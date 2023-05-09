@@ -1,0 +1,29 @@
+del command 'GlobalCollection';
+add command 'GlobalCollection'
+	description	'Global Search Collection'
+	label	'emxComponents.Common.AddtoCollection'
+	href	'${COMMON_DIR}/emxCollectionsSelectCreateDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	user	'Specification Restricted User'
+	user	'Global Template Administrator'
+	user	'Template Administrator'
+	user	'Template Header Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'GlobalCollection'
+	property	'version'	value	'R417'
+;
+modify menu GlobalSearchBottomActionBar add command GlobalCollection order command GlobalCollection 0;
+modify menu APPGlobalSearchActionsToolBar add command GlobalCollection order command GlobalCollection 0;
+#channel ==>GlobalSearchBottomActionBarAPPGlobalSearchActionsToolBar
+add property command_GlobalCollection on program eServiceSchemaVariableMapping.tcl to command 'GlobalCollection';

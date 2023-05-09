@@ -1,0 +1,27 @@
+del command 'TMCRouteSummaryDeleteSelected';
+add command 'TMCRouteSummaryDeleteSelected'
+	description	'Command for DeleteSelected link on RouteSummary'
+	label	'emxComponents.Routes.DeleteSelected'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPRouteDeleteNotification&mode=edit&formHeader=emxComponents.DeleteRoute.Heading&HelpMarker=emxhelpdeleteroute&postProcessJPO=emxRoute:deleteSelectedRoutes&submitAction=refreshCaller&findMxLink=false&refreshHeader=true'
+	alt	'emxComponents.Routes.DeleteSelected'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	user	'3DSRestrictedContributor'
+	user	'VPLMExperimenter'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRouteSummaryDeleteSelected'
+	property	'version'	value	'R423.HF3'
+;
+modify menu TMCRouteSummaryBottomActionBar add command TMCRouteSummaryDeleteSelected order command TMCRouteSummaryDeleteSelected 1;
+#channel ==>TMCRouteSummaryBottomActionBar
+add property command_TMCRouteSummaryDeleteSelected on program eServiceSchemaVariableMapping.tcl to command 'TMCRouteSummaryDeleteSelected';

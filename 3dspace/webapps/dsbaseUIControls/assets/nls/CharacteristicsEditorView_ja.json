@@ -1,0 +1,15 @@
+{
+  "CEV.optionsChecker.rdfServerURL.error": "RDF サーバー URL を定義する必要があります。",
+  "CEV.optionsChecker.resourceURI.error": "リソース URI を定義する必要があります。",
+  "CEV.optionsChecker.constraintsPosition.error": "拘束ポップアップの位置を \"上\"、\"右\"、\"下\"、\"左\" のいずれかにする必要があります",
+  "CEV.optionsChecker.buttons.types.error": "ボタン '{label}' のタイプを \"プライマリ\"、\"デフォルト\"、\"情報\"、\"成功\"、\"警告\"、\"エラー\" のいずれかにする必要があります",
+  "CEV.optionsChecker.buttons.specificActions.error": "'{key}' 特性の特定アクションを関数にする必要があります。",
+  "CEV.optionsChecker.search.error": "'{key}' 特性の値を検索するために関数が想定されています。",
+  "CEV.title": "特性エディター",
+  "CEV.defaultMessage": "すべての特性を取得中にエラーが発生しました...",
+  "CEV.userCharacteristics.title": "ユーザー特性",
+  "CEV.characteristics.title": "特性",
+  "CEV.okButton.content": "OK",
+  "CEV.cancelButton.content": "キャンセル",
+  "CEV.cancelButton.error": "[キャンセル] ボタンをクリックしたときにエラーが発生しました..."
+}

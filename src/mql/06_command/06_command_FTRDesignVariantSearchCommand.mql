@@ -1,0 +1,20 @@
+del command 'FTRDesignVariantSearchCommand';
+add command 'FTRDesignVariantSearchCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindDesignVariant'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxFeatureSearch:getDesignVariants&table=FTRSearchFeaturesTable&form=FTRSearchDesignVariantForm&CommandName=FTRDesignVariantSearchCommand&sortColumnName=Name&SubmitURL=${SUITE_DIR}/FeatureUtil.jsp?mode=addDesignVariant&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDesignVariantSearchCommand'
+	property	'version'	value	'R215'
+;
+modify menu SearchAddExistingChooserMenu add command FTRDesignVariantSearchCommand order command FTRDesignVariantSearchCommand 19;
+#channel ==>SearchAddExistingChooserMenu
+add property command_FTRDesignVariantSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRDesignVariantSearchCommand';

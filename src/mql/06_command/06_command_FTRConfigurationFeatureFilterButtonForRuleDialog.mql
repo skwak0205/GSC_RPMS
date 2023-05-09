@@ -1,0 +1,22 @@
+del command 'FTRConfigurationFeatureFilterButtonForRuleDialog';
+add command 'FTRConfigurationFeatureFilterButtonForRuleDialog'
+	description	''
+	label	'emxProduct.Button.Filter'
+	href	'javascript:filterPage()'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Action Label'		'emxProduct.Button.Filter'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Width'		'80'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationFeatureFilterButtonForRuleDialog'
+	property	'version'	value	'R215'
+;
+modify menu FTRConfigurationFeatureCustomFilterToolbarForRuleDialog add command FTRConfigurationFeatureFilterButtonForRuleDialog order command FTRConfigurationFeatureFilterButtonForRuleDialog 0;
+#channel ==>FTRConfigurationFeatureCustomFilterToolbarForRuleDialog
+add property command_FTRConfigurationFeatureFilterButtonForRuleDialog on program eServiceSchemaVariableMapping.tcl to command 'FTRConfigurationFeatureFilterButtonForRuleDialog';

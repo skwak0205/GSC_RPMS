@@ -1,0 +1,19 @@
+del command 'APPDOCUMENTSContentCheckoutEvent';
+add command 'APPDOCUMENTSContentCheckoutEvent'
+	description	'DOCUMENTS Content Checkout Event'
+	label	'emxComponents.DOCUMENTS.Event.Content_Checkout'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'3DNotificationSupported'		'false'
+	setting	'Event Type'		'Content Checkout'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDOCUMENTSContentCheckoutEvent'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPDOCUMENTSEvents add command APPDOCUMENTSContentCheckoutEvent order command APPDOCUMENTSContentCheckoutEvent 4;
+modify menu RMTRequirementSpecificationEvents add command APPDOCUMENTSContentCheckoutEvent order command APPDOCUMENTSContentCheckoutEvent 4;
+#channel ==>APPDOCUMENTSEventsRMTRequirementSpecificationEvents
+add property command_APPDOCUMENTSContentCheckoutEvent on program eServiceSchemaVariableMapping.tcl to command 'APPDOCUMENTSContentCheckoutEvent';

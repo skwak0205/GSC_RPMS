@@ -1,0 +1,12 @@
+del command 'APPXPLocalAdministration';
+add command 'APPXPLocalAdministration'
+	description	''
+	label	'emxPlmOnline.label.LocalAdministration'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=LocalAdministration'
+	alt	'emxPlmOnline.label.LocalAdministration'
+	setting	'Registered Suite'		'VPLMAdministration'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+#channel ==>LocalAdministrationXPChannel
+add property command_APPXPLocalAdministration on program eServiceSchemaVariableMapping.tcl to command 'APPXPLocalAdministration';

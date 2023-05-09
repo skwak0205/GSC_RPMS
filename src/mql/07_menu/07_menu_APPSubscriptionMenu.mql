@@ -1,0 +1,16 @@
+del menu 'APPSubscriptionMenu';
+add menu 'APPSubscriptionMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPUnsubscribeAction'
+	menu	'APPSubscribeMenu'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPSubscriptionMenu'
+	property 'version'	value	'R424.HF2'
+;
+add property menu_APPSubscriptionMenu on program eServiceSchemaVariableMapping.tcl to menu 'APPSubscriptionMenu';

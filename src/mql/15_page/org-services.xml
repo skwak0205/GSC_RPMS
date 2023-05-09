@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd">
+    <ds:service name="bps.organization">
+        <ds:license products="ENOBUPS_AP" />
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.pno.organization.OrganizationService" function="getOrganization" localInvokation="java" returnedData="idsAndData" />
+            <ds:updatejpo classname="com.dassault_systemes.enovia.pno.organization.OrganizationService" function="updateOrganization" localInvokation="java" processMultiple="true" />
+        </ds:data>
+        <ds:ref-subservice name="bps.basicFields" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.orgFields" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.orgBasics" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.plantFields" includeByDefault="yes" />
+        <ds:ref-subservice name="suborgs" referenceName="bps.suborgs" includeByDefault="no">
+            <ds:data structured="suborgs">
+                <ds:expand relationshipPattern="Division,Subsidiary,Company Department,Organization Plant" getFrom="true" getTo="false" recurseLevels="{level}" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.pno.organization.SubOrganizationService" function="updateSubOrgsById" localInvokation="java"  />
+            </ds:data>
+        </ds:ref-subservice>
+        <ds:subservice name="employees"  includeByDefault="never">
+            <ds:data excludeBasicFields="true">
+                <ds:jpo classname="com.dassault_systemes.enovia.pno.organization.SubOrganizationService" function="getEmployees" localInvokation="java" returnedData="idsAndData" />
+            </ds:data>
+            <ds:ref-subservice name="bps.personsFields" includeByDefault="yes" />
+            <ds:subservice name="reparent"  includeByDefault="never">
+                <ds:data>
+                    <ds:updatejpo classname="com.dassault_systemes.enovia.pno.organization.SubOrganizationService" function="reparentEmployees" localInvokation="java"  />
+                </ds:data>
+            </ds:subservice>
+        </ds:subservice>
+
+        <ds:subservice name="members"  includeByDefault="never">
+            <ds:data excludeBasicFields="true">
+                <ds:jpo classname="com.dassault_systemes.enovia.pno.organization.SubOrganizationService" function="getMembers" localInvokation="java" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.pno.organization.SubOrganizationService" function="updateMember" localInvokation="java"  />
+            </ds:data>
+            <ds:ref-subservice name="bps.personsFields" includeByDefault="yes" />
+        </ds:subservice>
+
+        <ds:ref-subservice name="businessunits" includeByDefault="never" />
+        <ds:ref-subservice name="departments" includeByDefault="never" />
+        <ds:ref-subservice name="plants" includeByDefault="never" />
+        <ds:ref-subservice name="subsidiaries" includeByDefault="never" />
+    </ds:service>
+    <ds:service name="businessunits">
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.pno.organization.SubOrganizationService" function="getBusinessUnits" localInvokation="java" returnedData="idsAndData" />
+        </ds:data>
+        <ds:ref-subservice name="bps.basicFields" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.orgBasics" includeByDefault="yes" />
+    </ds:service>
+    <ds:service name="departments" >
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.pno.organization.SubOrganizationService" function="getDepartment" localInvokation="java" returnedData="idsAndData" />
+        </ds:data>
+        <ds:ref-subservice name="bps.basicFields" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.orgBasics" includeByDefault="yes" />
+    </ds:service>
+    <ds:service name="host" >
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.pno.organization.OrganizationService" function="getHost" localInvokation="java" returnedData="idsAndData" />
+            <ds:updatejpo classname="com.dassault_systemes.enovia.pno.organization.OrganizationService" function="updateHost" localInvokation="java"  />
+        </ds:data>
+        <ds:ref-subservice name="bps.basicFields" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.orgFields" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.orgBasics" includeByDefault="yes" />
+    </ds:service>
+    <ds:service name="subsidiaries" >
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.pno.organization.SubOrganizationService" function="getSubsidiaries" localInvokation="java" returnedData="idsAndData" />
+        </ds:data>
+        <ds:ref-subservice name="bps.basicFields" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.subsidiaryField" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.orgBasics" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.orgFields" includeByDefault="yes" />
+    </ds:service>
+    <ds:service name="plants" >
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.pno.organization.SubOrganizationService" function="getPlants" localInvokation="java" returnedData="idsAndData" />
+        </ds:data>
+        <ds:ref-subservice name="bps.basicFields" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.orgBasics" includeByDefault="yes" />
+        <ds:ref-subservice name="bps.plantFields" includeByDefault="yes" />
+    </ds:service>
+    <ds:service name="persons" >
+        <ds:ref-subservice name="bps.personsFields" includeByDefault="yes" />
+    </ds:service>
+    <ds:service name="bps.basicFields">
+        <ds:field name="name" description="Name of the Organization">
+            <ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes" />
+        </ds:field>
+        <ds:field name="description" description="Description of the Organization">
+            <ds:selectable expression="description" autosave="true" busTypes="Company,Department,Business Unit"/>
+        </ds:field>
+        <ds:field name="state" description="Current state of the Organization">
+            <ds:selectable expression="current" type="bus" />
+        </ds:field>
+        <ds:field name="created" description="Creation time of the Organization">
+            <ds:selectable expression="originated" format="utc" />
+        </ds:field>
+        <ds:field name="modified" description="Last Modified Time">
+            <ds:selectable expression="modified" format="utc" />
+        </ds:field>
+    </ds:service>
+    <ds:service name="bps.orgBasics">
+        <ds:field name="title">
+            <ds:selectable expression="attribute[Title]" type="bus" autosave="true"  />
+        </ds:field>
+        <ds:field name="type" description="Type of the Organization">
+            <ds:selectable expression="type" type="bus" autosave="true" />
+        </ds:field>
+        <ds:field name="organizationId" description="ID of the Business Unit">
+            <ds:selectable expression="attribute[Organization ID]" type="bus" autosave="true" busTypes="Company,Department,Business Unit" />
+        </ds:field>
+        <ds:field name="dunsNumber" description="DUNS Number of the Business Unit">
+            <ds:selectable expression="attribute[DUNS Number]" type="bus" autosave="true" busTypes="Company,Department,Business Unit" />
+        </ds:field>
+        <ds:field name="phoneNumber" description="Phone Number of the Business Unit">
+            <ds:selectable expression="attribute[Organization Phone Number]" type="bus" autosave="true"  busTypes="Company,Department,Business Unit"/>
+        </ds:field>
+        <ds:field name="faxNumber" description="Fax Number of the Business Unit">
+            <ds:selectable expression="attribute[Organization Fax Number]" type="bus" autosave="true" busTypes="Company,Department,Business Unit" />
+        </ds:field>
+        <ds:field name="webSite" description="Website of the Business Unit">
+            <ds:selectable expression="attribute[Web Site]" type="bus" autosave="true" busTypes="Company,Department,Business Unit" />
+        </ds:field>
+        <ds:field name="plantId" description="Plant ID">
+            <ds:selectable expression="attribute[Plant ID]" type="bus"  busTypes="Plant"/>
+        </ds:field>
+    </ds:service>
+    <ds:service name="bps.suborgs">
+        <ds:field name="name" description="Name of the Organization">
+            <ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes" />
+        </ds:field>
+        <ds:field name="description" description="Description of the Organization">
+            <ds:selectable expression="description" autosave="true" busTypes="Company,Department,Business Unit"/>
+        </ds:field>
+        <ds:field name="state" description="Current state of the Organization">
+            <ds:selectable expression="current" type="bus" />
+        </ds:field>
+        <ds:field name="created" description="Creation time of the Organization">
+            <ds:selectable expression="originated" format="utc" />
+        </ds:field>
+        <ds:field name="modified" description="Last Modified Time">
+            <ds:selectable expression="modified" format="utc" />
+        </ds:field>
+        <ds:field name="title" description="Title of the Organization">
+            <ds:selectable expression="attribute[Title]" type="bus" autosave="true" />
+        </ds:field>
+        <ds:field name="type" description="Type of the Organization">
+            <ds:selectable expression="type" type="bus" autosave="true" />
+        </ds:field>
+        <ds:field name="organizationId" description="ID of the Organization">
+            <ds:selectable expression="attribute[Organization ID]" type="bus" autosave="true" busTypes="Company,Department,Business Unit"/>
+        </ds:field>
+        <ds:field name="dunsNumber" description="DUNS of the Organization">
+            <ds:selectable expression="attribute[DUNS Number]" type="bus" autosave="true" busTypes="Company,Department,Business Unit" />
+        </ds:field>
+        <ds:field name="phoneNumber" description="Phone Number of the Organization">
+            <ds:selectable expression="attribute[Organization Phone Number]" type="bus" autosave="true" busTypes="Company,Department,Business Unit" />
+        </ds:field>
+        <ds:field name="faxNumber">
+            <ds:selectable expression="attribute[Organization Fax Number]" type="bus" autosave="true" busTypes="Company,Department,Business Unit"/>
+        </ds:field>
+        <ds:field name="webSite" description="Website of the Organization">
+            <ds:selectable expression="attribute[Web Site]" type="bus" autosave="true" busTypes="Company,Department,Business Unit" />
+        </ds:field>
+        <ds:field name="city" description="Plant City">
+            <ds:selectable expression="attribute[City]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="timezone" description="Plant TimeZone">
+            <ds:selectable expression="attribute[Plant Time Zone]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="address" description="Address of the Organization">
+            <ds:selectable expression="attribute[Address]" type="bus" autosave="true" busTypes="Company"/>
+        </ds:field>
+        <ds:field name="address1" description="Plant Address">
+            <ds:selectable expression="attribute[Address1]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="address2" description="Plant Address">
+            <ds:selectable expression="attribute[Address2]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="region" description="Plant State">
+            <ds:selectable expression="attribute[State/Region]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="postalCode" description="Plant PostalCode">
+            <ds:selectable expression="attribute[Postal Code]" type="bus" autosave="true" busTypes="Company,Plant" />
+        </ds:field>
+        <ds:field name="country" description="Plant Country">
+            <ds:selectable expression="attribute[Country]" type="bus" autosave="true" busTypes="Plant"/>
+        </ds:field>
+        <ds:field name="nonProductionDays" description="Non Production Days for Plant">
+            <ds:selectable expression="attribute[Non Production Days]" type="bus" autosave="true" busTypes="Plant"/>
+        </ds:field>
+        <ds:field name="plantId" description="Plant ID">
+            <ds:selectable expression="attribute[Plant ID]" type="bus"  busTypes="Plant"/>
+        </ds:field>
+        <ds:field name="parentCompany" description="Parent Company name of the Subsidiary">
+            <ds:selectable expression="to[Subsidiary].from.name" type="bus" busTypes="Company"/>
+        </ds:field>
+        <ds:field name="parentCompanyId" description="Parent Company ID of the Subsidiary">
+            <ds:selectable expression="to[Subsidiary].from.physicalid" type="bus" busTypes="Company"/>
+        </ds:field>
+    </ds:service>
+    <ds:service name="bps.suborgFields">
+        <ds:field name="title">
+            <ds:selectable expression="attribute[Title]" type="bus" autosave="true" />
+        </ds:field>
+        <ds:field name="type">
+            <ds:selectable expression="type" type="bus" autosave="true" />
+        </ds:field>
+        <ds:field name="organizationId">
+            <ds:selectable expression="attribute[Organization ID]" type="bus" autosave="true" />
+        </ds:field>
+        <ds:field name="dunsNumber">
+            <ds:selectable expression="attribute[DUNS Number]" type="bus" autosave="true" />
+        </ds:field>
+        <ds:field name="phoneNumber">
+            <ds:selectable expression="attribute[Organization Phone Number]" type="bus" autosave="true" />
+        </ds:field>
+        <ds:field name="faxNumber">
+            <ds:selectable expression="attribute[Organization Fax Number]" type="bus" autosave="true" />
+        </ds:field>
+        <ds:field name="webSite">
+            <ds:selectable expression="attribute[Web Site]" type="bus" autosave="true" />
+        </ds:field>
+    </ds:service>
+    <ds:service name="bps.orgFields">
+        <ds:field name="address" description="Address of the Organization">
+            <ds:selectable expression="attribute[Address]" type="bus" autosave="true" busTypes="Company"/>
+        </ds:field>
+        <ds:field name="postalCode" description="Postal Code of the Organization">
+            <ds:selectable expression="attribute[Postal Code]" type="bus" autosave="true"  busTypes="Company"/>
+        </ds:field>
+        <ds:field name="parentCompany" description="Parent Company name of the Subsidiary">
+            <ds:selectable expression="to[Subsidiary].from.name" type="bus"  busTypes="Company"/>
+        </ds:field>
+        <ds:field name="parentCompanyId" description="Parent Company ID of the Subsidiary">
+            <ds:selectable expression="to[Subsidiary].from.physicalid" type="bus"  busTypes="Company" />
+        </ds:field>
+    </ds:service>
+    <ds:service name="bps.subsidiaryField">
+        <ds:field name="subsidiaryId" description="ID of the Subsidiary">
+            <ds:selectable expression="attribute[Organization ID]" type="bus" autosave="true" />
+        </ds:field>
+        <ds:field name="parentCompany" description="Parent Company name of the Subsidiary">
+            <ds:selectable expression="to[Subsidiary].from.name" type="bus" />
+        </ds:field>
+        <ds:field name="parentCompanyId" description="Parent Company ID of the Subsidiary">
+            <ds:selectable expression="to[Subsidiary].from.physicalid" type="bus" />
+        </ds:field>
+    </ds:service>
+    <ds:service name="bps.personsFields">
+        <ds:field name="name" description="The user account name">
+            <ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes" />
+        </ds:field>
+        <ds:field name="firstname" description="The user's first name">
+            <ds:selectable expression="attribute[First Name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes" />
+        </ds:field>
+        <ds:field name="lastname" description="The user's last name">
+            <ds:selectable expression="attribute[Last Name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes" />
+        </ds:field>
+        <ds:field name="type">
+            <ds:selectable expression="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+    </ds:service>
+    <ds:service name="bps.plantFields">
+        <ds:field name="city" description="Plant City">
+            <ds:selectable expression="attribute[City]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="timezone" description="Plant TimeZone">
+            <ds:selectable expression="attribute[Plant Time Zone]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="address1" description="Plant Address">
+            <ds:selectable expression="attribute[Address1]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="address2" description="Plant Address">
+            <ds:selectable expression="attribute[Address2]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="region" description="Plant State">
+            <ds:selectable expression="attribute[State/Region]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="postalCode" description="Plant PostalCode">
+            <ds:selectable expression="attribute[Postal Code]" type="bus" autosave="true" busTypes="Plant" />
+        </ds:field>
+        <ds:field name="country" description="Plant Country">
+            <ds:selectable expression="attribute[Country]" type="bus" autosave="true" busTypes="Plant"/>
+        </ds:field>
+        <ds:field name="nonProductionDays" description="Non Production Days for Plant">
+            <ds:selectable expression="attribute[Non Production Days]" type="bus" autosave="true" busTypes="Plant"/>
+        </ds:field>
+        <ds:field name="plantId" description="Plant ID">
+            <ds:selectable expression="attribute[Plant ID]" type="bus"  busTypes="Plant"/>
+        </ds:field>
+    </ds:service>
+</ds:services>
+

@@ -1,0 +1,6 @@
+// #PLMProfile_export.KProc file
+
+#Prog CLASSIFICATION_EXCHANGE_DETACH( iPLMIDSet : #In PLMIDSet, oPLMIDSet : #Out PLMIDSet ) : VoidType
+{
+     oPLMIDSet = ExecuteJavaProcedure("com.dassault_systemes.qrcapps.completionservices.EKLProcedure_PLMProfile_Expand", iPLMIDSet)
+} 

@@ -1,0 +1,15 @@
+del command 'VPLMIntegSynchConfigWithVPLM_X3';
+add command 'VPLMIntegSynchConfigWithVPLM_X3'
+	description	'Command to publish Configuration data to VPLM'
+	label	'emxVPMCentral.Configuration.Command.Publish.Title'
+	href	'${SUITE_DIR}/common/emxSyncronizeWithVPLM_X3_UI.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'225'
+	setting	'Window Width'		'350'
+	setting	'Registered Suite'		'VPMCentral'
+	setting	'Popup Modal'		'true'
+;
+modify menu PLCProductPropertiesTopActionBar add command VPLMIntegSynchConfigWithVPLM_X3 order command VPLMIntegSynchConfigWithVPLM_X3 0;
+#channel ==>PLCProductPropertiesTopActionBar
+add property command_VPLMIntegSynchConfigWithVPLM_X3 on program eServiceSchemaVariableMapping.tcl to command 'VPLMIntegSynchConfigWithVPLM_X3';

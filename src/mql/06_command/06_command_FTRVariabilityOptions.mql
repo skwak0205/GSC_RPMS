@@ -1,0 +1,15 @@
+del command 'FTRVariabilityOptions';
+add command 'FTRVariabilityOptions'
+	description	''
+	label	'emxProduct.Tree.VariabilityOptions'
+	href	'${SUITE_DIR}/VariabilityOptionsPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu type_VariabilityGroup add command FTRVariabilityOptions order command FTRVariabilityOptions 1;
+#channel ==>type_VariabilityGroup
+add property command_FTRVariabilityOptions on program eServiceSchemaVariableMapping.tcl to command 'FTRVariabilityOptions';

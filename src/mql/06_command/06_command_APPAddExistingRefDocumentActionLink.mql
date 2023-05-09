@@ -1,0 +1,31 @@
+del command 'APPAddExistingRefDocumentActionLink';
+add command 'APPAddExistingRefDocumentActionLink'
+	description	'Add Existing Reference Document'
+	label	'emxComponents.Command.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_DOCUMENTS:IS_VERSION_OBJECT=False&table=APPRefDocumentsSearchResults&selection=multiple&suiteKey=Components&StringResourceFileId=emxComponentsStringResource&SuiteDirectory=components&HelpMarker=emxhelpsearch&submitURL=../components/emxCommonConnectObjects.jsp&isTo=true&srcDestRelName=relationship_ReferenceDocument&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedAuthor'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Design Engineer'
+	user	'Manufacturing Engineer'
+	user	'Senior Design Engineer'
+	user	'Senior Manufacturing Engineer'
+	user	'Component Engineer'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddExistingRefDocumentActionLink'
+	property	'version'	value	'R216'
+;
+modify menu APPRefDocumentSummaryActionsToolBar add command APPAddExistingRefDocumentActionLink order command APPAddExistingRefDocumentActionLink 1;
+#channel ==>APPRefDocumentSummaryActionsToolBar
+add property command_APPAddExistingRefDocumentActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAddExistingRefDocumentActionLink';

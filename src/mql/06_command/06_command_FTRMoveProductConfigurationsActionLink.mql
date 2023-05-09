@@ -1,0 +1,19 @@
+del command 'FTRMoveProductConfigurationsActionLink';
+add command 'FTRMoveProductConfigurationsActionLink'
+	description	'MoveProductConfigurations'
+	label	'emxProduct.ActionLink.MoveProductConfigurations'
+	href	'${SUITE_DIR}/MoveProductConfigurationPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'($<type.kindof=="type_Products">)&&(!$<type=="type_ProductVariant">)&&(current != "Obsolete")'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/I_MoveProductConf32.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R422'
+;
+modify menu FTRProductConfigurationActionToolbar add command FTRMoveProductConfigurationsActionLink order command FTRMoveProductConfigurationsActionLink 3;
+#channel ==>FTRProductConfigurationActionToolbar
+add property command_FTRMoveProductConfigurationsActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRMoveProductConfigurationsActionLink';

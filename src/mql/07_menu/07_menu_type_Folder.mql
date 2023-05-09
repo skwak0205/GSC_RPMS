@@ -1,0 +1,20 @@
+del menu 'type_Folder';
+add menu 'type_Folder'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/ADDPAGEHERE'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallFolder.gif'
+	command	'TMCAccess'
+	command	'TMCContent'
+	command	'TMCDiscussion'
+	command	'TMCRoute'
+	command	'TMCSubfolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_Folder'
+	property 'version'	value	'9-5-0-0'
+;
+add property menu_type_Folder on program eServiceSchemaVariableMapping.tcl to menu 'type_Folder';

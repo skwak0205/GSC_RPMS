@@ -1,0 +1,22 @@
+del command 'FTRGenerateEBOMCommand';
+add command 'FTRGenerateEBOMCommand'
+	description	'FTRGenerateEBOMCommand'
+	label	'emxProduct.ActionLink.FTRGenerateEBOM'
+	href	'javascript:generateBOM()'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showLinksForSalableConfig'
+	setting	'Access Program'		'emxProductConfiguration'
+	setting	'Hide Mode'		'Mobile'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRGenerateEBOMCommand'
+	property	'version'	value	'R418'
+;
+modify menu FTRPreviewBOMTableToolbar add command FTRGenerateEBOMCommand order command FTRGenerateEBOMCommand 1;
+#channel ==>FTRPreviewBOMTableToolbar
+add property command_FTRGenerateEBOMCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRGenerateEBOMCommand';

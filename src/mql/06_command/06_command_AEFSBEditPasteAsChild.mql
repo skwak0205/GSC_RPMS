@@ -1,0 +1,21 @@
+del command 'AEFSBEditPasteAsChild';
+add command 'AEFSBEditPasteAsChild'
+	description	''
+	label	'emxFramework.FreezePane.SBEditActions.PasteAsChild'
+	href	'javascript:pasteAsChild()'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPaste.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBEditPasteAsChild'
+	property	'version'	value	'R422'
+;
+modify menu AEFSBEditActions add command AEFSBEditPasteAsChild order command AEFSBEditPasteAsChild 5;
+modify menu PMCFolderSBEditActions add command AEFSBEditPasteAsChild order command AEFSBEditPasteAsChild 2;
+#channel ==>AEFSBEditActionsPMCFolderSBEditActions
+add property command_AEFSBEditPasteAsChild on program eServiceSchemaVariableMapping.tcl to command 'AEFSBEditPasteAsChild';

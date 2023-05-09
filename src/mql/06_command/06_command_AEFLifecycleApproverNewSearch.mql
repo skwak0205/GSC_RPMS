@@ -1,0 +1,16 @@
+del command 'AEFLifecycleApproverNewSearch';
+add command 'AEFLifecycleApproverNewSearch'
+	description	'New Search command on Approver search results toolbar'
+	label	'emxFramework.Button.NewSearch'
+	href	'javascript:findFrame(getTopWindow(),\"pagecontent\").newSearch()'
+	alt	'emxFramework.Button.NewSearch'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecycleApproverNewSearch'
+	property	'version'	value	'R212'
+;
+modify menu AEFLifecycleApproverSearchResultsToolbar add command AEFLifecycleApproverNewSearch order command AEFLifecycleApproverNewSearch 0;
+#channel ==>AEFLifecycleApproverSearchResultsToolbar
+add property command_AEFLifecycleApproverNewSearch on program eServiceSchemaVariableMapping.tcl to command 'AEFLifecycleApproverNewSearch';

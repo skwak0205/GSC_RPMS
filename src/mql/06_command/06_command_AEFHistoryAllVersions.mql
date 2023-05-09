@@ -1,0 +1,18 @@
+del command 'AEFHistoryAllVersions';
+add command 'AEFHistoryAllVersions'
+	description	'All Versions History'
+	label	'emxFramework.History.History'
+	href	'${COMMON_DIR}/emxHistory.jsp?HistoryMode=AllRevisions&Header=emxFramework.Common.History&subHeader=Version'
+	alt	'emxFramework.History.History'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFHistoryAllVersions'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_AEFHistoryAllVersions on program eServiceSchemaVariableMapping.tcl to command 'AEFHistoryAllVersions';

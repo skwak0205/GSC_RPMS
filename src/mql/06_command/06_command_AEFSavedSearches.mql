@@ -1,0 +1,22 @@
+del command 'AEFSavedSearches';
+add command 'AEFSavedSearches'
+	description	'Saved Searches'
+	label	'emxFramework.GlobalSearch.SavedSearchesGTB'
+	href	'${COMMON_DIR}/emxSearchManage.jsp'
+	alt	'emxFramework.GlobalSearch.SavedSearches'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Framework'
+	setting	'Help Marker'		'emxhelpsearchsavedqueries'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSavedSearches'
+	property	'version'	value	'R417'
+;
+modify menu AEFSearchTypes add command AEFSavedSearches order command AEFSavedSearches 2;
+modify menu AEFTypesGlobalSearch add command AEFSavedSearches order command AEFSavedSearches 1;
+modify menu RMTRequirementSearchType add command AEFSavedSearches order command AEFSavedSearches 1;
+modify menu RMTRequirementSpecificationSearchType add command AEFSavedSearches order command AEFSavedSearches 1;
+modify menu RMTSpecificationSearchType add command AEFSavedSearches order command AEFSavedSearches 1;
+#channel ==>AEFSearchTypesAEFTypesGlobalSearchRMTRequirementSearchTypeRMTRequirementSpecificationSearchTypeRMTSpecificationSearchType
+add property command_AEFSavedSearches on program eServiceSchemaVariableMapping.tcl to command 'AEFSavedSearches';

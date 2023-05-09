@@ -1,0 +1,25 @@
+del command 'TMCWorkspaceTemplateSummaryDeleteSelected';
+add command 'TMCWorkspaceTemplateSummaryDeleteSelected'
+	description	''
+	label	'emxTeamCentral.Button.DeleteSelected'
+	href	'${SUITE_DIR}/emxTeamDeleteWorkspaceTemplate.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceTemplateSummaryDeleteSelected'
+	property	'version'	value	'R422'
+;
+modify menu TMCWorkspaceTemplateSummaryBottomActionBar add command TMCWorkspaceTemplateSummaryDeleteSelected order command TMCWorkspaceTemplateSummaryDeleteSelected 0;
+#channel ==>TMCWorkspaceTemplateSummaryBottomActionBar
+add property command_TMCWorkspaceTemplateSummaryDeleteSelected on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceTemplateSummaryDeleteSelected';

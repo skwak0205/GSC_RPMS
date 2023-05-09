@@ -1,0 +1,15 @@
+del menu 'TMCFileSearchOwnerChooser';
+add menu 'TMCFileSearchOwnerChooser'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	command	'TMCFileSearchOwnerCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCFileSearchOwnerChooser'
+	property 'version'	value	'R210'
+;
+add property menu_TMCFileSearchOwnerChooser on program eServiceSchemaVariableMapping.tcl to menu 'TMCFileSearchOwnerChooser';

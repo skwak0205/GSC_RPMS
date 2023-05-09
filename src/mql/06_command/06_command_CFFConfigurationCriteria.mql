@@ -1,0 +1,24 @@
+del command 'CFFConfigurationCriteria';
+add command 'CFFConfigurationCriteria'
+	description	''
+	label	'Effectivity.Command.ConfigurationCriteria'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=CFFConfigurationCriteria&header=Effectivity.Heading.ConfigurationCriteria&HelpMarker=emxhelpConfigurationCriteria'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Licensed Product'		'ENO_CFF_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFConfigurationCriteria'
+	property	'version'	value	'R215'
+;
+modify menu type_Chapter add command CFFConfigurationCriteria order command CFFConfigurationCriteria 7;
+modify menu type_RequirementGroup add command CFFConfigurationCriteria order command CFFConfigurationCriteria 6;
+modify menu type_Comment add command CFFConfigurationCriteria order command CFFConfigurationCriteria 6;
+modify menu type_Products add command CFFConfigurationCriteria order command CFFConfigurationCriteria 8;
+modify menu type_LogicalFeature add command CFFConfigurationCriteria order command CFFConfigurationCriteria 16;
+modify menu type_Variant add command CFFConfigurationCriteria order command CFFConfigurationCriteria 12;
+modify menu type_VariabilityGroup add command CFFConfigurationCriteria order command CFFConfigurationCriteria 12;
+#channel ==>type_Chaptertype_RequirementGrouptype_Commenttype_Productstype_LogicalFeaturetype_Varianttype_VariabilityGroupRMTChangeControlRMTSpecificationsChangeControl
+add property command_CFFConfigurationCriteria on program eServiceSchemaVariableMapping.tcl to command 'CFFConfigurationCriteria';

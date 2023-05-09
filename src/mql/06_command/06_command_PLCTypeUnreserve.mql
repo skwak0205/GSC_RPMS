@@ -1,0 +1,17 @@
+del command 'PLCTypeUnreserve';
+add command 'PLCTypeUnreserve'
+	description	'This will unset the Reserve flag on the selected branch of the structure'
+	label	'emxProductLine.ActionLink.Unreserve'
+	href	'${SUITE_DIR}/TestCaseUtil.jsp?Mode=UnReserve'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUnlock.gif'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+;
+modify menu PLCTestExecutionPropertiesToolbar add command PLCTypeUnreserve order command PLCTypeUnreserve 0;
+modify menu PLCTestCasePropertiesTopActionBar add command PLCTypeUnreserve order command PLCTypeUnreserve 0;
+#channel ==>PLCTestExecutionPropertiesToolbarPLCTestCasePropertiesTopActionBar
+add property command_PLCTypeUnreserve on program eServiceSchemaVariableMapping.tcl to command 'PLCTypeUnreserve';

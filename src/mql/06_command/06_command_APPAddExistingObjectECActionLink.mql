@@ -1,0 +1,22 @@
+del command 'APPAddExistingObjectECActionLink';
+add command 'APPAddExistingObjectECActionLink'
+	description	''
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_EngineeringChange:CURRENT!=policy_EngineeringChangeStandard.state_Close,policy_EngineeringChangeStandard.state_Complete,policy_EngineeringChangeStandard.state_Reject&excludeOIDprogram=emxCommonEngineeringChange:excludeConnectedEC&table=AEFGeneralSearchResults&selection=multiple&showSavedQuery=True&searchCollectionEnabled=True&srcDestRelName=relationship_ECAffectedItem&isTo=false&submitURL=../components/emxEngineeringChangeUtil.jsp?mode=AddExistingECAffectedItems'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddExistingObjectECActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPObjectECActionsToolBar add command APPAddExistingObjectECActionLink order command APPAddExistingObjectECActionLink 1;
+#channel ==>APPObjectECActionsToolBar
+add property command_APPAddExistingObjectECActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAddExistingObjectECActionLink';

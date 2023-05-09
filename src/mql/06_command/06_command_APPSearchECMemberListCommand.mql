@@ -1,0 +1,17 @@
+del command 'APPSearchECMemberListCommand';
+add command 'APPSearchECMemberListCommand'
+	description	'For searching the menber list to be connected to the parent object.'
+	label	'emxComponents.Command.Search'
+	href	'${SUITE_DIR}/emxComponentsSearchMemberListDialog.jsp?suiteKey=Components&program=emxCommonEngineeringChange:getMemberLists&table=APPECMemberListsSearchList&CommandName=APPSearchECMemberListCommand&sortColumnName=Name&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchECMemberListCommand'
+	property	'version'	value	'10-6'
+;
+modify menu APPECSearchAddExistingChooser add command APPSearchECMemberListCommand order command APPSearchECMemberListCommand 4;
+#channel ==>APPECSearchAddExistingChooser
+add property command_APPSearchECMemberListCommand on program eServiceSchemaVariableMapping.tcl to command 'APPSearchECMemberListCommand';

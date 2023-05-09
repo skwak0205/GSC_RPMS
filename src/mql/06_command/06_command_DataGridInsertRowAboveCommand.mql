@@ -1,0 +1,17 @@
+del command 'DataGridInsertRowAboveCommand';
+add command 'DataGridInsertRowAboveCommand'
+	description	''
+	label	'emxFramework.GridView.InsertRowAbove'
+	href	'javascript:StandardFunctions.insertRowAbove()'
+	alt	'emxFramework.GridView.InsertRowAbove'
+	setting	'Access Function'		'canInsertRow'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridInsertRowAboveCommand'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridInsertRowMenu add command DataGridInsertRowAboveCommand order command DataGridInsertRowAboveCommand 1;
+#channel ==>DataGridInsertRowMenu
+add property command_DataGridInsertRowAboveCommand on program eServiceSchemaVariableMapping.tcl to command 'DataGridInsertRowAboveCommand';

@@ -1,0 +1,18 @@
+del menu 'PMCAssignMenu';
+add menu 'PMCAssignMenu'
+	description	''
+	label	'emxProgramCentral.Common.Assign'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'((current.access[changesov] == true && type!=$<type_Risk>) && current != Complete)'
+	setting	'Image'		'${COMMON_DIR}/images/I_AddMember32.png'
+	command	'PMCWBSAssignSelected'
+	command	'PMCWBSAssignByProjectRole'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCAssignMenu'
+	property 'version'	value	'R421.HF5'
+;
+add property menu_PMCAssignMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCAssignMenu';

@@ -1,0 +1,30 @@
+del table 'PLCTypeAheadTable' system;
+add table 'PLCTypeAheadTable' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxProduct.Table.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProductLine'
+column #2
+	name	'Type'
+	businessobject	'type'
+	label	'emxProduct.Table.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Admin Type'		'Type'
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTypeAheadTable'
+	property	'version'	value	'R212'
+;
+add property table_PLCTypeAheadTable on program eServiceSchemaVariableMapping.tcl to table 'PLCTypeAheadTable' system;

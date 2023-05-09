@@ -1,0 +1,19 @@
+del menu 'PMCResourceRequestTemplateToolBar';
+add menu 'PMCResourceRequestTemplateToolBar'
+	description	''
+	label	'emxProgramCentral.Command.ResourceRequestTemplate.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCResourcePlanTemplateResourceRequestCreate'
+	command	'PMCDeleteRequests'
+	command	'PMCResourcePlanTemplateCurrencyFilter'
+	command	'PMCResourcePlanTemplateCostFTEFilter'
+	command	'PMCAssignResourcePoolStandardCosts'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourceRequestTemplateToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_PMCResourceRequestTemplateToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourceRequestTemplateToolBar';

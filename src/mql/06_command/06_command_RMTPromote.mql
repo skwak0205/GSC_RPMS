@@ -1,0 +1,25 @@
+del command 'RMTPromote';
+add command 'RMTPromote'
+	description	'Command used to promote object.'
+	label	'emxRequirements.Label.Promote'
+	href	'${SUITE_DIR}/RequirementUtil.jsp?mode=Promote'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Access Behavior'		'disable'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Access Function'		'hasNextState'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPromote.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTPromote'
+	property	'version'	value	'R216'
+;
+modify menu RMTRequirementSpecificationPropertiesActionBar add command RMTPromote order command RMTPromote 3;
+modify menu RMTChapterPropertiesActionBar add command RMTPromote order command RMTPromote 3;
+modify menu RMTCommentPropertiesActionBar add command RMTPromote order command RMTPromote 3;
+modify menu RMTRequirementPropertiesTopActionBar add command RMTPromote order command RMTPromote 5;
+#channel ==>RMTRequirementSpecificationPropertiesActionBarRMTChapterPropertiesActionBarRMTCommentPropertiesActionBarRMTRequirementPropertiesTopActionBar
+add property command_RMTPromote on program eServiceSchemaVariableMapping.tcl to command 'RMTPromote';

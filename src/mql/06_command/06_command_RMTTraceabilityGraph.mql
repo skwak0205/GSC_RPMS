@@ -1,0 +1,25 @@
+del command 'RMTTraceabilityGraph';
+add command 'RMTTraceabilityGraph'
+	description	''
+	label	'emxRequirements.Label.DisplayGraph'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=graphDisplay&command=RMTDisplayGraph'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isGraphAvailable'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTraceabilityGraph'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementSpecTraceabilityMenu add command RMTTraceabilityGraph order command RMTTraceabilityGraph 1;
+modify menu RMTRequirementTraceabilityMenu add command RMTTraceabilityGraph order command RMTTraceabilityGraph 1;
+#channel ==>RMTRequirementSpecTraceabilityMenuRMTRequirementTraceabilityMenu
+add property command_RMTTraceabilityGraph on program eServiceSchemaVariableMapping.tcl to command 'RMTTraceabilityGraph';

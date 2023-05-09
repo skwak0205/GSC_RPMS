@@ -1,0 +1,22 @@
+del command 'LBCDCObjectLock';
+add command 'LBCDCObjectLock'
+	description	'DC Object Lock'
+	label	'emxDocumentCentral.ActionBarCmd.Lock'
+	href	'${SUITE_DIR}/emxDocumentCentralObjectLockProcess.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Function'		'hasLockAccess'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionLock.gif'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDCObjectLock'
+	property	'version'	value	'R216'
+;
+modify menu LCObjectDetailsActionsToolBar add command LBCDCObjectLock order command LBCDCObjectLock 3;
+#channel ==>LCObjectDetailsActionsToolBar
+add property command_LBCDCObjectLock on program eServiceSchemaVariableMapping.tcl to command 'LBCDCObjectLock';

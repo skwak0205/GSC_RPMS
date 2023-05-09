@@ -1,0 +1,25 @@
+del command 'PMCProjectHold';
+add command 'PMCProjectHold'
+	description	'Command to Hold Project from Gate Portal Page'
+	label	'emxProgramCentral.Common.Gate.Hold'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=HoldGate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(to[$<relationship_ProjectAccessKey>].from.from[$<relationship_ProjectAccessList>].to.type.kindOf[$<type_ProjectSpace>]==true)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isHoldEnabled'
+	setting	'Access Program'		'emxProjectHoldAndCancel'
+	setting	'Image'		'${COMMON_DIR}/images/I_CompassPlayerPause32.png'
+	setting	'Confirm Message'		'emxProgramCentral.ProjectHoldCancel.HoldGate'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectHold'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProjectGateToolBarActions add command PMCProjectHold order command PMCProjectHold 3;
+modify menu PMCChecklistTopActionToolbar add command PMCProjectHold order command PMCProjectHold 8;
+#channel ==>PMCProjectGateToolBarActionsPMCChecklistTopActionToolbar
+add property command_PMCProjectHold on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectHold';

@@ -1,0 +1,18 @@
+del form 'type_ChecklistForms';
+add form 'type_ChecklistForms' web
+field #1
+	name	'Description'
+	businessobject	'description'
+	label	'emxProgramCentral.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'type_ChecklistForms'
+	property	'version'	value	'R210'
+;
+add property form_type_ChecklistForms on program eServiceSchemaVariableMapping.tcl to form 'type_ChecklistForms';

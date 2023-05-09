@@ -1,0 +1,13 @@
+del menu 'PARActions';
+add menu 'PARActions'
+	description	''
+	label	'emxParameter.menu.PRMActions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	setting	'Licensed Product'		'CPF,ENOBUPS_AP'
+	setting	'Access Function'		'isParameterAvailable'
+	setting	'Access Program'		'emxParameter'
+	command	'PARCreateNewParameter'
+;
+add property menu_PARActions on program eServiceSchemaVariableMapping.tcl to menu 'PARActions';

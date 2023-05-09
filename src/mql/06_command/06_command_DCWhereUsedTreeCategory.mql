@@ -1,0 +1,24 @@
+del command 'DCWhereUsedTreeCategory';
+add command 'DCWhereUsedTreeCategory'
+	description	'Where Used Tree Category'
+	label	'emxDocumentCentral.TreeCategory.WhereUsed'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&HelpMarker=emxhelpwhereused&inquiry=DCObjectWhereUsed&table=DCObjectsStandardWithoutLock&sortColumnName=Name&sortDirection=ascending&header=emxDocumentCentral.Common.WhereUsed&massPromoteDemote=false&triggerValidation=false'
+	alt	'emxDocumentCentral.TreeCategory.WhereUsed'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallObjectFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCWhereUsedTreeCategory'
+	property	'version'	value	'R215'
+;
+modify menu type_Library add command DCWhereUsedTreeCategory order command DCWhereUsedTreeCategory 9;
+modify menu DCtype_ProjectVault add command DCWhereUsedTreeCategory order command DCWhereUsedTreeCategory 0;
+modify menu type_Libraries add command DCWhereUsedTreeCategory order command DCWhereUsedTreeCategory 6;
+modify menu type_PartLibrary add command DCWhereUsedTreeCategory order command DCWhereUsedTreeCategory 8;
+modify menu type_GeneralLibrary add command DCWhereUsedTreeCategory order command DCWhereUsedTreeCategory 8;
+modify menu type_PartFamily add command DCWhereUsedTreeCategory order command DCWhereUsedTreeCategory 10;
+modify menu type_PurgedRecord add command DCWhereUsedTreeCategory order command DCWhereUsedTreeCategory 0;
+#channel ==>type_LibraryDCtype_ProjectVaulttype_Librariestype_PartLibrarytype_GeneralLibrarytype_PartFamilytype_PurgedRecord
+add property command_DCWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'DCWhereUsedTreeCategory';

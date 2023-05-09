@@ -1,0 +1,16 @@
+del menu 'PMCTemplateCoOwnerToolBar';
+add menu 'PMCTemplateCoOwnerToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCAddTemplateCoOwner'
+	command	'PMCRemoveTemplateCoOwner'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCTemplateCoOwnerToolBar'
+	property 'version'	value	'R419'
+;
+add property menu_PMCTemplateCoOwnerToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCTemplateCoOwnerToolBar';

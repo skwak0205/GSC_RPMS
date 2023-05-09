@@ -1,0 +1,22 @@
+del menu 'PMCWBSRMBActions';
+add menu 'PMCWBSRMBActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCTaskManagementProperties'
+	command	'PMCLifecycle'
+	command	'PMCWBSInsertTaskAbove'
+	command	'PMCWBSAddSubtaskBelow'
+	command	'PMCWBSInsertExistingProject'
+	command	'PMCWBSAddExistingProject'
+	command	'PMCWBSAssignSelected'
+	command	'PMCWBSDeleteSelected'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWBSRMBActions'
+	property 'version'	value	'V6R2009x'
+;
+add property menu_PMCWBSRMBActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCWBSRMBActions';

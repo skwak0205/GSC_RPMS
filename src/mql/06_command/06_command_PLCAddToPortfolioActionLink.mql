@@ -1,0 +1,24 @@
+del command 'PLCAddToPortfolioActionLink';
+add command 'PLCAddToPortfolioActionLink'
+	description	'Add an existing Product or Model to a Portfolio'
+	label	'emxProduct.ActionLink.AddToPortfolio'
+	href	'${ROOT_DIR}/productline/PortfolioUtil.jsp?mode=AddToPortfolioPreProcess'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddToPortfolioActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCModelProductListToolBarActions add command PLCAddToPortfolioActionLink order command PLCAddToPortfolioActionLink 4;
+modify menu PLCProductLineModelBottomActionBar add command PLCAddToPortfolioActionLink order command PLCAddToPortfolioActionLink 1;
+#channel ==>PLCModelProductListToolBarActionsPLCProductLineModelBottomActionBar
+add property command_PLCAddToPortfolioActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddToPortfolioActionLink';

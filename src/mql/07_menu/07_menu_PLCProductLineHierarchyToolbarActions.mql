@@ -1,0 +1,15 @@
+del menu 'PLCProductLineHierarchyToolbarActions';
+add menu 'PLCProductLineHierarchyToolbarActions'
+	description	''
+	label	'ProductCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCProductLineHierarchyToolbarActions'
+	property 'version'	value	'R418'
+;
+add property menu_PLCProductLineHierarchyToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductLineHierarchyToolbarActions';

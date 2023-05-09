@@ -1,0 +1,21 @@
+del command 'LBCPromotedToReviewStateEvent';
+add command 'LBCPromotedToReviewStateEvent'
+	description	'Event holder for promotion to Review state'
+	label	'emxLibraryCentral.Event.Promoted_To_Review_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Promoted To Review State'
+	setting	'History Bit'		'promote to Review'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCPromotedToReviewStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCDocumentLibrarySubscriptionEvents add command LBCPromotedToReviewStateEvent order command LBCPromotedToReviewStateEvent 6;
+modify menu LBCBookshelfSubscriptionEvents add command LBCPromotedToReviewStateEvent order command LBCPromotedToReviewStateEvent 7;
+modify menu LBCBookSubscriptionEvents add command LBCPromotedToReviewStateEvent order command LBCPromotedToReviewStateEvent 7;
+modify menu LBCDocumentFamilySubscriptionEvents add command LBCPromotedToReviewStateEvent order command LBCPromotedToReviewStateEvent 5;
+#channel ==>LBCDocumentLibrarySubscriptionEventsLBCBookshelfSubscriptionEventsLBCBookSubscriptionEventsLBCDocumentFamilySubscriptionEvents
+add property command_LBCPromotedToReviewStateEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCPromotedToReviewStateEvent';

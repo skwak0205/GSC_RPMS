@@ -1,0 +1,24 @@
+del command 'PMCProjectSpaceEdit';
+add command 'PMCProjectSpaceEdit'
+	description	'Task Properties Command Object'
+	label	'emxProgramCentral.Button.Edit'
+	href	'${SUITE_DIR}/emxProgramCentralProjectEditDialogFS.jsp'
+	alt	'emxProgramCentral.Button.Edit'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProperties.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpaceEdit'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectSpaceToolBarActions add command PMCProjectSpaceEdit order command PMCProjectSpaceEdit 1;
+#channel ==>PMCProjectSpaceToolBarActions
+add property command_PMCProjectSpaceEdit on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpaceEdit';

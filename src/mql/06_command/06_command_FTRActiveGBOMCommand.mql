@@ -1,0 +1,25 @@
+del command 'FTRActiveGBOMCommand';
+add command 'FTRActiveGBOMCommand'
+	description	''
+	label	'emxProduct.ActionLink.MakeActivePart'
+	href	'${SUITE_DIR}/GBOMActivePostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'actionCoumnDisplay'
+	setting	'Access Program'		'emxFTRPart'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/25868_iconActionActivateDeActivate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRActiveGBOMCommand'
+	property	'version'	value	'R418'
+;
+modify menu FTRContextInactivePartListToolBar add command FTRActiveGBOMCommand order command FTRActiveGBOMCommand 0;
+#channel ==>FTRContextInactivePartListToolBar
+add property command_FTRActiveGBOMCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRActiveGBOMCommand';

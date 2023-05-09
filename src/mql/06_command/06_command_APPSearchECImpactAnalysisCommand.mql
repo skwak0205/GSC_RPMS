@@ -1,0 +1,18 @@
+del command 'APPSearchECImpactAnalysisCommand';
+add command 'APPSearchECImpactAnalysisCommand'
+	description	'Impact Analysis find command object'
+	label	'emxComponents.Command.ImpactAnalysis'
+	href	'${SUITE_DIR}/emxEngineeringChangeImpactAnalysisSearchDialog.jsp?suiteKey=Components&program=emxCommonEngineeringChange:getAllImpactAnalysis&table=APPImpactAnalysisSearchList&CommandName=APPSearchECImpactAnalysisCommand&sortColumnName=Name&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchECImpactAnalysisCommand'
+	property	'version'	value	'10-6'
+;
+modify menu APPECSearchAddExistingChooser add command APPSearchECImpactAnalysisCommand order command APPSearchECImpactAnalysisCommand 3;
+#channel ==>APPECSearchAddExistingChooser
+add property command_APPSearchECImpactAnalysisCommand on program eServiceSchemaVariableMapping.tcl to command 'APPSearchECImpactAnalysisCommand';

@@ -1,0 +1,23 @@
+del command 'APPRouteStopActionLink';
+add command 'APPRouteStopActionLink'
+	description	'Command to Stop the Route'
+	label	'emxComponents.Command.StopRoute'
+	href	'${SUITE_DIR}/emxStopRoutePreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'checksToRouteStopActionLink'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionStopRoute.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteStopActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRoutePropertiesActionsToolBar add command APPRouteStopActionLink order command APPRouteStopActionLink 5;
+#channel ==>APPRoutePropertiesActionsToolBar
+add property command_APPRouteStopActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRouteStopActionLink';

@@ -1,0 +1,18 @@
+del command 'PMCQuestionProperties';
+add command 'PMCQuestionProperties'
+	description	'Question Properties Command Object'
+	label	'emxFramework.Command.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCQuestionForm&mode=view&formHeader=emxProgramCentral.Common.FormBasics&HelpMarker=emxhelpfolderproperties&Export=false'
+	alt	'emxFramework.Command.Properties'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCQuestionProperties'
+	property	'version'	value	'R420'
+;
+modify menu type_QuestionRMB add command PMCQuestionProperties order command PMCQuestionProperties 1;
+#channel ==>type_QuestionRMB
+add property command_PMCQuestionProperties on program eServiceSchemaVariableMapping.tcl to command 'PMCQuestionProperties';

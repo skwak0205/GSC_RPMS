@@ -1,0 +1,27 @@
+del command 'FTRDeleteVariabilityActionLink';
+add command 'FTRDeleteVariabilityActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/VariabilityDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRMyDeskVariantsToolbar add command FTRDeleteVariabilityActionLink order command FTRDeleteVariabilityActionLink 3;
+modify menu FTRMyDeskVariabilityGroupsToolbar add command FTRDeleteVariabilityActionLink order command FTRDeleteVariabilityActionLink 3;
+modify menu FTRVariantValuesToolbar add command FTRDeleteVariabilityActionLink order command FTRDeleteVariabilityActionLink 2;
+modify menu FTRVariabilityOptionsToolbar add command FTRDeleteVariabilityActionLink order command FTRDeleteVariabilityActionLink 2;
+modify menu FTRVariabilityToolbar add command FTRDeleteVariabilityActionLink order command FTRDeleteVariabilityActionLink 16;
+#channel ==>FTRMyDeskVariantsToolbarFTRMyDeskVariabilityGroupsToolbarFTRVariantValuesToolbarFTRVariabilityOptionsToolbarFTRVariabilityToolbar
+add property command_FTRDeleteVariabilityActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRDeleteVariabilityActionLink';

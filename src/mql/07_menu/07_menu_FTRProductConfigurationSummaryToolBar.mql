@@ -1,0 +1,15 @@
+del menu 'FTRProductConfigurationSummaryToolBar';
+add menu 'FTRProductConfigurationSummaryToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	menu	'FTRProductConfigurationToolBarActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRProductConfigurationSummaryToolBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_FTRProductConfigurationSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'FTRProductConfigurationSummaryToolBar';

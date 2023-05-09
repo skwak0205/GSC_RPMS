@@ -1,0 +1,23 @@
+del command 'TMCWorkspaceSaveImageCommand';
+add command 'TMCWorkspaceSaveImageCommand'
+	description	''
+	label	'emxTeamCentral.Button.AddWorkspaceImage'
+	href	'${COMPONENT_DIR}/emxComponentsCheckinDialogFS.jsp?appName=team&appDir=teamcentral&objectAction=Image'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'(current != "Archive" && context.user==owner)'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceSaveImageCommand'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCWorkspaceSaveImageCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceSaveImageCommand';

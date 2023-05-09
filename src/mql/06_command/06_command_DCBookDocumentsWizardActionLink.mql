@@ -1,0 +1,27 @@
+del command 'DCBookDocumentsWizardActionLink';
+add command 'DCBookDocumentsWizardActionLink'
+	description	'Document Create Wizard'
+	label	'emxDocumentCentral.ActionBarCmd.DocumentWizard'
+	href	'${SUITE_DIR}/emxDocumentCentralGenericDocumentCreateWizardDialogFS.jsp?type=type_GenericDocument'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Access Map'		'FromConnect'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	user	'VPLMViewer'
+	user	'Author'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCBookDocumentsWizardActionLink'
+	property	'version'	value	'R216'
+;
+modify menu DCBookDocumentsTopActionbar add command DCBookDocumentsWizardActionLink order command DCBookDocumentsWizardActionLink 0;
+#channel ==>DCBookDocumentsTopActionbar
+add property command_DCBookDocumentsWizardActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCBookDocumentsWizardActionLink';

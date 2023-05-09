@@ -1,0 +1,22 @@
+del command 'APPDOCUMENTSModifiedEvent';
+add command 'APPDOCUMENTSModifiedEvent'
+	description	'DOCUMENTS Modified Event'
+	label	'emxComponents.DOCUMENTS.Event.Document_Modified'
+	href	''
+	alt	''
+	setting	'Force Recursion'		'true'
+	setting	'Recurse Direction'		'from'
+	setting	'Registered Suite'		'Components'
+	setting	'3DNotificationSupported'		'false'
+	setting	'Event Type'		'Document Modified'
+	setting	'Recurse Relationship'		'$<relationship_ActiveVersion>'
+	setting	'Is Recursible'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDOCUMENTSModifiedEvent'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPDOCUMENTSEvents add command APPDOCUMENTSModifiedEvent order command APPDOCUMENTSModifiedEvent 6;
+#channel ==>APPDOCUMENTSEvents
+add property command_APPDOCUMENTSModifiedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPDOCUMENTSModifiedEvent';

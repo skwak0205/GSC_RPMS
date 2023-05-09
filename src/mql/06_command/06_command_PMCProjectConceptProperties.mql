@@ -1,0 +1,19 @@
+del command 'PMCProjectConceptProperties';
+add command 'PMCProjectConceptProperties'
+	description	'Project Properties Command Object'
+	label	'emxFramework.Command.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProjectDetailsViewForm&mode=view&toolbar=PMCProjectDetailsToolbar&formHeader=emxProgramCentral.Common.FormBasics&HelpMarker=emxhelpprojectdetails&Export=false'
+	alt	'emxFramework.Command.Properties'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProperties.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectConceptProperties'
+	property	'version'	value	'R216'
+;
+modify menu type_ProjectConcept add command PMCProjectConceptProperties order command PMCProjectConceptProperties 9;
+#channel ==>type_ProjectConcept
+add property command_PMCProjectConceptProperties on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectConceptProperties';

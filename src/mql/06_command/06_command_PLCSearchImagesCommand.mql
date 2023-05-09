@@ -1,0 +1,17 @@
+del command 'PLCSearchImagesCommand';
+add command 'PLCSearchImagesCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindImages'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxProductSearch:getImages&table=PLCSearchImagesTable&form=PLCSearchImagesForm&HelpMarker=emxhelpsearchresults&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchImagesCommand'
+	property	'version'	value	'R418'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchImagesCommand order command PLCSearchImagesCommand 37;
+#channel ==>SearchAddExistingChooserMenu
+add property command_PLCSearchImagesCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchImagesCommand';

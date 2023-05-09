@@ -1,0 +1,17 @@
+del form 'FTRMatrixRulesForm';
+add form 'FTRMatrixRulesForm' web
+field #1
+	name	'Description'
+	businessobject	'description'
+	label	'emxConfiguration.Form.Label.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Validate'		'CheckBadNameCharsLength'
+	setting	'Editable'		'true'
+	setting	'Field Type'		'basic'
+	property	'version'	value	'R418'
+;
+add property form_FTRMatrixRulesForm on program eServiceSchemaVariableMapping.tcl to form 'FTRMatrixRulesForm';

@@ -1,0 +1,21 @@
+del command 'WorkspacePublicFolders';
+add command 'WorkspacePublicFolders'
+	description	'WorkspacePublicFolders'
+	label	'enoFolderManagement.FolderView.FolderStructure'
+	href	'../webapps/ENOFrameworkStructureView/ENOFrameworkStructureView.html?serviceName=CollaborativeFolders'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'FolderManagement'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'WorkspacePublicFolders'
+	property	'version'	value	'R417'
+;
+#channel ==>WorkspacePublicFolders
+add property command_WorkspacePublicFolders on program eServiceSchemaVariableMapping.tcl to command 'WorkspacePublicFolders';

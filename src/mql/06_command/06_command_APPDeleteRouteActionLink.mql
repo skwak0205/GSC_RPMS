@@ -1,0 +1,31 @@
+del command 'APPDeleteRouteActionLink';
+add command 'APPDeleteRouteActionLink'
+	description	'Route Summary Delete Selcted Command Object'
+	label	'emxComponents.Routes.DeleteSelected'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPRouteDeleteNotification&mode=edit&formHeader=emxComponents.DeleteRoute.Heading&HelpMarker=emxhelpdeleteroute&postProcessJPO=emxRoute:deleteSelectedRoutes&submitAction=refreshCaller&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedContributor'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteRouteActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteSummaryBottomActionBar add command APPDeleteRouteActionLink order command APPDeleteRouteActionLink 1;
+modify menu APPRoutesTreeCategoryActionsToolBar add command APPDeleteRouteActionLink order command APPDeleteRouteActionLink 4;
+modify menu APPRouteSummaryActionsToolBar add command APPDeleteRouteActionLink order command APPDeleteRouteActionLink 8;
+modify menu APPRouteSummaryTaskActionsToolBar add command APPDeleteRouteActionLink order command APPDeleteRouteActionLink 8;
+modify menu PMCRouteSummaryActionsToolBar add command APPDeleteRouteActionLink order command APPDeleteRouteActionLink 8;
+#channel ==>APPRouteSummaryBottomActionBarAPPRoutesTreeCategoryActionsToolBarAPPRouteSummaryActionsToolBarAPPRouteSummaryTaskActionsToolBarPMCRouteSummaryActionsToolBar
+add property command_APPDeleteRouteActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteRouteActionLink';

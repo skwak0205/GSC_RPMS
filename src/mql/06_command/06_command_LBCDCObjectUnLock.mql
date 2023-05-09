@@ -1,0 +1,24 @@
+del command 'LBCDCObjectUnLock';
+add command 'LBCDCObjectUnLock'
+	description	'DC Object UnLock'
+	label	'emxDocumentCentral.ActionBarCmd.Unlock'
+	href	'${SUITE_DIR}/emxDocumentCentralObjectUnlockProcess.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Function'		'hasUnLockAccess'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionLock.gif'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDCObjectUnLock'
+	property	'version'	value	'R216'
+;
+modify menu LCObjectDetailsActionsToolBar add command LBCDCObjectUnLock order command LBCDCObjectUnLock 4;
+#channel ==>LCObjectDetailsActionsToolBar
+add property command_LBCDCObjectUnLock on program eServiceSchemaVariableMapping.tcl to command 'LBCDCObjectUnLock';

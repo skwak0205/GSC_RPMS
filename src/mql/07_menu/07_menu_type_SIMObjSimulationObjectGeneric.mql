@@ -1,0 +1,14 @@
+del menu 'type_SIMObjSimulationObjectGeneric';
+add menu 'type_SIMObjSimulationObjectGeneric'
+	description	''
+	label	''
+	href	'${COMMON_DIR}/emxVPLMCommonNavPropertiesFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'VPLMCommonModeler'
+	setting	'Type Icon Program'		'emxVPLMCommonNavUI'
+	setting	'Label Function'		'getTreeLabel'
+	setting	'Type Icon Function'		'getTreeIcon'
+	setting	'Label Program'		'emxVPLMCommonNavUI'
+	command	'VPLMCommonNavExplore'
+;
+add property menu_type_SIMObjSimulationObjectGeneric on program eServiceSchemaVariableMapping.tcl to menu 'type_SIMObjSimulationObjectGeneric';

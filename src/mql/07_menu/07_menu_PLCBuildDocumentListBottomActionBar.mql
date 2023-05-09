@@ -1,0 +1,15 @@
+del menu 'PLCBuildDocumentListBottomActionBar';
+add menu 'PLCBuildDocumentListBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PLCDeleteDocumentActionLink'
+	command	'PLCRemoveDocumentActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCBuildDocumentListBottomActionBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_PLCBuildDocumentListBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCBuildDocumentListBottomActionBar';

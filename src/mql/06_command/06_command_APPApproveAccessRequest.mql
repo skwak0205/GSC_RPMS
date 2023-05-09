@@ -1,0 +1,23 @@
+del command 'APPApproveAccessRequest';
+add command 'APPApproveAccessRequest'
+	description	'Command Object for Access Request Approve'
+	label	'emxComponents.Command.ApproveRequest'
+	href	'${SUITE_DIR}/emxCommonAccessRequestProcess.jsp?mode=Approved'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionApprove.png'
+	setting	'Confirm Message'		'emxComponents.AccessRequest.ApproveRequestAlertMsg'
+	user	'VPLMViewer'
+	user	'Request Reviewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPApproveAccessRequest'
+	property	'version'	value	'R417'
+;
+modify menu APPSummaryAccessRequestActionsToolbar add command APPApproveAccessRequest order command APPApproveAccessRequest 1;
+#channel ==>APPSummaryAccessRequestActionsToolbar
+add property command_APPApproveAccessRequest on program eServiceSchemaVariableMapping.tcl to command 'APPApproveAccessRequest';

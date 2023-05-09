@@ -1,0 +1,4 @@
+<meta charset="UTF-8"/>
+VCXWebLevelExploderGUI.VCXLevelExploderGUICmd.Title="Exploder úrovní";
+VCXWebLevelExploderGUI.PreviousLevelButton.Title="Přejít zpět k poslednímu rozloženému pohledu";
+VCXWebLevelExploderGUI.RestoreModelButton.Title="Obnovte původní stav rozloženého modelu";

@@ -1,0 +1,15 @@
+del menu 'DCGenericDocumentDocumentSheetsTopActionbar';
+add menu 'DCGenericDocumentDocumentSheetsTopActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCDocumentSheetCreateNewActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCGenericDocumentDocumentSheetsTopActionbar'
+	property 'version'	value	'9-5-2-0'
+;
+add property menu_DCGenericDocumentDocumentSheetsTopActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCGenericDocumentDocumentSheetsTopActionbar';

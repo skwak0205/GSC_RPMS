@@ -1,0 +1,21 @@
+del command 'ECMChangeTemplateActivate';
+add command 'ECMChangeTemplateActivate'
+	description	'Activate or Deactivate Change Template'
+	label	'EnterpriseChangeMgt.Command.ActiveDeactivate'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=promoteTemplate'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActivateDeActivate.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeTemplateActivate'
+	property	'version'	value	'R216'
+;
+modify menu ECMChangeTemplateMenuToolbar add command ECMChangeTemplateActivate order command ECMChangeTemplateActivate 2;
+#channel ==>ECMChangeTemplateMenuToolbar
+add property command_ECMChangeTemplateActivate on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeTemplateActivate';

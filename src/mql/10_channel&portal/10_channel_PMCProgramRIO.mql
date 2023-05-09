@@ -1,0 +1,15 @@
+del channel 'PMCProgramRIO';
+add channel 'PMCProgramRIO'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	command 	'PMCProgramIssuesList','PMCProgramRisk','PMCProgramOpportunity'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProgramRIO'
+	property	'version'	value	'R421'
+;
+#portal ==>PMCProgramRIO
+add property channel_PMCProgramRIO on program eServiceSchemaVariableMapping.tcl to channel 'PMCProgramRIO';

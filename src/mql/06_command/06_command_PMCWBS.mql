@@ -1,0 +1,26 @@
+del command 'PMCWBS';
+add command 'PMCWBS'
+	description	'WBS Command Object'
+	label	'emxProgramCentral.WBS.StructuredView'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCWBS'
+	alt	'emxFramework.Command.Alt.WBS'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(type.kindof[Project Space]==true||type.kindof[Project Concept]==true)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'iconTaskSmall.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBS'
+	property	'version'	value	'R422'
+;
+modify menu type_TaskManagement add command PMCWBS order command PMCWBS 12;
+#channel ==>type_TaskManagementPMCProjectSummaryPortalChannel1PMCWBSChannelPMCSchedulePMCFlattenedViewSchedulePMCGanttChartViewSchedulePMCDataGridViewSchedule
+add property command_PMCWBS on program eServiceSchemaVariableMapping.tcl to command 'PMCWBS';

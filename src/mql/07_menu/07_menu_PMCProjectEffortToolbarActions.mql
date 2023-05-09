@@ -1,0 +1,17 @@
+del menu 'PMCProjectEffortToolbarActions';
+add menu 'PMCProjectEffortToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectApproveEffort'
+	command	'PMCProjectRejectEffort'
+	command	'PMCProjectRemoveEffort'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectEffortToolbarActions'
+	property 'version'	value	'10-6'
+;
+add property menu_PMCProjectEffortToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectEffortToolbarActions';

@@ -1,0 +1,30 @@
+del command 'APPCompanySummaryDeleteSelected';
+add command 'APPCompanySummaryDeleteSelected'
+	description	'Company Delete Selected Command Object'
+	label	'emxComponents.Common.Delete'
+	href	'${COMPONENT_DIR}/emxComponentsCompanyDeleteProcess.jsp'
+	alt	'emxComponents.Common.Delete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToDeleteCompanies'
+	setting	'Access Program'		'emxCompany'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxFramework.Command.Delete_Warning_Message'
+	user	'Organization Manager'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	user	'Supplier Development Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompanySummaryDeleteSelected'
+	property	'version'	value	'R422'
+;
+modify menu APPInactiveCompanySummaryActionsToolBar add command APPCompanySummaryDeleteSelected order command APPCompanySummaryDeleteSelected 0;
+#channel ==>APPInactiveCompanySummaryActionsToolBar
+add property command_APPCompanySummaryDeleteSelected on program eServiceSchemaVariableMapping.tcl to command 'APPCompanySummaryDeleteSelected';

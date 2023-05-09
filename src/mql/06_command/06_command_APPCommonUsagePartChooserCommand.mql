@@ -1,0 +1,16 @@
+del command 'APPCommonUsagePartChooserCommand';
+add command 'APPCommonUsagePartChooserCommand'
+	description	'Command used for searching Parts for tracking the Usage and Download'
+	label	'emxComponents.Download.FindParts'
+	href	'${SUITE_DIR}/emxFindForm.jsp?suiteKey=Components&program=emxCommonDownload:getRelatedParts&table=APPECReportedAgainstSearchList&CommandName=APPCommonUsagePartChooserCommand&sortColumnName=Name&HelpMarker=emxhelpsearchresults&JSFunction=displayFieldsOne&hdnType=type_Part&InclusionList=type_Part'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonUsagePartChooserCommand'
+	property	'version'	value	'10-7'
+;
+modify menu APPCommonUsagePartChooser add command APPCommonUsagePartChooserCommand order command APPCommonUsagePartChooserCommand 0;
+#channel ==>APPCommonUsagePartChooser
+add property command_APPCommonUsagePartChooserCommand on program eServiceSchemaVariableMapping.tcl to command 'APPCommonUsagePartChooserCommand';

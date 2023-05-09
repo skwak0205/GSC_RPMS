@@ -1,0 +1,23 @@
+del command 'PLCIssueRaisedEvent';
+add command 'PLCIssueRaisedEvent'
+	description	'Issue Raised Event'
+	label	'PublishSubscribe.Event.IssueRaised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Issue Raised'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCIssueRaisedEvent'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductsEvents add command PLCIssueRaisedEvent order command PLCIssueRaisedEvent 25;
+modify menu FTRFeaturesEvents add command PLCIssueRaisedEvent order command PLCIssueRaisedEvent 7;
+modify menu FTRFeatureSubscriptionEvents add command PLCIssueRaisedEvent order command PLCIssueRaisedEvent 7;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command PLCIssueRaisedEvent order command PLCIssueRaisedEvent 6;
+modify menu FTRLogicalFeatureSubscriptionEvents add command PLCIssueRaisedEvent order command PLCIssueRaisedEvent 6;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command PLCIssueRaisedEvent order command PLCIssueRaisedEvent 4;
+#channel ==>PLCProductsEventsFTRFeaturesEventsFTRFeatureSubscriptionEventsFTRConfigurationFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_PLCIssueRaisedEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCIssueRaisedEvent';

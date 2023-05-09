@@ -1,0 +1,15 @@
+del menu 'FTRProductVariantFeatureListToolBar';
+add menu 'FTRProductVariantFeatureListToolBar'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	menu	'FTRProductVariantFeatureListToolBarActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRProductVariantFeatureListToolBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_FTRProductVariantFeatureListToolBar on program eServiceSchemaVariableMapping.tcl to menu 'FTRProductVariantFeatureListToolBar';

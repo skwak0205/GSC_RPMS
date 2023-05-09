@@ -1,0 +1,24 @@
+del command 'PLCProductLineHierarchyCreateModelActionLink';
+add command 'PLCProductLineHierarchyCreateModelActionLink'
+	description	''
+	label	'emxProduct.Action.Model'
+	href	'${SUITE_DIR}/PLCHierarchyModelCreatePreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(current != Inactive)'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductLineHierarchyCreateModelActionLink'
+	property	'version'	value	'R420'
+;
+modify menu PLCProductLineHierarchyModelsActions add command PLCProductLineHierarchyCreateModelActionLink order command PLCProductLineHierarchyCreateModelActionLink 1;
+#channel ==>PLCProductLineHierarchyModelsActions
+add property command_PLCProductLineHierarchyCreateModelActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCProductLineHierarchyCreateModelActionLink';

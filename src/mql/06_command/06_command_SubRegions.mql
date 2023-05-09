@@ -1,0 +1,17 @@
+del command 'SubRegions';
+add command 'SubRegions'
+	description	'Sub Region command'
+	label	'emxComponents.Command.SubRegions'
+	href	'${COMMON_DIR}/emxTable.jsp?table=RegionList&program=emxRegion:getRegions&header=emxComponents.Region.SubRegionHeader&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPRegionToolBar&HelpMarker=emxhelpregionproperties&relationshipName=Sub Region'
+	alt	'emxComponents.Command.SubRegions'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'SubRegions'
+	property	'version'	value	'R213'
+;
+modify menu type_Region add command SubRegions order command SubRegions 2;
+#channel ==>type_Region
+add property command_SubRegions on program eServiceSchemaVariableMapping.tcl to command 'SubRegions';

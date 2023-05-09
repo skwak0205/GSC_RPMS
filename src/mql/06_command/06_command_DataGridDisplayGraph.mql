@@ -1,0 +1,18 @@
+del command 'DataGridDisplayGraph';
+add command 'DataGridDisplayGraph'
+	description	''
+	label	'emxFramework.DisplayMode.Tree'
+	href	'javascript:ENXSBGridConnector.prototype.dataGridDisplayGraph()'
+	alt	'emxFramework.DisplayMode.Tree'
+	setting	'Access Function'		'enableGraphMenu'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionGraphView.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridDisplayGraph'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridDisplayMode add command DataGridDisplayGraph order command DataGridDisplayGraph 0;
+#channel ==>DataGridDisplayMode
+add property command_DataGridDisplayGraph on program eServiceSchemaVariableMapping.tcl to command 'DataGridDisplayGraph';

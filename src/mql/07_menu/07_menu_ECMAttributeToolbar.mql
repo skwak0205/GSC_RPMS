@@ -1,0 +1,15 @@
+del menu 'ECMAttributeToolbar';
+add menu 'ECMAttributeToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	menu	'ECMAttributeActionsToolBar'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMAttributeToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMAttributeToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMAttributeToolbar';

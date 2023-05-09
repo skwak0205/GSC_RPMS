@@ -1,0 +1,85 @@
+################################################################################################
+# Created Date : 2020.05.26
+# Create by MinSung,Kim
+# Description : Engine Group Create webform
+################################################################################################
+
+#OOTB Backup
+copy form 'type_CreateModel' 'type_CreateModel_OOTB';
+
+#Label 변경
+modify form 'type_CreateModel' field modify name 'Name' label 'emxProduct.Common.Code';
+modify form 'type_CreateModel' field modify name 'MarketingName' label 'emxProduct.Common.Name';
+modify form 'type_CreateModel' field modify name 'Description' label 'emxProduct.Common.ChangeReason';
+
+#Readonly로 변경
+modify form 'type_CreateModel'
+    field modify name 'Type'
+        range ''
+        add setting 'Editable' 'false'
+;
+
+#Hidden 처리
+modify form 'type_CreateModel' field modify name 'ModelPrefix' add setting 'Access Expression' 'false';
+modify form 'type_CreateModel' field modify name 'MarketingText' add setting 'Access Expression' 'false';
+modify form 'type_CreateModel' field modify name 'Owner' add setting 'Access Expression' 'false';
+modify form 'type_CreateModel' field modify name 'DesignResponsibility' add setting 'Access Expression' 'false';
+modify form 'type_CreateModel' field modify name 'CollabSpace' add setting 'Access Expression' 'false';
+modify form 'type_CreateModel' field modify name 'Policy' add setting 'Access Expression' 'false';
+modify form 'type_CreateModel' field modify name 'ProductLine1' add setting 'Access Expression' 'false';
+
+#Marketing Name Field Validate 추가
+modify form 'type_CreateModel' field modify name 'MarketingName' add setting 'Validate' 'checkRequiredField';
+
+#Marketing Name Field 불필요한 OnChange Handler 제거..
+modify form 'type_CreateModel' field modify name 'MarketingName' remove setting 'OnChange Handler';
+
+#Order 변경
+modify form 'type_CreateModel' field modify name 'Type' order '1';
+
+#Engine Type 추가
+modify form 'type_CreateModel'
+    field modify
+        name 'emdEngineType'
+        label 'emxProductLine.Attribute.emdEngineType'
+        businessobject  '$<attribute[attribute_emdEngineType]>'
+        alt ''
+        range ''
+        update ''
+        add setting 'Input Type' 'textbox'
+        add setting 'Admin Type' 'attribute_emdEngineType'
+        add setting 'Field Type' 'attribute'
+        add setting 'Registered Suite' 'ProductLine'
+        add setting 'Required' 'true'
+        add setting 'Editable' 'false'
+;
+
+# CreateJPO 에서 하도록 수정 by Suhwan,Jang 2020/07/15
+mod form type_CreateModel
+    field mod name MarketingName
+        remove setting 'Admin Type'
+        remove setting 'Field Type'
+    field mod name emdEngineType
+        order '7'
+        remove setting 'Admin Type'
+        remove setting 'Field Type'
+;
+
+# Engine Group Code Validation 추가 (2자리 영문) by Suhwan,Jang 2020/10/07
+mod form type_CreateModel
+    field mod name 'Name'
+        add setting 'Validate' 'emdEngineGroupCodeValidation'
+        add setting 'Maximum Length' '2'
+;
+
+# Size 조정 by MinSung,Kim 2020/11/12
+mod form type_CreateModel
+    field mod name 'MarketingName'
+        add setting 'Field Size' '25'
+;
+
+mod form type_CreateModel
+    field mod name 'emdEngineType'
+        add setting 'Field Size' '25'
+;
+

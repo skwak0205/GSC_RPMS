@@ -1,0 +1,15 @@
+del menu 'GlobalCopyBottomActionBar';
+add menu 'GlobalCopyBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'Copy'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'GlobalCopyBottomActionBar'
+	property 'version'	value	'10-0-1-0'
+;
+add property menu_GlobalCopyBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'GlobalCopyBottomActionBar';

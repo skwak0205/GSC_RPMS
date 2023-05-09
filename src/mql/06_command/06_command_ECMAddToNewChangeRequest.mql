@@ -1,0 +1,24 @@
+del command 'ECMAddToNewChangeRequest';
+add command 'ECMAddToNewChangeRequest'
+	description	'The Add to New Change Actions Link for the generic add to change menu'
+	label	'EnterpriseChangeMgt.Command.AddToNewCR'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=AddToNewChangeRequest&targetRelName=relationship_ChangeAffectedItem&isFrom=false'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAddToNewChangeRequest'
+	property	'version'	value	'R417'
+;
+modify menu ECMAddToChangeToolbar add command ECMAddToNewChangeRequest order command ECMAddToNewChangeRequest 5;
+modify menu ECMChangeRequestToolbar add command ECMAddToNewChangeRequest order command ECMAddToNewChangeRequest 0;
+#channel ==>ECMAddToChangeToolbarECMChangeRequestToolbar
+add property command_ECMAddToNewChangeRequest on program eServiceSchemaVariableMapping.tcl to command 'ECMAddToNewChangeRequest';

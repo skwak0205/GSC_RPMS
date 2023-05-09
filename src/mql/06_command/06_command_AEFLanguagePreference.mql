@@ -1,0 +1,17 @@
+del command 'AEFLanguagePreference';
+add command 'AEFLanguagePreference'
+	description	'Language Preference'
+	label	'emxFramework.Preferences.DefaultLanguage'
+	href	'${COMMON_DIR}/emxPrefLanguage.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/buttonToolbarPreferences.gif'
+	setting	'Help Marker'		'emxhelppreferenceslanguage'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLanguagePreference'
+	property	'version'	value	'R214'
+;
+#channel ==>
+add property command_AEFLanguagePreference on program eServiceSchemaVariableMapping.tcl to command 'AEFLanguagePreference';

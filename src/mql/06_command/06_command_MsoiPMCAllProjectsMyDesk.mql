@@ -1,0 +1,18 @@
+del command 'MsoiPMCAllProjectsMyDesk';
+add command 'MsoiPMCAllProjectsMyDesk'
+	description	'UI3 based my Projects Command object specific to MS Office Integration'
+	label	'emxFramework.MenuItem.Projects'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxMSProjectIntegration:getAllUserProjects&table=IEFDesktopObjectSummary'
+	alt	'emxFramework.MenuItem.Projects'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiPMCAllProjectsMyDesk'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>IEF ENOVIA Root
+add property command_MsoiPMCAllProjectsMyDesk on program eServiceSchemaVariableMapping.tcl to command 'MsoiPMCAllProjectsMyDesk';

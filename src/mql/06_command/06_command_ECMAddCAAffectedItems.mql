@@ -1,0 +1,23 @@
+del command 'ECMAddCAAffectedItems';
+add command 'ECMAddCAAffectedItems'
+	description	'Add Items under Affected Items in CA'
+	label	'EnterpriseChangeMgt.Command.AddAffectedItem'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=CAAffectedItemsAddExisting&targetRelName=relationship_ChangeAffectedItem&isFrom=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Popup Modal'		'false'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isProposedAddAllowed'
+	setting	'Access Program'		'enoECMChangeActionUX'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAddCAAffectedItems'
+	property	'version'	value	'R417'
+;
+modify menu ECMAddRemoveCAAffectedItemsToolbar add command ECMAddCAAffectedItems order command ECMAddCAAffectedItems 1;
+#channel ==>ECMAddRemoveCAAffectedItemsToolbar
+add property command_ECMAddCAAffectedItems on program eServiceSchemaVariableMapping.tcl to command 'ECMAddCAAffectedItems';

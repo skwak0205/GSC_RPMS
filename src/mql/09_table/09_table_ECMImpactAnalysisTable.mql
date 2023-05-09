@@ -1,0 +1,43 @@
+del table 'ECMImpactAnalysisTable' system;
+add table 'ECMImpactAnalysisTable' system
+column #1
+	name	'ChangeAction'
+	businessobject	'$<to[relationship_ImpactAnalysis].from.name>'
+	label	'EnterpriseChangeMgt.Common.ChangeAction'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxTree.jsp?DefaultCategory=ECMCAAffectedItems'
+	range	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Show Alternate Icon'		'true'
+	setting	'Alternate OID expression'		'$<to[relationship_ImpactAnalysis].from.id>'
+	setting	'Alternate OID Type'		'$<to[relationship_ImpactAnalysis].from.type>'
+column #2
+	name	'RTO'
+	businessobject	'name'
+	label	'EnterpriseChangeMgt.Common.RTO'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+column #3
+	name	'Tech Assignee'
+	businessobject	'owner'
+	label	'EnterpriseChangeMgt.Common.TechAssignee'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMImpactAnalysisTable'
+	property	'version'	value	'R216'
+;
+add property table_ECMImpactAnalysisTable on program eServiceSchemaVariableMapping.tcl to table 'ECMImpactAnalysisTable' system;

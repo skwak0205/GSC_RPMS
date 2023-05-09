@@ -1,0 +1,28 @@
+del command 'RMTSetChapterStructureView';
+add command 'RMTSetChapterStructureView'
+	description	'Change the view to Structure view'
+	label	'emxRequirements.Button.StructureView'
+	href	'${SUITE_DIR}/ChangeView.jsp?TargetView=sb&menu=RMTChapterStructureDisplay&categoryTreeName=type_Chapter'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Mode'		'view'
+	setting	'Submit'		'true'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionSynchronize.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSetChapterStructureView'
+	property	'version'	value	'R422'
+;
+modify menu RMTChapterRichTextEditorToolbar add command RMTSetChapterStructureView order command RMTSetChapterStructureView 0;
+#channel ==>RMTChapterRichTextEditorToolbar
+add property command_RMTSetChapterStructureView on program eServiceSchemaVariableMapping.tcl to command 'RMTSetChapterStructureView';

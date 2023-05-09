@@ -1,0 +1,92 @@
+################################################################################################
+# Created Date : 2020.05.21
+# Create by JeongHun,Ha
+# Description : S&O Create Form
+################################################################################################
+
+#del form "emdFTRPLCCreateProductDerivationForm";
+add form "emdFTRPLCCreateProductDerivationForm" web
+    field
+        name "Type"
+        label "emxFramework.Basic.Type"
+        businessobject  "type"
+        alt ""
+        range ""
+        update ""
+        setting "Admin Type" "Type"
+        setting "Registered Suite" "ProductLine"
+        setting "Required" "true"
+        setting "Editable" "false"
+        setting "Field Type" "basic"
+        setting "Show Type Icon" "true"
+    field
+        name "Name"
+        label "emxProduct.Form.Label.Name"
+        businessobject  "name"
+        alt ""
+        range ""
+        update ""
+        setting "Input Type" "textbox"
+        setting "OnChange Handler" "updateMarketingName"
+        setting "Registered Suite" "ProductLine"
+        setting "Required" "true"
+        setting "Field Type" "basic"
+    field
+        name "Revision"
+        label "emxFramework.Basic.Revision"
+        businessobject  "revision"
+        alt ""
+        range ""
+        update ""
+        setting "Input Type" "textbox"
+        setting "OnChange Handler" "checkRevisionForBadChars"
+        setting "Registered Suite" "ProductLine"
+        setting "Required" "true"
+        setting "function" "getFormDerivationRevisionValue"
+        setting "Editable" "false"
+        setting "Update Program" "emxProduct"
+        setting "program" "emxProduct"
+        setting "Update Function" "emptyProgram"
+        setting "Field Type" "program"
+    field
+        name "MarketingText"
+        label "emxConfiguration.Label.EngineType"
+        businessobject  "$<attribute[attribute_DisplayText].value>"
+        alt ""
+        range ""
+        update ""
+        setting "Admin Type" "attribute_DisplayText"
+        setting "Input Type" "textarea"
+        setting "Registered Suite" "Configuration"
+        setting "Field Type" "attribute"        
+    field
+        name "description"
+        label "emxProduct.emdSnOList.ChangeReason"
+        businessobject  "description"
+        alt ""
+        range ""
+        update ""
+        setting "Input Type" "textarea"        
+        setting "Registered Suite" "Configuration"
+        setting "Editable" "true"
+        setting "Field Type" "basic"
+    field
+        name "Policy"
+        label "emxFramework.Basic.Policy"
+        businessobject  "policy"
+        alt ""
+        range ""
+        update ""
+        setting "Input Type" "combobox"
+        setting "Admin Type" "Policy"
+        setting "Registered Suite" "ProductLine"
+        setting "Editable" "false"
+        setting "Field Type" "basic"
+property "installer" value "MatrixOneEngineering"
+property "application" value "ProductLine"
+property "installed date" value "05-08-2015"
+property "original name" value "emdFTRPLCCreateProductDerivationForm"
+property "version" value "R418"
+;
+
+add property form_emdFTRPLCCreateProductDerivationForm on program eServiceSchemaVariableMapping.tcl to form 'emdFTRPLCCreateProductDerivationForm';

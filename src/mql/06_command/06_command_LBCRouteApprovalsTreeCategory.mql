@@ -1,0 +1,24 @@
+del command 'LBCRouteApprovalsTreeCategory';
+add command 'LBCRouteApprovalsTreeCategory'
+	description	'Route Approvals Tree Category'
+	label	'emxDocumentCentral.TreeCategory.Approvals'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=LBCRouteApprovalsSummary&program=emxLibraryCentralRouteApprovals:getRouteApprovals&header=emxDocumentCentral.Common.ApprovalsPageHeading&HelpMarker=emxhelpapprovals&displayView=details'
+	alt	'emxDocumentCentral.TreeCategory.Approvals'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallObjectFolder.gif'
+	user	'VPLMViewer'
+	user	'Employee'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCRouteApprovalsTreeCategory'
+	property	'version'	value	'R216'
+;
+modify menu type_Library add command LBCRouteApprovalsTreeCategory order command LBCRouteApprovalsTreeCategory 5;
+modify menu type_RetentionRecord add command LBCRouteApprovalsTreeCategory order command LBCRouteApprovalsTreeCategory 1;
+modify menu type_RetentionHold add command LBCRouteApprovalsTreeCategory order command LBCRouteApprovalsTreeCategory 1;
+modify menu type_DocumentFamily add command LBCRouteApprovalsTreeCategory order command LBCRouteApprovalsTreeCategory 5;
+modify menu type_GenericDocument add command LBCRouteApprovalsTreeCategory order command LBCRouteApprovalsTreeCategory 3;
+#channel ==>type_Librarytype_RetentionRecordtype_RetentionHoldtype_DocumentFamilytype_GenericDocument
+add property command_LBCRouteApprovalsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'LBCRouteApprovalsTreeCategory';

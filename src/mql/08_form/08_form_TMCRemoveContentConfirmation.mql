@@ -1,0 +1,45 @@
+del form 'TMCRemoveContentConfirmation';
+add form 'TMCRemoveContentConfirmation' web
+field #1
+	name	'Header'
+	label	'emxTeamCentral.DeleteContent.HeadingMessage'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Field Type'		'Section Header'
+field #2
+	name	'RemoveOption'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Range Function'		'getContentRemoveOptionRange'
+	setting	'Input Type'		'radiobutton'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Range Program'		'emxWorkspaceFolder'
+	setting	'Remove Range Blank'		'true'
+	setting	'Hide Label'		'true'
+field #3
+	name	'Seperator'
+	label	'(Untitled)'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Field Type'		'Section Separator'
+field #4
+	name	'FooterMessage'
+	label	'emxTeamCentral.DeleteContent.ConfirmMessage'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Field Type'		'Section Header'
+	setting	'Section Level'		'2'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRemoveContentConfirmation'
+	property	'version'	value	'R212'
+;
+add property form_TMCRemoveContentConfirmation on program eServiceSchemaVariableMapping.tcl to form 'TMCRemoveContentConfirmation';

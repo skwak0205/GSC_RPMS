@@ -1,0 +1,17 @@
+{
+	"created": "Created",
+	"statusChanged":"Status Changed",
+	"Change":"Change Action",
+	"Document" :"Document",
+	"Engineering Item" : "Engineering Item",
+	"Manufacturing Item" : "Manufacturing Item",
+	"Manufacturing Process" : "Manufacturing Process",
+	"dsxcad" : "CAD Design Integration",
+	"Change Order" : "Change Order",
+	"computed" : "Computed",
+	"Production Plan" : "Production Plan",
+	"exchangejobs" : "Exchange Jobs",
+	"versioned" : "Versioned",
+	"SupplierCompany" : "Supplier Company",
+	"connected" : "Connected"
+}

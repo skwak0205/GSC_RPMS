@@ -1,0 +1,17 @@
+del menu 'type_ChangeRequestRMB';
+add menu 'type_ChangeRequestRMB'
+	description	''
+	label	'${NAME}'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMCRPropertiesRMB'
+	command	'ECMCREditDetailsRMB'
+	command	'AEFLifecycle'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_ChangeRequestRMB'
+	property 'version'	value	'R216'
+;
+add property menu_type_ChangeRequestRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_ChangeRequestRMB';

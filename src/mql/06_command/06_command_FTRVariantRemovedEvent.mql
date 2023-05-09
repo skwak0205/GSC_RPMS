@@ -1,0 +1,18 @@
+del command 'FTRVariantRemovedEvent';
+add command 'FTRVariantRemovedEvent'
+	description	'Variant Removed Event'
+	label	'PublishSubscribe.Event.VariantRemoved'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Variant Removed In Product Context'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'disconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'original name'	value	'FTRVariantRemovedEvent'
+	property	'version'	value	'R422'
+;
+modify menu PLCProductsEvents add command FTRVariantRemovedEvent order command FTRVariantRemovedEvent 11;
+#channel ==>PLCProductsEvents
+add property command_FTRVariantRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRVariantRemovedEvent';

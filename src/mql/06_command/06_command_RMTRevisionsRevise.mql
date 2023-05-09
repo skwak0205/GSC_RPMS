@@ -1,0 +1,26 @@
+del command 'RMTRevisionsRevise';
+add command 'RMTRevisionsRevise'
+	description	''
+	label	'emxRequirements.ActionLink.CreateNewRevision'
+	href	'${SUITE_DIR}/Revise.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'(current.access[revise] == true || current.access[majorrevise] == true)'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRevisionsRevise'
+	property	'version'	value	'R422'
+;
+modify menu RMTRevisionsToolBar add command RMTRevisionsRevise order command RMTRevisionsRevise 0;
+#channel ==>RMTRevisionsToolBar
+add property command_RMTRevisionsRevise on program eServiceSchemaVariableMapping.tcl to command 'RMTRevisionsRevise';

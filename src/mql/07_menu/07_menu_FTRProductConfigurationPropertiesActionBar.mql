@@ -1,0 +1,7 @@
+del menu 'FTRProductConfigurationPropertiesActionBar';
+add menu 'FTRProductConfigurationPropertiesActionBar'
+	description	''
+	label	'null'
+	href	'null'
+	alt	'null'
+add property menu_FTRProductConfigurationPropertiesActionBar on program eServiceSchemaVariableMapping.tcl to menu 'FTRProductConfigurationPropertiesActionBar';

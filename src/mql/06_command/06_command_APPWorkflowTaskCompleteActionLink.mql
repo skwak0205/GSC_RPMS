@@ -1,0 +1,18 @@
+del command 'APPWorkflowTaskCompleteActionLink';
+add command 'APPWorkflowTaskCompleteActionLink'
+	description	'Workflow task complete action link'
+	label	'emxComponents.Command.Complete'
+	href	'${COMPONENT_DIR}/emxWorkflowTaskAction.jsp?action=complete'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current == "Assigned" && owner == context.user && to[Workflow Task].from.current == "Started")'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowTaskCompleteActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowTaskPropertiesActionToolbar add command APPWorkflowTaskCompleteActionLink order command APPWorkflowTaskCompleteActionLink 0;
+#channel ==>APPWorkflowTaskPropertiesActionToolbar
+add property command_APPWorkflowTaskCompleteActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowTaskCompleteActionLink';

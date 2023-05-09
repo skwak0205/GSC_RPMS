@@ -1,0 +1,19 @@
+del menu 'PMCReferenceDocuemntCreateNew';
+add menu 'PMCReferenceDocuemntCreateNew'
+	description	''
+	label	'emxProgramCentral.Common.CreateNew'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[fromconnect] == true'
+	command	'PMCCreateNewReferenceDocument'
+	command	'AEFSeparator'
+	command	'APPCreateVCFileFolder'
+	command	'APPConnectVCFileFolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCReferenceDocuemntCreateNew'
+	property 'version'	value	'R421'
+;
+add property menu_PMCReferenceDocuemntCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'PMCReferenceDocuemntCreateNew';

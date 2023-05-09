@@ -1,0 +1,70 @@
+################################################################################################
+# Created Date : 2020.05.26
+# Create by MinSung,Kim
+# Description : Engine Group(Model) Detail OOTB Webform...
+################################################################################################
+
+#OOTB Backup
+copy form 'type_Model' 'type_Model_OOTB';
+
+#Readonly 처리
+modify form 'type_Model' field modify name 'Name' add setting 'Editable' 'false';
+modify form 'type_Model' field modify name 'ProductLine' add setting 'Editable' 'false';
+
+#Label 변경
+modify form 'type_Model' field modify name 'Marketing Name' label 'emxProduct.Common.Name';
+modify form 'type_Model' field modify name 'Name' label 'emxProduct.Common.Code';
+modify form 'type_Model' field modify name 'Description' label 'emxProduct.Common.ChangeReason';
+
+#Hidden 처리
+modify form 'type_Model' field modify name 'Primary Image' add setting 'Access Expression' 'false';
+modify form 'type_Model' field modify name 'Marketing Text' add setting 'Access Expression' 'false';
+modify form 'type_Model' field modify name 'ModelPrefix' add setting 'Access Expression' 'false';
+modify form 'type_Model' field modify name 'Policy' add setting 'Access Expression' 'false';
+modify form 'type_Model' field modify name 'DesignResponsibility1' add setting 'Access Expression' 'false';
+
+#selector 변경
+modify form 'type_Model' field modify name 'ProductLine' businessobject '$<relationship[relationship_ProductLineModels].from.attribute[Marketing Name]>';
+
+#modify 2020-06-03 MinSung,Kim, Type Icon 추가
+modify form 'type_Model' field modify name 'Top Level Part' add setting 'Show Alternate Icon' 'true';
+modify form 'type_Model' field modify name 'Top Level Part' add setting 'Alternate Type expression' '$<from[relationship_AssignedPart].to.type>';
+
+#Update Program 추가
+modify form 'type_Model' field modify name 'Marketing Name' add setting 'Update Program' 'emxModel';
+modify form 'type_Model' field modify name 'Marketing Name' add setting 'Update Function' 'updateModelMarketingName';
+
+#Order
+modify form 'type_Model' field modify name 'type' order '1';
+modify form 'type_Model' field modify name 'Name' order '2';
+modify form 'type_Model' field modify name 'Marketing Name' order '3';
+
+#Engine Type 추가
+modify form 'type_Model'
+    field
+        name 'emdEngineType'
+        label 'emxProductLine.Attribute.emdEngineType'
+        businessobject  '$<attribute[attribute_emdEngineType]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Input Type' 'textbox'
+        setting 'Admin Type' 'attribute_emdEngineType'
+        setting 'Field Type' 'attribute'
+        setting 'Registered Suite' 'ProductLine'
+        setting 'Required' 'true'
+        setting 'Editable' 'true'
+        setting 'Update Program' 'emxModel'
+        setting 'Update Function' 'updateEngineTypeForModel'
+        order '4'
+;
+
+# popup size 조정 by Suhwan,Jang 2020/11/24
+mod form 'type_Model'
+    field mod name 'ProductLine'
+        add setting 'Window Height' '760'
+        add setting 'Window Width' '1170'
+    field mod name 'Top Level Part'
+        add setting 'Window Height' '760'
+        add setting 'Window Width' '1170'
+;

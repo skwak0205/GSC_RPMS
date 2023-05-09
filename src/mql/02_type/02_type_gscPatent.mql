@@ -1,0 +1,17 @@
+################################################################################################
+# Created Date : 2023.01.25
+# Create by jrchoi
+# Description : 특허정보
+################################################################################################
+#del type gscPatent;
+add type gscPatent
+    property 'installed date'     value  '2023.01.10'
+    property 'application'        value  'Framework'
+    property 'original name'      value  'gscPatent'
+    property 'installer'          value  'GSC'
+    property 'version'            value  'V6R2019'
+;
+
+add property type_gscPatent on prog eServiceSchemaVariableMapping.tcl to  type 'gscPatent';
+
+mod type gscPatent add attribute gscMstNo,gscKoAppTitle,gscCountryNameTitle,gscKoName,gscWfStatusName,gscPriorityMstNo,gscPriorityDate,gscRegNo,gscRegDate,gscUpdDatetime;

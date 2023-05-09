@@ -1,0 +1,27 @@
+del command 'PMCWBSInsertTaskAbove';
+add command 'PMCWBSInsertTaskAbove'
+	description	''
+	label	'emxProgramCentral.Common.InsertTaskAbove'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=InsertTaskAbove'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSInsertTaskAbove'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSRMBActions add command PMCWBSInsertTaskAbove order command PMCWBSInsertTaskAbove 3;
+modify menu PMCAddTaskMenu add command PMCWBSInsertTaskAbove order command PMCWBSInsertTaskAbove 1;
+#channel ==>PMCWBSRMBActionsPMCAddTaskMenu
+add property command_PMCWBSInsertTaskAbove on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSInsertTaskAbove';

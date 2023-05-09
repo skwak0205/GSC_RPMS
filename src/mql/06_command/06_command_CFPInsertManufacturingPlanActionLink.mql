@@ -1,0 +1,23 @@
+del command 'CFPInsertManufacturingPlanActionLink';
+add command 'CFPInsertManufacturingPlanActionLink'
+	description	''
+	label	'DMCPlanning.ActionLink.InsertManufacturingPlanLink'
+	href	'${SUITE_DIR}/ManufacturingPlanUtil.jsp?mode=InsertManufacturingPlan'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPInsertManufacturingPlanActionLink'
+	property	'version'	value	'R418'
+;
+modify menu CFPEditManufacturingPlanBreakdownToolbarActions add command CFPInsertManufacturingPlanActionLink order command CFPInsertManufacturingPlanActionLink 1;
+#channel ==>CFPEditManufacturingPlanBreakdownToolbarActions
+add property command_CFPInsertManufacturingPlanActionLink on program eServiceSchemaVariableMapping.tcl to command 'CFPInsertManufacturingPlanActionLink';

@@ -1,0 +1,11 @@
+del command 'APPVPLMRole';
+add command 'APPVPLMRole'
+	description	''
+	label	'emxPlmOnline.label.Role'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=Role'
+	alt	'emxPlmOnline.label.Role'
+	setting	'Registered Suite'		'Framework'
+	user	'VPLMAdmin'
+;
+#channel ==>PeopleChannel
+add property command_APPVPLMRole on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMRole';

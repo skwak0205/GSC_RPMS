@@ -1,0 +1,16 @@
+del menu 'APPDiscussionAccessBottomActionBar';
+add menu 'APPDiscussionAccessBottomActionBar'
+	description	''
+	label	'${NAME}'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/iconSmallOrganization.gif'
+	command	'APPDiscussionAccessRemoveSelectedActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPDiscussionAccessBottomActionBar'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_APPDiscussionAccessBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'APPDiscussionAccessBottomActionBar';

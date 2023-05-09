@@ -1,0 +1,24 @@
+del command 'FTREditOptionsProductConfigurationAction';
+add command 'FTREditOptionsProductConfigurationAction'
+	description	''
+	label	'emxProduct.ActionLink.EditOptions'
+	href	'${SUITE_DIR}/ProductConfigurationEditOptions.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showLinksForSalableConfig'
+	setting	'Access Program'		'emxProductConfiguration'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditOptionsProductConfigurationAction'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_FTREditOptionsProductConfigurationAction on program eServiceSchemaVariableMapping.tcl to command 'FTREditOptionsProductConfigurationAction';

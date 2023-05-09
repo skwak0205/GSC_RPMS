@@ -1,0 +1,20 @@
+del command 'PMCResourcePoolCategoryDepartments';
+add command 'PMCResourcePoolCategoryDepartments'
+	description	'Shows Resource Pool departments'
+	label	'emxProgramCentral.ResourcePool.Category.Departments'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCResourcePoolDepartments&program=emxResourcePool:getTableResourcePoolDepartmentData&header=emxProgramCentral.ResourcePool.DepartmentsHeading&HelpMarker=emxhelpresourcepooldepartments&expandProgram=emxResourcePool:getTableResourcePoolDepartmentData'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolCategoryDepartments'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourcePoolTree add command PMCResourcePoolCategoryDepartments order command PMCResourcePoolCategoryDepartments 2;
+#channel ==>PMCResourcePoolTree
+add property command_PMCResourcePoolCategoryDepartments on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePoolCategoryDepartments';

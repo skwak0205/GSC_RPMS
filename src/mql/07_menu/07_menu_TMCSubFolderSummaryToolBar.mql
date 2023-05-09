@@ -1,0 +1,16 @@
+del menu 'TMCSubFolderSummaryToolBar';
+add menu 'TMCSubFolderSummaryToolBar'
+	description	''
+	label	'TeamCentral.Toolbar.Actions'
+	href	''
+	alt	'TeamCentral.Toolbar.Actions'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'TMCSubFolderSummaryActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCSubFolderSummaryToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_TMCSubFolderSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'TMCSubFolderSummaryToolBar';

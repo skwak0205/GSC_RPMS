@@ -1,0 +1,28 @@
+del command 'RMTUseCaseReferenceDocumentTreeCategory';
+add command 'RMTUseCaseReferenceDocumentTreeCategory'
+	description	''
+	label	'emxRequirements.Tree.ReferenceDocument'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ProductDocumentSummaryToolBar&header=emxRequirements.Menu.Documents&HelpMarker=emxhelprefdoclist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'COMMON_DIR/iconSmallDocumentAttachment.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTUseCaseReferenceDocumentTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_UseCase add command RMTUseCaseReferenceDocumentTreeCategory order command RMTUseCaseReferenceDocumentTreeCategory 7;
+modify menu Msoitype_UseCase add command RMTUseCaseReferenceDocumentTreeCategory order command RMTUseCaseReferenceDocumentTreeCategory 1;
+#channel ==>type_UseCaseMsoitype_UseCase
+add property command_RMTUseCaseReferenceDocumentTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTUseCaseReferenceDocumentTreeCategory';

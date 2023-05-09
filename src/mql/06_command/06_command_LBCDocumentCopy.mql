@@ -1,0 +1,27 @@
+del command 'LBCDocumentCopy';
+add command 'LBCDocumentCopy'
+	description	'Copy Action Link on Properties for Document'
+	label	'emxDocumentCentral.ActionBarCmd.Copy'
+	href	'${SUITE_DIR}/emxLibraryCentralIntermediateForm.jsp?mode=copy&isClassifiedItem=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True && (type=="$<type_GenericDocument>" || type.kindOf[$<type_GenericDocument>]))'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasReadWriteAccess'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.gif'
+	user	'VPLMViewer'
+	user	'Author'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDocumentCopy'
+	property	'version'	value	'R417'
+;
+modify menu APPDocumentActionsToolBar add command LBCDocumentCopy order command LBCDocumentCopy 2;
+modify menu LBCGenericDocumentActionsToolBar add command LBCDocumentCopy order command LBCDocumentCopy 2;
+modify menu LBCDocumentSheetActionsToolBar add command LBCDocumentCopy order command LBCDocumentCopy 2;
+#channel ==>APPDocumentActionsToolBarLBCGenericDocumentActionsToolBarLBCDocumentSheetActionsToolBar
+add property command_LBCDocumentCopy on program eServiceSchemaVariableMapping.tcl to command 'LBCDocumentCopy';

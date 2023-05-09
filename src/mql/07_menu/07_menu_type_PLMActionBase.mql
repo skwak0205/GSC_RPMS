@@ -1,0 +1,11 @@
+del menu 'type_PLMActionBase';
+add menu 'type_PLMActionBase'
+	description	'VPLM Actions'
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_PLMActionBase&toolbar=VPLMSyncChgActionPropertiesToolBar&mode=view&formHeader=emxVPMCentral.Change.EditECA.PropertiesPageHeading'
+	alt	''
+	setting	'Registered Suite'		'VPMCentral'
+	command	'VPLMSyncChgGetActionProductInput'
+	command	'VPLMSyncChgGetActionRelatedChange'
+;
+add property menu_type_PLMActionBase on program eServiceSchemaVariableMapping.tcl to menu 'type_PLMActionBase';

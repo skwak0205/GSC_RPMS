@@ -1,0 +1,25 @@
+del command 'FTRValidateProductConfigurationNewWindowActionLink';
+add command 'FTRValidateProductConfigurationNewWindowActionLink'
+	description	''
+	label	'emxProduct.ActionLink.ValidateConfiguration'
+	href	'${SUITE_DIR}/ProductConfigurationUtil.jsp?mode=validateConfiguration&place=listpage'
+	alt	''
+	setting	'Target Location'		'hiddenTreeFrame'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Command'		'NewWindow'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkAccessForLinks'
+	setting	'Access Program'		'emxProductConfiguration'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRValidateProductConfigurationNewWindowActionLink'
+	property	'version'	value	'R215'
+;
+modify menu FTRProductConfigurationPropertiesActionBar add command FTRValidateProductConfigurationNewWindowActionLink order command FTRValidateProductConfigurationNewWindowActionLink 5;
+#channel ==>FTRProductConfigurationPropertiesActionBar
+add property command_FTRValidateProductConfigurationNewWindowActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRValidateProductConfigurationNewWindowActionLink';

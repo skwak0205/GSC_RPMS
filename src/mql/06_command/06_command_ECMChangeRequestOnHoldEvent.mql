@@ -1,0 +1,19 @@
+del command 'ECMChangeRequestOnHoldEvent';
+add command 'ECMChangeRequestOnHoldEvent'
+	description	'Change Request OnHold Event'
+	label	'EnterpriseChangeMgt.Event.Change_Request_OnHold'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeRequest>])'
+	setting	'Event Type'		'Change Request On Hold'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeRequestOnHoldEvent'
+	property	'version'	value	'R216'
+;
+modify menu ECMSubscriptionEvents add command ECMChangeRequestOnHoldEvent order command ECMChangeRequestOnHoldEvent 0;
+#channel ==>ECMSubscriptionEvents
+add property command_ECMChangeRequestOnHoldEvent on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeRequestOnHoldEvent';

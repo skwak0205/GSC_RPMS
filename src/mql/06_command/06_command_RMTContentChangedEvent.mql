@@ -1,0 +1,21 @@
+del command 'RMTContentChangedEvent';
+add command 'RMTContentChangedEvent'
+	description	''
+	label	'emxRequirements.Event.ContentChanged.Label'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Event Type'		'Content Changed'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTContentChangedEvent'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementEvents add command RMTContentChangedEvent order command RMTContentChangedEvent 8;
+modify menu RMTCommentEvents add command RMTContentChangedEvent order command RMTContentChangedEvent 6;
+#channel ==>RMTRequirementEventsRMTCommentEvents
+add property command_RMTContentChangedEvent on program eServiceSchemaVariableMapping.tcl to command 'RMTContentChangedEvent';

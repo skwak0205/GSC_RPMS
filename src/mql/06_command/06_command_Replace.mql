@@ -1,0 +1,20 @@
+del command 'Replace';
+add command 'Replace'
+	description	'Global Search Replace Command'
+	label	'emxComponents.Command.Replace'
+	href	'${COMPONENT_DIR}/emxCommonSearchUtil.jsp?isNewSearch=false'
+	alt	'emxComponents.Command.Replace'
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Single'
+	setting	'Confirm Message'		'emxComponents.BOSReplace.ComfirmMessage'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'Replace'
+	property	'version'	value	'10-0-1-0'
+;
+modify menu GlobalReplaceBottomActionBar add command Replace order command Replace 0;
+#channel ==>GlobalReplaceBottomActionBar
+add property command_Replace on program eServiceSchemaVariableMapping.tcl to command 'Replace';

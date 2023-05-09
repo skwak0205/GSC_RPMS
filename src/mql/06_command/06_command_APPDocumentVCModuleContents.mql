@@ -1,0 +1,19 @@
+del command 'APPDocumentVCModuleContents';
+add command 'APPDocumentVCModuleContents'
+	description	'Command to display contents node in Version Control Module tree'
+	label	'emxComponents.VersionControl.ModuleContents'
+	href	'${COMPONENT_DIR}/emxCommonDocumentVCIntermediateProcess.jsp?fromPage=VCModuleContents'
+	alt	'emxComponents.VersionControl.ModuleContents'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'[vcmodule]'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentVCModuleContents'
+	property	'version'	value	'R417'
+;
+modify menu type_DOCUMENTS add command APPDocumentVCModuleContents order command APPDocumentVCModuleContents 17;
+modify menu type_GenericDocument add command APPDocumentVCModuleContents order command APPDocumentVCModuleContents 9;
+modify menu type_DocumentSheet add command APPDocumentVCModuleContents order command APPDocumentVCModuleContents 5;
+#channel ==>type_DOCUMENTStype_GenericDocumenttype_DocumentSheet
+add property command_APPDocumentVCModuleContents on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentVCModuleContents';

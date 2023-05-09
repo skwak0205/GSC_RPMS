@@ -1,0 +1,11 @@
+del menu 'FTRMatrixRuleToolbarMenu';
+add menu 'FTRMatrixRuleToolbarMenu'
+	description	'FTRMatrixRuleToolbarMenu'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	menu	'FTRMatrixRuleListActionsMenu'
+	property 'version'	value	'R418'
+;
+add property menu_FTRMatrixRuleToolbarMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRMatrixRuleToolbarMenu';

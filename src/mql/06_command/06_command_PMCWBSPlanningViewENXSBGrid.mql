@@ -1,0 +1,20 @@
+del command 'PMCWBSPlanningViewENXSBGrid';
+add command 'PMCWBSPlanningViewENXSBGrid'
+	description	''
+	label	'emxProgramCentral.TaskConstriant.WBSPlanningView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWBSPlanningViewTableENXSBGrid'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSPlanningViewENXSBGrid'
+	property	'version'	value	'R421.HF6'
+;
+modify menu PMCWBSTableMenuENXSBGrid add command PMCWBSPlanningViewENXSBGrid order command PMCWBSPlanningViewENXSBGrid 3;
+#channel ==>PMCWBSTableMenuENXSBGrid
+add property command_PMCWBSPlanningViewENXSBGrid on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSPlanningViewENXSBGrid';

@@ -1,0 +1,29 @@
+del command 'TMCChangeOwnerWorkspaceActionLink';
+add command 'TMCChangeOwnerWorkspaceActionLink'
+	description	''
+	label	'emxTeamCentral.Button.ChangeOwner'
+	href	'${SUITE_DIR}/emxWorkspaceChangeOwner.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_ImmTransferOwnership3.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCChangeOwnerWorkspaceActionLink'
+	property	'version'	value	'R422'
+;
+modify menu TMCWorkspaceSummaryActionsToolBar add command TMCChangeOwnerWorkspaceActionLink order command TMCChangeOwnerWorkspaceActionLink 0;
+modify menu FMAWorkspaceSummaryToolBar add command TMCChangeOwnerWorkspaceActionLink order command TMCChangeOwnerWorkspaceActionLink 0;
+#channel ==>TMCWorkspaceSummaryActionsToolBarFMAWorkspaceSummaryToolBar
+add property command_TMCChangeOwnerWorkspaceActionLink on program eServiceSchemaVariableMapping.tcl to command 'TMCChangeOwnerWorkspaceActionLink';

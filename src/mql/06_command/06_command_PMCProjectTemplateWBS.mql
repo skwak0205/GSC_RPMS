@@ -1,0 +1,23 @@
+del command 'PMCProjectTemplateWBS';
+add command 'PMCProjectTemplateWBS'
+	description	'ProjectTemplateWBS Command Object'
+	label	'emxProgramCentral.WBS.StructuredView'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCProjectTemplateWBS'
+	alt	'emxFramework.Command.Alt.ProjectTemplatesWBS'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Image'		'iconTaskSmall.gif'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateWBS'
+	property	'version'	value	'R422'
+;
+modify menu type_TaskTemplate add command PMCProjectTemplateWBS order command PMCProjectTemplateWBS 0;
+#channel ==>type_TaskTemplatePMCProjectTemplateWBSChannel
+add property command_PMCProjectTemplateWBS on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateWBS';

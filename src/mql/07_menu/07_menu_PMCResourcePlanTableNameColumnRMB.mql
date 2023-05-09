@@ -1,0 +1,19 @@
+del menu 'PMCResourcePlanTableNameColumnRMB';
+add menu 'PMCResourcePlanTableNameColumnRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.kindof[Resource Request]'
+	menu	'PMCResourceRequestDiscussion'
+	menu	'PMCResourceRequestCreateSubscription'
+	menu	'PMCResourceRequestProcessActions'
+	menu	'PMCResourceProcessActionsRMB'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourcePlanTableNameColumnRMB'
+	property 'version'	value	'R211'
+;
+add property menu_PMCResourcePlanTableNameColumnRMB on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourcePlanTableNameColumnRMB';

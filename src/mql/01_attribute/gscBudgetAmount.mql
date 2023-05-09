@@ -1,0 +1,19 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 공헌금액
+################################################################################################
+
+#del attribute 'gscBudgetAmount';
+add attribute  'gscBudgetAmount'
+   description '예산총실적'
+   type        'string'
+   default    ''
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "HHI"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscBudgetAmount"
+;
+add property attribute_gscBudgetAmount on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscBudgetAmount';
+modify type 'Project Space' add attribute 'gscBudgetAmount';

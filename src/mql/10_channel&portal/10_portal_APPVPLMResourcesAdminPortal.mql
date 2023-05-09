@@ -1,0 +1,9 @@
+del portal 'APPVPLMResourcesAdminPortal';
+add portal 'APPVPLMResourcesAdminPortal'
+	description	'Resources Administration portal'
+	label	'emxPlmOnline.label.ResourcesViewToolbar'
+	href	''
+	channel 	ResourcesChannel
+	setting	'Registered Suite'		'VPLMAdministration'
+;
+add property portal_APPVPLMResourcesAdminPortal on program eServiceSchemaVariableMapping.tcl to portal 'APPVPLMResourcesAdminPortal';

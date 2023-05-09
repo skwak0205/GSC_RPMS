@@ -1,0 +1,18 @@
+del command 'APPDocumentLifecycle';
+add command 'APPDocumentLifecycle'
+	description	'Current Document Object Lifecycle'
+	label	'emxFramework.Lifecycle.Lifecycle'
+	href	'${COMMON_DIR}/emxLifecycle.jsp?mode=basic&toolbar=AEFLifecycleMenuToolBar&header=emxFramework.Lifecycle.LifeCyclePageHeading&subHeader=emxFramework.Menu.SubHeaderDocuments&export=false'
+	alt	'emxFramework.Lifecycle.Lifecycle'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallLifecycle.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentLifecycle'
+	property	'version'	value	'R214'
+;
+#channel ==>
+add property command_APPDocumentLifecycle on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentLifecycle';

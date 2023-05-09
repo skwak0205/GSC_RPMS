@@ -1,0 +1,22 @@
+del command 'FTRPreviewApplyBOM';
+add command 'FTRPreviewApplyBOM'
+	description	'FTRPreviewApplyBOM'
+	label	'emxProduct.Button.Apply'
+	href	'${SUITE_DIR}/ProductConfigurationUtil.jsp?mode=apply'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRPreviewApplyBOM'
+	property	'version'	value	'R215'
+;
+modify menu FTRPreviewBOMToolbar add command FTRPreviewApplyBOM order command FTRPreviewApplyBOM 0;
+modify menu FTRPreviewPlanningBOMToolbar add command FTRPreviewApplyBOM order command FTRPreviewApplyBOM 0;
+#channel ==>FTRPreviewBOMToolbarFTRPreviewPlanningBOMToolbar
+add property command_FTRPreviewApplyBOM on program eServiceSchemaVariableMapping.tcl to command 'FTRPreviewApplyBOM';

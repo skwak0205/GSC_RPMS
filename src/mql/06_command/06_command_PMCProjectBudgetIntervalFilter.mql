@@ -1,0 +1,24 @@
+del command 'PMCProjectBudgetIntervalFilter';
+add command 'PMCProjectBudgetIntervalFilter'
+	description	'Interval Filter Command'
+	label	'emxProgramCentral.ProjectBenefitOrBudget.IntervalFilter'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=Filter'
+	alt	'emxProgramCentral.ProjectBenefitOrBudget.IntervalFilter'
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getBenefitOrBudgetYearRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'from[Project Financial Item].to.type==Budget'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxProjectBudget'
+	setting	'Access Function'		'isBudgetByPhase'
+	setting	'Access Program'		'emxProjectBudget'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetIntervalFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCProjectBudgetFilter add command PMCProjectBudgetIntervalFilter order command PMCProjectBudgetIntervalFilter 2;
+#channel ==>PMCProjectBudgetFilter
+add property command_PMCProjectBudgetIntervalFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudgetIntervalFilter';

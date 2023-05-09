@@ -1,0 +1,18 @@
+del command 'AEFTimeZonePreference';
+add command 'AEFTimeZonePreference'
+	description	'TimeZone Preference'
+	label	'emxFramework.Preferences.TimeZone'
+	href	'${COMMON_DIR}/emxPrefTimeZone.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/buttonToolbarPreferences.gif'
+	setting	'Help Marker'		'emxhelppreferencetimezone'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTimeZonePreference'
+	property	'version'	value	'R214'
+;
+modify menu General add command AEFTimeZonePreference order command AEFTimeZonePreference 5;
+#channel ==>General
+add property command_AEFTimeZonePreference on program eServiceSchemaVariableMapping.tcl to command 'AEFTimeZonePreference';

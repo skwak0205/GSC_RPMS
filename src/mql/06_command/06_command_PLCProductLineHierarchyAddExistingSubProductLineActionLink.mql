@@ -1,0 +1,24 @@
+del command 'PLCProductLineHierarchyAddExistingSubProductLineActionLink';
+add command 'PLCProductLineHierarchyAddExistingSubProductLineActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${SUITE_DIR}/PLCHierarchyProductLineAddExistingPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductLineHierarchyAddExistingSubProductLineActionLink'
+	property	'version'	value	'R420'
+;
+modify menu PLCProductLineHierarchySubProductLineActions add command PLCProductLineHierarchyAddExistingSubProductLineActionLink order command PLCProductLineHierarchyAddExistingSubProductLineActionLink 0;
+#channel ==>PLCProductLineHierarchySubProductLineActions
+add property command_PLCProductLineHierarchyAddExistingSubProductLineActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCProductLineHierarchyAddExistingSubProductLineActionLink';

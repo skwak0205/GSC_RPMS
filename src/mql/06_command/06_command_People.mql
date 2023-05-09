@@ -1,0 +1,36 @@
+del command 'People';
+add command 'People'
+	description	'People Command Object'
+	label	'emxFramework.Command.People'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCompany:getEmployeeMembers&table=PeopleSummary&toolbar=APPPeopleSummaryToolBar&header=emxComponents.Common.CompanyPeopleSummary.Heading&selection=multiple&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelppeople&PrinterFriendly=true&objectCompare=false'
+	alt	'emxFramework.Command.People'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'iconSmallPeople.gif'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	user	'Supplier'
+	user	'Supplier Representative'
+	user	'Buyer'
+	user	'Supplier Engineer'
+	user	'Advanced Quality Engineer'
+	user	'Buyer Administrator'
+	user	'Supplier Development Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'People'
+	property	'version'	value	'R422'
+;
+modify menu type_Company add command People order command People 12;
+modify menu type_BusinessUnit add command People order command People 2;
+modify menu type_Department add command People order command People 1;
+modify menu type_Plant add command People order command People 1;
+#channel ==>type_Companytype_BusinessUnittype_Departmenttype_Plant
+add property command_People on program eServiceSchemaVariableMapping.tcl to command 'People';

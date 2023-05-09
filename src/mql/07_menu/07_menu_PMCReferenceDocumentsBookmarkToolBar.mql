@@ -1,0 +1,19 @@
+del menu 'PMCReferenceDocumentsBookmarkToolBar';
+add menu 'PMCReferenceDocumentsBookmarkToolBar'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Hide Mode'		'mobile'
+	command	'PMCReferenceDocumentsBookmarkCreate'
+	command	'PMCProjectBookmarksDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCReferenceDocumentsBookmarkToolBar'
+	property 'version'	value	'R421'
+;
+add property menu_PMCReferenceDocumentsBookmarkToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCReferenceDocumentsBookmarkToolBar';

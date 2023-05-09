@@ -1,0 +1,10 @@
+del menu 'VPLMDocumentToolbar';
+add menu 'VPLMDocumentToolbar'
+	description	'VPLM Reference Document Page Toolbar'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'VPLMWebMgt'
+	menu	'VPLMDocumentActionMenu'
+;
+add property menu_VPLMDocumentToolbar on program eServiceSchemaVariableMapping.tcl to menu 'VPLMDocumentToolbar';

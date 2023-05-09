@@ -1,0 +1,18 @@
+del command 'PARCreateNewParameter';
+add command 'PARCreateNewParameter'
+	description	''
+	label	'emxParameter.create.New'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=PARCreateParameterWebForm&type=type_PlmParameter&typeChooser=false&nameField=both&autoNameChecked=true&policy=policy_Parameter&submitAction=treeContent&postProcessJPO=emxParameterEdit:updateFormValues'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'iconActionCreate.png'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Requirement Manager'
+;
+modify menu PARActions add command PARCreateNewParameter order command PARCreateNewParameter 0;
+#channel ==>PARActions
+add property command_PARCreateNewParameter on program eServiceSchemaVariableMapping.tcl to command 'PARCreateNewParameter';

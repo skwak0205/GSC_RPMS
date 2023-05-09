@@ -1,0 +1,20 @@
+del command 'ECMAttributeGroupAttributeRemove';
+add command 'ECMAttributeGroupAttributeRemove'
+	description	'command to remove attribute from Attribute Group'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=RemoveAttributesFromAttributeGroup'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.RemoveAttributeDialog.Confirm'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAttributeGroupAttributeRemove'
+	property	'version'	value	'R216'
+;
+modify menu ECMAttributeGroupAttributeActionsToolbar add command ECMAttributeGroupAttributeRemove order command ECMAttributeGroupAttributeRemove 0;
+#channel ==>ECMAttributeGroupAttributeActionsToolbar
+add property command_ECMAttributeGroupAttributeRemove on program eServiceSchemaVariableMapping.tcl to command 'ECMAttributeGroupAttributeRemove';

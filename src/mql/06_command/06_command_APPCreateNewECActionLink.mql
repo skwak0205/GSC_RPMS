@@ -1,0 +1,25 @@
+del command 'APPCreateNewECActionLink';
+add command 'APPCreateNewECActionLink'
+	description	'Creating New Engineering Change'
+	label	'emxComponents.Command.CreateEC'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ECCreateFSInstance'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'True'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateNewECActionLink'
+	property	'version'	value	'R420'
+;
+modify menu APPMyEngineeringChanges add command APPCreateNewECActionLink order command APPCreateNewECActionLink 0;
+modify menu APPECListActionsToolBar add command APPCreateNewECActionLink order command APPCreateNewECActionLink 1;
+#channel ==>APPMyEngineeringChangesAPPECListActionsToolBar
+add property command_APPCreateNewECActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPCreateNewECActionLink';

@@ -1,0 +1,17 @@
+del menu 'PMCOpportunityListMenu';
+add menu 'PMCOpportunityListMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectActiveOpportunity'
+	command	'PMCProjectCompleteOpportunity'
+	command	'PMCProjectAllOpportunity'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCOpportunityListMenu'
+	property 'version'	value	'R421'
+;
+add property menu_PMCOpportunityListMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCOpportunityListMenu';

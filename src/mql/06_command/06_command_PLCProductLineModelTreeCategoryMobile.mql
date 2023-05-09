@@ -1,0 +1,21 @@
+del command 'PLCProductLineModelTreeCategoryMobile';
+add command 'PLCProductLineModelTreeCategoryMobile'
+	description	'Command Object for Models in the Product Line Menu For Mobile'
+	label	'emxProduct.Tree.Models'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCModelList&program=emxModel:getModels&header=emxProduct.Heading.Model&selection=multiple&topActionbar=PLCProductLineModelTopActionBar&bottomActionbar=PLCProductLineModelBottomActionBar&Export=true&sortColumnName=Name&HelpMarker=emxhelpmodellist&editLink=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeEnabled'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Image'		'${COMMON_DIR}/iconSmallMoldedPart.gif'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductLineModelTreeCategoryMobile'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_PLCProductLineModelTreeCategoryMobile on program eServiceSchemaVariableMapping.tcl to command 'PLCProductLineModelTreeCategoryMobile';

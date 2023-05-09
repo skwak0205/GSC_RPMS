@@ -1,0 +1,18 @@
+del menu 'AEFHelpMenu';
+add menu 'AEFHelpMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	command	'AEFCoachmarkCommand'
+	command	'AEFHelpCommand'
+	command	'About3DEXPERIENCEPlatform'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFHelpMenu'
+	property 'version'	value	'R417'
+;
+add property menu_AEFHelpMenu on program eServiceSchemaVariableMapping.tcl to menu 'AEFHelpMenu';

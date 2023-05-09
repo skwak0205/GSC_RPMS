@@ -1,0 +1,23 @@
+del command 'TMCRouteContent';
+add command 'TMCRouteContent'
+	description	'RouteContent Command Object'
+	label	'emxFramework.Command.Content'
+	href	'${SUITE_DIR}/emxTeamRouteContentSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Content'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallContent.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRouteContent'
+	property	'version'	value	'R422'
+;
+modify menu TMCtype_InboxTask add command TMCRouteContent order command TMCRouteContent 1;
+#channel ==>TMCtype_InboxTask
+add property command_TMCRouteContent on program eServiceSchemaVariableMapping.tcl to command 'TMCRouteContent';

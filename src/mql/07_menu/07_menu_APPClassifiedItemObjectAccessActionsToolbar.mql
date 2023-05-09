@@ -1,0 +1,17 @@
+del menu 'APPClassifiedItemObjectAccessActionsToolbar';
+add menu 'APPClassifiedItemObjectAccessActionsToolbar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPSeparator'
+	command	'APPLibClassClassifiedItemObjectAccessRemoveUsers'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'APPClassifiedItemObjectAccessActionsToolbar'
+	property 'version'	value	'R419'
+;
+add property menu_APPClassifiedItemObjectAccessActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPClassifiedItemObjectAccessActionsToolbar';

@@ -1,0 +1,23 @@
+del command 'PMCDurationKeywordsEdit';
+add command 'PMCDurationKeywordsEdit'
+	description	''
+	label	'emxProgramCentral.Common.Edit'
+	href	'${SUITE_DIR}/emxProgramCentralDurationKeywordsUtil.jsp?FunctionMode=preedit'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessDurationKeywordView'
+	setting	'Access Program'		'emxDurationKeywords'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDurationKeywordsEdit'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCDurationKeywordsEdit on program eServiceSchemaVariableMapping.tcl to command 'PMCDurationKeywordsEdit';

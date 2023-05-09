@@ -1,0 +1,103 @@
+################################################################################################
+# Created Date : 2023.01.11
+# Create by HyungJin,Ju
+# Description : 프로젝트 조회 List
+################################################################################################
+
+#del table 'gscPMCProjectSpaceMyDesk' system;
+add table 'gscPMCProjectSpaceMyDesk' system
+    column
+        name 'gscProjectCode'
+        label 'emxProgramCentral.Label.gscProjectCode'
+        href '${COMMON_DIR}/emxTree.jsp??mode=replace&portalMode=true'
+        businessobject  'name'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'RMB Menu' 'PMCListProjectRMBMenu'
+        setting 'Target Location' 'content'
+        setting 'Auto Filter' 'false'
+        setting 'Show Type Icon' 'true'
+    column
+        name 'gscTitle'
+        label 'emxProgramCentral.Label.gscTitle'
+        businessobject  '$<attribute[attribute_gscTitle].value>'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'Admin Type'        'attribute_gscTitle'
+    column
+        name 'gscProjectType'
+        label 'emxProgramCentral.Label.gscProjectType'
+        businessobject  '$<attribute[attribute_ProjectType].value>'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'Admin Type'        'attribute_ProjectType'
+    column
+        name 'gscBusinessArea'
+        label 'emxProgramCentral.Label.gscBusinessArea'
+        businessobject  '$<attribute[attribute_gscBusinessArea].value>'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'Admin Type'        'attribute_gscBusinessArea'
+    column
+        name 'gscGateType'
+        label 'emxProgramCentral.Label.gscGateType'
+        businessobject  '$<attribute[attribute_gscGateType].value>'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'Admin Type'        'attribute_gscGateType'
+    column
+        name 'ProjectState'
+        label 'emxProgramCentral.Label.gscState'
+        businessobject 'current'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'RMB Menu' 'PMCListProjectRMBMenu'
+        setting 'Admin Type' 'State'
+        setting 'Auto Filter' 'true'
+    column
+        name 'ProjectStatus'
+        label 'emxProgramCentral.Label.gscStatus'
+        alt 'emxProgramCentral.Label.gscStatus'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'Column Type'        'programHTMLOutput'
+        setting 'RMB Menu' 'PMCListProjectRMBMenu'
+        setting 'program' 'emxTaskBase'
+        setting 'function' 'getStatusIcon'
+    column
+        name 'businessUnitProject'
+        label 'emxProgramCentral.Label.gscBusinessUnitProject'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'Column Type'        'programHTMLOutput'
+        setting 'program' 'emxProjectConcept'
+        setting 'function' 'getBusUnit'
+    column
+        name 'Owner'
+        label 'emxProgramCentral.Common.Owner'
+        businessobject  'owner'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'RMB Menu' 'PMCListProjectRMBMenu'
+        setting 'format' 'user'
+        user 'all'
+    column
+        name 'Est Finish'
+        label 'emxProgramCentral.Common.EstimatedFinishDate'
+        businessobject  '$<attribute[attribute_TaskEstimatedFinishDate].value>'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'RMB Menu' 'PMCListProjectRMBMenu'
+        setting 'IgnoreTimeZone' 'true'
+        setting 'Field Type' 'attribute'
+        setting 'Sort Type' 'date'
+        setting 'format' 'date'
+        user 'all'
+    column
+        name 'Created Date'
+        label 'emxProgramCentral.Label.gscOriginated'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'Column Type'        'programHTMLOutput'
+        setting 'program' 'emxProjectConcept'
+        setting 'function' 'getoriginatedDate'
+property "installer"        value "GSC"
+property "application"      value "ProgramManagementBase"
+property "installed date"   value "2023.01.11"
+property "original name"    value "gscPMCProjectSpaceMyDesk"
+property "version"          value "R424.HF3"
+;
+add property table_gscPMCProjectSpaceMyDesk on program 'eServiceSchemaVariableMapping.tcl' to table gscPMCProjectSpaceMyDesk system;
+
+# Portal Command href Table 수정
+# 기본: mod command PMCProjectSpaceMyDesk href '${COMMON_DIR}/emxIndentedTable.jsp?pageSize=25&parallelLoading=true&maxCellsToDraw=2000&scrollPageSize=50&program=emxProjectSpace:getAssignedActiveProjects,emxProjectSpace:getCredentialedActiveProjects,emxProjectSpace:getArchiveCancelCompleteProjects,emxProjectSpace:getAllOtherProjects&programLabel=emxProgramCentral.ProjectList.AssignedActive,emxProgramCentral.ProjectList.CredentialedActive,emxProgramCentral.Common.InActive,emxProgramCentral.Common.All&table=PMCProjectSpaceMyDesk&selection=multiple&header=emxProgramCentral.ProgramTop.Projects&sortColumnName=Name,ProjectNameOnMobile&sortDirection=ascending&Export=false&toolbar=PMCProjectSummaryToolBar&HelpMarker=emxhelpprojectsummary&freezePane=Name,ProjectNameOnMobile&expandLevelFilter=false&StringResourceFileId=emxProgramCentralStringResource';
+mod command PMCProjectSpaceMyDesk href '${COMMON_DIR}/emxIndentedTable.jsp?pageSize=25&parallelLoading=true&maxCellsToDraw=2000&scrollPageSize=50&program=emxProjectSpace:getAssignedActiveProjects,emxProjectSpace:getCredentialedActiveProjects,emxProjectSpace:getArchiveCancelCompleteProjects,emxProjectSpace:getAllOtherProjects&programLabel=emxProgramCentral.ProjectList.AssignedActive,emxProgramCentral.ProjectList.CredentialedActive,emxProgramCentral.Common.InActive,emxProgramCentral.Common.All&table=gscPMCProjectSpaceMyDesk&selection=multiple&header=emxProgramCentral.ProgramTop.Projects&sortColumnName=Name,ProjectNameOnMobile&sortDirection=ascending&Export=false&toolbar=PMCProjectSummaryToolBar&HelpMarker=emxhelpprojectsummary&freezePane=Name,ProjectNameOnMobile&expandLevelFilter=false&StringResourceFileId=emxProgramCentralStringResource';

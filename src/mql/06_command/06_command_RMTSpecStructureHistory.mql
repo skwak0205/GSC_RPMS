@@ -1,0 +1,30 @@
+del command 'RMTSpecStructureHistory';
+add command 'RMTSpecStructureHistory'
+	description	''
+	label	'emxRequirements.ActionLink.SpecStructureHistory'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxSpecStructureHistory:getSpecStructureHistoryTableData&table=RMTSpecStructureHistoryTable&header=emxRequirements.Heading.SpecStructureHistory&sortColumnName=Date&sortDirection=descending&HelpMarker=emxhelpspecstructurehistory'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'${SUITE_DIR}/images/iconSmallSpecificationStructureHistory.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecStructureHistory'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeActionBar add command RMTSpecStructureHistory order command RMTSpecStructureHistory 4;
+modify menu RMTRichTextEditorActions add command RMTSpecStructureHistory order command RMTSpecStructureHistory 4;
+#channel ==>RMTSpecTreeActionBarRMTRichTextEditorActions
+add property command_RMTSpecStructureHistory on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecStructureHistory';

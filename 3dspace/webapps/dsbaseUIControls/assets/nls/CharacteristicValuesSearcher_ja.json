@@ -1,0 +1,11 @@
+{
+  "CVS.optionsChecker.searchEngine.notExisting.error": "値を検索するには、検索エンジンを定義する必要があります。",
+  "CVS.optionsChecker.searchEngine.notFunction.error": "検索エンジンでは関数が想定されています。",
+  "CVS.optionsChecker.defaultValues.array.error": "デフォルト値が配列に含まれていなければなりません。",
+  "CVS.optionsChecker.defaultValues.arrayObjects.error": "オブジェクトの配列が入力のデフォルト値として想定されています。",
+  "CVS.optionsChecker.defaultValues.labelExpected.error": "デフォルト値ごとにラベルが想定されています。",
+  "CVS.optionsChecker.defaultValues.valueExpected.error": "デフォルト値ごとに値が想定されています。",
+  "CVS.optionsChecker.onSuggest.notFunction.error": "\"onSuggest\" オプションには関数が想定されています。",
+  "CVS.optionsChecker.onSelect.notFunction.error": "\"onSelect\" オプションには関数が想定されています。",
+  "CVS.optionsChecker.onCleanDataset.notFunction.error": "\"onCleanDataset\" オプションには関数が想定されています。"
+}

@@ -1,0 +1,23 @@
+del command 'PMCCostItem';
+add command 'PMCCostItem'
+	description	'Cost Item Command Object'
+	label	'emxFramework.Command.CostItem'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxFinancialItem:getCostItems&chart=false&calculations=false&objectCompare=false&toolbar=PMCProjectSpaceCostItemToolBar&selection=multiple&table=PMCProjectCostSummary&HelpMarker=emxhelpcostitemsummary&header=emxProgramCentral.ProgramTop.CostBudgetCategories&PrinterFriendly=true'
+	alt	'emxFramework.Command.Alt.CostItem'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'iconSmallCostBudgetItem.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCostItem'
+	property	'version'	value	'R422'
+;
+modify menu type_FinancialItem add command PMCCostItem order command PMCCostItem 3;
+#channel ==>type_FinancialItem
+add property command_PMCCostItem on program eServiceSchemaVariableMapping.tcl to command 'PMCCostItem';

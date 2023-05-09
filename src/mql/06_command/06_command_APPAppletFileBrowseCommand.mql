@@ -1,0 +1,20 @@
+del command 'APPAppletFileBrowseCommand';
+add command 'APPAppletFileBrowseCommand'
+	description	'Applet File Browse Command Object'
+	label	'emxComponents.Button.Browse'
+	href	'javascript:browseFiles()'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAppletFileBrowseCommand'
+	property	'version'	value	'R422'
+;
+modify menu APPFileUploadAppletToolBar add command APPAppletFileBrowseCommand order command APPAppletFileBrowseCommand 1;
+#channel ==>APPFileUploadAppletToolBar
+add property command_APPAppletFileBrowseCommand on program eServiceSchemaVariableMapping.tcl to command 'APPAppletFileBrowseCommand';

@@ -1,0 +1,23 @@
+del menu 'FTRLFContextLogicalFeatureToolbar';
+add menu 'FTRLFContextLogicalFeatureToolbar'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRCreateLogicalFeatureContextActionLink'
+	command	'FTRAddExistingLogicalFeatureContextActionLink'
+	command	'AEFSeparator'
+	command	'PLCMassAssignDesignResponsibility'
+	command	'FTRCreateAssemblyConfigurationLogicalFeatureContextActionLink'
+	command	'FTRRemoveLogicalFeatureContextActionLink'
+	command	'FTRDeleteLogicalFeatureContextActionLink'
+	menu	'FTRLFContextLogicalFeatureToolbarReports'
+	menu	'ECMChangeToolbar'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRLFContextLogicalFeatureToolbar'
+	property 'version'	value	'R418'
+;
+add property menu_FTRLFContextLogicalFeatureToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRLFContextLogicalFeatureToolbar';

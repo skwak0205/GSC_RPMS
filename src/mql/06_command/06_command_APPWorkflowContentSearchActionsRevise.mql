@@ -1,0 +1,17 @@
+del command 'APPWorkflowContentSearchActionsRevise';
+add command 'APPWorkflowContentSearchActionsRevise'
+	description	'Workflow add content revise search'
+	label	'emxComponents.Command.ReviseSearch'
+	href	'${SUITE_DIR}/emxWorkflowContentSearchDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowContentSearchActionsRevise'
+	property	'version'	value	'R210'
+;
+modify menu APPWorkflowContentSearchActionToolBar add command APPWorkflowContentSearchActionsRevise order command APPWorkflowContentSearchActionsRevise 0;
+#channel ==>APPWorkflowContentSearchActionToolBar
+add property command_APPWorkflowContentSearchActionsRevise on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowContentSearchActionsRevise';

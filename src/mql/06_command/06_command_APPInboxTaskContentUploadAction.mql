@@ -1,0 +1,24 @@
+del command 'APPInboxTaskContentUploadAction';
+add command 'APPInboxTaskContentUploadAction'
+	description	''
+	label	'emxComponents.Common.Upload'
+	href	'${COMPONENT_DIR}/emxTaskContentProcess.jsp?fromPage=Upload'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showContentUploadLink'
+	setting	'Access Program'		'emxInboxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.png'
+	user	'3DSRestrictedContributor'
+	user	'VPLMExperimenter'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPInboxTaskContentUploadAction'
+	property	'version'	value	'R422'
+;
+modify menu APPInboxTaskContentTopActionBar add command APPInboxTaskContentUploadAction order command APPInboxTaskContentUploadAction 2;
+#channel ==>APPInboxTaskContentTopActionBar
+add property command_APPInboxTaskContentUploadAction on program eServiceSchemaVariableMapping.tcl to command 'APPInboxTaskContentUploadAction';

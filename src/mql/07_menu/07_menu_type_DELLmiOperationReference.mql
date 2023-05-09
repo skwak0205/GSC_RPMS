@@ -1,0 +1,10 @@
+del menu 'type_DELLmiOperationReference';
+add menu 'type_DELLmiOperationReference'
+	description	'VPLM Operation'
+	label	'$<attribute[PLMEntity.PLM_ExternalID].value>'
+	href	'${COMMON_DIR}/emxVPLMCommonNavPropertiesFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'VPLMSystemEditor'
+	setting	'Image'		'iconSmallDefault.gif'
+;
+add property menu_type_DELLmiOperationReference on program eServiceSchemaVariableMapping.tcl to menu 'type_DELLmiOperationReference';

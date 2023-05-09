@@ -1,0 +1,27 @@
+del command 'LBCMyDocumentsMyDesk';
+add command 'LBCMyDocumentsMyDesk'
+	description	'My Documents Command Object'
+	label	'emxDocumentCentral.MenuItem.MyDocuments'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&HelpMarker=emxhelpmydocuments&program=emxDCUtilsBase:getAllDocumentsList&table=DCMyDocumentsApprover&sortColumnName=Name&sortDirection=ascending&header=emxDocumentCentral.Common.MyDocuments&HelpMarker=emxhelpmydocuments&massPromoteDemote=false'
+	alt	'emxDocumentCentral.MenuItem.MyDocuments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Release Manager'
+	user	'Reviewer'
+	user	'Author'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCMyDocumentsMyDesk'
+	property	'version'	value	'R216'
+;
+modify menu LBCDocumentsMyDesk add command LBCMyDocumentsMyDesk order command LBCMyDocumentsMyDesk 1;
+#channel ==>LBCDocumentsMyDesk
+add property command_LBCMyDocumentsMyDesk on program eServiceSchemaVariableMapping.tcl to command 'LBCMyDocumentsMyDesk';

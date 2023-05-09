@@ -1,0 +1,24 @@
+del command 'RMTSearchChaptersCommand';
+add command 'RMTSearchChaptersCommand'
+	description	'Search for existing Chapters'
+	label	'emxRequirements.ActionLink.FindChapters'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxRequirementSearch:getChapters&table=RMTSearchChaptersTable&form=RMTSearchChaptersForm&CommandName=RMTSearchChaptersCommand&sortColumnName=Name'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSearchChaptersCommand'
+	property	'version'	value	'R422'
+;
+modify menu RMTSearchAddExistingChooserMenu add command RMTSearchChaptersCommand order command RMTSearchChaptersCommand 1;
+#channel ==>RMTSearchAddExistingChooserMenu
+add property command_RMTSearchChaptersCommand on program eServiceSchemaVariableMapping.tcl to command 'RMTSearchChaptersCommand';

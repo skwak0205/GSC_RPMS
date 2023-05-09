@@ -1,0 +1,17 @@
+del command 'ECMChangeAttributeGroup';
+add command 'ECMChangeAttributeGroup'
+	description	'Attribute Group command for Change Template in ECM'
+	label	'EnterpriseChangeMgt.Command.AttributeGroup'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeTemplate:getChangeTemplateInterface&table=ECMAttributeGroupTable&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ECMAttributeGroupToolbar&header=EnterpriseChangeMgt.Label.AttributeGroup&HelpMarker=emxhelpattributegrouplist&autoFilter=true&Export=true&suiteKey=EnterpriseChangeMgt'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeAttributeGroup'
+	property	'version'	value	'R216'
+;
+modify menu type_ChangeTemplate add command ECMChangeAttributeGroup order command ECMChangeAttributeGroup 2;
+#channel ==>type_ChangeTemplate
+add property command_ECMChangeAttributeGroup on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeAttributeGroup';

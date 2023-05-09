@@ -1,0 +1,32 @@
+del command 'LBCIssueCreateActionLink';
+add command 'LBCIssueCreateActionLink'
+	description	'Create New Issue Command Object LBC'
+	label	'emxComponents.ActionLink.IssueCreate'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=IssueCreateFSInstance'
+	alt	'emxComponents.ActionLink.IssueCreate'
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'True'
+	setting	'Access Function'		'showCreateIssue'
+	setting	'Access Program'		'emxCommonIssue'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreateIssue.png'
+	setting	'Selectable in Preferences'		'false'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	user	'Customer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCIssueCreateActionLink'
+	property	'version'	value	'R422'
+;
+modify menu LCClassifiedItemToolBar add command LBCIssueCreateActionLink order command LBCIssueCreateActionLink 0;
+#channel ==>LCClassifiedItemToolBar
+add property command_LBCIssueCreateActionLink on program eServiceSchemaVariableMapping.tcl to command 'LBCIssueCreateActionLink';

@@ -1,0 +1,14 @@
+del channel 'ECMCRChangeOrdersChannnel1';
+add channel 'ECMCRChangeOrdersChannnel1'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'EnterpriseChangeMgt'
+	command 	'ECMCRChangeOrders'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCRChangeOrdersChannnel1'
+	property	'version'	value	'R419'
+;
+#portal ==>ECMCRChangeOrderPortal
+add property channel_ECMCRChangeOrdersChannnel1 on program eServiceSchemaVariableMapping.tcl to channel 'ECMCRChangeOrdersChannnel1';

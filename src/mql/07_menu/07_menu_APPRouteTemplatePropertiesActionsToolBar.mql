@@ -1,0 +1,19 @@
+del menu 'APPRouteTemplatePropertiesActionsToolBar';
+add menu 'APPRouteTemplatePropertiesActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPRouteTemplateEditDetails'
+	command	'APPRouteTemplateActivateDeActivate'
+	command	'RouteTemplateFormRevise'
+	command	'TransferOwnership'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRouteTemplatePropertiesActionsToolBar'
+	property 'version'	value	'R421'
+;
+add property menu_APPRouteTemplatePropertiesActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPRouteTemplatePropertiesActionsToolBar';

@@ -1,0 +1,13 @@
+#del attribute gscTitle;
+add attribute 'gscTitleKO'
+    description 'gscTitle KOR'
+    type        'string'
+    notmultiline
+    nothidden
+    property 'application' value 'Framework'
+    property 'version' value 'V6R2023x'
+    property 'installer' value 'GSC'
+    property 'original name' value 'gscTitle'
+    property 'installed date' value '2023-03-10'
+;
+add property attribute_gscTitleKO on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscTitleKO';

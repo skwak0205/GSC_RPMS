@@ -1,0 +1,18 @@
+del command 'DataGridPerformanceLogs';
+add command 'DataGridPerformanceLogs'
+	description	''
+	label	'emxFramework.GridView.LogPerformance'
+	href	'javascript:ENXSBGridPerformanceLogs.getLogs()'
+	alt	'emxFramework.GridView.LogPerformance'
+	setting	'Access Function'		'canDisplayPerformanceLogs'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPerformanceDiagnostics.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridPerformanceLogs'
+	property	'version'	value	'R423.HF3'
+;
+modify menu Tools add command DataGridPerformanceLogs order command DataGridPerformanceLogs 3;
+#channel ==>Tools
+add property command_DataGridPerformanceLogs on program eServiceSchemaVariableMapping.tcl to command 'DataGridPerformanceLogs';

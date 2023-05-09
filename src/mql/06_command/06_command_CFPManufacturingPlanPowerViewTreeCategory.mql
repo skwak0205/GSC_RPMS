@@ -1,0 +1,18 @@
+del command 'CFPManufacturingPlanPowerViewTreeCategory';
+add command 'CFPManufacturingPlanPowerViewTreeCategory'
+	description	'Display all the Manufacturing with channels'
+	label	'DMCPlanning.TreeCategory.ManufacturingPlanPowerView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=CFPProductManufacturingPlanPortal&header=DMCPlanning.Heading.ManufacturingPlanPowerView&HelpMarker=emxhelpmanufacturingpowerviewuse'
+	alt	''
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersion] =="FALSE">) || ($<type.kindof=="type_LOGICALSTRUCTURES">)'
+	setting	'Licensed Product'		'ENO_CFP_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPManufacturingPlanPowerViewTreeCategory'
+	property	'version'	value	'R421'
+;
+modify menu type_Products add command CFPManufacturingPlanPowerViewTreeCategory order command CFPManufacturingPlanPowerViewTreeCategory 1;
+#channel ==>type_Products
+add property command_CFPManufacturingPlanPowerViewTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'CFPManufacturingPlanPowerViewTreeCategory';

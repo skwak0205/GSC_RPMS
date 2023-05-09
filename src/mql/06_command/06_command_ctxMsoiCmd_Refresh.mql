@@ -1,0 +1,18 @@
+del command 'ctxMsoiCmd_Refresh';
+add command 'ctxMsoiCmd_Refresh'
+	description	'ctxMsoiCmd_Refresh'
+	label	'emxMSF.Command.ctxMsoiCmd_Refresh'
+	href	''
+	alt	'ctxMsoiCmd_Refresh'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_Refresh'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Navigation_Background add command ctxMsoiCmd_Refresh order command ctxMsoiCmd_Refresh 0;
+#channel ==>ctxMsoi_Navigation_Background
+add property command_ctxMsoiCmd_Refresh on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_Refresh';

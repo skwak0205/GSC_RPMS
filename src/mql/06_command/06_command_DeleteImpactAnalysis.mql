@@ -1,0 +1,23 @@
+del command 'DeleteImpactAnalysis';
+add command 'DeleteImpactAnalysis'
+	description	'Delete Impact Analysis'
+	label	'EnterpriseChangeMgt.Command.Delete'
+	href	'${SUITE_DIR}/ECMUtil.jsp?mode=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasDeleteImpactAnalysisAccess'
+	setting	'Access Program'		'enoECMChangeActionUX'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Alert.Delete'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'DeleteImpactAnalysis'
+	property	'version'	value	'R417'
+;
+modify menu ImpactAnalysisListActionsToolBar add command DeleteImpactAnalysis order command DeleteImpactAnalysis 0;
+#channel ==>ImpactAnalysisListActionsToolBar
+add property command_DeleteImpactAnalysis on program eServiceSchemaVariableMapping.tcl to command 'DeleteImpactAnalysis';

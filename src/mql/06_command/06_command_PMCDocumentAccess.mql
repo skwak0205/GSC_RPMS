@@ -1,0 +1,25 @@
+del command 'PMCDocumentAccess';
+add command 'PMCDocumentAccess'
+	description	'Document Access Command Object'
+	label	'emxFramework.Command.Access'
+	href	'${SUITE_DIR}/emxProgramCentralAccessSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Access'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True) && ($<to[relationship_VaultedDocumentsRev2]> == True)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'checkAccessNode'
+	setting	'Access Program'		'emxProgramCentralUtil'
+	setting	'Image'		'COMMON_DIR/iconSmallAccess.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDocumentAccess'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCDocumentAccess on program eServiceSchemaVariableMapping.tcl to command 'PMCDocumentAccess';

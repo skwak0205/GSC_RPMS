@@ -1,0 +1,20 @@
+del menu 'TestCaseTopBottom';
+add menu 'TestCaseTopBottom'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PLCCreateTestCaseActionLink'
+	command	'RMTAddExistingRequirementTestCaseActionLink'
+	command	'AEFSeparator2'
+	command	'PLCDeleteTestCaseActionLink'
+	command	'PLCRemoveTestCaseActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'TestCaseTopBottom'
+	property 'version'	value	'V6R2021x'
+;
+add property menu_TestCaseTopBottom on program eServiceSchemaVariableMapping.tcl to menu 'TestCaseTopBottom';

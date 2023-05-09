@@ -1,0 +1,14 @@
+del command 'ActivationUniquenessKeyCmd';
+add command 'ActivationUniquenessKeyCmd'
+	description	''
+	label	'emxPackagesManagement.label.UniquenessKeyActivation'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=ActivationUniquenessKeyTable&toolbar=none&program=emxPackagesMngtProgram:getAllUniquenessKeys&submitURL=../PackagesManagement/emxPackagesConfigurationActivationUniquenessKey.jsp&freezePane=ukName&selection=none&header=emxPackagesManagement.label.UniquenessKeyActivation&customize=false&showClipboard=false&showPageURL=false&displayView=details&hideLaunchButton=true&submitLabel=emxPackagesManagement.Submit'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'PackagesManagement'
+	setting	'Submit'		'true'
+	setting	'Image'		'${SUITE_DIR}/images/CustoPackNewAttribute_16.gif'
+	user	'VPLMAdmin'
+;
+#channel ==>MngUniquenessKeysChannel
+add property command_ActivationUniquenessKeyCmd on program eServiceSchemaVariableMapping.tcl to command 'ActivationUniquenessKeyCmd';

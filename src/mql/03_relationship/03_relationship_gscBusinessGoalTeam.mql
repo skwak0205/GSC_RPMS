@@ -1,0 +1,32 @@
+
+################################################################################################
+# Created Date : 2023.01.06
+# Create by Jungrim Choi
+# Description : KPI 수행팀
+################################################################################################
+
+#del relationship gscBusinessGoalTeam;
+add relationship gscBusinessGoalTeam
+  description "Business Goal to Business Unit"
+  from
+    type "Business Goal"
+    revision none
+    clone none
+    cardinality many
+    propagateconnection
+    !propagatemodify
+  to
+    type "Business Unit"
+    revision none
+    clone none
+    cardinality many
+    propagateconnection
+    !propagatemodify
+    nothidden
+    property 'installed date'     value  '01-06-2023'
+    property 'application'        value  'ProgramCentral'
+    property 'original name'      value  'gscBusinessGoalTeam'
+    property 'installer'          value  'jrchoi'
+    property 'version'            value  'V6R2022'
+;
+add property relationship_gscBusinessGoalTeam on program eServiceSchemaVariableMapping.tcl to relationship 'gscBusinessGoalTeam';

@@ -1,0 +1,19 @@
+del command 'AEFMQL';
+add command 'AEFMQL'
+	description	'MQLCommand'
+	label	'emxFramework.AdminTool.RunMQL'
+	href	'${COMMON_DIR}/emxRunMQL.jsp'
+	alt	'emxFramework.AdminTool.MQLCommand'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	user	'Administration Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFMQL'
+	property	'version'	value	'R216'
+;
+modify menu AdminTools add command AEFMQL order command AEFMQL 4;
+#channel ==>AdminTools
+add property command_AEFMQL on program eServiceSchemaVariableMapping.tcl to command 'AEFMQL';

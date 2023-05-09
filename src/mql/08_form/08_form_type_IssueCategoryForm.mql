@@ -1,0 +1,32 @@
+del form 'type_IssueCategoryForm';
+add form 'type_IssueCategoryForm' web
+field #1
+	name	'Name'
+	businessobject	'$<name>'
+	label	'emxFramework.Basic.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'Required'		'true'
+	setting	'Editable'		'false'
+	setting	'Field Type'		'basic'
+field #2
+	name	'Description'
+	businessobject	'$<description>'
+	label	'emxFramework.Basic.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'Components'
+	setting	'Required'		'true'
+	setting	'Editable'		'true'
+	setting	'Field Type'		'basic'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'type_IssueCategoryForm'
+	property	'version'	value	'R419'
+;
+add property form_type_IssueCategoryForm on program eServiceSchemaVariableMapping.tcl to form 'type_IssueCategoryForm';

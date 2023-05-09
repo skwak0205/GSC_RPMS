@@ -1,0 +1,21 @@
+del form 'PMCResourcePlanPreferencesForm';
+add form 'PMCResourcePlanPreferencesForm' web
+field #1
+	name	'Resource Plan Mode'
+	label	'emxProgramCentral.Common.ResourcePlanMode'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'false'
+	setting	'function'		'getResourcePlanPreferences'
+	setting	'Editable'		'true'
+	setting	'program'		'emxResourceRequest'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePlanPreferencesForm'
+	property	'version'	value	'R210'
+;
+add property form_PMCResourcePlanPreferencesForm on program eServiceSchemaVariableMapping.tcl to form 'PMCResourcePlanPreferencesForm';

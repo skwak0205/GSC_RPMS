@@ -1,0 +1,17 @@
+del command 'DCRouteTemplateRevision';
+add command 'DCRouteTemplateRevision'
+	description	'Route Template Revision Command Object'
+	label	'emxFramework.Command.Revision'
+	href	'${SUITE_DIR}/emxRouteTemplateRevisionsFS.jsp'
+	alt	'emxFramework.Command.Alt.Revision'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallRevision.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCRouteTemplateRevision'
+	property	'version'	value	'9-5-0-0'
+;
+#channel ==>
+add property command_DCRouteTemplateRevision on program eServiceSchemaVariableMapping.tcl to command 'DCRouteTemplateRevision';

@@ -1,0 +1,21 @@
+del menu 'type_SoftwareRequirementSpecification';
+add menu 'type_SoftwareRequirementSpecification'
+	description	''
+	label	'${NAME} ${REVISION}'
+	href	'${SUITE_DIR}/StructureDisplay.jsp?menu=RMTSpecStructureDisplay'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Label Function'		'getTreeLabelName'
+	setting	'Label Program'		'emxSpecificationStructure'
+	command	'RMTSpecificationsPropertiesPowerView'
+	command	'RMTSpecificationsExchangeTrackingPowerView'
+	command	'RMTSpecificationsChangeControPowerView'
+	command	'RMTSpecificationRelatedObjectsPowerView'
+	command	'RMTSpecificationsTraceabilityPowerView'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_SoftwareRequirementSpecification'
+	property 'version'	value	'V6R2014'
+;
+add property menu_type_SoftwareRequirementSpecification on program eServiceSchemaVariableMapping.tcl to menu 'type_SoftwareRequirementSpecification';

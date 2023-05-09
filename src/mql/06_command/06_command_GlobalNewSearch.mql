@@ -1,0 +1,23 @@
+del command 'GlobalNewSearch';
+add command 'GlobalNewSearch'
+	description	'Global New Search'
+	label	'emxComponents.Command.NewSearch'
+	href	'${COMPONENT_DIR}/emxCommonSearchUtil.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'GlobalNewSearch'
+	property	'version'	value	'10-7'
+;
+modify menu GlobalSearchTopActionBar add command GlobalNewSearch order command GlobalNewSearch 0;
+modify menu GlobalAddExistingTopActionBar add command GlobalNewSearch order command GlobalNewSearch 0;
+modify menu GlobalObjectChooserTopActionBar add command GlobalNewSearch order command GlobalNewSearch 0;
+modify menu APPGlobalSearchActionsToolBar add command GlobalNewSearch order command GlobalNewSearch 1;
+modify menu APPGlobalAddExistingActionsToolBar add command GlobalNewSearch order command GlobalNewSearch 0;
+modify menu APPGlobalObjectChooserActionsToolBar add command GlobalNewSearch order command GlobalNewSearch 0;
+#channel ==>GlobalSearchTopActionBarGlobalAddExistingTopActionBarGlobalObjectChooserTopActionBarAPPGlobalSearchActionsToolBarAPPGlobalAddExistingActionsToolBarAPPGlobalObjectChooserActionsToolBar
+add property command_GlobalNewSearch on program eServiceSchemaVariableMapping.tcl to command 'GlobalNewSearch';

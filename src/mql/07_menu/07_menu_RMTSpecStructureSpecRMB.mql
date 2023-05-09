@@ -1,0 +1,19 @@
+del menu 'RMTSpecStructureSpecRMB';
+add menu 'RMTSpecStructureSpecRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTSpecTreeCreateNewForChapter'
+	menu	'RMTSpecTreeAddExistingForChapter'
+	command	'RMTSpecificationProperties'
+	command	'AEFLifecycle'
+	menu	'AEFClipboardCollectionsRMB'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecStructureSpecRMB'
+	property 'version'	value	'V6R2016x'
+;
+add property menu_RMTSpecStructureSpecRMB on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecStructureSpecRMB';

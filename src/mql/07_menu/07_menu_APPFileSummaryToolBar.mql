@@ -1,0 +1,17 @@
+del menu 'APPFileSummaryToolBar';
+add menu 'APPFileSummaryToolBar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Horizontal ToolBar'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPFileSummaryActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPFileSummaryToolBar'
+	property 'version'	value	'R422'
+;
+add property menu_APPFileSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPFileSummaryToolBar';

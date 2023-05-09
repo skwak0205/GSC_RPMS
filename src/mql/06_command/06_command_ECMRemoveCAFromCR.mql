@@ -1,0 +1,21 @@
+del command 'ECMRemoveCAFromCR';
+add command 'ECMRemoveCAFromCR'
+	description	'Disconnect Change Action and Change Request'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMDisconnectProcess.jsp?functionality=disconnectChangeActionFromCR'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Create].value || current==policy.property[state_Evaluate].value || $<interface[interface_ChangeOnHold] =="TRUE">) && (current.access[fromdisconnect] == true) &&  (type.kindof[$<type_ChangeRequest>])'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Alert.Remove'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMRemoveCAFromCR'
+	property	'version'	value	'R423.HF6'
+;
+modify menu ECMCOAffectedChangeActionListToolbar add command ECMRemoveCAFromCR order command ECMRemoveCAFromCR 6;
+#channel ==>ECMCOAffectedChangeActionListToolbar
+add property command_ECMRemoveCAFromCR on program eServiceSchemaVariableMapping.tcl to command 'ECMRemoveCAFromCR';

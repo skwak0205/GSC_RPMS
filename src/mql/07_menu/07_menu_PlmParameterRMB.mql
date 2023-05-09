@@ -1,0 +1,14 @@
+del menu 'PlmParameterRMB';
+add menu 'PlmParameterRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	command	'AEFLifecycle'
+	menu	'AEFClipboardCollectionsRMB'
+	command	'APPQuickFileList'
+	command	'APPRelatedFiles'
+	command	'APPAllFileDetails'
+;
+add property menu_PlmParameterRMB on program eServiceSchemaVariableMapping.tcl to menu 'PlmParameterRMB';

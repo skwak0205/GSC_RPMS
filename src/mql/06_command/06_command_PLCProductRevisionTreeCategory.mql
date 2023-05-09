@@ -1,0 +1,18 @@
+del command 'PLCProductRevisionTreeCategory';
+add command 'PLCProductRevisionTreeCategory'
+	description	''
+	label	'emxProduct.Tree.Revisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCProductList&header=emxProduct.Heading.ProductRevisions&selection=multiple&program=emxProduct:getRevisionProducts&programLabel=emxProduct.Filter.All&topActionbar=PLCProductRevisionListTopActionBar&sortColumnName=Name&HelpMarker=emxhelpproductrevisionlist&showColumn=false&editLink=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'$<attribute[attribute_IsVersion] =="FALSE" >'
+	setting	'Image'		'${COMMON_DIR}/iconSmallRevision.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductRevisionTreeCategory'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_PLCProductRevisionTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCProductRevisionTreeCategory';

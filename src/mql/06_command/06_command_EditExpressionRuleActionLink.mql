@@ -1,0 +1,17 @@
+del command 'EditExpressionRuleActionLink';
+add command 'EditExpressionRuleActionLink'
+	description	'EditExpressionRuleActionLink'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_EditConfigurationRule&mode=Edit&formHeader=emxConfiguration.Heading.EditExpressionRule&HelpMarker=emxhelpconfigurablerulesedit&postProcessURL=../configuration/ConfigurationRuleEditPostProcess.jsp&submitAction=doNothing'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete" && $<attribute[attribute_ExpressionType] =="Boolean">)'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'version'	value	'R421'
+;
+modify menu ConfigurationRulePropertiesTopActionBar add command EditExpressionRuleActionLink order command EditExpressionRuleActionLink 0;
+#channel ==>ConfigurationRulePropertiesTopActionBar
+add property command_EditExpressionRuleActionLink on program eServiceSchemaVariableMapping.tcl to command 'EditExpressionRuleActionLink';

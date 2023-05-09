@@ -1,0 +1,27 @@
+del command 'FTRFeatureRefereceDocumentTreeCategory';
+add command 'FTRFeatureRefereceDocumentTreeCategory'
+	description	''
+	label	'emxProduct.Tree.ReferenceDocument'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ProductDocumentSummaryToolBar&header=emxProduct.Menu.Documents&HelpMarker=emxhelprefdoclist&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallDocumentAttachment.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRFeatureRefereceDocumentTreeCategory'
+	property	'version'	value	'R215'
+;
+modify menu type_ConfigurationFeature add command FTRFeatureRefereceDocumentTreeCategory order command FTRFeatureRefereceDocumentTreeCategory 8;
+modify menu type_LogicalFeature add command FTRFeatureRefereceDocumentTreeCategory order command FTRFeatureRefereceDocumentTreeCategory 9;
+modify menu type_ManufacturingFeature add command FTRFeatureRefereceDocumentTreeCategory order command FTRFeatureRefereceDocumentTreeCategory 7;
+modify menu type_ConfigurationOption add command FTRFeatureRefereceDocumentTreeCategory order command FTRFeatureRefereceDocumentTreeCategory 6;
+modify menu Msoitype_Features add command FTRFeatureRefereceDocumentTreeCategory order command FTRFeatureRefereceDocumentTreeCategory 4;
+modify menu type_Variant add command FTRFeatureRefereceDocumentTreeCategory order command FTRFeatureRefereceDocumentTreeCategory 7;
+modify menu type_VariabilityGroup add command FTRFeatureRefereceDocumentTreeCategory order command FTRFeatureRefereceDocumentTreeCategory 7;
+modify menu type_VariantValue add command FTRFeatureRefereceDocumentTreeCategory order command FTRFeatureRefereceDocumentTreeCategory 6;
+modify menu type_VariabilityOption add command FTRFeatureRefereceDocumentTreeCategory order command FTRFeatureRefereceDocumentTreeCategory 6;
+#channel ==>type_ConfigurationFeaturetype_LogicalFeaturetype_ManufacturingFeaturetype_ConfigurationOptionMsoitype_Featurestype_Varianttype_VariabilityGrouptype_VariantValuetype_VariabilityOption
+add property command_FTRFeatureRefereceDocumentTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRFeatureRefereceDocumentTreeCategory';

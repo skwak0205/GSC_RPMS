@@ -1,0 +1,27 @@
+del command 'PMCGenericBusinessGoalsSearchMenuBar';
+add command 'PMCGenericBusinessGoalsSearchMenuBar'
+	description	'Menu Bar Generic BusinessGoals Search'
+	label	'emxProgramCentral.Search.BusinessGoals'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?table=PMCGenericBusinessGoalsSearchResults&field=TYPES=type_BusinessGoal'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Currency Converter'		'false'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Business Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGenericBusinessGoalsSearchMenuBar'
+	property	'version'	value	'R422'
+;
+modify menu PMCProgramCentralSearch add command PMCGenericBusinessGoalsSearchMenuBar order command PMCGenericBusinessGoalsSearchMenuBar 7;
+#channel ==>PMCProgramCentralSearch
+add property command_PMCGenericBusinessGoalsSearchMenuBar on program eServiceSchemaVariableMapping.tcl to command 'PMCGenericBusinessGoalsSearchMenuBar';

@@ -1,0 +1,17 @@
+del command 'PLCRichEditPreference';
+add command 'PLCRichEditPreference'
+	description	''
+	label	'emxProduct.Preferences.RichEdit'
+	href	'${SUITE_DIR}/RichEditPref.jsp'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	user	'VPLMAdmin'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCRichEditPreference'
+	property	'version'	value	'R419'
+;
+modify menu ProductLine add command PLCRichEditPreference order command PLCRichEditPreference 1;
+#channel ==>ProductLine
+add property command_PLCRichEditPreference on program eServiceSchemaVariableMapping.tcl to command 'PLCRichEditPreference';

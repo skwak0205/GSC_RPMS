@@ -1,0 +1,25 @@
+del command 'APPLibClassObjectAccess';
+add command 'APPLibClassObjectAccess'
+	description	'Command added for generic object access implementation for Library and Class Objects'
+	label	'emxFramework.Command.Access'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPObjectAccessSummary&program=emxObjectAccess:getAccessGrantees&toolbar=APPLibClassObjectAccessToolbar&header=emxComponents.ObjectAccess.AccessHeading&sortColumnName=Name&sortDirection=ascending&selection=none&HelpMarker=emxhelpaccess&PrinterFriendly=true&accessChoice=Read_WO_Download,Add,Remove,Add_Remove&showAllProgram=emxObjectAccess&showAllFunction=hasLibrarianRole&pushGrantor=person_CommonAccessGrantor'
+	alt	'emxFramework.Command.Alt.Access'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'showGranteeAccessCategory'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallAccess.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'APPLibClassObjectAccess'
+	property	'version'	value	'R419'
+;
+modify menu type_PartLibrary add command APPLibClassObjectAccess order command APPLibClassObjectAccess 3;
+modify menu type_GeneralLibrary add command APPLibClassObjectAccess order command APPLibClassObjectAccess 2;
+modify menu type_Library add command APPLibClassObjectAccess order command APPLibClassObjectAccess 2;
+modify menu type_PartFamily add command APPLibClassObjectAccess order command APPLibClassObjectAccess 3;
+modify menu type_GeneralClass add command APPLibClassObjectAccess order command APPLibClassObjectAccess 3;
+modify menu type_DocumentFamily add command APPLibClassObjectAccess order command APPLibClassObjectAccess 3;
+#channel ==>type_PartLibrarytype_GeneralLibrarytype_Librarytype_PartFamilytype_GeneralClasstype_DocumentFamily
+add property command_APPLibClassObjectAccess on program eServiceSchemaVariableMapping.tcl to command 'APPLibClassObjectAccess';

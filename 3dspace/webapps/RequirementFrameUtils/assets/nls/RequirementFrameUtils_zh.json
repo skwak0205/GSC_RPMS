@@ -1,0 +1,19 @@
+{
+  "activities": "开始活动",
+  "requirement_definition": "要求",
+  "reqSpec_definition": "要求规格",
+  "specFolder_definition": "规格文件夹",
+  "my_work": "我的工作",
+  "recent_items": "最近项目",
+  "_home": "主页",
+  "start_activities": "开始活动",
+  "createActions": "创建",
+  "new_SpecFolder": "要求规格",
+  "new_ReqSpec": "规格文件夹",
+  "new_Req": "要求",
+  "open_req_spec": "打开要求对象",
+  "quick_access": "快速访问",
+  "reqSpec_objects_list": "我的要求规格",
+  "req_objects_list": "我的要求",
+  "recently_opened": "最近打开项"
+}

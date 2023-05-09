@@ -1,0 +1,19 @@
+del menu 'PMCQuestionToolbarActions';
+add menu 'PMCQuestionToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCCreateQuestion'
+	command	'PMCDeleteQuestion'
+	command	'PMCAssignTaskToQuestion'
+	command	'PMCRemoveTaskFromQuestion'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCQuestionToolbarActions'
+	property 'version'	value	'R418'
+;
+add property menu_PMCQuestionToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCQuestionToolbarActions';

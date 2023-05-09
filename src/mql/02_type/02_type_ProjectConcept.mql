@@ -1,0 +1,2 @@
+mod type 'Project Concept'
+ add attribute gscTitle,gscBusinessArea,gscGateType,gscReviewType;

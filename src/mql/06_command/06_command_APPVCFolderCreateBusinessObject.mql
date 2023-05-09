@@ -1,0 +1,27 @@
+del command 'APPVCFolderCreateBusinessObject';
+add command 'APPVCFolderCreateBusinessObject'
+	description	'VC Folder/File create on demand Command Object'
+	label	'emxComponents.VersionControl.CreateVCFileFolderOnDemand'
+	href	'${SUITE_DIR}/emxCommonDocumentVCOnDemandIntermediateProcess.jsp?objectAction=createVCFileFolderOnDemand'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasShowCommands'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Row Select'		'Single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPVCFolderCreateBusinessObject'
+	property	'version'	value	'R422'
+;
+modify menu APPVCFolderContentActions add command APPVCFolderCreateBusinessObject order command APPVCFolderCreateBusinessObject 2;
+#channel ==>APPVCFolderContentActions
+add property command_APPVCFolderCreateBusinessObject on program eServiceSchemaVariableMapping.tcl to command 'APPVCFolderCreateBusinessObject';

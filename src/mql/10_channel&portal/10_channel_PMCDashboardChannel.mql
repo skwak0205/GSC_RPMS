@@ -1,0 +1,16 @@
+del channel 'PMCDashboardChannel';
+add channel 'PMCDashboardChannel'
+	description	'For Project DashBoard'
+	height	'700'
+	label	'emxFramework.Common.PMCDashboardChannel'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCGateDashboardDetails','PMCDashboardDetail'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDashboardChannel'
+	property	'version'	value	'R210'
+;
+#portal ==>PMCDashboardPortal
+add property channel_PMCDashboardChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCDashboardChannel';

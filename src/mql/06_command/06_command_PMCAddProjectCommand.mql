@@ -1,0 +1,19 @@
+del command 'PMCAddProjectCommand';
+add command 'PMCAddProjectCommand'
+	description	'Command to Add Project to Dashboard'
+	label	'emxProgramCentral.Common.AddProject'
+	href	'${SUITE_DIR}/emxProgramCentralDashboardsProjectPreSearch.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddProjectCommand'
+	property	'version'	value	'R216'
+;
+modify menu PMCDashboardActionsMenu add command PMCAddProjectCommand order command PMCAddProjectCommand 1;
+#channel ==>PMCDashboardActionsMenu
+add property command_PMCAddProjectCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCAddProjectCommand';

@@ -1,0 +1,3 @@
+add relationship gscInterfaceDeliverable derived 'Task Deliverable';
+modify relationship 'Task Deliverable' to add type gscPolydataIf;
+modify relationship gscInterfaceDeliverable to add type gscPolydataIf;

@@ -1,0 +1,89 @@
+################################################################################################
+# Created Date : 2020. 06. 22
+# Create by Suhwan,Jang
+# Description : Project Remark View/Edit Form
+################################################################################################
+del form 'type_emdProjectRemark';
+add form 'type_emdProjectRemark' web
+    field
+        name 'Name'
+        label 'emdManufacturing.Label.Name'
+        businessobject  '$<name>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Required' 'true'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'basic'
+    field
+        name 'Description'
+        label 'emdManufacturing.Label.SpecialRequirement'
+        businessobject  '$<description>'
+        alt ''
+        range ''
+        update ''
+        setting 'Input Type' 'textarea'
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Required' 'true'
+        setting 'Validate' 'isBadChars'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'basic'
+    field
+        name 'emdSharedWith'
+        label 'emdManufacturing.Label.emdSharedWith'
+        businessobject  '$<attribute[attribute_emdSharedWith]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Required' 'true'
+        setting 'Editable' 'true'
+        setting 'Input Type' 'combobox'
+        setting 'Admin Type' 'attribute_emdFunctionalDept'
+        setting 'Field Type' 'attribute'
+        setting 'Update Program' 'emdProjectRemark'
+        setting 'Update Function' 'updateSharedWith'
+        setting "Range Program" "emdProjectRemark"
+        setting "Range Function" "getSharedWithRangeProgramForCreate"
+    field
+        name 'type'
+        label 'emdManufacturing.Label.Type'
+        businessobject  '$<type>'
+        alt ''
+        range ''
+        update ''
+        setting 'Admin Type' 'Type'
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'basic'
+    field
+        name 'Owner'
+        label 'emdManufacturing.Label.Owner'
+        businessobject  '$<owner>'
+        alt ''
+        range '${COMMON_DIR}/emxFullSearch.jsp?type=PERSON_CHOOSER&showInitialResults=true&selection=single&hideHeader=true&header=emxDocumentCentral.Search.PersonSearchResults'
+        update ''
+        setting 'Input Type' 'textbox'
+        setting 'Admin Type' 'owner'
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Required' 'true'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'basic'
+    field
+        name 'Policy'
+        label 'emdManufacturing.Label.Policy'
+        businessobject  '$<policy>'
+        alt ''
+        range ''
+        update ''
+        setting 'Admin Type' 'Policy'
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Editable' 'false'
+property 'application'      value 'emdManufacturing'
+property 'version'          value 'V6R2019'
+property 'installer'        value 'HHI'
+property 'installed date'   value '2020-06-22'
+property 'original name'    value 'type_emdProjectRemark'
+;
+add property 'form_type_emdProjectRemark' on program 'eServiceSchemaVariableMapping.tcl' to form 'type_emdProjectRemark';

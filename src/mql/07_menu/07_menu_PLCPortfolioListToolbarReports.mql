@@ -1,0 +1,17 @@
+del menu 'PLCPortfolioListToolbarReports';
+add menu 'PLCPortfolioListToolbarReports'
+	description	''
+	label	'emxProductLine.Menu.Reports'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallReport.png'
+	command	'PLCPortfolioListViewRoadmapActionLink'
+	command	'PLCPortfolioListViewTimelineActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCPortfolioListToolbarReports'
+	property 'version'	value	'R418'
+;
+add property menu_PLCPortfolioListToolbarReports on program eServiceSchemaVariableMapping.tcl to menu 'PLCPortfolioListToolbarReports';

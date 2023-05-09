@@ -1,0 +1,22 @@
+del command 'PMCCopySelectedTimeSheet';
+add command 'PMCCopySelectedTimeSheet'
+	description	'Copy Selected Timesheet'
+	label	'emxProgramCentral.WeeklyTimesheet.CopySelectedTimeSheet'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=copySelect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCopySelectedTimeSheet'
+	property	'version'	value	'R421'
+;
+modify menu PMCWeeklyTimeSheetToolBar add command PMCCopySelectedTimeSheet order command PMCCopySelectedTimeSheet 4;
+modify menu PMCMyWeeklyTimeSheetRMB add command PMCCopySelectedTimeSheet order command PMCCopySelectedTimeSheet 1;
+#channel ==>PMCWeeklyTimeSheetToolBarPMCMyWeeklyTimeSheetRMB
+add property command_PMCCopySelectedTimeSheet on program eServiceSchemaVariableMapping.tcl to command 'PMCCopySelectedTimeSheet';

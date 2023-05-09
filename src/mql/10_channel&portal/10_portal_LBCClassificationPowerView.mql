@@ -1,0 +1,14 @@
+del portal 'LBCClassificationPowerView';
+add portal 'LBCClassificationPowerView'
+	description	'LBC Classification Power View portal'
+	label	''
+	href	''
+	channel 	LBCObjectClassificationBOM
+	channel 	LBCObjectClassificationDetails
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCClassificationPowerView'
+	property	'version'	value	'R214'
+;
+add property portal_LBCClassificationPowerView on program eServiceSchemaVariableMapping.tcl to portal 'LBCClassificationPowerView';

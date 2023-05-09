@@ -1,0 +1,18 @@
+del command 'LBCFromDisConnectSeparator';
+add command 'LBCFromDisConnectSeparator'
+	description	'From Dis Connect access check separator'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Action Type'		'Separator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCFromDisConnectSeparator'
+	property	'version'	value	'R213'
+;
+modify menu LCClassifiedItemActionToolBar add command LBCFromDisConnectSeparator order command LBCFromDisConnectSeparator 14;
+#channel ==>LCClassifiedItemActionToolBar
+add property command_LBCFromDisConnectSeparator on program eServiceSchemaVariableMapping.tcl to command 'LBCFromDisConnectSeparator';

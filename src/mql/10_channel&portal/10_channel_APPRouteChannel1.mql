@@ -1,0 +1,16 @@
+del channel 'APPRouteChannel1';
+add channel 'APPRouteChannel1'
+	description	'First Route Channel for Route content, Proeprties, Access, Discussion, History'
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Components'
+	command 	'APPRouteDetails','APPContent','APPAccess','APPDiscussionCommand','AEFHistory'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteChannel1'
+	property	'version'	value	'R216'
+;
+#portal ==>APPRoutePowerView
+add property channel_APPRouteChannel1 on program eServiceSchemaVariableMapping.tcl to channel 'APPRouteChannel1';

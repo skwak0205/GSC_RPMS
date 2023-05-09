@@ -1,0 +1,17 @@
+del command 'CFPProductManufacturingPlanComposition';
+add command 'CFPProductManufacturingPlanComposition'
+	description	''
+	label	'DMCPlanning.Channel.Heading.ManufacturingPlanComposition'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=ManufacturingPlan:getActiveManufacturingPlans&sortColumnName=None&expandProgram=ManufacturingPlan:getManufacturingPlanBreakdown&table=CFPProductMPCompositionSummaryTable&freezePane=Revision,DerivationCue&selection=multiple&toolbar=CFPMPDerivationToolbar&editLink=true&header=DMCPlanning.Heading.ManufacturingPlanComposition&HelpMarker=emxhelpmanufacturingplanview&massPromoteDemote=false&objectCompare=false'
+	alt	''
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Access Function'		'isMobileModeDisabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPProductManufacturingPlanComposition'
+	property	'version'	value	'R418'
+;
+#channel ==>CFPProductManufacturingPlanChannel
+add property command_CFPProductManufacturingPlanComposition on program eServiceSchemaVariableMapping.tcl to command 'CFPProductManufacturingPlanComposition';

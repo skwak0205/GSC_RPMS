@@ -1,0 +1,15 @@
+del menu 'MCMAttributeGroupPropertiesDetailToolBar';
+add menu 'MCMAttributeGroupPropertiesDetailToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'MultipleClassification'
+	menu	'MCMAttributeGroupPropertiesDetailActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'MCMAttributeGroupPropertiesDetailToolBar'
+	property 'version'	value	'10-6-0-1'
+;
+add property menu_MCMAttributeGroupPropertiesDetailToolBar on program eServiceSchemaVariableMapping.tcl to menu 'MCMAttributeGroupPropertiesDetailToolBar';

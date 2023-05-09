@@ -1,0 +1,23 @@
+del command 'RMTMarkAsSource';
+add command 'RMTMarkAsSource'
+	description	''
+	label	'emxRequirements.Command.MarkAsSource'
+	href	'javascript:RMTMarkAsSource_onClick()'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTMarkAsSource'
+	property	'version'	value	'R422'
+;
+modify menu RMTMenuLinkSubDerived add command RMTMarkAsSource order command RMTMarkAsSource 1;
+#channel ==>RMTMenuLinkSubDerived
+add property command_RMTMarkAsSource on program eServiceSchemaVariableMapping.tcl to command 'RMTMarkAsSource';

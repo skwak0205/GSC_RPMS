@@ -1,0 +1,15 @@
+del menu 'Msoitype_GeneralClass';
+add menu 'Msoitype_GeneralClass'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'LCGeneralClassSubClasses'
+	command	'LCEndItems'
+	property 'installer'	value	'ENOVIAIntegrationEngineering'
+	property 'application'	value	'IntegrationFramework'
+	property 'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property 'original name'	value	'Msoitype_GeneralClass'
+	property 'version'	value	'V6R2022x'
+;
+add property menu_Msoitype_GeneralClass on program eServiceSchemaVariableMapping.tcl to menu 'Msoitype_GeneralClass';

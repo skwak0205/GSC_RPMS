@@ -1,0 +1,23 @@
+del command 'ECMAttributeRemove';
+add command 'ECMAttributeRemove'
+	description	'Attribute command for Change Template in ECM'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=removeAttribute'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.RemoveAttributeDialog.Confirm'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAttributeRemove'
+	property	'version'	value	'R417'
+;
+modify menu ECMAttributeActionsToolBar add command ECMAttributeRemove order command ECMAttributeRemove 0;
+#channel ==>ECMAttributeActionsToolBar
+add property command_ECMAttributeRemove on program eServiceSchemaVariableMapping.tcl to command 'ECMAttributeRemove';

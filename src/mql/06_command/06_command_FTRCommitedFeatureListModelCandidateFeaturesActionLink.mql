@@ -1,0 +1,20 @@
+del command 'FTRCommitedFeatureListModelCandidateFeaturesActionLink';
+add command 'FTRCommitedFeatureListModelCandidateFeaturesActionLink'
+	description	''
+	label	'emxProduct.ActionLink.CommitedFeaturesList'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=FTRModelCommitedFeatureTable&program=emxModel:getCommitedFeatures&header=emxProduct.Heading.CommittedFeaturesList&&massPromoteDemote=false&expandLevelFilter=false&autoFilter=false&multiColumnSort=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCommitedFeatureListModelCandidateFeaturesActionLink'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRCommitedFeatureListModelCandidateFeaturesActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCommitedFeatureListModelCandidateFeaturesActionLink';

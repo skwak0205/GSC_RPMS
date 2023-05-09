@@ -1,0 +1,21 @@
+del menu 'PMCFolderColumnRMBMenu';
+add menu 'PMCFolderColumnRMBMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxProjectFolder'
+	setting	'Dynamic Command Function'		'getDynamicCommandsForRMBMenu'
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCLifecycle'
+	command	'PMCProjectBookmarksCreate'
+	command	'PMCProjectBookmarksDelete'
+	menu	'PMCWorkspaceVaultColumnRMBSubMenu'
+	menu	'PMCWorkspaceVaultAddContnetActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCFolderColumnRMBMenu'
+	property 'version'	value	'R420'
+;
+add property menu_PMCFolderColumnRMBMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCFolderColumnRMBMenu';

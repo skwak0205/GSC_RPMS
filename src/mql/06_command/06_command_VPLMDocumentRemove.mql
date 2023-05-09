@@ -1,0 +1,16 @@
+del command 'VPLMDocumentRemove';
+add command 'VPLMDocumentRemove'
+	description	'Remove Selected Documents'
+	label	'emxFramework.Command.VPLMDocumentRemove'
+	href	'${COMMON_DIR}/emxVPLMDocumentRemove.jsp?action=disconnect'
+	alt	'emxFramework.Command.Alt.VPLMDocumentRemove'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'VPLMWebMgt'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	setting	'Confirm Message'		'emxFramework.Alert.Remove'
+;
+modify menu VPLMDocumentActionMenu add command VPLMDocumentRemove order command VPLMDocumentRemove 4;
+#channel ==>VPLMDocumentActionMenu
+add property command_VPLMDocumentRemove on program eServiceSchemaVariableMapping.tcl to command 'VPLMDocumentRemove';

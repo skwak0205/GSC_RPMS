@@ -1,0 +1,11 @@
+# del attribute 'gscMeasureofSuccess4';
+add attribute 'gscMeasureofSuccess4'
+ type 'string'
+ description 'gscMeasureofSuccess4'
+ property 'installer' value 'ENOVIAEngineering'
+ property 'application' value 'Framework'
+ property 'installed date' value 'Thu Oct 27 15:46:56 KST 2022'
+ property 'original name' value 'gscMeasureofSuccess4'
+ property 'version' value '9-5-1-0'
+;
+add property attribute_gscMeasureofSuccess4 on program eServiceSchemaVariableMapping.tcl to attribute 'gscMeasureofSuccess4';

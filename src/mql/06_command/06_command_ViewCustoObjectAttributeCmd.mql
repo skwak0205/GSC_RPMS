@@ -1,0 +1,18 @@
+del command 'ViewCustoObjectAttributeCmd';
+add command 'ViewCustoObjectAttributeCmd'
+	description	'Command to Add and edit Extensions'
+	label	'emxQualification.label.ModifyAttributesCmd'
+	href	'${COMMON_DIR}/emxForm.jsp?form=EditAttributeOfExtensionForm&toolbar=none&preProcessJPO=emxQualificationProgram:isExtensionSelected&postProcessURL=../Qualification/emxQualificationAddExtension.jsp&formHeader=emxQualification.label.ModifyAttributesCmd&findMxLink=false&showPageURLIcon=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Qualification'
+	setting	'Access Expression'		'current.access[modify] == false'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCustoAttrsOnObject'
+	setting	'Access Program'		'emxQualificationProgram'
+	setting	'Row Select'		'none'
+;
+modify menu PLMExtensionsToolbar add command ViewCustoObjectAttributeCmd order command ViewCustoObjectAttributeCmd 3;
+#channel ==>PLMExtensionsToolbar
+add property command_ViewCustoObjectAttributeCmd on program eServiceSchemaVariableMapping.tcl to command 'ViewCustoObjectAttributeCmd';

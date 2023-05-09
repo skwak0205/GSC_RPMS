@@ -1,0 +1,18 @@
+del command 'APPWorkflowTaskOverrideActionLink';
+add command 'APPWorkflowTaskOverrideActionLink'
+	description	'Workflow task override action link'
+	label	'emxComponents.Command.Override'
+	href	'${COMPONENT_DIR}/emxWorkflowTaskAction.jsp?action=override'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current == "Started" || current == "Assigned") && to[Workflow Task].from.owner == context.user && to[Workflow Task].from.current == "Started"'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowTaskOverrideActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowTaskPropertiesActionToolbar add command APPWorkflowTaskOverrideActionLink order command APPWorkflowTaskOverrideActionLink 3;
+#channel ==>APPWorkflowTaskPropertiesActionToolbar
+add property command_APPWorkflowTaskOverrideActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowTaskOverrideActionLink';

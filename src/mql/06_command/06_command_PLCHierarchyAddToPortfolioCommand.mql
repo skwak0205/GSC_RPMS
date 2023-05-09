@@ -1,0 +1,21 @@
+del command 'PLCHierarchyAddToPortfolioCommand';
+add command 'PLCHierarchyAddToPortfolioCommand'
+	description	''
+	label	'emxProduct.ActionLink.AddToPortfolio'
+	href	'${SUITE_DIR}/PLCHierarchyAddToPortfolioPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'$<expression[PortfolioEnabled]=="true">'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/AddToPortfolio32.png'
+	property	'version'	value	'R423'
+;
+modify menu PLCProductListToolBar add command PLCHierarchyAddToPortfolioCommand order command PLCHierarchyAddToPortfolioCommand 3;
+modify menu PLCProductLineHierarchyToolbar add command PLCHierarchyAddToPortfolioCommand order command PLCHierarchyAddToPortfolioCommand 2;
+modify menu PLCProductLineHierarchyMenu add command PLCHierarchyAddToPortfolioCommand order command PLCHierarchyAddToPortfolioCommand 2;
+#channel ==>PLCProductListToolBarPLCProductLineHierarchyToolbarPLCProductLineHierarchyMenu
+add property command_PLCHierarchyAddToPortfolioCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCHierarchyAddToPortfolioCommand';

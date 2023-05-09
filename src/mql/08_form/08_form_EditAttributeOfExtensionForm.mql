@@ -1,0 +1,15 @@
+del form 'EditAttributeOfExtensionForm';
+add form 'EditAttributeOfExtensionForm' web
+field #1
+	name	'dynamic'
+	label	'Extension Attributes'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Category'		'CustoAttribute'
+	setting	'Registered Suite'		'Qualification'
+	setting	'Access Function'		'accessObjEditAttributes'
+	setting	'Access Program'		'emxQualificationProgram'
+	setting	'Field Type'		'Dynamic Attributes'
+;
+add property form_EditAttributeOfExtensionForm on program eServiceSchemaVariableMapping.tcl to form 'EditAttributeOfExtensionForm';

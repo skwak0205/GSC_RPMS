@@ -1,0 +1,24 @@
+del command 'APPRemoveRecipientsActionLink';
+add command 'APPRemoveRecipientsActionLink'
+	description	''
+	label	'emxComponents.PushedRecipients.RemoveSelected'
+	href	'${COMPONENT_DIR}/emxRemovePushSubscription.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.PushedRecipients.AlertRemove'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRemoveRecipientsActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPPushSubscriptionsToolbar add command APPRemoveRecipientsActionLink order command APPRemoveRecipientsActionLink 0;
+#channel ==>APPPushSubscriptionsToolbar
+add property command_APPRemoveRecipientsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRemoveRecipientsActionLink';

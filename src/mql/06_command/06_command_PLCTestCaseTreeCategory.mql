@@ -1,0 +1,16 @@
+del command 'PLCTestCaseTreeCategory';
+add command 'PLCTestCaseTreeCategory'
+	description	'Command Object for Test Case'
+	label	'emxProduct.Tree.TestCase'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCTestCaseList&program=emxTestCase:getOwnedTestCases,emxTestCase:getTestCases&header=emxProduct.Tree.TestCase&selection=multiple&toolbar=TestCasesToolbar&sortColumnName=Name&HelpMarker=emxhelptestcaselist&freezePane=Name&suiteKey=ProductLine&pagination=100&programLabel=emxProduct.Filter.Owned,emxProduct.Filter.All'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Function'		'isStandAloneTCEnabled'
+	setting	'Access Program'		'emxTestCase'
+	setting	'Image'		'${COMMON_DIR}/iconSmallTestCase.gif'
+	property	'version'	value	'R422'
+;
+modify menu PLCMyDesk add command PLCTestCaseTreeCategory order command PLCTestCaseTreeCategory 0;
+#channel ==>PLCMyDesk
+add property command_PLCTestCaseTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCTestCaseTreeCategory';

@@ -1,0 +1,17 @@
+del menu 'type_RequirementGroupRMB';
+add menu 'type_RequirementGroupRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTRequirementGroupPropertiesSlidein'
+	command	'AEFLifecycle'
+	menu	'AEFClipboardCollectionsRMB'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_RequirementGroupRMB'
+	property 'version'	value	'V6R2014'
+;
+add property menu_type_RequirementGroupRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_RequirementGroupRMB';

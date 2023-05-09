@@ -1,0 +1,20 @@
+del command 'FTRMakeActivePartActionLink';
+add command 'FTRMakeActivePartActionLink'
+	description	''
+	label	'emxProduct.ActionLink.MakeActivePart'
+	href	'${SUITE_DIR}/PartUtil.jsp?mode=Active'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMakeActivePartActionLink'
+	property	'version'	value	'R215'
+;
+modify menu FTRInactivePartListToolBarMenu add command FTRMakeActivePartActionLink order command FTRMakeActivePartActionLink 0;
+#channel ==>FTRInactivePartListToolBarMenu
+add property command_FTRMakeActivePartActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRMakeActivePartActionLink';

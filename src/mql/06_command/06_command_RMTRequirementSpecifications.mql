@@ -1,0 +1,28 @@
+del command 'RMTRequirementSpecifications';
+add command 'RMTRequirementSpecifications'
+	description	'lists the specifications in the parent Object'
+	label	'emxRequirements.Tree.Specification'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRequirement:getRequirementSpecifications&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=RequirementSpecificationSummaryToolbar&header=emxRequirements.Heading.Specification&HelpMarker=emxhelpspeclist&freezePane=Name'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'policy != "Requirement Version"'
+	setting	'Access Function'		'showRMTRequirementSpecifications'
+	setting	'Access Program'		'emxRMTCommon'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementSpecifications'
+	property	'version'	value	'R422'
+;
+modify menu Msoitype_Requirement add command RMTRequirementSpecifications order command RMTRequirementSpecifications 2;
+#channel ==>Msoitype_RequirementRMTRelatedObjects
+add property command_RMTRequirementSpecifications on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementSpecifications';

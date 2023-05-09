@@ -1,0 +1,11 @@
+m|CAT3DAnnotationWebUXServices\CAT3DAnnotationController.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.0.22197|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\CAT3DAnnotationController\CAT3DAnnotationController.js|1657940527|46555
+s|CAT3DAnnotationWebUXServices\CAT3DAnnotationController.mweb\src\_copyright.js|1480428882|63
+u|CAT3DAnnotationWebUXServices\CAT3DAnnotationController.mweb\src\CAT3DAnnotBaseControllerInstance.js|1656687805|123998
+u|CAT3DAnnotationWebUXServices\CAT3DAnnotationController.mweb\src\CAT3DAnnotationController.js|1644327795|2766
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

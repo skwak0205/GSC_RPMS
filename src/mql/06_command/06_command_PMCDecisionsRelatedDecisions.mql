@@ -1,0 +1,16 @@
+del command 'PMCDecisionsRelatedDecisions';
+add command 'PMCDecisionsRelatedDecisions'
+	description	''
+	label	'emxProgramCentral.Common.RelatedDecisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProgramCentralUtil:getTablePMCDecisionsRelatedDecisionsData&table=PMCDecisionsRelatedDecisions&selection=multiple'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDecisionsRelatedDecisions'
+	property	'version'	value	'R216'
+;
+#channel ==>PMCDecisionsRelatedDecisions
+add property command_PMCDecisionsRelatedDecisions on program eServiceSchemaVariableMapping.tcl to command 'PMCDecisionsRelatedDecisions';

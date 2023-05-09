@@ -1,0 +1,24 @@
+del command 'IEFDesktopUnlockCommand';
+add command 'IEFDesktopUnlockCommand'
+	description	'IEF Desktop Unlock Command'
+	label	'emxIEFDesignCenter.Common.UnLock'
+	href	''
+	alt	''
+	setting	'iefcname'		'iefdesktopaction'
+	setting	'iefaction'		'unlock'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	setting	'Row Select'		'multi'
+	setting	'iefrefreshpage'		'true'
+	setting	'iefwaitforresponse'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopUnlockCommand'
+	property	'version'	value	'R424'
+;
+modify menu IEFDesktopLocalWorkspaceActionMenu add command IEFDesktopUnlockCommand order command IEFDesktopUnlockCommand 5;
+modify menu IEFDesktopActionsMenu add command IEFDesktopUnlockCommand order command IEFDesktopUnlockCommand 0;
+modify menu IEFDesktopMyLockedActionMenu add command IEFDesktopUnlockCommand order command IEFDesktopUnlockCommand 0;
+#channel ==>IEFDesktopLocalWorkspaceActionMenuIEFDesktopActionsMenuIEFDesktopMyLockedActionMenu
+add property command_IEFDesktopUnlockCommand on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopUnlockCommand';

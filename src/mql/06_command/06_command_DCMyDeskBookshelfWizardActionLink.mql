@@ -1,0 +1,24 @@
+del command 'DCMyDeskBookshelfWizardActionLink';
+add command 'DCMyDeskBookshelfWizardActionLink'
+	description	'My Desk Bookshelf Create Wizard'
+	label	'emxDocumentCentral.ActionBarCmd.BookshelfWizard'
+	href	'${SUITE_DIR}/emxDocumentCentralDocumentClassificationCreateWizardDialogFS.jsp?type=type_Bookshelf'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	user	'Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCMyDeskBookshelfWizardActionLink'
+	property	'version'	value	'10-5'
+;
+modify menu DCAllBookshelvesTopActionbar add command DCMyDeskBookshelfWizardActionLink order command DCMyDeskBookshelfWizardActionLink 0;
+#channel ==>DCAllBookshelvesTopActionbar
+add property command_DCMyDeskBookshelfWizardActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCMyDeskBookshelfWizardActionLink';

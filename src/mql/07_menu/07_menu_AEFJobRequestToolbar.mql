@@ -1,0 +1,15 @@
+del menu 'AEFJobRequestToolbar';
+add menu 'AEFJobRequestToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	menu	'AEFJobRequestToolbarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFJobRequestToolbar'
+	property 'version'	value	'10-7'
+;
+add property menu_AEFJobRequestToolbar on program eServiceSchemaVariableMapping.tcl to menu 'AEFJobRequestToolbar';

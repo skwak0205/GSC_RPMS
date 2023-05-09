@@ -1,0 +1,23 @@
+del command 'DCFilesUploadExternalFileActionLink';
+add command 'DCFilesUploadExternalFileActionLink'
+	description	'Upload External File Action Link'
+	label	'emxDocumentCentral.ActionBarCmd.UploadExternalFile'
+	href	'${SUITE_DIR}/emxDocumentCentralRedirectForFCS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'450'
+	setting	'Window Width'		'730'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCFilesUploadExternalFileActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCFilesTopActionbar add command DCFilesUploadExternalFileActionLink order command DCFilesUploadExternalFileActionLink 0;
+#channel ==>DCFilesTopActionbar
+add property command_DCFilesUploadExternalFileActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCFilesUploadExternalFileActionLink';

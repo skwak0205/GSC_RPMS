@@ -1,0 +1,16 @@
+del command 'AEFCollections';
+add command 'AEFCollections'
+	description	'AEF Collections'
+	label	'emxFramework.Collections.Collections'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxAEFCollection:getCollections&table=AEFCollection&toolbar=AEFCollectionToolBar&objectBased=false&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpcollections&header=emxFramework.Collections.Collections&selection=multiple&PrinterFriendly=true&displayView=details&showClipboard=false'
+	alt	'emxFramework.Collections.Collections'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCollections'
+	property	'version'	value	'R419'
+;
+#channel ==>My EnoviaAEFPowerViewChannel
+add property command_AEFCollections on program eServiceSchemaVariableMapping.tcl to command 'AEFCollections';

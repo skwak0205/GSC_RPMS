@@ -1,0 +1,18 @@
+del menu 'PMCDurationKeywordsToolBarActions';
+add menu 'PMCDurationKeywordsToolBarActions'
+	description	''
+	label	'emxProgramCentral.DurationKeywords.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	command	'PMCDurationKeywordsCreate'
+	command	'PMCDurationKeywordsDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCDurationKeywordsToolBarActions'
+	property 'version'	value	'R419'
+;
+add property menu_PMCDurationKeywordsToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCDurationKeywordsToolBarActions';

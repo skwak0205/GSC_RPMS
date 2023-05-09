@@ -1,0 +1,17 @@
+del command 'PLCSearchDocumentsCommand';
+add command 'PLCSearchDocumentsCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindDocuments'
+	href	'${SUITE_DIR}/SearchDocumentsForm.jsp?program=emxProductSearch:getDocuments&table=PLCSearchDocumentsTable&commandName=addexisting&HelpMarker=emxhelpsearchresults&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchDocumentsCommand'
+	property	'version'	value	'R418'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchDocumentsCommand order command PLCSearchDocumentsCommand 38;
+#channel ==>SearchAddExistingChooserMenu
+add property command_PLCSearchDocumentsCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchDocumentsCommand';

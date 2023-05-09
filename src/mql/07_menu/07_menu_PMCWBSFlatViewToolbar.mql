@@ -1,0 +1,21 @@
+del menu 'PMCWBSFlatViewToolbar';
+add menu 'PMCWBSFlatViewToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWBSQuickTaskTypeToAddBelow'
+	command	'PMCWBSQuickTasksToAddBelow'
+	command	'PMCWBSFlatViewAddAboveToggle'
+	command	'PMCWBSFlatViewAddAbove'
+	command	'PMCWBSFlatViewDelete'
+	command	'PMCRollupEngine'
+	command	'PMCCalculateFloatAndCriticalPath'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWBSFlatViewToolbar'
+	property 'version'	value	'R421.HF5'
+;
+add property menu_PMCWBSFlatViewToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCWBSFlatViewToolbar';

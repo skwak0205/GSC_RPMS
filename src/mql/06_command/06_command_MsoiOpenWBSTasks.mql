@@ -1,0 +1,18 @@
+del command 'MsoiOpenWBSTasks';
+add command 'MsoiOpenWBSTasks'
+	description	'Open WBS Tasks Command object specific to MS Office Integration'
+	label	'emxIEFDesignCenter.Common.OpenWBSTasks'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxMsoiWBSTasksUtil:getCurrentUserWBSTasks&tasks=&table=MsoiWBSTasksSummary'
+	alt	'emxIEFDesignCenter.Common.OpenWBSTasks'
+	setting	'Registered Suite'		'IntegrationFramework'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiOpenWBSTasks'
+	property	'version'	value	'V6R2022x'
+;
+modify menu Msoitype_WBSTasks add command MsoiOpenWBSTasks order command MsoiOpenWBSTasks 1;
+#channel ==>Msoitype_WBSTasks
+add property command_MsoiOpenWBSTasks on program eServiceSchemaVariableMapping.tcl to command 'MsoiOpenWBSTasks';

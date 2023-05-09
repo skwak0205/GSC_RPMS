@@ -1,0 +1,9 @@
+del table '3DLive Basic' system;
+add table '3DLive Basic' system
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'3DLive Basic'
+	property	'version'	value	'10-7-SP1'
+;
+add property table_3DLiveBasic on program eServiceSchemaVariableMapping.tcl to table '3DLive Basic' system;

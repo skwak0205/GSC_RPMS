@@ -1,0 +1,15 @@
+del channel 'APPWhereUsedChannel';
+add channel 'APPWhereUsedChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	command 	'APPWhereUsedHData','APPWhereUsedRData'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'WhereUsed'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWhereUsedChannel'
+	property	'version'	value	'R213'
+;
+#portal ==>APPWhereUsedPortal
+add property channel_APPWhereUsedChannel on program eServiceSchemaVariableMapping.tcl to channel 'APPWhereUsedChannel';

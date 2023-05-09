@@ -1,0 +1,12 @@
+del command 'APPVPLMProjectCreate';
+add command 'APPVPLMProjectCreate'
+	description	''
+	label	'emxPlmOnline.label.Create'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=CreateProject&dir=XP'
+	alt	'emxPlmOnline.label.Create'
+	setting	'Registered Suite'		'VPLMAdministration'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+#channel ==>ProjectVPLMChannel
+add property command_APPVPLMProjectCreate on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMProjectCreate';

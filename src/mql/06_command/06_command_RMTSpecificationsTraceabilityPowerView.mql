@@ -1,0 +1,19 @@
+del command 'RMTSpecificationsTraceabilityPowerView';
+add command 'RMTSpecificationsTraceabilityPowerView'
+	description	''
+	label	'emxRequirements.Common.RMTTraceabilityPowerView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=RMTSpecificationsTraceability&showPageHeader=true&header=emxRequirements.Heading.ReportsCategory'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationsTraceabilityPowerView'
+	property	'version'	value	'R422'
+;
+modify menu type_SoftwareRequirementSpecification add command RMTSpecificationsTraceabilityPowerView order command RMTSpecificationsTraceabilityPowerView 0;
+#channel ==>type_SoftwareRequirementSpecification
+add property command_RMTSpecificationsTraceabilityPowerView on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecificationsTraceabilityPowerView';

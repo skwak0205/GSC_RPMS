@@ -1,0 +1,18 @@
+del command 'DCCompanyPeopleTreeCategory';
+add command 'DCCompanyPeopleTreeCategory'
+	description	'People Tree Category'
+	label	'emxDocumentCentral.TreeCategory.People'
+	href	'${SUITE_DIR}/emxDocumentCentralStartFrameSet.jsp?topActionbar=DCCompanyPeopleTopActionbar&bottomActionbar=DCCompanyPeopleBottomActionbar&header=emxDocumentCentral.Common.People'
+	alt	'emxDocumentCentral.TreeCategory.People'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallPersonFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCompanyPeopleTreeCategory'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCtype_Company add command DCCompanyPeopleTreeCategory order command DCCompanyPeopleTreeCategory 0;
+#channel ==>DCtype_Company
+add property command_DCCompanyPeopleTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'DCCompanyPeopleTreeCategory';

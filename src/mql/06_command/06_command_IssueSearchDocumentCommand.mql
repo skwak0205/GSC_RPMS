@@ -1,0 +1,17 @@
+del command 'IssueSearchDocumentCommand';
+add command 'IssueSearchDocumentCommand'
+	description	'Issue Find Document Command Object'
+	label	'emxComponents.Command.SearchDocumentIssueLink'
+	href	'${SUITE_DIR}/emxIssueSearchDocumentsForm.jsp?program=emxCommonIssueBase:getDocuments&table=IssueSearchDocumentTable&commandName=addexisting&HelpMarker=emxhelpsearch'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueSearchDocumentCommand'
+	property	'version'	value	'R214'
+;
+modify menu SearchIssueAddExistingChooser add command IssueSearchDocumentCommand order command IssueSearchDocumentCommand 7;
+modify menu APPECSearchAddExistingChooser add command IssueSearchDocumentCommand order command IssueSearchDocumentCommand 9;
+#channel ==>SearchIssueAddExistingChooserAPPECSearchAddExistingChooser
+add property command_IssueSearchDocumentCommand on program eServiceSchemaVariableMapping.tcl to command 'IssueSearchDocumentCommand';

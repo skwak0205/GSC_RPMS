@@ -1,0 +1,21 @@
+del command 'PMCProjectBenefitViewsFilter';
+add command 'PMCProjectBenefitViewsFilter'
+	description	'Interval Filter Command'
+	label	'emxProgramCentral.ProjectBenefitOrBudget.ViewFilter'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=benifitFilter'
+	alt	'emxProgramCentral.ProjectBenefitOrBudget.ViewFilter'
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getBenefitOrBudgetViewsFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxBenefitItem'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitViewsFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCProjectBenefitFilter add command PMCProjectBenefitViewsFilter order command PMCProjectBenefitViewsFilter 0;
+#channel ==>PMCProjectBenefitFilter
+add property command_PMCProjectBenefitViewsFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitViewsFilter';

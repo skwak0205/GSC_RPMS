@@ -1,0 +1,18 @@
+del command 'PMCWorkspaceVaultFolderPromotedEvent';
+add command 'PMCWorkspaceVaultFolderPromotedEvent'
+	description	''
+	label	'emxProgramCentral.FolderSubscription.Event.Folder_Promoted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Event Type'		'Folder Promoted'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkspaceVaultFolderPromotedEvent'
+	property	'version'	value	'R216'
+;
+modify menu PMCControlledFolderSubscriptionEvents add command PMCWorkspaceVaultFolderPromotedEvent order command PMCWorkspaceVaultFolderPromotedEvent 9;
+#channel ==>PMCControlledFolderSubscriptionEvents
+add property command_PMCWorkspaceVaultFolderPromotedEvent on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkspaceVaultFolderPromotedEvent';

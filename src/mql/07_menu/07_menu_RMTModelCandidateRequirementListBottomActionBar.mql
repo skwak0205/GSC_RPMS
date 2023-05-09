@@ -1,0 +1,19 @@
+del menu 'RMTModelCandidateRequirementListBottomActionBar';
+add menu 'RMTModelCandidateRequirementListBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTUpdateRevisionActionLink'
+	command	'RMTCommitSelectedModelCandidateRequirementsActionLink'
+	command	'RMTReplaceCandidateRequirementActionsLink'
+	command	'RMTRemoveRequirementActionLink'
+	command	'RMTDeleteRequirementActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTModelCandidateRequirementListBottomActionBar'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTModelCandidateRequirementListBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTModelCandidateRequirementListBottomActionBar';

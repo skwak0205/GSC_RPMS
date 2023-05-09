@@ -1,0 +1,14 @@
+del portal 'PMCPropertiesPortal';
+add portal 'PMCPropertiesPortal'
+	description	'Properties Portal for Gate View'
+	label	'emxFramework.Command.PMCPropertiesPortal'
+	href	''
+	channel 	PMCPropertiesChannel
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCPropertiesPortal'
+	property	'version'	value	'R210'
+;
+add property portal_PMCPropertiesPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCPropertiesPortal';

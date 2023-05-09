@@ -1,0 +1,15 @@
+del menu 'type_Image';
+add menu 'type_Image'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/ImageUtil.jsp?form=type_Image&actionBarName=PLCImagePropertiesTopActionBar&formHeader=emxProduct.Heading.PropertiesWithoutRevision&mode=FormImage&HelpMarker=emxhelpimagedetails'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/iconSmallImage.gif'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_Image'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_type_Image on program eServiceSchemaVariableMapping.tcl to menu 'type_Image';

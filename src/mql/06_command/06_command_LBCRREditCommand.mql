@@ -1,0 +1,21 @@
+del command 'LBCRREditCommand';
+add command 'LBCRREditCommand'
+	description	'Displays Edit Command in RR & RH'
+	label	'emxDocumentCentral.ActionBarCmd.Edit'
+	href	'javascript:editMode()'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Access Function'		'isInActiveState'
+	setting	'Access Program'		'emxRetainedDocument'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCRREditCommand'
+	property	'version'	value	'R421'
+;
+modify menu LCRetainedDocumentSummaryActionsToolBar add command LBCRREditCommand order command LBCRREditCommand 0;
+#channel ==>LCRetainedDocumentSummaryActionsToolBar
+add property command_LBCRREditCommand on program eServiceSchemaVariableMapping.tcl to command 'LBCRREditCommand';

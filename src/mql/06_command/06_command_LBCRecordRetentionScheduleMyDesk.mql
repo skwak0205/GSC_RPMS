@@ -1,0 +1,25 @@
+del command 'LBCRecordRetentionScheduleMyDesk';
+add command 'LBCRecordRetentionScheduleMyDesk'
+	description	'Record Retention Schedules'
+	label	'emxLibraryCentral.Command.LCRecordRetentionSchedule'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&table=LCRetentionRecordSummary&toolbar=LCRetentionRecordSummaryToolbar&program=emxRetentionRecordBase:getActiveScheduledStateRecords,emxRetentionRecordBase:getCreatedStateRecords,emxRetentionRecordBase:getAllRetentionRecords,emxRetentionRecordBase:getPurgedStateRecords&programLabel=emxLibraryCentral.Command.Filter.Active/Scheduled,emxLibraryCentral.Command.Filter.Created,emxLibraryCentral.Command.Filter.All,emxLibraryCentral.Command.Filter.Purged&header=emxLibraryCentral.Common.RecordRetentionSchedule&HelpMarker=emxhelplibraryrecretentionsummary&selection=multiple'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP,ENO_LIB_TP'
+	setting	'Access Function'		'retentionFeatureEnabled'
+	setting	'Access Program'		'emxRetentionRecord'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Record Retention Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCRecordRetentionScheduleMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu LBCMyDesk add command LBCRecordRetentionScheduleMyDesk order command LBCRecordRetentionScheduleMyDesk 0;
+#channel ==>LBCMyDesk
+add property command_LBCRecordRetentionScheduleMyDesk on program eServiceSchemaVariableMapping.tcl to command 'LBCRecordRetentionScheduleMyDesk';

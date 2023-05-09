@@ -1,0 +1,25 @@
+del command 'ctxMsoiCmd_Separator';
+add command 'ctxMsoiCmd_Separator'
+	description	'ctxMsoiCmd_Separator'
+	label	'emxMSF.Command.ctxMsoiCmd_Separator'
+	href	''
+	alt	'ctxMsoiCmd_Separator'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_Separator'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Navigation_FileLocked add command ctxMsoiCmd_Separator order command ctxMsoiCmd_Separator 4;
+modify menu ctxMsoi_Navigation_FileUnlocked add command ctxMsoiCmd_Separator order command ctxMsoiCmd_Separator 4;
+modify menu ctxMsoi_Navigation_MultiFile add command ctxMsoiCmd_Separator order command ctxMsoiCmd_Separator 3;
+modify menu ctxMsoi_Navigation_NoFiles add command ctxMsoiCmd_Separator order command ctxMsoiCmd_Separator 2;
+modify menu ctxMsoi_SearchResults_FileLocked add command ctxMsoiCmd_Separator order command ctxMsoiCmd_Separator 4;
+modify menu ctxMsoi_SearchResults_FileUnlocked add command ctxMsoiCmd_Separator order command ctxMsoiCmd_Separator 4;
+modify menu ctxMsoi_SearchResults_MultiFile add command ctxMsoiCmd_Separator order command ctxMsoiCmd_Separator 3;
+modify menu ctxMsoi_SearchResults_NoFiles add command ctxMsoiCmd_Separator order command ctxMsoiCmd_Separator 2;
+#channel ==>ctxMsoi_Navigation_FileLockedctxMsoi_Navigation_FileUnlockedctxMsoi_Navigation_MultiFilectxMsoi_Navigation_NoFilesctxMsoi_SearchResults_FileLockedctxMsoi_SearchResults_FileUnlockedctxMsoi_SearchResults_MultiFilectxMsoi_SearchResults_NoFiles
+add property command_ctxMsoiCmd_Separator on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_Separator';

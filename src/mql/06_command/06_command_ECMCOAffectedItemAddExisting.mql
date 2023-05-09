@@ -1,0 +1,26 @@
+del command 'ECMCOAffectedItemAddExisting';
+add command 'ECMCOAffectedItemAddExisting'
+	description	'COAffectedItemAddExisting'
+	label	'EnterpriseChangeMgt.Command.AddExisting'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=AffectedItemsAddExisting&isFrom=true&targetRelName=relationship_ChangeAffectedItem'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>])'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'false'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAllowedToAddProposedChange'
+	setting	'Access Program'		'jpo.EnterpriseChangeMdl.ChangeOrderMdl'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOAffectedItemAddExisting'
+	property	'version'	value	'R417'
+;
+modify menu ECMCOAffectedItemsListToolbar add command ECMCOAffectedItemAddExisting order command ECMCOAffectedItemAddExisting 1;
+#channel ==>ECMCOAffectedItemsListToolbar
+add property command_ECMCOAffectedItemAddExisting on program eServiceSchemaVariableMapping.tcl to command 'ECMCOAffectedItemAddExisting';

@@ -1,0 +1,21 @@
+del command 'EditDetailsRegionActionLink';
+add command 'EditDetailsRegionActionLink'
+	description	'Edit Region Action Link'
+	label	'emxComponents.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=RegionForm&mode=edit&formHeader=emxComponents.Region.EditRegion&HelpMarker=emxhelpregioneditdetails'
+	alt	'emxComponents.Button.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'EditDetailsRegionActionLink'
+	property	'version'	value	'R417'
+;
+modify menu RegionEditTopActionBar add command EditDetailsRegionActionLink order command EditDetailsRegionActionLink 0;
+#channel ==>RegionEditTopActionBar
+add property command_EditDetailsRegionActionLink on program eServiceSchemaVariableMapping.tcl to command 'EditDetailsRegionActionLink';

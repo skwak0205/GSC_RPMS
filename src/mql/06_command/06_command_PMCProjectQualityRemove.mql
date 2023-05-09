@@ -1,0 +1,28 @@
+del command 'PMCProjectQualityRemove';
+add command 'PMCProjectQualityRemove'
+	description	'Command for remove'
+	label	'emxProgramCentral.Button.Remove'
+	href	'${SUITE_DIR}/emxProgramCentralQualityProcess.jsp?action=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectQualityRemove'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectQualityToolbarActions add command PMCProjectQualityRemove order command PMCProjectQualityRemove 0;
+#channel ==>PMCProjectQualityToolbarActions
+add property command_PMCProjectQualityRemove on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectQualityRemove';

@@ -1,0 +1,31 @@
+del command 'PMCContentUploadFiles';
+add command 'PMCContentUploadFiles'
+	description	'Upload Files'
+	label	'emxProgramCentral.Common.UploadFiles'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=createMasterPerFile&appDir=programcentral&appProcessPage=emxProgramCentraFolderUtil.jsp?actionMode=uploaddeliverable'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canUploadFilesForAttachment'
+	setting	'Access Program'		'emxTaskBase'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCContentUploadFiles'
+	property	'version'	value	'R422'
+;
+modify menu PMCContentSummaryToolBarActions add command PMCContentUploadFiles order command PMCContentUploadFiles 1;
+modify menu PMCAssessmentAttachmentsToolBarActions add command PMCContentUploadFiles order command PMCContentUploadFiles 1;
+modify menu PMCDeliverableSummaryToolBarActions add command PMCContentUploadFiles order command PMCContentUploadFiles 1;
+#channel ==>PMCContentSummaryToolBarActionsPMCAssessmentAttachmentsToolBarActionsPMCDeliverableSummaryToolBarActions
+add property command_PMCContentUploadFiles on program eServiceSchemaVariableMapping.tcl to command 'PMCContentUploadFiles';

@@ -1,0 +1,27 @@
+del command 'PeopleAddExistingBU';
+add command 'PeopleAddExistingBU'
+	description	'People AddExisting Command Object for Business Unit'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Person:CURRENT=policy_Person.state_Active&mode=addPeopleToCompany&submitLabel=emxFramework.GlobalSearch.Done&table=AEFPersonChooserDetails&form=BPSUserSearchForm&selection=multiple&submitURL=../components/emxCommonFullSearchProcess.jsp&showInitialResults=true&includeOIDprogram=emxBusinessUnit:includePersonsInCompany&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects&srcDestRelName=relationship_Member&isTo=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'type=="$<type_BusinessUnit>"'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForPeopleAddExisting'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddMember.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'PeopleAddExistingBU'
+	property	'version'	value	'R420.HF5'
+;
+modify menu APPPeopleSummaryActionsToolBar add command PeopleAddExistingBU order command PeopleAddExistingBU 3;
+modify menu APPPeopleSummaryToolBar add command PeopleAddExistingBU order command PeopleAddExistingBU 5;
+#channel ==>APPPeopleSummaryActionsToolBarAPPPeopleSummaryToolBar
+add property command_PeopleAddExistingBU on program eServiceSchemaVariableMapping.tcl to command 'PeopleAddExistingBU';

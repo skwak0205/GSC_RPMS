@@ -1,0 +1,26 @@
+del command 'RMTAddConfigurationContextAction';
+add command 'RMTAddConfigurationContextAction'
+	description	'This link will add an existing model to the context object'
+	label	'emxRequirements.ActionLink.AddConfiguration'
+	href	'${SUITE_DIR}/SpecificationStructureAddExisting.jsp?toolbar=none&editLink=false&addType=Model'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTAddConfigurationContextAction'
+	property	'version'	value	'R422'
+;
+modify menu RMTConfigurationManagementActions add command RMTAddConfigurationContextAction order command RMTAddConfigurationContextAction 1;
+#channel ==>RMTConfigurationManagementActions
+add property command_RMTAddConfigurationContextAction on program eServiceSchemaVariableMapping.tcl to command 'RMTAddConfigurationContextAction';

@@ -1,0 +1,20 @@
+del command 'APPAddNewExchangeRate';
+add command 'APPAddNewExchangeRate'
+	description	'Add New Currency Exchange Rate Command Object'
+	label	'emxComponents.Common.AddExchangeRate'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_CurrencyConversion&mode=Edit&type=type_CurrencyConversion&formHeader=emxComponents.Common.AddExchangeRate&HelpMarker=emxhelpaddexchangerate&postProcessURL=${SUITE_DIR}/emxComponentsCurrencyExchangeRateUtil.jsp?mode=create'
+	alt	'emxComponents.Common.AddExchangeRate'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddNewExchangeRate'
+	property	'version'	value	'R417'
+;
+modify menu APPCurrencyExchangeRateSummaryToolBar add command APPAddNewExchangeRate order command APPAddNewExchangeRate 1;
+modify menu APPCurrencyExchangeRateSummaryActionsToolBar add command APPAddNewExchangeRate order command APPAddNewExchangeRate 1;
+#channel ==>APPCurrencyExchangeRateSummaryToolBarAPPCurrencyExchangeRateSummaryActionsToolBar
+add property command_APPAddNewExchangeRate on program eServiceSchemaVariableMapping.tcl to command 'APPAddNewExchangeRate';

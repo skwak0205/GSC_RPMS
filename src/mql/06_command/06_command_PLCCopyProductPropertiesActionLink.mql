@@ -1,0 +1,24 @@
+del command 'PLCCopyProductPropertiesActionLink';
+add command 'PLCCopyProductPropertiesActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Copy'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ProductCopyFSInstance&PRCFSParam1=DetailsPage'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCopyProductPropertiesActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductPropertiesTopActionBar add command PLCCopyProductPropertiesActionLink order command PLCCopyProductPropertiesActionLink 6;
+#channel ==>PLCProductPropertiesTopActionBar
+add property command_PLCCopyProductPropertiesActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCCopyProductPropertiesActionLink';

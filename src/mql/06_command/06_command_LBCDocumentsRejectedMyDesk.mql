@@ -1,0 +1,19 @@
+del command 'LBCDocumentsRejectedMyDesk';
+add command 'LBCDocumentsRejectedMyDesk'
+	description	'Documents Rejected Command Object'
+	label	'emxDocumentCentral.MenuItem.DocumentsRejected'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&HelpMarker=emxhelpdocumentsrejected&program=emxDCUtilsBase:getRejectedDocumentsList&table=DCMyDocumentsStandard&sortColumnName=Name&sortDirection=ascending&header=emxDocumentCentral.Common.MyDocumentsRejected&massPromoteDemote=false'
+	alt	'emxDocumentCentral.MenuItem.DocumentsRejected'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDocumentsRejectedMyDesk'
+	property	'version'	value	'R216'
+;
+modify menu LBCDocumentsMyDesk add command LBCDocumentsRejectedMyDesk order command LBCDocumentsRejectedMyDesk 0;
+#channel ==>LBCDocumentsMyDesk
+add property command_LBCDocumentsRejectedMyDesk on program eServiceSchemaVariableMapping.tcl to command 'LBCDocumentsRejectedMyDesk';

@@ -1,0 +1,35 @@
+del command 'APPDocumentSummaryDownloadActionLink';
+add command 'APPDocumentSummaryDownloadActionLink'
+	description	'Document Download Command Object'
+	label	'emxComponents.Command.Download'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=download'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDownload.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentSummaryDownloadActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentSummaryActionsToolBar add command APPDocumentSummaryDownloadActionLink order command APPDocumentSummaryDownloadActionLink 4;
+modify menu IssueDocumentSummaryActionsToolBar add command APPDocumentSummaryDownloadActionLink order command APPDocumentSummaryDownloadActionLink 3;
+modify menu BuildSpecificationSummaryActionsToolbar add command APPDocumentSummaryDownloadActionLink order command APPDocumentSummaryDownloadActionLink 3;
+modify menu ProductSpecificationSummaryActionsToolbar add command APPDocumentSummaryDownloadActionLink order command APPDocumentSummaryDownloadActionLink 3;
+modify menu ProductSpecificationSummaryActionsToolbarRWA add command APPDocumentSummaryDownloadActionLink order command APPDocumentSummaryDownloadActionLink 1;
+modify menu ProductDocumentSummaryActionsToolBar add command APPDocumentSummaryDownloadActionLink order command APPDocumentSummaryDownloadActionLink 3;
+modify menu ProductDocumentSummaryActionsToolBarRWA add command APPDocumentSummaryDownloadActionLink order command APPDocumentSummaryDownloadActionLink 1;
+modify menu RequirementSpecificationSummaryActionsToolbar add command APPDocumentSummaryDownloadActionLink order command APPDocumentSummaryDownloadActionLink 4;
+modify menu FeatureSpecificationSummaryActionsToolbar add command APPDocumentSummaryDownloadActionLink order command APPDocumentSummaryDownloadActionLink 3;
+modify menu FeatureSpecificationSummaryActionsToolbarRWA add command APPDocumentSummaryDownloadActionLink order command APPDocumentSummaryDownloadActionLink 1;
+#channel ==>APPDocumentSummaryActionsToolBarIssueDocumentSummaryActionsToolBarBuildSpecificationSummaryActionsToolbarProductSpecificationSummaryActionsToolbarProductSpecificationSummaryActionsToolbarRWAProductDocumentSummaryActionsToolBarProductDocumentSummaryActionsToolBarRWARequirementSpecificationSummaryActionsToolbarFeatureSpecificationSummaryActionsToolbarFeatureSpecificationSummaryActionsToolbarRWA
+add property command_APPDocumentSummaryDownloadActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentSummaryDownloadActionLink';

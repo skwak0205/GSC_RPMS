@@ -1,0 +1,14 @@
+del portal 'CFPProductManufacturingPlanPortal';
+add portal 'CFPProductManufacturingPlanPortal'
+	description	''
+	label	''
+	href	''
+	channel 	CFPProductManufacturingPlanChannel
+	setting	'Registered Suite'		'DMCPlanning'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPProductManufacturingPlanPortal'
+	property	'version'	value	'R215'
+;
+add property portal_CFPProductManufacturingPlanPortal on program eServiceSchemaVariableMapping.tcl to portal 'CFPProductManufacturingPlanPortal';

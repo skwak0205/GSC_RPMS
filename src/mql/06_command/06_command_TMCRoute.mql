@@ -1,0 +1,32 @@
+del command 'TMCRoute';
+add command 'TMCRoute'
+	description	'Route Command Object'
+	label	'emxFramework.Command.Route'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRoute:getActiveRoutes,emxRoute:getInActiveRoutes,emxRoute:getMyRoutes&table=RouteSummary&header=emxTeamCentral.Workspace.RouteHeader&topActionbar=TMCRouteSummaryTopActionBar&bottomActionbar=TMCRouteSummaryBottomActionBar&programLabel=emxTeamCentral.Filter.Active,emxTeamCentral.Filter.Complete,emxTeamCentral.Filter.All&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelproutes'
+	alt	'emxFramework.Command.Alt.Route'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'(policy != "Template Workspace Vault")'
+	setting	'Access Function'		'displayTreeNodeAccessCheck'
+	setting	'Access Program'		'emxWorkspace'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRoute'
+	property	'version'	value	'R423.HF4'
+;
+modify menu TMCtype_InboxTask add command TMCRoute order command TMCRoute 2;
+modify menu TMCtype_RequestToSupplier add command TMCRoute order command TMCRoute 0;
+modify menu TMCtype_RTSQuotation add command TMCRoute order command TMCRoute 0;
+modify menu TMCtype_Package add command TMCRoute order command TMCRoute 0;
+modify menu type_Folder add command TMCRoute order command TMCRoute 4;
+modify menu type_ProjectVault add command TMCRoute order command TMCRoute 2;
+modify menu TMCtype_ProjectVault add command TMCRoute order command TMCRoute 3;
+modify menu type_Project add command TMCRoute order command TMCRoute 6;
+#channel ==>TMCtype_InboxTaskTMCtype_RequestToSupplierTMCtype_RTSQuotationTMCtype_Packagetype_Foldertype_ProjectVaultTMCtype_ProjectVaulttype_Project
+add property command_TMCRoute on program eServiceSchemaVariableMapping.tcl to command 'TMCRoute';

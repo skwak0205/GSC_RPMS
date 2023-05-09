@@ -1,0 +1,4 @@
+<meta charset="UTF-8"/>
+TerminologySelector.TerminologyManagementCommand.Title="管理浏览结构定义";
+TerminologySelector.AssociateTerminologiesCommand.Title="与浏览结构关联";
+TerminologySelector.AssociateTermsCommand.Title="与浏览节点关联";

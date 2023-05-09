@@ -1,0 +1,21 @@
+del command 'FTRProductConfigurationFeatures';
+add command 'FTRProductConfigurationFeatures'
+	description	''
+	label	'emxProduct.Tree.ConfigurationFeatures'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?toolbar=FTRConfigurationFeaturesToolbar,FTRProductConfigurationFeatureCustomFilterToolbar&expandProgram=ConfigurationFeature:getConfigurationFeatureStructureForProductContext&table=FTRProductsConfigurationFeatureTable&editRootNode=false&selection=multiple&featureType=Marketing&editLink=true&mode=edit&editRelationship=relationship_ConfigurationFeatures,relationship_ConfigurationOptions,relationship_MandatoryConfigurationFeatures,relationship_VariesBy,relationship_InactiveVariesBy&header=emxConfiguration.Heading.Table.ConfigurationFeatureSummary&sortColumnName=DisplayName&HelpMarker=emxhelpconfigurationfeaturelist&objectCompare=false&appendURL=EvolutionEffectivity|Effectivity&effectivityRelationship=relationship_CONFIGURATIONSTRUCTURES,relationship_ConfigurationOptions&postProcessJPO=ConfigurationFeatureBase:refreshTree'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isCFsViewEnabled'
+	setting	'Access Program'		'ConfigurationFeature'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductConfigurationFeatures'
+	property	'version'	value	'R421'
+;
+modify menu type_ProductVariant add command FTRProductConfigurationFeatures order command FTRProductConfigurationFeatures 8;
+modify menu Msoitype_Products add command FTRProductConfigurationFeatures order command FTRProductConfigurationFeatures 5;
+#channel ==>type_ProductVariantMsoitype_Products
+add property command_FTRProductConfigurationFeatures on program eServiceSchemaVariableMapping.tcl to command 'FTRProductConfigurationFeatures';

@@ -1,0 +1,17 @@
+del menu 'FTRGBOMCustomFilterToolbar';
+add menu 'FTRGBOMCustomFilterToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRLogicalFeatureGBOMNameFilterCommand'
+	command	'FTRLogicalFeatureGBOMLimitFilterCommand'
+	command	'FTRGBOMFilterButton'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRGBOMCustomFilterToolbar'
+	property 'version'	value	'R212'
+;
+add property menu_FTRGBOMCustomFilterToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRGBOMCustomFilterToolbar';

@@ -1,0 +1,18 @@
+del menu 'ECMSearchMenu';
+add menu 'ECMSearchMenu'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.ECM'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallProcess.gif'
+	command	'ECMSearchCO'
+	command	'ECMSearchCA'
+	command	'ECMSearchCR'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMSearchMenu'
+	property 'version'	value	'V6R2012'
+;
+add property menu_ECMSearchMenu on program eServiceSchemaVariableMapping.tcl to menu 'ECMSearchMenu';

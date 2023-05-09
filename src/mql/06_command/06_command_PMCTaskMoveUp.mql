@@ -1,0 +1,29 @@
+del command 'PMCTaskMoveUp';
+add command 'PMCTaskMoveUp'
+	description	'PMCTaskMoveUp'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?SubMode=moveUp&mode=MoveTasks'
+	alt	'emxProgramCentral.TaskIndentaion.MoveUp'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconMoveUp.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskMoveUp'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSToolBar add command PMCTaskMoveUp order command PMCTaskMoveUp 8;
+modify menu PMCWhatIFExperimentActionToolbar add command PMCTaskMoveUp order command PMCTaskMoveUp 6;
+modify menu PMCWBSProjectTemplateToolBar add command PMCTaskMoveUp order command PMCTaskMoveUp 7;
+#channel ==>PMCWBSToolBarPMCWhatIFExperimentActionToolbarPMCWBSProjectTemplateToolBar
+add property command_PMCTaskMoveUp on program eServiceSchemaVariableMapping.tcl to command 'PMCTaskMoveUp';

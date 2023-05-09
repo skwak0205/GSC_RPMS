@@ -1,0 +1,17 @@
+del command 'AEFBackForwardBlank8';
+add command 'AEFBackForwardBlank8'
+	description	'AEFBackForwardBlank8'
+	label	''
+	href	'javascript:void(null)'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFBackForwardBlank8'
+	property	'version'	value	'10-6-SP1'
+;
+modify menu AEFBackToolbarMenu add command AEFBackForwardBlank8 order command AEFBackForwardBlank8 8;
+modify menu AEFForwardToolbarMenu add command AEFBackForwardBlank8 order command AEFBackForwardBlank8 8;
+#channel ==>AEFBackToolbarMenuAEFForwardToolbarMenu
+add property command_AEFBackForwardBlank8 on program eServiceSchemaVariableMapping.tcl to command 'AEFBackForwardBlank8';

@@ -1,0 +1,20 @@
+del command 'PMCProjectBaselineStructure';
+add command 'PMCProjectBaselineStructure'
+	description	'Project Baseline structure'
+	label	'emxProgramCentral.Experiment.Structure'
+	href	'../programcentral/emxProgramCentralWhatIfAnalysis.jsp?mode=BlankProjectBaselineStructure'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBaselineStructure'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCProjectBaselineDetailsChannel
+add property command_PMCProjectBaselineStructure on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBaselineStructure';

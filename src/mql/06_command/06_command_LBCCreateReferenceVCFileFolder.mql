@@ -1,0 +1,28 @@
+del command 'LBCCreateReferenceVCFileFolder';
+add command 'LBCCreateReferenceVCFileFolder'
+	description	'Command for creating a file or folder in DesignSync'
+	label	'emxComponents.VersionControl.CreateVCFileFolder'
+	href	'${SUITE_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=createVCFileFolder&JPOName=emxVCDocument&methodName=checkinUpdate'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCreateReferenceVCFileFolder'
+	property	'version'	value	'R422'
+;
+modify menu LBCReferenceDocumentSummaryCreateNew add command LBCCreateReferenceVCFileFolder order command LBCCreateReferenceVCFileFolder 0;
+#channel ==>LBCReferenceDocumentSummaryCreateNew
+add property command_LBCCreateReferenceVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'LBCCreateReferenceVCFileFolder';

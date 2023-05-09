@@ -1,0 +1,22 @@
+del command 'APPDiscussionPrivateReply';
+add command 'APPDiscussionPrivateReply'
+	description	'Subscription'
+	label	'emxComponents.Common.PrivateReply'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPCreateDiscussion&formHeader=emxComponents.Discussion.Reply&HelpMarker=emxhelpdiscussionreplycreate&mode=edit&showPageURLIcon=false&Export=false&findMxLink=false&DiscType=Private&postProcessURL=../components/emxComponentsDiscussionCreateProcess.jsp&submitAction=doNothing&preProcessJavaScript=clearMessageInDiscussionReply'
+	alt	'emxComponents.Common.PrivateReply'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'false'
+	setting	'Access Function'		'isPrivateUser'
+	setting	'Access Program'		'emxDiscussion'
+	setting	'Image'		'../common/images/iconActionPrivateReply.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionPrivateReply'
+	property	'version'	value	'R419'
+;
+modify menu APPDiscussionViewToolBar add command APPDiscussionPrivateReply order command APPDiscussionPrivateReply 3;
+modify menu APPDiscussionTreeToolBar add command APPDiscussionPrivateReply order command APPDiscussionPrivateReply 2;
+#channel ==>APPDiscussionViewToolBarAPPDiscussionTreeToolBar
+add property command_APPDiscussionPrivateReply on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionPrivateReply';

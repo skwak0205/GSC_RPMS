@@ -1,0 +1,23 @@
+del command 'PMCMemberSummaryAddPerson';
+add command 'PMCMemberSummaryAddPerson'
+	description	'Command to Add Person'
+	label	'emxProgramCentral.Button.AddPerson'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=addPerson'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMemberSummaryAddPerson'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCMemberSummaryAddPerson on program eServiceSchemaVariableMapping.tcl to command 'PMCMemberSummaryAddPerson';

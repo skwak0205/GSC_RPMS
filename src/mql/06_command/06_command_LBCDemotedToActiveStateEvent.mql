@@ -1,0 +1,18 @@
+del command 'LBCDemotedToActiveStateEvent';
+add command 'LBCDemotedToActiveStateEvent'
+	description	'Event holder for demotion to Active state'
+	label	'emxLibraryCentral.Event.Demoted_To_Active_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Demoted To Active State'
+	setting	'History Bit'		'demote to Active'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDemotedToActiveStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCLibrariesSubscriptionEvents add command LBCDemotedToActiveStateEvent order command LBCDemotedToActiveStateEvent 7;
+#channel ==>LBCLibrariesSubscriptionEvents
+add property command_LBCDemotedToActiveStateEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCDemotedToActiveStateEvent';

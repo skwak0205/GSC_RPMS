@@ -1,0 +1,19 @@
+del command 'APPBusinessUnitRouteTemplate';
+add command 'APPBusinessUnitRouteTemplate'
+	description	'Route Template Command in BusinessUnit menu'
+	label	'emxComponents.Common.RouteTemplates'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPRouteTemplateSummary&program=emxRouteTemplate:getBusinessUnitRouteTemplates&header=emxComponents.RouteTemplate.RouteTemplateHeader&selection=none&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelproutetemplates'
+	alt	'emxComponents.Common.RouteTemplates'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPBusinessUnitRouteTemplate'
+	property	'version'	value	'R216'
+;
+modify menu type_BusinessUnit add command APPBusinessUnitRouteTemplate order command APPBusinessUnitRouteTemplate 10;
+#channel ==>type_BusinessUnit
+add property command_APPBusinessUnitRouteTemplate on program eServiceSchemaVariableMapping.tcl to command 'APPBusinessUnitRouteTemplate';

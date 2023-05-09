@@ -1,0 +1,19 @@
+del command 'ProcessStepRouteTaskSelectAssignee';
+add command 'ProcessStepRouteTaskSelectAssignee'
+	description	'Command to select assignees from user group'
+	label	'emxComponents.Command.selectAssignee'
+	href	'javascript:launchSelectAssigneeModal("${OBJECTID}")'
+	alt	''
+	setting	'Target Location'		'detailsDisplay'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'checksToShowSelectAssignee'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/UserGroupAssignment.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProcessSteps'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'ProcessStepRouteTaskSelectAssignee'
+	property	'version'	value	'R424'
+;
+#channel ==>
+add property command_ProcessStepRouteTaskSelectAssignee on program eServiceSchemaVariableMapping.tcl to command 'ProcessStepRouteTaskSelectAssignee';

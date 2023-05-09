@@ -1,0 +1,19 @@
+del command 'PLCDeleteTestCaseAction';
+add command 'PLCDeleteTestCaseAction'
+	description	''
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/TestCaseUtil.jsp?Mode=Delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	property	'application'	value	'ProductLine'
+	property	'version'	value	'R422'
+;
+modify menu TestCasesToolbar add command PLCDeleteTestCaseAction order command PLCDeleteTestCaseAction 0;
+#channel ==>TestCasesToolbar
+add property command_PLCDeleteTestCaseAction on program eServiceSchemaVariableMapping.tcl to command 'PLCDeleteTestCaseAction';

@@ -1,0 +1,18 @@
+del menu 'PMCRemoveDeleteMenu';
+add menu 'PMCRemoveDeleteMenu'
+	description	''
+	label	'emxProgramCentral.Common.Remove/Delete'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWBSMarkAsDeleted'
+	command	'PMCWBSDeleteSelected'
+	command	'PMCWBSRemoveProject'
+	command	'PMCWBSUndoMarkAsDeleted'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCRemoveDeleteMenu'
+	property 'version'	value	'R417'
+;
+add property menu_PMCRemoveDeleteMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCRemoveDeleteMenu';

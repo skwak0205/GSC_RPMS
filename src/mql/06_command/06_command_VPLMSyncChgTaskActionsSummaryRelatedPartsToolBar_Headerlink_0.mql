@@ -1,0 +1,13 @@
+del command 'VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar_Headerlink_0';
+add command 'VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar_Headerlink_0'
+	description	'Command to Add VPLM Parts'
+	label	'emxVPMCentral.Change.Command.TaskActionsSummaryRelatedPartsToolBar_Headerlink_0.Title'
+	href	'showRelatedVPLMPartsSearchDialog()'
+	alt	'AddMAO'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPMCentral'
+	setting	'Javascript'		'true'
+;
+modify menu VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar add command VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar_Headerlink_0 order command VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar_Headerlink_0 1;
+#channel ==>VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar
+add property command_VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar_Headerlink_0 on program eServiceSchemaVariableMapping.tcl to command 'VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar_Headerlink_0';

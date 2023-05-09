@@ -1,0 +1,22 @@
+del table 'PMCPhaseGateView' system;
+add table 'PMCPhaseGateView' system
+column #1
+	name	'DynamicColumn'
+	businessobject	'name'
+	label	'Other'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getPhaseGateViewDynamicColumns'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'emxGateReport'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCPhaseGateView'
+	property	'version'	value	'R421'
+;
+add property table_PMCPhaseGateView on program eServiceSchemaVariableMapping.tcl to table 'PMCPhaseGateView' system;

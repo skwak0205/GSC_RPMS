@@ -1,0 +1,18 @@
+del command 'APPDecisionMyDesk';
+add command 'APPDecisionMyDesk'
+	description	'Command Object for Decisions in the My Desk Menu'
+	label	'emxComponents.Command.Decisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDecision:getOwnedDecisions,emxDecision:getAllDecisions&programLabel=emxComponents.Filter.Owned,emxComponents.Filter.All&table=APPMyDeskDecisionsList&header=emxComponents.Header.Decisions&selection=multiple&toolbar=APPDecisionsMyDeskActionBar&sortColumnName=Date Modified&sortDirection=descending&HelpMarker=emxhelpdecisionlist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP,ENO_MPI_TP,ENO_PRF_TP,ENO_LPI_TP,ENO_LRA_TP'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionMyDesk'
+	property	'version'	value	'R216'
+;
+#channel ==>My Enovia
+add property command_APPDecisionMyDesk on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionMyDesk';

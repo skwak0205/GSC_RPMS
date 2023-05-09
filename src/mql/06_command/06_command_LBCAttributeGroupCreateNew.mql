@@ -1,0 +1,21 @@
+del command 'LBCAttributeGroupCreateNew';
+add command 'LBCAttributeGroupCreateNew'
+	description	'Attribute Group Create New'
+	label	'emxMultipleClassification.Command.CreateNew'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_CreateAttributeGroup&mode=edit&HelpMarker=emxhelpattributegroupcreate&formHeader=emxMultipleClassification.Create.AttributeGroup&Export=False&findMxLink=false&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeGroupCreateNew'
+	property	'version'	value	'R211'
+;
+modify menu MCMAttributeGroupActionsToolBar add command LBCAttributeGroupCreateNew order command LBCAttributeGroupCreateNew 1;
+#channel ==>MCMAttributeGroupActionsToolBar
+add property command_LBCAttributeGroupCreateNew on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeGroupCreateNew';

@@ -1,0 +1,15 @@
+del menu 'PeopleSummaryTopActionbar';
+add menu 'PeopleSummaryTopActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PeopleCreateNew'
+	command	'PeopleAddExisting'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'PeopleSummaryTopActionbar'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_PeopleSummaryTopActionbar on program eServiceSchemaVariableMapping.tcl to menu 'PeopleSummaryTopActionbar';

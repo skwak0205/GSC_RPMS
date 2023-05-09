@@ -1,0 +1,18 @@
+del command 'ECMAttributeGroupAttributes';
+add command 'ECMAttributeGroupAttributes'
+	description	'To get added attribuites in the Attributes Group'
+	label	'EnterpriseChangeMgt.Command.Attributes'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=enoECMChangeTemplate:getAttributeGroupAttributesAdded&table=ECMAttributeGroupAttributesAdded&sortColumnName=Name&sortDirection=ascending&toolbar=ECMAttributeGroupAttributeToolbar&header=EnterpriseChangeMgt.Heading.Attributes&objectCompare=false&Export=false&showRMB=false&selection=multiple'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAttributeGroupAttributes'
+	property	'version'	value	'R216'
+;
+modify menu ECMAttributeGroupMenu add command ECMAttributeGroupAttributes order command ECMAttributeGroupAttributes 0;
+#channel ==>ECMAttributeGroupMenu
+add property command_ECMAttributeGroupAttributes on program eServiceSchemaVariableMapping.tcl to command 'ECMAttributeGroupAttributes';

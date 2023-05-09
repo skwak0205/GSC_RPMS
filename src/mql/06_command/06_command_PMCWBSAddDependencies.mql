@@ -1,0 +1,23 @@
+del command 'PMCWBSAddDependencies';
+add command 'PMCWBSAddDependencies'
+	description	''
+	label	'emxProgramCentral.Common.Add'
+	href	'${SUITE_DIR}/emxProgramCentralDependencyProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSAddDependencies'
+	property	'version'	value	'R422.HF4'
+;
+modify menu PMCAddTaskDependenciesActionToolbar add command PMCWBSAddDependencies order command PMCWBSAddDependencies 1;
+#channel ==>PMCAddTaskDependenciesActionToolbar
+add property command_PMCWBSAddDependencies on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSAddDependencies';

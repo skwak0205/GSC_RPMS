@@ -1,0 +1,27 @@
+del command 'CFPViewManufacturingPlanMatrixLink';
+add command 'CFPViewManufacturingPlanMatrixLink'
+	description	''
+	label	'DMCPlanning.ActionLink.ViewManufacturingPlanMatrix'
+	href	'${SUITE_DIR}/ManufacturingPlanUtil.jsp?mode=ViewManufacturingPlan'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'700'
+	setting	'Window Width'		'650'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Access Expression'		'$<type.kindof =="type_Products">'
+	setting	'Licensed Product'		'ENO_CFP_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAuthoringModeEnabled'
+	setting	'Access Program'		'CFPModelBase'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPViewManufacturingPlanMatrixLink'
+	property	'version'	value	'R418'
+;
+modify menu CFPManufacturingPlanToolbarActions add command CFPViewManufacturingPlanMatrixLink order command CFPViewManufacturingPlanMatrixLink 3;
+modify menu CFPMPDerivationReports add command CFPViewManufacturingPlanMatrixLink order command CFPViewManufacturingPlanMatrixLink 1;
+#channel ==>CFPManufacturingPlanToolbarActionsCFPMPDerivationReports
+add property command_CFPViewManufacturingPlanMatrixLink on program eServiceSchemaVariableMapping.tcl to command 'CFPViewManufacturingPlanMatrixLink';

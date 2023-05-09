@@ -1,0 +1,5 @@
+# HJ 230502
+
+copy command PMCProjectDetailsPropertiesEdit gscPMCProjectDetailsPropertiesEdit;
+
+mod command gscPMCProjectDetailsPropertiesEdit href '${COMMON_DIR}/emxForm.jsp?form=gscPMCProjectDetailsViewForm&mode=edit&&postProcessJPO=emxProjectConcept:gscperformPostProcessActionsEdit&findMxLink=false&formHeader=emxProgramCentral.Common.ProjectBasicsEdit&HelpMarker=emxhelpprojecteditdialog&submitAction=refreshCaller&Export=false';

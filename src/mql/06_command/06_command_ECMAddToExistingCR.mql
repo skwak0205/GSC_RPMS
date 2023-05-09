@@ -1,0 +1,20 @@
+del command 'ECMAddToExistingCR';
+add command 'ECMAddToExistingCR'
+	description	'The Add to Existing Change Request Link on for the change management powerview from app context eg part--changemgmt'
+	label	'EnterpriseChangeMgt.Command.AddToExistingCR'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=ECMAddToExistingCR&portalFrame=ECMCRs&isFrom=false'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAddToExistingCR'
+	property	'version'	value	'R424'
+;
+modify menu ECMChangeRequestManagementToolbar add command ECMAddToExistingCR order command ECMAddToExistingCR 1;
+#channel ==>ECMChangeRequestManagementToolbar
+add property command_ECMAddToExistingCR on program eServiceSchemaVariableMapping.tcl to command 'ECMAddToExistingCR';

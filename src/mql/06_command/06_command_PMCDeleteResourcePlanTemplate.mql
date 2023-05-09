@@ -1,0 +1,27 @@
+del command 'PMCDeleteResourcePlanTemplate';
+add command 'PMCDeleteResourcePlanTemplate'
+	description	'Delete Resource Plan Template'
+	label	'emxProgramCentral.Command.DeleteResourcePlanTemplate'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePlanTemplateUtil.jsp?FunctionMode=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isOwnerOrCoOwner'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Row Select'		'multiple'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ConfirmDelete'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeleteResourcePlanTemplate'
+	property	'version'	value	'R422'
+;
+modify menu PMCCreateResourcePlanTemplate add command PMCDeleteResourcePlanTemplate order command PMCDeleteResourcePlanTemplate 0;
+#channel ==>PMCCreateResourcePlanTemplate
+add property command_PMCDeleteResourcePlanTemplate on program eServiceSchemaVariableMapping.tcl to command 'PMCDeleteResourcePlanTemplate';

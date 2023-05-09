@@ -1,0 +1,28 @@
+del command 'LBCLibraryExportProperties';
+add command 'LBCLibraryExportProperties'
+	description	'Library Export in Properties Page command'
+	label	'emxMultipleClassification.Command.Export'
+	href	'${SUITE_DIR}/emxLibraryCentralExportLibraryIntermediateProcess.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showExportforLibraries'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCLibraryExportProperties'
+	property	'version'	value	'R422'
+;
+modify menu LCObjectDetailsActionsToolBar add command LBCLibraryExportProperties order command LBCLibraryExportProperties 5;
+#channel ==>LCObjectDetailsActionsToolBar
+add property command_LBCLibraryExportProperties on program eServiceSchemaVariableMapping.tcl to command 'LBCLibraryExportProperties';

@@ -1,0 +1,18 @@
+del command 'ECMAttributeGroupAttributeAddExisting';
+add command 'ECMAttributeGroupAttributeAddExisting'
+	description	'Adding attributes to the Attribute Group'
+	label	'EnterpriseChangeMgt.Command.AddExisting'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeTemplate:getAttributeList&table=ECMAttributeList&selection=multiple&categoryTreeName=null&header=EnterpriseChangeMgt.AttributeChooser.SelectAttribute&sortColumnName=Name&sortDirection=ascending&objectCompare=false&Export=false&toolbar=ECMAttributeAddExisting&expandLevelFilterMenu=false&PrinterFriendly=false&showClipboard=false&showPageURLIcon=false&submitLabel=emxFramework.Common.Done&cancelLabel=emxFramework.Common.Cancel&cancelButton=true&autoFilter=true&filter=true&submitURL=../enterprisechangemgtapp/ECMUtil.jsp?functionality=AddAttributesToAttributeGroup'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAttributeGroupAttributeAddExisting'
+	property	'version'	value	'418'
+;
+modify menu ECMAttributeGroupAttributeActionsToolbar add command ECMAttributeGroupAttributeAddExisting order command ECMAttributeGroupAttributeAddExisting 1;
+#channel ==>ECMAttributeGroupAttributeActionsToolbar
+add property command_ECMAttributeGroupAttributeAddExisting on program eServiceSchemaVariableMapping.tcl to command 'ECMAttributeGroupAttributeAddExisting';

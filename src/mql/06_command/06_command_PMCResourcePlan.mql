@@ -1,0 +1,21 @@
+del command 'PMCResourcePlan';
+add command 'PMCResourcePlan'
+	description	''
+	label	'emxProgramCentral.Common.ResourcePlan'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCResourceRequestSummaryTable&toolbar=PMCResourcePlanToolBar,PMCResourceRequestLifecycleFilterMenu&freezePane=Name&HelpMarker=emxhelpresourceplanlist&header=emxProgramCentral.ResourceRequest.ResourceRequest&expandProgram=emxResourceRequest:getTableExpandChildResourceRequestData&editLink=false&postProcessJPO=emxResourceRequestBase:postProcessRefreshTable&selection=multiple&editRootNode=false&hideLaunchButton=true&displayView=details&showPageURLIcon=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePlan'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCAccess_ResourcePlan
+add property command_PMCResourcePlan on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePlan';

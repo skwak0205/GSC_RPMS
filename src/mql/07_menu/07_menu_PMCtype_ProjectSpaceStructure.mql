@@ -1,0 +1,15 @@
+del menu 'PMCtype_ProjectSpaceStructure';
+add menu 'PMCtype_ProjectSpaceStructure'
+	description	''
+	label	'${NAME}'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectSpaceStructure'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCtype_ProjectSpaceStructure'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_PMCtype_ProjectSpaceStructure on program eServiceSchemaVariableMapping.tcl to menu 'PMCtype_ProjectSpaceStructure';

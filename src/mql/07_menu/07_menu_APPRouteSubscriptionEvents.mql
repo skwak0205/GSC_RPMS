@@ -1,0 +1,21 @@
+del menu 'APPRouteSubscriptionEvents';
+add menu 'APPRouteSubscriptionEvents'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPObjectRouteStartedEvent'
+	command	'APPRouteContentAddedEvent'
+	command	'APPRouteContentRemovedEvent'
+	command	'APPRouteTaskCompletedEvent'
+	command	'APPObjectRouteCompletedEvent'
+	command	'APPObjectNewDiscussionEvent'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRouteSubscriptionEvents'
+	property 'version'	value	'R417'
+;
+add property menu_APPRouteSubscriptionEvents on program eServiceSchemaVariableMapping.tcl to menu 'APPRouteSubscriptionEvents';

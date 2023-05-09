@@ -1,0 +1,11 @@
+del command 'ECHInterOpSupportApplicability';
+add command 'ECHInterOpSupportApplicability'
+	description	'Command to handle interoperability to list the types for which applicability is supported'
+	label	''
+	href	''
+	alt	''
+	setting	'ApplicabilitySupportType_CHT'		'type_PLMActionBase'
+	setting	'Registered Suite'		'EnterpriseChange'
+;
+#channel ==>
+add property command_ECHInterOpSupportApplicability on program eServiceSchemaVariableMapping.tcl to command 'ECHInterOpSupportApplicability';

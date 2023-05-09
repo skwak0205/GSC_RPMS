@@ -1,0 +1,19 @@
+del command 'RMTSpecificationsExchangeTrackingPowerView';
+add command 'RMTSpecificationsExchangeTrackingPowerView'
+	description	''
+	label	'emxRequirements.Common.RMTExchangeTrackingPowerView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=RMTSpecificationsExchangeTracking&showPageHeader=true&header=emxRequirements.Heading.ExchangeTrackingCategory'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationsExchangeTrackingPowerView'
+	property	'version'	value	'R422'
+;
+modify menu type_SoftwareRequirementSpecification add command RMTSpecificationsExchangeTrackingPowerView order command RMTSpecificationsExchangeTrackingPowerView 2;
+#channel ==>type_SoftwareRequirementSpecification
+add property command_RMTSpecificationsExchangeTrackingPowerView on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecificationsExchangeTrackingPowerView';

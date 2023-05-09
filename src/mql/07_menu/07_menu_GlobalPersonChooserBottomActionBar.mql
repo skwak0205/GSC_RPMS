@@ -1,0 +1,15 @@
+del menu 'GlobalPersonChooserBottomActionBar';
+add menu 'GlobalPersonChooserBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'SelectPerson'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'GlobalPersonChooserBottomActionBar'
+	property 'version'	value	'10-0-1-0'
+;
+add property menu_GlobalPersonChooserBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'GlobalPersonChooserBottomActionBar';

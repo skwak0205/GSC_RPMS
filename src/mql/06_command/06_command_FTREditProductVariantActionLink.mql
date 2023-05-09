@@ -1,0 +1,28 @@
+del command 'FTREditProductVariantActionLink';
+add command 'FTREditProductVariantActionLink'
+	description	''
+	label	'emxProduct.ActionLink.EditProductVariant'
+	href	'${SUITE_DIR}/ProductVariantUtil.jsp?mode=edit'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'730'
+	setting	'Window Width'		'600'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showLinkForProductVariant'
+	setting	'Access Program'		'emxProductVariant'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditProductVariantActionLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRProductVariantListToolBarActions add command FTREditProductVariantActionLink order command FTREditProductVariantActionLink 3;
+#channel ==>FTRProductVariantListToolBarActions
+add property command_FTREditProductVariantActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTREditProductVariantActionLink';

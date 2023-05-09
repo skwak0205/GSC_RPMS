@@ -1,0 +1,23 @@
+del command 'ECMMassObsolete';
+add command 'ECMMassObsolete'
+	description	''
+	label	'EnterpriseChangeMgt.Command.MassObsolete'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=MassObsolete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionMassObsolete.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMassObsolete'
+	property	'version'	value	'R216'
+;
+modify menu ECMMassChangeToolbar add command ECMMassObsolete order command ECMMassObsolete 0;
+modify menu ECMChangeToolbar add command ECMMassObsolete order command ECMMassObsolete 0;
+#channel ==>ECMMassChangeToolbarECMChangeToolbar
+add property command_ECMMassObsolete on program eServiceSchemaVariableMapping.tcl to command 'ECMMassObsolete';

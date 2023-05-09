@@ -1,0 +1,24 @@
+del command 'DCObjectPropertiesSearchInActionLink';
+add command 'DCObjectPropertiesSearchInActionLink'
+	description	'Search In Action Link on Properties'
+	label	'emxDocumentCentral.ActionBarCmd.SearchIn'
+	href	'${SUITE_DIR}/emxDocumentCentralObjectFindDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectPropertiesSearchInActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCObjectPropertiesTopActionbar add command DCObjectPropertiesSearchInActionLink order command DCObjectPropertiesSearchInActionLink 4;
+modify menu DCFolderPropertiesTopActionbar add command DCObjectPropertiesSearchInActionLink order command DCObjectPropertiesSearchInActionLink 3;
+#channel ==>DCObjectPropertiesTopActionbarDCFolderPropertiesTopActionbar
+add property command_DCObjectPropertiesSearchInActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectPropertiesSearchInActionLink';

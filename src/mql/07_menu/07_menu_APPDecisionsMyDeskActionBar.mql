@@ -1,0 +1,19 @@
+del menu 'APPDecisionsMyDeskActionBar';
+add menu 'APPDecisionsMyDeskActionBar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPDecisionMyDeskCreate'
+	command	'APPSubscriptionMultiObject'
+	command	'AEFSeparator'
+	command	'APPDecisionDeleteActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPDecisionsMyDeskActionBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPDecisionsMyDeskActionBar on program eServiceSchemaVariableMapping.tcl to menu 'APPDecisionsMyDeskActionBar';

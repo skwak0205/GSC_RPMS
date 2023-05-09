@@ -1,0 +1,14 @@
+del command 'CollabSpaceAppCmd';
+add command 'CollabSpaceAppCmd'
+	description	'Manage the current Collaborative Space'
+	label	'emxCollabSpaceCentral.Commands.Manage'
+	href	'https://rpmsdev.gscaltex.co.kr/3ddashboard/#app:X3DCSMA_AP/content:collab-storage=OnPremise'
+	alt	''
+	setting	'Target Location'		'_blank'
+	setting	'Registered Suite'		'eServiceSuiteCollabSpaceCentral'
+	setting	'Selectable in Preferences'		'false'
+;
+modify menu AEFMyHome add command CollabSpaceAppCmd order command CollabSpaceAppCmd 2;
+modify menu CollabSpaceAppMenu add command CollabSpaceAppCmd order command CollabSpaceAppCmd 0;
+#channel ==>AEFMyHomeCollabSpaceAppMenu
+add property command_CollabSpaceAppCmd on program eServiceSchemaVariableMapping.tcl to command 'CollabSpaceAppCmd';

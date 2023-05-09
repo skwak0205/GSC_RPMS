@@ -1,0 +1,23 @@
+{
+  "PaginationLabel": "Page {1} sur {2}",
+  "Undefined": "non défini",
+  "inputNoFileChosen": "Aucun fichier sélectionné",
+  "AutoCompletePlaceHolder": "Saisir une valeur",
+  "AutoCompleteNoValueFound": "Aucune valeur trouvée",
+  "tagcloud": "Vue cloud",
+  "smallthumbnail": "Vue Miniature",
+  "bigthumbnail": "Vue Grandes miniatures",
+  "imagewallthumbnail": "Miniature du mur",
+  "smalltile": "Vue Mosaïque",
+  "bigtile": "Vue Grandes mosaïques",
+  "textualtile": "Vue Mosaïque textuelle",
+  "datagridview": "Vue Grille de données",
+  "mixed": "Vue mixte",
+  "large": "Vue large",
+  "graphlist": "Vue chronologique",
+  "list": "Vue compacte",
+  "kanban": "Vue Kanban",
+  "graph": "Affichage du graphique",
+  "gantt": "Vue Gantt",
+  "map": "Vue Carte"
+}

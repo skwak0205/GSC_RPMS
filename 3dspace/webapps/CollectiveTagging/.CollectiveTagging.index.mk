@@ -1,0 +1,10 @@
+m|SNResultUX\CollectiveTagging.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.23010|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\CollectiveTagging\CollectiveTagging.js|1673382087|7763
+s|SNResultUX\CollectiveTagging.mweb\src\A.js|1411546573|43
+u|SNResultUX\CollectiveTagging.mweb\src\CollectiveTaggingHelpers.js|1672999889|17970
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

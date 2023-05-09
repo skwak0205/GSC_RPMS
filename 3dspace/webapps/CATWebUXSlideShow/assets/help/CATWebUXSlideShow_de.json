@@ -1,0 +1,12 @@
+{
+"CATWebUXSlideShowHdr.Title":"Präsentationsmodus",
+"CATWebUXSlideShowHdr.ShortHelp":"Zeigt alle Folien im Vollbildmodus an.",
+"CATWebUXSlideShowHdr.LongHelp":"Blättern Sie nacheinander durch alle Folien.",
+"CATWebUXSlideShowPreviousHdr.Title":"Zurück",
+"CATWebUXSlideShowPreviousHdr.ShortHelp":"Vorheriges Element anzeigen.",
+"CATWebUXSlideShowNextHdr.Title":"Weiter",
+"CATWebUXSlideShowNextHdr.ShortHelp":"Nächstes Element anzeigen.",
+"CATWebUXSlideShowExitHdr.Title":"Beenden",
+"CATWebUXSlideShowExitHdr.ShortHelp":"Beendet den Präsentationsmodus.",
+"CATWebUXSlideShowHdr.WebHelp":"D3reUserMap/d3re-t-Slides.htm#t-DisplaytheReviewContentintheSlideShowMode"
+}

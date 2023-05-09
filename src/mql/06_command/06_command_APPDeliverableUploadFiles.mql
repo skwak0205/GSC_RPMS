@@ -1,0 +1,23 @@
+del command 'APPDeliverableUploadFiles';
+add command 'APPDeliverableUploadFiles'
+	description	'Upload Files'
+	label	'emxComponents.CommonDocument.UploadFiles'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=createMasterPerFile'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'((current.access[fromconnect]==true) && (to[Workflow Task].from.current=="Started"))'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeliverableUploadFiles'
+	property	'version'	value	'R417'
+;
+modify menu APPWorkflowDeliverableSummaryActionsToolBar add command APPDeliverableUploadFiles order command APPDeliverableUploadFiles 1;
+#channel ==>APPWorkflowDeliverableSummaryActionsToolBar
+add property command_APPDeliverableUploadFiles on program eServiceSchemaVariableMapping.tcl to command 'APPDeliverableUploadFiles';

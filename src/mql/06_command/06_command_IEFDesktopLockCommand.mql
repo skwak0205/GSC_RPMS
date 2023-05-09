@@ -1,0 +1,23 @@
+del command 'IEFDesktopLockCommand';
+add command 'IEFDesktopLockCommand'
+	description	'IEF Desktop Lock Command'
+	label	'emxIEFDesignCenter.Common.Lock'
+	href	''
+	alt	''
+	setting	'iefcname'		'iefdesktopaction'
+	setting	'iefaction'		'lock'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	setting	'Row Select'		'multi'
+	setting	'iefrefreshpage'		'true'
+	setting	'iefwaitforresponse'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopLockCommand'
+	property	'version'	value	'R424'
+;
+modify menu IEFDesktopLocalWorkspaceActionMenu add command IEFDesktopLockCommand order command IEFDesktopLockCommand 4;
+modify menu IEFDesktopActionsMenu add command IEFDesktopLockCommand order command IEFDesktopLockCommand 2;
+#channel ==>IEFDesktopLocalWorkspaceActionMenuIEFDesktopActionsMenu
+add property command_IEFDesktopLockCommand on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopLockCommand';

@@ -1,0 +1,18 @@
+del menu 'type_ChapterRMB';
+add menu 'type_ChapterRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTChapterProperties'
+	command	'RMTChapterStructureTreeCategory'
+	command	'AEFLifecycle'
+	menu	'AEFClipboardCollectionsRMB'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_ChapterRMB'
+	property 'version'	value	'V6R2011x'
+;
+add property menu_type_ChapterRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_ChapterRMB';

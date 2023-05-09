@@ -1,0 +1,15 @@
+del menu 'type_CostItem';
+add menu 'type_CostItem'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=displayCostItemProp'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'iconSmallCostBudgetItem.gif'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_CostItem'
+	property 'version'	value	'R210'
+;
+add property menu_type_CostItem on program eServiceSchemaVariableMapping.tcl to menu 'type_CostItem';

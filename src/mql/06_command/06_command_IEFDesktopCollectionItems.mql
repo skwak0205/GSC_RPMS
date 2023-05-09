@@ -1,0 +1,17 @@
+del command 'IEFDesktopCollectionItems';
+add command 'IEFDesktopCollectionItems'
+	description	'Collection Items Summary'
+	label	'emxIEFDesignCenter.Common.Collections'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxAEFCollection:getObjects&table=IEFDesktopCollectionItems&toolbar=IEFDesktopActionsMenu&objectBased=true&HelpMarker=emxhelpcollectionitems&sortColumnName=Name&header=emxFramework.Command.AEFItems&selection=multiple&PrinterFriendly=true&showClipboard=false'
+	alt	'Collection Items'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopCollectionItems'
+	property	'version'	value	'R424'
+;
+#channel ==>
+add property command_IEFDesktopCollectionItems on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopCollectionItems';

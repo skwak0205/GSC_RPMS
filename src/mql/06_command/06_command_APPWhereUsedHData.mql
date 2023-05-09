@@ -1,0 +1,16 @@
+del command 'APPWhereUsedHData';
+add command 'APPWhereUsedHData'
+	description	''
+	label	'emxWhereUsed.Command.WhereUsed'
+	href	'${SUITE_DIR}/WhereUsedPreproccessUtil.jsp?'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'WhereUsed'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'WhereUsed'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWhereUsedHData'
+	property	'version'	value	'R213'
+;
+#channel ==>APPWhereUsedChannelPLCCollaboration
+add property command_APPWhereUsedHData on program eServiceSchemaVariableMapping.tcl to command 'APPWhereUsedHData';

@@ -1,0 +1,7 @@
+del menu 'FTRActions';
+add menu 'FTRActions'
+	description	''
+	label	'null'
+	href	'null'
+	alt	'null'
+add property menu_FTRActions on program eServiceSchemaVariableMapping.tcl to menu 'FTRActions';

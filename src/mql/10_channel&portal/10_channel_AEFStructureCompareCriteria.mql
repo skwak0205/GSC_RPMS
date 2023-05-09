@@ -1,0 +1,17 @@
+del channel 'AEFStructureCompareCriteria';
+add channel 'AEFStructureCompareCriteria'
+	description	'APP3DPlay window in channel'
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Components'
+	setting		'Height'		'40%'
+	command 	'AEFStructureCompareCriteria','APPLaunch3DPlayCompare'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFStructureCompareCriteria'
+	property	'version'	value	'R419'
+;
+#portal ==>AEFStructureComparePortal
+add property channel_AEFStructureCompareCriteria on program eServiceSchemaVariableMapping.tcl to channel 'AEFStructureCompareCriteria';

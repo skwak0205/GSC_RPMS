@@ -1,0 +1,14 @@
+del portal 'PLCModelPortal';
+add portal 'PLCModelPortal'
+	description	''
+	label	''
+	href	''
+	channel 	PLCModelDefaultChannel
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCModelPortal'
+	property	'version'	value	'R214'
+;
+add property portal_PLCModelPortal on program eServiceSchemaVariableMapping.tcl to portal 'PLCModelPortal';

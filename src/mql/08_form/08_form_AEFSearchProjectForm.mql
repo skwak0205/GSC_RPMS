@@ -1,0 +1,26 @@
+del form 'AEFSearchProjectForm';
+add form 'AEFSearchProjectForm' web
+field #1
+	name	'Type'
+	label	'emxFramework.Basic.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Admin Type'		'type'
+	setting	'Registered Suite'		'Framework'
+	setting	'Editable'		'false'
+	setting	'Default'		'type_Project'
+field #2
+	name	'Name'
+	label	'emxFramework.Basic.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSearchProjectForm'
+	property	'version'	value	'R215'
+;
+add property form_AEFSearchProjectForm on program eServiceSchemaVariableMapping.tcl to form 'AEFSearchProjectForm';

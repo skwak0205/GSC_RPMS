@@ -1,0 +1,23 @@
+del command 'APPObjectNewReplyEvent';
+add command 'APPObjectNewReplyEvent'
+	description	'Object New Reply Event'
+	label	'emxComponents.Message.Event.New_Reply'
+	href	''
+	alt	''
+	setting	'Force Recursion'		'true'
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'New Reply'
+	setting	'Recurse Relationship'		'$<relationship_Reply>,$<relationship_Message>,$<relationship_Thread>'
+	setting	'Is Recursible'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectNewReplyEvent'
+	property	'version'	value	'R422'
+;
+modify menu APPMessageEvents add command APPObjectNewReplyEvent order command APPObjectNewReplyEvent 0;
+#channel ==>APPMessageEvents
+add property command_APPObjectNewReplyEvent on program eServiceSchemaVariableMapping.tcl to command 'APPObjectNewReplyEvent';

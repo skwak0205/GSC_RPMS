@@ -1,0 +1,24 @@
+del command 'PMCRPN';
+add command 'PMCRPN'
+	description	'RPN Command Object'
+	label	'emxFramework.Command.RPN'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRisk:getRiskRPNs&toolbar=PMCRiskRpnToolBar&table=PMCRiskRpnTable&HelpMarker=emxhelprpnsummary&header=emxProgramCentral.ProgramTop.RPN'
+	alt	'emxFramework.Command.Alt.RPN'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'False'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'iconSmallRPN.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRPN'
+	property	'version'	value	'R422'
+;
+modify menu type_Risk add command PMCRPN order command PMCRPN 8;
+#channel ==>type_Risk
+add property command_PMCRPN on program eServiceSchemaVariableMapping.tcl to command 'PMCRPN';

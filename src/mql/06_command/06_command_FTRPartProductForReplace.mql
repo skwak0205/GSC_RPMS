@@ -1,0 +1,17 @@
+del command 'FTRPartProductForReplace';
+add command 'FTRPartProductForReplace'
+	description	''
+	label	'emxProduct.ActionLink.Find'
+	href	'${SUITE_DIR}/emxFindForm.jsp?suiteKey=Configuration&program=emxFeatureSearchBase:getGBOMForReplace&table=PLCSearchPartsTable&CommandName=FTRPartProductForReplace&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRPartProductForReplace'
+	property	'version'	value	'R215'
+;
+modify menu SearchAddExistingChooserMenu add command FTRPartProductForReplace order command FTRPartProductForReplace 14;
+#channel ==>SearchAddExistingChooserMenu
+add property command_FTRPartProductForReplace on program eServiceSchemaVariableMapping.tcl to command 'FTRPartProductForReplace';

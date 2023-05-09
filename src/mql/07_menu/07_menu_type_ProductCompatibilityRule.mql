@@ -1,0 +1,16 @@
+del menu 'type_ProductCompatibilityRule';
+add menu 'type_ProductCompatibilityRule'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=FTRProductCompatibilityRuleForm&actionBarName=FTRProductCompatibilityRulePropertiesTopActionBarMenu&formHeader=emxConfigurationMgmt.Heading.Properties&HelpMarker=emxhelpproductcompatibilityruledetails'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_ProductCompatibilityRule'
+	property 'version'	value	'R212'
+;
+add property menu_type_ProductCompatibilityRule on program eServiceSchemaVariableMapping.tcl to menu 'type_ProductCompatibilityRule';

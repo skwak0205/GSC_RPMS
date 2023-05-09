@@ -1,0 +1,19 @@
+del command 'WorkspacesExplorerView';
+add command 'WorkspacesExplorerView'
+	description	'Workspaces Command Object'
+	label	'enoFolderManagement.MyDesk.FolderView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=WorkspaceExplorerView&showPageHeader=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'FolderManagement'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'WorkspacesExplorerView'
+	property	'version'	value	'R417'
+;
+modify menu FolderManagementMyDesk add command WorkspacesExplorerView order command WorkspacesExplorerView 1;
+#channel ==>FolderManagementMyDesk
+add property command_WorkspacesExplorerView on program eServiceSchemaVariableMapping.tcl to command 'WorkspacesExplorerView';

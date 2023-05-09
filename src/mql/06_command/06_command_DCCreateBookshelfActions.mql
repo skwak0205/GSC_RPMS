@@ -1,0 +1,20 @@
+del command 'DCCreateBookshelfActions';
+add command 'DCCreateBookshelfActions'
+	description	'CreateBookshelf Command Object'
+	label	'emxDocumentCentral.Shortcut.CreateBookshelf'
+	href	'${SUITE_DIR}/emxDocumentCentralDocumentClassificationCreateDialogFS.jsp?type=type_Bookshelf&contexualOpen=QuickCreate'
+	alt	'emxDocumentCentral.Shortcut.CreateBookshelf'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'DocumentCentral'
+	user	'Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCreateBookshelfActions'
+	property	'version'	value	'10-5'
+;
+modify menu DCActions add command DCCreateBookshelfActions order command DCCreateBookshelfActions 2;
+#channel ==>DCActions
+add property command_DCCreateBookshelfActions on program eServiceSchemaVariableMapping.tcl to command 'DCCreateBookshelfActions';

@@ -1,0 +1,18 @@
+del command 'LBCPromotedToActiveStateEvent';
+add command 'LBCPromotedToActiveStateEvent'
+	description	'Event holder for promotion to Active state'
+	label	'emxLibraryCentral.Event.Promoted_To_Active_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Promoted To Active State'
+	setting	'History Bit'		'promote to Active'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCPromotedToActiveStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCLibrariesSubscriptionEvents add command LBCPromotedToActiveStateEvent order command LBCPromotedToActiveStateEvent 5;
+#channel ==>LBCLibrariesSubscriptionEvents
+add property command_LBCPromotedToActiveStateEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCPromotedToActiveStateEvent';

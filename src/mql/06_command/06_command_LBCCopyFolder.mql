@@ -1,0 +1,21 @@
+del command 'LBCCopyFolder';
+add command 'LBCCopyFolder'
+	description	'Copy Action Link on Properties'
+	label	'emxDocumentCentral.ActionBarCmd.Copy'
+	href	'${COMMON_DIR}/emxCreate.jsp?policy=policy_Project&form=type_CopyWorkspaceVault&type=type_ProjectVault&typeChooser=false&nameField=keyin&header=emxLibraryCentral.Shortcut.CopyFolder&HelpMarker=emxhelpfoldercopy&createJPO=emxLibraryCentralCommon:createClone&submitAction=treeContent&findMxLink=false&mode=copy'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'false'
+	setting	'Access Function'		'hasReadWriteAccess'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCopyFolder'
+	property	'version'	value	'R423.HF4'
+;
+modify menu LBCFolderPropertiesActionsToolbar add command LBCCopyFolder order command LBCCopyFolder 1;
+#channel ==>LBCFolderPropertiesActionsToolbar
+add property command_LBCCopyFolder on program eServiceSchemaVariableMapping.tcl to command 'LBCCopyFolder';

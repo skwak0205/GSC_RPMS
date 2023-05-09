@@ -1,0 +1,16 @@
+del command 'AEFSCCompareCommonComponents';
+add command 'AEFSCCompareCommonComponents'
+	description	'Compare Common Components Results'
+	label	'emxFramework.Common.CommonComponentsReport'
+	href	'${COMMON_DIR}/emxStructureCompareIntermediate.jsp?fromPage=Common_Report'
+	alt	'emxFramework.Common.CommonComponentsReport'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSCCompareCommonComponents'
+	property	'version'	value	'R214'
+;
+#channel ==>AEFStructureCompareResults
+add property command_AEFSCCompareCommonComponents on program eServiceSchemaVariableMapping.tcl to command 'AEFSCCompareCommonComponents';

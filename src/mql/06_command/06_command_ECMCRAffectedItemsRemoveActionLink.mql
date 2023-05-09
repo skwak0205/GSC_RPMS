@@ -1,0 +1,23 @@
+del command 'ECMCRAffectedItemsRemoveActionLink';
+add command 'ECMCRAffectedItemsRemoveActionLink'
+	description	'CRAffectedItemsRemoveActionLink'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMDisconnectProcess.jsp?functionality=disconnectAffectedItem'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Create].value || current==policy.property[state_Evaluate].value || $<interface[interface_ChangeOnHold] =="TRUE">) && (owner==context.user) && (type.kindof[$<type_ChangeRequest>])'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRAffectedItemsRemoveActionLink'
+	property	'version'	value	'R421'
+;
+modify menu ECMCOAffectedItemsListToolbar add command ECMCRAffectedItemsRemoveActionLink order command ECMCRAffectedItemsRemoveActionLink 6;
+#channel ==>ECMCOAffectedItemsListToolbar
+add property command_ECMCRAffectedItemsRemoveActionLink on program eServiceSchemaVariableMapping.tcl to command 'ECMCRAffectedItemsRemoveActionLink';

@@ -1,0 +1,14 @@
+del menu 'APPXPAdminAdvancedToolBar';
+add menu 'APPXPAdminAdvancedToolBar'
+	description	''
+	label	'emxPlmOnline.label.XPAdminBar'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Image'		'iconSmallPeople.gif'
+	command	'APPXPRoleViewToolbar'
+	command	'APPXPLocalAdministrationViewToolbar'
+	command	'APPResourcesViewToolbar'
+	command	'APPVPLMBasicViewToolbar'
+;
+add property menu_APPXPAdminAdvancedToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPXPAdminAdvancedToolBar';

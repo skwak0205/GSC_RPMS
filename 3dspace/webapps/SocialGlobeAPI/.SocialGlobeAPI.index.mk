@@ -1,0 +1,16 @@
+m|SocialGlobe\SocialGlobeAPI.mweb
+b|j|c,m
+b|c|n,m
+v|6.425.1.23007|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\SocialGlobeAPI\GlobeViewer2D.css|1669240457|11268
+s|SocialGlobe\SocialGlobeAPI.mweb\src\GlobeViewer2D.css|1653318496|14389
+t|win_b64\webapps\SocialGlobeAPI\SocialGlobeAPI.js|1673059983|1278
+s|SocialGlobe\SocialGlobeAPI.mweb\src\GlobeAPI.js|1671553885|5703
+t|win_b64\webapps\SocialGlobeAPI\test.css|1669240458|849
+s|SocialGlobe\SocialGlobeAPI.mweb\src\test.css|1668097928|1174
+t|win_b64\webapps\SocialGlobeAPI\testAPInew.html|1673059984|8522
+s|SocialGlobe\SocialGlobeAPI.mweb\src\testAPInew.html|1670245306|8522
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240
+u|win_b64\code\toolcmds\yuicompressor-2.4.9.bat|1647654585|205

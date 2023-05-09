@@ -1,0 +1,16 @@
+del command 'AEFTypesGlobalSearchCommand';
+add command 'AEFTypesGlobalSearchCommand'
+	description	'Command To get Types For Global search'
+	label	'emxFramework.Command.AEFFullSearchViewTagsModeLabel'
+	href	'javascript::::'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTypesGlobalSearchCommand'
+	property	'version'	value	'R215'
+;
+modify menu AEFTypesGlobalSearch add command AEFTypesGlobalSearchCommand order command AEFTypesGlobalSearchCommand 0;
+#channel ==>AEFTypesGlobalSearch
+add property command_AEFTypesGlobalSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'AEFTypesGlobalSearchCommand';

@@ -1,0 +1,25 @@
+del command 'APPSubsidiaryCreateActionLink';
+add command 'APPSubsidiaryCreateActionLink'
+	description	'Create Subsidiary Command Object'
+	label	'emxComponents.Command.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_CreateCompany&nameField=autoName&type=type_Company&createJPO=emxCompany:createCompanyObject&mode=create&targetLocation=slidein&companyType=Subsidiary&submitAction=treeContent&header=emxComponents.Common.CreateSubsidiary&suiteKey=Components&preProcessJavaScript=clearCompanyFormFields&showPageURLIcon=false&findMxLink=false&HelpMarker=emxhelpcompanycreate&HelpMarker=emxhelpcompanycreate'
+	alt	'emxComponents.Command.CreateNew'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Slidein Width'		'500'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSubsidiaryCreateActionLink'
+	property	'version'	value	'R424'
+;
+modify menu APPSubsidiarySummaryActionsToolBar add command APPSubsidiaryCreateActionLink order command APPSubsidiaryCreateActionLink 1;
+#channel ==>APPSubsidiarySummaryActionsToolBar
+add property command_APPSubsidiaryCreateActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPSubsidiaryCreateActionLink';

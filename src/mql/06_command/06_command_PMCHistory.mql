@@ -1,0 +1,34 @@
+del command 'PMCHistory';
+add command 'PMCHistory'
+	description	'History Command Object'
+	label	'emxFramework.Command.History'
+	href	'${COMMON_DIR}/emxHistory.jsp?HelpMarker=emxhelphistory'
+	alt	'emxFramework.Command.Alt.History'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'sm_icon_History.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCHistory'
+	property	'version'	value	'R422'
+;
+modify menu type_Assessment add command PMCHistory order command PMCHistory 3;
+modify menu type_FinancialItem add command PMCHistory order command PMCHistory 4;
+modify menu type_Program add command PMCHistory order command PMCHistory 2;
+modify menu type_ProjectConcept add command PMCHistory order command PMCHistory 5;
+modify menu type_ProjectTemplate add command PMCHistory order command PMCHistory 4;
+modify menu type_Quality add command PMCHistory order command PMCHistory 3;
+modify menu type_QualityMetric add command PMCHistory order command PMCHistory 0;
+modify menu type_Risk add command PMCHistory order command PMCHistory 4;
+modify menu type_TaskTemplate add command PMCHistory order command PMCHistory 5;
+modify menu type_BusinessGoal add command PMCHistory order command PMCHistory 3;
+modify menu type_Effort add command PMCHistory order command PMCHistory 0;
+modify menu type_Opportunity add command PMCHistory order command PMCHistory 4;
+#channel ==>type_Assessmenttype_FinancialItemtype_Programtype_ProjectConcepttype_ProjectTemplatetype_Qualitytype_QualityMetrictype_Risktype_TaskTemplatetype_BusinessGoaltype_Efforttype_OpportunityPMCPropertiesChannelPMCProjectPropertiesChannel
+add property command_PMCHistory on program eServiceSchemaVariableMapping.tcl to command 'PMCHistory';

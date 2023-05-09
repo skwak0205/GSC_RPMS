@@ -1,0 +1,24 @@
+del command 'LCRemove';
+add command 'LCRemove'
+	description	'Remove Selected Documents'
+	label	'emxLibraryCentral.Command.Remove'
+	href	'${SUITE_DIR}/emxLibraryCentralDisconnectRecord.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxLibraryCentral.Remove.ConfirmMsg'
+	setting	'Access Mask'		'fromdisconnect'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCRemove'
+	property	'version'	value	'R421'
+;
+modify menu LCRetentionScheduleSummaryActionsToolBar add command LCRemove order command LCRemove 0;
+modify menu LCRetainedDocumentSummaryActionsToolBar add command LCRemove order command LCRemove 2;
+#channel ==>LCRetentionScheduleSummaryActionsToolBarLCRetainedDocumentSummaryActionsToolBar
+add property command_LCRemove on program eServiceSchemaVariableMapping.tcl to command 'LCRemove';

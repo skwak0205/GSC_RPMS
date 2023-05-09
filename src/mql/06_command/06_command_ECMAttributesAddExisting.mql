@@ -1,0 +1,22 @@
+del command 'ECMAttributesAddExisting';
+add command 'ECMAttributesAddExisting'
+	description	'Attribute command for Change Template in ECM'
+	label	'EnterpriseChangeMgt.Command.AddExisting'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeTemplate:getAttributeList&table=ECMAttributeList&selection=multiple&categoryTreeName=null&header=EnterpriseChangeMgt.AttributeChooser.SelectAttribute&sortColumnName=Name&sortDirection=ascending&objectCompare=false&Export=false&toolbar=ECMAttributeAddExisting&expandLevelFilterMenu=false&PrinterFriendly=false&showClipboard=false&showPageURLIcon=false&submitLabel=emxFramework.Common.Done&cancelLabel=emxFramework.Common.Cancel&cancelButton=true&autoFilter=true&filter=true&submitURL=../enterprisechangemgtapp/ECMUtil.jsp?functionality=addAttribute'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAttributesAddExisting'
+	property	'version'	value	'R417'
+;
+modify menu ECMAttributeActionsToolBar add command ECMAttributesAddExisting order command ECMAttributesAddExisting 1;
+#channel ==>ECMAttributeActionsToolBar
+add property command_ECMAttributesAddExisting on program eServiceSchemaVariableMapping.tcl to command 'ECMAttributesAddExisting';

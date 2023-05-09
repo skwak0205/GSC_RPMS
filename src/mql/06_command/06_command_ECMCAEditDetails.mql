@@ -1,0 +1,22 @@
+del command 'ECMCAEditDetails';
+add command 'ECMCAEditDetails'
+	description	'Edit Change'
+	label	'EnterpriseChangeMgt.Command.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ChangeAction&formHeader=EnterpriseChangeMgt.Heading.EditCA&HelpMarker=emxhelpchangeactionedit&mode=edit&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Access Function'		'isChangeActionEditable'
+	setting	'Access Program'		'enoECMChangeActionUX'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCAEditDetails'
+	property	'version'	value	'R417'
+;
+modify menu ECMCAPropertiesActionsToolbar add command ECMCAEditDetails order command ECMCAEditDetails 1;
+modify menu ECMCAPropertiesToolbar add command ECMCAEditDetails order command ECMCAEditDetails 1;
+#channel ==>ECMCAPropertiesActionsToolbarECMCAPropertiesToolbar
+add property command_ECMCAEditDetails on program eServiceSchemaVariableMapping.tcl to command 'ECMCAEditDetails';

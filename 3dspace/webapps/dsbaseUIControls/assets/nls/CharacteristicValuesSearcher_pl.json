@@ -1,0 +1,11 @@
+{
+  "CVS.optionsChecker.searchEngine.notExisting.error": "Aby znaleźć wartości, należy zdefiniować wyszukiwarkę!",
+  "CVS.optionsChecker.searchEngine.notFunction.error": "Oczekiwana jest funkcja dla wyszukiwarki!",
+  "CVS.optionsChecker.defaultValues.array.error": "Wartości domyślne muszą być zawarte w macierzy!",
+  "CVS.optionsChecker.defaultValues.arrayObjects.error": "Macierz obiektów jest oczekiwana jako wartości domyślne dla danych wejściowych!",
+  "CVS.optionsChecker.defaultValues.labelExpected.error": "Oczekiwana jest etykieta dla każdej wartości domyślnej!",
+  "CVS.optionsChecker.defaultValues.valueExpected.error": "Oczekiwana jest wartość dla każdej wartości domyślnej!",
+  "CVS.optionsChecker.onSuggest.notFunction.error": "Oczekiwana jest funkcja dla opcji „onSuggest”!",
+  "CVS.optionsChecker.onSelect.notFunction.error": "Oczekiwana jest funkcja dla opcji „onSelect”!",
+  "CVS.optionsChecker.onCleanDataset.notFunction.error": "Oczekiwana jest funkcja dla opcji „onCleanDataset”!"
+}

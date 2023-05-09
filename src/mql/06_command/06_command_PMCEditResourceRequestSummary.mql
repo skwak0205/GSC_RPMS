@@ -1,0 +1,24 @@
+del command 'PMCEditResourceRequestSummary';
+add command 'PMCEditResourceRequestSummary'
+	description	'Edit Resource Request Summary Table'
+	label	'emxProgramCentral.Command.EditResourceRequest'
+	href	'javascript:editMode()'
+	alt	'emxProgramCentral.Command.EditResourceRequest'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Function'		'isModeCommandEnabled'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEditResourceRequestSummary'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourcePlanToolBar add command PMCEditResourceRequestSummary order command PMCEditResourceRequestSummary 5;
+#channel ==>PMCResourcePlanToolBar
+add property command_PMCEditResourceRequestSummary on program eServiceSchemaVariableMapping.tcl to command 'PMCEditResourceRequestSummary';

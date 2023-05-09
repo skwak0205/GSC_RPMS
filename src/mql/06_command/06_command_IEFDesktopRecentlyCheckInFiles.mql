@@ -1,0 +1,20 @@
+del command 'IEFDesktopRecentlyCheckInFiles';
+add command 'IEFDesktopRecentlyCheckInFiles'
+	description	'Recently Checked in files for Office Integration'
+	label	'emxIEFDesignCenter.Common.RecentlyCheckedInFiles'
+	href	'${COMMON_DIR}/emxTable.jsp?program=DSCCheckinHistoryUtil:getRecentlyCheckedInFiles&table=IEFDesktopRecentlyCheckInFiles&toolbar=IEFDesktopActionsMenu'
+	alt	'Recently Checked In Files'
+	setting	'Target Location'		'content'
+	setting	'isRecentlyCheckedInFiles'		'true'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	setting	'Access Function'		'isCADIntegAssigned'
+	setting	'Access Program'		'IEFActionAccess'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopRecentlyCheckInFiles'
+	property	'version'	value	'R417.HF8'
+;
+#channel ==>IEF ENOVIA Root
+add property command_IEFDesktopRecentlyCheckInFiles on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopRecentlyCheckInFiles';

@@ -1,0 +1,28 @@
+del command 'DCObjectSubscribetoSelectedActionLink';
+add command 'DCObjectSubscribetoSelectedActionLink'
+	description	'Subscribe to Selected on Objects List'
+	label	'emxDocumentCentral.ActionBarCmd.SubscribetoSelected'
+	href	'${SUITE_DIR}/emxDocumentCentralSubscribeOptionsFS.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribeToAFolder.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectSubscribetoSelectedActionLink'
+	property	'version'	value	'R418'
+;
+modify menu DCSearchResultToolbar add command DCObjectSubscribetoSelectedActionLink order command DCObjectSubscribetoSelectedActionLink 0;
+modify menu DCDocumentClassificationsBottomActionbar add command DCObjectSubscribetoSelectedActionLink order command DCObjectSubscribetoSelectedActionLink 2;
+modify menu DCBookDocumentsBottomActionbar add command DCObjectSubscribetoSelectedActionLink order command DCObjectSubscribetoSelectedActionLink 0;
+modify menu DCAllFoldersBottomActionbar add command DCObjectSubscribetoSelectedActionLink order command DCObjectSubscribetoSelectedActionLink 1;
+#channel ==>DCSearchResultToolbarDCDocumentClassificationsBottomActionbarDCBookDocumentsBottomActionbarDCAllFoldersBottomActionbar
+add property command_DCObjectSubscribetoSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectSubscribetoSelectedActionLink';

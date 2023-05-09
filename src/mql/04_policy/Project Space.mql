@@ -1,0 +1,24 @@
+modify policy 'Project Space'
+    state Create
+        login user VPLMCreator key gscOwnerLoginVPLMCreator all context owner
+        login user VPLMCreator key gscModifyLoginVPLMCreator modify,checkin,lock,unlock,promote single organization single project
+        login user VPLMCreator key gscParentModifyLoginVPLMCreator modify,checkin,lock,unlock,promote descendant organization single project
+        login user VPLMProjectLeader key gscLoginVPLMProjectLeader all single organization single project
+        login user VPLMProjectLeader key gscParentLoginVPLMProjectLeader all descendant organization single project
+        login user VPLMProjectAdministrator key gscLoginVPLMProjectAdministrator all
+        user VPLMCreator key gscOwnerVPLMCreator  all context owner
+        user VPLMCreator key gscModifyVPLMCreator modify,checkin,lock,unlock,promote single organization single project
+        user VPLMCreator key gscParentModifyVPLMCreator modify,checkin,lock,unlock,promote descendant organization single project
+        user VPLMProjectLeader key gscVPLMProjectLeader all single organization single project
+        user VPLMProjectLeader key gscParentVPLMProjectLeader all descendant organization single project
+        user VPLMProjectAdministrator key gscVPLMProjectAdministrator all
+		;
+modify policy 'Project Space'
+    state Assign
+        login user VPLMCreator key gscLoginVPLMCreator modify,promote,demote single organization single project
+        login user VPLMProjectLeader key gscParentLoginVPLMProjectLeader modify,promote,demote descendant organization single project
+        login user VPLMProjectAdministrator key gscLoginVPLMProjectAdministrator all
+        user VPLMCreator key gscLoginVPLMCreator promote,demote single organization single project
+        user VPLMProjectLeader key gscParentLoginVPLMProjectLeader promote,demote descendant organization single project
+        user VPLMProjectAdministrator key gscLoginVPLMProjectAdministrator all
+;

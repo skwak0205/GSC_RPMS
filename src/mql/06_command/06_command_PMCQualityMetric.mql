@@ -1,0 +1,23 @@
+del command 'PMCQualityMetric';
+add command 'PMCQualityMetric'
+	description	'Quality Metric Command Object'
+	label	'emxFramework.Command.QualityMetric'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxQuality:getMetric&table=PMCProjectQualityMetric&toolbar=PMCQualityMetricToolbar&selection=multiple&HelpMarker=emxhelpqualitymetricssummary&header=emxProgramCentral.Common.QualityMetricHeading&editLink=true'
+	alt	'emxFramework.Command.QualityMetric'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'${SUITE_DIR}/iconSmallMetric.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCQualityMetric'
+	property	'version'	value	'R422'
+;
+modify menu type_Quality add command PMCQualityMetric order command PMCQualityMetric 0;
+#channel ==>type_Quality
+add property command_PMCQualityMetric on program eServiceSchemaVariableMapping.tcl to command 'PMCQualityMetric';

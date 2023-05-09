@@ -1,0 +1,91 @@
+################################################################################################
+# Created Date : 2020.06.18
+# Create by Nackwon.Do
+# Description : 승인도 엔진 그룹 생성 webform
+################################################################################################
+
+# del form 'type_emdADEngineGroup';
+
+add form 'type_emdADEngineGroup' web
+	field
+		name  'Name'
+		label 'emxEngineeringCentral.Common.Name'
+		businessobject '$<name>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+	field
+		name  'Title'
+		label 'emxEngineeringCentral.Common.Title'
+		businessobject '$<attribute[attribute_V_Name]>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"attribute"
+	field
+		name  'emdADType'
+		label 'emxEngineeringCentral.Label.ADType'
+		businessobject '$<attribute[attribute_emdADType]>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"attribute"
+	field
+		name  'Description'
+		label 'emxEngineeringCentral.Common.Description'
+		businessobject '$<description>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"true"
+        setting "Field Type" 		"basic"
+        setting "Admin Type" 		"description"
+        setting "Input Type"        "textarea"
+	field
+		name  'revision'
+		label 'emxEngineeringCentral.Common.Revision'
+		businessobject '$<revision>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+	field
+		name  'State'
+		label 'emxEngineeringCentral.Common.State'
+		businessobject '$<current>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+	field
+		name  'Owner'
+		label 'emxEngineeringCentral.Common.Owner'
+		businessobject '$<owner>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+        setting "Admin Type" 		"owner"
+        setting "format"            "user"
+property "installer" value "HHI"
+property "application" value "Framework"
+property "installed date" value "2020-06-19"
+property "original name" value "type_emdADEngineGroup"
+property "version" value "V6R2019"
+;
+
+add property form_type_emdADEngineGroup on program eServiceSchemaVariableMapping.tcl to form 'type_emdADEngineGroup';

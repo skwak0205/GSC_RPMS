@@ -1,0 +1,21 @@
+del command 'emxEditBusinessSkill';
+add command 'emxEditBusinessSkill'
+	description	''
+	label	'emxComponents.Common.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=emxBusinessSkill&mode=edit&printerfriendly=true&HelpMarker=emxhelpskilleditdetails&formHeader=emxComponents.Common.FormEditDetailsHeadingWithoutRev'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'emxEditBusinessSkill'
+	property	'version'	value	'R417'
+;
+modify menu APPBusinessSkillToolBarActions add command emxEditBusinessSkill order command emxEditBusinessSkill 0;
+#channel ==>APPBusinessSkillToolBarActions
+add property command_emxEditBusinessSkill on program eServiceSchemaVariableMapping.tcl to command 'emxEditBusinessSkill';

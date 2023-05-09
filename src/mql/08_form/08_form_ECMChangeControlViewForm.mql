@@ -1,0 +1,30 @@
+del form 'ECMChangeControlViewForm';
+add form 'ECMChangeControlViewForm' web
+field #1
+	name	'GroupHeader'
+	label	'EnterpriseChangeMgt.SectionHeader.ChangeManagement'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Field Type'		'Section Header'
+	setting	'Section Level'		'1'
+field #2
+	name	'ChangeControl'
+	label	'EnterpriseChangeMgt.Label.ChangeControl'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'function'		'getHTMLForChangeControlValueOnForm'
+	setting	'Editable'		'false'
+	setting	'Export'		'false'
+	setting	'program'		'enoECMChangeUX'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'ECMChangeControlViewForm'
+	property	'version'	value	'R421'
+;
+add property form_ECMChangeControlViewForm on program eServiceSchemaVariableMapping.tcl to form 'ECMChangeControlViewForm';

@@ -1,0 +1,17 @@
+del channel 'AEFStructureCompareResults';
+add channel 'AEFStructureCompareResults'
+	description	'Channel for BOM Compare Selection Criteria'
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Framework'
+	setting		'Height'		'60%'
+	command 	'AEFSCCompleteSummaryResults','AEFSCDifferenceOnlyReport','AEFSCCompareCommonComponents','AEFSCBOM1UniqueComponentsReport','AEFSCBOM2UniqueComponentsReport'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFStructureCompareResults'
+	property	'version'	value	'R214'
+;
+#portal ==>AEFStructureComparePortal
+add property channel_AEFStructureCompareResults on program eServiceSchemaVariableMapping.tcl to channel 'AEFStructureCompareResults';

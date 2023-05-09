@@ -1,0 +1,27 @@
+del command 'PMCFolderAddQuickBelow';
+add command 'PMCFolderAddQuickBelow'
+	description	''
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=createQuickFolder'
+	alt	'emxProgramCentral.QuickFolder.AddFolderBelow'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionInsertRowAfter.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFolderAddQuickBelow'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCFolderAddQuickBelow on program eServiceSchemaVariableMapping.tcl to command 'PMCFolderAddQuickBelow';

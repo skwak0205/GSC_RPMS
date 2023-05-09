@@ -1,0 +1,58 @@
+
+################################################################################################
+# Created Date : 2020.07.02
+# Create by Nackwon.Do
+# Description : MFG AD Part Create Form
+################################################################################################
+        
+# del form 'emdMFGADPartCreateForm';
+
+add form 'emdMFGADPartCreateForm' web
+	field# Basic Info
+  		name  'header1'
+	    label 'emxEngineeringCentral.SectionHeader.BasicInfo'
+	    setting 'Field Type' 		'Section Header'
+	    setting 'Registered Suite' 'EngineeringCentral'
+	field
+		name  'Type'
+		label 'emxComponents.Common.Type'
+		businessobject   '$<type>'
+		alt ''
+        range ''
+        update ''
+		setting 'Required'		 	'false'
+		setting 'Editable'          'false'
+		setting 'Registered Suite'  'EngineeringCentral'
+		setting 'Input Type'        'textbox'
+		setting "Field Type" 		"basic"
+		setting "Access Expression" "false"
+	field
+		name  'ADPartNo'
+		label 'emxEngineeringCentral.Label.ADPartNo'
+		businessobject   '$<name>'
+		alt ''
+        range ''
+        update ''
+		setting 'Required'		 	'false'
+		setting 'Registered Suite'  'EngineeringCentral'
+		setting 'Editable'          'false'
+		setting "Field Type" 		"basic"
+	field
+		name 'ADPartName'
+		label 'emxEngineeringCentral.Label.ADPartName'
+		businessobject $<attribute[attribute_V_Name]>'
+		alt ''
+        range ''
+        update ''
+		setting 'Required'		 	'false'
+		setting 'Registered Suite'  'EngineeringCentral'
+		setting 'Input Type'        'textbox'
+		setting "Field Type" 		"attribute"
+property "installer" 		value "HHI"
+property "application" 		value "Framework"
+property "installed date" 	value "2020-07-02"
+property "original name" 	value "emdMFGADPartCreateForm"
+property "version" 			value "V6R2019"
+;
+
+add property form_emdMFGADPartCreateForm on program eServiceSchemaVariableMapping.tcl to form 'emdMFGADPartCreateForm';	

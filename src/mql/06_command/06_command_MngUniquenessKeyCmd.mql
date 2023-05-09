@@ -1,0 +1,17 @@
+del command 'MngUniquenessKeyCmd';
+add command 'MngUniquenessKeyCmd'
+	description	'Manage Uniqueness Keys View'
+	label	'emxPackagesManagement.label.UniquenessKeyActivation'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=MngUKConfigurationPortal&header=emxPackagesManagement.label.UniquenessKeyActivation'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'PackagesManagement'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isManageUKAvailable'
+	setting	'Access Program'		'emxPackagesMngtProgram'
+	setting	'Image'		'${SUITE_DIR}/images/CustoPackNewUK_32.png'
+	user	'VPLMAdmin'
+;
+modify menu ManagePackagesToolbar add command MngUniquenessKeyCmd order command MngUniquenessKeyCmd 0;
+#channel ==>ManagePackagesToolbar
+add property command_MngUniquenessKeyCmd on program eServiceSchemaVariableMapping.tcl to command 'MngUniquenessKeyCmd';

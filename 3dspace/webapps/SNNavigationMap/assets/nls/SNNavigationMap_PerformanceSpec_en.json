@@ -1,0 +1,12 @@
+{
+  "PerformanceSpec": "Performance Spec Relations",
+  "performancespecof": "Performance Spec Of",
+  "performancespecof_to": "Performance Spec Of",
+  "performancespecof_from": "Performance Specs",
+  "performancechar": "Performance Char",
+  "performancechar_to": "Performance Chars",
+  "performancechar_from": "Performance Char Of",
+  "performancetest": "Performance Test",
+  "performancetest_to": "Performance Tests",
+  "performancetest_from": "Performance Test Of"
+}

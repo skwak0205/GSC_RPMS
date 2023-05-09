@@ -1,0 +1,21 @@
+del command 'CFPCreateProductRevisionFromModelTree';
+add command 'CFPCreateProductRevisionFromModelTree'
+	description	''
+	label	'DMCPlanning.ActionLink.CreateNewRevision'
+	href	'${SUITE_DIR}/DesignEffectivityUtil.jsp?mode=CreateNewProductRevision'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Access Expression'		'$<(from[relationship_ModelTemplate]=="True") && (from[relationship_Products]=="True")>'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPCreateProductRevisionFromModelTree'
+	property	'version'	value	'R216'
+;
+modify menu PLCModelProductListToolBarActions add command CFPCreateProductRevisionFromModelTree order command CFPCreateProductRevisionFromModelTree 1;
+#channel ==>PLCModelProductListToolBarActions
+add property command_CFPCreateProductRevisionFromModelTree on program eServiceSchemaVariableMapping.tcl to command 'CFPCreateProductRevisionFromModelTree';

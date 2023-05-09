@@ -1,0 +1,14 @@
+del menu 'FTRCopyToWizardStep2Menu';
+add menu 'FTRCopyToWizardStep2Menu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'FTRInsertIntoSelected'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRCopyToWizardStep2Menu'
+	property 'version'	value	'V6R2009.HF40'
+;
+add property menu_FTRCopyToWizardStep2Menu on program eServiceSchemaVariableMapping.tcl to menu 'FTRCopyToWizardStep2Menu';

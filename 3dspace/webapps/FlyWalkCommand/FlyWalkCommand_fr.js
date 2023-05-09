@@ -1,0 +1,1 @@
+define("DS/FlyWalkCommand/FlyWalkCommand_fr",{});define("DS/FlyWalkCommand/assets/nls/translation",{StartHelp:"Maintenir le bouton gauche de la souris enfoncé pour",StartHelp_Touch:"Utiliser les joysticks pour",WalkText:"Marcher",FlyText:"Vol",DontShow:"Ne plus afficher"});

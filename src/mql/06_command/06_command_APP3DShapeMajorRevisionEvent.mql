@@ -1,0 +1,13 @@
+del command 'APP3DShapeMajorRevisionEvent';
+add command 'APP3DShapeMajorRevisionEvent'
+	description	'When 3DShape is major revised'
+	label	'emxComponents.Notification.Event.Revised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Revised'
+	property	'version'	value	'R421'
+;
+modify menu APP3DShapeEvents add command APP3DShapeMajorRevisionEvent order command APP3DShapeMajorRevisionEvent 0;
+#channel ==>APP3DShapeEvents
+add property command_APP3DShapeMajorRevisionEvent on program eServiceSchemaVariableMapping.tcl to command 'APP3DShapeMajorRevisionEvent';

@@ -1,0 +1,20 @@
+del command 'AEFHomeToolbar';
+add command 'AEFHomeToolbar'
+	description	'Home'
+	label	''
+	href	'emxNavigatorContentLoad.jsp'
+	alt	'emxNavigator.UIMenu.Home'
+	setting	'Target Location'		'content'
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionHome.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFHomeToolbar'
+	property	'version'	value	'R216'
+;
+modify menu AEFMyHome add command AEFHomeToolbar order command AEFHomeToolbar 1;
+#channel ==>AEFMyHome
+add property command_AEFHomeToolbar on program eServiceSchemaVariableMapping.tcl to command 'AEFHomeToolbar';

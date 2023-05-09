@@ -1,0 +1,33 @@
+del table 'APPFormatsSummary' system;
+add table 'APPFormatsSummary' system
+column #1
+	name	'Name'
+	label	'emxComponents.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Components'
+	setting	'Column Type'		'program'
+	setting	'function'		'getFormatNames'
+	setting	'program'		'emxOrganization'
+column #2
+	name	'Versions'
+	label	'emxComponents.Formats.Version'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Components'
+	setting	'Column Type'		'program'
+	setting	'function'		'getFormatVersions'
+	setting	'program'		'emxOrganization'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFormatsSummary'
+	property	'version'	value	'10-5-SP1'
+;
+add property table_APPFormatsSummary on program eServiceSchemaVariableMapping.tcl to table 'APPFormatsSummary' system;

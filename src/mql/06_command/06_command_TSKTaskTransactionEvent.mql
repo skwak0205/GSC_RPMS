@@ -1,0 +1,13 @@
+del command 'TSKTaskTransactionEvent';
+add command 'TSKTaskTransactionEvent'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'CollaborativeTasks'
+	setting	'Event Type'		'TSKTaskTransaction'
+	setting	'History Bit'		'modify'
+;
+modify menu TSKTaskSubscriptionEvents add command TSKTaskTransactionEvent order command TSKTaskTransactionEvent 0;
+#channel ==>TSKTaskSubscriptionEvents
+add property command_TSKTaskTransactionEvent on program eServiceSchemaVariableMapping.tcl to command 'TSKTaskTransactionEvent';

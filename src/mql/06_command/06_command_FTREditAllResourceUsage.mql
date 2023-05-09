@@ -1,0 +1,24 @@
+del command 'FTREditAllResourceUsage';
+add command 'FTREditAllResourceUsage'
+	description	'Command for Edit All link'
+	label	'emxProduct.ActionLink.EditAll'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?HelpMarker=emxhelpresourceusageedit'
+	alt	'emxProduct.ActionLink.EditAll'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'450'
+	setting	'Window Width'		'730'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditAllResourceUsage'
+	property	'version'	value	'R417'
+;
+modify menu FTRResourceUsageToolBar add command FTREditAllResourceUsage order command FTREditAllResourceUsage 0;
+#channel ==>FTRResourceUsageToolBar
+add property command_FTREditAllResourceUsage on program eServiceSchemaVariableMapping.tcl to command 'FTREditAllResourceUsage';

@@ -1,0 +1,21 @@
+del command 'FTRLFAssemblyConfigurationsTreeCategory';
+add command 'FTRLFAssemblyConfigurationsTreeCategory'
+	description	'Command Object for Product Configuration in the Logical Feature Tree Category'
+	label	'emxConfiguration.ActionLink.AssemblyConfigurations'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProductConfiguration:getOwnedProductConfigurations,emxProductConfiguration:getAllProductConfigurations&programLabel=emxProduct.Filter.Owned,emxProduct.Filter.AllConfiguration&selection=multiple&table=FTRProductConfigurationList&header=emxConfiguration.Heading.AssemblyConfigurations&sortColumnName=Name&sortDirection=ascending&toolbar=FTRProductConfigurationActionToolbar&ExportData=false&HelpMarker=emxhelpproductconfigurationlist'
+	alt	'emxProduct.Menu.ProductConfigurations'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProductConfiguration.gif'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLFAssemblyConfigurationsTreeCategory'
+	property	'version'	value	'R421'
+;
+modify menu type_LogicalFeature add command FTRLFAssemblyConfigurationsTreeCategory order command FTRLFAssemblyConfigurationsTreeCategory 1;
+#channel ==>type_LogicalFeature
+add property command_FTRLFAssemblyConfigurationsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRLFAssemblyConfigurationsTreeCategory';

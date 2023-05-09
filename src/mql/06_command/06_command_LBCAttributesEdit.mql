@@ -1,0 +1,23 @@
+del command 'LBCAttributesEdit';
+add command 'LBCAttributesEdit'
+	description	'command to edit Classification Attribute'
+	label	'emxLibraryCentral.Attributes.Edit'
+	href	'${SUITE_DIR}/emxLibraryCentralAttributeEditPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributesEdit'
+	property	'version'	value	'R423.HF5'
+;
+modify menu MCMAttributeActionsToolBar add command LBCAttributesEdit order command LBCAttributesEdit 4;
+#channel ==>MCMAttributeActionsToolBar
+add property command_LBCAttributesEdit on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributesEdit';

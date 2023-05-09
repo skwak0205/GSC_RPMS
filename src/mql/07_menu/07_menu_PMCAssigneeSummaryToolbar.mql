@@ -1,0 +1,17 @@
+del menu 'PMCAssigneeSummaryToolbar';
+add menu 'PMCAssigneeSummaryToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'hasAssigneeToolbarAccess'
+	setting	'Access Program'		'emxTask'
+	menu	'PMCAssigneeSummaryToolbarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCAssigneeSummaryToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_PMCAssigneeSummaryToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCAssigneeSummaryToolbar';

@@ -1,0 +1,24 @@
+del command 'PMCRemoveEffort';
+add command 'PMCRemoveEffort'
+	description	'Remove Effort Object'
+	label	'emxProgramCentral.Common.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralRemoveProjectItem.jsp?fromEfforts=removeEfforts'
+	alt	'emxProgramCentral.Common.Delete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxProgramCentral.Common.DeleteWarningMsg'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRemoveEffort'
+	property	'version'	value	'R422'
+;
+modify menu PMCEffortToolbarActions add command PMCRemoveEffort order command PMCRemoveEffort 0;
+#channel ==>PMCEffortToolbarActions
+add property command_PMCRemoveEffort on program eServiceSchemaVariableMapping.tcl to command 'PMCRemoveEffort';

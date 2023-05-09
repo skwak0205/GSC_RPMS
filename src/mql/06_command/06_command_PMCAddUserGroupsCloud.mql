@@ -1,0 +1,19 @@
+del command 'PMCAddUserGroupsCloud';
+add command 'PMCAddUserGroupsCloud'
+	description	'Command for Cloud Add User Group Into Project'
+	label	'emxFramework.Common.DomainAccessAddUserGroups'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?showInitialResults=true&table=AEFUserGroupsChooser&selection=multiple&form=AEFSearchUserGroupsForm&submitURL=../common/emxDomainAccessProcess.jsp&cmdName=addUserGroups&jpoName=emxDomainAccess&methodName=addUserGroups&source=usersgroup&rdfQuery=type:foaf:Group&HelpMarker=emxhelpsearch'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'false'
+	setting	'Hide Mode'		'!Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddPersons.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddUserGroupsCloud'
+	property	'version'	value	'R423.HF1'
+;
+modify menu PMCMemberSummaryToolBarActions add command PMCAddUserGroupsCloud order command PMCAddUserGroupsCloud 6;
+#channel ==>PMCMemberSummaryToolBarActions
+add property command_PMCAddUserGroupsCloud on program eServiceSchemaVariableMapping.tcl to command 'PMCAddUserGroupsCloud';

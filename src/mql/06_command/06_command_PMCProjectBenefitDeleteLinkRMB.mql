@@ -1,0 +1,27 @@
+del command 'PMCProjectBenefitDeleteLinkRMB';
+add command 'PMCProjectBenefitDeleteLinkRMB'
+	description	'Delete Benefit'
+	label	'emxProgramCentral.ProjectBenefit.Command.DeleteBenefit'
+	href	'${SUITE_DIR}/emxProgramCentralFinancialItemDeleteProcess.jsp'
+	alt	'emxProgramCentral.ProjectBenefit.Command.DeleteBenefit'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'checkFinDeleteAccess'
+	setting	'Access Program'		'emxBenefitItem'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitDeleteLinkRMB'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBenefitRMB add command PMCProjectBenefitDeleteLinkRMB order command PMCProjectBenefitDeleteLinkRMB 0;
+#channel ==>PMCProjectBenefitRMB
+add property command_PMCProjectBenefitDeleteLinkRMB on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitDeleteLinkRMB';

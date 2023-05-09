@@ -1,0 +1,22 @@
+del command 'FTRCreateProductCompatibilityRuleActionCommandLink';
+add command 'FTRCreateProductCompatibilityRuleActionCommandLink'
+	description	''
+	label	'emxProduct.ActionLink.Create'
+	href	'${SUITE_DIR}/CreateRuleDialog.jsp?modetype=create&commandName= FTRProductCompatibilityRuleSettings&ruleType=ProductCompatibilityRule&submitURL=../configuration/PCRCreatePostProcess.jsp?mode=create&ruleType=ProductCompatibilityRule&submitAction=refreshCaller'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateProductCompatibilityRuleActionCommandLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRProductCompatibilityRuleListActionsMenu add command FTRCreateProductCompatibilityRuleActionCommandLink order command FTRCreateProductCompatibilityRuleActionCommandLink 1;
+#channel ==>FTRProductCompatibilityRuleListActionsMenu
+add property command_FTRCreateProductCompatibilityRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateProductCompatibilityRuleActionCommandLink';

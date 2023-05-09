@@ -1,0 +1,17 @@
+del menu 'ECMChangeOrderToolbar';
+add menu 'ECMChangeOrderToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.CO'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallChangeOrder.png'
+	setting	'Expanded'		'true'
+	command	'ECMAddToExistingChange'
+	command	'ECMAddToNewChange'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'original name'	value	'ECMChangeOrderToolbar'
+	property 'version'	value	'R420'
+;
+add property menu_ECMChangeOrderToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMChangeOrderToolbar';

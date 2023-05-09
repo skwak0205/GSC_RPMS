@@ -1,0 +1,16 @@
+del menu 'DCFolderContentBottomActionbar';
+add menu 'DCFolderContentBottomActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCObjectRemoveSelectedActionLink'
+	command	'APPSubscriptionMultiObject'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCFolderContentBottomActionbar'
+	property 'version'	value	'R212'
+;
+add property menu_DCFolderContentBottomActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCFolderContentBottomActionbar';

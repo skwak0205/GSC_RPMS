@@ -1,0 +1,15 @@
+del portal 'ECMAffectedItemsPortal';
+add portal 'ECMAffectedItemsPortal'
+	description	''
+	label	''
+	href	''
+	channel 	ECMAffectedItemsChannel
+	channel 	ECMCandidateItemsChannel
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAffectedItemsPortal'
+	property	'version'	value	'R216'
+;
+add property portal_ECMAffectedItemsPortal on program eServiceSchemaVariableMapping.tcl to portal 'ECMAffectedItemsPortal';

@@ -1,0 +1,18 @@
+del command 'LCEndItems';
+add command 'LCEndItems'
+	description	''
+	label	'emxLibraryCentral.Command.ClassifiedItems'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&HelpMarker=emxhelpenditems&program=emxLibraryCentralUtil:getClassifiedItems&table=LCMyPartsList&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=LCClassifiedItemToolBar&header=emxLibraryCentral.Heading.ClassifiedEndItems&defaultType=type_GenericDocument&parentRelName=relationship_ClassifiedItem&editLink=true'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCEndItems'
+	property	'version'	value	'R214'
+;
+modify menu type_Classification add command LCEndItems order command LCEndItems 2;
+modify menu type_GeneralClass add command LCEndItems order command LCEndItems 4;
+modify menu Msoitype_GeneralClass add command LCEndItems order command LCEndItems 0;
+#channel ==>type_Classificationtype_GeneralClassMsoitype_GeneralClass
+add property command_LCEndItems on program eServiceSchemaVariableMapping.tcl to command 'LCEndItems';

@@ -1,0 +1,25 @@
+del command 'DCObjectRevisionsShowHistoryActionLink';
+add command 'DCObjectRevisionsShowHistoryActionLink'
+	description	'Show History Action Link on Revisions'
+	label	'emxDocumentCentral.ActionBarCmd.ShowHistory'
+	href	'${COMMON_DIR}/emxHistory.jsp?HistoryMode=AllRevisions&header=emxDocumentCentral.Revisions.History'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'600'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionHistory.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectRevisionsShowHistoryActionLink'
+	property	'version'	value	'R418'
+;
+modify menu DCDocumentRevisionsActionBar add command DCObjectRevisionsShowHistoryActionLink order command DCObjectRevisionsShowHistoryActionLink 1;
+modify menu DCObjectRevisionsTopActionbar add command DCObjectRevisionsShowHistoryActionLink order command DCObjectRevisionsShowHistoryActionLink 0;
+#channel ==>DCDocumentRevisionsActionBarDCObjectRevisionsTopActionbar
+add property command_DCObjectRevisionsShowHistoryActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectRevisionsShowHistoryActionLink';

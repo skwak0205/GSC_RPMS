@@ -1,0 +1,40 @@
+del table 'MngMxTNRTypesTable' system;
+add table 'MngMxTNRTypesTable' system
+column #1
+	name	'packageName'
+	label	'emxPackagesManagement.label.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'PackagesManagement'
+	setting	'Column Type'		'program'
+	setting	'function'		'getMxTNRPackageOrTypeName'
+	setting	'program'		'emxPackagesMngtProgram'
+column #2
+	name	'packageNature'
+	label	'emxPackagesManagement.label.PackageNature'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'PackagesManagement'
+	setting	'Column Type'		'program'
+	setting	'function'		'getMxTNRPackageOrTypeInfo'
+	setting	'program'		'emxPackagesMngtProgram'
+column #3
+	name	'mxTNRTypeStatus'
+	label	'emxPackagesManagement.label.mxTNRTypeStatus'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'PackagesManagement'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getMxTNRTypeStatusHTML'
+	setting	'program'		'emxPackagesMngtProgram'
+;
+add property table_MngMxTNRTypesTable on program eServiceSchemaVariableMapping.tcl to table 'MngMxTNRTypesTable' system;

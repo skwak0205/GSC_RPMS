@@ -1,0 +1,19 @@
+del command 'PLCAddExistingTestExeSubExeActionLink';
+add command 'PLCAddExistingTestExeSubExeActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_TestExecution&table=PLCSearchTestCasesTable&excludeOIDprogram=emxTestCase:excludeSubTestCases&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_SubTestExecution&isTo=true&cancelLabel=emxProduct.Button.Close&showInitialResults=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'version'	value	'R422'
+;
+modify menu SubTestExeToolbar add command PLCAddExistingTestExeSubExeActionLink order command PLCAddExistingTestExeSubExeActionLink 1;
+#channel ==>SubTestExeToolbar
+add property command_PLCAddExistingTestExeSubExeActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingTestExeSubExeActionLink';

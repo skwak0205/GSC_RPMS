@@ -1,0 +1,20 @@
+del command 'FTRCreateExpressionRuleActionCommandLink';
+add command 'FTRCreateExpressionRuleActionCommandLink'
+	description	'FTRCreateExpressionRuleActionCommandLink'
+	label	'emxProduct.ActionLink.CreateExpressionRules'
+	href	'${SUITE_DIR}/ConfigurationRuleCreateProcess.jsp?targetLocation=listHidden&ruleType=Boolean'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R421'
+;
+modify menu FTRExpressionRuleListActionsMenu add command FTRCreateExpressionRuleActionCommandLink order command FTRCreateExpressionRuleActionCommandLink 1;
+#channel ==>FTRExpressionRuleListActionsMenu
+add property command_FTRCreateExpressionRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateExpressionRuleActionCommandLink';

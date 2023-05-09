@@ -1,0 +1,1 @@
+define("DS/ControlsEx/ControlsEx_fr",{});define("DS/ControlsEx/assets/nls/translation",{information:"Informations",expand:"Développer",collapse:"Réduire"});

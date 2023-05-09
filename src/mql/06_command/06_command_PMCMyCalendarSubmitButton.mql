@@ -1,0 +1,24 @@
+del command 'PMCMyCalendarSubmitButton';
+add command 'PMCMyCalendarSubmitButton'
+	description	''
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralMyCalendarDispatcher.jsp?navigate=goto'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Action Label'		'emxProgramCentral.MyCalendar.Toolbar.Submit'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Width'		'100'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMyCalendarSubmitButton'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyCalendarToolbar add command PMCMyCalendarSubmitButton order command PMCMyCalendarSubmitButton 0;
+#channel ==>PMCMyCalendarToolbar
+add property command_PMCMyCalendarSubmitButton on program eServiceSchemaVariableMapping.tcl to command 'PMCMyCalendarSubmitButton';

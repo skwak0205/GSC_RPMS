@@ -1,0 +1,20 @@
+del menu 'PMCDashboardActionsMenu';
+add menu 'PMCDashboardActionsMenu'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'isShowActionsMenu'
+	setting	'Access Program'		'emxTemplateDrivenDashboard'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCAddProjectCommand'
+	command	'PMCDeleteProjectCommand'
+	command	'PMCLaborReport'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCDashboardActionsMenu'
+	property 'version'	value	'R419'
+;
+add property menu_PMCDashboardActionsMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCDashboardActionsMenu';

@@ -1,0 +1,22 @@
+del command 'PMCWorkCalendarEventCreateActionLink';
+add command 'PMCWorkCalendarEventCreateActionLink'
+	description	''
+	label	'emxProgramCentral.Button.CreateNew'
+	href	'${SUITE_DIR}/WorkCalendarUtil.jsp?mode=createWorkCalendarEvent'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkCalendarEventCreateActionLink'
+	property	'version'	value	'R423.HF2'
+;
+modify menu PMCWorkCalendarEventsToolbarActions add command PMCWorkCalendarEventCreateActionLink order command PMCWorkCalendarEventCreateActionLink 1;
+#channel ==>PMCWorkCalendarEventsToolbarActions
+add property command_PMCWorkCalendarEventCreateActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkCalendarEventCreateActionLink';

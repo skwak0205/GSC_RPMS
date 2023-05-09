@@ -1,0 +1,17 @@
+del channel 'RMTSpecificationsGraph';
+add channel 'RMTSpecificationsGraph'
+	description	'Channel to Traceability'
+	height	'0'
+	label	'emxRequirements.Label.DisplayGraph'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'Height'		'40%'
+	command 	'RMTDisplayGraph'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationsGraph'
+	property	'version'	value	'R417'
+;
+#portal ==>
+add property channel_RMTSpecificationsGraph on program eServiceSchemaVariableMapping.tcl to channel 'RMTSpecificationsGraph';

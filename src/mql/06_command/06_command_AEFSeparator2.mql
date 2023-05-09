@@ -1,0 +1,57 @@
+del command 'AEFSeparator2';
+add command 'AEFSeparator2'
+	description	'Use as separator for toolbar buttons'
+	label	'AEFSeparator2'
+	href	''
+	alt	'AEFSeparator2'
+	setting	'Registered Suite'		'Framework'
+	setting	'Action Type'		'Separator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSeparator2'
+	property	'version'	value	'10-5'
+;
+modify menu AEFCollectionActionsToolBar add command AEFSeparator2 order command AEFSeparator2 4;
+modify menu AEFCollectionItemsActionsToolBar add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu APPECListActionsToolBar add command AEFSeparator2 order command AEFSeparator2 3;
+modify menu APPObjectECActionsToolBar add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu APPDecisionsActionBar add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu APPRefDocumentSummaryActionsToolBar add command AEFSeparator2 order command AEFSeparator2 6;
+modify menu DCBookDocumentsActionBar add command AEFSeparator2 order command AEFSeparator2 0;
+modify menu ECMMoveToCOToolbar add command AEFSeparator2 order command AEFSeparator2 0;
+modify menu ECMAddToChangeToolbar add command AEFSeparator2 order command AEFSeparator2 6;
+modify menu ECMChangeToolbar add command AEFSeparator2 order command AEFSeparator2 2;
+modify menu PLCModelProductListToolBarActions add command AEFSeparator2 order command AEFSeparator2 6;
+modify menu PLCPortfolioContentListToolbarActions add command AEFSeparator2 order command AEFSeparator2 3;
+modify menu PLCImageListToolBarActions add command AEFSeparator2 order command AEFSeparator2 8;
+modify menu PMCWBSToolBarActions add command AEFSeparator2 order command AEFSeparator2 8;
+modify menu PMCWeeklyTimeSheetToolBar add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu PMCWeeklyTimeSheetToolBarActions add command AEFSeparator2 order command AEFSeparator2 2;
+modify menu PMCWhatIfExperimentActionMenu add command AEFSeparator2 order command AEFSeparator2 3;
+modify menu PMCProjectSummaryToolBarActions add command AEFSeparator2 order command AEFSeparator2 9;
+modify menu PMCAssessSummaryToolBar add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu PMCAssessSummaryToolBarActions add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu type_GateRMB add command AEFSeparator2 order command AEFSeparator2 8;
+modify menu RMTSpecTreeActionBar add command AEFSeparator2 order command AEFSeparator2 6;
+modify menu RMTStructureBrowserActionsMenu add command AEFSeparator2 order command AEFSeparator2 2;
+modify menu type_TaskManagementRMB add command AEFSeparator2 order command AEFSeparator2 6;
+modify menu PMCFolderSummaryToolBar add command AEFSeparator2 order command AEFSeparator2 9;
+modify menu RMTRichTextEditorActions add command AEFSeparator2 order command AEFSeparator2 6;
+modify menu RMTFeatureRequirementBottomActionBar add command AEFSeparator2 order command AEFSeparator2 2;
+modify menu RMTSpecificationListActionMenu add command AEFSeparator2 order command AEFSeparator2 12;
+modify menu RMTSCETreeRMB add command AEFSeparator2 order command AEFSeparator2 6;
+modify menu RMTChapTreeActionBar add command AEFSeparator2 order command AEFSeparator2 2;
+modify menu RMTRequirementRichTextEditorActions add command AEFSeparator2 order command AEFSeparator2 1;
+modify menu RMTRequirementListActionMenu add command AEFSeparator2 order command AEFSeparator2 8;
+modify menu TestCaseTopBottom add command AEFSeparator2 order command AEFSeparator2 3;
+modify menu FTRManufacturingFeaturesToolbarActions add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu FTRModelCandidateManufacturingFeatureToolbarActions add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu FTRMyDeskManufacturingFeatureToolbarActionsMenu add command AEFSeparator2 order command AEFSeparator2 4;
+modify menu FTRMyDeskConfigurationFeaturesActions add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu FTRLogicalFeatureRMB add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu FTRLFContextManufacturingFeaturesToolbarActions add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu FTRMFContextManufacturingFeaturesToolbarActions add command AEFSeparator2 order command AEFSeparator2 5;
+modify menu CFPMasterFeatureToolbarActions add command AEFSeparator2 order command AEFSeparator2 2;
+#channel ==>AEFCollectionActionsToolBarAEFCollectionItemsActionsToolBarAPPECListActionsToolBarAPPObjectECActionsToolBarAPPDecisionsActionBarAPPRefDocumentSummaryActionsToolBarDCBookDocumentsActionBarECMMoveToCOToolbarECMAddToChangeToolbarECMChangeToolbarPLCModelProductListToolBarActionsPLCPortfolioContentListToolbarActionsPLCImageListToolBarActionsPMCWBSToolBarActionsPMCWeeklyTimeSheetToolBarPMCWeeklyTimeSheetToolBarActionsPMCWhatIfExperimentActionMenuPMCProjectSummaryToolBarActionsPMCAssessSummaryToolBarPMCAssessSummaryToolBarActionstype_GateRMBRMTSpecTreeActionBarRMTStructureBrowserActionsMenutype_TaskManagementRMBPMCFolderSummaryToolBarRMTRichTextEditorActionsRMTFeatureRequirementBottomActionBarRMTSpecificationListActionMenuRMTSCETreeRMBRMTChapTreeActionBarRMTRequirementRichTextEditorActionsRMTRequirementListActionMenuTestCaseTopBottomFTRManufacturingFeaturesToolbarActionsFTRModelCandidateManufacturingFeatureToolbarActionsFTRMyDeskManufacturingFeatureToolbarActionsMenuFTRMyDeskConfigurationFeaturesActionsFTRLogicalFeatureRMBFTRLFContextManufacturingFeaturesToolbarActionsFTRMFContextManufacturingFeaturesToolbarActionsCFPMasterFeatureToolbarActions
+add property command_AEFSeparator2 on program eServiceSchemaVariableMapping.tcl to command 'AEFSeparator2';

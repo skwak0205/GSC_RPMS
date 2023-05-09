@@ -1,0 +1,25 @@
+del command 'APPLibClassObjectAccessAddUsers';
+add command 'APPLibClassObjectAccessAddUsers'
+	description	'This command provides add users functionality to the Library and Class type objects for giving them granted access'
+	label	'emxComponents.Command.Add'
+	href	'${SUITE_DIR}/emxComponentsObjectAccessUsersDialogFS.jsp?accessChoice=Read_WO_Download,Add,Remove,Add_Remove&addUserType=person,role,group&showAllProgram=emxObjectAccess&showAllFunction=hasLibrarianRole&pushGrantor=person_CommonAccessGrantor&lbcAccess=true'
+	alt	'emxComponents.Command.Add'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(owner==context.user) || (locked == FALSE)'
+	setting	'Access Map'		'FromConnect'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'APPLibClassObjectAccessAddUsers'
+	property	'version'	value	'R419'
+;
+#channel ==>
+add property command_APPLibClassObjectAccessAddUsers on program eServiceSchemaVariableMapping.tcl to command 'APPLibClassObjectAccessAddUsers';

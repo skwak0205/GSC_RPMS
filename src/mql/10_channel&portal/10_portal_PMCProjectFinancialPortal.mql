@@ -1,0 +1,14 @@
+del portal 'PMCProjectFinancialPortal';
+add portal 'PMCProjectFinancialPortal'
+	description	'Financial Forecast Portal for Project Benefit and Sale Forecast'
+	label	''
+	href	''
+	channel 	PMCProjectFinancialChannel
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectFinancialPortal'
+	property	'version'	value	'R210'
+;
+add property portal_PMCProjectFinancialPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCProjectFinancialPortal';

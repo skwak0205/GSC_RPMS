@@ -1,0 +1,20 @@
+del command 'APPPartFamilySubscribe';
+add command 'APPPartFamilySubscribe'
+	description	''
+	label	'emxComponents.Button.Subscribe'
+	href	'${SUITE_DIR}/emxCommonFS.jsp?functionality=PartSubscriptions&suiteKey=Components&help=emxhelpparteventsubscription'
+	alt	'emxComponents.Command.Subscriptions'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartFamilySubscribe'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_APPPartFamilySubscribe on program eServiceSchemaVariableMapping.tcl to command 'APPPartFamilySubscribe';

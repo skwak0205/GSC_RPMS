@@ -1,0 +1,21 @@
+del command 'FTREditRuleExtensionRuleActionLink';
+add command 'FTREditRuleExtensionRuleActionLink'
+	description	'Edit Rule Extension Rule'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_RuleExtension&mode=Edit&formHeader=emxConfiguration.Heading.EditNoRevRuleExtension&HelpMarker=emxhelpresourcerulesedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditRuleExtensionRuleActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRRuleExtensionPropertiesTopActionBar add command FTREditRuleExtensionRuleActionLink order command FTREditRuleExtensionRuleActionLink 0;
+#channel ==>FTRRuleExtensionPropertiesTopActionBar
+add property command_FTREditRuleExtensionRuleActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTREditRuleExtensionRuleActionLink';

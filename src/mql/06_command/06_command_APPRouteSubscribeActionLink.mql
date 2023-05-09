@@ -1,0 +1,19 @@
+del command 'APPRouteSubscribeActionLink';
+add command 'APPRouteSubscribeActionLink'
+	description	'Command to Subscribe to Route'
+	label	'emxComponents.Routes.Subscribe'
+	href	'${COMPONENT_DIR}/emxSubscriptionDialog.jsp?HelpMarker=emxhelpsubscriptionevents'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteSubscribeActionLink'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPRouteSubscribeActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRouteSubscribeActionLink';

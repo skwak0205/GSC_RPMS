@@ -1,0 +1,35 @@
+del command 'APPCreateRouteActionLink';
+add command 'APPCreateRouteActionLink'
+	description	'Route Summary Create Route Command Object'
+	label	'emxComponents.Routes.CreateNew'
+	href	'${COMPONENT_DIR}/emxRouteWizardCreateDialogFS.jsp?init1=true&showmenuinToolbar=false'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(policy == "Inbox Task" && current == Complete)'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'emxCheckCreateRoutesAccess'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRouteWizard.png'
+	setting	'Selectable in Preferences'		'false'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateRouteActionLink'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPRouteSummaryTopActionBar add command APPCreateRouteActionLink order command APPCreateRouteActionLink 0;
+modify menu APPRoutesTreeCategoryActionsToolBar add command APPCreateRouteActionLink order command APPCreateRouteActionLink 1;
+modify menu APPRouteSummaryActionsToolBar add command APPCreateRouteActionLink order command APPCreateRouteActionLink 2;
+modify menu AppActionRoute add command APPCreateRouteActionLink order command APPCreateRouteActionLink 2;
+modify menu APPRouteSummaryTaskActionsToolBar add command APPCreateRouteActionLink order command APPCreateRouteActionLink 2;
+modify menu PMCRouteSummaryActionsToolBar add command APPCreateRouteActionLink order command APPCreateRouteActionLink 2;
+#channel ==>APPRouteSummaryTopActionBarAPPRoutesTreeCategoryActionsToolBarAPPRouteSummaryActionsToolBarAppActionRouteAPPRouteSummaryTaskActionsToolBarPMCRouteSummaryActionsToolBar
+add property command_APPCreateRouteActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPCreateRouteActionLink';

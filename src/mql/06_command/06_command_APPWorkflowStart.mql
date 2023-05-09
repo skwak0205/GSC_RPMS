@@ -1,0 +1,21 @@
+del command 'APPWorkflowStart';
+add command 'APPWorkflowStart'
+	description	'Command Object for Starting the workflow from action menu on the workflow summary page'
+	label	'emxComponents.Workflow.Start'
+	href	'${COMPONENT_DIR}/emxWorkflowAction.jsp?action=start'
+	alt	'emxComponents.Workflow.Start'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionStart.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowStart'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowSummaryActionsToolBar add command APPWorkflowStart order command APPWorkflowStart 3;
+modify menu APPObjectWorkflowActionsToolBar add command APPWorkflowStart order command APPWorkflowStart 3;
+#channel ==>APPWorkflowSummaryActionsToolBarAPPObjectWorkflowActionsToolBar
+add property command_APPWorkflowStart on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowStart';

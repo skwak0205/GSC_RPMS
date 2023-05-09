@@ -1,0 +1,20 @@
+del command 'APPSearchForCompanies';
+add command 'APPSearchForCompanies'
+	description	'Command object for Search For Companies for Collaboration Request'
+	label	'emxComponents.Command.SearchForCompanies'
+	href	'${COMPONENT_DIR}/emxComponentsCollaborateSearchDialog.jsp?typename=Company'
+	alt	'emxComponents.Command.SearchForCompanies'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearchForCompany.png'
+	setting	'Help Marker'		'emxhelpselectorganization'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchForCompanies'
+	property	'version'	value	'R417'
+;
+modify menu APPSearchCompanyActionsToolBar add command APPSearchForCompanies order command APPSearchForCompanies 1;
+modify menu APPSearchCompanyToolBar add command APPSearchForCompanies order command APPSearchForCompanies 0;
+#channel ==>APPSearchCompanyActionsToolBarAPPSearchCompanyToolBar
+add property command_APPSearchForCompanies on program eServiceSchemaVariableMapping.tcl to command 'APPSearchForCompanies';

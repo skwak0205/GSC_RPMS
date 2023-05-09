@@ -1,0 +1,22 @@
+del command 'PARConnectToExistingObject';
+add command 'PARConnectToExistingObject'
+	description	'Command to connect an existing object to the given parameter by the "Parametrer Usage" relation'
+	label	'emxParameter.Associate.ExistingObject'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Requirement&showInitialResults=false&selection=multiple&table=PARObjectsToConnect&HelpMarker=emxhelpfullsearch&cancelLabel=emxParameter.FindObjects.Quit&submitLabel=emxParameter.FindObjects.Connect&excludeOIDprogram=emxParameterConnect:excludeConnectedObjects&submitURL=../parameter/emxParameterAssociateExisting.jsp?&connectRelationship=relationship_ParameterUsage'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Maximum Length'		'20'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'VPLMLocalCrossPrjContextAccess'
+	user	'VPLMLocalCrossOrgContextAccess'
+	user	'VPLMSecuredCrossAccess'
+	user	'Requirement Manager'
+;
+modify menu PARWhereUsedActionToolBar add command PARConnectToExistingObject order command PARConnectToExistingObject 1;
+#channel ==>PARWhereUsedActionToolBar
+add property command_PARConnectToExistingObject on program eServiceSchemaVariableMapping.tcl to command 'PARConnectToExistingObject';

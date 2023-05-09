@@ -1,0 +1,14 @@
+del menu 'ENCpartPartDetailsToolBar';
+add menu 'ENCpartPartDetailsToolBar'
+	description	''
+	label	'Components.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'ENCpartPartDetailsToolBar'
+	property 'version'	value	'10-7'
+;
+add property menu_ENCpartPartDetailsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'ENCpartPartDetailsToolBar';

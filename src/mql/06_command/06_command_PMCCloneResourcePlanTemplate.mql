@@ -1,0 +1,27 @@
+del command 'PMCCloneResourcePlanTemplate';
+add command 'PMCCloneResourcePlanTemplate'
+	description	'Clone Resource plan Template'
+	label	'emxProgramCentral.Command.ResourcePlan.CreateFromClone'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCResourcePlanTemplateSummaryTable&selection=single&program=emxResourcePlanTemplate:getAllActiveResourcePlanTemplates&header=emxProgramCentral.Common.CloneResourcePlanTemplate&submitURL=${SUITE_DIR}/emxProgramCentralResourcePlanTemplateUtil.jsp&submitLabel=emxFramework.Button.Submit&FunctionMode=clone&HelpMarker=emxhelpresourceplantemplateclone'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isOwnerOrCoOwner'
+	setting	'Access Program'		'emxProjectTemplate'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCloneResourcePlanTemplate'
+	property	'version'	value	'R422'
+;
+modify menu PMCCreateResourcePlanTemplate add command PMCCloneResourcePlanTemplate order command PMCCloneResourcePlanTemplate 2;
+#channel ==>PMCCreateResourcePlanTemplate
+add property command_PMCCloneResourcePlanTemplate on program eServiceSchemaVariableMapping.tcl to command 'PMCCloneResourcePlanTemplate';

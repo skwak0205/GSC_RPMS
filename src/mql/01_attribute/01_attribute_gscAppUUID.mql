@@ -1,0 +1,15 @@
+#del attribute 'gscAppUUID';
+add attribute 'gscAppUUID'
+ type 'string'
+ description 'Toffice Approval UUID'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscAppUUID'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscAppUUID on program eServiceSchemaVariableMapping.tcl to attribute 'gscAppUUID';
+
+modify type Route add attribute gscAppUUID;

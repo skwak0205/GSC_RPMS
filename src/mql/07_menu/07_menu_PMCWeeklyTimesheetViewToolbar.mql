@@ -1,0 +1,15 @@
+del menu 'PMCWeeklyTimesheetViewToolbar';
+add menu 'PMCWeeklyTimesheetViewToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCWeeklyTimeSheetToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWeeklyTimesheetViewToolbar'
+	property 'version'	value	'R210'
+;
+add property menu_PMCWeeklyTimesheetViewToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCWeeklyTimesheetViewToolbar';

@@ -1,0 +1,35 @@
+#del menu 'gscPMCWBSTableMenuENXSBGrid';
+add menu 'gscPMCWBSTableMenuENXSBGrid'
+ description ''
+ label ''
+ href ''
+ alt ''
+ setting 'Registered Suite'  'ProgramCentral'
+ command 'PMCWBSTaskAssignmentViewENXSBGrid'
+ property 'installer' value 'ENOVIAEngineering'
+ property 'application' value 'ProgramManagementBase'
+ property 'installed date' value '03-23-2023'
+ property 'original name' value 'gscPMCWBSTableMenuENXSBGrid'
+ property 'version' value 'R422.HF4'
+;
+
+add property menu_gscPMCWBSTableMenuENXSBGrid on program eServiceSchemaVariableMapping.tcl to menu 'gscPMCWBSTableMenuENXSBGrid';
+
+# [ENOVIA] Project - Schedule 에 해당하는 menu 'type_Project' 수정 및 gscPMCSchedule 생성 (기존 PMCSchedule 에서 변경)
+# menu 'type_Project' history 참고
+
+
+
+
+
+# [ENOVIA] Project - Schedule - 'Table View' Command 'PMCWBSDataGridView' href URL 변경 ->> JSP 수정 gscProjectManagementUtil.jsp 사용
+# 기본: mod command PMCWBSDataGridView href '${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCWBS&subMode=PMCWBSDataGridView&lazyLoad=2000&fastColumns=Name';
+# tableMenu: PMCWBSTableMenuENXSBGrid -> gscPMCWBSTableMenuENXSBGrid
+# toolbar: PMCWBSToolBar -> 제거
+# expandProgramMenu: PMCWBSListMenu -> gscPMCWBSListMenu
+# selectedProgram: null - > emxTask:getMemberTasks
+# custom url: https://rpmsdev.gscaltex.co.kr/3dspace/webapps/ENXSBGridConnector/ENXSBGridConnectorClient.html?tableMenu=gscPMCWBSTableMenuENXSBGrid&lazyLoad=2000&fastColumns=Name&expandProgramMenu=gscPMCWBSListMenu&freezePane=Name&selection=multiple&HelpMarker=emxhelpdatagridtable&sortColumnName=ID&findMxLink=false&editRelationship=relationship_Subtask&suiteKey=ProgramCentral&SuiteDirectory=programcentral&resequenceRelationship=relationship_Subtask&connectionProgram=emxTask:cutPasteTasksInWBS&postProcessJPO=emxTask:updateScheduleChanges&hideLaunchButton=true&parallelLoading=true&objectId=15741.36097.45387.35709&showPageURLIcon=false&cacheEditAccessProgram=true&toolbar=&editLink=true&massPromoteDemote=true&SuiteDirectory=programcentral&showPageHeader=false&treeLabel=HJ+TEST+-+%ED%85%8C%EC%8A%A4%ED%8A%B8+%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8&parentOID=15741.36097.45387.35709&emxSuiteDirectory=programcentral&HelpMarker=emxhelpprojectadvancedreport&fastColumns=Name&portalMode=true&lazyLoad=2000&StringResourceFileId=emxProgramCentralStringResource&mode=PMCWBS&portalCmdName=PMCWBSDataGridView&jsTreeID=null&suiteKey=ProgramCentral&portal=PMCSchedule&subMode=PMCWBSDataGridView&objectId=15741.36097.45387.35709&maxCellsToDraw=2000&scrollPageSize=50&emxExpandFilter=0&selectedProgram=emxTask:getMemberTasks
+# JSP 변경: emxProjectManagementUtil -> gscProjectManagementUtil, SubMode 변경: PMCWBSDataGridView -> gscPMCWBSDataGridView
+mod command gscPMCWBSDataGridView href '${SUITE_DIR}/gscProjectManagementUtil.jsp?mode=PMCWBS&subMode=gscPMCWBSDataGridView&lazyLoad=2000&fastColumns=Name';
+
+# Table Name: PMCWBSAssignmentViewTableENXSBGrid

@@ -1,0 +1,16 @@
+del command 'SearchECOwnerLink';
+add command 'SearchECOwnerLink'
+	description	'EC Owner Find Command Object'
+	label	'emxComponents.Command.SearchPerson'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxCommonEngineeringChange:getPersons&table=ECSearchPersonsTable&form=ECSearchPersonsForm&searchCommand=SearchECOwnerLink&ChangeOwner=true&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'SearchECOwnerLink'
+	property	'version'	value	'10-6'
+;
+modify menu APPECSearchAddExistingChooser add command SearchECOwnerLink order command SearchECOwnerLink 11;
+#channel ==>APPECSearchAddExistingChooser
+add property command_SearchECOwnerLink on program eServiceSchemaVariableMapping.tcl to command 'SearchECOwnerLink';

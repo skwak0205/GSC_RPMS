@@ -1,0 +1,19 @@
+del command 'APPProcessListCreateWorkflow';
+add command 'APPProcessListCreateWorkflow'
+	description	'Command for creating the workflow from process list page'
+	label	'emxComponents.processList.CreateWorkflow'
+	href	'createNew()'
+	alt	'emxComponents.processList.CreateWorkflow'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Javascript'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallWorkflow.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPProcessListCreateWorkflow'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPProcessListActiontoolbar add command APPProcessListCreateWorkflow order command APPProcessListCreateWorkflow 0;
+#channel ==>APPProcessListActiontoolbar
+add property command_APPProcessListCreateWorkflow on program eServiceSchemaVariableMapping.tcl to command 'APPProcessListCreateWorkflow';

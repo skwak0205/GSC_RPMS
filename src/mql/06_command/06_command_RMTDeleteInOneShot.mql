@@ -1,0 +1,29 @@
+del command 'RMTDeleteInOneShot';
+add command 'RMTDeleteInOneShot'
+	description	'This will Delete the selected element{s} ith children from the database'
+	label	'emxRequirements.ActionLink.Delete'
+	href	'${SUITE_DIR}/DeleteSelected.jsp?mode=deleteAll'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'reserved == "FALSE" || reservedby == context.user'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.Delete2'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTDeleteInOneShot'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecificationListActionMenu add command RMTDeleteInOneShot order command RMTDeleteInOneShot 0;
+modify menu type_SoftwareRequirementSpecificationRMB add command RMTDeleteInOneShot order command RMTDeleteInOneShot 0;
+#channel ==>RMTSpecificationListActionMenutype_SoftwareRequirementSpecificationRMB
+add property command_RMTDeleteInOneShot on program eServiceSchemaVariableMapping.tcl to command 'RMTDeleteInOneShot';

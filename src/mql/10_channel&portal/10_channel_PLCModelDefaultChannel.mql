@@ -1,0 +1,16 @@
+del channel 'PLCModelDefaultChannel';
+add channel 'PLCModelDefaultChannel'
+	description	''
+	height	'500'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProductLine'
+	command 	'PLCModelProperties'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCModelDefaultChannel'
+	property	'version'	value	'R214'
+;
+#portal ==>PLCModelPortal
+add property channel_PLCModelDefaultChannel on program eServiceSchemaVariableMapping.tcl to channel 'PLCModelDefaultChannel';

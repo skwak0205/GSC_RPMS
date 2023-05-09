@@ -1,0 +1,16 @@
+del command 'VPLMIntegSynchWithVPLM';
+add command 'VPLMIntegSynchWithVPLM'
+	description	'Command to synchronize data with Engineering'
+	label	'emxVPMCentral.Synchronization.Command.SyncWithVPLM.Title'
+	href	'${SUITE_DIR}/common/emxSynchronizeWithVPLMDialogFS.jsp?titleKey=emxVPLMSynchro.Synchronization.Command.SyncWithVPLM.Title&Transfer=False'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'VPMCentral'
+	setting	'Slidein Width'		'550'
+	setting	'Access Function'		'isVPMUser'
+	setting	'Access Program'		'VPLMIntegCheckCommandAccess'
+	setting	'Image'		'${COMMON_DIR}/images/CATPLMMatrixSyncRequestAddin_I.png'
+	setting	'Access Mask'		'modify,fromconnect'
+;
+#channel ==>
+add property command_VPLMIntegSynchWithVPLM on program eServiceSchemaVariableMapping.tcl to command 'VPLMIntegSynchWithVPLM';

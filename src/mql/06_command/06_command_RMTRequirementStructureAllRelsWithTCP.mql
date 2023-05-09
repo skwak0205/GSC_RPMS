@@ -1,0 +1,28 @@
+del command 'RMTRequirementStructureAllRelsWithTCP';
+add command 'RMTRequirementStructureAllRelsWithTCP'
+	description	'Display Requirement object with Parameter(s) and TestCase(s)'
+	label	'emxRequirements.Filter.AllRelsWithTCP'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgramMenu=RMTRequirementStructureProgramFilterMenu&tableMenu=RMTRequirementTableFilterMenu&toolbar=RMTRequirementStructureBrowserToolbar&selection=multiple&HelpMarker=emxhelprequirementstructurebrowser&editLink=true&header=emxRequirements.Heading.RequirementStructureBrowser'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'function'		'getRequirementChildren'
+	setting	'program'		'emxRequirement'
+	setting	'table'		'RMTRequirementStatusView'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementStructureAllRelsWithTCP'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementStructureProgramFilterMenu add command RMTRequirementStructureAllRelsWithTCP order command RMTRequirementStructureAllRelsWithTCP 0;
+#channel ==>RMTRequirementStructureProgramFilterMenu
+add property command_RMTRequirementStructureAllRelsWithTCP on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementStructureAllRelsWithTCP';

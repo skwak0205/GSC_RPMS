@@ -1,0 +1,27 @@
+del command 'PMCProjectBenefitEditLink';
+add command 'PMCProjectBenefitEditLink'
+	description	'Edit Benefit'
+	label	'emxProgramCentral.ProjectBenefit.Command.EditLink'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=editProjectBenefitProperties&HelpMarker=emxhelpbenefitedit'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasEditBenefitAccess'
+	setting	'Access Program'		'emxBenefitItem'
+	setting	'Row Select'		'Single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitEditLink'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBenefitEditPageToolBarActions add command PMCProjectBenefitEditLink order command PMCProjectBenefitEditLink 2;
+#channel ==>PMCProjectBenefitEditPageToolBarActions
+add property command_PMCProjectBenefitEditLink on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitEditLink';

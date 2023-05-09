@@ -1,0 +1,25 @@
+del command 'APPRouteRemoveAccess';
+add command 'APPRouteRemoveAccess'
+	description	'Command to remove route access'
+	label	'emxComponents.ObjectAccess.Remove'
+	href	'${SUITE_DIR}/emxRouteRemoveMembersProcess.jsp?fromRouteAccessSummaryPage=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(type.kindof=="$<type_Route>" && current.access[fromdisconnect] == true)'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.RouteMember.RemoveMsgConfirm'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteRemoveAccess'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteAccessActionsToolbar add command APPRouteRemoveAccess order command APPRouteRemoveAccess 3;
+#channel ==>APPRouteAccessActionsToolbar
+add property command_APPRouteRemoveAccess on program eServiceSchemaVariableMapping.tcl to command 'APPRouteRemoveAccess';

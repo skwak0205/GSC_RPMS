@@ -1,0 +1,15 @@
+del menu 'LBCAttributeGroupPropertiesToolBar';
+add menu 'LBCAttributeGroupPropertiesToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'LBCAttributeGroupEditDetails'
+	command	'LBCAttributeGroupCopy'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCAttributeGroupPropertiesToolBar'
+	property 'version'	value	'R211'
+;
+add property menu_LBCAttributeGroupPropertiesToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LBCAttributeGroupPropertiesToolBar';

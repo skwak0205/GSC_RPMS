@@ -1,0 +1,1 @@
+define("DS/ENOXEngineerCommonUtils/ENOXEngineerCommonUtils_ko",{});define("DS/ENOXEngineerCommonUtils/assets/nls/XENCommonNls",{loading:"로드 중...","eng.ui.button.ok":"확인","eng.ui.button.cancel":"취소"});

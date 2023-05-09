@@ -1,0 +1,22 @@
+del command 'APPDeliverableAddExistingActionLink';
+add command 'APPDeliverableAddExistingActionLink'
+	description	'Add existing content'
+	label	'emxComponents.Common.AddExisting'
+	href	'${SUITE_DIR}/emxCommonTaskDeliverablesAddExistingSearchFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'640'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'((current.access[fromconnect]==true) && (to[Workflow Task].from.current=="Started"))'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeliverableAddExistingActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPWorkflowDeliverableSummaryActionsToolBar add command APPDeliverableAddExistingActionLink order command APPDeliverableAddExistingActionLink 2;
+#channel ==>APPWorkflowDeliverableSummaryActionsToolBar
+add property command_APPDeliverableAddExistingActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDeliverableAddExistingActionLink';

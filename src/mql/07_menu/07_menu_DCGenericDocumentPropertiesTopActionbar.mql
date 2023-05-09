@@ -1,0 +1,21 @@
+del menu 'DCGenericDocumentPropertiesTopActionbar';
+add menu 'DCGenericDocumentPropertiesTopActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCObjectPropertiesEditDetailsActionLink'
+	command	'DCObjectPropertiesCopyActionLink'
+	command	'DCObjectPropertiesReviseActionLink'
+	command	'DCObjectPropertiesSubscribeActionLink'
+	command	'DCObjectPropertiesLockActionLink'
+	command	'DCObjectPropertiesUnlockActionLink'
+	command	'DCObjectPropertiesDeleteActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCGenericDocumentPropertiesTopActionbar'
+	property 'version'	value	'9-5-2-0'
+;
+add property menu_DCGenericDocumentPropertiesTopActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCGenericDocumentPropertiesTopActionbar';

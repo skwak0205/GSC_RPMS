@@ -1,0 +1,11 @@
+del channel 'ResourcesChannel';
+add channel 'ResourcesChannel'
+	description	'Resources view Administration'
+	height	'620'
+	label	'emxPlmOnline.label.ResourcesViewToolbar'
+	href	''
+	setting		'Registered Suite'		'VPLMAdministration'
+	command 	'APPVPLMDiscipline'
+;
+#portal ==>APPVPLMResourcesAdminPortal
+add property channel_ResourcesChannel on program eServiceSchemaVariableMapping.tcl to channel 'ResourcesChannel';

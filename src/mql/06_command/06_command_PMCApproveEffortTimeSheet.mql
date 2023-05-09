@@ -1,0 +1,23 @@
+del command 'PMCApproveEffortTimeSheet';
+add command 'PMCApproveEffortTimeSheet'
+	description	'Approve Effort Timesheet'
+	label	'emxProgramCentral.WeeklyTimesheet.Approve'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=approve'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessOnApproveRejectCmd'
+	setting	'Access Program'		'emxWeeklyTimeSheet'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionApprove.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCApproveEffortTimeSheet'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimeSheetApproveToolBarActions add command PMCApproveEffortTimeSheet order command PMCApproveEffortTimeSheet 1;
+modify menu PMCWeeklyTimeSheetApproverViewRMB add command PMCApproveEffortTimeSheet order command PMCApproveEffortTimeSheet 1;
+#channel ==>PMCWeeklyTimeSheetApproveToolBarActionsPMCWeeklyTimeSheetApproverViewRMB
+add property command_PMCApproveEffortTimeSheet on program eServiceSchemaVariableMapping.tcl to command 'PMCApproveEffortTimeSheet';

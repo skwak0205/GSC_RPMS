@@ -1,0 +1,16 @@
+del menu 'RMTSpecificationsListTopActionBar';
+add menu 'RMTSpecificationsListTopActionBar'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTCreateSpecificationActionLink'
+	command	'RMTCreateRequirementGroupCreateActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecificationsListTopActionBar'
+	property 'version'	value	'V6R2012x'
+;
+add property menu_RMTSpecificationsListTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecificationsListTopActionBar';

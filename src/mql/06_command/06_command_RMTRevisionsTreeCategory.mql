@@ -1,0 +1,30 @@
+del command 'RMTRevisionsTreeCategory';
+add command 'RMTRevisionsTreeCategory'
+	description	''
+	label	'emxRequirements.Tree.Revisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=RMTRevisionsList&header=emxRequirements.Heading.Revisions&program=emxRMTCommon:getRevisions&toolbar=RMTRevisionsToolBar&sortColumnName=Name&HelpMarker=emxhelprevisionlist&massPromoteDemote=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'policy != "Requirement Version"'
+	setting	'Image'		'COMMON_DIR/iconSmallRevision.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRevisionsTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_Chapter add command RMTRevisionsTreeCategory order command RMTRevisionsTreeCategory 3;
+modify menu type_Comment add command RMTRevisionsTreeCategory order command RMTRevisionsTreeCategory 5;
+modify menu type_UseCase add command RMTRevisionsTreeCategory order command RMTRevisionsTreeCategory 0;
+#channel ==>type_Chaptertype_Commenttype_UseCaseRMTChangeControl
+add property command_RMTRevisionsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTRevisionsTreeCategory';

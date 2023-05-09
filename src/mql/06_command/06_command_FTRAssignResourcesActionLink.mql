@@ -1,0 +1,26 @@
+del command 'FTRAssignResourcesActionLink';
+add command 'FTRAssignResourcesActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AssignResource'
+	href	'${SUITE_DIR}/FixedResourceUtil.jsp?mode=AssignResourceUsage&HelpMarker=emxhelpresourceusageassign'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'createNewLinkDisplay'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAssignResourcesActionLink'
+	property	'version'	value	'R215'
+;
+modify menu FTRFixedResourceToolBarActions add command FTRAssignResourcesActionLink order command FTRAssignResourcesActionLink 5;
+modify menu FTRResourcesListBottomActionBar add command FTRAssignResourcesActionLink order command FTRAssignResourcesActionLink 1;
+#channel ==>FTRFixedResourceToolBarActionsFTRResourcesListBottomActionBar
+add property command_FTRAssignResourcesActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAssignResourcesActionLink';

@@ -1,0 +1,22 @@
+del command 'PMCMemberSummaryEditAll';
+add command 'PMCMemberSummaryEditAll'
+	description	'Command to Edit All the Members'
+	label	'emxProgramCentral.Button.EditAll'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?table=PMCProjectMemberSummary&program=emxProjectMember:getMembersForEdit&header=emxProgramCentral.Common.Members&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpmembereditroledialog&postProcessURL=../programcentral/emxProgramCentralMemberEditAllProcess.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMemberSummaryEditAll'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCMemberSummaryEditAll on program eServiceSchemaVariableMapping.tcl to command 'PMCMemberSummaryEditAll';

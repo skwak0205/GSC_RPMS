@@ -1,0 +1,22 @@
+del command 'FTRLogicalFeatureGBOMReportLimitFilterCommand';
+add command 'FTRLogicalFeatureGBOMReportLimitFilterCommand'
+	description	''
+	label	'emxFramework.Basic.Limit'
+	href	'javascript:filterPage()'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'false'
+	setting	'Action Label'		'Search'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Default'		'*'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLogicalFeatureGBOMReportLimitFilterCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRLogicalFeatureOptionGBOMCustomFilterToolbar add command FTRLogicalFeatureGBOMReportLimitFilterCommand order command FTRLogicalFeatureGBOMReportLimitFilterCommand 0;
+#channel ==>FTRLogicalFeatureOptionGBOMCustomFilterToolbar
+add property command_FTRLogicalFeatureGBOMReportLimitFilterCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRLogicalFeatureGBOMReportLimitFilterCommand';

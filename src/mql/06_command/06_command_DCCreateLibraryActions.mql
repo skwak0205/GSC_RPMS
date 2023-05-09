@@ -1,0 +1,20 @@
+del command 'DCCreateLibraryActions';
+add command 'DCCreateLibraryActions'
+	description	'CreateLibrary Command Object'
+	label	'emxDocumentCentral.Shortcut.CreateLibrary'
+	href	'${SUITE_DIR}/emxDocumentCentralDocumentClassificationCreateDialogFS.jsp?type=type_Library&contexualOpen=QuickCreate'
+	alt	'emxDocumentCentral.Shortcut.CreateLibrary'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'DocumentCentral'
+	user	'Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCreateLibraryActions'
+	property	'version'	value	'10-5'
+;
+modify menu DCActions add command DCCreateLibraryActions order command DCCreateLibraryActions 1;
+#channel ==>DCActions
+add property command_DCCreateLibraryActions on program eServiceSchemaVariableMapping.tcl to command 'DCCreateLibraryActions';

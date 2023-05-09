@@ -1,0 +1,14 @@
+del portal 'APPLifecycleReviewPortal';
+add portal 'APPLifecycleReviewPortal'
+	description	''
+	label	''
+	href	''
+	channel 	APPLifecycleReviewChannel
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLifecycleReviewPortal'
+	property	'version'	value	'10-6'
+;
+add property portal_APPLifecycleReviewPortal on program eServiceSchemaVariableMapping.tcl to portal 'APPLifecycleReviewPortal';

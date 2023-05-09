@@ -1,0 +1,12 @@
+del menu 'VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar';
+add menu 'VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar'
+	description	'VPLM Actions'
+	label	'emxVPMCentral.Change.Menu.TaskActionsSummaryRelatedPartsToolBar.Title'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'VPMCentral'
+	command	'VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar_Headerlink_0'
+	command	'AEFSeparator'
+	command	'VPLMSyncChgActionSummaryRemoveParts_Footerlink_0'
+;
+add property menu_VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar';

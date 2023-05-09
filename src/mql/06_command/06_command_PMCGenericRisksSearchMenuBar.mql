@@ -1,0 +1,28 @@
+del command 'PMCGenericRisksSearchMenuBar';
+add command 'PMCGenericRisksSearchMenuBar'
+	description	'Menu Bar Generic Risks Search'
+	label	'emxProgramCentral.Search.Risks'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?table=PMCGenericRiskSearchResults&field=TYPES=type_Risk'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Currency Converter'		'false'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelprisksearch'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGenericRisksSearchMenuBar'
+	property	'version'	value	'R422'
+;
+modify menu PMCProgramCentralSearch add command PMCGenericRisksSearchMenuBar order command PMCGenericRisksSearchMenuBar 5;
+#channel ==>PMCProgramCentralSearch
+add property command_PMCGenericRisksSearchMenuBar on program eServiceSchemaVariableMapping.tcl to command 'PMCGenericRisksSearchMenuBar';

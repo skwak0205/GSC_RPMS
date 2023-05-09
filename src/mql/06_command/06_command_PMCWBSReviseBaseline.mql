@@ -1,0 +1,27 @@
+del command 'PMCWBSReviseBaseline';
+add command 'PMCWBSReviseBaseline'
+	description	''
+	label	'emxProgramCentral.Button.ReviseBaseline'
+	href	'${SUITE_DIR}/emxProgramCentralWBSBaselineDialogFS.jsp?fromPage=StructureBrowser'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForReviseBaseline'
+	setting	'Access Program'		'emxTask'
+	setting	'Access Mask'		'modify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSReviseBaseline'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSToolBarActions add command PMCWBSReviseBaseline order command PMCWBSReviseBaseline 4;
+#channel ==>PMCWBSToolBarActions
+add property command_PMCWBSReviseBaseline on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSReviseBaseline';

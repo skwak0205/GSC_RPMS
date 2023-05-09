@@ -1,0 +1,25 @@
+del command 'PMCCreateQuestion';
+add command 'PMCCreateQuestion'
+	description	'Create Question in Project Template'
+	label	'emxProgramCentral.Common.Create'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=CreateSubQuestion'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToQuestionCommands'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateQuestion'
+	property	'version'	value	'R424.HF4'
+;
+modify menu PMCQuestionToolbarActions add command PMCCreateQuestion order command PMCCreateQuestion 1;
+modify menu PMCQuestionToolbar add command PMCCreateQuestion order command PMCCreateQuestion 1;
+#channel ==>PMCQuestionToolbarActionsPMCQuestionToolbar
+add property command_PMCCreateQuestion on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateQuestion';

@@ -1,0 +1,24 @@
+del command 'ECMRemoveCAAfftectedItems';
+add command 'ECMRemoveCAAfftectedItems'
+	description	'Remove Items under Affected Items in CA'
+	label	'EnterpriseChangeMgt.Command.RemoveAffectedItem'
+	href	'${SUITE_DIR}/ECMDisconnectProcess.jsp?functionality=disconnectCAAffectedItem'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isProposedRemoveAllowed'
+	setting	'Access Program'		'enoECMChangeActionUX'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMRemoveCAAfftectedItems'
+	property	'version'	value	'R417'
+;
+modify menu ECMAddRemoveCAAffectedItemsToolbar add command ECMRemoveCAAfftectedItems order command ECMRemoveCAAfftectedItems 2;
+#channel ==>ECMAddRemoveCAAffectedItemsToolbar
+add property command_ECMRemoveCAAfftectedItems on program eServiceSchemaVariableMapping.tcl to command 'ECMRemoveCAAfftectedItems';

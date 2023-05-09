@@ -1,0 +1,18 @@
+del command 'DataGridLaunch';
+add command 'DataGridLaunch'
+	description	''
+	label	'emxFramework.Toolbar.Launch'
+	href	'javascript:StandardFunctions.launchDataGrid()'
+	alt	'emxFramework.Toolbar.Launch'
+	setting	'Access Function'		'showLaunchButton'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionNewWindow.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridLaunch'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridMenu add command DataGridLaunch order command DataGridLaunch 1;
+#channel ==>DataGridMenu
+add property command_DataGridLaunch on program eServiceSchemaVariableMapping.tcl to command 'DataGridLaunch';

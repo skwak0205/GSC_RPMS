@@ -1,0 +1,15 @@
+del menu 'DataGridExpandLevelMenu';
+add menu 'DataGridExpandLevelMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'DataGridExpandAllLevel'
+	command	'DataGridExpandNLevel'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'DataGridExpandLevelMenu'
+	property 'version'	value	'R423.HF3'
+;
+add property menu_DataGridExpandLevelMenu on program eServiceSchemaVariableMapping.tcl to menu 'DataGridExpandLevelMenu';

@@ -1,0 +1,27 @@
+del command 'RMTRequirementStructureRemoveRichText';
+add command 'RMTRequirementStructureRemoveRichText'
+	description	'Remove the requirement'
+	label	'emxRequirements.Command.RMTStructureBrowserRemove'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.Remove'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementStructureRemoveRichText'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementRichTextEditorDeleteActions add command RMTRequirementStructureRemoveRichText order command RMTRequirementStructureRemoveRichText 0;
+#channel ==>RMTRequirementRichTextEditorDeleteActions
+add property command_RMTRequirementStructureRemoveRichText on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementStructureRemoveRichText';

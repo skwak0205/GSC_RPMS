@@ -1,0 +1,16 @@
+del channel 'PMCDeliverableChannel1';
+add channel 'PMCDeliverableChannel1'
+	description	'PMCDeliverableChannel1'
+	height	'260'
+	label	'PMCDeliverableChannel1'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCDeliverable'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeliverableChannel1'
+	property	'version'	value	'R421'
+;
+#portal ==>PMCDeliverablePortal
+add property channel_PMCDeliverableChannel1 on program eServiceSchemaVariableMapping.tcl to channel 'PMCDeliverableChannel1';

@@ -1,0 +1,25 @@
+del command 'TMCShowDiscussionSubscriptionCommand';
+add command 'TMCShowDiscussionSubscriptionCommand'
+	description	''
+	label	'emxTeamCentral.Button.Subscribe'
+	href	'${SUITE_DIR}/emxTeamDiscussionSubscribeDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCShowDiscussionSubscriptionCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCDiscussionSummaryActionsToolBar add command TMCShowDiscussionSubscriptionCommand order command TMCShowDiscussionSubscriptionCommand 2;
+#channel ==>TMCDiscussionSummaryActionsToolBar
+add property command_TMCShowDiscussionSubscriptionCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCShowDiscussionSubscriptionCommand';

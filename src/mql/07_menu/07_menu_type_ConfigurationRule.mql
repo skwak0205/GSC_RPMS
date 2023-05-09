@@ -1,0 +1,14 @@
+del menu 'type_ConfigurationRule';
+add menu 'type_ConfigurationRule'
+	description	'type_ConfigurationRule'
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ConfigurationRule&actionBarName=ConfigurationRulePropertiesTopActionBar&formHeader=emxConfigurationMgmt.Heading.Properties&HelpMarker=emxhelpconfigurablerulesdetails&postProcessURL=../configuration/ConfigurationRuleEditPostProcess.jsp&submitAction=doNothing'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	command	'RuleTable'
+	command	'RuleExpression'
+	property 'version'	value	'R421'
+;
+add property menu_type_ConfigurationRule on program eServiceSchemaVariableMapping.tcl to menu 'type_ConfigurationRule';

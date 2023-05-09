@@ -1,0 +1,15 @@
+del menu 'Msoitype_Builds';
+add menu 'Msoitype_Builds'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PLCBuildReferenceDocumentTreeCategory'
+	command	'PLCBuildSpecifications'
+	property 'installer'	value	'ENOVIAIntegrationEngineering'
+	property 'application'	value	'IntegrationFramework'
+	property 'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property 'original name'	value	'Msoitype_Builds'
+	property 'version'	value	'V6R2022x'
+;
+add property menu_Msoitype_Builds on program eServiceSchemaVariableMapping.tcl to menu 'Msoitype_Builds';

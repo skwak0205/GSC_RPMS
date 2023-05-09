@@ -1,0 +1,14 @@
+del menu 'type_VCSubFolderContents';
+add menu 'type_VCSubFolderContents'
+	description	''
+	label	'$<revision>'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxVCDocumentUI:getVCFolderContents&table=APPVCFolderConfigContentsSummary&header=emxComponents.VersionControl.FolderContents&HelpMarker=emxhelpdsfaviewfoldercontent&FilterFramePage=${COMPONENT_DIR}/emxCommonDocumentCheckoutUtil.jsp&FilterFrameSize=1'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_VCSubFolderContents'
+	property 'version'	value	'10-7'
+;
+add property menu_type_VCSubFolderContents on program eServiceSchemaVariableMapping.tcl to menu 'type_VCSubFolderContents';

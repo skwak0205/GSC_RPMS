@@ -1,0 +1,21 @@
+del menu 'FTRFixedResourceToolBarActions';
+add menu 'FTRFixedResourceToolBarActions'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRCreateResourcesActionLink'
+	command	'FTRAddExistingResourceRuleActionLink'
+	command	'FTRCopyResourceRuleActionLink'
+	command	'AEFSeparator'
+	command	'FTRAssignResourcesActionLink'
+	command	'FTRRemoveResourceRuleActionLink'
+	command	'FTRDeleteResourcesActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRFixedResourceToolBarActions'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_FTRFixedResourceToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'FTRFixedResourceToolBarActions';

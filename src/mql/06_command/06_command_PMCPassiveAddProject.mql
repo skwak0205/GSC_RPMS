@@ -1,0 +1,26 @@
+del command 'PMCPassiveAddProject';
+add command 'PMCPassiveAddProject'
+	description	'add passive project'
+	label	'emxProgramCentral.Command.PMCPassiveAddProject'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PassiveProject&subMode=SearchURL'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.kindOf[Experiment]!=true && current.access[modify] == true'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToPMCPassiveAddProjectCommand'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddHierarchicalProduct.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCPassiveAddProject'
+	property	'version'	value	'R422.HF5'
+;
+modify menu PMCAddProjectMenu add command PMCPassiveAddProject order command PMCPassiveAddProject 3;
+#channel ==>PMCAddProjectMenu
+add property command_PMCPassiveAddProject on program eServiceSchemaVariableMapping.tcl to command 'PMCPassiveAddProject';

@@ -1,0 +1,19 @@
+del command 'PLCRemoveTestExeActionLink';
+add command 'PLCRemoveTestExeActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/TestExecutionUtil.jsp?mode=Disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	setting	'Access Mask'		'ToDisconnect'
+	property	'version'	value	'R422'
+;
+modify menu SubTestExeToolbar add command PLCRemoveTestExeActionLink order command PLCRemoveTestExeActionLink 0;
+#channel ==>SubTestExeToolbar
+add property command_PLCRemoveTestExeActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCRemoveTestExeActionLink';

@@ -1,0 +1,22 @@
+del command 'PMCTaskManagementProperties';
+add command 'PMCTaskManagementProperties'
+	description	'Task Properties Command Object'
+	label	'emxFramework.Command.Properties'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=rmbTaskproperties'
+	alt	'emxFramework.Command.Properties'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'${COMMON_DIR}/images/I_SmallProperties16.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskManagementProperties'
+	property	'version'	value	'R421.HF7'
+;
+modify menu PMCWBSRMBActions add command PMCTaskManagementProperties order command PMCTaskManagementProperties 1;
+modify menu type_TaskManagementRMB add command PMCTaskManagementProperties order command PMCTaskManagementProperties 1;
+modify menu PMCWBSTaskRMBMenu add command PMCTaskManagementProperties order command PMCTaskManagementProperties 1;
+modify menu type_GateRMB add command PMCTaskManagementProperties order command PMCTaskManagementProperties 1;
+#channel ==>PMCWBSRMBActionstype_TaskManagementRMBPMCWBSTaskRMBMenutype_GateRMBPMCPropertiesChannel
+add property command_PMCTaskManagementProperties on program eServiceSchemaVariableMapping.tcl to command 'PMCTaskManagementProperties';

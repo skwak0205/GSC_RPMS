@@ -1,0 +1,73 @@
+{
+  "Compare3DPanelTitle": "3D View",
+  "CompareStructurePanelTitle": "Structure",
+  "ComparePropertiesPanelTitle": "Properties",
+  "CompareInstancePanelTitle": "Instance",
+
+  "FirstDifference": "First Difference",
+  "PreviousDifference": "Previous Difference",
+  "NextDifference": "Next Difference",
+  "LastDifference": "Last Difference",
+  "NumberOfDifferences": "Number of Differences",
+
+  "StructureView": "Structure View",
+  "ListView": "List View",
+  "SingleColView": "Single Column view",
+  "MultiColView": "Multiple Column View",
+
+  "ExpandAll": "Expand All",
+  "ExpandNLevels": "Expand N Levels",
+  "CollapseAll": "Collapse All",
+
+  "chooseStatusToDisplay": "Choose Statuses To Display",
+  "chooseTreeExpansion": "Choose Expansion Level of Tree",
+  "chooseTreeOrListView": "View Selector",
+
+  "attrShowDiffOnly": "Show Differences Only",
+  "selectPropertiesToDisplay": "Select Attributes To Display",
+
+  "LO": "Left-Only",
+  "RO": "Right-Only",
+  "SM": "Identical",
+  "MOVED": "Position",
+  "REV": "Revision",
+  "DIFFERENT": "Different",
+  "QUANTITY": "Quantity",
+  "SIMILAR": "Similar",
+  "REPLACED": "Replaced",
+  "DUPLICATED": "Duplicate",
+  "BRANCHED": "Branch",
+  "UNRELATED": "Unrelated",
+
+  "selectInTreeIsolateInViewer": "Isolate the Object and Hide the Others",
+  "selectInTreeSelectInViewer": "Select the Object and Display the Others",
+  "viewerDisplayMode": "3D Viewer Display When Selecting an Object in the Structure Comparison",
+
+  "viewerIsolate": "When selecting an object in the structure, hide all other objects in the 3D Viewer",
+
+  "useIndex": "Use Index Mode",
+
+  "uncheckBothPrimaryAndSecondary": "Hide row only when all applicable statuses are unchecked",
+
+  "OpenWith": "Open With",
+
+  "mainToolbarLeftObjectString": "Left",
+  "mainToolbarRightObjectString": "Right",
+  "mainToolbarSwap": "Swap Column Order",
+  "mainToolbarDisplayViews": "Display Tabs",
+  "mainToolbarRefresh": "Refresh",
+  "mainToolbarExport": "Export Compare Results",
+  "mainToolbarAdditionalMenu": "Additional Options",
+  "displayAllProperties": "Show All",
+  "resetProperties": "Reset",
+  "compareSettings.dataSource.useIndex": "Index Mode",
+  "compareSettings.includeFacets.externalRelations": "Choose Relations",
+  "compareSettings.includeFacets.externalRelations.showDocs": "Show Documents",
+  "compareSettings.includeFacets.externalRelations.showOtherRels": "Show Other Related Objects",
+  "closeAllObjects": "Close All Objects",
+  "restoreLayout": "Restore Layout",
+  "saveToWidgetOnly": "Save preferences to this widget only.",
+
+  "Close": "Close"
+}
+

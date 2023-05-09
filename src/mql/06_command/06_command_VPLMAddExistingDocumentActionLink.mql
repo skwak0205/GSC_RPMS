@@ -1,0 +1,17 @@
+del command 'VPLMAddExistingDocumentActionLink';
+add command 'VPLMAddExistingDocumentActionLink'
+	description	'Add Existing Documents'
+	label	'emxFramework.Command.VPLMAddExistingDocumentActionLink'
+	href	'../common/emxFullSearch.jsp?field=TYPES=type_DOCUMENTS:IS_VERSION_OBJECT!=True&table=IssueSearchDocumentTable&selection=multiple&submitAction=refreshCaller&header=searchresult&submitURL=../common/emxVPLMConnectObjects.jsp&HelpMarker=emxhelpsearch&showInitialResults=true'
+	alt	'emxFramework.Command.Alt.VPLMAddExistingDocumentActionLink'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'VPLMWebMgt'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+;
+modify menu VPLMDocumentActionMenu add command VPLMAddExistingDocumentActionLink order command VPLMAddExistingDocumentActionLink 2;
+#channel ==>VPLMDocumentActionMenu
+add property command_VPLMAddExistingDocumentActionLink on program eServiceSchemaVariableMapping.tcl to command 'VPLMAddExistingDocumentActionLink';

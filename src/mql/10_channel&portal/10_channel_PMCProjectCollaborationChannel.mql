@@ -1,0 +1,16 @@
+del channel 'PMCProjectCollaborationChannel';
+add channel 'PMCProjectCollaborationChannel'
+	description	'ProjectCollaboration Channel'
+	height	'650'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCDecisionsPowerView','APPDiscussionCommand','APPMeeting'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectCollaborationChannel'
+	property	'version'	value	'R424.HF1'
+;
+#portal ==>PMCProjectCollaborationPortal
+add property channel_PMCProjectCollaborationChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCProjectCollaborationChannel';

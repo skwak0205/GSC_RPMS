@@ -1,0 +1,21 @@
+del command 'PMCCopyPreviousTimeSheet';
+add command 'PMCCopyPreviousTimeSheet'
+	description	'Copy Previous Timesheet'
+	label	'emxProgramCentral.WeeklyTimesheet.CopyPreviousTimeSheet'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=copyPrevious'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'isTimesheetExistForUser'
+	setting	'Access Program'		'emxWeeklyTimeSheet'
+	setting	'Image'		'${COMMON_DIR}/images/iconCopyPrevious.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCopyPreviousTimeSheet'
+	property	'version'	value	'R421'
+;
+modify menu PMCWeeklyTimeSheetToolBar add command PMCCopyPreviousTimeSheet order command PMCCopyPreviousTimeSheet 3;
+#channel ==>PMCWeeklyTimeSheetToolBar
+add property command_PMCCopyPreviousTimeSheet on program eServiceSchemaVariableMapping.tcl to command 'PMCCopyPreviousTimeSheet';

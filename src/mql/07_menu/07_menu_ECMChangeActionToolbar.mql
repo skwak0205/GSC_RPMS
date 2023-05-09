@@ -1,0 +1,16 @@
+del menu 'ECMChangeActionToolbar';
+add menu 'ECMChangeActionToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.ChangeActions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallChangeAction.png'
+	setting	'Expanded'		'true'
+	command	'ECMAddToExistingChangeAction'
+	command	'ECMAddToNewChangeAction'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'original name'	value	'ECMChangeActionToolbar'
+	property 'version'	value	'R420'
+;
+add property menu_ECMChangeActionToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMChangeActionToolbar';

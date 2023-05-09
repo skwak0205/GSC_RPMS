@@ -1,0 +1,24 @@
+del command 'PLCDeleteEngineeringChangeTestCaseActionLink';
+add command 'PLCDeleteEngineeringChangeTestCaseActionLink'
+	description	'Test Case Delete action link'
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/TestCaseUtil.jsp?Mode=Delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'context.user == owner || context.user == to[Assigned EC].from.name'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	setting	'Access Mask'		'FromDisconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCDeleteEngineeringChangeTestCaseActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCEngineeringChangeTestCaseActionsToolbar add command PLCDeleteEngineeringChangeTestCaseActionLink order command PLCDeleteEngineeringChangeTestCaseActionLink 0;
+#channel ==>PLCEngineeringChangeTestCaseActionsToolbar
+add property command_PLCDeleteEngineeringChangeTestCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCDeleteEngineeringChangeTestCaseActionLink';

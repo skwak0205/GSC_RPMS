@@ -1,0 +1,26 @@
+del command 'FTRReplaceGBOMActionsLink';
+add command 'FTRReplaceGBOMActionsLink'
+	description	''
+	label	'emxProduct.ActionLink.GBOMReplace'
+	href	'${SUITE_DIR}/PartUtil.jsp?functionality=GBOMReplaceFSInstance&PRCFSParam1=listPage'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showReplaceGBOMActionCommand'
+	setting	'Access Program'		'emxFTRPart'
+	setting	'Row Select'		'single'
+	setting	'Help Marker'		'emxhelpgbomreplace'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRReplaceGBOMActionsLink'
+	property	'version'	value	'R215'
+;
+modify menu FTRPartListBottomActionBar add command FTRReplaceGBOMActionsLink order command FTRReplaceGBOMActionsLink 1;
+#channel ==>FTRPartListBottomActionBar
+add property command_FTRReplaceGBOMActionsLink on program eServiceSchemaVariableMapping.tcl to command 'FTRReplaceGBOMActionsLink';

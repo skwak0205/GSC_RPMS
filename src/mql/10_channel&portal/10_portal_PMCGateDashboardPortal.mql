@@ -1,0 +1,15 @@
+del portal 'PMCGateDashboardPortal';
+add portal 'PMCGateDashboardPortal'
+	description	'PMCGateDashboardPortal'
+	label	'emxFramework.Command.PMCGateDashboardPortal'
+	href	''
+	channel 	PMCGateDashboardChannel1
+	channel 	PMCGateDashboardChannel2
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateDashboardPortal'
+	property	'version'	value	'R210'
+;
+add property portal_PMCGateDashboardPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCGateDashboardPortal';

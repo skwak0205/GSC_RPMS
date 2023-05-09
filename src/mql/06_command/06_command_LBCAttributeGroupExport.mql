@@ -1,0 +1,29 @@
+del command 'LBCAttributeGroupExport';
+add command 'LBCAttributeGroupExport'
+	description	'Attribute Group Export command'
+	label	'emxMultipleClassification.Command.Export'
+	href	'${SUITE_DIR}/emxLibraryCentralExportAttributeGroupIntermediateProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'exportVisible'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeGroupExport'
+	property	'version'	value	'R422'
+;
+modify menu MCMAttributeGroupActionsToolBar add command LBCAttributeGroupExport order command LBCAttributeGroupExport 3;
+#channel ==>MCMAttributeGroupActionsToolBar
+add property command_LBCAttributeGroupExport on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeGroupExport';

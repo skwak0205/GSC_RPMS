@@ -1,0 +1,23 @@
+del command 'MultiObjectTransferOwnership';
+add command 'MultiObjectTransferOwnership'
+	description	'a generic command having capability to select multiple objects and modify the primary ownership of those business objects which includes the primary owner, the primary organization and the primary project'
+	label	'emxFramework.Command.MultiObjectTransferOwnership'
+	href	'${COMMON_DIR}/emxMultiObjectTransferOwnershipReportDialog.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/I_ImmTransferOwnership3.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'MultiObjectTransferOwnership'
+	property	'version'	value	'R422'
+;
+modify menu IssueToolBarActions add command MultiObjectTransferOwnership order command MultiObjectTransferOwnership 3;
+modify menu ContextIssueToolBarActions add command MultiObjectTransferOwnership order command MultiObjectTransferOwnership 4;
+modify menu APPRouteSummaryToolBar add command MultiObjectTransferOwnership order command MultiObjectTransferOwnership 0;
+#channel ==>IssueToolBarActionsContextIssueToolBarActionsAPPRouteSummaryToolBar
+add property command_MultiObjectTransferOwnership on program eServiceSchemaVariableMapping.tcl to command 'MultiObjectTransferOwnership';

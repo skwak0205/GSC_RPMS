@@ -1,0 +1,18 @@
+del command 'DCCompanyFormatsTreeCategory';
+add command 'DCCompanyFormatsTreeCategory'
+	description	'Formats Tree Category'
+	label	'emxDocumentCentral.TreeCategory.Formats'
+	href	'${SUITE_DIR}/emxDocumentCentralStartFrameSet.jsp?topActionbar=DCCompanyFormatsTopActionbar&bottomActionbar=DCCompanyFormatsBottomActionbar&header=emxDocumentCentral.Common.Formats'
+	alt	'emxDocumentCentral.TreeCategory.Formats'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallFormFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCompanyFormatsTreeCategory'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCtype_Company add command DCCompanyFormatsTreeCategory order command DCCompanyFormatsTreeCategory 2;
+#channel ==>DCtype_Company
+add property command_DCCompanyFormatsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'DCCompanyFormatsTreeCategory';

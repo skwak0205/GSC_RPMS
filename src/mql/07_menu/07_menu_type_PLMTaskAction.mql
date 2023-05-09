@@ -1,0 +1,10 @@
+del menu 'type_PLMTaskAction';
+add menu 'type_PLMTaskAction'
+	description	'VPLM Tasks'
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_PLMActionBase&toolbar=VPLMSyncChgActionPropertiesToolBar&mode=view'
+	alt	''
+	setting	'Registered Suite'		'VPMCentral'
+	command	'VPLMSyncChgGetActionMAO'
+;
+add property menu_type_PLMTaskAction on program eServiceSchemaVariableMapping.tcl to menu 'type_PLMTaskAction';

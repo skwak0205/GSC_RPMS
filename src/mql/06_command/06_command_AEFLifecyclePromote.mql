@@ -1,0 +1,24 @@
+del command 'AEFLifecyclePromote';
+add command 'AEFLifecyclePromote'
+	description	'Promote Object'
+	label	'emxFramework.Lifecycle.Promote'
+	href	'javascript:lockPromote(\"emxLifecycleProcess.jsp?cmd=promote&toolbar=AEFLifecycleMenuToolBar&header=emxFramework.Lifecycle.LifeCyclePageHeading&export=false\" )'
+	alt	''
+	setting	'Printer Friendly'		'false'
+	setting	'Access Behavior'		'disable'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Function'		'hasNextState'
+	setting	'Access Program'		'emxLifecycle'
+	setting	'Currency Converter'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPromote.png'
+	setting	'Access Mask'		'Promote'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecyclePromote'
+	property	'version'	value	'R417'
+;
+modify menu AEFLifecycleMenu add command AEFLifecyclePromote order command AEFLifecyclePromote 1;
+modify menu AEFLifecycleMenuToolBar add command AEFLifecyclePromote order command AEFLifecyclePromote 2;
+#channel ==>AEFLifecycleMenuAEFLifecycleMenuToolBar
+add property command_AEFLifecyclePromote on program eServiceSchemaVariableMapping.tcl to command 'AEFLifecyclePromote';

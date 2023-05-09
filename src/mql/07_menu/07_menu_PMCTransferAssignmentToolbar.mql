@@ -1,0 +1,15 @@
+del menu 'PMCTransferAssignmentToolbar';
+add menu 'PMCTransferAssignmentToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCTransferAssignmentMoveBack'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCTransferAssignmentToolbar'
+	property 'version'	value	'V6R2009x'
+;
+add property menu_PMCTransferAssignmentToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCTransferAssignmentToolbar';

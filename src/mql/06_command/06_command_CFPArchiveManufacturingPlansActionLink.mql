@@ -1,0 +1,21 @@
+del command 'CFPArchiveManufacturingPlansActionLink';
+add command 'CFPArchiveManufacturingPlansActionLink'
+	description	''
+	label	'DMCPlanning.ActionLink.ArchiveManufacturingPlan'
+	href	'${SUITE_DIR}/ArchiveUtil.jsp?'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallArchive.gif'
+	setting	'Confirm Message'		'DMCPlanning.Alert.Archive'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPArchiveManufacturingPlansActionLink'
+	property	'version'	value	'R209'
+;
+modify menu CFPManufacturingPlanToolbarActions add command CFPArchiveManufacturingPlansActionLink order command CFPArchiveManufacturingPlansActionLink 0;
+#channel ==>CFPManufacturingPlanToolbarActions
+add property command_CFPArchiveManufacturingPlansActionLink on program eServiceSchemaVariableMapping.tcl to command 'CFPArchiveManufacturingPlansActionLink';

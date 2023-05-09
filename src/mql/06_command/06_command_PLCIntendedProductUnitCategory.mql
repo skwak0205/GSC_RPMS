@@ -1,0 +1,17 @@
+del command 'PLCIntendedProductUnitCategory';
+add command 'PLCIntendedProductUnitCategory'
+	description	''
+	label	'emxProduct.Tree.IntendedProductUnit'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxBuildBase:getIntendedProductUnits&table=PLCIntendedProductUnitList&header=emxProduct.Tree.IntendedProductUnit&topActionbar=PLCIntendedProductUnitTopActionBar&selection=multiple&sortColumnName=Name&HelpMarker=emxhelpbuildintendedproductunit'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCIntendedProductUnitCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_HardwareBuild add command PLCIntendedProductUnitCategory order command PLCIntendedProductUnitCategory 2;
+#channel ==>type_HardwareBuild
+add property command_PLCIntendedProductUnitCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCIntendedProductUnitCategory';

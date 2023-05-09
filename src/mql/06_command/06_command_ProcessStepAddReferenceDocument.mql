@@ -1,0 +1,22 @@
+del command 'ProcessStepAddReferenceDocument';
+add command 'ProcessStepAddReferenceDocument'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProcessSteps'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Drop Reference Document'		'true'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProcessSteps'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'ProcessStepAddReferenceDocument'
+	property	'version'	value	'R424'
+;
+#channel ==>
+add property command_ProcessStepAddReferenceDocument on program eServiceSchemaVariableMapping.tcl to command 'ProcessStepAddReferenceDocument';

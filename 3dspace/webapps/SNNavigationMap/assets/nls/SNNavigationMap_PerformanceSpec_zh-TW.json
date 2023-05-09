@@ -1,0 +1,12 @@
+{
+  "PerformanceSpec": "效能規格限制條件",
+  "performancespecof": "效能規格：",
+  "performancespecof_to": "效能規格：",
+  "performancespecof_from": "效能規格",
+  "performancechar": "效能字元",
+  "performancechar_to": "效能字元",
+  "performancechar_from": "效能字元：",
+  "performancetest": "效能測試",
+  "performancetest_to": "效能測試",
+  "performancetest_from": "效能測試："
+}

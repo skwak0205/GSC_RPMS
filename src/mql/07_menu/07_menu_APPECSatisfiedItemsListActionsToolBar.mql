@@ -1,0 +1,18 @@
+del menu 'APPECSatisfiedItemsListActionsToolBar';
+add menu 'APPECSatisfiedItemsListActionsToolBar'
+	description	''
+	label	'emxComponents.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPAddExistingECSatisfiedItemsActionLink'
+	command	'AEFSeparator'
+	command	'APPRemoveECSatisfiedItemsActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPECSatisfiedItemsListActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPECSatisfiedItemsListActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPECSatisfiedItemsListActionsToolBar';

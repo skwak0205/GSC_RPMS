@@ -1,0 +1,15 @@
+del menu 'type_FTRManufacturingFeatureStructureMenu';
+add menu 'type_FTRManufacturingFeatureStructureMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRManufacturingFeatureStructure'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_FTRManufacturingFeatureStructureMenu'
+	property 'version'	value	'R212'
+;
+add property menu_type_FTRManufacturingFeatureStructureMenu on program eServiceSchemaVariableMapping.tcl to menu 'type_FTRManufacturingFeatureStructureMenu';

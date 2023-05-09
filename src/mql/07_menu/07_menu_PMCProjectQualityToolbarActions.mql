@@ -1,0 +1,19 @@
+del menu 'PMCProjectQualityToolbarActions';
+add menu 'PMCProjectQualityToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	command	'PMCProjectQualityCreate'
+	command	'PMCProjectQualityImport'
+	command	'PMCProjectQualityRemove'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectQualityToolbarActions'
+	property 'version'	value	'R421'
+;
+add property menu_PMCProjectQualityToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectQualityToolbarActions';

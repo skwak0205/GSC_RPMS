@@ -1,0 +1,18 @@
+del menu 'ctxMsoi_Navigation_FileLocked';
+add menu 'ctxMsoi_Navigation_FileLocked'
+	description	'Menu for FileLocked'
+	label	''
+	href	''
+	alt	''
+	command	'ctxMsoiCmd_Open'
+	command	'ctxMsoiCmd_Download'
+	command	'ctxMsoiCmd_Update'
+	command	'ctxMsoiCmd_Separator'
+	command	'ctxMsoiCmd_Unlock'
+	command	'ctxMsoiCmd_Revise'
+	menu	'ctxMsoiCmd_ReviseMenu'
+	command	'ctxMsoiCmd_Separator1'
+	command	'ctxMsoiCmd_Revisions'
+	command	'ctxMsoiCmd_ShowAttributes'
+;
+add property menu_ctxMsoi_Navigation_FileLocked on program eServiceSchemaVariableMapping.tcl to menu 'ctxMsoi_Navigation_FileLocked';

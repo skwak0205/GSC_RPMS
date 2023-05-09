@@ -1,0 +1,27 @@
+del command 'PLMDisconnectParametersActionLink';
+add command 'PLMDisconnectParametersActionLink'
+	description	''
+	label	'emxParameter.Associate.Remove'
+	href	'${SUITE_DIR}/emxParameterRemove.jsp?selection=multiple'
+	alt	'emxParameter.Associate.AltRemove'
+	setting	'Target Location'		'listHidden'
+	setting	'Maximum Length'		'20'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxParameter.Associate.ConfirmRemove'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'VPLMLocalCrossPrjContextAccess'
+	user	'VPLMLocalCrossOrgContextAccess'
+	user	'VPLMSecuredCrossAccess'
+	user	'Requirement Manager'
+;
+modify menu PLMAssociatedParametersActions add command PLMDisconnectParametersActionLink order command PLMDisconnectParametersActionLink 0;
+modify menu PARParametersToolbar add command PLMDisconnectParametersActionLink order command PLMDisconnectParametersActionLink 0;
+modify menu PLCAssociatedParametersToolbar add command PLMDisconnectParametersActionLink order command PLMDisconnectParametersActionLink 0;
+#channel ==>PLMAssociatedParametersActionsPARParametersToolbarPLCAssociatedParametersToolbar
+add property command_PLMDisconnectParametersActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLMDisconnectParametersActionLink';

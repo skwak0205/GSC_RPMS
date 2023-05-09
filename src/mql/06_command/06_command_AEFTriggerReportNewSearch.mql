@@ -1,0 +1,17 @@
+del command 'AEFTriggerReportNewSearch';
+add command 'AEFTriggerReportNewSearch'
+	description	''
+	label	'emxFramework.TriggerReport.NewSearch'
+	href	'${COMMON_DIR}/emxTriggerReportFS.jsp'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTriggerReportNewSearch'
+	property	'version'	value	'10-7'
+;
+modify menu AEFTriggerReportActionToolBar add command AEFTriggerReportNewSearch order command AEFTriggerReportNewSearch 0;
+#channel ==>AEFTriggerReportActionToolBar
+add property command_AEFTriggerReportNewSearch on program eServiceSchemaVariableMapping.tcl to command 'AEFTriggerReportNewSearch';

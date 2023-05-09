@@ -1,0 +1,19 @@
+del command 'PLCSearchProductsCommand';
+add command 'PLCSearchProductsCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindProducts'
+	href	'${SUITE_DIR}/SearchProductsForm.jsp?program=emxProductSearch:getProducts&table=PLCSearchProductsTable&CommandName=PLCSearchProductsCommand&sortColumnName=Name&header=emxProduct.Heading.Search&Style=dialog&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchProductsCommand'
+	property	'version'	value	'R215'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchProductsCommand order command PLCSearchProductsCommand 2;
+modify menu MarketingPreferenceMenu add command PLCSearchProductsCommand order command PLCSearchProductsCommand 3;
+#channel ==>SearchAddExistingChooserMenuMarketingPreferenceMenu
+add property command_PLCSearchProductsCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchProductsCommand';

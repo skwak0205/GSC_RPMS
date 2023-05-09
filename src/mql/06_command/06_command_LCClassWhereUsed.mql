@@ -1,0 +1,27 @@
+del command 'LCClassWhereUsed';
+add command 'LCClassWhereUsed'
+	description	''
+	label	'emxDocumentCentral.TreeCategory.WhereUsed'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&HelpMarker=emxhelpclassused&inquiry=DCObjectWhereUsed&table=DCObjectsStandardWithoutLock&sortColumnName=Name&sortDirection=ascending&header=emxDocumentCentral.Common.WhereUsed&massPromoteDemote=false&triggerValidation=false'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCClassWhereUsed'
+	property	'version'	value	'R422'
+;
+modify menu type_Classification add command LCClassWhereUsed order command LCClassWhereUsed 7;
+modify menu type_GeneralClass add command LCClassWhereUsed order command LCClassWhereUsed 10;
+modify menu type_DocumentFamily add command LCClassWhereUsed order command LCClassWhereUsed 11;
+#channel ==>type_Classificationtype_GeneralClasstype_DocumentFamily
+add property command_LCClassWhereUsed on program eServiceSchemaVariableMapping.tcl to command 'LCClassWhereUsed';

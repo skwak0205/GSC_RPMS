@@ -1,0 +1,16 @@
+del menu 'APPSubsidiarySummaryToolBar';
+add menu 'APPSubsidiarySummaryToolBar'
+	description	''
+	label	'Components.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPSubsidiarySummaryActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPSubsidiarySummaryToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPSubsidiarySummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPSubsidiarySummaryToolBar';

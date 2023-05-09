@@ -1,0 +1,20 @@
+del command 'LBCObjectReClassification';
+add command 'LBCObjectReClassification'
+	description	'ReClassification from Object'
+	label	'emxLibraryCentral.Common.ReClassify'
+	href	'${SUITE_DIR}/emxLibraryCentralClassificationIntermediate.jsp?form=LBCObjectClassificationForm&mode=edit&formHeader=emxLibraryCentral.Header.ReClassify&classificationMode=reClassification&HelpMarker=emxhelplbcreclassify&formFieldsOnly=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'ToDisconnect,ToConnect'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCObjectReClassification'
+	property	'version'	value	'R421'
+;
+modify menu LBCObjectClassificationActionsToolBar add command LBCObjectReClassification order command LBCObjectReClassification 3;
+#channel ==>LBCObjectClassificationActionsToolBar
+add property command_LBCObjectReClassification on program eServiceSchemaVariableMapping.tcl to command 'LBCObjectReClassification';

@@ -1,0 +1,22 @@
+del command 'TMCRevision';
+add command 'TMCRevision'
+	description	'Revision Command Object'
+	label	'emxFramework.Command.Revision'
+	href	'${SUITE_DIR}/emxTeamRouteTemplateRevisionsFS.jsp'
+	alt	'emxFramework.Command.Alt.Revision'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallRevision.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRevision'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCRevision on program eServiceSchemaVariableMapping.tcl to command 'TMCRevision';

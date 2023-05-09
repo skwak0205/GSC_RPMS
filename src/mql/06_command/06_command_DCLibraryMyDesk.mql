@@ -1,0 +1,18 @@
+del command 'DCLibraryMyDesk';
+add command 'DCLibraryMyDesk'
+	description	'Library Command Object'
+	label	'emxDocumentCentral.MenuItem.Libraries'
+	href	'${COMMON_DIR}/emxTable.jsp?HelpMarker=emxhelpcontainerobjectlist&inquiry=DCAllLibraries,DCCreateLibraries,DCReviewLibraries,DCApproveLibraries,DCLockLibraries,DCObsoleteLibraries&inquiryLabel=emxDocumentCentral.Common.All,emxDocumentCentral.Common.Create,emxDocumentCentral.Common.Review,emxDocumentCentral.Common.Approved,emxDocumentCentral.Common.Locked,emxDocumentCentral.Common.Obsolete&table=DCObjectsStandard&selection=multiple&sortColumnName=Name&sortDirection=ascending&topActionbar=DCAllLibrariesTopActionbar&bottomActionbar=DCDocumentClassificationsBottomActionbar&header=emxDocumentCentral.Common.Libraries&HelpMarker=emxhelplibraries'
+	alt	'emxDocumentCentral.MenuItem.Libraries'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	user	'VPLMViewer'
+	user	'Employee'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCLibraryMyDesk'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_DCLibraryMyDesk on program eServiceSchemaVariableMapping.tcl to command 'DCLibraryMyDesk';

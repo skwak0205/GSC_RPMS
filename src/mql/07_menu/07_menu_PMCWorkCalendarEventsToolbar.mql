@@ -1,0 +1,15 @@
+del menu 'PMCWorkCalendarEventsToolbar';
+add menu 'PMCWorkCalendarEventsToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCWorkCalendarEventsToolbarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWorkCalendarEventsToolbar'
+	property 'version'	value	'10-6'
+;
+add property menu_PMCWorkCalendarEventsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCWorkCalendarEventsToolbar';

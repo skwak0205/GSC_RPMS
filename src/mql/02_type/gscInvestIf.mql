@@ -1,0 +1,23 @@
+################################################################################################
+# Created Date : 2023.03.29
+# Create by jrchoi
+# Description : 투자실적 I/F Object
+################################################################################################
+#del type gscInvestIf;
+add type gscInvestIf
+    property 'installed date'     value  '2023.01.10'
+    property 'application'        value  'Framework'
+    property 'original name'      value  'gscInvestIf'
+    property 'installer'          value  'GSC'
+    property 'version'            value  'V6R2019'
+;
+
+add property type_gscInvestIf on prog eServiceSchemaVariableMapping.tcl to  type 'gscInvestIf';
+
+mod policy 'gscInterfaceDeliverable'
+   add type gscInvestIf;
+
+mod type gscInvestIf add attribute gscBizNm,gscDeptNm,gscLineNo,gscMgmBgtAmt,gscPlnAmt,gscRemAmt,gscRsltAmt01,gscRsltAmt02,gscWbsCd,gscTrnsAmt;
+
+
+

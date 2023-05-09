@@ -1,0 +1,227 @@
+################################################################################################
+# Created Date : 2020.07.02
+# Create by Suhwan,Jang
+# Description : Part Detail OOTB Webform
+################################################################################################
+#OOTB Backup
+copy form 'type_Part' 'type_Part_OOTB';
+
+# Change ootb column by Suhwan,Jang 2020/07/02
+mod form 'type_Part'
+    field mod name 'Type'
+        add setting 'Group Name' 'ROW01'
+    field mod name 'Name'
+        label 'emxEngineeringCentral.Label.emdPartNumber'
+        add setting 'Group Name' 'ROW02'
+    field mod name 'V_Name'
+        label 'emxEngineeringCentral.Label.emdPartName'
+        add setting 'Registered Suite' 'EngineeringCentral'
+    field mod name 'V_Name1'
+        label 'emxEngineeringCentral.Label.emdPartName'
+        add setting 'Registered Suite' 'EngineeringCentral'
+    field mod name 'StructureContent'
+        add setting 'Access Expression' 'false && (type!=$<type_MPN>)'
+    field mod name 'Description'
+        add setting 'Access Expression' 'false'
+    field mod name 'State'
+        add setting 'Group Name' 'ROW01'
+        order 3
+    field mod name 'Revision'
+        add setting 'Group Name' 'ROW02'
+        order 5
+    field mod name 'ReleaseProcess'
+        add setting 'Access Expression' 'false && ((type!=$<type_MPN>) && (policy.property[PolicyClassification].value!="Equivalent"))'
+    field mod name 'Classification Path'
+        add setting 'Access Expression' 'false'
+    field mod name 'partFamily'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value!="Reported Part")'
+    field mod name 'DerivedFrom'
+        add setting 'Access Expression' 'false'
+;
+
+# Add New Custom Column by Suhwan,Jang 2020/07/02
+mod form 'type_Part'
+    field
+        name 'emdChangeDescription'
+        label 'emxComponents.Common.ChangeDesc'
+        businessobject  '$<from[Part Specification].to.attribute[PLMReference.V_versionComment]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'EngineeringCentral'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'attribute'
+        order 12
+    field
+        name 'emdMaterial'
+        label 'emxEngineeringCentral.Label.emdMaterial'
+        businessobject  '$<from[Part Specification].to.attribute[emdVPMReference.emdMaterial]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'EngineeringCentral'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'attribute'
+        setting 'Group Name' 'ROW05'
+        order 13
+    field
+        name 'emdSpec'
+        label 'emxEngineeringCentral.Label.emdSpec'
+        businessobject  '$<from[Part Specification].to.attribute[emdVPMReference.emdStandardSpec]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'EngineeringCentral'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'attribute'
+        setting 'Group Name' 'ROW05'
+        order 14
+    field
+        name 'emdWeight'
+        label 'emxEngineeringCentral.Label.emdWeight'
+        businessobject  '$<evaluate[IF(from[Part Specification].to.attribute[WCGEquivalentComputedExt.V_WCG_Mass] neq "") THEN from[Part Specification].to.attribute[WCGEquivalentComputedExt.V_WCG_Mass] ELSE from[Part Specification].to.attribute[WCGEquivalentDeclaredWeightExt.V_WCG_Declared_Mass]]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'EngineeringCentral'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'attribute'
+        setting 'Group Name' 'ROW06'
+        order 15
+    field
+        name 'emdPartType'
+        label 'emxEngineeringCentral.Label.PartType'
+        businessobject  '$<from[Part Specification].to.attribute[emdVPMReference.emdPartType]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'EngineeringCentral'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'attribute'
+        setting 'Admin Type' 'attribute_emdPartType'
+        setting 'Group Name' 'ROW06'
+        order 16
+    field
+        name 'emdSecurityGrade'
+        label 'emxEngineeringCentral.Label.emdSecurityGrade'
+        businessobject  '$<from[Part Specification].to.attribute[emdVPMReference.emdSecurityGrade]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'EngineeringCentral'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'attribute'
+        setting 'Admin Type' 'attribute_emdSecurityGrade'
+        setting 'Group Name' 'ROW07'
+        order 17
+    field
+        name 'emdItemUnit'
+        label 'emxEngineeringCentral.Label.emdItemUnit'
+        businessobject  '$<from[Part Specification].to.attribute[emdVPMReference.emdItemUnit]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'EngineeringCentral'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'attribute'
+        setting 'Group Name' 'ROW07'
+        order 18
+    field
+        name 'emdDrawingDistribution'
+        label 'emxEngineeringCentral.Label.emdDrawingDistribution'
+        businessobject  '$<from[Part Specification].to.attribute[emdVPMReference.emdDrawingDistribution]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'EngineeringCentral'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'attribute'
+        setting 'Admin Type' 'attribute_emdDrawingDistribution'
+        setting 'Group Name' 'Maturity'
+        order 19
+;
+
+# 미사용 Column 숨김처리 by Suhwan,Jang 2020/07/06
+mod form 'type_Part'
+    field mod name 'SectionHeader1'
+        add setting 'Access Expression' 'false'
+    field mod name 'UOMType'
+        add setting 'Access Expression' 'false'
+    field mod name 'Uom'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value!="Reported Part")'
+    field mod name 'RP_Uom'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value=="Reported Part")'
+    field mod name 'UomView'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value!="Reported Part")'
+    field mod name 'Weight'
+        add setting 'Access Expression' 'false'
+    field mod name 'RP_Weight'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value=="Reported Part")'
+    field mod name 'EffectivityDate'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value!="Reported Part")'
+    field mod name 'SectionHeader3'
+        add setting 'Access Expression' 'false'
+    field mod name 'EstimatedCost'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value!="Reported Part")'
+    field mod name 'TargetCost'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value!="Reported Part")'
+    field mod name 'LeadTime'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value!="Reported Part")'
+    field mod name 'SparePart'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value!="Reported Part")'
+    field mod name 'DesignPurchaseView'
+        add setting 'Access Expression' 'false && (type!=$<type_MPN> && id!=first.id && "$<policy_DevelopmentPart>" != previous.policy)'
+    field mod name 'DesignPurchase'
+        add setting 'Access Expression' 'false && (type!=$<type_MPN> && (id==first.id || "$<policy_DevelopmentPart>" == previous.policy))'
+    field mod name 'Manufacturer'
+        add setting 'Access Expression' 'false'
+    field mod name 'ManufacturerLocation'
+        add setting 'Access Expression' 'false'
+    field mod name 'RP_Manufacturer'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value=="Reported Part")'
+    field mod name 'RP_ManufacturerLocation'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value=="Reported Part")'
+    field mod name 'ExternalRevisionLevel'
+        add setting 'Access Expression' 'false'
+    field mod name 'ExternalRevisionDate'
+        add setting 'Access Expression' 'false'
+    field mod name 'RP_Originated'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value=="Reported Part")'
+    field mod name 'Compliance'
+        add setting 'Access Expression' 'false && ((policy.property[PolicyClassification].value=="Production") || (policy.property[PolicyClassification].value=="Development") || (policy.property[PolicyClassification].value=="Equivalent"))'
+    field mod name 'Enable Materials Compliance'
+        add setting 'Access Expression' 'false && ((policy.property[PolicyClassification].value=="Production") || (policy.property[PolicyClassification].value=="Development") || (policy.property[PolicyClassification].value=="Equivalent"))'
+    field mod name 'textArea_ROHSExemption'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value=="Reported Part")'
+    field mod name 'textArea_ROHSCompliance'
+        add setting 'Access Expression' 'false && (policy.property[PolicyClassification].value=="Reported Part")'
+    field mod name 'Classification'
+        add setting 'Access Expression' 'false'
+    field mod name 'AttributeGroupCollection'
+        add setting 'Access Expression' 'false'
+;
+
+# Field Type 이 Dynamic Attributes 의 경우 Access Expression 으로 제어가 안되기 때문에 Field Type 변경 후 숨김처리 by Suhwan,Jang 2020/07/06
+mod form 'type_Part'
+    field mod name 'DynamicAttributes'
+        add setting 'Field Type' 'Section Header'
+        add setting 'Access Expression' 'false'
+;
+
+# 선급유무 추가 by MinSung,Kim 2020/12/15
+mod form 'type_Part' field mod name 'emdChangeDescription' add setting 'Group Name' 'ROW04';
+mod form 'type_Part'
+    field name 'emdClassificationYN'
+        label 'emxEngineeringCentral.Attribute.emdClassificationYN'
+        businessobject  '$<attribute[attribute_emdClassificationYN]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'EngineeringCentral'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'attribute'
+        setting 'Group Name' 'ROW04'
+        order 13
+;
+# 단위 속성 변경 by MinSung,Kim 2020/12/15
+mod form 'type_Part' field mod name 'emdItemUnit' businessobject '$<attribute[attribute_UnitofMeasure]>';

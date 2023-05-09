@@ -1,0 +1,28 @@
+del command 'APPCreateCustomerCompany';
+add command 'APPCreateCustomerCompany'
+	description	'Customer Company Create Command Object'
+	label	'emxComponents.Common.CreateCustomer'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_CreateCompany&nameField=autoName&type=type_Company&createJPO=emxCompany:createCompanyObject&mode=create&targetLocation=slidein&companyType=Customer&submitAction=treeContent&header=emxComponents.Common.CreateCustomer&suiteKey=Components&preProcessJavaScript=clearCompanyFormFields&showPageURLIcon=false&findMxLink=false&HelpMarker=emxhelpcompanycreate'
+	alt	'emxComponents.Common.CreateCustomer'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Slidein Width'		'500'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasAccessToCreateCompanies'
+	setting	'Access Program'		'emxCompany'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/ENOCreateCustomer.png'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateCustomerCompany'
+	property	'version'	value	'R424'
+;
+modify menu APPCompanySummaryActionsToolBar add command APPCreateCustomerCompany order command APPCreateCustomerCompany 0;
+modify menu APPCompanyCreateNew add command APPCreateCustomerCompany order command APPCreateCustomerCompany 0;
+#channel ==>APPCompanySummaryActionsToolBarAPPCompanyCreateNew
+add property command_APPCreateCustomerCompany on program eServiceSchemaVariableMapping.tcl to command 'APPCreateCustomerCompany';

@@ -1,0 +1,21 @@
+del command 'APPObjectAccessEditAccess';
+add command 'APPObjectAccessEditAccess'
+	description	'This command is used for editing the granted access of users. It should be cloned for implementing for specific type'
+	label	'emxComponents.Common.EditAccess'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?program=emxObjectAccess:getAccessGrantees&sortColumnName=Name&sortDirection=ascending&table=APPObjectAccessSummary&header=emxComponents.Common.EditAccess&massUpdate=true&accessChoice=&showAllProgram=&showAllFunction=&pushGrantor=person_CommonAccessGrantor&HelpMarker=&editMode=true&postProcessURL=${SUITE_DIR}/emxComponentsObjectAccessSetAccessProcess.jsp'
+	alt	'emxComponents.Common.EditAccess'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectAccessEditAccess'
+	property	'version'	value	'R417'
+;
+modify menu APPObjectAccessActionsToolbar add command APPObjectAccessEditAccess order command APPObjectAccessEditAccess 2;
+#channel ==>APPObjectAccessActionsToolbar
+add property command_APPObjectAccessEditAccess on program eServiceSchemaVariableMapping.tcl to command 'APPObjectAccessEditAccess';

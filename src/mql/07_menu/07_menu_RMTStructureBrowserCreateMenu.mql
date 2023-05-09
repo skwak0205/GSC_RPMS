@@ -1,0 +1,17 @@
+del menu 'RMTStructureBrowserCreateMenu';
+add menu 'RMTStructureBrowserCreateMenu'
+	description	''
+	label	'emxRequirements.Menu.RMTStructureBrowserCreate'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'policy != "Requirement Version"'
+	command	'RMTCreateSubRequirementPreCheck'
+	command	'RMTCreateDerivedRequirementPreCheck'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTStructureBrowserCreateMenu'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTStructureBrowserCreateMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTStructureBrowserCreateMenu';

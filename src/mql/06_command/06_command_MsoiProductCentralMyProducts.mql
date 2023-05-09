@@ -1,0 +1,16 @@
+del command 'MsoiProductCentralMyProducts';
+add command 'MsoiProductCentralMyProducts'
+	description	'UI3 based my Products Command object specific to MS Office Integration'
+	label	'emxProduct.Menu.Products'
+	href	'${COMMON_DIR}/emxTable.jsp?program=MSFProductCentralUtil:getCurrentUserProducts&table=PLCProductList'
+	alt	'emxProduct.Menu.Products'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiProductCentralMyProducts'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>IEF ENOVIA Root
+add property command_MsoiProductCentralMyProducts on program eServiceSchemaVariableMapping.tcl to command 'MsoiProductCentralMyProducts';

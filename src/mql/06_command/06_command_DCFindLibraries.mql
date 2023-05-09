@@ -1,0 +1,25 @@
+del command 'DCFindLibraries';
+add command 'DCFindLibraries'
+	description	'Find Libraries Command Object for Global DC Search'
+	label	'emxDocumentCentral.Search.Libraries'
+	href	'${SUITE_DIR}/emxDocumentCentralObjectFindDialog.jsp?DialogAction=globalSearch&baseType=type_Library'
+	alt	'emxDocumentCentral.Search.Libraries'
+	setting	'Target Location'		'searchContent'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Currency Converter'		'false'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'VPLMViewer'
+	user	'Employee'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCFindLibraries'
+	property	'version'	value	'R216'
+;
+modify menu DCSearch add command DCFindLibraries order command DCFindLibraries 1;
+#channel ==>DCSearch
+add property command_DCFindLibraries on program eServiceSchemaVariableMapping.tcl to command 'DCFindLibraries';

@@ -1,0 +1,15 @@
+del command 'APPXPSecurityContextViewToolbar';
+add command 'APPXPSecurityContextViewToolbar'
+	description	'Security Context view'
+	label	'emxPlmOnline.label.Context'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPXPSecurityContextAdminPortal&toolbar=APPXPAdminToolBar&header=emxPlmOnline.label.ManageContext'
+	alt	'emxPlmOnline.label.Context'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Access Function'		'isOneClickEnvironment'
+	setting	'Access Program'		'VPLMPosAdminUIOptions'
+	setting	'Image'		'iconSmallContext.gif'
+;
+modify menu APPXPAdminToolBar add command APPXPSecurityContextViewToolbar order command APPXPSecurityContextViewToolbar 4;
+#channel ==>APPXPAdminToolBar
+add property command_APPXPSecurityContextViewToolbar on program eServiceSchemaVariableMapping.tcl to command 'APPXPSecurityContextViewToolbar';

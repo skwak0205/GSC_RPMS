@@ -1,0 +1,98 @@
+################################################################################################
+# Created Date : 2023.03.13
+# Create by HyungJin,Ju
+# Description : 프로젝트 Concept 생성 Form
+################################################################################################
+
+#del form 'gscPMCProjectConceptCreateForm';
+add form 'gscPMCProjectConceptCreateForm' web
+field #1
+    name 'Name'
+    businessobject '$<name>'
+    label emxProgramCentral.Label.gscTitle
+    autoheight 'FALSE'
+    autowidth 'FALSE'
+    edit 'FALSE'
+    setting 'Registered Suite'  'ProgramCentral'
+    setting 'Required'  'true'
+    setting 'Group Name'  'nameCS'
+    setting 'Validate'  'isBadNameChars'
+    setting 'Editable'  'True'
+    setting 'Field Type'  'basic'
+field #2
+    name 'ProjectDescription'
+    businessobject '$<description>'
+    label 'emxProgramCentral.Common.BriefDescription'
+    autoheight 'FALSE'
+    autowidth 'FALSE'
+    edit 'FALSE'
+    setting 'Registered Suite'  'ProgramCentral'
+    setting 'Required'  'false'
+    setting 'Editable'  'true'
+    setting 'Field Type'  'basic'
+field #3
+    name 'gscProjectType'
+    businessobject '$<attribute[attribute_ProjectType].value>'
+    label emxProgramCentral.Label.gscProjectType
+    setting 'Editable' 'true'
+    setting 'Field Type' 'attribute'
+    setting 'Admin Type' 'attribute_ProjectType'
+    setting 'Input Type' 'combobox'
+    setting 'Registered Suite' 'ProgramCentral'
+field #4
+    name 'gscBusinessArea'
+    businessobject '$<attribute[attribute_gscBusinessArea].value>'
+    label emxProgramCentral.Label.gscBusinessArea
+    setting 'Editable' 'true'
+    setting 'Field Type' 'attribute'
+    setting 'Admin Type' 'attribute_gscBusinessArea'
+    setting 'Input Type' 'combobox'
+    setting 'Registered Suite' 'ProgramCentral'
+field #5
+    name 'gscReviewType'
+    businessobject '$<attribute[attribute_gscReviewType].value>'
+    label emxProgramCentral.Label.gscReviewType
+    setting 'Editable' 'true'
+    setting 'Field Type' 'attribute'
+    setting 'Admin Type' 'attribute_gscReviewType'
+    setting 'Input Type' 'combobox'
+    setting 'Registered Suite' 'ProgramCentral'
+field #6
+    name 'BusinessUnitName'
+    label 'emxProgramCentral.Label.gscBusinessUnitProject'
+    autoheight 'FALSE'
+    autowidth 'FALSE'
+    edit 'FALSE'
+    setting 'Registered Suite'  'ProgramCentral'
+    setting 'Required'  'false'
+    setting 'function'  'selectBusUnit'
+    setting 'Editable'  'true'
+    setting 'program'  'emxProjectConcept'
+    setting 'Field Type'  'programHTMLOutput'
+field #7
+    name 'ProjectDate'
+    label 'emxProgramCentral.Label.gscProjectStartDate'
+    autoheight 'FALSE'
+    autowidth 'FALSE'
+    edit 'FALSE'
+    setting 'Registered Suite'  'ProgramCentral'
+    setting 'Required'  'true'
+    setting 'function'  'getCurrentDate'
+    setting 'IgnoreTimeZone'  'true'
+    setting 'format'  'date'
+    setting 'Calendar Function'  'getCompanyNonWorkingDays'
+    setting 'Calendar Program'  'emxTask'
+    setting 'Update Program'  'emxProjectSpace'
+    setting 'program'  'emxProjectSpace'
+    setting 'Update Function'  'updateProjectDate'
+    setting 'Field Type'  'program'
+ property 'installer' value 'ENOVIAEngineering'
+ property 'application' value 'ProgramManagementBase'
+ property 'installed date' value '03-15-2023'
+ property 'original name' value 'gscPMCProjectConceptCreateForm'
+ property 'version' value 'R423.HF5'
+;
+add property form_gscPMCProjectConceptCreateForm on program eServiceSchemaVariableMapping.tcl to form 'gscPMCProjectConceptCreateForm';
+
+# ENOVIA 프로젝트 생성 Toolbar 에서 Project Concept 생성 Command 수정 - Project Concept 생성 href form PMCProjectConceptCreateForm 에서 gscPMCProjectConceptCreateForm로 수정
+mod command PMCProjectSummaryCreateConceptProject href '${COMMON_DIR}/emxCreate.jsp?type=type_ProjectConcept&nameField=keyin&policy=policy_ProjectConcept&vaultChooser=false&form=gscPMCProjectConceptCreateForm&header=emxProgramCentral.Common.ProjectConcept&HelpMarker=emxhelpprojectconceptcreatedialog&postProcessJPO=emxProjectConcept:performPostProcessActions&mode=create&submitAction=refreshCaller&findMxLink=false';

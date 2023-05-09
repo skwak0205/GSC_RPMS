@@ -1,0 +1,22 @@
+del command 'PLCEditModelActionLink';
+add command 'PLCEditModelActionLink'
+	description	'Edit Details Action Link on Properties Page for Model'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Model&formMode=Edit&formHeader=emxProduct.Heading.EditNoRev&mode=edit&HelpMarker=emxhelpmodeledit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCEditModelActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCEditModelActionCommandsBar add command PLCEditModelActionLink order command PLCEditModelActionLink 1;
+#channel ==>PLCEditModelActionCommandsBar
+add property command_PLCEditModelActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCEditModelActionLink';

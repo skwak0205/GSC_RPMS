@@ -1,0 +1,18 @@
+del menu 'type_ProjectConceptRMB';
+add menu 'type_ProjectConceptRMB'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectSpaceProperties'
+	command	'PMCLifecycle'
+	command	'PMCWBSAddSubtaskBelow'
+	command	'PMCWBSAddExistingProject'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_ProjectConceptRMB'
+	property 'version'	value	'R214'
+;
+add property menu_type_ProjectConceptRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_ProjectConceptRMB';

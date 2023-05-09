@@ -1,0 +1,19 @@
+del command 'APPRouteNodeTaskEdit';
+add command 'APPRouteNodeTaskEdit'
+	description	'Edit the Route Node Task details'
+	label	'emxComponents.Button.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPRouteNodeTask&mode=edit&formHeader=emxComponents.TaskDetails.EditTaskDetails&HelpMarker=emxhelpedittaskdetails&postProcessJPO=emxRoute:updateRouteNodeTask&findMxLink=false'
+	alt	'emxComponents.Button.Edit'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'((owner == context.user) && !("$<type>"=="$<type_RouteTemplate>" && current=="Active"))'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteNodeTaskEdit'
+	property	'version'	value	'R423.HF1'
+;
+modify menu APPRoleNodeTaskActionsToolBar add command APPRouteNodeTaskEdit order command APPRouteNodeTaskEdit 0;
+#channel ==>APPRoleNodeTaskActionsToolBar
+add property command_APPRouteNodeTaskEdit on program eServiceSchemaVariableMapping.tcl to command 'APPRouteNodeTaskEdit';

@@ -1,0 +1,27 @@
+del command 'LCLibraryStructureCommand';
+add command 'LCLibraryStructureCommand'
+	description	'Library Structure Command'
+	label	'emxDocumentCentral.Common.Name'
+	href	''
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Structure Program'		'emxLibraryStructureTree'
+	setting	'Structure Function'		'getStructure'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCLibraryStructureCommand'
+	property	'version'	value	'R422'
+;
+modify menu LCLibraryStructure add command LCLibraryStructureCommand order command LCLibraryStructureCommand 0;
+#channel ==>LCLibraryStructure
+add property command_LCLibraryStructureCommand on program eServiceSchemaVariableMapping.tcl to command 'LCLibraryStructureCommand';

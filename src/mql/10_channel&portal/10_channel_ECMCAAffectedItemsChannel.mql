@@ -1,0 +1,17 @@
+del channel 'ECMCAAffectedItemsChannel';
+add channel 'ECMCAAffectedItemsChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'EnterpriseChangeMgt'
+	setting		'ChannelID'		'1'
+	command 	'ECM3DAffectedItemsCA','ECMCAImplementedItems','ECMCANewImplementedItems'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCAAffectedItemsChannel'
+	property	'version'	value	'R216'
+;
+#portal ==>ECMCAAffectedItemsPortal
+add property channel_ECMCAAffectedItemsChannel on program eServiceSchemaVariableMapping.tcl to channel 'ECMCAAffectedItemsChannel';

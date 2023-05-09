@@ -1,0 +1,26 @@
+del command 'PMCWhatIfDelete';
+add command 'PMCWhatIfDelete'
+	description	'PMCCompare'
+	label	'emxProgramCentral.Experiment.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=deleteExperiment'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true && (current!= Review && current!= Complete && current!= Archive && current!= Cancel)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfDelete'
+	property	'version'	value	'R422'
+;
+modify menu PMCWhatIfActions add command PMCWhatIfDelete order command PMCWhatIfDelete 0;
+#channel ==>PMCWhatIfActions
+add property command_PMCWhatIfDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCWhatIfDelete';

@@ -1,0 +1,15 @@
+del menu 'LCSearchToolBarRetentionSchedule';
+add menu 'LCSearchToolBarRetentionSchedule'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LCNewSearchRetention'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCSearchToolBarRetentionSchedule'
+	property 'version'	value	'10-7-SP1'
+;
+add property menu_LCSearchToolBarRetentionSchedule on program eServiceSchemaVariableMapping.tcl to menu 'LCSearchToolBarRetentionSchedule';

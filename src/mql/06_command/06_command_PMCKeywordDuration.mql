@@ -1,0 +1,22 @@
+del command 'PMCKeywordDuration';
+add command 'PMCKeywordDuration'
+	description	''
+	label	'emxProgramCentral.Common.KeywordDuration'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCDurationKeywordsSummaryTable&toolbar=PMCDurationKeywordsToolBar&freezePane=Name&selection=multiple&HelpMarker=emxhelpkeywordlist&header=emxProgramCentral.DurationKeywords.DurationKeywords&program=emxDurationKeywords:getTableDurationKeywordsData&customize=false&objectCompare=false&submitAction=refreshCaller&findMxLink=false&editLink=true&hideLaunchButton=true&displayView=details&showPageURLIcon=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCKeywordDuration'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSProjectTemplateToolBarActions add command PMCKeywordDuration order command PMCKeywordDuration 5;
+#channel ==>PMCWBSProjectTemplateToolBarActionsPMCProjectPropertiesChannel
+add property command_PMCKeywordDuration on program eServiceSchemaVariableMapping.tcl to command 'PMCKeywordDuration';

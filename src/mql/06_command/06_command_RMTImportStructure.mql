@@ -1,0 +1,28 @@
+del command 'RMTImportStructure';
+add command 'RMTImportStructure'
+	description	''
+	label	'emxRequirements.ActionLink.ImportStructure'
+	href	'${SUITE_DIR}/ImportStructureFS.jsp?relationshiplist=emxRequirements.CloneTypes.relationship_RequirementSpecification&connectProgram=emxSpecificationStructure&connectFunction=addExistingToStructure&completeExpandProgram=emxSpecificationStructure&completeExpandFunction=expandTreeWithRefCopyObjects&expandProgramMenu=RMTSpecTreeProgramMenu&sbTableMenu=RMTSpecTreeTableMenu&sbSRMTortColumnName=sep1&fromWebApp=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${SUITE_DIR}/images/iconActonImportExistingStructure.gif'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTImportStructure'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTImportStructure on program eServiceSchemaVariableMapping.tcl to command 'RMTImportStructure';

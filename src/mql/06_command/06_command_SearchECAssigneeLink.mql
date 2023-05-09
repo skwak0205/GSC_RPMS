@@ -1,0 +1,18 @@
+del command 'SearchECAssigneeLink';
+add command 'SearchECAssigneeLink'
+	description	''
+	label	'emxComponents.Command.SearchPerson'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxCommonEngineeringChange:getPersons&table=ECSearchPersonsTable&form=ECSearchPersonsForm&searchCommand=SearchECAssigneeLink&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'SearchECAssigneeLink'
+	property	'version'	value	'10-6'
+;
+modify menu APPECSearchAddExistingChooser add command SearchECAssigneeLink order command SearchECAssigneeLink 10;
+#channel ==>APPECSearchAddExistingChooser
+add property command_SearchECAssigneeLink on program eServiceSchemaVariableMapping.tcl to command 'SearchECAssigneeLink';

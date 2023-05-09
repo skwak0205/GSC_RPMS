@@ -1,0 +1,22 @@
+del command 'ECMChangeTemplateDelete';
+add command 'ECMChangeTemplateDelete'
+	description	'Delete Change Template'
+	label	'EnterpriseChangeMgt.Command.Delete'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=deleteTemplate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.ChangeTemplate.MsgConfirm'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeTemplateDelete'
+	property	'version'	value	'R216'
+;
+modify menu ECMChangeTemplateMenuToolbar add command ECMChangeTemplateDelete order command ECMChangeTemplateDelete 0;
+#channel ==>ECMChangeTemplateMenuToolbar
+add property command_ECMChangeTemplateDelete on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeTemplateDelete';

@@ -1,0 +1,18 @@
+del command 'APPWorkflowTaskReassignActionLink';
+add command 'APPWorkflowTaskReassignActionLink'
+	description	'Workflow task reassign action link'
+	label	'emxComponents.Workflow.Reassign'
+	href	'${COMPONENT_DIR}/emxReassignPersonSearch.jsp?searchmode=PersonChooser&suiteKey=Components&searchmenu=APPWorkflowPersonSearchMenu&searchcommand=APPWorkflowOwnerFind&SubmitURL=${COMPONENT_DIR}/emxWorkflowTaskReassignAction.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'((current == "Assigned" || current == "Started") && (to[Workflow Task].from.owner == context.user && to[Workflow Task].from.current == "Started"))'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowTaskReassignActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowTaskPropertiesActionToolbar add command APPWorkflowTaskReassignActionLink order command APPWorkflowTaskReassignActionLink 6;
+#channel ==>APPWorkflowTaskPropertiesActionToolbar
+add property command_APPWorkflowTaskReassignActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowTaskReassignActionLink';

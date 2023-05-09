@@ -1,0 +1,19 @@
+del command 'AddExisting';
+add command 'AddExisting'
+	description	'Global Search AddExisting'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMPONENT_DIR}/emxCommonConnectObjects.jsp'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AddExisting'
+	property	'version'	value	'10-0-1-0'
+;
+modify menu GlobalAddExistingBottomActionBar add command AddExisting order command AddExisting 0;
+#channel ==>GlobalAddExistingBottomActionBar
+add property command_AddExisting on program eServiceSchemaVariableMapping.tcl to command 'AddExisting';

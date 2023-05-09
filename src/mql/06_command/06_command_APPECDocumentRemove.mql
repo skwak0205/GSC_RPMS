@@ -1,0 +1,25 @@
+del command 'APPECDocumentRemove';
+add command 'APPECDocumentRemove'
+	description	'Remove Selected Document'
+	label	'emxComponents.Command.Remove'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRemove.jsp?action=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromdisconnect] == true)'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECDocumentRemove'
+	property	'version'	value	'R422'
+;
+modify menu APPObjectDocumentSummaryActionsToolBar add command APPECDocumentRemove order command APPECDocumentRemove 5;
+#channel ==>APPObjectDocumentSummaryActionsToolBar
+add property command_APPECDocumentRemove on program eServiceSchemaVariableMapping.tcl to command 'APPECDocumentRemove';

@@ -1,0 +1,19 @@
+del command 'PLCTestCaseStructure';
+add command 'PLCTestCaseStructure'
+	description	'TestCase Structure Command'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Structure Program'		'emxTestCase'
+	setting	'Submit'		'true'
+	setting	'Structure Function'		'getStructureList'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestCaseStructure'
+	property	'version'	value	'R418'
+;
+modify menu type_PLCTestCaseStructureMenu add command PLCTestCaseStructure order command PLCTestCaseStructure 0;
+#channel ==>type_PLCTestCaseStructureMenu
+add property command_PLCTestCaseStructure on program eServiceSchemaVariableMapping.tcl to command 'PLCTestCaseStructure';

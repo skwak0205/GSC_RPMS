@@ -1,0 +1,28 @@
+del command 'PMCResourcePoolAddResource';
+add command 'PMCResourcePoolAddResource'
+	description	'It will add resources to request from Resource pool'
+	label	'emxProgramCentral.ResourcePool.Command.AddResources'
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=Resources'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isResourcePoolRequestSummaryTable'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_AddMember32.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolAddResource'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourceProcessActions add command PMCResourcePoolAddResource order command PMCResourcePoolAddResource 2;
+modify menu PMCResourceProcessActionsRMB add command PMCResourcePoolAddResource order command PMCResourcePoolAddResource 0;
+modify menu PMCResourcePoolRequestToolbar add command PMCResourcePoolAddResource order command PMCResourcePoolAddResource 8;
+#channel ==>PMCResourceProcessActionsPMCResourceProcessActionsRMBPMCResourcePoolRequestToolbar
+add property command_PMCResourcePoolAddResource on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePoolAddResource';

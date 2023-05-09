@@ -1,0 +1,23 @@
+del command 'APPRouteCreateWithDocument';
+add command 'APPRouteCreateWithDocument'
+	description	'APPRouteCreateWithDocument'
+	label	'emxComponents.Common.CreateSimpleRoute'
+	href	'${COMMON_DIR}/emxRouteCreate.jsp'
+	alt	''
+	setting	'Popup Size'		'Medium Tall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submite'		'true'
+	setting	'Access Function'		'emxCheckCreateRoutesAccess'
+	setting	'Access Program'		'emxRoute'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallRoute.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteCreateWithDocument'
+	property	'version'	value	'R420.HF2'
+;
+#channel ==>
+add property command_APPRouteCreateWithDocument on program eServiceSchemaVariableMapping.tcl to command 'APPRouteCreateWithDocument';

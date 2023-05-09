@@ -1,0 +1,32 @@
+del command 'PMCWBSInsertExistingProject';
+add command 'PMCWBSInsertExistingProject'
+	description	''
+	label	'emxProgramCentral.Common.InsertExistingProject'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=insertExistingProjectAbove'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(!((to[$<relationship_Subtask>].from.policy=="$<policy_ProjectReview>") && (to[$<relationship_Subtask>].from.type.kindof=="$<type_Milestone>"))) && (!((to[Project Access Key].from.from[Project Access List].to.type.kindof[Project Template]==TRUE) || (type.kindof[Project Template]==TRUE)))'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSRMBCommand'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionInsertRowBefore.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSInsertExistingProject'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSRMBActions add command PMCWBSInsertExistingProject order command PMCWBSInsertExistingProject 5;
+modify menu type_TaskManagementRMB add command PMCWBSInsertExistingProject order command PMCWBSInsertExistingProject 7;
+modify menu PMCAddProjectMenu add command PMCWBSInsertExistingProject order command PMCWBSInsertExistingProject 1;
+modify menu type_GateRMB add command PMCWBSInsertExistingProject order command PMCWBSInsertExistingProject 9;
+#channel ==>PMCWBSRMBActionstype_TaskManagementRMBPMCAddProjectMenutype_GateRMB
+add property command_PMCWBSInsertExistingProject on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSInsertExistingProject';

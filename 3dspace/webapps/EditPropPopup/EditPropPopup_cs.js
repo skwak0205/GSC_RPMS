@@ -1,0 +1,1 @@
+define("DS/EditPropPopup/EditPropPopup_cs",{});define("DS/EditPropPopup/assets/nls/editPropPopup",{Properties:"Vlastnosti",PinWidget:"Připnout widget",Loading:"Probíhá načítání...",CloseOverlay:"Zavřít překryvné okno"});

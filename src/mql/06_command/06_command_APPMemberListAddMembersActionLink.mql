@@ -1,0 +1,27 @@
+del command 'APPMemberListAddMembersActionLink';
+add command 'APPMemberListAddMembersActionLink'
+	description	'Add Members Command'
+	label	'emxComponents.Command.DistributionListAddPersons'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?showInitialResults=false&table=AEFPersonChooserDetails&selection=multiple&form=AEFSearchPersonForm&submitURL=../components/emxMemberListAddMembers.jsp&field=TYPES=type_Person:CURRENT=policy_Person.state_Active&header=emxComponents.Common.SelectPerson&memberType=Person&HelpMarker=emxhelpsearch'
+	alt	'emxComponents.Command.DistributionListAddPersons'
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'owner==context.user'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddMember.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMemberListAddMembersActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPMemberListMembersTopActionBar add command APPMemberListAddMembersActionLink order command APPMemberListAddMembersActionLink 0;
+modify menu APPMemberListMembersActionsToolBar add command APPMemberListAddMembersActionLink order command APPMemberListAddMembersActionLink 1;
+#channel ==>APPMemberListMembersTopActionBarAPPMemberListMembersActionsToolBar
+add property command_APPMemberListAddMembersActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPMemberListAddMembersActionLink';

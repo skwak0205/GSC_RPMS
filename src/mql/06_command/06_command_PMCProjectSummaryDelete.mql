@@ -1,0 +1,31 @@
+del command 'PMCProjectSummaryDelete';
+add command 'PMCProjectSummaryDelete'
+	description	'Command for Delete'
+	label	'emxProgramCentral.Common.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=deleteProject'
+	alt	''
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCommandVisible'
+	setting	'Access Program'		'emxProjectHoldAndCancel'
+	setting	'Command Name'		'Delete'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSummaryDelete'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProjectSummaryToolBarActions add command PMCProjectSummaryDelete order command PMCProjectSummaryDelete 4;
+#channel ==>PMCProjectSummaryToolBarActions
+add property command_PMCProjectSummaryDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSummaryDelete';

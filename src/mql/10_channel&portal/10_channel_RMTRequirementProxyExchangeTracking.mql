@@ -1,0 +1,17 @@
+del channel 'RMTRequirementProxyExchangeTracking';
+add channel 'RMTRequirementProxyExchangeTracking'
+	description	'Channel to Exchanges Tracking'
+	height	'0'
+	label	'emxRequirements.Common.ExchangeTracking'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'ChannelID'		'1'
+	command 	'ContextIssueListPage','APPDecisionsTreeCategory'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementProxyExchangeTracking'
+	property	'version'	value	'R421'
+;
+#portal ==>RMTRequirementProxyExchangeTracking
+add property channel_RMTRequirementProxyExchangeTracking on program eServiceSchemaVariableMapping.tcl to channel 'RMTRequirementProxyExchangeTracking';

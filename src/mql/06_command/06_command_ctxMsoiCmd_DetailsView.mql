@@ -1,0 +1,17 @@
+del command 'ctxMsoiCmd_DetailsView';
+add command 'ctxMsoiCmd_DetailsView'
+	description	'ctxMsoiCmd_DetailsView'
+	label	'emxMSF.Command.ctxMsoiCmd_DetailsView'
+	href	''
+	alt	'ctxMsoiCmd_DetailsView'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_DetailsView'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_ctxMsoiCmd_DetailsView on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_DetailsView';

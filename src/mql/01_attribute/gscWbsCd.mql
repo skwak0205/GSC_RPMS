@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : WBS코드
+################################################################################################
+
+#del attribute 'gscWbsCd';
+add attribute  'gscWbsCd'
+   description 'WBS코드'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscWbsCd"
+;
+add property attribute_gscWbsCd on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscWbsCd';
+

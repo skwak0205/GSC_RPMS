@@ -1,0 +1,20 @@
+del command 'FTRDesignVariantLimitFilterCommand';
+add command 'FTRDesignVariantLimitFilterCommand'
+	description	'FTRDesignVariantLimitFilterCommand'
+	label	'emxFramework.Basic.Limit'
+	href	'javascript:filterPage()'
+	alt	''
+	setting	'Target Location'		'detailsDisplay'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Action Label'		'emxFramework.Label.Filter'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDesignVariantLimitFilterCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRDVConfigurationOptionsCustomFilterToolbar add command FTRDesignVariantLimitFilterCommand order command FTRDesignVariantLimitFilterCommand 0;
+#channel ==>FTRDVConfigurationOptionsCustomFilterToolbar
+add property command_FTRDesignVariantLimitFilterCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRDesignVariantLimitFilterCommand';

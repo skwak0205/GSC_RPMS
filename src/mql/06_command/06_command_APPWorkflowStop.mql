@@ -1,0 +1,21 @@
+del command 'APPWorkflowStop';
+add command 'APPWorkflowStop'
+	description	'Command Object for Stopping the workflow from action menu on the workflow summary page'
+	label	'emxComponents.Workflow.Stop'
+	href	'${COMPONENT_DIR}/emxWorkflowAction.jsp?action=stop'
+	alt	'emxComponents.Workflow.Stop'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionStop.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowStop'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowSummaryActionsToolBar add command APPWorkflowStop order command APPWorkflowStop 4;
+modify menu APPObjectWorkflowActionsToolBar add command APPWorkflowStop order command APPWorkflowStop 4;
+#channel ==>APPWorkflowSummaryActionsToolBarAPPObjectWorkflowActionsToolBar
+add property command_APPWorkflowStop on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowStop';

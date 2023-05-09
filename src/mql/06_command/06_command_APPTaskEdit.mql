@@ -1,0 +1,22 @@
+del command 'APPTaskEdit';
+add command 'APPTaskEdit'
+	description	'Command for editing Inbox Task details'
+	label	'emxComponents.Common.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPInboxTaskEditForm&mode=edit&formHeader=emxComponents.TaskDetails.EditTaskDetails&HelpMarker=emxhelptaskproperties&showPageURLIcon=false&Export=false&findMxLink=false&postProcessJPO=emxInboxTask:updateTaskDetails&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checksToEditTask'
+	setting	'Access Program'		'emxInboxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPTaskEdit'
+	property	'version'	value	'R417'
+;
+modify menu APPInboxTaskDetailsActionsToolbar add command APPTaskEdit order command APPTaskEdit 3;
+#channel ==>APPInboxTaskDetailsActionsToolbar
+add property command_APPTaskEdit on program eServiceSchemaVariableMapping.tcl to command 'APPTaskEdit';

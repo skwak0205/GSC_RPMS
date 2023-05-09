@@ -1,0 +1,17 @@
+del command 'APPPartDeletedEvent';
+add command 'APPPartDeletedEvent'
+	description	'Delete Part'
+	label	'emxComponents.Event.Part_Deleted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Part Deleted'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartDeletedEvent'
+	property	'version'	value	'10-7-SP1'
+;
+modify menu APPPartEvents add command APPPartDeletedEvent order command APPPartDeletedEvent 2;
+#channel ==>APPPartEvents
+add property command_APPPartDeletedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPPartDeletedEvent';

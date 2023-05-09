@@ -1,0 +1,25 @@
+del command 'RMTProjectsAndFoldersGenericSearch';
+add command 'RMTProjectsAndFoldersGenericSearch'
+	description	'Opens generic search dialog page for projects.'
+	label	'emxRequirements.Search.Projects'
+	href	'../programcentral/emxProgramCentralSearchProject.jsp?rmtInstall=true'
+	alt	''
+	setting	'Target Location'		'SearchContent'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTProjectsAndFoldersGenericSearch'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementSpecificationSearchType add command RMTProjectsAndFoldersGenericSearch order command RMTProjectsAndFoldersGenericSearch 0;
+#channel ==>RMTRequirementSpecificationSearchType
+add property command_RMTProjectsAndFoldersGenericSearch on program eServiceSchemaVariableMapping.tcl to command 'RMTProjectsAndFoldersGenericSearch';

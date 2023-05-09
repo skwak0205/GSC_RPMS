@@ -1,0 +1,17 @@
+del menu 'type_Location';
+add menu 'type_Location'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Location&HelpMarker=emxhelplocationproperties&formHeader=emxComponents.Common.PropertiesPageHeading&toolbar=APPLocationDetailsToolBar'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/iconSmallLocation.gif'
+	command	'AEFLifecycle'
+	command	'PMCLocationCalendars'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_Location'
+	property 'version'	value	'10-6'
+;
+add property menu_type_Location on program eServiceSchemaVariableMapping.tcl to menu 'type_Location';

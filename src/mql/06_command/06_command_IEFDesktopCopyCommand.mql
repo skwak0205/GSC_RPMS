@@ -1,0 +1,22 @@
+del command 'IEFDesktopCopyCommand';
+add command 'IEFDesktopCopyCommand'
+	description	'IEF Desktop Copy Command'
+	label	'emxIEFDesignCenter.Common.Copy'
+	href	''
+	alt	''
+	setting	'iefcname'		'iefdesktopaction'
+	setting	'iefaction'		'copy'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	setting	'Row Select'		'multi'
+	setting	'iefrefreshpage'		'true'
+	setting	'iefwaitforresponse'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopCopyCommand'
+	property	'version'	value	'R424'
+;
+modify menu IEFDesktopLocalWorkspaceActionMenu add command IEFDesktopCopyCommand order command IEFDesktopCopyCommand 6;
+#channel ==>IEFDesktopLocalWorkspaceActionMenu
+add property command_IEFDesktopCopyCommand on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopCopyCommand';

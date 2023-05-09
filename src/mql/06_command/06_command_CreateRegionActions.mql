@@ -1,0 +1,21 @@
+del command 'CreateRegionActions';
+add command 'CreateRegionActions'
+	description	'CreateRegion Command Object'
+	label	'emxFramework.Shortcut.CreateRegion'
+	href	'${COMPONENT_DIR}/emxCommonFS.jsp?functionality=RegionCreateFSInstance'
+	alt	'emxFramework.Shortcut.CreateRegion'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'CreateRegionActions'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_CreateRegionActions on program eServiceSchemaVariableMapping.tcl to command 'CreateRegionActions';

@@ -1,0 +1,16 @@
+del command 'LBCClassificationPowerView';
+add command 'LBCClassificationPowerView'
+	description	'Classification PowerView containing Classification BOM and Classification Details'
+	label	'emxLibraryCentral.Command.ClassificationPowerView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=LBCClassificationPowerView&header=emxLibraryCentral.Portal.ClassificationBOMHeader&HelpMarker=emxhelpclassificationpowerview'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCClassificationPowerView'
+	property	'version'	value	'R215'
+;
+modify menu type_Part add command LBCClassificationPowerView order command LBCClassificationPowerView 0;
+#channel ==>type_Part
+add property command_LBCClassificationPowerView on program eServiceSchemaVariableMapping.tcl to command 'LBCClassificationPowerView';

@@ -1,0 +1,15 @@
+{
+  "CEV.optionsChecker.rdfServerURL.error": "Adres URL serwera RDF musi zostać zdefiniowany!",
+  "CEV.optionsChecker.resourceURI.error": "Identyfikator URI zasobu musi zostać zdefiniowany!",
+  "CEV.optionsChecker.constraintsPosition.error": "Wyskakujące okno powiązań powinno mieć jedną z następujących pozycji: „góra”, „prawa strona”, „dół” lub „lewa strona”!",
+  "CEV.optionsChecker.buttons.types.error": "Przycisk „{label}” powinien mieć jeden z następujących typów: „Podstawowy”, „Domyślny”, „Informacyjny”, „Sukces”, „Ostrzeżenie”, „Błąd”",
+  "CEV.optionsChecker.buttons.specificActions.error": "Działanie specyficzne dla cechy „{key}” powinno być funkcją!",
+  "CEV.optionsChecker.search.error": "Funkcja jest oczekiwana w celu wyszukania wartości cechy „{key}”!",
+  "CEV.title": "Edytor cech",
+  "CEV.defaultMessage": "Wystąpił błąd podczas pobierania wszystkich cech...",
+  "CEV.userCharacteristics.title": "Cechy użytkownika",
+  "CEV.characteristics.title": "Cechy",
+  "CEV.okButton.content": "OK",
+  "CEV.cancelButton.content": "Anuluj",
+  "CEV.cancelButton.error": "Błąd podczas klikania przycisku „Anuluj”..."
+}

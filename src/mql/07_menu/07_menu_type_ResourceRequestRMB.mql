@@ -1,0 +1,18 @@
+del menu 'type_ResourceRequestRMB';
+add menu 'type_ResourceRequestRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCResourceRequestDiscussion'
+	menu	'PMCResourceRequestCreateSubscription'
+	menu	'PMCResourceRequestProcessActions'
+	menu	'PMCResourceProcessActionsRMB'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_ResourceRequestRMB'
+	property 'version'	value	'V6R2011'
+;
+add property menu_type_ResourceRequestRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_ResourceRequestRMB';

@@ -1,0 +1,16 @@
+del menu 'TMCMeetingAttachmentTopActionBar';
+add menu 'TMCMeetingAttachmentTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	command	'TMCMeetingAttachmentsUploadActionLink'
+	command	'TMCMeetingAddWorkspaceContent'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCMeetingAttachmentTopActionBar'
+	property 'version'	value	'10-5'
+;
+add property menu_TMCMeetingAttachmentTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'TMCMeetingAttachmentTopActionBar';

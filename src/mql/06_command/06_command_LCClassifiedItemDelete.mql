@@ -1,0 +1,7 @@
+del command 'LCClassifiedItemDelete';
+add command 'LCClassifiedItemDelete'
+	description	'Classified Item Delete'
+	label	'null'
+	href	'null'
+	alt	'null'
+add property command_LCClassifiedItemDelete on program eServiceSchemaVariableMapping.tcl to command 'LCClassifiedItemDelete';

@@ -1,0 +1,23 @@
+del command 'ECMMoveToExistingCR';
+add command 'ECMMoveToExistingCR'
+	description	'The Move to Exisiting Actions Link on the CR Affected Items Page'
+	label	'EnterpriseChangeMgt.Command.MovetoExisting'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=MoveToExistingCR&targetRelName=relationship_ChangeAction&isFrom=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Create].value || current==policy.property[state_Evaluate].value) && (owner==context.user) && !($<interface[interface_ChangeOnHold]=="TRUE">)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'false'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_Moveto22.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMoveToExistingCR'
+	property	'version'	value	'R417'
+;
+modify menu ECMMoveToCRMenu add command ECMMoveToExistingCR order command ECMMoveToExistingCR 1;
+#channel ==>ECMMoveToCRMenu
+add property command_ECMMoveToExistingCR on program eServiceSchemaVariableMapping.tcl to command 'ECMMoveToExistingCR';

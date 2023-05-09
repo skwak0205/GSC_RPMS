@@ -1,0 +1,19 @@
+del command 'PLCModelImageTreeCategory';
+add command 'PLCModelImageTreeCategory'
+	description	''
+	label	'emxProduct.Tree.Image'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCImageList&program=emxImage:getImages&header=emxProduct.Heading.ImageNoRev&selection=multiple&toolbar=PLCImageListToolBar&sortColumnName=Seq No&HelpMarker=emxhelpimagelist&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallImage.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCModelImageTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_Model add command PLCModelImageTreeCategory order command PLCModelImageTreeCategory 8;
+#channel ==>type_Model
+add property command_PLCModelImageTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCModelImageTreeCategory';

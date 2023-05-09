@@ -1,0 +1,18 @@
+del command 'PMCMilestones';
+add command 'PMCMilestones'
+	description	''
+	label	'emxProgramCentral.Common.Milestones'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCMilestonesSummaryTable&header=emxProgramCentral.header.Milestones&selection=multiple&program=emxMilestones:getMilestonesAllSubtasks,emxMilestones:getEngineeringMilestones,emxMilestones:getManufacturingMilestones&programLabel=emxProgramCentral.Filter.AllMilestones,emxProgramCentral.Filter.EngineeringMilestones,emxProgramCentral.Filter.ManufacturingMilestones&editLink=true&sortColumnName=ActualEndDate,EstimatedEndDate&postProcessJPO=emxMilestones:createMilestoneTrack&hideLaunchButton=true&displayView=details&cellwrap=false&showClipboard=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'isMilestoneDisplayAllowed'
+	setting	'Access Program'		'emxMilestones'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMilestones'
+	property	'version'	value	'R418'
+;
+#channel ==>PMCSchedulePMCFlattenedViewSchedulePMCGanttChartViewSchedulePMCDataGridViewSchedule
+add property command_PMCMilestones on program eServiceSchemaVariableMapping.tcl to command 'PMCMilestones';

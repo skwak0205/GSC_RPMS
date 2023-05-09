@@ -1,0 +1,8 @@
+{
+  "UCV.optionsChecker.optionSet.notExisting.error": "ユーザー特性を取得するためにオプション セットを定義する必要があります。",
+  "UCV.optionsChecker.optionSet.type.error": "ユーザー特性を取得するためにオプション セットを定義する必要があります。",
+  "UCV.mode.icon.text.switchReadOnly": "読み取り専用モードに切り替え",
+  "UCV.mode.icon.text.switchEdit": "編集モードに切り替え",
+  "UCV.add.icon.text": "ユーザー特性を追加",
+  "UCV.noUC.error": "使用可能なユーザー特性がありません..."
+}

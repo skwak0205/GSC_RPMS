@@ -1,0 +1,24 @@
+del command 'ECMChangeTemplatesEdit';
+add command 'ECMChangeTemplatesEdit'
+	description	'Edit Change Template Command'
+	label	'EnterpriseChangeMgt.Label.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ChangeTemplate&mode=edit&postProcessJPO=enoECMChangeUX:updateRouteTemplateForChangeEdit&preProcessJavaScript=setOwningOrganization&submitAction=refreshCaller&formHeader=EnterpriseChangeMgt.Command.EditTemplate&HelpMarker=emxhelpchangetemplateedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'500'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkAccessForEdit'
+	setting	'Access Program'		'enoECMChangeTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeTemplatesEdit'
+	property	'version'	value	'R216'
+;
+modify menu ECMChangeTemplatePropertiesToolbar add command ECMChangeTemplatesEdit order command ECMChangeTemplatesEdit 0;
+#channel ==>ECMChangeTemplatePropertiesToolbar
+add property command_ECMChangeTemplatesEdit on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeTemplatesEdit';

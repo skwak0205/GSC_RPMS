@@ -1,0 +1,18 @@
+del command 'APPRouteTemplateEditAccess';
+add command 'APPRouteTemplateEditAccess'
+	description	'Command to edit Route Template Access'
+	label	'emxComponents.Common.EditAccess'
+	href	'${SUITE_DIR}/emxRouteMembersSearch.jsp?fromPage=RouteAccessSummary&memberType=editAccess'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'type.kindof=="$<type_RouteTemplate>"'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteTemplateEditAccess'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_APPRouteTemplateEditAccess on program eServiceSchemaVariableMapping.tcl to command 'APPRouteTemplateEditAccess';

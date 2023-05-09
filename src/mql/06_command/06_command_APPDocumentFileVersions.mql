@@ -1,0 +1,25 @@
+del command 'APPDocumentFileVersions';
+add command 'APPDocumentFileVersions'
+	description	'lists the File versions in the Document Object'
+	label	'emxComponents.Common.FileVersions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonFileUI:getFileVersions&table=APPFileVersions&disableSorting=true&header=emxComponents.Common.DocumentVersionsPageHeading&subHeader=emxComponents.Menu.SubHeaderDocuments&HelpMarker=emxhelpdocumentfileversions&FilterFramePage=${COMPONENT_DIR}/emxCommonDocumentCheckoutUtil.jsp&FilterFrameSize=1'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True) && (vcfile == FALSE && vcfolder == FALSE && vcmodule == FALSE)'
+	setting	'Access Function'		'allowFileVersioning'
+	setting	'Access Program'		'emxCommonDocument'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentFileVersions'
+	property	'version'	value	'R422'
+;
+modify menu type_DOCUMENTS add command APPDocumentFileVersions order command APPDocumentFileVersions 6;
+modify menu type_GenericDocument add command APPDocumentFileVersions order command APPDocumentFileVersions 6;
+modify menu type_DocumentSheet add command APPDocumentFileVersions order command APPDocumentFileVersions 2;
+modify menu type_Specification add command APPDocumentFileVersions order command APPDocumentFileVersions 5;
+#channel ==>type_DOCUMENTStype_GenericDocumenttype_DocumentSheettype_SpecificationRMTSpecificationsProperties
+add property command_APPDocumentFileVersions on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentFileVersions';

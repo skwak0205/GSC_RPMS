@@ -1,0 +1,16 @@
+del command 'PLCProductEngineeringChangePowerview';
+add command 'PLCProductEngineeringChangePowerview'
+	description	''
+	label	'emxProduct.Product.Tree.EngineeringChangePowerview'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PLCProductEngineeringChangePortal&header=emxProduct.Product.Heading.EngineeringChangePowerview&HelpMarker=emxhelpchangemgmtpowerview'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductEngineeringChangePowerview'
+	property	'version'	value	'V6R2009-1.0'
+;
+#channel ==>
+add property command_PLCProductEngineeringChangePowerview on program eServiceSchemaVariableMapping.tcl to command 'PLCProductEngineeringChangePowerview';

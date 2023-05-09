@@ -1,0 +1,19 @@
+del command 'RMTHideSubTypes';
+add command 'RMTHideSubTypes'
+	description	''
+	label	'emxRequirements.hideSubTypes.HideSubTypes'
+	href	'${SUITE_DIR}/HideSubTypes.jsp?HelpMarker=emxhelppreferences'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Function'		'hideSubTypeCommand'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionSettings.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTHideSubTypes'
+	property	'version'	value	'V6R2017x'
+;
+modify menu RequirementsCentral add command RMTHideSubTypes order command RMTHideSubTypes 5;
+#channel ==>RequirementsCentral
+add property command_RMTHideSubTypes on program eServiceSchemaVariableMapping.tcl to command 'RMTHideSubTypes';

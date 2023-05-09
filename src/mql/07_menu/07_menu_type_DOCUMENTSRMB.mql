@@ -1,0 +1,20 @@
+del menu 'type_DOCUMENTSRMB';
+add menu 'type_DOCUMENTSRMB'
+	description	''
+	label	'emxFramework.RMBMenu.RMBDocumentMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'type.kindof[DOCUMENTS]'
+	command	'APPQuickFileList'
+	command	'APPVersionQuickFiles'
+	command	'AEFSeparator'
+	command	'AEFLifecycle'
+	command	'APPDocumentEditActionLinkRMB'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_DOCUMENTSRMB'
+	property 'version'	value	'R212'
+;
+add property menu_type_DOCUMENTSRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_DOCUMENTSRMB';

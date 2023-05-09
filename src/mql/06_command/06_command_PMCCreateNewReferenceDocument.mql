@@ -1,0 +1,31 @@
+del command 'PMCCreateNewReferenceDocument';
+add command 'PMCCreateNewReferenceDocument'
+	description	'Create New Document object'
+	label	'emxProgramCentral.Command.Document'
+	href	'${SUITE_DIR}/emxProgramCentralDocumentCreatePreProcess.jsp?documentAction=create&fileRequired=false&mode=referenceDocument'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedLeader'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMProjectLeader'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateNewReferenceDocument'
+	property	'version'	value	'R422'
+;
+modify menu PMCReferenceDocuemntCreateNew add command PMCCreateNewReferenceDocument order command PMCCreateNewReferenceDocument 1;
+#channel ==>PMCReferenceDocuemntCreateNew
+add property command_PMCCreateNewReferenceDocument on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateNewReferenceDocument';

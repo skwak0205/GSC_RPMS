@@ -1,0 +1,19 @@
+del menu 'PMCFolderBookmarkActions';
+add menu 'PMCFolderBookmarkActions'
+	description	''
+	label	'emxProgramCentral.Common.FolderBookmark'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'hasAccessToBookmarkActionMenuInFolderView'
+	setting	'Access Program'		'emxBookmark'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallBookmark.gif'
+	command	'PMCWorkspaceVaultBookmarksCreate'
+	command	'PMCProjectBookmarksDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCFolderBookmarkActions'
+	property 'version'	value	'R213'
+;
+add property menu_PMCFolderBookmarkActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCFolderBookmarkActions';

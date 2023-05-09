@@ -1,0 +1,17 @@
+del menu 'PLCEditModelActionCommandsBar';
+add menu 'PLCEditModelActionCommandsBar'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PLCEditModelActionLink'
+	command	'PLCAddToPortfolioFromProperties'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCEditModelActionCommandsBar'
+	property 'version'	value	'R418'
+;
+add property menu_PLCEditModelActionCommandsBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCEditModelActionCommandsBar';

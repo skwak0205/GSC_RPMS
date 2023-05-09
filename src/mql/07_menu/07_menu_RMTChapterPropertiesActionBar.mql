@@ -1,0 +1,20 @@
+del menu 'RMTChapterPropertiesActionBar';
+add menu 'RMTChapterPropertiesActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTChapterPropertiesEdit'
+	command	'APPSubscription'
+	command	'RMTPromote'
+	command	'RMTDemote'
+	command	'RMTTypeReserve'
+	command	'RMTTypeUnreserve'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTChapterPropertiesActionBar'
+	property 'version'	value	'V6R2017'
+;
+add property menu_RMTChapterPropertiesActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTChapterPropertiesActionBar';

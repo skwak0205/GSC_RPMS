@@ -1,0 +1,33 @@
+del table 'APPIssueCategoryChooser' system;
+add table 'APPIssueCategoryChooser' system
+column #1
+	name	'Name'
+	label	'emxComponents.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Components'
+	setting	'Column Type'		'program'
+	setting	'function'		'issueCategoryChooserName'
+	setting	'program'		'emxCommonIssue'
+column #2
+	name	'Type'
+	label	'emxComponents.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Components'
+	setting	'Column Type'		'program'
+	setting	'function'		'issueCategoryChooserDescription'
+	setting	'program'		'emxCommonIssue'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPIssueCategoryChooser'
+	property	'version'	value	'R212'
+;
+add property table_APPIssueCategoryChooser on program eServiceSchemaVariableMapping.tcl to table 'APPIssueCategoryChooser' system;

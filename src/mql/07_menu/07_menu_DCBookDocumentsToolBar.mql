@@ -1,0 +1,15 @@
+del menu 'DCBookDocumentsToolBar';
+add menu 'DCBookDocumentsToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	menu	'DCBookDocumentsActionBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCBookDocumentsToolBar'
+	property 'version'	value	'10-5'
+;
+add property menu_DCBookDocumentsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'DCBookDocumentsToolBar';

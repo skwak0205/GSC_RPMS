@@ -1,0 +1,22 @@
+del command 'APPDecisionMyDeskCreate';
+add command 'APPDecisionMyDeskCreate'
+	description	'Create a new Decision'
+	label	'emxComponents.Common.Create'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Decision&typeChooser=true&nameField=both&vaultChooser=true&header=emxComponents.Header.CreateDecision&submitAction=refreshCaller&form=APPDecisionCreate&HelpMarker=emxhelpdecisioncreate&showPageURLIcon=false&ReloadOpener=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP,ENO_MPI_TP,ENO_PRF_TP,ENO_LPI_TP,ENO_LRA_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionMyDeskCreate'
+	property	'version'	value	'R420'
+;
+modify menu APPDecisionsMyDeskActionBar add command APPDecisionMyDeskCreate order command APPDecisionMyDeskCreate 1;
+#channel ==>APPDecisionsMyDeskActionBar
+add property command_APPDecisionMyDeskCreate on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionMyDeskCreate';

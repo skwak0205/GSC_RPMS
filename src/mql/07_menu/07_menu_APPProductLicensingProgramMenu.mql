@@ -1,0 +1,16 @@
+del menu 'APPProductLicensingProgramMenu';
+add menu 'APPProductLicensingProgramMenu'
+	description	''
+	label	'emxComponents.Menu.ProductLicensingProgramMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPProductLicensingServerCommand'
+	command	'APPProductLicensingDatabaseCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPProductLicensingProgramMenu'
+	property 'version'	value	'R207'
+;
+add property menu_APPProductLicensingProgramMenu on program eServiceSchemaVariableMapping.tcl to menu 'APPProductLicensingProgramMenu';

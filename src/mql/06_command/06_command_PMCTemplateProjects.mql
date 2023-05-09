@@ -1,0 +1,17 @@
+del command 'PMCTemplateProjects';
+add command 'PMCTemplateProjects'
+	description	'Added for Projects Traceability'
+	label	'emxProgramCentral.Common.Projects'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCProjectTemplateTraceability&program=emxProjectTemplate:getProjects&parallelLoading=true'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTemplateProjects'
+	property	'version'	value	'R421'
+;
+modify menu type_ProjectTemplate add command PMCTemplateProjects order command PMCTemplateProjects 10;
+#channel ==>type_ProjectTemplate
+add property command_PMCTemplateProjects on program eServiceSchemaVariableMapping.tcl to command 'PMCTemplateProjects';

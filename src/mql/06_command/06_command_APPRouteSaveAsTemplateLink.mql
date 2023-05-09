@@ -1,0 +1,24 @@
+del command 'APPRouteSaveAsTemplateLink';
+add command 'APPRouteSaveAsTemplateLink'
+	description	'Command for saving the Route as a Template'
+	label	'emxComponents.Routes.SaveasTemplate'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_RouteTemplate&header=emxComponents.SaveRouteTemplateFS.Heading&HelpMarker=emxhelpsaverouteastemplate&suiteKey=Components&form=APPRouteSaveAsTemplate&mode=create&submitAction=refreshCaller&createJPO=emxRouteTemplate:saveRouteAsTemplate&preProcessJavaScript=routeSaveTemplateFormLoad&postProcessJPO=emxRouteTemplate:promoteRouteTemplate'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showSaveAsRouteTemplateLink'
+	setting	'Access Program'		'emxRouteTemplateBase'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSaveRouteAsTemplate.png'
+	user	'3DSRestrictedLeader'
+	user	'Global User'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteSaveAsTemplateLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRoutePropertiesActionsToolBar add command APPRouteSaveAsTemplateLink order command APPRouteSaveAsTemplateLink 3;
+#channel ==>APPRoutePropertiesActionsToolBar
+add property command_APPRouteSaveAsTemplateLink on program eServiceSchemaVariableMapping.tcl to command 'APPRouteSaveAsTemplateLink';

@@ -1,0 +1,16 @@
+del menu 'type_RuleExtension';
+add menu 'type_RuleExtension'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=FTREditRuleExtensionForm&actionBarName=FTRRuleExtensionPropertiesTopActionBarMenu&formHeader=emxConfigurationMgmt.Heading.Properties&HelpMarker=emxhelpruleextensionsdetails'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_RuleExtension'
+	property 'version'	value	'R214'
+;
+add property menu_type_RuleExtension on program eServiceSchemaVariableMapping.tcl to menu 'type_RuleExtension';

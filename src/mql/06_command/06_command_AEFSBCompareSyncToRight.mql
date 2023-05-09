@@ -1,0 +1,20 @@
+del command 'AEFSBCompareSyncToRight';
+add command 'AEFSBCompareSyncToRight'
+	description	''
+	label	'emxFramework.command.SyncToRight'
+	href	'javascript:synchronize('right')'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Function'		'accessSyncCommands'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSyncRight.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBCompareSyncToRight'
+	property	'version'	value	'V6R2008-2.0'
+;
+modify menu AEFStructureCompareToolbar add command AEFSBCompareSyncToRight order command AEFSBCompareSyncToRight 2;
+#channel ==>AEFStructureCompareToolbar
+add property command_AEFSBCompareSyncToRight on program eServiceSchemaVariableMapping.tcl to command 'AEFSBCompareSyncToRight';

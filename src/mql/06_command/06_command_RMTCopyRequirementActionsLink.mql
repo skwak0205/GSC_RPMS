@@ -1,0 +1,29 @@
+del command 'RMTCopyRequirementActionsLink';
+add command 'RMTCopyRequirementActionsLink'
+	description	''
+	label	'emxRequirements.ActionLink.Copy'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ReqCopyFSInstance&PRCFSParam1=Requirement&PRCFSParam2=DetailsPage&fromWebApp=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'policy != "Requirement Version"'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.gif'
+	setting	'Help Marker'		'emxhelprequirementcopy'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCopyRequirementActionsLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementPropertiesTopActionBar add command RMTCopyRequirementActionsLink order command RMTCopyRequirementActionsLink 3;
+#channel ==>RMTRequirementPropertiesTopActionBar
+add property command_RMTCopyRequirementActionsLink on program eServiceSchemaVariableMapping.tcl to command 'RMTCopyRequirementActionsLink';

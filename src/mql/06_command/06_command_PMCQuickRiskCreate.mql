@@ -1,0 +1,23 @@
+del command 'PMCQuickRiskCreate';
+add command 'PMCQuickRiskCreate'
+	description	'Quick command to create Risk'
+	label	'emxProgramCentral.Risk.CreateRisk'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=quickCreateRisk'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCQuickRiskCreate'
+	property	'version'	value	'R421.HF2'
+;
+modify menu PMCRisksSummaryToolBar add command PMCQuickRiskCreate order command PMCQuickRiskCreate 1;
+#channel ==>PMCRisksSummaryToolBar
+add property command_PMCQuickRiskCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCQuickRiskCreate';

@@ -1,0 +1,17 @@
+del menu 'APPWhereUsedExpandMenu';
+add menu 'APPWhereUsedExpandMenu'
+	description	''
+	label	'emxFramework.RMBMenu.expand.Label'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFFreezePaneExpandNLevel'
+	command	'AEFFreezePaneExpandAllLevel'
+	command	'APPWhereUsedExpandENDlevel'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'WhereUsed'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPWhereUsedExpandMenu'
+	property 'version'	value	'R423.HF2'
+;
+add property menu_APPWhereUsedExpandMenu on program eServiceSchemaVariableMapping.tcl to menu 'APPWhereUsedExpandMenu';

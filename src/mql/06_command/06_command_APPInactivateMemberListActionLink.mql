@@ -1,0 +1,26 @@
+del command 'APPInactivateMemberListActionLink';
+add command 'APPInactivateMemberListActionLink'
+	description	'Components Command Object'
+	label	'emxComponents.Command.DistributionListInActivate'
+	href	'../components/emxMemberListUtil.jsp?action=Inactivate&HelpMarker=emxhelpmemlisdeactivate'
+	alt	'emxComponents.Command.DistributionListInActivate'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDeActivate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPInactivateMemberListActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPMemberListBottomActionBar add command APPInactivateMemberListActionLink order command APPInactivateMemberListActionLink 0;
+modify menu APPMemberListsMyDeskActionsToolBar add command APPInactivateMemberListActionLink order command APPInactivateMemberListActionLink 0;
+#channel ==>APPMemberListBottomActionBarAPPMemberListsMyDeskActionsToolBar
+add property command_APPInactivateMemberListActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPInactivateMemberListActionLink';

@@ -1,0 +1,20 @@
+del command 'LBCContentRemovedEvent';
+add command 'LBCContentRemovedEvent'
+	description	'Event holder for Content Removal'
+	label	'emxLibraryCentral.Event.Content_Removed'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Content Removed'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCContentRemovedEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCDocumentLibrarySubscriptionEvents add command LBCContentRemovedEvent order command LBCContentRemovedEvent 2;
+modify menu LBCBookshelfSubscriptionEvents add command LBCContentRemovedEvent order command LBCContentRemovedEvent 2;
+modify menu LBCBookSubscriptionEvents add command LBCContentRemovedEvent order command LBCContentRemovedEvent 2;
+modify menu LBCLibrariesSubscriptionEvents add command LBCContentRemovedEvent order command LBCContentRemovedEvent 2;
+#channel ==>LBCDocumentLibrarySubscriptionEventsLBCBookshelfSubscriptionEventsLBCBookSubscriptionEventsLBCLibrariesSubscriptionEvents
+add property command_LBCContentRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCContentRemovedEvent';

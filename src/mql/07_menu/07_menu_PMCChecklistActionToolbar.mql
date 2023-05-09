@@ -1,0 +1,21 @@
+del menu 'PMCChecklistActionToolbar';
+add menu 'PMCChecklistActionToolbar'
+	description	''
+	label	'emxProgramCentral.Common.Checklist.ActionToolbar'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCChecklistCreateNew'
+	command	'PMCChecklistAddItem'
+	command	'PMCChecklistCopyFrom'
+	command	'PMCChecklistEdit'
+	command	'PMCChecklistDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCChecklistActionToolbar'
+	property 'version'	value	'R421.HF5'
+;
+add property menu_PMCChecklistActionToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCChecklistActionToolbar';

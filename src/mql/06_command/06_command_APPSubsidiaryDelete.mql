@@ -1,0 +1,24 @@
+del command 'APPSubsidiaryDelete';
+add command 'APPSubsidiaryDelete'
+	description	'Subsidiary Delete Selected Command Object'
+	label	'emxComponents.Common.Delete'
+	href	'${COMPONENT_DIR}/emxComponentsConfigurableTableDeleteProcess.jsp'
+	alt	'emxComponents.Common.Delete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxFramework.Command.Delete_Warning_Message'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSubsidiaryDelete'
+	property	'version'	value	'R417'
+;
+modify menu APPSubsidiarySummaryActionsToolBar add command APPSubsidiaryDelete order command APPSubsidiaryDelete 0;
+#channel ==>APPSubsidiarySummaryActionsToolBar
+add property command_APPSubsidiaryDelete on program eServiceSchemaVariableMapping.tcl to command 'APPSubsidiaryDelete';

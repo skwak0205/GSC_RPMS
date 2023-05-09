@@ -1,0 +1,28 @@
+del command 'RMTUseCaseStructure';
+add command 'RMTUseCaseStructure'
+	description	'UseCase Structure Command'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Structure Program'		'emxUseCase'
+	setting	'Submit'		'true'
+	setting	'Structure Function'		'getStructureList'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTUseCaseStructure'
+	property	'version'	value	'R422'
+;
+modify menu type_RMTUseCaseStructureMenu add command RMTUseCaseStructure order command RMTUseCaseStructure 0;
+#channel ==>type_RMTUseCaseStructureMenu
+add property command_RMTUseCaseStructure on program eServiceSchemaVariableMapping.tcl to command 'RMTUseCaseStructure';

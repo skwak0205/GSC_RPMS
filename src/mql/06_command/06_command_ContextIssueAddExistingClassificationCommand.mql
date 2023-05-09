@@ -1,0 +1,25 @@
+del command 'ContextIssueAddExistingClassificationCommand';
+add command 'ContextIssueAddExistingClassificationCommand'
+	description	'Context Issue command for Add Existing Classifications'
+	label	'emxComponents.ActionLink.AddExistingClassification'
+	href	'${COMPONENT_DIR}/emxIssueCategoryClassificationUtil.jsp?mode=AddExistingClassification'
+	alt	'emxComponents.ActionLink.AddExistingClassification'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'((current.access[modify]==TRUE) && (current.access[fromconnect]==TRUE))'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd32.png'
+	user	'3DSRestrictedOwner'
+	user	'Administration Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'ContextIssueAddExistingClassificationCommand'
+	property	'version'	value	'R422'
+;
+modify menu IssueCategoriesToolBarActions add command ContextIssueAddExistingClassificationCommand order command ContextIssueAddExistingClassificationCommand 3;
+#channel ==>IssueCategoriesToolBarActions
+add property command_ContextIssueAddExistingClassificationCommand on program eServiceSchemaVariableMapping.tcl to command 'ContextIssueAddExistingClassificationCommand';

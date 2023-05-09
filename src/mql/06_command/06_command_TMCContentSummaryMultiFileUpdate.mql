@@ -1,0 +1,25 @@
+del command 'TMCContentSummaryMultiFileUpdate';
+add command 'TMCContentSummaryMultiFileUpdate'
+	description	'Multi File Update Command Object'
+	label	'emxTeamCentral.Command.Update'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?showDescription=required&appDir=teamcentral&parentRelName=relationship_VaultedDocuments&objectAction=revise&showTitle=true&showFormat=true&appProcessPage=emxTeamPostCheckinProcess.jsp'
+	alt	'emxTeamCentral.Attachments.MultiFileUpdate'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasMultipleFiles'
+	setting	'Access Program'		'emxTeamContent'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCContentSummaryMultiFileUpdate'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCContentSummaryMultiFileUpdate on program eServiceSchemaVariableMapping.tcl to command 'TMCContentSummaryMultiFileUpdate';

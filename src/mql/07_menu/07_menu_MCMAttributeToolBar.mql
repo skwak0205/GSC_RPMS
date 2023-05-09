@@ -1,0 +1,16 @@
+del menu 'MCMAttributeToolBar';
+add menu 'MCMAttributeToolBar'
+	description	''
+	label	'emxMultipleClassification.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'MCMAttributeActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'MCMAttributeToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_MCMAttributeToolBar on program eServiceSchemaVariableMapping.tcl to menu 'MCMAttributeToolBar';

@@ -1,0 +1,17 @@
+del command 'APPMeetingAttachments';
+add command 'APPMeetingAttachments'
+	description	'Meeting Attachments Command Object'
+	label	'emxComponents.Command.Attachments'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&parentRelName=relationship_MeetingAttachments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPMeetingAttachmentsToolbar&header=emxComponents.Command.Attachments&HelpMarker=emxhelpmeetingattachments'
+	alt	'emxFramework.Command.Alt.Attachments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingAttachments'
+	property	'version'	value	'R209'
+;
+modify menu type_Meeting add command APPMeetingAttachments order command APPMeetingAttachments 2;
+#channel ==>type_Meeting
+add property command_APPMeetingAttachments on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingAttachments';

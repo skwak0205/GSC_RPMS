@@ -1,0 +1,19 @@
+del command 'APPSearchECRouteTemplatesCommand';
+add command 'APPSearchECRouteTemplatesCommand'
+	description	'Find Route Template Search Link'
+	label	'emxComponents.Command.Search'
+	href	'${SUITE_DIR}/emxComponentsFindRouteTemplateDialog.jsp?table=APPECRouteTemplateSearchList&program=emxCommonEngineeringChange:getRouteTemplate&CancelButton=true&CancelLabel=emxCommon.Common.Close&Style=dialog&CommandName=APPSearchECRouteTemplatesCommand&listMode=search&Export=true&HelpMarker=emxhelpsrchrttemp&sortColumnName=Name'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	setting	'Export'		'True'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchECRouteTemplatesCommand'
+	property	'version'	value	'10-6'
+;
+modify menu APPECSearchAddExistingChooser add command APPSearchECRouteTemplatesCommand order command APPSearchECRouteTemplatesCommand 5;
+#channel ==>APPECSearchAddExistingChooser
+add property command_APPSearchECRouteTemplatesCommand on program eServiceSchemaVariableMapping.tcl to command 'APPSearchECRouteTemplatesCommand';

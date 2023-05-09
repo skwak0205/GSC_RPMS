@@ -1,0 +1,8 @@
+del portal 'APPXPRoleAdminPortal';
+add portal 'APPXPRoleAdminPortal'
+	description	''
+	label	''
+	href	''
+	channel 	RoleXPChannel
+;
+add property portal_APPXPRoleAdminPortal on program eServiceSchemaVariableMapping.tcl to portal 'APPXPRoleAdminPortal';

@@ -1,0 +1,20 @@
+del command 'FTRMyDeskCreateVariabilityOption';
+add command 'FTRMyDeskCreateVariabilityOption'
+	description	''
+	label	'emxProduct.ActionLink.CreateVariabilityOption'
+	href	'${SUITE_DIR}/MyDeskCreateVariabilityOptionPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateVariabilityOption.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRMyDeskVariabilityGroupsToolbar add command FTRMyDeskCreateVariabilityOption order command FTRMyDeskCreateVariabilityOption 2;
+#channel ==>FTRMyDeskVariabilityGroupsToolbar
+add property command_FTRMyDeskCreateVariabilityOption on program eServiceSchemaVariableMapping.tcl to command 'FTRMyDeskCreateVariabilityOption';

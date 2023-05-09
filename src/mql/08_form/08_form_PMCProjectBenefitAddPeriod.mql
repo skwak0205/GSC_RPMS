@@ -1,0 +1,41 @@
+del form 'PMCProjectBenefitAddPeriod';
+add form 'PMCProjectBenefitAddPeriod' web
+field #1
+	name	'TimeLineInterval'
+	label	'emxProgramCentral.ProjectBenefit.TimeLineInterval'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getInterval'
+	setting	'program'		'emxBenefitItem'
+	setting	'Field Type'		'programHTMLOutput'
+field #2
+	name	'Add Period To'
+	label	'emxProgramCentral.ProjectBenefit.AddPeriodTo'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'function'		'getPeriodTo'
+	setting	'program'		'emxBenefitItem'
+	setting	'Field Type'		'programHTMLOutput'
+field #3
+	name	'Interval Periods'
+	label	'emxProgramCentral.ProjectBenefit.IntervalPeriods'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'function'		'getIntervalPeriods'
+	setting	'program'		'emxBenefitItem'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitAddPeriod'
+	property	'version'	value	'R210'
+;
+add property form_PMCProjectBenefitAddPeriod on program eServiceSchemaVariableMapping.tcl to form 'PMCProjectBenefitAddPeriod';

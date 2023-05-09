@@ -1,0 +1,19 @@
+del menu 'IssueToolBarActions';
+add menu 'IssueToolBarActions'
+	description	''
+	label	'emxComponents.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'IssueCreateNewActionLink'
+	command	'AEFSeparator'
+	command	'MultiObjectTransferOwnership'
+	command	'DeleteIssueActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'IssueToolBarActions'
+	property 'version'	value	'R421'
+;
+add property menu_IssueToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'IssueToolBarActions';

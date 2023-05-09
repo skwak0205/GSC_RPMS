@@ -1,0 +1,26 @@
+del command 'APPRefDocumentSummaryDownloadActionLink';
+add command 'APPRefDocumentSummaryDownloadActionLink'
+	description	'Reference Document Download Command Object'
+	label	'emxComponents.Command.Download'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=download'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[checkout] == true) && current!="Obsolete"'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDownload.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRefDocumentSummaryDownloadActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRefDocumentSummaryActionsToolBar add command APPRefDocumentSummaryDownloadActionLink order command APPRefDocumentSummaryDownloadActionLink 3;
+#channel ==>APPRefDocumentSummaryActionsToolBar
+add property command_APPRefDocumentSummaryDownloadActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRefDocumentSummaryDownloadActionLink';

@@ -1,0 +1,17 @@
+del menu 'PMCWhatIfActions';
+add menu 'PMCWhatIfActions'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWhatIfCreate'
+	command	'PMCWhatIfDelete'
+	menu	'PMCWhatIfCompareStructureActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWhatIfActions'
+	property 'version'	value	'R215'
+;
+add property menu_PMCWhatIfActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCWhatIfActions';

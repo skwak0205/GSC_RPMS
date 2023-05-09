@@ -1,0 +1,29 @@
+{
+  "Merge": "Merge",
+  "Merging": "Merging...",
+  "MergeStructure": "Merge Structure",
+  "MergeConfirmTitle": "Confirm Merge",
+  "MergeConfirmMsg": "Go ahead with the merge operation?",
+  "MergeSuccessMsg": "Merge successful",
+  "MergeFailureMsg": "Merge unsuccessful",
+  "MergeConfirmCloseDialogMsg": "Do you want to close the Merge command dialog?",
+  
+  "Revise": "Revise",
+  "Reuse": "Reuse Right",
+  "ReuseRef": "Reuse Left",
+  "Exclude": "Exclude",
+  "InsertNew": "Insert New",
+  
+  "Maturity": "Maturity",
+  "Result": "Result",
+  "Action": "Action",
+  "ActionFilter": "Action Filter",
+  "ReapplyCurrentFilter": "Reapply current filter",
+  
+  "ContentColorIndicator": "Content color indicator",
+  "ContentFromLeft": "Content taken from the left",
+  "ContentFromRight": "Content taken from the right",
+  
+  "TreePanelCaptionReference": "Reference",
+  "TreePanelCaptionSource": "Source"
+}

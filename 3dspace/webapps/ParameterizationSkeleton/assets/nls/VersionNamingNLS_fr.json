@@ -1,0 +1,15 @@
+{
+  "SelectAFile": "Sélectionner un fichier...",
+  "BrowseButtonText": "Parcourir",
+  "UploadButtonText": "Charger",
+  "ResetButtonText": "Réinitialiser toutes les séquences étendues",
+  "DownloadButtonText": "Télécharger",
+  "DownloadFailedAlert": "Echec du téléchargement",
+  "NoFileToUpload": "Rien à télécharger en amont ; sélectionnez d'abord un fichier",
+  "UploadSuccessAlert": "Fichier téléchargé avec succès",
+  "UploadFailedAlert": "Le téléchargement en amont du fichier a échoué",
+  "ResetSuccessAlert": "Réinitialisation réussie",
+  "ResetFailedAlert": "Echec de la réinitialisation",
+  "VersionNamingExtHeader": "Télécharger en amont/Télécharger les définitions de séquences de révision étendues",
+  "VersionNamingExtTooltip": ""
+}

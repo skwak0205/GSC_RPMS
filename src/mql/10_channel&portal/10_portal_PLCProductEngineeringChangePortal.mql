@@ -1,0 +1,14 @@
+del portal 'PLCProductEngineeringChangePortal';
+add portal 'PLCProductEngineeringChangePortal'
+	description	''
+	label	''
+	href	''
+	channel 	PLCProductEngineeringChangeChannel
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductEngineeringChangePortal'
+	property	'version'	value	'V6R2009-1.0'
+;
+add property portal_PLCProductEngineeringChangePortal on program eServiceSchemaVariableMapping.tcl to portal 'PLCProductEngineeringChangePortal';

@@ -1,0 +1,23 @@
+del command 'RMTCreateReqSpecAndLinkToReq';
+add command 'RMTCreateReqSpecAndLinkToReq'
+	description	'Create a Req Spec and link it to the selected Req'
+	label	'emxRequirements.ActionLink.CreateStandaloneRequirementSpecification'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?form=RMTSpecCreation&mode=ReqSpecLinkReq&type=type_SoftwareRequirementSpecification&submitAction=refreshCaller&header=emxRequirements.ActionLink.CreateStandaloneRequirementSpecification'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	setting	'Window Height'		'680'
+	setting	'Window Width'		'550'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCreateReqSpecAndLinkToReq'
+	property	'version'	value	'V6R2015x'
+;
+modify menu RequirementSpecificationSummaryActionsToolbar add command RMTCreateReqSpecAndLinkToReq order command RMTCreateReqSpecAndLinkToReq 1;
+#channel ==>RequirementSpecificationSummaryActionsToolbar
+add property command_RMTCreateReqSpecAndLinkToReq on program eServiceSchemaVariableMapping.tcl to command 'RMTCreateReqSpecAndLinkToReq';

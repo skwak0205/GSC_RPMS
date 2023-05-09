@@ -1,0 +1,17 @@
+del command 'APPCommonShowMyDownloads';
+add command 'APPCommonShowMyDownloads'
+	description	'My Downloads'
+	label	'emxComponents.Command.MyDownloads'
+	href	'${COMPONENT_DIR}/emxCommonDownloadReportDialog.jsp?fromPage=MyDownloads'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonShowMyDownloads'
+	property	'version'	value	'10-7'
+;
+modify menu APPCommonShowMyDownloadsToolbar add command APPCommonShowMyDownloads order command APPCommonShowMyDownloads 0;
+#channel ==>APPCommonShowMyDownloadsToolbar
+add property command_APPCommonShowMyDownloads on program eServiceSchemaVariableMapping.tcl to command 'APPCommonShowMyDownloads';

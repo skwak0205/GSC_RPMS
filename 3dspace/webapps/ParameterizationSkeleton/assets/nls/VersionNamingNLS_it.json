@@ -1,0 +1,15 @@
+{
+  "SelectAFile": "Seleziona un file...",
+  "BrowseButtonText": "Sfoglia",
+  "UploadButtonText": "Carica",
+  "ResetButtonText": "Reimposta tutte le sequenze estese",
+  "DownloadButtonText": "Scarica",
+  "DownloadFailedAlert": "Download non riuscito",
+  "NoFileToUpload": "Niente da caricare, selezionare prima un file",
+  "UploadSuccessAlert": "Caricamento file riuscito",
+  "UploadFailedAlert": "Caricamento del file non riuscito",
+  "ResetSuccessAlert": "Reimpostazione riuscita",
+  "ResetFailedAlert": "Reimpostazione non riuscita",
+  "VersionNamingExtHeader": "Caricare/scaricare le definizioni delle sequenze di revisione estese",
+  "VersionNamingExtTooltip": ""
+}

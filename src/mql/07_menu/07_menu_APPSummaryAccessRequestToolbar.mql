@@ -1,0 +1,19 @@
+del menu 'APPSummaryAccessRequestToolbar';
+add menu 'APPSummaryAccessRequestToolbar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPSummaryAccessRequestActionsToolbar'
+	command	'APPAccessRequestStateFilter'
+	command	'APPAccessRequestStatusFilter'
+	command	'APPAccessRequestFilterSubmitButton'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPSummaryAccessRequestToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_APPSummaryAccessRequestToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPSummaryAccessRequestToolbar';

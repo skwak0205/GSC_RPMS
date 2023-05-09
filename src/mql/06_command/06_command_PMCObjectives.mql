@@ -1,0 +1,17 @@
+del command 'PMCObjectives';
+add command 'PMCObjectives'
+	description	''
+	label	'emxProgramCentral.ProjectCategory.Objectives'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCObjectives&showPageHeader=false&HelpMarker=emxhelpprojectdetails&showPageURLIcon=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCObjectives'
+	property	'version'	value	'R421'
+;
+modify menu type_ProjectSpace add command PMCObjectives order command PMCObjectives 9;
+#channel ==>type_ProjectSpace
+add property command_PMCObjectives on program eServiceSchemaVariableMapping.tcl to command 'PMCObjectives';

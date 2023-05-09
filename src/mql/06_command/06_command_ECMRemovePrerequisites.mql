@@ -1,0 +1,25 @@
+del command 'ECMRemovePrerequisites';
+add command 'ECMRemovePrerequisites'
+	description	'Remove Selected object from Prerequisites'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMDisconnectProcess.jsp?functionality=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Propose].value || current==policy.property[state_Prepare].value || current==policy.property[state_InReview].value) && (owner==context.user)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCODependencyAuthoringActivated'
+	setting	'Access Program'		'enoECMChangeUX'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMRemovePrerequisites'
+	property	'version'	value	'R417'
+;
+modify menu ECMPrerequisiteActionsToolbar add command ECMRemovePrerequisites order command ECMRemovePrerequisites 3;
+#channel ==>ECMPrerequisiteActionsToolbar
+add property command_ECMRemovePrerequisites on program eServiceSchemaVariableMapping.tcl to command 'ECMRemovePrerequisites';

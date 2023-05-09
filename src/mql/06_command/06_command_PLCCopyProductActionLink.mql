@@ -1,0 +1,32 @@
+del command 'PLCCopyProductActionLink';
+add command 'PLCCopyProductActionLink'
+	description	''
+	label	'emxProduct.ActionLink.CopySelected'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ProductCopyFSInstance&PRCFSParam1=ListPage'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCopyProductActionLink'
+	property	'version'	value	'R215'
+;
+modify menu PLCModelProductListToolBarActions add command PLCCopyProductActionLink order command PLCCopyProductActionLink 5;
+modify menu PLCProductListToolBar add command PLCCopyProductActionLink order command PLCCopyProductActionLink 4;
+modify menu PLCModelDerivationsActionsToolbar add command PLCCopyProductActionLink order command PLCCopyProductActionLink 5;
+modify menu PLCProductDerivationsActionsToolbar add command PLCCopyProductActionLink order command PLCCopyProductActionLink 5;
+modify menu PLCModelProductBottomActionBar add command PLCCopyProductActionLink order command PLCCopyProductActionLink 2;
+modify menu PLCProductListBottomActionBar add command PLCCopyProductActionLink order command PLCCopyProductActionLink 0;
+#channel ==>PLCModelProductListToolBarActionsPLCProductListToolBarPLCModelDerivationsActionsToolbarPLCProductDerivationsActionsToolbarPLCModelProductBottomActionBarPLCProductListBottomActionBar
+add property command_PLCCopyProductActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCCopyProductActionLink';

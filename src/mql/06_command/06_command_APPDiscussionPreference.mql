@@ -1,0 +1,16 @@
+del command 'APPDiscussionPreference';
+add command 'APPDiscussionPreference'
+	description	'Discussion Prefence setting'
+	label	'emxComponents.Discussion.Preference'
+	href	'${COMPONENT_DIR}/emxPrefDiscussions.jsp'
+	alt	'emxComponents.Discussion.Preference'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionPreference'
+	property	'version'	value	'10-7-SP1'
+;
+modify menu General add command APPDiscussionPreference order command APPDiscussionPreference 0;
+#channel ==>General
+add property command_APPDiscussionPreference on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionPreference';

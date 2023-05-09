@@ -1,0 +1,16 @@
+del menu 'RMTRequirementTestCaseBottomActionBar';
+add menu 'RMTRequirementTestCaseBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'PLCDeleteTestCaseActionLink'
+	command	'PLCRemoveTestCaseActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementTestCaseBottomActionBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_RMTRequirementTestCaseBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementTestCaseBottomActionBar';

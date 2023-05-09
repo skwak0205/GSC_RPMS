@@ -1,0 +1,19 @@
+del menu 'RMTMenuLinkSubDerived';
+add menu 'RMTMenuLinkSubDerived'
+	description	''
+	label	'emxRequirements.Menu.MarkAndLinkAsSubDerivedRequirement'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Mode'		'view'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallLinkedObject.gif'
+	command	'RMTMarkAsSource'
+	command	'RMTLinkAsDerived'
+	command	'RMTLinkAsSub'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTMenuLinkSubDerived'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTMenuLinkSubDerived on program eServiceSchemaVariableMapping.tcl to menu 'RMTMenuLinkSubDerived';

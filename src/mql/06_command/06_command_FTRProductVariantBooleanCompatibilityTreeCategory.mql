@@ -1,0 +1,17 @@
+del command 'FTRProductVariantBooleanCompatibilityTreeCategory';
+add command 'FTRProductVariantBooleanCompatibilityTreeCategory'
+	description	'Boolean Compatibility Rules'
+	label	'emxProduct.Tree.CompatibilityRules'
+	href	'${COMMON_DIR}/emxTable.jsp?table=FTRBooleanCompatibilityRuleList&header=emxProduct.Heading.ProductVariant.CompatibilityRule&selection=multiple&program=emxBooleanCompatibility:getAllBooleanCompatibilityRules&topActionbar=FTRBooleanCompatibilityRuleListTopActionBar&bottomActionbar=FTRBooleanCompatibilityRuleListBottomActionBar&sortColumnName=Name&HelpMarker=emxhelpbooleanlist&intermediate=true'
+	alt	''
+	setting	'image'		'${COMMON_DIR}/images/iconSmallBooleanCompatibilityRule.gif'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductVariantBooleanCompatibilityTreeCategory'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRProductVariantBooleanCompatibilityTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariantBooleanCompatibilityTreeCategory';

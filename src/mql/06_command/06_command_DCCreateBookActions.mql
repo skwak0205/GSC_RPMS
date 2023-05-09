@@ -1,0 +1,20 @@
+del command 'DCCreateBookActions';
+add command 'DCCreateBookActions'
+	description	'CreateBook Command Object'
+	label	'emxDocumentCentral.Shortcut.CreateBook'
+	href	'${SUITE_DIR}/emxDocumentCentralDocumentClassificationCreateDialogFS.jsp?type=type_Book&contexualOpen=QuickCreate'
+	alt	'emxDocumentCentral.Shortcut.CreateBook'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'DocumentCentral'
+	user	'Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCreateBookActions'
+	property	'version'	value	'10-5'
+;
+modify menu DCActions add command DCCreateBookActions order command DCCreateBookActions 0;
+#channel ==>DCActions
+add property command_DCCreateBookActions on program eServiceSchemaVariableMapping.tcl to command 'DCCreateBookActions';

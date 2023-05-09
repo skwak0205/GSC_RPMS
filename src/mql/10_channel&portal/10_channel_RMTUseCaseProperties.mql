@@ -1,0 +1,17 @@
+del channel 'RMTUseCaseProperties';
+add channel 'RMTUseCaseProperties'
+	description	'UseCase Properties'
+	height	'0'
+	label	'emxRequirements.Common.RMTPropertiesPowerView'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'Height'		'40%'
+	command 	'RMTUseCaseProperties','PLMAddExtensionCmd'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTUseCaseProperties'
+	property	'version'	value	'R419'
+;
+#portal ==>RMTUseCaseProperties
+add property channel_RMTUseCaseProperties on program eServiceSchemaVariableMapping.tcl to channel 'RMTUseCaseProperties';

@@ -1,0 +1,31 @@
+################################################################################################
+# Created Date : 2020.05.25
+# Create by MinSung,Kim
+# Description : Product Line Detail OOTB Webform...
+################################################################################################
+
+#OOTB Backup
+copy form 'type_ProductLine' 'type_ProductLine_OOTB';
+
+#Readonly 처리
+modify form 'type_ProductLine' field modify name 'Name' add setting 'Editable' 'false';
+
+#Label 변경..
+modify form 'type_ProductLine' field modify name 'Marketing Name' label 'emxProduct.Common.Name';
+modify form 'type_ProductLine' field modify name 'Name' label 'emxProduct.Common.Code';
+modify form 'type_ProductLine' field modify name 'Description' label 'emxProduct.Common.ChangeReason';
+
+#Hidden 처리
+modify form 'type_ProductLine' field modify name 'Primary Image' add setting 'Access Expression' 'false';
+modify form 'type_ProductLine' field modify name 'Marketing Text' add setting 'Access Expression' 'false';
+
+modify form 'type_ProductLine' field modify name 'Company' add setting 'Access Expression' 'false';
+modify form 'type_ProductLine' field modify name 'DesignResponsibility1' add setting 'Access Expression' 'false';
+modify form 'type_ProductLine' field modify name 'Policy' add setting 'Access Expression' 'false';
+
+# Marketing Name Update 시 Marketing Text Update by Suhwan,Jang 2020/07/16
+mod form 'type_ProductLine'
+    field mod name 'Marketing Name'
+        add setting 'Update Program' 'emxProductLine'
+        add setting 'Update Function' 'updateMarketingName'
+;

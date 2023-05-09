@@ -1,0 +1,26 @@
+del command 'DCObjectAccessAddActionLink';
+add command 'DCObjectAccessAddActionLink'
+	description	'Add Existing Action Link on Access'
+	label	'emxDocumentCentral.ActionBarCmd.Add'
+	href	'${SUITE_DIR}/emxDocumentCentralStart.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'710'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectAccessAddActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCLibraryAccessTopActionbar add command DCObjectAccessAddActionLink order command DCObjectAccessAddActionLink 1;
+modify menu DCBookshelfAccessTopActionbar add command DCObjectAccessAddActionLink order command DCObjectAccessAddActionLink 1;
+modify menu DCBookAccessTopActionbar add command DCObjectAccessAddActionLink order command DCObjectAccessAddActionLink 1;
+modify menu DCGenericDocumentAccessTopActionbar add command DCObjectAccessAddActionLink order command DCObjectAccessAddActionLink 1;
+modify menu DCFolderAccessTopActionbar add command DCObjectAccessAddActionLink order command DCObjectAccessAddActionLink 1;
+#channel ==>DCLibraryAccessTopActionbarDCBookshelfAccessTopActionbarDCBookAccessTopActionbarDCGenericDocumentAccessTopActionbarDCFolderAccessTopActionbar
+add property command_DCObjectAccessAddActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectAccessAddActionLink';

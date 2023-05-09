@@ -1,0 +1,22 @@
+del command 'PMCRiskMyDesk';
+add command 'PMCRiskMyDesk'
+	description	'Risk Command Object'
+	label	'emxFramework.MenuItem.Risks'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCRisksSummary&selection=multiple&Export=true&sortColumnName=Title&sortDirection=ascending&header=emxProgramCentral.ProgramTop.Risks&HelpMarker=emxhelprisksummary&freezePane=Name&editLink=true&postProcessJPO=emxTask:postProcessRefresh&hideLaunchButton=true&expandProgramMenu=PMCRiskListMenu'
+	alt	'emxFramework.MenuItem.Risks'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRiskMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyDesk add command PMCRiskMyDesk order command PMCRiskMyDesk 5;
+#channel ==>PMCMyDeskPMCPowerViewChannel
+add property command_PMCRiskMyDesk on program eServiceSchemaVariableMapping.tcl to command 'PMCRiskMyDesk';

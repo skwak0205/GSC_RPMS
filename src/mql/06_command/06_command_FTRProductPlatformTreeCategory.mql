@@ -1,0 +1,16 @@
+del command 'FTRProductPlatformTreeCategory';
+add command 'FTRProductPlatformTreeCategory'
+	description	'Product Platform tree category'
+	label	'emxProduct.Command.MandatoryFeatures'
+	href	'${SUITE_DIR}/ProductPlatformUtil.jsp?mode=displayMasterFeatures'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductPlatformTreeCategory'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRProductPlatformTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRProductPlatformTreeCategory';

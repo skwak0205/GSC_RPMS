@@ -1,0 +1,21 @@
+del command 'PLCMoveProductActionLink';
+add command 'PLCMoveProductActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Move'
+	href	'${SUITE_DIR}/ProductUtil.jsp?mode=movePreprocess'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(current.access[todisconnect] == true)'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Confirm Message'		'emxProduct.Alert.Move'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCMoveProductActionLink'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_PLCMoveProductActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCMoveProductActionLink';

@@ -1,0 +1,15 @@
+del menu 'APPCommonShowDownloadReportToolbar';
+add menu 'APPCommonShowDownloadReportToolbar'
+	description	''
+	label	'emxComponents.Menu.Reports'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPCommonShowDownloadReport'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPCommonShowDownloadReportToolbar'
+	property 'version'	value	'10-7'
+;
+add property menu_APPCommonShowDownloadReportToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPCommonShowDownloadReportToolbar';

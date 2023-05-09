@@ -1,0 +1,16 @@
+del menu 'APPECAffectedItemsListToolBar';
+add menu 'APPECAffectedItemsListToolBar'
+	description	''
+	label	'emxComponents.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPECAffectedItemsListActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPECAffectedItemsListToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPECAffectedItemsListToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPECAffectedItemsListToolBar';

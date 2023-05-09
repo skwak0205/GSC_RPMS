@@ -1,0 +1,36 @@
+del table 'APPRoleSummary' system;
+add table 'APPRoleSummary' system
+column #1
+	name	'Name'
+	label	'emxComponents.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Auto Filter'		'false'
+	setting	'Registered Suite'		'Components'
+	setting	'Column Type'		'program'
+	setting	'function'		'getI18NRoleName'
+	setting	'program'		'emxRoleUtil'
+column #2
+	name	'Description'
+	label	'emxComponents.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Auto Filter'		'false'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'Components'
+	setting	'Column Type'		'program'
+	setting	'function'		'getI18NRoleDescription'
+	setting	'program'		'emxRoleUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRoleSummary'
+	property	'version'	value	'R213'
+;
+add property table_APPRoleSummary on program eServiceSchemaVariableMapping.tcl to table 'APPRoleSummary' system;

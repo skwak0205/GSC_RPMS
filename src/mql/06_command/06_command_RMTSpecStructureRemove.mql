@@ -1,0 +1,40 @@
+del command 'RMTSpecStructureRemove';
+add command 'RMTSpecStructureRemove'
+	description	'This will Remove the selected element{s} from the structure'
+	label	'emxRequirements.ActionLink.Remove'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'reserved == "FALSE" || reservedby == context.user'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.Remove'
+	user	'System Transition Manager'
+	user	'System Conversion Manager'
+	user	'Shadow Agent'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Software Engineering Manager'
+	user	'Software Project Manager'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecStructureRemove'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecStructureCommentRMB add command RMTSpecStructureRemove order command RMTSpecStructureRemove 1;
+modify menu RMTSpecStructureRequirementRMB add command RMTSpecStructureRemove order command RMTSpecStructureRemove 1;
+modify menu RMTChapterRichTextEditorActions add command RMTSpecStructureRemove order command RMTSpecStructureRemove 0;
+modify menu RMTSpecDeleteActions add command RMTSpecStructureRemove order command RMTSpecStructureRemove 0;
+modify menu RMTSpecStructureSubRequirementRMB add command RMTSpecStructureRemove order command RMTSpecStructureRemove 1;
+modify menu RMTSpecStructureProxyRequirementRMB add command RMTSpecStructureRemove order command RMTSpecStructureRemove 0;
+#channel ==>RMTSpecStructureCommentRMBRMTSpecStructureRequirementRMBRMTChapterRichTextEditorActionsRMTSpecDeleteActionsRMTSpecStructureSubRequirementRMBRMTSpecStructureProxyRequirementRMB
+add property command_RMTSpecStructureRemove on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecStructureRemove';

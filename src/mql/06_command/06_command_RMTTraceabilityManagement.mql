@@ -1,0 +1,19 @@
+del command 'RMTTraceabilityManagement';
+add command 'RMTTraceabilityManagement'
+	description	'Traceability Management Settings'
+	label	'emxRequirements.SCE.Label.SCETraceabilityManagementSettings'
+	href	'${SUITE_DIR}/TraceabilityManagementSettings.jsp?HelpMarker=emxhelppreferences'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Function'		'isCheckConsistencyAvailable'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionSettings.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTraceabilityManagement'
+	property	'version'	value	'V6R2016'
+;
+modify menu RequirementsCentral add command RMTTraceabilityManagement order command RMTTraceabilityManagement 3;
+#channel ==>RequirementsCentral
+add property command_RMTTraceabilityManagement on program eServiceSchemaVariableMapping.tcl to command 'RMTTraceabilityManagement';

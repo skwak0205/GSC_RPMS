@@ -1,0 +1,19 @@
+del command 'FTRModelCandidateConfigurationFeaturesMobile';
+add command 'FTRModelCandidateConfigurationFeaturesMobile'
+	description	''
+	label	'emxConfiguration.Model.CandidateConfigurationFeatures'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=ConfigurationFeature:getCandidateConfigurationFeatures&table=FTRModelConfigurationFeatureTable&selection=multiple&toolbar=FTRModelCandidateConfigurationFeatureToolbar&editRootNode=false&editLink=false&header=emxConfiguration.Model.CandidateConfigurationFeatures&HelpMarker=emxhelpconfigurationfeaturelistmodel&massPromoteDemote=false&objectCompare=false&editRelationship=relationship_CandidateConfigurationFeatures&context=Candidate'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeEnabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelCandidateConfigurationFeaturesMobile'
+	property	'version'	value	'R418'
+;
+#channel ==>FTRModelConfigurationViewChannel
+add property command_FTRModelCandidateConfigurationFeaturesMobile on program eServiceSchemaVariableMapping.tcl to command 'FTRModelCandidateConfigurationFeaturesMobile';

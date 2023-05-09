@@ -1,0 +1,17 @@
+del menu 'LBCInProcessCreateClassMenu';
+add menu 'LBCInProcessCreateClassMenu'
+	description	''
+	label	'emxLibraryCentral.Menu.LCCreateClassActions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LBCCreatePartFamily'
+	command	'LBCCreateGeneralClass'
+	command	'LBCCreateDocumentFamily'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCInProcessCreateClassMenu'
+	property 'version'	value	'R213'
+;
+add property menu_LBCInProcessCreateClassMenu on program eServiceSchemaVariableMapping.tcl to menu 'LBCInProcessCreateClassMenu';

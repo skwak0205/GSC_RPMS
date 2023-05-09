@@ -1,0 +1,29 @@
+del command 'PMCFolderSummaryCopyLink';
+add command 'PMCFolderSummaryCopyLink'
+	description	'Copy Action Link'
+	label	'emxProgramCentral.Command.CloneFolder'
+	href	'${SUITE_DIR}/emxProgramCentralFolderCreatePreProcess.jsp?IsClone=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'CmdName'		'PMCFolderSummaryCopyLink'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForFolderAndDocumentActions'
+	setting	'Access Program'		'emxProjectFolder'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/I_Duplicate32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFolderSummaryCopyLink'
+	property	'version'	value	'R422'
+;
+modify menu PMCFolderActions add command PMCFolderSummaryCopyLink order command PMCFolderSummaryCopyLink 2;
+modify menu PMCWorkspaceVaultColumnRMBSubMenu add command PMCFolderSummaryCopyLink order command PMCFolderSummaryCopyLink 2;
+modify menu PMCFolderSummaryToolBar add command PMCFolderSummaryCopyLink order command PMCFolderSummaryCopyLink 8;
+#channel ==>PMCFolderActionsPMCWorkspaceVaultColumnRMBSubMenuPMCFolderSummaryToolBar
+add property command_PMCFolderSummaryCopyLink on program eServiceSchemaVariableMapping.tcl to command 'PMCFolderSummaryCopyLink';

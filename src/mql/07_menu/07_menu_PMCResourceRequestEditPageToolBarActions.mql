@@ -1,0 +1,18 @@
+del menu 'PMCResourceRequestEditPageToolBarActions';
+add menu 'PMCResourceRequestEditPageToolBarActions'
+	description	''
+	label	'emxProgramCentral.Command.ResourcePlan.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'PMCResourceRequestEditPageProcessActions'
+	menu	'PMCResourceRequestEditPageDiscussion'
+	menu	'PMCResourceRequestEditPageCreateSubscription'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourceRequestEditPageToolBarActions'
+	property 'version'	value	'R418'
+;
+add property menu_PMCResourceRequestEditPageToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourceRequestEditPageToolBarActions';

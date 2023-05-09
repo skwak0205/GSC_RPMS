@@ -1,0 +1,20 @@
+del command 'FolderProperties';
+add command 'FolderProperties'
+	description	''
+	label	'enoFolderManagement.RMBMenu.Properties'
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'enoFolderManagementFolder'
+	setting	'Dynamic Command Function'		'getFolderProperties'
+	setting	'Registered Suite'		'FolderManagement'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'FolderProperties'
+	property	'version'	value	'R417.HF2'
+;
+modify menu type_ProjectVaultRMB add command FolderProperties order command FolderProperties 0;
+#channel ==>type_ProjectVaultRMB
+add property command_FolderProperties on program eServiceSchemaVariableMapping.tcl to command 'FolderProperties';

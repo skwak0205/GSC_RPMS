@@ -1,0 +1,17 @@
+del command 'AEFSlideShowPreviousImage';
+add command 'AEFSlideShowPreviousImage'
+	description	'To view the previous Image'
+	label	''
+	href	'javascript:chgImg(-1)'
+	alt	'emxComponents.Command.Previous'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/buttonSlideshowBack.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSlideShowPreviousImage'
+	property	'version'	value	'R210'
+;
+modify menu APPSlideShowToolBar add command AEFSlideShowPreviousImage order command AEFSlideShowPreviousImage 1;
+#channel ==>APPSlideShowToolBar
+add property command_AEFSlideShowPreviousImage on program eServiceSchemaVariableMapping.tcl to command 'AEFSlideShowPreviousImage';

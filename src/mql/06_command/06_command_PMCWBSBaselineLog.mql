@@ -1,0 +1,25 @@
+del command 'PMCWBSBaselineLog';
+add command 'PMCWBSBaselineLog'
+	description	''
+	label	'emxProgramCentral.Button.BaselineLog'
+	href	'${SUITE_DIR}/emxProgramCentralWBSBaselineLogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForReviseBaseline'
+	setting	'Access Program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSBaselineLog'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSToolBarActions add command PMCWBSBaselineLog order command PMCWBSBaselineLog 5;
+#channel ==>PMCWBSToolBarActions
+add property command_PMCWBSBaselineLog on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSBaselineLog';

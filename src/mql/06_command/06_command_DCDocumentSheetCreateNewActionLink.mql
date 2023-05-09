@@ -1,0 +1,27 @@
+del command 'DCDocumentSheetCreateNewActionLink';
+add command 'DCDocumentSheetCreateNewActionLink'
+	description	'Document Sheet Create New'
+	label	'emxDocumentCentral.ActionBarCmd.CreateNew'
+	href	'${SUITE_DIR}/emxDocumentCentralDocumentSheetCreateWizardDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Access Map'		'FromConnect'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	user	'VPLMViewer'
+	user	'Author'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCDocumentSheetCreateNewActionLink'
+	property	'version'	value	'R216'
+;
+modify menu DCGenericDocumentDocumentSheetsTopActionbar add command DCDocumentSheetCreateNewActionLink order command DCDocumentSheetCreateNewActionLink 0;
+#channel ==>DCGenericDocumentDocumentSheetsTopActionbar
+add property command_DCDocumentSheetCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCDocumentSheetCreateNewActionLink';

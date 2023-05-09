@@ -1,0 +1,29 @@
+del command 'PMCRisksSummaryImportRisks';
+add command 'PMCRisksSummaryImportRisks'
+	description	'Command for Importing Risks link in Risks Summary'
+	label	'emxProgramCentral.Common.ImportFromFile'
+	href	'${SUITE_DIR}/emxProgramCentralImportTypeFS.jsp?calledFrom=type_Risk'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Image'		'${COMMON_DIR}/images/I_ImportFromFile_32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRisksSummaryImportRisks'
+	property	'version'	value	'R422'
+;
+modify menu PMCRisksSummaryToolBarActions add command PMCRisksSummaryImportRisks order command PMCRisksSummaryImportRisks 3;
+modify menu PMCRisksSummaryToolBar add command PMCRisksSummaryImportRisks order command PMCRisksSummaryImportRisks 5;
+#channel ==>PMCRisksSummaryToolBarActionsPMCRisksSummaryToolBar
+add property command_PMCRisksSummaryImportRisks on program eServiceSchemaVariableMapping.tcl to command 'PMCRisksSummaryImportRisks';

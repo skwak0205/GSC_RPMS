@@ -1,0 +1,28 @@
+del command 'PMCWhatIfCreate';
+add command 'PMCWhatIfCreate'
+	description	'PMCCompare'
+	label	'emxProgramCentral.Experiment.Create'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=Experiment'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true && (current!= Review && current!= Complete && current!= Archive && current!= Cancel)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToCreateCommand'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	setting	'Confirm Message'		'emxProgramCentral.Experiment.CreateExperimentWarning'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfCreate'
+	property	'version'	value	'R423.HF6'
+;
+modify menu PMCWhatIfActions add command PMCWhatIfCreate order command PMCWhatIfCreate 1;
+#channel ==>PMCWhatIfActions
+add property command_PMCWhatIfCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCWhatIfCreate';

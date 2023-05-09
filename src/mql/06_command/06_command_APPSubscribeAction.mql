@@ -1,0 +1,20 @@
+del command 'APPSubscribeAction';
+add command 'APPSubscribeAction'
+	description	''
+	label	'emxComponents.Common.Subscribe'
+	href	'${COMPONENT_DIR}/emxSubscription.jsp?mode=Subscribe'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSubscribeAction'
+	property	'version'	value	'R417'
+;
+modify menu APPSubscribeMenu add command APPSubscribeAction order command APPSubscribeAction 1;
+#channel ==>APPSubscribeMenu
+add property command_APPSubscribeAction on program eServiceSchemaVariableMapping.tcl to command 'APPSubscribeAction';

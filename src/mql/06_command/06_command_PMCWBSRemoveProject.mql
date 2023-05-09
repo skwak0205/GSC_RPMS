@@ -1,0 +1,29 @@
+del command 'PMCWBSRemoveProject';
+add command 'PMCWBSRemoveProject'
+	description	''
+	label	'emxProgramCentral.Common.RemoveProject'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=submitRemoveProject'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionGenericRemove.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSRemoveProject'
+	property	'version'	value	'R422'
+;
+modify menu PMCWhatIfExperimentActionMenu add command PMCWBSRemoveProject order command PMCWBSRemoveProject 0;
+modify menu PMCRemoveDeleteMenu add command PMCWBSRemoveProject order command PMCWBSRemoveProject 3;
+modify menu type_ProjectSpaceRMB add command PMCWBSRemoveProject order command PMCWBSRemoveProject 0;
+#channel ==>PMCWhatIfExperimentActionMenuPMCRemoveDeleteMenutype_ProjectSpaceRMB
+add property command_PMCWBSRemoveProject on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSRemoveProject';

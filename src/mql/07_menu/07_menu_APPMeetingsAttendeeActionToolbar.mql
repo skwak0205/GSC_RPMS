@@ -1,0 +1,18 @@
+del menu 'APPMeetingsAttendeeActionToolbar';
+add menu 'APPMeetingsAttendeeActionToolbar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	setting	'Access Mask'		'changesov'
+	command	'APPMeetingAddAttendee'
+	command	'APPRemoveMeetingAttendee'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPMeetingsAttendeeActionToolbar'
+	property 'version'	value	'R422.HF1'
+;
+add property menu_APPMeetingsAttendeeActionToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPMeetingsAttendeeActionToolbar';

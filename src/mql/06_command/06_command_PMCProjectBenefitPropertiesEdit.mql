@@ -1,0 +1,24 @@
+del command 'PMCProjectBenefitPropertiesEdit';
+add command 'PMCProjectBenefitPropertiesEdit'
+	description	''
+	label	'emxProgramCentral.Benefit.ProjectEditBenefit'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=editBenefitProperties&HelpMarker=emxhelpbenefitedit&HelpMarker=emxhelpfinancialitemdetails'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitPropertiesEdit'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBenefitEditToolbar add command PMCProjectBenefitPropertiesEdit order command PMCProjectBenefitPropertiesEdit 0;
+#channel ==>PMCProjectBenefitEditToolbar
+add property command_PMCProjectBenefitPropertiesEdit on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitPropertiesEdit';

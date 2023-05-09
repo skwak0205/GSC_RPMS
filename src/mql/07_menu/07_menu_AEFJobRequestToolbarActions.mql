@@ -1,0 +1,18 @@
+del menu 'AEFJobRequestToolbarActions';
+add menu 'AEFJobRequestToolbarActions'
+	description	''
+	label	'emxFramework.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'AEFJobRequestAbort'
+	command	'AEFJobRequestDelete'
+	command	'AEFJobRequestArchive'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFJobRequestToolbarActions'
+	property 'version'	value	'R417'
+;
+add property menu_AEFJobRequestToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'AEFJobRequestToolbarActions';

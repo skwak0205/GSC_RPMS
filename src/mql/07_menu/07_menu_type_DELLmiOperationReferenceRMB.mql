@@ -1,0 +1,9 @@
+del menu 'type_DELLmiOperationReferenceRMB';
+add menu 'type_DELLmiOperationReferenceRMB'
+	description	'VPLM Operation Right Mouse Button Menu'
+	label	'Operation RMB'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+;
+add property menu_type_DELLmiOperationReferenceRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_DELLmiOperationReferenceRMB';

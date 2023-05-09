@@ -1,0 +1,16 @@
+del command 'AEFChannelUIHomePage';
+add command 'AEFChannelUIHomePage'
+	description	''
+	label	'emxFramework.HomePage.ChannelUI'
+	href	'../webapps/Foundation/foundation-basic.html?e6w-widget=BPS_View_ChannelHomePage&HelpMarker=emxhelpchannelhomepage&SuiteDirectory=common&suiteKey=Framework'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFChannelUIHomePage'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_AEFChannelUIHomePage on program eServiceSchemaVariableMapping.tcl to command 'AEFChannelUIHomePage';

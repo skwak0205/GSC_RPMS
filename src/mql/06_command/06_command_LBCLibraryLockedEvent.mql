@@ -1,0 +1,18 @@
+del command 'LBCLibraryLockedEvent';
+add command 'LBCLibraryLockedEvent'
+	description	'Event holder for Library Locked'
+	label	'emxLibraryCentral.Event.Library_Locked'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Library Locked'
+	setting	'History Bit'		'lock'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCLibraryLockedEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCDocumentLibrarySubscriptionEvents add command LBCLibraryLockedEvent order command LBCLibraryLockedEvent 4;
+#channel ==>LBCDocumentLibrarySubscriptionEvents
+add property command_LBCLibraryLockedEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCLibraryLockedEvent';

@@ -1,0 +1,25 @@
+del command 'PLCRemoveAssigneeActionLink';
+add command 'PLCRemoveAssigneeActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/AssigneeUtil.jsp?mode=Disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'current.access[todisconnect] == true'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCRemoveAssigneeActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCTestExecutionAssigneesActionsToolbar add command PLCRemoveAssigneeActionLink order command PLCRemoveAssigneeActionLink 0;
+modify menu PLCAssigneeListBottomActionBar add command PLCRemoveAssigneeActionLink order command PLCRemoveAssigneeActionLink 0;
+modify menu FTRAssigneeListBottomActionBar add command PLCRemoveAssigneeActionLink order command PLCRemoveAssigneeActionLink 0;
+#channel ==>PLCTestExecutionAssigneesActionsToolbarPLCAssigneeListBottomActionBarFTRAssigneeListBottomActionBar
+add property command_PLCRemoveAssigneeActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCRemoveAssigneeActionLink';

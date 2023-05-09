@@ -1,0 +1,15 @@
+del menu 'IssueToolBar';
+add menu 'IssueToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	menu	'IssueToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'IssueToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_IssueToolBar on program eServiceSchemaVariableMapping.tcl to menu 'IssueToolBar';

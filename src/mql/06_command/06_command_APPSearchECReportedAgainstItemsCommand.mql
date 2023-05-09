@@ -1,0 +1,16 @@
+del command 'APPSearchECReportedAgainstItemsCommand';
+add command 'APPSearchECReportedAgainstItemsCommand'
+	description	'Command used for searching Reported against items while creating an EC'
+	label	'emxComponents.Command.Search'
+	href	'${SUITE_DIR}/emxFindForm.jsp?suiteKey=Components&program=emxCommonEngineeringChange:getGeneralSearchResults&table=APPECReportedAgainstSearchList&CommandName=APPSearchECReportedAgainstItemsCommand&sortColumnName=Name&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchECReportedAgainstItemsCommand'
+	property	'version'	value	'10-6'
+;
+modify menu APPECSearchAddExistingChooser add command APPSearchECReportedAgainstItemsCommand order command APPSearchECReportedAgainstItemsCommand 6;
+#channel ==>APPECSearchAddExistingChooser
+add property command_APPSearchECReportedAgainstItemsCommand on program eServiceSchemaVariableMapping.tcl to command 'APPSearchECReportedAgainstItemsCommand';

@@ -1,0 +1,9 @@
+{
+  "UnCV.optionsChecker.rdfServerURL.error": "Se debe definir un extremo de la URL del servidor RDF.",
+  "UnCV.optionsChecker.originalValue.notExisting.error": "Se debe definir un valor original.",
+  "UnCV.optionsChecker.originalValue.type.error": "El valor original debe ser un número.",
+  "UnCV.optionsChecker.quantityURI.error": "Se debe definir una cantidad (tipo de característica).",
+  "UnCV.optionsChecker.unitURI.error": "Se debe definir un URI de unidad (sufijo).",
+  "UnCV.convertedValue": "Valor convertido",
+  "UnCV.originalValue": "Valor original"
+}

@@ -1,0 +1,20 @@
+del command 'PMCFileVersions';
+add command 'PMCFileVersions'
+	description	'lists the version of the File'
+	label	'emxProgramCentral.Command.Versions'
+	href	'${SUITE_DIR}/emxProgramCentralDocumentCreatePreProcess.jsp?documentAction=fileVersions&header=emxProgramCemtral.Common.VersionsPageHeading&subHeader=emxComponents.Menu.SubHeaderDocuments'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> == True)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFileVersions'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCFileVersions on program eServiceSchemaVariableMapping.tcl to command 'PMCFileVersions';

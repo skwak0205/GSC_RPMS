@@ -1,0 +1,23 @@
+del command 'APPDocumentVCFolderContents';
+add command 'APPDocumentVCFolderContents'
+	description	'Command to display contents node in Version Contral Folder tree'
+	label	'emxComponents.VersionContral.FolderContents'
+	href	'${COMPONENT_DIR}/emxCommonDocumentVCIntermediateProcess.jsp?fromPage=VCFolderContents'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(vcfolder)'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentVCFolderContents'
+	property	'version'	value	'R422'
+;
+modify menu type_DOCUMENTS add command APPDocumentVCFolderContents order command APPDocumentVCFolderContents 8;
+modify menu type_GenericDocument add command APPDocumentVCFolderContents order command APPDocumentVCFolderContents 8;
+modify menu type_DocumentSheet add command APPDocumentVCFolderContents order command APPDocumentVCFolderContents 4;
+modify menu type_Specification add command APPDocumentVCFolderContents order command APPDocumentVCFolderContents 4;
+#channel ==>type_DOCUMENTStype_GenericDocumenttype_DocumentSheettype_SpecificationRMTSpecificationsProperties
+add property command_APPDocumentVCFolderContents on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentVCFolderContents';

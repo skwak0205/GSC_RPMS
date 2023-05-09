@@ -1,0 +1,17 @@
+del command 'ECMCASummaryView';
+add command 'ECMCASummaryView'
+	description	'Show CA Properties with Affected and implemented items info'
+	label	'EnterpriseChangeMgt.Command.CASummaryView'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_CASummaryView&type=type_ChangeAction&HelpMarker=emxhelpchangeactionsummaryview&mode=view'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeAction>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCASummaryView'
+	property	'version'	value	'R418'
+;
+#channel ==>ECMChangePropertyChannel1
+add property command_ECMCASummaryView on program eServiceSchemaVariableMapping.tcl to command 'ECMCASummaryView';

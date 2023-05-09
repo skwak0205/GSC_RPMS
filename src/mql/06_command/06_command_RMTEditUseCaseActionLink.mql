@@ -1,0 +1,28 @@
+del command 'RMTEditUseCaseActionLink';
+add command 'RMTEditUseCaseActionLink'
+	description	'Edit Details Action Link on Properties Page for Use Cases'
+	label	'emxRequirements.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_UseCase&mode=Edit&formHeader=emxRequirements.Heading.Edit&HelpMarker=emxhelpusecaseedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTEditUseCaseActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTUseCasePropertiesTopActionBar add command RMTEditUseCaseActionLink order command RMTEditUseCaseActionLink 1;
+#channel ==>RMTUseCasePropertiesTopActionBar
+add property command_RMTEditUseCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTEditUseCaseActionLink';

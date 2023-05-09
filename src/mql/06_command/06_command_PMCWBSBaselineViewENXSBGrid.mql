@@ -1,0 +1,22 @@
+del command 'PMCWBSBaselineViewENXSBGrid';
+add command 'PMCWBSBaselineViewENXSBGrid'
+	description	''
+	label	'emxProgramCentral.Button.BaselineView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessToBaselineView'
+	setting	'Access Program'		'emxTask'
+	setting	'table'		'PMCWBSBaseLineViewTableENXSBGrid'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSBaselineViewENXSBGrid'
+	property	'version'	value	'R421.HF6'
+;
+modify menu PMCWBSTableMenuENXSBGrid add command PMCWBSBaselineViewENXSBGrid order command PMCWBSBaselineViewENXSBGrid 4;
+#channel ==>PMCWBSTableMenuENXSBGrid
+add property command_PMCWBSBaselineViewENXSBGrid on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSBaselineViewENXSBGrid';

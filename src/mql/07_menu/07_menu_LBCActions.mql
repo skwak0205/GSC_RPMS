@@ -1,0 +1,18 @@
+del menu 'LBCActions';
+add menu 'LBCActions'
+	description	''
+	label	'emxLibraryCentral.Menu.LCActions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LIB_TP,ENO_LBC_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallLibrary.gif'
+	menu	'LBCCreateLibraryActionsMenu'
+	menu	'LBCCreateClassActionsMenu'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCActions'
+	property 'version'	value	'R216'
+;
+add property menu_LBCActions on program eServiceSchemaVariableMapping.tcl to menu 'LBCActions';

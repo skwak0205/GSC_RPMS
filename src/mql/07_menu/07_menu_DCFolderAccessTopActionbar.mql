@@ -1,0 +1,16 @@
+del menu 'DCFolderAccessTopActionbar';
+add menu 'DCFolderAccessTopActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCObjectAccessAddActionLink'
+	command	'DCObjectAccessEditAccessActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCFolderAccessTopActionbar'
+	property 'version'	value	'9-5-2-0'
+;
+add property menu_DCFolderAccessTopActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCFolderAccessTopActionbar';

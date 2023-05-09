@@ -1,0 +1,20 @@
+del command 'FTRCreateMatrixRuleActionCommandLink';
+add command 'FTRCreateMatrixRuleActionCommandLink'
+	description	'FTRCreateMatrixRuleActionCommandLink'
+	label	'emxProduct.ActionLink.CreateMatrixRule'
+	href	'${SUITE_DIR}/ConfigurationRuleCreateProcess.jsp?targetLocation=listHidden&ruleType=Matrix'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R418'
+;
+modify menu FTRMatrixRuleListActionsMenu add command FTRCreateMatrixRuleActionCommandLink order command FTRCreateMatrixRuleActionCommandLink 1;
+#channel ==>FTRMatrixRuleListActionsMenu
+add property command_FTRCreateMatrixRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateMatrixRuleActionCommandLink';

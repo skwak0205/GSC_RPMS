@@ -1,0 +1,23 @@
+del command 'APPDocumentDownloadActionLink2';
+add command 'APPDocumentDownloadActionLink2'
+	description	'Document Download Command Object'
+	label	'emxComponents.Command.Download'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=download'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasDocumentDownloadAccess'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDownload.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentDownloadActionLink2'
+	property	'version'	value	'R422'
+;
+modify menu APPNonVersionableFileSummaryActionsToolBar add command APPDocumentDownloadActionLink2 order command APPDocumentDownloadActionLink2 2;
+#channel ==>APPNonVersionableFileSummaryActionsToolBar
+add property command_APPDocumentDownloadActionLink2 on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentDownloadActionLink2';

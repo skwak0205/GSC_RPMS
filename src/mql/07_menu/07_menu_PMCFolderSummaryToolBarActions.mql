@@ -1,0 +1,22 @@
+del menu 'PMCFolderSummaryToolBarActions';
+add menu 'PMCFolderSummaryToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'PMCFolderActions'
+	menu	'PMCFolderDocumentFileActions'
+	menu	'PMCFolderBookmarkActions'
+	menu	'PMCFolderSubscriptionMenu'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCFolderSummaryToolBarActions'
+	property 'version'	value	'R421.HF3'
+;
+add property menu_PMCFolderSummaryToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCFolderSummaryToolBarActions';

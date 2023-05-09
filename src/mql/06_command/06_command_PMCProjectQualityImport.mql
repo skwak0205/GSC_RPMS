@@ -1,0 +1,27 @@
+del command 'PMCProjectQualityImport';
+add command 'PMCProjectQualityImport'
+	description	'Command for import'
+	label	'emxProgramCentral.Common.Import'
+	href	'${SUITE_DIR}/emxProgramCentralImportTypeFS.jsp?calledFrom=type_Quality'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallImportedBOM.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectQualityImport'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectQualityToolbarActions add command PMCProjectQualityImport order command PMCProjectQualityImport 2;
+#channel ==>PMCProjectQualityToolbarActions
+add property command_PMCProjectQualityImport on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectQualityImport';

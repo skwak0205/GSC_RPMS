@@ -1,0 +1,18 @@
+del form 'PMCWeeklyTimeSheetComments';
+add form 'PMCWeeklyTimeSheetComments' web
+field #1
+	name	'Comments'
+	label	'emxProgramCentral.WeeklyTimesheet.Comments'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWeeklyTimeSheetComments'
+	property	'version'	value	'R210'
+;
+add property form_PMCWeeklyTimeSheetComments on program eServiceSchemaVariableMapping.tcl to form 'PMCWeeklyTimeSheetComments';

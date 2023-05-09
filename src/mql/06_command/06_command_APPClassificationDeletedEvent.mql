@@ -1,0 +1,18 @@
+del command 'APPClassificationDeletedEvent';
+add command 'APPClassificationDeletedEvent'
+	description	'Event holder for Object Deletion'
+	label	'emxComponents.Event.Classification_Deleted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Classification Deleted'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPClassificationDeletedEvent'
+	property	'version'	value	'R212'
+;
+modify menu APPClassificationSubscriptionEvents add command APPClassificationDeletedEvent order command APPClassificationDeletedEvent 4;
+modify menu LBCDocumentFamilySubscriptionEvents add command APPClassificationDeletedEvent order command APPClassificationDeletedEvent 4;
+#channel ==>APPClassificationSubscriptionEventsLBCDocumentFamilySubscriptionEvents
+add property command_APPClassificationDeletedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPClassificationDeletedEvent';

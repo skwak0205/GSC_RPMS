@@ -1,0 +1,24 @@
+del command 'PMCCopyProject';
+add command 'PMCCopyProject'
+	description	''
+	label	'emxProgramCentral.Common.Project.Copy'
+	href	'${COMMON_DIR}/emxCreate.jsp?typeChooser=true&SelectType=single&ReloadOpener=true&nameField=both&autoNameChecked=false&type=type_ProjectSpace&policy=policy_ProjectSpace&form=PMCCreateProjectFromExistingObjectForm&mode=create&createJPO=emxProjectSpace:createNewProject&postProcessJPO=emxProjectSpace:createAndConnectProject&postProcessURL=../programcentral/emxProgramCentralUtil.jsp?mode=launchProject&submitAction=nothing&HelpMarker=emxhelpprojectdetailsspecify&findMxLink=false&showPageURLIcon=false&showPageHeader=false&hideHeader=true&suiteKey=ProgramCentral&StringResourceFileId=emxProgramCentralStringResource&SuiteDirectory=programcentral&header=emxProgramCentral.Common.Project.CopyHeader&preProcessJavaScript=setFocusOnSearchField&createProject=Clone&formFieldsOnly=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Slidein Width'		'500'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/I_CopyFromProject32.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCopyProject'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProjectCreateMenu add command PMCCopyProject order command PMCCopyProject 2;
+#channel ==>PMCProjectCreateMenu
+add property command_PMCCopyProject on program eServiceSchemaVariableMapping.tcl to command 'PMCCopyProject';

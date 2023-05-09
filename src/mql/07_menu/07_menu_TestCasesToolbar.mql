@@ -1,0 +1,12 @@
+del menu 'TestCasesToolbar';
+add menu 'TestCasesToolbar'
+	description	'Menu Description'
+	label	'emxProduct.Menu.ProductLine'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCCreateTestCaseAction'
+	command	'PLCDeleteTestCaseAction'
+	property 'version'	value	'R421.HF2'
+;
+add property menu_TestCasesToolbar on program eServiceSchemaVariableMapping.tcl to menu 'TestCasesToolbar';

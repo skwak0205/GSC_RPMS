@@ -1,0 +1,20 @@
+del menu 'type_GeneralClassRMB';
+add menu 'type_GeneralClassRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LBCRMBClassViewDetails'
+	command	'AEFSeparator'
+	command	'AEFLifecycle'
+	command	'APPQuickFileList'
+	command	'APPRelatedFiles'
+	command	'APPAllFileDetails'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_GeneralClassRMB'
+	property 'version'	value	'R216'
+;
+add property menu_type_GeneralClassRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_GeneralClassRMB';

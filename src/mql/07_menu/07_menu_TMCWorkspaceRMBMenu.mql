@@ -1,0 +1,21 @@
+del menu 'TMCWorkspaceRMBMenu';
+add menu 'TMCWorkspaceRMBMenu'
+	description	''
+	label	'emxTeamCentral.RMBMenu.WorkspaceMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	command	'AEFProperties'
+	command	'AEFSeparator'
+	command	'APPQuickFileList'
+	command	'APPRelatedFiles'
+	command	'APPAllFileDetails'
+	command	'AEFAddToClipboardCollectionRMB'
+	command	'AEFNewAddToCollectionsRMB'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCWorkspaceRMBMenu'
+	property 'version'	value	'R423.HF4'
+;
+add property menu_TMCWorkspaceRMBMenu on program eServiceSchemaVariableMapping.tcl to menu 'TMCWorkspaceRMBMenu';

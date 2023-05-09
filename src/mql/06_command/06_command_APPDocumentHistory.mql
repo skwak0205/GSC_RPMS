@@ -1,0 +1,20 @@
+del command 'APPDocumentHistory';
+add command 'APPDocumentHistory'
+	description	'Current Document Object History'
+	label	'emxComponents.Document.History'
+	href	'${COMMON_DIR}/emxHistory.jsp?HistoryMode=CurrentRevision&header=emxComponents.Common.HistoryHeading&subHeader=emxComponents.Menu.SubHeaderDocuments'
+	alt	'emxComponents.Document.History'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallHistory.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentHistory'
+	property	'version'	value	'R417'
+;
+modify menu type_DOCUMENTS add command APPDocumentHistory order command APPDocumentHistory 20;
+modify menu type_GenericDocument add command APPDocumentHistory order command APPDocumentHistory 12;
+modify menu type_DocumentSheet add command APPDocumentHistory order command APPDocumentHistory 8;
+#channel ==>type_DOCUMENTStype_GenericDocumenttype_DocumentSheet
+add property command_APPDocumentHistory on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentHistory';

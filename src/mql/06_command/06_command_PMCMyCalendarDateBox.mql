@@ -1,0 +1,23 @@
+del command 'PMCMyCalendarDateBox';
+add command 'PMCMyCalendarDateBox'
+	description	''
+	label	'emxProgramCentral.MyCalendar.Toolbar.Date'
+	href	''
+	alt	''
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'format'		'date'
+	setting	'Width'		'100'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMyCalendarDateBox'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyCalendarToolbar add command PMCMyCalendarDateBox order command PMCMyCalendarDateBox 4;
+#channel ==>PMCMyCalendarToolbar
+add property command_PMCMyCalendarDateBox on program eServiceSchemaVariableMapping.tcl to command 'PMCMyCalendarDateBox';

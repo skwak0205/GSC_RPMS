@@ -1,0 +1,24 @@
+del command 'FTRProductsLFStructureCompareCommand';
+add command 'FTRProductsLFStructureCompareCommand'
+	description	'Command to Compare Logical Views'
+	label	'emxConfiguration.Command.CompareLogicalViews'
+	href	'${COMMON_DIR}/emxForm.jsp?form=FTRProductsLFStructureCompareForm&mode=Edit&formHeader=emxConfiguration.command.Logical.StructureCompare&editLink=true&suiteKey=Configuration&featureType=LogicalFeature&isSelfTargeted=true&postProcessURL=../configuration/StructureCompareProcess.jsp&HelpMarker=emxhelplogicalviewstructurecompare'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type!="type_ProductLine" > && $<type!="type_ProductVariant"> && $<type!="type_LogicalFeature">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductsLFStructureCompareCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRLogicalFeaturesStructureCompareMenu add command FTRProductsLFStructureCompareCommand order command FTRProductsLFStructureCompareCommand 1;
+modify menu FTRLogicalFeatureToolbarReports add command FTRProductsLFStructureCompareCommand order command FTRProductsLFStructureCompareCommand 1;
+modify menu FTRPVLogicalFeatureToolbarReports add command FTRProductsLFStructureCompareCommand order command FTRProductsLFStructureCompareCommand 1;
+modify menu FTRLFContextLogicalFeatureToolbarReports add command FTRProductsLFStructureCompareCommand order command FTRProductsLFStructureCompareCommand 1;
+#channel ==>FTRLogicalFeaturesStructureCompareMenuFTRLogicalFeatureToolbarReportsFTRPVLogicalFeatureToolbarReportsFTRLFContextLogicalFeatureToolbarReports
+add property command_FTRProductsLFStructureCompareCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRProductsLFStructureCompareCommand';

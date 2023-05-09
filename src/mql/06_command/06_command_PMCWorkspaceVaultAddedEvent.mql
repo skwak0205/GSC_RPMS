@@ -1,0 +1,19 @@
+del command 'PMCWorkspaceVaultAddedEvent';
+add command 'PMCWorkspaceVaultAddedEvent'
+	description	''
+	label	'emxProgramCentral.FolderSubscription.Event.Folder_Added'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Event Type'		'Folder Added'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkspaceVaultAddedEvent'
+	property	'version'	value	'R216'
+;
+modify menu PMCWorkspaceVaultSubscriptionEvents add command PMCWorkspaceVaultAddedEvent order command PMCWorkspaceVaultAddedEvent 6;
+modify menu PMCControlledFolderSubscriptionEvents add command PMCWorkspaceVaultAddedEvent order command PMCWorkspaceVaultAddedEvent 6;
+#channel ==>PMCWorkspaceVaultSubscriptionEventsPMCControlledFolderSubscriptionEvents
+add property command_PMCWorkspaceVaultAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkspaceVaultAddedEvent';

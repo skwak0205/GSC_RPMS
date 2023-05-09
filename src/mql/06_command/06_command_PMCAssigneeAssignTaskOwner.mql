@@ -1,0 +1,24 @@
+del command 'PMCAssigneeAssignTaskOwner';
+add command 'PMCAssigneeAssignTaskOwner'
+	description	'Add Task Assignee Command'
+	label	'emxProgramCentral.Common.AssignAsTaskOwner'
+	href	'${SUITE_DIR}/emxProgramCentralTaskAssigneeActionsHidden.jsp?command=MakeTaskOwner'
+	alt	''
+	setting	'Target Location'		'_self'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'((current.access[changesov] == true && (!type.kindOf[$<type_RiskManagement>])) && current != Complete)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForAssigneeOwnerCmd'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_ImmTransferToUser.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssigneeAssignTaskOwner'
+	property	'version'	value	'R423.HF4'
+;
+modify menu PMCAssigneeSummaryToolbarActions add command PMCAssigneeAssignTaskOwner order command PMCAssigneeAssignTaskOwner 0;
+#channel ==>PMCAssigneeSummaryToolbarActions
+add property command_PMCAssigneeAssignTaskOwner on program eServiceSchemaVariableMapping.tcl to command 'PMCAssigneeAssignTaskOwner';

@@ -1,0 +1,15 @@
+{
+  "CEV.optionsChecker.rdfServerURL.error": "RDF 서버 URL을 정의해야 합니다!",
+  "CEV.optionsChecker.resourceURI.error": "리소스 URI를 정의해야 합니다!",
+  "CEV.optionsChecker.constraintsPosition.error": "구속 조건 팝업의 위치는 \"위쪽\", \"오른쪽\", \"아래쪽\" 또는 \"왼쪽\"이어야 합니다.",
+  "CEV.optionsChecker.buttons.types.error": "버튼 '{label}'의 유형은 \"주\", \"기본\", \"정보\", \"성공\", \"경고\", \"오류\" 중 하나여야 합니다.",
+  "CEV.optionsChecker.buttons.specificActions.error": "'{key}' 특성에 대한 특정 작업은 기능이어야 합니다!",
+  "CEV.optionsChecker.search.error": "'{key}' 특성의 값을 검색하려면 기능이 필요합니다!",
+  "CEV.title": "특성 편집기",
+  "CEV.defaultMessage": "모든 특성을 검색하는 중 오류가 발생했습니다...",
+  "CEV.userCharacteristics.title": "사용자 특성",
+  "CEV.characteristics.title": "특성",
+  "CEV.okButton.content": "확인",
+  "CEV.cancelButton.content": "취소",
+  "CEV.cancelButton.error": "\"취소\" 버튼 클릭 오류입니다..."
+}

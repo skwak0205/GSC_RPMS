@@ -1,0 +1,23 @@
+del command 'APPDocumentSubscriptionsActionLink';
+add command 'APPDocumentSubscriptionsActionLink'
+	description	'Document Subscriptions Command Object'
+	label	'emxComponents.Command.Subscriptions'
+	href	'${COMPONENT_DIR}/emxCommonFS.jsp?functionality=DiscussionsSubscribe'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentSubscriptionsActionLink'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPDocumentSubscriptionsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentSubscriptionsActionLink';

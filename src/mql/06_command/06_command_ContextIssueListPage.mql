@@ -1,0 +1,48 @@
+del command 'ContextIssueListPage';
+add command 'ContextIssueListPage'
+	description	'Command Object for Issue under context'
+	label	'emxComponents.Menu.Issues'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonIssue:getActiveIssues,emxCommonIssue:getAllContextIssues,emxCommonIssue:getClosedIssues&programLabel=emxComponents.Filter.Active,emxComponents.Filter.All,emxComponents.Filter.Closed&sortColumnName=Name&table=IssueList&freezePane=Name&header=emxComponents.Menu.Issues&selection=multiple&toolbar=ContextIssueToolBar&HelpMarker=emxhelpissues&displayView=details'
+	alt	'emxComponents.Menu.Issues'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(policy != "Template Workspace Vault")'
+	setting	'Access Function'		'displayTreeNodeAccessCheck'
+	setting	'Access Program'		'emxWorkspace'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallIssue.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	user	'Customer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'ContextIssueListPage'
+	property	'version'	value	'R423.HF5'
+;
+modify menu type_DOCUMENTS add command ContextIssueListPage order command ContextIssueListPage 12;
+modify menu type_Part add command ContextIssueListPage order command ContextIssueListPage 4;
+modify menu type_ProjectVault add command ContextIssueListPage order command ContextIssueListPage 5;
+modify menu TMCtype_ProjectVault add command ContextIssueListPage order command ContextIssueListPage 2;
+modify menu type_Project add command ContextIssueListPage order command ContextIssueListPage 4;
+modify menu type_Products add command ContextIssueListPage order command ContextIssueListPage 15;
+modify menu type_TestCase add command ContextIssueListPage order command ContextIssueListPage 4;
+modify menu type_HardwareBuild add command ContextIssueListPage order command ContextIssueListPage 6;
+modify menu type_Builds add command ContextIssueListPage order command ContextIssueListPage 6;
+modify menu type_SoftwareBuild add command ContextIssueListPage order command ContextIssueListPage 6;
+modify menu type_UseCase add command ContextIssueListPage order command ContextIssueListPage 5;
+modify menu type_TaskManagement add command ContextIssueListPage order command ContextIssueListPage 0;
+modify menu type_ProductVariant add command ContextIssueListPage order command ContextIssueListPage 3;
+modify menu type_ConfigurationFeature add command ContextIssueListPage order command ContextIssueListPage 5;
+modify menu type_LogicalFeature add command ContextIssueListPage order command ContextIssueListPage 4;
+modify menu type_ManufacturingFeature add command ContextIssueListPage order command ContextIssueListPage 4;
+modify menu type_ConfigurationOption add command ContextIssueListPage order command ContextIssueListPage 4;
+modify menu type_Variant add command ContextIssueListPage order command ContextIssueListPage 4;
+modify menu type_VariabilityGroup add command ContextIssueListPage order command ContextIssueListPage 4;
+modify menu type_VariantValue add command ContextIssueListPage order command ContextIssueListPage 4;
+modify menu type_VariabilityOption add command ContextIssueListPage order command ContextIssueListPage 4;
+#channel ==>type_DOCUMENTStype_Parttype_ProjectVaultTMCtype_ProjectVaulttype_Projecttype_Productstype_TestCasetype_HardwareBuildtype_Buildstype_SoftwareBuildtype_UseCasetype_TaskManagementtype_ProductVarianttype_ConfigurationFeaturetype_LogicalFeaturetype_ManufacturingFeaturetype_ConfigurationOptiontype_Varianttype_VariabilityGrouptype_VariantValuetype_VariabilityOptionPLCProductEngineeringChangeChannelPMCProjectIssuesRisksChannelRMTExchangeTrackingRMTSpecificationsExchangeTrackingRMTRequirementProxyExchangeTracking
+add property command_ContextIssueListPage on program eServiceSchemaVariableMapping.tcl to command 'ContextIssueListPage';

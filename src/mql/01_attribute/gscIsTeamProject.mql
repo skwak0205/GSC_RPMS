@@ -1,0 +1,16 @@
+#del attribute 'gsIsTeamProject';
+add attribute 'gsIsTeamProject'
+ type 'boolean'
+ default 'FALSE'
+ description '팀과제여부'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gsIsTeamProject'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gsIsTeamProject on program eServiceSchemaVariableMapping.tcl to attribute 'gsIsTeamProject';
+
+modify type 'Project Space' add attribute gsIsTeamProject;

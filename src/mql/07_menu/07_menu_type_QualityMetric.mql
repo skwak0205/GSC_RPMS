@@ -1,0 +1,16 @@
+del menu 'type_QualityMetric';
+add menu 'type_QualityMetric'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/emxProgramCentralQualityMetricDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${SUITE_DIR}/iconSmallMetric.gif'
+	command	'PMCHistory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_QualityMetric'
+	property 'version'	value	'9-5-0-0'
+;
+add property menu_type_QualityMetric on program eServiceSchemaVariableMapping.tcl to menu 'type_QualityMetric';

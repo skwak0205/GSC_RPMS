@@ -1,0 +1,24 @@
+del command 'PMCAddTaskDependency';
+add command 'PMCAddTaskDependency'
+	description	'Command for adding task dependency'
+	label	'emxProgramCentral.Dependency.CurrentProject'
+	href	'${SUITE_DIR}/emxProgramCentralDependencyAddDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'720'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddTaskDependency'
+	property	'version'	value	'R422'
+;
+modify menu PMCTaskDependencyActionMenu add command PMCAddTaskDependency order command PMCAddTaskDependency 1;
+#channel ==>PMCTaskDependencyActionMenu
+add property command_PMCAddTaskDependency on program eServiceSchemaVariableMapping.tcl to command 'PMCAddTaskDependency';

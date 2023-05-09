@@ -1,0 +1,26 @@
+del command 'PMCWorkCalendarLocationAddExistingActionLink';
+add command 'PMCWorkCalendarLocationAddExistingActionLink'
+	description	''
+	label	'emxProgramCentral.Common.AddExisting'
+	href	'${COMMON_DIR}/emxTable.jsp?table=PMCWorkCalendarLocations&program=emxWorkCalendar:getAvailableLocations&header=emxProgramCentral.Common.Calendar.ConnectLocations&CancelButton=true&doConnect=true&addProgram=emxLocation&addFunction=setCalendar&selection=multiple&SubmitURL=../programcentral/emxProgramCentralLocationProcess.jsp&HelpMarker=emxhelpcalendaraddnewlocation&disableHyperLink=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'650'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkCalendarLocationAddExistingActionLink'
+	property	'version'	value	'R422.HF4'
+;
+modify menu PMCWorkCalendarLocationToolbarActions add command PMCWorkCalendarLocationAddExistingActionLink order command PMCWorkCalendarLocationAddExistingActionLink 1;
+#channel ==>PMCWorkCalendarLocationToolbarActions
+add property command_PMCWorkCalendarLocationAddExistingActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkCalendarLocationAddExistingActionLink';

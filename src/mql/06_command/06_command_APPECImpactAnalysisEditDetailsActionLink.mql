@@ -1,0 +1,20 @@
+del command 'APPECImpactAnalysisEditDetailsActionLink';
+add command 'APPECImpactAnalysisEditDetailsActionLink'
+	description	'Impact Anlaysis Properties edit link'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ImpactAnalysis&mode=Edit&formHeader=emxComponents.Heading.EditImpactAnalysis&HelpMarker=emxhelpimpactanalysiseditone'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECImpactAnalysisEditDetailsActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECImpactAnalysisPropertiesActionsToolBar add command APPECImpactAnalysisEditDetailsActionLink order command APPECImpactAnalysisEditDetailsActionLink 0;
+#channel ==>APPECImpactAnalysisPropertiesActionsToolBar
+add property command_APPECImpactAnalysisEditDetailsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPECImpactAnalysisEditDetailsActionLink';

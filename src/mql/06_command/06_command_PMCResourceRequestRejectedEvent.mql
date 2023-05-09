@@ -1,0 +1,18 @@
+del command 'PMCResourceRequestRejectedEvent';
+add command 'PMCResourceRequestRejectedEvent'
+	description	''
+	label	'emxProgramCentral.ResourceRequest.RejectedEvent'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Event Type'		'Request Rejected'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestRejectedEvent'
+	property	'version'	value	'R216'
+;
+modify menu PMCResourceRequestEvents add command PMCResourceRequestRejectedEvent order command PMCResourceRequestRejectedEvent 0;
+#channel ==>PMCResourceRequestEvents
+add property command_PMCResourceRequestRejectedEvent on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestRejectedEvent';

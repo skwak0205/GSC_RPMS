@@ -1,0 +1,21 @@
+del command 'ECMAddRelatedAsAffectedItem';
+add command 'ECMAddRelatedAsAffectedItem'
+	description	'Add Relatem Item as Affected Item'
+	label	'EnterpriseChangeMgt.Command.AddRelatedAsProposedChanges'
+	href	'${SUITE_DIR}/ECMUtil.jsp?mode=AddRelatedAsAffected'
+	alt	'EnterpriseChangeMgt.Command.AddRelatedAsAffected'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/normal/I_SLMCategory_2.bmp'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAddRelatedAsAffectedItem'
+	property	'version'	value	'R216'
+;
+modify menu ECMRelatedItemActionsToolbar add command ECMAddRelatedAsAffectedItem order command ECMAddRelatedAsAffectedItem 1;
+#channel ==>ECMRelatedItemActionsToolbar
+add property command_ECMAddRelatedAsAffectedItem on program eServiceSchemaVariableMapping.tcl to command 'ECMAddRelatedAsAffectedItem';

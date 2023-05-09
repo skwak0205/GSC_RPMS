@@ -1,0 +1,22 @@
+del command 'Help';
+add command 'Help'
+	description	''
+	label	'emxFramework.Common.Tooltip.Help'
+	href	'${COMMON_DIR}/emxAddCommandDataGridHelp.jsp'
+	alt	'emxFramework.Common.Tooltip.Help'
+	setting	'Target Location'		'listHidden'
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canShowHelp'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionHelp.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'Help'
+	property	'version'	value	'R423.HF3'
+;
+modify menu Tools add command Help order command Help 7;
+#channel ==>Tools
+add property command_Help on program eServiceSchemaVariableMapping.tcl to command 'Help';

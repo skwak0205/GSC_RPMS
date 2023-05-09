@@ -1,0 +1,26 @@
+del command 'LBCAttributeGroupImportBkg';
+add command 'LBCAttributeGroupImportBkg'
+	description	'Attribute Group Import command Background'
+	label	'emxMultipleClassification.Command.ImportBkg'
+	href	'${SUITE_DIR}/emxLibraryCentralImportAGFS.jsp?AGImport=true&bkgprocess=true&heading=bkg'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeGroupImportBkg'
+	property	'version'	value	'R422'
+;
+modify menu MCMAttributeGroupActionsToolBar add command LBCAttributeGroupImportBkg order command LBCAttributeGroupImportBkg 6;
+#channel ==>MCMAttributeGroupActionsToolBar
+add property command_LBCAttributeGroupImportBkg on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeGroupImportBkg';

@@ -1,0 +1,27 @@
+del command 'PMCProjectTemplateSummaryCreateNew';
+add command 'PMCProjectTemplateSummaryCreateNew'
+	description	'Create New Project Template Command Object'
+	label	'emxProgramCentral.Common.CreateNewProjectTemplate'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ProjectTemplate&typeChooser=false&nameField=None&form=PMCProjectTemplateCreateForm&header=emxProgramCentral.ProgramTop.CreateProjectTemplate&HelpMarker=emxhelpprojecttemplatecreatedialog&postProcessJPO=emxProjectTemplate:performPostProcessActions&submitAction=refreshCaller&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateSummaryCreateNew'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyDeskProjectTemplateSummaryToolBarActions add command PMCProjectTemplateSummaryCreateNew order command PMCProjectTemplateSummaryCreateNew 1;
+#channel ==>PMCMyDeskProjectTemplateSummaryToolBarActions
+add property command_PMCProjectTemplateSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateSummaryCreateNew';

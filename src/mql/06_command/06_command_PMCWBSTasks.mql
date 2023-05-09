@@ -1,0 +1,24 @@
+del command 'PMCWBSTasks';
+add command 'PMCWBSTasks'
+	description	''
+	label	'emxProgramCentral.Common.WBSTasks'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getWBSSubtasks'
+	setting	'Access Function'		'isNotFromRMB'
+	setting	'Access Program'		'emxTask'
+	setting	'program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSTasks'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSListMenu add command PMCWBSTasks order command PMCWBSTasks 1;
+modify menu PMCWBSTaskListMenu add command PMCWBSTasks order command PMCWBSTasks 1;
+#channel ==>PMCWBSListMenuPMCWBSTaskListMenu
+add property command_PMCWBSTasks on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSTasks';

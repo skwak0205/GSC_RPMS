@@ -1,0 +1,26 @@
+del command 'PMCProjectQualityCreate';
+add command 'PMCProjectQualityCreate'
+	description	'Command for creating a Project Quality'
+	label	'emxProgramCentral.Button.CreateForCompany'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Quality&relationship=relationship_Quality&nameField=both&autoNameChecked=true&header=emxProgramCentral.Common.CreateCTQ&policy=policy_Quality&form=PMCProjectQualityCreateForm&postProcessJPO=emxQualityBase:createQualityProcess&isContinuous=false&submitAction=refreshCaller&HelpMarker=emxhelpqualitycreatedialog&postProcessURL=../programcentral/emxProgramCentralUtil.jsp?mode=refreshQualityPage&submitAction=doNothing'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectQualityCreate'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectQualityToolbarActions add command PMCProjectQualityCreate order command PMCProjectQualityCreate 1;
+#channel ==>PMCProjectQualityToolbarActions
+add property command_PMCProjectQualityCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectQualityCreate';

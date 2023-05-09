@@ -1,0 +1,21 @@
+del menu 'type_MemberList';
+add menu 'type_MemberList'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPMemberListEditForm&mode=view&toolbar=APPMemberListDetailsToolBar&HelpMarker=emxhelpmemberlistproperties&formHeader=emxComponents.Common.PropertiesPageHeading'
+	alt	''
+	setting	'Lable Program'		'emxMemberListBase'
+	setting	'Tree Scope ID'		'listId'
+	setting	'Registered Suite'		'Components'
+	setting	'Label Function'		'getRoot'
+	setting	'Image'		'${COMMON_DIR}/ENOMemberList.png'
+	command	'AEFLifecycle'
+	command	'APPMemberListMembersTreeCategory'
+	command	'AEFHistory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_MemberList'
+	property 'version'	value	'R422'
+;
+add property menu_type_MemberList on program eServiceSchemaVariableMapping.tcl to menu 'type_MemberList';

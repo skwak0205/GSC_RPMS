@@ -1,0 +1,15 @@
+del menu 'AEFCollectionItemsToolBar';
+add menu 'AEFCollectionItemsToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	menu	'AEFCollectionItemsActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFCollectionItemsToolBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_AEFCollectionItemsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'AEFCollectionItemsToolBar';

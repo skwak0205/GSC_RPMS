@@ -1,0 +1,11 @@
+del command 'Impact Analysis';
+add command 'Impact Analysis'
+	description	'Command Object for Impact Analysis'
+	label	'EnterpriseChangeMgt.Command.ImpactAnalysis'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMImpactAnalysis:getImpactAnalysis&table=ImpactAnalysisList&header=EnterpriseChangeMgt.Heading.ImpactAnalysis&selection=multiple&toolbar=ImpactAnalysisListToolBar&sortColumnName=Name&HelpMarker=emxhelpimpactanalysis&calculations=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+add property command_ImpactAnalysis on program eServiceSchemaVariableMapping.tcl to command 'Impact Analysis';

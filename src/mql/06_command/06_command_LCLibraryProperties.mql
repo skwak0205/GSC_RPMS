@@ -1,0 +1,21 @@
+del command 'LCLibraryProperties';
+add command 'LCLibraryProperties'
+	description	''
+	label	'emxLibraryCentral.Command.Properties'
+	href	'${SUITE_DIR}/emxLibraryCentralDocumentClassificationDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCLibraryProperties'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_LCLibraryProperties on program eServiceSchemaVariableMapping.tcl to command 'LCLibraryProperties';

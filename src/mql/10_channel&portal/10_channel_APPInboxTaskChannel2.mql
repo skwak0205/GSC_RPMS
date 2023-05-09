@@ -1,0 +1,16 @@
+del channel 'APPInboxTaskChannel2';
+add channel 'APPInboxTaskChannel2'
+	description	'InboxTask Channel 2 for InboxTask content'
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Components'
+	command 	'AppInboxTaskContent'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPInboxTaskChannel2'
+	property	'version'	value	'R216'
+;
+#portal ==>APPInboxTaskPowerView
+add property channel_APPInboxTaskChannel2 on program eServiceSchemaVariableMapping.tcl to channel 'APPInboxTaskChannel2';

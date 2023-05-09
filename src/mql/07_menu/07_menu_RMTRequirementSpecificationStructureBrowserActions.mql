@@ -1,0 +1,16 @@
+del menu 'RMTRequirementSpecificationStructureBrowserActions';
+add menu 'RMTRequirementSpecificationStructureBrowserActions'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTProjectsAndFoldersSearch'
+	command	'AEFAddToCollection'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementSpecificationStructureBrowserActions'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_RMTRequirementSpecificationStructureBrowserActions on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementSpecificationStructureBrowserActions';

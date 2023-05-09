@@ -1,0 +1,22 @@
+del command 'PLCGlobalSearchBuildsCommand';
+add command 'PLCGlobalSearchBuildsCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindBuilds'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Builds&table=PLCSearchBuildsTable&selection=multiple&cancelLabel=emxProduct.Button.Close&showSavedQuery=True&searchCollectionEnabled=True&HelpMarker=emxhelpfullsearch&searchmode=globalsearch&toolbar=PLCFullSearchPLCToolbar'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	user	'VPLMCreator'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCGlobalSearchBuildsCommand'
+	property	'version'	value	'R418'
+;
+modify menu PLCSearch add command PLCGlobalSearchBuildsCommand order command PLCGlobalSearchBuildsCommand 4;
+#channel ==>PLCSearch
+add property command_PLCGlobalSearchBuildsCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCGlobalSearchBuildsCommand';

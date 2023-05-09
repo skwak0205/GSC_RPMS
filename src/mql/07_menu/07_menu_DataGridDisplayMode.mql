@@ -1,0 +1,19 @@
+del menu 'DataGridDisplayMode';
+add menu 'DataGridDisplayMode'
+	description	''
+	label	'emxFramework.DisplayMode.Tooltip'
+	href	''
+	alt	'emxFramework.DisplayMode.Tooltip'
+	setting	'Access Function'		'enableDisplayModeMenu'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionChangeTableView.png'
+	command	'DataGridDisplayDetails'
+	command	'DataGridDisplayThumbnail'
+	command	'DataGridDisplayGraph'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'DataGridDisplayMode'
+	property 'version'	value	'R423.HF3'
+;
+add property menu_DataGridDisplayMode on program eServiceSchemaVariableMapping.tcl to menu 'DataGridDisplayMode';

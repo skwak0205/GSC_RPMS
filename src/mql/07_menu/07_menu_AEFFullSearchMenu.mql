@@ -1,0 +1,17 @@
+del menu 'AEFFullSearchMenu';
+add menu 'AEFFullSearchMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFGenericDelete'
+	command	'AEFFullSearchSave'
+	command	'AEFFullSearchCollection'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFFullSearchMenu'
+	property 'version'	value	'R215'
+;
+add property menu_AEFFullSearchMenu on program eServiceSchemaVariableMapping.tcl to menu 'AEFFullSearchMenu';

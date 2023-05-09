@@ -1,0 +1,20 @@
+del command 'PMCRelatedProjects';
+add command 'PMCRelatedProjects'
+	description	'Related Projects Command Object'
+	label	'emxFramework.Command.RelatedProjects'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCScheduleViewTable&toolbar=PMCRelatedProjectsToolBar&freezePane=Name&expandProgram=emxProjectSpace:getRelatedProject&selection=multiple&tableMenu=PMCRelatedProjectsTableMenu&HelpMarker=emxhelprelatedprojects&showPageURLIcon=false&sortColumnName=Name'
+	alt	'emxFramework.Command.RelatedProjects'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRelatedProjects'
+	property	'version'	value	'R423.HF1'
+;
+#channel ==>PMCProjectPropertiesChannel
+add property command_PMCRelatedProjects on program eServiceSchemaVariableMapping.tcl to command 'PMCRelatedProjects';

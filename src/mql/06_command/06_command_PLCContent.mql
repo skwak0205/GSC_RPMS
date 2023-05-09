@@ -1,0 +1,17 @@
+del command 'PLCContent';
+add command 'PLCContent'
+	description	''
+	label	'emxProductLine.CategoryTab.Content'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PLCContent&HelpMarker=emxhelpproductdetails&header=emxProduct.Heading.Portal.PropertiesWithRev'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCContent'
+	property	'version'	value	'R418'
+;
+modify menu type_Products add command PLCContent order command PLCContent 13;
+#channel ==>type_Products
+add property command_PLCContent on program eServiceSchemaVariableMapping.tcl to command 'PLCContent';

@@ -1,0 +1,14 @@
+del portal 'PMCGanttChartViewSchedule';
+add portal 'PMCGanttChartViewSchedule'
+	description	''
+	label	''
+	href	''
+	channel 	PMCGanttChartViewSchedule
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGanttChartViewSchedule'
+	property	'version'	value	'R422.HF2'
+;
+add property portal_PMCGanttChartViewSchedule on program eServiceSchemaVariableMapping.tcl to portal 'PMCGanttChartViewSchedule';

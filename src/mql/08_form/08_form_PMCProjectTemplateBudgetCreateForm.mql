@@ -1,0 +1,38 @@
+del form 'PMCProjectTemplateBudgetCreateForm';
+add form 'PMCProjectTemplateBudgetCreateForm' web
+field #1
+	name	'Interval Period'
+	label	'emxProgramCentral.Budget.CostInterval'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getCostIntervalRangeValues'
+	setting	'program'		'emxProjectBudget'
+	setting	'Field Type'		'programHTMLOutput'
+field #2
+	name	'Template Enforcement'
+	label	'emxProgramCentral.Budget.TemplateEnforcement'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'false'
+	setting	'function'		'getTempalteEnforcementRangeValues'
+	setting	'program'		'emxProjectBudget'
+	setting	'Field Type'		'programHTMLOutput'
+field #3
+	name	'Notes'
+	label	'emxProgramCentral.Common.Notes'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateBudgetCreateForm'
+	property	'version'	value	'R210'
+;
+add property form_PMCProjectTemplateBudgetCreateForm on program eServiceSchemaVariableMapping.tcl to form 'PMCProjectTemplateBudgetCreateForm';

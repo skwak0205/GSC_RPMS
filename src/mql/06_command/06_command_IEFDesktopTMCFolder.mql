@@ -1,0 +1,17 @@
+del command 'IEFDesktopTMCFolder';
+add command 'IEFDesktopTMCFolder'
+	description	'UI3 based my Projects Command object specific to IEF Desktop Client'
+	label	'IEFDesktopTMCFolder'
+	href	'${COMMON_DIR}/emxTable.jsp?program=IEFTMCUtil:getWorkspaceFolders&table=IEFDesktopObjectSummary&toolbar=IEFDesktopActionsMenu'
+	alt	'emxFramework.Command.Folder'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopTMCFolder'
+	property	'version'	value	'R424'
+;
+#channel ==>
+add property command_IEFDesktopTMCFolder on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopTMCFolder';

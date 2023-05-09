@@ -1,0 +1,14 @@
+del portal 'APPWhereUsedPortal';
+add portal 'APPWhereUsedPortal'
+	description	''
+	label	''
+	href	''
+	channel 	APPWhereUsedChannel
+	setting	'Registered Suite'		'WhereUsed'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'WhereUsed'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWhereUsedPortal'
+	property	'version'	value	'R213'
+;
+add property portal_APPWhereUsedPortal on program eServiceSchemaVariableMapping.tcl to portal 'APPWhereUsedPortal';

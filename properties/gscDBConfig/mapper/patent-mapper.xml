@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsc.gscInterface.patentIF">
+    <select id="selectPatentList" parameterType="java.util.Map" resultType="java.util.Map">
+        select * from patent_if where if_yn = 'N'
+    </select>
+
+    <update id="updateIFColumn" parameterType="java.util.Map">
+        update patent_if set IF_YN = #{if_yn}, IF_RESULT = #{if_result}, IF_MSG = #{if_msg}
+        where trim(MST_NO) = #{value}
+    </update>
+</mapper>

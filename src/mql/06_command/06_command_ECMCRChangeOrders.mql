@@ -1,0 +1,15 @@
+del command 'ECMCRChangeOrders';
+add command 'ECMCRChangeOrders'
+	description	'Change Orders summery viewChange Orders channel1'
+	label	'EnterpriseChangeMgt.Command.ChangeOrders'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=COSummary'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCRChangeOrders'
+	property	'version'	value	'R419'
+;
+#channel ==>ECMCRChangeOrdersChannnel1
+add property command_ECMCRChangeOrders on program eServiceSchemaVariableMapping.tcl to command 'ECMCRChangeOrders';

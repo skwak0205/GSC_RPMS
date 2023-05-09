@@ -1,0 +1,22 @@
+del command 'AEFCollectionItemMoveToAnotherCollection';
+add command 'AEFCollectionItemMoveToAnotherCollection'
+	description	'Moving the selected Collection Item to Another Collection'
+	label	'emxFramework.Collections.MoveToAnotherCollection'
+	href	'${COMMON_DIR}/emxCollectionItemsMoveCopyFS.jsp?mode=Move'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCut.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCollectionItemMoveToAnotherCollection'
+	property	'version'	value	'R422'
+;
+modify menu AEFCollectionItemsActionsToolBar add command AEFCollectionItemMoveToAnotherCollection order command AEFCollectionItemMoveToAnotherCollection 3;
+#channel ==>AEFCollectionItemsActionsToolBar
+add property command_AEFCollectionItemMoveToAnotherCollection on program eServiceSchemaVariableMapping.tcl to command 'AEFCollectionItemMoveToAnotherCollection';

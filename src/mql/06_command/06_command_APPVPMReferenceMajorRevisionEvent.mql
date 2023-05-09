@@ -1,0 +1,13 @@
+del command 'APPVPMReferenceMajorRevisionEvent';
+add command 'APPVPMReferenceMajorRevisionEvent'
+	description	'When VPMReference is major revised'
+	label	'emxComponents.Notification.Event.Revised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Revised'
+	property	'version'	value	'R421'
+;
+modify menu APPVPMReferenceEvents add command APPVPMReferenceMajorRevisionEvent order command APPVPMReferenceMajorRevisionEvent 0;
+#channel ==>APPVPMReferenceEvents
+add property command_APPVPMReferenceMajorRevisionEvent on program eServiceSchemaVariableMapping.tcl to command 'APPVPMReferenceMajorRevisionEvent';

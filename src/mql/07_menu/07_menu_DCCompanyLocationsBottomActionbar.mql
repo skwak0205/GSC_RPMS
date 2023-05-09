@@ -1,0 +1,15 @@
+del menu 'DCCompanyLocationsBottomActionbar';
+add menu 'DCCompanyLocationsBottomActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCObjectDeleteSelectedActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCCompanyLocationsBottomActionbar'
+	property 'version'	value	'9-5-2-0'
+;
+add property menu_DCCompanyLocationsBottomActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCCompanyLocationsBottomActionbar';

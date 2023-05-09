@@ -1,0 +1,15 @@
+del menu 'ECMChangeLegacyToolbar';
+add menu 'ECMChangeLegacyToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMChangeLegacyFilter'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMChangeLegacyToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMChangeLegacyToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMChangeLegacyToolbar';

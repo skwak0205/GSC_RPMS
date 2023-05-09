@@ -1,0 +1,20 @@
+del command 'LCClassificationAttributesEditDetails';
+add command 'LCClassificationAttributesEditDetails'
+	description	'Edit classification Attributes'
+	label	'emxDocumentCentral.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=LBCObjectClassificationEditAttributes&mode=edit&formHeader=emxLibraryCentral.Common.ClassificationAttributes&suiteKey=LibraryCentral&Export=false&HelpMarker=emxhelpeditclassificationattribute&submitAction=refreshCaller&postProcessURL=../documentcentral/emxLibraryCentralClassificationPostProcess.jsp?classificationMode=reloadBOMCell'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Function'		'hasModifyAccess'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCClassificationAttributesEditDetails'
+	property	'version'	value	'R214'
+;
+modify menu LCClassificationAttributesToolbar add command LCClassificationAttributesEditDetails order command LCClassificationAttributesEditDetails 0;
+#channel ==>LCClassificationAttributesToolbar
+add property command_LCClassificationAttributesEditDetails on program eServiceSchemaVariableMapping.tcl to command 'LCClassificationAttributesEditDetails';

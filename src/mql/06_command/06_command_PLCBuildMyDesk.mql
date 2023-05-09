@@ -1,0 +1,20 @@
+del command 'PLCBuildMyDesk';
+add command 'PLCBuildMyDesk'
+	description	'Command Object for Build in the My Desk Menu'
+	label	'emxProduct.Menu.Builds'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCMyDeskBuildList&editLink=true&header=emxProduct.Heading.Build&selection=multiple&program=emxBuild:getOwnedBuilds,emxBuild:getAllBuilds&programLabel=emxProduct.Filter.Owned,emxProduct.Filter.All&toolbar=PLCMyEnoviaProductLineBuildsToolbar&sortColumnName=Name&HelpMarker=emxhelpbuildslist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Submit'		'true'
+	user	'VPLMCreator'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCBuildMyDesk'
+	property	'version'	value	'R215'
+;
+modify menu PLCMyDesk add command PLCBuildMyDesk order command PLCBuildMyDesk 4;
+#channel ==>PLCMyDesk
+add property command_PLCBuildMyDesk on program eServiceSchemaVariableMapping.tcl to command 'PLCBuildMyDesk';

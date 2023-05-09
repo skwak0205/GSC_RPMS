@@ -1,0 +1,21 @@
+del menu 'FTRMyDesk';
+add menu 'FTRMyDesk'
+	description	''
+	label	'emxProduct.Menu.FeatureConfiguration'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconMenuVariantConfiguration.gif'
+	command	'FTRProductConfigurationMyDesk'
+	menu	'FTRMyDeskLogicalStructure'
+	menu	'FTRMyDeskVariabilityMenu'
+	command	'FTRMyDeskLogicalFeatures'
+	command	'FTRMyDeskManufacturingFeatures'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRMyDesk'
+	property 'version'	value	'R216'
+;
+add property menu_FTRMyDesk on program eServiceSchemaVariableMapping.tcl to menu 'FTRMyDesk';

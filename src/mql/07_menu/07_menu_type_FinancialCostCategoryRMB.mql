@@ -1,0 +1,16 @@
+del menu 'type_FinancialCostCategoryRMB';
+add menu 'type_FinancialCostCategoryRMB'
+	description	''
+	label	'emxProgramCentral.Budget.CostCategoryAction'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type=="$<type_FinancialCostCategory>"'
+	command	'PMCProjectBudgetCategoryAddCostItem'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_FinancialCostCategoryRMB'
+	property 'version'	value	'R215'
+;
+add property menu_type_FinancialCostCategoryRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_FinancialCostCategoryRMB';

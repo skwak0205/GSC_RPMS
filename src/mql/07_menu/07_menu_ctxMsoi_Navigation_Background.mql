@@ -1,0 +1,12 @@
+del menu 'ctxMsoi_Navigation_Background';
+add menu 'ctxMsoi_Navigation_Background'
+	description	'Menu for Background'
+	label	''
+	href	''
+	alt	''
+	command	'ctxMsoiCmd_CreateNewObject'
+	command	'ctxMsoiCmd_CreateWorkspace'
+	command	'ctxMsoiCmd_CreateWorkspaceFolder'
+	command	'ctxMsoiCmd_Refresh'
+;
+add property menu_ctxMsoi_Navigation_Background on program eServiceSchemaVariableMapping.tcl to menu 'ctxMsoi_Navigation_Background';

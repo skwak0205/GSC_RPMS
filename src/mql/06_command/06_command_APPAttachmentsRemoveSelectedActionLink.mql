@@ -1,0 +1,26 @@
+del command 'APPAttachmentsRemoveSelectedActionLink';
+add command 'APPAttachmentsRemoveSelectedActionLink'
+	description	'Remove Query Link'
+	label	'emxComponents.Command.RemoveSelected'
+	href	'${SUITE_DIR}/emxSpecCentralUtil.jsp?mode=REMOVE'
+	alt	'emxComponents.Command.RemoveSelected'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	user	'Global Template Administrator'
+	user	'Template Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAttachmentsRemoveSelectedActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPAttachmentsBottomActionBar add command APPAttachmentsRemoveSelectedActionLink order command APPAttachmentsRemoveSelectedActionLink 0;
+#channel ==>APPAttachmentsBottomActionBar
+add property command_APPAttachmentsRemoveSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAttachmentsRemoveSelectedActionLink';

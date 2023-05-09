@@ -1,0 +1,10 @@
+del menu 'ctxMsoi_Revisions_OlderVersion';
+add menu 'ctxMsoi_Revisions_OlderVersion'
+	description	'Menu for Older Version'
+	label	''
+	href	''
+	alt	''
+	command	'ctxMsoiCmd_Open'
+	command	'ctxMsoiCmd_Download'
+;
+add property menu_ctxMsoi_Revisions_OlderVersion on program eServiceSchemaVariableMapping.tcl to menu 'ctxMsoi_Revisions_OlderVersion';

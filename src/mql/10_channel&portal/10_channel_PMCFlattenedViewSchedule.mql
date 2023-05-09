@@ -1,0 +1,16 @@
+del channel 'PMCFlattenedViewSchedule';
+add channel 'PMCFlattenedViewSchedule'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCWBSFlatView','PMCWBS','PMCWBSDataGridView','PMCGantt','PMCMilestones','PMCProjectBaseline'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFlattenedViewSchedule'
+	property	'version'	value	'R422.HF6'
+;
+#portal ==>PMCFlattenedViewSchedule
+add property channel_PMCFlattenedViewSchedule on program eServiceSchemaVariableMapping.tcl to channel 'PMCFlattenedViewSchedule';

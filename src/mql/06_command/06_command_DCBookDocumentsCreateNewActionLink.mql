@@ -1,0 +1,23 @@
+del command 'DCBookDocumentsCreateNewActionLink';
+add command 'DCBookDocumentsCreateNewActionLink'
+	description	'Document Create New'
+	label	'emxDocumentCentral.Common.Generic_Document'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_GenericDocument&policy=policy_ControlledDesignReleaseRev2&createJPO=emxLibraryCentralCommon:createLBCObject&typeChooser=true&autoNameChecked=true&form=type_CreateGenericDocument&submitAction=refreshCaller&header=emxLibraryCentral.Command.CreateNewGenericDocument&HelpMarker=emxhelpcreatedocument2&findMxLink=false&postProcessURL=${SUITE_DIR}/emxLibraryCentralPostProcess.jsp&mode=create&isClassifiedItem=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromConnect'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'VPLMViewer'
+	user	'Author'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCBookDocumentsCreateNewActionLink'
+	property	'version'	value	'R216'
+;
+modify menu DCBookDocumentSummaryCreateNew add command DCBookDocumentsCreateNewActionLink order command DCBookDocumentsCreateNewActionLink 1;
+#channel ==>DCBookDocumentSummaryCreateNew
+add property command_DCBookDocumentsCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCBookDocumentsCreateNewActionLink';

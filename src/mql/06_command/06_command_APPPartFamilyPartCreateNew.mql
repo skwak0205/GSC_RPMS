@@ -1,0 +1,36 @@
+del command 'APPPartFamilyPartCreateNew';
+add command 'APPPartFamilyPartCreateNew'
+	description	'Part Create New'
+	label	'emxComponents.Heading.CreatePart'
+	href	'${SUITE_DIR}/emxCommonPartCreateDialogFS.jsp'
+	alt	''
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Access Expression'		'!type.kindof[$<type_DocumentFamily>]'
+	setting	'Access Map'		'FromConnect'
+	setting	'Licensed Product'		'ENO_XCE_TP,ENOENGI_TP,ENO_TBE_TP,ENO_MCC_TP,ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'false'
+	setting	'Access Function'		'canDisplayCreateDefinitionCommand'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Limited Author'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartFamilyPartCreateNew'
+	property	'version'	value	'R422'
+;
+modify menu APPPartFamilyPartActionsToolBar add command APPPartFamilyPartCreateNew order command APPPartFamilyPartCreateNew 1;
+modify menu LCDocumentSummaryCreateNew add command APPPartFamilyPartCreateNew order command APPPartFamilyPartCreateNew 0;
+#channel ==>APPPartFamilyPartActionsToolBarLCDocumentSummaryCreateNew
+add property command_APPPartFamilyPartCreateNew on program eServiceSchemaVariableMapping.tcl to command 'APPPartFamilyPartCreateNew';

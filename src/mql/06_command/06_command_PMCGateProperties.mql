@@ -1,0 +1,20 @@
+del command 'PMCGateProperties';
+add command 'PMCGateProperties'
+	description	'Properties Command to open Properties Portal Page'
+	label	'emxFramework.Command.PMCGateProperties'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCPropertiesPortal&header=emxProgramCentral.Gate.Portal.Properties&export=false&HelpMarker=emxhelpprojectproperties'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(to[$<relationship_ProjectAccessKey>].name != "")'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateProperties'
+	property	'version'	value	'R421'
+;
+modify menu type_TaskManagement add command PMCGateProperties order command PMCGateProperties 7;
+#channel ==>type_TaskManagement
+add property command_PMCGateProperties on program eServiceSchemaVariableMapping.tcl to command 'PMCGateProperties';

@@ -1,0 +1,26 @@
+del command 'PMCProjectTemplateCreateBudget';
+add command 'PMCProjectTemplateCreateBudget'
+	description	''
+	label	'emxProgramCentral.Budget.ProjectTemplateCreateBudget'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Budget&nameField=both&autoNameChecked=true&policy=policy_FinancialItems&form=PMCProjectTemplateBudgetCreateForm&mode=edit&header=emxProgramCentral.Budget.CreateNewBudget&submitAction=refreshCaller&relationship=relationship_ProjectFinancialItem&postProcessJPO=emxProjectBudget:createTemplateBudget&HelpMarker=emxhelpprojecttemplatebudgetcreate'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkFinCreateImportAccess'
+	setting	'Access Program'		'emxFinancialItem'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateCreateBudget'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectTemplateBudgetToolbarActions add command PMCProjectTemplateCreateBudget order command PMCProjectTemplateCreateBudget 1;
+#channel ==>PMCProjectTemplateBudgetToolbarActions
+add property command_PMCProjectTemplateCreateBudget on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateCreateBudget';

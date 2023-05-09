@@ -1,0 +1,33 @@
+del table 'TMCWorkspacePredefinedFolderResults' system;
+add table 'TMCWorkspacePredefinedFolderResults' system
+column #1
+	name	'Name'
+	label	'emxTeamCentral.Common.Title'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getFolderNames'
+	setting	'program'		'emxWorkspaceFolder'
+column #2
+	name	'Description'
+	label	'emxTeamCentral.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getFolderDesc'
+	setting	'program'		'emxWorkspaceFolder'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspacePredefinedFolderResults'
+	property	'version'	value	'R424.HF1'
+;
+add property table_TMCWorkspacePredefinedFolderResults on program eServiceSchemaVariableMapping.tcl to table 'TMCWorkspacePredefinedFolderResults' system;

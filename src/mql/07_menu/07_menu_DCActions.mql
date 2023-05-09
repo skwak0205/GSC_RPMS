@@ -1,0 +1,18 @@
+del menu 'DCActions';
+add menu 'DCActions'
+	description	''
+	label	'emxDocumentCentral.Menu.DCActions'
+	href	'${SUITE_DIR}/'
+	alt	'emxDocumentCentral.Menu.DCActions'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCCreateLibraryActions'
+	command	'DCCreateBookshelfActions'
+	command	'DCCreateBookActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCActions'
+	property 'version'	value	'10-5'
+;
+add property menu_DCActions on program eServiceSchemaVariableMapping.tcl to menu 'DCActions';

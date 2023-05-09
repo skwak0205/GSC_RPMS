@@ -1,0 +1,27 @@
+del command 'RMTTraceabilityLogicalReport';
+add command 'RMTTraceabilityLogicalReport'
+	description	'Launches the Requirement-Logical Traceability Report'
+	label	'emxRequirements.ActionLink.TraceabilityReport.Logical'
+	href	'${SUITE_DIR}/VPLMTraceabilityOptionsFS.jsp?reportType=Logical&HelpMarker=emxhelptraceabilityreqlogicaloptions&HelpMarker2=emxhelptraceabilityreqlogicalreport'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isVPMInstalled'
+	setting	'Access Program'		'emxRMTCommon'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTraceabilityLogicalReport'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeTraceability add command RMTTraceabilityLogicalReport order command RMTTraceabilityLogicalReport 5;
+#channel ==>RMTSpecTreeTraceabilityRMTSpecificationsTraceabilityRMTSpecificationsLogicalTraceability
+add property command_RMTTraceabilityLogicalReport on program eServiceSchemaVariableMapping.tcl to command 'RMTTraceabilityLogicalReport';

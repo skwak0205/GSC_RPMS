@@ -1,0 +1,18 @@
+del command 'IEFDesktopTMCAllWorskpace';
+add command 'IEFDesktopTMCAllWorskpace'
+	description	'UI3 based my workspace Command object specific to MS Office Integration'
+	label	'emxIEFDesignCenter.Common.MatrixWorkspaces'
+	href	'${COMMON_DIR}/emxTable.jsp?program=IEFTMCUtil:getCurrentUserWorkspaces&table=IEFDesktopObjectSummary&toolbar=IEFDesktopActionsMenu'
+	alt	'emxIEFDesignCenter.Common.MatrixWorkspaces'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	user	'Integration User'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopTMCAllWorskpace'
+	property	'version'	value	'R424'
+;
+#channel ==>IEF ENOVIA Root
+add property command_IEFDesktopTMCAllWorskpace on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopTMCAllWorskpace';

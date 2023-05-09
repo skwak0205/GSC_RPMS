@@ -1,0 +1,26 @@
+del command 'PMCProjectSpaceDeleteBenefitItem';
+add command 'PMCProjectSpaceDeleteBenefitItem'
+	description	'Command for Deleting the Benefit Item'
+	label	'emxProgramCentral.Button.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralCommonDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[delete] == true)'
+	setting	'Selection'		'multiple'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ConfirmDelete'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpaceDeleteBenefitItem'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectSpaceBenefitItemToolBarActions add command PMCProjectSpaceDeleteBenefitItem order command PMCProjectSpaceDeleteBenefitItem 0;
+#channel ==>PMCProjectSpaceBenefitItemToolBarActions
+add property command_PMCProjectSpaceDeleteBenefitItem on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpaceDeleteBenefitItem';

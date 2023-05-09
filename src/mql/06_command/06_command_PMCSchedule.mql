@@ -1,0 +1,17 @@
+del command 'PMCSchedule';
+add command 'PMCSchedule'
+	description	''
+	label	'emxFramework.Command.PMCGateReport'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCSchedule'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSchedule'
+	property	'version'	value	'R422.HF2'
+;
+modify menu type_ProjectSpace add command PMCSchedule order command PMCSchedule 1;
+#channel ==>type_ProjectSpace
+add property command_PMCSchedule on program eServiceSchemaVariableMapping.tcl to command 'PMCSchedule';

@@ -1,0 +1,23 @@
+del command 'RMTSpecificationSearchImport';
+add command 'RMTSpecificationSearchImport'
+	description	''
+	label	'emxRequirements.ActionLink.FindRequirementSpecifications'
+	href	'${SUITE_DIR}/RequirementSearchForm.jsp?program=emxRequirementSearch:getSourceSpecifications&table=RMTSearchSpecificationsTable&InclusionList=emxRequirements.Search.ContainedIn.Types&resultToolbar=RMTSpecificationSearchResultToolbar&CommandName=RMTSpecificationSearchImport&sortColumnName=Name&Style=dialog&containedInFlag=false&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationSearchImport'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTSpecificationSearchImport on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecificationSearchImport';

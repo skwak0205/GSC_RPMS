@@ -1,0 +1,21 @@
+del command 'LBCSearchWithinAtClass';
+add command 'LBCSearchWithinAtClass'
+	description	'Search Within at Class Level'
+	label	'emxMultipleClassification.ActionBarCmd.SearchIn'
+	href	'${SUITE_DIR}/emxMultipleClassificationEndItemsSearch.jsp?toolbar=APPBlankToolbar'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearchWithin.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCSearchWithinAtClass'
+	property	'version'	value	'R418'
+;
+modify menu LBCClassSubClassesToolBar add command LBCSearchWithinAtClass order command LBCSearchWithinAtClass 0;
+modify menu LBCPartFamilySubFamiliesToolBar add command LBCSearchWithinAtClass order command LBCSearchWithinAtClass 0;
+#channel ==>LBCClassSubClassesToolBarLBCPartFamilySubFamiliesToolBar
+add property command_LBCSearchWithinAtClass on program eServiceSchemaVariableMapping.tcl to command 'LBCSearchWithinAtClass';

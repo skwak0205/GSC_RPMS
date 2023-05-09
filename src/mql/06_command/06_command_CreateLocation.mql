@@ -1,0 +1,21 @@
+del command 'CreateLocation';
+add command 'CreateLocation'
+	description	'Create Location Command Object'
+	label	'emxComponents.LocationDialog.CreateLocation'
+	href	'${COMPONENT_DIR}/emxComponentsCreateLocationDialogFS.jsp'
+	alt	'emxComponents.LocationDialog.CreateLocation'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'CreateLocation'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_CreateLocation on program eServiceSchemaVariableMapping.tcl to command 'CreateLocation';

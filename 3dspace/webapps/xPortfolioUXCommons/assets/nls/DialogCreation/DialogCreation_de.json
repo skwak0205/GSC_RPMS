@@ -1,0 +1,23 @@
+{
+  "ok": "OK",
+  "cancel": "Abbrechen",
+  "create": "Erstellen",
+  "createAndClose": "Erstellen und schließen",
+  "add": "Hinzufügen",
+  "TXT_NEW": "Neu",
+  "title": "Titel",
+  "revision": "Revision",
+  "description": "Beschreibung",
+  "image": "Bild",
+  "titleMandatory": "Das Feld 'Titel' darf nicht leer sein",
+  "revisionMandatory": "Das Feld 'Revision' darf nicht leer sein",
+  "_dropMessage": "Bild hier ablegen",
+  "_uploadButtonLabel": "Bild hochladen",
+  "_priority": "Priorität",
+  "_content": "Inhalt",
+  "_preAssigned": "Voreingestellt",
+  "_low": "Niedrig",
+  "_medium": "Medium",
+  "_high": "Hoch",
+  "_urgent": "Dringend"
+}

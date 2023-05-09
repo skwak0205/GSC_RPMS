@@ -1,0 +1,20 @@
+del command 'ECMCreateChangeAction';
+add command 'ECMCreateChangeAction'
+	description	'Create Change Action'
+	label	'EnterpriseChangeMgt.Command.CreateChangeAction'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_CreateChangeActionSlidein&header=EnterpriseChangeMgt.Command.CreateChangeAction&type=type_ChangeAction&policy=policy_ChangeAction&nameField=autoname&createJPO=enoECMChangeActionUX:createChangeAction&submitAction=treeContent&CreateMode=CreateCA&mode=create&HelpMarker=emxhelpchangeactioncreate&formFieldsOnly=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'true'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallChangeAction.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCreateChangeAction'
+	property	'version'	value	'R419'
+;
+modify menu ChangeManagement add command ECMCreateChangeAction order command ECMCreateChangeAction 0;
+#channel ==>ChangeManagement
+add property command_ECMCreateChangeAction on program eServiceSchemaVariableMapping.tcl to command 'ECMCreateChangeAction';

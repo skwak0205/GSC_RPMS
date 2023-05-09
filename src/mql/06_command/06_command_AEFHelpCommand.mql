@@ -1,0 +1,18 @@
+del command 'AEFHelpCommand';
+add command 'AEFHelpCommand'
+	description	''
+	label	'emxNavigator.UIMenuBar.Help'
+	href	'javascript:openHelpPage()'
+	alt	'emxNavigator.UIMenuBar.Help'
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFHelpCommand'
+	property	'version'	value	'R215'
+;
+modify menu AEFHelpMenu add command AEFHelpCommand order command AEFHelpCommand 2;
+modify menu DashboardHelpMenu add command AEFHelpCommand order command AEFHelpCommand 0;
+#channel ==>AEFHelpMenuDashboardHelpMenu
+add property command_AEFHelpCommand on program eServiceSchemaVariableMapping.tcl to command 'AEFHelpCommand';

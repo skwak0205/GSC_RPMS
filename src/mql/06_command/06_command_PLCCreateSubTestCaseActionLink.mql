@@ -1,0 +1,24 @@
+del command 'PLCCreateSubTestCaseActionLink';
+add command 'PLCCreateSubTestCaseActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Create'
+	href	'${SUITE_DIR}/TestCaseUtil.jsp?Mode=CreateSubTestCase'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	setting	'Access Mask'		'ToConnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateSubTestCaseActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCTestCaseSubTestCaseTopActionBar add command PLCCreateSubTestCaseActionLink order command PLCCreateSubTestCaseActionLink 1;
+#channel ==>PLCTestCaseSubTestCaseTopActionBar
+add property command_PLCCreateSubTestCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateSubTestCaseActionLink';

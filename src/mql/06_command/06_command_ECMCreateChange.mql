@@ -1,0 +1,22 @@
+del command 'ECMCreateChange';
+add command 'ECMCreateChange'
+	description	'CreateChange Command Object'
+	label	'EnterpriseChangeMgt.Command.CreateChange'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_CreateChangeOrderSlidein&header=EnterpriseChangeMgt.Command.CreateChange&type=type_ChangeOrder&nameField=autoname&createJPO=enoECMChangeOrderUX:createChange&typeChooser=true&submitAction=treeContent&CreateMode=CreateCO&preProcessJavaScript=preProcessInCreateCO&mode=create&HelpMarker=emxhelpchangeordercreate'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallChangeOrder.png'
+	user	'Global User'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCreateChange'
+	property	'version'	value	'R417'
+;
+modify menu ChangeManagement add command ECMCreateChange order command ECMCreateChange 1;
+#channel ==>ChangeManagement
+add property command_ECMCreateChange on program eServiceSchemaVariableMapping.tcl to command 'ECMCreateChange';

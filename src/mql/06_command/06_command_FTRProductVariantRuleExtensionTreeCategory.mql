@@ -1,0 +1,17 @@
+del command 'FTRProductVariantRuleExtensionTreeCategory';
+add command 'FTRProductVariantRuleExtensionTreeCategory'
+	description	''
+	label	'emxProduct.Tree.RuleExtensions'
+	href	'${COMMON_DIR}/emxTable.jsp?table=FTRRuleExtensionList&header=emxProduct.Heading.ProductVariant.RuleExtension&selection=multiple&program=emxRuleExtension:getAllRuleExtensions&topActionbar=FTRRuleExtensionsListTopActionBar&bottomActionbar=FTRRuleExtensionsListBottomActionBar&sortColumnName=Name&HelpMarker=emxhelpruleextensionslist'
+	alt	''
+	setting	'image'		'${COMMON_DIR}/images/iconSmallRuleExtension.gif'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductVariantRuleExtensionTreeCategory'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRProductVariantRuleExtensionTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariantRuleExtensionTreeCategory';

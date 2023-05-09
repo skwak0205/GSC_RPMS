@@ -1,0 +1,22 @@
+del command 'FTRViewProductVariantsActionLink';
+add command 'FTRViewProductVariantsActionLink'
+	description	''
+	label	'emxProduct.ActionLink.ViewProductVariants'
+	href	'${SUITE_DIR}/ProductVariantUtil.jsp?mode=ViewProductVariant'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRViewProductVariantsActionLink'
+	property	'version'	value	'R215'
+;
+modify menu FTRProductVariantListToolBarActions add command FTRViewProductVariantsActionLink order command FTRViewProductVariantsActionLink 0;
+#channel ==>FTRProductVariantListToolBarActions
+add property command_FTRViewProductVariantsActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRViewProductVariantsActionLink';

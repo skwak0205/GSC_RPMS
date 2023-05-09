@@ -1,0 +1,17 @@
+del command 'PLCSearchCompanyCommandForMassAssign';
+add command 'PLCSearchCompanyCommandForMassAssign'
+	description	''
+	label	'emxProduct.ActionLink.FindCompany'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxProductSearch:getCompaniesForMassRDO&table=PLCSearchCompanyTable&form=PLCSearchCompanyForm&HelpMarker=emxhelpsearchresults&CommandName=PLCSearchCompanyCommandForMassAssign&sortColumnName=Name&selection=single'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchCompanyCommandForMassAssign'
+	property	'version'	value	'R215'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchCompanyCommandForMassAssign order command PLCSearchCompanyCommandForMassAssign 33;
+#channel ==>SearchAddExistingChooserMenu
+add property command_PLCSearchCompanyCommandForMassAssign on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchCompanyCommandForMassAssign';

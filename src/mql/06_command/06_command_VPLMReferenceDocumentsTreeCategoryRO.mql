@@ -1,0 +1,10 @@
+del command 'VPLMReferenceDocumentsTreeCategoryRO';
+add command 'VPLMReferenceDocumentsTreeCategoryRO'
+	description	'CBP Documents on VPLM RepReference'
+	label	'emxFramework.Command.VPLMReferenceDocumentsTreeCategoryRO'
+	href	'${COMMON_DIR}/emxVPLMLogon.jsp?urlLogon=emxTable.jsp?program=VPLMDocument:getDocuments&table=APPDocumentSummary&selection=multiple&header=emxFramework.Menu.Documents&HelpMarker=emxhelpcontentlist'
+	alt	'emxFramework.Command.Alt.VPLMReferenceDocumentsTreeCategoryRO'
+	setting	'Registered Suite'		'VPLMWebMgt'
+;
+#channel ==>
+add property command_VPLMReferenceDocumentsTreeCategoryRO on program eServiceSchemaVariableMapping.tcl to command 'VPLMReferenceDocumentsTreeCategoryRO';

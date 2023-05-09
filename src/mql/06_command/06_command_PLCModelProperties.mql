@@ -1,0 +1,15 @@
+del command 'PLCModelProperties';
+add command 'PLCModelProperties'
+	description	'Command to display the properties of Model'
+	label	'emxProduct.Command.Label.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Model&formHeader=emxProduct.Heading.Properties&toolbar=PLCModelPropertiesTopActionBar&HelpMarker=emxhelpmodeldetails'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCModelProperties'
+	property	'version'	value	'R215'
+;
+#channel ==>PLCModelDefaultChannel
+add property command_PLCModelProperties on program eServiceSchemaVariableMapping.tcl to command 'PLCModelProperties';

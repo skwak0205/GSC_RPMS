@@ -1,0 +1,2 @@
+mod type 'Budget' add attribute gscYear;
+mod type 'Budget' add attribute gscCostCenter;

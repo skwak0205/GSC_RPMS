@@ -1,0 +1,24 @@
+del command 'APPMeetingDeleteAgendaItem';
+add command 'APPMeetingDeleteAgendaItem'
+	description	''
+	label	'emxComponents.Common.DeleteAgendaItem'
+	href	'${COMPONENT_DIR}/emxMeetingProcess.jsp?action=DeleteAgendaItem&notification=Yes&sReturnPage=null'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCreateAndDeleteAgendaItemEnabled'
+	setting	'Access Program'		'emxMeeting'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.DeleteAgenda.WarningMessage'
+	setting	'Access Mask'		'fromdisconnect'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingDeleteAgendaItem'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPAgendaItemActionToolbar add command APPMeetingDeleteAgendaItem order command APPMeetingDeleteAgendaItem 0;
+#channel ==>APPAgendaItemActionToolbar
+add property command_APPMeetingDeleteAgendaItem on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingDeleteAgendaItem';

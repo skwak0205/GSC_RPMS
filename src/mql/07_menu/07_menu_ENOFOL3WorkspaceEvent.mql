@@ -1,0 +1,18 @@
+del menu 'ENOFOL3WorkspaceEvent';
+add menu 'ENOFOL3WorkspaceEvent'
+	description	''
+	label	'emxComponents.Notification.Event.EventMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'ENOFOL3WorkspaceConnectEvent'
+	command	'ENOFOL3WorkspaceDisconnectEvent'
+	command	'ENOFOL3WorkspaceConnectObjectEvent'
+	command	'ENOFOL3WorkspaceDisconnectObjectEvent'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'FolderManagement'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'ENOFOL3WorkspaceEvent'
+	property 'version'	value	'R423'
+;
+add property menu_ENOFOL3WorkspaceEvent on program eServiceSchemaVariableMapping.tcl to menu 'ENOFOL3WorkspaceEvent';

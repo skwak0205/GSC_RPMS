@@ -1,0 +1,18 @@
+del command 'PLCProductWhereUsedTreeCategory';
+add command 'PLCProductWhereUsedTreeCategory'
+	description	'Products where used tree category'
+	label	'emxProduct.Tree.WhereUsed'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxPLCCommon:getWhereUsed&FilterFramePage=${SUITE_DIR}/WhereUsedTableFilterInclude.jsp&FilterFrameSize=55&table=PLCWhereUsedList&header=emxProduct.Heading.WhereUsedGeneric&selection=multiple&topActionbar=PLCWhereUsedListTopActionBar&HelpMarker=emxhelpwhereusedlist&command=command_PLCProductWhereUsedTreeCategory'
+	alt	''
+	setting	'ExpandFilterTypes'		'emxProduct.WhereUsed.Product.ExpandTypes'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'ExpandFilterRelationships'		'emxProduct.WhereUsed.Product.ExpandRelationships'
+	setting	'IntermediateFilterTypes'		'emxProduct.WhereUsed.IntermediateTypes'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductWhereUsedTreeCategory'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_PLCProductWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCProductWhereUsedTreeCategory';

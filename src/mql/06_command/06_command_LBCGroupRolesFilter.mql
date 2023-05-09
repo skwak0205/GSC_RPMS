@@ -1,0 +1,19 @@
+del command 'LBCGroupRolesFilter';
+add command 'LBCGroupRolesFilter'
+	description	''
+	label	'emxDocumentCentral.History.Filter'
+	href	'${SUITE_DIR}/emxLibraryCentralAddRoleGroupFilter.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Action Label'		'emxDocumentCentral.History.Filter'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCGroupRolesFilter'
+	property	'version'	value	'R212'
+;
+modify menu LBCRolesGroupsSearchToolbar add command LBCGroupRolesFilter order command LBCGroupRolesFilter 0;
+#channel ==>LBCRolesGroupsSearchToolbar
+add property command_LBCGroupRolesFilter on program eServiceSchemaVariableMapping.tcl to command 'LBCGroupRolesFilter';

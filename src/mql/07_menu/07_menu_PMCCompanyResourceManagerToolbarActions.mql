@@ -1,0 +1,16 @@
+del menu 'PMCCompanyResourceManagerToolbarActions';
+add menu 'PMCCompanyResourceManagerToolbarActions'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCAddCompanyResourceManager'
+	command	'PMCRemoveCompanyResourceManager'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCCompanyResourceManagerToolbarActions'
+	property 'version'	value	'R216'
+;
+add property menu_PMCCompanyResourceManagerToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCCompanyResourceManagerToolbarActions';

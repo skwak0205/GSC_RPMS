@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd ">
+
+  <ds:service name="dpm.timesheets">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.timesheet.TimesheetService" function="getUserActiveTimesheets" returnedData="idsAndData" />
+            <ds:updatejpo classname="com.dassault_systemes.enovia.timesheet.TimesheetService" function="updateTimesheets" processMultiple="true"/>
+        </ds:data>
+
+        <ds:field name="name"><ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="weekEndingDate"><ds:selectable expression="attribute[Week Ending Date]" type="bus" format="isodate" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="state"><ds:selectable expression="current" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="userComments"><ds:selectable expression="attribute[User Comments]" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="approverComments"><ds:selectable expression="attribute[Approver Comments]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originated"><ds:selectable expression="originated" type="bus" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/>
+            <ds:sort type="date" direction="descending" order="1" />
+        </ds:field>
+        <ds:field name="modified"><ds:selectable expression="modified" type="bus" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="modifyAccess"><ds:selectable expression="current.access[modify]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="deleteAccess"><ds:selectable expression="current.access[delete]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        
+        <ds:ref-subservice name="e6w.ownerInfo" includeByDefault="yes"/>        
+        
+        <ds:ref-subservice name="efforts" referenceName="dpm.timesheetEfforts" includeByDefault="yes">
+            <ds:data>
+                <ds:expand relationshipPattern="relationship_Effort" getFrom="true" recurseToLevel="1"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.timesheet.TimesheetService" function="updateEfforts" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="associatedProjects" referenceName="dpm.timesheetProjects" includeByDefault="yes">
+            <ds:data>
+                <ds:expand relationshipPattern="relationship_ApproverContext" getFrom="true" recurseToLevel="1"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="submit" referenceName="dpm.timesheetSubmission" includeByDefault="never">
+         <ds:data>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.timesheet.TimesheetService" function="submitTimesheets" processMultiple="true"/>
+         </ds:data>
+        </ds:ref-subservice>
+        <ds:ref-subservice name="approve" referenceName="dpm.timesheetApproval" includeByDefault="never">
+           <ds:data>
+              <ds:updatejpo classname="com.dassault_systemes.enovia.timesheet.TimesheetService" function="approveTimesheets" processMultiple="true">
+                 <ds:arg arg-name="action" arg-value="approve"/>
+              </ds:updatejpo>
+           </ds:data>
+        </ds:ref-subservice>
+        <ds:ref-subservice name="reject" referenceName="dpm.timesheetApproval" includeByDefault="never">
+           <ds:data>
+              <ds:updatejpo classname="com.dassault_systemes.enovia.timesheet.TimesheetService" function="approveTimesheets" processMultiple="true">
+                 <ds:arg arg-name="action" arg-value="reject"/>
+              </ds:updatejpo>
+           </ds:data>
+        </ds:ref-subservice>
+      
+  </ds:service>
+
+  <ds:service name="dpm.timesheetEfforts">
+      <ds:data>
+          <ds:print/>
+      </ds:data>
+
+      <ds:field name="sunday" description="Effort accumulated for Sunday."><ds:selectable expression="attribute[Sunday]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="monday" description="Effort accumulated for Monday."><ds:selectable expression="attribute[Monday]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="tuesday" description="Effort accumulated for Tuesday"><ds:selectable expression="attribute[Tuesday]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="wednesday" description="Effort accumulated for Wednesday"><ds:selectable expression="attribute[Wednesday]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="thursday" description="Effort accumulated for Thursday"><ds:selectable expression="attribute[Thursday]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="friday" description="Effort accumulated for Friday"><ds:selectable expression="attribute[Friday]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="saturday" description="Effort accumulated for Saturday"><ds:selectable expression="attribute[Saturday]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="totalEffort" description="Total effort accumulated for the week."><ds:selectable expression="attribute[Total Effort]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+      <ds:field name="state"><ds:selectable expression="current" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+      <ds:field name="userComments"><ds:selectable expression="attribute[Effort Comments]" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="approverComments"><ds:selectable expression="attribute[Approver Comments]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+      <ds:ref-subservice name="task" referenceName="dpm.effortTask" includeByDefault="yes">
+          <ds:data cardinality="one">
+              <ds:expand relationshipPattern="relationship_hasEfforts" getTo="true" recurseToLevel="1"/>
+          </ds:data>                    
+      </ds:ref-subservice>
+
+      <ds:ref-subservice name="project" referenceName="dpm.timesheetProjects" includeByDefault="yes">
+          <ds:data cardinality="one">
+              <ds:expand relationshipPattern="relationship_Effort" typePattern="type_ProjectSpace,type_ProjectConcept" getTo="true" recurseToLevel="1"/>
+          </ds:data>
+      </ds:ref-subservice>
+  </ds:service>
+
+  <ds:service name="dpm.effortTask">
+      <ds:field name="name"><ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+  </ds:service>
+
+  <ds:service name="dpm.timesheetProjects">
+      <ds:field name="name"><ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+  </ds:service>
+
+  <ds:service name="dpm.timesheetSubmission"/>
+
+  <ds:service name="dpm.timesheetApproval">
+      <ds:field name="approverComments"><ds:selectable expression="attribute[Approver Comments]" type="bus" createOperation="no" modifyOperation="no" readOperation="no"/></ds:field>
+      <ds:subservice name="efforts" caaName="AprovalEffort">
+          <ds:data>
+              <ds:print/>
+          </ds:data>
+          <ds:field name="approverComments"><ds:selectable expression="attribute[Approver Comments]" type="bus" createOperation="no" modifyOperation="no" readOperation="no"/></ds:field>
+      </ds:subservice>
+  </ds:service>
+
+</ds:services>
+

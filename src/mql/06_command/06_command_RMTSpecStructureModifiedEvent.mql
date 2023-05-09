@@ -1,0 +1,20 @@
+del command 'RMTSpecStructureModifiedEvent';
+add command 'RMTSpecStructureModifiedEvent'
+	description	''
+	label	'emxRequirements.Event.SpecStructureModified.Label'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Event Type'		'Spec Structure Modified'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecStructureModifiedEvent'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementSpecificationEvents add command RMTSpecStructureModifiedEvent order command RMTSpecStructureModifiedEvent 9;
+#channel ==>RMTRequirementSpecificationEvents
+add property command_RMTSpecStructureModifiedEvent on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecStructureModifiedEvent';

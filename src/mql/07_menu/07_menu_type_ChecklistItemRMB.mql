@@ -1,0 +1,16 @@
+del menu 'type_ChecklistItemRMB';
+add menu 'type_ChecklistItemRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCChecklistEdit'
+	command	'PMCChecklistDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_ChecklistItemRMB'
+	property 'version'	value	'V6R2011x'
+;
+add property menu_type_ChecklistItemRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_ChecklistItemRMB';

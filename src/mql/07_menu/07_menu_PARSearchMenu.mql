@@ -1,0 +1,11 @@
+del menu 'PARSearchMenu';
+add menu 'PARSearchMenu'
+	description	''
+	label	'emxParameter.common.Parameters'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	setting	'Licensed Product'		'CPF,ENOBUPS_AP'
+	command	'PARSearchFindParameters'
+;
+add property menu_PARSearchMenu on program eServiceSchemaVariableMapping.tcl to menu 'PARSearchMenu';

@@ -1,0 +1,16 @@
+del menu 'TRMChange';
+add menu 'TRMChange'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'ENOAuthoringUXCommand'
+	menu	'TestCaseTopBottom'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'TRMChange'
+	property 'version'	value	'V6R2020x'
+;
+add property menu_TRMChange on program eServiceSchemaVariableMapping.tcl to menu 'TRMChange';

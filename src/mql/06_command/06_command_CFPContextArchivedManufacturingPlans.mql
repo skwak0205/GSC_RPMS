@@ -1,0 +1,18 @@
+del command 'CFPContextArchivedManufacturingPlans';
+add command 'CFPContextArchivedManufacturingPlans'
+	description	''
+	label	'DMCPlanning.Command.ArchivedManufacturingPlans'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=ManufacturingPlan:getArchivedManufacturingPlans&table=CFPArchivedManufacturingPlanContextSummaryTable&toolbar=CFPArchivedManufacturingPlanToolbar&editRootNode=false&editLink=true&selection=multiple&header=DMCPlanning.Heading.ArchivedManufacturingPlans&HelpMarker=emxhelpmanufacturingplanview&massPromoteDemote=false&objectCompare=false&freezePane=Title&sortColumnName=Revision'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'800'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DMCPlanning'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPContextArchivedManufacturingPlans'
+	property	'version'	value	'R209'
+;
+#channel ==>CFPManufacturingPlanChannel
+add property command_CFPContextArchivedManufacturingPlans on program eServiceSchemaVariableMapping.tcl to command 'CFPContextArchivedManufacturingPlans';

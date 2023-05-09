@@ -1,0 +1,1 @@
+define("DS/FlyWalkCommand/FlyWalkCommand_en",{});define("DS/FlyWalkCommand/assets/nls/translation",{StartHelp:"Hold left mouse button to",StartHelp_Touch:"Use the joysticks to",WalkText:"Walk",FlyText:"Fly",DontShow:"Don't show again"});

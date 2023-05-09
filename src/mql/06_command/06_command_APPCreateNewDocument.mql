@@ -1,0 +1,30 @@
+del command 'APPCreateNewDocument';
+add command 'APPCreateNewDocument'
+	description	'Create New Document object'
+	label	'emxComponents.CreateDocument'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=create'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateNewDocument'
+	property	'version'	value	'R422'
+;
+modify menu APPContentSummaryCreateNew add command APPCreateNewDocument order command APPCreateNewDocument 1;
+modify menu ECMSupportingDocsToolbar add command APPCreateNewDocument order command APPCreateNewDocument 1;
+#channel ==>APPContentSummaryCreateNewECMSupportingDocsToolbar
+add property command_APPCreateNewDocument on program eServiceSchemaVariableMapping.tcl to command 'APPCreateNewDocument';

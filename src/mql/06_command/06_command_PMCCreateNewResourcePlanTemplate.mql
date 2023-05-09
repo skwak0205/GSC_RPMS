@@ -1,0 +1,25 @@
+del command 'PMCCreateNewResourcePlanTemplate';
+add command 'PMCCreateNewResourcePlanTemplate'
+	description	'Create new Resource plan Template'
+	label	'emxProgramCentral.Command.CreateResourcePlanTemplate'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=createResourcePlanTemplate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Function'		'isOwnerOrCoOwner'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateNewResourcePlanTemplate'
+	property	'version'	value	'R422'
+;
+modify menu PMCCreateResourcePlanTemplate add command PMCCreateNewResourcePlanTemplate order command PMCCreateNewResourcePlanTemplate 1;
+#channel ==>PMCCreateResourcePlanTemplate
+add property command_PMCCreateNewResourcePlanTemplate on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateNewResourcePlanTemplate';

@@ -1,0 +1,16 @@
+del menu 'APPWhereUsedToolbar';
+add menu 'APPWhereUsedToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'WhereUsed'
+	command	'APPRaiseECActionLink'
+	command	'AEFSeparator'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'WhereUsed'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPWhereUsedToolbar'
+	property 'version'	value	'R212'
+;
+add property menu_APPWhereUsedToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPWhereUsedToolbar';

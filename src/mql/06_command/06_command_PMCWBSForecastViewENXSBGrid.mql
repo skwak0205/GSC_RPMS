@@ -1,0 +1,19 @@
+del command 'PMCWBSForecastViewENXSBGrid';
+add command 'PMCWBSForecastViewENXSBGrid'
+	description	''
+	label	'emxProgramCentral.TaskConstriant.WBSForecastView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.Kindof[Project Space]'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWBSForecastViewTableENXSBGrid'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSForecastViewENXSBGrid'
+	property	'version'	value	'R422.HF4'
+;
+modify menu PMCWBSTableMenuENXSBGrid add command PMCWBSForecastViewENXSBGrid order command PMCWBSForecastViewENXSBGrid 0;
+#channel ==>PMCWBSTableMenuENXSBGrid
+add property command_PMCWBSForecastViewENXSBGrid on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSForecastViewENXSBGrid';

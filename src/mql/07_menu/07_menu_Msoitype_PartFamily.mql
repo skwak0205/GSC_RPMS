@@ -1,0 +1,15 @@
+del menu 'Msoitype_PartFamily';
+add menu 'Msoitype_PartFamily'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'APPPartFamilyParts'
+	command	'LCSubPartFamilies'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'Msoitype_PartFamily'
+	property 'version'	value	'R214'
+;
+add property menu_Msoitype_PartFamily on program eServiceSchemaVariableMapping.tcl to menu 'Msoitype_PartFamily';

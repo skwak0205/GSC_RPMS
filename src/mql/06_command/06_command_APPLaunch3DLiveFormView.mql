@@ -1,0 +1,23 @@
+del command 'APPLaunch3DLiveFormView';
+add command 'APPLaunch3DLiveFormView'
+	description	''
+	label	'emxComponents.ImageManager.3DLiveExamine'
+	href	'${COMPONENT_DIR}/emxLaunch3DLiveExamineCheck.jsp'
+	alt	'emxComponents.ImageManager.3DLiveExamine'
+	setting	'Target Location'		'formViewHidden'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'false'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionShowHide3D.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLaunch3DLiveFormView'
+	property	'version'	value	'R419'
+;
+#channel ==>
+add property command_APPLaunch3DLiveFormView on program eServiceSchemaVariableMapping.tcl to command 'APPLaunch3DLiveFormView';

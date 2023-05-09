@@ -1,0 +1,29 @@
+del command 'MCMClassRemove';
+add command 'MCMClassRemove'
+	description	'Class Remove'
+	label	'emxMultipleClassification.Access.Remove'
+	href	'${SUITE_DIR}/emxMultipleClassificationRemoveClassPreProcess.jsp?Mode=Remove'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'Content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'MCMClassRemove'
+	property	'version'	value	'R422'
+;
+modify menu LCClassActionsToolBar add command MCMClassRemove order command MCMClassRemove 5;
+#channel ==>LCClassActionsToolBar
+add property command_MCMClassRemove on program eServiceSchemaVariableMapping.tcl to command 'MCMClassRemove';

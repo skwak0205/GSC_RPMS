@@ -1,0 +1,18 @@
+del command 'PLCBuildAddedEvent';
+add command 'PLCBuildAddedEvent'
+	description	'Build Added Event'
+	label	'PublishSubscribe.Event.BuildAdded'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Build Added'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCBuildAddedEvent'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductsEvents add command PLCBuildAddedEvent order command PLCBuildAddedEvent 22;
+#channel ==>PLCProductsEvents
+add property command_PLCBuildAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCBuildAddedEvent';

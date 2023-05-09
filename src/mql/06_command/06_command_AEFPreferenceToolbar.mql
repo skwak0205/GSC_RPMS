@@ -1,0 +1,22 @@
+del command 'AEFPreferenceToolbar';
+add command 'AEFPreferenceToolbar'
+	description	'Preference Toolbar'
+	label	'emxNavigator.UIMenu.Preferences'
+	href	'${COMMON_DIR}/emxPreferences.jsp'
+	alt	'emxNavigator.UIMenu.Preferences'
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Help Marker'		'emxhelpselectcontentpage'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFPreferenceToolbar'
+	property	'version'	value	'R421'
+;
+#channel ==>My ToolsAEFPersonMenuDashboardPersonMenu
+add property command_AEFPreferenceToolbar on program eServiceSchemaVariableMapping.tcl to command 'AEFPreferenceToolbar';

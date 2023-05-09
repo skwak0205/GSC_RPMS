@@ -1,0 +1,22 @@
+del command 'PMCProjectMember';
+add command 'PMCProjectMember'
+	description	'ProjectMember Command Object'
+	label	'emxFramework.Command.Member'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=People'
+	alt	'emxFramework.Command.Alt.ProjectMember'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'sm_icon_Member.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectMember'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCProjectSummaryPortalChannel3PMCSCProjectMembersAccessChannelPMCAccess_ResourcePlan
+add property command_PMCProjectMember on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectMember';

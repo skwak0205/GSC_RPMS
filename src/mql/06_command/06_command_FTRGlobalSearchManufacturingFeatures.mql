@@ -1,0 +1,19 @@
+del command 'FTRGlobalSearchManufacturingFeatures';
+add command 'FTRGlobalSearchManufacturingFeatures'
+	description	''
+	label	'emxConfiguration.ActionLink.FindManufacturingFeatures'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_ManufacturingFeature&table=FTRLogicalFeatureSearchResultsTable&showInitialResults=false&toolbar=FTRFullSearchManufacturingFeatureToolbar&selection=multiple&showSavedQuery=True&searchCollectionEnabled=True&HelpMarker=emxhelpfullsearch&searchmode=globalsearch&formInclusionList=DISPLAY_NAME'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Hide Mode'		'Cloud'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRGlobalSearchManufacturingFeatures'
+	property	'version'	value	'R417'
+;
+modify menu FTRGlobalSearchLogicalStructuresToolbar add command FTRGlobalSearchManufacturingFeatures order command FTRGlobalSearchManufacturingFeatures 0;
+#channel ==>FTRGlobalSearchLogicalStructuresToolbar
+add property command_FTRGlobalSearchManufacturingFeatures on program eServiceSchemaVariableMapping.tcl to command 'FTRGlobalSearchManufacturingFeatures';

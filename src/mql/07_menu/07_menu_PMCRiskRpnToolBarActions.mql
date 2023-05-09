@@ -1,0 +1,15 @@
+del menu 'PMCRiskRpnToolBarActions';
+add menu 'PMCRiskRpnToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCRiskRpnCreateNew'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCRiskRpnToolBarActions'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_PMCRiskRpnToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCRiskRpnToolBarActions';

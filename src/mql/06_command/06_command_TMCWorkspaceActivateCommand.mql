@@ -1,0 +1,27 @@
+del command 'TMCWorkspaceActivateCommand';
+add command 'TMCWorkspaceActivateCommand'
+	description	''
+	label	'emxTeamCentral.Button.Activate'
+	href	'${SUITE_DIR}/emxTeamWorkspaceActivate.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'((current != "Archive" && (current == "Create" || current == "Assign")) && current.access[promote] == true)'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActivate.png'
+	setting	'Confirm Message'		'emxTeamCentral.ActivateProject.Confirmation'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceActivateCommand'
+	property	'version'	value	'R422.HF1'
+;
+modify menu TMCWorkspaceDetailsActionsToolBar add command TMCWorkspaceActivateCommand order command TMCWorkspaceActivateCommand 4;
+modify menu FMAWorkspaceDetailsToolBar add command TMCWorkspaceActivateCommand order command TMCWorkspaceActivateCommand 0;
+#channel ==>TMCWorkspaceDetailsActionsToolBarFMAWorkspaceDetailsToolBar
+add property command_TMCWorkspaceActivateCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceActivateCommand';

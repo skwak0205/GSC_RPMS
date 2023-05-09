@@ -1,0 +1,25 @@
+del command 'PMCAssigneeAdd';
+add command 'PMCAssigneeAdd'
+	description	'Add Task Assignee Command'
+	label	'emxProgramCentral.Button.Add'
+	href	'${SUITE_DIR}/emxProgramCentralTaskAssigneeActionsHidden.jsp?command=Add'
+	alt	'emxProgramCentral.Button.Add'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'((current.access[changesov] == true && (!type.kindOf[$<type_RiskManagement>])) && current != Complete)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/I_AddMember32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssigneeAdd'
+	property	'version'	value	'R422'
+;
+modify menu PMCAssigneeSummaryToolbarActions add command PMCAssigneeAdd order command PMCAssigneeAdd 1;
+#channel ==>PMCAssigneeSummaryToolbarActions
+add property command_PMCAssigneeAdd on program eServiceSchemaVariableMapping.tcl to command 'PMCAssigneeAdd';

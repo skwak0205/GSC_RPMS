@@ -1,0 +1,28 @@
+del command 'PMCGenericCompaniesSearchMenuBar';
+add command 'PMCGenericCompaniesSearchMenuBar'
+	description	'Menu Bar Generic Companies Search'
+	label	'emxProgramCentral.Search.Companies'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?table=PMCGenericCompanySearchResults&field=TYPES=type_Company'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Currency Converter'		'false'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGenericCompaniesSearchMenuBar'
+	property	'version'	value	'R422'
+;
+modify menu PMCProgramCentralSearch add command PMCGenericCompaniesSearchMenuBar order command PMCGenericCompaniesSearchMenuBar 6;
+#channel ==>PMCProgramCentralSearch
+add property command_PMCGenericCompaniesSearchMenuBar on program eServiceSchemaVariableMapping.tcl to command 'PMCGenericCompaniesSearchMenuBar';

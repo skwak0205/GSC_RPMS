@@ -1,0 +1,15 @@
+del command 'AddExistingExtensionCmd';
+add command 'AddExistingExtensionCmd'
+	description	''
+	label	'emxQualification.label.AddExtensionCmd'
+	href	'${SUITE_DIR}/emxQualificationAddExtensionFS.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Qualification'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+;
+modify menu PLMExtensionsToolbar add command AddExistingExtensionCmd order command AddExistingExtensionCmd 1;
+#channel ==>PLMExtensionsToolbar
+add property command_AddExistingExtensionCmd on program eServiceSchemaVariableMapping.tcl to command 'AddExistingExtensionCmd';

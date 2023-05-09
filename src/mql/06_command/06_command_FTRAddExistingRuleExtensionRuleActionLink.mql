@@ -1,0 +1,25 @@
+del command 'FTRAddExistingRuleExtensionRuleActionLink';
+add command 'FTRAddExistingRuleExtensionRuleActionLink'
+	description	'AddExistingRuleExtensionRule'
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_RuleExtension&excludeOIDprogram=emxFeatureSearchBase:excludeConnected&table=FTRRuleExtensionSearchTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../configuration/SearchUtil.jsp?mode=AddExisting&relName=relationship_RuleExtension&from=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'createNewLinkDisplay'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddExisting.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingRuleExtensionRuleActionLink'
+	property	'version'	value	'R215'
+;
+modify menu FTRRuleExtensionsListTopActionBar add command FTRAddExistingRuleExtensionRuleActionLink order command FTRAddExistingRuleExtensionRuleActionLink 2;
+#channel ==>FTRRuleExtensionsListTopActionBar
+add property command_FTRAddExistingRuleExtensionRuleActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingRuleExtensionRuleActionLink';

@@ -1,0 +1,15 @@
+del menu 'type_RPN';
+add menu 'type_RPN'
+	description	''
+	label	'${NAME}'
+	href	'emxForm.jsp?form=ViewRPN&formHeader=emxProgramCentral.Common.BasicInfo&HelpMarker=emxhelprpnpropertiesview&toolbar=PMCRPNToolbar'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallRPN.gif'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_RPN'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_type_RPN on program eServiceSchemaVariableMapping.tcl to menu 'type_RPN';

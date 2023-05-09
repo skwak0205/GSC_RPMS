@@ -1,0 +1,24 @@
+del command 'APPUserTaskMassApproval';
+add command 'APPUserTaskMassApproval'
+	description	'My Task Mass Approval Functionality'
+	label	'emxComponents.Button.MassApproval'
+	href	'${COMMON_DIR}/emxUserTasksMassApproveLinksProcess.jsp?fromPage=APPUserTaskMassApproval'
+	alt	'emxComponents.Button.MassApproval'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkIfResponsibleRoleEnabled'
+	setting	'Access Program'		'emxInboxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionApprovalMass.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPUserTaskMassApproval'
+	property	'version'	value	'R422'
+;
+modify menu APPTaskSummaryActionsToolBar add command APPUserTaskMassApproval order command APPUserTaskMassApproval 0;
+#channel ==>APPTaskSummaryActionsToolBar
+add property command_APPUserTaskMassApproval on program eServiceSchemaVariableMapping.tcl to command 'APPUserTaskMassApproval';

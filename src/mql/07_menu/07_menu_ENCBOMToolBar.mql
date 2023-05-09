@@ -1,0 +1,17 @@
+del menu 'ENCBOMToolBar';
+add menu 'ENCBOMToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	menu	'ENCBOMActionsToolBar'
+	command	'AEFSeparator'
+	command	'APPDownloadPackage'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'ENCBOMToolBar'
+	property 'version'	value	'10-5'
+;
+add property menu_ENCBOMToolBar on program eServiceSchemaVariableMapping.tcl to menu 'ENCBOMToolBar';

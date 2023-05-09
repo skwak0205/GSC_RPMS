@@ -1,0 +1,33 @@
+del table 'TMCPushSubscriptionTable' system;
+add table 'TMCPushSubscriptionTable' system
+column #1
+	name	'AlertEvents'
+	label	'emxTeamCentral.PublishSubscribeSummary.AlertEvents'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getAlertEvents'
+	setting	'program'		'emxWorkspaceSubscription'
+column #2
+	name	'Recipients'
+	label	'emxTeamCentral.DiscussionSummary.Recipients'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getRecipientsOnEvents'
+	setting	'program'		'emxWorkspaceSubscription'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCPushSubscriptionTable'
+	property	'version'	value	'R210'
+;
+add property table_TMCPushSubscriptionTable on program eServiceSchemaVariableMapping.tcl to table 'TMCPushSubscriptionTable' system;

@@ -1,0 +1,21 @@
+del command 'FTRGlobalActionCreateVariabilityGroup';
+add command 'FTRGlobalActionCreateVariabilityGroup'
+	description	''
+	label	'emxProduct.ActionLink.CreateVariabilityGroup'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_VariabilityGroup&typeChooser=false&showApply=true&showPolicy=false&autoNameChecked=false&nameField=both&vaultChooser=false&submitAction=none&form=type_CreateVariabilityGroup&header=emxConfiguration.Form.Heading.CreateVariabilityGroup&createJPO=ConfigurationFeature:createVariabilityGroup&HelpMarker=emxhelpvariabilitygroupcreate&postProcessURL=../configuration/VariabilityGroupCreatePostProcess.jsp&UIContext=GlobalActions&policy=policy_PerpetualResource'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRGlobalVariabilityMenu add command FTRGlobalActionCreateVariabilityGroup order command FTRGlobalActionCreateVariabilityGroup 2;
+#channel ==>FTRGlobalVariabilityMenu
+add property command_FTRGlobalActionCreateVariabilityGroup on program eServiceSchemaVariableMapping.tcl to command 'FTRGlobalActionCreateVariabilityGroup';

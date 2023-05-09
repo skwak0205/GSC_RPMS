@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/"> 
+ <!-- Copyright 2014 , Dassault Systemes. All rights reserved. -->
+<head>   
+
+<!--
+     This use case shows how to consume a WS external to the 3DEXPERIENCE platform.
+	 it requires the currency rate between euros and Dollar US. using http://query.yahooapis.com
+	 and computes the conversion for a given amount.	
+-->
+    
+    <title>CAA Web Apps Euros/ Converter</title>
+	
+	<!-- Application Metas Start -->	
+    <meta name="description" content="CAA Web Apps Euros/USD Converter" />
+    <meta name="keywords" content="CAA Use Case" /> 	
+	<!-- Application Metas End -->
+	
+	<link rel="stylesheet" type="text/css" href="../CAAWebAppsConverter/CAAWebAppsConverter.css" />
+	
+	<!-- Application JS Start -->
+    <script >   
+            /* global widget,require */	
+			require(['DS/CAAWebAppsConverter/CAAWebAppsConverterHelp'] , 
+			    function (CAAWebAppsConverterHelp ) {
+				'use strict';
+              
+				var myWidget = {
+						
+					//onLoad: event triggered when the widget is launched  
+					//--------------------------------------------------
+					onLoad: function() {				
+						var html = "<div >" +
+									"<label class='euroLbl' >Euros</label> <input class='amountIpt' value=0 type='number'/>" + 
+									"<button class='convertBtn'></button>" +  "<br>" +"<br>" +
+									"<label>USD: </label>" +
+									"<label class='amountResultLbl'></label>" + 
+									"</div>";
+						
+						widget.body.innerHTML=html ;
+						 
+						var button = widget.body.querySelector('.convertBtn');
+						button.addEventListener("click", function () {
+							CAAWebAppsConverterHelp.onConvertClick( {container: widget.body } ) ;
+						} );
+						
+					}
+				};
+     			//
+                //---------				
+				widget.addEvent('onLoad',  myWidget.onLoad);
+		});
+
+    </script>
+	<!-- Application JS End -->
+</head>
+<body>
+</body>
+</html>

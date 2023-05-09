@@ -1,0 +1,18 @@
+del command 'ECMCRAffectedItems';
+add command 'ECMCRAffectedItems'
+	description	'Affected Items command'
+	label	'EnterpriseChangeMgt.Command.ProposedChanges'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeOrder:getAffectedItems&table=ECMCOAffectedItemsTable&header=EnterpriseChangeMgt.Change.ProposedChangesSummaryPageHeading&selection=multiple&toolbar=ECMCOAffectedItemsListToolbar&sortColumnName=Name&HelpMarker=emxhelpecrecraffecteditems&postProcessJPO=enoECMChangeOrder:refreshAffectedItems&selectHandler=highlight3DAffectedItem'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeRequest>])'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRAffectedItems'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMAffectedItemsChannel
+add property command_ECMCRAffectedItems on program eServiceSchemaVariableMapping.tcl to command 'ECMCRAffectedItems';

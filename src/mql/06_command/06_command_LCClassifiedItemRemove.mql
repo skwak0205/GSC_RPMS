@@ -1,0 +1,22 @@
+del command 'LCClassifiedItemRemove';
+add command 'LCClassifiedItemRemove'
+	description	'Classified Item Remove'
+	label	'emxMultipleClassification.Command.Remove'
+	href	'${SUITE_DIR}/emxMultipleClassificationObjectRemoveContentsPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'Content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCClassifiedItemRemove'
+	property	'version'	value	'R417'
+;
+modify menu LCClassifiedItemActionToolBar add command LCClassifiedItemRemove order command LCClassifiedItemRemove 11;
+#channel ==>LCClassifiedItemActionToolBar
+add property command_LCClassifiedItemRemove on program eServiceSchemaVariableMapping.tcl to command 'LCClassifiedItemRemove';

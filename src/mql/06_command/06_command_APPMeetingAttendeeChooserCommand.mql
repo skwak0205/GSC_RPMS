@@ -1,0 +1,16 @@
+del command 'APPMeetingAttendeeChooserCommand';
+add command 'APPMeetingAttendeeChooserCommand'
+	description	'Command object to find Requested Assignees.'
+	label	'emxComponents.Command.RequestedAssignees'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxMeeting:getMeetingAttendeeSearchPersons&table=IssueSearchPersonsTable&form=MeetingSearchAttendeePersonsForm&searchCommand=APPMeetingAttendeeChooserCommand'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingAttendeeChooserCommand'
+	property	'version'	value	'R207'
+;
+modify menu APPMeetingAttendeeChooserMenu add command APPMeetingAttendeeChooserCommand order command APPMeetingAttendeeChooserCommand 0;
+#channel ==>APPMeetingAttendeeChooserMenu
+add property command_APPMeetingAttendeeChooserCommand on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingAttendeeChooserCommand';

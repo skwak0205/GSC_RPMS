@@ -1,0 +1,24 @@
+del command 'RMTObjectReleaseEvent';
+add command 'RMTObjectReleaseEvent'
+	description	''
+	label	'emxRequirements.Event.ObjectReleased.Label'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'(policy != "$<policy_RequirementVersion>")'
+	setting	'Event Type'		'Object Released'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTObjectReleaseEvent'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementEvents add command RMTObjectReleaseEvent order command RMTObjectReleaseEvent 1;
+modify menu RMTRequirementSpecificationEvents add command RMTObjectReleaseEvent order command RMTObjectReleaseEvent 6;
+modify menu RMTChapterEvents add command RMTObjectReleaseEvent order command RMTObjectReleaseEvent 1;
+modify menu RMTCommentEvents add command RMTObjectReleaseEvent order command RMTObjectReleaseEvent 1;
+#channel ==>RMTRequirementEventsRMTRequirementSpecificationEventsRMTChapterEventsRMTCommentEvents
+add property command_RMTObjectReleaseEvent on program eServiceSchemaVariableMapping.tcl to command 'RMTObjectReleaseEvent';

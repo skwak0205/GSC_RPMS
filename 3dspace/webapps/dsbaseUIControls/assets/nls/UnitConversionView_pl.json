@@ -1,0 +1,9 @@
+{
+  "UnCV.optionsChecker.rdfServerURL.error": "Punkt końcowy adresu URL serwera RDF musi zostać zdefiniowany!",
+  "UnCV.optionsChecker.originalValue.notExisting.error": "Oryginalna wartość musi zostać zdefiniowana!",
+  "UnCV.optionsChecker.originalValue.type.error": "Oryginalna wartość musi być liczbą!",
+  "UnCV.optionsChecker.quantityURI.error": "Ilość (typ cechy) musi zostać zdefiniowana!",
+  "UnCV.optionsChecker.unitURI.error": "Identyfikator URI jednostki (przyrostek) musi zostać zdefiniowany!",
+  "UnCV.convertedValue": "Wartość konwertowana",
+  "UnCV.originalValue": "Wartość oryginalna"
+}

@@ -1,0 +1,1 @@
+define("DS/FlyWalkCommand/FlyWalkCommand_ja",{});define("DS/FlyWalkCommand/assets/nls/translation",{StartHelp:"マウスの左ボタンを押したまま次の操作を行います",StartHelp_Touch:"ジョイスティックを使用して次の操作を行います",WalkText:"徒歩",FlyText:"フライ",DontShow:"今後表示しない"});

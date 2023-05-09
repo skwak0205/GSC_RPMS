@@ -1,0 +1,17 @@
+del menu 'type_ImpactAnalysisRMB';
+add menu 'type_ImpactAnalysisRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'AEFProperties'
+	command	'AEFLifecycle'
+	command	'APPReferenceDocumentsTreeCategory'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_ImpactAnalysisRMB'
+	property 'version'	value	'R213'
+;
+add property menu_type_ImpactAnalysisRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_ImpactAnalysisRMB';

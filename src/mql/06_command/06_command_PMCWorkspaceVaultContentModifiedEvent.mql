@@ -1,0 +1,19 @@
+del command 'PMCWorkspaceVaultContentModifiedEvent';
+add command 'PMCWorkspaceVaultContentModifiedEvent'
+	description	''
+	label	'emxProgramCentral.FolderSubscription.Event.Content_Modified'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Event Type'		'Content Modified'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkspaceVaultContentModifiedEvent'
+	property	'version'	value	'R216'
+;
+modify menu PMCWorkspaceVaultSubscriptionEvents add command PMCWorkspaceVaultContentModifiedEvent order command PMCWorkspaceVaultContentModifiedEvent 4;
+modify menu PMCControlledFolderSubscriptionEvents add command PMCWorkspaceVaultContentModifiedEvent order command PMCWorkspaceVaultContentModifiedEvent 4;
+#channel ==>PMCWorkspaceVaultSubscriptionEventsPMCControlledFolderSubscriptionEvents
+add property command_PMCWorkspaceVaultContentModifiedEvent on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkspaceVaultContentModifiedEvent';

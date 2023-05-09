@@ -1,0 +1,24 @@
+del command 'DomainAccessDeleteAccess';
+add command 'DomainAccessDeleteAccess'
+	description	''
+	label	'emxFramework.Common.DomainAccessDeleteAccess'
+	href	'${COMMON_DIR}/emxDomainAccessProcess.jsp?cmdName=deleteAccess&jpoName=emxDomainAccess&methodName=deleteAccess'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'current.access[changesov]'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionThrash.png'
+	setting	'Confirm Message'		'emxFramework.Delete.ConfirmMsg'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DomainAccessDeleteAccess'
+	property	'version'	value	'R422.HF1'
+;
+modify menu DomainAccessActionToolBar add command DomainAccessDeleteAccess order command DomainAccessDeleteAccess 0;
+modify menu LBCFolderDomainAccessToolBar add command DomainAccessDeleteAccess order command DomainAccessDeleteAccess 0;
+modify menu PMCBudgetMOASummaryToolBar add command DomainAccessDeleteAccess order command DomainAccessDeleteAccess 0;
+#channel ==>DomainAccessActionToolBarLBCFolderDomainAccessToolBarPMCBudgetMOASummaryToolBar
+add property command_DomainAccessDeleteAccess on program eServiceSchemaVariableMapping.tcl to command 'DomainAccessDeleteAccess';

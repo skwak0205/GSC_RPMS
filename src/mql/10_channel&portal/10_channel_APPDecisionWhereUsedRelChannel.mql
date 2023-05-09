@@ -1,0 +1,17 @@
+del channel 'APPDecisionWhereUsedRelChannel';
+add channel 'APPDecisionWhereUsedRelChannel'
+	description	''
+	height	'400'
+	label	''
+	href	''
+	setting		'RowID'		'2'
+	setting		'Registered Suite'		'Components'
+	command 	'APPDecisionWhereUsedRel'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionWhereUsedRelChannel'
+	property	'version'	value	'R207'
+;
+#portal ==>APPDecisionWhereUsedPowerView
+add property channel_APPDecisionWhereUsedRelChannel on program eServiceSchemaVariableMapping.tcl to channel 'APPDecisionWhereUsedRelChannel';

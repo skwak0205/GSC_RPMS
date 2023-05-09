@@ -1,0 +1,21 @@
+del command 'AEFFullTextSearch';
+add command 'AEFFullTextSearch'
+	description	'Full Text Search'
+	label	'emxFramework.GlobalSearch.SearchAll'
+	href	'javascript:updateSearchField(\"All_Search\")'
+	alt	'emxFramework.GlobalSearch.SearchAll'
+	setting	'Registered Suite'		'Framework'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFFullTextSearch'
+	property	'version'	value	'R422'
+;
+modify menu AEFSearchTypes add command AEFFullTextSearch order command AEFFullTextSearch 1;
+modify menu AEFTypesGlobalSearch add command AEFFullTextSearch order command AEFFullTextSearch 3;
+#channel ==>AEFSearchTypesAEFTypesGlobalSearch
+add property command_AEFFullTextSearch on program eServiceSchemaVariableMapping.tcl to command 'AEFFullTextSearch';

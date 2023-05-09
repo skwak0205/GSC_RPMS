@@ -1,0 +1,18 @@
+del command 'APPWorkflowTasks';
+add command 'APPWorkflowTasks'
+	description	'Command Object for tasks display in workflow tree'
+	label	'emxComponents.TaskSummary.Tasks'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPWorkflowTasks&program=emxWorkflow:getAllTasks,emxWorkflow:getActiveTasks,emxWorkflow:getCompletedTasks&header=emxComponents.Workflow.TasksHeader&programLabel=emxComponents.Filter.AllTasks,emxComponents.Filter.Active,emxComponents.Filter.Complete&HelpMarker=emxhelpworkflowtasks'
+	alt	'emxComponents.Common.Task'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowTasks'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu type_Workflow add command APPWorkflowTasks order command APPWorkflowTasks 3;
+#channel ==>type_Workflow
+add property command_APPWorkflowTasks on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowTasks';

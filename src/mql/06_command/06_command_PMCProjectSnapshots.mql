@@ -1,0 +1,22 @@
+del command 'PMCProjectSnapshots';
+add command 'PMCProjectSnapshots'
+	description	'Command to view Snapshot summary table'
+	label	'emxProgramCentral.ProjectSnapshot.Command.ProjectSnapshotView'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCProjectSnapshotViewTable&toolbar=PMCProjectSnapshotToolbar&expandProgram=emxProjectSnapshot:expandProjectSnapshots&freezePane=Name&selection=single&header=emxProgramCentral.ProjectSnapshot.SnapshotViewHeader&findMxLink=false&showRMB=false&hideHeader=true&customize=false&rowGrouping=false&showPageURLIcon=false&hideLaunchButton=true&export=false&massPromoteDemote=false&expandLevelFilter=false&multiColumnSort=false&showClipboard=false&displayView=details'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'False'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'function'		'expandProjectSnapshots'
+	setting	'program'		'emxProjectSnapshot'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSnapshots'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCWhatIfExperimentsChannel
+add property command_PMCProjectSnapshots on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSnapshots';

@@ -1,0 +1,20 @@
+################################################################################################
+# Created Date : 2023.01.05
+# Create by HyungJin, Ju
+# Description : gscPMCProjectDetailsViewForm
+################################################################################################
+
+add form "gscPMCProjectDetailsViewForm" web
+field name 'gscProjectSite'
+ businessobject '$<attribute[attribute_gscProjectSite].value>'
+ label 'emxProgramCentral.Label.gscProjectSite'
+ setting 'Registered Suite' 'ProgramCentral'
+ setting 'Required' 'false'
+ setting 'Editable' 'true'
+ setting 'Field Type' 'programHTMLOutput'
+ setting 'Admin Type' 'attribute_gscProjectSite'
+ setting 'program' 'gscCommonUtil'
+ setting 'function' 'getAttrRangegscProjectSiteValue'
+ setting 'Update Program' 'gscCommonUtil'
+ setting 'Update Function' 'updateAttrgscProjectSite'
+;

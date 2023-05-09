@@ -1,0 +1,28 @@
+del command 'TMCRouteSummaryStartResume';
+add command 'TMCRouteSummaryStartResume'
+	description	'Command for StartResume link on RouteSummary'
+	label	'emxComponents.Routes.StartResume'
+	href	'${COMPONENT_DIR}/emxRouteStart.jsp'
+	alt	'emxComponents.Routes.StartResume'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'displayLinkAccessCheck'
+	setting	'Access Program'		'emxRoute'
+	setting	'Row Select'		'multi'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRouteSummaryStartResume'
+	property	'version'	value	'R422'
+;
+modify menu TMCRouteSummaryBottomActionBar add command TMCRouteSummaryStartResume order command TMCRouteSummaryStartResume 0;
+#channel ==>TMCRouteSummaryBottomActionBar
+add property command_TMCRouteSummaryStartResume on program eServiceSchemaVariableMapping.tcl to command 'TMCRouteSummaryStartResume';

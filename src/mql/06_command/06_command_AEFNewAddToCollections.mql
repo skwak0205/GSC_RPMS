@@ -1,0 +1,23 @@
+del command 'AEFNewAddToCollections';
+add command 'AEFNewAddToCollections'
+	description	'Creating a collection or adding the selected items to Collections'
+	label	'emxFramework.Collections.NewAddToCollections'
+	href	'${COMMON_DIR}/emxCollectionsAddToProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFNewAddToCollections'
+	property	'version'	value	'R422'
+;
+modify menu AEFClipboardCollections add command AEFNewAddToCollections order command AEFNewAddToCollections 0;
+#channel ==>AEFClipboardCollections
+add property command_AEFNewAddToCollections on program eServiceSchemaVariableMapping.tcl to command 'AEFNewAddToCollections';

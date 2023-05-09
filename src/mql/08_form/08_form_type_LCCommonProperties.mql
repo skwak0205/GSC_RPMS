@@ -1,0 +1,2 @@
+del form 'type_LCCommonProperties';
+add form 'type_LCCommonProperties' web

@@ -1,0 +1,21 @@
+del menu 'DCDocumentSheetSummaryCreateNew';
+add menu 'DCDocumentSheetSummaryCreateNew'
+	description	''
+	label	'emxLibraryCentral.Command.CreateNew'
+	href	''
+	alt	'emxLibraryCentral.Command.CreateNew'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'(current.access[fromconnect]==TRUE)'
+	setting	'Access Function'		'checkCreateAccessForDocumentSheet'
+	setting	'Access Program'		'emxDCUtils'
+	command	'DCDocumentSheetCreateNew'
+	command	'LBCVCSeparator'
+	command	'DCDocumentSheetCreateVCFileFolder'
+	command	'DCDocumentSheetConnectVCFileFolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCDocumentSheetSummaryCreateNew'
+	property 'version'	value	'R213'
+;
+add property menu_DCDocumentSheetSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'DCDocumentSheetSummaryCreateNew';

@@ -1,0 +1,18 @@
+del menu 'APPSubscribeMenu';
+add menu 'APPSubscribeMenu'
+	description	''
+	label	'emxComponents.Common.Subscribe'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.png'
+	command	'APPSubscribeAction'
+	command	'APPPushSubscribeAction'
+	command	'APPPushSubscribeUserGroupAction'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'APPSubscribeMenu'
+	property 'version'	value	'R424.HF2'
+;
+add property menu_APPSubscribeMenu on program eServiceSchemaVariableMapping.tcl to menu 'APPSubscribeMenu';

@@ -1,0 +1,27 @@
+del command 'FTRCreateLogicalFeatureContextActionLink';
+add command 'FTRCreateLogicalFeatureContextActionLink'
+	description	''
+	label	'emxConfiguration.ActionLink.CreateLogicalFeature'
+	href	'${SUITE_DIR}/LogicalFeatureCreatePreProcess.jsp?strCreationType=type_LogicalFeature&HelpMarker=emxhelplogicalfeaturecreate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Mode'		'edit'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionCreateLogicalFeature.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateLogicalFeatureContextActionLink'
+	property	'version'	value	'R421'
+;
+modify menu FTRLogicalFeatureToolbar add command FTRCreateLogicalFeatureContextActionLink order command FTRCreateLogicalFeatureContextActionLink 1;
+modify menu FTRLFContextLogicalFeatureToolbar add command FTRCreateLogicalFeatureContextActionLink order command FTRCreateLogicalFeatureContextActionLink 1;
+#channel ==>FTRLogicalFeatureToolbarFTRLFContextLogicalFeatureToolbar
+add property command_FTRCreateLogicalFeatureContextActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateLogicalFeatureContextActionLink';

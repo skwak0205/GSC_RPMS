@@ -1,0 +1,19 @@
+del menu 'RMTSpecDeleteActions';
+add menu 'RMTSpecDeleteActions'
+	description	''
+	label	'emxRequirements.ActionLink.DeleteAndRemove'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Mode'		'view'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	command	'RMTDeleteSelected'
+	command	'RMTSpecDeleteChildren'
+	command	'RMTSpecStructureRemove'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecDeleteActions'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTSpecDeleteActions on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecDeleteActions';

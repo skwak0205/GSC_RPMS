@@ -1,0 +1,27 @@
+del command 'APPRouteContentEditLifeCycleBlocks';
+add command 'APPRouteContentEditLifeCycleBlocks'
+	description	'Edit Lifecycle Blocks'
+	label	'emxComponents.EditContent.EditStateBlock'
+	href	'${COMPONENT_DIR}/emxRouteContentBlockedStateDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'575'
+	setting	'Window Width'		'575'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canEditLifecycleBlocks'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteContentEditLifeCycleBlocks'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteContentActionsToolBar add command APPRouteContentEditLifeCycleBlocks order command APPRouteContentEditLifeCycleBlocks 2;
+#channel ==>APPRouteContentActionsToolBar
+add property command_APPRouteContentEditLifeCycleBlocks on program eServiceSchemaVariableMapping.tcl to command 'APPRouteContentEditLifeCycleBlocks';

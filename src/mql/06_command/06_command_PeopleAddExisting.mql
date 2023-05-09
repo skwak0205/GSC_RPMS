@@ -1,0 +1,28 @@
+del command 'PeopleAddExisting';
+add command 'PeopleAddExisting'
+	description	'People AddExisting Command Object'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?mode=addPeopleToCompany&submitLabel=emxFramework.GlobalSearch.Done&table=AEFPersonChooserDetails&form=BPSUserSearchForm&selection=multiple&submitURL=../components/emxCommonFullSearchProcess.jsp&showInitialResults=true&fieldQueryProgram=emxCompany:getFieldQueryForCompany&srcDestRelName=relationship_Member&isTo=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'((type!="$<type_BusinessUnit>") && (type!="$<type_Department>"))'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForPeopleAddExisting'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddMember.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'PeopleAddExisting'
+	property	'version'	value	'R422'
+;
+modify menu PeopleSummaryTopActionbar add command PeopleAddExisting order command PeopleAddExisting 0;
+modify menu APPPeopleSummaryActionsToolBar add command PeopleAddExisting order command PeopleAddExisting 2;
+modify menu APPPeopleSummaryToolBar add command PeopleAddExisting order command PeopleAddExisting 4;
+#channel ==>PeopleSummaryTopActionbarAPPPeopleSummaryActionsToolBarAPPPeopleSummaryToolBar
+add property command_PeopleAddExisting on program eServiceSchemaVariableMapping.tcl to command 'PeopleAddExisting';

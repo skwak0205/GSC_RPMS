@@ -1,0 +1,11 @@
+{
+  "CVS.optionsChecker.searchEngine.notExisting.error": "必須定義搜尋引擎才能尋找值！",
+  "CVS.optionsChecker.searchEngine.notFunction.error": "搜尋引擎預期是一項功能！",
+  "CVS.optionsChecker.defaultValues.array.error": "預設值必須包含在陣列中！",
+  "CVS.optionsChecker.defaultValues.arrayObjects.error": "物件陣列預期是作為輸入的預設值！",
+  "CVS.optionsChecker.defaultValues.labelExpected.error": "預期每個預設值都有標籤！",
+  "CVS.optionsChecker.defaultValues.valueExpected.error": "預期每個預設值都有一個值！",
+  "CVS.optionsChecker.onSuggest.notFunction.error": "「onSuggest」選項預期是一項功能！",
+  "CVS.optionsChecker.onSelect.notFunction.error": "「onSelect」選項預期是一項功能！",
+  "CVS.optionsChecker.onCleanDataset.notFunction.error": "「onCleanDataset」選項預期是一項功能！"
+}

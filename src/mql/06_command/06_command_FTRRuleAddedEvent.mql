@@ -1,0 +1,23 @@
+del command 'FTRRuleAddedEvent';
+add command 'FTRRuleAddedEvent'
+	description	'Rule Added Event'
+	label	'PublishSubscribe.Event.RuleAdded'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Rule Added'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRRuleAddedEvent'
+	property	'version'	value	'R215'
+;
+modify menu PLCProductsEvents add command FTRRuleAddedEvent order command FTRRuleAddedEvent 6;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command FTRRuleAddedEvent order command FTRRuleAddedEvent 9;
+modify menu FTRConfigurationOptionSubscriptionEvents add command FTRRuleAddedEvent order command FTRRuleAddedEvent 2;
+modify menu FTRLogicalFeatureSubscriptionEvents add command FTRRuleAddedEvent order command FTRRuleAddedEvent 17;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command FTRRuleAddedEvent order command FTRRuleAddedEvent 15;
+#channel ==>PLCProductsEventsFTRConfigurationFeatureSubscriptionEventsFTRConfigurationOptionSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_FTRRuleAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRRuleAddedEvent';

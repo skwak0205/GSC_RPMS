@@ -1,0 +1,21 @@
+del command 'PARDeleteParameter';
+add command 'PARDeleteParameter'
+	description	''
+	label	'emxParameter.delete.command'
+	href	'${SUITE_DIR}/emxParameterDeleteParameters.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxParameter.delete.confirm'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Requirement Manager'
+;
+modify menu PARActionsToolbar add command PARDeleteParameter order command PARDeleteParameter 2;
+#channel ==>PARActionsToolbar
+add property command_PARDeleteParameter on program eServiceSchemaVariableMapping.tcl to command 'PARDeleteParameter';

@@ -1,0 +1,19 @@
+del command 'AEFShareToolbar';
+add command 'AEFShareToolbar'
+	description	''
+	label	''
+	href	'javascript:emailPageURL()'
+	alt	'emxNavigator.UIMenuBar.Share'
+	setting	'Target Location'		'listHidden'
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallShare.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFShareToolbar'
+	property	'version'	value	'R215'
+;
+modify menu AEFShareMenu add command AEFShareToolbar order command AEFShareToolbar 1;
+#channel ==>AEFShareMenu
+add property command_AEFShareToolbar on program eServiceSchemaVariableMapping.tcl to command 'AEFShareToolbar';

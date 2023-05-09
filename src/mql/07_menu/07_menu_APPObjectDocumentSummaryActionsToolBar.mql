@@ -1,0 +1,22 @@
+del menu 'APPObjectDocumentSummaryActionsToolBar';
+add menu 'APPObjectDocumentSummaryActionsToolBar'
+	description	''
+	label	'emxComponents.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPContentSummaryCreateNew'
+	command	'APPAddExistingDocumentActionLink'
+	command	'APPSeparator'
+	command	'APPECDocumentSummaryDownloadActionLink'
+	command	'APPECDocumentSummaryCheckOutActionLink'
+	command	'APPECDocumentRemove'
+	command	'APPECDocumentDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPObjectDocumentSummaryActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPObjectDocumentSummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPObjectDocumentSummaryActionsToolBar';

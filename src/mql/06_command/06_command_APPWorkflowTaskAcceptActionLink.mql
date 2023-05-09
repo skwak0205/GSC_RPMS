@@ -1,0 +1,18 @@
+del command 'APPWorkflowTaskAcceptActionLink';
+add command 'APPWorkflowTaskAcceptActionLink'
+	description	'Workflow task accept action link'
+	label	'emxComponents.Command.Accept'
+	href	'${COMPONENT_DIR}/emxWorkflowTaskAction.jsp?action=accept'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current=="Started") && ((owner.isaperson != true && owner==context.user.assignment) || (owner.isaperson==true && owner==context.user.name))'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowTaskAcceptActionLink'
+	property	'version'	value	'R214'
+;
+modify menu APPWorkflowTaskPropertiesActionToolbar add command APPWorkflowTaskAcceptActionLink order command APPWorkflowTaskAcceptActionLink 2;
+#channel ==>APPWorkflowTaskPropertiesActionToolbar
+add property command_APPWorkflowTaskAcceptActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowTaskAcceptActionLink';

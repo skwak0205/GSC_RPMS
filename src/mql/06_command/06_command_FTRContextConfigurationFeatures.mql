@@ -1,0 +1,21 @@
+del command 'FTRContextConfigurationFeatures';
+add command 'FTRContextConfigurationFeatures'
+	description	''
+	label	'emxProduct.Tree.ConfigurationOptions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?toolbar=FTRConfigurationFeaturesToolbar,FTRProductConfigurationFeatureCustomFilterToolbar&expandProgram=ConfigurationFeature:getConfigurationFeatureStructure&table=FTRContextConfigurationFeatureTable&editRootNode=false&selection=multiple&featureType=Marketing&editLink=true&mode=edit&editRelationship=relationship_ConfigurationFeatures,relationship_ConfigurationOptions,relationship_MandatoryConfigurationFeatures,relationship_VariesBy,relationship_InactiveVariesBy&header=emxConfiguration.Heading.ConfigFeatures&HelpMarker=emxhelpconfigurationfeaturelist&massPromoteDemote=false&objectCompare=false&postProcessJPO=ConfigurationFeatureBase:refreshTree'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeDisabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRContextConfigurationFeatures'
+	property	'version'	value	'R418'
+;
+modify menu type_ConfigurationFeature add command FTRContextConfigurationFeatures order command FTRContextConfigurationFeatures 1;
+modify menu Msoitype_Features add command FTRContextConfigurationFeatures order command FTRContextConfigurationFeatures 1;
+#channel ==>type_ConfigurationFeatureMsoitype_Features
+add property command_FTRContextConfigurationFeatures on program eServiceSchemaVariableMapping.tcl to command 'FTRContextConfigurationFeatures';

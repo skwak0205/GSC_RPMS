@@ -1,0 +1,19 @@
+del menu 'APPPersonDepartmentSummaryActionsToolBar';
+add menu 'APPPersonDepartmentSummaryActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasAccessForCompanyNodes'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPSeparator'
+	command	'DepartmentRemoveSelected'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPPersonDepartmentSummaryActionsToolBar'
+	property 'version'	value	'R419'
+;
+add property menu_APPPersonDepartmentSummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPPersonDepartmentSummaryActionsToolBar';

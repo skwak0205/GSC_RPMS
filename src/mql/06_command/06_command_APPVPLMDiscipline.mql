@@ -1,0 +1,10 @@
+del command 'APPVPLMDiscipline';
+add command 'APPVPLMDiscipline'
+	description	'Define a set of disciplines'
+	label	'emxPlmOnline.label.Discipline'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminDisciplineDetails.jsp'
+	alt	'emxPlmOnline.label.Discipline'
+	setting	'Registered Suite'		'VPLMAdministration'
+;
+#channel ==>ResourcesChannel
+add property command_APPVPLMDiscipline on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMDiscipline';

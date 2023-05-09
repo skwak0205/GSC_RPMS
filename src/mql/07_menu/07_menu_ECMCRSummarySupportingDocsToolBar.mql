@@ -1,0 +1,18 @@
+del menu 'ECMCRSummarySupportingDocsToolBar';
+add menu 'ECMCRSummarySupportingDocsToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'ECMCRSummarySupportingDocs_Headerlink_0'
+	command	'ECMCRSummarySupportingDocs_Headerlink_1'
+	command	'APPCommonDocumentDownloadActionLink'
+	command	'APPDocumentSummaryCheckOutActionLink'
+	command	'APPDocumentRemove'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMCRSummarySupportingDocsToolBar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMCRSummarySupportingDocsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'ECMCRSummarySupportingDocsToolBar';

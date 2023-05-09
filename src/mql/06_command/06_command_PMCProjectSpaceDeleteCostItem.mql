@@ -1,0 +1,26 @@
+del command 'PMCProjectSpaceDeleteCostItem';
+add command 'PMCProjectSpaceDeleteCostItem'
+	description	'Command for deleting the Cost Item'
+	label	'emxProgramCentral.Button.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralCommonDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[delete] == true)'
+	setting	'Selection'		'multiple'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ConfirmDelete'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpaceDeleteCostItem'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectSpaceCostItemToolBarActions add command PMCProjectSpaceDeleteCostItem order command PMCProjectSpaceDeleteCostItem 0;
+#channel ==>PMCProjectSpaceCostItemToolBarActions
+add property command_PMCProjectSpaceDeleteCostItem on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpaceDeleteCostItem';

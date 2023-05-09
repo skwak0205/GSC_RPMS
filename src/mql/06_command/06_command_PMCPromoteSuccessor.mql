@@ -1,0 +1,23 @@
+del command 'PMCPromoteSuccessor';
+add command 'PMCPromoteSuccessor'
+	description	''
+	label	'emxProgramCentral.Schedule.PromoteSuccessor'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=promoteSuccessor'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.Kindof[Project Space] && (current == Assign || current == Active) && (current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'checkIfPromoteReadyTaskCommandVisible'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionMultipleTaskApproval.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCPromoteSuccessor'
+	property	'version'	value	'R424.HF2'
+;
+modify menu PMCWBSToolBar add command PMCPromoteSuccessor order command PMCPromoteSuccessor 17;
+#channel ==>PMCWBSToolBar
+add property command_PMCPromoteSuccessor on program eServiceSchemaVariableMapping.tcl to command 'PMCPromoteSuccessor';

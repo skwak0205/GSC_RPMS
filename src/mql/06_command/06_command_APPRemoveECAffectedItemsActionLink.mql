@@ -1,0 +1,24 @@
+del command 'APPRemoveECAffectedItemsActionLink';
+add command 'APPRemoveECAffectedItemsActionLink'
+	description	''
+	label	'emxComponents.Common.Remove'
+	href	'${SUITE_DIR}/emxEngineeringChangeUtil.jsp?mode=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showAddRemoveAffectedItemsLink'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	setting	'Access Mask'		'ToDisconnect'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRemoveECAffectedItemsActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECAffectedItemsListActionsToolBar add command APPRemoveECAffectedItemsActionLink order command APPRemoveECAffectedItemsActionLink 0;
+#channel ==>APPECAffectedItemsListActionsToolBar
+add property command_APPRemoveECAffectedItemsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRemoveECAffectedItemsActionLink';

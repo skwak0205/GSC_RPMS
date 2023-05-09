@@ -1,0 +1,21 @@
+del command 'RMTSearchDecisionsStep2Command';
+add command 'RMTSearchDecisionsStep2Command'
+	description	'Search for existing Decisions'
+	label	'emxRequirements.Label.SearchDecisionStep2'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxRequirementSearchBase:getDecisions&table=RMTSearchDecisionsTable&form=RMTSearchDecisionsForm&CommandName=RMTSearchDecisionsStep2Command&sortColumnName=Name&header=emxRequirements.Label.SearchResultDecisionStep2'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSearchDecisionsStep2Command'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTSearchDecisionsStep2Command on program eServiceSchemaVariableMapping.tcl to command 'RMTSearchDecisionsStep2Command';

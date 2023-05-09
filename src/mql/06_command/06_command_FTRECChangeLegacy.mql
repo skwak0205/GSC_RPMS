@@ -1,0 +1,14 @@
+del command 'FTRECChangeLegacy';
+add command 'FTRECChangeLegacy'
+	description	'FTRECChangeLegacy'
+	label	'emxProduct.Table.EngChg'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'searchType'		'type_EngineeringChange'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	property	'version'	value	'R418'
+;
+modify menu ECMChangeLegacyMenu add command FTRECChangeLegacy order command FTRECChangeLegacy 0;
+#channel ==>ECMChangeLegacyMenu
+add property command_FTRECChangeLegacy on program eServiceSchemaVariableMapping.tcl to command 'FTRECChangeLegacy';

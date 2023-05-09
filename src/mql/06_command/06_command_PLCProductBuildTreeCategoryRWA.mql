@@ -1,0 +1,23 @@
+del command 'PLCProductBuildTreeCategoryRWA';
+add command 'PLCProductBuildTreeCategoryRWA'
+	description	''
+	label	'emxProductLine.CategoryTabMenu.Builds'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCMyDeskBuildList&header=emxProduct.Heading.BuildContext&selection=multiple&program=emxBuild:getOwnedProductBuilds,emxBuild:getAllProductBuilds&programLabel=emxProduct.Filter.Owned,emxProduct.Filter.All&topActionbar=PLCProductBuildListTopActionBar&bottomActionbar=PLCBuildListBottomActionBar&sortColumnName=Name&HelpMarker=emxhelpbuildslist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'hideEditLink'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Image'		'${COMMON_DIR}/iconSmallSoftwareBuild.gif'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductBuildTreeCategory'
+	property	'version'	value	'R419'
+;
+#channel ==>PLCPlanning
+add property command_PLCProductBuildTreeCategoryRWA on program eServiceSchemaVariableMapping.tcl to command 'PLCProductBuildTreeCategoryRWA';

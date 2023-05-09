@@ -1,0 +1,17 @@
+del channel 'CFFConfigurationContext';
+add channel 'CFFConfigurationContext'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Effectivity'
+	setting		'ChannelID'		'1'
+	command 	'CFFConfigurationContext'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFConfigurationContext'
+	property	'version'	value	'R214'
+;
+#portal ==>CFFConfigurationCriteria
+add property channel_CFFConfigurationContext on program eServiceSchemaVariableMapping.tcl to channel 'CFFConfigurationContext';

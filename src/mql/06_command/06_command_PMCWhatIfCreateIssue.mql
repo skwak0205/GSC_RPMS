@@ -1,0 +1,25 @@
+del command 'PMCWhatIfCreateIssue';
+add command 'PMCWhatIfCreateIssue'
+	description	'PMCCompare'
+	label	'emxProgramCentral.Experiment.Create'
+	href	'${COMMON_DIR}/emxCreate.jsp?typeChooser=true&SelectType=single&ReloadOpener=true&type=type_Issue&nameField=both&autoNameChecked=true&header=ProjectIssue&policy=policy_Issue&form=PMCWhatIfIssueForm&isContinuous=false&HelpMarker=emxhelpqualitycreatedialog&postProcessJPO=emxWhatIf:createIssueWithRoute&submitAction=doNothing&postProcessURL=${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=refreshStructureExperiment'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current!= Complete && current!= Archive && current!= Cancel'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallIssue.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfCreateIssue'
+	property	'version'	value	'R422'
+;
+modify menu PMCWhatIfProjectChangeActions add command PMCWhatIfCreateIssue order command PMCWhatIfCreateIssue 1;
+#channel ==>PMCWhatIfProjectChangeActions
+add property command_PMCWhatIfCreateIssue on program eServiceSchemaVariableMapping.tcl to command 'PMCWhatIfCreateIssue';

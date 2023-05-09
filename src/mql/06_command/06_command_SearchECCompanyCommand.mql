@@ -1,0 +1,16 @@
+del command 'SearchECCompanyCommand';
+add command 'SearchECCompanyCommand'
+	description	'EC Owner Company Find Command Object'
+	label	'emxComponents.Command.SearchCompany'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxCommonEngineeringChange:getCompanies&table=ECSearchCompanyTable&form=ECSearchCompanyForm&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'SearchECCompanyCommand'
+	property	'version'	value	'10-5'
+;
+modify menu APPECSearchAddExistingChooser add command SearchECCompanyCommand order command SearchECCompanyCommand 0;
+#channel ==>APPECSearchAddExistingChooser
+add property command_SearchECCompanyCommand on program eServiceSchemaVariableMapping.tcl to command 'SearchECCompanyCommand';

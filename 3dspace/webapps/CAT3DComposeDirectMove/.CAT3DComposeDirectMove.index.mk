@@ -1,0 +1,9 @@
+m|CAT3DComposeWebUX\CAT3DComposeDirectMove.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.22295|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\CAT3DComposeDirectMove\CAT3DComposeDirectMove.js|1666424885|19024
+s|CAT3DComposeWebUX\CAT3DComposeDirectMove.mweb\src\CAT3DComposeDirectMove.js|1664874436|49415
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

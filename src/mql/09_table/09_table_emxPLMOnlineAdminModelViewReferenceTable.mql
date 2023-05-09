@@ -1,0 +1,29 @@
+del table 'emxPLMOnlineAdminModelViewReferenceTable' system;
+add table 'emxPLMOnlineAdminModelViewReferenceTable' system
+column #1
+	name	'Name'
+	label	'emxPlmOnline.label.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Auto Filter'		'true'
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'fillReferenceOrInstanceColumn'
+	setting	'program'		'emxPLMOnlineAdminModelViewProgram'
+column #2
+	name	'Desription'
+	label	'emxFramework.Basic.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'fillReferenceDescription'
+	setting	'program'		'emxPLMOnlineAdminModelViewProgram'
+;
+add property table_emxPLMOnlineAdminModelViewReferenceTable on program eServiceSchemaVariableMapping.tcl to table 'emxPLMOnlineAdminModelViewReferenceTable' system;

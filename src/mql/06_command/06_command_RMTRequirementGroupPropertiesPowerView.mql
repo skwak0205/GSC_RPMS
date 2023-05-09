@@ -1,0 +1,16 @@
+del command 'RMTRequirementGroupPropertiesPowerView';
+add command 'RMTRequirementGroupPropertiesPowerView'
+	description	''
+	label	'emxRequirements.Common.RMTPropertiesPowerView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=RMTRequirementGroupProperties'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementGroupPropertiesPowerView'
+	property	'version'	value	'V6R2017x'
+;
+modify menu type_RequirementGroup add command RMTRequirementGroupPropertiesPowerView order command RMTRequirementGroupPropertiesPowerView 1;
+#channel ==>type_RequirementGroup
+add property command_RMTRequirementGroupPropertiesPowerView on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementGroupPropertiesPowerView';

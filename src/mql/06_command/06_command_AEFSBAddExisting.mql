@@ -1,0 +1,19 @@
+del command 'AEFSBAddExisting';
+add command 'AEFSBAddExisting'
+	description	''
+	label	''
+	href	'javascript:addExistingChildRow()'
+	alt	'emxFramework.FreezePane.SBEditActions.AddNewRow'
+	setting	'Registered Suite'		'Framework'
+	setting	'Mode'		'edit'
+	setting	'Access Function'		'accessEditExisting'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBAddExisting'
+	property	'version'	value	'V6R2010x.HF1'
+;
+#channel ==>
+add property command_AEFSBAddExisting on program eServiceSchemaVariableMapping.tcl to command 'AEFSBAddExisting';

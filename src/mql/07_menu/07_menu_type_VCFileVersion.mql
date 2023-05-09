@@ -1,0 +1,14 @@
+del menu 'type_VCFileVersion';
+add menu 'type_VCFileVersion'
+	description	''
+	label	'$<revision>'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxVCDocumentUI:getVCFileVersions&table=APPVCFileVersionsSummary&header=emxComponents.Common.DocumentVersionsPageHeading&HelpMarker=emxhelpsdfaversionsummarypage&FilterFramePage=${COMPONENT_DIR}/emxCommonDocumentCheckoutUtil.jsp&FilterFrameSize=1'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_VCFileVersion'
+	property 'version'	value	'10-7'
+;
+add property menu_type_VCFileVersion on program eServiceSchemaVariableMapping.tcl to menu 'type_VCFileVersion';

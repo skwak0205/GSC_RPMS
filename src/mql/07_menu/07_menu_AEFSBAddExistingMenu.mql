@@ -1,0 +1,20 @@
+del menu 'AEFSBAddExistingMenu';
+add menu 'AEFSBAddExistingMenu'
+	description	''
+	label	''
+	href	'javascript:addExistingChildRow()'
+	alt	'emxFramework.FreezePane.SBEditActions.AddNewRow'
+	setting	'Registered Suite'		'Framework'
+	setting	'Mode'		'edit'
+	setting	'Access Function'		'accessEditExisting'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	command	'AEFSBInsertExistingRowBefore'
+	command	'AEFSBInsertExistingRowAfter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFSBAddExistingMenu'
+	property 'version'	value	'R213'
+;
+add property menu_AEFSBAddExistingMenu on program eServiceSchemaVariableMapping.tcl to menu 'AEFSBAddExistingMenu';

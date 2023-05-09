@@ -1,0 +1,23 @@
+{
+  "TYPES": "Typen",
+  "EVENTS": "Ereignisse",
+  "HEADING_SHOW_MORE": "Suchen Sie nach dem Typ oder den Typen, für den/die Sie Ereigniseinstellungen konfigurieren möchten, und verwenden Sie die Umschaltfläche zum Aktivieren/Deaktivieren. Verwenden Sie die Schaltfläche „Speichern“, um die Änderungen zu speichern (dies kann länger dauern), und nutzen Sie die Schaltfläche „Abbrechen“, um die letzten Änderungen rückgängig zu machen.",
+  "HEADING_SHOW_HEADER": "Ereignisaktivierungskonfiguration",
+  "SAVE": "Speichern",
+  "CANCEL": "Abbrechen",
+  "ERROR": "Fehler",
+  "REFRESH": "Aktualisieren",
+  "WARNING": "Warnung",
+  "NOTIFICATION_SUBMIT_MESSAGE": "Erfolgreich gespeichert ...",
+  "NOTIFICATION_CANCEL_MESSAGE": "Erfolgreich abgebrochen ...",
+  "NOTIFICATION_FAILURE_MESSAGE": "Ereigniseinstellungen konnten nicht geändert werden.",
+  "NOTIFICATION_CANCEL_MESSAGE_REASON": "Ereigniseinstellungen konnten nicht geändert werden. Grund: ",
+  "NOTIFICATION_VIEW_MESSAGE": "Ereigniseinstellungen konnten nicht abgerufen werden.",
+  "NOTIFICATION_VIEW_MESSAGE_REASON": "Ereigniseinstellungen konnten nicht abgerufen werden. Grund: ",
+  "NOTIFICATION_REFRESH_MESSAGE": "Erfolgreich aktualisiert ...",
+  "LOADINGMESSAGE": "   Wird geladen ...",
+  "NOAGENTERROR": "Integrations-Agent zur Nachrichtenveröffentlichung wurde nicht erstellt. Stellen Sie sicher, dass ein Integrations-Agent erstellt wurde.",
+  "NOCONFIGERROR": "Ereigniskonfiguration konnte nicht gefunden werden oder ist fehlerhaft. Ändern Sie die Ereigniskonfiguration, um fortzufahren.",
+  "EVPTITLE": "Administration von öffentlichen Ereignissen",
+  "PREF_TENANT": "3DEXPERIENCE Platform"
+}

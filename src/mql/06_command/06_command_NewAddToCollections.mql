@@ -1,0 +1,20 @@
+del command 'NewAddToCollections';
+add command 'NewAddToCollections'
+	description	''
+	label	'emxFramework.Collections.NewAddToCollections'
+	href	'${COMMON_DIR}/emxCollectionsSelectCreateDialogFS.jsp'
+	alt	'emxFramework.Collections.NewAddToCollections'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'NewAddToCollections'
+	property	'version'	value	'R423.HF3'
+;
+modify menu CollectionMenu add command NewAddToCollections order command NewAddToCollections 0;
+#channel ==>CollectionMenu
+add property command_NewAddToCollections on program eServiceSchemaVariableMapping.tcl to command 'NewAddToCollections';

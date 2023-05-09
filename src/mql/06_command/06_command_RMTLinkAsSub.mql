@@ -1,0 +1,23 @@
+del command 'RMTLinkAsSub';
+add command 'RMTLinkAsSub'
+	description	''
+	label	'emxRequirements.Command.LinkAsSub'
+	href	'javascript:RMTLinkAsSub_onClick()'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Row Select'		'multi'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTLinkAsSub'
+	property	'version'	value	'R422'
+;
+modify menu RMTMenuLinkSubDerived add command RMTLinkAsSub order command RMTLinkAsSub 0;
+#channel ==>RMTMenuLinkSubDerived
+add property command_RMTLinkAsSub on program eServiceSchemaVariableMapping.tcl to command 'RMTLinkAsSub';

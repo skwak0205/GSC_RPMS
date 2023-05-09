@@ -1,0 +1,26 @@
+del command 'APPDeleteThisVersion';
+add command 'APPDeleteThisVersion'
+	description	'Remove Selected File Active Version'
+	label	'emxComponents.Command.DeleteVersion'
+	href	'javascript:window.deleteThisVersion_onclick()'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_SuspendVersioning].value> != True && current.access[checkin] == true) && ($<attribute[attribute_IsVersionObject].value> != True) && (vcfile == FALSE && vcfolder == FALSE) && (current.access[todisconnect] == true )&& (revision==last) && (current.access[modify] == true)'
+	setting	'Access Function'		'allowFileVersioning'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	user	'3DSRestrictedContributor'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteThisVersion'
+	property	'version'	value	'R424.HF3'
+;
+modify menu APPDocumentActionsToolBar add command APPDeleteThisVersion order command APPDeleteThisVersion 18;
+modify menu TMCDocumentsActionToolbar add command APPDeleteThisVersion order command APPDeleteThisVersion 17;
+modify menu FMADocumentsToolbar add command APPDeleteThisVersion order command APPDeleteThisVersion 4;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbarFMADocumentsToolbar
+add property command_APPDeleteThisVersion on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteThisVersion';

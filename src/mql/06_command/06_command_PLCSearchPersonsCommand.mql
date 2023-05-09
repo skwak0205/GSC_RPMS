@@ -1,0 +1,17 @@
+del command 'PLCSearchPersonsCommand';
+add command 'PLCSearchPersonsCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindPerson'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxProductSearch:getPersons&table=PLCSearchPersonsTable&form=PLCSearchPersonsForm&HelpMarker=emxhelpsearchresults&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Help Marker'		'emxhelpselectuser'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchPersonsCommand'
+	property	'version'	value	'R418'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchPersonsCommand order command PLCSearchPersonsCommand 36;
+#channel ==>SearchAddExistingChooserMenu
+add property command_PLCSearchPersonsCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchPersonsCommand';

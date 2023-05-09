@@ -1,0 +1,24 @@
+del command 'PMCProjectSpaceStructure';
+add command 'PMCProjectSpaceStructure'
+	description	'Command for Workspace Structure View'
+	label	'emxProgramCentral.Common.Projects'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Structure Program'		'emxProjectSpace'
+	setting	'Submit'		'true'
+	setting	'Structure Function'		'getProjectSpaceFolderList'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpaceStructure'
+	property	'version'	value	'R422'
+;
+modify menu PMCtype_ProjectSpaceStructure add command PMCProjectSpaceStructure order command PMCProjectSpaceStructure 0;
+#channel ==>PMCtype_ProjectSpaceStructure
+add property command_PMCProjectSpaceStructure on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpaceStructure';

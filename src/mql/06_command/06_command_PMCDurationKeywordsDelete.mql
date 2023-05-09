@@ -1,0 +1,25 @@
+del command 'PMCDurationKeywordsDelete';
+add command 'PMCDurationKeywordsDelete'
+	description	''
+	label	'emxProgramCentral.Common.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralDurationKeywordsUtil.jsp?FunctionMode=delete'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessDurationKeywordView'
+	setting	'Access Program'		'emxDurationKeywords'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxProgramCentral.DurationKeywords.DeleteConfirm'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDurationKeywordsDelete'
+	property	'version'	value	'R422'
+;
+modify menu PMCDurationKeywordsToolBarActions add command PMCDurationKeywordsDelete order command PMCDurationKeywordsDelete 0;
+#channel ==>PMCDurationKeywordsToolBarActions
+add property command_PMCDurationKeywordsDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCDurationKeywordsDelete';

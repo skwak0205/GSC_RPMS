@@ -1,0 +1,26 @@
+del command 'RMTTraceabilityRequirementReport';
+add command 'RMTTraceabilityRequirementReport'
+	description	'Launches the Requirement-Requirement Traceabilty Report'
+	label	'emxRequirements.ActionLink.TraceabilityReport.Requirement'
+	href	'${SUITE_DIR}/TraceabilityOptionsFS.jsp?reportType=Requirement&HelpMarker=emxhelptraceabilityreqreq&HelpMarker2=emxhelptraceabilityreqreqreport'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTraceabilityRequirementReport'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeTraceability add command RMTTraceabilityRequirementReport order command RMTTraceabilityRequirementReport 1;
+#channel ==>RMTSpecTreeTraceabilityRMTTraceabilityRMTSpecificationsTraceabilityRMTSpecificationsReqTraceability
+add property command_RMTTraceabilityRequirementReport on program eServiceSchemaVariableMapping.tcl to command 'RMTTraceabilityRequirementReport';

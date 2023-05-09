@@ -1,0 +1,28 @@
+del command 'PLCRemoveBuildActionLink';
+add command 'PLCRemoveBuildActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/BuildUtil.jsp?mode=Disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'checkAccessForProdConfig'
+	setting	'Access Program'		'emxBuild'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconSmallTrashCan.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCRemoveBuildActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCProductConfigurationBuildTopActionBar add command PLCRemoveBuildActionLink order command PLCRemoveBuildActionLink 0;
+modify menu PLCProductBuildListTopActionBar add command PLCRemoveBuildActionLink order command PLCRemoveBuildActionLink 0;
+modify menu PLCProductBuildListBottomActionBar add command PLCRemoveBuildActionLink order command PLCRemoveBuildActionLink 1;
+modify menu FTRProductConfigurationBuildTopActionBar add command PLCRemoveBuildActionLink order command PLCRemoveBuildActionLink 0;
+modify menu FTRProductConfigurationBuildBottomActionBar add command PLCRemoveBuildActionLink order command PLCRemoveBuildActionLink 1;
+#channel ==>PLCProductConfigurationBuildTopActionBarPLCProductBuildListTopActionBarPLCProductBuildListBottomActionBarFTRProductConfigurationBuildTopActionBarFTRProductConfigurationBuildBottomActionBar
+add property command_PLCRemoveBuildActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCRemoveBuildActionLink';

@@ -1,0 +1,16 @@
+del command 'APPMeetingAgenda';
+add command 'APPMeetingAgenda'
+	description	''
+	label	'emxComponents.Common.AgendaItems'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPMeetingAgendaSummary&sortColumnName=Sequence Number&program=emxMeeting:getMeetingAgendas&editLink=true&toolbar=APPAgendaItemToolbar&selection=multiple&freezePane=SequenceNumber,Topic&header=emxComponents.Heading.AgendaItems&customize=false&showClipboard=false&objectCompare=false&HelpMarker=emxhelpagendaitems&HasValidateAll=true&preProcessJPO=emxMeeting:meetingAgendaItemEditPreProcess&postProcessJPO=emxMeeting:meetingAgendaItemEditPostProcess'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingAgenda'
+	property	'version'	value	'R424.HF5'
+;
+modify menu type_Meeting add command APPMeetingAgenda order command APPMeetingAgenda 1;
+#channel ==>type_Meeting
+add property command_APPMeetingAgenda on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingAgenda';

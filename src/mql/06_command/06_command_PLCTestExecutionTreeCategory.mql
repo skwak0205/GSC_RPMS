@@ -1,0 +1,17 @@
+del command 'PLCTestExecutionTreeCategory';
+add command 'PLCTestExecutionTreeCategory'
+	description	'Test Execution tree category command'
+	label	'emxProduct.Tree.TestExecution'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCTestExecutionList&program=emxTestExecution:getRelatedTestExecutions&header=emxProduct.Heading.TestExecutionWithoutRevision&selection=multiple&toolbar=PLCTestExecutionToolbar&sortColumnName=Name&HelpMarker=emxhelptestexecutionlist&preProcessJPO=emxTestExecution:setReadOnlyForTE&editLink=true'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestExecutionTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_TestCase add command PLCTestExecutionTreeCategory order command PLCTestExecutionTreeCategory 9;
+modify menu type_EngineeringChange add command PLCTestExecutionTreeCategory order command PLCTestExecutionTreeCategory 0;
+#channel ==>type_TestCasetype_EngineeringChange
+add property command_PLCTestExecutionTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCTestExecutionTreeCategory';

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd ">
+
+  <ds:service name="e6w.workcalendars">
+        <ds:license products="ENO_CBS_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.workcalendar.WorkCalendarService" function="getCompanyWorkCalendars" returnedData="idsAndData" />
+            <ds:updatejpo classname="com.dassault_systemes.enovia.workcalendar.WorkCalendarService" function="updateWorkCalendars" processMultiple="true"/>
+        </ds:data>
+
+        <ds:field name="name"><ds:selectable expression="name" type="bus" autosave="true" createOperation="required" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="description"><ds:selectable expression="description" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"><ds:selectable expression="originated" type="bus" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="modified"><ds:selectable expression="modified" type="bus" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/>
+            <ds:sort type="date" direction="descending" order="1" />
+        </ds:field>
+        <ds:field name="modifyAccess"><ds:selectable expression="current.access[modify,changename]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="deleteAccess"><ds:selectable expression="current.access[delete]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="ownerFullName"><ds:selectable expression="owner" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="company"><ds:selectable expression="to[Company Calendar].from.name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="workHoursPerDay"><ds:selectable expression="attribute[Working Time Per Day]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="defaultWorkingHours"><ds:selectable createOperation="yes" modifyOperation="no" readOperation="no"/></ds:field>
+        <ds:field name="typeicon"><ds:image source="businessType" size="icon"/></ds:field>
+          
+        <ds:ref-subservice name="workweek" referenceName="e6w.workcalendarWorkWeek" includeByDefault="yes">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.workcalendar.WorkCalendarService" function="getWorkCalendarWorkWeek" returnedData="idsAndData" />
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="exceptions" referenceName="e6w.workcalendarExceptions" includeByDefault="yes">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.workcalendar.WorkCalendarService" function="getWorkCalendarExceptions" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.workcalendar.WorkCalendarService" function="updateWorkCalendarExceptions" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+  
+        <ds:ref-subservice name="locations" referenceName="e6w.workcalendarLocations" includeByDefault="no">
+          <ds:data>
+              <ds:expand relationshipPattern="Calendar" getTo="true"/>
+              <ds:updatejpo classname="com.dassault_systemes.enovia.workcalendar.WorkCalendarService" function="updateWorkCalendarLocations" processMultiple="true"/>
+          </ds:data>
+        </ds:ref-subservice>
+  </ds:service>
+
+  <ds:service name="e6w.workcalendarWorkWeek">
+      <ds:data>
+          <ds:print/>
+      </ds:data>
+
+      <ds:field name="dayOfWeek" description="The day of the week for setting work day type."><ds:selectable expression="attribute[Day Of Week]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="no" readOperation="yes"/>     
+        <ds:range>
+          <ds:item value="Sunday" display="Sunday"/>
+          <ds:item value="Monday" display="Monday"/>
+          <ds:item value="Tuesday" display="Tuesday"/>
+          <ds:item value="Wednesday" display="Wednesday"/>
+          <ds:item value="Thursday" display="Thursday"/>
+          <ds:item value="Friday" display="Friday"/>
+          <ds:item value="Saturday" display="Saturday"/>
+        </ds:range>      
+      </ds:field>
+      <ds:field name="workdayType"><ds:selectable expression="attribute[Calendar Exception Type]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        <ds:range>
+          <ds:item value="Working" display="Working"/>
+          <ds:item value="Non Working" display="Non Working"/>
+        </ds:range>
+      </ds:field>
+      <ds:field name="workingHours" description="Applicable if the work day type is working"><ds:selectable expression="attribute[attribute_WorkingTimes]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="trans_dayOfWeekIndex" includeByDefault="always" description="just to remove field added to the payload."><ds:selectable expression="attribute[Title]" type="rel" typeTarget="bus" transient="true"/></ds:field>
+  </ds:service>
+
+  <ds:service name="e6w.workcalendarExceptions">
+      <ds:data>
+         <ds:jpo classname="com.dassault_systemes.enovia.workcalendar.WorkCalendarService" function="getWorkCalendarExceptionsInfo" returnedData="idsAndData" />
+      </ds:data>
+      
+      <ds:field name="title"><ds:selectable expression="attribute[Title]" type="rel" typeTarget="bus" createOperation="required" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="notes"><ds:selectable expression="attribute[Notes]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="modified"><ds:selectable expression="modified" type="rel" typeTarget="bus" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+      <ds:field name="exceptionType"><ds:selectable expression="attribute[Calendar Exception Type]" type="rel" typeTarget="bus" createOperation="required" modifyOperation="no" readOperation="yes"/>
+        <ds:range>
+          <ds:item value="Working" display="Working"/>
+          <ds:item value="Non Working" display="Non Working"/>
+        </ds:range>
+      </ds:field>
+      <ds:field name="startDate"><ds:selectable expression="attribute[Start Date]" type="rel" typeTarget="bus" createOperation="required" modifyOperation="yes" readOperation="yes" format="isodate"/></ds:field>
+      <ds:field name="endDate"><ds:selectable expression="attribute[End Date]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes" format="isodate"/></ds:field>
+      <ds:field name="workingHours" description="Applicable if the exception type is working"><ds:selectable expression="attribute[attribute_WorkingTimes]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      
+      <ds:field name="frequency"><ds:selectable expression="attribute[Frequency]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        <ds:range>
+          <ds:item value="Daily" display="Daily"/>
+          <ds:item value="Weekly" display="Weekly"/>
+          <ds:item value="Monthly" display="Monthly"/>
+          <ds:item value="Yearly" display="Yearly"/>
+        </ds:range>
+      </ds:field>
+      <ds:field name="daysOfWeek" description="Relevant for Weekly frequency, comma separated if multiple days required."><ds:selectable expression="attribute[Days Of Week]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        <ds:range>
+          <ds:item value="Sun" display="Sun"/>
+          <ds:item value="Mon" display="Mon"/>
+          <ds:item value="Tue" display="Tue"/>
+          <ds:item value="Wed" display="Wed"/>
+          <ds:item value="Thu" display="Thu"/>
+          <ds:item value="Fri" display="Fri"/>
+          <ds:item value="Sat" display="Sat"/>
+        </ds:range>      
+      </ds:field>
+      <ds:field name="weekOfMonth" description="Relevant for Monthly or Yearly frequency."><ds:selectable expression="attribute[Week Of Month]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        <ds:range>
+          <ds:item value="First" display="First"/>
+          <ds:item value="Second" display="Second"/>
+          <ds:item value="Third" display="Third"/>
+          <ds:item value="Fourth" display="Fourth"/>
+          <ds:item value="Last" display="Last"/>
+        </ds:range>      
+      </ds:field>
+      <ds:field name="dayOfWeek" description="May be relevant for Monthly or Yearly frequency when week of month specified."><ds:selectable expression="attribute[Day Of Week]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        <ds:range>
+          <ds:item value="Sunday" display="Sunday"/>
+          <ds:item value="Monday" display="Monday"/>
+          <ds:item value="Tuesday" display="Tuesday"/>
+          <ds:item value="Wednesday" display="Wednesday"/>
+          <ds:item value="Thursday" display="Thursday"/>
+          <ds:item value="Friday" display="Friday"/>
+          <ds:item value="Saturday" display="Saturday"/>
+        </ds:range>      
+      </ds:field>
+      <ds:field name="dayOfMonth" description="Relevant for Monthly or Yearly frequency."><ds:selectable expression="attribute[Day Of Month]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+      <ds:field name="monthOfYear" description="Relevant for Yearly frequency."><ds:selectable expression="attribute[Month Of Year]" type="rel" typeTarget="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        <ds:range>
+          <ds:item value="January" display="January"/>
+          <ds:item value="February" display="February"/>
+          <ds:item value="March" display="March"/>
+          <ds:item value="April" display="April"/>
+          <ds:item value="May" display="May"/>
+          <ds:item value="June" display="June"/>
+          <ds:item value="July" display="July"/>
+          <ds:item value="August" display="August"/>
+          <ds:item value="September" display="September"/>
+          <ds:item value="October" display="October"/>
+          <ds:item value="November" display="November"/>
+          <ds:item value="December" display="December"/>
+        </ds:range>      
+      </ds:field>
+
+      <ds:field name="nextOccurrence"       description="The Next Occurrence of excpetion" includeByDefault="no(private)">
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.workcalendar.WorkCalendarService"      function="getNextOccurrenceOfExcpetion"        localInvokation="java"></ds:fieldjpo>
+        </ds:field>
+
+  </ds:service>
+
+  <ds:service name="e6w.workcalendarLocations">
+      <ds:data>
+          <ds:print />
+      </ds:data>
+      <ds:field name="name"><ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+  </ds:service>
+
+</ds:services>
+

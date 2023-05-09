@@ -1,0 +1,19 @@
+del command 'ObjectComparePivotView';
+add command 'ObjectComparePivotView'
+	description	'Object Compare Pivot View'
+	label	'emxFramework.Button.Pivot'
+	href	'pivotTable()'
+	alt	'emxFramework.Button.Pivot'
+	setting	'Target Location'		'pagecontent'
+	setting	'Registered Suite'		'Framework'
+	setting	'Javascript'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPivotTable.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'ObjectComparePivotView'
+	property	'version'	value	'R417'
+;
+modify menu ObjectComparePivotToolBar add command ObjectComparePivotView order command ObjectComparePivotView 0;
+#channel ==>ObjectComparePivotToolBar
+add property command_ObjectComparePivotView on program eServiceSchemaVariableMapping.tcl to command 'ObjectComparePivotView';

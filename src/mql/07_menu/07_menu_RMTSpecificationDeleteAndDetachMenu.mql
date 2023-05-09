@@ -1,0 +1,18 @@
+del menu 'RMTSpecificationDeleteAndDetachMenu';
+add menu 'RMTSpecificationDeleteAndDetachMenu'
+	description	''
+	label	'emxRequirements.ActionLink.DeleteAndDetach'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	command	'RMTDeleteGroupActionLink'
+	command	'RMTRequirementGroupDetachSubGroup'
+	command	'RMTRequirementGroupDetachRequirement'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecificationDeleteAndDetachMenu'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTSpecificationDeleteAndDetachMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecificationDeleteAndDetachMenu';

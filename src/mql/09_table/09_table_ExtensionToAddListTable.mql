@@ -1,0 +1,40 @@
+del table 'ExtensionToAddListTable' system;
+add table 'ExtensionToAddListTable' system
+column #1
+	name	'extName'
+	label	'emxQualification.label.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Qualification'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getExtensionName'
+	setting	'program'		'emxQualificationProgram'
+column #2
+	name	'extType'
+	label	'emxQualification.label.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Qualification'
+	setting	'Column Type'		'program'
+	setting	'function'		'getExtensionType'
+	setting	'program'		'emxQualificationProgram'
+column #3
+	name	'extNbrAttrs'
+	label	'emxQualification.label.NbrOfAttr'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Qualification'
+	setting	'Column Type'		'program'
+	setting	'function'		'getExtensionNbrOfAttributes'
+	setting	'program'		'emxQualificationProgram'
+;
+add property table_ExtensionToAddListTable on program eServiceSchemaVariableMapping.tcl to table 'ExtensionToAddListTable' system;

@@ -1,0 +1,21 @@
+del menu 'type_ProductsRMB';
+add menu 'type_ProductsRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCProductsProperties'
+	command	'AEFLifecycle'
+	menu	'AEFClipboardCollectionsRMB'
+	command	'AEFSeparator'
+	command	'APPQuickFileList'
+	command	'APPRelatedFiles'
+	command	'APPAllFileDetails'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_ProductsRMB'
+	property 'version'	value	'R214'
+;
+add property menu_type_ProductsRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_ProductsRMB';

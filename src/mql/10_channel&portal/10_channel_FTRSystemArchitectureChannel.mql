@@ -1,0 +1,15 @@
+del channel 'FTRSystemArchitectureChannel';
+add channel 'FTRSystemArchitectureChannel'
+	description	''
+	height	'630'
+	label	''
+	href	''
+	command 	'FTRSystemArchitectureLogicalFeatures','FTRSystemArchitectureManufacturingFeatures','FTRContextLFLogicalFeatures','FTRContextLFManufacturingFeatures','FTRSystemArchitectureManufacturingFeaturesMobile','FTRContextLFManufacturingFeaturesMobile'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRSystemArchitectureChannel'
+	property	'version'	value	'R418'
+;
+#portal ==>FTRSystemArchitecture
+add property channel_FTRSystemArchitectureChannel on program eServiceSchemaVariableMapping.tcl to channel 'FTRSystemArchitectureChannel';

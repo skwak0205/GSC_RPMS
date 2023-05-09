@@ -1,0 +1,22 @@
+del command 'ECMCRSummarySupportingDocs_Headerlink_1';
+add command 'ECMCRSummarySupportingDocs_Headerlink_1'
+	description	''
+	label	'EnterpriseChangeMgt.Command.AddExisting'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?targetRelName=relationship_ECRSupportingDocument&functionality=CRSupportingDocAddExisting&isFrom=true'
+	alt	'EnterpriseChangeMgt.Command.AddExisting'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current.access[fromconnect] == true) && !($<interface[interface_ChangeOnHold] =="TRUE">)'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'false'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRSummarySupportingDocs_Headerlink_1'
+	property	'version'	value	'R417'
+;
+modify menu ECMCRSummarySupportingDocsToolBar add command ECMCRSummarySupportingDocs_Headerlink_1 order command ECMCRSummarySupportingDocs_Headerlink_1 2;
+#channel ==>ECMCRSummarySupportingDocsToolBar
+add property command_ECMCRSummarySupportingDocs_Headerlink_1 on program eServiceSchemaVariableMapping.tcl to command 'ECMCRSummarySupportingDocs_Headerlink_1';

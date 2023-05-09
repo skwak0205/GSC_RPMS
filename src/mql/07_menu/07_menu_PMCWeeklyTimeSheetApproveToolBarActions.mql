@@ -1,0 +1,17 @@
+del menu 'PMCWeeklyTimeSheetApproveToolBarActions';
+add menu 'PMCWeeklyTimeSheetApproveToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCApproveEffortTimeSheet'
+	command	'AEFSeparator'
+	command	'PMCRejectEffortTimeSheet'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWeeklyTimeSheetApproveToolBarActions'
+	property 'version'	value	'R210'
+;
+add property menu_PMCWeeklyTimeSheetApproveToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCWeeklyTimeSheetApproveToolBarActions';

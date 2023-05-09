@@ -1,0 +1,17 @@
+del command 'APPRouteSummary';
+add command 'APPRouteSummary'
+	description	'Command to show the Route Summary List'
+	label	'emxComponents.String.RoutesSummary'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRoute:getMyDeskActiveRoutes,emxRoute:getMyDeskInActiveRoutes,emxRoute:getAllMyDeskRoutes&table=APPRouteSummary&toolbar=APPRouteSummaryToolBar&header=emxComponents.Routes.Heading&programLabel=emxComponents.Filter.Active,emxComponents.Filter.Complete,emxComponents.Filter.All&selection=multiple&HelpMarker=emxhelprouteview&PrinterFriendly=true&freezePane=Name'
+	alt	'emxComponents.String.RoutesSummary'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteSummary'
+	property	'version'	value	'R417'
+;
+#channel ==>TMCMyViewTasksRoutesChannel
+add property command_APPRouteSummary on program eServiceSchemaVariableMapping.tcl to command 'APPRouteSummary';

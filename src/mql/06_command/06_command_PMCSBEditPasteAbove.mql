@@ -1,0 +1,20 @@
+del command 'PMCSBEditPasteAbove';
+add command 'PMCSBEditPasteAbove'
+	description	'Command to paste task above the selected task'
+	label	'emxFramework.FreezePane.SBEditActions.PasteAbove'
+	href	'javascript:pasteTaskAbove()'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionInsertRowBefore.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSBEditPasteAbove'
+	property	'version'	value	'R422'
+;
+modify menu PMCSBEditActions add command PMCSBEditPasteAbove order command PMCSBEditPasteAbove 3;
+#channel ==>PMCSBEditActions
+add property command_PMCSBEditPasteAbove on program eServiceSchemaVariableMapping.tcl to command 'PMCSBEditPasteAbove';

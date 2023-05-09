@@ -1,0 +1,18 @@
+del menu 'type_Message';
+add menu 'type_Message'
+	description	''
+	label	'$<attribute[attribute_Subject].value>'
+	href	'${COMPONENT_DIR}/emxComponentsDiscussionTreeFrame.jsp'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'DocumentDrop Relationship'		'Message Attachments'
+	setting	'Document Command'		'APPDiscussionAttachmentsTreeCategory'
+	command	'AEFHistory'
+	command	'APPDiscussionAttachmentsTreeCategory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_Message'
+	property 'version'	value	'R417'
+;
+add property menu_type_Message on program eServiceSchemaVariableMapping.tcl to menu 'type_Message';

@@ -1,0 +1,24 @@
+################################################################################################
+# Created Date : 2020.06.10
+# Create by BongJun,Park
+# Description : 공통코드 detail 등록 command
+################################################################################################
+#del command "gscCommonCodeDetailCreate";
+add command "gscCommonCodeDetailCreate"
+    description ""
+    label   "emxComponents.Button.Create"
+    alt     "emxComponents.Button.Create"
+    href "${COMMON_DIR}/emxCreate.jsp?form=form_gscCommonCodeDetailCreate&type=type_gscCodeMaster&policy=policy_gscCodeMaster&nameField=both&typeChooser=true&header=emxComponents.Label.gscCommonCodeDetail&relationship=relationship_gscCodeParentAndChild&submitAction=doNothing&postProcessURL=../components/gscCommonCodeDetailCreatePostProcess.jsp"
+    setting "Registered Suite"  "Components"
+	setting "Target Location"   "popup"
+	setting "Popup Size"        "Medium"
+	setting "Popup Modal"       "true"
+	setting "Submit"            "true"
+	setting "Image"             "${COMMON_DIR}/images/iconActionCreate.png"
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2020.06.10"
+property "original name"    value "gscCommonCodeDetailCreate"
+;
+add property command_gscCommonCodeDetailCreate on program eServiceSchemaVariableMapping.tcl to command 'gscCommonCodeDetailCreate';

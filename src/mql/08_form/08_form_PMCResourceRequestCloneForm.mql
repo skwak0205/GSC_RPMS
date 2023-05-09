@@ -1,0 +1,44 @@
+del form 'PMCResourceRequestCloneForm';
+add form 'PMCResourceRequestCloneForm' web
+field #1
+	name	'Business Skill'
+	label	'emxProgramCentral.Common.BusinessSkills'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'checkbox'
+	setting	'Registered Suite'		'ProgramCentral'
+field #2
+	name	'Project Role'
+	label	'emxProgramCentral.Common.ProjectRole'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'checkbox'
+	setting	'Registered Suite'		'ProgramCentral'
+field #3
+	name	'Resource'
+	label	'emxProgramCentral.Common.Resource'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'checkbox'
+	setting	'Registered Suite'		'ProgramCentral'
+field #4
+	name	'Standard Cost'
+	label	'emxProgramCentral.ResourceRequest.StandardCost'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'checkbox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Editable'		'true'
+	setting	'Default'		'0'
+	setting	'Requiered'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestCloneForm'
+	property	'version'	value	'R210'
+;
+add property form_PMCResourceRequestCloneForm on program eServiceSchemaVariableMapping.tcl to form 'PMCResourceRequestCloneForm';

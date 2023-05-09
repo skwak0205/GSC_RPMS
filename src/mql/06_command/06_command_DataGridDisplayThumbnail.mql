@@ -1,0 +1,18 @@
+del command 'DataGridDisplayThumbnail';
+add command 'DataGridDisplayThumbnail'
+	description	''
+	label	'emxFramework.DisplayMode.Thumbnail'
+	href	'javascript:ENXSBGridConnector.prototype.dataGridDisplayThumbnail()'
+	alt	'emxFramework.DisplayMode.Thumbnail'
+	setting	'Access Function'		'enableThumbnailMenu'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionThumbnail-view.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridDisplayThumbnail'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridDisplayMode add command DataGridDisplayThumbnail order command DataGridDisplayThumbnail 2;
+#channel ==>DataGridDisplayMode
+add property command_DataGridDisplayThumbnail on program eServiceSchemaVariableMapping.tcl to command 'DataGridDisplayThumbnail';

@@ -1,0 +1,32 @@
+del form 'PMCResourceRequestSubmitForm';
+add form 'PMCResourceRequestSubmitForm' web
+field #1
+	name	'Comment'
+	businessobject	'empty'
+	label	'emxProgramCentral.ResourcePlan.CommentsForSubmition'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'false'
+	setting	'Access Expression'		'(current=="Create"||current=="Requested"||current=="Proposed"||current=="Committed")'
+	setting	'Editable'		'true'
+field #2
+	name	'Comment1'
+	label	'emxProgramCentral.ResourcePlan.CommentsForSubmition'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'Access Expression'		'(current=="Rejected")'
+	setting	'Editable'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestSubmitForm'
+	property	'version'	value	'R209'
+;
+add property form_PMCResourceRequestSubmitForm on program eServiceSchemaVariableMapping.tcl to form 'PMCResourceRequestSubmitForm';

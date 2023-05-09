@@ -1,0 +1,17 @@
+del menu 'RMTSpecificationAttachExistingMenu';
+add menu 'RMTSpecificationAttachExistingMenu'
+	description	''
+	label	'emxRequirements.Menu.RMTStructureBrowserAttachExisting'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	command	'RMTAddExistingGroupActionLink'
+	command	'RMTRequirementGroupAddExistingReqSpec'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecificationAttachExistingMenu'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTSpecificationAttachExistingMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecificationAttachExistingMenu';

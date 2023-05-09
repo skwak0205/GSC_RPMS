@@ -1,0 +1,27 @@
+del command 'LCDocumentCreateNew';
+add command 'LCDocumentCreateNew'
+	description	'Document Create New'
+	label	'emxLibraryCentral.Command.Document'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=create&appDir=documentcentral&parentRelName=relationship_ClassifiedItem&appProcessPage=emxLibraryCentralDocumentPostChekinProcess.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromConnect'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayCreateDefinitionCommand'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCDocumentCreateNew'
+	property	'version'	value	'R420'
+;
+modify menu LCDocumentSummaryCreateNew add command LCDocumentCreateNew order command LCDocumentCreateNew 1;
+#channel ==>LCDocumentSummaryCreateNew
+add property command_LCDocumentCreateNew on program eServiceSchemaVariableMapping.tcl to command 'LCDocumentCreateNew';

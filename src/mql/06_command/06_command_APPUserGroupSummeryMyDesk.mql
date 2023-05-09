@@ -1,0 +1,17 @@
+del command 'APPUserGroupSummeryMyDesk';
+add command 'APPUserGroupSummeryMyDesk'
+	description	'UserGroupSummery Command Object'
+	label	'emxFramework.Command.UserGroupSummery'
+	href	'../webapps/ENOUserGroupMgmt/ENOUserGroupMgmt.html?HelpMarker=emxhelpmydeskusergroup&SuiteDirectory=common&suiteKey=Framework'
+	alt	'emxFramework.Command.UserGroupSummery'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	setting	'Hide Mode'		'Cloud'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPUserGroupSummeryMyDesk'
+	property	'version'	value	'R424'
+;
+#channel ==>My Enovia
+add property command_APPUserGroupSummeryMyDesk on program eServiceSchemaVariableMapping.tcl to command 'APPUserGroupSummeryMyDesk';

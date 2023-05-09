@@ -1,0 +1,17 @@
+del menu 'Msoitype_Requirement';
+add menu 'Msoitype_Requirement'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'RMTRequirementReferenceDocumentTreeCategory'
+	command	'RMTRequirementSpecifications'
+	command	'RMTRequirementTestCaseTreeCategory'
+	command	'RMTRequirementUseCaseTreeCategory'
+	property 'installer'	value	'ENOVIAIntegrationEngineering'
+	property 'application'	value	'IntegrationFramework'
+	property 'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property 'original name'	value	'Msoitype_Requirement'
+	property 'version'	value	'V6R2022x'
+;
+add property menu_Msoitype_Requirement on program eServiceSchemaVariableMapping.tcl to menu 'Msoitype_Requirement';

@@ -1,0 +1,16 @@
+del menu 'APPRouteSummaryBottomActionBar';
+add menu 'APPRouteSummaryBottomActionBar'
+	description	''
+	label	'${NAME}'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPDeleteRouteActionLink'
+	command	'APPStartResumeRouteActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRouteSummaryBottomActionBar'
+	property 'version'	value	'10-0-1-1'
+;
+add property menu_APPRouteSummaryBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'APPRouteSummaryBottomActionBar';

@@ -1,0 +1,25 @@
+del command 'PMCProjectBudgetAddPeriod';
+add command 'PMCProjectBudgetAddPeriod'
+	description	''
+	label	'emxProgramCentral.Budget.AddPeriod'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProjectBudgetAddPeriodForm&mode=edit&formHeader=emxProgramCentral.Budget.AddPeriod&postProcessJPO=emxProjectBudget:addPeriod&HelpMarker=emxhelpperiodadd'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'CmdName'		'PMCProjectBudgetAddPeriod'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'submitAction'		'refreshCaller'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isAddPeriodAvailable'
+	setting	'Access Program'		'emxProjectBudget'
+	setting	'Image'		'${COMMON_DIR}/images/I_AddPeriod32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetAddPeriod'
+	property	'version'	value	'R421.HF2'
+;
+modify menu PMCProjectBudgetToolbarActions add command PMCProjectBudgetAddPeriod order command PMCProjectBudgetAddPeriod 5;
+modify menu PMCProjectBudgetToolbar add command PMCProjectBudgetAddPeriod order command PMCProjectBudgetAddPeriod 2;
+#channel ==>PMCProjectBudgetToolbarActionsPMCProjectBudgetToolbar
+add property command_PMCProjectBudgetAddPeriod on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudgetAddPeriod';

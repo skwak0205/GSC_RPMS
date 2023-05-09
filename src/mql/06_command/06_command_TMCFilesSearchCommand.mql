@@ -1,0 +1,24 @@
+del command 'TMCFilesSearchCommand';
+add command 'TMCFilesSearchCommand'
+	description	'Search Files Command Object'
+	label	'emxFramework.MenuItem.Files'
+	href	'${SUITE_DIR}/emxTeamSearchContentDialog.jsp'
+	alt	'emxFramework.MenuItem.Files'
+	setting	'Target Location'		'searchContent'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCFilesSearchCommand'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCFilesSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCFilesSearchCommand';

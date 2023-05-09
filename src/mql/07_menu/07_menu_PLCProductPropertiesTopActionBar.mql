@@ -1,0 +1,7 @@
+del menu 'PLCProductPropertiesTopActionBar';
+add menu 'PLCProductPropertiesTopActionBar'
+	description	''
+	label	'null'
+	href	'null'
+	alt	'null'
+add property menu_PLCProductPropertiesTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductPropertiesTopActionBar';

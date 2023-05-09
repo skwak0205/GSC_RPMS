@@ -1,0 +1,24 @@
+del command 'FTRSBCompareSyncToLeft';
+add command 'FTRSBCompareSyncToLeft'
+	description	''
+	label	'emxFramework.command.SyncToLeft'
+	href	'javascript:synchronize('left')'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Access Function'		'accessSyncCommands'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSyncLeft.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRSBCompareSyncToLeft'
+	property	'version'	value	'R215'
+;
+modify menu FTRLogicalFeatureCompareToolbar add command FTRSBCompareSyncToLeft order command FTRSBCompareSyncToLeft 1;
+modify menu FTRStructureCompareEBOMToolbar add command FTRSBCompareSyncToLeft order command FTRSBCompareSyncToLeft 0;
+modify menu FTRProductToProductStructureCompareToolbar add command FTRSBCompareSyncToLeft order command FTRSBCompareSyncToLeft 1;
+modify menu FTRProductToEBOMStructureCompareToolbar add command FTRSBCompareSyncToLeft order command FTRSBCompareSyncToLeft 0;
+#channel ==>FTRLogicalFeatureCompareToolbarFTRStructureCompareEBOMToolbarFTRProductToProductStructureCompareToolbarFTRProductToEBOMStructureCompareToolbar
+add property command_FTRSBCompareSyncToLeft on program eServiceSchemaVariableMapping.tcl to command 'FTRSBCompareSyncToLeft';

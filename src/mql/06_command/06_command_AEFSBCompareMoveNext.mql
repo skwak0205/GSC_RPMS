@@ -1,0 +1,19 @@
+del command 'AEFSBCompareMoveNext';
+add command 'AEFSBCompareMoveNext'
+	description	''
+	label	'emxFramework.FreezePane.SBCompare.MoveNext'
+	href	'javascript:moveNextOrPreviousChanges('next')'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionMoveDown.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBCompareMoveNext'
+	property	'version'	value	'R419'
+;
+modify menu AEFStructureCompareToolbar add command AEFSBCompareMoveNext order command AEFSBCompareMoveNext 4;
+modify menu PMCProjectBaselineCompareToolbar add command AEFSBCompareMoveNext order command AEFSBCompareMoveNext 2;
+modify menu PMCWhatIfSyncToolbar add command AEFSBCompareMoveNext order command AEFSBCompareMoveNext 4;
+#channel ==>AEFStructureCompareToolbarPMCProjectBaselineCompareToolbarPMCWhatIfSyncToolbar
+add property command_AEFSBCompareMoveNext on program eServiceSchemaVariableMapping.tcl to command 'AEFSBCompareMoveNext';

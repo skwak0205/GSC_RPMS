@@ -1,0 +1,21 @@
+del command 'AEFLifecycleMassApproveTask';
+add command 'AEFLifecycleMassApproveTask'
+	description	'Current Assigned Task/Signatures on object'
+	label	'emxFramework.LifecycleTasks.ApproveAssignedTasks'
+	href	'${COMMON_DIR}/emxUserTasksMassApproveLinksProcess.jsp?fromPage=AEFLifecycleMassApproveTask'
+	alt	'emxFramework.LifecycleTasks.ApproveAssignedTasks'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionApprove.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecycleMassApproveTask'
+	property	'version'	value	'R417'
+;
+modify menu AEFLifecycleTasksToolbar add command AEFLifecycleMassApproveTask order command AEFLifecycleMassApproveTask 1;
+#channel ==>AEFLifecycleTasksToolbar
+add property command_AEFLifecycleMassApproveTask on program eServiceSchemaVariableMapping.tcl to command 'AEFLifecycleMassApproveTask';

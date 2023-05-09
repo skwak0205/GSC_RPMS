@@ -1,0 +1,27 @@
+del command 'DeleteRegionActionLink';
+add command 'DeleteRegionActionLink'
+	description	'Delete Region Action Link'
+	label	'emxComponents.Button.Delete'
+	href	'${COMPONENT_DIR}/emxComponentsRegionUtil.jsp?mode=Delete'
+	alt	'emxComponents.Button.Delete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForRegionDeleteCreateNew'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxFramework.Command.Delete_Warning_Message'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DeleteRegionActionLink'
+	property	'version'	value	'R417'
+;
+modify menu RegionBottomActionBar add command DeleteRegionActionLink order command DeleteRegionActionLink 1;
+modify menu APPRegionActionsToolBar add command DeleteRegionActionLink order command DeleteRegionActionLink 4;
+#channel ==>RegionBottomActionBarAPPRegionActionsToolBar
+add property command_DeleteRegionActionLink on program eServiceSchemaVariableMapping.tcl to command 'DeleteRegionActionLink';

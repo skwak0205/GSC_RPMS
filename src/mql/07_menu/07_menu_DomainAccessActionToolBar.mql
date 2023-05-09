@@ -1,0 +1,21 @@
+del menu 'DomainAccessActionToolBar';
+add menu 'DomainAccessActionToolBar'
+	description	''
+	label	'emxFramework.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'((type != "Workspace Vault" || attribute[Access Type] == "" || attribute[Access Type] == Specific) && (type != "Workspace Vault" || attribute[Access Type] != Specific) && (type != "Controlled Folder" || attribute[Access Type] != Specific))'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'DomainAccessAddMember'
+	command	'DomainAccessAddUserGroups'
+	command	'DomainAccessAddUserGroupsCloud'
+	command	'DomainAccessAddSecurityContext'
+	command	'DomainAccessDeleteAccess'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'DomainAccessActionToolBar'
+	property 'version'	value	'R421.HF1'
+;
+add property menu_DomainAccessActionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'DomainAccessActionToolBar';

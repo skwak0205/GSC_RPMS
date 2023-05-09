@@ -1,0 +1,20 @@
+del command 'APPRejectTask';
+add command 'APPRejectTask'
+	description	'Reject action for the Inbox Task'
+	label	'emxComponents.Tasks.Reject'
+	href	'${SUITE_DIR}/emxTaskCompletePreProcess.jsp?action=Reject'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'displayApproveRejectLink'
+	setting	'Access Program'		'emxInboxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReject.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRejectTask'
+	property	'version'	value	'R417'
+;
+modify menu APPInboxTaskActionsToolbar add command APPRejectTask order command APPRejectTask 2;
+#channel ==>APPInboxTaskActionsToolbar
+add property command_APPRejectTask on program eServiceSchemaVariableMapping.tcl to command 'APPRejectTask';

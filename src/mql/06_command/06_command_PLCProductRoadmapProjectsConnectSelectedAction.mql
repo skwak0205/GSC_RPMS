@@ -1,0 +1,20 @@
+del command 'PLCProductRoadmapProjectsConnectSelectedAction';
+add command 'PLCProductRoadmapProjectsConnectSelectedAction'
+	description	''
+	label	'emxProduct.ActionLink.AddProjects'
+	href	'${SUITE_DIR}/AssociateProjectProcess.jsp?'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductRoadmapProjectsConnectSelectedAction'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductRoadmapProjectsSearchToolBar add command PLCProductRoadmapProjectsConnectSelectedAction order command PLCProductRoadmapProjectsConnectSelectedAction 0;
+#channel ==>PLCProductRoadmapProjectsSearchToolBar
+add property command_PLCProductRoadmapProjectsConnectSelectedAction on program eServiceSchemaVariableMapping.tcl to command 'PLCProductRoadmapProjectsConnectSelectedAction';

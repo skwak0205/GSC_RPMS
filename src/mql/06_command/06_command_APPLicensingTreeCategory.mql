@@ -1,0 +1,20 @@
+del command 'APPLicensingTreeCategory';
+add command 'APPLicensingTreeCategory'
+	description	''
+	label	'emxComponents.Command.Licensing.APPPersonTreeCategory'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxLicense:getAssignLicenseByUser&table=APPUserProductLicense&expandProgramMenu=APPProductLicensingProgramMenu&header=emxComponents.Common.LicensingUser.Heading&selection=none&editLink=true&expandLevelFilter=false&massUpdate=false&findMxLink=false&customize=false&postProcessJPO=emxLicense:reloadUserProductLicense&HelpMarker=emxhelpassignlicensebyuser&displayView=details'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Hide Mode'		'Cloud'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLicensingTreeCategory'
+	property	'version'	value	'R420.HF2'
+;
+modify menu type_Person add command APPLicensingTreeCategory order command APPLicensingTreeCategory 0;
+#channel ==>type_Person
+add property command_APPLicensingTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPLicensingTreeCategory';

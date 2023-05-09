@@ -1,0 +1,14 @@
+del portal 'AEFPowerView';
+add portal 'AEFPowerView'
+	description	''
+	label	''
+	href	''
+	channel 	AEFPowerViewChannel
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFPowerView'
+	property	'version'	value	'R215'
+;
+add property portal_AEFPowerView on program eServiceSchemaVariableMapping.tcl to portal 'AEFPowerView';

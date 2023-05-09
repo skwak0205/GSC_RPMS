@@ -1,0 +1,21 @@
+del command 'APPRouteAddGroup';
+add command 'APPRouteAddGroup'
+	description	'Command to add groups to the route access'
+	label	'emxComponents.AddMembersDialog.AddGroup'
+	href	'${SUITE_DIR}/emxRouteMembersSearch.jsp?fromPage=RouteAccessSummary&memberType=Group'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(to[Route Scope] == False)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteAddGroup'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPRouteAddGroup on program eServiceSchemaVariableMapping.tcl to command 'APPRouteAddGroup';

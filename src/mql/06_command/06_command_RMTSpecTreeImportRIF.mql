@@ -1,0 +1,25 @@
+del command 'RMTSpecTreeImportRIF';
+add command 'RMTSpecTreeImportRIF'
+	description	''
+	label	'emxRequirements.ActionLink.ImportRIF'
+	href	'${SUITE_DIR}/ImportXMLStructureFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecTreeImportRIF'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTSpecTreeImportRIF on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecTreeImportRIF';

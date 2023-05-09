@@ -1,0 +1,17 @@
+del command 'PLCTypeReserve';
+add command 'PLCTypeReserve'
+	description	'This will set the Reserve flag on the selected Type from Attribute tab'
+	label	'emxProductLine.ActionLink.Reserve'
+	href	'${SUITE_DIR}/TestCaseUtil.jsp?Mode=Reserve'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionLockforEdit.gif'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+;
+modify menu PLCTestExecutionPropertiesToolbar add command PLCTypeReserve order command PLCTypeReserve 1;
+modify menu PLCTestCasePropertiesTopActionBar add command PLCTypeReserve order command PLCTypeReserve 2;
+#channel ==>PLCTestExecutionPropertiesToolbarPLCTestCasePropertiesTopActionBar
+add property command_PLCTypeReserve on program eServiceSchemaVariableMapping.tcl to command 'PLCTypeReserve';

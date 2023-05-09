@@ -1,0 +1,19 @@
+del command 'APPWorkflowStopActionLink';
+add command 'APPWorkflowStopActionLink'
+	description	'Workflow stop action link'
+	label	'emxComponents.Command.Stop'
+	href	'${COMPONENT_DIR}/emxWorkflowAction.jsp?action=stop'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current == "Started" && owner == context.user)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionStop.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowStopActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowToolbar add command APPWorkflowStopActionLink order command APPWorkflowStopActionLink 3;
+#channel ==>APPWorkflowToolbar
+add property command_APPWorkflowStopActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowStopActionLink';

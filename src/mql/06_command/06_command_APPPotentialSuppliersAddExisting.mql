@@ -1,0 +1,22 @@
+del command 'APPPotentialSuppliersAddExisting';
+add command 'APPPotentialSuppliersAddExisting'
+	description	'Potential Supplier Add Existing Command Object'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxSearch.jsp?defaultSearch=APPPotentialSupplierSearch&toolbar=APPPotentialSupplierSearchToolBar&helpMarker=emxhelpsearch'
+	alt	'emxComponents.Common.AddExisting'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToPotentialSuppliers'
+	setting	'Access Program'		'emxCompany'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPotentialSuppliersAddExisting'
+	property	'version'	value	'R417'
+;
+modify menu APPPotentialSuppliersActionsToolbar add command APPPotentialSuppliersAddExisting order command APPPotentialSuppliersAddExisting 1;
+#channel ==>APPPotentialSuppliersActionsToolbar
+add property command_APPPotentialSuppliersAddExisting on program eServiceSchemaVariableMapping.tcl to command 'APPPotentialSuppliersAddExisting';

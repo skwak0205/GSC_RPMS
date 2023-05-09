@@ -1,0 +1,18 @@
+del command 'APPFindPeople';
+add command 'APPFindPeople'
+	description	'Find People Search Link'
+	label	'emxComponents.Common.FindPeople'
+	href	'${COMPONENT_DIR}/emxComponentsPersonSearchDialog.jsp?table=APPMemberListPeopleSearchList&program=emxPerson:getMemberListPeopleSearchResult&CancelButton=true&CancelLabel=emxCommon.Common.Close&Style=dialog&CommandName=APPFindPeople&listMode=search&Export=true&HelpMarker=emxhelpselectuser&sortColumnName=UserName'
+	alt	'emxComponents.Common.FindPeople'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	setting	'Export'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFindPeople'
+	property	'version'	value	'10-5'
+;
+modify menu APPMemberSearchInMemberList add command APPFindPeople order command APPFindPeople 0;
+#channel ==>APPMemberSearchInMemberList
+add property command_APPFindPeople on program eServiceSchemaVariableMapping.tcl to command 'APPFindPeople';

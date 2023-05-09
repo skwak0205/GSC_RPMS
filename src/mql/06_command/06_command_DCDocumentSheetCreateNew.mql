@@ -1,0 +1,26 @@
+del command 'DCDocumentSheetCreateNew';
+add command 'DCDocumentSheetCreateNew'
+	description	'Create New Document Sheet object'
+	label	'emxLibraryCentral.Command.CreateNewDocumentSheet'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_DocumentSheet&typeChooser=true&autoNameChecked=true&form=type_CreateDocumentSheet&createJPO=emxLibraryCentralCommon:createLBCObject&submitAction=refreshCaller&header=emxLibraryCentral.Command.CreateNewDocumentSheet&HelpMarker=emxhelpdocumentsheetcreate&findMxLink=false&&postProcessURL=${SUITE_DIR}/emxLibraryCentralPostProcess.jsp&mode=create&isClassifiedItem=true&postProcessJPO=emxLibraryCentralCommon:connectDocumentSheetToGenericDocument'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Access Program Method'		'checkCreateAccessForDocumentSheet'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'(current.access[fromconnect]==TRUE)'
+	setting	'Popup Modal'		'true'
+	setting	'Access Program'		'emxDCUtils'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Author'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCDocumentSheetCreateNew'
+	property	'version'	value	'R422'
+;
+modify menu DCDocumentSheetSummaryCreateNew add command DCDocumentSheetCreateNew order command DCDocumentSheetCreateNew 1;
+#channel ==>DCDocumentSheetSummaryCreateNew
+add property command_DCDocumentSheetCreateNew on program eServiceSchemaVariableMapping.tcl to command 'DCDocumentSheetCreateNew';

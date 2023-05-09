@@ -1,0 +1,22 @@
+del command 'CFPCreateManufacturingPlansActionLink';
+add command 'CFPCreateManufacturingPlansActionLink'
+	description	''
+	label	'DMCPlanning.ActionLink.CreateNewManufacturingPlan'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ManufacturingPlan&suiteKey=DMCPlanning&autoNameChecked=false&typeChooser=true&nameField=both&vaultChooser=true&form=CFPCreateManufacturingPlanForm&header=DMCPlanning.Heading.ManufacturingPlanCreate&relationship=null&submitAction=refreshCaller&HelpMarker=emxhelpmanufacturingplancreate&derivedFrom=false&postProcessJPO=ManufacturingPlan:createManufacturingPlan&parentOID=${ID}&derivedFrom=false&revision=1'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isMPAssociatedToHigherRev'
+	setting	'Access Program'		'ManufacturingPlan'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPCreateManufacturingPlansActionLink'
+	property	'version'	value	'R417'
+;
+modify menu CFPManufacturingPlanToolbarActions add command CFPCreateManufacturingPlansActionLink order command CFPCreateManufacturingPlansActionLink 1;
+#channel ==>CFPManufacturingPlanToolbarActions
+add property command_CFPCreateManufacturingPlansActionLink on program eServiceSchemaVariableMapping.tcl to command 'CFPCreateManufacturingPlansActionLink';

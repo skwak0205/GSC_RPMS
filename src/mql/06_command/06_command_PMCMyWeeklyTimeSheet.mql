@@ -1,0 +1,25 @@
+del command 'PMCMyWeeklyTimeSheet';
+add command 'PMCMyWeeklyTimeSheet'
+	description	'My WeeklyTimeSheet'
+	label	'emxProgramCentral.WeeklyTimesheet.MyWeeklyTimeSheet'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxWeeklyTimeSheet:getTimesheetInProcess,emxWeeklyTimeSheet:getTimesheetSubmitted,emxWeeklyTimeSheet:getTimesheetApproved,emxWeeklyTimeSheet:getTimesheetRejected,emxWeeklyTimeSheet:getWeeklyTimeSheets&table=PMCWeeklyTimeSheet&header=emxProgramCentral.WeeklyTimesheet.WeeklyTimeSheet&toolbar=PMCWeeklyTimeSheetToolBar&programLabel=emxProgramCentral.WeeklyTimesheet.InProcess,emxProgramCentral.WeeklyTimesheet.submitted,emxProgramCentral.WeeklyTimesheet.Approved,emxProgramCentral.WeeklyTimesheet.Rejected,emxProgramCentral.Common.All&selection=multiple&editLink=true&multiColumnSort=false&customize=true&sortColumnName=Week&sortDirection=descending&showClipboard=false&autoFilter=false&showPageURLIcon=false&suiteKey=ProgramCentral&objectCompare=false&rowGrouping=false&displayView=details&StringResourceFileId=emxProgramCentralStringResource&showTabHeader=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Project Lead'
+	user	'Project User'
+	user	'External Project User'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMyWeeklyTimeSheet'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCWeeklyTimeSheet
+add property command_PMCMyWeeklyTimeSheet on program eServiceSchemaVariableMapping.tcl to command 'PMCMyWeeklyTimeSheet';

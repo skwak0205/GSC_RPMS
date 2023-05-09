@@ -1,0 +1,26 @@
+del command 'IssueDocumentCreateNewLink';
+add command 'IssueDocumentCreateNewLink'
+	description	'Create New Document object'
+	label	'emxComponents.Command.CreateNew'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=create'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'bCommandDisplay'
+	setting	'Access Program'		'emxCommonIssue'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueDocumentCreateNewLink'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_IssueDocumentCreateNewLink on program eServiceSchemaVariableMapping.tcl to command 'IssueDocumentCreateNewLink';

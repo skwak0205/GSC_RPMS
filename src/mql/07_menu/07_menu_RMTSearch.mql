@@ -1,0 +1,19 @@
+del menu 'RMTSearch';
+add menu 'RMTSearch'
+	description	''
+	label	'emxRequirements.Menu.RequirementManagement'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallUseRequirement.gif'
+	command	'RMTGlobalSearchRequirementsCommand'
+	command	'RMTGlobalSearchSpecificationCommand'
+	command	'RMTGlobalSearchUseCasesCommand'
+	command	'RMTGlobalSearchGroupsCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSearch'
+	property 'version'	value	'V6R2016x'
+;
+add property menu_RMTSearch on program eServiceSchemaVariableMapping.tcl to menu 'RMTSearch';

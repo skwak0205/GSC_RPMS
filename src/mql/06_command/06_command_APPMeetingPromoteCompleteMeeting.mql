@@ -1,0 +1,21 @@
+del command 'APPMeetingPromoteCompleteMeeting';
+add command 'APPMeetingPromoteCompleteMeeting'
+	description	'To promote meeting from In Progress to Complete state'
+	label	'emxComponents.Meeting.CompleteMeeting'
+	href	'${COMPONENT_DIR}/emxMeetingProcess.jsp?action=Promote&notification=Yes&sReturnPage=null&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'showMeetingPromoteCompleteCommand'
+	setting	'Access Program'		'emxMeeting'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCompleteMeeting.png'
+	setting	'Access Mask'		'promote'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingPromoteCompleteMeeting'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPMeetingPropertiesActionToolbar add command APPMeetingPromoteCompleteMeeting order command APPMeetingPromoteCompleteMeeting 4;
+#channel ==>APPMeetingPropertiesActionToolbar
+add property command_APPMeetingPromoteCompleteMeeting on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingPromoteCompleteMeeting';

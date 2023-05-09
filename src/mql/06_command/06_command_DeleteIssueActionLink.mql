@@ -1,0 +1,31 @@
+del command 'DeleteIssueActionLink';
+add command 'DeleteIssueActionLink'
+	description	'Issue Delete Selcted Command Object'
+	label	'emxComponents.ActionLink.Delete'
+	href	'${SUITE_DIR}/emxIssueUtil.jsp?mode=delete'
+	alt	'emxComponents.ActionLink.Delete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'current.access[todisconnect]'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Delete'
+	user	'3DSRestrictedContributor'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DeleteIssueActionLink'
+	property	'version'	value	'R422'
+;
+modify menu IssueToolBarActions add command DeleteIssueActionLink order command DeleteIssueActionLink 0;
+modify menu ContextIssueToolBarActions add command DeleteIssueActionLink order command DeleteIssueActionLink 0;
+#channel ==>IssueToolBarActionsContextIssueToolBarActions
+add property command_DeleteIssueActionLink on program eServiceSchemaVariableMapping.tcl to command 'DeleteIssueActionLink';

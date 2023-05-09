@@ -1,0 +1,23 @@
+del command 'FTRMyDeskLogicalFeatureBOMCompareCommand';
+add command 'FTRMyDeskLogicalFeatureBOMCompareCommand'
+	description	'Command to Compare Logical Views & BOM'
+	label	'emxConfiguration.Command.CompareBOM'
+	href	'${COMMON_DIR}/emxForm.jsp?form=FTRLogicalFeatureBOMCompareForm&mode=Edit&formHeader=emxConfiguration.Command.CompareBOM&editLink=true&suiteKey=Configuration&featureType=BOMCompare&isSelfTargeted=true&postProcessURL=../configuration/StructureCompareProcess.jsp&HelpMarker=emxhelplogicalviewstructurecompare'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMyDeskLogicalFeatureBOMCompareCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRMyDeskLogicalFeaturesStructureCompareMenu add command FTRMyDeskLogicalFeatureBOMCompareCommand order command FTRMyDeskLogicalFeatureBOMCompareCommand 0;
+modify menu FTRMyDeskLogicalFeatureToolbarReports add command FTRMyDeskLogicalFeatureBOMCompareCommand order command FTRMyDeskLogicalFeatureBOMCompareCommand 0;
+#channel ==>FTRMyDeskLogicalFeaturesStructureCompareMenuFTRMyDeskLogicalFeatureToolbarReports
+add property command_FTRMyDeskLogicalFeatureBOMCompareCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRMyDeskLogicalFeatureBOMCompareCommand';

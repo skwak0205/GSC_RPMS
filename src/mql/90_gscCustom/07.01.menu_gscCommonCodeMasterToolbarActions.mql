@@ -1,0 +1,20 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통코드 Master list toolbar actions
+################################################################################################
+#del menu "gscCommonCodeMasterToolbarActions";
+add menu "gscCommonCodeMasterToolbarActions"
+    description "emxComponents.label.Actions"
+    label   "emxComponents.Menu.gscCommonCodeMasterToolbarActions"
+    alt     "emxComponents.Menu.gscCommonCodeMasterToolbarActions"
+    command gscCommonCodeMasterCreate
+    command gscCommonCodeMasterDelete
+    setting "Registered Suite" "Components"
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2023.01.10"
+property "original name"    value "gscCommonCodeMasterToolbarActions"
+;
+add property menu_gscCommonCodeMasterToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'gscCommonCodeMasterToolbarActions';

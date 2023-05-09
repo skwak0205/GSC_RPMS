@@ -1,0 +1,19 @@
+del command 'ECMMyChangeTemplates';
+add command 'ECMMyChangeTemplates'
+	description	'Change Templates'
+	label	'EnterpriseChangeMgt.Command.ChangeTemplates'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=ECMChangeTemplateSummary&program=enoECMChangeTemplateUX:getMyTemplatesView&selection=multiple&toolbar=ECMChangeTemplateMenuToolbar&HelpMarker=emxhelpchangetemplates&header=EnterpriseChangeMgt.Command.ChangeTemplates'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'isChangeTemplateActivated'
+	setting	'Access Program'		'enoECMChangeUX'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMyChangeTemplates'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMMyChangesTopChannel
+add property command_ECMMyChangeTemplates on program eServiceSchemaVariableMapping.tcl to command 'ECMMyChangeTemplates';

@@ -1,0 +1,26 @@
+del command 'APPLocationsAddExisting';
+add command 'APPLocationsAddExisting'
+	description	'Command To Add Existing Location(s)'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPLocationsSummary&program=emxOrganization:getExistingLocations&Style=dialog&header=emxComponents.AddExistingLocations.Heading&HelpMarker=emxhelplocations&selection=multiple&PrinterFriendly=true&sortColumnName=Name&sortDirection=ascending&CancelButton=true&SubmitURL=${COMPONENT_DIR}/emxComponentsAddExistingLocationsProcess.jsp'
+	alt	'emxComponents.Common.AddExisting'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasAccessForLocationRegionAddRemove'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLocationsAddExisting'
+	property	'version'	value	'R417'
+;
+modify menu APPLocationsSummaryActionToolBar add command APPLocationsAddExisting order command APPLocationsAddExisting 2;
+#channel ==>APPLocationsSummaryActionToolBar
+add property command_APPLocationsAddExisting on program eServiceSchemaVariableMapping.tcl to command 'APPLocationsAddExisting';

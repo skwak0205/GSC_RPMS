@@ -1,0 +1,20 @@
+del menu 'APPDiscussionActionsToolBar';
+add menu 'APPDiscussionActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPDiscussionCreatePublic'
+	command	'APPDiscussionCreatePrivate'
+	command	'APPSeparator'
+	command	'APPDiscussionDeleteSelectedActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPDiscussionActionsToolBar'
+	property 'version'	value	'R421.HF1'
+;
+add property menu_APPDiscussionActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPDiscussionActionsToolBar';

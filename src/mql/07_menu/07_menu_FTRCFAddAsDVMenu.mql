@@ -1,0 +1,10 @@
+del menu 'FTRCFAddAsDVMenu';
+add menu 'FTRCFAddAsDVMenu'
+	description	'FTRCFAddAsDVMenu'
+	label	''
+	href	''
+	alt	''
+	command	'FTRCFAddAsDV'
+	property 'version'	value	'R420'
+;
+add property menu_FTRCFAddAsDVMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRCFAddAsDVMenu';

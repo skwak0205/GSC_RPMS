@@ -1,0 +1,22 @@
+del command 'APPCommonMyDownloads';
+add command 'APPCommonMyDownloads'
+	description	'My Downloads'
+	label	'emxComponents.Command.MyDownloads'
+	href	'${COMMON_DIR}/emxSearch.jsp?defaultSearch=APPCommonShowMyDownloads&helpMarker=emxhelpsearchmydownloads'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_LBC_TP,ENO_LIB_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayMyDownloadsCmd'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonMyDownloads'
+	property	'version'	value	'R424.HF1'
+;
+modify menu APPReports add command APPCommonMyDownloads order command APPCommonMyDownloads 0;
+modify menu LBCMyDesk add command APPCommonMyDownloads order command APPCommonMyDownloads 5;
+#channel ==>APPReportsLBCMyDesk
+add property command_APPCommonMyDownloads on program eServiceSchemaVariableMapping.tcl to command 'APPCommonMyDownloads';

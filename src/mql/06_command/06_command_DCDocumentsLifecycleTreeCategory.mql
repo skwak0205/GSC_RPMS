@@ -1,0 +1,18 @@
+del command 'DCDocumentsLifecycleTreeCategory';
+add command 'DCDocumentsLifecycleTreeCategory'
+	description	'Lifecycle Tree Category for DOCUMENTS'
+	label	'emxDocumentCentral.TreeCategory.Lifecycle'
+	href	'${SUITE_DIR}/emxDocumentCentralLifeCycleFS.jsp'
+	alt	'emxDocumentCentral.TreeCategory.Lifecycle'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Image'		'${COMMON_DIR}/iconSmallLifecycle.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCDocumentsLifecycleTreeCategory'
+	property	'version'	value	'10-5'
+;
+#channel ==>
+add property command_DCDocumentsLifecycleTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'DCDocumentsLifecycleTreeCategory';

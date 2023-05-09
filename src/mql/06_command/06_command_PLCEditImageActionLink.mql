@@ -1,0 +1,21 @@
+del command 'PLCEditImageActionLink';
+add command 'PLCEditImageActionLink'
+	description	'Edit Details Action Link on Properties Page for Image'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${SUITE_DIR}/ImageUtil.jsp?form=type_Image&formMode=Edit&formHeader=emxProduct.Heading.EditNoRev&mode=FormImage&HelpMarker=emxhelpimageedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCEditImageActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCImagePropertiesTopActionBar add command PLCEditImageActionLink order command PLCEditImageActionLink 0;
+#channel ==>PLCImagePropertiesTopActionBar
+add property command_PLCEditImageActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCEditImageActionLink';

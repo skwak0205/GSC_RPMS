@@ -1,0 +1,21 @@
+del command 'APPWorkflowTaskEditDetailsActionLink';
+add command 'APPWorkflowTaskEditDetailsActionLink'
+	description	'Workflow task edit details'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_WorkflowTask&mode=Edit&formHeader=emxComponents.Heading.EditWorkflowTask&HelpMarker=emxhelpworkflowtaskeditdetails&postProcessJPO=emxWorkflowTask:notifyAssigneeOfModification&submitAction=refreshCaller'
+	alt	''
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current != Completed && (to[Workflow Task].from.owner == context.user) || (from[Workflow Task Assignee].to.name == context.user))'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowTaskEditDetailsActionLink'
+	property	'version'	value	'R214'
+;
+modify menu APPWorkflowTaskPropertiesActionToolbar add command APPWorkflowTaskEditDetailsActionLink order command APPWorkflowTaskEditDetailsActionLink 1;
+#channel ==>APPWorkflowTaskPropertiesActionToolbar
+add property command_APPWorkflowTaskEditDetailsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowTaskEditDetailsActionLink';

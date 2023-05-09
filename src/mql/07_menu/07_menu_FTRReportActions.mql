@@ -1,0 +1,17 @@
+del menu 'FTRReportActions';
+add menu 'FTRReportActions'
+	description	''
+	label	'emxProduct.Menu.Reports'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallReport.png'
+	command	'FTRDependencyReportProductPropertiesActionLink'
+	command	'FTRProductCompatibilityReportProductPropertiesActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRReportActions'
+	property 'version'	value	'R418'
+;
+add property menu_FTRReportActions on program eServiceSchemaVariableMapping.tcl to menu 'FTRReportActions';

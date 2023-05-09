@@ -1,0 +1,19 @@
+del command 'ECMSummaryReport';
+add command 'ECMSummaryReport'
+	description	'Summary Report Command'
+	label	'EnterpriseChangeMgt.Common.PdfSummary'
+	href	'${SUITE_DIR}/emxECMPdfSummaryReportFS.jsp?generateSummary=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'hasChangeViewPdfLink'
+	setting	'Access Program'		'enoECMChangeReportUX'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMSummaryReport'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMChangePropertyChannel1
+add property command_ECMSummaryReport on program eServiceSchemaVariableMapping.tcl to command 'ECMSummaryReport';

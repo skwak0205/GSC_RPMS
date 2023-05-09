@@ -1,0 +1,23 @@
+del command 'PMCRelatedProjectsDashboardView';
+add command 'PMCRelatedProjectsDashboardView'
+	description	'Command for Dashboard View'
+	label	'emxProgramCentral.TableMenu.DashboardView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessToCommand'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'table'		'PMCDashboardViewTable'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRelatedProjectsDashboardView'
+	property	'version'	value	'R422'
+;
+modify menu PMCRelatedProjectsTableMenu add command PMCRelatedProjectsDashboardView order command PMCRelatedProjectsDashboardView 0;
+#channel ==>PMCRelatedProjectsTableMenu
+add property command_PMCRelatedProjectsDashboardView on program eServiceSchemaVariableMapping.tcl to command 'PMCRelatedProjectsDashboardView';

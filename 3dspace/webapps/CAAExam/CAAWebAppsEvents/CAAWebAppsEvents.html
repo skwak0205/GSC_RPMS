@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/"> 
+ <!-- Copyright 2014 , Dassault Systemes. All rights reserved. -->
+ <head>
+    
+    <title>CAA Event Widget App</title>
+	
+	<!-- Application Metas Start -->	
+    <meta name="description" content="CAA Web Apps basic use case " />
+    <meta name="keywords" content="CAA Use Case" /> 	
+	<!-- Application Metas End -->
+	
+	<!-- Application Preferences Start -->
+	<widget:preference type="text" name="thetextpreference"  label="Enter a text"  ></widget:preference>
+	<!-- Application Preferences End -->
+	
+	<!-- Application JS Start -->
+    <script >
+        /* global widget */
+	    ( function () {
+            'use strict';
+            
+			var myWidget = {
+ 
+				events: {
+					         
+					onLoad: function() {
+						widget.body.innerHTML= "onLoad2";	
+                        alert('onLoad callback');						
+					},
+					endEdit: function () {
+						alert('endEdit callback');
+					},
+					onEdit: function () {
+						alert('onEdit callback');
+					},
+					onKeyboardAction: function (key) {
+						alert('onKeyboardAction:'  + ' / ' + key);
+					},
+					onRefresh: function () {
+						alert('onRefresh callback');
+					},
+					onResize: function () {
+						alert('onResize callback');
+					},
+					onViewChange: function (event) {
+						alert('onViewChange >' + event.type);					
+					}				
+				}
+				
+            };
+
+			widget.addEvent('onLoad',myWidget.events.onLoad);
+			widget.addEvent('endEdit',myWidget.events.endEdit);
+			widget.addEvent('onEdit',myWidget.events.onEdit);
+			widget.addEvent('onKeyboardAction',myWidget.events.onKeyboardAction);
+			widget.addEvent('onRefresh',myWidget.events.onRefresh);
+			widget.addEvent('onResize',myWidget.events.onResize);
+			widget.addEvent('onViewChange',myWidget.events.onViewChange);
+		}() ) ;	
+    </script>
+	<!-- Application JS End -->
+</head>
+<body>
+</body>
+</html>

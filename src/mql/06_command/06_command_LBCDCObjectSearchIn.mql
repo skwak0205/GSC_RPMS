@@ -1,0 +1,26 @@
+del command 'LBCDCObjectSearchIn';
+add command 'LBCDCObjectSearchIn'
+	description	'DC Object Search details'
+	label	'emxDocumentCentral.ActionBarCmd.SearchIn'
+	href	'${SUITE_DIR}/emxLibraryCentralSearchIntermediate.jsp?useMode=searchIn'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearchWithin.png'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDCObjectSearchIn'
+	property	'version'	value	'R419'
+;
+modify menu LBCLibraryBookshelvesToolBar add command LBCDCObjectSearchIn order command LBCDCObjectSearchIn 0;
+modify menu LBCBookshelfBooksToolBar add command LBCDCObjectSearchIn order command LBCDCObjectSearchIn 0;
+modify menu LBCBookDocumentsToolBar add command LBCDCObjectSearchIn order command LBCDCObjectSearchIn 0;
+modify menu LBCFolderContentToolBar add command LBCDCObjectSearchIn order command LBCDCObjectSearchIn 0;
+modify menu LBCFolderPropertiesActionsToolbar add command LBCDCObjectSearchIn order command LBCDCObjectSearchIn 2;
+#channel ==>LBCLibraryBookshelvesToolBarLBCBookshelfBooksToolBarLBCBookDocumentsToolBarLBCFolderContentToolBarLBCFolderPropertiesActionsToolbar
+add property command_LBCDCObjectSearchIn on program eServiceSchemaVariableMapping.tcl to command 'LBCDCObjectSearchIn';

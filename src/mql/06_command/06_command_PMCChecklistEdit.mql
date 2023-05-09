@@ -1,0 +1,23 @@
+del command 'PMCChecklistEdit';
+add command 'PMCChecklistEdit'
+	description	''
+	label	'emxProgramCentral.Common.Checklist.ChecklistEdit'
+	href	'${SUITE_DIR}/emxProgramCentralChecklistUtil.jsp?mode=edit&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCChecklistEdit'
+	property	'version'	value	'R417'
+;
+modify menu type_ChecklistRMB add command PMCChecklistEdit order command PMCChecklistEdit 3;
+modify menu type_ChecklistItemRMB add command PMCChecklistEdit order command PMCChecklistEdit 1;
+modify menu PMCChecklistActionToolbar add command PMCChecklistEdit order command PMCChecklistEdit 4;
+#channel ==>type_ChecklistRMBtype_ChecklistItemRMBPMCChecklistActionToolbar
+add property command_PMCChecklistEdit on program eServiceSchemaVariableMapping.tcl to command 'PMCChecklistEdit';

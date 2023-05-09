@@ -1,0 +1,19 @@
+del menu 'AEFLifecycleApprovalsSummaryToolbar';
+add menu 'AEFLifecycleApprovalsSummaryToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFTaskApproveReject'
+	command	'AEFTaskReassign'
+	command	'AEFTaskAddApprover'
+	command	'AEFTaskAddApproverFromTemplate'
+	command	'AEFTaskRemoveSelectedApprover'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFLifecycleApprovalsSummaryToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_AEFLifecycleApprovalsSummaryToolbar on program eServiceSchemaVariableMapping.tcl to menu 'AEFLifecycleApprovalsSummaryToolbar';

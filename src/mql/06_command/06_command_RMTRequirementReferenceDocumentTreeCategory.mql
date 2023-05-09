@@ -1,0 +1,28 @@
+del command 'RMTRequirementReferenceDocumentTreeCategory';
+add command 'RMTRequirementReferenceDocumentTreeCategory'
+	description	'Command Object for Reference Documents in Requirement Menu'
+	label	'emxRequirements.Tree.ReferenceDocument'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ProductDocumentSummaryToolBar&header=emxRequirements.Menu.Documents&HelpMarker=emxhelprefdoclist&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'COMMON_DIR/iconSmallDocument.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementReferenceDocumentTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu Msoitype_Requirement add command RMTRequirementReferenceDocumentTreeCategory order command RMTRequirementReferenceDocumentTreeCategory 1;
+modify menu type_Comment add command RMTRequirementReferenceDocumentTreeCategory order command RMTRequirementReferenceDocumentTreeCategory 8;
+#channel ==>Msoitype_Requirementtype_CommentRMTProperties
+add property command_RMTRequirementReferenceDocumentTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementReferenceDocumentTreeCategory';

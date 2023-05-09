@@ -1,0 +1,18 @@
+del menu 'type_RequirementProxy';
+add menu 'type_RequirementProxy'
+	description	''
+	label	'${NAME} ${REVISION}'
+	href	'${COMMON_DIR}/enoProxyProperties.jsp?header=emxRequirements.Heading.PropertiesCategory'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTReqProxyExchangeTrackingPowerView'
+	command	'RMTRelatedObjectsPowerView'
+	command	'RMTTraceabilityPowerView'
+	command	'RMTRequirementProxyInformation'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_RequirementProxy'
+	property 'version'	value	'V6R2019x'
+;
+add property menu_type_RequirementProxy on program eServiceSchemaVariableMapping.tcl to menu 'type_RequirementProxy';

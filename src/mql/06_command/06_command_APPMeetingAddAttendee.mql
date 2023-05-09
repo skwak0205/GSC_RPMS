@@ -1,0 +1,20 @@
+del command 'APPMeetingAddAttendee';
+add command 'APPMeetingAddAttendee'
+	description	''
+	label	'emxComponents.Button.AddAttendee'
+	href	'${SUITE_DIR}/emxComponentsAddMeetingAttendees.jsp?commandAction=openAttendeeSearchWindow'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[changesov]==true && current==Create )'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingAddAttendee'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPMeetingsAttendeeActionToolbar add command APPMeetingAddAttendee order command APPMeetingAddAttendee 1;
+#channel ==>APPMeetingsAttendeeActionToolbar
+add property command_APPMeetingAddAttendee on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingAddAttendee';

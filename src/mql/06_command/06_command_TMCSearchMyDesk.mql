@@ -1,0 +1,23 @@
+del command 'TMCSearchMyDesk';
+add command 'TMCSearchMyDesk'
+	description	'Search Command Object'
+	label	'emxFramework.MenuItem.Search'
+	href	'${SUITE_DIR}/emxTeamSearchContentDialogFS.jsp'
+	alt	'emxFramework.MenuItem.Search'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'false'
+	setting	'Selectable in Preferences'		'false'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCSearchMyDesk'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCSearchMyDesk on program eServiceSchemaVariableMapping.tcl to command 'TMCSearchMyDesk';

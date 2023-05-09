@@ -1,0 +1,33 @@
+del command 'APPDiscussionAccessResetActionLink';
+add command 'APPDiscussionAccessResetActionLink'
+	description	'Access Reset Discussion Command Object'
+	label	'emxComponents.Common.ResetAccess'
+	href	'${COMPONENT_DIR}/emxComponentsDiscussionAccessUtil.jsp?mode=reset'
+	alt	'emxComponents.Common.ResetAccess'
+	setting	'Target Location'		'listHidden'
+	setting	'Access Program Method'		'showCommand'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Program'		'emxDiscussion'
+	user	'Organization Manager'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	user	'Specification Restricted User'
+	user	'Global Template Administrator'
+	user	'Template Administrator'
+	user	'Template Header Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionAccessResetActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDiscussionAccessTopActionBar add command APPDiscussionAccessResetActionLink order command APPDiscussionAccessResetActionLink 0;
+modify menu APPDiscussionAccessActionsToolBar add command APPDiscussionAccessResetActionLink order command APPDiscussionAccessResetActionLink 1;
+#channel ==>APPDiscussionAccessTopActionBarAPPDiscussionAccessActionsToolBar
+add property command_APPDiscussionAccessResetActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionAccessResetActionLink';

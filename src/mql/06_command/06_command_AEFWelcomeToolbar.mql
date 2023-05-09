@@ -1,0 +1,19 @@
+del command 'AEFWelcomeToolbar';
+add command 'AEFWelcomeToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Alignment'		'right'
+	setting	'Dynamic Label Function'		'getWelcomeMessage'
+	setting	'Registered Suite'		'Framework'
+	setting	'Dynamic Label Program'		'emxAEFUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFWelcomeToolbar'
+	property	'version'	value	'R215'
+;
+modify menu AEFGlobalToolbar add command AEFWelcomeToolbar order command AEFWelcomeToolbar 0;
+#channel ==>AEFGlobalToolbar
+add property command_AEFWelcomeToolbar on program eServiceSchemaVariableMapping.tcl to command 'AEFWelcomeToolbar';

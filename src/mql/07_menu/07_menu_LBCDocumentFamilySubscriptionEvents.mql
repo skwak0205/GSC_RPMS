@@ -1,0 +1,23 @@
+del menu 'LBCDocumentFamilySubscriptionEvents';
+add menu 'LBCDocumentFamilySubscriptionEvents'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'APPClassificationContentAddedEvent'
+	command	'APPClassificationContentRemovedEvent'
+	command	'APPClassificationModifiedEvent'
+	command	'APPClassificationDeletedEvent'
+	command	'LBCPromotedToReviewStateEvent'
+	command	'LBCPromotedToApprovedStateEvent'
+	command	'LBCPromotedToLockedStateEvent'
+	command	'LBCPromotedToObsoleteStateEvent'
+	command	'LBCDemotedToCreateStateEvent'
+	command	'LBCDemotedToReviewStateEvent'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCDocumentFamilySubscriptionEvents'
+	property 'version'	value	'R421'
+;
+add property menu_LBCDocumentFamilySubscriptionEvents on program eServiceSchemaVariableMapping.tcl to menu 'LBCDocumentFamilySubscriptionEvents';

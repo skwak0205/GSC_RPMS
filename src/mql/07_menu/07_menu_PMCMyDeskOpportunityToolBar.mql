@@ -1,0 +1,15 @@
+del menu 'PMCMyDeskOpportunityToolBar';
+add menu 'PMCMyDeskOpportunityToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCMyDeskOpportunityToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCMyDeskOpportunityToolBar'
+	property 'version'	value	'R421'
+;
+add property menu_PMCMyDeskOpportunityToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCMyDeskOpportunityToolBar';

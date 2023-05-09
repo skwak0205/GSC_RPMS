@@ -1,0 +1,6 @@
+{
+  "notificationAccessUnauthorized": "この情報へのアクセス権がありません",
+  "platformManagentName": "プラットフォームの管理",
+  "navigationFailedDashboard": "要求されたダッシュボードを開けませんでした。",
+  "fetchingFailedDashboard": "このダッシュボードの情報を取得できませんでした。"
+}

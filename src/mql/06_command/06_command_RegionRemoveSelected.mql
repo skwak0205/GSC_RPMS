@@ -1,0 +1,27 @@
+del command 'RegionRemoveSelected';
+add command 'RegionRemoveSelected'
+	description	'Region Remove Selected Command Object'
+	label	'emxComponents.Common.RemoveSelected'
+	href	'${COMPONENT_DIR}/emxComponentsConfigurableTableDisconnectProcess.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForLocationRegionAddRemove'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Common.MsgConfirm'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'RegionRemoveSelected'
+	property	'version'	value	'R417'
+;
+modify menu RegionBottomActionBar add command RegionRemoveSelected order command RegionRemoveSelected 0;
+modify menu APPRegionActionsToolBar add command RegionRemoveSelected order command RegionRemoveSelected 0;
+#channel ==>RegionBottomActionBarAPPRegionActionsToolBar
+add property command_RegionRemoveSelected on program eServiceSchemaVariableMapping.tcl to command 'RegionRemoveSelected';

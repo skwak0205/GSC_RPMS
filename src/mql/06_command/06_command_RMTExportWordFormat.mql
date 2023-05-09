@@ -1,0 +1,26 @@
+del command 'RMTExportWordFormat';
+add command 'RMTExportWordFormat'
+	description	'This will Export the Requirement Specificaiton into RMC or Tabular format'
+	label	'emxRequirements.SCE.Label.RMTExportWordFormat'
+	href	'${SUITE_DIR}/ExportWordFormat.jsp?PrinterFriendly=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionSettings.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTExportWordFormat'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTExportWordFormat on program eServiceSchemaVariableMapping.tcl to command 'RMTExportWordFormat';

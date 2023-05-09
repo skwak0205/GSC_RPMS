@@ -1,0 +1,15 @@
+del menu 'FTRPVLogicalFeatureToolbarActions';
+add menu 'FTRPVLogicalFeatureToolbarActions'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRCreateAssemblyConfigurationLogicalFeatureContextActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRPVLogicalFeatureToolbarActions'
+	property 'version'	value	'R212'
+;
+add property menu_FTRPVLogicalFeatureToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'FTRPVLogicalFeatureToolbarActions';

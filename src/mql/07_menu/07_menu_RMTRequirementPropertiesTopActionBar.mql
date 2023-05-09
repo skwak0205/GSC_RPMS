@@ -1,0 +1,22 @@
+del menu 'RMTRequirementPropertiesTopActionBar';
+add menu 'RMTRequirementPropertiesTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTEditRequirementActionLink'
+	command	'PLCCreateRevisionPropertiesActionLink'
+	command	'RMTCopyRequirementActionsLink'
+	command	'APPSubscription'
+	command	'RMTPromote'
+	command	'RMTDemote'
+	command	'RMTReqReserve'
+	command	'RMTReqUnreserve'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementPropertiesTopActionBar'
+	property 'version'	value	'V6R2017'
+;
+add property menu_RMTRequirementPropertiesTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementPropertiesTopActionBar';

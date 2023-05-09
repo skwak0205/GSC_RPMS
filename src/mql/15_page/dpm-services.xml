@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd">
+
+    <ds:importServices page="risk-services"/>
+    <ds:importServices page="dpm-preference"/>
+    <ds:importServices page="assessment-services"/>
+    <ds:importServices page="opportunity-services"/>
+    <ds:importServices page="projecttemplate-services"/>
+
+    <ds:service name="DPM_WIDGET_CONSTANTS">
+        <ds:ref-subservice name="E6W_WIDGET_CONSTANTS"/>
+        <ds:field><ds:label text="emxProgramCentral.GanttView.SearchForProject" registeredSuite="ProgramCentral"/></ds:field>
+        <ds:field><ds:label text="emxProgramCentral.GanttView.NotProjectSpace" registeredSuite="ProgramCentral"/></ds:field>
+        <ds:field><ds:label text="emxProgramCentral.GanttView.ClearProject" registeredSuite="ProgramCentral"/></ds:field>
+    </ds:service>
+
+    <!-- ******************************************* -->
+    <!-- ****************   PROGRAMS  ************** -->
+    <!-- ******************************************* -->
+
+    <ds:service name="dpm.programs">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo       classname="com.dassault_systemes.enovia.dpm.ProgramService" function="getPrograms" returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProgramService" function="updatePrograms" localInvokation="true" />
+        </ds:data>
+        <ds:ref-subservice name="dpm.basicFields"  includeByDefault="yes"/>
+        <ds:field          name="owner"            includeByDefault="no"     description="The current owner of the object." >         <ds:selectable expression="owner" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="dpm.dateFields"   includeByDefault="yes"/>
+
+        <ds:field name="program-custom-fields">
+            <ds:customAttributes busTypes="Program"/>
+        </ds:field>
+
+
+        <ds:ref-subservice name="projects" referenceName="pgm.projects" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Program Project" getFrom="true" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProgramService" function="updateProgramProjects"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:subservice name="search" includeByDefault="never">
+            <ds:data>
+                <ds:indexQuery typePattern="Program" keyword="{searchStr}" limit="50"/>
+            </ds:data>
+            <ds:ref-subservice name="dpm.searchFields" includeByDefault="never"/>
+        </ds:subservice>
+    </ds:service>
+
+    <ds:service name="pgm.projects" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:ref-subservice name="dpm.basicFields" />
+    </ds:service>
+
+
+    <!-- ******************************************* -->
+    <!-- ****************   PROJECTS  ************** -->
+    <!-- ******************************************* -->
+
+
+    <ds:service name="dpm.projects">
+
+        <ds:license products="ENO_PGE_TP"/>
+
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProjects" returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="updateProjectSpace" localInvokation="true" />
+        </ds:data>
+
+        <ds:ref-subservice name="dpm.basicFields"  includeByDefault="yes"/>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="dpm.dateFields" includeByDefault="yes"/>
+
+        <ds:field name="projectType" >
+            <ds:selectable transient="true" />
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getTypes">
+                    <ds:arg arg-name="type" arg-value="Project Space"/>
+                    <ds:arg arg-name="excludeTypeName" arg-value="Experiment,Project Baseline,Project Snapshot"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <!-- For Gantt Chart Infra :Start -->
+        <ds:field name="nlsType" includeByDefault="no"><ds:selectable expression="type" format="type" type="bus"/></ds:field>
+        <ds:field name="color" includeByDefault="no">         <ds:selectable  expression="attribute[Color]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="pattern" includeByDefault="no"><ds:selectable expression="attribute[FormatPattern]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="dpmTaskCalendar" includeByDefault="no" description="dpmTaskCalendar">
+            <ds:selectable type="key" createOperation="yes" modifyOperation="yes" readOperation="yes" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getDpmTaskCalendar" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="ganttConfig" includeByDefault="no">
+            <ds:selectable expression="attribute[ganttConfig]" type="bus"  autosave="true"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getGanttConfig" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="checkIfPromoteReadyTaskCommandVisible" includeByDefault="no">
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="checkIfPromoteReadyTaskCommandVisible" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="kindofBaseline" includeByDefault="no"> <ds:selectable   expression="type.kindof[Project Baseline]"                                  type="bus"/></ds:field>
+        <ds:field name="kindofExperiment" includeByDefault="no">        <ds:selectable  expression="type.kindof[Experiment]"                                        type="bus"/></ds:field>
+        <ds:field name="kindofTemplate" includeByDefault="no"> <ds:selectable   expression="type.kindof[Project Template]"                                  type="bus"/></ds:field>
+        <ds:field name="kindofConcept" includeByDefault="no"> <ds:selectable   expression="type.kindof[Project Concept]"                                  type="bus"/></ds:field>
+        <ds:field name="experimentProjectState" includeByDefault="no">
+            <ds:selectable   expression="to[Experiment].from.current"  type="bus"/>
+        </ds:field>
+        <ds:field name="routeId" includeByDefault="no">         <ds:selectable  expression="from[Object Route].to.id"                                       type="bus"/></ds:field>
+        <ds:field name="columns" includeByDefault="no" description="Gantt Chart columns">
+            <ds:selectable expression="id" type="bus"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getGanttColumns" localInvokation="true"/>
+        </ds:field>
+
+
+        <ds:field name="percentComplete"             description="Percentage complete of project" >   <ds:selectable expression="attribute[Percent Complete]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="percentCompleteBasedOn"  description="This attribute stores the value of parameter based on which the percent complete is calculated" >   <ds:selectable expression="attribute[Percent Complete Based On]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes" autosave="true"/></ds:field>
+        <ds:field name="lagCalendar"             description="Lag Calendar">   <ds:selectable expression="attribute[Lag Calendar]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="hasDPMAccess" description="This field will be returned only if the user has DPM license">
+            <ds:label text="0"/>
+            <ds:license products="ENO_PRF_TP"/>
+            <ds:selectable format="transient"/>
+        </ds:field>
+        <ds:field name="estimatedDurationInputValue" description="Duration value">    <ds:selectable expression="attribute[Task Estimated Duration].inputvalue" type="bus" autosave="true"  createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedDurationInputUnit"  description="Duration unit">     <ds:selectable expression="attribute[Task Estimated Duration].inputunit" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedDuration"           description="Estimated duration"><ds:selectable expression="attribute[Task Estimated Duration]" type="bus" autosave="true"  createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="actualDuration"              description="Actual duration">   <ds:selectable expression="attribute[Task Actual Duration]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="forecastDuration">                                            <ds:selectable busInterfaces="DPMForecast" createOperation="yes" modifyOperation="yes" readOperation="yes" expression="attribute[Forecast Duration]" type="bus"/></ds:field>
+        <ds:field name="forecastStartDate">                                           <ds:selectable busInterfaces="DPMForecast" expression="attribute[Forecast Start Date]" type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="forecastFinishDate">                                          <ds:selectable busInterfaces="DPMForecast" expression="attribute[Forecast Finish Date]" type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="constraintType"  includeByDefault="no" description="Reflects ASAP or ALAP depending on schedule from.">
+            <ds:selectable expression="attribute[Schedule From]" type="bus" createOperation="yes" modifyOperation="no" readOperation="yes"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="convertScheduleFromToConstraint" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="constraintDate"             description="Constraint date">    <ds:selectable expression="attribute[Task Constraint Date]" type="bus" format="isodate" autosave="true"  createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="defaultConstraintType"      description="Constraint type">    <ds:selectable expression="attribute[Default Constraint Type]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="scheduleFrom"               description="Scheduling type">    <ds:selectable expression="attribute[Schedule From]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="scheduleBasedOn"            description="Scheduling basis">    <ds:selectable expression="attribute[Schedule Based On]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="projectVisibility"          description="A non-controlling identification of the desired Project access.">    <ds:selectable expression="attribute[Project Visibility]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currency" includeByDefault="no" description="Currency type">
+            <ds:selectable expression="attribute[Currency]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getCurrencyValues">
+                    <ds:arg arg-name="attributeName" arg-value="Currency"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="notes"                      description="Notes"><ds:selectable expression="attribute[Notes]" type="bus" autosave="true" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="status" includeByDefault="no">
+            <ds:selectable expression="State" type="bus"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getStatus" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="PALId"                      description=" The Project Access List object (used for some navigation)" includeByDefault="no"><ds:selectable expression="to[Project Access List].from.id" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="objectId"                   includeByDefault="no"><ds:selectable expression="id" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+
+        <ds:field name="sequenceOrder" includeByDefault="no" description="the task sequence id within a project.">
+            <ds:selectable type="keyrel" createOperation="yes" modifyOperation="yes" readOperation="yes" />
+            <ds:sort type="integer" direction="ascending" order="1" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getSequenceOrder" localInvokation="true">
+                <ds:arg arg-name="taskWBS" arg-value="taskWBS"/>
+                <ds:arg arg-name="palIdField" arg-value="PALId"/>
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="typesForSearch">
+            <ds:selectable transient="true"/>
+            <ds:range>
+                <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.ProjectService"    function="getRangeTypeDerivatives">
+                    <ds:arg arg-name="relKey"           arg-value="contextTypesForProjectGantt"/>
+                    <ds:arg arg-name="searchtypes"      arg-value="Project Space, Project Concept"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="image"  includeByDefault="no" description="The thumbnail or type icon associated to the project object.">
+            <ds:image source="primaryOrType" size="medium"  indexBasedImage="false"/>
+        </ds:field>
+
+        <ds:field name="projectSchedule" includeByDefault="no(private)" description="Auto or Manual schedule" >
+            <ds:selectable expression="attribute[Schedule]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes" autosave="true"/>
+        </ds:field>
+        <ds:field name="enableApproval" includeByDefault="no(private)" description="TRUE or FALSE value based on whether to enable the approval process for Experiment or not" >
+            <ds:selectable expression="attribute[Enable Approval]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes" autosave="true"/>
+        </ds:field>
+        <ds:field name="resourcePlanPreference" includeByDefault="no(private)" description="Resource plan preference Timeline or Phase" >
+            <ds:selectable expression="attribute[Resource Plan Preference]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes" autosave="true"/>
+        </ds:field>
+        <ds:field name="canDelete"     includeByDefault="no(private)">
+            <ds:selectable busTypes="Project Space" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getDeleteAccess" localInvokation="true"/>
+        </ds:field>
+
+        <ds:field name="project-custom-fields">
+            <ds:customAttributes busTypes="Project Management"/>
+        </ds:field>
+
+        <ds:field name="isLibraryInstalled">
+            <ds:label text="emxLibraryCentral.Record.RetainRelationship" registeredSuite="emxLibraryCentral.properties"/>
+            <ds:selectable format="transient"/>
+        </ds:field>
+
+        <ds:field name="hasExperimentOrBaseline" includeByDefault="no(private)" description="It will check whether Project has Experiment Or Baseline connected.">
+            <ds:selectable   expression="evaluate[if from[Experiment] OR from[Project Baseline]  then TRUE else FALSE]"  type="bus"/>
+        </ds:field>
+        <!--
+        <ds:ref-subservice name="dpm.projects-custom-fields"/>
+        -->
+
+        <!-- related data -->
+
+        <ds:ref-subservice name="programList" referenceName="programsNameList" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Program Project" getFrom="false" getTo="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+
+
+        <ds:subservice name="sendNotification"   includeByDefault="no">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="sendNotification"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:ref-subservice name="ownerInfo"       includeByDefault="no"/>
+        <ds:ref-subservice name="originatorInfo"  includeByDefault="no"/>
+        <ds:ref-subservice name="tasks"           includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Subtask" getFrom="true" recurseLevels="{level}" chunkSize="300"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskService" function="updateTasks" processMultiple="true"/>
+            </ds:data>
+            <!-- override this definition from tasks as it is N/A in the project services. -->
+            <ds:subservice name="DPMProject" includeByDefault="never" hidden="true"/>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="baselines" referenceName="baselines" includeByDefault="no(private)">
+            <ds:data>
+                <ds:expand relationshipPattern="Project Baseline" getFrom="true" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="updateProjectBaselines" localInvokation="java" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+        <ds:ref-subservice name="experiments" referenceName="dpm.experiments" includeByDefault="no(private)">
+            <ds:data>
+                <ds:expand relationshipPattern="Experiment" getFrom="true" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="updateExperiments" localInvokation="java" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="assessments" referenceName="dpm.assessments" includeByDefault="no(private)">
+            <ds:data>
+                <!--            <ds:expand relationshipPattern="Project Assessment" getFrom="true" />  -->
+                <ds:jpo       classname="com.dassault_systemes.enovia.dpm.AssessmentService" function="getAssessments" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.AssessmentService" function="updateAssessments" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="members" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Member*" getFrom="true"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="updateMembers" />
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:subservice name="background" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="createProjectInBackground" />
+            </ds:data>
+        </ds:subservice>
+
+        <ds:ref-subservice name="risks" referenceName="dpm.risks" includeByDefault="no">
+        </ds:ref-subservice>
+
+        <ds:subservice name="getFloatValues" includeByDefault="no(private)">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProjectFloatValues" localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="palIdField" arg-value="PALId"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="getForecastValues" includeByDefault="no(private)">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProjectForecastValues" localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="palIdField" arg-value="PALId"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="promoteSuccessor" includeByDefault="no(private)">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="promoteSuccessor" localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="palIdField" arg-value="PALId"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <!-- To get SubTypes of all OOTB types -->
+        <ds:subservice name="subTypesInfo">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getDerivativeTypes" localInvokation="false" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+        <ds:subservice name="subTypesAndPolicies">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getTypeAndPolicy" localInvokation="false" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:ref-subservice name="dpm.opportunities" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="allrisks" referenceName="dpm.allrisks" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="dpm.allopportunities" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="milestones" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+
+        <ds:ref-subservice name="issues" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProjectIssues" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:subservice name="programId" includeByDefault="never">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProgramProjects" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:ref-subservice name="folders" referenceName="e6w.workspaceFolders" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.workspace.WorkspaceService" function="getWorkspaceFolders" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.workspace.WorkspaceService" function="updateWorkspaceFolders" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="folderId" referenceName="e6w.workspaceFolders" includeByDefault="never">
+            <ds:data>
+                <ds:expand relationshipPattern="Sub Vaults" getFrom="true" recurseLevels="{foldersLevel}" preserveRoot="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="calendar" referenceName="tsk.calendar" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Default Calendar" getFrom="true"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskService" function="updateCalendar" />
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:subservice name="performRollup" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="performRollup" />
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="search" includeByDefault="never">
+            <ds:data>
+                <ds:indexQuery typePattern="Project Management" keyword="{searchStr}" limitStr="{$top::50}" skipStr="{$skip::0}" sortField="{sortField::relevance}" sortDirection="{sortDirection::desc}" />
+            </ds:data>
+            <ds:ref-subservice name="dpm.searchFields" />
+        </ds:subservice>
+
+        <ds:subservice name="classes" includeByDefault="no(private)">
+            <ds:data>
+                <ds:expand relationshipPattern="Classified Item" getFrom="false" getTo="true"/>
+            </ds:data>
+            <ds:field name="title"   includeByDefault="no" >     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" /></ds:field>
+        </ds:subservice>
+
+    </ds:service>
+
+
+    <!-- ****************   ISSUES  ************** -->
+    <ds:service name="issues">
+        <ds:license products="ENOPRPR_AP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProjectIssues" returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="updateProjectIssues"/>
+        </ds:data>
+
+        <ds:ref-subservice name="dpm.basicFields"   includeByDefault="yes"/>
+        <ds:ref-subservice name="dpm.dateFields2"    includeByDefault="yes"/>
+        <ds:field name="problemType"             description="Classification of problem or issue source.">     <ds:selectable expression="attribute[Problem Type]"        type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="priority"                description="Relative severity of the issue.">        <ds:selectable expression="attribute[Priority]"            type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+
+        <!-- Field grouping included automatically - includeByDefault not yet enforced for Fields -->
+        <ds:subservice name="issuedetail"          includeByDefault="no">
+            <ds:field name="priorityInternal" description="Internal priority ranking.">                    <ds:selectable expression="attribute[Internal Priority]"   type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+            <ds:field name="actionTaken"      description="Description of the action taken.">              <ds:selectable expression="attribute[Action Taken]"        type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+            <ds:field name="resolution"       description="Description of the resolution status.">         <ds:selectable expression="attribute[ResolutionStatement]" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+            <ds:field name="steps"            description="Description of the steps needed to reproduce."> <ds:selectable expression="attribute[Steps To Reproduce]"  type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        </ds:subservice>
+
+        <!-- related data -->
+        <ds:ref-subservice name="dpm.accessFields"  includeByDefault="no"/>
+        <ds:ref-subservice name="assignees"       includeByDefault="no"/>
+        <ds:ref-subservice name="ownerInfo"       includeByDefault="no"/>
+        <ds:ref-subservice name="originatorInfo"  includeByDefault="no"/>
+        <!--
+        <ds:ref-subservice name="dpm.issues-custom-fields"/>
+        -->
+    </ds:service>
+
+
+
+    <!-- ****************   MILESTONES  ************** -->
+    <ds:service name="milestones">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo        classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProjectMilestones" returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="updateProjectMilestones" localInvokation="true" />
+        </ds:data>
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">         <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="description"    description="Description of the object.">         <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">             <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="ownerName"      description="The current owner of the object." includeByDefault="always">       <ds:selectable expression="owner" format="transient" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedStartDate">         <ds:selectable busTypes="Project Management" expression="attribute[Task Estimated Start Date]"  type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="dueDate">                    <ds:selectable busTypes="Project Management" expression="attribute[Task Estimated Finish Date]" type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="actualStartDate">            <ds:selectable busTypes="Project Management" expression="attribute[Task Actual Start Date]"     type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="actualFinishDate">           <ds:selectable busTypes="Project Management" expression="attribute[Task Actual Finish Date]"    type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="parentId">                   <ds:selectable busTypes="Project Management" expression="to[Subtask].from.physicalid"           type="bus" /></ds:field>
+
+    </ds:service>
+
+
+    <!-- ****************   COMMON SUB SERVICES  ************** -->
+
+    <ds:service name="dpm.searchFields">
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeicon"       >                                                 <ds:image source="businessType"         size="icon" /></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+    </ds:service>
+
+
+    <ds:service name="dpm.basicFields">
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">         <ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"       description="(unique discriminator only, Projects and Tasks are not revisioned)">      <ds:selectable expression="revision"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeicon"       >                                                 <ds:image source="businessType"         size="icon" /></ds:field>
+        <ds:field name="description"    description="Description of the object.">         <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getAllPolicyStates">
+                    <ds:arg arg-name="type" arg-value="Project Space"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="ownerName"      description="The current owner of the object." includeByDefault="always">         <ds:selectable expression="owner" format="transient" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originatorName" description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+    </ds:service>
+
+    <ds:service name="dpm.accessFields">
+        <ds:field name="policy"         description="The policy of the object.">
+            <ds:selectable expression="policy" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getAllTypePolicy">
+                    <ds:arg arg-name="type" arg-value="Project Space"/>
+                    <ds:arg arg-name="excludePolicyName" arg-value="Project Space Hold Cancel"/>
+                    <ds:arg arg-name="excludeTypeName" arg-value="Experiment,Project Baseline,Project Snapshot"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+        <ds:field name="modifyAccess"   description="Whether the user has modify access to the Project."> <ds:selectable expression="current.access[modify,changename]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="deleteAccess"   description="Whether the user has delete access to the Project."> <ds:selectable expression="current.access[delete]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="promoteAccess"   description="Whether the user has delete access to the Project."> <ds:selectable expression="current.access[promote]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="demoteAccess"   description="Whether the user has delete access to the Project."> <ds:selectable expression="current.access[demote]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="checkoutAccess"   description="Whether the user has delete access to the Project."> <ds:selectable expression="current.access[checkout]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="checkinAccess"   description="Whether the user has delete access to the Project."> <ds:selectable expression="current.access[checkin]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="project"        description="Collaborative Space (project) the Project was created in.">      <ds:selectable expression="project" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+    </ds:service>
+
+    <ds:service name="dpm.accessFields2">
+        <ds:field name="modifyAccess"   description="Whether the user has modify access to the Project."> <ds:selectable expression="from.current.access[modify]" type="rel" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+    </ds:service>
+
+
+    <ds:service name="dpm.personFields">
+        <ds:field name="name"      description="The user account name">    <ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="firstname" description="The user's first name">    <ds:selectable expression="attribute[First Name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="lastname"  description="The user's last name">    <ds:selectable expression="attribute[Last Name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="email"     description="The user's email address" includeByDefault="no"><ds:selectable expression="attribute[Email Address]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:subservice name="calendar" includeByDefault="no">
+            <ds:data>
+                <!-- recurse to "rel". -->
+                <ds:expand relationshipPattern="Work Place,Calendar" getFrom="true" recurseToLevel="-2"/>
+            </ds:data>
+
+            <ds:field name="title" description="Common description for the calendar"><ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        </ds:subservice>
+    </ds:service>
+
+    <ds:service name="dpm.dateFields">
+        <ds:field name="estimatedStartDate"   description="Project start date target"> <ds:selectable expression="attribute[Task Estimated Start Date]" type="bus" format="isodate" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedFinishDate"  description="Project completion date target"><ds:selectable expression="attribute[Task Estimated Finish Date]" type="bus" format="isodate"/>
+            <ds:sort name="latest" sortable="true" type="date" direction="ascending" order="1" />
+        </ds:field>
+        <ds:field name="dueDate"             description="Project completion date target (depecatd)">            <ds:selectable expression="attribute[Task Estimated Finish Date]" type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="actualStartDate"     description="Project actual start date">      <ds:selectable expression="attribute[Task Actual Start Date]" type="bus" format="isodate" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="actualFinishDate"    description="Project actual completion date"> <ds:selectable expression="attribute[Task Actual Finish Date]" type="bus" format="isodate" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+    </ds:service>
+
+    <ds:service name="dpm.dateFields2">
+        <ds:field name="estimatedStartDate"  description="Object start date target">     <ds:selectable expression="attribute[Estimated Start Date]" type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedFinishDate" description="Object completion date target"><ds:selectable expression="attribute[Estimated End Date]" type="bus" format="isodate"/>
+            <ds:sort name="latest" sortable="true" type="date" direction="ascending" order="1" />
+        </ds:field>
+        <!--
+        <ds:field name="dueDate"             description="Object completion date target (depecatd)">            <ds:selectable expression="attribute[Estimated End Date]" type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="actualStartDate"     description="Object start date target">      <ds:selectable expression="attribute[Actual Start Date]" type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="actualFinishDate"    description="Object actual completion date"> <ds:selectable expression="attribute[Actual End Date]" type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+         -->
+    </ds:service>
+
+    <ds:service name="baselines">
+        <ds:data>
+            <ds:print/>
+        </ds:data>
+        <ds:ref-subservice name="dpm.basicFields"  includeByDefault="yes"/>
+        <ds:field name="sortdate" includeByDefault="always"  description="The Baseline creation date sorted most recent first.">
+            <ds:selectable expression="originated" format="transient"  createOperation="no" modifyOperation="no" readOperation="no"/>
+            <ds:sort sortable="true" type="date" direction="descending" order="1"/>
+        </ds:field>
+        <ds:field name="baselineCurrentStartDate" description="Baseline start date"> <ds:selectable expression="attribute[Baseline Current Start Date]" type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="baselineCurrentFinishDate" description="Baseline finish date"><ds:selectable expression="attribute[Baseline Current End Date]" type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedFinishDate" description="Estimated finish date"><ds:selectable expression="attribute[Task Estimated Finish Date]" type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes" includeByDefault="no(private)"/></ds:field>
+        <ds:field name="percentComplete"             description="Percentage complete of project" >   <ds:selectable expression="attribute[Percent Complete]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes" includeByDefault="no(private)"/></ds:field>
+        <ds:field name="percentCompleteBasedOn"  includeByDefault="no(private)" description="This attribute stores the value of parameter based on which the percent complete is calculated" >
+            <ds:selectable expression="attribute[Percent Complete Based On]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="scheduleBasedOn" includeByDefault="no(private)" description="Scheduling basis">
+            <ds:selectable expression="attribute[Schedule Based On]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="projectSchedule" includeByDefault="no(private)" description="Auto or Manual schedule" >
+            <ds:selectable expression="attribute[Schedule]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="lagCalendar" includeByDefault="no(private)" description="Lag Calendar">
+            <ds:selectable expression="attribute[Lag Calendar]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="originatorInfo"  includeByDefault="yes"/>
+        <ds:ref-subservice name="ownerInfo"  includeByDefault="yes"/>
+        <ds:ref-subservice name="tasks" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Subtask" getFrom="true" recurseLevels="{level}"/>
+            </ds:data>
+            <!-- override this definition from tasks as it is N/A in the project services. -->
+            <ds:subservice name="DPMProject" includeByDefault="never" hidden="true"/>
+        </ds:ref-subservice>
+
+    </ds:service>
+    <ds:service name="dpm.experiments">
+        <ds:data>
+            <ds:print/>
+        </ds:data>
+        <ds:ref-subservice name="dpm.basicFields"  includeByDefault="yes"/>
+        <ds:field name="estimatedFinishDate" description="Estimated finish date"><ds:selectable expression="attribute[Task Estimated Finish Date]" type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes" includeByDefault="no(private)"/></ds:field>
+        <ds:field name="percentComplete"             description="Percentage complete of project" >   <ds:selectable expression="attribute[Percent Complete]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes" includeByDefault="no(private)"/></ds:field>
+        <ds:field name="percentCompleteBasedOn"  includeByDefault="no(private)" description="This attribute stores the value of parameter based on which the percent complete is calculated" >
+            <ds:selectable expression="attribute[Percent Complete Based On]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="scheduleBasedOn" includeByDefault="no(private)" description="Scheduling basis">
+            <ds:selectable expression="attribute[Schedule Based On]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="projectSchedule" includeByDefault="no(private)" description="Auto or Manual schedule" >
+            <ds:selectable expression="attribute[Schedule]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="lagCalendar" includeByDefault="no(private)" description="Lag Calendar">
+            <ds:selectable expression="attribute[Lag Calendar]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="ownerInfo"  includeByDefault="yes"/>
+
+    </ds:service>
+
+    <ds:service name="members">
+        <ds:data>
+            <ds:print/>
+        </ds:data>
+        <ds:ref-subservice name="dpm.personFields"/>
+        <ds:field name="projectAccess"><ds:selectable expression="attribute[Project Access]" type="rel" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+    </ds:service>
+
+    <!-- Note the dependency on TSK2 methods -->
+    <ds:service name="assignees">
+        <ds:data>
+            <ds:expand relationshipPattern="Assigned*" getTo="true"/>
+        </ds:data>
+        <ds:ref-subservice name="dpm.personFields"/>
+    </ds:service>
+
+    <ds:service name="ownerInfo" >
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.tskv2.TaskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="owner" arg-value="true"/>
+            </ds:jpo>
+        </ds:data>
+        <ds:field name="name.transient" includeByDefault="always"><ds:selectable expression="name" format="transient" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:ref-subservice name="dpm.personFields"/>
+    </ds:service>
+
+
+    <ds:service name="programsNameList" includeByDefault="no">
+        <ds:data>
+            <ds:print />
+        </ds:data>
+
+        <ds:field name="name">      <ds:selectable expression="name"                   type="bus"/></ds:field>
+        <ds:field name="typeicon" >
+            <ds:image source="businessType" size="icon" />
+        </ds:field>
+        <ds:field name="icon" includeByDefault="yes">
+            <ds:image source="businessType" size="small"/>
+        </ds:field>
+        <ds:field name="image">
+            <ds:image source="primaryOrType" size="medium"/>
+        </ds:field>
+        <ds:field name="programNames"             description="Name of program"  includeByDefault="no" >
+            <ds:selectable expression="to[Program Project].from.name" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/>
+
+            <!--ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProgramNames" localInvokation="false" /-->
+        </ds:field>
+    </ds:service>
+
+    <!-- Note the dependency on TSK2 methods -->
+    <ds:service name="originatorInfo">
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.tskv2.TaskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="attribute[Originator]" arg-value="true"/>
+            </ds:jpo>
+        </ds:data>
+        <ds:field name="name.transient" includeByDefault="always"><ds:selectable expression="name" format="transient" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:ref-subservice name="dpm.personFields"/>
+    </ds:service>
+
+</ds:services>

@@ -1,0 +1,18 @@
+del command 'APPWhereUsedExpandENDlevel';
+add command 'APPWhereUsedExpandENDlevel'
+	description	''
+	label	'emxWhereUsed.command.expandlevel.end'
+	href	'javascript:top.AEFFreezePaneExpandAllLevelmxcommandcode.main()'
+	alt	''
+	setting	'Registered Suite'		'WhereUsed'
+	setting	'Level'		'End'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'WhereUsed'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWhereUsedExpandENDlevel'
+	property	'version'	value	'R213'
+;
+modify menu APPWhereUsedExpandMenu add command APPWhereUsedExpandENDlevel order command APPWhereUsedExpandENDlevel 0;
+#channel ==>APPWhereUsedExpandMenu
+add property command_APPWhereUsedExpandENDlevel on program eServiceSchemaVariableMapping.tcl to command 'APPWhereUsedExpandENDlevel';

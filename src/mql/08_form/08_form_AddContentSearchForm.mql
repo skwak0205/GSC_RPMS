@@ -1,0 +1,33 @@
+del form 'AddContentSearchForm';
+add form 'AddContentSearchForm' web
+field #1
+	name	'ADDCONTENTTYPE'
+	label	'emxFramework.FullTextSearch.ADDCONTENTTYPE'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+field #2
+	name	'Name'
+	label	'emxFramework.Basic.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+field #3
+	name	'Revision'
+	label	'emxFramework.Basic.Revision'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+field #4
+	name	'Owner'
+	label	'emxFramework.Basic.Owner'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AddContentSearchForm'
+	property	'version'	value	'R417'
+;
+add property form_AddContentSearchForm on program eServiceSchemaVariableMapping.tcl to form 'AddContentSearchForm';

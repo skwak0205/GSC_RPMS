@@ -1,0 +1,16 @@
+del menu 'PLCAssociatedParametersToolbar';
+add menu 'PLCAssociatedParametersToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PLCAddNewParameterActionLink'
+	command	'AEFSeparator'
+	command	'PLMDisconnectParametersActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCAssociatedParametersToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_PLCAssociatedParametersToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PLCAssociatedParametersToolbar';

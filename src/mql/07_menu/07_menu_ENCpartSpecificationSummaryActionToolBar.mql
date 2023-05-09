@@ -1,0 +1,7 @@
+del menu 'ENCpartSpecificationSummaryActionToolBar';
+add menu 'ENCpartSpecificationSummaryActionToolBar'
+	description	''
+	label	'null'
+	href	'null'
+	alt	'null'
+add property menu_ENCpartSpecificationSummaryActionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'ENCpartSpecificationSummaryActionToolBar';

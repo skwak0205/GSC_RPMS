@@ -1,0 +1,27 @@
+del command 'APPObjectNewDiscussionEvent';
+add command 'APPObjectNewDiscussionEvent'
+	description	'Object New Discussion Event'
+	label	'emxComponents.Discussion.NewDiscussion'
+	href	''
+	alt	''
+	setting	'Force Recursion'		'true'
+	setting	'Registered Suite'		'Components'
+	setting	'3DNotificationSupported'		'false'
+	setting	'Event Type'		'New Discussion'
+	setting	'Recurse Relationship'		'$<relationship_Reply>,$<relationship_Message>,$<relationship_Thread>'
+	setting	'Is Recursible'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectNewDiscussionEvent'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPPartEvents add command APPObjectNewDiscussionEvent order command APPObjectNewDiscussionEvent 7;
+modify menu APPDecisionEvents add command APPObjectNewDiscussionEvent order command APPObjectNewDiscussionEvent 0;
+modify menu APPIssueEvents add command APPObjectNewDiscussionEvent order command APPObjectNewDiscussionEvent 0;
+modify menu APPRouteSubscriptionEvents add command APPObjectNewDiscussionEvent order command APPObjectNewDiscussionEvent 0;
+modify menu APPDOCUMENTSEvents add command APPObjectNewDiscussionEvent order command APPObjectNewDiscussionEvent 10;
+modify menu RMTRequirementEvents add command APPObjectNewDiscussionEvent order command APPObjectNewDiscussionEvent 11;
+modify menu RMTRequirementSpecificationEvents add command APPObjectNewDiscussionEvent order command APPObjectNewDiscussionEvent 5;
+#channel ==>APPPartEventsAPPDecisionEventsAPPIssueEventsAPPRouteSubscriptionEventsAPPDOCUMENTSEventsRMTRequirementEventsRMTRequirementSpecificationEvents
+add property command_APPObjectNewDiscussionEvent on program eServiceSchemaVariableMapping.tcl to command 'APPObjectNewDiscussionEvent';

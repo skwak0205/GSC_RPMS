@@ -1,0 +1,22 @@
+del command 'ContextIssueCategoryListPage';
+add command 'ContextIssueCategoryListPage'
+	description	'Command Object for Issue Categories under context'
+	label	'emxComponents.Menu.IssueCategories'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=emxCommonIssue:issueCategoryClassificationExpand&table=MyDeskIssueCategorySummaryTable&program=emxCommonIssue:getIssueCategoryList&header=emxComponents.Form.Label.IssueCategoryClassification&suiteKey=Components&toolbar=IssueCategoriesToolBar&selection=multiple&editLink=true&massPromoteDemote=false&massUpdate=false&customize=false&multiColumnSort=false&showPageURLIcon=false&showRMB=false&showClipboard=false&objectCompare=false&displayView=details&findMxLink=false&rowGrouping=false'
+	alt	'emxComponents.Menu.IssueCategories'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallIssue.gif'
+	user	'3DSRestrictedOwner'
+	user	'Administration Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'ContextIssueCategoryListPage'
+	property	'version'	value	'R422'
+;
+#channel ==>My Enovia
+add property command_ContextIssueCategoryListPage on program eServiceSchemaVariableMapping.tcl to command 'ContextIssueCategoryListPage';

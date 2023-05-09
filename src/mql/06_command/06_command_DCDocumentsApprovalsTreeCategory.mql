@@ -1,0 +1,18 @@
+del command 'DCDocumentsApprovalsTreeCategory';
+add command 'DCDocumentsApprovalsTreeCategory'
+	description	'Approvals Tree Category for DOCUMENTS'
+	label	'emxDocumentCentral.TreeCategory.Approvals'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=LBCRouteApprovalsSummary&program=emxLibraryCentralRouteApprovals:getRouteApprovals&header=emxDocumentCentral.Common.ApprovalsPageHeading&HelpMarker=emxhelpapprovals'
+	alt	'emxDocumentCentral.TreeCategory.Approvals'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Image'		'${COMMON_DIR}/iconSmallObjectFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCDocumentsApprovalsTreeCategory'
+	property	'version'	value	'R212'
+;
+#channel ==>
+add property command_DCDocumentsApprovalsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'DCDocumentsApprovalsTreeCategory';

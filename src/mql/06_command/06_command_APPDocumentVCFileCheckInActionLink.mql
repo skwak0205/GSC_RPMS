@@ -1,0 +1,29 @@
+del command 'APPDocumentVCFileCheckInActionLink';
+add command 'APPDocumentVCFileCheckInActionLink'
+	description	'VC File Check In Command Object'
+	label	'emxComponents.Common.Checkin'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=checkinVCFile&allowFileNameChange=false&noOfFiles=1&showComments=required&showFormat=false&JPOName=emxVCDocument&methodName=checkinUpdate'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasVCFileCheckinAccess'
+	setting	'Access Program'		'emxVCDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckIn.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentVCFileCheckInActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentActionsToolBar add command APPDocumentVCFileCheckInActionLink order command APPDocumentVCFileCheckInActionLink 5;
+modify menu TMCDocumentsActionToolbar add command APPDocumentVCFileCheckInActionLink order command APPDocumentVCFileCheckInActionLink 4;
+modify menu LBCGenericDocumentActionsToolBar add command APPDocumentVCFileCheckInActionLink order command APPDocumentVCFileCheckInActionLink 5;
+modify menu LBCDocumentSheetActionsToolBar add command APPDocumentVCFileCheckInActionLink order command APPDocumentVCFileCheckInActionLink 5;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbarLBCGenericDocumentActionsToolBarLBCDocumentSheetActionsToolBar
+add property command_APPDocumentVCFileCheckInActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentVCFileCheckInActionLink';

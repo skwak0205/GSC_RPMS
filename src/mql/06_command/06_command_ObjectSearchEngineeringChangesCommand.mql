@@ -1,0 +1,16 @@
+del command 'ObjectSearchEngineeringChangesCommand';
+add command 'ObjectSearchEngineeringChangesCommand'
+	description	''
+	label	'emxComponents.ActionLink.FindEngineeringChanges'
+	href	'${SUITE_DIR}/emxEngineeringChangeSearchDialog.jsp?program=emxCommonEngineeringChangeBase:getEngineeringChangeSearchResults&table=APPECContextSearchList&CommandName=ObjectSearchEngineeringChangesCommand&sortColumnName=Name&header=emxComponents.Heading.AddExisting&Style=dialog&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'ObjectSearchEngineeringChangesCommand'
+	property	'version'	value	'10-6'
+;
+modify menu APPECSearchAddExistingChooser add command ObjectSearchEngineeringChangesCommand order command ObjectSearchEngineeringChangesCommand 8;
+#channel ==>APPECSearchAddExistingChooser
+add property command_ObjectSearchEngineeringChangesCommand on program eServiceSchemaVariableMapping.tcl to command 'ObjectSearchEngineeringChangesCommand';

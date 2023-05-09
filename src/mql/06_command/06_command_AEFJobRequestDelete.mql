@@ -1,0 +1,24 @@
+del command 'AEFJobRequestDelete';
+add command 'AEFJobRequestDelete'
+	description	''
+	label	'emxFramework.Command.Delete'
+	href	'${SUITE_DIR}/emxJobRequestDelete.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxFramework.JobDelete.ConfirmMessage'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFJobRequestDelete'
+	property	'version'	value	'R422'
+;
+modify menu AEFJobRequestToolbarActions add command AEFJobRequestDelete order command AEFJobRequestDelete 2;
+#channel ==>AEFJobRequestToolbarActions
+add property command_AEFJobRequestDelete on program eServiceSchemaVariableMapping.tcl to command 'AEFJobRequestDelete';

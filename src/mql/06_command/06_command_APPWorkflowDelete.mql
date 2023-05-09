@@ -1,0 +1,21 @@
+del command 'APPWorkflowDelete';
+add command 'APPWorkflowDelete'
+	description	'Command Object for Deleting the workflow from action menu on the workflow summary page'
+	label	'emxComponents.Workflow.Delete'
+	href	'${COMPONENT_DIR}/emxWorkflowAction.jsp?action=delete'
+	alt	'emxComponents.Workflow.Delete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowDelete'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowSummaryActionsToolBar add command APPWorkflowDelete order command APPWorkflowDelete 0;
+modify menu APPObjectWorkflowActionsToolBar add command APPWorkflowDelete order command APPWorkflowDelete 0;
+#channel ==>APPWorkflowSummaryActionsToolBarAPPObjectWorkflowActionsToolBar
+add property command_APPWorkflowDelete on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowDelete';

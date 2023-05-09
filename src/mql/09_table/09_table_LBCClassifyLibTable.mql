@@ -1,0 +1,23 @@
+del table 'LBCClassifyLibTable' system;
+add table 'LBCClassifyLibTable' system
+column #1
+	name	'Label'
+	label	'emxDocumentCentral.Common.Title'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxTree.jsp?appendParameters=true&mode=insert'
+	range	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Column Type'		'program'
+	setting	'function'		'getLabel'
+	setting	'program'		'emxLibraryCentralCommon'
+	setting	'Show Type Icon'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCClassifyLibTable'
+	property	'version'	value	'R423.HF4'
+;
+add property table_LBCClassifyLibTable on program eServiceSchemaVariableMapping.tcl to table 'LBCClassifyLibTable' system;

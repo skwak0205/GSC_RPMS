@@ -1,0 +1,33 @@
+        <!-- BO Type END -->
+
+        <!-- BO FIELD START -->
+        <!--<BOTYPEFIELDS name="emdCADAttribute">
+          <FIELD name="emdVPMReference.emdPartType" select="attribute[emdVPMReference.emdPartType]" type="STRING"/>
+        </BOTYPEFIELDS>
+        -->
+<BOTYPEFIELDS name="gscBusinessGoalCustom">
+    <FIELD name="operationalDefinition" select="attribute[Operational Definition]" type="STRING"/>
+    <FIELD name="measureOfSuccess" select="attribute[Measure of Success]" type="STRING"/>
+    <FIELD name="businessBenefit" select="attribute[Business Benefit]" type="STRING"/>
+    <FIELD name="gscRatio" select="attribute[gscRatio]" type="num"/>
+    <FIELD name="gscYear" select="attribute[gscYear]" type="STRING"/>
+</BOTYPEFIELDS>
+<BOTYPEFIELDS name="gscResourceRequestCustom">
+    <FIELD name="gscResourceTransferType" select="attribute[gscResourceTransferType]" type="STRING"/>
+    <FIELD name="gscResourceRole" select="attribute[gscResourceRole]" type="STRING"/>
+    <FIELD name="gscResourceReason" select="attribute[gscResourceReason]" type="STRING"/>
+    <FIELD name="gscResourceServiceType" select="attribute[gscResourceServiceType]" type="STRING"/>
+    <FIELD name="gscYear" select="attribute[gscYear]" type="STRING"/>
+</BOTYPEFIELDS>
+<BOTYPEFIELDS name="gscProjectSpaceCustom">
+    <FIELD name="gscProjectTitle" select="attribute[gscProjectTitle]"  sixw="ds6wg:gscProjectTitle" type="STRING"/>
+    <FIELD name="gscBusinessArea" select="attribute[gscBusinessArea]"   sixw="ds6wg:gscBusinessArea" type="STRING"/>
+    <FIELD name="gscFundingType" select="attribute[gscFundingType]"   sixw="ds6wg:gscFundingType" type="STRING"/>
+    <FIELD name="gscSourcingType" select="attribute[gscSourcingType]"   sixw="ds6wg:gscSourcingType" type="STRING"/>
+    <FIELD name="gscReviewType" select="attribute[gscReviewType]"   sixw="ds6wg:gscReviewType" type="STRING"/>
+    <FIELD name="gscIsCurrentYearReview" select="attribute[gscIsCurrentYearReview]"   sixw="ds6wg:gscIsCurrentYearReview" type="STRING"/>
+    <FIELD name="gscGateType" select="attribute[gscGateType]"   sixw="ds6wg:gscGateType" type="STRING"/>
+    <FIELD name="gscCostCenter" select="attribute[gscCostCenter]"   sixw="ds6wg:gscCostCenter" type="STRING"/>
+    <FIELD name="gscProjectSite" select="attribute[gscProjectSite]"   sixw="ds6wg:gscProjectSite" type="STRING"/>
+</BOTYPEFIELDS>
+        <!-- BO FIELD END -->

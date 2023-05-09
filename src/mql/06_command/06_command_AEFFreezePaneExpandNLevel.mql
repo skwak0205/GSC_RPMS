@@ -1,0 +1,22 @@
+del command 'AEFFreezePaneExpandNLevel';
+add command 'AEFFreezePaneExpandNLevel'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Level'		'1,2,3,4,5'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFFreezePaneExpandNLevel'
+	property	'version'	value	'R422'
+;
+modify menu AEFFreezePaneExpandLevelFilter add command AEFFreezePaneExpandNLevel order command AEFFreezePaneExpandNLevel 1;
+modify menu AEFFreezePaneExpandLevelFilterMenu add command AEFFreezePaneExpandNLevel order command AEFFreezePaneExpandNLevel 1;
+modify menu APPWhereUsedExpandMenu add command AEFFreezePaneExpandNLevel order command AEFFreezePaneExpandNLevel 1;
+#channel ==>AEFFreezePaneExpandLevelFilterAEFFreezePaneExpandLevelFilterMenuAPPWhereUsedExpandMenu
+add property command_AEFFreezePaneExpandNLevel on program eServiceSchemaVariableMapping.tcl to command 'AEFFreezePaneExpandNLevel';

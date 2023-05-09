@@ -1,0 +1,21 @@
+del command 'APPAttachmentsUploadActionLink';
+add command 'APPAttachmentsUploadActionLink'
+	description	'Upload External Files'
+	label	'emxComponents.Common.Upload'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?showDescription=required&appDir=components&parentRelName=relationship_MessageAttachments&objectAction=create&showTitle=true&showFormat=true'
+	alt	'emxComponents.Common.Upload'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAttachmentsUploadActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPAttachmentsContentSummaryCreateNew add command APPAttachmentsUploadActionLink order command APPAttachmentsUploadActionLink 1;
+#channel ==>APPAttachmentsContentSummaryCreateNew
+add property command_APPAttachmentsUploadActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAttachmentsUploadActionLink';

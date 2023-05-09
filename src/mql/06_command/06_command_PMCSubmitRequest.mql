@@ -1,0 +1,28 @@
+del command 'PMCSubmitRequest';
+add command 'PMCSubmitRequest'
+	description	'Submit Request'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=submitResourceRequest'
+	alt	'emxProgramCentral.Command.ResourcePlan.SubmitRequest'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Action Label'		'emxProgramCentral.Command.ResourcePlan.SubmitRequest'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isResourcePlanRequestCommand'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_Submit_32.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSubmitRequest'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourcePlanToolBar add command PMCSubmitRequest order command PMCSubmitRequest 6;
+#channel ==>PMCResourcePlanToolBar
+add property command_PMCSubmitRequest on program eServiceSchemaVariableMapping.tcl to command 'PMCSubmitRequest';

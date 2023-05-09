@@ -1,0 +1,16 @@
+del channel 'PMCDataGridViewSchedule';
+add channel 'PMCDataGridViewSchedule'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCWBSDataGridView','PMCWBS','PMCWBSFlatView','PMCGantt','PMCMilestones','PMCProjectBaseline'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDataGridViewSchedule'
+	property	'version'	value	'R422.HF6'
+;
+#portal ==>PMCDataGridViewSchedule
+add property channel_PMCDataGridViewSchedule on program eServiceSchemaVariableMapping.tcl to channel 'PMCDataGridViewSchedule';

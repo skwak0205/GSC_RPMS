@@ -1,0 +1,36 @@
+del command 'APPFormats';
+add command 'APPFormats'
+	description	'Formats Command Object'
+	label	'emxComponents.Command.Formats'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPFormatsSummary&toolbar=APPFormatsSummaryToolBar&program=emxOrganization:getAllFormats&header=emxComponents.Formats.Heading&HelpMarker=emxhelpformats&selection=multiple&PrinterFriendly=true&sortColumnName=Name&sortDirection=ascending'
+	alt	'emxComponents.Command.Formats'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(to[$<relationship_Customer>].from.name != "")'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Hide Mode'		'Cloud'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	user	'Supplier'
+	user	'Supplier Representative'
+	user	'Buyer'
+	user	'Supplier Engineer'
+	user	'Advanced Quality Engineer'
+	user	'Buyer Administrator'
+	user	'Supplier Development Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFormats'
+	property	'version'	value	'R422'
+;
+modify menu type_BusinessUnit add command APPFormats order command APPFormats 12;
+modify menu type_Company add command APPFormats order command APPFormats 8;
+#channel ==>type_BusinessUnittype_Company
+add property command_APPFormats on program eServiceSchemaVariableMapping.tcl to command 'APPFormats';

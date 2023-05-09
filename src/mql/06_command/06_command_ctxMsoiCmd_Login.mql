@@ -1,0 +1,17 @@
+del command 'ctxMsoiCmd_Login';
+add command 'ctxMsoiCmd_Login'
+	description	'ctxMsoiCmd_Login'
+	label	'emxMSF.Command.ctxMsoiCmd_Login'
+	href	''
+	alt	'ctxMsoiCmd_Login'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_Login'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_ctxMsoiCmd_Login on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_Login';

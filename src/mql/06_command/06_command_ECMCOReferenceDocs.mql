@@ -1,0 +1,18 @@
+del command 'ECMCOReferenceDocs';
+add command 'ECMCOReferenceDocs'
+	description	'Reference Documents Command Object from CO Categoriest'
+	label	'EnterpriseChangeMgt.Command.ReferenceDocuments'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ECMSupportingDocsToolbar&header=EnterpriseChangeMgt.Common.ReferenceDocumentsPageHeading&HelpMarker=emxhelpreferencedocumentsforecm&parentRelName=relationship_ReferenceDocument'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOReferenceDocs'
+	property	'version'	value	'R418'
+;
+modify menu type_ChangeTemplate add command ECMCOReferenceDocs order command ECMCOReferenceDocs 1;
+#channel ==>type_ChangeTemplateECMReferenceDocumentsChannel
+add property command_ECMCOReferenceDocs on program eServiceSchemaVariableMapping.tcl to command 'ECMCOReferenceDocs';

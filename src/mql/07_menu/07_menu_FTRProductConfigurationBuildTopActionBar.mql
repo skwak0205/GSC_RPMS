@@ -1,0 +1,17 @@
+del menu 'FTRProductConfigurationBuildTopActionBar';
+add menu 'FTRProductConfigurationBuildTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'PLCCreateBuildActionLink'
+	command	'FTRAddExistingProductConfigurationBuildActionLink'
+	command	'PLCRemoveBuildActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRProductConfigurationBuildTopActionBar'
+	property 'version'	value	'R207'
+;
+add property menu_FTRProductConfigurationBuildTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'FTRProductConfigurationBuildTopActionBar';

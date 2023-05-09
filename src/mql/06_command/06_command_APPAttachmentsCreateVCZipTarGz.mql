@@ -1,0 +1,25 @@
+del command 'APPAttachmentsCreateVCZipTarGz';
+add command 'APPAttachmentsCreateVCZipTarGz'
+	description	'Command for mapping a file or folder in DesignSync to business object'
+	label	'emxComponents.VersionControl.CreateVCZipTarGz'
+	href	'${SUITE_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=createVCZipTarGz&JPOName=emxVCDocument&JPOMethod=createCheckin&showDescription=required&appDir=components&parentRelName=relationship_MessageAttachments&showTitle=true&showFormat=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isCreateVCZipTarGzLinkEnabled'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAttachmentsCreateVCZipTarGz'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPAttachmentsCreateVCZipTarGz on program eServiceSchemaVariableMapping.tcl to command 'APPAttachmentsCreateVCZipTarGz';

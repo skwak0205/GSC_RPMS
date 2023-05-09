@@ -1,0 +1,16 @@
+del menu 'FTRMarketingPreferenceRulesToolbar';
+add menu 'FTRMarketingPreferenceRulesToolbar'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRCreateMarketingPreferenceRuleActionCommandLink'
+	command	'FTRAddExistingMarketingPreferenceActionCommandLink'
+	command	'FTRCopyMarketingPreferenceActionCommandLink'
+	command	'AEFSeparator'
+	command	'FTRRemoveMarketingPreferenceActionCommandLink'
+	command	'FTRDeleteMarketingPreferenceActionCommandLink'
+	property 'version'	value	'R420'
+;
+add property menu_FTRMarketingPreferenceRulesToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRMarketingPreferenceRulesToolbar';

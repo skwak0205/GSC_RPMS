@@ -1,0 +1,15 @@
+del menu 'RMTRichTextToolbar';
+add menu 'RMTRichTextToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTRichTextEditorSettings'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRichTextToolbar'
+	property 'version'	value	'V6R2009x'
+;
+add property menu_RMTRichTextToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRichTextToolbar';

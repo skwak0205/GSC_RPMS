@@ -1,0 +1,27 @@
+del command 'FTRReplaceManufacturingFeatureContextActionLink';
+add command 'FTRReplaceManufacturingFeatureContextActionLink'
+	description	''
+	label	'emxProduct.ActionLink.ReplaceFeature'
+	href	'${SUITE_DIR}/ManufacturingFeatureReplacePreProcess.jsp?mode=Replace&HelpMarker=emxhelpmanufacturingfeaturereplace'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'ManufacturingFeature'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/IconSmallReplace.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRReplaceManufacturingFeatureContextActionLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRManufacturingFeaturesToolbarActions add command FTRReplaceManufacturingFeatureContextActionLink order command FTRReplaceManufacturingFeatureContextActionLink 6;
+modify menu FTRLFContextManufacturingFeaturesToolbarActions add command FTRReplaceManufacturingFeatureContextActionLink order command FTRReplaceManufacturingFeatureContextActionLink 6;
+modify menu FTRMFContextManufacturingFeaturesToolbarActions add command FTRReplaceManufacturingFeatureContextActionLink order command FTRReplaceManufacturingFeatureContextActionLink 6;
+#channel ==>FTRManufacturingFeaturesToolbarActionsFTRLFContextManufacturingFeaturesToolbarActionsFTRMFContextManufacturingFeaturesToolbarActions
+add property command_FTRReplaceManufacturingFeatureContextActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRReplaceManufacturingFeatureContextActionLink';

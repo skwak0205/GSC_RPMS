@@ -1,0 +1,21 @@
+del menu 'APPWorkflowTaskPropertiesActionToolbar';
+add menu 'APPWorkflowTaskPropertiesActionToolbar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPWorkflowTaskEditDetailsActionLink'
+	command	'APPWorkflowTaskAcceptActionLink'
+	command	'APPWorkflowTaskOverrideActionLink'
+	command	'APPWorkflowTaskSuspendActionLink'
+	command	'APPWorkflowTaskResumeActionLink'
+	command	'APPWorkflowTaskReassignActionLink'
+	command	'APPWorkflowTaskCompleteActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPWorkflowTaskPropertiesActionToolbar'
+	property 'version'	value	'10-6-SP2'
+;
+add property menu_APPWorkflowTaskPropertiesActionToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPWorkflowTaskPropertiesActionToolbar';

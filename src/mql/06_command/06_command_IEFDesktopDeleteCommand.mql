@@ -1,0 +1,22 @@
+del command 'IEFDesktopDeleteCommand';
+add command 'IEFDesktopDeleteCommand'
+	description	'IEF Desktop Delete Command'
+	label	'emxIEFDesignCenter.Common.Delete'
+	href	''
+	alt	''
+	setting	'iefcname'		'iefdesktopaction'
+	setting	'iefaction'		'delete'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	setting	'Row Select'		'multi'
+	setting	'iefrefreshpage'		'true'
+	setting	'iefwaitforresponse'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopDeleteCommand'
+	property	'version'	value	'R424'
+;
+modify menu IEFDesktopLocalWorkspaceActionMenu add command IEFDesktopDeleteCommand order command IEFDesktopDeleteCommand 0;
+#channel ==>IEFDesktopLocalWorkspaceActionMenu
+add property command_IEFDesktopDeleteCommand on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopDeleteCommand';

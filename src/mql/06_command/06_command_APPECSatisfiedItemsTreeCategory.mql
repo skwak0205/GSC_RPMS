@@ -1,0 +1,18 @@
+del command 'APPECSatisfiedItemsTreeCategory';
+add command 'APPECSatisfiedItemsTreeCategory'
+	description	'Satisfied Items Command Object'
+	label	'emxComponents.Command.SatisfiedItems'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonEngineeringChange:getAllSatisfiedItems&table=APPECSatisfiedItemsList&header=emxComponents.Heading.ECSatisfiedItems&selection=multiple&toolbar=APPECSatisfiedItemsListToolBar&sortColumnName=Name&HelpMarker=emxhelpsatisfieditemslist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECSatisfiedItemsTreeCategory'
+	property	'version'	value	'R420'
+;
+modify menu type_EngineeringChange add command APPECSatisfiedItemsTreeCategory order command APPECSatisfiedItemsTreeCategory 8;
+modify menu type_Issue add command APPECSatisfiedItemsTreeCategory order command APPECSatisfiedItemsTreeCategory 5;
+#channel ==>type_EngineeringChangetype_Issue
+add property command_APPECSatisfiedItemsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPECSatisfiedItemsTreeCategory';

@@ -1,0 +1,17 @@
+del menu 'RMTCreateAddExistingDerivedRequirements';
+add menu 'RMTCreateAddExistingDerivedRequirements'
+	description	''
+	label	'emxRequirements.ActionLink.LinkNewDerivedRequirement'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTCreateAsChildAddExistingDerivedRequirements'
+	command	'RMTCreateAboveAddExistingDerivedRequirements'
+	command	'RMTCreateBelowAddExistingDerivedRequirements'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTCreateAddExistingDerivedRequirements'
+	property 'version'	value	'V6R2011x'
+;
+add property menu_RMTCreateAddExistingDerivedRequirements on program eServiceSchemaVariableMapping.tcl to menu 'RMTCreateAddExistingDerivedRequirements';

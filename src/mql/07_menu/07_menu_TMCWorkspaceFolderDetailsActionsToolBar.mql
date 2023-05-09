@@ -1,0 +1,19 @@
+del menu 'TMCWorkspaceFolderDetailsActionsToolBar';
+add menu 'TMCWorkspaceFolderDetailsActionsToolBar'
+	description	''
+	label	'TeamCentral.Toolbar.Actions'
+	href	''
+	alt	'TeamCentral.Toolbar.Actions'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'TMCWorkspaceFolderEditDetailsCommand'
+	command	'TMCWorkspaceFolderCloneCommand'
+	command	'TMCWorkspaceFolderSubscriptionCommand'
+	command	'TMCFolderCreatePushSubscriptionCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCWorkspaceFolderDetailsActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_TMCWorkspaceFolderDetailsActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'TMCWorkspaceFolderDetailsActionsToolBar';

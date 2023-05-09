@@ -1,0 +1,21 @@
+del command 'CFPMPRevisionCreateCommand';
+add command 'CFPMPRevisionCreateCommand'
+	description	''
+	label	'DMCPlanning.Command.Derivations.CreateRevision'
+	href	'${SUITE_DIR}/ManufacturingPlanRevisionCreatePreProcess.jsp?HelpMarker=emxhelpMPrevision'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Licensed Product'		'ENO_CFP_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/CreateRevision16.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPMPRevisionCreateCommand'
+	property	'version'	value	'R418'
+;
+modify menu CFPMPDerivationActions add command CFPMPRevisionCreateCommand order command CFPMPRevisionCreateCommand 2;
+#channel ==>CFPMPDerivationActions
+add property command_CFPMPRevisionCreateCommand on program eServiceSchemaVariableMapping.tcl to command 'CFPMPRevisionCreateCommand';

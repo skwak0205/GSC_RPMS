@@ -1,0 +1,11 @@
+del menu 'APP3DShapeEvents';
+add menu 'APP3DShapeEvents'
+	description	'Events menu for 3DShape'
+	label	''
+	href	''
+	alt	''
+	command	'APP3DShapePromoteEvent'
+	command	'APP3DShapeMajorRevisionEvent'
+	property 'version'	value	'R421'
+;
+add property menu_APP3DShapeEvents on program eServiceSchemaVariableMapping.tcl to menu 'APP3DShapeEvents';

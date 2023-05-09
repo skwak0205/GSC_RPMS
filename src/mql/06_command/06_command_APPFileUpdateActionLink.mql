@@ -1,0 +1,27 @@
+del command 'APPFileUpdateActionLink';
+add command 'APPFileUpdateActionLink'
+	description	'File Update Command Object'
+	label	'emxComponents.Command.CheckIn'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=update&showFormat=readonly&showComments=required&msfBypass=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasFileCheckinAccess'
+	setting	'Access Program'		'emxCommonFile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckIn.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFileUpdateActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentActionsToolBar add command APPFileUpdateActionLink order command APPFileUpdateActionLink 13;
+modify menu TMCDocumentsActionToolbar add command APPFileUpdateActionLink order command APPFileUpdateActionLink 9;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbar
+add property command_APPFileUpdateActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPFileUpdateActionLink';

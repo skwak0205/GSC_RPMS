@@ -1,0 +1,15 @@
+del menu 'APPProcessListActiontoolbar';
+add menu 'APPProcessListActiontoolbar'
+	description	''
+	label	'emxComponents.Menu.Workflows'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPProcessListCreateWorkflow'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPProcessListActiontoolbar'
+	property 'version'	value	'10-6-SP2'
+;
+add property menu_APPProcessListActiontoolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPProcessListActiontoolbar';

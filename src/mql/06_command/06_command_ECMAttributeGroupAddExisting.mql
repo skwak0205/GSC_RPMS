@@ -1,0 +1,22 @@
+del command 'ECMAttributeGroupAddExisting';
+add command 'ECMAttributeGroupAddExisting'
+	description	'Attribute Group command for Change Template in ECM'
+	label	'EnterpriseChangeMgt.Command.AddExisting'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeTemplate:getUnusedAttributeGroups&table=ECMAttributeGroupTable&selection=multiple&categoryTreeName=null&header=EnterpriseChangeMgt.AttributeChooser.SelectAttributeGroup&sortColumnName=Name&sortDirection=ascending&objectCompare=false&Export=false&toolbar=ECMAttributeAddExisting&expandLevelFilterMenu=false&PrinterFriendly=false&showClipboard=false&showPageURLIcon=false&submitLabel=emxFramework.Common.Done&cancelLabel=emxFramework.Common.Cancel&cancelButton=true&autoFilter=true&filter=true&HelpMarker=emxhelpattributegroupaddexisting&submitURL=../enterprisechangemgtapp/ECMUtil.jsp?functionality=addAttributeGroup'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAttributeGroupAddExisting'
+	property	'version'	value	'R417'
+;
+modify menu ECMAttributeGroupToolbar add command ECMAttributeGroupAddExisting order command ECMAttributeGroupAddExisting 1;
+#channel ==>ECMAttributeGroupToolbar
+add property command_ECMAttributeGroupAddExisting on program eServiceSchemaVariableMapping.tcl to command 'ECMAttributeGroupAddExisting';

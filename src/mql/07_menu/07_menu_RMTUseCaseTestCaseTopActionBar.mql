@@ -1,0 +1,16 @@
+del menu 'RMTUseCaseTestCaseTopActionBar';
+add menu 'RMTUseCaseTestCaseTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'PLCCreateTestCaseActionLink'
+	command	'RMTAddExistingUseCaseTestCaseActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTUseCaseTestCaseTopActionBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_RMTUseCaseTestCaseTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTUseCaseTestCaseTopActionBar';

@@ -1,0 +1,22 @@
+del command 'APPLaunch3DPlayTableSelect';
+add command 'APPLaunch3DPlayTableSelect'
+	description	''
+	label	'emxComponents.ImageManager.3DPlay'
+	href	'${COMPONENT_DIR}/emxLaunch3DPlayCheck.jsp?uiType=structureBrowser'
+	alt	'emxComponents.ImageManager.3DPlay'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showOrHide3DPlay'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionShowHide3D.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLaunch3DPlayTableSelect'
+	property	'version'	value	'R419'
+;
+modify menu APPPartFamilyPartToolBar add command APPLaunch3DPlayTableSelect order command APPLaunch3DPlayTableSelect 2;
+#channel ==>APPPartFamilyPartToolBar
+add property command_APPLaunch3DPlayTableSelect on program eServiceSchemaVariableMapping.tcl to command 'APPLaunch3DPlayTableSelect';

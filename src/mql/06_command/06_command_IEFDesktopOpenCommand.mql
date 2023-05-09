@@ -1,0 +1,23 @@
+del command 'IEFDesktopOpenCommand';
+add command 'IEFDesktopOpenCommand'
+	description	'IEF Desktop Open Command'
+	label	'emxIEFDesignCenter.Common.Open'
+	href	''
+	alt	''
+	setting	'iefcname'		'iefdesktopaction'
+	setting	'iefaction'		'open'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'iefdoubleclick'		'true'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	setting	'Row Select'		'single'
+	setting	'iefrefreshpage'		'false'
+	setting	'iefwaitforresponse'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopOpenCommand'
+	property	'version'	value	'R424'
+;
+modify menu IEFDesktopLocalWorkspaceActionMenu add command IEFDesktopOpenCommand order command IEFDesktopOpenCommand 1;
+#channel ==>IEFDesktopLocalWorkspaceActionMenu
+add property command_IEFDesktopOpenCommand on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopOpenCommand';

@@ -1,0 +1,15 @@
+del menu 'PMCWTSLaborReportMenu';
+add menu 'PMCWTSLaborReportMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PMCWTSMembershipReport'
+	command	'PMCWTSPhaseReport'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWTSLaborReportMenu'
+	property 'version'	value	'R210'
+;
+add property menu_PMCWTSLaborReportMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCWTSLaborReportMenu';

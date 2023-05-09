@@ -1,0 +1,19 @@
+del command 'ECMCARelatedItems';
+add command 'ECMCARelatedItems'
+	description	'Related Items command'
+	label	'EnterpriseChangeMgt.Command.Referential'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeAction:getReferntial&table=ECMCARelatedItemSummary&header=EnterpriseChangeMgt.Common.ReferentialPageHeading&selection=multiple&sortColumnName=Name&HelpMarker=emxhelprelateditems&toolbar=ECMAddRemoveCARelatedItemsToolbar'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCARelatedItems'
+	property	'version'	value	'R216'
+;
+modify menu type_ChangeAction add command ECMCARelatedItems order command ECMCARelatedItems 4;
+#channel ==>type_ChangeAction
+add property command_ECMCARelatedItems on program eServiceSchemaVariableMapping.tcl to command 'ECMCARelatedItems';

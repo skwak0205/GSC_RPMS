@@ -1,0 +1,24 @@
+del command 'FTRConfigurationFeatureMakeMandatory';
+add command 'FTRConfigurationFeatureMakeMandatory'
+	description	''
+	label	'emxConfiguration.ActionLink.MakeMandatoryFeature'
+	href	'${SUITE_DIR}/ConfigurationFeatureToggleMandatory.jsp?mode=makeMandatory'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'ConfigurationFeature'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallMandatory.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationFeatureMakeMandatory'
+	property	'version'	value	'R418'
+;
+modify menu FTRModelCandidateConfigurationFeatureToolbar add command FTRConfigurationFeatureMakeMandatory order command FTRConfigurationFeatureMakeMandatory 4;
+#channel ==>FTRModelCandidateConfigurationFeatureToolbar
+add property command_FTRConfigurationFeatureMakeMandatory on program eServiceSchemaVariableMapping.tcl to command 'FTRConfigurationFeatureMakeMandatory';

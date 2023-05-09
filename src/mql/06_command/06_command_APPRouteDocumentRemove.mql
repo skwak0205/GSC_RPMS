@@ -1,0 +1,26 @@
+del command 'APPRouteDocumentRemove';
+add command 'APPRouteDocumentRemove'
+	description	'Remove Selected Document'
+	label	'emxComponents.Command.Remove'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRemove.jsp?action=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canDeleteContent'
+	setting	'Access Program'		'emxRoute'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteDocumentRemove'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteContentActionsToolBar add command APPRouteDocumentRemove order command APPRouteDocumentRemove 0;
+#channel ==>APPRouteContentActionsToolBar
+add property command_APPRouteDocumentRemove on program eServiceSchemaVariableMapping.tcl to command 'APPRouteDocumentRemove';

@@ -1,0 +1,18 @@
+del menu 'APPPersonSkillSummaryToolBarActions';
+add menu 'APPPersonSkillSummaryToolBarActions'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'emxAddSkillToPerson'
+	command	'AEFSeparator'
+	command	'emxRemoveSkillFromPerson'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPPersonSkillSummaryToolBarActions'
+	property 'version'	value	'R417'
+;
+add property menu_APPPersonSkillSummaryToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'APPPersonSkillSummaryToolBarActions';

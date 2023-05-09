@@ -1,0 +1,23 @@
+del command 'DSCCreateCADStructure';
+add command 'DSCCreateCADStructure'
+	description	'Create CAD Structure from EBOM'
+	label	'emxIEFDesignCenter.CreateCADStructure.CreateCADStructure'
+	href	'${SUITE_DIR}/DSCCreateCADStructureDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'400'
+	setting	'Window Width'		'400'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Javascript'		'true'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'allowCreatCADStructure'
+	setting	'Access Program'		'VPLMIntegCheckCommandAccess'
+	user	'Integration User'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'DesignerCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DSCCreateCADStructure'
+	property	'version'	value	'10-6-0-1'
+;
+#channel ==>
+add property command_DSCCreateCADStructure on program eServiceSchemaVariableMapping.tcl to command 'DSCCreateCADStructure';

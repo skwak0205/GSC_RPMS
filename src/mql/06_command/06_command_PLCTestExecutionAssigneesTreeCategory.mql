@@ -1,0 +1,16 @@
+del command 'PLCTestExecutionAssigneesTreeCategory';
+add command 'PLCTestExecutionAssigneesTreeCategory'
+	description	'Test Execution Assignees tree category command'
+	label	'emxComponents.Command.Assignees'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCAssigneeList&program=emxAssignee:getAllAssignee&toolbar=PLCTestExecutionAssigneesToolbar&relationName=relationship_AssignedTestExecution&isTo=false&header=emxComponents.Heading.TestExecutionAssignees&selection=multiple&sortColumnName=Name&HelpMarker=emxhelpassigneeslist'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestExecutionAssigneesTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_TestExecution add command PLCTestExecutionAssigneesTreeCategory order command PLCTestExecutionAssigneesTreeCategory 1;
+#channel ==>type_TestExecution
+add property command_PLCTestExecutionAssigneesTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCTestExecutionAssigneesTreeCategory';

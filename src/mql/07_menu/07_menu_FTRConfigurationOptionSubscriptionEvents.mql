@@ -1,0 +1,21 @@
+del menu 'FTRConfigurationOptionSubscriptionEvents';
+add menu 'FTRConfigurationOptionSubscriptionEvents'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'PLCEngineeringChangeRaisedEvent'
+	command	'FTRRuleAddedEvent'
+	command	'FTRRuleRemovedEvent'
+	command	'PLCSpecificationAddedEvent'
+	command	'PLCSpecificationRemovedEvent'
+	command	'FTRTestCaseAddedEvent'
+	command	'FTRTestCaseRemovedEvent'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRConfigurationOptionSubscriptionEvents'
+	property 'version'	value	'R212'
+;
+add property menu_FTRConfigurationOptionSubscriptionEvents on program eServiceSchemaVariableMapping.tcl to menu 'FTRConfigurationOptionSubscriptionEvents';

@@ -1,0 +1,28 @@
+del command 'PMCReferenceDocumentAddProjectContentActionLink';
+add command 'PMCReferenceDocumentAddProjectContentActionLink'
+	description	'Add existing Project content'
+	label	'emxProgramCentral.Common.AddExisting'
+	href	'${SUITE_DIR}/emxProgramCentralFolderAddExisting.jsp?uiType=structureBrowser&mode=referenceDocument'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'700'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'((current.access[modify]==TRUE) && (current.access[fromconnect]==TRUE)) && ( (type.kindOf[$<type_ControlledFolder>]==false)||(current.name == Create))'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReferenceDocumentAddProjectContentActionLink'
+	property	'version'	value	'R422'
+;
+modify menu PMCReferenceDocumentSummaryActionsToolBar add command PMCReferenceDocumentAddProjectContentActionLink order command PMCReferenceDocumentAddProjectContentActionLink 1;
+#channel ==>PMCReferenceDocumentSummaryActionsToolBar
+add property command_PMCReferenceDocumentAddProjectContentActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCReferenceDocumentAddProjectContentActionLink';

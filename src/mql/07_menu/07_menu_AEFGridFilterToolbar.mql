@@ -1,0 +1,17 @@
+del menu 'AEFGridFilterToolbar';
+add menu 'AEFGridFilterToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFGridToolbarNameInput'
+	command	'AEFGridToolbarFindButton'
+	command	'AEFGridToolbarFilterButton'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFGridFilterToolbar'
+	property 'version'	value	'R212'
+;
+add property menu_AEFGridFilterToolbar on program eServiceSchemaVariableMapping.tcl to menu 'AEFGridFilterToolbar';

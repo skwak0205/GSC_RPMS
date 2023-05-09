@@ -1,0 +1,18 @@
+del command 'PMCReferenceDocumentURL';
+add command 'PMCReferenceDocumentURL'
+	description	''
+	label	'emxProgramCentral.Common.FolderBookmark'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCReferenceDocumentURL'
+	alt	'emxFramework.Command.Bookmark'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReferenceDocumentURL'
+	property	'version'	value	'R421.HF3'
+;
+#channel ==>PMCTaskReferenceDocumentChannel2
+add property command_PMCReferenceDocumentURL on program eServiceSchemaVariableMapping.tcl to command 'PMCReferenceDocumentURL';

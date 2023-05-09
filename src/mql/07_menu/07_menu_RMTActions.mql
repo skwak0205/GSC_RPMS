@@ -1,0 +1,19 @@
+del menu 'RMTActions';
+add menu 'RMTActions'
+	description	''
+	label	'emxRequirements.Menu.RequirementManagement'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallUseRequirement.gif'
+	command	'RMTCreateRequirementActions'
+	command	'RMTCreateRequirementSpecification'
+	command	'RMTRequirementGroupCreateActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTActions'
+	property 'version'	value	'V6R2014x'
+;
+add property menu_RMTActions on program eServiceSchemaVariableMapping.tcl to menu 'RMTActions';

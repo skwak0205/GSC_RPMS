@@ -1,0 +1,19 @@
+del command 'APPAcceptInboxTask';
+add command 'APPAcceptInboxTask'
+	description	'Command for accepting Inbox Task'
+	label	'emxComponents.Inbox.AcceptTask'
+	href	'${SUITE_DIR}/emxRouteAcceptTask.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'checksToAcceptTask'
+	setting	'Access Program'		'emxInboxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAcceptInboxTask'
+	property	'version'	value	'R211'
+;
+modify menu APPInboxTaskDetailsActionsToolbar add command APPAcceptInboxTask order command APPAcceptInboxTask 1;
+#channel ==>APPInboxTaskDetailsActionsToolbar
+add property command_APPAcceptInboxTask on program eServiceSchemaVariableMapping.tcl to command 'APPAcceptInboxTask';

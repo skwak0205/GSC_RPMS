@@ -1,0 +1,25 @@
+del command 'APPMeetingAttachmentsUploadActionLink';
+add command 'APPMeetingAttachmentsUploadActionLink'
+	description	''
+	label	'emxComponents.Command.UploadFiles'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?showDescription=required&appDir=components&parentRelName=relationship_MeetingAttachments&objectAction=create&showTitle=true&showFormat=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingAttachmentsUploadActionLink'
+	property	'version'	value	'R420'
+;
+modify menu APPMeetingAttachmentTopActionBar add command APPMeetingAttachmentsUploadActionLink order command APPMeetingAttachmentsUploadActionLink 1;
+modify menu APPMeetingAttachmentsActionToolbar add command APPMeetingAttachmentsUploadActionLink order command APPMeetingAttachmentsUploadActionLink 1;
+#channel ==>APPMeetingAttachmentTopActionBarAPPMeetingAttachmentsActionToolbar
+add property command_APPMeetingAttachmentsUploadActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingAttachmentsUploadActionLink';

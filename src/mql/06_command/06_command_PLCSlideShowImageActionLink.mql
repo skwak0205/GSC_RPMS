@@ -1,0 +1,22 @@
+del command 'PLCSlideShowImageActionLink';
+add command 'PLCSlideShowImageActionLink'
+	description	''
+	label	'emxProduct.ActionLink.SlideShow'
+	href	'${COMPONENT_DIR}/emxImageManager.jsp?isPopup=true&header=emxProduct.Heading.Image&HelpMarker=emxhelpimageslideshow'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'650'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'$<(from[relationship_Image].to.id !="")>'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSlideShowImageActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCImageListToolBarActions add command PLCSlideShowImageActionLink order command PLCSlideShowImageActionLink 3;
+modify menu PLCImageListTopActionBar add command PLCSlideShowImageActionLink order command PLCSlideShowImageActionLink 0;
+#channel ==>PLCImageListToolBarActionsPLCImageListTopActionBar
+add property command_PLCSlideShowImageActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCSlideShowImageActionLink';

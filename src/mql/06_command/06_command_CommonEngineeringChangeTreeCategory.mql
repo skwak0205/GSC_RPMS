@@ -1,0 +1,25 @@
+del command 'CommonEngineeringChangeTreeCategory';
+add command 'CommonEngineeringChangeTreeCategory'
+	description	'Common Engineering Change tree category command'
+	label	'emxComponents.Command.EngineeringChanges'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonEngineeringChange:getObjectECList&sortColumnName=Name&table=APPECContextList&header=emxComponents.Heading.ObjectEngineeringChange&selection=multiple&toolbar=APPObjectECListToolBar&HelpMarker=emxhelpengchangelist'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'policy != "Version"'
+	setting	'Access Function'		'showEngineeringChangeTreeCategoryCmd'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'CommonEngineeringChangeTreeCategory'
+	property	'version'	value	'V6R2011x'
+;
+modify menu type_TestCase add command CommonEngineeringChangeTreeCategory order command CommonEngineeringChangeTreeCategory 2;
+modify menu type_HardwareBuild add command CommonEngineeringChangeTreeCategory order command CommonEngineeringChangeTreeCategory 4;
+modify menu type_Builds add command CommonEngineeringChangeTreeCategory order command CommonEngineeringChangeTreeCategory 3;
+modify menu type_SoftwareBuild add command CommonEngineeringChangeTreeCategory order command CommonEngineeringChangeTreeCategory 3;
+modify menu type_UseCase add command CommonEngineeringChangeTreeCategory order command CommonEngineeringChangeTreeCategory 3;
+modify menu type_Chapter add command CommonEngineeringChangeTreeCategory order command CommonEngineeringChangeTreeCategory 6;
+modify menu type_Comment add command CommonEngineeringChangeTreeCategory order command CommonEngineeringChangeTreeCategory 4;
+#channel ==>type_TestCasetype_HardwareBuildtype_Buildstype_SoftwareBuildtype_UseCasetype_Chaptertype_CommentPLCProductEngineeringChangeChannelRMTChangeControlRMTSpecificationsChangeControl
+add property command_CommonEngineeringChangeTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'CommonEngineeringChangeTreeCategory';

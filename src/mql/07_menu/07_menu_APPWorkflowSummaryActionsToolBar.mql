@@ -1,0 +1,22 @@
+del menu 'APPWorkflowSummaryActionsToolBar';
+add menu 'APPWorkflowSummaryActionsToolBar'
+	description	''
+	label	'emxComponents.Workflow.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPCreateWorkflow'
+	command	'APPSeparator'
+	command	'APPWorkflowStart'
+	command	'APPWorkflowStop'
+	command	'APPWorkflowReassign'
+	command	'APPWorkflowResume'
+	command	'APPWorkflowPause'
+	command	'APPWorkflowDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPWorkflowSummaryActionsToolBar'
+	property 'version'	value	'10-6-SP2'
+;
+add property menu_APPWorkflowSummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPWorkflowSummaryActionsToolBar';

@@ -1,0 +1,20 @@
+del command 'PLCProductRoadmapTaskConnectSelectedAction';
+add command 'PLCProductRoadmapTaskConnectSelectedAction'
+	description	''
+	label	'emxProduct.ActionLink.AddTasks'
+	href	'${SUITE_DIR}/AssociateTaskProcess.jsp?'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductRoadmapTaskConnectSelectedAction'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductRoadmapTasksSearchToolBar add command PLCProductRoadmapTaskConnectSelectedAction order command PLCProductRoadmapTaskConnectSelectedAction 0;
+#channel ==>PLCProductRoadmapTasksSearchToolBar
+add property command_PLCProductRoadmapTaskConnectSelectedAction on program eServiceSchemaVariableMapping.tcl to command 'PLCProductRoadmapTaskConnectSelectedAction';

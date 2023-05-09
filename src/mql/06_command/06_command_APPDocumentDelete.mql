@@ -1,0 +1,32 @@
+del command 'APPDocumentDelete';
+add command 'APPDocumentDelete'
+	description	'Delete Selected Document'
+	label	'emxComponents.Command.Delete'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRemove.jsp?action=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromdisconnect] == true)'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Delete'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentDelete'
+	property	'version'	value	'R422'
+;
+modify menu IssueDocumentSummaryActionsToolBar add command APPDocumentDelete order command APPDocumentDelete 0;
+modify menu APPDocumentSummaryActionsToolBar add command APPDocumentDelete order command APPDocumentDelete 0;
+modify menu ECMSupportingDocsToolbar add command APPDocumentDelete order command APPDocumentDelete 0;
+modify menu BuildSpecificationSummaryActionsToolbar add command APPDocumentDelete order command APPDocumentDelete 0;
+modify menu ProductSpecificationSummaryActionsToolbar add command APPDocumentDelete order command APPDocumentDelete 0;
+modify menu ProductDocumentSummaryActionsToolBar add command APPDocumentDelete order command APPDocumentDelete 0;
+modify menu FTRPartIssuerDocumentSummaryToolBarActions add command APPDocumentDelete order command APPDocumentDelete 0;
+modify menu FeatureSpecificationSummaryActionsToolbar add command APPDocumentDelete order command APPDocumentDelete 0;
+#channel ==>IssueDocumentSummaryActionsToolBarAPPDocumentSummaryActionsToolBarECMSupportingDocsToolbarBuildSpecificationSummaryActionsToolbarProductSpecificationSummaryActionsToolbarProductDocumentSummaryActionsToolBarFTRPartIssuerDocumentSummaryToolBarActionsFeatureSpecificationSummaryActionsToolbar
+add property command_APPDocumentDelete on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentDelete';

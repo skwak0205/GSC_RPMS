@@ -1,0 +1,23 @@
+del command 'PMCProjectSpace';
+add command 'PMCProjectSpace'
+	description	'ProjectSpace Command Object'
+	label	'emxFramework.Command.Project'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProjectSpace:getActiveProjects,emxProjectSpace:getCompletedProjects,emxProjectSpace:getAllProjects&programLabel=emxProgramCentral.Common.ActiveProjects,emxProgramCentral.Common.CompletedProjects,emxProgramCentral.Common.All&sortColumnName=Type&sortDirection=ascending&Export=false&toolbar=PMCProgramProjectSummaryToolBar&HelpMarker=emxhelpprojectsummary&FilterFramePage=../programcentral/emxProgramVaultFilterInclude.jsp&FilterFrameSize=40&freezePane=Name&table=PMCProjectSpaceMyDesk&toolbar=PMCProgramProjectSummaryToolBar&selection=multiple&header=emxProgramCentral.ProgramTop.Projects&HelpMarker=emxhelpprojectsummary&rowGrouping=false&displayView=details&showClipboard=false&Export=false&showPageURLIcon=false&ShowFilterAction=false&typeFilter=false&customize=true&multiColumnSort=false&objectCompare=false&autoFilter=false&massPromoteDemote=false&triggerValidation=false&isFromProject=false'
+	alt	'emxFramework.Command.Alt.Project'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'iconProjectSmall.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpace'
+	property	'version'	value	'R423.HF1'
+;
+modify menu type_Program add command PMCProjectSpace order command PMCProjectSpace 4;
+#channel ==>type_Program
+add property command_PMCProjectSpace on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpace';

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd ">
+	<ds:service name="ESign.Config">
+        <ds:license products="ENOBUPS_AP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.esignconfig.ESignConfigService" function="getEsignConfig" returnedData="idsAndData" />
+            <ds:updatejpo classname="com.dassault_systemes.enovia.esignconfig.ESignConfigService" function="CreateEsignConfig" processMultiple="true"/>
+        </ds:data>
+        
+		<ds:ref-subservice name="ESign.basicFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="ESign.ConfigFields" includeByDefault="yes"/>
+        
+        <ds:subservice name="active" includeByDefault="no">
+            <ds:data>
+            	<ds:jpo classname="com.dassault_systemes.enovia.esignconfig.ESignConfigService" function="getActiveEsignConfig" returnedData="idsAndData" />
+            </ds:data>
+            <ds:ref-subservice name="ESign.basicFields" includeByDefault="yes"/>
+        	<ds:ref-subservice name="ESign.ConfigFields" includeByDefault="yes"/>
+        </ds:subservice>
+        
+        <ds:subservice name="promoteESign" includeByDefault="no">
+            <ds:data>
+            	<ds:updatejpo classname="com.dassault_systemes.enovia.esignconfig.ESignConfigService" function="promoteESign" processMultiple="true"/>
+            </ds:data>
+            <ds:ref-subservice name="ESign.basicFields" includeByDefault="yes"/>
+        	<ds:ref-subservice name="ESign.ConfigFields" includeByDefault="yes"/>
+        </ds:subservice>
+        
+        <ds:subservice name="demoteESign" includeByDefault="no">
+            <ds:data>
+            	<ds:updatejpo classname="com.dassault_systemes.enovia.esignconfig.ESignConfigService" function="demoteESign" processMultiple="true"/>
+            </ds:data>
+            <ds:ref-subservice name="ESign.basicFields" includeByDefault="yes"/>
+        	<ds:ref-subservice name="ESign.ConfigFields" includeByDefault="yes"/>
+        </ds:subservice>
+        
+        <ds:subservice name="reviseESign" includeByDefault="no">
+            <ds:data>
+            	<ds:updatejpo classname="com.dassault_systemes.enovia.esignconfig.ESignConfigService" function="reviseESignConfig" processMultiple="true"/>
+            </ds:data>
+            <ds:ref-subservice name="ESign.basicFields" includeByDefault="yes"/>
+        	<ds:ref-subservice name="ESign.ConfigFields" includeByDefault="yes"/>
+        </ds:subservice>
+        
+        <ds:subservice name="owner" includeByDefault="no">
+            <ds:data>
+            	<ds:updatejpo classname="com.dassault_systemes.enovia.esignconfig.ESignConfigService" function="modifyEsignOwner" processMultiple="true"/>
+            </ds:data>
+            <ds:ref-subservice name="ESign.basicFields" includeByDefault="yes"/>
+        	<ds:ref-subservice name="ESign.ConfigFields" includeByDefault="yes"/>
+        </ds:subservice>
+         
+	</ds:service> 
+
+
+	<ds:service name="ESign.Record">
+        <ds:license products="ENOBUPS_AP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.esign.ESignRecordService" function="getEsignDetails" returnedData="idsAndData" />
+            <ds:updatejpo classname="com.dassault_systemes.enovia.esign.ESignRecordService" function="CreateEsignLogin" processMultiple="true"/>
+        </ds:data>
+        
+        <ds:ref-subservice name="ESign.basicFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="ESign.RecordFields" includeByDefault="yes"/>
+        
+        <ds:subservice name="validate2FA" includeByDefault="no">
+            <ds:data>
+            	<ds:updatejpo classname="com.dassault_systemes.enovia.esign.ESignRecordService" function="validate2FA" processMultiple="true"/>
+            </ds:data>
+        </ds:subservice>
+        
+        <ds:subservice name="delegateAuth" includeByDefault="no">
+            <ds:data>
+            	<ds:jpo classname="com.dassault_systemes.enovia.esign.ESignRecordService" function="delegateAuth" returnedData="idsAndData" />
+            </ds:data>
+        </ds:subservice>
+        
+        <ds:subservice name="delegateAuthSuccess" includeByDefault="no">
+            <ds:data>
+            	<ds:jpo classname="com.dassault_systemes.enovia.esign.ESignRecordService" function="delegateAuthSuccess" returnedData="idsAndData" />
+            </ds:data>
+        </ds:subservice>
+        
+	</ds:service> 
+
+
+	<ds:service name="ESign.basicFields">
+		<ds:field name="id"><ds:selectable expression="physicalid"/></ds:field>
+		<ds:field name="lastphysicalid"><ds:selectable expression="last.physicalid"/></ds:field>
+		<ds:field name="previousPhysicalId"><ds:selectable expression="previous.physicalid"/></ds:field>
+		<ds:field name="physicalid"><ds:selectable expression="physicalid" /></ds:field>
+		<ds:field name="type"><ds:selectable expression="type" /></ds:field>
+		<ds:field name="type_nls"><ds:selectable expression="type" format="type"/></ds:field>
+		<ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+		<ds:field name="revision"><ds:selectable expression="revision" type="bus"/></ds:field>
+		<ds:field name="owner"><ds:selectable expression="owner"/></ds:field>
+		<ds:field name="ownerFullName"><ds:selectable expression="owner" type="bus" format="fullname"/></ds:field>
+		<ds:field name="created"><ds:selectable expression="created" type="bus" /></ds:field>
+      	<ds:field name="description"><ds:selectable expression="description" autosave="true"/></ds:field>
+      	<ds:field name="current"><ds:selectable expression="current" type="bus" /></ds:field>
+		<ds:field name="policy" includeByDefault="yes" description="required to support state NLS"><ds:selectable expression="policy" type="bus"/></ds:field>
+		<ds:field name="stateNLS"><ds:selectable expression="current" format="state"/></ds:field>
+		<ds:field name="policyNLS"><ds:selectable expression="policy" format="policy"/></ds:field>
+		<ds:field name="modified"><ds:selectable expression="modified" format="utc" type="bus" /></ds:field>
+		<ds:field name="modifyAccess"><ds:selectable expression="current.access[modify]" type="bus"/></ds:field>
+      	<ds:field name="deleteAccess"><ds:selectable expression="current.access[delete]" type="bus"/></ds:field>
+      	<ds:field name="promoteAccess"><ds:selectable expression="current.access[promote]" type="bus"/></ds:field>
+      	<ds:field name="demoteAccess"><ds:selectable expression="current.access[demote]" type="bus"/></ds:field> 
+	</ds:service>
+  
+	<ds:service name="ESign.ConfigFields">	
+		<ds:field name="ESignTitle"><ds:selectable type="bus" expression="attribute[Title]" /></ds:field> 
+        <ds:field name="AuthorizationRequires"><ds:selectable expression="evaluate[ IF(attribute[ESignAuthRequiresUname] == 'TRUE') THEN 'Username Password' ELSE 'Password' ]" type="bus"/></ds:field>
+		<ds:field name="SignatureAppliedAs"><ds:selectable type="bus" expression="attribute[ESignAppliedAs]" /></ds:field>
+		<ds:field name="ApprovalESignMeaning"><ds:selectable type="bus" expression="attribute[ESignApprovalMeaning]" /></ds:field>
+		<ds:field name="ApprovalESignComment"><ds:selectable type="bus" expression="evaluate[ IF(attribute[ESignApprovalComment] == 'TRUE') THEN 'Yes' ELSE 'No' ]" /></ds:field>
+		<ds:field name="DisApprovalESignMeaning"><ds:selectable type="bus" expression="attribute[ESignDisapprovalMeaning]" /></ds:field>
+		<ds:field name="DisApprovalESignComment"><ds:selectable type="bus" expression="evaluate[ IF(attribute[ESignDisapprovalComment] == 'TRUE') THEN 'Yes' ELSE 'No' ]" /></ds:field>	
+	</ds:service>
+
+	<ds:service name="ESign.RecordFields">
+		<ds:field name="ESignRecordTitle"><ds:selectable type="bus" expression="attribute[Title]" autosave="true" /></ds:field>
+		<ds:field name="SignedTime"><ds:selectable type="bus" format="utc" expression="attribute[ESignTimeSigned]" /></ds:field>
+		<ds:field name="SignedStatus"><ds:selectable type="bus" expression="current" /></ds:field>		
+		<ds:field name="SignAppliedAs"><ds:selectable type="bus" expression="from[ESignRecord].to.attribute[ESignAppliedAs]" /></ds:field>
+		<ds:field name="ApprovalESignMeaning"><ds:selectable type="bus" expression="from[ESignRecord].to.attribute[ESignApprovalMeaning]"/></ds:field>
+		<ds:field name="ApprovalESignComment"><ds:selectable type="bus" expression="from[ESignRecord].to.attribute[ESignApprovalComment]"/></ds:field>
+		<ds:field name="DisApprovalESignMeaning"><ds:selectable type="bus" expression="from[ESignRecord].to.attribute[ESignDisapprovalMeaning]"/></ds:field>
+		<ds:field name="DisApprovalESignComment"><ds:selectable type="bus" expression="from[ESignRecord].to.attribute[ESignDisapprovalComment]"/></ds:field>		
+		<ds:field name="Require2FA"><ds:selectable type="bus" expression="attribute[ESignTwoFactorAuth]" /></ds:field>
+		<ds:field name="ObjectReference"><ds:selectable type="bus" expression="attribute[ESignObjectRef]" /></ds:field>
+		<ds:field name="ObjectServiceID"><ds:selectable type="bus" expression="attribute[ESignObjectServiceID]" /></ds:field>
+		<ds:field name="ObjectURl"><ds:selectable type="bus" expression="attribute[ESignObjectURI]" /></ds:field>
+		<ds:field name="Actiontaken"><ds:selectable type="bus" expression="attribute[ESignActionTaken]" /></ds:field>
+		<ds:field name="ActionType"><ds:selectable type="bus" expression="attribute[ESignObjectActionType]" /></ds:field>
+		<ds:field name="SignComment"><ds:selectable type="bus" expression="attribute[ESignComment]" /></ds:field>
+		<ds:field name="SignedFullName"><ds:selectable type="bus" expression="attribute[ESignUserFullName]" /></ds:field>
+		<ds:field name="SignedUserName"><ds:selectable type="bus" expression="attribute[ESignUsername]" /></ds:field>
+		
+	</ds:service>
+  
+</ds:services>
+

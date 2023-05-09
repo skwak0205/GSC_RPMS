@@ -1,0 +1,16 @@
+del menu 'RMTReqirementStructureRMB';
+add menu 'RMTReqirementStructureRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxRequirement'
+	setting	'Dynamic Command Function'		'getRequirementStructureRMBMenu'
+	setting	'Registered Suite'		'Requirements'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTReqirementStructureRMB'
+	property 'version'	value	'V6R2009x'
+;
+add property menu_RMTReqirementStructureRMB on program eServiceSchemaVariableMapping.tcl to menu 'RMTReqirementStructureRMB';

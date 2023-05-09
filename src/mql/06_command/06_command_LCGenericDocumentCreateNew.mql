@@ -1,0 +1,25 @@
+del command 'LCGenericDocumentCreateNew';
+add command 'LCGenericDocumentCreateNew'
+	description	'Document Create New'
+	label	'emxLibraryCentral.Command.GenericDocument'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_GenericDocument&policy=policy_ControlledDesignReleaseRev2&createJPO=emxLibraryCentralCommon:createLBCObject&typeChooser=true&autoNameChecked=true&form=type_CreateGenericDocument&submitAction=refreshCaller&header=emxLibraryCentral.Command.CreateNewGenericDocument&HelpMarker=emxhelpcreatedocument2&findMxLink=false&postProcessURL=${SUITE_DIR}/emxLibraryCentralPostProcess.jsp&mode=create&isClassifiedItem=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromConnect'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayGenericDocCreateCommand'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	setting	'Currency Converter'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCGenericDocumentCreateNew'
+	property	'version'	value	'R422.HF1'
+;
+modify menu LCDocumentSummaryCreateNew add command LCGenericDocumentCreateNew order command LCGenericDocumentCreateNew 5;
+modify menu LBCBookDocumentsCreateActionToolBar add command LCGenericDocumentCreateNew order command LCGenericDocumentCreateNew 1;
+#channel ==>LCDocumentSummaryCreateNewLBCBookDocumentsCreateActionToolBar
+add property command_LCGenericDocumentCreateNew on program eServiceSchemaVariableMapping.tcl to command 'LCGenericDocumentCreateNew';

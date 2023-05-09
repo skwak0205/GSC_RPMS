@@ -1,0 +1,16 @@
+del command 'PMCGateDashboardReport';
+add command 'PMCGateDashboardReport'
+	description	'Command to Open Project Dashboard Report'
+	label	'emxFramework.Command.PMCPhaseGateView'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCPhaseGateView&program=emxGateReport:expandPhaseGateView&sortColumnName=none&freezePane=labels&hideLaunchButton=true&customize=false&displayView=details&autoFilter=false&showPageURLIcon=false&rowGrouping=false&Export=false&tableHeadClass=phase-gate-view'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateDashboardReport'
+	property	'version'	value	'R421'
+;
+#channel ==>PMCGateDashboardChannel1
+add property command_PMCGateDashboardReport on program eServiceSchemaVariableMapping.tcl to command 'PMCGateDashboardReport';

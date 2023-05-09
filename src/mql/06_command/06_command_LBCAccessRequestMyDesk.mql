@@ -1,0 +1,33 @@
+del command 'LBCAccessRequestMyDesk';
+add command 'LBCAccessRequestMyDesk'
+	description	'Display Download Access Request Command Object'
+	label	'emxLibraryCentral.Command.AccessRequests'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxCommonAccessRequest:getAllAccessRequests&table=APPAccessRequestSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPSummaryAccessRequestToolbar&header=emxLibraryCentral.AccessRequest.AccessRequests&HelpMarker=emxhelprequests&path=Library'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP,ENO_LIB_TP'
+	setting	'Access Function'		'canDisplayAccessRequestMyDesk'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Release Manager'
+	user	'Reviewer'
+	user	'Author'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	user	'Request Reviewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAccessRequestMyDesk'
+	property	'version'	value	'R422.HF1'
+;
+modify menu LBCMyDesk add command LBCAccessRequestMyDesk order command LBCAccessRequestMyDesk 6;
+#channel ==>LBCMyDesk
+add property command_LBCAccessRequestMyDesk on program eServiceSchemaVariableMapping.tcl to command 'LBCAccessRequestMyDesk';

@@ -1,0 +1,16 @@
+del menu 'PMCRelatedProjectsTableMenu';
+add menu 'PMCRelatedProjectsTableMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCRelatedProjectsScheduleSummaryView'
+	command	'PMCRelatedProjectsDashboardView'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCRelatedProjectsTableMenu'
+	property 'version'	value	'10-7'
+;
+add property menu_PMCRelatedProjectsTableMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCRelatedProjectsTableMenu';

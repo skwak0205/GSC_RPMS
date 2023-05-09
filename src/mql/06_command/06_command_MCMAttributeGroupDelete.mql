@@ -1,0 +1,22 @@
+del command 'MCMAttributeGroupDelete';
+add command 'MCMAttributeGroupDelete'
+	description	'AttributeGroup Delete'
+	label	'emxMultipleClassification.Access.Delete'
+	href	'${SUITE_DIR}/emxMultipleClassificationAttributeGroupDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'Content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxMultipleClassification.Deleted.Message3'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'MCMAttributeGroupDelete'
+	property	'version'	value	'R213'
+;
+modify menu MCMAttributeGroupActionsToolBar add command MCMAttributeGroupDelete order command MCMAttributeGroupDelete 0;
+#channel ==>MCMAttributeGroupActionsToolBar
+add property command_MCMAttributeGroupDelete on program eServiceSchemaVariableMapping.tcl to command 'MCMAttributeGroupDelete';

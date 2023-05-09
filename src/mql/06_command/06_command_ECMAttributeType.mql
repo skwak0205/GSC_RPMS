@@ -1,0 +1,22 @@
+del command 'ECMAttributeType';
+add command 'ECMAttributeType'
+	description	'Attribute command for Change Template in ECM'
+	label	'EnterpriseChangeMgt.Label.Type'
+	href	''
+	alt	''
+	setting	'Range Function'		'getAttributeTypes'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Range Program'		'enoECMChangeTemplate'
+	setting	'Access Function'		'ShowTypeFilterAttributes'
+	setting	'Access Program'		'enoECMChangeTemplate'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAttributeType'
+	property	'version'	value	'R216'
+;
+modify menu ECMAttributeAddExisting add command ECMAttributeType order command ECMAttributeType 2;
+#channel ==>ECMAttributeAddExisting
+add property command_ECMAttributeType on program eServiceSchemaVariableMapping.tcl to command 'ECMAttributeType';

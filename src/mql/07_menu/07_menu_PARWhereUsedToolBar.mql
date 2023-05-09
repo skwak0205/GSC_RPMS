@@ -1,0 +1,10 @@
+del menu 'PARWhereUsedToolBar';
+add menu 'PARWhereUsedToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	menu	'PARWhereUsedActionToolBar'
+;
+add property menu_PARWhereUsedToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PARWhereUsedToolBar';

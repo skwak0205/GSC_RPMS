@@ -1,0 +1,21 @@
+del command 'AEFJobReRun';
+add command 'AEFJobReRun'
+	description	'Re Running the Job'
+	label	'emxFramework.Job.Rerun'
+	href	'${COMMON_DIR}/emxJobReexecute.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'(current != "Running" && $<attribute[attribute_AllowReexecute].value> == "Yes" && revision==last && latest==TRUE)'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFJobReRun'
+	property	'version'	value	'R216'
+;
+modify menu JobActions add command AEFJobReRun order command AEFJobReRun 0;
+#channel ==>JobActions
+add property command_AEFJobReRun on program eServiceSchemaVariableMapping.tcl to command 'AEFJobReRun';

@@ -1,0 +1,26 @@
+del command 'DepartmentCreateNew';
+add command 'DepartmentCreateNew'
+	description	'Create Department Command Object'
+	label	'emxComponents.Common.CreateDepartment'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Department&nameField=autoName&typeChooser=false&form=type_Department&header=emxComponents.Common.CreateNewDepartment&postProcessJPO=emxDepartment:createDepartmentPostProcess&actionPerformed=createDepartment&submitAction=refreshCaller&vaultChooser=true&preProcessJavaScript=clearDepartmentFormFields&HelpMarker=emxhelpdepartmentcreate'
+	alt	'emxComponents.Common.CreateDepartment'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Slidein Width'		'500'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DepartmentCreateNew'
+	property	'version'	value	'R424'
+;
+modify menu DepartmentSummaryTopActionBar add command DepartmentCreateNew order command DepartmentCreateNew 0;
+modify menu APPDepartmentSummaryActionsToolBar add command DepartmentCreateNew order command DepartmentCreateNew 1;
+#channel ==>DepartmentSummaryTopActionBarAPPDepartmentSummaryActionsToolBar
+add property command_DepartmentCreateNew on program eServiceSchemaVariableMapping.tcl to command 'DepartmentCreateNew';

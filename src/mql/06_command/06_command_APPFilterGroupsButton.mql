@@ -1,0 +1,19 @@
+del command 'APPFilterGroupsButton';
+add command 'APPFilterGroupsButton'
+	description	''
+	label	'emxComponents.Button.Filter'
+	href	'${SUITE_DIR}/emxGroupsFilter.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'Components'
+	setting	'Action Label'		'emxComponents.Button.Filter'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFilterGroupsButton'
+	property	'version'	value	'R211'
+;
+modify menu APPGroupSearchToolbar add command APPFilterGroupsButton order command APPFilterGroupsButton 0;
+#channel ==>APPGroupSearchToolbar
+add property command_APPFilterGroupsButton on program eServiceSchemaVariableMapping.tcl to command 'APPFilterGroupsButton';

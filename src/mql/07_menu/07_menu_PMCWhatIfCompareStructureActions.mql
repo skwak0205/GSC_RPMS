@@ -1,0 +1,19 @@
+del menu 'PMCWhatIfCompareStructureActions';
+add menu 'PMCWhatIfCompareStructureActions'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCompare.gif'
+	setting	'Width'		'100'
+	command	'PMCWhatIfCompare'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWhatIfCompareStructureActions'
+	property 'version'	value	'R216'
+;
+add property menu_PMCWhatIfCompareStructureActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCWhatIfCompareStructureActions';

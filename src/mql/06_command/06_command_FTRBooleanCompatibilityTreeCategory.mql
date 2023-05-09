@@ -1,0 +1,19 @@
+del command 'FTRBooleanCompatibilityTreeCategory';
+add command 'FTRBooleanCompatibilityTreeCategory'
+	description	'Boolean Compatibility Rules'
+	label	'emxProduct.Tree.CompatibilityRules'
+	href	'${COMMON_DIR}/emxTable.jsp?table=FTRBooleanCompatibilityRuleList&header=emxProduct.Heading.CompatibilityRule&selection=multiple&program=emxBooleanCompatibility:getAllBooleanCompatibilityRules&topActionbar=FTRBooleanCompatibilityRuleListTopActionBar&bottomActionbar=FTRBooleanCompatibilityRuleListBottomActionBar&sortColumnName=Name&HelpMarker=emxhelpbooleanlist&intermediate=true'
+	alt	''
+	setting	'Target Location'		'detailsDisplay'
+	setting	'image'		'${COMMON_DIR}/images/iconSmallBooleanCompatibilityRule.gif'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRBooleanCompatibilityTreeCategory'
+	property	'version'	value	'R215'
+;
+modify menu FTRFeatureConfigurableRuleTreeCategory add command FTRBooleanCompatibilityTreeCategory order command FTRBooleanCompatibilityTreeCategory 1;
+#channel ==>FTRFeatureConfigurableRuleTreeCategory
+add property command_FTRBooleanCompatibilityTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRBooleanCompatibilityTreeCategory';

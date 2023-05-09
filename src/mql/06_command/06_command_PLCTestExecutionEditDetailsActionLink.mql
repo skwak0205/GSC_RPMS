@@ -1,0 +1,21 @@
+del command 'PLCTestExecutionEditDetailsActionLink';
+add command 'PLCTestExecutionEditDetailsActionLink'
+	description	'Test Execution Properties edit link'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_TestExecution&mode=Edit&formHeader=emxProduct.Heading.EditTestExecution&HelpMarker=emxhelptestexecutionedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(current != "Complete")'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestExecutionEditDetailsActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCTestExecutionPropertiesActionsToolbar add command PLCTestExecutionEditDetailsActionLink order command PLCTestExecutionEditDetailsActionLink 0;
+#channel ==>PLCTestExecutionPropertiesActionsToolbar
+add property command_PLCTestExecutionEditDetailsActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCTestExecutionEditDetailsActionLink';

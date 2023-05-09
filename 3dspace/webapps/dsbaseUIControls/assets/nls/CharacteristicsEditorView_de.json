@@ -1,0 +1,15 @@
+{
+  "CEV.optionsChecker.rdfServerURL.error": "RDF-Server-URL muss definiert sein.",
+  "CEV.optionsChecker.resourceURI.error": "Ein Ressourcen-URI muss definiert sein.",
+  "CEV.optionsChecker.constraintsPosition.error": "Position des Popup-Fensters für Bedingungen sollte \"oben\", \"rechts\", \"unten\" oder \"links\" sein",
+  "CEV.optionsChecker.buttons.types.error": "Der Typ für die Schaltfläche '{label}' sollte einer der folgenden sein: \"primär\", \"Standard\", \"Info\", \"Erfolg\", \"Warnung\", \"Fehler\"",
+  "CEV.optionsChecker.buttons.specificActions.error": "Spezifische Aktion für Merkmal '{key}' sollte eine Funktion sein.",
+  "CEV.optionsChecker.search.error": "Es wird eine Funktion erwartet, um Werte für Merkmal '{key}' zu suchen.",
+  "CEV.title": "Merkmal-Editor",
+  "CEV.defaultMessage": "Beim Abrufen aller Merkmale ist ein Fehler aufgetreten...",
+  "CEV.userCharacteristics.title": "Benutzermerkmale",
+  "CEV.characteristics.title": "Merkmale",
+  "CEV.okButton.content": "OK",
+  "CEV.cancelButton.content": "Abbrechen",
+  "CEV.cancelButton.error": "Fehler beim Klicken auf die Schaltfläche \"Abbrechen\"..."
+}

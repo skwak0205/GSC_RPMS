@@ -1,0 +1,16 @@
+del command 'AEFStructureCompareCriteria';
+add command 'AEFStructureCompareCriteria'
+	description	'Strucuture Compare Criteria display'
+	label	'emxFramework.Common.StrucutureCompareCriteria'
+	href	'${COMMON_DIR}/emxAdvancedStructureCompare.jsp?fromContext=CriteriaChannel'
+	alt	'emxFramework.Common.StrucutureCompareCriteria'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFStructureCompareCriteria'
+	property	'version'	value	'R214'
+;
+#channel ==>AEFStructureCompareCriteria
+add property command_AEFStructureCompareCriteria on program eServiceSchemaVariableMapping.tcl to command 'AEFStructureCompareCriteria';

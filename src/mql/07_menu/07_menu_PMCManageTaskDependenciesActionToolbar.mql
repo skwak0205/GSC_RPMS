@@ -1,0 +1,16 @@
+del menu 'PMCManageTaskDependenciesActionToolbar';
+add menu 'PMCManageTaskDependenciesActionToolbar'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCUpdateSelectedTaskDependencies'
+	command	'PMCRemoveSelectedTaskDependencies'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCManageTaskDependenciesActionToolbar'
+	property 'version'	value	'R215'
+;
+add property menu_PMCManageTaskDependenciesActionToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCManageTaskDependenciesActionToolbar';

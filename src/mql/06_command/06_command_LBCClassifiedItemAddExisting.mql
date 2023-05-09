@@ -1,0 +1,21 @@
+del command 'LBCClassifiedItemAddExisting';
+add command 'LBCClassifiedItemAddExisting'
+	description	'Add Existing'
+	label	'emxLibraryCentral.ActionBarCmd.AddExisting'
+	href	'${SUITE_DIR}/emxLibraryCentralSearchIntermediate.jsp?useMode=addClassificationEndItem'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromConnect'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCClassifiedItemAddExisting'
+	property	'version'	value	'R420'
+;
+modify menu LCClassifiedItemActionToolBar add command LBCClassifiedItemAddExisting order command LBCClassifiedItemAddExisting 9;
+#channel ==>LCClassifiedItemActionToolBar
+add property command_LBCClassifiedItemAddExisting on program eServiceSchemaVariableMapping.tcl to command 'LBCClassifiedItemAddExisting';

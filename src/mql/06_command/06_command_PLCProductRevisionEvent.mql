@@ -1,0 +1,18 @@
+del command 'PLCProductRevisionEvent';
+add command 'PLCProductRevisionEvent'
+	description	'Product Revision Event'
+	label	'PublishSubscribe.Event.Revision'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Product Revised'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductRevisionEvent'
+	property	'version'	value	'R417'
+;
+modify menu PLCProductsEvents add command PLCProductRevisionEvent order command PLCProductRevisionEvent 18;
+#channel ==>PLCProductsEvents
+add property command_PLCProductRevisionEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCProductRevisionEvent';

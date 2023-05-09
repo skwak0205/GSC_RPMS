@@ -1,0 +1,25 @@
+del command 'PLCAddToPortfolioFromProperties';
+add command 'PLCAddToPortfolioFromProperties'
+	description	'Adds the Product or Model in context to a Portfolio'
+	label	'emxProduct.ActionLink.AddToPortfolio'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Portfolio&table=PLCSearchPortfoliosList&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_Portfolio&from=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'$<expression[PortfolioEnabled]=="true">'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/AddToPortfolio32.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddToPortfolioFromProperties'
+	property	'version'	value	'R423'
+;
+modify menu PLCProductPropertiesTopActionBar add command PLCAddToPortfolioFromProperties order command PLCAddToPortfolioFromProperties 5;
+modify menu PLCEditModelActionCommandsBar add command PLCAddToPortfolioFromProperties order command PLCAddToPortfolioFromProperties 0;
+#channel ==>PLCProductPropertiesTopActionBarPLCEditModelActionCommandsBar
+add property command_PLCAddToPortfolioFromProperties on program eServiceSchemaVariableMapping.tcl to command 'PLCAddToPortfolioFromProperties';

@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 신제품신기술매출액
+################################################################################################
+
+#del attribute 'gscProductAmount';
+add attribute  'gscProductAmount'
+   description '신제품신기술매출액'
+   type        'real'
+   default    ''
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "HHI"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscProductAmount"
+;
+add property attribute_gscProductAmount on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscProductAmount';

@@ -1,0 +1,15 @@
+del command 'RuleTable';
+add command 'RuleTable'
+	description	'RuleTable'
+	label	'emxProduct.RuleTable'
+	href	'${SUITE_DIR}/ConfigurationRuleDefine.jsp?HelpMarker=emxhelpconfigurablerulesdefinition'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<attribute[attribute_ExpressionType] =="Matrix">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R421'
+;
+modify menu type_ConfigurationRule add command RuleTable order command RuleTable 3;
+#channel ==>type_ConfigurationRule
+add property command_RuleTable on program eServiceSchemaVariableMapping.tcl to command 'RuleTable';

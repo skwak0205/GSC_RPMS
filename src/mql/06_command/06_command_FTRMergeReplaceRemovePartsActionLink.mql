@@ -1,0 +1,25 @@
+del command 'FTRMergeReplaceRemovePartsActionLink';
+add command 'FTRMergeReplaceRemovePartsActionLink'
+	description	'Remove parts while Merging and Replacing Features'
+	label	'emxProduct.Action.RemoveParts'
+	href	'${SUITE_DIR}/PartUtil.jsp?mode=MergeReplaceRemove'
+	alt	'emxProduct.ActionLink.RemoveParts'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Mode'		'view'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProduct.Alert.AboutRemove'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMergeReplaceRemovePartsActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRMergeReplaceEditGBOMToolBarMenu add command FTRMergeReplaceRemovePartsActionLink order command FTRMergeReplaceRemovePartsActionLink 0;
+modify menu FTRMergeReplaceDuplicatePartListToolBarMenu add command FTRMergeReplaceRemovePartsActionLink order command FTRMergeReplaceRemovePartsActionLink 0;
+#channel ==>FTRMergeReplaceEditGBOMToolBarMenuFTRMergeReplaceDuplicatePartListToolBarMenu
+add property command_FTRMergeReplaceRemovePartsActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRMergeReplaceRemovePartsActionLink';

@@ -1,0 +1,19 @@
+del menu 'PMCProjectBenefitRMB';
+add menu 'PMCProjectBenefitRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'hasAccess'
+	setting	'Access Program'		'emxProjectMember'
+	command	'PMCProjectBenefitAddBenefitItem'
+	command	'PMCProjectBenefitDeleteBenefitItem'
+	command	'PMCProjectBenefitDeleteLinkRMB'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBenefitRMB'
+	property 'version'	value	'R214'
+;
+add property menu_PMCProjectBenefitRMB on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBenefitRMB';

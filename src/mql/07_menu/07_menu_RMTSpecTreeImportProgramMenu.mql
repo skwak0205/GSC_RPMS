@@ -1,0 +1,19 @@
+del menu 'RMTSpecTreeImportProgramMenu';
+add menu 'RMTSpecTreeImportProgramMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTSpecTreeImportView'
+	command	'RMTSpecTreeFunctionalView'
+	command	'RMTSpecTreeNonFunctionalView'
+	command	'RMTSpecTreeConstraintView'
+	command	'RMTSpecTreeUnclassifiedView'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecTreeImportProgramMenu'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTSpecTreeImportProgramMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecTreeImportProgramMenu';

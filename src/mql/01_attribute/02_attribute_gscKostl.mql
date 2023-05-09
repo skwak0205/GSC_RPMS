@@ -1,0 +1,14 @@
+#del attribute 'gscKostl';
+add attribute 'gscKostl'
+ type 'string'
+ description '코스트 센터'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscKostl'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscKostl on program eServiceSchemaVariableMapping.tcl to attribute 'gscKostl';
+

@@ -1,0 +1,25 @@
+del command 'PMCCopyRisk';
+add command 'PMCCopyRisk'
+	description	''
+	label	'emxProgramCentral.Common.CopyRisk'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Risk&table=PMCExistingRisksSummary&selection=multiple&header=emxProgramCentral.Common.Search&submitAction=refreshCaller&hideHeader=true&excludeOIDprogram=emxRiskBase:excludeExistingRisks&cancelLabel=emxProgramCentral.Common.Close&submitURL=../programcentral/emxProgramCentralUtil.jsp?mode=copyRisk'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCopyRisk'
+	property	'version'	value	'R423.HF3'
+;
+modify menu PMCRisksSummaryToolBar add command PMCCopyRisk order command PMCCopyRisk 3;
+#channel ==>PMCRisksSummaryToolBar
+add property command_PMCCopyRisk on program eServiceSchemaVariableMapping.tcl to command 'PMCCopyRisk';

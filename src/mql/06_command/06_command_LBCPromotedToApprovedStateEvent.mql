@@ -1,0 +1,21 @@
+del command 'LBCPromotedToApprovedStateEvent';
+add command 'LBCPromotedToApprovedStateEvent'
+	description	'Event holder for promotion to Approved state'
+	label	'emxLibraryCentral.Event.Promoted_To_Approved_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Promoted_To_Approved_State'
+	setting	'History Bit'		'promote to Approved'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCPromotedToApprovedStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCDocumentLibrarySubscriptionEvents add command LBCPromotedToApprovedStateEvent order command LBCPromotedToApprovedStateEvent 7;
+modify menu LBCBookshelfSubscriptionEvents add command LBCPromotedToApprovedStateEvent order command LBCPromotedToApprovedStateEvent 8;
+modify menu LBCBookSubscriptionEvents add command LBCPromotedToApprovedStateEvent order command LBCPromotedToApprovedStateEvent 8;
+modify menu LBCDocumentFamilySubscriptionEvents add command LBCPromotedToApprovedStateEvent order command LBCPromotedToApprovedStateEvent 6;
+#channel ==>LBCDocumentLibrarySubscriptionEventsLBCBookshelfSubscriptionEventsLBCBookSubscriptionEventsLBCDocumentFamilySubscriptionEvents
+add property command_LBCPromotedToApprovedStateEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCPromotedToApprovedStateEvent';

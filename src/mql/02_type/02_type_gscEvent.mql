@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.01.25
+# Create by jrchoi
+# Description : Event
+################################################################################################
+del type gscEvent;
+add type gscEvent derived 'Task Management'
+    property 'installed date'     value  '2023.01.10'
+    property 'application'        value  'Framework'
+    property 'original name'      value  'gscPatent'
+    property 'installer'          value  'GSC'
+    property 'version'            value  'V6R2019'
+;
+
+add property type_gscEvent on prog eServiceSchemaVariableMapping.tcl to  type 'gscEvent';
+
+mod type gscEvent add attribute gscTitle,gscEventType,gscLocation;
+mod type gscEvent add attribute gscEventStartDate,gscEventFinishDate;

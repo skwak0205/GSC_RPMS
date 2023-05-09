@@ -1,0 +1,22 @@
+del menu 'APPLocationsSummaryActionToolBar';
+add menu 'APPLocationsSummaryActionToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasAccessForCompanyNodes'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPLocationCreateNew'
+	command	'APPLocationsAddExisting'
+	command	'APPSeparator'
+	command	'APPLocationsRemove'
+	command	'APPLocationsDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPLocationsSummaryActionToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPLocationsSummaryActionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPLocationsSummaryActionToolBar';

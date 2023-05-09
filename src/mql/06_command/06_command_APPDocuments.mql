@@ -1,0 +1,18 @@
+del command 'APPDocuments';
+add command 'APPDocuments'
+	description	'lists the Documents in the parent Object'
+	label	'emxComponents.Command.Documents'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPDocumentSummaryToolBar&header=emxComponents.Menu.Documents&HelpMarker=emxhelpbooktreecategorydocuments'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocuments'
+	property	'version'	value	'R422'
+;
+#channel ==>Generic Mobile Tree
+add property command_APPDocuments on program eServiceSchemaVariableMapping.tcl to command 'APPDocuments';

@@ -1,0 +1,10 @@
+m|ENOCollabBaseServicesWebUI\ENOCollabToolsUI.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.23002|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\ENOCollabToolsUI\ENOCollabToolsUI.js|1672690630|2918
+s|ENOCollabBaseServicesWebUI\ENOCollabToolsUI.mweb\src\ENOCollabToolsUI.js|1669820651|164
+u|ENOCollabBaseServicesWebUI\ENOCollabToolsUI.mweb\src\tracker\ENOCollabTracker.js|1671007447|9538
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

@@ -1,0 +1,24 @@
+del command 'ECMChangeAssessment';
+add command 'ECMChangeAssessment'
+	description	'Add All Related Item'
+	label	'EnterpriseChangeMgt.Command.ChangeAssessment'
+	href	'${SUITE_DIR}/ECMChangeAssessmentFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>])'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAllowedToAddProposedChange'
+	setting	'Access Program'		'jpo.EnterpriseChangeMdl.ChangeOrderMdl'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_ENOAddAssessmentReport32.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeAssessment'
+	property	'version'	value	'R216'
+;
+modify menu ECMCOAffectedItemsListToolbar add command ECMChangeAssessment order command ECMChangeAssessment 3;
+#channel ==>ECMCOAffectedItemsListToolbar
+add property command_ECMChangeAssessment on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeAssessment';

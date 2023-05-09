@@ -1,0 +1,16 @@
+del command 'APPSearchForGeneral';
+add command 'APPSearchForGeneral'
+	description	'Command object for Search For Companies for Collaboration Request'
+	label	'emxComponents.Common.General'
+	href	'${COMPONENT_DIR}/emxComponentsCollaborateSearchDialog.jsp?typename=Company'
+	alt	'emxComponents.Common.General'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchForGeneral'
+	property	'version'	value	'10-5'
+;
+#channel ==>
+add property command_APPSearchForGeneral on program eServiceSchemaVariableMapping.tcl to command 'APPSearchForGeneral';

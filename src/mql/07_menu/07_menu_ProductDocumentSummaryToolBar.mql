@@ -1,0 +1,16 @@
+del menu 'ProductDocumentSummaryToolBar';
+add menu 'ProductDocumentSummaryToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	menu	'ProductDocumentSummaryActionsToolBar'
+	menu	'ProductDocumentSummaryActionsToolBarRWA'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ProductDocumentSummaryToolBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_ProductDocumentSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'ProductDocumentSummaryToolBar';

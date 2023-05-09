@@ -1,0 +1,25 @@
+del command 'APPStateSensitiveVCFileFolder';
+add command 'APPStateSensitiveVCFileFolder'
+	description	'Command for creating a file or folder in DesignSync'
+	label	'emxComponents.VersionControl.StateSensitiveVCFileFolder'
+	href	'${SUITE_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=stateSensitiveConnectVCFileFolder&processingPage=emxCommonDocumentVCConnectProcess.jsp&header=emxComponents.Header.StateSensitiveConnectDesignSyncFileFolder'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPStateSensitiveVCFileFolder'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPStateSensitiveVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'APPStateSensitiveVCFileFolder';

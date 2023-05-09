@@ -1,0 +1,17 @@
+#del attribute 'gscIsCurrentYearReview';
+add attribute 'gscIsCurrentYearReview'
+ type 'string'
+ description 'Identifies the Business Area'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscIsCurrentYearReview'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscIsCurrentYearReview on program eServiceSchemaVariableMapping.tcl to attribute 'gscIsCurrentYearReview';
+
+modify attribute 'gscIsCurrentYearReview' add range= Y;
+modify attribute 'gscIsCurrentYearReview' add range= N;
+modify attribute 'gscIsCurrentYearReview' add range= ''; #공백

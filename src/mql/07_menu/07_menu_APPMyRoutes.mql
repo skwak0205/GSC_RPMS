@@ -1,0 +1,16 @@
+del menu 'APPMyRoutes';
+add menu 'APPMyRoutes'
+	description	''
+	label	'emxFramework.MenuItem.Routes'
+	href	''
+	alt	'emxFramework.MenuItem.Routes'
+	setting	'Registered Suite'		'Components'
+	command	'APPMyRoute'
+	command	'APPRouteTemplates'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPMyRoutes'
+	property 'version'	value	'R211'
+;
+add property menu_APPMyRoutes on program eServiceSchemaVariableMapping.tcl to menu 'APPMyRoutes';

@@ -1,0 +1,27 @@
+del command 'PMCResourcePlanPreferences';
+add command 'PMCResourcePlanPreferences'
+	description	'Resource Plan Preferences'
+	label	''
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCResourcePlanPreferencesForm&formHeader=emxProgramCentral.Command.ResourcePlanPreferences&mode=edit&HelpMarker=emxhelpresourceplanpreferences&postProcessJPO=emxResourceRequest:setResourcePlanPreference&submitAction=refreshCaller'
+	alt	'emxProgramCentral.Command.ResourcePlanPreferences'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isResourcePlanRequestCommand'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPreferences.gif'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePlanPreferences'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCResourcePlanPreferences on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePlanPreferences';

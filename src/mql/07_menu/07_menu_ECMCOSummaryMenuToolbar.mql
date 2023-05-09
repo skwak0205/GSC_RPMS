@@ -1,0 +1,16 @@
+del menu 'ECMCOSummaryMenuToolbar';
+add menu 'ECMCOSummaryMenuToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Access Function'		'isCOSummaryMenuAccessible'
+	setting	'Access Program'		'enoECMChangeUtil'
+	command	'ECMCreateCOUnderCR'
+	menu	'ECMTransferOwnershipMenu'
+	command	'ECMDeleteCO'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'original name'	value	'ECMCOSummaryMenuToolbar'
+	property 'version'	value	'R419'
+;
+add property menu_ECMCOSummaryMenuToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMCOSummaryMenuToolbar';

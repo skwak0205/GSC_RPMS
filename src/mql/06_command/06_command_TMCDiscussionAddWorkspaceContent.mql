@@ -1,0 +1,31 @@
+del command 'TMCDiscussionAddWorkspaceContent';
+add command 'TMCDiscussionAddWorkspaceContent'
+	description	'Add Workspace Content Command Object'
+	label	'emxTeamCentral.Command.AddWorkspaceContent'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_DOCUMENTS:IS_VERSION_OBJECT=False&table=TMCDiscussionAttachmentsTable&selection=multiple&HelpMarker=emxhelpsearch&suiteKey=Components&SuiteDirectory=components&form=TMCDiscussionFindFilesForm&submitURL=../components/emxCommonConnectObjects.jsp&srcDestRelName=relationship_MessageAttachments&isTo=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'575'
+	setting	'Window Width'		'675'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'popup'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDiscussionAddWorkspaceContent'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPDiscussionDocumentSummaryActionsToolBar add command TMCDiscussionAddWorkspaceContent order command TMCDiscussionAddWorkspaceContent 1;
+modify menu TMCDiscussionAttachmentTopActionBar add command TMCDiscussionAddWorkspaceContent order command TMCDiscussionAddWorkspaceContent 1;
+#channel ==>APPDiscussionDocumentSummaryActionsToolBarTMCDiscussionAttachmentTopActionBar
+add property command_TMCDiscussionAddWorkspaceContent on program eServiceSchemaVariableMapping.tcl to command 'TMCDiscussionAddWorkspaceContent';

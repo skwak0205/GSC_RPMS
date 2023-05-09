@@ -1,0 +1,19 @@
+del command 'APPFilterTopLevelCheckbox';
+add command 'APPFilterTopLevelCheckbox'
+	description	''
+	label	'emxComponents.SearchRole.TopLevel'
+	href	''
+	alt	''
+	setting	'Input Type'		'checkbox'
+	setting	'Registered Suite'		'Components'
+	setting	'Default'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFilterTopLevelCheckbox'
+	property	'version'	value	'R211'
+;
+modify menu APPRoleSearchToolbar add command APPFilterTopLevelCheckbox order command APPFilterTopLevelCheckbox 2;
+modify menu APPGroupSearchToolbar add command APPFilterTopLevelCheckbox order command APPFilterTopLevelCheckbox 2;
+#channel ==>APPRoleSearchToolbarAPPGroupSearchToolbar
+add property command_APPFilterTopLevelCheckbox on program eServiceSchemaVariableMapping.tcl to command 'APPFilterTopLevelCheckbox';

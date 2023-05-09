@@ -1,0 +1,25 @@
+del command 'PLCModelDerivationsInsertBeforeActionLink';
+add command 'PLCModelDerivationsInsertBeforeActionLink'
+	description	''
+	label	'emxProduct.Derivation.Menu.InsertBefore'
+	href	'${SUITE_DIR}/ProductDerivationInsertPreProcess.jsp?UIContext=model&HelpMarker=emxhelpproductderivationinsertbefore'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isProductEvolutionsEnabled'
+	setting	'Access Program'		'emxProduct'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionInsertRowBefore.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCModelDerivationsInsertBeforeActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCModelDerivationsActionsToolbar add command PLCModelDerivationsInsertBeforeActionLink order command PLCModelDerivationsInsertBeforeActionLink 3;
+#channel ==>PLCModelDerivationsActionsToolbar
+add property command_PLCModelDerivationsInsertBeforeActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCModelDerivationsInsertBeforeActionLink';

@@ -1,0 +1,21 @@
+del command 'APPCollaborationRequests';
+add command 'APPCollaborationRequests'
+	description	'Command Object for Collaboration Request Summary'
+	label	'emxComponents.Command.CollaborationRequests'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxOrganization:getCollaborationRequests&table=APPCollaborationRequestsSummary&toolbar=APPCollaborationRequestsSummaryToolBar&header=emxComponents.Common.CollaborationRequestsHeading&selection=multiple&sortColumnName=FromOrg&sortDirection=ascending&HelpMarker=emxhelpcollaborationrequests&PrinterFriendly=true'
+	alt	'emxComponents.Command.CollaborationRequests'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCollaborationRequests'
+	property	'version'	value	'R216'
+;
+modify menu APPAdministration add command APPCollaborationRequests order command APPCollaborationRequests 3;
+#channel ==>APPAdministration
+add property command_APPCollaborationRequests on program eServiceSchemaVariableMapping.tcl to command 'APPCollaborationRequests';

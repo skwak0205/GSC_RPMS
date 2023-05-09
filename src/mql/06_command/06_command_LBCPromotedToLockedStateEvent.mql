@@ -1,0 +1,21 @@
+del command 'LBCPromotedToLockedStateEvent';
+add command 'LBCPromotedToLockedStateEvent'
+	description	'Event holder for promotion to Locked state'
+	label	'emxLibraryCentral.Event.Promoted_To_Locked_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Promoted To Locked State'
+	setting	'History Bit'		'promote to Locked'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCPromotedToLockedStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCDocumentLibrarySubscriptionEvents add command LBCPromotedToLockedStateEvent order command LBCPromotedToLockedStateEvent 8;
+modify menu LBCBookshelfSubscriptionEvents add command LBCPromotedToLockedStateEvent order command LBCPromotedToLockedStateEvent 9;
+modify menu LBCBookSubscriptionEvents add command LBCPromotedToLockedStateEvent order command LBCPromotedToLockedStateEvent 9;
+modify menu LBCDocumentFamilySubscriptionEvents add command LBCPromotedToLockedStateEvent order command LBCPromotedToLockedStateEvent 7;
+#channel ==>LBCDocumentLibrarySubscriptionEventsLBCBookshelfSubscriptionEventsLBCBookSubscriptionEventsLBCDocumentFamilySubscriptionEvents
+add property command_LBCPromotedToLockedStateEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCPromotedToLockedStateEvent';

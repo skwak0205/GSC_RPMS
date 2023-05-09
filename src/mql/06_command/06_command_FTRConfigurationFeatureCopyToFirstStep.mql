@@ -1,0 +1,17 @@
+del command 'FTRConfigurationFeatureCopyToFirstStep';
+add command 'FTRConfigurationFeatureCopyToFirstStep'
+	description	''
+	label	'emxProduct.Heading.CopyTo'
+	href	'${SUITE_DIR}/ConfigurationFeatureCopyDialog.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationFeatureCopyToFirstStep'
+	property	'version'	value	'R215'
+;
+#channel ==>FTRConfigurationFeatureCopyToFirstStep
+add property command_FTRConfigurationFeatureCopyToFirstStep on program eServiceSchemaVariableMapping.tcl to command 'FTRConfigurationFeatureCopyToFirstStep';

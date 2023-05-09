@@ -1,0 +1,18 @@
+del channel 'FTRLogicalFeatureCopySecondStep';
+add channel 'FTRLogicalFeatureCopySecondStep'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Configuration'
+	setting		'Height'		'34'
+	setting		'ChannelID'		'2'
+	command 	'FTRLogicalFeatureCopySecondStep'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLogicalFeatureCopySecondStep'
+	property	'version'	value	'R214'
+;
+#portal ==>FTRLogicalFeatureCopyFromPortalFTRLogicalFeatureCopyToPortal
+add property channel_FTRLogicalFeatureCopySecondStep on program eServiceSchemaVariableMapping.tcl to channel 'FTRLogicalFeatureCopySecondStep';

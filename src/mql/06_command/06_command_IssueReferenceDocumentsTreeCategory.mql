@@ -1,0 +1,23 @@
+del command 'IssueReferenceDocumentsTreeCategory';
+add command 'IssueReferenceDocumentsTreeCategory'
+	description	'Issue ReferenceDocument TreeCommand Object'
+	label	'emxComponents.Command.ReferenceDocumentList'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=IssueDocumentSummaryToolBar&header=emxComponents.Menu.Documents&HelpMarker=emxhelpcontentlist'
+	alt	'emxComponents.Command.ReferenceDocumentList'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueReferenceDocumentsTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_Issue add command IssueReferenceDocumentsTreeCategory order command IssueReferenceDocumentsTreeCategory 2;
+#channel ==>type_IssueIssueChannel3
+add property command_IssueReferenceDocumentsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'IssueReferenceDocumentsTreeCategory';

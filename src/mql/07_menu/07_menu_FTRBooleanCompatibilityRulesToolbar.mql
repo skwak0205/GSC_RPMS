@@ -1,0 +1,16 @@
+del menu 'FTRBooleanCompatibilityRulesToolbar';
+add menu 'FTRBooleanCompatibilityRulesToolbar'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRCreateBooleanCompatibilityRuleActionCommandLink'
+	command	'FTRAddExistingBooleanCompatibilityRuleActionCommandLink'
+	command	'FTRCopyBooleanCompatibilityRuleActionCommandLink'
+	command	'AEFSeparator'
+	command	'FTRRemoveBooleanCompatibilityRuleActionCommandLink'
+	command	'FTRDeleteBooleanCompatibilityRuleActionCommandLink'
+	property 'version'	value	'R420'
+;
+add property menu_FTRBooleanCompatibilityRulesToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRBooleanCompatibilityRulesToolbar';

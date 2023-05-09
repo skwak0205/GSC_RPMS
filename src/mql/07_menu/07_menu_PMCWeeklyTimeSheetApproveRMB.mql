@@ -1,0 +1,16 @@
+del menu 'PMCWeeklyTimeSheetApproveRMB';
+add menu 'PMCWeeklyTimeSheetApproveRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCApproveTimeSheet'
+	command	'PMCRejectTimeSheet'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWeeklyTimeSheetApproveRMB'
+	property 'version'	value	'R210'
+;
+add property menu_PMCWeeklyTimeSheetApproveRMB on program eServiceSchemaVariableMapping.tcl to menu 'PMCWeeklyTimeSheetApproveRMB';

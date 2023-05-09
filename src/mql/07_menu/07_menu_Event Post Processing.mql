@@ -1,0 +1,14 @@
+del menu 'Event Post Processing';
+add menu 'Event Post Processing'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'Event Post Processing'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_EventPostProcessing on program eServiceSchemaVariableMapping.tcl to menu 'Event Post Processing';

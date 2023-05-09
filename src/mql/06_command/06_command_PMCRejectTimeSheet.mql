@@ -1,0 +1,24 @@
+del command 'PMCRejectTimeSheet';
+add command 'PMCRejectTimeSheet'
+	description	'Reject Timesheet'
+	label	'emxProgramCentral.WeeklyTimesheet.Reject'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=reject'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessOnApproveRejectCmd'
+	setting	'Access Program'		'emxWeeklyTimeSheet'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReject.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRejectTimeSheet'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimeSheetApproveToolBar add command PMCRejectTimeSheet order command PMCRejectTimeSheet 0;
+modify menu PMCWeeklyTimeSheetApproveRMB add command PMCRejectTimeSheet order command PMCRejectTimeSheet 0;
+#channel ==>PMCWeeklyTimeSheetApproveToolBarPMCWeeklyTimeSheetApproveRMB
+add property command_PMCRejectTimeSheet on program eServiceSchemaVariableMapping.tcl to command 'PMCRejectTimeSheet';

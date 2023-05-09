@@ -1,0 +1,23 @@
+del command 'APPDocumentVCFileVersions';
+add command 'APPDocumentVCFileVersions'
+	description	'Command to display file versions node in Version Contral File tree'
+	label	'emxComponents.Common.FileVersions'
+	href	'${COMPONENT_DIR}/emxCommonDocumentVCIntermediateProcess.jsp?fromPage=VCFileVersions'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(vcfile)'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentVCFileVersions'
+	property	'version'	value	'R422'
+;
+modify menu type_DOCUMENTS add command APPDocumentVCFileVersions order command APPDocumentVCFileVersions 7;
+modify menu type_GenericDocument add command APPDocumentVCFileVersions order command APPDocumentVCFileVersions 7;
+modify menu type_DocumentSheet add command APPDocumentVCFileVersions order command APPDocumentVCFileVersions 3;
+modify menu type_Specification add command APPDocumentVCFileVersions order command APPDocumentVCFileVersions 3;
+#channel ==>type_DOCUMENTStype_GenericDocumenttype_DocumentSheettype_SpecificationRMTSpecificationsProperties
+add property command_APPDocumentVCFileVersions on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentVCFileVersions';

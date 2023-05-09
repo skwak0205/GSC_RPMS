@@ -1,0 +1,24 @@
+del command 'PMCEditPageSubmitRequest';
+add command 'PMCEditPageSubmitRequest'
+	description	'Submit Request'
+	label	'emxProgramCentral.Command.ResourcePlan.SubmitRequest'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCResourceRequestSubmitForm&formHeader=emxProgramCentral.ResourcePlan.HeaderForSubmition&HelpMarker=emxhelpresourcerequestsubmitcomment&postProcessURL=${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp&submode=EditPageSubmitRequestComment&mode=edit'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Function'		'isResourceRequestPropertiesPageCommand'
+	setting	'Access Program'		'emxResourceRequest'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEditPageSubmitRequest'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourceRequestEditPageProcessActions add command PMCEditPageSubmitRequest order command PMCEditPageSubmitRequest 0;
+#channel ==>PMCResourceRequestEditPageProcessActions
+add property command_PMCEditPageSubmitRequest on program eServiceSchemaVariableMapping.tcl to command 'PMCEditPageSubmitRequest';

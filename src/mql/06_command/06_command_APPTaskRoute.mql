@@ -1,0 +1,17 @@
+del command 'APPTaskRoute';
+add command 'APPTaskRoute'
+	description	'Command Object to Display Routes'
+	label	'emxComponents.Common.Route'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRoute:getMyRoutes&table=APPRouteSummary&header=emxComponents.Routes.Heading&toolbar=APPRouteSummaryTaskToolBar&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelproutes&displayView=details&rowGrouping=false'
+	alt	'emxComponents.Common.Route'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPTaskRoute'
+	property	'version'	value	'R419'
+;
+modify menu type_InboxTask add command APPTaskRoute order command APPTaskRoute 1;
+#channel ==>type_InboxTask
+add property command_APPTaskRoute on program eServiceSchemaVariableMapping.tcl to command 'APPTaskRoute';

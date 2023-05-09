@@ -1,0 +1,22 @@
+del command 'PMCResourceRequestEditLink';
+add command 'PMCResourceRequestEditLink'
+	description	'Submit Request'
+	label	'emxProgramCentral.Common.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCResourceRequestForm&mode=edit&formHeader=emxProgramCentral.ResourceRequest.EditLink&submitAction=refreshCaller&HelpMarker=emxhelpresourcerequestedit'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isRequestEditable'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestEditLink'
+	property	'version'	value	'R216'
+;
+modify menu PMCResourceRequestEditPageToolBar add command PMCResourceRequestEditLink order command PMCResourceRequestEditLink 0;
+#channel ==>PMCResourceRequestEditPageToolBar
+add property command_PMCResourceRequestEditLink on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestEditLink';

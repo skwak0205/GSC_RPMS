@@ -1,0 +1,12 @@
+{
+  "PerformanceSpec": "性能规格关系",
+  "performancespecof": "以下项的性能规格：",
+  "performancespecof_to": "以下项的性能规格：",
+  "performancespecof_from": "性能规格",
+  "performancechar": "性能特征",
+  "performancechar_to": "性能特征",
+  "performancechar_from": "以下项的性能特征：",
+  "performancetest": "性能测试",
+  "performancetest_to": "性能测试",
+  "performancetest_from": "以下项的性能测试："
+}

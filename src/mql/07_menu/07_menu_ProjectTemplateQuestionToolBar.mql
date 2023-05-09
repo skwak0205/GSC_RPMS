@@ -1,0 +1,15 @@
+del menu 'ProjectTemplateQuestionToolBar';
+add menu 'ProjectTemplateQuestionToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectTemplateQuestionEdit'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'ProjectTemplateQuestionToolBar'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_ProjectTemplateQuestionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'ProjectTemplateQuestionToolBar';

@@ -1,0 +1,12 @@
+del command 'PARMyParameters';
+add command 'PARMyParameters'
+	description	'to retrieve all parameters owned by user'
+	label	'emxParameter.common.Parameters'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?pageSize=100&program=emxParameter:PARMyPARAMETERList,emxParameter:PARAllPARAMETERList&programLabel=emxParameter.Filter.Owned,emxParameter.Filter.All&table=PARSearchResult&header=emxParameter.common.Parameters&toolbar=PARBrowserToolbar&selection=multiple&editLink=true&postProcessJPO=emxParameterEdit:updateTableValues&HelpMarker=emxparameterhelphomepage'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Parameter'
+;
+modify menu PARMyDesk add command PARMyParameters order command PARMyParameters 0;
+#channel ==>PARMyDesk
+add property command_PARMyParameters on program eServiceSchemaVariableMapping.tcl to command 'PARMyParameters';

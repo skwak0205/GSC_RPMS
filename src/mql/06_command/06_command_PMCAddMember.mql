@@ -1,0 +1,18 @@
+del command 'PMCAddMember';
+add command 'PMCAddMember'
+	description	'Command for Add Member Into Project'
+	label	'emxFramework.Common.DomainAccessAddMember'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?showInitialResults=true&table=AEFPersonChooserDetails&selection=multiple&form= AEFSearchPersonForm&submitURL=../programcentral/emxProgramCentralUtil.jsp?mode=addMember&fieldQueryProgram=emxProjectMember:getFieldQueryForProjectMember&memberType=Person&HelpMarker=emxhelpsearch'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'( (current.access[fromconnect] == true) || (current.access[changesov] == true) )'
+	setting	'Image'		'${COMMON_DIR}/images/iconShare_32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddMember'
+	property	'version'	value	'R423'
+;
+modify menu PMCMemberSummaryToolBarActions add command PMCAddMember order command PMCAddMember 1;
+#channel ==>PMCMemberSummaryToolBarActions
+add property command_PMCAddMember on program eServiceSchemaVariableMapping.tcl to command 'PMCAddMember';

@@ -1,0 +1,8 @@
+{
+  "UCV.optionsChecker.optionSet.notExisting.error": "Aby pobrać cechę użytkownika, należy zdefiniować zestaw opcji!",
+  "UCV.optionsChecker.optionSet.type.error": "Aby pobrać cechę użytkownika, należy zdefiniować zestaw opcji!",
+  "UCV.mode.icon.text.switchReadOnly": "Przełącz na tryb tylko do odczytu",
+  "UCV.mode.icon.text.switchEdit": "Przełącz na tryb edycji",
+  "UCV.add.icon.text": "Dodaj cechę użytkownika",
+  "UCV.noUC.error": "Brak dostępnych cech użytkownika..."
+}

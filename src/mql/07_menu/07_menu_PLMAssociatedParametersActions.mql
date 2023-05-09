@@ -1,0 +1,12 @@
+del menu 'PLMAssociatedParametersActions';
+add menu 'PLMAssociatedParametersActions'
+	description	''
+	label	'emxParameter.common.Actions'
+	href	''
+	alt	''
+	command	'PLMAddNewParameterActionLink'
+	command	'PLMAddExistingParameterActionLink'
+	command	'AEFSeparator'
+	command	'PLMDisconnectParametersActionLink'
+;
+add property menu_PLMAssociatedParametersActions on program eServiceSchemaVariableMapping.tcl to menu 'PLMAssociatedParametersActions';

@@ -1,0 +1,16 @@
+del command 'FTRProductConfiguratorMode';
+add command 'FTRProductConfiguratorMode'
+	description	'Command to set the mode for the Product Configurator, it can be interactive or non- interactive'
+	label	'emxProduct.Preferences.ProductConfiguratorMode'
+	href	'${SUITE_DIR}/emxPrefProductConfiguratorMode.jsp?HelpMarker=emxhelpproductconfiguratormode'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductConfiguratorMode'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRProductConfiguratorMode on program eServiceSchemaVariableMapping.tcl to command 'FTRProductConfiguratorMode';

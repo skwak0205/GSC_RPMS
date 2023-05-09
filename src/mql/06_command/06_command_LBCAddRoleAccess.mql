@@ -1,0 +1,16 @@
+del command 'LBCAddRoleAccess';
+add command 'LBCAddRoleAccess'
+	description	'Add Access Roles'
+	label	'emxDocumentCentral.Search.AddRole'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPRoleSummary&program=emxWorkspaceVault:getRoleGroupSearchResults&selection=multiple&expandLevelFilterMenu=false&customize=false&Export=false&multiColumnSort=false&useMode=addRole&PrinterFriendly=false&showPageURLIcon=false&showRMB=false&showClipboard=false&objectCompare=false&header=emxDocumentCentral.Search.RolesSearchResults&submitLabel=emxFramework.Common.Done&cancelLabel=emxFramework.Common.Cancel&cancelButton=true&displayView=details&toolbar=LBCRolesGroupsSearchToolbar&submitURL=../documentcentral/emxLibraryCentralFolderAccessAdd.jsp?useMode=addRole'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAddRoleAccess'
+	property	'version'	value	'R212'
+;
+modify menu LBCFolderAccessAddMembersActionToolBar add command LBCAddRoleAccess order command LBCAddRoleAccess 2;
+#channel ==>LBCFolderAccessAddMembersActionToolBar
+add property command_LBCAddRoleAccess on program eServiceSchemaVariableMapping.tcl to command 'LBCAddRoleAccess';

@@ -1,0 +1,18 @@
+del command 'PMCResourceRequestProposedEvent';
+add command 'PMCResourceRequestProposedEvent'
+	description	''
+	label	'emxProgramCentral.ResourceRequest.PropsedEvent'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Event Type'		'Request Proposed'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestProposedEvent'
+	property	'version'	value	'R216'
+;
+modify menu PMCResourceRequestEvents add command PMCResourceRequestProposedEvent order command PMCResourceRequestProposedEvent 4;
+#channel ==>PMCResourceRequestEvents
+add property command_PMCResourceRequestProposedEvent on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestProposedEvent';

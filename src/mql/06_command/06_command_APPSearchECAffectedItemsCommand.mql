@@ -1,0 +1,18 @@
+del command 'APPSearchECAffectedItemsCommand';
+add command 'APPSearchECAffectedItemsCommand'
+	description	'Affected Items find command object'
+	label	'emxComponents.Command.Search'
+	href	'${SUITE_DIR}/emxFindForm.jsp?suiteKey=Components&program=emxCommonEngineeringChange:getGeneralSearchResults&table=APPECAffectedItemsSearchList&CommandName=APPSearchECAffectedItemsCommand&sortColumnName=Name&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchECAffectedItemsCommand'
+	property	'version'	value	'10-6'
+;
+modify menu APPECSearchAddExistingChooser add command APPSearchECAffectedItemsCommand order command APPSearchECAffectedItemsCommand 1;
+#channel ==>APPECSearchAddExistingChooser
+add property command_APPSearchECAffectedItemsCommand on program eServiceSchemaVariableMapping.tcl to command 'APPSearchECAffectedItemsCommand';

@@ -1,0 +1,25 @@
+del command 'RMTSpecTreeDetailTable';
+add command 'RMTSpecTreeDetailTable'
+	description	''
+	label	'emxRequirements.Label.DetailView'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgramMenu=RMTSpecTreeProgramMenu&tableMenu=RMTSpecTreeTableMenu&freezePane=Name&selection=multiple&directionFilter=true&direction=from&editLink=true'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'table'		'RMTSpecDetailTable'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecTreeDetailTable'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTSpecTreeDetailTable on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecTreeDetailTable';

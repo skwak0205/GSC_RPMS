@@ -1,0 +1,27 @@
+del command 'APPCommonDownloadReport';
+add command 'APPCommonDownloadReport'
+	description	'Download Report'
+	label	'emxComponents.Command.DownloadReport'
+	href	'${COMMON_DIR}/emxSearch.jsp?defaultSearch=APPCommonShowDownloadReport&helpMarker=emxhelpsearchdownloadreport'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayDownloadReportsCmd'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonDownloadReport'
+	property	'version'	value	'R424.HF1'
+;
+modify menu APPReports add command APPCommonDownloadReport order command APPCommonDownloadReport 2;
+modify menu LBCAdministrationMyDesk add command APPCommonDownloadReport order command APPCommonDownloadReport 0;
+#channel ==>APPReportsLBCAdministrationMyDesk
+add property command_APPCommonDownloadReport on program eServiceSchemaVariableMapping.tcl to command 'APPCommonDownloadReport';

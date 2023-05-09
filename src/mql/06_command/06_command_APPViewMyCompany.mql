@@ -1,0 +1,23 @@
+del command 'APPViewMyCompany';
+add command 'APPViewMyCompany'
+	description	'View My Company'
+	label	'emxComponents.Button.ViewMyCompany'
+	href	'javascript:getViewMyCompanyURL()'
+	alt	'emxComponents.Button.ViewMyCompany'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'Organization Manager'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Supplier Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPViewMyCompany'
+	property	'version'	value	'R422'
+;
+#channel ==>My Enovia
+add property command_APPViewMyCompany on program eServiceSchemaVariableMapping.tcl to command 'APPViewMyCompany';

@@ -1,0 +1,25 @@
+del command 'PMCWBSAll';
+add command 'PMCWBSAll'
+	description	''
+	label	'emxProgramCentral.Common.TasksAll'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'function'		'getWBSAllSubtasks'
+	setting	'Access Function'		'isNotFromRMB'
+	setting	'Access Program'		'emxTask'
+	setting	'program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSAll'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSListMenu add command PMCWBSAll order command PMCWBSAll 2;
+modify menu PMCWBSTaskListMenu add command PMCWBSAll order command PMCWBSAll 2;
+#channel ==>PMCWBSListMenuPMCWBSTaskListMenu
+add property command_PMCWBSAll on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSAll';

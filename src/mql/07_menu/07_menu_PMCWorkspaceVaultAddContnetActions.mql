@@ -1,0 +1,22 @@
+del menu 'PMCWorkspaceVaultAddContnetActions';
+add menu 'PMCWorkspaceVaultAddContnetActions'
+	description	''
+	label	'emxProgramCentral.Common.DocumentFiles'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.kindof[Workspace Vault]'
+	setting	'Access Function'		'isControlledFolderSuperceded'
+	setting	'Access Program'		'emxProjectFolder'
+	setting	'Hide Mode'		'mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallDocument.gif'
+	command	'PMCCreateNewFolderDocument'
+	command	'PMCContentAddProjectContentActionLink'
+	command	'PMCDocumentContentUploadFiles'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWorkspaceVaultAddContnetActions'
+	property 'version'	value	'R417'
+;
+add property menu_PMCWorkspaceVaultAddContnetActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCWorkspaceVaultAddContnetActions';

@@ -1,0 +1,22 @@
+del command 'PMCAssignment';
+add command 'PMCAssignment'
+	description	'Assignment Command Object'
+	label	'emxFramework.Command.Assignment'
+	href	'${SUITE_DIR}/emxProgramCentralAssignmentSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Assignment'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'iconTaskSmall.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssignment'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCAssignment on program eServiceSchemaVariableMapping.tcl to command 'PMCAssignment';

@@ -1,0 +1,24 @@
+del command 'TMCContentSummaryUploadExternalJTFile';
+add command 'TMCContentSummaryUploadExternalJTFile'
+	description	'External JT File Upload Command Object'
+	label	'emxTeamCentral.Button.UploadExternalJTFile'
+	href	'${SUITE_DIR}/emxTeamContentTopLinksProcess.jsp?toPage=UploadExternalJTFile'
+	alt	'emxTeamCentral.Button.UploadExternalJTFile'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isJTEnabled'
+	setting	'Access Program'		'emxTeamContent'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCContentSummaryUploadExternalJTFile'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCContentSummaryUploadExternalJTFile on program eServiceSchemaVariableMapping.tcl to command 'TMCContentSummaryUploadExternalJTFile';

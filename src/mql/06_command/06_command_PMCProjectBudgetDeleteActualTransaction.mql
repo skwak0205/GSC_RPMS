@@ -1,0 +1,21 @@
+del command 'PMCProjectBudgetDeleteActualTransaction';
+add command 'PMCProjectBudgetDeleteActualTransaction'
+	description	'Delete Actual Transaction'
+	label	'emxProgramCentral.Button.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=deleteActualTransaction'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetDeleteActualTransaction'
+	property	'version'	value	'R216'
+;
+modify menu PMCProjectBudgetActualTransactionToolbarActions add command PMCProjectBudgetDeleteActualTransaction order command PMCProjectBudgetDeleteActualTransaction 0;
+#channel ==>PMCProjectBudgetActualTransactionToolbarActions
+add property command_PMCProjectBudgetDeleteActualTransaction on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudgetDeleteActualTransaction';

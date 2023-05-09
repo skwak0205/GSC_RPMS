@@ -1,0 +1,17 @@
+del menu 'PMCProjectSpaceBenefitItemToolBarActions';
+add menu 'PMCProjectSpaceBenefitItemToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Hide Mode'		'mobile'
+	command	'PMCProjectSpaceAddBenefitItem'
+	command	'PMCProjectSpaceDeleteBenefitItem'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectSpaceBenefitItemToolBarActions'
+	property 'version'	value	'R417'
+;
+add property menu_PMCProjectSpaceBenefitItemToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectSpaceBenefitItemToolBarActions';

@@ -1,0 +1,18 @@
+del command 'APPDOCUMENTSPromoteEvent';
+add command 'APPDOCUMENTSPromoteEvent'
+	description	'promote event for DOCUMENTS'
+	label	'emxComponents.Notification.Event.Promoted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'3DNotificationSupported'		'true'
+	setting	'Event Type'		'Promoted'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDOCUMENTSPromoteEvent'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPDOCUMENTSEvents add command APPDOCUMENTSPromoteEvent order command APPDOCUMENTSPromoteEvent 0;
+#channel ==>APPDOCUMENTSEvents
+add property command_APPDOCUMENTSPromoteEvent on program eServiceSchemaVariableMapping.tcl to command 'APPDOCUMENTSPromoteEvent';

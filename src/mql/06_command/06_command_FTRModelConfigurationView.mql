@@ -1,0 +1,20 @@
+del command 'FTRModelConfigurationView';
+add command 'FTRModelConfigurationView'
+	description	''
+	label	'emxConfiguration.Model.ConfigurationView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=FTRModelConfigurationViewPortal&header=emxConfiguration.Model.Heading.ConfigurationView&HelpMarker=emxhelpconfigurationfeaturelistmodel'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Action Label'		'emxProduct.Button.Filter'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'ConfigurationFeature'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelConfigurationView'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRModelConfigurationView on program eServiceSchemaVariableMapping.tcl to command 'FTRModelConfigurationView';

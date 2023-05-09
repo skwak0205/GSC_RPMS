@@ -1,0 +1,19 @@
+del command 'LBCAttributeGroupFilter';
+add command 'LBCAttributeGroupFilter'
+	description	''
+	label	'emxLibraryCentral.Command.Filter.AttributeGroups'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Action Label'		'emxLibraryCentral.Command.Filter.AttributeGroups'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeGroupFilter'
+	property	'version'	value	'R421'
+;
+modify menu LBCAttributeGroupAddExisting add command LBCAttributeGroupFilter order command LBCAttributeGroupFilter 0;
+#channel ==>LBCAttributeGroupAddExisting
+add property command_LBCAttributeGroupFilter on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeGroupFilter';

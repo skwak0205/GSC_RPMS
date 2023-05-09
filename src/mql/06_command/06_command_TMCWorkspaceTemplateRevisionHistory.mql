@@ -1,0 +1,23 @@
+del command 'TMCWorkspaceTemplateRevisionHistory';
+add command 'TMCWorkspaceTemplateRevisionHistory'
+	description	'Subfolder Command Object'
+	label	'emxTeamCentral.Button.RevisionHistory'
+	href	'${SUITE_DIR}/emxTeamShowHistoryLinkProcess.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceTemplateRevisionHistory'
+	property	'version'	value	'R422'
+;
+modify menu TMCWorkspaceTemplateRevSummaryTopActionBar add command TMCWorkspaceTemplateRevisionHistory order command TMCWorkspaceTemplateRevisionHistory 0;
+#channel ==>TMCWorkspaceTemplateRevSummaryTopActionBar
+add property command_TMCWorkspaceTemplateRevisionHistory on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceTemplateRevisionHistory';

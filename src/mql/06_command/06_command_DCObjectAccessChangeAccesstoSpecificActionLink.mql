@@ -1,0 +1,21 @@
+del command 'DCObjectAccessChangeAccesstoSpecificActionLink';
+add command 'DCObjectAccessChangeAccesstoSpecificActionLink'
+	description	'Generic Document Access Change Access to Specific'
+	label	'emxDocumentCentral.ActionBarCmd.ChangeAccesstoSpecific'
+	href	''
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectAccessChangeAccesstoSpecificActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCBookshelfAccessTopActionbar add command DCObjectAccessChangeAccesstoSpecificActionLink order command DCObjectAccessChangeAccesstoSpecificActionLink 0;
+modify menu DCBookAccessTopActionbar add command DCObjectAccessChangeAccesstoSpecificActionLink order command DCObjectAccessChangeAccesstoSpecificActionLink 0;
+modify menu DCGenericDocumentAccessTopActionbar add command DCObjectAccessChangeAccesstoSpecificActionLink order command DCObjectAccessChangeAccesstoSpecificActionLink 0;
+#channel ==>DCBookshelfAccessTopActionbarDCBookAccessTopActionbarDCGenericDocumentAccessTopActionbar
+add property command_DCObjectAccessChangeAccesstoSpecificActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectAccessChangeAccesstoSpecificActionLink';

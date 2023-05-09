@@ -1,0 +1,23 @@
+del command 'AEFCollectionDelete';
+add command 'AEFCollectionDelete'
+	description	'AEF Collection Delete'
+	label	'emxFramework.Collections.DeleteSelected'
+	href	'${COMMON_DIR}/emxAEFCollectionsDeleteCheck.jsp'
+	alt	'emxFramework.Command.RemoveSelected'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCollectionDelete'
+	property	'version'	value	'R422'
+;
+modify menu AEFCollectionActionsToolBar add command AEFCollectionDelete order command AEFCollectionDelete 0;
+#channel ==>AEFCollectionActionsToolBar
+add property command_AEFCollectionDelete on program eServiceSchemaVariableMapping.tcl to command 'AEFCollectionDelete';

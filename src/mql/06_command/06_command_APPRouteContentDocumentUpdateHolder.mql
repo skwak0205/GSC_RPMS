@@ -1,0 +1,26 @@
+del command 'APPRouteContentDocumentUpdateHolder';
+add command 'APPRouteContentDocumentUpdateHolder'
+	description	'Update All Documents connected to Parent object'
+	label	'emxComponents.Common.UpdateDocuments'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=updateHolder&showFormat=readOnly&showComments=required'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canAddContent'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckIn.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteContentDocumentUpdateHolder'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPRouteContentDocumentUpdateHolder on program eServiceSchemaVariableMapping.tcl to command 'APPRouteContentDocumentUpdateHolder';

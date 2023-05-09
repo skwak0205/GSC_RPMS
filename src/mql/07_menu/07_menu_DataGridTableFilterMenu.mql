@@ -1,0 +1,16 @@
+del menu 'DataGridTableFilterMenu';
+add menu 'DataGridTableFilterMenu'
+	description	''
+	label	'emxFramework.UITable.Tooltip.Customize'
+	href	''
+	alt	'emxFramework.UITable.Tooltip.Customize'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSystemColumns.png'
+	command	'DataGridDynamicTableFilterCommand'
+	command	'CreateCustomTable'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'DataGridTableFilterMenu'
+	property 'version'	value	'R423.HF5'
+;
+add property menu_DataGridTableFilterMenu on program eServiceSchemaVariableMapping.tcl to menu 'DataGridTableFilterMenu';

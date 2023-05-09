@@ -1,0 +1,18 @@
+del command 'PLCSearchTestCasesCommand';
+add command 'PLCSearchTestCasesCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindTestCases'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxProductSearch:getTestCases&table=PLCSearchTestCasesTable&form=PLCSearchTestCasesForm&CommandName=PLCSearchTestCasesCommand&sortColumnName=Name&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchTestCasesCommand'
+	property	'version'	value	'R418'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchTestCasesCommand order command PLCSearchTestCasesCommand 35;
+#channel ==>SearchAddExistingChooserMenu
+add property command_PLCSearchTestCasesCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchTestCasesCommand';

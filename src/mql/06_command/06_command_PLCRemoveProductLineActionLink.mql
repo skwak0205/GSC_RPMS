@@ -1,0 +1,25 @@
+del command 'PLCRemoveProductLineActionLink';
+add command 'PLCRemoveProductLineActionLink'
+	description	'Command Object for Removing Selected Product Lines from the Product line.'
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/ProductLineRemoveProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Mode'		'edit'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCRemoveProductLineActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductLineSubProductLineBottomActionBar add command PLCRemoveProductLineActionLink order command PLCRemoveProductLineActionLink 0;
+#channel ==>PLCProductLineSubProductLineBottomActionBar
+add property command_PLCRemoveProductLineActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCRemoveProductLineActionLink';

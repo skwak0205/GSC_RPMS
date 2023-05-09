@@ -1,0 +1,13 @@
+del command 'APPVPMReferencePromoteEvent';
+add command 'APPVPMReferencePromoteEvent'
+	description	'When VPMReference is promoted'
+	label	'emxComponents.Notification.Event.Promoted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Promoted'
+	property	'version'	value	'R421'
+;
+modify menu APPVPMReferenceEvents add command APPVPMReferencePromoteEvent order command APPVPMReferencePromoteEvent 1;
+#channel ==>APPVPMReferenceEvents
+add property command_APPVPMReferencePromoteEvent on program eServiceSchemaVariableMapping.tcl to command 'APPVPMReferencePromoteEvent';

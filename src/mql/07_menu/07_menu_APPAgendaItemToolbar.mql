@@ -1,0 +1,15 @@
+del menu 'APPAgendaItemToolbar';
+add menu 'APPAgendaItemToolbar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	menu	'APPAgendaItemActionToolbar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPAgendaItemToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_APPAgendaItemToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPAgendaItemToolbar';

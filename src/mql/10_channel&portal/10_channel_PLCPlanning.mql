@@ -1,0 +1,16 @@
+del channel 'PLCPlanning';
+add channel 'PLCPlanning'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProductLine'
+	command 	'PLCProductDerivationsTreeCategory','PLCProductRoadmapProjectsTreeCategory','PLCProductTaskTreeCategory','PLCProductTaskTreeCategoryMobile','PLCProductMilestones','PLCProductBuildTreeCategory','PLCProductBuildTreeCategoryRWA'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPlanning'
+	property	'version'	value	'R418'
+;
+#portal ==>PLCPlanning
+add property channel_PLCPlanning on program eServiceSchemaVariableMapping.tcl to channel 'PLCPlanning';

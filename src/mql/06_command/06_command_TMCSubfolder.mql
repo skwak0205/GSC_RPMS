@@ -1,0 +1,27 @@
+del command 'TMCSubfolder';
+add command 'TMCSubfolder'
+	description	'Subfolder Command Object'
+	label	'emxFramework.Command.Subfolder'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxWorkspaceFolder:getSubFolders&table=TMCWorkspaceFolderSummary&header=emxTeamCentral.Common.Subfolders&toolbar=TMCSubFolderSummaryToolBar&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelpsubfolders'
+	alt	'emxFramework.Command.Alt.Subfolder'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'PreExpand Category'		'true'
+	setting	'Expand Inquiry'		'TMCSubFolders'
+	setting	'Image'		'iconSmallFolder.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCSubfolder'
+	property	'version'	value	'R422.HF1'
+;
+modify menu type_Folder add command TMCSubfolder order command TMCSubfolder 0;
+modify menu TMCtype_ProjectVault add command TMCSubfolder order command TMCSubfolder 1;
+modify menu type_ProjectVault add command TMCSubfolder order command TMCSubfolder 3;
+#channel ==>type_FolderTMCtype_ProjectVaulttype_ProjectVault
+add property command_TMCSubfolder on program eServiceSchemaVariableMapping.tcl to command 'TMCSubfolder';

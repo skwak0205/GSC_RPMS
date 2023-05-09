@@ -1,0 +1,27 @@
+del command 'LBCCheckedOutMyDesk';
+add command 'LBCCheckedOutMyDesk'
+	description	'Checked Out Command Object'
+	label	'emxDocumentCentral.MenuItem.CheckedOut'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&HelpMarker=emxhelpdocumentscheckedout&program=emxDCUtils:getMyCheckedOutDocs&table=DCMyDocumentsStandard&sortColumnName=Name&sortDirection=ascending&header=emxDocumentCentral.Common.MyDocumentsCheckedOut&HelpMarker=emxhelpmydocumentscheckedout&massPromoteDemote=false'
+	alt	'emxDocumentCentral.MenuItem.CheckedOut'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Release Manager'
+	user	'Reviewer'
+	user	'Author'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCheckedOutMyDesk'
+	property	'version'	value	'R216'
+;
+modify menu LBCDocumentsMyDesk add command LBCCheckedOutMyDesk order command LBCCheckedOutMyDesk 2;
+#channel ==>LBCDocumentsMyDesk
+add property command_LBCCheckedOutMyDesk on program eServiceSchemaVariableMapping.tcl to command 'LBCCheckedOutMyDesk';

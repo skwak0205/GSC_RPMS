@@ -1,0 +1,19 @@
+del command 'DCObjectAccessRemoveSelectedActionLink';
+add command 'DCObjectAccessRemoveSelectedActionLink'
+	description	'Remove Selected Action Link on Properties'
+	label	'emxDocumentCentral.ActionBarCmd.RemoveSelected'
+	href	''
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectAccessRemoveSelectedActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCObjectAccessBottomActionbar add command DCObjectAccessRemoveSelectedActionLink order command DCObjectAccessRemoveSelectedActionLink 0;
+#channel ==>DCObjectAccessBottomActionbar
+add property command_DCObjectAccessRemoveSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectAccessRemoveSelectedActionLink';

@@ -1,0 +1,20 @@
+del command 'FTRMFContextManufacturingFeatures';
+add command 'FTRMFContextManufacturingFeatures'
+	description	''
+	label	'emxConfiguration.Category.ManufacturingView'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?toolbar=FTRMFContextManufacturingFeaturesToolbar,FTRProductManufacturingFeatureCustomFilterToolbar&expandProgram=ManufacturingFeature:getManufacturingFeatureStructure&table=FTRManufacturingFeaturesTable&editRootNode=false&selection=multiple&featureType=Manufacturing&editLink=true&editRelationship=relationship_ManufacturingFeatures&header=emxConfiguration.Heading.ManufacturingView&HelpMarker=emxhelpmanufacturingfeaturespage&massPromoteDemote=false&objectCompare=false&postProcessJPO=ManufacturingFeatureBase:refreshTree'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type.kindof[type_ManufacturingFeature]>'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeDisabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMFContextManufacturingFeatures'
+	property	'version'	value	'R418'
+;
+#channel ==>FTRMFSystemArchitectureChannel
+add property command_FTRMFContextManufacturingFeatures on program eServiceSchemaVariableMapping.tcl to command 'FTRMFContextManufacturingFeatures';

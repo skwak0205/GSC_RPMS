@@ -1,0 +1,23 @@
+del command 'APPDiscussionAttachmentsTreeCategory';
+add command 'APPDiscussionAttachmentsTreeCategory'
+	description	'Common Discussion Attachments'
+	label	'emxComponents.Common.Attachments'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxDiscussion:getDiscussionAttachmentsList&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&header=emxComponents.Common.DiscussionAttachments&HelpMarker=emxhelpdiscussion&parentRelName=relationship_MessageAttachments&toolbar=APPDiscussionDocumentSummaryToolBar'
+	alt	'emxComponents.Common.Attachments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Specification Restricted User'
+	user	'Template Header Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionAttachmentsTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_Message add command APPDiscussionAttachmentsTreeCategory order command APPDiscussionAttachmentsTreeCategory 0;
+modify menu TMCtype_Message add command APPDiscussionAttachmentsTreeCategory order command APPDiscussionAttachmentsTreeCategory 3;
+#channel ==>type_MessageTMCtype_Message
+add property command_APPDiscussionAttachmentsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionAttachmentsTreeCategory';

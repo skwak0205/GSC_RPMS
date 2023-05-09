@@ -1,0 +1,24 @@
+del command 'RMTSCETreeSelectAllChildren';
+add command 'RMTSCETreeSelectAllChildren'
+	description	'Select all child nodes'
+	label	'emxRequirements.Command.SelectAllChildren'
+	href	'javascript:SCESelectAllChildren()'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSCETreeSelectAllChildren'
+	property	'version'	value	'R422'
+;
+modify menu RMTSCETreeRMB add command RMTSCETreeSelectAllChildren order command RMTSCETreeSelectAllChildren 4;
+#channel ==>RMTSCETreeRMB
+add property command_RMTSCETreeSelectAllChildren on program eServiceSchemaVariableMapping.tcl to command 'RMTSCETreeSelectAllChildren';

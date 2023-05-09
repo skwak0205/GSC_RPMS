@@ -1,0 +1,21 @@
+del command 'LBCDCObjectSubscribe';
+add command 'LBCDCObjectSubscribe'
+	description	'DC Object Subscibe'
+	label	'emxDocumentCentral.ActionBarCmd.Subscribe'
+	href	'${SUITE_DIR}/emxDocumentCentralSubscribeOptionsFS.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.gif'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDCObjectSubscribe'
+	property	'version'	value	'R216'
+;
+modify menu LBCFolderPropertiesActionsToolbar add command LBCDCObjectSubscribe order command LBCDCObjectSubscribe 0;
+#channel ==>LBCFolderPropertiesActionsToolbar
+add property command_LBCDCObjectSubscribe on program eServiceSchemaVariableMapping.tcl to command 'LBCDCObjectSubscribe';

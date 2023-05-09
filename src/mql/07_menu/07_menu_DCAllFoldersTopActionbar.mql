@@ -1,0 +1,15 @@
+del menu 'DCAllFoldersTopActionbar';
+add menu 'DCAllFoldersTopActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'LBCCreateNewFolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCAllFoldersTopActionbar'
+	property 'version'	value	'R211'
+;
+add property menu_DCAllFoldersTopActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCAllFoldersTopActionbar';

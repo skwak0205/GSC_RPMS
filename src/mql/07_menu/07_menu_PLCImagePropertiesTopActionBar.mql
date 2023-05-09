@@ -1,0 +1,15 @@
+del menu 'PLCImagePropertiesTopActionBar';
+add menu 'PLCImagePropertiesTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCEditImageActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCImagePropertiesTopActionBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_PLCImagePropertiesTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCImagePropertiesTopActionBar';

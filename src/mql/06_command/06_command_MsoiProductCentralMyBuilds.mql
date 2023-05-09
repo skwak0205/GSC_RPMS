@@ -1,0 +1,16 @@
+del command 'MsoiProductCentralMyBuilds';
+add command 'MsoiProductCentralMyBuilds'
+	description	'UI3 based my builds Command object specific to MS Office Integration'
+	label	'emxProduct.Menu.Builds'
+	href	'${COMMON_DIR}/emxTable.jsp?program=MSFProductCentralUtil:getCurrentUserBuilds&table=PRCBuildList'
+	alt	'emxProduct.Menu.Builds'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiProductCentralMyBuilds'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_MsoiProductCentralMyBuilds on program eServiceSchemaVariableMapping.tcl to command 'MsoiProductCentralMyBuilds';

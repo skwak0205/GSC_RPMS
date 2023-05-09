@@ -1,0 +1,23 @@
+del command 'LBCRetentionScheduleEdit';
+add command 'LBCRetentionScheduleEdit'
+	description	'LBC Retention Schedule Edit'
+	label	'emxDocumentCentral.ActionBarCmd.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_LCRetentionScheduleProperties&HelpMarker=emxhelplibraryrecordproperties&formHeader=emxDocumentCentral.Common.Edit&Export=False&mode=edit&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCRetentionScheduleEdit'
+	property	'version'	value	'R421'
+;
+modify menu LBCRetentionScheduleToolBar add command LBCRetentionScheduleEdit order command LBCRetentionScheduleEdit 0;
+#channel ==>LBCRetentionScheduleToolBar
+add property command_LBCRetentionScheduleEdit on program eServiceSchemaVariableMapping.tcl to command 'LBCRetentionScheduleEdit';

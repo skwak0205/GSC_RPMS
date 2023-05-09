@@ -1,0 +1,1 @@
+define("DS/FlyWalkCommand/FlyWalkCommand_pt-BR",{});define("DS/FlyWalkCommand/assets/nls/translation",{StartHelp:"Mantenha pressionado o botão esquerdo do mouse para",StartHelp_Touch:"Use os joysticks para",WalkText:"Caminhar",FlyText:"Voar",DontShow:"Não mostrar novamente"});

@@ -1,0 +1,9 @@
+del menu 'type_PnOOrg';
+add menu 'type_PnOOrg'
+	description	''
+	label	'emxPlmOnline.label.OrganizationResults'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminQueryOrganization.jsp'
+	alt	'Organization Results'
+	setting	'Registered Suite'		'VPLMAdministration'
+;
+add property menu_type_PnOOrg on program eServiceSchemaVariableMapping.tcl to menu 'type_PnOOrg';

@@ -1,0 +1,24 @@
+del command 'PMCResolvesItems';
+add command 'PMCResolvesItems'
+	description	'Command for displaying Items being resolved using ResolveTo and ResolvingProject'
+	label	'emxProgramCentral.Command.Resolves'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCResolvesItemsList&toolbar=PMCResolvesItemsToolBar&freezePane=Name&relationship=relationship_ContributesTo&selection=multiple&tableMenu=&header=&HelpMarker=emxhelpresolvesitems&showPageURLIcon=false&direction=from'
+	alt	'emxProgramCentral.Command.Resolves'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Function'		'hasAccessTaskResolves'
+	setting	'Access Program'		'emxTaskBase'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResolvesItems'
+	property	'version'	value	'R424.HF1'
+;
+modify menu type_Risk add command PMCResolvesItems order command PMCResolvesItems 5;
+modify menu type_Opportunity add command PMCResolvesItems order command PMCResolvesItems 6;
+#channel ==>type_Risktype_Opportunity
+add property command_PMCResolvesItems on program eServiceSchemaVariableMapping.tcl to command 'PMCResolvesItems';

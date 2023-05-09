@@ -1,0 +1,22 @@
+del command 'FTRAddExistingFeatureTestCaseActionLink';
+add command 'FTRAddExistingFeatureTestCaseActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_TestCase&excludeOIDprogram=emxPLCCommon:excludeConnected&table=FTRFeatureSearchResultsTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../configuration/SearchUtil.jsp?mode=AddExisting&relName=relationship_FeatureTestCase&from=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingFeatureTestCaseActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRFeatureTestCaseTopActionBar add command FTRAddExistingFeatureTestCaseActionLink order command FTRAddExistingFeatureTestCaseActionLink 0;
+#channel ==>FTRFeatureTestCaseTopActionBar
+add property command_FTRAddExistingFeatureTestCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingFeatureTestCaseActionLink';

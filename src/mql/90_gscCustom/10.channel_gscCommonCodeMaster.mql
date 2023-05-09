@@ -1,0 +1,16 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통코드 master channel
+################################################################################################
+#del channel "gscCommonCodeMaster";
+add channel "gscCommonCodeMaster"
+    description ""
+    command gscCommonCodeMasterList
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2023.01.10"
+property "original name"    value "gscCommonCodeMaster"
+;
+add property channel_gscCommonCodeMaster on program eServiceSchemaVariableMapping.tcl to channel 'gscCommonCodeMaster';

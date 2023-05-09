@@ -1,0 +1,16 @@
+del command 'PLCPreviewBOMContextActionLink';
+add command 'PLCPreviewBOMContextActionLink'
+	description	''
+	label	'emxProduct.ActionLink.PLCPreviewBOM'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=emxProductConfigurationEBOM:expandFeaturesForProductConfiguration&table=PLCPreviewBOMTable&selection=none&mode=edit&toolbar=PLCPreviewBOMToolbar&postProcessURL=${SUITE_DIR}/ProductConfigurationUtil.jsp?mode=apply'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPreviewBOMContextActionLink'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_PLCPreviewBOMContextActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCPreviewBOMContextActionLink';

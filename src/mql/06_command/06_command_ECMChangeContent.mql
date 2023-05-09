@@ -1,0 +1,20 @@
+del command 'ECMChangeContent';
+add command 'ECMChangeContent'
+	description	'CR CO CA Content commands'
+	label	'EnterpriseChangeMgt.Command.ChangeContent'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=ECMChangeContentPortal&showPageHeader=true&header=EnterpriseChangeMgt.Heading.ChangeContent'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeAction>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeContent'
+	property	'version'	value	'R216'
+;
+modify menu type_ChangeOrder add command ECMChangeContent order command ECMChangeContent 1;
+modify menu type_ChangeRequest add command ECMChangeContent order command ECMChangeContent 1;
+#channel ==>type_ChangeOrdertype_ChangeRequest
+add property command_ECMChangeContent on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeContent';

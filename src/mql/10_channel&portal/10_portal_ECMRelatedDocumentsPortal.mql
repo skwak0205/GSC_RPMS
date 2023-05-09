@@ -1,0 +1,15 @@
+del portal 'ECMRelatedDocumentsPortal';
+add portal 'ECMRelatedDocumentsPortal'
+	description	''
+	label	''
+	href	''
+	channel 	ECMReferenceDocumentsChannel
+	channel 	ECMSupportingDocumentsChannel
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMRelatedDocumentsPortal'
+	property	'version'	value	'R216'
+;
+add property portal_ECMRelatedDocumentsPortal on program eServiceSchemaVariableMapping.tcl to portal 'ECMRelatedDocumentsPortal';

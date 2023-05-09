@@ -1,0 +1,21 @@
+del command 'PMCProgramAddExistingProject';
+add command 'PMCProgramAddExistingProject'
+	description	'Command used to Add Existing Project in Program'
+	label	'emxProgramCentral.Common.AddExisting'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=addExistingProjectBelow'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProgramAddExistingProject'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProgramProjectSummaryToolBarActions add command PMCProgramAddExistingProject order command PMCProgramAddExistingProject 1;
+#channel ==>PMCProgramProjectSummaryToolBarActions
+add property command_PMCProgramAddExistingProject on program eServiceSchemaVariableMapping.tcl to command 'PMCProgramAddExistingProject';

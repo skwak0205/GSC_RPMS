@@ -1,0 +1,18 @@
+del menu 'ECMChangeRequestManagementToolbar';
+add menu 'ECMChangeRequestManagementToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMAddToExistingCR'
+	command	'ECMAddToNewCR'
+	command	'AEFSeparator'
+	command	'ECMContextChangeRemoveActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMChangeRequestManagementToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMChangeRequestManagementToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMChangeRequestManagementToolbar';

@@ -1,0 +1,16 @@
+del command 'ManagePackagesCmd';
+add command 'ManagePackagesCmd'
+	description	'Import Packages On cloud'
+	label	'emxPackagesManagement.label.PackagesMngtCmd'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PackagesImportListTable&selection=none&toolbar=ManagePackagesToolbar&program=emxPackagesMngtProgram:getCustoPackCloud&header=emxPackagesManagement.label.TitleTableManagePackages&customize=false&showClipboard=false&showPageURL=false&showRMB=false&sortColumnName=packParentPackage&displayView=details'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'PackagesManagement'
+	setting	'Access Function'		'isPackagesManagerAvailable'
+	setting	'Access Program'		'emxPackagesMngtProgram'
+	user	'Domain Expert'
+	user	'VPLMAdmin'
+;
+modify menu DMAMyDesk add command ManagePackagesCmd order command ManagePackagesCmd 0;
+#channel ==>DMAMyDesk
+add property command_ManagePackagesCmd on program eServiceSchemaVariableMapping.tcl to command 'ManagePackagesCmd';

@@ -1,0 +1,4 @@
+<meta charset="UTF-8"/>
+TerminologySelector.TerminologyManagementCommand.Title="Suchstrukturdefinition verwalten";
+TerminologySelector.AssociateTerminologiesCommand.Title="Mit Suchstruktur verknüpfen";
+TerminologySelector.AssociateTermsCommand.Title="Mit Suchknoten verknüpfen";

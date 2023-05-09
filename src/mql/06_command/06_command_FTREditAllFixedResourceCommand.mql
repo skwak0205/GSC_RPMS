@@ -1,0 +1,25 @@
+del command 'FTREditAllFixedResourceCommand';
+add command 'FTREditAllFixedResourceCommand'
+	description	'Command for Edit All link'
+	label	'emxProduct.ActionLink.EditAll'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?HelpMarker=emxhelpresourceusageedit&program=emxFixedResource:getAllFixedResourcesForEditAll&table=FTRFixedResourceRuleListTable&timeStamp=null&header=Edit:Resource Rule'
+	alt	'emxProduct.ActionLink.EditAll'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'450'
+	setting	'Window Width'		'730'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete")'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditAllFixedResourceCommand'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_FTREditAllFixedResourceCommand on program eServiceSchemaVariableMapping.tcl to command 'FTREditAllFixedResourceCommand';

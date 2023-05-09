@@ -1,0 +1,22 @@
+del command 'CFPModifyManufacturingPlanImplementsActionLink';
+add command 'CFPModifyManufacturingPlanImplementsActionLink'
+	description	''
+	label	'DMCPlanning.ActionLink.ModifyImplements'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ManufacturingPlanResolution&mode=update'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUpdate.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPModifyManufacturingPlanImplementsActionLink'
+	property	'version'	value	'R418'
+;
+modify menu CFPEditManufacturingPlanBreakdownToolbarActions add command CFPModifyManufacturingPlanImplementsActionLink order command CFPModifyManufacturingPlanImplementsActionLink 0;
+#channel ==>CFPEditManufacturingPlanBreakdownToolbarActions
+add property command_CFPModifyManufacturingPlanImplementsActionLink on program eServiceSchemaVariableMapping.tcl to command 'CFPModifyManufacturingPlanImplementsActionLink';

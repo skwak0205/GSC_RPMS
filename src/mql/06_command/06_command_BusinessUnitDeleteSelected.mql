@@ -1,0 +1,28 @@
+del command 'BusinessUnitDeleteSelected';
+add command 'BusinessUnitDeleteSelected'
+	description	'Business Unit Delete Selected Command Object'
+	label	'emxComponents.Button.Delete'
+	href	'${COMPONENT_DIR}/emxComponentsConfigurableTableDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[delete] == true)'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForBUDeleteSelected'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxFramework.Command.Delete_Warning_Message'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'BusinessUnitDeleteSelected'
+	property	'version'	value	'R421'
+;
+modify menu BusinessUnitSummaryBottomActionBar add command BusinessUnitDeleteSelected order command BusinessUnitDeleteSelected 1;
+modify menu APPBusinessUnitSummaryActionsToolBar add command BusinessUnitDeleteSelected order command BusinessUnitDeleteSelected 4;
+#channel ==>BusinessUnitSummaryBottomActionBarAPPBusinessUnitSummaryActionsToolBar
+add property command_BusinessUnitDeleteSelected on program eServiceSchemaVariableMapping.tcl to command 'BusinessUnitDeleteSelected';

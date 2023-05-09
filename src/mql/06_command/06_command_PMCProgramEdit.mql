@@ -1,0 +1,24 @@
+del command 'PMCProgramEdit';
+add command 'PMCProgramEdit'
+	description	''
+	label	'emxProgramCentral.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProgramForm&mode=edit&HelpMarker=emxhelpprogramdetails&formHeader=emxProgramCentral.Common.ProgramEditBasics&findMxLink=false&submitAction=refreshCaller'
+	alt	'emxProgramCentral.Button.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Icon'		'../common/images/iconActionEdit.gif'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProgramEdit'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProgramPropertiesToolBar add command PMCProgramEdit order command PMCProgramEdit 0;
+#channel ==>PMCProgramPropertiesToolBar
+add property command_PMCProgramEdit on program eServiceSchemaVariableMapping.tcl to command 'PMCProgramEdit';

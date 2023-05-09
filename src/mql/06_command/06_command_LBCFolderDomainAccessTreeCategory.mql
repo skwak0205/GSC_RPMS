@@ -1,0 +1,17 @@
+del command 'LBCFolderDomainAccessTreeCategory';
+add command 'LBCFolderDomainAccessTreeCategory'
+	description	''
+	label	'emxFramework.Common.DomainAccessTreeCategory'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDomainAccess:getObjectAccessList&table=DomainAccess&editLink=true&selection=multiple&toolbar=LBCFolderDomainAccessToolBar&level=0&header=emxFramework.DomainAccess.AccessView&expandLevelFilter=true&editRootNode=false&objectBased=false&hideRootSelection=true&displayView=details&showClipboard=false&HelpMarker=emxhelpmultipleownershipaccess&massUpdate=false'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCFolderDomainAccessTreeCategory'
+	property	'version'	value	'R419'
+;
+modify menu DCtype_ProjectVault add command LBCFolderDomainAccessTreeCategory order command LBCFolderDomainAccessTreeCategory 1;
+modify menu LBCFolderRMB add command LBCFolderDomainAccessTreeCategory order command LBCFolderDomainAccessTreeCategory 1;
+#channel ==>DCtype_ProjectVaultLBCFolderRMB
+add property command_LBCFolderDomainAccessTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'LBCFolderDomainAccessTreeCategory';

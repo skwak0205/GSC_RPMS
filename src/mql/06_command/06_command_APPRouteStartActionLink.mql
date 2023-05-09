@@ -1,0 +1,23 @@
+del command 'APPRouteStartActionLink';
+add command 'APPRouteStartActionLink'
+	description	'Command to Start the Route'
+	label	'emxComponents.Routes.StartRoute'
+	href	'javascript:startRoute()'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'JavaScript Include'		'../components/emxComponentsFormValidation.js'
+	setting	'Access Function'		'checksToRouteStartActionLink'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionStartResumeRoute.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteStartActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRoutePropertiesActionsToolBar add command APPRouteStartActionLink order command APPRouteStartActionLink 4;
+#channel ==>APPRoutePropertiesActionsToolBar
+add property command_APPRouteStartActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRouteStartActionLink';

@@ -1,0 +1,25 @@
+del command 'PMCProjectTemplateSummaryCopyLink';
+add command 'PMCProjectTemplateSummaryCopyLink'
+	description	'Copy Action Link'
+	label	'emxProgramCentral.Common.Clone'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ProjectTemplate&policy=policy_ProjectTemplate&form=PMCProjectTemplateCreateForm&header=emxProgramCentral.ProgramTop.CloneProjectTemplate&HelpMarker=emxhelpprojecttemplatecreatedialog&postProcessJPO=emxProjectTemplate:performClonePostProcessActions&IsClone=true&IsVersion=false&fromTPMyDesk=true&nameField=None&submitAction=refreshCaller&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateSummaryCopyLink'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyDeskProjectTemplateSummaryToolBarActions add command PMCProjectTemplateSummaryCopyLink order command PMCProjectTemplateSummaryCopyLink 0;
+#channel ==>PMCMyDeskProjectTemplateSummaryToolBarActions
+add property command_PMCProjectTemplateSummaryCopyLink on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateSummaryCopyLink';

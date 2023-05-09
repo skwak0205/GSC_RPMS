@@ -1,0 +1,19 @@
+del menu 'Msoitype_Products';
+add menu 'Msoitype_Products'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PLCProductSpecifications'
+	command	'PLCProductReferenceDocumentTreeCategory'
+	command	'PLCProductBuildTreeCategory'
+	command	'FTRSystemArchitectureTreeCategory'
+	command	'FTRProductConfigurationFeatures'
+	command	'RMTProductRequirementTreeCategory'
+	property 'installer'	value	'ENOVIAIntegrationEngineering'
+	property 'application'	value	'IntegrationFramework'
+	property 'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property 'original name'	value	'Msoitype_Products'
+	property 'version'	value	'V6R2022x'
+;
+add property menu_Msoitype_Products on program eServiceSchemaVariableMapping.tcl to menu 'Msoitype_Products';

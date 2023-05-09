@@ -1,0 +1,9 @@
+del menu 'type_DELFmiFunctionReferenceRMB';
+add menu 'type_DELFmiFunctionReferenceRMB'
+	description	'VPLM Process Right Mouse Button Menu'
+	label	'Process RMB'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+;
+add property menu_type_DELFmiFunctionReferenceRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_DELFmiFunctionReferenceRMB';

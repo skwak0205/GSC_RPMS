@@ -1,0 +1,22 @@
+del command 'PMCDeleteAccess';
+add command 'PMCDeleteAccess'
+	description	'Command for Remove Access From Project'
+	label	'emxProgramcentral.Member.DomainAccessDeleteAccess'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=deleteMember'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'( (current.access[fromconnect] == true) || (current.access[changesov] == true) )'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionThrash.png'
+	setting	'Confirm Message'		'emxProgramcentral.RemoveAccess.ConfirmMsg'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeleteAccess'
+	property	'version'	value	'R423.HF5'
+;
+modify menu PMCMemberSummaryToolBarActions add command PMCDeleteAccess order command PMCDeleteAccess 8;
+#channel ==>PMCMemberSummaryToolBarActions
+add property command_PMCDeleteAccess on program eServiceSchemaVariableMapping.tcl to command 'PMCDeleteAccess';

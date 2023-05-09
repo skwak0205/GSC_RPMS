@@ -1,0 +1,15 @@
+del menu 'type_AssessmentRMB';
+add menu 'type_AssessmentRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PMCLifecycle'
+	command	'PMCAssessmentProperties'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_AssessmentRMB'
+	property 'version'	value	'R420'
+;
+add property menu_type_AssessmentRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_AssessmentRMB';

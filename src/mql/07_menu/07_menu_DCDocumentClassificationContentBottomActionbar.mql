@@ -1,0 +1,16 @@
+del menu 'DCDocumentClassificationContentBottomActionbar';
+add menu 'DCDocumentClassificationContentBottomActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'APPSubscriptionMultiObject'
+	command	'DCObjectRemoveSelectedActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCDocumentClassificationContentBottomActionbar'
+	property 'version'	value	'R212'
+;
+add property menu_DCDocumentClassificationContentBottomActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCDocumentClassificationContentBottomActionbar';

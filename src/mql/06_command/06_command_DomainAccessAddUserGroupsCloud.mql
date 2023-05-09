@@ -1,0 +1,21 @@
+del command 'DomainAccessAddUserGroupsCloud';
+add command 'DomainAccessAddUserGroupsCloud'
+	description	''
+	label	'emxFramework.Common.DomainAccessAddUserGroups'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?showInitialResults=true&table=AEFUserGroupsChooser&selection=multiple&form=AEFSearchUserGroupsForm&submitURL=${COMMON_DIR}/emxDomainAccessProcess.jsp&cmdName=addUserGroups&jpoName=emxDomainAccess&methodName=addUserGroups&source=usersgroup&rdfQuery=[ds6w:type]:(Group)&HelpMarker=emxhelpsearch'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'current.access[changesov]'
+	setting	'Hide Mode'		'!Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconShareWithUserGroup_32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DomainAccessAddUserGroupsCloud'
+	property	'version'	value	'R423.HF1'
+;
+modify menu DomainAccessActionToolBar add command DomainAccessAddUserGroupsCloud order command DomainAccessAddUserGroupsCloud 3;
+modify menu PMCMemberSummaryToolBarActions add command DomainAccessAddUserGroupsCloud order command DomainAccessAddUserGroupsCloud 3;
+modify menu PMCBudgetMOASummaryToolBar add command DomainAccessAddUserGroupsCloud order command DomainAccessAddUserGroupsCloud 3;
+#channel ==>DomainAccessActionToolBarPMCMemberSummaryToolBarActionsPMCBudgetMOASummaryToolBar
+add property command_DomainAccessAddUserGroupsCloud on program eServiceSchemaVariableMapping.tcl to command 'DomainAccessAddUserGroupsCloud';

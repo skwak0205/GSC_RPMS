@@ -1,0 +1,16 @@
+del command 'PMCProjectTemplateVersions';
+add command 'PMCProjectTemplateVersions'
+	description	'Lists the Project Template Revisions'
+	label	'emxProgramCentral.ProgramTop.Revisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProjectTemplate:getRevisions&table=PMCProjectTemplateVersions&toolbar=PMCProjectTemplateVersionsToolBar&selection=multiple&HelpMarker=emxhelpprojecttemplateversions&Export=false&sortColumnName=Name&sortDirection=ascending'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateVersions'
+	property	'version'	value	'R424.HF4'
+;
+modify menu type_ProjectTemplate add command PMCProjectTemplateVersions order command PMCProjectTemplateVersions 9;
+#channel ==>type_ProjectTemplate
+add property command_PMCProjectTemplateVersions on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateVersions';

@@ -1,0 +1,22 @@
+del command 'LBCCreateGeneralLibrary';
+add command 'LBCCreateGeneralLibrary'
+	description	'Create New General Library'
+	label	'emxDocumentCentral.Common.CreateGeneralLibrary'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_GeneralLibrary&nameField=autoName&form=type_CreateLibrary&createJPO=emxLibraryCentralCommon:createLBCObject&submitAction=refreshCaller&header=emxDocumentCentral.Common.CreateNewGeneralLibrary&HelpMarker=emxhelpcreatelibrarysimple&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCreateGeneralLibrary'
+	property	'version'	value	'R423.HF4'
+;
+modify menu LBCCreateLibraryMenu add command LBCCreateGeneralLibrary order command LBCCreateGeneralLibrary 2;
+#channel ==>LBCCreateLibraryMenu
+add property command_LBCCreateGeneralLibrary on program eServiceSchemaVariableMapping.tcl to command 'LBCCreateGeneralLibrary';

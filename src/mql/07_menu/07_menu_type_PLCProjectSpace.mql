@@ -1,0 +1,15 @@
+del menu 'type_PLCProjectSpace';
+add menu 'type_PLCProjectSpace'
+	description	''
+	label	'${NAME}'
+	href	'emxDynamicAttributes.jsp'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProject.gif'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_PLCProjectSpace'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_type_PLCProjectSpace on program eServiceSchemaVariableMapping.tcl to menu 'type_PLCProjectSpace';

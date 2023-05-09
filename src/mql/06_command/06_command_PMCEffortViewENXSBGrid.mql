@@ -1,0 +1,20 @@
+del command 'PMCEffortViewENXSBGrid';
+add command 'PMCEffortViewENXSBGrid'
+	description	''
+	label	'emxProgramCentral.Button.EffortView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCProjectTaskEffortENXSBGrid'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEffortViewENXSBGrid'
+	property	'version'	value	'R421.HF6'
+;
+modify menu PMCWBSTableMenuENXSBGrid add command PMCEffortViewENXSBGrid order command PMCEffortViewENXSBGrid 5;
+#channel ==>PMCWBSTableMenuENXSBGrid
+add property command_PMCEffortViewENXSBGrid on program eServiceSchemaVariableMapping.tcl to command 'PMCEffortViewENXSBGrid';

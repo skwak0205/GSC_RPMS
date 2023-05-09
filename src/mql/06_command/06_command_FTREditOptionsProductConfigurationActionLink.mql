@@ -1,0 +1,25 @@
+del command 'FTREditOptionsProductConfigurationActionLink';
+add command 'FTREditOptionsProductConfigurationActionLink'
+	description	''
+	label	'emxProduct.ActionLink.EditOptions'
+	href	'${SUITE_DIR}/ProductConfigurationUtil.jsp?mode=editOptions'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showLinksForSalableConfig'
+	setting	'Access Program'		'emxProductConfiguration'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditOptionsProductConfigurationActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRProductConfigurationPropertiesActionBar add command FTREditOptionsProductConfigurationActionLink order command FTREditOptionsProductConfigurationActionLink 3;
+#channel ==>FTRProductConfigurationPropertiesActionBar
+add property command_FTREditOptionsProductConfigurationActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTREditOptionsProductConfigurationActionLink';

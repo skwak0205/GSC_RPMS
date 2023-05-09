@@ -1,0 +1,24 @@
+del command 'PMCRemoveQualityMetric';
+add command 'PMCRemoveQualityMetric'
+	description	'Command for Removing Quality Metric'
+	label	'emxProgramCentral.Button.RemoveSelected'
+	href	'${SUITE_DIR}/emxProgramCentralQualityMetricProcess.jsp?action=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Access Mask'		'modify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRemoveQualityMetric'
+	property	'version'	value	'R422'
+;
+modify menu PMCQualityMetricToolbarActions add command PMCRemoveQualityMetric order command PMCRemoveQualityMetric 0;
+#channel ==>PMCQualityMetricToolbarActions
+add property command_PMCRemoveQualityMetric on program eServiceSchemaVariableMapping.tcl to command 'PMCRemoveQualityMetric';

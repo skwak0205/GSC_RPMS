@@ -1,0 +1,16 @@
+del menu 'APPAccessRequestToolbar';
+add menu 'APPAccessRequestToolbar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPAccessRequestActionsToolbar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPAccessRequestToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_APPAccessRequestToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPAccessRequestToolbar';

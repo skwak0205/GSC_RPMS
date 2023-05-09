@@ -1,0 +1,32 @@
+del command 'IssueAddExistingListActionLink';
+add command 'IssueAddExistingListActionLink'
+	description	'Issue AddExisting Command Object'
+	label	'emxComponents.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Issue&table=AEFGeneralSearchResults&selection=multiple&showSavedQuery=True&searchCollectionEnabled=True&srcDestRelName=relationship_Issue&isTo=false&submitURL=../components/emxIssueUtil.jsp?mode=addExisting'
+	alt	'emxComponents.ActionLink.AddExisting'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	setting	'Access Mask'		'ToConnect'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMReleaseManager'
+	user	'VPLMTeamManager'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueAddExistingListActionLink'
+	property	'version'	value	'R422'
+;
+modify menu ContextIssueToolBarActions add command IssueAddExistingListActionLink order command IssueAddExistingListActionLink 2;
+#channel ==>ContextIssueToolBarActions
+add property command_IssueAddExistingListActionLink on program eServiceSchemaVariableMapping.tcl to command 'IssueAddExistingListActionLink';

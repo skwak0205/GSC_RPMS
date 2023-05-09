@@ -1,0 +1,19 @@
+del command 'FTRRecalculatePriceAction';
+add command 'FTRRecalculatePriceAction'
+	description	'Command is used to Recalculate Price of Out Of Date PCs.'
+	label	'emxProduct.ActionLink.RecalculatePrice'
+	href	'${SUITE_DIR}/ProductConfigurationRecomputeListPrice.jsp?mode=RecalculateOnSummaryAction'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type.kindof == "type_Products"> && $<type!="type_ProductVariant">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRecalculatePrice.png'
+	property	'version'	value	'R420'
+;
+modify menu FTRProductConfigurationActionToolbar add command FTRRecalculatePriceAction order command FTRRecalculatePriceAction 5;
+#channel ==>FTRProductConfigurationActionToolbar
+add property command_FTRRecalculatePriceAction on program eServiceSchemaVariableMapping.tcl to command 'FTRRecalculatePriceAction';

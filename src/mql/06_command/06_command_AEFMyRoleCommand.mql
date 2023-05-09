@@ -1,0 +1,16 @@
+del command 'AEFMyRoleCommand';
+add command 'AEFMyRoleCommand'
+	description	'Command To get the roles'
+	label	'AEFMyRoleCommand'
+	href	'javascript::::'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFMyRoleCommand'
+	property	'version'	value	'R417'
+;
+modify menu AEFMyRoleMenu add command AEFMyRoleCommand order command AEFMyRoleCommand 0;
+#channel ==>AEFMyRoleMenu
+add property command_AEFMyRoleCommand on program eServiceSchemaVariableMapping.tcl to command 'AEFMyRoleCommand';

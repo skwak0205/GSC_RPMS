@@ -1,0 +1,12 @@
+del command 'APPSpace';
+add command 'APPSpace'
+	description	''
+	label	'emxPlmOnline.label.MySpace'
+	href	'${COMMON_DIR}/emxTree.jsp?treeMenu=type_MySpace&legacyTree=true'
+	alt	'emxPlmOnline.label.MySpace'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+;
+modify menu APPPnOSpace add command APPSpace order command APPSpace 0;
+#channel ==>APPPnOSpace
+add property command_APPSpace on program eServiceSchemaVariableMapping.tcl to command 'APPSpace';

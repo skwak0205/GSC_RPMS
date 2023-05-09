@@ -1,0 +1,20 @@
+del menu 'type_RouteTemplate';
+add menu 'type_RouteTemplate'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_RouteTemplate&mode=view&toolbar=APPRouteTemplatePropertiesToolBar&formHeader=emxComponents.Heading.Properties&HelpMarker=emxhelproutetemplateproperties&&Export=false&showPageURLIcon=false'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/iconSmallRouteTemplate.gif'
+	command	'APPTask'
+	command	'APPRevision'
+	command	'AEFLifecycle'
+	command	'AEFHistory'
+	command	'APPRouteTemplateAccess'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_RouteTemplate'
+	property 'version'	value	'R215'
+;
+add property menu_type_RouteTemplate on program eServiceSchemaVariableMapping.tcl to menu 'type_RouteTemplate';

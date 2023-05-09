@@ -1,0 +1,12 @@
+del command 'APPXPCreateSecurityContext';
+add command 'APPXPCreateSecurityContext'
+	description	''
+	label	'emxPlmOnline.label.Create'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=CreateContext&dir=XP'
+	alt	'emxPlmOnline.label.Create'
+	setting	'Registered Suite'		'VPLMAdministration'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+#channel ==>SecurityContextXPChannel
+add property command_APPXPCreateSecurityContext on program eServiceSchemaVariableMapping.tcl to command 'APPXPCreateSecurityContext';

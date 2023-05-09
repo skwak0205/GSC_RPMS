@@ -1,0 +1,16 @@
+del command 'AEFFullSearchViewNavigationMode';
+add command 'AEFFullSearchViewNavigationMode'
+	description	'Tags Mode Command'
+	label	'emxFramework.Command.AEFFullSearchViewNavigationModeLabel'
+	href	'javascript:parent.changeView(\"NavigationMode\")'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFFullSearchViewNavigationMode'
+	property	'version'	value	'R215'
+;
+modify menu AEFFullSearchView add command AEFFullSearchViewNavigationMode order command AEFFullSearchViewNavigationMode 0;
+#channel ==>AEFFullSearchView
+add property command_AEFFullSearchViewNavigationMode on program eServiceSchemaVariableMapping.tcl to command 'AEFFullSearchViewNavigationMode';

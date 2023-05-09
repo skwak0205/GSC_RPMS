@@ -1,0 +1,15 @@
+del command 'APPDecisionWhereUsedRel';
+add command 'APPDecisionWhereUsedRel'
+	description	'Decision where used relationship tree category'
+	label	'emxComponents.Command.WhereUsedRel'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxDecision:getWhereUsedRel&table=APPDecisionWhereUsedRelTable&header=emxComponents.Header.DecisionWhereUsedRel&selection=multiple&toolbar=APPDecisionWhereUsedRelToolbar&HelpMarker=emxhelpdecisionwhereused'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionWhereUsedRel'
+	property	'version'	value	'R207'
+;
+#channel ==>APPDecisionWhereUsedRelChannel
+add property command_APPDecisionWhereUsedRel on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionWhereUsedRel';

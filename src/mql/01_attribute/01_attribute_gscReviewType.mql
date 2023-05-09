@@ -1,0 +1,21 @@
+#del attribute 'gscReviewType';
+add attribute 'gscReviewType'
+ type 'string'
+ description 'Identifies the Business Area'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscReviewType'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscReviewType on program eServiceSchemaVariableMapping.tcl to attribute 'gscReviewType';
+
+modify attribute 'gscReviewType' add range= RT01; #Gate Review Process
+modify attribute 'gscReviewType' add range= RT02; #R&D 심의위원회
+modify attribute 'gscReviewType' add range= RT03; #Seed과제 심의위원회(?)
+modify attribute 'gscReviewType' add range= RT04; #대외과제심의위원회
+modify attribute 'gscReviewType' add range= RT05; #T과제
+modify attribute 'gscReviewType' add range= RT06; #V과제
+modify attribute 'gscReviewType' add range= ''; #공백

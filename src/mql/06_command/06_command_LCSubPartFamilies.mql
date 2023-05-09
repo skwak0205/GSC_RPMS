@@ -1,0 +1,18 @@
+del command 'LCSubPartFamilies';
+add command 'LCSubPartFamilies'
+	description	''
+	label	'emxLibraryCentral.Command.SubPartFamilies'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxLibraryCentralUtil:getSubclasses&table=LCClassificationList&selection=single&sortColumnName=Name&sortDirection=ascending&toolbar=LBCPartFamilySubFamiliesToolBar&header=emxLibraryCentral.Common.PartFamilies&HelpMarker=emxhelplistsubparts'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCSubPartFamilies'
+	property	'version'	value	'R213'
+;
+modify menu type_PartFamily add command LCSubPartFamilies order command LCSubPartFamilies 9;
+modify menu Msoitype_PartFamily add command LCSubPartFamilies order command LCSubPartFamilies 0;
+#channel ==>type_PartFamilyMsoitype_PartFamily
+add property command_LCSubPartFamilies on program eServiceSchemaVariableMapping.tcl to command 'LCSubPartFamilies';

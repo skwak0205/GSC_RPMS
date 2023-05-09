@@ -1,0 +1,21 @@
+del command 'APPAddGroupSearchCommand';
+add command 'APPAddGroupSearchCommand'
+	description	''
+	label	'emxComponents.AddMembers.SelectGroup'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?table=APPGroupSummary&form=APPFindGroupForm&searchCommand=APPAddGroupSearchCommand&SubmitLabel=emxComponents.Common.Done&customize=false&showClipboard=false&multiColumnSort=false&objectCompare=false&HelpMarker=emxhelpselectmembers&toolbar=APPGlobalAddExistingToolBar'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddGroupSearchCommand'
+	property	'version'	value	'R422'
+;
+modify menu APPAddGroupSearchMenu add command APPAddGroupSearchCommand order command APPAddGroupSearchCommand 0;
+#channel ==>APPAddGroupSearchMenu
+add property command_APPAddGroupSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'APPAddGroupSearchCommand';

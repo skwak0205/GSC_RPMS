@@ -1,0 +1,45 @@
+del form 'PLMRuleEditorWebForm';
+add form 'PLMRuleEditorWebForm' web
+field #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxComponents.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Admin Type'		'Name'
+	setting	'Registered Suite'		'Components'
+	setting	'Editable'		'false'
+	setting	'Field Type'		'basic'
+field #2
+	name	'Type'
+	businessobject	'Type'
+	label	'emxComponents.Common.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Admin Type'		'Type'
+	setting	'Registered Suite'		'Components'
+	setting	'Editable'		'false'
+	setting	'Field Type'		'basic'
+field #3
+	name	'ArgumentList'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'function'		'createArgumentList'
+	setting	'program'		'emxPLMRuleEditor'
+	setting	'Field Type'		'programHTMLOutput'
+field #4
+	name	'Body'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'function'		'createBody'
+	setting	'Update Program'		'emxPLMRuleEditor'
+	setting	'program'		'emxPLMRuleEditor'
+	setting	'Field Type'		'programHTMLOutput'
+;
+add property form_PLMRuleEditorWebForm on program eServiceSchemaVariableMapping.tcl to form 'PLMRuleEditorWebForm';

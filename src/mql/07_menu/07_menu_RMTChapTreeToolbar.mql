@@ -1,0 +1,17 @@
+del menu 'RMTChapTreeToolbar';
+add menu 'RMTChapTreeToolbar'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTChapTreeActionBar'
+	menu	'AEFSBEditActions'
+	command	'RMTSetChapterContentView'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTChapTreeToolbar'
+	property 'version'	value	'V6R2013'
+;
+add property menu_RMTChapTreeToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RMTChapTreeToolbar';

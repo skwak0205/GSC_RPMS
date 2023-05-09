@@ -1,0 +1,26 @@
+del command 'RMTUseCaseAssigneeTreeCategory';
+add command 'RMTUseCaseAssigneeTreeCategory'
+	description	''
+	label	'emxRequirements.Tree.Assignee'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxAssignee:getAllAssignee&relationName=relationship_AssignedUseCase&table=PLCAssigneeList&header=emxRequirements.Heading.Assignees&selection=multiple&topActionbar=RMTUseCaseAssigneeListTopActionBar&bottomActionbar=PLCAssigneeListBottomActionBar&sortColumnName=Name&HelpMarker=emxhelpassignees'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'COMMON_DIR/iconSmallPerson.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTUseCaseAssigneeTreeCategory'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTUseCaseAssigneeTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTUseCaseAssigneeTreeCategory';

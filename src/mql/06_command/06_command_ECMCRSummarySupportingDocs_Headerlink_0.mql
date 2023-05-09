@@ -1,0 +1,16 @@
+del command 'ECMCRSummarySupportingDocs_Headerlink_0';
+add command 'ECMCRSummarySupportingDocs_Headerlink_0'
+	description	''
+	label	'EnterpriseChangeMgt.Command.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_ECMCreateSketch&type=type_Sketch&nameField=autoname&typeChooser=true&submitAction=refreshCaller&header=EnterpriseChangeMgt.Label.CreateSketch&HelpMarker=emxhelpsketchcreate&postProcessJPO=enoECMChangeRequest:connectToCR'
+	alt	'EnterpriseChangeMgt.Command.CreateNew'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current.access[fromconnect] == true) && !($<interface[interface_ChangeOnHold] =="TRUE">)'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'application'	value	'EnterpriseChangeMgt'
+;
+modify menu ECMCRSummarySupportingDocsToolBar add command ECMCRSummarySupportingDocs_Headerlink_0 order command ECMCRSummarySupportingDocs_Headerlink_0 1;
+#channel ==>ECMCRSummarySupportingDocsToolBar
+add property command_ECMCRSummarySupportingDocs_Headerlink_0 on program eServiceSchemaVariableMapping.tcl to command 'ECMCRSummarySupportingDocs_Headerlink_0';

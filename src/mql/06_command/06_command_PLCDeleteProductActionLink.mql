@@ -1,0 +1,29 @@
+del command 'PLCDeleteProductActionLink';
+add command 'PLCDeleteProductActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/ProductDeletePostProcess.jsp?mode=Delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCDeleteProductActionLink'
+	property	'version'	value	'R215'
+;
+modify menu PLCModelProductListToolBarActions add command PLCDeleteProductActionLink order command PLCDeleteProductActionLink 0;
+modify menu PLCModelDerivationsActionsToolbar add command PLCDeleteProductActionLink order command PLCDeleteProductActionLink 0;
+modify menu PLCModelProductBottomActionBar add command PLCDeleteProductActionLink order command PLCDeleteProductActionLink 1;
+modify menu PLCProductListBottomActionBar add command PLCDeleteProductActionLink order command PLCDeleteProductActionLink 3;
+modify menu PLCProductVersionListBottomActionBar add command PLCDeleteProductActionLink order command PLCDeleteProductActionLink 1;
+#channel ==>PLCModelProductListToolBarActionsPLCModelDerivationsActionsToolbarPLCModelProductBottomActionBarPLCProductListBottomActionBarPLCProductVersionListBottomActionBar
+add property command_PLCDeleteProductActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCDeleteProductActionLink';

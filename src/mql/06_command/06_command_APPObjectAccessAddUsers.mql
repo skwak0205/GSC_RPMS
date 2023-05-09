@@ -1,0 +1,21 @@
+del command 'APPObjectAccessAddUsers';
+add command 'APPObjectAccessAddUsers'
+	description	'This command provides add users functionality for giving them granted access. It should be cloned for implementing for specific type'
+	label	'emxComponents.Command.Add'
+	href	'${SUITE_DIR}/emxComponentsObjectAccessUsersDialogFS.jsp?accessChoice=&addUserType=person,role,group&showAllProgram=&showAllFunction=&pushGrantor=person_CommonAccessGrantor'
+	alt	'emxComponents.Command.Add'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectAccessAddUsers'
+	property	'version'	value	'10-7'
+;
+modify menu APPObjectAccessActionsToolbar add command APPObjectAccessAddUsers order command APPObjectAccessAddUsers 1;
+#channel ==>APPObjectAccessActionsToolbar
+add property command_APPObjectAccessAddUsers on program eServiceSchemaVariableMapping.tcl to command 'APPObjectAccessAddUsers';

@@ -1,0 +1,17 @@
+del command 'APPObjectReleasedEvent';
+add command 'APPObjectReleasedEvent'
+	description	'Object Released Event'
+	label	'emxComponents.Notification.Event.Released'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Released'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectReleasedEvent'
+	property	'version'	value	'R207'
+;
+modify menu APPDecisionEvents add command APPObjectReleasedEvent order command APPObjectReleasedEvent 2;
+#channel ==>APPDecisionEvents
+add property command_APPObjectReleasedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPObjectReleasedEvent';

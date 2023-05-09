@@ -1,0 +1,17 @@
+del command 'APPNewSearchRefDocumentsActionLink';
+add command 'APPNewSearchRefDocumentsActionLink'
+	description	'New Search Command Object'
+	label	'emxComponents.Command.NewSearch'
+	href	'${SUITE_DIR}/emxCommonPartReferenceDocumentsSearchDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPNewSearchRefDocumentsActionLink'
+	property	'version'	value	'10-7'
+;
+modify menu APPRefDocumentsSearchResultsHeader add command APPNewSearchRefDocumentsActionLink order command APPNewSearchRefDocumentsActionLink 0;
+#channel ==>APPRefDocumentsSearchResultsHeader
+add property command_APPNewSearchRefDocumentsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPNewSearchRefDocumentsActionLink';

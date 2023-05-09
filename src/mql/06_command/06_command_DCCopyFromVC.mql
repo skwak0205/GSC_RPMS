@@ -1,0 +1,25 @@
+del command 'DCCopyFromVC';
+add command 'DCCopyFromVC'
+	description	'Command for copying a file or folder from any DesignSync to local DesignSync'
+	label	'emxComponents.VersionControl.CopyFromVC'
+	href	'${SUITE_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=copyFromVC&actionURL=emxCommonDocumentVCConnectProcess.jsp&stepOneHeader=emxComponents.Header.CopyDesignSync&defaultType=type_GenericDocument&populateDefaults=true&documentType=type_GenericDocument'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCopyFromVCLinkEnabled'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'VPLMViewer'
+	user	'Author'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCopyFromVC'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_DCCopyFromVC on program eServiceSchemaVariableMapping.tcl to command 'DCCopyFromVC';

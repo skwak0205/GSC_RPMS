@@ -1,0 +1,16 @@
+del menu 'type_PLCPerson';
+add menu 'type_PLCPerson'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Person&editLink=false&formHeader=emxProduct.Heading.Properties&HelpMarker=emxhelppersonproperties'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/iconSmallPerson.gif'
+	setting	'Show Type Icon'		'true'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_PLCPerson'
+	property 'version'	value	'R214'
+;
+add property menu_type_PLCPerson on program eServiceSchemaVariableMapping.tcl to menu 'type_PLCPerson';

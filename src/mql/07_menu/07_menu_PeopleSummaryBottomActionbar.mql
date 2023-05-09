@@ -1,0 +1,14 @@
+del menu 'PeopleSummaryBottomActionbar';
+add menu 'PeopleSummaryBottomActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PeopleRemove'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'PeopleSummaryBottomActionbar'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_PeopleSummaryBottomActionbar on program eServiceSchemaVariableMapping.tcl to menu 'PeopleSummaryBottomActionbar';

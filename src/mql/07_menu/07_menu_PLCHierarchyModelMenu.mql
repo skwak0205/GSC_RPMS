@@ -1,0 +1,13 @@
+del menu 'PLCHierarchyModelMenu';
+add menu 'PLCHierarchyModelMenu'
+	description	''
+	label	'emxProduct.Menu.Model'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionModel.png'
+	command	'PLCHierarchyCreateModelCommand'
+	command	'PLCHierarchyAddModelCommand'
+	property 'version'	value	'R420'
+;
+add property menu_PLCHierarchyModelMenu on program eServiceSchemaVariableMapping.tcl to menu 'PLCHierarchyModelMenu';

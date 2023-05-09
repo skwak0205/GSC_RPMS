@@ -1,0 +1,21 @@
+del command 'LBCFoldersMyDesk';
+add command 'LBCFoldersMyDesk'
+	description	'Folders Command Object'
+	label	'emxDocumentCentral.MenuItem.Folders'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDCUtils:getTopLevelFoldersIOwn,emxDCUtils:getAllTopLevelFolders,emxDCUtils:getFoldersIOwn,emxDCUtils:getAllFolders&programLabel=emxDocumentCentral.Common.PersonalTopLevelFolders,emxDocumentCentral.Common.AllTopLevelFolders,emxDocumentCentral.Common.AllPersonalFolders,emxDocumentCentral.Common.AllFolders&table=DCFolders&selection=multiple&sortColumnName=Name&sortDirection=ascending&topActionbar=DCAllFoldersTopActionbar&bottomActionbar=DCAllFoldersBottomActionbar&header=emxDocumentCentral.Common.Folders&HelpMarker=emxhelplistfolders'
+	alt	'emxDocumentCentral.MenuItem.Folders'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP,ENO_LIB_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Employee'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCFoldersMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu LBCMyDesk add command LBCFoldersMyDesk order command LBCFoldersMyDesk 3;
+#channel ==>LBCMyDesk
+add property command_LBCFoldersMyDesk on program eServiceSchemaVariableMapping.tcl to command 'LBCFoldersMyDesk';

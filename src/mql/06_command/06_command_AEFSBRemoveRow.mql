@@ -1,0 +1,21 @@
+del command 'AEFSBRemoveRow';
+add command 'AEFSBRemoveRow'
+	description	''
+	label	''
+	href	'javascript:removeNewRows()'
+	alt	'emxFramework.FreezePane.SBEditActions.RemoveRow'
+	setting	'Registered Suite'		'Framework'
+	setting	'Mode'		'edit'
+	setting	'Access Function'		'accessEditRemove'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBRemoveRow'
+	property	'version'	value	'R417'
+;
+modify menu AEFSBEditInline add command AEFSBRemoveRow order command AEFSBRemoveRow 2;
+#channel ==>AEFSBEditInline
+add property command_AEFSBRemoveRow on program eServiceSchemaVariableMapping.tcl to command 'AEFSBRemoveRow';

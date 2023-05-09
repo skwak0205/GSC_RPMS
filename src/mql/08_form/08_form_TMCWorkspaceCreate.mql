@@ -1,0 +1,42 @@
+del form 'TMCWorkspaceCreate';
+add form 'TMCWorkspaceCreate' web
+field #1
+	name	'Title'
+	businessobject	'$<attribute[attribute_Title].value>'
+	label	'emxTeamCentral.Common.Title'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Required'		'true'
+	setting	'Editable'		'true'
+	setting	'Field Type'		'attribute'
+field #2
+	name	'Template'
+	label	'emxTeamCentral.Common.Template'
+	range	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_WorkspaceTemplate&table=TMCWorkspaceTemplateSearchResults&selection=single&cancelLabel=emxTeamCentral.Button.Cancel&hideHeader=true&submitURL=../teamcentral/emxTeamFullSearchUtil.jsp?populateDescription=true&mode=Chooser&chooserType=TypeChooser&includeOIDprogram=emxWorkspaceTemplate:getWorkspaceTemplateIncludeIDs'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Show Clear Button'		'true'
+field #3
+	name	'Description'
+	businessobject	'description'
+	label	'emxTeamCentral.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Required'		'true'
+	setting	'Validate Type'		'Basic'
+	setting	'Editable'		'true'
+	setting	'Field Type'		'basic'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceCreate'
+	property	'version'	value	'R24HF1'
+;
+add property form_TMCWorkspaceCreate on program eServiceSchemaVariableMapping.tcl to form 'TMCWorkspaceCreate';

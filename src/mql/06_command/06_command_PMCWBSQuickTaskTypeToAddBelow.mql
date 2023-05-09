@@ -1,0 +1,26 @@
+del command 'PMCWBSQuickTaskTypeToAddBelow';
+add command 'PMCWBSQuickTaskTypeToAddBelow'
+	description	''
+	label	'emxProgramCentral.Common.Type'
+	href	''
+	alt	''
+	setting	'Range Function'		'getTaskTypes'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxTask'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSQuickTaskTypeToAddBelow'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSQuickFilterToolbar add command PMCWBSQuickTaskTypeToAddBelow order command PMCWBSQuickTaskTypeToAddBelow 1;
+modify menu PMCWBSFlatViewToolbar add command PMCWBSQuickTaskTypeToAddBelow order command PMCWBSQuickTaskTypeToAddBelow 1;
+#channel ==>PMCWBSQuickFilterToolbarPMCWBSFlatViewToolbar
+add property command_PMCWBSQuickTaskTypeToAddBelow on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSQuickTaskTypeToAddBelow';

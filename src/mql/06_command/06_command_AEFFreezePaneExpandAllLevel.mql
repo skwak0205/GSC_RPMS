@@ -1,0 +1,27 @@
+del command 'AEFFreezePaneExpandAllLevel';
+add command 'AEFFreezePaneExpandAllLevel'
+	description	''
+	label	'emxFramework.FreezePane.All'
+	href	'javascript:getTopWindow().AEFFreezePaneExpandAllLevelmxcommandcode.main()'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Level'		'All'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionExpandAll.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFFreezePaneExpandAllLevel'
+	property	'version'	value	'R422'
+;
+modify menu AEFFreezePaneExpandLevelFilter add command AEFFreezePaneExpandAllLevel order command AEFFreezePaneExpandAllLevel 0;
+modify menu AEFFreezePaneExpandLevelFilterMenu add command AEFFreezePaneExpandAllLevel order command AEFFreezePaneExpandAllLevel 0;
+modify menu APPWhereUsedExpandMenu add command AEFFreezePaneExpandAllLevel order command AEFFreezePaneExpandAllLevel 2;
+modify menu PLCExpandAllLevelFilter add command AEFFreezePaneExpandAllLevel order command AEFFreezePaneExpandAllLevel 0;
+modify menu CFFExpandAllLevelFilter add command AEFFreezePaneExpandAllLevel order command AEFFreezePaneExpandAllLevel 0;
+modify menu FTRExpandAllLevelFilter add command AEFFreezePaneExpandAllLevel order command AEFFreezePaneExpandAllLevel 0;
+#channel ==>AEFFreezePaneExpandLevelFilterAEFFreezePaneExpandLevelFilterMenuAPPWhereUsedExpandMenuPLCExpandAllLevelFilterCFFExpandAllLevelFilterFTRExpandAllLevelFilter
+add property command_AEFFreezePaneExpandAllLevel on program eServiceSchemaVariableMapping.tcl to command 'AEFFreezePaneExpandAllLevel';

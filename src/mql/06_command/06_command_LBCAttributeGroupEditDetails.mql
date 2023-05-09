@@ -1,0 +1,26 @@
+del command 'LBCAttributeGroupEditDetails';
+add command 'LBCAttributeGroupEditDetails'
+	description	''
+	label	'emxMultipleClassification.Access.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_AttributeGroup&HelpMarker=emxhelpeditattribute&mode=edit&formHeader=emxMultipleClassification.Common.Edit&Export=False&findMxLink=false&postProcessURL=${SUITE_DIR}/emxLibraryCentralAttributeGroupPostProcess.jsp&submitAction=doNothing'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeGroupEditDetails'
+	property	'version'	value	'R422'
+;
+modify menu LBCAttributeGroupPropertiesToolBar add command LBCAttributeGroupEditDetails order command LBCAttributeGroupEditDetails 1;
+#channel ==>LBCAttributeGroupPropertiesToolBar
+add property command_LBCAttributeGroupEditDetails on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeGroupEditDetails';

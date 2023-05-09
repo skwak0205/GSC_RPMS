@@ -1,0 +1,27 @@
+del command 'PMCCopyPartialSchedule';
+add command 'PMCCopyPartialSchedule'
+	description	''
+	label	'emxProgramCentral.CopySchedule.CopyPartial'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCCopyPartialSchedule'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current!="Review" && current!="Complete"'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_CopyFromProject32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCopyPartialSchedule'
+	property	'version'	value	'R422.HF5'
+;
+modify menu PMCCopySchedule add command PMCCopyPartialSchedule order command PMCCopyPartialSchedule 2;
+modify menu PMCAddProjectMenu add command PMCCopyPartialSchedule order command PMCCopyPartialSchedule 5;
+modify menu PMCWBSProjectTemplateToolBarActions add command PMCCopyPartialSchedule order command PMCCopyPartialSchedule 3;
+modify menu PMCAddProjectTemplateMenu add command PMCCopyPartialSchedule order command PMCCopyPartialSchedule 1;
+#channel ==>PMCCopySchedulePMCAddProjectMenuPMCWBSProjectTemplateToolBarActionsPMCAddProjectTemplateMenu
+add property command_PMCCopyPartialSchedule on program eServiceSchemaVariableMapping.tcl to command 'PMCCopyPartialSchedule';

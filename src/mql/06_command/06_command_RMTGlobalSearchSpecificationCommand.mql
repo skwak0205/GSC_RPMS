@@ -1,0 +1,33 @@
+del command 'RMTGlobalSearchSpecificationCommand';
+add command 'RMTGlobalSearchSpecificationCommand'
+	description	''
+	label	'emxRequirements.ActionLink.FindRequirementSpecifications'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_SoftwareRequirementSpecification&table=RMTGlobalSearchSpecificationsTable&selection=multiple&cancelLabel=emxRequirements.Button.Close&searchmode=globalsearch&showInitialResults=true&showSavedQuery=True&searchCollectionEnabled=True&HelpMarker=emxhelpfullsearch'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Design Engineer'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Requirement Manager'
+	user	'System Engineer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTGlobalSearchSpecificationCommand'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecificationSearchType add command RMTGlobalSearchSpecificationCommand order command RMTGlobalSearchSpecificationCommand 0;
+modify menu RMTSearch add command RMTGlobalSearchSpecificationCommand order command RMTGlobalSearchSpecificationCommand 2;
+#channel ==>RMTSpecificationSearchTypeRMTSearch
+add property command_RMTGlobalSearchSpecificationCommand on program eServiceSchemaVariableMapping.tcl to command 'RMTGlobalSearchSpecificationCommand';

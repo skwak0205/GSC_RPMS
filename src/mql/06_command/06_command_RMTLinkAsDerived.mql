@@ -1,0 +1,23 @@
+del command 'RMTLinkAsDerived';
+add command 'RMTLinkAsDerived'
+	description	''
+	label	'emxRequirements.Command.LinkAsDerived'
+	href	'javascript:RMTLinkAsDerived_onClick()'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Row Select'		'multi'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTLinkAsDerived'
+	property	'version'	value	'R422'
+;
+modify menu RMTMenuLinkSubDerived add command RMTLinkAsDerived order command RMTLinkAsDerived 2;
+#channel ==>RMTMenuLinkSubDerived
+add property command_RMTLinkAsDerived on program eServiceSchemaVariableMapping.tcl to command 'RMTLinkAsDerived';

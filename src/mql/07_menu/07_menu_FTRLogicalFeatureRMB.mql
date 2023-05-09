@@ -1,0 +1,21 @@
+del menu 'FTRLogicalFeatureRMB';
+add menu 'FTRLogicalFeatureRMB'
+	description	''
+	label	'emxFramework.RMBMenu.RMBDefaultMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'FTRCreateAssemblyConfigurationRMB'
+	command	'AEFSeparator'
+	command	'FTRViewDesignVariantsRMB'
+	command	'FTRViewGBOMSummaryRMB'
+	command	'AEFSeparator2'
+	command	'FTRMergeAndReplaceRMBCommand'
+	command	'FTRSplitAndReplaceRMBCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRLogicalFeatureRMB'
+	property 'version'	value	'R215'
+;
+add property menu_FTRLogicalFeatureRMB on program eServiceSchemaVariableMapping.tcl to menu 'FTRLogicalFeatureRMB';

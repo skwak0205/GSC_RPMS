@@ -1,0 +1,20 @@
+################################################################################################
+# Created Date : 2023.01.09
+# Create by HyungJin,Ju
+# Description : 보안등급
+################################################################################################
+
+#del attribute 'gscSecurityGrade';
+add attribute  'gscSecurityGrade'
+   description '보안등급'
+   type        'string'
+   default    ''
+   range program gscCommonCodeAttributeRange
+   range '=' ''
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "HHI"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscSecurityGrade"
+;
+add property attribute_gscSecurityGrade on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscSecurityGrade';

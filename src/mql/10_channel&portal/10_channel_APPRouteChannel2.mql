@@ -1,0 +1,16 @@
+del channel 'APPRouteChannel2';
+add channel 'APPRouteChannel2'
+	description	'Second Route Channel for Route Task Info'
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Components'
+	command 	'APPTasksGraphical','APPTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteChannel2'
+	property	'version'	value	'R216'
+;
+#portal ==>APPRoutePowerView
+add property channel_APPRouteChannel2 on program eServiceSchemaVariableMapping.tcl to channel 'APPRouteChannel2';

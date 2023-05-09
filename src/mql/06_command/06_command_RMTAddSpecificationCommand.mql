@@ -1,0 +1,23 @@
+del command 'RMTAddSpecificationCommand';
+add command 'RMTAddSpecificationCommand'
+	description	''
+	label	'emxRequirements.ActionLink.FindSpecifications'
+	href	'../productline/SearchSpecificationsForm.jsp?program=emxRequirementSearch:getSpecifications&table=PLCSearchSpecificationsTable&sortColumnName=Name&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTAddSpecificationCommand'
+	property	'version'	value	'R422'
+;
+modify menu SearchAddExistingChooserMenu add command RMTAddSpecificationCommand order command RMTAddSpecificationCommand 0;
+#channel ==>SearchAddExistingChooserMenu
+add property command_RMTAddSpecificationCommand on program eServiceSchemaVariableMapping.tcl to command 'RMTAddSpecificationCommand';

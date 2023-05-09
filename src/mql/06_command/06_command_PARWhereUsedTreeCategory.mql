@@ -1,0 +1,12 @@
+del command 'PARWhereUsedTreeCategory';
+add command 'PARWhereUsedTreeCategory'
+	description	'Tree category command to retrieve objects connected to the parameter'
+	label	'emxParameter.TreeCategory.WhereUsed'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxParameterConnect:getAssociatedObjects&table=PARObjectsWhereUsed&header=emxParameter.TreeCategory.WhereUsed&relationship=relationship_ParameterUsage,relationship_ParameterAggregation&direction=to&toolbar=PARWhereUsedToolBar&selection=multiple'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Parameter'
+;
+modify menu type_PlmParameter add command PARWhereUsedTreeCategory order command PARWhereUsedTreeCategory 3;
+#channel ==>type_PlmParameter
+add property command_PARWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PARWhereUsedTreeCategory';

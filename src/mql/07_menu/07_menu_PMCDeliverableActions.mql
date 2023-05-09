@@ -1,0 +1,16 @@
+del menu 'PMCDeliverableActions';
+add menu 'PMCDeliverableActions'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCCreateDeliverable'
+	command	'PMCDeleteDeliverable'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCDeliverableActions'
+	property 'version'	value	'R216'
+;
+add property menu_PMCDeliverableActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCDeliverableActions';

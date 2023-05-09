@@ -1,0 +1,24 @@
+del command 'FTRModelCreateCandidateManufacturingFeatureAction';
+add command 'FTRModelCreateCandidateManufacturingFeatureAction'
+	description	''
+	label	'emxConfiguration.ActionLink.CreateManufacturingFeature'
+	href	'${SUITE_DIR}/ManufacturingFeatureCreatePreProcess.jsp?strCreationType=type_ManufacturingFeature&UIContext=Model&HelpMarker=emxhelpmanufacturingfeaturecreate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'ManufacturingFeature'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelCreateCandidateManufacturingFeatureAction'
+	property	'version'	value	'R418'
+;
+modify menu FTRModelCandidateManufacturingFeatureToolbarActions add command FTRModelCreateCandidateManufacturingFeatureAction order command FTRModelCreateCandidateManufacturingFeatureAction 1;
+#channel ==>FTRModelCandidateManufacturingFeatureToolbarActions
+add property command_FTRModelCreateCandidateManufacturingFeatureAction on program eServiceSchemaVariableMapping.tcl to command 'FTRModelCreateCandidateManufacturingFeatureAction';

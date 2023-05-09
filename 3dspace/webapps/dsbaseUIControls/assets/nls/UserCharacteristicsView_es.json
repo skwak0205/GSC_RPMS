@@ -1,0 +1,8 @@
+{
+  "UCV.optionsChecker.optionSet.notExisting.error": "Para recuperar las características de usuario, tiene que estar definido el conjunto de opciones.",
+  "UCV.optionsChecker.optionSet.type.error": "Para recuperar las características de usuario, tiene que estar definido el conjunto de opciones.",
+  "UCV.mode.icon.text.switchReadOnly": "Cambiar a modo de solo lectura",
+  "UCV.mode.icon.text.switchEdit": "Cambiar a modo de edición",
+  "UCV.add.icon.text": "Agregar una característica de usuario",
+  "UCV.noUC.error": "No hay características de usuario disponibles."
+}

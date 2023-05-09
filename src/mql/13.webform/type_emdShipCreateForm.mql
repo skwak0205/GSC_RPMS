@@ -1,0 +1,50 @@
+################################################################################################
+# Created Date : 2020. 06. 15
+# Create by Suhwan,Jang
+# Description : Ship 생성 Form
+################################################################################################
+#del form 'type_emdShipCreateForm';
+add form 'type_emdShipCreateForm' web
+    field
+        name 'Type'
+        label 'emdManufacturing.Label.Type'
+        businessobject  'type'
+        alt ''
+        range '${COMMON_DIR}/emxTypeChooser.jsp?InclusionList=type_emdShip&ReloadOpener=true'
+        update ''
+        setting 'Input Type' 'textbox'
+        setting 'Admin Type' 'Type'
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Required' 'true'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'basic'
+    field
+        name 'Name'
+        label 'emdManufacturing.Label.ShipNo'
+        businessobject  'name'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Required' 'true'
+        setting 'Validate' 'emdValidateForBadCharacters'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'basic'
+    field
+        name 'Description'
+        label 'emdManufacturing.Label.ChangeDescription'
+        businessobject  'description'
+        alt ''
+        range ''
+        update ''
+        setting 'Input Type' 'textarea'
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'basic'
+    property 'application'      value 'emdManufacturing'
+    property 'version'          value 'V6R2019'
+    property 'installer'        value 'HHI'
+    property 'installed date'   value '2020-06-15'
+    property 'original name'    value 'type_emdShipCreateForm'
+;
+add property 'form_type_type_emdShipCreateForm' on program 'eServiceSchemaVariableMapping.tcl' to form 'type_emdShipCreateForm';

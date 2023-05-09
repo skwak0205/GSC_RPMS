@@ -1,0 +1,25 @@
+del command 'FTRPreviewBOMAction';
+add command 'FTRPreviewBOMAction'
+	description	''
+	label	'emxProduct.Command.PreviewBOM'
+	href	'${SUITE_DIR}/PreviewBOMProcess.jsp?mode=PreviewBOM'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'($<to[relationship_ProductConfiguration].from.type.kindof=="type_Products">||$<to[relationship_FeatureProductConfiguration].from.type!="type_ProductVariant">) && ($<attribute[attribute_ValidationStatus] !="Not Validated"> || current != "Active") && ($<expression[LogicalFeatureEnabled]=="true">)'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showLinkForPreviewBOM'
+	setting	'Access Program'		'emxProductConfiguration'
+	setting	'Hide Mode'		'Mobile'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRPreviewBOMAction'
+	property	'version'	value	'R423'
+;
+modify menu FTRProductConfigurationPropertiesPageActionBar add command FTRPreviewBOMAction order command FTRPreviewBOMAction 0;
+#channel ==>FTRProductConfigurationPropertiesPageActionBar
+add property command_FTRPreviewBOMAction on program eServiceSchemaVariableMapping.tcl to command 'FTRPreviewBOMAction';

@@ -1,0 +1,22 @@
+del command 'APPPartFamilyEditDetails';
+add command 'APPPartFamilyEditDetails'
+	description	''
+	label	'emxComponents.Common.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_PartFamily&formHeader=emxComponents.PartFamily.EditPartFamily&mode=edit&HelpMarker=emxhelppartfamilyeditdetails&postProcessURL=../documentcentral/emxLibraryCentralPostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_LBC_TP,ENO_TBE_TP,ENOENGI_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartFamilyEditDetails'
+	property	'version'	value	'R420'
+;
+modify menu APPPartFamilyDetailsActionsToolBar add command APPPartFamilyEditDetails order command APPPartFamilyEditDetails 1;
+#channel ==>APPPartFamilyDetailsActionsToolBar
+add property command_APPPartFamilyEditDetails on program eServiceSchemaVariableMapping.tcl to command 'APPPartFamilyEditDetails';

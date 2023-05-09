@@ -1,0 +1,18 @@
+del menu 'PMCWBSListMenu';
+add menu 'PMCWBSListMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWBSTasks'
+	command	'PMCWBSAll'
+	command	'PMCWBSTaskAssigneeView'
+	command	'PMCWBSPassiveSubtasks'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWBSListMenu'
+	property 'version'	value	'R422.HF5'
+;
+add property menu_PMCWBSListMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCWBSListMenu';

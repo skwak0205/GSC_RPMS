@@ -1,0 +1,35 @@
+del form 'type_CloneAttributeGroup';
+add form 'type_CloneAttributeGroup' web
+field #1
+	name	'Name'
+	label	'emxDocumentCentral.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Required'		'true'
+	setting	'Validate'		'validateAGNameInCreate'
+	setting	'Editable'		'true'
+	setting	'Update Program'		'emxMultipleClassificationAttributeGroup'
+	setting	'Update Function'		'cloneAttributeGroup'
+	setting	'Field Type'		'basic'
+field #2
+	name	'Description'
+	label	'emxDocumentCentral.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Validate'		'checkDescriptionLength'
+	setting	'function'		'getAGDescription'
+	setting	'Editable'		'true'
+	setting	'program'		'emxMultipleClassificationAttributeGroup'
+	setting	'Field Type'		'program'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'type_CloneAttributeGroup'
+	property	'version'	value	'R213'
+;
+add property form_type_CloneAttributeGroup on program eServiceSchemaVariableMapping.tcl to form 'type_CloneAttributeGroup';

@@ -1,0 +1,18 @@
+del menu 'RMTDocStructureBrowserActionsMenu';
+add menu 'RMTDocStructureBrowserActionsMenu'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTDocStructureBrowserCreateMenu'
+	menu	'RMTDocStructureBrowserAddExistingMenu'
+	command	'RMTStructureBrowserRemoveActionLink'
+	command	'RMTDelete'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTDocStructureBrowserActionsMenu'
+	property 'version'	value	'V6R2009x'
+;
+add property menu_RMTDocStructureBrowserActionsMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTDocStructureBrowserActionsMenu';

@@ -1,0 +1,29 @@
+del command 'PLCDeleteBuildActionLink';
+add command 'PLCDeleteBuildActionLink'
+	description	'Deleting Build Object'
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/BuildUtil.jsp?mode=Delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'checkAccessForProdConfig'
+	setting	'Access Program'		'emxBuild'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCDeleteBuildActionLink'
+	property	'version'	value	'R215'
+;
+modify menu PLCBuildListBottomActionBar add command PLCDeleteBuildActionLink order command PLCDeleteBuildActionLink 1;
+modify menu PLCBuildListTopActionBar add command PLCDeleteBuildActionLink order command PLCDeleteBuildActionLink 0;
+modify menu PLCProductBuildListBottomActionBar add command PLCDeleteBuildActionLink order command PLCDeleteBuildActionLink 0;
+modify menu FTRProductConfigurationBuildBottomActionBar add command PLCDeleteBuildActionLink order command PLCDeleteBuildActionLink 0;
+#channel ==>PLCBuildListBottomActionBarPLCBuildListTopActionBarPLCProductBuildListBottomActionBarFTRProductConfigurationBuildBottomActionBar
+add property command_PLCDeleteBuildActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCDeleteBuildActionLink';

@@ -1,0 +1,19 @@
+del command 'APPLaunch3DPlayCompare';
+add command 'APPLaunch3DPlayCompare'
+	description	''
+	label	'emxComponents.ImageManager.3DPlay'
+	href	'${COMPONENT_DIR}/emxLaunchIntermediateCompare3DPlay.jsp'
+	alt	'emxComponents.ImageManager.3DPlay'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionShowHide3D.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLaunch3DPlayCompare'
+	property	'version'	value	'R419'
+;
+#channel ==>AEFStructureCompareCriteria
+add property command_APPLaunch3DPlayCompare on program eServiceSchemaVariableMapping.tcl to command 'APPLaunch3DPlayCompare';

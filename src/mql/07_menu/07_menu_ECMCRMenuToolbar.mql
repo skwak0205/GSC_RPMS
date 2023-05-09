@@ -1,0 +1,22 @@
+del menu 'ECMCRMenuToolbar';
+add menu 'ECMCRMenuToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Access Expression'		'false'
+	command	'ECMCreateCR'
+	command	'ECMHoldCR'
+	command	'ECMApproveRejectCO'
+	command	'ECMCopySelectedCR'
+	command	'ECMCancelCR'
+	menu	'ECMCRTransferOwnershipMenu'
+	command	'ECMMultipleSubscriptions'
+	command	'ECMDeleteCR'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMCRMenuToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMCRMenuToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMCRMenuToolbar';

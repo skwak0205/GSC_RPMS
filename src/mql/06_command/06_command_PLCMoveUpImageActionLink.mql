@@ -1,0 +1,24 @@
+del command 'PLCMoveUpImageActionLink';
+add command 'PLCMoveUpImageActionLink'
+	description	''
+	label	'emxProduct.ActionLink.MoveUp'
+	href	'${SUITE_DIR}/ImageUtil.jsp?mode=MoveUp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Single'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCMoveUpImageActionLink'
+	property	'version'	value	'R421'
+;
+modify menu PLCImageListToolBarActions add command PLCMoveUpImageActionLink order command PLCMoveUpImageActionLink 5;
+modify menu PLCImageListBottomActionBar add command PLCMoveUpImageActionLink order command PLCMoveUpImageActionLink 3;
+#channel ==>PLCImageListToolBarActionsPLCImageListBottomActionBar
+add property command_PLCMoveUpImageActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCMoveUpImageActionLink';

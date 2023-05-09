@@ -1,0 +1,21 @@
+del command 'PMCWhatIfAssignmentView';
+add command 'PMCWhatIfAssignmentView'
+	description	''
+	label	'emxProgramCentral.TaskAssignment.View'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWBSAssignmentViewTable'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfAssignmentView'
+	property	'version'	value	'R422'
+;
+modify menu PMCWhatIfTableMenu add command PMCWhatIfAssignmentView order command PMCWhatIfAssignmentView 0;
+#channel ==>PMCWhatIfTableMenu
+add property command_PMCWhatIfAssignmentView on program eServiceSchemaVariableMapping.tcl to command 'PMCWhatIfAssignmentView';

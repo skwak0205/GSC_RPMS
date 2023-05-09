@@ -1,0 +1,18 @@
+del command 'PMCMultipleOwnershipAccessCommandForBudget';
+add command 'PMCMultipleOwnershipAccessCommandForBudget'
+	description	'This command opens Multiple Ownerhship Access page for Project Budget'
+	label	'emxFramework.Common.DomainAccessTreeCategory'
+	href	'../programcentral/emxProgramCentralBudgetUtil.jsp?mode=redirectToMultipleOwnershipPage'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessOnMultipleOwnershipAccessCommand'
+	setting	'Access Program'		'emxFinancialItem'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMultipleOwnershipAccessCommandForBudget'
+	property	'version'	value	'R423'
+;
+#channel ==>PMCProjectFinancialChannel
+add property command_PMCMultipleOwnershipAccessCommandForBudget on program eServiceSchemaVariableMapping.tcl to command 'PMCMultipleOwnershipAccessCommandForBudget';

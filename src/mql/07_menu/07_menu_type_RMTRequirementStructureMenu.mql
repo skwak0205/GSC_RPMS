@@ -1,0 +1,14 @@
+del menu 'type_RMTRequirementStructureMenu';
+add menu 'type_RMTRequirementStructureMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_RMTRequirementStructureMenu'
+	property 'version'	value	'V6R2014x'
+;
+add property menu_type_RMTRequirementStructureMenu on program eServiceSchemaVariableMapping.tcl to menu 'type_RMTRequirementStructureMenu';

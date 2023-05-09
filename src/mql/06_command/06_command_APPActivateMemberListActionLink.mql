@@ -1,0 +1,26 @@
+del command 'APPActivateMemberListActionLink';
+add command 'APPActivateMemberListActionLink'
+	description	'SpecCentral Command Object'
+	label	'emxComponents.Command.DistributionListActivate'
+	href	'../components/emxMemberListUtil.jsp?action=Activate'
+	alt	'emxComponents.Command.DistributionListActivate'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActivate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPActivateMemberListActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPMemberListBottomActionBar add command APPActivateMemberListActionLink order command APPActivateMemberListActionLink 2;
+modify menu APPMemberListsMyDeskActionsToolBar add command APPActivateMemberListActionLink order command APPActivateMemberListActionLink 4;
+#channel ==>APPMemberListBottomActionBarAPPMemberListsMyDeskActionsToolBar
+add property command_APPActivateMemberListActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPActivateMemberListActionLink';

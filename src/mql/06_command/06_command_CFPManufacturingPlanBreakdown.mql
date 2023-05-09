@@ -1,0 +1,22 @@
+del command 'CFPManufacturingPlanBreakdown';
+add command 'CFPManufacturingPlanBreakdown'
+	description	''
+	label	'DMCPlanning.TreeCategory.ManufacturingPlanBreakdown'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=ManufacturingPlan:getManufacturingPlanBreakdown&table=CFPManufacturingPlanContextSummaryTable&editRootNode=false&selection=multiple&header=DMCPlanning.Heading.ManufacturingPlansBreakdown&HelpMarker=emxhelptechnicalfeatureview&massPromoteDemote=false&objectCompare=false&freezePane=Title&sortColumnName=Revision&toolbar=CFPManufacturingPlanBreakdownPropertiesToolbarActions'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'800'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Licensed Product'		'ENO_CFP_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isAuthoringModeEnabled'
+	setting	'Access Program'		'CFPModelBase'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPManufacturingPlanBreakdown'
+	property	'version'	value	'R209'
+;
+modify menu type_ManufacturingPlan add command CFPManufacturingPlanBreakdown order command CFPManufacturingPlanBreakdown 4;
+#channel ==>type_ManufacturingPlan
+add property command_CFPManufacturingPlanBreakdown on program eServiceSchemaVariableMapping.tcl to command 'CFPManufacturingPlanBreakdown';

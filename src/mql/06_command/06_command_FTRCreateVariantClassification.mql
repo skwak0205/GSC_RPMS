@@ -1,0 +1,19 @@
+del command 'FTRCreateVariantClassification';
+add command 'FTRCreateVariantClassification'
+	description	''
+	label	'emxProduct.ActionLink.CreateVariant'
+	href	'${SUITE_DIR}/VariantCreatePreProcess.jsp?UIContext=Classification'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type.kindof=="type_GeneralClass">'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateVariant.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R423'
+;
+modify menu LCClassifiedItemActionToolBar add command FTRCreateVariantClassification order command FTRCreateVariantClassification 5;
+#channel ==>LCClassifiedItemActionToolBar
+add property command_FTRCreateVariantClassification on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateVariantClassification';

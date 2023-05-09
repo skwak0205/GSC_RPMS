@@ -1,0 +1,20 @@
+del command 'ObjectCompare';
+add command 'ObjectCompare'
+	description	''
+	label	'emxFramework.ObjectCompare.ObjectCompare'
+	href	'${COMMON_DIR}/emxObjectCompareProcess.jsp'
+	alt	'emxFramework.ObjectCompare.ObjectCompare'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCompare.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'ObjectCompare'
+	property	'version'	value	'R423.HF3'
+;
+modify menu Tools add command ObjectCompare order command ObjectCompare 2;
+#channel ==>Tools
+add property command_ObjectCompare on program eServiceSchemaVariableMapping.tcl to command 'ObjectCompare';

@@ -1,0 +1,17 @@
+del menu 'PLCProductLineHierarchyModelsActions';
+add menu 'PLCProductLineHierarchyModelsActions'
+	description	''
+	label	'emxProduct.Form.Label.Model'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionModel.png'
+	command	'PLCProductLineHierarchyCreateModelActionLink'
+	command	'PLCProductLineHierarchyAddExistingModelActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCProductLineHierarchyModelsActions'
+	property 'version'	value	'R418'
+;
+add property menu_PLCProductLineHierarchyModelsActions on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductLineHierarchyModelsActions';

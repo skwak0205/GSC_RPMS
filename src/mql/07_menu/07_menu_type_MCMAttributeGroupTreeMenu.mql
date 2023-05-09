@@ -1,0 +1,19 @@
+del menu 'type_MCMAttributeGroupTreeMenu';
+add menu 'type_MCMAttributeGroupTreeMenu'
+	description	''
+	label	''
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_AttributeGroup&toolbar=LBCAttributeGroupPropertiesToolBar&HelpMarker=emxhelpattributegroup&formHeader=emxMultipleClassification.Common.Properties&Export=False&findMxLink=false'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Default Category'		'MCMAttributeGroupAttributes'
+	setting	'Image'		'iconSmallAttributeGroup.gif'
+	command	'MCMAttributeGroupAttributes'
+	command	'MCMAttributeGroupWhereUsed'
+	command	'LBCAGBackgroundJobs'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_MCMAttributeGroupTreeMenu'
+	property 'version'	value	'R213'
+;
+add property menu_type_MCMAttributeGroupTreeMenu on program eServiceSchemaVariableMapping.tcl to menu 'type_MCMAttributeGroupTreeMenu';

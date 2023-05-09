@@ -1,0 +1,29 @@
+del command 'RMTSpecTreeUnclassifiedView';
+add command 'RMTSpecTreeUnclassifiedView'
+	description	''
+	label	'emxRequirements.Label.UnclassifiedRequirementsOnly'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgramMenu=RMTSpecTreeProgramMenu&tableMenu=RMTSpecTreeTableMenu&filterAtt=Requirement Classification&filterVal=Functional&relationshipFilter=true&freezePane=Name&selection=multiple&directionFilter=true&direction=from&editLink=true'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'function'		'expandTreeWithUnclassifiedRequirements'
+	setting	'Submit'		'true'
+	setting	'program'		'emxSpecificationStructure'
+	setting	'table'		'RMTSpecStructureTable'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecTreeUnclassifiedView'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeImportProgramMenu add command RMTSpecTreeUnclassifiedView order command RMTSpecTreeUnclassifiedView 0;
+#channel ==>RMTSpecTreeImportProgramMenu
+add property command_RMTSpecTreeUnclassifiedView on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecTreeUnclassifiedView';

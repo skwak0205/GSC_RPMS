@@ -1,0 +1,26 @@
+del command 'FTRGenerateProductConfiguration';
+add command 'FTRGenerateProductConfiguration'
+	description	''
+	label	'emxProduct.ActionLink.CreateProductConfiguration'
+	href	'${COMPONENT_DIR}/emxCommonFS.jsp?functionality=ProductConfigurationCreateFromPart&PRCFSParam1=ProductConfiguration&str&Mode=Create&PrinterFriendly=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canCreateProductConfig'
+	setting	'Access Program'		'emxProductConfiguration'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRGenerateProductConfiguration'
+	property	'version'	value	'R215'
+;
+modify menu ENCBOMActionsToolBar add command FTRGenerateProductConfiguration order command FTRGenerateProductConfiguration 0;
+#channel ==>ENCBOMActionsToolBar
+add property command_FTRGenerateProductConfiguration on program eServiceSchemaVariableMapping.tcl to command 'FTRGenerateProductConfiguration';

@@ -1,0 +1,26 @@
+del command 'LBCAttributeGroupCopy';
+add command 'LBCAttributeGroupCopy'
+	description	''
+	label	'emxMultipleClassification.ActionBarCmd.Clone'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_CloneAttributeGroup&HelpMarker=emxhelpcopyattributegroup&mode=edit&formHeader=emxMultipleClassification.AttributeGroup.CopyAttributeGroup&Export=False&findMxLink=false&postProcessURL=${SUITE_DIR}/emxLibraryCentralAttributeGroupPostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeGroupCopy'
+	property	'version'	value	'R422'
+;
+modify menu LBCAttributeGroupPropertiesToolBar add command LBCAttributeGroupCopy order command LBCAttributeGroupCopy 0;
+#channel ==>LBCAttributeGroupPropertiesToolBar
+add property command_LBCAttributeGroupCopy on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeGroupCopy';

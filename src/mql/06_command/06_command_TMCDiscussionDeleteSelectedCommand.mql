@@ -1,0 +1,26 @@
+del command 'TMCDiscussionDeleteSelectedCommand';
+add command 'TMCDiscussionDeleteSelectedCommand'
+	description	''
+	label	'emxTeamCentral.Button.DeleteSelected'
+	href	'${SUITE_DIR}/emxTeamDiscussionDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxTeamCentral.DiscussionSummary.DeleteConfirmAttachments'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDiscussionDeleteSelectedCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCDiscussionSummaryActionsToolBar add command TMCDiscussionDeleteSelectedCommand order command TMCDiscussionDeleteSelectedCommand 0;
+#channel ==>TMCDiscussionSummaryActionsToolBar
+add property command_TMCDiscussionDeleteSelectedCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCDiscussionDeleteSelectedCommand';

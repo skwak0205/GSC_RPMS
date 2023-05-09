@@ -1,0 +1,21 @@
+del command 'ECMCOEnablePrerequisiteEdit';
+add command 'ECMCOEnablePrerequisiteEdit'
+	description	'CO Prerequisite Edit'
+	label	'emxFramework.TableEdit.Enable_Edit'
+	href	'javascript:editMode()'
+	alt	''
+	setting	'Access Expression'		'(current==policy.property[state_Propose].value || current==policy.property[state_Prepare].value || current==policy.property[state_Create].value || current==policy.property[state_Evaluate].value) && (owner==context.user)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Access Function'		'isCODependencyAuthoringActivated'
+	setting	'Access Program'		'enoECMChangeUX'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'04-24-2018'
+	property	'original name'	value	'ECMCOEnablePrerequisiteEdit'
+	property	'version'	value	'R421'
+;
+modify menu ECMPrerequisiteActionsToolbar add command ECMCOEnablePrerequisiteEdit order command ECMCOEnablePrerequisiteEdit 0;
+#channel ==>ECMPrerequisiteActionsToolbar
+add property command_ECMCOEnablePrerequisiteEdit on program eServiceSchemaVariableMapping.tcl to command 'ECMCOEnablePrerequisiteEdit';

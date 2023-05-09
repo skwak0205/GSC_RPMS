@@ -1,0 +1,21 @@
+del command 'RMTStructureDisplay';
+add command 'RMTStructureDisplay'
+	description	'Preference for structure display.'
+	label	'emxRequirements.ActionLink.RMTStructureDisplay'
+	href	'${SUITE_DIR}/emxPrefStructureDisplay.jsp?HelpMarker=emxhelppreferences'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'${COMMON_DIR}/images/buttonToolbarPreferences.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTStructureDisplay'
+	property	'version'	value	'R422'
+;
+modify menu RequirementsCentral add command RMTStructureDisplay order command RMTStructureDisplay 1;
+#channel ==>RequirementsCentral
+add property command_RMTStructureDisplay on program eServiceSchemaVariableMapping.tcl to command 'RMTStructureDisplay';

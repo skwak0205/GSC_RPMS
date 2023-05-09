@@ -1,0 +1,19 @@
+del command 'RMTOwnershipInheritance';
+add command 'RMTOwnershipInheritance'
+	description	''
+	label	'emxRequirements.ActionLink.OwnershipInheritance'
+	href	'${SUITE_DIR}/emxPrefOwnershipInheritance.jsp?HelpMarker=emxhelppreferences'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Function'		'displayOwnershipInheritancePreference'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionSettings.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTOwnershipInheritance'
+	property	'version'	value	'V6R2018x'
+;
+modify menu RequirementsCentral add command RMTOwnershipInheritance order command RMTOwnershipInheritance 0;
+#channel ==>RequirementsCentral
+add property command_RMTOwnershipInheritance on program eServiceSchemaVariableMapping.tcl to command 'RMTOwnershipInheritance';

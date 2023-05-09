@@ -1,0 +1,27 @@
+del command 'RMTRequirementFulfillmentReport';
+add command 'RMTRequirementFulfillmentReport'
+	description	''
+	label	'emxRequirements.ActionLink.FulfillmentReport'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=RMTFulfillmentReport&header=emxRequirements.Heading.RequirementFulfillmentReport&program=emxRequirement:getNotFulfilledObjects,emxRequirement:getFulfilledObjects&programLabel=emxRequirements.Filter.NotFulfilled,emxRequirements.Filter.Fulfilled&HelpMarker=emxhelprequirementfulfillmentreport'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementFulfillmentReport'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTRequirementFulfillmentReport on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementFulfillmentReport';

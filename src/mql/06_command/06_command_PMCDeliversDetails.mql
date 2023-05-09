@@ -1,0 +1,21 @@
+del command 'PMCDeliversDetails';
+add command 'PMCDeliversDetails'
+	description	'Deliverable Planning Functionality'
+	label	'emxProgramCentral.Common.Delivers'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDeliverable:getDeliversDetails&table=PMCDeliversTable&mode=view&toolbar=PMCDeliversActions&selection=multiple&editLink=true&sortColumnName=Name&header=Delivers'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENODEPL_TP'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeliversDetails'
+	property	'version'	value	'R422'
+;
+modify menu type_DeliverableIntent add command PMCDeliversDetails order command PMCDeliversDetails 1;
+#channel ==>type_DeliverableIntent
+add property command_PMCDeliversDetails on program eServiceSchemaVariableMapping.tcl to command 'PMCDeliversDetails';

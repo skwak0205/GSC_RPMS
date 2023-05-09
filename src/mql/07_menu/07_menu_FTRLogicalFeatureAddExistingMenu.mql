@@ -1,0 +1,11 @@
+del menu 'FTRLogicalFeatureAddExistingMenu';
+add menu 'FTRLogicalFeatureAddExistingMenu'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property 'version'	value	'R421'
+;
+add property menu_FTRLogicalFeatureAddExistingMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRLogicalFeatureAddExistingMenu';

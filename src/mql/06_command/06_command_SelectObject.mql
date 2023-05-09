@@ -1,0 +1,19 @@
+del command 'SelectObject';
+add command 'SelectObject'
+	description	'Global Search SelectObject'
+	label	'emxComponents.Common.Select'
+	href	'${COMPONENT_DIR}/emxCommonSelectObject.jsp'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Single'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'SelectObject'
+	property	'version'	value	'10-0-1-0'
+;
+modify menu GlobalObjectChooserBottomActionBar add command SelectObject order command SelectObject 0;
+#channel ==>GlobalObjectChooserBottomActionBar
+add property command_SelectObject on program eServiceSchemaVariableMapping.tcl to command 'SelectObject';

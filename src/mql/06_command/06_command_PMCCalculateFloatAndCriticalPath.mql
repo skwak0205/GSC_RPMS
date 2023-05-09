@@ -1,0 +1,25 @@
+del command 'PMCCalculateFloatAndCriticalPath';
+add command 'PMCCalculateFloatAndCriticalPath'
+	description	''
+	label	'emxProgramCentral.Schedule.CalculateFloatAndCriticalPath'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=calculateFloatAndCriticalPath'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify]==TRUE'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToPMCCalculateFloatAndCriticalPathCommand'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Image'		'${COMMON_DIR}/images/I_OverallCriticalPath32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCalculateFloatAndCriticalPath'
+	property	'version'	value	'R421.HF5'
+;
+modify menu PMCWhatIFExperimentActionToolbar add command PMCCalculateFloatAndCriticalPath order command PMCCalculateFloatAndCriticalPath 9;
+modify menu PMCWBSToolBar add command PMCCalculateFloatAndCriticalPath order command PMCCalculateFloatAndCriticalPath 15;
+modify menu PMCWBSFlatViewToolbar add command PMCCalculateFloatAndCriticalPath order command PMCCalculateFloatAndCriticalPath 0;
+#channel ==>PMCWhatIFExperimentActionToolbarPMCWBSToolBarPMCWBSFlatViewToolbar
+add property command_PMCCalculateFloatAndCriticalPath on program eServiceSchemaVariableMapping.tcl to command 'PMCCalculateFloatAndCriticalPath';

@@ -1,0 +1,26 @@
+del command 'PLCAddExistingTestCaseAssigneeActionLink';
+add command 'PLCAddExistingTestCaseAssigneeActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddAssignee'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Person&excludeOIDprogram=emxPLCCommon:excludeConnected&table=PLCSearchPersonsTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_AssignedTestCase&from=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingTestCaseAssigneeActionLink'
+	property	'version'	value	'V6R2011'
+;
+modify menu PLCTestCaseAssigneeListTopActionBar add command PLCAddExistingTestCaseAssigneeActionLink order command PLCAddExistingTestCaseAssigneeActionLink 0;
+#channel ==>PLCTestCaseAssigneeListTopActionBar
+add property command_PLCAddExistingTestCaseAssigneeActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingTestCaseAssigneeActionLink';

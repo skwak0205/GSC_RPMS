@@ -1,0 +1,23 @@
+del command 'RMTObjectRemovedFromSpecStructureEvent';
+add command 'RMTObjectRemovedFromSpecStructureEvent'
+	description	''
+	label	'emxRequirements.Event.ObjectRemovedFromSpecStructure.Label'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'(policy != "$<policy_RequirementVersion>")'
+	setting	'Event Type'		'Object Removed From Spec Structure'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTObjectRemovedFromSpecStructureEvent'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementEvents add command RMTObjectRemovedFromSpecStructureEvent order command RMTObjectRemovedFromSpecStructureEvent 5;
+modify menu RMTChapterEvents add command RMTObjectRemovedFromSpecStructureEvent order command RMTObjectRemovedFromSpecStructureEvent 5;
+modify menu RMTCommentEvents add command RMTObjectRemovedFromSpecStructureEvent order command RMTObjectRemovedFromSpecStructureEvent 5;
+#channel ==>RMTRequirementEventsRMTChapterEventsRMTCommentEvents
+add property command_RMTObjectRemovedFromSpecStructureEvent on program eServiceSchemaVariableMapping.tcl to command 'RMTObjectRemovedFromSpecStructureEvent';

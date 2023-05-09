@@ -1,0 +1,22 @@
+del command 'MCIReleaseCADTool';
+add command 'MCIReleaseCADTool'
+	description	'Releases the CAD tool.'
+	label	'emxIEFDesignCenter.Common.ReleaseCADTool'
+	href	'../integrations/DSCGenericActionsUtil.jsp?jsMethodName=releaseCADTool'
+	alt	'emxIEFDesignCenter.Common.ReleaseCADTool'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Access Expression'		'1==0'
+	setting	'Access Function'		'isCATIAUser'
+	setting	'Access Program'		'IEFActionAccess'
+	setting	'Image'		'../integrations/images/buttonToolbarReleaseCADTool.gif'
+	user	'creator'
+	user	'Integration User'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'MCIReleaseCADTool'
+	property	'version'	value	'R424'
+;
+#channel ==>ToolbarMy Enovia
+add property command_MCIReleaseCADTool on program eServiceSchemaVariableMapping.tcl to command 'MCIReleaseCADTool';

@@ -1,0 +1,24 @@
+del command 'PMCProjectConditionallyApprove';
+add command 'PMCProjectConditionallyApprove'
+	description	'Command to Conditionally Approve Project from Gate Portal Page'
+	label	'emxProgramCentral.Common.Gate.ConditionallyApprove'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCGateDecision&postProcessJPO=emxProjectHoldAndCancel:projectPolicyChangeSequence&mode=edit&formHeader=emxProgramCentral.Header.CreateDecision&HelpMarker=emxhelpdecisioncreate&switch=ConditionallyApprove'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(to[$<relationship_ProjectAccessKey>].from.from[$<relationship_ProjectAccessList>].to.type.kindOf[$<type_ProjectSpace>]==true)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isApproveEnabled'
+	setting	'Access Program'		'emxProjectHoldAndCancel'
+	setting	'Image'		'${COMMON_DIR}/images/I_ConditionallyApproveGate32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectConditionallyApprove'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProjectGateToolBarActions add command PMCProjectConditionallyApprove order command PMCProjectConditionallyApprove 2;
+modify menu PMCChecklistTopActionToolbar add command PMCProjectConditionallyApprove order command PMCProjectConditionallyApprove 7;
+#channel ==>PMCProjectGateToolBarActionsPMCChecklistTopActionToolbar
+add property command_PMCProjectConditionallyApprove on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectConditionallyApprove';

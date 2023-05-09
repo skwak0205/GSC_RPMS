@@ -1,0 +1,18 @@
+del command 'APPLifecycleRouteTaskSelectAssignee';
+add command 'APPLifecycleRouteTaskSelectAssignee'
+	description	'Command to select assignees from user group in lifecycle page'
+	label	'emxFramework.Command.selectAssignee'
+	href	'javascript:getRouteIdFromContentIdAndLaunch()'
+	alt	''
+	setting	'Access Function'		'checksToShowSelectAssigneeInLifecyclePage'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/UserGroupAssignment.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLifecycleRouteTaskSelectAssignee'
+	property	'version'	value	'R423.HF3'
+;
+modify menu AEFLifecycleTasksToolbar add command APPLifecycleRouteTaskSelectAssignee order command APPLifecycleRouteTaskSelectAssignee 0;
+#channel ==>AEFLifecycleTasksToolbar
+add property command_APPLifecycleRouteTaskSelectAssignee on program eServiceSchemaVariableMapping.tcl to command 'APPLifecycleRouteTaskSelectAssignee';

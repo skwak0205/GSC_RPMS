@@ -1,0 +1,22 @@
+del command 'PMCProjectTemplatesCommand';
+add command 'PMCProjectTemplatesCommand'
+	description	'Project Template Command'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralTemplateDrivenDashboardDetails.jsp?showTemplates=Active'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getAllProjectTemplates'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Range Program'		'emxTemplateDrivenDashboard'
+	setting	'Default'		'Default Template'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplatesCommand'
+	property	'version'	value	'R419'
+;
+modify menu PMCDashboardToolbarMenu add command PMCProjectTemplatesCommand order command PMCProjectTemplatesCommand 1;
+#channel ==>PMCDashboardToolbarMenu
+add property command_PMCProjectTemplatesCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplatesCommand';

@@ -1,0 +1,20 @@
+del table 'ECMChangeControl' system;
+add table 'ECMChangeControl' system
+column #1
+	name	'ChangeControl'
+	label	'EnterpriseChangeMgt.Label.ChangeControl'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getHTMLForChangeControlValue'
+	setting	'Editable'		'false'
+	setting	'program'		'enoECMChangeUX'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMChangeControl'
+	property	'version'	value	'R421'
+;
+add property table_ECMChangeControl on program eServiceSchemaVariableMapping.tcl to table 'ECMChangeControl' system;

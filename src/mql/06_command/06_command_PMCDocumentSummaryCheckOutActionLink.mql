@@ -1,0 +1,26 @@
+del command 'PMCDocumentSummaryCheckOutActionLink';
+add command 'PMCDocumentSummaryCheckOutActionLink'
+	description	'Document Check Out Command Object'
+	label	'emxProgramCentral.Command.CheckOut'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=checkoutDocument'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckOut.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDocumentSummaryCheckOutActionLink'
+	property	'version'	value	'R422.HF7'
+;
+modify menu PMCReferenceDocumentSummaryActionsToolBar add command PMCDocumentSummaryCheckOutActionLink order command PMCDocumentSummaryCheckOutActionLink 4;
+#channel ==>PMCReferenceDocumentSummaryActionsToolBar
+add property command_PMCDocumentSummaryCheckOutActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCDocumentSummaryCheckOutActionLink';

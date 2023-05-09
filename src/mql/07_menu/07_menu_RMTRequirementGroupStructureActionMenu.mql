@@ -1,0 +1,15 @@
+del menu 'RMTRequirementGroupStructureActionMenu';
+add menu 'RMTRequirementGroupStructureActionMenu'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTReqGroupActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementGroupStructureActionMenu'
+	property 'version'	value	'V6R2012x'
+;
+add property menu_RMTRequirementGroupStructureActionMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementGroupStructureActionMenu';

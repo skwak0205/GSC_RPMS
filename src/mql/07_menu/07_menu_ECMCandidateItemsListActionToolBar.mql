@@ -1,0 +1,15 @@
+del menu 'ECMCandidateItemsListActionToolBar';
+add menu 'ECMCandidateItemsListActionToolBar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMCandidateItemsListActionToolBar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMCandidateItemsListActionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'ECMCandidateItemsListActionToolBar';

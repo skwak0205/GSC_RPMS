@@ -1,0 +1,19 @@
+del menu 'DCSearch';
+add menu 'DCSearch'
+	description	''
+	label	'emxDocumentCentral.Menu.DCSearch'
+	href	'${SUITE_DIR}/'
+	alt	'emxDocumentCentral.Menu.DCSearch'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCFindLibraries'
+	command	'DCFindBookshelves'
+	command	'DCFindBooks'
+	command	'DCFindDocuments'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCSearch'
+	property 'version'	value	'10-5'
+;
+add property menu_DCSearch on program eServiceSchemaVariableMapping.tcl to menu 'DCSearch';

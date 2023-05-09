@@ -1,0 +1,32 @@
+del command 'APPCommonDocumentCheckOutActionLink';
+add command 'APPCommonDocumentCheckOutActionLink'
+	description	'Document or File Check Out Command Object'
+	label	'emxComponents.Command.CheckOut'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=checkout&msfBypass=true'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasDocumentCheckOutAccess'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckOut.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMReleaseManager'
+	user	'VPLMTeamManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonDocumentCheckOutActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPFileSummaryActionsToolBar add command APPCommonDocumentCheckOutActionLink order command APPCommonDocumentCheckOutActionLink 8;
+modify menu DCDocumentSheetActionBar add command APPCommonDocumentCheckOutActionLink order command APPCommonDocumentCheckOutActionLink 3;
+modify menu FTRPartIssuerDocumentSummaryToolBarActions add command APPCommonDocumentCheckOutActionLink order command APPCommonDocumentCheckOutActionLink 3;
+#channel ==>APPFileSummaryActionsToolBarDCDocumentSheetActionBarFTRPartIssuerDocumentSummaryToolBarActions
+add property command_APPCommonDocumentCheckOutActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPCommonDocumentCheckOutActionLink';

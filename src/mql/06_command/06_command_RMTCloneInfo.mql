@@ -1,0 +1,22 @@
+del command 'RMTCloneInfo';
+add command 'RMTCloneInfo'
+	description	'Check all Clone relationships of an object.'
+	label	'emxRequirements.Label.ClonesInfo'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=emxTraceabilityReportBase:getCloneInfo&expandMultiLevelsJPO=true&table=RMTFullTraceabilityTable&header=emxRequirements.Label.ClonesInfo&sortColumnName=none&HelpMarker=emxhelpfulltraceability&expandLevelFilter=false'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Function'		'showCloneInfo'
+	setting	'Access Program'		'emxRMTCommon'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCloneInfo'
+	property	'version'	value	'R422'
+;
+modify menu type_Chapter add command RMTCloneInfo order command RMTCloneInfo 8;
+modify menu type_Comment add command RMTCloneInfo order command RMTCloneInfo 7;
+#channel ==>type_Chaptertype_CommentRMTSpecificationRelatedObjectsRMTRelatedObjects
+add property command_RMTCloneInfo on program eServiceSchemaVariableMapping.tcl to command 'RMTCloneInfo';

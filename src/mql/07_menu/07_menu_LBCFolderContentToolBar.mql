@@ -1,0 +1,17 @@
+del menu 'LBCFolderContentToolBar';
+add menu 'LBCFolderContentToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'LBCFolderContentActionToolBar'
+	command	'LBCDCObjectSearchIn'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCFolderContentToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_LBCFolderContentToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LBCFolderContentToolBar';

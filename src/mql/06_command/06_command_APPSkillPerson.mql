@@ -1,0 +1,22 @@
+del command 'APPSkillPerson';
+add command 'APPSkillPerson'
+	description	'List peoples related to a business skill'
+	label	'emxFramework.Command.People'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxBusinessSkill:ListBusinessSkillPersons&table=APPSkillPersonSummary&selection=multiple&header=emxComponents.BusinessSkill.Persons&toolbar=APPSkillPersonSummaryToolBar&HelpMarker=emxhelpskillspeople&editLink=true'
+	alt	'emxFramework.Command.People'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSkillPerson'
+	property	'version'	value	'R422'
+;
+modify menu type_BusinessSkill add command APPSkillPerson order command APPSkillPerson 0;
+#channel ==>type_BusinessSkill
+add property command_APPSkillPerson on program eServiceSchemaVariableMapping.tcl to command 'APPSkillPerson';

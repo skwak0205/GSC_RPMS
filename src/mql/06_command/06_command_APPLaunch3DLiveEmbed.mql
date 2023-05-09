@@ -1,0 +1,22 @@
+del command 'APPLaunch3DLiveEmbed';
+add command 'APPLaunch3DLiveEmbed'
+	description	'command to launch 3DLive Examine from applications'
+	label	'emxComponents.ImageManager.3DLiveExamine'
+	href	'${COMPONENT_DIR}/emxLaunch3DLiveExamineCheck.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionShowHide3D.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLaunch3DLiveEmbed'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPLaunch3DLiveEmbed on program eServiceSchemaVariableMapping.tcl to command 'APPLaunch3DLiveEmbed';

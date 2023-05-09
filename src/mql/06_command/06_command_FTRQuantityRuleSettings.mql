@@ -1,0 +1,24 @@
+del command 'FTRQuantityRuleSettings';
+add command 'FTRQuantityRuleSettings'
+	description	'Settings for Quantity Rule'
+	label	''
+	href	''
+	alt	''
+	setting	'Comparison Operator'		'NA'
+	setting	'Completed Rule'		'RuleDialogCompletedRule.jsp'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Basics'		'RuleDialogBasicsForQuantityRule.jsp'
+	setting	'ValidationForRightExpression'		'RuleDialogValidationsForRightExpressionInQuantityRule.js'
+	setting	'Left Expression'		'NA'
+	setting	'ValidationForBasics'		'RuleDialogValidationsForBasicsInQuantityRule.js'
+	setting	'ValidationForCompletedRule'		'RuleDialogValidationsForCompletedRuleInQuantityRule.js'
+	setting	'Context Selector'		'RuleDialogContextSelector.jsp'
+	setting	'Right Expression'		'RuleDialogRightExpression.jsp'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRQuantityRuleSettings'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRQuantityRuleSettings on program eServiceSchemaVariableMapping.tcl to command 'FTRQuantityRuleSettings';

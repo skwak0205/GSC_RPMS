@@ -1,0 +1,21 @@
+del command 'LBCDemotedToCreateStateEvent';
+add command 'LBCDemotedToCreateStateEvent'
+	description	'Event holder for demotion to Create state'
+	label	'emxLibraryCentral.Event.Demoted_To_Create_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Demoted To Create State'
+	setting	'History Bit'		'demote to Create'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDemotedToCreateStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCDocumentLibrarySubscriptionEvents add command LBCDemotedToCreateStateEvent order command LBCDemotedToCreateStateEvent 10;
+modify menu LBCBookshelfSubscriptionEvents add command LBCDemotedToCreateStateEvent order command LBCDemotedToCreateStateEvent 11;
+modify menu LBCBookSubscriptionEvents add command LBCDemotedToCreateStateEvent order command LBCDemotedToCreateStateEvent 11;
+modify menu LBCDocumentFamilySubscriptionEvents add command LBCDemotedToCreateStateEvent order command LBCDemotedToCreateStateEvent 9;
+#channel ==>LBCDocumentLibrarySubscriptionEventsLBCBookshelfSubscriptionEventsLBCBookSubscriptionEventsLBCDocumentFamilySubscriptionEvents
+add property command_LBCDemotedToCreateStateEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCDemotedToCreateStateEvent';

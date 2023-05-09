@@ -1,0 +1,25 @@
+del command 'APPDocumentFiles';
+add command 'APPDocumentFiles'
+	description	'lists the Files in the Document Object'
+	label	'emxComponents.Common.Files'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonFileUI:getFiles&table=APPFileSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPFileSummaryToolBar&header=emxComponents.Menu.Files&subHeader=emxComponents.Menu.SubHeaderDocuments&HelpMarker=emxhelpdocumentfilelist&FilterFramePage=../components/emxCommonDocumentCheckoutUtil.jsp&FilterFrameSize=1&showClipboard=false&objectCompare=false'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True) && (vcfile == FALSE && vcfolder == FALSE && vcmodule == FALSE)'
+	setting	'Access Function'		'allowFileVersioning'
+	setting	'Access Program'		'emxCommonDocument'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentFiles'
+	property	'version'	value	'R422'
+;
+modify menu type_DOCUMENTS add command APPDocumentFiles order command APPDocumentFiles 4;
+modify menu type_GenericDocument add command APPDocumentFiles order command APPDocumentFiles 5;
+modify menu type_DocumentSheet add command APPDocumentFiles order command APPDocumentFiles 1;
+modify menu type_Specification add command APPDocumentFiles order command APPDocumentFiles 2;
+#channel ==>type_DOCUMENTStype_GenericDocumenttype_DocumentSheettype_SpecificationRMTSpecificationsProperties
+add property command_APPDocumentFiles on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentFiles';

@@ -1,0 +1,23 @@
+del command 'PLMAddExistingParameterActionLink';
+add command 'PLMAddExistingParameterActionLink'
+	description	''
+	label	'emxParameter.Associate.ExistingParameter'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_PlmParameter:POLICY=policy_Parameter,policy_ParameterAggregation&showInitialResults=false&selection=multiple&HelpMarker=emxhelpfullsearch&cancelLabel=emxParameter.FindObjects.Quit&submitLabel=emxParameter.FindObjects.Associate&excludeOIDprogram=emxParameterConnect:excludeConnectedParameters&&submitURL=../parameter/emxParameterAssociateExisting.jsp?connectFromId=${ID}&connectRelationship=relationship_ParameterUsage'
+	alt	'emxParameter.Associate.AltExistingParameter'
+	setting	'Target Location'		'popup'
+	setting	'Maximum Length'		'25'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'VPLMLocalCrossPrjContextAccess'
+	user	'VPLMLocalCrossOrgContextAccess'
+	user	'VPLMSecuredCrossAccess'
+	user	'Requirement Manager'
+;
+modify menu PLMAssociatedParametersActions add command PLMAddExistingParameterActionLink order command PLMAddExistingParameterActionLink 2;
+modify menu PARParametersToolbar add command PLMAddExistingParameterActionLink order command PLMAddExistingParameterActionLink 3;
+#channel ==>PLMAssociatedParametersActionsPARParametersToolbar
+add property command_PLMAddExistingParameterActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLMAddExistingParameterActionLink';

@@ -1,0 +1,23 @@
+del command 'APPCompanyUploadImage';
+add command 'APPCompanyUploadImage'
+	description	'Image Check In Command Object'
+	label	'emxComponents.ImageManager.Upload'
+	href	'${COMPONENT_DIR}/emxImageManagerUpload.jsp'
+	alt	''
+	setting	'Target Location'		'imageHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAppend.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompanyUploadImage'
+	property	'version'	value	'R417'
+;
+modify menu APPCompanyImageManagerActionsToolBar add command APPCompanyUploadImage order command APPCompanyUploadImage 1;
+#channel ==>APPCompanyImageManagerActionsToolBar
+add property command_APPCompanyUploadImage on program eServiceSchemaVariableMapping.tcl to command 'APPCompanyUploadImage';

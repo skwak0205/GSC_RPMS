@@ -1,0 +1,30 @@
+del command 'APPConnectVCFileFolder';
+add command 'APPConnectVCFileFolder'
+	description	'Command for mapping a file or folder in DesignSync to business object'
+	label	'emxComponents.VersionControl.ConnectVCFileFolder'
+	href	'${SUITE_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=connectVCFileFolder&actionURL=emxCommonDocumentVCConnectProcess.jsp&stepOneHeader=emxComponents.Header.ConnectToDesignSyncFileFolder'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPConnectVCFileFolder'
+	property	'version'	value	'R422'
+;
+modify menu APPContentSummaryCreateNew add command APPConnectVCFileFolder order command APPConnectVCFileFolder 0;
+modify menu PMCContentSummaryCreateNew add command APPConnectVCFileFolder order command APPConnectVCFileFolder 0;
+modify menu PMCReferenceDocuemntCreateNew add command APPConnectVCFileFolder order command APPConnectVCFileFolder 0;
+modify menu PMCDeliverableSummaryCreateNew add command APPConnectVCFileFolder order command APPConnectVCFileFolder 0;
+#channel ==>APPContentSummaryCreateNewPMCContentSummaryCreateNewPMCReferenceDocuemntCreateNewPMCDeliverableSummaryCreateNew
+add property command_APPConnectVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'APPConnectVCFileFolder';

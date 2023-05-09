@@ -1,0 +1,18 @@
+del command 'APPClassificationContentRemovedEvent';
+add command 'APPClassificationContentRemovedEvent'
+	description	'Event holder for Content Removal'
+	label	'emxComponents.Event.Content_Removed'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Content Removed'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPClassificationContentRemovedEvent'
+	property	'version'	value	'R212'
+;
+modify menu APPClassificationSubscriptionEvents add command APPClassificationContentRemovedEvent order command APPClassificationContentRemovedEvent 2;
+modify menu LBCDocumentFamilySubscriptionEvents add command APPClassificationContentRemovedEvent order command APPClassificationContentRemovedEvent 2;
+#channel ==>APPClassificationSubscriptionEventsLBCDocumentFamilySubscriptionEvents
+add property command_APPClassificationContentRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPClassificationContentRemovedEvent';

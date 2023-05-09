@@ -1,0 +1,15 @@
+del menu 'ECMRelatedItemToolbar';
+add menu 'ECMRelatedItemToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	menu	'ECMRelatedItemActionsToolbar'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMRelatedItemToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMRelatedItemToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMRelatedItemToolbar';

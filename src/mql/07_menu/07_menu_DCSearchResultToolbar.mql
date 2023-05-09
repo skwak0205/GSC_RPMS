@@ -1,0 +1,19 @@
+del menu 'DCSearchResultToolbar';
+add menu 'DCSearchResultToolbar'
+	description	''
+	label	''
+	href	'${SUITE_DIR}/'
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'AEFReviseSearch'
+	command	'AEFAddToCollection'
+	command	'DCObjectAddSelectedtoFoldersSearchResultsActionLink'
+	command	'DCSearchObjectDeleteSelectedActionLink'
+	command	'DCObjectSubscribetoSelectedActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCSearchResultToolbar'
+	property 'version'	value	'10-5'
+;
+add property menu_DCSearchResultToolbar on program eServiceSchemaVariableMapping.tcl to menu 'DCSearchResultToolbar';

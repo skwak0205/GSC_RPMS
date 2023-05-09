@@ -1,0 +1,15 @@
+del menu 'Msoitype_TestCase';
+add menu 'Msoitype_TestCase'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PLCTestCaseReferenceDocumentTreeCategory'
+	command	'PLCTestCaseSubTestCaseTreeCategory'
+	property 'installer'	value	'ENOVIAIntegrationEngineering'
+	property 'application'	value	'IntegrationFramework'
+	property 'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property 'original name'	value	'Msoitype_TestCase'
+	property 'version'	value	'V6R2022x'
+;
+add property menu_Msoitype_TestCase on program eServiceSchemaVariableMapping.tcl to menu 'Msoitype_TestCase';

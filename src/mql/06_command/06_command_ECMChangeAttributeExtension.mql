@@ -1,0 +1,12 @@
+del command 'ECMChangeAttributeExtension';
+add command 'ECMChangeAttributeExtension'
+	description	'Attribute command for Change Template in ECM'
+	label	'EnterpriseChangeMgt.Command.AttributeExtension'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeTemplate:getInterfaceAttributes&table=ECMAttributeList&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ECMAttributeToolbar&header=EnterpriseChangeMgt.Label.TemplateAttribute&HelpMarker=emxhelpattributegrouplist&autoFilter=true&Export=true&suiteKey=EnterpriseChangeMgt'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'owner==context.user'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_ECMChangeAttributeExtension on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeAttributeExtension';

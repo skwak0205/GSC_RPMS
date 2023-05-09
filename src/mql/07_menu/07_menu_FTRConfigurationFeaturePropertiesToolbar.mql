@@ -1,0 +1,15 @@
+del menu 'FTRConfigurationFeaturePropertiesToolbar';
+add menu 'FTRConfigurationFeaturePropertiesToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	menu	'FTRConfigurationFeaturePropertiesToolbarActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRConfigurationFeaturePropertiesToolbar'
+	property 'version'	value	'R212'
+;
+add property menu_FTRConfigurationFeaturePropertiesToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRConfigurationFeaturePropertiesToolbar';

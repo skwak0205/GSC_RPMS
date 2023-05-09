@@ -1,0 +1,21 @@
+del command 'PLCEditHardwareBuildActionLink';
+add command 'PLCEditHardwareBuildActionLink'
+	description	'Edit Details Action Link on Properties Page for Hardware Build.'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_HardwareBuild&formMode=Edit&mode=edit&formHeader=emxProduct.Heading.EditNoRev&HelpMarker=emxhelpbuildedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCEditHardwareBuildActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCHardwareBuildPropertiesTopActionBar add command PLCEditHardwareBuildActionLink order command PLCEditHardwareBuildActionLink 0;
+#channel ==>PLCHardwareBuildPropertiesTopActionBar
+add property command_PLCEditHardwareBuildActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCEditHardwareBuildActionLink';

@@ -1,0 +1,20 @@
+del command 'PMCProjectBaselinesList';
+add command 'PMCProjectBaselinesList'
+	description	'Project Baseline list command'
+	label	'emxProgramCentral.Common.Baselines'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=PMCProjectBaselineList'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBaselinesList'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCBaselineChannel
+add property command_PMCProjectBaselinesList on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBaselinesList';

@@ -1,0 +1,22 @@
+del command 'APPCurrencyExchangeRates';
+add command 'APPCurrencyExchangeRates'
+	description	''
+	label	'emxComponents.Command.CurrencyExchangeRates'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCurrencyConversion:getCurrencyExchangeRate&table=APPCurrencyExchangeRateSummary&toolbar=APPCurrencyExchangeRateSummaryToolBar&selection=multiple&sortColumnName=Name&GlobalContext=false&objectCompare=true&header=emxComponents.CurrencyExchangeRateSummary.CurrencyExchangeRate&mode=view&editLink=true&HelpMarker=emxhelpcurrencyrates&PrinterFriendly=true&sortColumnName=Name&calculations=true&chart=true&sortDirection=ascending'
+	alt	'emxComponents.Command.CurrencyExchangeRates'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCurrencyExchangeRates'
+	property	'version'	value	'R422'
+;
+modify menu type_Company add command APPCurrencyExchangeRates order command APPCurrencyExchangeRates 16;
+#channel ==>type_Company
+add property command_APPCurrencyExchangeRates on program eServiceSchemaVariableMapping.tcl to command 'APPCurrencyExchangeRates';

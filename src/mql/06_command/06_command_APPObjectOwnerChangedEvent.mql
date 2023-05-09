@@ -1,0 +1,18 @@
+del command 'APPObjectOwnerChangedEvent';
+add command 'APPObjectOwnerChangedEvent'
+	description	'Object Owner Changed Event'
+	label	'emxComponents.Notification.Event.Owner_Changed'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Owner Changed'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectOwnerChangedEvent'
+	property	'version'	value	'R207'
+;
+modify menu APPDecisionEvents add command APPObjectOwnerChangedEvent order command APPObjectOwnerChangedEvent 3;
+modify menu ECMSubscriptionEvents add command APPObjectOwnerChangedEvent order command APPObjectOwnerChangedEvent 3;
+#channel ==>APPDecisionEventsECMSubscriptionEvents
+add property command_APPObjectOwnerChangedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPObjectOwnerChangedEvent';

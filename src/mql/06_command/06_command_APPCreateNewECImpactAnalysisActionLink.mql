@@ -1,0 +1,25 @@
+del command 'APPCreateNewECImpactAnalysisActionLink';
+add command 'APPCreateNewECImpactAnalysisActionLink'
+	description	''
+	label	'emxComponents.Common.CreateNew'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ECIACreateFSInstance'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasImpactAnalysisLink'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	setting	'Access Mask'		'ToConnect'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateNewECImpactAnalysisActionLink'
+	property	'version'	value	'10-6'
+;
+modify menu APPECImpactAnalysisListActionsToolBar add command APPCreateNewECImpactAnalysisActionLink order command APPCreateNewECImpactAnalysisActionLink 1;
+#channel ==>APPECImpactAnalysisListActionsToolBar
+add property command_APPCreateNewECImpactAnalysisActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPCreateNewECImpactAnalysisActionLink';

@@ -1,0 +1,29 @@
+del command 'PMCCreateNewResourceRequest';
+add command 'PMCCreateNewResourceRequest'
+	description	'Create new Resource Request'
+	label	'emxProgramCentral.Command.CreateResourceRequest'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ResourceRequest&nameField=both&autoNameChecked=true&policy=policy_ResourceRequest&form=PMCResourceRequestCreateForm&header=emxProgramCentral.Common.CreateNewResourceRequest&HelpMarker=emxhelpresourcerequestcreate&submitAction=refreshCaller&postProcessJPO=emxResourceRequest:createResourcePlan&showPageURLIcon=false'
+	alt	'emxProgramCentral.Command.CreateResourcePlan'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isCommandEnabled'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateNewResourceRequest'
+	property	'version'	value	'R422'
+;
+modify menu PMCCreateResourcePlan add command PMCCreateNewResourceRequest order command PMCCreateNewResourceRequest 1;
+modify menu PMCResourcePlanToolBar add command PMCCreateNewResourceRequest order command PMCCreateNewResourceRequest 1;
+#channel ==>PMCCreateResourcePlanPMCResourcePlanToolBar
+add property command_PMCCreateNewResourceRequest on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateNewResourceRequest';

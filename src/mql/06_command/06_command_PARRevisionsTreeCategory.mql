@@ -1,0 +1,12 @@
+del command 'PARRevisionsTreeCategory';
+add command 'PARRevisionsTreeCategory'
+	description	'Tree category command to retrieve the parameter revisions'
+	label	'emxParameter.TreeCategory.Revisions'
+	href	'${COMMON_DIR}/emxTable.jsp?table=PARRevisionsList&header=emxParameter.common.RevisionHeader&program=emxParameter:getRevisions&toolbar=PARRevisionsToolBar&sortColumnName=ParameterRevision&HelpMarker=emxhelprevisionlist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Parameter'
+;
+modify menu type_PlmParameter add command PARRevisionsTreeCategory order command PARRevisionsTreeCategory 4;
+#channel ==>type_PlmParameter
+add property command_PARRevisionsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PARRevisionsTreeCategory';

@@ -1,0 +1,21 @@
+del menu 'RMTRequirementTraceabilityMenu';
+add menu 'RMTRequirementTraceabilityMenu'
+	description	''
+	label	'emxRequirements.ActionLink.TraceabilityReport'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionTraceabilityReport.gif'
+	command	'RMTTraceabilityGraph'
+	command	'RMTTraceabilityRequirementReportActionLink'
+	command	'RMTTraceabilityFeatureReportActionLink'
+	command	'RMTTraceabilityTestCaseReportActionLink'
+	command	'RMTTraceabilityParameterReportActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementTraceabilityMenu'
+	property 'version'	value	'V6R2014x'
+;
+add property menu_RMTRequirementTraceabilityMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementTraceabilityMenu';

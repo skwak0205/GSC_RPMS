@@ -1,0 +1,23 @@
+del command 'PLCPortfolioDelete';
+add command 'PLCPortfolioDelete'
+	description	'Deletes an existing Portfolio'
+	label	'emxProduct.ActionLink.Delete'
+	href	'${ROOT_DIR}/productline/PortfolioUtil.jsp?mode=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'True'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPortfolioDelete'
+	property	'version'	value	'R418'
+;
+modify menu PLCPortfolioListToolbar add command PLCPortfolioDelete order command PLCPortfolioDelete 0;
+#channel ==>PLCPortfolioListToolbar
+add property command_PLCPortfolioDelete on program eServiceSchemaVariableMapping.tcl to command 'PLCPortfolioDelete';

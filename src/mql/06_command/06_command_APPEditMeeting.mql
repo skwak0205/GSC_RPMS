@@ -1,0 +1,21 @@
+del command 'APPEditMeeting';
+add command 'APPEditMeeting'
+	description	''
+	label	'emxComponents.Common.EditMeeting'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_MeetingForm&type=type_Meeting&Mode=edit&HelpMarker=emxhelpeditmeeting&mode=edit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkEditMeeting'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPEditMeeting'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPMeetingPropertiesActionToolbar add command APPEditMeeting order command APPEditMeeting 1;
+#channel ==>APPMeetingPropertiesActionToolbar
+add property command_APPEditMeeting on program eServiceSchemaVariableMapping.tcl to command 'APPEditMeeting';

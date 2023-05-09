@@ -1,0 +1,22 @@
+del command 'DCDocumentsWhereUsedTreeCategory';
+add command 'DCDocumentsWhereUsedTreeCategory'
+	description	'Where Used Tree Category for DOCUMENTS'
+	label	'emxDocumentCentral.TreeCategory.WhereUsed'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?eezePane=Name&HelpMarker=emxhelpwhereused&inquiry=DCObjectWhereUsed&table=DCObjectsStandardWithoutLock&sortColumnName=Name&sortDirection=ascending&header=emxDocumentCentral.Common.WhereUsed&HelpMarker=emxhelpobjecttreecategorywhereused&massPromoteDemote=false&triggerValidation=false&displayView=details,thumbnails'
+	alt	'emxDocumentCentral.TreeCategory.WhereUsed'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallObjectFolder.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCDocumentsWhereUsedTreeCategory'
+	property	'version'	value	'R424'
+;
+modify menu type_DOCUMENTS add command DCDocumentsWhereUsedTreeCategory order command DCDocumentsWhereUsedTreeCategory 0;
+modify menu type_GenericDocument add command DCDocumentsWhereUsedTreeCategory order command DCDocumentsWhereUsedTreeCategory 19;
+modify menu type_DocumentSheet add command DCDocumentsWhereUsedTreeCategory order command DCDocumentsWhereUsedTreeCategory 0;
+#channel ==>type_DOCUMENTStype_GenericDocumenttype_DocumentSheet
+add property command_DCDocumentsWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'DCDocumentsWhereUsedTreeCategory';

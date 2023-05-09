@@ -1,0 +1,24 @@
+del command 'DCAdministrationDeleteSelectedActionLink';
+add command 'DCAdministrationDeleteSelectedActionLink'
+	description	'Delete Selected Companies'
+	label	'emxDocumentCentral.ActionBarCmd.DeleteSelected'
+	href	'${SUITE_DIR}/emxDocumentCentralStart.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'600'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCAdministrationDeleteSelectedActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCAdministrationBottomActionbar add command DCAdministrationDeleteSelectedActionLink order command DCAdministrationDeleteSelectedActionLink 1;
+modify menu DCCompanyPeopleBottomActionbar add command DCAdministrationDeleteSelectedActionLink order command DCAdministrationDeleteSelectedActionLink 1;
+#channel ==>DCAdministrationBottomActionbarDCCompanyPeopleBottomActionbar
+add property command_DCAdministrationDeleteSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCAdministrationDeleteSelectedActionLink';

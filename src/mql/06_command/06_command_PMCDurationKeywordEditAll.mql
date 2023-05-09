@@ -1,0 +1,21 @@
+del command 'PMCDurationKeywordEditAll';
+add command 'PMCDurationKeywordEditAll'
+	description	''
+	label	'emxProgramCentral.Common.EditAll'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?table=PMCDurationKeywordsSummaryTable&toolbar=PMCDurationKeywordsToolBar&freezePane=Name&selection=multiple&HelpMarker=emxhelpkeywordeditall&header=emxProgramCentral.DurationKeywords.Edit&program=emxDurationKeywords:getTableDurationKeywordsData&postProcessURL=../programcentral/emxProgramCentralDurationKeywordsUtil.jsp&FunctionMode=editall'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Function'		'hasAccessDurationKeywordView'
+	setting	'Access Program'		'emxDurationKeywords'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDurationKeywordEditAll'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCDurationKeywordEditAll on program eServiceSchemaVariableMapping.tcl to command 'PMCDurationKeywordEditAll';

@@ -1,0 +1,27 @@
+del command 'PMCAttachment';
+add command 'PMCAttachment'
+	description	'Attachment Command Object'
+	label	'emxFramework.Command.Attachment'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=PMCContentSummaryToolBar&header=emxProgramCentral.Common.Attachments&HelpMarker=emxhelpcontentlist&parentRelName=relationship_ReferenceDocument'
+	alt	'emxFramework.Command.Alt.Attachment'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'sm_icon_Attachment.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAttachment'
+	property	'version'	value	'R422'
+;
+modify menu type_FinancialItem add command PMCAttachment order command PMCAttachment 1;
+modify menu type_Quality add command PMCAttachment order command PMCAttachment 1;
+modify menu type_Risk add command PMCAttachment order command PMCAttachment 2;
+modify menu type_BusinessGoal add command PMCAttachment order command PMCAttachment 1;
+modify menu type_Opportunity add command PMCAttachment order command PMCAttachment 2;
+#channel ==>type_FinancialItemtype_Qualitytype_Risktype_BusinessGoaltype_Opportunity
+add property command_PMCAttachment on program eServiceSchemaVariableMapping.tcl to command 'PMCAttachment';

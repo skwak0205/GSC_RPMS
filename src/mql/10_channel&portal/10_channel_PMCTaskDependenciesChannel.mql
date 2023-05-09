@@ -1,0 +1,16 @@
+del channel 'PMCTaskDependenciesChannel';
+add channel 'PMCTaskDependenciesChannel'
+	description	'Channel for Dependent Task'
+	height	'260'
+	label	'emxProgramCentral.Common.DependentTask'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCWBSManageDependencies'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskDependenciesChannel'
+	property	'version'	value	'R215'
+;
+#portal ==>PMCWBSTaskDependencyPortal
+add property channel_PMCTaskDependenciesChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCTaskDependenciesChannel';

@@ -1,0 +1,18 @@
+del command 'AEFGridToolbarNameInput';
+add command 'AEFGridToolbarNameInput'
+	description	'Input field for the AEF Grid Toolbar to find/filter table results'
+	label	'emxFramework.Basic.Name'
+	href	''
+	alt	''
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Framework'
+	setting	'Default'		'*'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFGridToolbarNameInput'
+	property	'version'	value	'R212'
+;
+modify menu AEFGridFilterToolbar add command AEFGridToolbarNameInput order command AEFGridToolbarNameInput 1;
+#channel ==>AEFGridFilterToolbar
+add property command_AEFGridToolbarNameInput on program eServiceSchemaVariableMapping.tcl to command 'AEFGridToolbarNameInput';

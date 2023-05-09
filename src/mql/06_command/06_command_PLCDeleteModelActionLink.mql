@@ -1,0 +1,12 @@
+del command 'PLCDeleteModelActionLink';
+add command 'PLCDeleteModelActionLink'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R420'
+;
+#channel ==>
+add property command_PLCDeleteModelActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCDeleteModelActionLink';

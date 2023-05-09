@@ -1,0 +1,20 @@
+del command 'FTRContextConfigurationFeaturesMobile';
+add command 'FTRContextConfigurationFeaturesMobile'
+	description	''
+	label	'emxProduct.Tree.ConfigurationOptions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?toolbar=FTRConfigurationFeaturesToolbar,FTRProductConfigurationFeatureCustomFilterToolbar&expandProgram=ConfigurationFeature:getConfigurationFeatureStructure&table=FTRContextConfigurationFeatureTable&editRootNode=false&selection=multiple&featureType=Marketing&editLink=false&editRelationship=relationship_ConfigurationFeatures,relationship_ConfigurationOptions,relationship_MandatoryConfigurationFeatures,relationship_VariesBy,relationship_InactiveVariesBy&header=emxConfiguration.Heading.ConfigFeatures&HelpMarker=emxhelpconfigurationfeaturelist&massPromoteDemote=false&objectCompare=false&appendURL=EvolutionEffectivity|Effectivity'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeEnabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRContextConfigurationFeaturesMobile'
+	property	'version'	value	'R418'
+;
+modify menu type_ConfigurationFeature add command FTRContextConfigurationFeaturesMobile order command FTRContextConfigurationFeaturesMobile 2;
+#channel ==>type_ConfigurationFeature
+add property command_FTRContextConfigurationFeaturesMobile on program eServiceSchemaVariableMapping.tcl to command 'FTRContextConfigurationFeaturesMobile';

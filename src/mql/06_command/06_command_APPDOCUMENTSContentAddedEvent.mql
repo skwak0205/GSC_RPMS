@@ -1,0 +1,19 @@
+del command 'APPDOCUMENTSContentAddedEvent';
+add command 'APPDOCUMENTSContentAddedEvent'
+	description	'DOCUMENTS Content Added Event'
+	label	'emxComponents.DOCUMENTS.Event.Content_Added'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'3DNotificationSupported'		'false'
+	setting	'Event Type'		'Content Added'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDOCUMENTSContentAddedEvent'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPDOCUMENTSEvents add command APPDOCUMENTSContentAddedEvent order command APPDOCUMENTSContentAddedEvent 1;
+modify menu RMTRequirementSpecificationEvents add command APPDOCUMENTSContentAddedEvent order command APPDOCUMENTSContentAddedEvent 1;
+#channel ==>APPDOCUMENTSEventsRMTRequirementSpecificationEvents
+add property command_APPDOCUMENTSContentAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPDOCUMENTSContentAddedEvent';

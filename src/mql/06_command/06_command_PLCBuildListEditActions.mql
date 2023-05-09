@@ -1,0 +1,22 @@
+del command 'PLCBuildListEditActions';
+add command 'PLCBuildListEditActions'
+	description	''
+	label	'emxProduct.ActionLink.EditAll'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?table=PLCMyDeskBuildList&header=emxProduct.Heading.Build&selection=multiple&sortColumnName=Name&program=emxBuild:getOwnedBuilds,emxBuild:getAllBuilds'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCBuildListEditActions'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_PLCBuildListEditActions on program eServiceSchemaVariableMapping.tcl to command 'PLCBuildListEditActions';

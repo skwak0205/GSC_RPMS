@@ -1,0 +1,25 @@
+del command 'PLCDeleteTestExecutionActionLink';
+add command 'PLCDeleteTestExecutionActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Delete'
+	href	'${ROOT_DIR}/productline/TestExecutionUtil.jsp?mode=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Access Program Method'		'showTestExecutionLinksToAssignedQE'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Program'		'emxTestExecution'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	setting	'Access Mask'		'FromDisconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCDeleteTestExecutionActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCTestExecutionActionsToolbar add command PLCDeleteTestExecutionActionLink order command PLCDeleteTestExecutionActionLink 0;
+#channel ==>PLCTestExecutionActionsToolbar
+add property command_PLCDeleteTestExecutionActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCDeleteTestExecutionActionLink';

@@ -1,0 +1,22 @@
+################################################################################################
+# Created Date : 2023.03.29
+# Create by jrchoi
+# Description : 비용예산 실적 I/F Object
+################################################################################################
+#del type gscBudgetIf;
+add type gscBudgetIf
+    property 'installed date'     value  '2023.01.10'
+    property 'application'        value  'Framework'
+    property 'original name'      value  'gscBudgetIf'
+    property 'installer'          value  'GSC'
+    property 'version'            value  'V6R2019'
+;
+
+add property type_gscBudgetIf on prog eServiceSchemaVariableMapping.tcl to  type 'gscBudgetIf';
+
+mod policy 'gscInterfaceDeliverable'
+   add type gscBudgetIf;
+
+mod type gscBudgetIf add attribute gscKostl,gscKostlTx,gscSaknr,gscSaknrTx,gscAmtPlanYear,gscAmtAct,gscAmtActM,gscWaers;
+
+

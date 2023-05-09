@@ -1,0 +1,25 @@
+del command 'PMCDeleteQuestion';
+add command 'PMCDeleteQuestion'
+	description	'Delete Question from Project Template'
+	label	'emxProgramCentral.Common.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=deleteQuestion'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToQuestionCommands'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Common.DeleteQuestionConfirmationMessage'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeleteQuestion'
+	property	'version'	value	'R424.HF4'
+;
+modify menu PMCQuestionToolbarActions add command PMCDeleteQuestion order command PMCDeleteQuestion 2;
+modify menu PMCQuestionToolbar add command PMCDeleteQuestion order command PMCDeleteQuestion 2;
+#channel ==>PMCQuestionToolbarActionsPMCQuestionToolbar
+add property command_PMCDeleteQuestion on program eServiceSchemaVariableMapping.tcl to command 'PMCDeleteQuestion';

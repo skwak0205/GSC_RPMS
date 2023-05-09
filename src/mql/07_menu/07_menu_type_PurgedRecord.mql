@@ -1,0 +1,17 @@
+del menu 'type_PurgedRecord';
+add menu 'type_PurgedRecord'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_PurgedRecord&toolbar=LBCPurgedDocumentToolBar&HelpMarker=emxhelplibrarypurgedrecordproperties&formHeader=emxDocumentCentral.Common.Properties&Export=False'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	command	'DCWhereUsedTreeCategory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_PurgedRecord'
+	property 'version'	value	'R213'
+;
+add property menu_type_PurgedRecord on program eServiceSchemaVariableMapping.tcl to menu 'type_PurgedRecord';

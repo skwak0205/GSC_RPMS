@@ -1,0 +1,18 @@
+del menu 'type_PLCDocument';
+add menu 'type_PLCDocument'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Document&actionBarName=PLCDocumentPropertiesTopActionBar&editLink=false&formHeader=emxProduct.Heading.Properties&HelpMarker=emxhelpdetailsReferenceDocuments'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	command	'APPRoutes'
+	command	'PLCDocumentWhereUsedTreeCategory'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_PLCDocument'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_type_PLCDocument on program eServiceSchemaVariableMapping.tcl to menu 'type_PLCDocument';

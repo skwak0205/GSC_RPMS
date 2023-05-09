@@ -1,0 +1,95 @@
+#del attribute 'gscNo';
+add attribute  'gscNo'
+   description '업무번호'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscNo"
+;
+add property attribute_gscNo on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscNo';
+
+add attribute  'gscUserId'
+   description '작성자ID'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscUserId"
+;
+add property attribute_gscUserId on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscUserId';
+
+add attribute  'gscUserName'
+  description '작성자ID'
+  type        'string'
+  property "application"	  value "Framework"
+  property "version"		  value "V6R2019"
+  property "installer"	  value "gsc"
+  property "installed date" value "2020-05-19"
+  property "original name"  value "gscUserName"
+;
+add property attribute_gscUserName on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscUserName';
+
+add attribute  'gscProductType'
+  description '생산유형'
+  type        'string'
+  property "application"	  value "Framework"
+  property "version"		  value "V6R2019"
+  property "installer"	  value "gsc"
+  property "installed date" value "2020-05-19"
+  property "original name"  value "gscProductType"
+;
+add property attribute_gscProductType on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscProductType';
+
+add attribute  'gscProductTypeLabel'
+  description '생산유형 Label'
+  type        'string'
+  property "application"	  value "Framework"
+  property "version"		  value "V6R2019"
+  property "installer"	  value "gsc"
+  property "installed date" value "2020-05-19"
+  property "original name"  value "gscProductTypeLabel"
+;
+add property attribute_gscProductTypeLabel on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscProductTypeLabel';
+
+
+add attribute  'gscSendDt'
+  description '업무요청일'
+  type        'string'
+  property "application"	  value "Framework"
+  property "version"		  value "V6R2019"
+  property "installer"	  value "gsc"
+  property "installed date" value "2020-05-19"
+  property "original name"  value "gscSendDt"
+;
+add property attribute_gscSendDt on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscSendDt';
+
+add attribute  'gscCloseDt'
+  description '마감일'
+  type        'string'
+  property "application"	  value "Framework"
+  property "version"		  value "V6R2019"
+  property "installer"	  value "gsc"
+  property "installed date" value "2020-05-19"
+  property "original name"  value "gscCloseDt"
+;
+add property attribute_gscCloseDt on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscCloseDt';
+
+add type gscPolydataIf
+    property 'installed date'     value  '2023.01.10'
+    property 'application'        value  'Framework'
+    property 'original name'      value  'gscPolydataIf'
+    property 'installer'          value  'GSC'
+    property 'version'            value  'V6R2019'
+;
+
+add property type_gscPolydataIf on prog eServiceSchemaVariableMapping.tcl to  type 'gscPolydataIf';
+
+mod policy 'gscInterfaceDeliverable'
+   add type gscPolydataIf;
+
+mod type gscPolydataIf add attribute gscNo,gscTitle,gscUserId,gscUserName,gscProductType,gscProductTypeLabel,gscSendDt,gscCloseDt;
+
+

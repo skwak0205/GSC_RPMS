@@ -1,0 +1,22 @@
+del command 'PLCAddExistingUnitLink';
+add command 'PLCAddExistingUnitLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Builds:HAS_INTENTDED_UNIT_TO=False:HAS_UNIT_BOM_TO=False&excludeOIDprogram=emxBuild:filterProductBuilds&table=PLCIntendedProductUnitList&selection=multiple&showSavedQuery=true&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_IntendedProductUnit'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingUnitLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCIntendedProductUnitTopActionBar add command PLCAddExistingUnitLink order command PLCAddExistingUnitLink 1;
+#channel ==>PLCIntendedProductUnitTopActionBar
+add property command_PLCAddExistingUnitLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingUnitLink';

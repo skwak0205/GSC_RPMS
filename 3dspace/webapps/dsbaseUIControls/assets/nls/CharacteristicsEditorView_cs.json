@@ -1,0 +1,15 @@
+{
+  "CEV.optionsChecker.rdfServerURL.error": "Musí být definována adresa URL serveru RDF!",
+  "CEV.optionsChecker.resourceURI.error": "Musí být definován identifikátor URI zdroje!",
+  "CEV.optionsChecker.constraintsPosition.error": "Pozice místního okna pro omezení musí být \"nahoře\", \"vpravo\", \"dole\" nebo \"vlevo\"",
+  "CEV.optionsChecker.buttons.types.error": "Tlačítko '{label}' musí mít jeden z těchto typů: \"primární\", \"výchozí\", \"informace\", \"úspěch\", \"varování\", \"chyba\"",
+  "CEV.optionsChecker.buttons.specificActions.error": "Akce určená pro charakteristiku '{key}' musí být funkce!",
+  "CEV.optionsChecker.search.error": "Očekává se funkce, aby bylo možno vyhledat hodnoty pro charakteristiku '{key}'!",
+  "CEV.title": "Editor charakteristik",
+  "CEV.defaultMessage": "¤×Při načítání všech charakteristik došlo k chybě...",
+  "CEV.userCharacteristics.title": "Charakteristiky uživatele",
+  "CEV.characteristics.title": "Charakteristiky",
+  "CEV.okButton.content": "OK",
+  "CEV.cancelButton.content": "Zrušit",
+  "CEV.cancelButton.error": "Chyba při kliknutí na tlačítko \"Zrušit\"..."
+}

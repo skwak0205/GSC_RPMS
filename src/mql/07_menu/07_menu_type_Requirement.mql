@@ -1,0 +1,22 @@
+del menu 'type_Requirement';
+add menu 'type_Requirement'
+	description	''
+	label	'${NAME} ${REVISION}'
+	href	'${SUITE_DIR}/StructureDisplay.jsp?menu=RMTRequirementStructureDisplay'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Type Icon Program'		'emxRMTCommon'
+	setting	'Type Icon Function'		'getRequirementIcons'
+	setting	'Structure Menu'		'type_RMTRequirementStructureMenu'
+	command	'RMTPropertiesPowerView'
+	command	'RMTExchangeTrackingPowerView'
+	command	'RMTChangeControPowerView'
+	command	'RMTRelatedObjectsPowerView'
+	command	'RMTTraceabilityPowerView'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_Requirement'
+	property 'version'	value	'V6R2014x'
+;
+add property menu_type_Requirement on program eServiceSchemaVariableMapping.tcl to menu 'type_Requirement';

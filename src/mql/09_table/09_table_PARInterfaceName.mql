@@ -1,0 +1,28 @@
+del table 'PARInterfaceName' system;
+add table 'PARInterfaceName' system
+column #1
+	name	'PlmParameterInterface'
+	label	'emxParameter.common.Dimension'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Parameter'
+	setting	'Column Type'		'program'
+	setting	'function'		'getTypesListNLS'
+	setting	'program'		'emxParameterCreation'
+column #2
+	name	'InterfaceNLS'
+	label	'emxParameter.common.ParameterType'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Parameter'
+	setting	'Column Type'		'program'
+	setting	'function'		'getTypesList'
+	setting	'program'		'emxParameterCreation'
+;
+add property table_PARInterfaceName on program eServiceSchemaVariableMapping.tcl to table 'PARInterfaceName' system;

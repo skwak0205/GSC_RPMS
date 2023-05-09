@@ -1,0 +1,23 @@
+del command 'PMCMyCalendarTaskTypes';
+add command 'PMCMyCalendarTaskTypes'
+	description	''
+	label	'emxProgramCentral.MyCalendar.Toolbar.Types'
+	href	''
+	alt	''
+	setting	'Range Function'		'getRangeForTasksToShow'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxMyCalendar'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMyCalendarTaskTypes'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyCalendarToolbar add command PMCMyCalendarTaskTypes order command PMCMyCalendarTaskTypes 3;
+#channel ==>PMCMyCalendarToolbar
+add property command_PMCMyCalendarTaskTypes on program eServiceSchemaVariableMapping.tcl to command 'PMCMyCalendarTaskTypes';

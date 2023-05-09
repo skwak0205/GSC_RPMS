@@ -1,0 +1,16 @@
+del portal 'AEFStructureComparePortal';
+add portal 'AEFStructureComparePortal'
+	description	'Structure Compare Portal'
+	label	'emxFramework.Common.StructureCompare'
+	href	''
+	channel 	AEFStructureCompareCriteria
+	channel 	AEFStructureCompareResults
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFStructureComparePortal'
+	property	'version'	value	'R214'
+;
+add property portal_AEFStructureComparePortal on program eServiceSchemaVariableMapping.tcl to portal 'AEFStructureComparePortal';

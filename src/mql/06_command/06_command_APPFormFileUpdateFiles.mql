@@ -1,0 +1,19 @@
+del command 'APPFormFileUpdateFiles';
+add command 'APPFormFileUpdateFiles'
+	description	'Document Update Files Command Object'
+	label	'emxComponents.Command.UpdateFiles'
+	href	'javascript:window.updateFiles_onclick()'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'((vcfile == FALSE && vcfolder == FALSE) && $<attribute[attribute_IsVersionObject].value> != True && $<attribute[attribute_SuspendVersioning].value> != True && current.access[checkout] == true && current.access[checkin] == true)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckIn.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFormFileUpdateFiles'
+	property	'version'	value	'R215'
+;
+modify menu LBCGenericDocumentActionsToolBar add command APPFormFileUpdateFiles order command APPFormFileUpdateFiles 7;
+modify menu LBCDocumentSheetActionsToolBar add command APPFormFileUpdateFiles order command APPFormFileUpdateFiles 7;
+#channel ==>LBCGenericDocumentActionsToolBarLBCDocumentSheetActionsToolBar
+add property command_APPFormFileUpdateFiles on program eServiceSchemaVariableMapping.tcl to command 'APPFormFileUpdateFiles';

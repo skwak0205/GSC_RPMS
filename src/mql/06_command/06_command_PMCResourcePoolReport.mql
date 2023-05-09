@@ -1,0 +1,21 @@
+del command 'PMCResourcePoolReport';
+add command 'PMCResourcePoolReport'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Reports'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCResourcePoolReport&showPageHeader=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Hide Mode'		'Cloud'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolReport'
+	property	'version'	value	'R423.HF4'
+;
+modify menu PMCResourcePoolTree add command PMCResourcePoolReport order command PMCResourcePoolReport 0;
+#channel ==>PMCResourcePoolTree
+add property command_PMCResourcePoolReport on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePoolReport';

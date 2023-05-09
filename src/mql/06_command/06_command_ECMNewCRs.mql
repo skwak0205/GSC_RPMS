@@ -1,0 +1,16 @@
+del command 'ECMNewCRs';
+add command 'ECMNewCRs'
+	description	'For showing related CA objects'
+	label	'EnterpriseChangeMgt.Command.ChangeRequest'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeRequestUX:getChangeRequestsFromAffectedItemsIds&table=ECMChangeRequestSummary&toolbar=ECMChangeRequestManagementToolbar&functionality=isChangeRequestTab&selection=multiple&sortColumnName=Name&sortDirection=ascending&PrinterFriendly=true&HelpMarker=emxhelpchangerequestsection'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMNewCRs'
+	property	'version'	value	'R424'
+;
+#channel ==>ECMEnterpriseChangeMgtChannel
+add property command_ECMNewCRs on program eServiceSchemaVariableMapping.tcl to command 'ECMNewCRs';

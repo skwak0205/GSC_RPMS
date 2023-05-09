@@ -1,0 +1,17 @@
+del command 'ECMChangeOrder';
+add command 'ECMChangeOrder'
+	description	'Change Orders Category in CR'
+	label	'EnterpriseChangeMgt.Command.ChangeOrders'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=ECMCRChangeOrderPortal&showPageHeader=true&header=EnterpriseChangeMgt.Heading.ChangeOrder'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMChangeOrder'
+	property	'version'	value	'R419'
+;
+modify menu type_ChangeRequest add command ECMChangeOrder order command ECMChangeOrder 13;
+#channel ==>type_ChangeRequest
+add property command_ECMChangeOrder on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeOrder';

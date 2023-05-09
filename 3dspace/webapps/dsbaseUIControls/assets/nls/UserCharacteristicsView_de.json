@@ -1,0 +1,8 @@
+{
+  "UCV.optionsChecker.optionSet.notExisting.error": "Es muss ein Optionssatz definiert sein, um Benutzermerkmale abzurufen.",
+  "UCV.optionsChecker.optionSet.type.error": "Es muss ein Optionssatz definiert sein, um Benutzermerkmale abzurufen.",
+  "UCV.mode.icon.text.switchReadOnly": "In schreibgeschützten Modus wechseln",
+  "UCV.mode.icon.text.switchEdit": "In Bearbeitungsmodus wechseln",
+  "UCV.add.icon.text": "Benutzermerkmal hinzufügen",
+  "UCV.noUC.error": "Es sind keine Benutzermerkmale verfügbar..."
+}

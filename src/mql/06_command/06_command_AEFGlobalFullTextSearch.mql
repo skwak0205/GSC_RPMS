@@ -1,0 +1,20 @@
+del command 'AEFGlobalFullTextSearch';
+add command 'AEFGlobalFullTextSearch'
+	description	''
+	label	''
+	href	'javascript:void()'
+	alt	'emxFramework.GlobalSearch.Search'
+	setting	'Alignment'		'center'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Framework'
+	setting	'format'		'fullsearch'
+	setting	'Default'		'*'
+	setting	'Width'		'150'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFGlobalFullTextSearch'
+	property	'version'	value	'R214'
+;
+#channel ==>
+add property command_AEFGlobalFullTextSearch on program eServiceSchemaVariableMapping.tcl to command 'AEFGlobalFullTextSearch';

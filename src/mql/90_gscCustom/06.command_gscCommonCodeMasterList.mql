@@ -1,0 +1,20 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통코드 master list table
+################################################################################################
+#del command "gscCommonCodeMasterList";
+add command "gscCommonCodeMasterList"
+    description ""
+    label   "emxComponents.Command.gscCommonCodeMasterList"
+    alt     "emxComponents.Command.gscCommonCodeMasterList"
+    href '${COMMON_DIR}/emxIndentedTable.jsp?table=gscCommonCodeMaster&program=gscCommonCode:selectCodeMasterList&header=emxComponents.Label.gscCommonCodeMasterList&toolbar=gscCommonCodeMasterToolbar&sortColumnName=Name&sortDirection=ascending&selection=multiple&editLink=true&Export=true&massPromoteDemote=true&sortColumnName=SequenceOrder&sortDirection=ascending'
+    setting "Registered Suite" "Components"
+    setting 'Target Location' 'content'
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2023.01.10"
+property "original name"    value "gscCommonCodeMasterList"
+;
+add property command_gscCommonCodeMasterList on program eServiceSchemaVariableMapping.tcl to command 'gscCommonCodeMasterList';

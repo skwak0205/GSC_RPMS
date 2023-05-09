@@ -1,0 +1,31 @@
+del command 'PMCWBSProjectTemplateAssignQuestion';
+add command 'PMCWBSProjectTemplateAssignQuestion'
+	description	'Command to assign question to selected project template tasks'
+	label	'emxProgramCentral.Common.AssignQuestion'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=listQuestionsToAssignTemplateTask'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'!(to[$<relationship_Question>].from.name != "")'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSQuestionsCommand'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconAssignTraining.png'
+	setting	'Access Mask'		'Modify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSProjectTemplateAssignQuestion'
+	property	'version'	value	'R424.HF3'
+;
+modify menu PMCWBSProjectTemplateToolBarActions add command PMCWBSProjectTemplateAssignQuestion order command PMCWBSProjectTemplateAssignQuestion 8;
+modify menu PMCQuestionProjectTemplateMenu add command PMCWBSProjectTemplateAssignQuestion order command PMCWBSProjectTemplateAssignQuestion 0;
+#channel ==>PMCWBSProjectTemplateToolBarActionsPMCQuestionProjectTemplateMenu
+add property command_PMCWBSProjectTemplateAssignQuestion on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSProjectTemplateAssignQuestion';

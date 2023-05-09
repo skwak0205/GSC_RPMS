@@ -1,0 +1,34 @@
+del table 'PMCReportProjectAssignment' system;
+add table 'PMCReportProjectAssignment' system
+column #1
+	name	'Project'
+	label	'emxProgramCentral.Common.Projects'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'eServiceSuiteProgramCentral'
+	setting	'Sortable'		'false'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getColumnRowHeaderData'
+	setting	'Export'		'true'
+	setting	'program'		'emxResourcePoolReports'
+column #2
+	name	'Month Object Dynamic Column'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getDynamicMonthYearColumns'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'emxResourcePoolReports'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportProjectAssignment'
+	property	'version'	value	'R208'
+;
+add property table_PMCReportProjectAssignment on program eServiceSchemaVariableMapping.tcl to table 'PMCReportProjectAssignment' system;

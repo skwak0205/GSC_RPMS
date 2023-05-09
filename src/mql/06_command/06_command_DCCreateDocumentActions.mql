@@ -1,0 +1,21 @@
+del command 'DCCreateDocumentActions';
+add command 'DCCreateDocumentActions'
+	description	'CreateDocument Command Object'
+	label	'emxDocumentCentral.Shortcut.CreateDocument'
+	href	'${SUITE_DIR}/emxDocumentCentralGenericDocumentCreateWizardDialogFS.jsp?type=type_GenericDocument&initSource=ActionMenu'
+	alt	'emxDocumentCentral.Shortcut.CreateDocument'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'DocumentCentral'
+	user	'VPLMViewer'
+	user	'Author'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCreateDocumentActions'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_DCCreateDocumentActions on program eServiceSchemaVariableMapping.tcl to command 'DCCreateDocumentActions';

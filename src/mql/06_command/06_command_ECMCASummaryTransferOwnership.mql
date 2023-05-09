@@ -1,0 +1,21 @@
+del command 'ECMCASummaryTransferOwnership';
+add command 'ECMCASummaryTransferOwnership'
+	description	'Change Action Transfer Ownership'
+	label	'EnterpriseChangeMgt.Command.TransferOwnership'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=transferOwnership'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Create].value || current==policy.property[state_Evaluate].value || current==policy.property[state_InReview].value || current==policy.property[state_InProcessCO].value || current==policy.property[state_Propose].value || current==policy.property[state_Prepare].value || current==policy.property[state_InWork].value || current==policy.property[state_InApproval].value || current==policy.property[state_Approved].value) && !($<interface[interface_ChangeOnHold]=="TRUE">)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_ImmTransferToUser.png'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCASummaryTransferOwnership'
+	property	'version'	value	'R421'
+;
+modify menu ECMCOAffectedChangeActionListToolbar add command ECMCASummaryTransferOwnership order command ECMCASummaryTransferOwnership 0;
+#channel ==>ECMCOAffectedChangeActionListToolbar
+add property command_ECMCASummaryTransferOwnership on program eServiceSchemaVariableMapping.tcl to command 'ECMCASummaryTransferOwnership';

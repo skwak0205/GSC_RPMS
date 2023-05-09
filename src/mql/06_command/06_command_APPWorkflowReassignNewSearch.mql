@@ -1,0 +1,18 @@
+del command 'APPWorkflowReassignNewSearch';
+add command 'APPWorkflowReassignNewSearch'
+	description	'Workflow reassign new sarch'
+	label	'emxComponents.Command.NewSearch'
+	href	'${COMPONENT_DIR}/emxReassignPersonSearch.jsp?searchmode=PersonChooser&suiteKey=Components&searchmenu=APPWorkflowPersonSearchMenu&searchcommand=APPWorkflowOwnerFind&SubmitURL=${COMPONENT_DIR}/emxWorkflowChangeOwner.jsp'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowReassignNewSearch'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowPersonNewSearchMenu add command APPWorkflowReassignNewSearch order command APPWorkflowReassignNewSearch 0;
+#channel ==>APPWorkflowPersonNewSearchMenu
+add property command_APPWorkflowReassignNewSearch on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowReassignNewSearch';

@@ -1,0 +1,17 @@
+del menu 'PMCWeeklyTimeSheetReportResourcePoolToolbarMenu';
+add menu 'PMCWeeklyTimeSheetReportResourcePoolToolbarMenu'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Reports'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCReportPeopleProjectAssignment'
+	command	'PMCReportResourceLoading'
+	command	'PMCLaborReportByPersonForRM'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWeeklyTimeSheetReportResourcePoolToolbarMenu'
+	property 'version'	value	'R211'
+;
+add property menu_PMCWeeklyTimeSheetReportResourcePoolToolbarMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCWeeklyTimeSheetReportResourcePoolToolbarMenu';

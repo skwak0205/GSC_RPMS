@@ -1,0 +1,40 @@
+del form 'AEFSearchUserGroupsForm';
+add form 'AEFSearchUserGroupsForm' web
+field #1
+	name	'Type'
+	label	'emxFramework.Basic.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Admin Type'		'type'
+	setting	'Registered Suite'		'Framework'
+	setting	'Editable'		'false'
+	setting	'Default'		'type_Group'
+field #2
+	name	'Name'
+	label	'emxFramework.Basic.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Framework'
+field #3
+	name	'Description'
+	label	'emxFramework.Basic.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Framework'
+field #4
+	name	'UG_Member'
+	label	'emxFramework.FullTextSearch.UG_Member'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registerd Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSearchUserGroupsForm'
+	property	'version'	value	'R421.HF1'
+;
+add property form_AEFSearchUserGroupsForm on program eServiceSchemaVariableMapping.tcl to form 'AEFSearchUserGroupsForm';

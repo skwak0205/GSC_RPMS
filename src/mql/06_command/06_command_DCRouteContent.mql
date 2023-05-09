@@ -1,0 +1,17 @@
+del command 'DCRouteContent';
+add command 'DCRouteContent'
+	description	'Route Content Command Object'
+	label	'emxFramework.Command.Content'
+	href	'${SUITE_DIR}/emxRouteContentSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Content'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCRouteContent'
+	property	'version'	value	'9-5-0-0'
+;
+#channel ==>
+add property command_DCRouteContent on program eServiceSchemaVariableMapping.tcl to command 'DCRouteContent';

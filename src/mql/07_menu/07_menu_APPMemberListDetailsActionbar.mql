@@ -1,0 +1,15 @@
+del menu 'APPMemberListDetailsActionbar';
+add menu 'APPMemberListDetailsActionbar'
+	description	''
+	label	'emxFramework.MenuItem.SPCMemberListDetailsActionbar'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPMemberListEditActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPMemberListDetailsActionbar'
+	property 'version'	value	'10-0-1-1'
+;
+add property menu_APPMemberListDetailsActionbar on program eServiceSchemaVariableMapping.tcl to menu 'APPMemberListDetailsActionbar';

@@ -1,0 +1,21 @@
+del command 'ECMCOEnableEdit';
+add command 'ECMCOEnableEdit'
+	description	''
+	label	'emxFramework.TableEdit.Enable_Edit'
+	href	'javascript:editMode()'
+	alt	''
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>])'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Access Function'		'isAllowedToAddProposedChange'
+	setting	'Access Program'		'jpo.EnterpriseChangeMdl.ChangeOrderMdl'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOEnableEdit'
+	property	'version'	value	'R417'
+;
+modify menu ECMCOAffectedItemsListToolbar add command ECMCOEnableEdit order command ECMCOEnableEdit 8;
+#channel ==>ECMCOAffectedItemsListToolbar
+add property command_ECMCOEnableEdit on program eServiceSchemaVariableMapping.tcl to command 'ECMCOEnableEdit';

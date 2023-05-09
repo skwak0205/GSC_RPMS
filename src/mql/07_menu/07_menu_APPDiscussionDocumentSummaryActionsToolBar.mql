@@ -1,0 +1,20 @@
+del menu 'APPDiscussionDocumentSummaryActionsToolBar';
+add menu 'APPDiscussionDocumentSummaryActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'TMCDiscussionAddWorkspaceContent'
+	menu	'APPContentSummaryCreateNew'
+	command	'APPDocumentUploadExternalFile'
+	command	'APPSeparator'
+	command	'APPDiscussionRemoveContent'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPDiscussionDocumentSummaryActionsToolBar'
+	property 'version'	value	'R210'
+;
+add property menu_APPDiscussionDocumentSummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPDiscussionDocumentSummaryActionsToolBar';

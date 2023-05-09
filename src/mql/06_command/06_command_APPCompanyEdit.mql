@@ -1,0 +1,26 @@
+del command 'APPCompanyEdit';
+add command 'APPCompanyEdit'
+	description	'Command to edit the company'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Company&HelpMarker=emxhelpcompanyeditdetails&formHeader=emxComponents.Common.EditDetailsHeading&mode=edit&postProcessJPO=emxCompany:companyEditPostProcess'
+	alt	'emxComponents.Command.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Supplier Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompanyEdit'
+	property	'version'	value	'R422'
+;
+modify menu APPCompanyDetailsActionsToolBar add command APPCompanyEdit order command APPCompanyEdit 1;
+#channel ==>APPCompanyDetailsActionsToolBar
+add property command_APPCompanyEdit on program eServiceSchemaVariableMapping.tcl to command 'APPCompanyEdit';

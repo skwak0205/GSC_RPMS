@@ -1,0 +1,25 @@
+del command 'PMCProjectSpaceAddBenefitItem';
+add command 'PMCProjectSpaceAddBenefitItem'
+	description	'Command for Creating New Benefit item'
+	label	'emxProgramCentral.Button.Add'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitItemCreateDialogFS.jsp?cleanSession=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[delete] == true)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpaceAddBenefitItem'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectSpaceBenefitItemToolBarActions add command PMCProjectSpaceAddBenefitItem order command PMCProjectSpaceAddBenefitItem 1;
+#channel ==>PMCProjectSpaceBenefitItemToolBarActions
+add property command_PMCProjectSpaceAddBenefitItem on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpaceAddBenefitItem';

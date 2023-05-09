@@ -1,0 +1,13 @@
+del portal 'ProcessStepDefaultPortal';
+add portal 'ProcessStepDefaultPortal'
+	description	''
+	label	'Regulatory'
+	href	''
+	channel 	ProcessStepDefaultChannel
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProcessSteps'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'ProcessStepDefaultPortal'
+	property	'version'	value	'R421'
+;
+add property portal_ProcessStepDefaultPortal on program eServiceSchemaVariableMapping.tcl to portal 'ProcessStepDefaultPortal';

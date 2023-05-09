@@ -1,0 +1,18 @@
+del command 'ctxMsoiCmd_OpenProject';
+add command 'ctxMsoiCmd_OpenProject'
+	description	'ctxMsoiCmd_OpenProject'
+	label	'emxMSF.Command.ctxMsoiCmd_OpenProject'
+	href	''
+	alt	'ctxMsoiCmd_OpenProject'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_OpenProject'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_SearchResults_Projects add command ctxMsoiCmd_OpenProject order command ctxMsoiCmd_OpenProject 1;
+#channel ==>ctxMsoi_SearchResults_Projects
+add property command_ctxMsoiCmd_OpenProject on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_OpenProject';

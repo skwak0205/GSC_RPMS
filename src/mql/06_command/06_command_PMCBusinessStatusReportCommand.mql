@@ -1,0 +1,17 @@
+del command 'PMCBusinessStatusReportCommand';
+add command 'PMCBusinessStatusReportCommand'
+	description	'This command is used to display the project business report.'
+	label	'emxProgramCentral.StatusReport.Page2'
+	href	'${SUITE_DIR}/ProgramCentralBusinessStatusReport.jsp'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBusinessStatusReportCommand'
+	property	'version'	value	'R419'
+;
+#channel ==>PMCGateDashboardChannel1
+add property command_PMCBusinessStatusReportCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCBusinessStatusReportCommand';

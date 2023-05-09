@@ -1,0 +1,24 @@
+del command 'APPCompanyCollaborate';
+add command 'APPCompanyCollaborate'
+	description	'Command for collaborate in company'
+	label	'emxComponents.Button.Collaborate'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?table=AEFOrganizationChooserDetails&field=TYPES=type_Organization:CURRENT=policy_Organization.state_Active&form=AEFSearchOrganizationForm&selection=multiple&submitURL=../components/emxCommonFullSearchProcess.jsp&srcDestRelName=relationship_CollaborationRequest&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects&mode=collberate&isTo=true&showInitialResults=true'
+	alt	'emxComponents.Button.Collaborate'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCollaborate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompanyCollaborate'
+	property	'version'	value	'R417'
+;
+modify menu APPCompanyDetailsActionsToolBar add command APPCompanyCollaborate order command APPCompanyCollaborate 2;
+modify menu APPBusinessUnitDetailsToolBarActions add command APPCompanyCollaborate order command APPCompanyCollaborate 2;
+#channel ==>APPCompanyDetailsActionsToolBarAPPBusinessUnitDetailsToolBarActions
+add property command_APPCompanyCollaborate on program eServiceSchemaVariableMapping.tcl to command 'APPCompanyCollaborate';

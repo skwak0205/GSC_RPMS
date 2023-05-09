@@ -1,0 +1,15 @@
+del menu 'PMCMyDeskRisksSummaryToolBar';
+add menu 'PMCMyDeskRisksSummaryToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCMyDeskRisksSummaryToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCMyDeskRisksSummaryToolBar'
+	property 'version'	value	'10-6'
+;
+add property menu_PMCMyDeskRisksSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCMyDeskRisksSummaryToolBar';

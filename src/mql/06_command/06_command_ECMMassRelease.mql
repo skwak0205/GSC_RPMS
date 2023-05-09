@@ -1,0 +1,23 @@
+del command 'ECMMassRelease';
+add command 'ECMMassRelease'
+	description	''
+	label	'EnterpriseChangeMgt.Command.MassRelease'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=MassRelease'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionMassRelease.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMassRelease'
+	property	'version'	value	'R216'
+;
+modify menu ECMMassChangeToolbar add command ECMMassRelease order command ECMMassRelease 1;
+modify menu ECMChangeToolbar add command ECMMassRelease order command ECMMassRelease 4;
+#channel ==>ECMMassChangeToolbarECMChangeToolbar
+add property command_ECMMassRelease on program eServiceSchemaVariableMapping.tcl to command 'ECMMassRelease';

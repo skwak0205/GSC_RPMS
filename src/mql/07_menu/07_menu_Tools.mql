@@ -1,0 +1,22 @@
+del menu 'Tools';
+add menu 'Tools'
+	description	''
+	label	''
+	href	''
+	alt	'emxFramework.Menu.Tools'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallAdministration.png'
+	command	'TriggerValidation'
+	command	'ObjectCompare'
+	command	'DataGridPerformanceLogs'
+	command	'DataGridExport'
+	command	'MassPromote'
+	command	'MassDemote'
+	command	'Help'
+	command	'DataGridPrintHTML'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'Tools'
+	property 'version'	value	'R424'
+;
+add property menu_Tools on program eServiceSchemaVariableMapping.tcl to menu 'Tools';

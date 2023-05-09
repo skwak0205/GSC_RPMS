@@ -1,0 +1,28 @@
+del command 'PMCWBSMarkAsDeleted';
+add command 'PMCWBSMarkAsDeleted'
+	description	''
+	label	'emxProgramCentral.Common.MarkDeleteSelected'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=submitMarkDeleteTask'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_MarkAsDeleted32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSMarkAsDeleted'
+	property	'version'	value	'R422'
+;
+modify menu PMCRemoveDeleteMenu add command PMCWBSMarkAsDeleted order command PMCWBSMarkAsDeleted 1;
+modify menu PMCWBSToolBar add command PMCWBSMarkAsDeleted order command PMCWBSMarkAsDeleted 13;
+#channel ==>PMCRemoveDeleteMenuPMCWBSToolBar
+add property command_PMCWBSMarkAsDeleted on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSMarkAsDeleted';

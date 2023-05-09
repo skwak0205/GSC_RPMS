@@ -1,0 +1,17 @@
+del command 'APPIssueReportedAganistNewSearch';
+add command 'APPIssueReportedAganistNewSearch'
+	description	'DSFA Reported Aganist Revised Search'
+	label	'emxComponents.Button.NewSearch'
+	href	'${COMPONENT_DIR}/emxCommonSearch.jsp?formName=IssueCreate&frameName=pageContent&fieldNameActual=txtActualAffectedItem&fieldNameDisplay=txtIssueAffectedItem&searchmode=chooser&suiteKey=Components&searchmenu=SearchIssueAddExistingChooser&srcDestRelName=relationship_Issue&searchcommand=IssueSearchReportedAgainstVCCommand,IssueSearchReportedAgainstCommand&CommandName=IssueSearchReportedAgainstVCCommand&ResolvedTo=false'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPIssueReportedAganistNewSearch'
+	property	'version'	value	'10-7-SP1'
+;
+modify menu APPIssueObjectReportedAganistSearchToolBar add command APPIssueReportedAganistNewSearch order command APPIssueReportedAganistNewSearch 0;
+#channel ==>APPIssueObjectReportedAganistSearchToolBar
+add property command_APPIssueReportedAganistNewSearch on program eServiceSchemaVariableMapping.tcl to command 'APPIssueReportedAganistNewSearch';

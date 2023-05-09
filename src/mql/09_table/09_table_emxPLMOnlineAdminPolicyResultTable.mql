@@ -1,0 +1,30 @@
+del table 'emxPLMOnlineAdminPolicyResultTable' system;
+add table 'emxPLMOnlineAdminPolicyResultTable' system
+column #1
+	name	'Name'
+	label	'emxPlmOnline.label.Policies'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminPolicyReport.jsp?policyName=${ROW_ID}'
+	range	''
+	setting	'Target Location'		'_parent'
+	setting	'Auto Filter'		'true'
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'fillPolicyColumn'
+	setting	'program'		'emxPLMOnlineAdminAccessesViewProgram'
+column #2
+	name	'Desription'
+	label	'emxFramework.Basic.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'fillPolicyDescription'
+	setting	'program'		'emxPLMOnlineAdminAccessesViewProgram'
+;
+add property table_emxPLMOnlineAdminPolicyResultTable on program eServiceSchemaVariableMapping.tcl to table 'emxPLMOnlineAdminPolicyResultTable' system;

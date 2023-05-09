@@ -1,0 +1,18 @@
+del menu 'DCBookDocumentSummaryCreateNew';
+add menu 'DCBookDocumentSummaryCreateNew'
+	description	''
+	label	'emxLibraryCentral.Command.CreateNew'
+	href	''
+	alt	'emxLibraryCentral.Command.CreateNew'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromConnect'
+	command	'DCBookDocumentsCreateNewActionLink'
+	command	'DCCreateVCFileFolder'
+	command	'DCConnectVCFileFolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCBookDocumentSummaryCreateNew'
+	property 'version'	value	'R211'
+;
+add property menu_DCBookDocumentSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'DCBookDocumentSummaryCreateNew';

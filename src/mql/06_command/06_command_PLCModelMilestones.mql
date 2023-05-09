@@ -1,0 +1,18 @@
+del command 'PLCModelMilestones';
+add command 'PLCModelMilestones'
+	description	''
+	label	'emxProductLine.Common.ModelMilestones'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCModelMilestonesTrackSummaryTable&header=emxProductLine.header.Milestones&selection=multiple&program=emxModel:getAllMilestones&sortColumnName=Date&rowGrouping=true&rowGroupingColumnNames=Discipline&HelpMarker=emxhelpmilestonetrack'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Function'		'isMilestoneDispalyAllowed'
+	setting	'Access Program'		'emxPLCMilestones'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCModelMilestones'
+	property	'version'	value	'R418'
+;
+modify menu type_Model add command PLCModelMilestones order command PLCModelMilestones 11;
+#channel ==>type_Model
+add property command_PLCModelMilestones on program eServiceSchemaVariableMapping.tcl to command 'PLCModelMilestones';

@@ -1,0 +1,27 @@
+del command 'PMCCreateResourcePlanFromWBS';
+add command 'PMCCreateResourcePlanFromWBS'
+	description	'CreateResourcePlanFromWBS'
+	label	'emxProgramCentral.Command.ResourcePlan.CreateFromWBS'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?table=PMCResourceRequestCreateWBSTable&selection=multiple&HelpMarker=emxhelpresourcerequestcreatewbs&header=emxProgramCentral.Common.ResourcePlanWBS&objectBased=false&program=emxResourceRequest:getTableResourcePlanWBSData&postProcessURL=../programcentral/emxProgramCentralResourceRequestUtil.jsp?mode=createWBS'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isCommandEnabled'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateFromExisting32.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateResourcePlanFromWBS'
+	property	'version'	value	'R422'
+;
+modify menu PMCCreateResourcePlan add command PMCCreateResourcePlanFromWBS order command PMCCreateResourcePlanFromWBS 2;
+modify menu PMCResourcePlanToolBar add command PMCCreateResourcePlanFromWBS order command PMCCreateResourcePlanFromWBS 3;
+#channel ==>PMCCreateResourcePlanPMCResourcePlanToolBar
+add property command_PMCCreateResourcePlanFromWBS on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateResourcePlanFromWBS';

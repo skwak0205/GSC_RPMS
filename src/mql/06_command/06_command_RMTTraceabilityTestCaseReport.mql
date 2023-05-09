@@ -1,0 +1,28 @@
+del command 'RMTTraceabilityTestCaseReport';
+add command 'RMTTraceabilityTestCaseReport'
+	description	'Launches the Requirement-TestCase Traceability Report'
+	label	'emxRequirements.ActionLink.TraceabilityReport.TestCase'
+	href	'${SUITE_DIR}/TraceabilityOptionsFS.jsp?reportType=TestCase&HelpMarker=emxhelptraceabilityreqtestcase&HelpMarker2=emxhelptraceabilityreqtestcasereport'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showRMTTraceabilityTestCaseReport'
+	setting	'Access Program'		'emxRMTCommon'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTraceabilityTestCaseReport'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeTraceability add command RMTTraceabilityTestCaseReport order command RMTTraceabilityTestCaseReport 3;
+#channel ==>RMTSpecTreeTraceabilityRMTTraceabilityRMTSpecificationsTraceabilityRMTSpecificationsTestCaseTraceability
+add property command_RMTTraceabilityTestCaseReport on program eServiceSchemaVariableMapping.tcl to command 'RMTTraceabilityTestCaseReport';

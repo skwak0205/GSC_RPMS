@@ -1,0 +1,19 @@
+del command 'ECMNewChangeActionGeneratedEvent';
+add command 'ECMNewChangeActionGeneratedEvent'
+	description	'New Change Action Generated Event'
+	label	'EnterpriseChangeMgt.Event.Generated_New_Change_Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>] || type.kindof[$<type_ChangeRequest>])'
+	setting	'Event Type'		'Generated New Change Action'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMNewChangeActionGeneratedEvent'
+	property	'version'	value	'R216'
+;
+modify menu ECMSubscriptionEvents add command ECMNewChangeActionGeneratedEvent order command ECMNewChangeActionGeneratedEvent 8;
+#channel ==>ECMSubscriptionEvents
+add property command_ECMNewChangeActionGeneratedEvent on program eServiceSchemaVariableMapping.tcl to command 'ECMNewChangeActionGeneratedEvent';

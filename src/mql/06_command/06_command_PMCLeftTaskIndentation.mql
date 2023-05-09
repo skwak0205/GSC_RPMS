@@ -1,0 +1,29 @@
+del command 'PMCLeftTaskIndentation';
+add command 'PMCLeftTaskIndentation'
+	description	'PMCLeftTaskIndentation'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?SubMode=Left&mode=taskIndentation'
+	alt	'emxProgramCentral.TaskIndentaion.LeftIndent'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconLeftIndent.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCLeftTaskIndentation'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSToolBar add command PMCLeftTaskIndentation order command PMCLeftTaskIndentation 6;
+modify menu PMCWhatIFExperimentActionToolbar add command PMCLeftTaskIndentation order command PMCLeftTaskIndentation 4;
+modify menu PMCWBSProjectTemplateToolBar add command PMCLeftTaskIndentation order command PMCLeftTaskIndentation 4;
+#channel ==>PMCWBSToolBarPMCWhatIFExperimentActionToolbarPMCWBSProjectTemplateToolBar
+add property command_PMCLeftTaskIndentation on program eServiceSchemaVariableMapping.tcl to command 'PMCLeftTaskIndentation';

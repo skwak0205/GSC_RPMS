@@ -1,0 +1,20 @@
+del command 'PMCResourceRequestSkill';
+add command 'PMCResourceRequestSkill'
+	description	''
+	label	'emxProgramCentral.ResourceRequest.ResourceRequestSkill'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCResourceRequestSkillSummary&program=emxResourcePool:getResourceRequestSkills&freezePane=Name&HelpMarker=emxhelpresourcepoolrequests&header=emxProgramCentral.Common.ResourceRequestSkills&editLink=true'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestSkill'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCResourceRequestSkill on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestSkill';

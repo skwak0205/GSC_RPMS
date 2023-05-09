@@ -1,0 +1,11 @@
+del channel 'ProjectXPChannel';
+add channel 'ProjectXPChannel'
+	description	'Project express view Administration'
+	height	'650'
+	label	'emxPlmOnline.label.Project'
+	href	''
+	setting		'Registered Suite'		'VPLMAdministration'
+	command 	'APPXPProjectSearch'
+;
+#portal ==>APPXPProjectAdminPortal
+add property channel_ProjectXPChannel on program eServiceSchemaVariableMapping.tcl to channel 'ProjectXPChannel';

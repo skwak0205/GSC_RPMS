@@ -1,0 +1,17 @@
+del command 'PMCProjectIssue';
+add command 'PMCProjectIssue'
+	description	'Added for issues view'
+	label	'emxProgramCentral.Menu.Issues'
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxProgramCentralUtil'
+	setting	'Dynamic Command Function'		'createDynamicPMCProjectIssue'
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectIssue'
+	property	'version'	value	'R421.HF5'
+;
+#channel ==>PMCExecution
+add property command_PMCProjectIssue on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectIssue';

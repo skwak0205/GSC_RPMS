@@ -1,0 +1,30 @@
+del command 'TMCGeneralSearch';
+add command 'TMCGeneralSearch'
+	description	''
+	label	'emxTeamCentral.AddExistingResult.Heading'
+	href	'${COMMON_DIR}/enoPreSearch.jsp?commandName=TMCGeneralSearch&relType=relationship_VaultedDocuments'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasWorkspaceAndFileUpload'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCGeneralSearch'
+	property	'version'	value	'R422'
+;
+modify menu TMCContentSummaryTopActionBar add command TMCGeneralSearch order command TMCGeneralSearch 1;
+#channel ==>TMCContentSummaryTopActionBar
+add property command_TMCGeneralSearch on program eServiceSchemaVariableMapping.tcl to command 'TMCGeneralSearch';

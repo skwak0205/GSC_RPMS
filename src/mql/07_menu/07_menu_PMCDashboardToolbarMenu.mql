@@ -1,0 +1,18 @@
+del menu 'PMCDashboardToolbarMenu';
+add menu 'PMCDashboardToolbarMenu'
+	description	''
+	label	'ProgramCentral.Toolbar.DashboardDetailsMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCDashboardActionsMenu'
+	command	'PMCProjectTemplatesCommand'
+	command	'PMCIncludeLevelCommand'
+	command	'PMCShowWBSTasksCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCDashboardToolbarMenu'
+	property 'version'	value	'R207'
+;
+add property menu_PMCDashboardToolbarMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCDashboardToolbarMenu';

@@ -1,0 +1,15 @@
+{
+  "CEV.optionsChecker.rdfServerURL.error": "È necessario definire l'URL del server RDF.",
+  "CEV.optionsChecker.resourceURI.error": "È necessario definire l'URI della risorsa.",
+  "CEV.optionsChecker.constraintsPosition.error": "La posizione del popup delle limitazioni deve essere \"in alto\", \"a destra\", \"in basso\" o \"a sinistra\"",
+  "CEV.optionsChecker.buttons.types.error": "Il tipo del pulsante '{label}' deve essere uno tra :\"principale\", \"predefinito\", \"informazioni\", \"operazione riuscita\", \"avviso\", \"errore\"",
+  "CEV.optionsChecker.buttons.specificActions.error": "L'azione specifica per la caratteristica '{key}' deve essere una funzione.",
+  "CEV.optionsChecker.search.error": "È prevista una funzione per cercare i valori per la caratteristica '{key}'.",
+  "CEV.title": "Editor delle caratteristiche",
+  "CEV.defaultMessage": "Si è verificato un errore durante il recupero di tutte le caratteristiche...",
+  "CEV.userCharacteristics.title": "Caratteristiche utente",
+  "CEV.characteristics.title": "Caratteristiche",
+  "CEV.okButton.content": "OK",
+  "CEV.cancelButton.content": "Annulla",
+  "CEV.cancelButton.error": "Errore dopo aver fatto clic sul pulsante \"Annulla\"..."
+}

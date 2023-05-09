@@ -1,0 +1,22 @@
+del command 'APPCapabilityAddExisting';
+add command 'APPCapabilityAddExisting'
+	description	'Capability Add Existing Command Object'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMPONENT_DIR}/emxComponentsAddExistingCapabilitiesFS.jsp'
+	alt	'emxComponents.Common.AddExisting'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCapabilityAddExisting'
+	property	'version'	value	'R417'
+;
+modify menu APPCapabilitySummaryActionsToolBar add command APPCapabilityAddExisting order command APPCapabilityAddExisting 1;
+#channel ==>APPCapabilitySummaryActionsToolBar
+add property command_APPCapabilityAddExisting on program eServiceSchemaVariableMapping.tcl to command 'APPCapabilityAddExisting';

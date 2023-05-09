@@ -1,0 +1,20 @@
+del menu 'IssueReportedAgainstListToolBarActions';
+add menu 'IssueReportedAgainstListToolBarActions'
+	description	''
+	label	'emxComponents.Menu.IssueReportedAgainstListToolBarActions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current != Closed)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'AddExistingIssueReportedAgainstLink'
+	command	'AddExternalIssueReportedAgainstLink'
+	command	'AEFSeparator'
+	command	'RemoveSelectedIssueReportedAgainstLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'IssueReportedAgainstListToolBarActions'
+	property 'version'	value	'R421'
+;
+add property menu_IssueReportedAgainstListToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'IssueReportedAgainstListToolBarActions';

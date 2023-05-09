@@ -1,0 +1,22 @@
+del menu 'PMCTaskDependencyActionMenu';
+add menu 'PMCTaskDependencyActionMenu'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'hasTaskDepednecyEditAccess'
+	setting	'Access Program'		'emxTaskBase'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCAddTaskDependency'
+	command	'PMCAddExternalTaskDependency'
+	command	'AEFSeparator'
+	command	'PMCTaskDependencyUpdateSelected'
+	command	'PMCTaskDependencyRemoveSelected'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCTaskDependencyActionMenu'
+	property 'version'	value	'R418'
+;
+add property menu_PMCTaskDependencyActionMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCTaskDependencyActionMenu';

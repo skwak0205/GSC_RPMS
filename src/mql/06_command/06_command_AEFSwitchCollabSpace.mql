@@ -1,0 +1,19 @@
+del command 'AEFSwitchCollabSpace';
+add command 'AEFSwitchCollabSpace'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Dynamic Command Program'		'emxAEFUtil'
+	setting	'Alignment'		'right'
+	setting	'Dynamic Command Function'		'getCollaborativeSpace'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSwitchCollabSpace'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_AEFSwitchCollabSpace on program eServiceSchemaVariableMapping.tcl to command 'AEFSwitchCollabSpace';

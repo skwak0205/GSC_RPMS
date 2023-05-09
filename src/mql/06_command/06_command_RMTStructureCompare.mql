@@ -1,0 +1,34 @@
+del command 'RMTStructureCompare';
+add command 'RMTStructureCompare'
+	description	''
+	label	'emxRequirements.ActionLink.StructureCompare'
+	href	'${COMMON_DIR}/emxAdvancedStructureCompare.jsp?form=RMTReqSpecStructureCompare&submitURL=../requirements/emxRequirementsComparePostProcess.jsp&header=emxRequirements.Heading.StructureCompare'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionCompare.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTStructureCompare'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecificationsListBottomActionBar add command RMTStructureCompare order command RMTStructureCompare 4;
+modify menu RMTSpecTreeActionBar add command RMTStructureCompare order command RMTStructureCompare 1;
+modify menu RMTRichTextEditorActions add command RMTStructureCompare order command RMTStructureCompare 1;
+modify menu RMTSpecificationListActionMenu add command RMTStructureCompare order command RMTStructureCompare 6;
+#channel ==>RMTSpecificationsListBottomActionBarRMTSpecTreeActionBarRMTRichTextEditorActionsRMTSpecificationListActionMenu
+add property command_RMTStructureCompare on program eServiceSchemaVariableMapping.tcl to command 'RMTStructureCompare';

@@ -1,0 +1,21 @@
+del command 'FTREditProductConfigurationActionLink';
+add command 'FTREditProductConfigurationActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ProductConfiguration&mode=Edit&formHeader=emxProduct.Heading.EditNoRev&HelpMarker=emxhelpproductconfigurationedit&postProcessJPO=emxProductConfiguration:connectTopLevelPart'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditProductConfigurationActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRProductConfigurationPropertiesActionBar add command FTREditProductConfigurationActionLink order command FTREditProductConfigurationActionLink 2;
+#channel ==>FTRProductConfigurationPropertiesActionBar
+add property command_FTREditProductConfigurationActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTREditProductConfigurationActionLink';

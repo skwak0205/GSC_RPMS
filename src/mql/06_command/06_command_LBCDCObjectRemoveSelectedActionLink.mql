@@ -1,0 +1,24 @@
+del command 'LBCDCObjectRemoveSelectedActionLink';
+add command 'LBCDCObjectRemoveSelectedActionLink'
+	description	'Remove Selected Action Link'
+	label	'emxDocumentCentral.Access.Remove'
+	href	'${SUITE_DIR}/emxDocumentCentralObjectRemoveContentsProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxDocumentCentral.Message.ConfirmRemoveSelected'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDCObjectRemoveSelectedActionLink'
+	property	'version'	value	'R212'
+;
+modify menu LBCLibraryBookshelvesActionToolBar add command LBCDCObjectRemoveSelectedActionLink order command LBCDCObjectRemoveSelectedActionLink 0;
+modify menu LBCBookshelfBooksActionToolBar add command LBCDCObjectRemoveSelectedActionLink order command LBCDCObjectRemoveSelectedActionLink 0;
+modify menu LBCBookDocumentsActionToolBar add command LBCDCObjectRemoveSelectedActionLink order command LBCDCObjectRemoveSelectedActionLink 6;
+modify menu LBCFolderContentActionToolBar add command LBCDCObjectRemoveSelectedActionLink order command LBCDCObjectRemoveSelectedActionLink 0;
+#channel ==>LBCLibraryBookshelvesActionToolBarLBCBookshelfBooksActionToolBarLBCBookDocumentsActionToolBarLBCFolderContentActionToolBar
+add property command_LBCDCObjectRemoveSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'LBCDCObjectRemoveSelectedActionLink';

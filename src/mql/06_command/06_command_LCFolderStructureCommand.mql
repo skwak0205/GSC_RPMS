@@ -1,0 +1,19 @@
+del command 'LCFolderStructureCommand';
+add command 'LCFolderStructureCommand'
+	description	'Library Folder Structure Command'
+	label	'emxDocumentCentral.Common.Folders'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Structure Program'		'emxDCUtils'
+	setting	'Submit'		'true'
+	setting	'Structure Function'		'getSubFolderList'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCFolderStructureCommand'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu LCFolderStructure add command LCFolderStructureCommand order command LCFolderStructureCommand 0;
+#channel ==>LCFolderStructure
+add property command_LCFolderStructureCommand on program eServiceSchemaVariableMapping.tcl to command 'LCFolderStructureCommand';

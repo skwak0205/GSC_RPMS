@@ -1,0 +1,12 @@
+del portal 'ECMCRChangeOrderPortal';
+add portal 'ECMCRChangeOrderPortal'
+	description	''
+	label	''
+	href	''
+	channel 	ECMCRChangeOrdersChannnel1,ECMCRChangeOrdersChannnel2
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCRChangeOrderPortal'
+	property	'version'	value	'R419'
+;
+add property portal_ECMCRChangeOrderPortal on program eServiceSchemaVariableMapping.tcl to portal 'ECMCRChangeOrderPortal';

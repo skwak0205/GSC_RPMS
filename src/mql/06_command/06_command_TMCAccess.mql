@@ -1,0 +1,27 @@
+del command 'TMCAccess';
+add command 'TMCAccess'
+	description	'Access Command Object'
+	label	'emxFramework.Command.Access'
+	href	'${SUITE_DIR}/emxTeamAccessSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Access'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Function'		'displayTreeNodeAccessCheck'
+	setting	'Access Program'		'emxWorkspace'
+	setting	'Image'		'iconSmallAccess.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCAccess'
+	property	'version'	value	'R422'
+;
+modify menu type_Folder add command TMCAccess order command TMCAccess 1;
+modify menu TMCtype_Message add command TMCAccess order command TMCAccess 1;
+modify menu TMCtype_Route add command TMCAccess order command TMCAccess 1;
+#channel ==>type_FolderTMCtype_MessageTMCtype_Route
+add property command_TMCAccess on program eServiceSchemaVariableMapping.tcl to command 'TMCAccess';

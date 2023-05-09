@@ -1,0 +1,22 @@
+del command 'FTRAddExistingBuildSatisfiesFeatureLink';
+add command 'FTRAddExistingBuildSatisfiesFeatureLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_CONFIGURATIONFEATURES,type_LOGICALSTRUCTURES&excludeOIDprogram=emxFeature:getSatisfiedFeaturesList&table=FTRFeatureSearchResultsTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../configuration/SearchUtil.jsp?mode=AddExisting&relName=relationship_BuildSatisfies&from=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingBuildSatisfiesFeatureLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRBuildSatisfiesTopActionBar add command FTRAddExistingBuildSatisfiesFeatureLink order command FTRAddExistingBuildSatisfiesFeatureLink 0;
+#channel ==>FTRBuildSatisfiesTopActionBar
+add property command_FTRAddExistingBuildSatisfiesFeatureLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingBuildSatisfiesFeatureLink';

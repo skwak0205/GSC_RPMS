@@ -1,0 +1,15 @@
+del menu 'APPHomePageDocumentsToolbar';
+add menu 'APPHomePageDocumentsToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	menu	'ECMChangeToolbar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPHomePageDocumentsToolbar'
+	property 'version'	value	'R421'
+;
+add property menu_APPHomePageDocumentsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPHomePageDocumentsToolbar';

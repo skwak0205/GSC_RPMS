@@ -1,0 +1,17 @@
+del menu 'MCMAttributeGroupPropertiesDetailActionsToolBar';
+add menu 'MCMAttributeGroupPropertiesDetailActionsToolBar'
+	description	''
+	label	'emxMultipleClassification.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'MultipleClassification'
+	setting	'Access Function'		'hasAccessForCompanyNodes'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'MCMAttributeGroupPropertiesDetailActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_MCMAttributeGroupPropertiesDetailActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'MCMAttributeGroupPropertiesDetailActionsToolBar';

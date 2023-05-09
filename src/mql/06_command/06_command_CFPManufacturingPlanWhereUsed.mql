@@ -1,0 +1,18 @@
+del command 'CFPManufacturingPlanWhereUsed';
+add command 'CFPManufacturingPlanWhereUsed'
+	description	''
+	label	'DMCPlanning.TreeCategory.WhereUsed'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=ManufacturingPlan:getParentManufacturingPlan&table=CFPManufacturingPlanContextSummaryTable&editRootNode=false&selection=multiple&header=DMCPlanning.Heading.ParentManufacturingPlans&HelpMarker=emxhelptechnicalfeatureview&massPromoteDemote=false&objectCompare=false&freezePane=Title&sortColumnName=Revision'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'800'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DMCPlanning'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPManufacturingPlanWhereUsed'
+	property	'version'	value	'R209'
+;
+#channel ==>
+add property command_CFPManufacturingPlanWhereUsed on program eServiceSchemaVariableMapping.tcl to command 'CFPManufacturingPlanWhereUsed';

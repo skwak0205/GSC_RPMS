@@ -1,0 +1,26 @@
+del command 'PeopleAddExistingDept';
+add command 'PeopleAddExistingDept'
+	description	'People AddExisting Command Object for Department'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?mode=addPeopleToCompany&submitLabel=emxFramework.GlobalSearch.Done&table=AEFPersonChooserDetails&form=BPSUserSearchForm&selection=multiple&submitURL=../components/emxCommonFullSearchProcess.jsp&showInitialResults=true&fieldQueryProgram=emxDepartment:getFieldQueryForDepartment'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'type=="$<type_Department>"'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForPeopleAddExisting'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddMember.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'PeopleAddExistingDept'
+	property	'version'	value	'R422'
+;
+modify menu APPPeopleSummaryToolBar add command PeopleAddExistingDept order command PeopleAddExistingDept 3;
+#channel ==>APPPeopleSummaryToolBar
+add property command_PeopleAddExistingDept on program eServiceSchemaVariableMapping.tcl to command 'PeopleAddExistingDept';

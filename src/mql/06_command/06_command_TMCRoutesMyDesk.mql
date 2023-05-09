@@ -1,0 +1,20 @@
+del command 'TMCRoutesMyDesk';
+add command 'TMCRoutesMyDesk'
+	description	'Routes Command Object'
+	label	'emxFramework.MenuItem.Routes'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxRoute:getMyDeskRoutes&table=MyDeskRouteSummary&header=emxTeamCentral.Common.RouteHeader&bottomActionbar=TMCRouteSummaryBottomActionBar&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelproutes'
+	alt	'emxFramework.MenuItem.Routes'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'yellowbullet.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRoutesMyDesk'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCRoutesMyDesk on program eServiceSchemaVariableMapping.tcl to command 'TMCRoutesMyDesk';

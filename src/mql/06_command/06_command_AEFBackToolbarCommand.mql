@@ -1,0 +1,17 @@
+del command 'AEFBackToolbarCommand';
+add command 'AEFBackToolbarCommand'
+	description	''
+	label	''
+	href	'javascript:getTopWindow().bclist.goBack()'
+	alt	'emxFramework.BackToolbarMenu.label'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconMedPrevious.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFBackToolbarCommand'
+	property	'version'	value	'R214'
+;
+#channel ==>
+add property command_AEFBackToolbarCommand on program eServiceSchemaVariableMapping.tcl to command 'AEFBackToolbarCommand';

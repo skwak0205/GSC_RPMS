@@ -1,0 +1,28 @@
+del command 'RMTTraceabilityRequirementReportActionLink';
+add command 'RMTTraceabilityRequirementReportActionLink'
+	description	'Launches the Requirement-Requirement Traceabilty Report'
+	label	'emxRequirements.ActionLink.TraceabilityReport.Requirement'
+	href	'${SUITE_DIR}/PortalIntermediate.jsp?portal=RMTSpecificationsReqTraceability&toolbar=&showPageHeader=true&HelpMarker=emxhelptraceabilityreqreqoptions&HelpMarker2=emxhelptraceabilityreqreqreport&header=emxRequirements.Heading.ReportsCategory'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTraceabilityRequirementReportActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementTraceabilityMenu add command RMTTraceabilityRequirementReportActionLink order command RMTTraceabilityRequirementReportActionLink 2;
+modify menu RMTRequirementSpecTraceabilityMenu add command RMTTraceabilityRequirementReportActionLink order command RMTTraceabilityRequirementReportActionLink 2;
+#channel ==>RMTRequirementTraceabilityMenuRMTRequirementSpecTraceabilityMenu
+add property command_RMTTraceabilityRequirementReportActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTTraceabilityRequirementReportActionLink';

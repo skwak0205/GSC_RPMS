@@ -1,0 +1,26 @@
+del form 'AEFSearchSecurityContextForm';
+add form 'AEFSearchSecurityContextForm' web
+field #1
+	name	'Type'
+	label	'emxFramework.Basic.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Admin Type'		'type'
+	setting	'Registered Suite'		'Framework'
+	setting	'Editable'		'false'
+	setting	'Default'		'type_SecurityContext'
+field #2
+	name	'Name'
+	label	'emxFramework.Basic.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSearchSecurityContextForm'
+	property	'version'	value	'R215'
+;
+add property form_AEFSearchSecurityContextForm on program eServiceSchemaVariableMapping.tcl to form 'AEFSearchSecurityContextForm';

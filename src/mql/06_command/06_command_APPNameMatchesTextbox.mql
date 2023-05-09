@@ -1,0 +1,19 @@
+del command 'APPNameMatchesTextbox';
+add command 'APPNameMatchesTextbox'
+	description	''
+	label	'emxComponents.Common.Name'
+	href	''
+	alt	''
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Components'
+	setting	'Default'		'*'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPNameMatchesTextbox'
+	property	'version'	value	'R211'
+;
+modify menu APPRoleSearchToolbar add command APPNameMatchesTextbox order command APPNameMatchesTextbox 1;
+modify menu APPGroupSearchToolbar add command APPNameMatchesTextbox order command APPNameMatchesTextbox 1;
+#channel ==>APPRoleSearchToolbarAPPGroupSearchToolbar
+add property command_APPNameMatchesTextbox on program eServiceSchemaVariableMapping.tcl to command 'APPNameMatchesTextbox';

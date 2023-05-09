@@ -1,0 +1,31 @@
+del command 'RMTDeleteUseCaseActionLink';
+add command 'RMTDeleteUseCaseActionLink'
+	description	''
+	label	'emxRequirements.ActionLink.Delete'
+	href	'${SUITE_DIR}/UseCaseUtil.jsp?Mode=Delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.Delete'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Product Manager'
+	user	'Requirement Manager'
+	user	'System Engineer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTDeleteUseCaseActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTUseCaseSubUseCaseBottomActionBar add command RMTDeleteUseCaseActionLink order command RMTDeleteUseCaseActionLink 1;
+modify menu RMTRequirementUseCaseBottomActionBar add command RMTDeleteUseCaseActionLink order command RMTDeleteUseCaseActionLink 1;
+modify menu RMTFeatureUseCaseBottomActionBar add command RMTDeleteUseCaseActionLink order command RMTDeleteUseCaseActionLink 1;
+#channel ==>RMTUseCaseSubUseCaseBottomActionBarRMTRequirementUseCaseBottomActionBarRMTFeatureUseCaseBottomActionBar
+add property command_RMTDeleteUseCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTDeleteUseCaseActionLink';

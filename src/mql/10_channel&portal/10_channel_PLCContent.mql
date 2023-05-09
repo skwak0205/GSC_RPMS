@@ -1,0 +1,16 @@
+del channel 'PLCContent';
+add channel 'PLCContent'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProductLine'
+	command 	'PLCProductSpecifications','PLCProductReferenceDocumentTreeCategory'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCContent'
+	property	'version'	value	'R216'
+;
+#portal ==>PLCContent
+add property channel_PLCContent on program eServiceSchemaVariableMapping.tcl to channel 'PLCContent';

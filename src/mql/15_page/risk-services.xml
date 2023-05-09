@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd">
+
+
+<!-- ******************************************* -->
+<!-- ****************   RISK MGMT  ************** -->
+<!-- ******************************************* -->
+
+  <ds:service name="RiskContextInfo">
+      <ds:license products="ENORISK_AP"/>
+
+      <ds:data>
+         <ds:jpo       classname="com.dassault_systemes.enovia.risk.RiskContext" function="getContextInfo" returnedData="idsAndData"  localInvokation="java" />
+      </ds:data>
+
+      <ds:field name="name">    <ds:selectable expression="evaluate[if attribute[PLMEntity.PLM_ExternalID] != '' then attribute[PLMEntity.PLM_ExternalID] else name]" type="bus"/></ds:field>
+      <ds:field name="title"          description="Title information if used, otherwise the object name.">  <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+      <ds:field name="policy"      includeByDefault="yes" description="required to support state NLS"><ds:selectable expression="policy" type="bus"/></ds:field>
+      <ds:field name="stateNLS"    includeByDefault="yes"><ds:selectable expression="current" type="bus" format="state"/></ds:field>
+      <ds:field name="typeNLS"     includeByDefault="yes"><ds:selectable expression="type" type="bus" format="type"/></ds:field>
+
+      <ds:field name="projectTitle"     description="Collaborative Space the object was created in." >
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getCollabSpaceTitle" localInvokation="java">
+                <ds:arg arg-name="collabField" arg-value="project.transient"/>
+           </ds:fieldjpo>
+      </ds:field>
+      <ds:field name="project"     includeByDefault="yes" description="Collaborative Space (name) the Project was created in."> <ds:selectable expression="project" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+      <ds:field name="project.transient" includeByDefault="always">
+           <ds:selectable expression="project" transient="true"/>
+      </ds:field>
+
+      <ds:field name="owner"       includeByDefault="no">  <ds:selectable expression="owner" type="bus" format="fullname"/></ds:field>
+      <ds:field name="typeicon"    includeByDefault="yes"><ds:image source="primaryOrType" size="small" /></ds:field>
+      <ds:field name="icon"        includeByDefault="no(private)">
+         <ds:image source="businessType" size="small"/>
+      </ds:field>
+      <ds:field name="image"  includeByDefault="yes" description="The thumbnail or type icon associated to the document object.">
+            <ds:image source="primaryOrType" size="medium"  indexBasedImage="false"/>
+        </ds:field> 
+      <ds:field name="thumbnail">
+           <ds:image source="primaryImage" size="thumbnail"/>
+      </ds:field>
+
+     <ds:field name="riskCreateAccess"   includeByDefault="no(private)" description="Whether the user has create access for a risk.">
+         <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getRiskCreateAccess" localInvokation="java"></ds:fieldjpo>
+      </ds:field>
+
+	  <ds:field name="readAccess"      description="Whether the user has read access to the context." includeByDefault="yes" >             <ds:selectable expression="current.access[read]"            type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+       <ds:field name="matrixConfigCreateAccess" includeByDefault="no(private)"  description="Whether the user has create access for a RMC.">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfiguration"    function="getCreateAccess">
+              </ds:rangejpo>
+          </ds:range>
+      </ds:field>
+
+      <ds:ref-subservice name="configuration"      referenceName="risk.configuration"        includeByDefault="no">
+         <ds:data>
+            <ds:jpo       classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="getGoverningRiskConfiguration" localInvokation="java" returnedData="idsAndData"/>
+         </ds:data>
+      </ds:ref-subservice>
+
+<!--
+      <ds:field name="isSimpleTask"   includeByDefault="no(private)" description="Whether this is a Colllab Task.">
+         <ds:selectable expression="evaluate[if (type=='Project Space' || type=='Program' || type=='Risk Context Proxy' || type=='dsplan:xProject' || (type=='Task Management' &amp;&amp; (to[Subtask] || from[Subtask]))) then 'FALSE' else 'TRUE']" type="bus"/>
+      </ds:field>
+-->
+      <ds:ref-subservice name="risks" referenceName="dpm.risk" includeByDefault="no">
+         <ds:data>
+              <ds:jpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getRelatedRisks" returnedData="idsAndData"  localInvokation="java"/>
+          </ds:data>
+      </ds:ref-subservice>
+
+      <ds:ref-subservice name="opportunities" referenceName="dpm.opportunity" includeByDefault="no">
+         <ds:data>
+              <ds:jpo classname="com.dassault_systemes.enovia.opportunity.OpportunityService" function="getRelatedOpportunities" returnedData="idsAndData" localInvokation="java" />
+          </ds:data>
+      </ds:ref-subservice>
+  </ds:service>
+
+   <ds:service name="dpm.riskmatrix">
+       <ds:license products="ENORISK_AP"/>
+       <ds:data>
+            <ds:jpo       classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="getRiskMatrixConfiguration" returnedData="idsAndData" localInvokation="java"/>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="updateRiskMatrixConfiguration"  localInvokation="java" />
+        </ds:data>
+
+        <ds:field name="rmcType"          description="RMCType">     <ds:selectable expression="attribute[RMC Type]" type="bus"  createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="attribute[Title]" autosave="true" type="bus"  createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"             autosave="true" type="bus"  createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="revision"       description="(unique discriminator only, Risks are not revisioned)">     <ds:selectable expression="revision"                         type="bus"  createOperation="no"  modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="description"    description="Description of the object.">                                <ds:selectable expression="description"      autosave="true"             createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated"             format="utc"          createOperation="no"  modifyOperation="no"  readOperation="yes" sixw="_tag_implicit_ds6w:when/ds6w:created"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object.">               <ds:selectable expression="attribute[Originator]"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"               format="utc"          createOperation="no"  modifyOperation="no"  readOperation="yes" sixw="_tag_implicit_ds6w:when/ds6w:modified"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+
+        <ds:field name="organization"  description="The Organization the object was created in."   >            <ds:selectable expression="organization"                     type="bus"  createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+
+        <ds:field name="projectTitle" description="Collaborative Space the object was created in.">
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getCollabSpaceTitle" localInvokation="java">
+                <ds:arg arg-name="collabField" arg-value="project.transient"/>
+           </ds:fieldjpo>
+        </ds:field>
+      <ds:field name="project"        description="Collaborative Space (name) the Project was created in."> <ds:selectable expression="project" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="project.transient" includeByDefault="always">
+             <ds:selectable expression="project" transient="true"/>
+        </ds:field>
+
+        <ds:field name="state.transient" includeByDefault="always" conditionalInclude="modifyAccess,deleteAccess"><ds:selectable expression="current" transient="true"/></ds:field>
+
+        <ds:ref-subservice name="ownerInfo"         referenceName="risk.ownerInfo"        includeByDefault="no" >
+           <ds:data>
+             <ds:jpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="owner" arg-value="true"/>
+             </ds:jpo>
+          </ds:data>
+        </ds:ref-subservice>
+
+
+        <ds:field name="modifyAccess" includeByDefault="no(private)">
+            <ds:selectable expression="current.access[modify]"           type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+       </ds:field>
+
+        <ds:field name="deleteAccess" includeByDefault="no(private)">
+            <ds:selectable expression="current.access[delete]"           type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+
+        <ds:field name="matrixConfigCreateAccess" includeByDefault="no(private)"  description="Whether the user has create access for a RMC.">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfiguration"    function="getCreateAccess">
+              </ds:rangejpo>
+          </ds:range>
+        </ds:field>
+
+        <ds:ref-subservice name="matrix" itemType="composition-service"     referenceName="risk.matrix"        includeByDefault="no">
+            <ds:data  cardinality="one">
+                <ds:jpo       classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="getRiskMatrix" returnedData="idsAndData" localInvokation="java"/>
+            </ds:data>
+         </ds:ref-subservice>
+
+       <ds:ref-subservice name="configuredItems" referenceName="risk.configuredItems" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="getRiskConfigurationReferences"  localInvokation="java" returnedData="idsAndData">
+                     <ds:arg arg-name="relationshiptype" arg-value="Risk Configuration"/>
+                     <ds:arg arg-name="typeFilter"       arg-value="Program,Risk Context Proxy"/>
+                </ds:jpo>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="updateRiskConfigurationReferences"  localInvokation="java">
+                     <ds:arg arg-name="relationshiptype" arg-value="Risk Configuration"/>
+                </ds:updatejpo>
+            </ds:data>
+       </ds:ref-subservice>
+
+       <ds:ref-subservice name="configuredUses" referenceName="risk.configuredUses" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="getRiskConfigurationReferences"  localInvokation="java" returnedData="idsAndData">
+                     <ds:arg arg-name="relationshiptype" arg-value="Risk Matrix"/>
+                </ds:jpo>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="updateRiskConfigurationReferences"  localInvokation="java">
+                     <ds:arg arg-name="relationshiptype" arg-value="Risk Matrix"/>
+                </ds:updatejpo>
+            </ds:data>
+       </ds:ref-subservice>
+
+       <ds:subservice name="performRefresh" includeByDefault="never" hidden="true">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="performRefresh" localInvokation="java" processMultiple="true" />
+            </ds:data>
+       </ds:subservice>
+
+      <ds:singleCardinality>nls</ds:singleCardinality>
+      <ds:singleCardinality>Xaxis</ds:singleCardinality>
+      <ds:singleCardinality>Yaxis</ds:singleCardinality>
+
+   </ds:service>
+
+   <ds:service name="risk.matrix" itemType="composition-service">
+      <ds:data>
+         <ds:print />
+      </ds:data>
+   </ds:service>
+
+   <ds:service name="risk.configuredItems" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="type"           description="The object type.">                                          <ds:selectable expression="type"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="typesForSearch">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService"    function="getRangeTypeDerivatives">
+                  <ds:arg arg-name="relKey"           arg-value="configuredItemTypesForSearch"/>
+                  <ds:arg arg-name="searchtypes"      arg-value="Program"/>
+                  <ds:arg arg-name="relationshipType" arg-value="Risk Configuration"/>
+                  <ds:arg arg-name="relationshipDir"  arg-value="fromtype"/>
+              </ds:rangejpo>
+          </ds:range>
+       </ds:field>
+      <ds:field name="image">
+         <ds:image source="primaryOrType" size="medium"/>
+      </ds:field>
+      <ds:field name="thumbnail">
+           <ds:image source="primaryImage" size="thumbnail"/>
+      </ds:field>
+
+   </ds:service>
+
+   <ds:service name="risk.configuredUses" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+   </ds:service>
+
+   <ds:service name="risk.configuration" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current maturity state">                                    <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+
+<!--
+        <ds:field name="sourceName"     description="The name of the object providing the configuration">        <ds:selectable expression="to[Risk Configuration].from.name"       createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="sourceType"     description="The type of the object providing the configuration">        <ds:selectable expression="to[Risk Configuration].from.type"       createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="sourceID"       description="The ID of the object providing the configuration">          <ds:selectable expression="to[Risk Configuration].from.physicalid" createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+-->
+        <ds:field name="organization"   description="The Organization the object was created in." >              <ds:selectable expression="organization"                     type="bus"  createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="projectTitle"  description="Collaborative Space the object was created in.">
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getCollabSpaceTitle" localInvokation="java">
+                <ds:arg arg-name="collabField" arg-value="project.transient"/>
+           </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="project"        description="Collaborative Space (name) the Project was created in."> <ds:selectable expression="project" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="project.transient" includeByDefault="always">
+           <ds:selectable expression="project" transient="true"/>
+        </ds:field>
+
+        <ds:ref-subservice name="ownerInfo"         referenceName="risk.ownerInfo"        includeByDefault="no" >
+           <ds:data>
+             <ds:jpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="owner" arg-value="true"/>
+             </ds:jpo>
+          </ds:data>
+        </ds:ref-subservice>
+
+        <ds:field name="state.transient" includeByDefault="always" conditionalInclude="modifyAccess,deleteAccess"><ds:selectable expression="current" transient="true"/></ds:field>
+
+        <ds:field name="modifyAccess" includeByDefault="no(private)">
+            <ds:selectable expression="current.access[modify]"           type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+
+        <ds:field name="deleteAccess" includeByDefault="no(private)">
+            <ds:selectable expression="current.access[delete]"           type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+
+        <ds:ref-subservice name="matrix" itemType="composition-service" referenceName="risk.matrix"        includeByDefault="no" >
+            <ds:data cardinality="one">
+                <ds:jpo       classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="getRiskMatrix" localInvokation="java" returnedData="idsAndData"/>
+            </ds:data>
+       </ds:ref-subservice>
+   </ds:service>
+
+   <!--
+   <ds:service name="dpm.riskproxy">
+        <ds:data>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskContext" function="deleteProxyContext" localInvokation="true" />
+        </ds:data>
+   </ds:service>
+   -->
+
+   <ds:service name="dpm.risk">
+        <ds:license products="ENORISK_AP"/>
+        <ds:data>
+            <ds:jpo       classname="com.dassault_systemes.enovia.risk.RiskService" function="getRiskManagement" returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="updateRiskManagement" localInvokation="true" />
+        </ds:data>
+
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="required" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="required" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="revision"       description="(unique discriminator only, Risks are not revisioned)">     <ds:selectable expression="revision"     type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="description"    description="Description of the object.">                                <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes" sixw="_tag_implicit_ds6w:when/ds6w:created"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object.">               <ds:selectable expression="attribute[Originator]"        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes" sixw="_tag_implicit_ds6w:when/ds6w:modified"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"      autosave="true"   createOperation="no"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+
+        <ds:field name="policy"         description="The current policy of the object.">
+            <ds:selectable createOperation="yes" modifyOperation="yes" readOperation="yes" expression="policy" sixw="_tag_implicit_ds6w:what/ds6w:policy"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getPolicies">
+                      <ds:arg arg-name="type" arg-value="Risk"/>
+              </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="state"         description="The current maturity of the object.">
+            <ds:selectable expression="current"  createOperation="no" modifyOperation="yes" readOperation="yes"  sixw="_tag_implicit_ds6w:what/ds6w:status" />
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getAllPolicyStates">
+                    <ds:arg arg-name="type" arg-value="Risk"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="state.transient" includeByDefault="always" conditionalInclude="modifyAccess,fromConnectAccess,deleteAccess">
+           <ds:selectable expression="current" transient="true"/>
+        </ds:field>
+
+        <ds:field name="isLibraryInstalled">
+            <ds:label text="emxLibraryCentral.Record.RetainRelationship" registeredSuite="emxLibraryCentral.properties"/>
+            <ds:selectable format="transient"/>
+        </ds:field>
+
+        <ds:field name="estimatedStartDate"  description="Object estimated start date target">      <ds:selectable expression="attribute[Estimated Start Date]" type="bus" format="isodate" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedFinishDate" description="Object estimated completion date target"> <ds:selectable expression="attribute[Estimated End Date]"   type="bus" format="isodate" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="actualStartDate"     description="Object actual start date">                <ds:selectable expression="attribute[Actual Start Date]"    type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="actualFinishDate"    description="Object actual completion date">           <ds:selectable expression="attribute[Actual End Date]"      type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="actionPlanStatus"       description="The summary status of the Resolving Tasks">
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService"      function="getResolutionPlanStatus"        localInvokation="true"></ds:fieldjpo>
+           <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getResolutionPlanStatusRange"></ds:rangejpo>
+           </ds:range>
+        </ds:field>
+
+        <!--  RISK Only  -->
+        <ds:field name="classType"              description="The classification of the Risk">
+           <ds:selectable expression="attribute[Risk Type]"    sixw="_tag_implicit_ds6w:how/ds6w:classification"   autosave="true"  busTypes="Risk" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+           <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getAttributeRange">
+                    <ds:arg arg-name="attribute" arg-value="Risk Type"/>
+                    <ds:arg arg-name="sort"     arg-value="None,Cost,Quality,Technical,Resource,Performance,Privacy,Security,Schedule,Benefits,Manufacturability,Other"/>
+                </ds:rangejpo>
+           </ds:range>
+        </ds:field>
+
+        <ds:field name="mitigationType"        description="The mitigation approach for the Risk">
+           <ds:selectable expression="attribute[Risk Handling Plan Technique]"  sixw="_tag_implicit_ds6w:how/ds6w:actionPlan" autosave="true"  busTypes="Risk" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+           <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getAttributeRange">
+                    <ds:arg arg-name="attribute" arg-value="Risk Handling Plan Technique"/>
+                    <ds:arg arg-name="sort"      arg-value="custom"/>
+                </ds:rangejpo>
+           </ds:range>
+        </ds:field>
+
+        <ds:field name="impact"                 description="The estimated negative effect the Risk will have.">                   <ds:selectable expression="attribute[Risk Impact]"             autosave="true"  busTypes="Risk" type="bus" createOperation="required" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="probability"            description="The relative probability that the Risk will occur.">                  <ds:selectable expression="attribute[Risk Probability]"        autosave="true"  busTypes="Risk" type="bus" createOperation="required" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="rpnValue"               description="The relative rating of the Risk.">                                    <ds:selectable expression="attribute[Risk Factor]"                              busTypes="Risk" type="bus" createOperation="no"  modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="comments"               description="The rationale for the rating of the Risk.">                           <ds:selectable expression="attribute[Comments]"                 autosave="true" busTypes="Risk" type="bus" createOperation="no"  modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="effectiveDate"          description="The date the Risk is expected to be become active.">
+           <ds:selectable createOperation="required" modifyOperation="yes" readOperation="yes" format="utc"/>
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getEffectiveDate" localInvokation="java"></ds:fieldjpo>
+        </ds:field>
+        <ds:field name="abatement"              description="The actions being planned or taken to mitigate or resolve the Risk."> <ds:selectable expression="attribute[Abatement Plan]"          autosave="true"  busTypes="Risk" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="measureOfSuccess"       description="The criteria to be used used to evaluate the Risk resolution.">       <ds:selectable expression="attribute[Measure of Success]"      autosave="true"  busTypes="Risk" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+
+        <ds:field name="risk-custom-fields">
+            <ds:customAttributes busTypes="Risk"/>
+        </ds:field>
+
+        <!--  General  -->
+        <ds:field name="modifyAccess"    includeByDefault="no(private)">
+            <ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" expression="current.access[modify]" type="bus"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getModifyAccess" localInvokation="java">
+                <ds:arg arg-name="stateField" arg-value="state.transient"/>
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="deleteAccess"     includeByDefault="no(private)">
+<!--
+            <ds:selectable busTypes="Risk Management" expression="current.access[delete]" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes" />
+-->
+            <ds:selectable busTypes="Risk Management" expression="evaluate[if current.access[delete] == 'TRUE' AND to[Risk].from.current.access[fromdisconnect] == 'TRUE' then 'TRUE' else 'FALSE']" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getDeleteAccess" localInvokation="java">
+                <ds:arg arg-name="stateField" arg-value="state.transient"/>
+                <ds:arg arg-name="palIdField" arg-value="PALId.transient"/>
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="changeOwnerAccess" includeByDefault="no(private)" description="Whether the user has change owner access to the Risk.">       <ds:selectable expression="current.access[changeowner]"       type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="promoteAccess"     includeByDefault="no(private)" description="Whether the user has promote access to the Risk.">            <ds:selectable expression="current.access[promote]"           type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="demoteAccess"      includeByDefault="no(private)" description="Whether the user has demote access to the Risk.">             <ds:selectable expression="current.access[demote]"            type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="fromConnectAccess" includeByDefault="no(private)" description="Whether the user has connect access to the Risk.">            <ds:selectable expression="current.access[fromconnect]"       type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="toConnectAccess"   includeByDefault="no(private)" description="Whether the user has connect access to the Risk.">            <ds:selectable expression="current.access[toconnect]"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="matrixConfigCreateAccess" includeByDefault="no(private)"  description="Whether the user has create access for a RMC.">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfiguration"    function="getCreateAccess">
+              </ds:rangejpo>
+          </ds:range>
+        </ds:field>
+
+       <ds:field name="projectTitle"            description="Collaborative Space the object was created in.">
+             <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getCollabSpaceTitle" localInvokation="java">
+                  <ds:arg arg-name="collabField" arg-value="project.transient"/>
+             </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="project"           description="Collaborative Space (name) the Project was created in."> <ds:selectable expression="project" type="bus" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="project.transient" includeByDefault="always">
+             <ds:selectable expression="project" transient="true"/>
+        </ds:field>
+        <ds:field name="organizationTitle"  description="The Organization the object was created in."   >
+              <ds:selectable sixw="_tag_implicit_ds6w:who/ds6w:responsible/ds6w:organizationResponsible"/>
+              <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getOrganizationTitle" localInvokation="java">
+                  <ds:arg arg-name="organizationField" arg-value="organization.transient"/>
+             </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="organization"       description="The Organization the object was created in."   >    <ds:selectable expression="organization" type="bus"  createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="organization.transient" includeByDefault="always">
+             <ds:selectable expression="organization" transient="true"/>
+        </ds:field>
+
+        <ds:ref-subservice name="ownerInfo"         referenceName="risk.ownerInfo"        includeByDefault="no(private)" >
+           <ds:data>
+             <ds:jpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getPerson" returnedData="idsAndData">
+                <ds:arg arg-name="owner" arg-value="true"/>
+             </ds:jpo>
+          </ds:data>
+<!--
+           <ds:data>
+               <ds:jpo classname="com.dassault_systemes.enovia.e6wv2.foundation.service.FoundationResource" function="getPersonInfo" localInvokation="true" returnedData="idsAndData">
+                  <ds:arg arg-name="parentOwnerField" arg-value="es6.ownerName.transient"/>
+                  <ds:arg arg-name="nameField" arg-value="name.transient"/>
+              </ds:jpo>
+           </ds:data>
+-->
+        </ds:ref-subservice>
+
+       <ds:field name="contextId" includeByDefault="yes"  description="The object ID the Risk is created for (i.e., Project or Task).  This is required for Create.">        <ds:selectable expression="to[Risk].from.physicalid"         type="bus" createOperation="required" modifyOperation="yes" readOperation="yes"/></ds:field>
+       <ds:field name="rmcId"               includeByDefault="no(private)"> <ds:selectable expression="from[Risk Matrix].to.physicalid"  type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+       <ds:field name="validConfiguration"  includeByDefault="no(private)"  description="Confirmation that the rmcid is the appropriate one (matches governing)">
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfiguration"      function="validRiskConfiguration"        localInvokation="true"></ds:fieldjpo>
+       </ds:field>
+
+
+       <ds:field name="typeicon" includeByDefault="yes"><ds:image source="primaryOrType"  size="small" /></ds:field>
+       <ds:field name="icon"     includeByDefault="no(private)"><ds:image source="primaryOrType" size="small"/></ds:field>
+
+       <!-- was medium -->
+       <ds:field name="image" includeByDefault="yes" description="The thumbnail or type icon associated to the document object.">
+            <ds:image source="primaryOrType" size="small"  indexBasedImage="false"/>
+       </ds:field> 
+ 
+ 
+
+
+       <ds:ref-subservice name="rmcActual"        referenceName="risk.configuration"        includeByDefault="no(private)">
+           <ds:data>
+               <ds:jpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="getRiskMatrixReferences" localInvokation="java" returnedData="idsAndData">
+                     <ds:arg arg-name="relationshiptype" arg-value="Risk Matrix"/>
+               </ds:jpo>
+          <!-- <ds:expand relationshipPattern="Risk Matrix" getFrom="true" getTo="false"/> -->
+          <!--  <ds:updatejpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="updateRiskMatrixReferences" localInvokation="java" /> -->
+           </ds:data>
+        </ds:ref-subservice>
+
+       <!--  This cant be modiyied from risk -->
+       <ds:ref-subservice name="rmcGoverning"      referenceName="risk.configuration"        includeByDefault="no(private)">
+           <ds:data>
+               <ds:jpo       classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="getGoverningRiskConfiguration" localInvokation="java" returnedData="idsAndData"/>
+          <!-- <ds:updatejpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfigurationService" function="updateGoverningRiskConfiguration" localInvokation="true" />  -->
+           </ds:data>
+        </ds:ref-subservice>
+<!--
+       <ds:field name="RMCSetForProject"  includeByDefault="no(private)"  description="Confirmation that the RMC was changed for the Project">
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfiguration"      function="rmcSetForProject"                 localInvokation="true"></ds:fieldjpo>
+       </ds:field>
+-->
+       <ds:field name="RMCConnectAccess"  includeByDefault="no(private)"  description="Confirmation that the context RMC can be modified">
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfiguration"      function="rmcConnectAccess"                 localInvokation="java"></ds:fieldjpo>
+       </ds:field>
+
+ <ds:ref-subservice name="sendNotification" referenceName="risk.sendNotification" includeByDefault="no">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="sendNotification"/>
+            </ds:data>
+       </ds:ref-subservice> 
+	
+       <ds:ref-subservice name="classes"        referenceName="risk.classes"                   includeByDefault="no">
+          <ds:data>
+              <ds:expand relationshipPattern="Classified Item" getFrom="false" getTo="true"/>
+          </ds:data>
+        </ds:ref-subservice>
+
+       <ds:ref-subservice name="rpn"      referenceName="risk.rpn"   includeByDefault="no">
+       </ds:ref-subservice>
+
+       <ds:ref-subservice name="context" referenceName="risk.context" includeByDefault="no">
+            <ds:data>
+<!--             <ds:expand relationshipPattern="Risk" getFrom="false" getTo="true"/>  -->
+<!--              Needed for Assignees with no native access to the context -->
+                <ds:jpo       classname="com.dassault_systemes.enovia.risk.RiskContext" function="getContext" returnedData="idsAndData"  localInvokation="java" />
+            </ds:data>
+       </ds:ref-subservice>
+
+       <ds:field name="contextValidConfiguration"  includeByDefault="no(private)"  description="Confirmation that the rmcid matches the context configuration (multiple programs use case)">
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.riskconfiguration.RiskConfiguration"      function="validContextConfiguration"        localInvokation="java"></ds:fieldjpo>
+       </ds:field>
+
+        <ds:ref-subservice name="informedUser"    referenceName="risk.informedUser"     includeByDefault="no(private)" >
+            <ds:data>
+                <ds:expand relationshipPattern="Informed User" getFrom="true" getTo="false"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="updateRiskInformedUser"   localInvokation="java" />
+            </ds:data>
+       </ds:ref-subservice>
+
+       <ds:ref-subservice name="assignees" referenceName="risk.assignees" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Assigned Risk" getFrom="false" getTo="true"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="updateRiskAssignees"/>
+            </ds:data>
+       </ds:ref-subservice>
+
+       <ds:ref-subservice name="affectedItems" referenceName="risk.affectedItems" includeByDefault="no">
+            <ds:data>
+           <!--
+                <ds:expand relationshipPattern="Risk Affected Items" getFrom="true" getTo="false"/>
+            -->
+                <ds:jpo       classname="com.dassault_systemes.enovia.risk.RiskAffectedItems"  function="getRiskAffectedItems"        localInvokation="true" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="updateRiskAffectedItems" localInvokation="java" />
+            </ds:data>
+       </ds:ref-subservice>
+
+       <ds:ref-subservice name="resolvedBy" referenceName="risk.resolvedBy" includeByDefault="no">
+            <ds:data>
+            <!--
+                <ds:expand relationshipPattern="Contributes To" getFrom="true" getTo="false"/>
+              -->
+                <ds:jpo       classname="com.dassault_systemes.enovia.risk.RiskResolvedBy"  function="getRiskResolvedBy"        localInvokation="true" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="updateRiskResolvedBy" localInvokation="java" />
+            </ds:data>
+       </ds:ref-subservice>
+
+       <ds:ref-subservice name="references" referenceName="risk.references" includeByDefault="no">
+       </ds:ref-subservice>
+
+        <ds:subservice name="performRefresh" includeByDefault="never" hidden="true">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="performRefresh" localInvokation="java" />
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="search" includeByDefault="never">
+            <ds:data>
+                <ds:indexQuery typePattern="Risk Management,Risk,Opportunity"  keyword="{searchStr}" limitStr="{$top::50}" skipStr="{$skip::0}" sortField="{sortField::relevance}" sortDirection="{sortDirection::desc}" />
+            </ds:data>
+            <ds:ref-subservice name="dpm.searchFields" />
+        </ds:subservice>
+
+       <ds:ref-subservice name="associatedRisks" referenceName="risk.associatedRisks" includeByDefault="no">
+            <ds:data>
+<!--
+                <ds:expand relationshipPattern="Associated Risk" getFrom="true" getTo="false"/>
+-->
+                <ds:jpo       classname="com.dassault_systemes.enovia.risk.RiskService"  function="getAssociatedRisks"  localInvokation="java" returnedData="idsAndData"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="updateAssociatedRisks" processMultiple="true" localInvokation="java" />
+            </ds:data>
+       </ds:ref-subservice>
+
+   </ds:service>
+
+
+
+   <ds:service name="risk.associatedRisks" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+	  
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"       description="(unique discriminator only, Risks are not revisioned)">     <ds:selectable expression="revision"     type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="image" includeByDefault="yes" description="The thumbnail or type icon associated to the document object.">
+            <ds:image source="primaryOrType" size="small"  indexBasedImage="false"/>
+        </ds:field> 
+   </ds:service>
+
+   <ds:service name="risk.context" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">  <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"  sixw="_tag_implicit_ds6w:where/ds6w:context"/></ds:field>
+        <ds:field name="description"    description="Description of the object.">                                <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="projectTitle"  description="Collaborative Space the Risk was created in.">
+             <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getCollabSpaceTitle" localInvokation="java">
+                  <ds:arg arg-name="collabField" arg-value="project.transient"/>
+             </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="project"        description="Collaborative Space (name) the Project was created in."> <ds:selectable expression="project" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="project.transient" includeByDefault="always">
+             <ds:selectable expression="project" transient="true"/>
+        </ds:field>
+        <ds:field name="image">
+            <ds:image source="primaryOrType" size="medium"/>
+        </ds:field>
+        <ds:field name="thumbnail">
+            <ds:image source="primaryImage" size="thumbnail"/>
+        </ds:field>
+       <ds:field name="typesForSearch">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService"    function="getRangeTypeDerivatives">
+                  <ds:arg arg-name="relKey"                 arg-value="contextTypesForSearch"/>
+                  <ds:arg arg-name="searchtypes"            arg-value="Program,Project Space,Task Management"/>
+                  <ds:arg arg-name="searchRootTypes"        arg-value="Product Configuration,VPMReference,DELFmiFunctionReference,Model,Products,Part"/>
+                  <ds:arg arg-name="relationshipType"       arg-value="Risk"/>
+                  <ds:arg arg-name="relationshipDir"        arg-value="fromtype"/>
+              </ds:rangejpo>
+          </ds:range>
+       </ds:field>
+   </ds:service>
+
+   <ds:service name="risk.classes" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+   </ds:service>
+
+   <ds:service name="risk.affectedItems" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">  <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"       description="The object revision">                                       <ds:selectable expression="revision"     type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="description"    description="Description of the object.">                                <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object.">               <ds:selectable expression="attribute[Originator]"        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+
+        <ds:field name="typeicon" includeByDefault="yes"><ds:image source="primaryOrType" size="small" /></ds:field>
+        <ds:field name="icon"     includeByDefault="no(private)"><ds:image source="primaryOrType" size="small"/></ds:field>
+       <!-- was medium -->
+        <ds:field name="image" includeByDefault="yes" description="The thumbnail or type icon associated to the document object.">
+            <ds:image source="primaryOrType" size="small"  indexBasedImage="false"/>
+        </ds:field> 
+   </ds:service>
+
+   <ds:service name="risk.ownerInfo" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="name.transient" includeByDefault="always"><ds:selectable expression="name" transient="true" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="name">      <ds:selectable expression="name"                   type="bus"/></ds:field>
+        <ds:field name="firstname"> <ds:selectable expression="attribute[First Name]"  type="bus"/></ds:field>
+        <ds:field name="lastname">  <ds:selectable expression="attribute[Last Name]"   type="bus"/></ds:field>
+        <ds:field name="fullname">  <ds:selectable expression="evaluate[attribute[First Name] + ' ' + attribute[Last Name]]" sixw="_tag_implicit_ds6w:who/ds6w:responsible" type="bus" busTypes="Person"/></ds:field>
+        <ds:field name="title">     <ds:selectable expression="attribute[Title]"       type="bus"/></ds:field>
+        <ds:field name="company">   <ds:selectable expression="to[Employee].from.name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <!--
+        <ds:field name="icon" includeByDefault="yes">
+           <ds:selectable   expression="name"               type="bus"/>
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getResourceImage" localInvokation="true"/>
+        </ds:field>
+       -->
+       <ds:field name="image">
+          <ds:image source="primaryOrType" size="medium"/>
+        </ds:field>
+   </ds:service>
+
+   <ds:service name="risk.originatorInfo" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="name.transient" includeByDefault="always"><ds:selectable expression="name" transient="true" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="name">      <ds:selectable expression="name"                   type="bus"/></ds:field>
+        <ds:field name="firstname"> <ds:selectable expression="attribute[First Name]"  type="bus"/></ds:field>
+        <ds:field name="lastname">  <ds:selectable expression="attribute[Last Name]"   type="bus"/></ds:field>
+        <ds:field name="fullname">  <ds:selectable expression="evaluate[attribute[First Name] + ' ' + attribute[Last Name]]" sixw="_tag_implicit_ds6w:who/ds6w:responsible/ds6w:originator" type="bus" busTypes="Person"/></ds:field>
+        <ds:field name="title">     <ds:selectable expression="attribute[Title]"       type="bus"/></ds:field>
+        <!--
+        <ds:field name="icon" includeByDefault="yes">
+           <ds:selectable   expression="name"               type="bus"/>
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getResourceImage" localInvokation="true"/>
+        </ds:field>
+        -->
+        <ds:field name="image">
+          <ds:image source="primaryOrType" size="medium"/>
+        </ds:field>
+   </ds:service>
+
+    <ds:service name="risk.informedUser" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="name">      <ds:selectable expression="name"                   type="bus"/></ds:field>
+        <ds:field name="firstname"> <ds:selectable expression="attribute[First Name]"  type="bus"/></ds:field>
+        <ds:field name="lastname">  <ds:selectable expression="attribute[Last Name]"   type="bus"/></ds:field>
+        <ds:field name="fullname">  <ds:selectable expression="evaluate[attribute[First Name] + ' ' + attribute[Last Name]]" sixw="_tag_implicit_ds6w:who/ds6w:assignee"  type="bus" busTypes="Person"/></ds:field>
+        <ds:field name="title">     <ds:selectable expression="attribute[Title]"       type="bus"/></ds:field>
+        <ds:field name="email">     <ds:selectable expression="attribute[Email Address]" type="bus"/></ds:field>
+       <ds:field name="image">
+            <ds:image source="primaryOrType" size="medium"/>
+       </ds:field>
+  </ds:service>
+
+
+    <ds:service name="risk.assignees" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="name">      <ds:selectable expression="name"                   type="bus"/></ds:field>
+        <ds:field name="firstname"> <ds:selectable expression="attribute[First Name]"  type="bus"/></ds:field>
+        <ds:field name="lastname">  <ds:selectable expression="attribute[Last Name]"   type="bus"/></ds:field>
+        <ds:field name="fullname">  <ds:selectable expression="evaluate[attribute[First Name] + ' ' + attribute[Last Name]]" sixw="_tag_implicit_ds6w:who/ds6w:assignee"  type="bus" busTypes="Person"/></ds:field>
+        <ds:field name="title">     <ds:selectable expression="attribute[Title]"       type="bus"/></ds:field>
+        <ds:field name="email">     <ds:selectable expression="attribute[Email Address]" type="bus"/></ds:field>
+        <!--
+        <ds:field name="icon" includeByDefault="yes">
+           <ds:selectable   expression="name"               type="bus"/>
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getResourceImage" localInvokation="true"/>
+       </ds:field>
+       -->
+       <ds:field name="image">
+            <ds:image source="primaryOrType" size="medium"/>
+       </ds:field>
+
+        <ds:subservice name="Assignments" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getPersonAssignments" returnedData="idsAndData"/>
+            </ds:data>
+
+            <ds:field name="TaskId"     includeByDefault="no"><ds:selectable expression="physicalid" type="bus"/></ds:field>
+            <ds:field name="Id"         includeByDefault="no"><ds:selectable expression="id" type="rel"/></ds:field>
+            <ds:field name="TaskProjectId"><ds:selectable   expression="to[Project Access Key].from.from[Project Access List].to.physicalid"    type="bus"/></ds:field>
+            <ds:field name="owner"><ds:selectable  expression="owner" type="bus" autosave="true"/></ds:field>
+            <!--
+            <ds:field name="icon" includeByDefault="yes">
+                <ds:image source="businessType" size="small"/>
+            </ds:field>
+            -->
+            <ds:field name="image">
+                <ds:image source="primaryOrType" size="medium"/>
+            </ds:field>
+
+        </ds:subservice>
+
+    </ds:service>
+
+    <ds:service name="risk.rpn" includeByDefault="yes">
+          <ds:data>
+       <!-- <ds:expand relationshipPattern="Risk RPN" getFrom="true" recurseLevels="1" /> -->
+            <ds:jpo   classname="com.dassault_systemes.enovia.risk.RiskService" function="getRPN" localInvokation="false" returnedData="idsAndData">
+                  <ds:arg arg-name="relationshiptype" arg-value="Risk RPN"/>
+            </ds:jpo>
+          </ds:data>
+       <ds:field name="rpnImpact"        description="(Assessment Instance) The estimated negative effect the Risk will have.">   <ds:selectable expression="attribute[Risk Impact]"      type="rel"  typeTarget="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+       <ds:field name="rpnProbability"   description="(Assessment Instance) The relative probability that the Risk will occur.">  <ds:selectable expression="attribute[Risk Probability]" type="rel"  typeTarget="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+       <ds:field name="rpnValue"         description="(Assessment Instance) The relative rating of the Risk.">                    <ds:selectable expression="attribute[Risk RPN Value]"   type="rel"  typeTarget="bus"  createOperation="no"  modifyOperation="no" readOperation="yes"/></ds:field>
+       <ds:field name="rpnStatus"        description="(Assessment Instance) The current status of the rating or reassessment.">   <ds:selectable expression="attribute[Status]"           type="rel"  typeTarget="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+       <ds:field name="rpnComments"      description="(Assessment Instance) The rationale for the rating or reassessment.">       <ds:selectable expression="attribute[Comments]"         type="rel"  typeTarget="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+       <ds:field name="rpnEffectiveDate" description="(Assessment Instance) The date this Risk assessment becomes effective."> <ds:selectable expression="attribute[Effective Date]"   type="rel"  typeTarget="bus"  format="utc"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+       <ds:field name="originated"       description="The creation date of the object.">                       <ds:selectable expression="originated" type="rel" typeTarget="bus"  format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+       <ds:field name="modified"         description="Date of last modification to any object information.">   <ds:selectable expression="modified"   type="rel" typeTarget="bus"  format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        <!--
+           <ds:sort name="latest" sortable="true" type="date" direction="descending" order="1" />
+         -->
+       </ds:field>
+       <ds:field name="modified.transient"   includeByDefault="always" >   <ds:selectable expression="modified" transient="true"   type="rel"  format="timestamp" />
+            <ds:sort name="latest" sortable="true" type="integer" direction="descending" order="1" />
+      </ds:field>
+       <ds:field name="modifyAccess"  includeByDefault="no(private)" description="Whether the user has modify access to the Project.">     <ds:selectable expression="from.current.access[modify]" type="rel"  typeTarget="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+    </ds:service>
+
+    <ds:service name="risk.resolvedBy" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" sixw="_tag_implicit_ds6w:how/ds6w:contributesTo"  type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"       description="(unique discriminator only, Risks are not revisioned)">     <ds:selectable expression="revision"     type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="description"    description="Description of the object.">                                <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object.">               <ds:selectable expression="attribute[Originator]"        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+
+        <ds:field name="typeicon" includeByDefault="yes"><ds:image source="primaryOrType"  size="small" /></ds:field>
+        <ds:field name="icon"     includeByDefault="no(private)"><ds:image source="primaryOrType"  size="small"/></ds:field>
+       <!-- was medium -->
+        <ds:field name="image" includeByDefault="yes" description="The thumbnail or type icon associated to the document object.">
+            <ds:image source="primaryOrType" size="small"  indexBasedImage="false"/>
+        </ds:field> 
+
+        <ds:field name="typesForSearch">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService"    function="getRangeTypeDerivatives">
+                 <ds:arg arg-name="relKey"             arg-value="resolutionTypesForSearch"/>
+                  <ds:arg arg-name="searchtypes"       arg-value="Project Space,Task Management"/>
+                  <ds:arg arg-name="searchRootTypes"   arg-value="Change Request"/>
+                  <ds:arg arg-name="relationshipType"  arg-value="Contributes To"/>
+                 <ds:arg arg-name="relationshipDir"   arg-value="totype"/>
+               </ds:rangejpo>
+          </ds:range>
+       </ds:field>
+    </ds:service>
+
+    <ds:service name="risk.references" includeByDefault="yes">
+        <ds:data>
+             <ds:jpo       classname="com.dassault_systemes.enovia.risk.RiskReferences" function="getRelatedFiles" localInvokation="false" returnedData="idsAndData">
+                  <ds:arg  arg-name="relationshiptype" arg-value="Reference Document"/>
+             </ds:jpo>
+             <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskReferences" function="updateRelatedFiles">
+                  <ds:arg  arg-name="relationshiptype" arg-value="Reference Document"/>
+             </ds:updatejpo>
+        </ds:data>
+
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"       description="(unique discriminator only, Risks are not revisioned)">     <ds:selectable expression="revision"     type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="description"    description="Description of the object.">                                <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object.">               <ds:selectable expression="attribute[Originator]"        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+
+        <ds:field name="typeicon" includeByDefault="yes"><ds:image source="primaryOrType" size="small" /></ds:field>
+        <ds:field name="icon"     includeByDefault="yes"><ds:image source="primaryOrType" size="small"/></ds:field>
+       <!-- was medium -->
+       <ds:field name="image" includeByDefault="yes" description="The thumbnail or type icon associated to the document object.">
+            <ds:image source="primaryOrType" size="small"  indexBasedImage="false"/>
+       </ds:field> 
+<!--
+        <ds:field name="typesForSearch">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService"    function="getRangeTypeDerivatives">
+                 <ds:arg arg-name="relKey"           arg-value="referenceTypesForSearch"/>
+                 <ds:arg arg-name="searchtypes"      arg-value="DOCUMENTS"/>
+                 <ds:arg arg-name="relationshipType" arg-value="Reference Document"/>
+                 <ds:arg arg-name="relationshipDir"  arg-value="totype"/>
+               </ds:rangejpo>
+          </ds:range>
+       </ds:field>
+-->
+
+    </ds:service>
+<!-- ********************************************************************************************************* -->
+<!-- ********************************************************************************************************* -->
+<!--                          EVERY THING BELOW HERE IS DEPRECATED                                            -->
+<!-- ********************************************************************************************************* -->
+<!-- ********************************************************************************************************* -->
+
+<!-- ****************  DPM RISKS  ************** -->
+    <ds:service name="dpm.allrisks">
+        <ds:license products="ENOPRPR_AP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProjectRisksFromPAL" returnedData="idsAndData"/>
+        </ds:data>
+        <ds:field name="affectedItemType" description="Item Type causing the Risk">          <ds:selectable expression="from[Risk Affected Items].to.type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="affectedItemName" description="Name of the Item causing the Risk">   <ds:selectable expression="from[Risk Affected Items].to.name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="affectedItemId">                                                     <ds:selectable expression="from[Risk Affected Items].to.physicalid"   type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:ref-subservice name="dpm.risksDetail" includeByDefault="yes"/>
+    </ds:service>
+
+    <ds:service name="dpm.risks">
+        <ds:license products="ENOPRPR_AP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProjectRisks" returnedData="idsAndData"/>
+        </ds:data>
+        <ds:ref-subservice name="dpm.risksDetail" includeByDefault="yes"/>
+    </ds:service>
+
+    <ds:service name="dpm.risksDetail">
+
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"       description="(unique discriminator only, Risks are not revisioned)">     <ds:selectable expression="revision"     type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeicon"       >                                                                        <ds:image source="businessType"         size="icon" /></ds:field>
+        <ds:field name="description"    description="Description of the object.">                                <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object.">               <ds:selectable expression="attribute[Originator]"        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+
+        <ds:field name="estimatedStartDate"  description="Object estimated start date target">      <ds:selectable expression="attribute[Estimated Start Date]" type="bus" format="isodate" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedFinishDate" description="Object estimated completion date target"> <ds:selectable expression="attribute[Estimated End Date]"   type="bus" format="isodate" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="actualStartDate"     description="Object actual start date">                <ds:selectable expression="attribute[Actual Start Date]"    type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="actualFinishDate"    description="Object actual completion date">           <ds:selectable expression="attribute[Actual End Date]"      type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="riskType"               description="The classification of the risk">                                           <ds:selectable expression="attribute[Risk Type]"       autosave="true"   busTypes="Risk" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="riskVisibility"         description="The assignment of Public or Restricted visibility of the Risk information"><ds:selectable expression="attribute[Risk Visibility]" autosave="true"   busTypes="Risk" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+
+        <!-- Field grouping included automatically - includeByDefault not yet enforced for Fields -->
+       <ds:subservice name="riskdetail"  includeByDefault="no">
+              <ds:field name="riskImpact"       description="The estimated negative effect the Risk will have.">                  <ds:selectable expression="attribute[Risk Impact]"           autosave="true"   busTypes="Risk" type="bus" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+              <ds:field name="riskProbability"  description="The relative probability that the Risk will occur.">                 <ds:selectable expression="attribute[Risk Probability]"      autosave="true"   busTypes="Risk" type="bus" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+              <ds:field name="riskFactor"       description="The relative rating of the Risk.">                                   <ds:selectable expression="attribute[Risk Factor]"                             busTypes="Risk" type="bus" createOperation="no"  modifyOperation="no" readOperation="yes"/></ds:field>
+              <ds:field name="riskResolution"   description="The status or assessment of the Risk resolution.">                   <ds:selectable expression="attribute[ResolutionStatement]"   autosave="true"   busTypes="Risk" type="bus" createOperation="no"  modifyOperation="no" readOperation="no"/></ds:field>
+              <ds:field name="riskAbatement"    description="The actions being planned or taken to mitigate or resolve the Risk."><ds:selectable expression="attribute[Abatement Plan]"        autosave="true"   busTypes="Risk" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+              <ds:field name="measureOfSuccess" description="The criteria to be used used to evaluate the Risk resolution.">      <ds:selectable expression="attribute[Measure of Success]"    autosave="true"   busTypes="Risk" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+              <ds:field name="riskCategory"     description="Business oriented categorization of the Risk">                       <ds:selectable expression="attribute[Risk Category]"         autosave="true"   busTypes="Risk" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+       </ds:subservice>
+
+        <!-- related data -->
+       <ds:ref-subservice name="assignees"       includeByDefault="no"/>
+
+        <ds:ref-subservice name="ownerInfo"      referenceName="e6w.ownerInfo"        includeByDefault="no" >
+           <ds:data>
+              <ds:jpo classname="com.dassault_systemes.enovia.e6wv2.foundation.service.FoundationResource" function="getPersonInfo" localInvokation="java" returnedData="idsAndData">
+                  <ds:arg arg-name="parentOwnerField" arg-value="es6.ownerName.transient"/>
+                  <ds:arg arg-name="nameField" arg-value="name.transient"/>
+              </ds:jpo>
+           </ds:data>
+       </ds:ref-subservice>
+
+<!--
+       <ds:ref-subservice name="ownerInfo"       referenceName="risk.ownerInfo"        includeByDefault="no" >
+          <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="owner" arg-value="true"/>
+            </ds:jpo>
+          </ds:data>
+       </ds:ref-subservice>
+
+       <ds:ref-subservice name="originatorInfo"  referenceName="risk.originatorInfo"   includeByDefault="no" >
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="originator" arg-value="true"/>
+            </ds:jpo>
+        </ds:data>
+       </ds:ref-subservice>
+-->
+
+        <ds:field name="modifyAccess"      description="Whether the user has modify access to the Risk.">             <ds:selectable expression="current.access[modify,changename]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="deleteAccess"      description="Whether the user has delete access to the Risk.">             <ds:selectable expression="current.access[delete]"            type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="promoteAccess"     description="Whether the user has promote access to the Risk.">            <ds:selectable expression="current.access[promote]"           type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="demoteAccess"      description="Whether the user has demote access to the Risk.">             <ds:selectable expression="current.access[demote]"            type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="fromConnectAccess" description="Whether the user has connect access to the Risk.">            <ds:selectable expression="current.access[fromconnect]"       type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="toConnectAccess"   description="Whether the user has connect access to the Risk.">            <ds:selectable expression="current.access[toconnect]"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="projectTitle"     description="Collaborative Space the object was created in.">
+             <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getCollabSpaceTitle" localInvokation="java">
+                  <ds:arg arg-name="collabField" arg-value="project.transient"/>
+             </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="project"          description="Collaborative Space (name) the Project was created in."> <ds:selectable expression="project" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="project.transient" includeByDefault="always">
+             <ds:selectable expression="project" transient="true"/>
+        </ds:field>
+
+
+        <ds:ref-subservice name="rpn"      referenceName="risk.rpn"   includeByDefault="no">
+          <ds:data>
+            <ds:expand relationshipPattern="Risk RPN" getFrom="true" recurseLevels="1" />
+          </ds:data>
+        </ds:ref-subservice>
+    </ds:service>
+
+<!-- ****************  DPM  OPPORTUNITIES  ************** -->
+
+    <ds:service name="dpm.allopportunities">
+        <ds:license products="ENOPRPR_AP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProjectOpportunitiesFromPAL" returnedData="idsAndData"/>
+        </ds:data>
+        <ds:field name="affectedItemType" description="Item Type causing the opportunity">         <ds:selectable expression="from[Risk Affected Items].to.type"        type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="affectedItemName" description="Name of the Item causing the Opportunity">  <ds:selectable expression="from[Risk Affected Items].to.name"        type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="affectedItemId" >                                                          <ds:selectable expression="from[Risk Affected Items].to.physicalid"  type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:ref-subservice name="dpm.opportunitiesDetail" includeByDefault="yes"/>
+    </ds:service>
+
+    <ds:service name="dpm.opportunities">
+        <ds:license products="ENOPRPR_AP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getProjectOpportunities" returnedData="idsAndData"/>
+        </ds:data>
+        <ds:ref-subservice name="dpm.opportunitiesDetail" includeByDefault="yes"/>
+    </ds:service>
+
+    <ds:service name="dpm.opportunitiesDetail">
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"       description="(unique discriminator only, Risks are not revisioned)">     <ds:selectable expression="revision"     type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeicon"       >                                                                        <ds:image source="businessType"         size="icon" /></ds:field>
+        <ds:field name="description"    description="Description of the object.">                                <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object.">               <ds:selectable expression="attribute[Originator]"        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+
+        <ds:field name="estimatedStartDate"  description="Object estimated start date target">      <ds:selectable expression="attribute[Estimated Start Date]" type="bus" format="isodate" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedFinishDate" description="Object estimated completion date target"> <ds:selectable expression="attribute[Estimated End Date]"   type="bus" format="isodate" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="actualStartDate"     description="Object actual start date">                <ds:selectable expression="attribute[Actual Start Date]"    type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="actualFinishDate"    description="Object actual completion date">           <ds:selectable expression="attribute[Actual End Date]"      type="bus" format="isodate" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="opportunityType"       description="The classification of the Opportunity">  <ds:selectable expression="attribute[Opportunity Type]"        type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="opportunityVisibility" description="Recommended visibility">                 <ds:selectable expression="attribute[Risk Visibility]"  type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+
+        <!-- Field grouping included automatically - includeByDefault not yet enforced for Fields -->
+        <ds:subservice name="opportunitydetail"  includeByDefault="no">
+              <ds:field name="opportunityImpact"      description="The estimated benefit of the Opportunity.">             <ds:selectable expression="attribute[Opportunity Impact]"      type="bus" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+              <ds:field name="opportunityProbability" description="The estimated probability that the Opportunity will occur."> <ds:selectable expression="attribute[Opportunity Probability]" type="bus" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+              <ds:field name="opportunityOpnValue"    description="The relative rating of the Opportunity.">                    <ds:selectable expression="attribute[Opportunity RPN Value]"   type="bus" createOperation="no"  modifyOperation="no" readOperation="yes"/></ds:field>
+         </ds:subservice>
+
+        <!-- related data -->
+        <ds:ref-subservice name="assignees"       includeByDefault="no"/>
+
+        <ds:ref-subservice name="ownerInfo"      referenceName="e6w.ownerInfo"        includeByDefault="no" >
+           <ds:data>
+              <ds:jpo classname="com.dassault_systemes.enovia.e6wv2.foundation.service.FoundationResource" function="getPersonInfo" localInvokation="java" returnedData="idsAndData">
+                  <ds:arg arg-name="parentOwnerField" arg-value="es6.ownerName.transient"/>
+                  <ds:arg arg-name="nameField" arg-value="name.transient"/>
+              </ds:jpo>
+           </ds:data>
+        </ds:ref-subservice>
+
+<!--
+        <ds:ref-subservice name="ownerInfo"       referenceName="risk.ownerInfo"         includeByDefault="no" >
+          <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="owner" arg-value="true"/>
+            </ds:jpo>
+          </ds:data>
+       </ds:ref-subservice>
+
+        <ds:ref-subservice name="originatorInfo"  referenceName="risk.originatorInfo"    includeByDefault="no" >
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="originator" arg-value="true"/>
+            </ds:jpo>
+        </ds:data>
+       </ds:ref-subservice>
+-->
+
+        <ds:field name="modifyAccess"      description="Whether the user has modify access to the Risk.">                <ds:selectable expression="current.access[modify,changename]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="deleteAccess"      description="Whether the user has delete access to the Risk.">                <ds:selectable expression="current.access[delete]"            type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="promoteAccess"     description="Whether the user has promote access to the Risk.">            <ds:selectable expression="current.access[promote]"           type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="demoteAccess"      description="Whether the user has demote access to the Risk.">             <ds:selectable expression="current.access[demote]"            type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="fromConnectAccess" description="Whether the user has connect access to the Risk.">            <ds:selectable expression="current.access[fromconnect]"       type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="toConnectAccess"   description="Whether the user has connect access to the Risk.">            <ds:selectable expression="current.access[toconnect]"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="projectTitle"     description="Collaborative Space the object was created in." >
+             <ds:fieldjpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getCollabSpaceTitle" localInvokation="java">
+                  <ds:arg arg-name="collabField" arg-value="project.transient"/>
+             </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="project"         description="Collaborative Space (name) the Project was created in."> <ds:selectable expression="project" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="project.transient" includeByDefault="always">
+             <ds:selectable expression="project" transient="true"/>
+        </ds:field>
+
+
+        <ds:ref-subservice name="opn"      referenceName="risk.opn"   includeByDefault="no">
+           <ds:data>
+              <ds:expand relationshipPattern="Opportunity RPN" getFrom="true" recurseLevels="1" />
+           </ds:data>
+       </ds:ref-subservice>
+    </ds:service>
+
+</ds:services>
+

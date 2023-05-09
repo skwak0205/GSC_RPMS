@@ -1,0 +1,24 @@
+del command 'PMCCreateProjectConceptActions';
+add command 'PMCCreateProjectConceptActions'
+	description	'CreateProjectConcept Command Object'
+	label	'emxFramework.Shortcut.CreateProjectConcept'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ProjectConcept&nameField=keyin&policy=policy_ProjectConcept&vaultChooser=false&form=PMCProjectConceptCreateForm&header=emxProgramCentral.Common.ProjectConcept&HelpMarker=emxhelpprojectconceptcreatedialog&postProcessJPO=emxProjectConcept:performPostProcessActions&mode=create&submitAction=treeContent&findMxLink=false'
+	alt	'emxFramework.Shortcut.CreateProjectConcept'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateProjectConceptActions'
+	property	'version'	value	'R422'
+;
+modify menu PMCActions add command PMCCreateProjectConceptActions order command PMCCreateProjectConceptActions 2;
+#channel ==>PMCActions
+add property command_PMCCreateProjectConceptActions on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateProjectConceptActions';

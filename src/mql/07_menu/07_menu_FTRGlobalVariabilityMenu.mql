@@ -1,0 +1,14 @@
+del menu 'FTRGlobalVariabilityMenu';
+add menu 'FTRGlobalVariabilityMenu'
+	description	'Global Actions Variability Menu'
+	label	'emxProduct.Menu.Variability'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRGlobalActionCreateVariant'
+	command	'FTRGlobalActionCreateVariabilityGroup'
+	command	'FTRCreateFormConfigurationFeatureFromActions'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'version'	value	'R421'
+;
+add property menu_FTRGlobalVariabilityMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRGlobalVariabilityMenu';

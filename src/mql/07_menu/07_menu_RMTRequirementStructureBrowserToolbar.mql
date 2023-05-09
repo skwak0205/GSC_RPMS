@@ -1,0 +1,19 @@
+del menu 'RMTRequirementStructureBrowserToolbar';
+add menu 'RMTRequirementStructureBrowserToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTStructureBrowserActionsMenu'
+	command	'RMTSetReqContentView'
+	command	'AEFLifecycleMassPromote'
+	command	'AEFLifecycleMassDemote'
+	menu	'AEFSBEditActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementStructureBrowserToolbar'
+	property 'version'	value	'V6R2021x'
+;
+add property menu_RMTRequirementStructureBrowserToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementStructureBrowserToolbar';

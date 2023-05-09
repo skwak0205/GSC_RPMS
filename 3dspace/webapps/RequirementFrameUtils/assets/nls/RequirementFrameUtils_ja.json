@@ -1,0 +1,19 @@
+{
+  "activities": "アクティビティを開始",
+  "requirement_definition": "要求",
+  "reqSpec_definition": "要求仕様",
+  "specFolder_definition": "仕様フォルダー",
+  "my_work": "マイ仕事",
+  "recent_items": "最近の項目",
+  "_home": "ホーム",
+  "start_activities": "アクティビティを開始",
+  "createActions": "作成",
+  "new_SpecFolder": "要求仕様",
+  "new_ReqSpec": "仕様フォルダー",
+  "new_Req": "要件",
+  "open_req_spec": "要求オブジェクトを開く",
+  "quick_access": "クイック アクセス",
+  "reqSpec_objects_list": "マイ要求仕様",
+  "req_objects_list": "マイ要求",
+  "recently_opened": "最近開いた項目"
+}

@@ -1,0 +1,26 @@
+del command 'DCLibraryCreateNewActionLink';
+add command 'DCLibraryCreateNewActionLink'
+	description	'Library Create New'
+	label	'emxDocumentCentral.ActionBarCmd.CreateNew'
+	href	'${SUITE_DIR}/emxDocumentCentralDocumentClassificationCreateDialogFS.jsp?type=type_Library'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	user	'Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCLibraryCreateNewActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCAllLibrariesTopActionbar add command DCLibraryCreateNewActionLink order command DCLibraryCreateNewActionLink 1;
+modify menu DCCompanyLocationsTopActionbar add command DCLibraryCreateNewActionLink order command DCLibraryCreateNewActionLink 0;
+modify menu DCCompanyPeopleTopActionbar add command DCLibraryCreateNewActionLink order command DCLibraryCreateNewActionLink 0;
+#channel ==>DCAllLibrariesTopActionbarDCCompanyLocationsTopActionbarDCCompanyPeopleTopActionbar
+add property command_DCLibraryCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCLibraryCreateNewActionLink';

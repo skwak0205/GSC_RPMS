@@ -1,0 +1,15 @@
+del menu 'ECMCRPropertiesToolbarRMB';
+add menu 'ECMCRPropertiesToolbarRMB'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMCREditDetailsFromViewRMB'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMCRPropertiesToolbarRMB'
+	property 'version'	value	'R216'
+;
+add property menu_ECMCRPropertiesToolbarRMB on program eServiceSchemaVariableMapping.tcl to menu 'ECMCRPropertiesToolbarRMB';

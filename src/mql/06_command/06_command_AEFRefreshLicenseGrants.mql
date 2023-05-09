@@ -1,0 +1,17 @@
+del command 'AEFRefreshLicenseGrants';
+add command 'AEFRefreshLicenseGrants'
+	description	'Refresh the license in case any new licenses have been assigned to the user'
+	label	'emxFramework.Person.RefreshMyLicenses'
+	href	'${COMMON_DIR}/emxLicenseRefresh.jsp'
+	alt	'emxFramework.Person.RefreshMyLicenses'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFRefreshLicenseGrants'
+	property	'version'	value	'R420'
+;
+modify menu AEFPersonMenu add command AEFRefreshLicenseGrants order command AEFRefreshLicenseGrants 6;
+#channel ==>AEFPersonMenu
+add property command_AEFRefreshLicenseGrants on program eServiceSchemaVariableMapping.tcl to command 'AEFRefreshLicenseGrants';

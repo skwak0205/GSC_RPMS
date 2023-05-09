@@ -1,0 +1,15 @@
+del menu 'PMCProjectContentSearchResults';
+add menu 'PMCProjectContentSearchResults'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCProjectContentSearchResultsActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectContentSearchResults'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_PMCProjectContentSearchResults on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectContentSearchResults';

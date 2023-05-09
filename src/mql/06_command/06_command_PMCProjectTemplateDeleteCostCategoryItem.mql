@@ -1,0 +1,28 @@
+del command 'PMCProjectTemplateDeleteCostCategoryItem';
+add command 'PMCProjectTemplateDeleteCostCategoryItem'
+	description	''
+	label	'emxProgramCentral.Budget.DeleteCostCategoryItem'
+	href	'${SUITE_DIR}/emxProgramCentralCostItemDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'hidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isDeleteCostItemAvailableTemplate'
+	setting	'Access Program'		'emxProjectBudget'
+	setting	'Row Select'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ConfirmDelete'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateDeleteCostCategoryItem'
+	property	'version'	value	'R422'
+;
+modify menu type_CostItemRMB add command PMCProjectTemplateDeleteCostCategoryItem order command PMCProjectTemplateDeleteCostCategoryItem 0;
+#channel ==>type_CostItemRMB
+add property command_PMCProjectTemplateDeleteCostCategoryItem on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateDeleteCostCategoryItem';

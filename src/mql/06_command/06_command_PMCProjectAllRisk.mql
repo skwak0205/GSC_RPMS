@@ -1,0 +1,20 @@
+del command 'PMCProjectAllRisk';
+add command 'PMCProjectAllRisk'
+	description	'Risk Command Object'
+	label	'emxProgramCentral.Common.All'
+	href	''
+	alt	'emxFramework.Command.Alt.Risk'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'function'		'getAllRisks'
+	setting	'program'		'emxRisk'
+	setting	'Image'		'risk.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectAllRisk'
+	property	'version'	value	'R418'
+;
+modify menu PMCRiskListMenu add command PMCProjectAllRisk order command PMCProjectAllRisk 0;
+#channel ==>PMCRiskListMenu
+add property command_PMCProjectAllRisk on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectAllRisk';

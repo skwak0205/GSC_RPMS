@@ -1,0 +1,14 @@
+del menu 'DummyFilterToolBar';
+add menu 'DummyFilterToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'DummyFilterToolBar'
+	property 'version'	value	'R418.B2'
+;
+add property menu_DummyFilterToolBar on program eServiceSchemaVariableMapping.tcl to menu 'DummyFilterToolBar';

@@ -1,0 +1,23 @@
+del command 'PMCEditOpportunityDetails';
+add command 'PMCEditOpportunityDetails'
+	description	'Command for Editing Opportunity Details'
+	label	'emxProgramCentral.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCOpportunityForm&mode=edit&postProcessJPO=emxRisk:updateFinishDate&formHeader=emxProgramCentral.Common.HeaderOpportunityEditDetails&HelpMarker=emxhelpriskeditdetailsdialog&findMxLink=false&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessOnRisk'
+	setting	'Access Program'		'emxRisk'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEditOpportunityDetails'
+	property	'version'	value	'R422'
+;
+modify menu PMCOpportunityToolBarActions add command PMCEditOpportunityDetails order command PMCEditOpportunityDetails 0;
+#channel ==>PMCOpportunityToolBarActions
+add property command_PMCEditOpportunityDetails on program eServiceSchemaVariableMapping.tcl to command 'PMCEditOpportunityDetails';

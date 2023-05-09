@@ -1,0 +1,17 @@
+del menu 'TMCActions';
+add menu 'TMCActions'
+	description	''
+	label	'emxFramework.Command.TMCSubMenuActions'
+	href	''
+	alt	'emxFramework.Command.Alt.TMCSubMenuActions'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallChangeBoard.gif'
+	command	'TMCCreateWorkspaceActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCActions'
+	property 'version'	value	'R417'
+;
+add property menu_TMCActions on program eServiceSchemaVariableMapping.tcl to menu 'TMCActions';

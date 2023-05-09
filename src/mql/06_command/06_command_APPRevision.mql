@@ -1,0 +1,18 @@
+del command 'APPRevision';
+add command 'APPRevision'
+	description	'Revision Command Object'
+	label	'emxComponents.Common.Revision'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRouteTemplate:getRevisions&table=APPRouteTemplateRevisionSummary&header=emxComponents.Common.Revisions&bottomActionbar=APPRouteTemplateRevisionsActionsToolBar&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelproutetemplaterevision&displayView=details&rowGrouping=false'
+	alt	'emxComponents.Common.Revision'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'iconSmallRevision.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRevision'
+	property	'version'	value	'R216'
+;
+modify menu type_RouteTemplate add command APPRevision order command APPRevision 2;
+#channel ==>type_RouteTemplate
+add property command_APPRevision on program eServiceSchemaVariableMapping.tcl to command 'APPRevision';

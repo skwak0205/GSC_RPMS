@@ -1,0 +1,17 @@
+del command 'PLCSearchPartsCommand';
+add command 'PLCSearchPartsCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindParts'
+	href	'${SUITE_DIR}/SearchPartsForm.jsp?program=emxProductSearch:getParts&table=PLCSearchPartsTable&HelpMarker=emxhelpsearchresults&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchPartsCommand'
+	property	'version'	value	'R418'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchPartsCommand order command PLCSearchPartsCommand 46;
+#channel ==>SearchAddExistingChooserMenu
+add property command_PLCSearchPartsCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchPartsCommand';

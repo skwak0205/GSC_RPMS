@@ -1,0 +1,24 @@
+del command 'FTRAddExistingGBOMPartActionLink';
+add command 'FTRAddExistingGBOMPartActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExistingPart'
+	href	'${SUITE_DIR}/PartUtil.jsp?mode=addExistingPart'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete" && type.kindof == "Features")'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingGBOMPartActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRProductPartListTopActionBar add command FTRAddExistingGBOMPartActionLink order command FTRAddExistingGBOMPartActionLink 2;
+#channel ==>FTRProductPartListTopActionBar
+add property command_FTRAddExistingGBOMPartActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingGBOMPartActionLink';

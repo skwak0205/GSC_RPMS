@@ -1,0 +1,16 @@
+del menu 'DCBookDocumentsTopActionbar';
+add menu 'DCBookDocumentsTopActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	menu	'DCBookDocumentSummaryCreateNew'
+	command	'DCBookDocumentsWizardActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCBookDocumentsTopActionbar'
+	property 'version'	value	'10-7'
+;
+add property menu_DCBookDocumentsTopActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCBookDocumentsTopActionbar';

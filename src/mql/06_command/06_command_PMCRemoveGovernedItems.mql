@@ -1,0 +1,22 @@
+del command 'PMCRemoveGovernedItems';
+add command 'PMCRemoveGovernedItems'
+	description	''
+	label	'emxProgramCentral.Common.RemoveSelected'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=removeGovernedItems'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToRemoveGovernedItemsAction'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRemoveGovernedItems'
+	property	'version'	value	'R421'
+;
+modify menu PMCGovernedItemsToolbar add command PMCRemoveGovernedItems order command PMCRemoveGovernedItems 0;
+#channel ==>PMCGovernedItemsToolbar
+add property command_PMCRemoveGovernedItems on program eServiceSchemaVariableMapping.tcl to command 'PMCRemoveGovernedItems';

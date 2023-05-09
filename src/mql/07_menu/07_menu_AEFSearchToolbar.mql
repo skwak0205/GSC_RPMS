@@ -1,0 +1,17 @@
+del menu 'AEFSearchToolbar';
+add menu 'AEFSearchToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	menu	'AEFSearchActionsToolbar'
+	command	'AEFSaveSearch'
+	command	'AEFSaveAsSearch'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFSearchToolbar'
+	property 'version'	value	'R215'
+;
+add property menu_AEFSearchToolbar on program eServiceSchemaVariableMapping.tcl to menu 'AEFSearchToolbar';

@@ -1,0 +1,31 @@
+del command 'TMCContentSummaryUploadExternalFile';
+add command 'TMCContentSummaryUploadExternalFile'
+	description	'External File Upload Command Object'
+	label	'emxTeamCentral.Command.Upload'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?showDescription=required&JPOName=emxTeamDocumentBase&appDir=teamcentral&parentRelName=relationship_VaultedDocuments&objectAction=createMasterPerFile&showTitle=true&showFormat=true&appProcessPage=emxTeamPostCheckinProcess.jsp'
+	alt	'emxTeamCentral.Button.UploadExternalFile'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasWorkspaceAndFileUpload'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCContentSummaryUploadExternalFile'
+	property	'version'	value	'R422'
+;
+modify menu TMCContentSummaryTopActionBar add command TMCContentSummaryUploadExternalFile order command TMCContentSummaryUploadExternalFile 2;
+#channel ==>TMCContentSummaryTopActionBar
+add property command_TMCContentSummaryUploadExternalFile on program eServiceSchemaVariableMapping.tcl to command 'TMCContentSummaryUploadExternalFile';

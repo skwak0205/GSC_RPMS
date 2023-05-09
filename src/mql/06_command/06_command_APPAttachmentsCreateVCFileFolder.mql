@@ -1,0 +1,26 @@
+del command 'APPAttachmentsCreateVCFileFolder';
+add command 'APPAttachmentsCreateVCFileFolder'
+	description	'Command for creating a file or folder in DesignSync'
+	label	'emxComponents.VersionControl.CreateVCFileFolder'
+	href	'${SUITE_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=createVCFileFolder&JPOName=emxVCDocument&methodName=checkinUpdate&showDescription=required&appDir=components&parentRelName=relationship_MessageAttachments&showTitle=true&showFormat=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAttachmentsCreateVCFileFolder'
+	property	'version'	value	'R422'
+;
+modify menu APPAttachmentsContentSummaryCreateNew add command APPAttachmentsCreateVCFileFolder order command APPAttachmentsCreateVCFileFolder 3;
+#channel ==>APPAttachmentsContentSummaryCreateNew
+add property command_APPAttachmentsCreateVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'APPAttachmentsCreateVCFileFolder';

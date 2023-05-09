@@ -1,0 +1,20 @@
+del command 'RMTGlobalSearchGroupsCommand';
+add command 'RMTGlobalSearchGroupsCommand'
+	description	'search for groups'
+	label	'emxRequirements.Command.RMTGlobalSearchGroups'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_RequirementGroup&table=RMTMyDeskGroupList&selection=multiple&cancelLabel=emxRequirements.Button.Close&searchmode=globalsearch&showInitialResults=true&showSavedQuery=true&searchCollectionEnabled=True&HelpMarker=emxhelpfullsearch'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTGlobalSearchGroupsCommand'
+	property	'version'	value	'R422'
+;
+modify menu RMTSearch add command RMTGlobalSearchGroupsCommand order command RMTGlobalSearchGroupsCommand 0;
+#channel ==>RMTSearch
+add property command_RMTGlobalSearchGroupsCommand on program eServiceSchemaVariableMapping.tcl to command 'RMTGlobalSearchGroupsCommand';

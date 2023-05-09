@@ -1,0 +1,25 @@
+del command 'FTRAddExistingGBOMPartFamilyActionLink';
+add command 'FTRAddExistingGBOMPartFamilyActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExistingPartFamily'
+	href	'${ROOT_DIR}/common/emxFullSearch.jsp?field=TYPES=type_PartFamily:CURRENT!=policy_Classification.state_Obsolete&excludeOIDprogram=emxFeatureSearchBase:excludeConnectedPartsAndPartfamilies&formName=GBOMReplace&table=FTRSearchPartsTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../configuration/PartUtil.jsp?mode=AddPartFamily'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete"'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isFeatureConnectedToVariants'
+	setting	'Access Program'		'emxFTRPart'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingGBOMPartFamilyActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRProductPartListTopActionBar add command FTRAddExistingGBOMPartFamilyActionLink order command FTRAddExistingGBOMPartFamilyActionLink 3;
+#channel ==>FTRProductPartListTopActionBar
+add property command_FTRAddExistingGBOMPartFamilyActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingGBOMPartFamilyActionLink';

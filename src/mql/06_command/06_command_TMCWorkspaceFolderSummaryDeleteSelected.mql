@@ -1,0 +1,29 @@
+del command 'TMCWorkspaceFolderSummaryDeleteSelected';
+add command 'TMCWorkspaceFolderSummaryDeleteSelected'
+	description	''
+	label	'emxTeamCentral.Button.DeleteSelected'
+	href	'${SUITE_DIR}/emxTeamDeleteFolders.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'current.access[fromdisconnect]'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isWsNotInArchiveState'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxTeamCentral.FolderDelete.MsgConfirm'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceFolderSummaryDeleteSelected'
+	property	'version'	value	'R422'
+;
+modify menu TMCWorkspaceFolderSummaryActionsToolBar add command TMCWorkspaceFolderSummaryDeleteSelected order command TMCWorkspaceFolderSummaryDeleteSelected 0;
+#channel ==>TMCWorkspaceFolderSummaryActionsToolBar
+add property command_TMCWorkspaceFolderSummaryDeleteSelected on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceFolderSummaryDeleteSelected';

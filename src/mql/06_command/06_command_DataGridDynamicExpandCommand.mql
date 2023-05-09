@@ -1,0 +1,17 @@
+del command 'DataGridDynamicExpandCommand';
+add command 'DataGridDynamicExpandCommand'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Dynamic Command Function'		'getExpandMenu'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridDynamicExpandCommand'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridMenu add command DataGridDynamicExpandCommand order command DataGridDynamicExpandCommand 2;
+#channel ==>DataGridMenu
+add property command_DataGridDynamicExpandCommand on program eServiceSchemaVariableMapping.tcl to command 'DataGridDynamicExpandCommand';

@@ -1,0 +1,25 @@
+del command 'RMTSearchWithinContext';
+add command 'RMTSearchWithinContext'
+	description	'RMT Search With In Context.'
+	label	'emxRequirements.Button.SearchWithInContext'
+	href	'${SUITE_DIR}/emxRMTContextObjFullSearchPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'hidden'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearch.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSearchWithinContext'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeToolbar add command RMTSearchWithinContext order command RMTSearchWithinContext 5;
+#channel ==>RMTSpecTreeToolbar
+add property command_RMTSearchWithinContext on program eServiceSchemaVariableMapping.tcl to command 'RMTSearchWithinContext';

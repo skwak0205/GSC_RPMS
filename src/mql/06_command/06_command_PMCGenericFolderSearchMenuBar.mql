@@ -1,0 +1,29 @@
+del command 'PMCGenericFolderSearchMenuBar';
+add command 'PMCGenericFolderSearchMenuBar'
+	description	'Menu Bar Generic Folder Search'
+	label	'emxProgramCentral.Search.Folder'
+	href	'${SUITE_DIR}/emxProgramCentralFolderSearchFiles.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGenericFolderSearchMenuBar'
+	property	'version'	value	'R422'
+;
+modify menu PMCProgramCentralSearch add command PMCGenericFolderSearchMenuBar order command PMCGenericFolderSearchMenuBar 10;
+#channel ==>PMCProgramCentralSearch
+add property command_PMCGenericFolderSearchMenuBar on program eServiceSchemaVariableMapping.tcl to command 'PMCGenericFolderSearchMenuBar';

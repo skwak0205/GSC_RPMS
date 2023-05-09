@@ -1,0 +1,15 @@
+del menu 'type_PLCProductStructureMenu';
+add menu 'type_PLCProductStructureMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCProductStructure'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_PLCProductStructureMenu'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_type_PLCProductStructureMenu on program eServiceSchemaVariableMapping.tcl to menu 'type_PLCProductStructureMenu';

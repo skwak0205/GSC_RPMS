@@ -1,0 +1,24 @@
+del command 'PMCProperties';
+add command 'PMCProperties'
+	description	'Workspace Vault Properties Command Object'
+	label	'emxProgramCentral.Folders.Command.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProjectVaultViewForm&mode=view&toolbar=PMCProjectFolderToolbar&formHeader=emxProgramCentral.Common.FormBasics&HelpMarker=emxhelpfolderproperties&Export=false'
+	alt	'emxFramework.Command.Properties'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallProperties.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProperties'
+	property	'version'	value	'R423.HF2'
+;
+modify menu PMCtype_ProjectVault add command PMCProperties order command PMCProperties 2;
+modify menu type_ProjectTemplateVault add command PMCProperties order command PMCProperties 2;
+#channel ==>PMCtype_ProjectVaulttype_ProjectTemplateVault
+add property command_PMCProperties on program eServiceSchemaVariableMapping.tcl to command 'PMCProperties';

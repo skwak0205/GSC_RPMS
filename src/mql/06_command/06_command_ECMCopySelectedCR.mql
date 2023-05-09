@@ -1,0 +1,21 @@
+del command 'ECMCopySelectedCR';
+add command 'ECMCopySelectedCR'
+	description	'Copy CR'
+	label	'EnterpriseChangeMgt.Command.CopySelected'
+	href	'${SUITE_DIR}/ECMSearchUtil.jsp?chooserType=copyCR'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCopySelectedCR'
+	property	'version'	value	'R216'
+;
+modify menu ECMCRMenuToolbar add command ECMCopySelectedCR order command ECMCopySelectedCR 4;
+#channel ==>ECMCRMenuToolbar
+add property command_ECMCopySelectedCR on program eServiceSchemaVariableMapping.tcl to command 'ECMCopySelectedCR';

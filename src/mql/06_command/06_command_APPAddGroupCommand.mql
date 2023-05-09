@@ -1,0 +1,22 @@
+del command 'APPAddGroupCommand';
+add command 'APPAddGroupCommand'
+	description	'Command to add group to a person'
+	label	'emxComponents.AddMembersDialog.AddGroup'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?selection=multiple&expandLevelFilterMenu=false&customize=false&Export=false&multiColumnSort=false&PrinterFriendly=false&showPageURLIcon=false&showRMB=false&showClipboard=false&objectCompare=false&submitLabel=emxComponents.Common.Done&cancelLabel=emxComponents.Common.Cancel&cancelButton=true&submitURL=../components/emxComponentsAddGroup.jsp&header=emxComponents.AddGroups.SelectGroups&table=APPGroupSummary&program=emxGroupUtil:getGroupSearchResults&toolbar=APPGroupSearchToolbar'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'Global User'
+	user	'VPLMAdmin'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddGroupCommand'
+	property	'version'	value	'R417'
+;
+modify menu APPGroupActionsToolBar add command APPAddGroupCommand order command APPAddGroupCommand 1;
+#channel ==>APPGroupActionsToolBar
+add property command_APPAddGroupCommand on program eServiceSchemaVariableMapping.tcl to command 'APPAddGroupCommand';

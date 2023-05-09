@@ -1,0 +1,21 @@
+del command 'PMCWBSView';
+add command 'PMCWBSView'
+	description	''
+	label	'emxProgramCentral.Button.WBSView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWBSViewTable'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSView'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSTableMenu add command PMCWBSView order command PMCWBSView 1;
+#channel ==>PMCWBSTableMenu
+add property command_PMCWBSView on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSView';

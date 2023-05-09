@@ -1,0 +1,17 @@
+del command 'AEFSlideShowNextImage';
+add command 'AEFSlideShowNextImage'
+	description	'To view the next Image'
+	label	''
+	href	'javascript:chgImg(1)'
+	alt	'Next'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/buttonSlideshowNext.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSlideShowNextImage'
+	property	'version'	value	'R210'
+;
+modify menu APPSlideShowToolBar add command AEFSlideShowNextImage order command AEFSlideShowNextImage 0;
+#channel ==>APPSlideShowToolBar
+add property command_AEFSlideShowNextImage on program eServiceSchemaVariableMapping.tcl to command 'AEFSlideShowNextImage';

@@ -1,0 +1,18 @@
+del command 'AEFGridToolbarFindButton';
+add command 'AEFGridToolbarFindButton'
+	description	'Find button for the AEF Grid Toolbar to find table results'
+	label	'emxFramework.Button.Find'
+	href	''
+	alt	''
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'Framework'
+	setting	'Action Label'		'emxFramework.Button.Find'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFGridToolbarFindButton'
+	property	'version'	value	'R212'
+;
+modify menu AEFGridFilterToolbar add command AEFGridToolbarFindButton order command AEFGridToolbarFindButton 2;
+#channel ==>AEFGridFilterToolbar
+add property command_AEFGridToolbarFindButton on program eServiceSchemaVariableMapping.tcl to command 'AEFGridToolbarFindButton';

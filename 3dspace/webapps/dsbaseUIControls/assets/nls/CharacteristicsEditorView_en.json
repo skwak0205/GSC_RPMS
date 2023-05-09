@@ -1,0 +1,18 @@
+{
+    "CEV.optionsChecker.rdfServerURL.error": "RDF server URL must be defined!",
+    "CEV.optionsChecker.resourceURI.error": "A resource URI must be defined!",
+    "CEV.optionsChecker.constraintsPosition.error": "Position for constraints popup should be \"top\", \"right\", \"bottom\" or \"left\"",
+    "CEV.optionsChecker.buttons.types.error": "Type for button '{label}' should be one of these : \"primary\", \"default\", \"info\", \"success\", \"warning\", \"error\"",
+    "CEV.optionsChecker.buttons.specificActions.error": "Specific action for '{key}' characteristic should be a function!",
+    "CEV.optionsChecker.search.error": "A function is expected in order to search values for '{key}' characteristic!",
+
+    "CEV.title": "Characteristics Editor",
+    "CEV.defaultMessage": "An error occured when retrieving all characteristics...",
+
+    "CEV.userCharacteristics.title": "User Characteristics",
+    "CEV.characteristics.title": "Characteristics",
+
+    "CEV.okButton.content": "Ok",
+    "CEV.cancelButton.content": "Cancel",
+    "CEV.cancelButton.error": "Error when clicking on \"Cancel\" button..."
+}

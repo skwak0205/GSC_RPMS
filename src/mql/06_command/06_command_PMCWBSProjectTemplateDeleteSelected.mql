@@ -1,0 +1,28 @@
+del command 'PMCWBSProjectTemplateDeleteSelected';
+add command 'PMCWBSProjectTemplateDeleteSelected'
+	description	''
+	label	'emxProgramCentral.Common.DeleteSelected'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=submitDeleteTask'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multiple'
+	setting	'Access Mask'		'Modify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSProjectTemplateDeleteSelected'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSProjectTemplateToolBarActions add command PMCWBSProjectTemplateDeleteSelected order command PMCWBSProjectTemplateDeleteSelected 0;
+#channel ==>PMCWBSProjectTemplateToolBarActions
+add property command_PMCWBSProjectTemplateDeleteSelected on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSProjectTemplateDeleteSelected';

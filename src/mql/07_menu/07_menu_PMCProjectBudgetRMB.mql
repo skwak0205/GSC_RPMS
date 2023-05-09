@@ -1,0 +1,19 @@
+del menu 'PMCProjectBudgetRMB';
+add menu 'PMCProjectBudgetRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'hasAccess'
+	setting	'Access Program'		'emxProjectBudget'
+	menu	'type_BudgetRMB'
+	menu	'type_FinancialCostCategoryRMB'
+	menu	'type_CostItemRMB'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBudgetRMB'
+	property 'version'	value	'R216'
+;
+add property menu_PMCProjectBudgetRMB on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBudgetRMB';

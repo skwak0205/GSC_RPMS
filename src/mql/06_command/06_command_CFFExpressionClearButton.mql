@@ -1,0 +1,17 @@
+del command 'CFFExpressionClearButton';
+add command 'CFFExpressionClearButton'
+	description	''
+	label	''
+	href	'javascript:clearExp()'
+	alt	''
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReset.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFExpressionClearButton'
+	property	'version'	value	'R214'
+;
+modify menu CFFEffectivityFrameworkToolbar add command CFFExpressionClearButton order command CFFExpressionClearButton 2;
+#channel ==>CFFEffectivityFrameworkToolbar
+add property command_CFFExpressionClearButton on program eServiceSchemaVariableMapping.tcl to command 'CFFExpressionClearButton';

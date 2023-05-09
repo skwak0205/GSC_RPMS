@@ -1,0 +1,15 @@
+del menu 'PMCBusinessGoalToolBarActions';
+add menu 'PMCBusinessGoalToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCBusinessGoalEdit'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCBusinessGoalToolBarActions'
+	property 'version'	value	'R209'
+;
+add property menu_PMCBusinessGoalToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCBusinessGoalToolBarActions';

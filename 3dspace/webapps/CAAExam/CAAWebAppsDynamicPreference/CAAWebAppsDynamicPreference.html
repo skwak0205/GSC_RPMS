@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/"> 
+ <!-- Copyright 2014 , Dassault Systemes. All rights reserved. -->
+<head>
+<!--
+ This use case shows dynamic user preferences:
+   - 1 - ( 	platformid  ) is created by XML tag as hidden, and dynamically fill in with the current platform instance names (fake) 
+   - 2 - (  secondChoice ) is created by code - It only appears if the end user selects the last value of the platformid list. 
+												When the end user selects another value, the user preference is hidden again. 
+-->
+	
+    <title>CAA Web Apps About Dynamic User Preferences</title>
+	
+	<!-- Application Metas Start -->
+    <meta name="description" content="CAA Web Apps About Dynamic User Preferences" />
+    <meta name="keywords" content="CAA Use Case" />
+	<!-- Application Metas End -->
+	
+	<!-- Application JS Start -->
+    <script >
+            
+            /* global widget,require */		
+			require(['DS/CAAWebAppsDynamicPreference/CAAWebAppsUPDynamicMngt'], 
+				function (CAAWebAppsUPDynamicMngt) {
+				'use strict';
+				var myWidget = {
+	 
+					//onLoad: event triggered when the widget is launched  
+					// --------------------------------------------------------------------      
+					onLoad: function() {
+ 
+						//The platformid preference is updated with the current values. 
+						//If no choice, the preference must be deleted
+						var listPlatform = CAAWebAppsUPDynamicMngt.getListPlatformId();
+						if ( listPlatform.length === 0 ) { 
+							//It is an error 
+							widget.body.innerHTML= "Error no Platform Id";
+						} else {
+							//The list is presented in the Preference menu 
+							var platformidPreference = CAAWebAppsUPDynamicMngt.getPlatformIdPreference();
+							widget.addPreference(platformidPreference);
+							
+							//We are sure  getValue returns a valid value.  
+							//A more complex code could take into account the previous current value
+							//The default value defined by getPlatformIdPreference is only useful 
+							//at the first widget instantiation in the 3DD. 
+							widget.setValue('platformid', listPlatform[0] );
+							widget.body.innerHTML= 'The current platform id is:'  + widget.getValue('platformid');
+						} 					 	
+					},
+					
+					//onRefresh: to avoid onLoad
+					// --------------------------------------------------------------------      
+					onRefresh: function() {
+					     widget.body.innerHTML= "The current platform is is:" + widget.getValue('platformid');	
+					},
+					
+					//onPlatformIdChange: If the last is chosen, another preference appears
+					//                    see platformid definition 
+					// --------------------------------------------------------------------      
+					onPlatformIdChange: function( name, value) {
+					     //To compare the value selected by the end-user and the list 
+					     var listPlatform = CAAWebAppsUPDynamicMngt.getListPlatformId(); 
+						 if ( value === listPlatform[(listPlatform.length)-1] ) {	
+                            //The end user has just selected the last value of the combo. 
+                            //It triggers the display of another preference (secondchoice)							
+							var secondChoice = CAAWebAppsUPDynamicMngt.getSecondChoice();
+							widget.addPreference(secondChoice);
+						}else {
+						    //The end user has just selected a value which is not the last one
+                            //The  secondchoice preference is hidden
+						    var secondChoice = CAAWebAppsUPDynamicMngt.getSecondChoiceHidden();
+							widget.addPreference(secondChoice);
+						}						
+						//it enables the User preference dialog box to be refreshed
+						widget.dispatchEvent('onEdit');
+					}
+				};
+				
+				//Events
+                //---------				
+				widget.addEvent('onLoad',    myWidget.onLoad);
+				widget.addEvent('onRefresh',    myWidget.onRefresh); 
+				widget.addEvent('onPlatformIdChange',    myWidget.onPlatformIdChange); 						
+		});
+    </script>
+	<!-- Application JS End -->
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,19 @@
+del command 'RMTReqProxyExchangeTrackingPowerView';
+add command 'RMTReqProxyExchangeTrackingPowerView'
+	description	''
+	label	'emxRequirements.Common.RMTExchangeTrackingPowerView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=RMTRequirementProxyExchangeTracking&showPageHeader=true&header=emxRequirements.Heading.ExchangeTrackingCategory'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTReqProxyExchangeTrackingPowerView'
+	property	'version'	value	'R422'
+;
+modify menu type_RequirementProxy add command RMTReqProxyExchangeTrackingPowerView order command RMTReqProxyExchangeTrackingPowerView 1;
+#channel ==>type_RequirementProxy
+add property command_RMTReqProxyExchangeTrackingPowerView on program eServiceSchemaVariableMapping.tcl to command 'RMTReqProxyExchangeTrackingPowerView';

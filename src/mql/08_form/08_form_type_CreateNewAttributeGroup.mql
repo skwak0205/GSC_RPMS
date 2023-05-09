@@ -1,0 +1,43 @@
+del form 'type_CreateNewAttributeGroup';
+add form 'type_CreateNewAttributeGroup' web
+field #1
+	name	'Name'
+	label	'EnterpriseChangeMgt.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Required'		'true'
+	setting	'Validate'		'checkIsNumeric'
+	setting	'Editable'		'true'
+	setting	'Update Program'		'enoECMChangeTemplateUX'
+	setting	'Update Function'		'createAttributeGroup'
+	setting	'Field Type'		'basic'
+field #2
+	name	'Attributes'
+	label	'EnterpriseChangeMgt.Common.Attributes'
+	range	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeTemplate:getAttributeList&table=ECMAttributeGroupAttributesAdded&selection=multiple&categoryTreeName=null&header=EnterpriseChangeMgt.AttributeChooser.SelectAttribute&sortColumnName=Name&sortDirection=ascending&objectCompare=false&Export=false&toolbar=ECMAttributeAddExisting&expandLevelFilterMenu=false&PrinterFriendly=false&showClipboard=false&showPageURLIcon=false&submitLabel=emxFramework.Common.Done&cancelLabel=emxFramework.Common.Cancel&cancelButton=true&autoFilter=true&filter=false&submitURL=../enterprisechangemgtapp/ECMUtil.jsp?functionality=attributeChooser&HelpMarker=emxhelpattributegroupcreatenewattributeellipsis'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Editable'		'true'
+	setting	'Show Clear Button'		'true'
+field #3
+	name	'Description'
+	label	'EnterpriseChangeMgt.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Editable'		'true'
+	setting	'Field Type'		'basic'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'type_CreateNewAttributeGroup'
+	property	'version'	value	'R216'
+;
+add property form_type_CreateNewAttributeGroup on program eServiceSchemaVariableMapping.tcl to form 'type_CreateNewAttributeGroup';

@@ -1,0 +1,21 @@
+del command 'PMCWeeklyTimeSheetDelete';
+add command 'PMCWeeklyTimeSheetDelete'
+	description	'Delete Timesheet'
+	label	'emxProgramCentral.WeeklyTimesheet.DeleteTimeSheet'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWeeklyTimeSheetDelete'
+	property	'version'	value	'R216'
+;
+modify menu PMCMyWeeklyTimeSheetRMB add command PMCWeeklyTimeSheetDelete order command PMCWeeklyTimeSheetDelete 0;
+#channel ==>PMCMyWeeklyTimeSheetRMB
+add property command_PMCWeeklyTimeSheetDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCWeeklyTimeSheetDelete';

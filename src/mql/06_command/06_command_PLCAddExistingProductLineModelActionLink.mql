@@ -1,0 +1,11 @@
+del command 'PLCAddExistingProductLineModelActionLink';
+add command 'PLCAddExistingProductLineModelActionLink'
+	description	''
+	label	''
+	href	''
+	alt	''
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R420'
+;
+#channel ==>
+add property command_PLCAddExistingProductLineModelActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingProductLineModelActionLink';

@@ -1,0 +1,22 @@
+del command 'ECMRemoveChangeSubscriptions';
+add command 'ECMRemoveChangeSubscriptions'
+	description	'Remove Subscriptions'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMDisconnectProcess.jsp?functionality=deleteSubscriptions&commandName=ECMChangeSubscriptions'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Warning.RemoveSubscriptions'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMRemoveChangeSubscriptions'
+	property	'version'	value	'R417'
+;
+modify menu ECMChangeSubscriptionsToolbar add command ECMRemoveChangeSubscriptions order command ECMRemoveChangeSubscriptions 0;
+#channel ==>ECMChangeSubscriptionsToolbar
+add property command_ECMRemoveChangeSubscriptions on program eServiceSchemaVariableMapping.tcl to command 'ECMRemoveChangeSubscriptions';

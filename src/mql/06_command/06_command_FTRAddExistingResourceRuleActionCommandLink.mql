@@ -1,0 +1,25 @@
+del command 'FTRAddExistingResourceRuleActionCommandLink';
+add command 'FTRAddExistingResourceRuleActionCommandLink'
+	description	'AddExistingResourceRule'
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_FixedResource&excludeOIDprogram=emxFixedResource:excludeConnectedFixedResourceRule&table=FTRResourceRulesSearchTable&showInitialResults=false&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../configuration/RuleAddExistingPostProcess.jsp?relName=relationship_ResourceLimit&from=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingResourceRuleActionCommandLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRFixedResourceToolBarActionsMenu add command FTRAddExistingResourceRuleActionCommandLink order command FTRAddExistingResourceRuleActionCommandLink 2;
+#channel ==>FTRFixedResourceToolBarActionsMenu
+add property command_FTRAddExistingResourceRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingResourceRuleActionCommandLink';

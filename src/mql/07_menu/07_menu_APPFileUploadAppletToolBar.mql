@@ -1,0 +1,18 @@
+del menu 'APPFileUploadAppletToolBar';
+add menu 'APPFileUploadAppletToolBar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPAppletFileBrowseCommand'
+	command	'APPSeparator'
+	command	'APPAppletFileRemoveCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPFileUploadAppletToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPFileUploadAppletToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPFileUploadAppletToolBar';

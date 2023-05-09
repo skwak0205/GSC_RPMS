@@ -1,0 +1,19 @@
+del command 'PMCShowWBSTasksCommand';
+add command 'PMCShowWBSTasksCommand'
+	description	'Show WBS Tasks Command'
+	label	'ProgramCentral.Toolbar.ShowMilestones'
+	href	'${SUITE_DIR}/emxProgramCentralTemplateDrivenDashboardDetails.jsp?wbsTask=type_Milestone'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'checkbox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCShowWBSTasksCommand'
+	property	'version'	value	'R419'
+;
+modify menu PMCDashboardToolbarMenu add command PMCShowWBSTasksCommand order command PMCShowWBSTasksCommand 0;
+#channel ==>PMCDashboardToolbarMenu
+add property command_PMCShowWBSTasksCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCShowWBSTasksCommand';

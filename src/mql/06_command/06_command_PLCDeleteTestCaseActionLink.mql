@@ -1,0 +1,27 @@
+del command 'PLCDeleteTestCaseActionLink';
+add command 'PLCDeleteTestCaseActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/TestCaseUtil.jsp?Mode=Delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	setting	'Access Mask'		'ToDisconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCDeleteTestCaseActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCTestCaseSubTestCaseBottomActionBar add command PLCDeleteTestCaseActionLink order command PLCDeleteTestCaseActionLink 1;
+modify menu RMTUseCaseTestCaseBottomActionBar add command PLCDeleteTestCaseActionLink order command PLCDeleteTestCaseActionLink 1;
+modify menu RMTRequirementTestCaseBottomActionBar add command PLCDeleteTestCaseActionLink order command PLCDeleteTestCaseActionLink 1;
+modify menu TestCaseTopBottom add command PLCDeleteTestCaseActionLink order command PLCDeleteTestCaseActionLink 4;
+modify menu FTRFeatureTestCaseBottomActionBar add command PLCDeleteTestCaseActionLink order command PLCDeleteTestCaseActionLink 1;
+#channel ==>PLCTestCaseSubTestCaseBottomActionBarRMTUseCaseTestCaseBottomActionBarRMTRequirementTestCaseBottomActionBarTestCaseTopBottomFTRFeatureTestCaseBottomActionBar
+add property command_PLCDeleteTestCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCDeleteTestCaseActionLink';

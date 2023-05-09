@@ -1,0 +1,25 @@
+del command 'APPDiscussionsUnSubscribe';
+add command 'APPDiscussionsUnSubscribe'
+	description	''
+	label	'emxComponents.command.Unsubscribe'
+	href	'${COMPONENT_DIR}/emxComponentsDiscussionSubscriptionProcess.jsp?action=unsubscribe'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUnsubscribe.png'
+	setting	'Confirm Message'		'emxComponents.DiscussionUnSubscribe.Message'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionsUnSubscribe'
+	property	'version'	value	'R422'
+;
+modify menu APPDiscussionsActionsToolBar add command APPDiscussionsUnSubscribe order command APPDiscussionsUnSubscribe 0;
+modify menu APPDiscussionToolBar add command APPDiscussionsUnSubscribe order command APPDiscussionsUnSubscribe 0;
+#channel ==>APPDiscussionsActionsToolBarAPPDiscussionToolBar
+add property command_APPDiscussionsUnSubscribe on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionsUnSubscribe';

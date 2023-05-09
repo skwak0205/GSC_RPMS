@@ -1,0 +1,16 @@
+del channel 'PMCWBSChannel';
+add channel 'PMCWBSChannel'
+	description	'WBS and Gantt Chart Channel'
+	height	'650'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCWBS','PMCWBSDataGridView','PMCWBSFlatView','PMCGantt'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSChannel'
+	property	'version'	value	'R422.HF6'
+;
+#portal ==>PMCWBSPortal
+add property channel_PMCWBSChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCWBSChannel';

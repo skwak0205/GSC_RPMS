@@ -1,0 +1,18 @@
+del menu 'APPAttachmentsContentSummaryCreateNew';
+add menu 'APPAttachmentsContentSummaryCreateNew'
+	description	''
+	label	'emxComponents.Common.CreateNew'
+	href	''
+	alt	'emxComponents.Common.CreateNew'
+	setting	'Registered Suite'		'Components'
+	command	'APPAttachmentsUploadActionLink'
+	command	'AEFSeparator'
+	command	'APPAttachmentsCreateVCFileFolder'
+	command	'APPAttachmentsConnectVCFileFolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPAttachmentsContentSummaryCreateNew'
+	property 'version'	value	'10-7'
+;
+add property menu_APPAttachmentsContentSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'APPAttachmentsContentSummaryCreateNew';

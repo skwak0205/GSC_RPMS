@@ -1,0 +1,22 @@
+del menu 'AEFDefaultRMB';
+add menu 'AEFDefaultRMB'
+	description	''
+	label	'emxFramework.RMBMenu.RMBDefaultMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFProperties'
+	command	'AEFLifecycle'
+	command	'AEFSeparator'
+	command	'APPQuickFileList'
+	command	'APPRelatedFiles'
+	command	'APPAllFileDetails'
+	command	'AEFAddToClipboardCollectionRMB'
+	command	'AEFNewAddToCollectionsRMB'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFDefaultRMB'
+	property 'version'	value	'R423.HF2'
+;
+add property menu_AEFDefaultRMB on program eServiceSchemaVariableMapping.tcl to menu 'AEFDefaultRMB';

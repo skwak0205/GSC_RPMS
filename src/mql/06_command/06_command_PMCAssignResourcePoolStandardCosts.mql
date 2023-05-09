@@ -1,0 +1,27 @@
+del command 'PMCAssignResourcePoolStandardCosts';
+add command 'PMCAssignResourcePoolStandardCosts'
+	description	'Assign resource pool standard cost to resource request'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=AssignResourcePoolStandardCost'
+	alt	'emxProgramCentral.Command.ResourcePlan.AssignResourcePoolStandardCost'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isOwnerOrCoOwner'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAssignCost.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssignResourcePoolStandardCosts'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourceRequestTemplateToolBar add command PMCAssignResourcePoolStandardCosts order command PMCAssignResourcePoolStandardCosts 0;
+#channel ==>PMCResourceRequestTemplateToolBar
+add property command_PMCAssignResourcePoolStandardCosts on program eServiceSchemaVariableMapping.tcl to command 'PMCAssignResourcePoolStandardCosts';

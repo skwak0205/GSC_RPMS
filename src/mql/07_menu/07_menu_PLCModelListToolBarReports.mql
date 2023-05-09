@@ -1,0 +1,18 @@
+del menu 'PLCModelListToolBarReports';
+add menu 'PLCModelListToolBarReports'
+	description	''
+	label	'emxProduct.Menu.Reports'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'CFPModelViewProductEffectivityActionLink'
+	command	'CFPModelEffectivityMatrixReportActionLink'
+	command	'PLCViewProductRoadmapActionLink'
+	command	'PLCProductListViewTimelineActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCModelListToolBarReports'
+	property 'version'	value	'R213'
+;
+add property menu_PLCModelListToolBarReports on program eServiceSchemaVariableMapping.tcl to menu 'PLCModelListToolBarReports';

@@ -1,0 +1,19 @@
+del menu 'APPMeetingsTopActionToolbar';
+add menu 'APPMeetingsTopActionToolbar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Horizontal ToolBar'		'true'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPMeetingActionToolbar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPMeetingsTopActionToolbar'
+	property 'version'	value	'R419'
+;
+add property menu_APPMeetingsTopActionToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPMeetingsTopActionToolbar';

@@ -1,0 +1,27 @@
+del command 'PMCContentCreateNewActionLink';
+add command 'PMCContentCreateNewActionLink'
+	description	'Create New Document object'
+	label	'emxProgramCentral.Common.CreateNew'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=create&showAccessType=required&defaultType=type_Document'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[fromconnect]==TRUE)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCContentCreateNewActionLink'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCContentCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCContentCreateNewActionLink';

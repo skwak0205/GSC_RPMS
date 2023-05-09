@@ -1,0 +1,24 @@
+del command 'APPRouteAddPeople';
+add command 'APPRouteAddPeople'
+	description	'Command to add persons to the route access'
+	label	'emxComponents.AddMembersDialog.AddPeople'
+	href	'${SUITE_DIR}/emxRouteMembersSearch.jsp?fromPage=RouteAccessSummary&memberType=Person'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Access Function'		'showCommand'
+	setting	'Access Program'		'emxRouteTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteAddPeople'
+	property	'version'	value	'R423.HF4'
+;
+modify menu APPRouteAccessActionsToolbar add command APPRouteAddPeople order command APPRouteAddPeople 1;
+#channel ==>APPRouteAccessActionsToolbar
+add property command_APPRouteAddPeople on program eServiceSchemaVariableMapping.tcl to command 'APPRouteAddPeople';

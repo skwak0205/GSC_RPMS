@@ -1,0 +1,22 @@
+del command 'AEFIconMailToolbar';
+add command 'AEFIconMailToolbar'
+	description	'Icon Mail Command'
+	label	'emxFramework.PersonMenu.IconMail'
+	href	'emxCompInboxDialogFS.jsp?mx.page.filter=unread'
+	alt	'emxFramework.Attribute.Icon_Mail'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'650'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionIconMail.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFIconMailToolbar'
+	property	'version'	value	'R421'
+;
+#channel ==>My ToolsAEFPersonMenuDashboardPersonMenu
+add property command_AEFIconMailToolbar on program eServiceSchemaVariableMapping.tcl to command 'AEFIconMailToolbar';

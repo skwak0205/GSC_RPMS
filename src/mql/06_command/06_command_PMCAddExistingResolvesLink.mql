@@ -1,0 +1,24 @@
+del command 'PMCAddExistingResolvesLink';
+add command 'PMCAddExistingResolvesLink'
+	description	'Add Existing to Resolves Command Object'
+	label	'emxProgramCentral.Command.PMCAddExistingResolvesLink'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=searchResolves&relType=relationship_ContributesTo'
+	alt	'emxProgramCentral.Command.PMCAddExistingResolvesLink'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddExistingResolvesLink'
+	property	'version'	value	'R423.HF4'
+;
+modify menu PMCResolvesItemsToolBarActions add command PMCAddExistingResolvesLink order command PMCAddExistingResolvesLink 1;
+#channel ==>PMCResolvesItemsToolBarActions
+add property command_PMCAddExistingResolvesLink on program eServiceSchemaVariableMapping.tcl to command 'PMCAddExistingResolvesLink';

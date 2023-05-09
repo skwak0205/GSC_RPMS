@@ -1,0 +1,16 @@
+del command 'APPRequestedAssignees';
+add command 'APPRequestedAssignees'
+	description	'Command object for Requested Assignees.'
+	label	'emxComponents.Command.RequestedAssignees'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonAccessRequest:getRequestedAssignees&table=APPPersonSearchResults&HelpMarker=emxhelprequestassignees&toolbar=APPRequestedAssigneesToolbar&header=emxComponents.Heading.RequestedAssignees&selection=multiple'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRequestedAssignees'
+	property	'version'	value	'10-7'
+;
+modify menu type_AccessRequest add command APPRequestedAssignees order command APPRequestedAssignees 1;
+#channel ==>type_AccessRequest
+add property command_APPRequestedAssignees on program eServiceSchemaVariableMapping.tcl to command 'APPRequestedAssignees';

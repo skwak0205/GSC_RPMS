@@ -1,0 +1,19 @@
+del menu 'DCtype_Company';
+add menu 'DCtype_Company'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/emxDocumentCentralStartFrameSet.jsp?topActionbar=DCCompanyPropertiesTopActionbar&header=emxDocumentCentral.Common.Properties'
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallCompany.gif'
+	command	'DCCompanyCapabilitiesTreeCategory'
+	command	'DCCompanyFormatsTreeCategory'
+	command	'DCCompanyLocationsTreeCategory'
+	command	'DCCompanyPeopleTreeCategory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCtype_Company'
+	property 'version'	value	'10-0-1-0'
+;
+add property menu_DCtype_Company on program eServiceSchemaVariableMapping.tcl to menu 'DCtype_Company';

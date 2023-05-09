@@ -1,0 +1,26 @@
+del command 'FTRProductVariantLFStructureCompareCommand';
+add command 'FTRProductVariantLFStructureCompareCommand'
+	description	'Command to Compare Logical Views'
+	label	'emxConfiguration.Command.CompareLogicalViews'
+	href	'${COMMON_DIR}/emxForm.jsp?form=FTRProductVariantLFStructureCompareForm&mode=Edit&formHeader=emxConfiguration.command.Logical.StructureCompare&editLink=true&suiteKey=Configuration&featureType=PVLogicalFeature&isSelfTargeted=true&postProcessURL=../configuration/StructureCompareProcess.jsp&HelpMarker=emxhelplogicalviewstructurecompare'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type=="type_ProductVariant">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductVariantLFStructureCompareCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRLogicalFeaturesStructureCompareMenu add command FTRProductVariantLFStructureCompareCommand order command FTRProductVariantLFStructureCompareCommand 3;
+modify menu FTRLogicalFeatureToolbarReports add command FTRProductVariantLFStructureCompareCommand order command FTRProductVariantLFStructureCompareCommand 3;
+modify menu FTRPVLogicalFeaturesStructureCompareMenu add command FTRProductVariantLFStructureCompareCommand order command FTRProductVariantLFStructureCompareCommand 1;
+modify menu FTRPVLogicalFeatureToolbarReports add command FTRProductVariantLFStructureCompareCommand order command FTRProductVariantLFStructureCompareCommand 3;
+modify menu FTRLFContextLogicalFeatureToolbarReports add command FTRProductVariantLFStructureCompareCommand order command FTRProductVariantLFStructureCompareCommand 3;
+#channel ==>FTRLogicalFeaturesStructureCompareMenuFTRLogicalFeatureToolbarReportsFTRPVLogicalFeaturesStructureCompareMenuFTRPVLogicalFeatureToolbarReportsFTRLFContextLogicalFeatureToolbarReports
+add property command_FTRProductVariantLFStructureCompareCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariantLFStructureCompareCommand';

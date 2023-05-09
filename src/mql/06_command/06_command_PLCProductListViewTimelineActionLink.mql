@@ -1,0 +1,26 @@
+del command 'PLCProductListViewTimelineActionLink';
+add command 'PLCProductListViewTimelineActionLink'
+	description	''
+	label	'emxProduct.ActionLink.TimelineReport'
+	href	'${SUITE_DIR}/PLCProductRoadmapTimelineReportPreProcess.jsp?mode=TimelineReport'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isPRGInstalled'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallTimelineReport.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductListViewTimelineActionLink'
+	property	'version'	value	'R420'
+;
+modify menu PLCProductListToolBarReports add command PLCProductListViewTimelineActionLink order command PLCProductListViewTimelineActionLink 0;
+modify menu PLCModelListToolBarReports add command PLCProductListViewTimelineActionLink order command PLCProductListViewTimelineActionLink 0;
+modify menu PLCProductDerivationsReportsToolbar add command PLCProductListViewTimelineActionLink order command PLCProductListViewTimelineActionLink 0;
+modify menu PLCModelDerivationsReportsToolbar add command PLCProductListViewTimelineActionLink order command PLCProductListViewTimelineActionLink 0;
+#channel ==>PLCProductListToolBarReportsPLCModelListToolBarReportsPLCProductDerivationsReportsToolbarPLCModelDerivationsReportsToolbar
+add property command_PLCProductListViewTimelineActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCProductListViewTimelineActionLink';

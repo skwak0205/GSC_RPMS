@@ -1,0 +1,11 @@
+del command 'ECMSubscriptionsCategory';
+add command 'ECMSubscriptionsCategory'
+	description	'View Change Subscriptions'
+	label	'EnterpriseChangeMgt.Label.Subscription'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonSubscription:getSubscriptionEventsTableData&expandProgram=emxCommonSubscription:getSubscribers&enablePush=true&sortColumnName=Name&table=APPSubscriptionTable&selection=multiple&toolbar=APPSubscriptionMenu&HelpMarker=emxhelpsubscriptionevents&Header=EnterpriseChangeMgt.Label.SubscriptionHeader'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_ECMSubscriptionsCategory on program eServiceSchemaVariableMapping.tcl to command 'ECMSubscriptionsCategory';

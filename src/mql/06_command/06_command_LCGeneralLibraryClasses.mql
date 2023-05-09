@@ -1,0 +1,25 @@
+del command 'LCGeneralLibraryClasses';
+add command 'LCGeneralLibraryClasses'
+	description	''
+	label	'emxLibraryCentral.Command.LibraryClasses'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxLibraryCentralUtilBase:getSubclasses&table=LCClassificationList&selection=single&sortColumnName=Name&massPromoteDemote=false&sortDirection=ascending&toolbar=LCClassToolBar&header=emxLibraryCentral.Common.Classifications&HelpMarker=emxhelpclasses'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCGeneralLibraryClasses'
+	property	'version'	value	'R422'
+;
+modify menu type_GeneralLibrary add command LCGeneralLibraryClasses order command LCGeneralLibraryClasses 4;
+#channel ==>type_GeneralLibrary
+add property command_LCGeneralLibraryClasses on program eServiceSchemaVariableMapping.tcl to command 'LCGeneralLibraryClasses';

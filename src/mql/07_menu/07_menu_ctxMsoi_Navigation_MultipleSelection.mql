@@ -1,0 +1,13 @@
+del menu 'ctxMsoi_Navigation_MultipleSelection';
+add menu 'ctxMsoi_Navigation_MultipleSelection'
+	description	'Menu for MultipleSelection'
+	label	''
+	href	''
+	alt	''
+	command	'ctxMsoiCmd_Open'
+	command	'ctxMsoiCmd_Download'
+	command	'ctxMsoiCmd_Lock'
+	command	'ctxMsoiCmd_Unlock'
+	command	'ctxMsoiCmd_Delete'
+;
+add property menu_ctxMsoi_Navigation_MultipleSelection on program eServiceSchemaVariableMapping.tcl to menu 'ctxMsoi_Navigation_MultipleSelection';

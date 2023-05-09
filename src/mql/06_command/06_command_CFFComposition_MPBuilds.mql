@@ -1,0 +1,19 @@
+del command 'CFFComposition_MPBuilds';
+add command 'CFFComposition_MPBuilds'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Effectivity'
+	setting	'expandProgram'		'ManufacturingPlan:getBuildManufacturingPlanAllocation'
+	setting	'relationshipType'		'relationship_PlannedBuilds'
+	setting	'binaryKey'		'MPBuilds'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFComposition_MPBuilds'
+	property	'version'	value	'R214'
+;
+modify menu CFFParentComposition add command CFFComposition_MPBuilds order command CFFComposition_MPBuilds 1;
+#channel ==>CFFParentComposition
+add property command_CFFComposition_MPBuilds on program eServiceSchemaVariableMapping.tcl to command 'CFFComposition_MPBuilds';

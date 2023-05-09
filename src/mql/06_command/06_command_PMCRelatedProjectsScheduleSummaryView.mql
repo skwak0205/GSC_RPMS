@@ -1,0 +1,23 @@
+del command 'PMCRelatedProjectsScheduleSummaryView';
+add command 'PMCRelatedProjectsScheduleSummaryView'
+	description	'Command for Schedule Summary View'
+	label	'emxProgramCentral.TableMenu.ScheduleSummaryView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessToCommand'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'table'		'PMCScheduleViewTable'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRelatedProjectsScheduleSummaryView'
+	property	'version'	value	'R422'
+;
+modify menu PMCRelatedProjectsTableMenu add command PMCRelatedProjectsScheduleSummaryView order command PMCRelatedProjectsScheduleSummaryView 1;
+#channel ==>PMCRelatedProjectsTableMenu
+add property command_PMCRelatedProjectsScheduleSummaryView on program eServiceSchemaVariableMapping.tcl to command 'PMCRelatedProjectsScheduleSummaryView';

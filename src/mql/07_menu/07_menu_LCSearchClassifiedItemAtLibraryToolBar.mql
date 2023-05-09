@@ -1,0 +1,17 @@
+del menu 'LCSearchClassifiedItemAtLibraryToolBar';
+add menu 'LCSearchClassifiedItemAtLibraryToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'LCLibraryEndItemsReviseSearchInAtLibrary'
+	command	'LBCSearchWithInNewSearch'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCSearchClassifiedItemAtLibraryToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_LCSearchClassifiedItemAtLibraryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCSearchClassifiedItemAtLibraryToolBar';

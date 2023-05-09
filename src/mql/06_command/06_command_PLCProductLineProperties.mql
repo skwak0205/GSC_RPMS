@@ -1,0 +1,15 @@
+del command 'PLCProductLineProperties';
+add command 'PLCProductLineProperties'
+	description	'Command to display the properties of the Product Line'
+	label	'emxProduct.Command.Label.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ProductLine&formHeader=emxProduct.Heading.PropertiesWithoutRevision&toolbar=PLCProductLinePropertiesTopActionBar&HelpMarker=emxhelpproductlinedetails'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductLineProperties'
+	property	'version'	value	'R418'
+;
+#channel ==>PLCProductLineDefaultChannel
+add property command_PLCProductLineProperties on program eServiceSchemaVariableMapping.tcl to command 'PLCProductLineProperties';

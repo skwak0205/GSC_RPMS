@@ -1,0 +1,18 @@
+del command 'APPCollaborationResultsNewSearch';
+add command 'APPCollaborationResultsNewSearch'
+	description	'New Search command on Collaboration Results tool bar'
+	label	'emxComponents.Button.NewSearch'
+	href	'newSearch()'
+	alt	'emxComponents.Button.NewSearch'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Javascript'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCollaborationResultsNewSearch'
+	property	'version'	value	'10.5'
+;
+modify menu APPCollaborationSearchResultsToolbar add command APPCollaborationResultsNewSearch order command APPCollaborationResultsNewSearch 0;
+#channel ==>APPCollaborationSearchResultsToolbar
+add property command_APPCollaborationResultsNewSearch on program eServiceSchemaVariableMapping.tcl to command 'APPCollaborationResultsNewSearch';

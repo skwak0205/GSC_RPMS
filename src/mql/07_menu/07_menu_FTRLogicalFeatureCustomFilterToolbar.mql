@@ -1,0 +1,17 @@
+del menu 'FTRLogicalFeatureCustomFilterToolbar';
+add menu 'FTRLogicalFeatureCustomFilterToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRLogicalFeatureNameFilterCommand'
+	command	'FTRLogicalFeatureLimitFilterCommand'
+	command	'FTRLogicalFeatureFilterButton'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRLogicalFeatureCustomFilterToolbar'
+	property 'version'	value	'R212'
+;
+add property menu_FTRLogicalFeatureCustomFilterToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRLogicalFeatureCustomFilterToolbar';

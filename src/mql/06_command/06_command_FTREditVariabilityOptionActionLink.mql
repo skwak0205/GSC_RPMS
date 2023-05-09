@@ -1,0 +1,21 @@
+del command 'FTREditVariabilityOptionActionLink';
+add command 'FTREditVariabilityOptionActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_VariabilityOptionProperties&formMode=Edit&formHeader=emxProduct.Heading.Edit&mode=edit&HelpMarker=emxhelpvariantoptionpropsedit&context=VariabilityOption'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'ConfigurationFeature'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRVariabilityOptionPropertiesToolbarActions add command FTREditVariabilityOptionActionLink order command FTREditVariabilityOptionActionLink 1;
+#channel ==>FTRVariabilityOptionPropertiesToolbarActions
+add property command_FTREditVariabilityOptionActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTREditVariabilityOptionActionLink';

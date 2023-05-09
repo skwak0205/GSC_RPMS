@@ -1,0 +1,25 @@
+del command 'DCFindBooks';
+add command 'DCFindBooks'
+	description	'Find Books Command Object for Global DC Search'
+	label	'emxDocumentCentral.Search.Books'
+	href	'${SUITE_DIR}/emxDocumentCentralObjectFindDialog.jsp?DialogAction=globalSearch&baseType=type_Book'
+	alt	'emxDocumentCentral.Search.Books'
+	setting	'Target Location'		'searchContent'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Currency Converter'		'false'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'VPLMViewer'
+	user	'Employee'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCFindBooks'
+	property	'version'	value	'R216'
+;
+modify menu DCSearch add command DCFindBooks order command DCFindBooks 3;
+#channel ==>DCSearch
+add property command_DCFindBooks on program eServiceSchemaVariableMapping.tcl to command 'DCFindBooks';

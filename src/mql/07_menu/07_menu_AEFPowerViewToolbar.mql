@@ -1,0 +1,15 @@
+del menu 'AEFPowerViewToolbar';
+add menu 'AEFPowerViewToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	menu	'AEFPowerViewActionsToolbar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFPowerViewToolbar'
+	property 'version'	value	'10-0-1-1'
+;
+add property menu_AEFPowerViewToolbar on program eServiceSchemaVariableMapping.tcl to menu 'AEFPowerViewToolbar';

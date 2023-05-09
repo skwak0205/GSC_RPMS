@@ -1,0 +1,25 @@
+del command 'FTRRemoveDesignVariant';
+add command 'FTRRemoveDesignVariant'
+	description	''
+	label	'emxProduct.ActionLink.RemoveDesignVariantActionLink'
+	href	'${SUITE_DIR}/DesignVariantRemovePostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showDVActionsWhenLFInProductContext'
+	setting	'Access Program'		'LogicalFeature'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRRemoveDesignVariant'
+	property	'version'	value	'R418'
+;
+modify menu FTRDesignVariantToolbarActions add command FTRRemoveDesignVariant order command FTRRemoveDesignVariant 0;
+#channel ==>FTRDesignVariantToolbarActions
+add property command_FTRRemoveDesignVariant on program eServiceSchemaVariableMapping.tcl to command 'FTRRemoveDesignVariant';

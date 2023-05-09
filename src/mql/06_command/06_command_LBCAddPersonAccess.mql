@@ -1,0 +1,17 @@
+del command 'LBCAddPersonAccess';
+add command 'LBCAddPersonAccess'
+	description	'Add Access Person'
+	label	'emxDocumentCentral.Search.AddPerson'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Person:CURRENT=policy_Person.state_Active&showInitialResults=true&table=AEFPersonChooserDetails&excludeOIDprogram=emxWorkspaceVault:excludeExistingPersonAccess&hideHeader=true&header=emxDocumentCentral.Search.PersonSearchResults&selection=multiple&form=AEFSearchPersonForm&HelpMarker=emxhelpfullsearch&useMode=addPerson&submitURL=../documentcentral/emxLibraryCentralFolderAccessAdd.jsp?useMode=addPerson'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAddPersonAccess'
+	property	'version'	value	'R417'
+;
+modify menu LBCFolderAccessAddMembersActionToolBar add command LBCAddPersonAccess order command LBCAddPersonAccess 1;
+#channel ==>LBCFolderAccessAddMembersActionToolBar
+add property command_LBCAddPersonAccess on program eServiceSchemaVariableMapping.tcl to command 'LBCAddPersonAccess';

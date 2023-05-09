@@ -1,0 +1,23 @@
+del command 'AddExistingIssueDocumentLink';
+add command 'AddExistingIssueDocumentLink'
+	description	'Issue AddExisting Document Command Object'
+	label	'emxComponents.Command.AddExistingIssueDocumentLink'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_DOCUMENTS:IS_VERSION_OBJECT=False&frameNameToRefresh=IssueReferenceDocumentsTreeCategory&submitLabel=emxFramework.GlobalSearch.Done&table=IssueSearchDocumentTable&selection=multiple&submitURL=../components/emxCommonConnectObjects.jsp&showInitialResults=true&HelpMarker=emxhelpsearch&srcDestRelName=relationship_ReferenceDocument&isTo=true&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects'
+	alt	'emxComponents.Command.AddExistingIssueDocumentLink'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AddExistingIssueDocumentLink'
+	property	'version'	value	'R422'
+;
+modify menu IssueDocumentSummaryActionsToolBar add command AddExistingIssueDocumentLink order command AddExistingIssueDocumentLink 1;
+#channel ==>IssueDocumentSummaryActionsToolBar
+add property command_AddExistingIssueDocumentLink on program eServiceSchemaVariableMapping.tcl to command 'AddExistingIssueDocumentLink';

@@ -1,0 +1,17 @@
+del channel 'AEFLifecycleState';
+add channel 'AEFLifecycleState'
+	description	'Shows basic lifecycle of object'
+	height	'100'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Framework'
+	setting		'Height'		'20%'
+	command 	'AEFLifecycleBasic'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecycleState'
+	property	'version'	value	'V6R2008-2.0'
+;
+#portal ==>AEFLifecyclePowerView
+add property channel_AEFLifecycleState on program eServiceSchemaVariableMapping.tcl to channel 'AEFLifecycleState';

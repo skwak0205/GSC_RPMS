@@ -1,0 +1,9 @@
+{
+  "UnCV.optionsChecker.rdfServerURL.error": "Musí být definována adresa URL koncového bodu serveru RDF!",
+  "UnCV.optionsChecker.originalValue.notExisting.error": "Musí být definována původní hodnota!",
+  "UnCV.optionsChecker.originalValue.type.error": "Původní hodnota musí být číslo!",
+  "UnCV.optionsChecker.quantityURI.error": "Musí být definováno množství (typ charakteristiky)!",
+  "UnCV.optionsChecker.unitURI.error": "Musí být definován identifikátor (přípona) URI jednotky!",
+  "UnCV.convertedValue": "Převedená hodnota",
+  "UnCV.originalValue": "Původní hodnota"
+}

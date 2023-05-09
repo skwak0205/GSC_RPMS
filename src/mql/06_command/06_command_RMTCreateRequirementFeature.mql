@@ -1,0 +1,24 @@
+del command 'RMTCreateRequirementFeature';
+add command 'RMTCreateRequirementFeature'
+	description	''
+	label	'emxRequirements.ActionLink.Create'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Requirement&typeChooser=true&nameField=program&vaultChooser=false&form=RMTSpecTreeCreateNewRequirement&header=emxRequirements.Heading.CreateRequirement&submitAction=refreshCaller&relationship=relationship_RequirementSatisfiedBy&showApply=true&postProcessURL=../requirements/CreateProcess.jsp&operation=setRichText'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCreateRequirementFeature'
+	property	'version'	value	'R422'
+;
+modify menu RMTFeatureRequirementTopActionBar add command RMTCreateRequirementFeature order command RMTCreateRequirementFeature 1;
+#channel ==>RMTFeatureRequirementTopActionBar
+add property command_RMTCreateRequirementFeature on program eServiceSchemaVariableMapping.tcl to command 'RMTCreateRequirementFeature';

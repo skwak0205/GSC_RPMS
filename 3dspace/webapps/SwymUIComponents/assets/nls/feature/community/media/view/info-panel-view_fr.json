@@ -1,0 +1,16 @@
+{
+  "Title": "Titre",
+  "Description": "Description",
+  "TitleSizeCannotExceedNCharacters": "Le titre ne peut pas excéder {maxlen} caractères",
+  "Nochangetosave": "Aucune modification à sauvegarder",
+  "Giveyourmediaatitle": "Donner un titre au média",
+  "Update": "Mettre à jour",
+  "Cancel": "Annuler",
+  "Author": "Auteur",
+  "FileDetails": "Détails du fichier",
+  "FileName": "Nom du fichier",
+  "Resolution": "Résolution",
+  "Size": "Taille",
+  "RelatedPosts": "Posts associés",
+  "AreYouSure": "Voulez-vous vraiment annuler ? Vous perdrez les données saisies."
+}

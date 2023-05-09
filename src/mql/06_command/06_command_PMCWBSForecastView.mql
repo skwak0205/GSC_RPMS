@@ -1,0 +1,19 @@
+del command 'PMCWBSForecastView';
+add command 'PMCWBSForecastView'
+	description	''
+	label	'emxProgramCentral.TaskConstriant.WBSForecastView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.Kindof[Project Space]'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWBSForecastViewTable'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSForecastView'
+	property	'version'	value	'R422.HF4'
+;
+modify menu PMCWBSTableMenu add command PMCWBSForecastView order command PMCWBSForecastView 0;
+#channel ==>PMCWBSTableMenu
+add property command_PMCWBSForecastView on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSForecastView';

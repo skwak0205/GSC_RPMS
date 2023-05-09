@@ -1,0 +1,17 @@
+del menu 'PLCProductLineHierarchyMenu';
+add menu 'PLCProductLineHierarchyMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	menu	'PLCHierarchyProductLineMenu'
+	menu	'PLCHierarchyModelMenu'
+	menu	'PLCHierarchyProductMenu'
+	command	'AEFSeparator'
+	command	'PLCHierarchyAddToPortfolioCommand'
+	command	'PLCHierarchyRemoveCommand'
+	command	'PLCHierarchyDeleteCommand'
+	property 'version'	value	'R420'
+;
+add property menu_PLCProductLineHierarchyMenu on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductLineHierarchyMenu';

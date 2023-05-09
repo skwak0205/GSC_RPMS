@@ -1,0 +1,41 @@
+del form 'PMCProjectBudgetAddPeriodForm';
+add form 'PMCProjectBudgetAddPeriodForm' web
+field #1
+	name	'TimeLineInterval'
+	label	'emxProgramCentral.Budget.TimeLineInterval'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getInterval'
+	setting	'program'		'emxProjectBudget'
+	setting	'Field Type'		'programHTMLOutput'
+field #2
+	name	'Add Period To'
+	label	'emxProgramCentral.Budget.AddPeriodTo'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'function'		'getPeriodTo'
+	setting	'program'		'emxProjectBudget'
+	setting	'Field Type'		'programHTMLOutput'
+field #3
+	name	'Interval Periods'
+	label	'emxProgramCentral.Budget.IntervalPeriods'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'function'		'getIntervalPeriodsForAdd'
+	setting	'program'		'emxProjectBudget'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetAddPeriodForm'
+	property	'version'	value	'R210'
+;
+add property form_PMCProjectBudgetAddPeriodForm on program eServiceSchemaVariableMapping.tcl to form 'PMCProjectBudgetAddPeriodForm';

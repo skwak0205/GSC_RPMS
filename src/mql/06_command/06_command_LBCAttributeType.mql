@@ -1,0 +1,19 @@
+del command 'LBCAttributeType';
+add command 'LBCAttributeType'
+	description	''
+	label	'emxDocumentCentral.Common.Type'
+	href	''
+	alt	''
+	setting	'Range Function'		'getAttributeTypes'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Range Program'		'emxMultipleClassificationAttributeGroup'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeType'
+	property	'version'	value	'R211'
+;
+modify menu LBCAttributeAddExisting add command LBCAttributeType order command LBCAttributeType 2;
+#channel ==>LBCAttributeAddExisting
+add property command_LBCAttributeType on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeType';

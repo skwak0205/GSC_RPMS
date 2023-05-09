@@ -1,0 +1,21 @@
+del command 'ECMAddRelatedAsCandidateItem';
+add command 'ECMAddRelatedAsCandidateItem'
+	description	'Add Related Item As Candidate Item'
+	label	'EnterpriseChangeMgt.Command.AddRelatedAsCandidate'
+	href	'${SUITE_DIR}/ECMUtil.jsp?mode=AddRelatedAsCandidate'
+	alt	'EnterpriseChangeMgt.Command.AddRelatedAsCandidate'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/normal/I_SLMCategory_3.bmp'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAddRelatedAsCandidateItem'
+	property	'version'	value	'R216'
+;
+modify menu ECMRelatedItemActionsToolbar add command ECMAddRelatedAsCandidateItem order command ECMAddRelatedAsCandidateItem 0;
+#channel ==>ECMRelatedItemActionsToolbar
+add property command_ECMAddRelatedAsCandidateItem on program eServiceSchemaVariableMapping.tcl to command 'ECMAddRelatedAsCandidateItem';

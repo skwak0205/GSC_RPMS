@@ -1,0 +1,17 @@
+del command 'CFPModelManufacturingPlanDerivationMobile';
+add command 'CFPModelManufacturingPlanDerivationMobile'
+	description	''
+	label	'DMCPlanning.Channel.Heading.ManufacturingPlanDerivation'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=CFPModel:getManufacturingPlanRevision&sortColumnName=None&expandProgram=ManufacturingPlan:getManufacturingPlanDerivationChain&table=CFPModelMPDerivationSummaryTable&selection=multiple&toolbar=CFPMPDerivationToolbar&editRootNode=false&editLink=false&HelpMarker=emxhelpmanufacturingplanview&massPromoteDemote=false&objectCompare=false&freezePane=Revision,DerivationCue&SuiteDirectory=dmcplanning&StringResourceFileId=dmcplanningStringResource'
+	alt	''
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Access Function'		'isMobileModeEnabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPModelManufacturingPlanDerivationMobile'
+	property	'version'	value	'R418'
+;
+#channel ==>CFPModelManufacturingPlanChannel
+add property command_CFPModelManufacturingPlanDerivationMobile on program eServiceSchemaVariableMapping.tcl to command 'CFPModelManufacturingPlanDerivationMobile';

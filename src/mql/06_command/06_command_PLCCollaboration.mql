@@ -1,0 +1,17 @@
+del command 'PLCCollaboration';
+add command 'PLCCollaboration'
+	description	''
+	label	'emxProductLine.CategoryTab.Collaboration'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PLCCollaboration&HelpMarker=emxhelpproductdetails&header=emxWhereUsed.Heading.WhereUsed'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCollaboration'
+	property	'version'	value	'R418'
+;
+modify menu type_Products add command PLCCollaboration order command PLCCollaboration 12;
+#channel ==>type_Products
+add property command_PLCCollaboration on program eServiceSchemaVariableMapping.tcl to command 'PLCCollaboration';

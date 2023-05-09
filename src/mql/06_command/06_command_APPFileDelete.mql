@@ -1,0 +1,25 @@
+del command 'APPFileDelete';
+add command 'APPFileDelete'
+	description	'Delete Selected File from Document'
+	label	'emxComponents.Command.DeleteFile'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRemove.jsp?action=deleteFile'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_SuspendVersioning].value> != True && current.access[fromdisconnect] == true && revision==last && current.access[checkin] == true) && (current.access[modify] == true)'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDeleteAll.png'
+	setting	'Confirm Message'		'emxComponents.Alert.RemoveFile'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFileDelete'
+	property	'version'	value	'R424.HF4'
+;
+modify menu APPFileSummaryActionsToolBar add command APPFileDelete order command APPFileDelete 10;
+#channel ==>APPFileSummaryActionsToolBar
+add property command_APPFileDelete on program eServiceSchemaVariableMapping.tcl to command 'APPFileDelete';

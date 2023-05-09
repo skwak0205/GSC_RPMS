@@ -1,0 +1,26 @@
+del command 'RMTCreateReqSpecFromGroupActionLink';
+add command 'RMTCreateReqSpecFromGroupActionLink'
+	description	''
+	label	'emxRequirements.Heading.CreateRequirementSpecificationFromGroup'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=createAndAttachToReqGroup&type=type_SoftwareRequirementSpecification&relType=relationship_RequirementGroupContent'
+	alt	''
+	setting	'Target Location'		'hidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCreateReqSpecFromGroupActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecificationCreateAndAttachMenu add command RMTCreateReqSpecFromGroupActionLink order command RMTCreateReqSpecFromGroupActionLink 0;
+#channel ==>RMTSpecificationCreateAndAttachMenu
+add property command_RMTCreateReqSpecFromGroupActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTCreateReqSpecFromGroupActionLink';

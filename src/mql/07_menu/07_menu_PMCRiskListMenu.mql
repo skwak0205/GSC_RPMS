@@ -1,0 +1,17 @@
+del menu 'PMCRiskListMenu';
+add menu 'PMCRiskListMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectActiveRisk'
+	command	'PMCProjectCompleteRisk'
+	command	'PMCProjectAllRisk'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCRiskListMenu'
+	property 'version'	value	'R418'
+;
+add property menu_PMCRiskListMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCRiskListMenu';

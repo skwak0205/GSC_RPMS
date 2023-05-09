@@ -1,0 +1,20 @@
+del command 'LBCContentAddedEvent';
+add command 'LBCContentAddedEvent'
+	description	'Event holder for Content Addition'
+	label	'emxLibraryCentral.Event.Content_Added'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Content Added'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCContentAddedEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCDocumentLibrarySubscriptionEvents add command LBCContentAddedEvent order command LBCContentAddedEvent 1;
+modify menu LBCBookshelfSubscriptionEvents add command LBCContentAddedEvent order command LBCContentAddedEvent 1;
+modify menu LBCBookSubscriptionEvents add command LBCContentAddedEvent order command LBCContentAddedEvent 1;
+modify menu LBCLibrariesSubscriptionEvents add command LBCContentAddedEvent order command LBCContentAddedEvent 1;
+#channel ==>LBCDocumentLibrarySubscriptionEventsLBCBookshelfSubscriptionEventsLBCBookSubscriptionEventsLBCLibrariesSubscriptionEvents
+add property command_LBCContentAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCContentAddedEvent';

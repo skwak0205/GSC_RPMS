@@ -1,0 +1,26 @@
+del command 'PMCWhatIfCompare';
+add command 'PMCWhatIfCompare'
+	description	'PMCCompare'
+	label	'emxProgramCentral.Experiment.CompareExperimentWBS'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=compareWBS'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true && (current!= Review && current!= Complete && current!= Archive && current!= Cancel)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_PLMCompare32.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfCompare'
+	property	'version'	value	'R422'
+;
+modify menu PMCWhatIfCompareStructureActions add command PMCWhatIfCompare order command PMCWhatIfCompare 0;
+#channel ==>PMCWhatIfCompareStructureActions
+add property command_PMCWhatIfCompare on program eServiceSchemaVariableMapping.tcl to command 'PMCWhatIfCompare';

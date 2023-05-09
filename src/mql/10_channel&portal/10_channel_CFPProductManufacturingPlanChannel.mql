@@ -1,0 +1,16 @@
+del channel 'CFPProductManufacturingPlanChannel';
+add channel 'CFPProductManufacturingPlanChannel'
+	description	''
+	height	'630'
+	label	''
+	href	''
+	setting		'Registered Suite'		'DMCPlanning'
+	command 	'CFPProductManufacturingPlanComposition','CFPProductManufacturingPlanCompositionMobile'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPProductManufacturingPlanChannel'
+	property	'version'	value	'R418'
+;
+#portal ==>CFPProductManufacturingPlanPortal
+add property channel_CFPProductManufacturingPlanChannel on program eServiceSchemaVariableMapping.tcl to channel 'CFPProductManufacturingPlanChannel';

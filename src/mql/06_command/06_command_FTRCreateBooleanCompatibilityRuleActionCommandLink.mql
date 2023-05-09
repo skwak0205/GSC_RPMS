@@ -1,0 +1,25 @@
+del command 'FTRCreateBooleanCompatibilityRuleActionCommandLink';
+add command 'FTRCreateBooleanCompatibilityRuleActionCommandLink'
+	description	''
+	label	'emxProduct.ActionLink.CreateBCR'
+	href	'${SUITE_DIR}/CreateRuleDialog.jsp?modetype=create&commandName= FTRBooleanCompatibilityRuleSettings&ruleType=BooleanCompatibilityRule&submitURL=../configuration/BCRCreatePostProcess.jsp?mode=create&ruleType=BooleanCompatibilityRule&submitAction=refreshCaller'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateBooleanCompatibilityRuleActionCommandLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRBooleanCompatibilityRulesToolbar add command FTRCreateBooleanCompatibilityRuleActionCommandLink order command FTRCreateBooleanCompatibilityRuleActionCommandLink 1;
+modify menu FTRBooleanCompatibilityRuleListTopActionBarMenu add command FTRCreateBooleanCompatibilityRuleActionCommandLink order command FTRCreateBooleanCompatibilityRuleActionCommandLink 1;
+#channel ==>FTRBooleanCompatibilityRulesToolbarFTRBooleanCompatibilityRuleListTopActionBarMenu
+add property command_FTRCreateBooleanCompatibilityRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateBooleanCompatibilityRuleActionCommandLink';

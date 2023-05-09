@@ -1,0 +1,18 @@
+del command 'About3DEXPERIENCEPlatform';
+add command 'About3DEXPERIENCEPlatform'
+	description	'About 3DEXPERIENCE Platform'
+	label	'emxNavigator.UIMenuBar.About3DExp'
+	href	'javascript:showAndGetNonModalDialog(\"../common/emx3DExperiencePlatformAbout.jsp?suiteKey=Framework&StringResourceFileId=emxFrameworkStringResource&SuiteDirectory=common\",\"530\",\"325\",true)'
+	alt	'emxNavigator.UIMenuBar.About3DExp'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'About3DEXPERIENCEPlatform'
+	property	'version'	value	'R417'
+;
+modify menu AEFHelpMenu add command About3DEXPERIENCEPlatform order command About3DEXPERIENCEPlatform 0;
+#channel ==>AEFHelpMenu
+add property command_About3DEXPERIENCEPlatform on program eServiceSchemaVariableMapping.tcl to command 'About3DEXPERIENCEPlatform';

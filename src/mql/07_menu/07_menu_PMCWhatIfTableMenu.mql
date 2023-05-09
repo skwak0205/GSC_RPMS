@@ -1,0 +1,16 @@
+del menu 'PMCWhatIfTableMenu';
+add menu 'PMCWhatIfTableMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWhatIfWBSView'
+	command	'PMCWhatIfAssignmentView'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWhatIfTableMenu'
+	property 'version'	value	'R215'
+;
+add property menu_PMCWhatIfTableMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCWhatIfTableMenu';

@@ -1,0 +1,26 @@
+del command 'PMCAddExistingRisk';
+add command 'PMCAddExistingRisk'
+	description	''
+	label	'emxProgramCentral.Common.AddExisting'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=addExistingRisk'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddExistingRisk'
+	property	'version'	value	'R422'
+;
+modify menu PMCRisksSummaryToolBar add command PMCAddExistingRisk order command PMCAddExistingRisk 4;
+#channel ==>PMCRisksSummaryToolBar
+add property command_PMCAddExistingRisk on program eServiceSchemaVariableMapping.tcl to command 'PMCAddExistingRisk';

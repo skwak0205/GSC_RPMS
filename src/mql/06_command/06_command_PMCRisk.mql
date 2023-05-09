@@ -1,0 +1,26 @@
+del command 'PMCRisk';
+add command 'PMCRisk'
+	description	'Risk Command Object'
+	label	'emxFramework.Command.Risk'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=PMCProjectRisk'
+	alt	'emxFramework.Command.Alt.Risk'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'risk.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRisk'
+	property	'version'	value	'R422'
+;
+modify menu type_ProjectConcept add command PMCRisk order command PMCRisk 7;
+modify menu type_TaskManagement add command PMCRisk order command PMCRisk 8;
+#channel ==>type_ProjectConcepttype_TaskManagementPMCProjectSummaryPortalChannel2
+add property command_PMCRisk on program eServiceSchemaVariableMapping.tcl to command 'PMCRisk';

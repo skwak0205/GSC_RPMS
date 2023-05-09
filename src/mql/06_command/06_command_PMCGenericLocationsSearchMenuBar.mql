@@ -1,0 +1,26 @@
+del command 'PMCGenericLocationsSearchMenuBar';
+add command 'PMCGenericLocationsSearchMenuBar'
+	description	'Menu Bar Generic Locations Search'
+	label	'emxProgramCentral.Search.Locations'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?table=PMCGenericLocationSearchResults&field=TYPES=type_Location'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Currency Converter'		'false'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGenericLocationsSearchMenuBar'
+	property	'version'	value	'R423.HF2'
+;
+modify menu PMCProgramCentralSearch add command PMCGenericLocationsSearchMenuBar order command PMCGenericLocationsSearchMenuBar 9;
+#channel ==>PMCProgramCentralSearch
+add property command_PMCGenericLocationsSearchMenuBar on program eServiceSchemaVariableMapping.tcl to command 'PMCGenericLocationsSearchMenuBar';

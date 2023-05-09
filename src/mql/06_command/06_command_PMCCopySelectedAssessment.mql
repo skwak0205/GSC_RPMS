@@ -1,0 +1,23 @@
+del command 'PMCCopySelectedAssessment';
+add command 'PMCCopySelectedAssessment'
+	description	'Copy Selected Assessment'
+	label	'emxProgramCentral.Common.CopySelectedAssessment'
+	href	'${SUITE_DIR}/emxProgramCentralAssessmentUtil.jsp?mode=copySelect'
+	alt	'emxProgramCentral.Common.CopySelectedAssessment'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAssessmentCopyValid'
+	setting	'Access Program'		'emxAssessment'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCopySelectedAssessment'
+	property	'version'	value	'R423.HF6'
+;
+modify menu PMCAssessSummaryToolBar add command PMCCopySelectedAssessment order command PMCCopySelectedAssessment 4;
+modify menu PMCAssessSummaryToolBarActions add command PMCCopySelectedAssessment order command PMCCopySelectedAssessment 4;
+#channel ==>PMCAssessSummaryToolBarPMCAssessSummaryToolBarActions
+add property command_PMCCopySelectedAssessment on program eServiceSchemaVariableMapping.tcl to command 'PMCCopySelectedAssessment';

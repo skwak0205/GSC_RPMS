@@ -1,0 +1,21 @@
+del command 'APPWorkflowPause';
+add command 'APPWorkflowPause'
+	description	'Command Object for pausing the workflow from action menu on the workflow summary page'
+	label	'emxComponents.Command.Suspend'
+	href	'${COMPONENT_DIR}/emxWorkflowAction.jsp?action=pause'
+	alt	'emxComponents.Command.Suspend'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPause.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowPause'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowSummaryActionsToolBar add command APPWorkflowPause order command APPWorkflowPause 7;
+modify menu APPObjectWorkflowActionsToolBar add command APPWorkflowPause order command APPWorkflowPause 7;
+#channel ==>APPWorkflowSummaryActionsToolBarAPPObjectWorkflowActionsToolBar
+add property command_APPWorkflowPause on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowPause';

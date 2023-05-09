@@ -1,0 +1,24 @@
+del command 'AddExistingIssueResolvedToLink';
+add command 'AddExistingIssueResolvedToLink'
+	description	'Issue AddExisting Command Object'
+	label	'emxComponents.Command.AddExistingIssueResolvedToLink'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?table=AEFGeneralSearchResults&selection=multiple&HelpMarker=emxhelpsearch&submitLabel=emxFramework.GlobalSearch.Done&submitURL=../components/emxCommonConnectObjects.jsp&srcDestRelName=relationship_ResolvedTo&targetLocation=popup&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects&mode=resolvedby&isTo=true&commandName=AddExistingIssueResolvedToLink&relType=relationship_ResolvedTo&frameNameToRefresh=IssueResolvedToTreeCategory&addPreCondParam=false&viewFormBased=true'
+	alt	'emxComponents.Command.AddExistingIssueResolvedToLink'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AddExistingIssueResolvedToLink'
+	property	'version'	value	'R422.HF1'
+;
+modify menu IssueResolvedToListToolBarActions add command AddExistingIssueResolvedToLink order command AddExistingIssueResolvedToLink 2;
+#channel ==>IssueResolvedToListToolBarActions
+add property command_AddExistingIssueResolvedToLink on program eServiceSchemaVariableMapping.tcl to command 'AddExistingIssueResolvedToLink';

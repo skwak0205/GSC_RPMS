@@ -1,0 +1,23 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통코드 master 생성 command
+################################################################################################
+#del command "gscCommonCodeMasterCreate";
+add command "gscCommonCodeMasterCreate"
+    description ""
+    label   "emxComponents.Button.Create"
+    alt     "emxComponents.Button.Create"
+	href "${COMMON_DIR}/emxCreate.jsp?form=form_gscCommonCodeMasterCreate&type=type_gscCodeMaster&policy=policy_gscCodeMaster&nameField=both&typeChooser=true&header=emxComponents.Label.gscCommonCodeMaster&revision=-&submitAction=refreshCaller"
+    setting "Registered Suite" "Components"
+	setting "Target Location"  "popup"
+	setting "Popup Size"       "Medium"
+	setting "Popup Modal"      "true"
+	setting "Image"            "${COMMON_DIR}/images/iconActionCreate.png"
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2023.01.10"
+property "original name"    value "gscCommonCodeMasterCreate"
+;
+add property command_gscCommonCodeMasterCreate on program eServiceSchemaVariableMapping.tcl to command 'gscCommonCodeMasterCreate';

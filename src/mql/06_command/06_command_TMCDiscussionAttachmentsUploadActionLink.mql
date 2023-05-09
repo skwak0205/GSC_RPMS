@@ -1,0 +1,25 @@
+del command 'TMCDiscussionAttachmentsUploadActionLink';
+add command 'TMCDiscussionAttachmentsUploadActionLink'
+	description	''
+	label	'emxTeamCentral.Command.Upload'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?showDescription=required&appDir=components&parentRelName=relationship_MessageAttachments&objectAction=createMasterPerFile&showTitle=true&showFormat=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDiscussionAttachmentsUploadActionLink'
+	property	'version'	value	'R422'
+;
+modify menu TMCDiscussionAttachmentTopActionBar add command TMCDiscussionAttachmentsUploadActionLink order command TMCDiscussionAttachmentsUploadActionLink 0;
+#channel ==>TMCDiscussionAttachmentTopActionBar
+add property command_TMCDiscussionAttachmentsUploadActionLink on program eServiceSchemaVariableMapping.tcl to command 'TMCDiscussionAttachmentsUploadActionLink';

@@ -1,0 +1,17 @@
+del menu 'PMCGateProjectReviewRMBSubMenu';
+add menu 'PMCGateProjectReviewRMBSubMenu'
+	description	''
+	label	'emxProgramCentral.Type.Gate'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	command	'PMCChecklistCreateNew'
+	command	'PMCChecklistCopyFrom'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCGateProjectReviewRMBSubMenu'
+	property 'version'	value	'R421.HF2'
+;
+add property menu_PMCGateProjectReviewRMBSubMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCGateProjectReviewRMBSubMenu';

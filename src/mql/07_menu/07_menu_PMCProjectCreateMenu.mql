@@ -1,0 +1,20 @@
+del menu 'PMCProjectCreateMenu';
+add menu 'PMCProjectCreateMenu'
+	description	''
+	label	'emxProgramCentral.Common.CreateProject'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'hasAccessToCreateCommand'
+	setting	'Access Program'		'emxProjectSpace'
+	command	'PMCCreateProject'
+	command	'PMCCopyProject'
+	command	'PMCImportProject'
+	command	'PMCProjectTemplate'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectCreateMenu'
+	property 'version'	value	'R423.HF6'
+;
+add property menu_PMCProjectCreateMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectCreateMenu';

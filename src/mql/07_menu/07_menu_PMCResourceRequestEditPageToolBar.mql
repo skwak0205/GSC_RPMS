@@ -1,0 +1,15 @@
+del menu 'PMCResourceRequestEditPageToolBar';
+add menu 'PMCResourceRequestEditPageToolBar'
+	description	''
+	label	'emxProgramCentral.Command.ResourcePlan.Actions'
+	href	''
+	alt	''
+	menu	'PMCResourceRequestEditPageToolBarActions'
+	command	'PMCResourceRequestEditLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourceRequestEditPageToolBar'
+	property 'version'	value	'R208'
+;
+add property menu_PMCResourceRequestEditPageToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourceRequestEditPageToolBar';

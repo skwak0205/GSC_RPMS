@@ -1,0 +1,18 @@
+del command 'PLCBuildRemovedEvent';
+add command 'PLCBuildRemovedEvent'
+	description	'Build Removed Event'
+	label	'PublishSubscribe.Event.BuildRemoved'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Build Removed'
+	setting	'History Bit'		'disconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCBuildRemovedEvent'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductsEvents add command PLCBuildRemovedEvent order command PLCBuildRemovedEvent 23;
+#channel ==>PLCProductsEvents
+add property command_PLCBuildRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCBuildRemovedEvent';

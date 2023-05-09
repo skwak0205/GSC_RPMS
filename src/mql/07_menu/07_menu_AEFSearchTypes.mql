@@ -1,0 +1,23 @@
+del menu 'AEFSearchTypes';
+add menu 'AEFSearchTypes'
+	description	''
+	label	'emxFramework.GlobalSearch.SearchTypes'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	menu	'FTRSearch'
+	menu	'PLCSearch'
+	command	'AEFFullTextSearch'
+	command	'AEFSavedSearches'
+	command	'AEFSeparator'
+	command	'AEFConsolidatedSearchCollections'
+	command	'AEFConsolidatedSearchClipboardCollections'
+	menu	'TMCGlobalSearchMenu'
+	menu	'PMCProgramCentralSearch'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFSearchTypes'
+	property 'version'	value	'10-5'
+;
+add property menu_AEFSearchTypes on program eServiceSchemaVariableMapping.tcl to menu 'AEFSearchTypes';

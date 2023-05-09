@@ -1,0 +1,26 @@
+del command 'PMCProgramSummaryDeleteActionLink';
+add command 'PMCProgramSummaryDeleteActionLink'
+	description	'Command for Delete link on ProgramSummary'
+	label	'emxProgramCentral.Button.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=DeleteProgram'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Program Lead'
+	user	'External Program Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProgramSummaryDeleteActionLink'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyDeskProgramSummaryToolBarActions add command PMCProgramSummaryDeleteActionLink order command PMCProgramSummaryDeleteActionLink 0;
+#channel ==>PMCMyDeskProgramSummaryToolBarActions
+add property command_PMCProgramSummaryDeleteActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCProgramSummaryDeleteActionLink';

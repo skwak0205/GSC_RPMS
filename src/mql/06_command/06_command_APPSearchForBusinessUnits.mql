@@ -1,0 +1,18 @@
+del command 'APPSearchForBusinessUnits';
+add command 'APPSearchForBusinessUnits'
+	description	'Command object for Search For Business Units for Collaboration Request'
+	label	'emxComponents.Command.SearchForBUs'
+	href	'${COMPONENT_DIR}/emxComponentsCollaborateSearchDialog.jsp?typename=BU'
+	alt	'emxComponents.Command.SearchForBUs'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearchForBusinessUnit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchForBusinessUnits'
+	property	'version'	value	'R417'
+;
+modify menu APPSearchCompanyActionsToolBar add command APPSearchForBusinessUnits order command APPSearchForBusinessUnits 0;
+#channel ==>APPSearchCompanyActionsToolBar
+add property command_APPSearchForBusinessUnits on program eServiceSchemaVariableMapping.tcl to command 'APPSearchForBusinessUnits';

@@ -1,0 +1,12 @@
+del menu 'PARMyDesk';
+add menu 'PARMyDesk'
+	description	''
+	label	'emxParameter.common.Parameters'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	setting	'Licensed Product'		'CPF,ENO_BPS_TP'
+	setting	'Image'		'${SUITE_DIR}/images/I_PLMParameter.png'
+	command	'PARMyParameters'
+;
+add property menu_PARMyDesk on program eServiceSchemaVariableMapping.tcl to menu 'PARMyDesk';

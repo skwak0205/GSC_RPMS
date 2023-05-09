@@ -1,0 +1,20 @@
+del command 'PMCShowParentHierarchy';
+add command 'PMCShowParentHierarchy'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Structure Program'		'emxTask'
+	setting	'Structure Function'		'getTaskParentHierarchy'
+	setting	'ShowParentHierarchy'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCShowParentHierarchy'
+	property	'version'	value	'R421.HF7'
+;
+modify menu PMCtype_TaskManagement add command PMCShowParentHierarchy order command PMCShowParentHierarchy 0;
+#channel ==>PMCtype_TaskManagement
+add property command_PMCShowParentHierarchy on program eServiceSchemaVariableMapping.tcl to command 'PMCShowParentHierarchy';

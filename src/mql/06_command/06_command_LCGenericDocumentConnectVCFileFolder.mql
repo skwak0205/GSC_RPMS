@@ -1,0 +1,30 @@
+del command 'LCGenericDocumentConnectVCFileFolder';
+add command 'LCGenericDocumentConnectVCFileFolder'
+	description	'Command for mapping a file or folder in DesignSync to business object'
+	label	'emxComponents.VersionControl.ConnectVCFileFolder'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=connectVCFileFolder&actionURL=emxCommonDocumentVCConnectProcess.jsp&stepOneHeader=emxComponents.Header.ConnectToDesignSyncFileFolder&appProcessPage=emxDocumentCentralGenericDocumentSetActionsDialogFS.jsp&appDir=documentcentral&defaultType=type_GenericDocument&documentType=type_GenericDocument&parentRelName=relationship_ClassifiedItem&target=_parent'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canDisplayGenericDocVcCommands'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCGenericDocumentConnectVCFileFolder'
+	property	'version'	value	'R422.HF1'
+;
+modify menu LCDocumentSummaryCreateNew add command LCGenericDocumentConnectVCFileFolder order command LCGenericDocumentConnectVCFileFolder 7;
+#channel ==>LCDocumentSummaryCreateNew
+add property command_LCGenericDocumentConnectVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'LCGenericDocumentConnectVCFileFolder';

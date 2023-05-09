@@ -1,0 +1,17 @@
+del command 'APPDecisionAppliesToTreeCategory';
+add command 'APPDecisionAppliesToTreeCategory'
+	description	''
+	label	'emxComponents.Command.AppliesTo'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDecision:getAppliesTo&rel=relationship_DecisionAppliesTo&table=APPDecisionAppliesToList&header=emxComponents.Header.AppliesTo&sortColumnName=Name&sortDirection=ascending&toolbar=APPDecisionAppliesToActionBar&selection=multiple'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionAppliesToTreeCategory'
+	property	'version'	value	'R417'
+;
+modify menu type_Decision add command APPDecisionAppliesToTreeCategory order command APPDecisionAppliesToTreeCategory 4;
+#channel ==>type_Decision
+add property command_APPDecisionAppliesToTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionAppliesToTreeCategory';

@@ -1,0 +1,20 @@
+del menu 'PMCProjectBaselineCompareToolbar';
+add menu 'PMCProjectBaselineCompareToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'AEFSBCompareMoveFirst'
+	command	'AEFSBCompareMoveNext'
+	command	'AEFSBCompareMovePrevious'
+	command	'AEFSBCompareMoveLast'
+	command	'PMCProjectBaselineCompareDifferenceOnly'
+	command	'PMCProjectBaselineCompareAll'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBaselineCompareToolbar'
+	property 'version'	value	'R419'
+;
+add property menu_PMCProjectBaselineCompareToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBaselineCompareToolbar';

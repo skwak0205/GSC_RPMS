@@ -1,0 +1,14 @@
+del portal 'RMTRequirementProxyExchangeTracking';
+add portal 'RMTRequirementProxyExchangeTracking'
+	description	''
+	label	''
+	href	''
+	channel 	RMTRequirementProxyExchangeTracking
+	setting	'Registered Suite'		'Requirements'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementProxyExchangeTracking'
+	property	'version'	value	'V6R2019x'
+;
+add property portal_RMTRequirementProxyExchangeTracking on program eServiceSchemaVariableMapping.tcl to portal 'RMTRequirementProxyExchangeTracking';

@@ -1,0 +1,20 @@
+del command 'PMCProjectEffort';
+add command 'PMCProjectEffort'
+	description	'Efforts'
+	label	'emxProgramCentral.Common.Effort'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxEffortManagement:getProjectTaskList,emxEffortManagement:getProjectTaskListSubmitted,emxEffortManagement:getProjectTaskListPending,emxEffortManagement:getProjectTaskListApproved&table=PMCProjectTaskEffort&programLabel=emxProgramCentral.Effort.All,emxProgramCentral.Effort.Submitted,emxProgramCentral.Effort.Rejected,emxProgramCentral.Effort.Approved&toolbar=PMCProjectEffortToolbar&header=emxProgramCentral.Effort.EffortTitle&selection=none&HelpMarker=emxhelpeffortprojectlist&sortDirection=ascending&PrinterFriendly=true&selectedFilter=emxEffortManagement:getProjectTaskListSubmitted&HelpMarker=emxhelpeffortprojectlist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectEffort'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCProjectEffort on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectEffort';

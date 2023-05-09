@@ -1,0 +1,19 @@
+del form 'PMCBaseCurrencyModifyMessageForm';
+add form 'PMCBaseCurrencyModifyMessageForm' web
+field #1
+	name	'Message'
+	label	'emxProgramCentral.Common.Message'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getCurrencyModifyBackgroundTaskMessage'
+	setting	'program'		'emxFinancialItem'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBaseCurrencyModifyMessageForm'
+	property	'version'	value	'R216'
+;
+add property form_PMCBaseCurrencyModifyMessageForm on program eServiceSchemaVariableMapping.tcl to form 'PMCBaseCurrencyModifyMessageForm';

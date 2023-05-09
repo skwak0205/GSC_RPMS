@@ -1,0 +1,25 @@
+del command 'AddExistingIssueReportedAgainstLink';
+add command 'AddExistingIssueReportedAgainstLink'
+	description	'Issue AddExisting Command Object'
+	label	'emxComponents.Command.AddExistingReportedAgainstLink'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?frameNameToRefresh=IssueReportedAgainstTreeCategory&submitLabel=emxFramework.GlobalSearch.Done&table=AEFGeneralSearchResults&selection=multiple&submitURL=../components/emxCommonConnectObjects.jsp&HelpMarker=emxhelpsearch&srcDestRelName=relationship_Issue&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects&mode=reportedAgainst&isTo=true&addPreCondParam=false&viewFormBased=true'
+	alt	'emxComponents.Command.AddExistingReportedAgainstLink'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AddExistingIssueReportedAgainstLink'
+	property	'version'	value	'R422.HF1'
+;
+modify menu IssueReportedAgainstListToolBarActions add command AddExistingIssueReportedAgainstLink order command AddExistingIssueReportedAgainstLink 1;
+#channel ==>IssueReportedAgainstListToolBarActions
+add property command_AddExistingIssueReportedAgainstLink on program eServiceSchemaVariableMapping.tcl to command 'AddExistingIssueReportedAgainstLink';

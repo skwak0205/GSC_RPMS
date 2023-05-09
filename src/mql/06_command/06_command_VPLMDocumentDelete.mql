@@ -1,0 +1,16 @@
+del command 'VPLMDocumentDelete';
+add command 'VPLMDocumentDelete'
+	description	'Delete Selected Documents'
+	label	'emxFramework.Command.VPLMDocumentDelete'
+	href	'${COMMON_DIR}/emxVPLMDocumentRemove.jsp?action=delete'
+	alt	'emxFramework.Command.Alt.VPLMDocumentDelete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'VPLMWebMgt'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxFramework.Alert.Delete'
+;
+modify menu VPLMDocumentActionMenu add command VPLMDocumentDelete order command VPLMDocumentDelete 0;
+#channel ==>VPLMDocumentActionMenu
+add property command_VPLMDocumentDelete on program eServiceSchemaVariableMapping.tcl to command 'VPLMDocumentDelete';

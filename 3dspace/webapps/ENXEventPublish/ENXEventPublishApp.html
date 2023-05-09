@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/"> 
+ <!-- Copyright 2016 , Dassault Systemes. All rights reserved. -->
+<head>   
+    
+    <title>Event Settings</title>
+	
+	<!-- Application Metas Start -->
+	
+    <meta name="description" content="CAA Web Apps basic use case " />
+    <meta name="keywords" content="CAA Use Case" />
+	<link rel="stylesheet" type="text/css" href="../UIKIT/UIKIT.css" />
+   	<style>
+   	 .wux-layouts-header-poolcontainer .wux-layouts-datagridview-column-header-cell {
+    text-align: center;
+	}
+	.wux-layouts-datagridview-cell .wux-tweakers:not([alignment=center]) .wux-controls-toggle, .wux-layouts-datagridview-cell .wux-tweakers:not([alignment=center]) .wux-tweakers-boolean-readonly{
+	padding-left: 45%;
+	position: fixed;
+	}
+	.editedCell {
+  	background-color: #d5e8f2 !important;
+	}
+	.disabledCell {
+	pointer-events: none;
+	opacity: 0.5 !important;
+    }
+	</style>
+	
+	<!-- Application Metas End -->
+	<!-- Application JS Start -->
+    <script >
+	   /* global widget */
+	   ( function () {
+            'use strict';
+            
+			var myWidget = {
+                //The onLoad() function is the first one - it will be triggered by widget "onLoad" event.            
+                onLoad: function() {
+                	require (["DS/ENXEventPublish/Views/EventsEnablementGridView"], function(EventsEnablementGridView){
+                			EventsEnablementGridView.onLoad.call();
+                	});      
+                },
+                onRefresh : function() {
+                	require (["DS/ENXEventPublish/Views/EventsEnablementGridView"], function(EventsEnablementGridView){
+            			EventsEnablementGridView.onRefresh.call();
+            	});
+                },
+                onStorageChange : function(event) {
+					require(["DS/ENXEventPublish/Views/EventsEnablementGridView"], function (EventsEnablementGridView) {
+						'use strict';
+						EventsEnablementGridView.onStorageChange.call(event);
+					});
+                }
+            };
+
+            //The "onLoad" event is the very first event triggered when - the widget is fully loaded.         
+            widget.addEvent('onLoad', myWidget.onLoad);
+            widget.addEvent('onRefresh', myWidget.onRefresh);
+            widget.addEvent('onStorageChange', myWidget.onStorageChange);
+	   	}() ) ;
+    </script>
+	<!-- Application JS End -->
+</head>
+<body>
+<!-- Default Loading -->
+  <div class="spinner spinning fade in" style="transform: translate3d(0px, 0px, 0px); display: inline-block; display: inline-block; margin-top: 20%; margin-left: 45%;">
+    <span class="spinner-bar"></span>
+    <span class="spinner-bar spinner-bar1"></span>
+    <span class="spinner-bar spinner-bar2"></span>
+    <span class="spinner-bar spinner-bar3"></span>
+   </div>
+</body>
+</html>

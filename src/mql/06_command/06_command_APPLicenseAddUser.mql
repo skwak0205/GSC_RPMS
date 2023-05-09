@@ -1,0 +1,21 @@
+del command 'APPLicenseAddUser';
+add command 'APPLicenseAddUser'
+	description	''
+	label	'emxComponents.Common.Licensing.AddUser'
+	href	'${COMPONENT_DIR}/emxComponentsLicenseProcess.jsp'
+	alt	'emxComponents.Common.Licensing.AddUser'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddPerson.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLicenseAddUser'
+	property	'version'	value	'R422'
+;
+modify menu APPProductLicenseToolbar add command APPLicenseAddUser order command APPLicenseAddUser 1;
+#channel ==>APPProductLicenseToolbar
+add property command_APPLicenseAddUser on program eServiceSchemaVariableMapping.tcl to command 'APPLicenseAddUser';

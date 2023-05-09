@@ -1,0 +1,26 @@
+del command 'DepartmentDeleteSelected';
+add command 'DepartmentDeleteSelected'
+	description	'Department Delete Selected Command Object'
+	label	'emxComponents.Common.Delete'
+	href	'${COMPONENT_DIR}/emxComponentsConfigurableTableDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[delete] == true)'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.DeleteDepartment.ConfirmMsg'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DepartmentDeleteSelected'
+	property	'version'	value	'R421'
+;
+modify menu DepartmentSummaryBottomActionBar add command DepartmentDeleteSelected order command DepartmentDeleteSelected 0;
+modify menu APPDepartmentSummaryActionsToolBar add command DepartmentDeleteSelected order command DepartmentDeleteSelected 0;
+#channel ==>DepartmentSummaryBottomActionBarAPPDepartmentSummaryActionsToolBar
+add property command_DepartmentDeleteSelected on program eServiceSchemaVariableMapping.tcl to command 'DepartmentDeleteSelected';

@@ -1,0 +1,19 @@
+del command 'PMCBudgetAddMember';
+add command 'PMCBudgetAddMember'
+	description	''
+	label	'emxFramework.Common.DomainAccessAddMember'
+	href	'../programcentral/emxProgramCentralBudgetUtil.jsp?mode=addMemberToMultipleOwnershipPage'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'current.access[changeowner]||current.access[changesov]'
+	setting	'Image'		'${COMMON_DIR}/images/iconShare_32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBudgetAddMember'
+	property	'version'	value	'R423'
+;
+modify menu PMCBudgetMOASummaryToolBar add command PMCBudgetAddMember order command PMCBudgetAddMember 1;
+#channel ==>PMCBudgetMOASummaryToolBar
+add property command_PMCBudgetAddMember on program eServiceSchemaVariableMapping.tcl to command 'PMCBudgetAddMember';

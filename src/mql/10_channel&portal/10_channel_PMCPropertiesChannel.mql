@@ -1,0 +1,16 @@
+del channel 'PMCPropertiesChannel';
+add channel 'PMCPropertiesChannel'
+	description	'Channel for Properties Portal'
+	height	'600'
+	label	'emxFramework.Command.PMCPropertiesChannel'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCTaskManagementProperties','PMCLifecycle','PMCHistory','PMCResolvesRIOCommand'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCPropertiesChannel'
+	property	'version'	value	'R424'
+;
+#portal ==>PMCPropertiesPortal
+add property channel_PMCPropertiesChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCPropertiesChannel';

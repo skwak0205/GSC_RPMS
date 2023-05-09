@@ -1,0 +1,15 @@
+del menu 'PMCProjectFolderToolbar';
+add menu 'PMCProjectFolderToolbar'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCProjectFolderToolbarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectFolderToolbar'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_PMCProjectFolderToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectFolderToolbar';

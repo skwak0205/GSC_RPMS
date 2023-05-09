@@ -1,0 +1,17 @@
+del menu 'RMTRequirementRichTextEditorDeleteActions';
+add menu 'RMTRequirementRichTextEditorDeleteActions'
+	description	''
+	label	'emxRequirements.ActionLink.DeleteAndRemove'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTDeleteSelected'
+	command	'RMTRequirementDeleteChildren'
+	command	'RMTRequirementStructureRemoveRichText'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementRichTextEditorDeleteActions'
+	property 'version'	value	'V6R2013'
+;
+add property menu_RMTRequirementRichTextEditorDeleteActions on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementRichTextEditorDeleteActions';

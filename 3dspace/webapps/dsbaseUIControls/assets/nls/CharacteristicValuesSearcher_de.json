@@ -1,0 +1,11 @@
+{
+  "CVS.optionsChecker.searchEngine.notExisting.error": "Um Werte zu finden, muss eine Suchmaschine definiert sein.",
+  "CVS.optionsChecker.searchEngine.notFunction.error": "Für die Suchmaschine wird eine Funktion erwartet.",
+  "CVS.optionsChecker.defaultValues.array.error": "Standardwerte müssen in einem Array enthalten sein.",
+  "CVS.optionsChecker.defaultValues.arrayObjects.error": "Als Standardwerte für die Eingabe wird ein Array von Objekten erwartet.",
+  "CVS.optionsChecker.defaultValues.labelExpected.error": "Für jeden Standardwert wird eine Beschriftung erwartet.",
+  "CVS.optionsChecker.defaultValues.valueExpected.error": "Für jeden Standardwert wird ein Wert erwartet.",
+  "CVS.optionsChecker.onSuggest.notFunction.error": "Für die Option \"onSuggest\" wird eine Funktion erwartet.",
+  "CVS.optionsChecker.onSelect.notFunction.error": "Für die Option \"onSelect\" wird eine Funktion erwartet.",
+  "CVS.optionsChecker.onCleanDataset.notFunction.error": "Für die Option \"onCleanDataset\" wird eine Funktion erwartet."
+}

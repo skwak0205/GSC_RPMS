@@ -1,0 +1,20 @@
+del command 'PMCProjectTemplateProperties';
+add command 'PMCProjectTemplateProperties'
+	description	'Template Properties Command Object'
+	label	'emxFramework.Command.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProjectTemplateForm&mode=view&toolbar=PMCProjectTemplateToolbar&formHeader=emxProgramCentral.Common.FormBasics&HelpMarker=emxhelpprojecttemplatedetails&Export=false'
+	alt	'emxFramework.Command.Properties'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Image'		'${COMMON_DIR}/images/I_SmallProperties16.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateProperties'
+	property	'version'	value	'R421.HF2'
+;
+modify menu type_ProjectTemplate add command PMCProjectTemplateProperties order command PMCProjectTemplateProperties 6;
+modify menu type_ProjectTemplateRMB add command PMCProjectTemplateProperties order command PMCProjectTemplateProperties 1;
+#channel ==>type_ProjectTemplatetype_ProjectTemplateRMB
+add property command_PMCProjectTemplateProperties on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateProperties';

@@ -1,0 +1,15 @@
+del menu 'type_URL';
+add menu 'type_URL'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_BookMark&toolbar=PMCBookMarkToolbarActions&formHeader=emxProgramCentral.Common.BookmarkBasics&HelpMarker=emxhelpbookmarkproperties&Export=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${SUITE_DIR}/sm_icon_Bookmark.gif'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_URL'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_type_URL on program eServiceSchemaVariableMapping.tcl to menu 'type_URL';

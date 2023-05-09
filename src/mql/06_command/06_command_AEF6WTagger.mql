@@ -1,0 +1,19 @@
+del command 'AEF6WTagger';
+add command 'AEF6WTagger'
+	description	''
+	label	''
+	href	''
+	alt	'6WTags'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Alignment'		'center'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/Tag_Icon_Off.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEF6WTagger'
+	property	'version'	value	'R418'
+;
+modify menu AEFGlobalToolbar add command AEF6WTagger order command AEF6WTagger 5;
+#channel ==>AEFGlobalToolbar
+add property command_AEF6WTagger on program eServiceSchemaVariableMapping.tcl to command 'AEF6WTagger';

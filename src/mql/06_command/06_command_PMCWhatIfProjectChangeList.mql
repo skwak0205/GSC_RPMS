@@ -1,0 +1,23 @@
+del command 'PMCWhatIfProjectChangeList';
+add command 'PMCWhatIfProjectChangeList'
+	description	'Related Projects Command Object'
+	label	'emxProgramCentral.ChangeProject.Experiment.ProjectChanges'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCWhatIfProjectChangeTable&toolbar=PMCWhatIfProjectChangeActions&freezePane=Name&selection=multiple&HelpMarker=emxhelprelatedprojects&hideHeader=true&customize=true&rowGrouping=false&showPageURLIcon=false&hideLaunchButton=true&export=false&displayView=details&export=false&editLink=true&hideRootSelection=true&objectCompare=false&showClipboard=false&multiColumnSort=false&findMxLink=false&showRMB=false&massPromoteDemote=false&expandLevelFilter=false&program=emxWhatIf:getExpIssues&postProcessJPO=emxWhatIf:postProcessRefreshAfterEdit'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Function'		'enableChangeProcessManagementChannel'
+	setting	'Access Program'		'emxWhatIf'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfProjectChangeList'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCWhatIfProjectChanges
+add property command_PMCWhatIfProjectChangeList on program eServiceSchemaVariableMapping.tcl to command 'PMCWhatIfProjectChangeList';

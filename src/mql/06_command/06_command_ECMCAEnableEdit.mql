@@ -1,0 +1,20 @@
+del command 'ECMCAEnableEdit';
+add command 'ECMCAEnableEdit'
+	description	''
+	label	'emxFramework.TableEdit.Enable_Edit'
+	href	'javascript:editMode()'
+	alt	''
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Access Function'		'isProposedEditAllowed'
+	setting	'Access Program'		'enoECMChangeActionUX'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCAEnableEdit'
+	property	'version'	value	'R417'
+;
+modify menu ECMAddRemoveCAAffectedItemsToolbar add command ECMCAEnableEdit order command ECMCAEnableEdit 3;
+#channel ==>ECMAddRemoveCAAffectedItemsToolbar
+add property command_ECMCAEnableEdit on program eServiceSchemaVariableMapping.tcl to command 'ECMCAEnableEdit';

@@ -1,0 +1,19 @@
+del command 'FTRLogicalFeaturesWithDV';
+add command 'FTRLogicalFeaturesWithDV'
+	description	''
+	label	'emxConfiguration.Category.LogicalView'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=LogicalFeature:getLogicalFeatureStructure&table=FTRLogicalFeatureWithDVTable&header=emxConfiguration.Heading.LogicalView&HelpMarker=emxhelplogfeatwithassocdesignvariantview&massPromoteDemote=false&objectCompare=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isChannelAllowedinProductDesignVariantReport'
+	setting	'Access Program'		'LogicalFeature'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLogicalFeaturesWithDV'
+	property	'version'	value	'R215'
+;
+#channel ==>FTRLogicalFeatureWithDVChannel
+add property command_FTRLogicalFeaturesWithDV on program eServiceSchemaVariableMapping.tcl to command 'FTRLogicalFeaturesWithDV';

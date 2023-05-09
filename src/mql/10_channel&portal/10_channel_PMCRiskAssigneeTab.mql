@@ -1,0 +1,16 @@
+del channel 'PMCRiskAssigneeTab';
+add channel 'PMCRiskAssigneeTab'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCAssignee','PMCRiskMultipleOwnershipCommand'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRiskAssigneeTab'
+	property	'version'	value	'R417'
+;
+#portal ==>PMCRiskAssigneeTab
+add property channel_PMCRiskAssigneeTab on program eServiceSchemaVariableMapping.tcl to channel 'PMCRiskAssigneeTab';

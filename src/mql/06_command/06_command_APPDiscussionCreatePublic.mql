@@ -1,0 +1,24 @@
+del command 'APPDiscussionCreatePublic';
+add command 'APPDiscussionCreatePublic'
+	description	''
+	label	'emxComponents.Common.CreatePublicDiscussion'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=APPCreateDiscussion&formHeader=emxComponents.Common.CreatePublicDiscussion&HelpMarker=emxhelpcreatediscussion&mode=edit&showPageURLIcon=false&createJPO=emxDiscussion:createDiscussionPostProcess&Export=false&findMxLink=false&DiscType=Public&postProcessURL=../components/emxComponentsDiscussionCreateProcess.jsp&submitAction=doNothing&type=type_Message&nameField=autoName&policy=policy_Message&showPolicy=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedContributor'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionCreatePublic'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPDiscussionActionsToolBar add command APPDiscussionCreatePublic order command APPDiscussionCreatePublic 1;
+#channel ==>APPDiscussionActionsToolBar
+add property command_APPDiscussionCreatePublic on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionCreatePublic';

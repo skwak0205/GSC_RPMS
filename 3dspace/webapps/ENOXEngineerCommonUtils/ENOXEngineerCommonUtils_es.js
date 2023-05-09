@@ -1,0 +1,1 @@
+define("DS/ENOXEngineerCommonUtils/ENOXEngineerCommonUtils_es",{});define("DS/ENOXEngineerCommonUtils/assets/nls/XENCommonNls",{loading:"Cargando...","eng.ui.button.ok":"Aceptar","eng.ui.button.cancel":"Cancelar"});

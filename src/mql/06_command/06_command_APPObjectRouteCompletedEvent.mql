@@ -1,0 +1,22 @@
+del command 'APPObjectRouteCompletedEvent';
+add command 'APPObjectRouteCompletedEvent'
+	description	'Object Route Completed Event'
+	label	'emxComponents.Route.Event.Route_Completed'
+	href	''
+	alt	''
+	setting	'Force Recursion'		'true'
+	setting	'Registered Suite'		'Components'
+	setting	'3DNotificationSupported'		'false'
+	setting	'Event Type'		'Route Completed'
+	setting	'Recurse Relationship'		'$<relationship_ObjectRoute>,$<relationship_RouteScope>'
+	setting	'Is Recursible'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectRouteCompletedEvent'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPRouteSubscriptionEvents add command APPObjectRouteCompletedEvent order command APPObjectRouteCompletedEvent 5;
+modify menu APPDOCUMENTSEvents add command APPObjectRouteCompletedEvent order command APPObjectRouteCompletedEvent 9;
+#channel ==>APPRouteSubscriptionEventsAPPDOCUMENTSEvents
+add property command_APPObjectRouteCompletedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPObjectRouteCompletedEvent';

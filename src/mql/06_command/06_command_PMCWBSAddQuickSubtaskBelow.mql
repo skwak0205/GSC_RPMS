@@ -1,0 +1,29 @@
+del command 'PMCWBSAddQuickSubtaskBelow';
+add command 'PMCWBSAddQuickSubtaskBelow'
+	description	''
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?mode=QuickWBS&calledMethod=submitAddTask'
+	alt	'emxProgramCentral.Common.AddSubtaskBelow'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionInsertRowAfter.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSAddQuickSubtaskBelow'
+	property	'version'	value	'R424.HF3'
+;
+modify menu PMCWBSQuickFilterToolbar add command PMCWBSAddQuickSubtaskBelow order command PMCWBSAddQuickSubtaskBelow 3;
+modify menu PMCWBSProjectTemplateToolBar add command PMCWBSAddQuickSubtaskBelow order command PMCWBSAddQuickSubtaskBelow 2;
+#channel ==>PMCWBSQuickFilterToolbarPMCWBSProjectTemplateToolBar
+add property command_PMCWBSAddQuickSubtaskBelow on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSAddQuickSubtaskBelow';

@@ -1,0 +1,24 @@
+del command 'APPNonVersionableDocumentFiles';
+add command 'APPNonVersionableDocumentFiles'
+	description	'lists the Files in the Document Object'
+	label	'emxComponents.Common.Files'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonFileUI:getNonVersionableFiles&table=APPNonVersionableFileSummary&objectBased=false&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPNonVersionableFileSummaryToolBar&header=emxComponents.Menu.Files&subHeader=emxComponents.Menu.SubHeaderDocuments&HelpMarker=emxhelpdocumentfilelist&FilterFramePage=${COMPONENT_DIR}/emxCommonDocumentCheckoutUtil.jsp&FilterFrameSize=1&AppendFileName=true'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(vcfile == FALSE && vcfolder == FALSE && vcmodule == FALSE)'
+	setting	'Access Function'		'disallowFileVersioning'
+	setting	'Access Program'		'emxCommonDocument'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPNonVersionableDocumentFiles'
+	property	'version'	value	'R422'
+;
+modify menu type_DOCUMENTS add command APPNonVersionableDocumentFiles order command APPNonVersionableDocumentFiles 9;
+modify menu type_GenericDocument add command APPNonVersionableDocumentFiles order command APPNonVersionableDocumentFiles 11;
+modify menu type_DocumentSheet add command APPNonVersionableDocumentFiles order command APPNonVersionableDocumentFiles 7;
+#channel ==>type_DOCUMENTStype_GenericDocumenttype_DocumentSheet
+add property command_APPNonVersionableDocumentFiles on program eServiceSchemaVariableMapping.tcl to command 'APPNonVersionableDocumentFiles';

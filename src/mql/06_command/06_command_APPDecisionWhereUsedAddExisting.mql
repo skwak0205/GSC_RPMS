@@ -1,0 +1,23 @@
+del command 'APPDecisionWhereUsedAddExisting';
+add command 'APPDecisionWhereUsedAddExisting'
+	description	'Add an existing object to the Decision'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Requirement,type_Meeting,type_ProjectManagement,type_Program,type_ChangeAction,type_ChangeOrder,type_ChangeRequest&table=APPDecisionsAddExistingSearch&excludeOIDprogram=emxDecision:excludeDecisionWhereUsed&selection=multiple&cancelLabel=emxComponents.Button.Close&showInitialResults=false&showSavedQuery=True&searchCollectionEnabled=True&HelpMarker=emxhelpfullsearch&submitURL=../components/emxComponentsFullSearchUtil.jsp?mode=Connect&relName=relationship_Decision&direction=from'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == TRUE)'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionWhereUsedAddExisting'
+	property	'version'	value	'R424'
+;
+modify menu APPDecisionWhereUsedActionBar add command APPDecisionWhereUsedAddExisting order command APPDecisionWhereUsedAddExisting 1;
+#channel ==>APPDecisionWhereUsedActionBar
+add property command_APPDecisionWhereUsedAddExisting on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionWhereUsedAddExisting';

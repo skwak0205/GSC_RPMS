@@ -1,0 +1,78 @@
+################################################################################################
+# Created Date : 2020. 05. 27
+# Create by Suhwan,Jang
+# Description : BPC Master 생성 Form
+################################################################################################
+#del form 'type_emdBPCMasterCreateForm';
+add form 'type_emdBPCMasterCreateForm' web
+    field
+        name 'Type'
+        label 'emxDocumentCentral.Common.Type'
+        businessobject  'type'
+        alt ''
+        range '${COMMON_DIR}/emxTypeChooser.jsp?InclusionList=type_Libraries&ReloadOpener=true'
+        update ''
+        setting 'Input Type' 'textbox'
+        setting 'Admin Type' 'Type'
+        setting 'Registered Suite' 'LibraryCentral'
+        setting 'Required' 'true'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'basic'
+    field
+        name 'Policy'
+        label 'emxDocumentCentral.Common.Policy'
+        businessobject  '$<policy>'
+        alt ''
+        range ''
+        update ''
+        setting 'Admin Type' 'Policy'
+        setting 'Registered Suite' 'LibraryCentral'
+        setting 'Required' 'true'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'basic'
+    field
+        name 'Name'
+        label 'emxDocumentCentral.Common.Name'
+        businessobject  'name'
+        alt ''
+        range ''
+        update ''
+        setting 'OnChange Handler' 'reloadMessageField'
+        setting 'Registered Suite' 'LibraryCentral'
+        setting 'Required' 'true'
+        setting 'Validate' 'validateForBadCharacters'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'basic'
+    field
+        name 'Title'
+        label 'emxDocumentCentral.Common.Title'
+        businessobject  '$<attribute[attribute_Title]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Input Type' 'textbox'
+        setting 'Admin Type' 'attribute_Title'
+        setting 'Registered Suite' 'LibraryCentral'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'attribute'
+        setting 'Field Size' '43'
+    field
+        name 'Description'
+        label 'emxLibraryCentral.Attribute.ChangeReason'
+        businessobject  'description'
+        alt ''
+        range ''
+        update ''
+        setting 'Input Type' 'textarea'
+        setting 'Registered Suite' 'LibraryCentral'
+        setting 'Validate' 'checkDescriptionLength'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'basic'
+    property 'application'      value 'LibraryCentral'
+    property 'version'          value 'V6R2019'
+    property 'installer'        value 'HHI'
+    property 'installed date'   value '2020-05-27'
+    property 'original name'    value 'type_emdBPCMasterCreateForm'
+;
+add property 'form_type_emdBPCMasterCreateForm' on program 'eServiceSchemaVariableMapping.tcl' to form 'type_emdBPCMasterCreateForm';

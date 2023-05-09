@@ -1,0 +1,43 @@
+del form 'PMCTaskEstimatedFinishDateUpdateConfirmation';
+add form 'PMCTaskEstimatedFinishDateUpdateConfirmation' web
+field #1
+	name	'Text'
+	label	'emxProgramCentral.Effort.UpdateTaskFromEffort'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Field Type'		'Section Header'
+field #2
+	name	'Task Name'
+	businessobject	'$<name>'
+	label	'emxProgramCentral.Common.PhaseTaskName'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Editable'		'false'
+	setting	'Field Type'		'basic'
+field #3
+	name	'Estimated Finish Date'
+	businessobject	'$<attribute[attribute_TaskEstimatedFinishDate].value>'
+	label	'emxProgramCentral.Common.EstimatedFinishDate'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'IgnoreTimeZone'		'true'
+	setting	'format'		'date'
+	setting	'Editable'		'true'
+	setting	'Calendar Function'		'getNonWorkingDays'
+	setting	'Calendar Program'		'emxTask'
+	setting	'Update Program'		'emxEffortManagement'
+	setting	'Update Function'		'updateEstDate'
+	setting	'Field Type'		'attribute'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskEstimatedFinishDateUpdateConfirmation'
+	property	'version'	value	'R421'
+;
+add property form_PMCTaskEstimatedFinishDateUpdateConfirmation on program eServiceSchemaVariableMapping.tcl to form 'PMCTaskEstimatedFinishDateUpdateConfirmation';

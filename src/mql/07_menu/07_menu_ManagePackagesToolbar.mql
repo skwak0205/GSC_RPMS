@@ -1,0 +1,10 @@
+del menu 'ManagePackagesToolbar';
+add menu 'ManagePackagesToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'ImportPackCmd'
+	command	'MngUniquenessKeyCmd'
+;
+add property menu_ManagePackagesToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ManagePackagesToolbar';

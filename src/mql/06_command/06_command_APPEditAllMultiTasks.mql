@@ -1,0 +1,22 @@
+del command 'APPEditAllMultiTasks';
+add command 'APPEditAllMultiTasks'
+	description	'Command for Edit All link'
+	label	'emxComponents.Button.EditAll'
+	href	'${COMMON_DIR}/emxUserTasksMassApproveLinksProcess.jsp?fromPage=APPEditAllMultiTasks'
+	alt	'emxComponents.Button.EditAll'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'450'
+	setting	'Window Width'		'730'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallObjectFolder.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPEditAllMultiTasks'
+	property	'version'	value	'R420.HF2'
+;
+modify menu APPMultiTaskActionsToolBar add command APPEditAllMultiTasks order command APPEditAllMultiTasks 1;
+#channel ==>APPMultiTaskActionsToolBar
+add property command_APPEditAllMultiTasks on program eServiceSchemaVariableMapping.tcl to command 'APPEditAllMultiTasks';

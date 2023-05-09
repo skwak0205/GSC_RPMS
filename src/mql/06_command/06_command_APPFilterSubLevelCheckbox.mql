@@ -1,0 +1,19 @@
+del command 'APPFilterSubLevelCheckbox';
+add command 'APPFilterSubLevelCheckbox'
+	description	''
+	label	'emxComponents.SearchRole.SubLevel'
+	href	''
+	alt	''
+	setting	'Input Type'		'checkbox'
+	setting	'Registered Suite'		'Components'
+	setting	'Default'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFilterSubLevelCheckbox'
+	property	'version'	value	'R211'
+;
+modify menu APPRoleSearchToolbar add command APPFilterSubLevelCheckbox order command APPFilterSubLevelCheckbox 3;
+modify menu APPGroupSearchToolbar add command APPFilterSubLevelCheckbox order command APPFilterSubLevelCheckbox 3;
+#channel ==>APPRoleSearchToolbarAPPGroupSearchToolbar
+add property command_APPFilterSubLevelCheckbox on program eServiceSchemaVariableMapping.tcl to command 'APPFilterSubLevelCheckbox';

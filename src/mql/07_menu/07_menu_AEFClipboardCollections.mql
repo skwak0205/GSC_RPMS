@@ -1,0 +1,21 @@
+del menu 'AEFClipboardCollections';
+add menu 'AEFClipboardCollections'
+	description	''
+	label	'emxFramework.ClipBoardCollection.NameLabel'
+	href	'emxCollectionsAddToProcess.jsp?mode=Clipboard'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'iconActionAddToClipboard.png'
+	command	'AEFAddToClipboardCollection'
+	command	'AEFNewAddToCollections'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFClipboardCollections'
+	property 'version'	value	'R417'
+;
+add property menu_AEFClipboardCollections on program eServiceSchemaVariableMapping.tcl to menu 'AEFClipboardCollections';

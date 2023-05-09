@@ -1,0 +1,16 @@
+del command 'MsoiProductCentralMyFeatures';
+add command 'MsoiProductCentralMyFeatures'
+	description	'UI3 based my Features Command object specific to MS Office Integration'
+	label	'emxProduct.Menu.Features'
+	href	'${COMMON_DIR}/emxTable.jsp?program=MSFProductCentralUtil:getCurrentUserFeatures&table=FTRFeatureList'
+	alt	'emxProduct.Menu.Features'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiProductCentralMyFeatures'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>IEF ENOVIA Root
+add property command_MsoiProductCentralMyFeatures on program eServiceSchemaVariableMapping.tcl to command 'MsoiProductCentralMyFeatures';

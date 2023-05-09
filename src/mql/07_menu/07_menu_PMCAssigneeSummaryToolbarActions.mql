@@ -1,0 +1,18 @@
+del menu 'PMCAssigneeSummaryToolbarActions';
+add menu 'PMCAssigneeSummaryToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCAssigneeAdd'
+	command	'PMCRiskAssigneeAdd'
+	command	'PMCAssigneeDelete'
+	command	'PMCAssigneeAssignTaskOwner'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCAssigneeSummaryToolbarActions'
+	property 'version'	value	'R212'
+;
+add property menu_PMCAssigneeSummaryToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCAssigneeSummaryToolbarActions';

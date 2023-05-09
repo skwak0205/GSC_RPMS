@@ -1,0 +1,16 @@
+del command 'LBCFolderProperties';
+add command 'LBCFolderProperties'
+	description	'Displays Properties of a LBC Folder'
+	label	'emxLibraryCentral.Command.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_WorkspaceVault&toolbar=LBCFolderPropertiesActions&HelpMarker=emxhelpfolderproperties&formHeader=emxDocumentCentral.Common.Properties&Export=False&findMxLink=false'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCFolderProperties'
+	property	'version'	value	'R417'
+;
+modify menu LBCFolderRMB add command LBCFolderProperties order command LBCFolderProperties 3;
+#channel ==>LBCFolderRMB
+add property command_LBCFolderProperties on program eServiceSchemaVariableMapping.tcl to command 'LBCFolderProperties';

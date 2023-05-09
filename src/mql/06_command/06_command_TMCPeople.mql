@@ -1,0 +1,23 @@
+del command 'TMCPeople';
+add command 'TMCPeople'
+	description	'People Command Object'
+	label	'emxFramework.Command.People'
+	href	'${SUITE_DIR}/emxTeamPeopleSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.People'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallPeople.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCPeople'
+	property	'version'	value	'R422'
+;
+modify menu TMCtype_BusinessUnit add command TMCPeople order command TMCPeople 0;
+#channel ==>TMCtype_BusinessUnit
+add property command_TMCPeople on program eServiceSchemaVariableMapping.tcl to command 'TMCPeople';

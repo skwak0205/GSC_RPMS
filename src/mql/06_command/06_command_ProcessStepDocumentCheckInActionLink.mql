@@ -1,0 +1,18 @@
+del command 'ProcessStepDocumentCheckInActionLink';
+add command 'ProcessStepDocumentCheckInActionLink'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Drop File CheckIn'		'true'
+	setting	'Registered Suite'		'ProcessSteps'
+	setting	'Access Function'		'hasDocumentAddFilesAccess'
+	setting	'Access Program'		'emxCommonDocument'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProcessSteps'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'ProcessStepDocumentCheckInActionLink'
+	property	'version'	value	'R421'
+;
+#channel ==>
+add property command_ProcessStepDocumentCheckInActionLink on program eServiceSchemaVariableMapping.tcl to command 'ProcessStepDocumentCheckInActionLink';

@@ -1,0 +1,20 @@
+del command 'PLCModelStructure';
+add command 'PLCModelStructure'
+	description	'Model Structure Command'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Structure Program'		'emxModel'
+	setting	'Submit'		'true'
+	setting	'Structure Function'		'getStructureList'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCModelStructure'
+	property	'version'	value	'R418'
+;
+modify menu type_PLCModelStructureMenu add command PLCModelStructure order command PLCModelStructure 0;
+#channel ==>type_PLCModelStructureMenu
+add property command_PLCModelStructure on program eServiceSchemaVariableMapping.tcl to command 'PLCModelStructure';

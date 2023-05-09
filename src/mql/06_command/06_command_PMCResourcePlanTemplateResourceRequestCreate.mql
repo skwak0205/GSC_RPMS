@@ -1,0 +1,21 @@
+del command 'PMCResourcePlanTemplateResourceRequestCreate';
+add command 'PMCResourcePlanTemplateResourceRequestCreate'
+	description	'Create Resource Request in Resource Plan Template'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=resourcePlanTemplateResourceRequestCreate'
+	alt	'emxProgramCentral.Command.CreateResourceRequest'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Function'		'canCreateResourceRequest'
+	setting	'Access Program'		'emxResourcePlanTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePlanTemplateResourceRequestCreate'
+	property	'version'	value	'R419'
+;
+modify menu PMCResourceRequestTemplateToolBar add command PMCResourcePlanTemplateResourceRequestCreate order command PMCResourcePlanTemplateResourceRequestCreate 1;
+#channel ==>PMCResourceRequestTemplateToolBar
+add property command_PMCResourcePlanTemplateResourceRequestCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePlanTemplateResourceRequestCreate';

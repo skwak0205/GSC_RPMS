@@ -1,0 +1,18 @@
+del command 'MsoiPMCFolders';
+add command 'MsoiPMCFolders'
+	description	'UI3 based my Projects Command object specific to MS Office Integration'
+	label	'emxFramework.Command.Folder'
+	href	'${COMMON_DIR}/emxTable.jsp?program=msoiMSFCommon:getProjectFolders&table=IEFDesktopObjectSummary'
+	alt	'emxFramework.Command.Folder'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiPMCFolders'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_MsoiPMCFolders on program eServiceSchemaVariableMapping.tcl to command 'MsoiPMCFolders';

@@ -1,0 +1,13 @@
+del menu 'PLMExtensionsToolbar';
+add menu 'PLMExtensionsToolbar'
+	description	'Attributes Toolbar'
+	label	''
+	href	''
+	alt	''
+	command	'AddExistingExtensionCmd'
+	command	'EditCustoObjectAttributeCmd'
+	command	'ViewCustoObjectAttributeCmd'
+	command	'EditCustoObjectAttributeFakeCmd'
+	command	'RemoveExtensionCmd'
+;
+add property menu_PLMExtensionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PLMExtensionsToolbar';

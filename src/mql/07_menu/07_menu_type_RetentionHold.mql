@@ -1,0 +1,23 @@
+del menu 'type_RetentionHold';
+add menu 'type_RetentionHold'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_LCRetentionScheduleProperties&toolbar=LBCRetentionScheduleToolBar&HelpMarker=emxhelplibraryrecordproperties&formHeader=emxDocumentCentral.Common.Properties&Export=False'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Tree Scope Id'		'objectId'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Default Category'		'LBCRetainedHoldDocuments'
+	command	'LBCRouteApprovalsTreeCategory'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	command	'LBCReferenceDocumentsTreeCategory'
+	command	'LBCRetainedHoldDocuments'
+	command	'APPRoutes'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_RetentionHold'
+	property 'version'	value	'R214'
+;
+add property menu_type_RetentionHold on program eServiceSchemaVariableMapping.tcl to menu 'type_RetentionHold';

@@ -1,0 +1,23 @@
+del command 'APPFilePropertyLockActionLink';
+add command 'APPFilePropertyLockActionLink'
+	description	'File Lock Command Object'
+	label	'emxComponents.Command.Lock'
+	href	'${COMPONENT_DIR}/emxCommonDocumentLock.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(vcfile && vcfile.locked == FALSE && current.access[lock] == true)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionLock.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFilePropertyLockActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentActionsToolBar add command APPFilePropertyLockActionLink order command APPFilePropertyLockActionLink 7;
+modify menu TMCDocumentsActionToolbar add command APPFilePropertyLockActionLink order command APPFilePropertyLockActionLink 10;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbar
+add property command_APPFilePropertyLockActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPFilePropertyLockActionLink';

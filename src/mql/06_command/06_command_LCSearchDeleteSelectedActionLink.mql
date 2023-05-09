@@ -1,0 +1,25 @@
+del command 'LCSearchDeleteSelectedActionLink';
+add command 'LCSearchDeleteSelectedActionLink'
+	description	'Delete Selected on Objects List'
+	label	'emxDocumentCentral.ActionBarCmd.DeleteSelected'
+	href	'${SUITE_DIR}/emxLibraryCentralObjectsDeleteProcess.jsp?callPage=SearchPage'
+	alt	''
+	setting	'Target Location'		'searchHidden'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Submit'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxDocumentCentral.Message.ConfirmDeleteSelected'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCSearchDeleteSelectedActionLink'
+	property	'version'	value	'R419'
+;
+modify menu LBCSearchResultToolBar add command LCSearchDeleteSelectedActionLink order command LCSearchDeleteSelectedActionLink 1;
+#channel ==>LBCSearchResultToolBar
+add property command_LCSearchDeleteSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'LCSearchDeleteSelectedActionLink';

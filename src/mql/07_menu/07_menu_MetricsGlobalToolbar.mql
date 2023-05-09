@@ -1,0 +1,13 @@
+del menu 'MetricsGlobalToolbar';
+add menu 'MetricsGlobalToolbar'
+	description	''
+	label	'emxMetrics.label.Metrics'
+	href	''
+	alt	''
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'MetricsGlobalToolbar'
+	property 'version'	value	'R422'
+;
+add property menu_MetricsGlobalToolbar on program eServiceSchemaVariableMapping.tcl to menu 'MetricsGlobalToolbar';

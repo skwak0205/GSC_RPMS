@@ -1,0 +1,16 @@
+del command 'FTRProductVariability';
+add command 'FTRProductVariability'
+	description	''
+	label	'emxProduct.Tree.Variability'
+	href	'${SUITE_DIR}/VariabilityPreProcess.jsp?mode=ProductContext'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu type_Products add command FTRProductVariability order command FTRProductVariability 4;
+#channel ==>type_Products
+add property command_FTRProductVariability on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariability';

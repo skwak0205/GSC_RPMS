@@ -1,0 +1,24 @@
+del table 'RMTRichTextDefinition' system;
+add table 'RMTRichTextDefinition' system
+column #1
+	name	'Richtext'
+	businessobject	'attribute[Content Data]'
+	label	'emxRequirements.Table.RichtextDescription'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Rich Text Content'		'Content Data'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Plain Text Content'		'Content Text'
+	setting	'Editable'		'true'
+	setting	'Edit Access Mask'		'modify'
+	setting	'Rich Text Format'		'Content Type'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRichTextDefinition'
+	property	'version'	value	'V6R2011x'
+;
+add property table_RMTRichTextDefinition on program eServiceSchemaVariableMapping.tcl to table 'RMTRichTextDefinition' system;

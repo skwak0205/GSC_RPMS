@@ -1,0 +1,36 @@
+del form 'TMCCloneWorkspaceVault';
+add form 'TMCCloneWorkspaceVault' web
+field #1
+	name	'Name'
+	label	'emxTeamCentral.Common.Title'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Allow Manual Edit'		'true'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Required'		'true'
+	setting	'function'		'getCloneName'
+	setting	'Editable'		'true'
+	setting	'program'		'emxWorkspaceFolder'
+	setting	'Field Type'		'program'
+field #2
+	name	'Description'
+	label	'emxTeamCentral.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Allow Manual Edit'		'true'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Validate'		'checkBadChars'
+	setting	'function'		'getCloneDescription'
+	setting	'Editable'		'true'
+	setting	'program'		'emxWorkspaceFolder'
+	setting	'Field Type'		'program'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCCloneWorkspaceVault'
+	property	'version'	value	'R24.HF1'
+;
+add property form_TMCCloneWorkspaceVault on program eServiceSchemaVariableMapping.tcl to form 'TMCCloneWorkspaceVault';

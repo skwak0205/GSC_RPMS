@@ -1,0 +1,26 @@
+del command 'TMCRouteSummaryCreateNew';
+add command 'TMCRouteSummaryCreateNew'
+	description	'Command for CreateNew link on RouteSummary'
+	label	'emxComponents.Common.CreateRoute'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Route&header=emxComponents.Common.CreateRoute&form=APPRouteCreate&HelpMarker=emxhelpcreatenewroute&nameField=both&createJPO=emxRoute:createRouteProcess&submitAction=doNothing&mode=create&postProcessURL=../components/emxComponentsCreateProcessUtil.jsp&autoNameChecked=true'
+	alt	'emxComponents.Common.CreateRoute'
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedContributor'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRouteSummaryCreateNew'
+	property	'version'	value	'R423.HF3'
+;
+modify menu TMCRouteSummaryTopActionBar add command TMCRouteSummaryCreateNew order command TMCRouteSummaryCreateNew 1;
+#channel ==>TMCRouteSummaryTopActionBar
+add property command_TMCRouteSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to command 'TMCRouteSummaryCreateNew';

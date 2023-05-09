@@ -1,0 +1,22 @@
+del command 'CFPAddExistingMasterFeature';
+add command 'CFPAddExistingMasterFeature'
+	description	''
+	label	'DMCPlanning.ActionLink.AddExistingMasterFeature'
+	href	'${SUITE_DIR}/CreateUtil.jsp?mode=AddExisting&context=PreProcessAddExistingMasterFeature'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPAddExistingMasterFeature'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_CFPAddExistingMasterFeature on program eServiceSchemaVariableMapping.tcl to command 'CFPAddExistingMasterFeature';

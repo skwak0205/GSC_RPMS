@@ -1,0 +1,24 @@
+del command 'PMCEditPageDeleteRequest';
+add command 'PMCEditPageDeleteRequest'
+	description	'DeleteRequest'
+	label	'emxProgramCentral.Command.ResourcePlan.DeleteRequest'
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=EditPagedelete'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isResourceRequestPropertiesPageCommand'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Confirm Message'		'emxProgramCentral.ResourceRequest.ConfirmDelete'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEditPageDeleteRequest'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCEditPageDeleteRequest on program eServiceSchemaVariableMapping.tcl to command 'PMCEditPageDeleteRequest';

@@ -1,0 +1,4 @@
+<meta charset="UTF-8"/>
+VCXWebLevelExploderGUI.VCXLevelExploderGUICmd.Title="層級爆炸器";
+VCXWebLevelExploderGUI.PreviousLevelButton.Title="返回前一個爆炸視圖";
+VCXWebLevelExploderGUI.RestoreModelButton.Title="將爆炸模型回復為原始狀態";

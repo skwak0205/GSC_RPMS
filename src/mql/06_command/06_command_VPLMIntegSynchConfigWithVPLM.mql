@@ -1,0 +1,15 @@
+del command 'VPLMIntegSynchConfigWithVPLM';
+add command 'VPLMIntegSynchConfigWithVPLM'
+	description	'Command to publish Configuration data to VPLM'
+	label	'emxVPMCentral.Configuration.Command.PublishPreciseBOM.Title'
+	href	'${SUITE_DIR}/common/emxSyncronizeWithVPLM.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'280'
+	setting	'Window Width'		'380'
+	setting	'Registered Suite'		'VPMCentral'
+	setting	'Popup Modal'		'true'
+;
+modify menu FTRProductConfigurationPropertiesActionBar add command VPLMIntegSynchConfigWithVPLM order command VPLMIntegSynchConfigWithVPLM 0;
+#channel ==>FTRProductConfigurationPropertiesActionBar
+add property command_VPLMIntegSynchConfigWithVPLM on program eServiceSchemaVariableMapping.tcl to command 'VPLMIntegSynchConfigWithVPLM';

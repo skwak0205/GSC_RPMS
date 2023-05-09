@@ -1,0 +1,16 @@
+del menu 'RMTRequirementUseCaseBottomActionBar';
+add menu 'RMTRequirementUseCaseBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTDeleteUseCaseActionLink'
+	command	'RMTRemoveUseCaseActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementUseCaseBottomActionBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_RMTRequirementUseCaseBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementUseCaseBottomActionBar';

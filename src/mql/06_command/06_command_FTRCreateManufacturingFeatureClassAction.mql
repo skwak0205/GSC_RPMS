@@ -1,0 +1,21 @@
+del command 'FTRCreateManufacturingFeatureClassAction';
+add command 'FTRCreateManufacturingFeatureClassAction'
+	description	''
+	label	'emxConfiguration.Heading.CreateManufacturingFeature'
+	href	'${SUITE_DIR}/ManufacturingFeatureCreatePreProcess.jsp?strCreationType=type_ManufacturingFeature&UIContext=Classification&HelpMarker=emxhelpmanufacturingfeaturecreate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type.kindof=="type_GeneralClass">'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateManufacturingFeatureClassAction'
+	property	'version'	value	'R417'
+;
+modify menu LCClassifiedItemActionToolBar add command FTRCreateManufacturingFeatureClassAction order command FTRCreateManufacturingFeatureClassAction 2;
+#channel ==>LCClassifiedItemActionToolBar
+add property command_FTRCreateManufacturingFeatureClassAction on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateManufacturingFeatureClassAction';

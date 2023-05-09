@@ -1,0 +1,21 @@
+del command 'PLCEditPortfolioActionLink';
+add command 'PLCEditPortfolioActionLink'
+	description	'For editing an existing Portfolio'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Portfolio&formMode=Edit&formHeader=emxProduct.Heading.EditNoRev&mode=edit&HelpMarker=emxhelpportfolioedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCEditPortfolioActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCPortfolioPropertiesToolbarActions add command PLCEditPortfolioActionLink order command PLCEditPortfolioActionLink 0;
+#channel ==>PLCPortfolioPropertiesToolbarActions
+add property command_PLCEditPortfolioActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCEditPortfolioActionLink';

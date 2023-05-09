@@ -1,0 +1,27 @@
+del command 'RMTCommentProperties';
+add command 'RMTCommentProperties'
+	description	''
+	label	'emxRequirements.Tree.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Comment&actionBarName=RMTCommentPropertiesActionBar&formHeader=emxRequirements.Heading.PropertiesWithoutRevision&HelpMarker=emxhelpcommentproperties'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCommentProperties'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecStructureCommentRMB add command RMTCommentProperties order command RMTCommentProperties 3;
+modify menu type_CommentRMB add command RMTCommentProperties order command RMTCommentProperties 1;
+#channel ==>RMTSpecStructureCommentRMBtype_CommentRMBRMTCommentProperties
+add property command_RMTCommentProperties on program eServiceSchemaVariableMapping.tcl to command 'RMTCommentProperties';

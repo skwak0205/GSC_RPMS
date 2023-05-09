@@ -1,0 +1,15 @@
+del command 'MSFInboxTaskAttachment';
+add command 'MSFInboxTaskAttachment'
+	description	'Get the documents attached to a route task'
+	label	'MSFInboxTaskAttachment'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxInboxTask:getTaskContent&table=IEFDesktopObjectSummary'
+	alt	'MSFInboxTaskAttachment'
+	setting	'Registered Suite'		'IntegrationFramework'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MSFInboxTaskAttachment'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_MSFInboxTaskAttachment on program eServiceSchemaVariableMapping.tcl to command 'MSFInboxTaskAttachment';

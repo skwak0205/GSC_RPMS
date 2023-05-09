@@ -1,0 +1,24 @@
+del command 'PMCUpdateSelectedTaskDependencies';
+add command 'PMCUpdateSelectedTaskDependencies'
+	description	'Command for updating task dependency'
+	label	'emxProgramCentral.Common.UpdateSelected'
+	href	'${SUITE_DIR}/emxProgramCentralDependencyProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUpdate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCUpdateSelectedTaskDependencies'
+	property	'version'	value	'R422.HF4'
+;
+modify menu PMCManageTaskDependenciesActionToolbar add command PMCUpdateSelectedTaskDependencies order command PMCUpdateSelectedTaskDependencies 1;
+#channel ==>PMCManageTaskDependenciesActionToolbar
+add property command_PMCUpdateSelectedTaskDependencies on program eServiceSchemaVariableMapping.tcl to command 'PMCUpdateSelectedTaskDependencies';

@@ -1,0 +1,17 @@
+del command 'APPRouteContentSearchActionsRevise';
+add command 'APPRouteContentSearchActionsRevise'
+	description	''
+	label	'emxComponents.Command.Revise'
+	href	'${SUITE_DIR}/emxRouteContentSearchDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteContentSearchActionsRevise'
+	property	'version'	value	'10-6'
+;
+modify menu APPRouteContentSearchActionBar add command APPRouteContentSearchActionsRevise order command APPRouteContentSearchActionsRevise 0;
+#channel ==>APPRouteContentSearchActionBar
+add property command_APPRouteContentSearchActionsRevise on program eServiceSchemaVariableMapping.tcl to command 'APPRouteContentSearchActionsRevise';

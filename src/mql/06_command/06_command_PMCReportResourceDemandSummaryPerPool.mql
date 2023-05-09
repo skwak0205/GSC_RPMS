@@ -1,0 +1,20 @@
+del command 'PMCReportResourceDemandSummaryPerPool';
+add command 'PMCReportResourceDemandSummaryPerPool'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Command.ResourceDemandSummaryReport'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePoolPeopleUtil.jsp?mode=ResourcePerPoolReport&program=emxResourcePoolReports:getTableResourceDemandSummaryReportData&table=PMCReportDemandSummary&toolbar=PMCReportDateToolbarMenu&selection=none&submode=PMCResourceDemandSummaryReport&header=emxProgramCentral.ResourcePlanning.Report.Charts.ResourceDemandSummaryReport&HelpMarker=emxhelpresourcedemandbypoolreport&xaxistitle=emxProgramCentral.ResourcePlanning.Report.Charts.TimeLine&yaxistitle=emxProgramCentral.ResourcePlanning.Report.Charts.NoofResources&charttype=stackedbar&threshholdvalue=Capacity&suiteKey=ProgramCentral&sortColumnName=none'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportResourceDemandSummaryPerPool'
+	property	'version'	value	'R417'
+;
+modify menu PMCResourcePoolRequestReports add command PMCReportResourceDemandSummaryPerPool order command PMCReportResourceDemandSummaryPerPool 1;
+#channel ==>PMCResourcePoolRequestReports
+add property command_PMCReportResourceDemandSummaryPerPool on program eServiceSchemaVariableMapping.tcl to command 'PMCReportResourceDemandSummaryPerPool';

@@ -1,0 +1,17 @@
+#del command 'gscPMCSchedule';
+add command 'gscPMCSchedule'
+ description ''
+ label 'emxFramework.Command.PMCGateReport'
+ href '${SUITE_DIR}/gscProjectManagementUtil.jsp?mode=gscPMCSchedule'
+ alt ''
+ setting 'Registered Suite'  'ProgramCentral'
+ setting 'Licensed Product'  'ENO_PGE_TP'
+ property 'installer' value 'ENOVIAEngineering'
+ property 'application' value 'ProgramManagementBase'
+ property 'installed date' value '03-23-2023'
+ property 'original name' value 'gscPMCSchedule'
+ property 'version' value 'R422.HF2'
+;
+
+modify menu type_ProjectSpace add command gscPMCSchedule order command gscPMCSchedule 1;
+modify menu type_ProjectSpace remove command PMCSchedule;

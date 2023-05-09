@@ -1,0 +1,22 @@
+del command 'PMCBusinessGoalAddExisting';
+add command 'PMCBusinessGoalAddExisting'
+	description	'Command for CreateNew link on BusinessGoalSummary'
+	label	'emxProgramCentral.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_BusinessGoal&table=PMCGenericBusinessGoalsSearchResults&cancelLabel=emxProgramCentral.Common.Close&selection=multiple&showSavedQuery=true&hideHeader=true&HelpMarker=emxhelpfullsearch&postProcessJPO=emxProgramBusinessGoal:addExistingBusinessGoal&submitURL=../programcentral/emxProgramCentralSearchBusinessGoalProcess.jsp&mode=AddExistingBusinessGoal&submitAction=refreshCaller&showSavedQuery=true&excludeOIDprogram=emxProgramBusinessGoal:excludeBusinessGoalforAddExisting&showInitialResults=true'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Business Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBusinessGoalAddExisting'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBusinessGoalToolBarActions add command PMCBusinessGoalAddExisting order command PMCBusinessGoalAddExisting 2;
+#channel ==>PMCProjectBusinessGoalToolBarActions
+add property command_PMCBusinessGoalAddExisting on program eServiceSchemaVariableMapping.tcl to command 'PMCBusinessGoalAddExisting';

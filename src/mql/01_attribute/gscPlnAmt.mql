@@ -1,0 +1,19 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 기초예산(A)
+################################################################################################
+
+#del attribute 'gscPlnAmt';
+add attribute  'gscPlnAmt'
+   description '기초예산(A)'
+   type        'real'
+   default    0
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscPlnAmt"
+;
+add property attribute_gscPlnAmt on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscPlnAmt';
+

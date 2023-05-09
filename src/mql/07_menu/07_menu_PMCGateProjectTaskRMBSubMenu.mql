@@ -1,0 +1,16 @@
+del menu 'PMCGateProjectTaskRMBSubMenu';
+add menu 'PMCGateProjectTaskRMBSubMenu'
+	description	''
+	label	'emxProgramCentral.Type.Gate'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(policy=="$<policy_ProjectTask>") && (type=="$<type_Gate>")'
+	menu	'type_TaskManagementRMB'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCGateProjectTaskRMBSubMenu'
+	property 'version'	value	'R211'
+;
+add property menu_PMCGateProjectTaskRMBSubMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCGateProjectTaskRMBSubMenu';

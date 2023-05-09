@@ -1,0 +1,28 @@
+del command 'PMCOpportunitySummaryDeleteOpportunity';
+add command 'PMCOpportunitySummaryDeleteOpportunity'
+	description	'Command for Delete link on Opportunity Summary'
+	label	'emxProgramCentral.Common.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralRiskUtil.jsp?mode=deleteOpportunity'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCOpportunitySummaryDeleteOpportunity'
+	property	'version'	value	'R422'
+;
+modify menu PMCOpportunitySummaryToolBarActions add command PMCOpportunitySummaryDeleteOpportunity order command PMCOpportunitySummaryDeleteOpportunity 0;
+modify menu PMCOpportunitySummaryToolBar add command PMCOpportunitySummaryDeleteOpportunity order command PMCOpportunitySummaryDeleteOpportunity 0;
+#channel ==>PMCOpportunitySummaryToolBarActionsPMCOpportunitySummaryToolBar
+add property command_PMCOpportunitySummaryDeleteOpportunity on program eServiceSchemaVariableMapping.tcl to command 'PMCOpportunitySummaryDeleteOpportunity';

@@ -1,0 +1,18 @@
+del command 'FTRProductVariantMarketingPreferencesTreeCategory';
+add command 'FTRProductVariantMarketingPreferencesTreeCategory'
+	description	'Marketing Preference Rules'
+	label	'emxProduct.Tree.MarketingPreferences'
+	href	'${COMMON_DIR}/emxTable.jsp?table=FTRMarketingPreferenceList&selection=multiple&program=emxMarketingPreference:getMarketingPreferences&intermediate=true&sortColumnName=Name&topActionbar=FTRMarketingPreferenceListTopActionBar&header=emxProduct.Heading.ProductVariant.MarketingPreference'
+	alt	''
+	setting	'image'		'${COMMON_DIR}/images/iconSmallRule.gif'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'type.kindof !=$<type_Features>'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductVariantMarketingPreferencesTreeCategory'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRProductVariantMarketingPreferencesTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariantMarketingPreferencesTreeCategory';

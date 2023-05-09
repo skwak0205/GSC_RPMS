@@ -1,0 +1,16 @@
+del menu 'LCClassificationAttributesToolbar';
+add menu 'LCClassificationAttributesToolbar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'LCClassificationAttributesEditDetails'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCClassificationAttributesToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_LCClassificationAttributesToolbar on program eServiceSchemaVariableMapping.tcl to menu 'LCClassificationAttributesToolbar';

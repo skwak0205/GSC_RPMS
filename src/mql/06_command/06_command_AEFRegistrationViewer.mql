@@ -1,0 +1,24 @@
+del command 'AEFRegistrationViewer';
+add command 'AEFRegistrationViewer'
+	description	'Registration Viewer Property'
+	label	'emxFramework.AdminProperty.RegistrationViewer'
+	href	'${COMMON_DIR}/emxRegistrationViewer.jsp?HelpMarker=emxhelpregisterviewer'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Help Marker'		'emxhelpregisterviewer'
+	user	'Administration Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFRegistrationViewer'
+	property	'version'	value	'R417'
+;
+modify menu AEFAdminPropertyMenu add command AEFRegistrationViewer order command AEFRegistrationViewer 0;
+#channel ==>AEFAdminPropertyMenu
+add property command_AEFRegistrationViewer on program eServiceSchemaVariableMapping.tcl to command 'AEFRegistrationViewer';

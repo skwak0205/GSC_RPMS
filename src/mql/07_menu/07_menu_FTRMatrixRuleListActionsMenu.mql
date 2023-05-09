@@ -1,0 +1,13 @@
+del menu 'FTRMatrixRuleListActionsMenu';
+add menu 'FTRMatrixRuleListActionsMenu'
+	description	'FTRMatrixRuleListActionsMenu'
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'FTRCreateMatrixRuleActionCommandLink'
+	command	'FTRDeleteMatrixRuleActionCommandLink'
+	property 'version'	value	'R418'
+;
+add property menu_FTRMatrixRuleListActionsMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRMatrixRuleListActionsMenu';

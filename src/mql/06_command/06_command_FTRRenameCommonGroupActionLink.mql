@@ -1,0 +1,20 @@
+del command 'FTRRenameCommonGroupActionLink';
+add command 'FTRRenameCommonGroupActionLink'
+	description	'Rename an existing Common Group'
+	label	'emxProduct.Command.RenameCommonGroup'
+	href	'${SUITE_DIR}/CommonGroupFS.jsp?mode=Rename'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'True'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRRenameCommonGroupActionLink'
+	property	'version'	value	'R215'
+;
+modify menu FTRCommonGroupCommands add command FTRRenameCommonGroupActionLink order command FTRRenameCommonGroupActionLink 0;
+#channel ==>FTRCommonGroupCommands
+add property command_FTRRenameCommonGroupActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRRenameCommonGroupActionLink';

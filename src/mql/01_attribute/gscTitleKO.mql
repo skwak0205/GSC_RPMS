@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2020.06.05
+# Create by GeonHwan,Bae
+# Description : 한글 표시명
+################################################################################################
+#del attribute gscTitleKO;
+add attribute gscTitleKO
+    description 'Korean Title'
+    type        'string'
+    notmultiline
+    nothidden
+    property 'application' value 'Framework'
+    property 'version' value 'V6R2019x'
+    property 'installer' value 'GSC'
+    property 'original name' value 'gscTitleKO'
+    property 'installed date' value '2020-06-05'
+;
+add property attribute_gscTitleKO on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscTitleKO';

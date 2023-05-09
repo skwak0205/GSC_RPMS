@@ -1,0 +1,23 @@
+del command 'PLCAddExistingPartActionLink';
+add command 'PLCAddExistingPartActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${ROOT_DIR}/components/emxCommonSearch.jsp?searchmode=addexisting&searchmenu=PLCSearchAddExistingChooserMenu&searchcommand=PLCSearchPartsProductsCommand&midBusType=type_GBOM&srcMidRelName=relationship_GBOMFrom&midDestRelName=relationship_GBOMTo&isTo=true&DefaultType=type_Part&HelpMarker=emxhelpfindselect'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete")'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingPartActionLink'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_PLCAddExistingPartActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingPartActionLink';

@@ -1,0 +1,17 @@
+del menu 'FMAWorkspaceTree';
+add menu 'FMAWorkspaceTree'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Workspace&mode=view&toolbar=FMAWorkspaceDetailsToolBar&HelpMarker=emxhelpworkspaceproperties'
+	alt	''
+	setting	'Tree Scope ID'		'workspaceId'
+	setting	'Registered Suite'		'FolderManagement'
+	setting	'Image'		'${COMMON_DIR}/iconSmallWorkspace.png'
+	command	'DomainAccessTreeCategory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'FolderManagement'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'FMAWorkspaceTree'
+	property 'version'	value	'R420.HF2a'
+;
+add property menu_FMAWorkspaceTree on program eServiceSchemaVariableMapping.tcl to menu 'FMAWorkspaceTree';

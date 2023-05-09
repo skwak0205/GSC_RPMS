@@ -1,0 +1,23 @@
+del command 'TransferOwnership';
+add command 'TransferOwnership'
+	description	'Command to Transfer Ownership'
+	label	'emxFramework.Command.Transfer_Ownership'
+	href	'${COMMON_DIR}/emxForm.jsp?form=TransferOwnership&mode=edit&showPageURLIcon=false&postProcessJPO=emxDomainAccess:updateOwnership&submitAction=refreshCaller&findMxLink=false&formHeader=emxFramework.Heading.Transfer_OwnerShip&HelpMarker=emxhelptransferownership&addCustAttributes=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'current.access[changeowner] && project != "" && organization != ""'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showCommand'
+	setting	'Access Program'		'emxRouteTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/I_ImmTransferOwnership3.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TransferOwnership'
+	property	'version'	value	'R423.HF4'
+;
+modify menu APPRouteTemplatePropertiesActionsToolBar add command TransferOwnership order command TransferOwnership 0;
+modify menu IssuePropertiesToolBarActions add command TransferOwnership order command TransferOwnership 3;
+#channel ==>APPRouteTemplatePropertiesActionsToolBarIssuePropertiesToolBarActions
+add property command_TransferOwnership on program eServiceSchemaVariableMapping.tcl to command 'TransferOwnership';

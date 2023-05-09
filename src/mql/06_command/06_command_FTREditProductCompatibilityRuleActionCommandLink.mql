@@ -1,0 +1,23 @@
+del command 'FTREditProductCompatibilityRuleActionCommandLink';
+add command 'FTREditProductCompatibilityRuleActionCommandLink'
+	description	'Edit Product Compatibilty Rule'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=FTRProductCompatibilityRuleForm&mode=Edit&formHeader=emxConfiguration.Heading.EditNoRevProductCompatibiltyRule&HelpMarker=emxhelpproductcompatibilityruleedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxBooleanCompatibility'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditProductCompatibilityRuleActionCommandLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRProductCompatibilityRulePropertiesTopActionBarMenu add command FTREditProductCompatibilityRuleActionCommandLink order command FTREditProductCompatibilityRuleActionCommandLink 0;
+#channel ==>FTRProductCompatibilityRulePropertiesTopActionBarMenu
+add property command_FTREditProductCompatibilityRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTREditProductCompatibilityRuleActionCommandLink';

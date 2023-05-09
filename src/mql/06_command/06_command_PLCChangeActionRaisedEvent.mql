@@ -1,0 +1,21 @@
+del command 'PLCChangeActionRaisedEvent';
+add command 'PLCChangeActionRaisedEvent'
+	description	'Change Action Raised Event'
+	label	'PublishSubscribe.Event.ChangeActionRaised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Change Action Raised'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCChangeActionRaisedEvent'
+	property	'version'	value	'R418'
+;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command PLCChangeActionRaisedEvent order command PLCChangeActionRaisedEvent 15;
+modify menu FTRLogicalFeatureSubscriptionEvents add command PLCChangeActionRaisedEvent order command PLCChangeActionRaisedEvent 23;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command PLCChangeActionRaisedEvent order command PLCChangeActionRaisedEvent 21;
+#channel ==>FTRConfigurationFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_PLCChangeActionRaisedEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCChangeActionRaisedEvent';

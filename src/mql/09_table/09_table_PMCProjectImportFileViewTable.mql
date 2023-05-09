@@ -1,0 +1,21 @@
+del table 'PMCProjectImportFileViewTable' system;
+add table 'PMCProjectImportFileViewTable' system
+column #1
+	name	'ImportDetails'
+	label	'Import'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getProjectImportViewDynamicTable'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'emxProjectSpace'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectImportFileViewTable'
+	property	'version'	value	'R417'
+;
+add property table_PMCProjectImportFileViewTable on program eServiceSchemaVariableMapping.tcl to table 'PMCProjectImportFileViewTable' system;

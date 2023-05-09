@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 담당부서----------
+################################################################################################
+
+#del attribute 'gscDeptNm';
+add attribute  'gscDeptNm'
+   description '담당부서'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "HHI"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscDeptNm"
+;
+add property attribute_gscDeptNm on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscDeptNm';
+

@@ -1,0 +1,18 @@
+del command 'PMCChecklist';
+add command 'PMCChecklist'
+	description	''
+	label	'emxProgramCentral.Common.Checklist.DisplayChecklistSummaryTable'
+	href	'${SUITE_DIR}/emxProgramCentralChecklistUtil.jsp?mode=userRole'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.kindOf[$<type_Milestone>]==true || type.kindOf[$<type_Gate>]==true'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCChecklist'
+	property	'version'	value	'R422.HF5'
+;
+#channel ==>PMCGateDefaultChannel
+add property command_PMCChecklist on program eServiceSchemaVariableMapping.tcl to command 'PMCChecklist';

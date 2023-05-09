@@ -1,0 +1,21 @@
+del command 'PLCTestCaseWhereUsedTreeCategory';
+add command 'PLCTestCaseWhereUsedTreeCategory'
+	description	'TestCase where used tree category'
+	label	'emxProduct.Tree.WhereUsed'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxPLCCommon:getWhereUsed&FilterFramePage=${SUITE_DIR}/WhereUsedTableFilterInclude.jsp&FilterFrameSize=55&table=PLCWhereUsedList&header=emxProduct.Heading.WhereUsedGeneric&selection=multiple&topActionbar=PLCWhereUsedListTopActionBar&HelpMarker=emxhelpwhereusedlist&command=command_PLCTestCaseWhereUsedTreeCategory&freezePane=Name'
+	alt	''
+	setting	'ExpandFilterTypes'		'emxProduct.WhereUsed.TestCase.ExpandTypes'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'ExpandFilterRelationships'		'emxProduct.WhereUsed.TestCase.ExpandRelationships'
+	setting	'IntermediateFilterTypes'		'emxProduct.WhereUsed.IntermediateTypes'
+	setting	'Image'		'${COMMON_DIR}/iconSmallObjectFolder.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestCaseWhereUsedTreeCategory'
+	property	'version'	value	'R215'
+;
+modify menu type_TestCase add command PLCTestCaseWhereUsedTreeCategory order command PLCTestCaseWhereUsedTreeCategory 11;
+#channel ==>type_TestCase
+add property command_PLCTestCaseWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCTestCaseWhereUsedTreeCategory';

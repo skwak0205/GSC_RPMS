@@ -1,0 +1,11 @@
+{
+  "CVS.optionsChecker.searchEngine.notExisting.error": "Para encontrar valores, debe definirse un motor de búsqueda.",
+  "CVS.optionsChecker.searchEngine.notFunction.error": "Se necesita una función para el motor de búsqueda.",
+  "CVS.optionsChecker.defaultValues.array.error": "Los valores predeterminados deben encontrarse en una matriz.",
+  "CVS.optionsChecker.defaultValues.arrayObjects.error": "Es necesario que los valores predeterminados sean una matriz de objetos para la entrada.",
+  "CVS.optionsChecker.defaultValues.labelExpected.error": "Es necesario que cada valor predeterminado tenga una etiqueta.",
+  "CVS.optionsChecker.defaultValues.valueExpected.error": "Es necesario que cada valor predeterminado tenga un valor.",
+  "CVS.optionsChecker.onSuggest.notFunction.error": "Es necesario que haya una función para la opción 'onSuggest'.",
+  "CVS.optionsChecker.onSelect.notFunction.error": "Es necesario que haya una función para la opción 'onSelect'.",
+  "CVS.optionsChecker.onCleanDataset.notFunction.error": "Es necesario que haya una función para la opción 'onCleanDataset'."
+}

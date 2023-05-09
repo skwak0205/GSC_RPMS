@@ -1,0 +1,19 @@
+del command 'PLCProductTaskTreeCategoryMobile';
+add command 'PLCProductTaskTreeCategoryMobile'
+	description	''
+	label	'emxProduct.Tree.Tasks'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCProductTaskTable&header=emxProduct.Heading.Task&editLink=false&selection=multiple&program=emxProduct:getRelatedTasks&toolbar=PLCProductTasksListToolbar&sortColumnName=Name&HelpMarker=emxhelptasklist'
+	alt	'emxProduct.Alt.Tasks'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isPRGInstalledMobileEnabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductTaskTreeCategoryMobile'
+	property	'version'	value	'R418'
+;
+#channel ==>PLCPlanning
+add property command_PLCProductTaskTreeCategoryMobile on program eServiceSchemaVariableMapping.tcl to command 'PLCProductTaskTreeCategoryMobile';

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd">
+
+    <ds:service name="dpm.preference">
+        <ds:field name="defaultTypePolicyMapping"> 
+            <ds:range>
+                <!-- value will be Type name and display will be Policy Name -->
+                <ds:item value="Task" display="Project Task"/>
+                <ds:item value="Phase" display="Project Task"/>
+                <ds:item value="Gate" display="Project Review"/>
+                <ds:item value="Milestone" display="Project Review"/>
+                <ds:item value="Project Space" display="Project Space"/>
+            </ds:range>             
+        </ds:field>
+    </ds:service>
+  
+</ds:services>
+
+

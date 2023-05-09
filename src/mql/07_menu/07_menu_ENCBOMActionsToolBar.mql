@@ -1,0 +1,15 @@
+del menu 'ENCBOMActionsToolBar';
+add menu 'ENCBOMActionsToolBar'
+	description	''
+	label	'Components.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'FTRGenerateProductConfiguration'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'ENCBOMActionsToolBar'
+	property 'version'	value	'R215'
+;
+add property menu_ENCBOMActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'ENCBOMActionsToolBar';

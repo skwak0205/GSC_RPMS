@@ -1,0 +1,25 @@
+del command 'PLCEditAllECTestExecutionActionLink';
+add command 'PLCEditAllECTestExecutionActionLink'
+	description	'Command for Edit All link'
+	label	'emxProduct.ActionLink.EditAll'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?HelpMarker=emxhelpteeditall&postProcessURL=../productline/TestExecutionUtil.jsp?mode=refreshTree'
+	alt	'emxProduct.ActionLink.EditAll'
+	setting	'Target Location'		'popup'
+	setting	'Access Program Method'		'showTestExecutionLinksToAssignedQE'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'750'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Program'		'emxTestExecution'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Help Marker'		'emxhelpteeditall'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCEditAllECTestExecutionActionLink'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_PLCEditAllECTestExecutionActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCEditAllECTestExecutionActionLink';

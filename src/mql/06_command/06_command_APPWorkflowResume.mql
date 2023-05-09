@@ -1,0 +1,21 @@
+del command 'APPWorkflowResume';
+add command 'APPWorkflowResume'
+	description	'Command Object for resuming the workflow from action menu on the workflow summary page'
+	label	'emxComponents.Workflow.Resume'
+	href	'${COMPONENT_DIR}/emxWorkflowAction.jsp?action=resume'
+	alt	'emxComponents.Workflow.Resume'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionResume.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowResume'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowSummaryActionsToolBar add command APPWorkflowResume order command APPWorkflowResume 6;
+modify menu APPObjectWorkflowActionsToolBar add command APPWorkflowResume order command APPWorkflowResume 6;
+#channel ==>APPWorkflowSummaryActionsToolBarAPPObjectWorkflowActionsToolBar
+add property command_APPWorkflowResume on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowResume';

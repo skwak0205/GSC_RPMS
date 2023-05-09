@@ -1,0 +1,21 @@
+del command 'APPMemberListEditActionLink';
+add command 'APPMemberListEditActionLink'
+	description	'Member List Edit Details Link'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPMemberListEditForm&mode=edit&HelpMarker=emxhelpmemberlisteditdetails&formHeader=emxComponents.MemberList.EditMemberListHeader'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'owner==context.user'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMemberListEditActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPMemberListDetailsActionbar add command APPMemberListEditActionLink order command APPMemberListEditActionLink 0;
+modify menu APPMemberListDetailsActionsToolBar add command APPMemberListEditActionLink order command APPMemberListEditActionLink 0;
+#channel ==>APPMemberListDetailsActionbarAPPMemberListDetailsActionsToolBar
+add property command_APPMemberListEditActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPMemberListEditActionLink';

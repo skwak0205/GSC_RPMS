@@ -1,0 +1,33 @@
+del command 'APPStartResumeRouteActionLink';
+add command 'APPStartResumeRouteActionLink'
+	description	'Route Summary Start Resume Command Object'
+	label	'emxComponents.Routes.StartResume'
+	href	'${COMPONENT_DIR}/emxRouteStart.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canStartOrResume'
+	setting	'Access Program'		'emxRoute'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionStartResumeRoute.png'
+	setting	'Confirm Message'		'emxComponents.Routes.StartRouteMessage'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPStartResumeRouteActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteSummaryBottomActionBar add command APPStartResumeRouteActionLink order command APPStartResumeRouteActionLink 0;
+modify menu APPRoutesTreeCategoryActionsToolBar add command APPStartResumeRouteActionLink order command APPStartResumeRouteActionLink 0;
+modify menu APPRouteSummaryActionsToolBar add command APPStartResumeRouteActionLink order command APPStartResumeRouteActionLink 7;
+modify menu APPRouteSummaryTaskActionsToolBar add command APPStartResumeRouteActionLink order command APPStartResumeRouteActionLink 7;
+modify menu PMCRouteSummaryActionsToolBar add command APPStartResumeRouteActionLink order command APPStartResumeRouteActionLink 7;
+#channel ==>APPRouteSummaryBottomActionBarAPPRoutesTreeCategoryActionsToolBarAPPRouteSummaryActionsToolBarAPPRouteSummaryTaskActionsToolBarPMCRouteSummaryActionsToolBar
+add property command_APPStartResumeRouteActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPStartResumeRouteActionLink';

@@ -1,0 +1,16 @@
+del channel 'PMCSCProjectMembersAccessChannel';
+add channel 'PMCSCProjectMembersAccessChannel'
+	description	'Members and Access Channel'
+	height	'650'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCProjectMember','DomainAccessTreeCategory'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSCProjectMembersAccessChannel'
+	property	'version'	value	'R216'
+;
+#portal ==>PMCSCProjectMembersAccessPortal
+add property channel_PMCSCProjectMembersAccessChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCSCProjectMembersAccessChannel';

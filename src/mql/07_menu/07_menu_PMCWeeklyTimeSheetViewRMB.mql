@@ -1,0 +1,17 @@
+del menu 'PMCWeeklyTimeSheetViewRMB';
+add menu 'PMCWeeklyTimeSheetViewRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type=="Effort" || type=="Task"'
+	command	'PMCWeeklyTimesheetSubmit'
+	command	'PMCDeleteTimeSheet'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWeeklyTimeSheetViewRMB'
+	property 'version'	value	'R210'
+;
+add property menu_PMCWeeklyTimeSheetViewRMB on program eServiceSchemaVariableMapping.tcl to menu 'PMCWeeklyTimeSheetViewRMB';

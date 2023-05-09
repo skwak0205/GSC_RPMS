@@ -1,0 +1,20 @@
+del menu 'APPFormatsSummaryActionToolBar';
+add menu 'APPFormatsSummaryActionToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasAccessForCompanyNodes'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPFormatsAddExisting'
+	command	'AEFSeparator'
+	command	'APPFormatsRemove'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPFormatsSummaryActionToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPFormatsSummaryActionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPFormatsSummaryActionToolBar';

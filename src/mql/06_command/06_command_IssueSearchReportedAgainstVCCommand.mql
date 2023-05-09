@@ -1,0 +1,18 @@
+del command 'IssueSearchReportedAgainstVCCommand';
+add command 'IssueSearchReportedAgainstVCCommand'
+	description	'Issue Find VC Objects Command'
+	label	'emxComponents.VCDocument.SearchReportedAgainstVCLink'
+	href	'${SUITE_DIR}/emxIssueSearchVCDocumentsForm.jsp?program=emxCommonIssue:getVCDocuments&expandProgram=emxVCDocumentUI:getVCAllContents&table=APPVCFileFolderSearchResults&commandName=IssueSearchReportedAgainstVCCommand&HelpMarker=&ActionURL=../common/emxIndentedTable.jsp&fromPage=searchVCDocuments&editRootNode=false&SubmitURL=../components/emxCommonDocumentVCOnDemandIntermediateProcess.jsp&cancelLabel=emxFramework.GlobalSearch.Close&submitLabel=emxFramework.GlobalSearch.Done&objectAction=connectVCFileFolderFromIssueSearch&toolbar=APPIssueObjectReportedAganistSearchToolBar'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueSearchReportedAgainstVCCommand'
+	property	'version'	value	'R207'
+;
+modify menu SearchIssueAddExistingChooser add command IssueSearchReportedAgainstVCCommand order command IssueSearchReportedAgainstVCCommand 0;
+#channel ==>SearchIssueAddExistingChooser
+add property command_IssueSearchReportedAgainstVCCommand on program eServiceSchemaVariableMapping.tcl to command 'IssueSearchReportedAgainstVCCommand';

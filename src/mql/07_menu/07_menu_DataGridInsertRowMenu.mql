@@ -1,0 +1,18 @@
+del menu 'DataGridInsertRowMenu';
+add menu 'DataGridInsertRowMenu'
+	description	''
+	label	'emxFramework.GridView.InsertRow'
+	href	''
+	alt	'emxFramework.GridView.InsertRow'
+	setting	'Access Function'		'canInsertRow'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreateObject.gif'
+	command	'DataGridInsertRowAboveCommand'
+	command	'DataGridInsertRowBelowCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'DataGridInsertRowMenu'
+	property 'version'	value	'R423.HF3'
+;
+add property menu_DataGridInsertRowMenu on program eServiceSchemaVariableMapping.tcl to menu 'DataGridInsertRowMenu';

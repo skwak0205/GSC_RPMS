@@ -1,0 +1,19 @@
+del command 'FTRVariabilityAllocationCommand';
+add command 'FTRVariabilityAllocationCommand'
+	description	'Command for Allocation Matrix of Variability in Model Version context'
+	label	'emxConfiguration.Command.VariabilityAllocation'
+	href	'${SUITE_DIR}/VariabilityAllocationPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'($<type.kindof=="type_Products">)&&(!$<type=="type_ProductVariant">)'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/EditEvolutionEffectivity.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRVariabilityToolbar add command FTRVariabilityAllocationCommand order command FTRVariabilityAllocationCommand 13;
+#channel ==>FTRVariabilityToolbar
+add property command_FTRVariabilityAllocationCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRVariabilityAllocationCommand';

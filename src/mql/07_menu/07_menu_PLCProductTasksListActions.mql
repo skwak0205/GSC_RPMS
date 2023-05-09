@@ -1,0 +1,18 @@
+del menu 'PLCProductTasksListActions';
+add menu 'PLCProductTasksListActions'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PLCProductAssociateTasksActionLink'
+	command	'AEFSeparator'
+	command	'PLCProductRemoveTasksActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCProductTasksListActions'
+	property 'version'	value	'R418'
+;
+add property menu_PLCProductTasksListActions on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductTasksListActions';

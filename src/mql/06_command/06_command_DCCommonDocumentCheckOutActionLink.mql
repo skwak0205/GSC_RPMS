@@ -1,0 +1,27 @@
+del command 'DCCommonDocumentCheckOutActionLink';
+add command 'DCCommonDocumentCheckOutActionLink'
+	description	'Document or File Check Out Command Object'
+	label	'emxComponents.Command.CheckOut'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=checkout'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canDisplayCommand'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckOut.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCommonDocumentCheckOutActionLink'
+	property	'version'	value	'R420'
+;
+modify menu DCBookDocumentsActionBar add command DCCommonDocumentCheckOutActionLink order command DCCommonDocumentCheckOutActionLink 4;
+modify menu LBCReferenceDocumentSummaryActionsToolBar add command DCCommonDocumentCheckOutActionLink order command DCCommonDocumentCheckOutActionLink 4;
+modify menu LBCBookDocumentsActionToolBar add command DCCommonDocumentCheckOutActionLink order command DCCommonDocumentCheckOutActionLink 4;
+modify menu LCClassifiedItemActionToolBar add command DCCommonDocumentCheckOutActionLink order command DCCommonDocumentCheckOutActionLink 16;
+#channel ==>DCBookDocumentsActionBarLBCReferenceDocumentSummaryActionsToolBarLBCBookDocumentsActionToolBarLCClassifiedItemActionToolBar
+add property command_DCCommonDocumentCheckOutActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCCommonDocumentCheckOutActionLink';

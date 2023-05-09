@@ -1,0 +1,17 @@
+del menu 'AEFFreezePaneExpandLevelFilterMenu';
+add menu 'AEFFreezePaneExpandLevelFilterMenu'
+	description	''
+	label	'emxFramework.FreezePane.Expand'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Row Select'		'multi'
+	command	'AEFFreezePaneExpandNLevel'
+	command	'AEFFreezePaneExpandAllLevel'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFFreezePaneExpandLevelFilterMenu'
+	property 'version'	value	'R420'
+;
+add property menu_AEFFreezePaneExpandLevelFilterMenu on program eServiceSchemaVariableMapping.tcl to menu 'AEFFreezePaneExpandLevelFilterMenu';

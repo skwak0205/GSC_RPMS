@@ -1,0 +1,15 @@
+del menu 'PLCTestExecutionPropertiesActionsToolbar';
+add menu 'PLCTestExecutionPropertiesActionsToolbar'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCTestExecutionEditDetailsActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCTestExecutionPropertiesActionsToolbar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_PLCTestExecutionPropertiesActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PLCTestExecutionPropertiesActionsToolbar';

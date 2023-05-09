@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd">
+    <ds:service name="gsctasks">
+
+        <ds:label text="emxCollaborativeTasks.WidgetLabel.MyTasks" icon="/widget/images/MyApps/iconENOVIA.png" registeredSuite="CollaborativeTasks"/>
+        <ds:license products="ENOTASK_TP"/>
+
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.tskv2.TaskService" function="getTasks" localInvokation="java" returnedData="idsAndData">
+                <ds:arg arg-name="includeRouteTasks" arg-value="false"/>
+            </ds:jpo>
+            <ds:updatejpo classname="com.gsc.enovia.tskv2.TaskService" function="updateTasks" processMultiple="true"/>
+        </ds:data>
+
+        <ds:field name="title" description="The name/title of the task."><ds:selectable createOperation="yes" modifyOperation="yes" readOperation="yes" expression="evaluate[if type == 'Inbox Task' AND attribute[Title] != '' then attribute[Title] else name]" type="bus"/></ds:field>
+
+        <!-- temporary for MSF -->
+        <ds:field name="revision" includeByDefault="no"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" expression="revision"/></ds:field>
+
+        <ds:field name="originated" description="The originated date of the task."><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" expression="originated" type="bus" format="utc"/></ds:field>
+        <ds:field name="typeicon" description="The type icon based on the type of the task."><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" /><ds:image source="businessType" size="icon"/></ds:field>
+        <ds:field name="modifyAccess">
+            <!-- removed changename to accommodate route tasks. -->
+            <ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" expression="current.access[modify]" type="bus"/>
+            <ds:fieldjpo classname="com.gsc.enovia.tskv2.TaskService" function="getModifyAccess" localInvokation="true">
+                <ds:arg arg-name="stateField" arg-value="state.transient"/>
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="deleteAccess">
+            <ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Project Management" expression="current.access[delete]" type="bus"/>
+            <ds:fieldjpo classname="com.gsc.enovia.tskv2.TaskService" function="getDeleteAccess" localInvokation="true">
+                <ds:arg arg-name="stateField" arg-value="state.transient"/>
+                <ds:arg arg-name="palIdField" arg-value="PALId.transient"/>
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="changeSOVAccess">
+            <ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Project Management" expression="current.access[changesov]" type="bus"/>
+        </ds:field>
+        <ds:field name="description"><ds:selectable busTypes="Project Management" expression="description" autosave="true"/></ds:field>
+
+        <ds:field name="state"><ds:selectable createOperation="yes" modifyOperation="yes" readOperation="yes" expression="current"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.gsc.enovia.tskv2.TaskService" function="getStates">
+                    <ds:arg arg-name="policy" arg-value="Project Task"/>
+                </ds:rangejpo>
+            </ds:range>
+            <ds:fieldjpo classname="com.gsc.enovia.tskv2.TaskService" function="overrideRouteTaskState" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="state.transient" includeByDefault="always" conditionalInclude="modifyAccess,deleteAccess"><ds:selectable expression="current" format="transient"/></ds:field>
+
+        <ds:field name="taskTypes"><ds:selectable format="transient"/>
+            <ds:range>
+                <ds:rangejpo classname="com.gsc.enovia.tskv2.TaskService" function="getRangeTaskTypes"/>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="project"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" expression="project"/></ds:field>
+        <ds:field name="ownerName" includeByDefault="always" conditionalInclude="ownerInfo,originatorInfo"><ds:selectable expression="owner" format="transient"/></ds:field>
+        <ds:field name="originatorName" includeByDefault="always" conditionalInclude="ownerInfo,originatorInfo"><ds:selectable expression="attribute[Originator]" format="transient"/></ds:field>
+        <ds:field name="modified"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" expression="modified" format="utc"/></ds:field>
+        <ds:field name="hasProject"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Project Management" expression="to[Project Access Key]" type="bus"/></ds:field>
+        <ds:field name="dueDateCategory">
+            <ds:selectable format="transient"/>
+            <ds:range registeredSuite="Foundation">
+                <ds:item value="PAST_DUE" display="emxFoundation.Widget.Date.PAST_DUE"/>
+                <ds:item value="NO_DATE" display="emxFoundation.Widget.Date.NO_DATE"/>
+                <ds:item value="DUE_TODAY" display="emxFoundation.Widget.Date.DUE_TODAY"/>
+                <ds:item value="DUE_TOMORROW" display="emxFoundation.Widget.Date.DUE_TOMORROW"/>
+                <ds:item value="DUE_THIS_WEEK" display="emxFoundation.Widget.Date.DUE_THIS_WEEK"/>
+                <ds:item value="DUE_FUTURE" display="emxFoundation.Widget.Date.DUE_FUTURE"/>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="stateForDisplay">
+            <ds:selectable format="transient"/>
+            <ds:range registeredSuite="CollaborativeTasks">
+                <ds:item value="To Do" display="emxCollaborativeTasks.Status.ToDo"/>
+                <ds:item value="In Progress" display="emxCollaborativeTasks.Status.InProgress"/>
+                <ds:item value="Done" display="emxCollaborativeTasks.Status.Done"/>
+            </ds:range>
+        </ds:field>
+        <ds:field name="taskRequirement"><ds:selectable expression="attribute[Task Requirement]" type="bus" autosave="true"/>
+            <ds:range registeredSuite="ProgramCentral">
+                <ds:item value="Optional" display="emxProgramCentral.Common.Optional"/>
+                <ds:item value="Mandatory" display="emxProgramCentral.Common.Mandatory"/>
+            </ds:range>
+        </ds:field>
+
+        <!--
+        <ds:field name="sequenceOrder" includeByDefault="no" description="the task sequence id within a project."><ds:selectable createOperation="yes" modifyOperation="yes" readOperation="yes" expression="attribute[Sequence Order]" type="rel" />
+            <ds:sort type="integer" direction="ascending" order="1" />
+        </ds:field>
+
+         <ds:field name="taskWBS" includeByDefault="no" description="the task WBS within a project."><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" expression="attribute[Task WBS]" type="rel" /></ds:field>
+
+         -->
+
+
+        <ds:field name="sequenceOrder" includeByDefault="no" description="the task sequence id within a project.">
+            <ds:selectable type="keyrel" createOperation="yes" modifyOperation="yes" readOperation="yes" />
+            <ds:sort type="integer" direction="ascending" order="1" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getSequenceOrder" localInvokation="true">
+                <ds:arg arg-name="taskWBS" arg-value="taskWBS"/>
+                <ds:arg arg-name="palIdField" arg-value="PALId.transient"/>
+            </ds:fieldjpo>
+        </ds:field>
+
+
+        <ds:field name="taskWBS" includeByDefault="no" description="the task WBS within a project.">
+            <ds:selectable type="keyrel" createOperation="no" modifyOperation="no" readOperation="yes"/>
+            <!--<ds:fieldjpo classname="com.gsc.enovia.tskv2.TaskService" function="getTaskWBS" localInvokation="true">
+					<ds:arg arg-name="stateField" arg-value="state.transient"/>
+					<ds:arg arg-name="palIdField" arg-value="PALId.transient"/>
+			</ds:fieldjpo> -->
+        </ds:field>
+
+        <ds:field name="taskWeightage" includeByDefault="no" description="the task Weightage within a project."><ds:selectable createOperation="yes" modifyOperation="yes" typeTarget="bus" readOperation="yes" busInterfaces="DPMTaskWeightage"  expression="attribute[TaskWeightage]" type="rel"/></ds:field>
+
+        <ds:field name="dueDate.transient" includeByDefault="always">
+            <ds:selectable expression="evaluate[if type == 'Inbox Task' then attribute[Scheduled Completion Date] else if attribute[Task Estimated Finish Date] != '' then attribute[Task Estimated Finish Date] else originated]" type="bus" format="timestamp" transient="true"/>
+            <ds:sort type="integer" direction="descending" order="2" />
+        </ds:field>
+
+        <ds:field name="taskWBS" includeByDefault="no" description="the task WBS within a project."><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" expression="attribute[Task WBS]" type="rel" /></ds:field>
+        <ds:field name="previousTaskId" description="used for updating the sequence order as an alternative to setting sequence order."><ds:selectable createOperation="yes" modifyOperation="yes" readOperation="no" type="key" format="transient"/></ds:field>
+        <ds:field name="notes" includeByDefault="no" description="Additional notes associated to the task"><ds:selectable createOperation="yes" modifyOperation="yes" readOperation="yes" busTypes="Project Management" expression="attribute[Notes]" type="bus" autosave="true"/></ds:field>
+        <!-- modified for Inbox Task. -->
+        <ds:field name="needsReview"><ds:selectable expression="evaluate[if type == 'Inbox Task' then attribute[Review Task] else attribute[Needs Review]]" type="bus" attribute="Needs Review" autosave="true"/></ds:field>
+        <ds:field name="deliverablesInheritance" includeByDefault="no(private)" checkExistence="true"><ds:selectable busTypes="Task,Phase,Gate,Milestone" expression="attribute[Deliverables Inheritance]" type="bus" attribute="Deliverables Inheritance" autosave="true"/></ds:field>
+        <ds:field name="percentComplete"><ds:selectable busTypes="Project Management" expression="attribute[Percent Complete]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="estimatedStartDate"><ds:selectable busTypes="Project Management" expression="attribute[Task Estimated Start Date]" type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="dueDate"><ds:selectable busTypes="Project Management" expression="attribute[Task Estimated Finish Date]" type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="estimatedDurationInputValue"><ds:selectable busTypes="Project Management" expression="attribute[Task Estimated Duration].inputvalue" type="bus" autosave="true"/></ds:field>
+        <ds:field name="estimatedDurationInputUnit"><ds:selectable createOperation="yes" modifyOperation="yes" readOperation="yes" busTypes="Project Management" expression="attribute[Task Estimated Duration].inputunit" type="bus" /></ds:field>
+        <ds:field name="estimatedDuration"><ds:selectable busTypes="Project Management" expression="attribute[Task Estimated Duration]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="actualStartDate"><ds:selectable busTypes="Project Management" expression="attribute[Task Actual Start Date]" type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="actualFinishDate"><ds:selectable busTypes="Project Management" expression="attribute[Task Actual Finish Date]" type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="actualDuration"><ds:selectable busTypes="Project Management" createOperation="yes" modifyOperation="yes" readOperation="yes" expression="attribute[Task Actual Duration]" type="bus"/></ds:field>
+        <ds:field name="forecastStartDate"><ds:selectable busInterfaces="DPMForecast" expression="attribute[Forecast Start Date]" type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="forecastFinishDate"><ds:selectable busInterfaces="DPMForecast" expression="attribute[Forecast Finish Date]" type="bus" format="isodate" autosave="true"/></ds:field>
+        <ds:field name="forecastDuration"><ds:selectable busInterfaces="DPMForecast" createOperation="yes" modifyOperation="yes" readOperation="yes" expression="attribute[Forecast Duration]" type="bus"/></ds:field>
+        <ds:field name="constraintType" includeByDefault="no"><ds:selectable busTypes="Task Management" expression="attribute[Task Constraint Type]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="constraintDate" includeByDefault="no"><ds:selectable busTypes="Project Management" expression="attribute[Task Constraint Date]" type="bus" format="isodate" autosave="true"/></ds:field>
+        <!--<ds:field name="constraintType"><ds:selectable expression="attribute[Task Constraint Type]" type="bus"/>
+         <ds:range registeredSuite="ProgramCentral">
+             <ds:item value="As Soon As Possible" display="emxProgramCentral.TaskConstriant.TaskConstriant.ASAP"/>
+             <ds:item value="As Late As Possible" display="emxProgramCentral.TaskConstriant.TaskConstriant.ALAP"/>
+             <ds:item value="Finish No Earlier Than" display="emxProgramCentral.TaskConstriant.TaskConstriant.FNET"/>
+             <ds:item value="Finish No Later Than" display="emxProgramCentral.TaskConstriant.TaskConstriant.FNLT"/>
+             <ds:item value="Must Finish On" display="emxProgramCentral.TaskConstriant.TaskConstriant.MFON"/>
+             <ds:item value="Must Start On" display="emxProgramCentral.TaskConstriant.TaskConstriant.MSON"/>
+             <ds:item value="Start No Earlier Than" display="emxProgramCentral.TaskConstriant.TaskConstriant.SNET"/>
+             <ds:item value="Start No Later Than" display="emxProgramCentral.TaskConstriant.TaskConstriant.SNLT"/>
+         </ds:range>
+        </ds:field>-->
+        <ds:field name="scheduleFrom" includeByDefault="no">
+            <ds:selectable busTypes="Project Space,Project Concept" expression="attribute[Schedule From]" type="bus" autosave="true"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="convertScheduleFromToConstraint" localInvokation="true">
+                <ds:arg arg-name="targetFieldName" arg-value="constraintType"/>
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="scheduleBasedOn" includeByDefault="no"><ds:selectable busTypes="Project Space,Project Concept" expression="attribute[Schedule Based On]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="projectVisibility" includeByDefault="no"><ds:selectable busTypes="Project Space,Project Concept" expression="attribute[Project Visibility]" type="bus" autosave="true"/></ds:field>
+
+        <!-- Route Task Fields -->
+        <ds:field name="expandId.transient" includeByDefault="always" conditionalInclude="references"><ds:selectable expression="evaluate[if type == 'Inbox Task' then from[Route Task].to.id else id]" type="bus" format="transient"/></ds:field>
+        <ds:field name="routeTaskValidStates">
+            <ds:selectable format="transient"/>
+            <ds:range>
+                <ds:rangejpo classname="com.gsc.enovia.tskv2.TaskService" function="getStates">
+                    <ds:arg arg-name="policy" arg-value="Project Task"/>
+                    <ds:arg arg-name="usecase" arg-value="Route Task"/><!-- remove 2 states from task policy. -->
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+        <ds:field name="routeTaskInstructions" description="Route Task Instructions for route-based tasks."><ds:selectable busTypes="Inbox Task" createOperation="no" modifyOperation="no" readOperation="yes" expression="attribute[Route Instructions]" type="bus"/></ds:field>
+        <ds:field name="routeTaskAction"><ds:selectable busTypes="Inbox Task" createOperation="no" modifyOperation="no" readOperation="yes" expression="attribute[Route Action]" type="bus" /></ds:field>
+        <ds:field name="routeTaskDueDate"><ds:selectable busTypes="Inbox Task" expression="attribute[Scheduled Completion Date]" type="bus" format="utc" autosave="true"/></ds:field>
+        <ds:field name="routeTaskActualFinishDate"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Inbox Task" expression="attribute[Actual Completion Date]" type="bus" format="utc"/></ds:field>
+        <ds:field name="routeTaskDelegationAllowed"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Inbox Task" expression="attribute[Allow Delegation]" type="bus" /></ds:field>
+        <ds:field name="routeTaskAssigneeSetDueDate"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Inbox Task" expression="attribute[Assignee Set Due Date]" type="bus" /></ds:field>
+        <ds:field name="routeTaskApprovalAction"><ds:selectable busTypes="Inbox Task" expression="attribute[Approval Status]" type="bus" autosave="true"/>
+            <ds:range>
+                <ds:rangejpo classname="com.gsc.enovia.tskv2.TaskService" function="getRouteTaskApprovalActions">
+                    <ds:arg
+                            arg-name="attribute"
+                            arg-value="Approval Status"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+        <ds:field name="routeTaskApprovalComments"><ds:selectable busTypes="Inbox Task" expression="attribute[Comments]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="routeTaskReviewerComments"><ds:selectable busTypes="Inbox Task" expression="attribute[Reviewers Comments]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="routeTaskRequiresESign"><ds:selectable busTypes="Inbox Task" expression="from[Route Task].to.attribute[Requires ESign]" type="bus"/></ds:field>
+        <ds:field name="routeOwnerTask" includeByDefault="no(private)"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Inbox Task" expression="attribute[Route Owner Task]" type="bus"/></ds:field>
+        <ds:field name="routeOwnerUGChoice" includeByDefault="no(private)"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Inbox Task" expression="attribute[Route Owner UG Choice]" type="bus" transient="true"/></ds:field>
+        <ds:field name="routeOwnerUGName" includeByDefault="no(private)">
+            <ds:selectable type="key" createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Inbox Task" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteOwnerUGChoice">
+                <ds:arg arg-name="routeOwnerUGChoice" arg-value="routeOwnerUGChoice"/>
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="routeOwnerUGTitle" includeByDefault="no(private)">
+            <ds:selectable type="key" createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Inbox Task" />
+        </ds:field>
+        <ds:field name="routeOwner" includeByDefault="no"><ds:selectable busTypes="Inbox Task" expression="from[Route Task].to.owner" type="bus"/></ds:field>
+
+        <ds:field name="policy"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" expression="policy" type="bus"/></ds:field>
+        <ds:field name="PALId.transient" includeByDefault="always" conditionalInclude="DPMProject,deleteAccess"><ds:selectable busTypes="Project Management" expression="to[Project Access Key].from.id" type="bus" format="transient"/></ds:field>
+        <ds:field name="PALId" includeByDefault="no"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" busTypes="Project Management" expression="to[Project Access Key].from.id" type="bus"/></ds:field>
+        <ds:field name="objectId" includeByDefault="no"><ds:selectable createOperation="no" modifyOperation="no" readOperation="yes" expression="id" type="bus"/></ds:field>
+        <!-- ****************   Added for Project Management 		****************  -->
+        <ds:field name="freeFloat" includeByDefault="no" description="Free Float value">
+            <ds:selectable type="key" createOperation="yes" modifyOperation="yes" readOperation="yes" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getFloatValues" localInvokation="true">
+                <ds:arg arg-name="palIdField" arg-value="PALId.transient"/>
+                <ds:arg arg-name="isTotalFloat" arg-value="false"/>
+                <ds:arg arg-name="isOverallCrit" arg-value="false"/>
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="totalFloat" includeByDefault="no" description="Total Float value">
+            <ds:selectable type="key" createOperation="yes" modifyOperation="yes" readOperation="yes" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getFloatValues" localInvokation="true">
+                <ds:arg arg-name="isTotalFloat" arg-value="true"/>
+                <ds:arg arg-name="palIdField" arg-value="PALId.transient"/>
+                <ds:arg arg-name="isOverallCrit" arg-value="false"/>
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="isOverallCritical" includeByDefault="no" description="isOverallCritical">
+            <ds:selectable type="key" createOperation="yes" modifyOperation="yes" readOperation="yes" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getFloatValues" localInvokation="true">
+                <ds:arg arg-name="isTotalFloat" arg-value="false"/>
+                <ds:arg arg-name="palIdField" arg-value="PALId.transient"/>
+                <ds:arg arg-name="isOverallCrit" arg-value="true"/>
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="dpmTaskCalendar" includeByDefault="no" description="dpmTaskCalendar">
+            <ds:selectable type="key" createOperation="yes" modifyOperation="yes" readOperation="yes" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getDpmTaskCalendar" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="nlsType" includeByDefault="no"><ds:selectable expression="type" format="type" type="bus"/></ds:field>
+        <ds:field name="pattern" includeByDefault="no"><ds:selectable expression="attribute[FormatPattern]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="color" includeByDefault="no">					<ds:selectable 	expression="attribute[Color]"	type="bus" autosave="true"/></ds:field>
+        <ds:field name="isTypeGate" includeByDefault="no">					<ds:selectable 	expression="type.kindof[Gate]" 									type="bus"/></ds:field>
+        <ds:field name="isTypeMilestone" includeByDefault="no">					<ds:selectable 	expression="type.kindof[Milestone]" 									type="bus"/></ds:field>
+        <ds:field name="isSummaryTask" includeByDefault="no">					<ds:selectable 	expression="from[Subtask]"	type="bus"/></ds:field>
+        <ds:field name="effortId" includeByDefault="no">					<ds:selectable 	expression="from[hasEfforts].to.id"	type="bus"/></ds:field>
+        <ds:field name="sourceId" includeByDefault="no">					<ds:selectable 	expression="attribute[Source Id]"	type="bus"/></ds:field>
+        <ds:field name="taskProjectId" includeByDefault="no">					<ds:selectable 	expression="to[Project Access Key].from.from[Project Access List].to.physicalid"	type="bus"/></ds:field>
+        <ds:field name="passiveSubtask" includeByDefault="no">		 <ds:selectable 	expression="from[Passive Subtask]" 	type="bus"/></ds:field>
+        <ds:field name="criticalTask">				    <ds:selectable 	expression="attribute[Critical Task]" 								type="bus"/></ds:field>
+
+        <ds:field name="transient.percentComplete" includeByDefault="always" conditionalInclude="status">
+            <ds:selectable busTypes="Project Management" expression="attribute[Percent Complete]" type="bus" transient="true"/>
+        </ds:field>
+        <ds:field name="transient.dueDate" includeByDefault="always" conditionalInclude="status">
+            <ds:selectable busTypes="Project Management" expression="attribute[Task Estimated Finish Date]" type="bus" format="isodate" transient="true"/>
+        </ds:field>
+        <ds:field name="transient.actualStartDate" includeByDefault="always" conditionalInclude="status">
+            <ds:selectable busTypes="Project Management" expression="attribute[Task Actual Start Date]" type="bus" format="isodate" transient="true"/>
+        </ds:field>
+        <ds:field name="transient.actualFinishDate" includeByDefault="always" conditionalInclude="status">
+            <ds:selectable busTypes="Project Management" expression="attribute[Task Actual Finish Date]" type="bus" format="isodate" transient="true"/>
+        </ds:field>
+
+        <ds:field name="status" includeByDefault="yes">
+            <ds:selectable createOperation="no" modifyOperation="no" readOperation="yes"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getStatus" localInvokation="true">
+                <ds:arg arg-name="useTransientFields" arg-value="true"/>
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="Deviation" includeByDefault="no">
+            <ds:selectable type="key"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getDeviationValue" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="predictiveActualFinishDate" includeByDefault="no" >
+            <ds:selectable type="key" format="isodate"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getPredicitveActualFinishDate" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="subscribed" includeByDefault="no">
+            <ds:fieldjpo classname="com.gsc.enovia.tskv2.TaskService" function="getSubscribed" localInvokation="true"></ds:fieldjpo>
+        </ds:field>
+
+        <!--
+                <ds:subservice name="deliverables" includeByDefault="yes">
+                    <ds:data>
+                        <ds:expand relationshipPattern="Task Deliverable" getFrom="true"/>
+                        <ds:updatejpo classname="com.gsc.enovia.tskv2.TaskService" function="updateTaskDeliverables" localInvokation="true"/>
+                    </ds:data>
+
+                    <ds:ref-subservice name="object-fields" description="based on global fields in foundation-services"/>
+                    <ds:field name="linkURL"><ds:selectable busTypes="URL" expression="attribute[Link URL]" type="bus"/></ds:field>
+                    <ds:field name="deliverablesTypesForSearch">
+                        <ds:selectable format="transient"/>
+                        <ds:range>
+                            <ds:rangejpo classname="com.gsc.enovia.tskv2.TaskService" function="getRangeTypeDerivatives">
+                                <ds:arg
+                                    arg-name="relationshiptype"
+                                    arg-value="Task Deliverable"/>
+                            </ds:rangejpo>
+                        </ds:range>
+                    </ds:field>
+                </ds:subservice>
+        -->
+        <ds:ref-subservice name="predecessors" referenceName="dpm.dependency" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Dependency" getFrom="true"/>
+                <ds:updatejpo classname="com.gsc.enovia.tskv2.TaskService" function="updatePredecessors" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="successors" referenceName="dpm.dependency" includeByDefault="no(private)">
+            <ds:data>
+                <ds:expand relationshipPattern="Dependency" getTo="true"/>
+            </ds:data>
+
+        </ds:ref-subservice>
+
+        <ds:subservice name="autoRefresh" includeByDefault="never">
+            <ds:data csrf="false">
+                <ds:jpo classname="com.gsc.enovia.tskv2.TaskService" function="autoRefreshTasks" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="scopeId" includeByDefault="never">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.tskv2.TaskService" function="getScopeTasks" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="ownerInfo" includeByDefault="yes">
+            <ds:data>
+                <!-- Requires local invocation to be false in order to retain private jpo cache. -->
+                <ds:jpo classname="com.gsc.enovia.tskv2.TaskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="owner" arg-value="true"/>
+                </ds:jpo>
+            </ds:data>
+
+            <ds:field name="name.transient" includeByDefault="always"><ds:selectable expression="name" format="transient" type="bus"/></ds:field>
+            <ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+            <ds:field name="firstname"><ds:selectable expression="attribute[First Name]" type="bus"/></ds:field>
+            <ds:field name="lastname"><ds:selectable expression="attribute[Last Name]" type="bus"/></ds:field>
+        </ds:subservice>
+
+        <ds:subservice name="originatorInfo" includeByDefault="yes">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.tskv2.TaskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="originator" arg-value="true"/>
+                </ds:jpo>
+            </ds:data>
+
+            <ds:field name="name.transient" includeByDefault="always"><ds:selectable expression="name" format="transient" type="bus"/></ds:field>
+            <ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+            <ds:field name="firstname"><ds:selectable expression="attribute[First Name]" type="bus"/></ds:field>
+            <ds:field name="lastname"><ds:selectable expression="attribute[Last Name]" type="bus"/></ds:field>
+        </ds:subservice>
+
+        <ds:ref-subservice name="co-owners" referenceName="tsk.co-owners" includeByDefault="no(private)">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.tskv2.TaskService" function="getCoOwners" returnedData="idsAndData"/>
+                <ds:updatejpo classname="com.gsc.enovia.tskv2.TaskService" function="updateCoOwners" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="references" referenceName="tsk.references" includeByDefault="yes"/>
+
+        <ds:ref-subservice name="deliverables" referenceName="tsk.gscdeliverables" includeByDefault="yes"/>
+
+        <ds:subservice name="deliverableId" includeByDefault="never">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.tskv2.TaskService" function="getRelatedTasks" returnedData="idsAndData">
+                    <ds:arg arg-name="relatedItemType" arg-value="deliverable"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="referenceId" includeByDefault="never">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.tskv2.TaskService" function="getRelatedTasks" returnedData="idsAndData">
+                    <ds:arg arg-name="relatedItemType" arg-value="reference"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="referencedSimulations" includeByDefault="yes" checkRelExistence="Referenced Simulations">
+            <ds:data>
+                <ds:expand relationshipPattern="Referenced Simulations" getFrom="true" getTo="true"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskReferences" function="updateRelatedFiles">
+                    <ds:arg  arg-name="relationshiptype" arg-value="Referenced Simulations"/>
+                </ds:updatejpo>
+            </ds:data>
+            <ds:ref-subservice name="object-fields" description="based on global fields in foundation-services"/>
+        </ds:subservice>
+
+        <ds:subservice name="DPMProject" includeByDefault="yes">
+            <ds:data>
+                <ds:expand relationshipPattern="Project Access List" getFrom="true" idField="PALId.transient"/>
+                <ds:updatejpo classname="com.gsc.enovia.tskv2.TaskService" function="updateProjectScope" localInvokation="true"/>
+            </ds:data>
+            <ds:field name="gscTitle"><ds:selectable expression="attribute[gscTitle]" type="bus"/></ds:field>
+
+            <ds:ref-subservice name="object-fields" description="based on global fields in foundation-services"/>
+        </ds:subservice>
+        <ds:subservice name="route" includeByDefault="yes">
+            <ds:data>
+                <ds:expand relationshipPattern="Route Task,Object Route" getFrom="true" />
+            </ds:data>
+            <ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+        </ds:subservice>
+        <ds:subservice name="scopes" includeByDefault="yes">
+            <ds:data>
+                <!-- modified to include route task schema. -->
+                <ds:expand relationshipPattern="Contributes To,Object Route" getTo="true" idField="expandId.transient" />
+                <ds:updatejpo classname="com.gsc.enovia.tskv2.TaskService" function="updateTaskScopes"/>
+            </ds:data>
+
+            <ds:ref-subservice name="object-fields" description="based on global fields in foundation-services"/>
+
+            <ds:field name="scopesTypesForSearch"><ds:selectable format="transient"/>
+                <ds:range>
+                    <ds:rangejpo classname="com.gsc.enovia.tskv2.TaskService" function="getRangeTypeDerivatives">
+                        <ds:arg arg-name="searchtypes" arg-value="Workspace,Workspace Vault,Opportunity,VPMReference,Part,Product Line,DOCUMENTS,Deliverable Management,Products,Model,Product Configuration,Requirement,DesignSight,Simulation,Analytics Case,Approximation,dsc_matref_rep_SmaOptions,FEM,Simulation Connector,Simulation Attribute Group,Simulation Template,Simulation Document - NonVersioned,Simulation Document – Versioned,Simulation Activity,Simulation Job,FailureModesEffectsAnalysis,FaultTreeElement,SafetyAssessment,SafetyCase,SemiconductorLogicalItem,SoftwareLogicalItem,XCADModelRepReference,Drawing,Risk,Issue"/>
+                    </ds:rangejpo>
+                </ds:range>
+            </ds:field>
+        </ds:subservice>
+        <ds:subservice name="contents" includeByDefault="yes">
+            <ds:data>
+
+                <ds:expand relationshipPattern="Object Route" getTo="true" idField="expandId.transient" />
+                <ds:updatejpo classname="com.gsc.enovia.tskv2.TaskService" function="updateInboxTaskContents"/>
+            </ds:data>
+
+            <ds:ref-subservice name="object-fields" description="based on global fields in foundation-services"/>
+
+            <ds:field name="contentsTypesForSearch"><ds:selectable format="transient"/>
+                <ds:range>
+                    <ds:rangejpo classname="com.gsc.enovia.tskv2.TaskService" function="getRangeTypeDerivatives">
+                        <ds:arg
+                                arg-name="relationshiptype"
+                                arg-value="Object Route"/>
+                    </ds:rangejpo>
+                </ds:range>
+            </ds:field>
+            <ds:field name="contentsRelationship">
+                <ds:selectable format="transient"/>
+                <ds:range>
+                    <ds:item value="parentDirection" display="To"/>
+                    <ds:item value="parentRelName" display="Object Route"/>
+                </ds:range>
+            </ds:field>
+        </ds:subservice>
+        <!-- moved below to process after scope -->
+        <ds:ref-subservice name="assignees" referenceName="tsk.assignees" includeByDefault="yes">
+            <ds:data>
+                <!-- modified to include route tasks assignees. -->
+                <ds:expand relationshipPattern="Assigned Tasks,Assigned Experiment Tasks,Project Task" getFrom="true" getTo="true"/>
+                <ds:updatejpo classname="com.gsc.enovia.tskv2.TaskService" function="updateTaskAssignees"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="calendar" referenceName="tsk.calendar" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.tskv2.TaskService" function="getCalendar" returnedData="idsAndData"/>
+                <ds:updatejpo classname="com.gsc.enovia.tskv2.TaskService" function="updateCalendar"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:subservice name="classes" includeByDefault="no(private)">
+            <ds:data>
+                <ds:expand relationshipPattern="Classified Item" getFrom="false" getTo="true"/>
+            </ds:data>
+            <ds:field name="title"   includeByDefault="no" >     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" /></ds:field>
+        </ds:subservice>
+
+        <ds:field name="projectTypesForSearch">
+            <ds:selectable format="transient"/>
+            <ds:range>
+                <ds:rangejpo classname="com.gsc.enovia.tskv2.TaskService" function="getRangeTypeDerivatives" localInvokation="true">
+                    <ds:arg arg-name="searchtypes" arg-value="Project Space"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+        <ds:field name="deliverablesRelationship">
+            <ds:selectable format="transient"/>
+            <ds:range>
+                <ds:item value="parentDirection" display="from"/>
+                <ds:item value="parentRelName" display="Task Deliverable"/>
+            </ds:range>
+        </ds:field>
+        <ds:field name="referencesRelationship">
+            <ds:selectable format="transient"/>
+            <ds:range>
+                <ds:item value="parentDirection" display="from"/>
+                <ds:item value="parentRelName" display="Reference Document"/>
+            </ds:range>
+        </ds:field>
+        <ds:field name="contentsRelationship">
+            <ds:selectable format="transient"/>
+            <ds:range>
+                <ds:item value="parentDirection" display="To"/>
+                <ds:item value="parentRelName" display="Object Route"/>
+            </ds:range>
+        </ds:field>
+        <ds:field name="isLibraryInstalled">
+            <ds:label text="emxLibraryCentral.Record.RetainRelationship" registeredSuite="emxLibraryCentral.properties"/>
+            <ds:selectable format="transient"/>
+        </ds:field>
+        <!-- either uses the platform extended attributes or overwritten by custom file. -->
+        <ds:ref-subservice name="tasks-custom-fields"/>
+        <ds:ref-subservice name="tasks1-custom-fields"/>
+    </ds:service>
+    <ds:service name="tsk.gscdeliverables" includeByDefault="yes">
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.tskv2.TaskReferences" function="getRelatedFiles"
+                    localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="relationshiptype" arg-value="Task Deliverable"/>
+            </ds:jpo>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskReferences" function="updateRelatedFiles">
+                <ds:arg arg-name="relationshiptype" arg-value="Task Deliverable"/>
+            </ds:updatejpo>
+        </ds:data>
+        <ds:ref-subservice name="object-fields" description="based on global fields in foundation-services"/>
+        <!--    <ds:ref-subservice name="file-fields" description="based on file specific global fields in foundation-services"/> -->
+        <ds:field name="linkURL">
+            <ds:selectable busTypes="URL" expression="attribute[Link URL]" type="bus"/>
+        </ds:field>
+        <ds:field name="state">
+            <ds:selectable createOperation="yes" modifyOperation="yes" readOperation="yes" expression="current"  type="bus"/>
+        </ds:field>
+        <ds:field name="deliverablesTypesForSearch">
+            <ds:selectable format="transient"/>
+            <ds:range>
+                <ds:rangejpo classname="com.dassault_systemes.enovia.tskv2.TaskService"
+                             function="getRangeTypeDerivatives">
+                    <ds:arg
+                            arg-name="relationshiptype"
+                            arg-value="Task Deliverable"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+        <ds:field name="deliverablesRelationship">
+            <ds:selectable format="transient"/>
+            <ds:range>
+                <ds:item value="parentDirection" display="from"/>
+                <ds:item value="parentRelName" display="Task Deliverable"/>
+            </ds:range>
+        </ds:field>
+    </ds:service>
+</ds:services>
+

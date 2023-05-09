@@ -1,0 +1,66 @@
+################################################################################################
+# Created Date : 2020. 06. 22
+# Create by Suhwan,Jang
+# Description : Project Remark 생성 Form
+################################################################################################
+del form 'type_emdProjectRemarkCreateForm';
+add form 'type_emdProjectRemarkCreateForm' web
+    field
+        name 'Type'
+        label 'emdManufacturing.Label.Type'
+        businessobject  'type'
+        alt ''
+        range '${COMMON_DIR}/emxTypeChooser.jsp?InclusionList=type_emdProjectRemark&ReloadOpener=true'
+        update ''
+        setting 'Input Type' 'textbox'
+        setting 'Admin Type' 'Type'
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Required' 'true'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'basic'
+    field
+        name 'Name'
+        label 'emdManufacturing.Label.Name'
+        businessobject  'name'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Required' 'true'
+        setting 'Validate' 'emdValidateForBadCharacters'
+        setting 'Editable' 'false'
+        setting 'Field Type' 'basic'
+    field
+        name 'Description'
+        label 'emdManufacturing.Label.SpecialRequirement'
+        businessobject  'description'
+        alt ''
+        range ''
+        update ''
+        setting 'Input Type' 'textarea'
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Required' 'true'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'basic'
+    field
+        name 'emdSharedWith'
+        label 'emdManufacturing.Label.emdSharedWith'
+        businessobject  '$<attribute[attribute_emdSharedWith]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Required' 'true'
+        setting 'Editable' 'true'
+        setting 'Input Type' 'combobox'
+        setting 'Admin Type' 'attribute_emdFunctionalDept'
+        setting 'Field Type' 'attribute'
+        setting "Range Program" "emdProjectRemark"
+        setting "Range Function" "getSharedWithRangeProgramForCreate"
+    property 'application'      value 'emdManufacturing'
+    property 'version'          value 'V6R2019'
+    property 'installer'        value 'HHI'
+    property 'installed date'   value '2020-06-22'
+    property 'original name'    value 'type_emdProjectRemarkCreateForm'
+;
+add property 'form_type_type_emdProjectRemarkCreateForm' on program 'eServiceSchemaVariableMapping.tcl' to form 'type_emdProjectRemarkCreateForm';

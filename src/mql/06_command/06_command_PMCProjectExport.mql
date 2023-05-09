@@ -1,0 +1,26 @@
+del command 'PMCProjectExport';
+add command 'PMCProjectExport'
+	description	'Command to Export Project and its subprojects'
+	label	'emxProgramCentral.Common.ExportProject'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=ProjectExport&exportSubProject=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.Kindof[Project Space]'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionExportToDocument.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-29-2022'
+	property	'original name'	value	'PMCProjectExport'
+	property	'version'	value	'R424.HF2'
+;
+modify menu PMCWBSToolBar add command PMCProjectExport order command PMCProjectExport 0;
+#channel ==>PMCWBSToolBar
+add property command_PMCProjectExport on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectExport';

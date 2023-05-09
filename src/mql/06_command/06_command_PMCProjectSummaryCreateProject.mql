@@ -1,0 +1,25 @@
+del command 'PMCProjectSummaryCreateProject';
+add command 'PMCProjectSummaryCreateProject'
+	description	'Command for Creating New Project'
+	label	'emxProgramCentral.Common.CreateProject'
+	href	'${SUITE_DIR}/emxProgramCentralCommonFS.jsp?functionality=CreateProjectSpaceStep1&suiteKey=eServiceSuiteProgramCentral&topLinks=false&bottomLinks=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSummaryCreateProject'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCProjectSummaryCreateProject on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSummaryCreateProject';

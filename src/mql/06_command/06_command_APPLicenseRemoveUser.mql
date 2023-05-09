@@ -1,0 +1,21 @@
+del command 'APPLicenseRemoveUser';
+add command 'APPLicenseRemoveUser'
+	description	''
+	label	'emxComponents.Common.Licensing.RemoveUser'
+	href	'${COMPONENT_DIR}/emxComponentsLicenseProcess.jsp?action=removeLicense'
+	alt	'emxComponents.Common.Licensing.RemoveUser'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemoveResource.png'
+	setting	'Confirm Message'		'emxComponents.License.RemoveUserConfirm'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLicenseRemoveUser'
+	property	'version'	value	'R422'
+;
+modify menu APPProductLicenseToolbar add command APPLicenseRemoveUser order command APPLicenseRemoveUser 0;
+#channel ==>APPProductLicenseToolbar
+add property command_APPLicenseRemoveUser on program eServiceSchemaVariableMapping.tcl to command 'APPLicenseRemoveUser';

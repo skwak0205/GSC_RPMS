@@ -1,0 +1,17 @@
+del command 'PMCSCProjectMembersAccessPowerView';
+add command 'PMCSCProjectMembersAccessPowerView'
+	description	''
+	label	'emxFramework.Command.Member'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCSCProjectMembersAccessPortal&header=emxProgramCentral.Common.Members&HelpMarker=emxhelpprojectmembers'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSCProjectMembersAccessPowerView'
+	property	'version'	value	'R216'
+;
+modify menu type_ProjectConcept add command PMCSCProjectMembersAccessPowerView order command PMCSCProjectMembersAccessPowerView 8;
+#channel ==>type_ProjectConcept
+add property command_PMCSCProjectMembersAccessPowerView on program eServiceSchemaVariableMapping.tcl to command 'PMCSCProjectMembersAccessPowerView';

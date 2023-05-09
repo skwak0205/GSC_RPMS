@@ -1,0 +1,19 @@
+del command 'SelectPerson';
+add command 'SelectPerson'
+	description	'Global Search Person chooser Command'
+	label	'emxComponents.Command.PersonChooser'
+	href	'${COMPONENT_DIR}/emxCommonSelectPerson.jsp'
+	alt	'emxComponents.Command.PersonChooser'
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Single'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'SelectPerson'
+	property	'version'	value	'10-0-1-0'
+;
+modify menu GlobalPersonChooserBottomActionBar add command SelectPerson order command SelectPerson 0;
+#channel ==>GlobalPersonChooserBottomActionBar
+add property command_SelectPerson on program eServiceSchemaVariableMapping.tcl to command 'SelectPerson';

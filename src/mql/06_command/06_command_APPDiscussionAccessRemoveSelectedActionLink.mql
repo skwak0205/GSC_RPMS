@@ -1,0 +1,37 @@
+del command 'APPDiscussionAccessRemoveSelectedActionLink';
+add command 'APPDiscussionAccessRemoveSelectedActionLink'
+	description	'Access Remove Discussion Command Object'
+	label	'emxComponents.Common.RemoveAccess'
+	href	'${COMPONENT_DIR}/emxComponentsDiscussionAccessUtil.jsp?mode=remove'
+	alt	'emxComponents.Common.RemoveAccess'
+	setting	'Target Location'		'listHidden'
+	setting	'Access Program Method'		'showCommand'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Program'		'emxDiscussion'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Remove.ConfirmMsg'
+	user	'Organization Manager'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	user	'Specification Restricted User'
+	user	'Global Template Administrator'
+	user	'Template Administrator'
+	user	'Template Header Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionAccessRemoveSelectedActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDiscussionAccessBottomActionBar add command APPDiscussionAccessRemoveSelectedActionLink order command APPDiscussionAccessRemoveSelectedActionLink 0;
+modify menu APPDiscussionAccessActionsToolBar add command APPDiscussionAccessRemoveSelectedActionLink order command APPDiscussionAccessRemoveSelectedActionLink 0;
+#channel ==>APPDiscussionAccessBottomActionBarAPPDiscussionAccessActionsToolBar
+add property command_APPDiscussionAccessRemoveSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionAccessRemoveSelectedActionLink';

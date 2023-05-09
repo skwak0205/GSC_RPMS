@@ -1,0 +1,22 @@
+del command 'PMCWBSClearAll';
+add command 'PMCWBSClearAll'
+	description	''
+	label	'emxProgramCentral.Common.Reset'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=clearAll'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReset.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSClearAll'
+	property	'version'	value	'R422.HF4'
+;
+modify menu PMCAddTaskDependenciesActionToolbar add command PMCWBSClearAll order command PMCWBSClearAll 0;
+#channel ==>PMCAddTaskDependenciesActionToolbar
+add property command_PMCWBSClearAll on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSClearAll';

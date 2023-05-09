@@ -1,0 +1,19 @@
+del menu 'APPCurrencyExchangeRateSummaryActionsToolBar';
+add menu 'APPCurrencyExchangeRateSummaryActionsToolBar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasAccessForCompanyNodes'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPAddNewExchangeRate'
+	command	'APPDeleteExchangeRate'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPCurrencyExchangeRateSummaryActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPCurrencyExchangeRateSummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPCurrencyExchangeRateSummaryActionsToolBar';

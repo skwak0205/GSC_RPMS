@@ -1,0 +1,12 @@
+del command 'APPVPLMPerson';
+add command 'APPVPLMPerson'
+	description	''
+	label	'emxPlmOnline.label.Person'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=Person'
+	alt	'emxPlmOnline.label.Person'
+	setting	'Registered Suite'		'VPLMAdministration'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+#channel ==>PeopleChannel
+add property command_APPVPLMPerson on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMPerson';

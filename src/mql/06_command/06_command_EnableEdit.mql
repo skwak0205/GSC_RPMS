@@ -1,0 +1,19 @@
+del command 'EnableEdit';
+add command 'EnableEdit'
+	description	''
+	label	'emxFramework.TableEdit.Enable_Edit'
+	href	'javascript:editMode()'
+	alt	''
+	setting	'Access Expression'		'id==last.id&&(current.access[changesov]==true) && !(type=="Route Template"&&current=="Active")'
+	setting	'Access Function'		'showCommand'
+	setting	'Access Program'		'emxRouteTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'EnableEdit'
+	property	'version'	value	'R423.HF4'
+;
+modify menu APPRouteAccessToolbar add command EnableEdit order command EnableEdit 0;
+#channel ==>APPRouteAccessToolbar
+add property command_EnableEdit on program eServiceSchemaVariableMapping.tcl to command 'EnableEdit';

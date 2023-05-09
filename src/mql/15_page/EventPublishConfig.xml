@@ -1,0 +1,31 @@
+#  $RCSfile: EventPublishConfig.properties v 1.00$
+#
+#   Copyright (c) 1992-2019 MatrixOne, Inc.
+#   All Rights Reserved.
+#   This program contains proprietary and trade secret information of MatrixOne,Inc.
+#   Copyright notice is precautionary only
+#   and does not evidence any actual or intended publication of such program
+#
+# Properties Description - Event Publishing Properties
+#
+# Created   10-05-2021
+# Modified
+#
+###############################################################################
+#
+
+####################################################################################
+# Event Publishing Specific Settings
+####################################################################################
+
+#ActiveMQ
+EventPublish.config.customBroker.ImplClass=
+
+# Please mention the Messaging Broker URL
+EventPublish.config.brokerURL=
+
+# Please mention the destination name
+EventPublish.config.destination=
+
+# Please mention the destination type
+EventPublish.config.destinationType=

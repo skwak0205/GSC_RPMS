@@ -1,0 +1,19 @@
+del command 'AEFMonitor';
+add command 'AEFMonitor'
+	description	'Monitor'
+	label	'emxFramework.AdminTool.Monitor'
+	href	'${COMMON_DIR}/emxMonitor.jsp'
+	alt	'emxFramework.AdminTool.Monitor'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	user	'Administration Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFMonitor'
+	property	'version'	value	'R216'
+;
+modify menu AdminTools add command AEFMonitor order command AEFMonitor 3;
+#channel ==>AdminTools
+add property command_AEFMonitor on program eServiceSchemaVariableMapping.tcl to command 'AEFMonitor';

@@ -1,0 +1,17 @@
+del command 'MsoiWBSTasks';
+add command 'MsoiWBSTasks'
+	description	'UI3 based my WBS Tasks Command object specific to MS Office Integration'
+	label	'emxIEFDesignCenter.Common.WBSTasks'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxMsoiWBSTasksUtil:getCurrentUserWBSTasks&table=MsoiWBSTasksSummary'
+	alt	'emxIEFDesignCenter.Common.WBSTasks'
+	setting	'Registered Suite'		'IntegrationFramework'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiWBSTasks'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>IEF ENOVIA Root
+add property command_MsoiWBSTasks on program eServiceSchemaVariableMapping.tcl to command 'MsoiWBSTasks';

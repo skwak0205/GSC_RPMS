@@ -1,0 +1,21 @@
+del command 'ECMSearchCO';
+add command 'ECMSearchCO'
+	description	'CO Search Command Object'
+	label	'EnterpriseChangeMgt.Command.CO'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_ChangeOrder:POLICY=policy_FasttrackChange,policy_FormalChange&showInitialResults=false&table=ECMGeneralCOSearchResult&selection=multiple&cancelLabel=Close&form=ECMGeneralCOSearchForm'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Selectable in Preferences'		'false'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMSearchCO'
+	property	'version'	value	'R417'
+;
+modify menu ECMSearchMenu add command ECMSearchCO order command ECMSearchCO 1;
+#channel ==>ECMSearchMenu
+add property command_ECMSearchCO on program eServiceSchemaVariableMapping.tcl to command 'ECMSearchCO';

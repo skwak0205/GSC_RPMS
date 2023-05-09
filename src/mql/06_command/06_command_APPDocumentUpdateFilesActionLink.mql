@@ -1,0 +1,31 @@
+del command 'APPDocumentUpdateFilesActionLink';
+add command 'APPDocumentUpdateFilesActionLink'
+	description	'Document Update Files Command Object'
+	label	'emxComponents.Command.CheckIn'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=update&showFormat=readonly&showComments=required&msfBypass=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasDocumentCheckinAccess'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckIn.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMReleaseManager'
+	user	'VPLMTeamManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentUpdateFilesActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentActionsToolBar add command APPDocumentUpdateFilesActionLink order command APPDocumentUpdateFilesActionLink 10;
+modify menu APPFileSummaryActionsToolBar add command APPDocumentUpdateFilesActionLink order command APPDocumentUpdateFilesActionLink 2;
+modify menu TMCDocumentsActionToolbar add command APPDocumentUpdateFilesActionLink order command APPDocumentUpdateFilesActionLink 7;
+#channel ==>APPDocumentActionsToolBarAPPFileSummaryActionsToolBarTMCDocumentsActionToolbar
+add property command_APPDocumentUpdateFilesActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentUpdateFilesActionLink';

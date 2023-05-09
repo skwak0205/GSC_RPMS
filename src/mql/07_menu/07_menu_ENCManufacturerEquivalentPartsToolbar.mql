@@ -1,0 +1,14 @@
+del menu 'ENCManufacturerEquivalentPartsToolbar';
+add menu 'ENCManufacturerEquivalentPartsToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'ENCManufacturerEquivalentPartsToolbar'
+	property 'version'	value	'10-7'
+;
+add property menu_ENCManufacturerEquivalentPartsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ENCManufacturerEquivalentPartsToolbar';

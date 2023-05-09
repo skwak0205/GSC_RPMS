@@ -1,0 +1,17 @@
+del command 'ECMCANewImplementedItems';
+add command 'ECMCANewImplementedItems'
+	description	'New UX Implemented Items command'
+	label	'EnterpriseChangeMgt.Command.ImplementedItems'
+	href	'${SUITE_DIR}/ECMChangeNewImplementedItems.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'isNewUXForRealized'
+	setting	'Access Program'		'enoECMChangeUtil'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCANewImplementedItems'
+	property	'version'	value	'R421'
+;
+#channel ==>ECMCAAffectedItemsChannel
+add property command_ECMCANewImplementedItems on program eServiceSchemaVariableMapping.tcl to command 'ECMCANewImplementedItems';

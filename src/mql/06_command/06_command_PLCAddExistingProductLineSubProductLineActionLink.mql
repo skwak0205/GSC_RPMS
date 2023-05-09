@@ -1,0 +1,26 @@
+del command 'PLCAddExistingProductLineSubProductLineActionLink';
+add command 'PLCAddExistingProductLineSubProductLineActionLink'
+	description	'Command Object for Add Existing Product Lines to Product line.'
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${SUITE_DIR}/ProductLineAddExistingPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Mode'		'edit'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'linkDisplay'
+	setting	'Access Program'		'emxProductLine'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingProductLineSubProductLineActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductLineSubProductLineTopActionBar add command PLCAddExistingProductLineSubProductLineActionLink order command PLCAddExistingProductLineSubProductLineActionLink 0;
+#channel ==>PLCProductLineSubProductLineTopActionBar
+add property command_PLCAddExistingProductLineSubProductLineActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingProductLineSubProductLineActionLink';

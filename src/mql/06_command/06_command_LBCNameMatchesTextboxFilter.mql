@@ -1,0 +1,18 @@
+del command 'LBCNameMatchesTextboxFilter';
+add command 'LBCNameMatchesTextboxFilter'
+	description	''
+	label	'emxMultipleClassification.AttributeChooser.NameMatches'
+	href	''
+	alt	''
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Default'		'*'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCNameMatchesTextboxFilter'
+	property	'version'	value	'R212'
+;
+modify menu LBCRolesGroupsSearchToolbar add command LBCNameMatchesTextboxFilter order command LBCNameMatchesTextboxFilter 1;
+#channel ==>LBCRolesGroupsSearchToolbar
+add property command_LBCNameMatchesTextboxFilter on program eServiceSchemaVariableMapping.tcl to command 'LBCNameMatchesTextboxFilter';

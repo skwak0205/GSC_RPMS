@@ -1,0 +1,20 @@
+del menu 'TMCGlobalSearchMenu';
+add menu 'TMCGlobalSearchMenu'
+	description	''
+	label	'emxFramework.MenuItem.SearchTeam'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	command	'TMCPackagesSearchCommand'
+	command	'TMCPartsSearchCommand'
+	command	'TMCQuotationsSearchCommand'
+	command	'TMCRFQSearchCommand'
+	command	'TMCUnmanagedFilesSearchCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCGlobalSearchMenu'
+	property 'version'	value	'R418'
+;
+add property menu_TMCGlobalSearchMenu on program eServiceSchemaVariableMapping.tcl to menu 'TMCGlobalSearchMenu';

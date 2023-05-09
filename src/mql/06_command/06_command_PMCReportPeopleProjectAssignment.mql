@@ -1,0 +1,21 @@
+del command 'PMCReportPeopleProjectAssignment';
+add command 'PMCReportPeopleProjectAssignment'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Command.PeopleProjectAssignmentReport'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePoolPeopleUtil.jsp?mode=ResourcePoolPeopleReport&program=emxResourcePoolReports:getTablePeopleProjectAssignmentReportData&table=PMCReportPeopleProjectAssignment&toolbar=PMCReportDateToolbarMenu,PMCReportPeopleProjectAssignementFilterMenu&selection=none&submode=PMCPeopleProjectAssignmentReport&header=emxProgramCentral.ResourcePlanning.Report.Charts.PeopleProjectAssignmentReport&HelpMarker=emxhelppeopleprojectassignmentreport&chartingrequired=false&suiteKey=ProgramCentral&sortColumnName=none'
+	alt	''
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportPeopleProjectAssignment'
+	property	'version'	value	'R417'
+;
+modify menu PMCWeeklyTimeSheetReportResourcePoolToolbarMenu add command PMCReportPeopleProjectAssignment order command PMCReportPeopleProjectAssignment 1;
+#channel ==>PMCWeeklyTimeSheetReportResourcePoolToolbarMenu
+add property command_PMCReportPeopleProjectAssignment on program eServiceSchemaVariableMapping.tcl to command 'PMCReportPeopleProjectAssignment';

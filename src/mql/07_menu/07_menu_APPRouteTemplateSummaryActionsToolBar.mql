@@ -1,0 +1,17 @@
+del menu 'APPRouteTemplateSummaryActionsToolBar';
+add menu 'APPRouteTemplateSummaryActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPCreateRouteTemplateActionLink'
+	command	'APPSeparator'
+	command	'APPDeleteRouteTemplateActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRouteTemplateSummaryActionsToolBar'
+	property 'version'	value	'10-0-1-1'
+;
+add property menu_APPRouteTemplateSummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPRouteTemplateSummaryActionsToolBar';

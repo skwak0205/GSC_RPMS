@@ -1,0 +1,20 @@
+del command 'AEFSaveSearch';
+add command 'AEFSaveSearch'
+	description	'Save Search'
+	label	'emxFramework.GlobalSearch.Save'
+	href	'javascript:void(getTopWindow().processSaveSearch())'
+	alt	'emxFramework.GlobalSearch.Save'
+	setting	'Target Location'		'searchHidden'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSaveSearch'
+	property	'version'	value	'V6R2008-2.0'
+;
+modify menu AEFSearchToolbar add command AEFSaveSearch order command AEFSaveSearch 1;
+modify menu AEFSearchConsolidatedActions add command AEFSaveSearch order command AEFSaveSearch 1;
+modify menu RMTGlobalSpecificationSearchToolbar add command AEFSaveSearch order command AEFSaveSearch 0;
+modify menu RMTGlobalRequirementSearchToolbar add command AEFSaveSearch order command AEFSaveSearch 0;
+#channel ==>AEFSearchToolbarAEFSearchConsolidatedActionsRMTGlobalSpecificationSearchToolbarRMTGlobalRequirementSearchToolbar
+add property command_AEFSaveSearch on program eServiceSchemaVariableMapping.tcl to command 'AEFSaveSearch';

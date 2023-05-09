@@ -1,0 +1,19 @@
+del menu 'PMCProjectTemplateVersionsActionsToolBar';
+add menu 'PMCProjectTemplateVersionsActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'isOwnerOrCoOwner'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCProjectTemplateVersionsRevise'
+	command	'PMCProjectTemplateSummaryRemoveLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectTemplateVersionsActionsToolBar'
+	property 'version'	value	'R419'
+;
+add property menu_PMCProjectTemplateVersionsActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectTemplateVersionsActionsToolBar';

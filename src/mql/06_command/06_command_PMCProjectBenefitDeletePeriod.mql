@@ -1,0 +1,27 @@
+del command 'PMCProjectBenefitDeletePeriod';
+add command 'PMCProjectBenefitDeletePeriod'
+	description	'Delete Period'
+	label	'emxProgramCentral.ProjectBenefit.Command.DeletePeriod'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProjectBenefitDeletePeriod&mode=edit&formHeader=emxProgramCentral.ProjectBenefit.Command.DeletePeriod&postProcessJPO=emxBenefitItem:deletePeriod&HelpMarker=emxhelpperioddelete'
+	alt	'emxProgramCentral.ProjectBenefit.Command.DeletePeriod'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'320'
+	setting	'Window Width'		'500'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'submitAction'		'refreshCaller'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isRemovePeriodAvailable'
+	setting	'Access Program'		'emxBenefitItem'
+	setting	'Image'		'${COMMON_DIR}/images/I_DeletePeriod32.png'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ConfirmDelete'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitDeletePeriod'
+	property	'version'	value	'R421.HF2'
+;
+modify menu PMCProjectBenefitEditPageToolBarActions add command PMCProjectBenefitDeletePeriod order command PMCProjectBenefitDeletePeriod 7;
+modify menu PMCProjectBenefitOperationsToolBar add command PMCProjectBenefitDeletePeriod order command PMCProjectBenefitDeletePeriod 4;
+#channel ==>PMCProjectBenefitEditPageToolBarActionsPMCProjectBenefitOperationsToolBar
+add property command_PMCProjectBenefitDeletePeriod on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitDeletePeriod';

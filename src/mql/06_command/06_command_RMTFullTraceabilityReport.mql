@@ -1,0 +1,25 @@
+del command 'RMTFullTraceabilityReport';
+add command 'RMTFullTraceabilityReport'
+	description	''
+	label	'emxRequirements.ActionLink.FullTraceability'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=emxTraceabilityReport:getTraceabilityFolderData&expandMultiLevelsJPO=true&table=RMTFullTraceabilityTable&header=emxRequirements.FullTraceability.Header&sortColumnName=none&HelpMarker=emxhelpfulltraceability&toolbar=RMTFullTraceabilityToolbar&expandLevelFilter=false&customize=false&isFullTraceabilityreport=true'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'policy != "Requirement Version"'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTFullTraceabilityReport'
+	property	'version'	value	'R422'
+;
+#channel ==>RMTSpecificationRelatedObjectsRMTRelatedObjects
+add property command_RMTFullTraceabilityReport on program eServiceSchemaVariableMapping.tcl to command 'RMTFullTraceabilityReport';

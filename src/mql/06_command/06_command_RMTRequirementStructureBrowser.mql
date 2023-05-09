@@ -1,0 +1,30 @@
+del command 'RMTRequirementStructureBrowser';
+add command 'RMTRequirementStructureBrowser'
+	description	'Command for displaying Sub and Derived Requirements in the RequirementStructureBrowser page'
+	label	'emxRequirements.Command.RequirementStructure'
+	href	'${SUITE_DIR}/PopupLauncher.jsp?table=RMTRequirementStatusView&freezePane=Name,Title,DUP_Title,Revision&toolbar=RMTRequirementStructureBrowserToolbar&selection=multiple&HelpMarker=emxhelprequirementstructurebrowser&editLink=true&header=emxRequirements.Heading.RequirementStructureBrowser&appendURL=StructureEffectivityForExpand|Requirements&sortColumnName=none&expandByDefault=true&editRelationship=relationship_DerivedRequirement,relationship_RequirementBreakdown&resequenceRelationship=relationship_DerivedRequirement,relationship_RequirementBreakdown,relationship_RequirementValidation&connectionProgram=emxSpecificationStructureBase:processXMLMessage&TargetView=sb&effectivityRelationship=relationship_RequirementBreakdown,relationship_DerivedRequirement&parallelLoading=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Software Engineering Manager'
+	user	'Software Project Manager'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementStructureBrowser'
+	property	'version'	value	'R423'
+;
+modify menu RMTRequirementStructureDisplay add command RMTRequirementStructureBrowser order command RMTRequirementStructureBrowser 1;
+#channel ==>RMTRequirementStructureDisplay
+add property command_RMTRequirementStructureBrowser on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementStructureBrowser';

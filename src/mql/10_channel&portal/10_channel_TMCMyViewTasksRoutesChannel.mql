@@ -1,0 +1,16 @@
+del channel 'TMCMyViewTasksRoutesChannel';
+add channel 'TMCMyViewTasksRoutesChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'TeamCentral'
+	command 	'APPMyTask','APPRouteSummary'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCMyViewTasksRoutesChannel'
+	property	'version'	value	'R417'
+;
+#portal ==>TMCMyViewPortal
+add property channel_TMCMyViewTasksRoutesChannel on program eServiceSchemaVariableMapping.tcl to channel 'TMCMyViewTasksRoutesChannel';

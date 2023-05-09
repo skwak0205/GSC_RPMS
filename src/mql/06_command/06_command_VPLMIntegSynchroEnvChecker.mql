@@ -1,0 +1,15 @@
+del command 'VPLMIntegSynchroEnvChecker';
+add command 'VPLMIntegSynchroEnvChecker'
+	description	'Command for Checking Synchronization Environment'
+	label	'emxVPMCentral.VPLM.Label.EnvChecker'
+	href	'${SUITE_DIR}/common/emxSynchronizationEnvCheckerFS.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Window Height'		'400'
+	setting	'Window Width'		'500'
+	setting	'Registered Suite'		'VPMCentral'
+	user	'VPLMAdmin'
+;
+modify menu CollaborationTools add command VPLMIntegSynchroEnvChecker order command VPLMIntegSynchroEnvChecker 1;
+#channel ==>CollaborationTools
+add property command_VPLMIntegSynchroEnvChecker on program eServiceSchemaVariableMapping.tcl to command 'VPLMIntegSynchroEnvChecker';

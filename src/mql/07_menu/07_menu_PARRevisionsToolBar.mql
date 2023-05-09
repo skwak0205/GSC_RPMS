@@ -1,0 +1,10 @@
+del menu 'PARRevisionsToolBar';
+add menu 'PARRevisionsToolBar'
+	description	''
+	label	'emxParameter.common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	command	'PARRevise'
+;
+add property menu_PARRevisionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PARRevisionsToolBar';

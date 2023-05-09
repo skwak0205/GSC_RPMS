@@ -1,0 +1,19 @@
+del command 'LBCObjectClassificationList';
+add command 'LBCObjectClassificationList'
+	description	'LBC object Classification List'
+	label	'emxLibraryCentral.Common.Classification'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxClassification:getClassificationIds&table=LBCObjectClassificationList&toolbar=LBCObjectClassificationToolBar&HelpMarker=emxhelplbcclassification&header=emxLibraryCentral.Header.Classification&selection=multiple&sortColumnName=Name&sortDirection=ascending&massPromoteDemote=false&excludeIPSecurityClasses=true'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'type.kindof[Part] || type.kindof[Test Case] || type.kindof[Simulation Template] || (type.kindof[DOCUMENTS] && ($<attribute[attribute_IsVersionObject].value> != True))'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCObjectClassificationList'
+	property	'version'	value	'R424.HF1'
+;
+modify menu type_TestCase add command LBCObjectClassificationList order command LBCObjectClassificationList 0;
+modify menu type_DOCUMENTS add command LBCObjectClassificationList order command LBCObjectClassificationList 22;
+modify menu type_GenericDocument add command LBCObjectClassificationList order command LBCObjectClassificationList 0;
+#channel ==>type_TestCasetype_DOCUMENTStype_GenericDocumentLBCObjectClassificationDetails
+add property command_LBCObjectClassificationList on program eServiceSchemaVariableMapping.tcl to command 'LBCObjectClassificationList';

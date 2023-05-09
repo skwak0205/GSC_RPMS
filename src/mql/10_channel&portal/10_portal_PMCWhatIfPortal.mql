@@ -1,0 +1,14 @@
+del portal 'PMCWhatIfPortal';
+add portal 'PMCWhatIfPortal'
+	description	''
+	label	''
+	href	''
+	channel 	PMCWhatIfProjectChanges,PMCWhatIfExperimentsChannel
+	channel 	PMCWhatIfExperimentsUpdateChannel
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfPortal'
+	property	'version'	value	'R216'
+;
+add property portal_PMCWhatIfPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCWhatIfPortal';

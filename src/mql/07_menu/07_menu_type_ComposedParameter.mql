@@ -1,0 +1,11 @@
+del menu 'type_ComposedParameter';
+add menu 'type_ComposedParameter'
+	description	''
+	label	'$<name>, $<revision>'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PARCreateParameterWebForm&mode=view&editLink=true&submitAction=refreshCaller&toolbar=none&postProcessJPO=emxParameterEdit:updateFormValues'
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+;
+add property menu_type_ComposedParameter on program eServiceSchemaVariableMapping.tcl to menu 'type_ComposedParameter';

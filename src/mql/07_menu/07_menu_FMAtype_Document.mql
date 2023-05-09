@@ -1,0 +1,17 @@
+del menu 'FMAtype_Document';
+add menu 'FMAtype_Document'
+	description	''
+	label	'$<attribute[attribute_Title].value>'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_DOCUMENTS&toolbar=FMADocumentsToolbar&HelpMarker=emxhelpdocumentproperties&formHeader=enoFolderManagement.Common.PropertiesPageHeading&subHeader=enoFolderManagement.Menu.SubHeaderDocuments&Export=False&displayCDMFileSummary=true'
+	alt	''
+	setting	'Registered Suite'		'FolderManagement'
+	command	'APPDocumentRevisions'
+	command	'APPFileVersions'
+	command	'DomainAccessTreeCategory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'FolderManagement'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'FMAtype_Document'
+	property 'version'	value	'R417.HF2'
+;
+add property menu_FMAtype_Document on program eServiceSchemaVariableMapping.tcl to menu 'FMAtype_Document';

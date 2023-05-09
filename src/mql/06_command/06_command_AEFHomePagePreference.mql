@@ -1,0 +1,18 @@
+del command 'AEFHomePagePreference';
+add command 'AEFHomePagePreference'
+	description	'Home Page Preference'
+	label	'emxFramework.Preferences.HomePage'
+	href	'${COMMON_DIR}/emxPrefHomePage.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/buttonToolbarPreferences.gif'
+	setting	'Help Marker'		'emxhelppreferenceshomepage'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFHomePagePreference'
+	property	'version'	value	'R214'
+;
+modify menu General add command AEFHomePagePreference order command AEFHomePagePreference 3;
+#channel ==>General
+add property command_AEFHomePagePreference on program eServiceSchemaVariableMapping.tcl to command 'AEFHomePagePreference';

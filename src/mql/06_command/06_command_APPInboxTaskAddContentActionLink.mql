@@ -1,0 +1,24 @@
+del command 'APPInboxTaskAddContentActionLink';
+add command 'APPInboxTaskAddContentActionLink'
+	description	''
+	label	'emxComponents.Common.AddContent'
+	href	'${COMMON_DIR}/emxRouteContentSearchTypes.jsp?table=APPRouteContentSearchResults&showInitialResults=true&form=AddContentSearchForm&selection=multiple&mode=addContenttoRoute&relName=Object Route&frameName=AppInboxTaskContent&submitURL=../components/emxRouteAddContentProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showAddContentLink'
+	setting	'Access Program'		'emxInboxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPInboxTaskAddContentActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPInboxTaskContentTopActionBar add command APPInboxTaskAddContentActionLink order command APPInboxTaskAddContentActionLink 1;
+#channel ==>APPInboxTaskContentTopActionBar
+add property command_APPInboxTaskAddContentActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPInboxTaskAddContentActionLink';

@@ -1,0 +1,15 @@
+del portal 'APPDecisionWhereUsedPowerView';
+add portal 'APPDecisionWhereUsedPowerView'
+	description	''
+	label	''
+	href	''
+	channel 	APPDecisionWhereUsedChannel
+	channel 	APPDecisionWhereUsedRelChannel
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionWhereUsedPowerView'
+	property	'version'	value	'R207'
+;
+add property portal_APPDecisionWhereUsedPowerView on program eServiceSchemaVariableMapping.tcl to portal 'APPDecisionWhereUsedPowerView';

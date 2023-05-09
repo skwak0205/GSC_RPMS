@@ -1,0 +1,19 @@
+del command 'ECMAffectedItemRemovedEvent';
+add command 'ECMAffectedItemRemovedEvent'
+	description	'Affected Item Removed Event'
+	label	'EnterpriseChangeMgt.Event.Proposed_Changes_Removed'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>] || type.kindof[$<type_ChangeRequest>] || type.kindof[$<type_ChangeAction>])'
+	setting	'Event Type'		'Affected Item Removed'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAffectedItemRemovedEvent'
+	property	'version'	value	'R216'
+;
+modify menu ECMSubscriptionEvents add command ECMAffectedItemRemovedEvent order command ECMAffectedItemRemovedEvent 2;
+#channel ==>ECMSubscriptionEvents
+add property command_ECMAffectedItemRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'ECMAffectedItemRemovedEvent';

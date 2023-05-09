@@ -1,0 +1,25 @@
+del command 'TMCSubscription';
+add command 'TMCSubscription'
+	description	'Subscription Command Object'
+	label	'emxFramework.Command.Subscription'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxWorkspaceSubscription:getSubscriptions&table=TMCWorkspaceSubscriptionSummary&header=emxTeamCentral.Workspace.Subscription&toolbar=TMCWorkspaceSubscriptionToolBar&HelpMarker=emxhelpworkspacesubscriptionnotices'
+	alt	'emxFramework.Command.Alt.Subscription'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Function'		'displayTreeNodeAccessCheck'
+	setting	'Access Program'		'emxWorkspace'
+	setting	'Image'		'${COMPONENT_DIR}/images/iconSmallSubscription.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCSubscription'
+	property	'version'	value	'R422'
+;
+modify menu type_Project add command TMCSubscription order command TMCSubscription 7;
+#channel ==>type_Project
+add property command_TMCSubscription on program eServiceSchemaVariableMapping.tcl to command 'TMCSubscription';

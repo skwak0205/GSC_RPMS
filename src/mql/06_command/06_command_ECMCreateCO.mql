@@ -1,0 +1,24 @@
+del command 'ECMCreateCO';
+add command 'ECMCreateCO'
+	description	'Create CO'
+	label	'EnterpriseChangeMgt.Command.CreateNew'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=CreateNewCOUnderCO'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Global User'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCreateCO'
+	property	'version'	value	'R417'
+;
+modify menu ECMCOMenuToolbar add command ECMCreateCO order command ECMCreateCO 1;
+modify menu ECMCOChangeOrderSummaryMenuToolbar add command ECMCreateCO order command ECMCreateCO 1;
+#channel ==>ECMCOMenuToolbarECMCOChangeOrderSummaryMenuToolbar
+add property command_ECMCreateCO on program eServiceSchemaVariableMapping.tcl to command 'ECMCreateCO';

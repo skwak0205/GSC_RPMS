@@ -1,0 +1,19 @@
+del command 'ECMChangeActionCompletedEvent';
+add command 'ECMChangeActionCompletedEvent'
+	description	'Change Action Completed Event'
+	label	'EnterpriseChangeMgt.Event.Complete_Change_Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeAction>])'
+	setting	'Event Type'		'Complete Change Action'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeActionCompletedEvent'
+	property	'version'	value	'R216'
+;
+modify menu ECMSubscriptionEvents add command ECMChangeActionCompletedEvent order command ECMChangeActionCompletedEvent 6;
+#channel ==>ECMSubscriptionEvents
+add property command_ECMChangeActionCompletedEvent on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeActionCompletedEvent';

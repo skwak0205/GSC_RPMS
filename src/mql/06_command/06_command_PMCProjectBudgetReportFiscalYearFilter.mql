@@ -1,0 +1,23 @@
+del command 'PMCProjectBudgetReportFiscalYearFilter';
+add command 'PMCProjectBudgetReportFiscalYearFilter'
+	description	'Fiscal Year Command'
+	label	'emxProgramCentral.Budget.FiscalYear'
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=reportBudget'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getBudgetFiscalReportFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxProjectBudget'
+	setting	'Access Function'		'isExpenseReportFiscalYearFilterAccessible'
+	setting	'Access Program'		'emxProjectBudget'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetReportFiscalYearFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCProjectBudgetReportFilter add command PMCProjectBudgetReportFiscalYearFilter order command PMCProjectBudgetReportFiscalYearFilter 5;
+#channel ==>PMCProjectBudgetReportFilter
+add property command_PMCProjectBudgetReportFiscalYearFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudgetReportFiscalYearFilter';

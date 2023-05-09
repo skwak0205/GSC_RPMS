@@ -1,0 +1,21 @@
+del command 'AEFSBEditCopy';
+add command 'AEFSBEditCopy'
+	description	''
+	label	'emxFramework.FreezePane.SBEditActions.Copy'
+	href	'javascript:copy()'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBEditCopy'
+	property	'version'	value	'R422'
+;
+modify menu AEFSBEditActions add command AEFSBEditCopy order command AEFSBEditCopy 3;
+modify menu PMCSBEditActions add command AEFSBEditCopy order command AEFSBEditCopy 1;
+#channel ==>AEFSBEditActionsPMCSBEditActions
+add property command_AEFSBEditCopy on program eServiceSchemaVariableMapping.tcl to command 'AEFSBEditCopy';

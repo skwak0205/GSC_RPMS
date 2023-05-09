@@ -1,0 +1,22 @@
+del command 'PMCProjectOpportunity';
+add command 'PMCProjectOpportunity'
+	description	''
+	label	'emxFramework.Command.Opportunity'
+	href	'${SUITE_DIR}/emxProgramCentralRiskUtil.jsp?mode=PMCProjectOpportunity'
+	alt	'emxFramework.Command.Alt.Opportunity'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.kindOf[Milestone]!=true && type.kindOf[Gate]!=true'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'opportunity.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectOpportunity'
+	property	'version'	value	'R421.HF5'
+;
+modify menu type_TaskManagement add command PMCProjectOpportunity order command PMCProjectOpportunity 10;
+#channel ==>type_TaskManagementPMCExecution
+add property command_PMCProjectOpportunity on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectOpportunity';

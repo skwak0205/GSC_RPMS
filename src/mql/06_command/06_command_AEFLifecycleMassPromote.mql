@@ -1,0 +1,25 @@
+del command 'AEFLifecycleMassPromote';
+add command 'AEFLifecycleMassPromote'
+	description	'Command to do Mass Promote'
+	label	'emxFramework.Common.MassPromote'
+	href	'${COMMON_DIR}/emxMassPromoteDemote.jsp?cmd=Promote'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPromote.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecycleMassPromote'
+	property	'version'	value	'R417'
+;
+modify menu RMTSpecTreeToolbar add command AEFLifecycleMassPromote order command AEFLifecycleMassPromote 3;
+modify menu RMTRichTextEditorToolbar add command AEFLifecycleMassPromote order command AEFLifecycleMassPromote 3;
+modify menu RMTRequirementStructureBrowserToolbar add command AEFLifecycleMassPromote order command AEFLifecycleMassPromote 2;
+modify menu RMTRequirementRichTextEditorToolbar add command AEFLifecycleMassPromote order command AEFLifecycleMassPromote 2;
+modify menu RMTRequirementListToolbar add command AEFLifecycleMassPromote order command AEFLifecycleMassPromote 1;
+modify menu RMTBufferMenu add command AEFLifecycleMassPromote order command AEFLifecycleMassPromote 1;
+#channel ==>RMTSpecTreeToolbarRMTRichTextEditorToolbarRMTRequirementStructureBrowserToolbarRMTRequirementRichTextEditorToolbarRMTRequirementListToolbarRMTBufferMenu
+add property command_AEFLifecycleMassPromote on program eServiceSchemaVariableMapping.tcl to command 'AEFLifecycleMassPromote';

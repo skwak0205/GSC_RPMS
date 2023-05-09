@@ -1,0 +1,28 @@
+del command 'RMTCopyReqSpec';
+add command 'RMTCopyReqSpec'
+	description	'Check all Clone relationships of an object.'
+	label	'emxRequirements.Label.CopyReqSpec'
+	href	'${SUITE_DIR}/ImportStructureFS.jsp?relationshiplist=emxRequirements.CloneTypes.relationship_RequirementSpecification&connectProgram=emxSpecificationStructure&connectFunction=addExistingToStructure&completeExpandProgram=emxSpecificationStructure&completeExpandFunction=expandTreeWithRefCopyObjects&expandProgramMenu=RMTSpecTreeProgramMenu&sbTableMenu=RMTSpecTreeTableMenu&sbSRMTortColumnName=sep1&fromWebApp=true&copyReqSpec=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.gif'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCopyReqSpec'
+	property	'version'	value	'R422'
+;
+modify menu type_SoftwareRequirementSpecificationRMB add command RMTCopyReqSpec order command RMTCopyReqSpec 1;
+modify menu RMTSpecificationListActionMenu add command RMTCopyReqSpec order command RMTCopyReqSpec 2;
+#channel ==>type_SoftwareRequirementSpecificationRMBRMTSpecificationListActionMenu
+add property command_RMTCopyReqSpec on program eServiceSchemaVariableMapping.tcl to command 'RMTCopyReqSpec';

@@ -1,0 +1,21 @@
+del command 'FTRLogicalFeatureGBOMNameFilterCommand';
+add command 'FTRLogicalFeatureGBOMNameFilterCommand'
+	description	'FTRLogicalFeatureGBOMNameFilterCommand'
+	label	'emxFramework.Basic.Name'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Action Label'		'Search'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Default'		'*'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLogicalFeatureGBOMNameFilterCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRGBOMCustomFilterToolbar add command FTRLogicalFeatureGBOMNameFilterCommand order command FTRLogicalFeatureGBOMNameFilterCommand 1;
+#channel ==>FTRGBOMCustomFilterToolbar
+add property command_FTRLogicalFeatureGBOMNameFilterCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRLogicalFeatureGBOMNameFilterCommand';

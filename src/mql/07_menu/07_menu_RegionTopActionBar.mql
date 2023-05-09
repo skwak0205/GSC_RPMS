@@ -1,0 +1,16 @@
+del menu 'RegionTopActionBar';
+add menu 'RegionTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'CreateRegionActionLink'
+	command	'RegionAddExisting'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'RegionTopActionBar'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_RegionTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RegionTopActionBar';

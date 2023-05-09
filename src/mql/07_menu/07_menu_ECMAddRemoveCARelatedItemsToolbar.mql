@@ -1,0 +1,16 @@
+del menu 'ECMAddRemoveCARelatedItemsToolbar';
+add menu 'ECMAddRemoveCARelatedItemsToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.AddRemove'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMAddCARelatedItems'
+	command	'ECMRemoveCARelatedItems'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMAddRemoveCARelatedItemsToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMAddRemoveCARelatedItemsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMAddRemoveCARelatedItemsToolbar';

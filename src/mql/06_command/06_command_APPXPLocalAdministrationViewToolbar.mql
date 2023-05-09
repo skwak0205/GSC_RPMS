@@ -1,0 +1,15 @@
+del command 'APPXPLocalAdministrationViewToolbar';
+add command 'APPXPLocalAdministrationViewToolbar'
+	description	'Local Administration view'
+	label	'emxPlmOnline.label.LocalAdministration'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPXPLocalAdministrationPortal&toolbar=APPXPAdminAdvancedToolBar&header=emxPlmOnline.label.LocalAdministration'
+	alt	'emxPlmOnline.label.LocalAdministration'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Access Function'		'isOneClickEnvironment'
+	setting	'Access Program'		'VPLMPosAdminUIOptions'
+	setting	'Image'		'iconAdminPeople.gif'
+;
+modify menu APPXPAdminAdvancedToolBar add command APPXPLocalAdministrationViewToolbar order command APPXPLocalAdministrationViewToolbar 2;
+#channel ==>APPXPAdminAdvancedToolBar
+add property command_APPXPLocalAdministrationViewToolbar on program eServiceSchemaVariableMapping.tcl to command 'APPXPLocalAdministrationViewToolbar';

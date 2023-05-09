@@ -1,0 +1,23 @@
+del command 'APPRouteRestartActionLink';
+add command 'APPRouteRestartActionLink'
+	description	'Command to Restart the Route'
+	label	'emxComponents.Route.RestartRoute'
+	href	'${SUITE_DIR}/emxRouteRestart.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'checksToRouteRestartActionLink'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReStartRoute.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteRestartActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRoutePropertiesActionsToolBar add command APPRouteRestartActionLink order command APPRouteRestartActionLink 6;
+#channel ==>APPRoutePropertiesActionsToolBar
+add property command_APPRouteRestartActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRouteRestartActionLink';

@@ -1,0 +1,19 @@
+del command 'PMCOpenExternalProject';
+add command 'PMCOpenExternalProject'
+	description	''
+	label	'emxProgramCentral.Button.Next'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=addExternalTasks'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/I_CopyFromProject32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCOpenExternalProject'
+	property	'version'	value	'R422.HF4'
+;
+modify menu PMCOpenExternalProjectToolBar add command PMCOpenExternalProject order command PMCOpenExternalProject 0;
+#channel ==>PMCOpenExternalProjectToolBar
+add property command_PMCOpenExternalProject on program eServiceSchemaVariableMapping.tcl to command 'PMCOpenExternalProject';

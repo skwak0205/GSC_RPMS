@@ -1,0 +1,14 @@
+del menu 'type_VCBranches';
+add menu 'type_VCBranches'
+	description	''
+	label	'$<revision>'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxVCDocumentUI:getVCFileBranchVersionInfo&table=APPVCBranchesSummary&header=emxComponents.VersionControl.DocumentBranchesPageHeading&HelpMarker=emxhelpdsfabranchsummarypage'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_VCBranches'
+	property 'version'	value	'10-7-SP1'
+;
+add property menu_type_VCBranches on program eServiceSchemaVariableMapping.tcl to menu 'type_VCBranches';

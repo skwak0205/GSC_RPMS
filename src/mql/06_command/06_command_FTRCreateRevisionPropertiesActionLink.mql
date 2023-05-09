@@ -1,0 +1,25 @@
+del command 'FTRCreateRevisionPropertiesActionLink';
+add command 'FTRCreateRevisionPropertiesActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Revise'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=CommonRevisionCreateFSInstance&mode=property'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'current.access[revise] == true && revision == last.revision && (current==Release || current==Obsolete)'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateRevisionPropertiesActionLink'
+	property	'version'	value	'R215'
+;
+modify menu FTRConfigurationFeaturePropertiesToolbarActions add command FTRCreateRevisionPropertiesActionLink order command FTRCreateRevisionPropertiesActionLink 2;
+modify menu FTRLogicalFeatureContextToolBarAction add command FTRCreateRevisionPropertiesActionLink order command FTRCreateRevisionPropertiesActionLink 2;
+modify menu ManufacturingFeatureContextToolBar add command FTRCreateRevisionPropertiesActionLink order command FTRCreateRevisionPropertiesActionLink 2;
+#channel ==>FTRConfigurationFeaturePropertiesToolbarActionsFTRLogicalFeatureContextToolBarActionManufacturingFeatureContextToolBar
+add property command_FTRCreateRevisionPropertiesActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateRevisionPropertiesActionLink';

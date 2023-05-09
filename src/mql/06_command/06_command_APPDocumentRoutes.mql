@@ -1,0 +1,20 @@
+del command 'APPDocumentRoutes';
+add command 'APPDocumentRoutes'
+	description	'Common Document Routes Command Object'
+	label	'emxComponents.Common.Route'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRoute:getActiveRoutes,emxRoute:getInActiveRoutes,emxRoute:getMyRoutes&table=APPRouteSummary&header=emxComponents.Common.RoutesHeading&subHeader=emxComponents.Menu.SubHeaderDocuments&toolbar=APPRouteSummaryToolBar&programLabel=emxComponents.Filter.Active,emxComponents.Filter.Complete,emxComponents.Filter.All&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelproutes'
+	alt	'emxComponents.Common.Route'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentRoutes'
+	property	'version'	value	'R418'
+;
+modify menu type_DOCUMENTS add command APPDocumentRoutes order command APPDocumentRoutes 13;
+modify menu type_GenericDocument add command APPDocumentRoutes order command APPDocumentRoutes 13;
+modify menu type_DocumentSheet add command APPDocumentRoutes order command APPDocumentRoutes 9;
+#channel ==>type_DOCUMENTStype_GenericDocumenttype_DocumentSheetRMTSpecificationsChangeControl
+add property command_APPDocumentRoutes on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentRoutes';

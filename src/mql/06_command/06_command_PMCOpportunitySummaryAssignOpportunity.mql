@@ -1,0 +1,27 @@
+del command 'PMCOpportunitySummaryAssignOpportunity';
+add command 'PMCOpportunitySummaryAssignOpportunity'
+	description	'Command for Assign Risk link on Opportunity Summary'
+	label	'emxProgramCentral.Common.AddAssignee'
+	href	'${SUITE_DIR}/emxProgramCentralTaskAssigneeActionsHidden.jsp?command=AddOpportunityAssignee'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/I_AddMember32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCOpportunitySummaryAssignOpportunity'
+	property	'version'	value	'R422'
+;
+modify menu PMCOpportunitySummaryToolBarActions add command PMCOpportunitySummaryAssignOpportunity order command PMCOpportunitySummaryAssignOpportunity 4;
+modify menu PMCOpportunitySummaryToolBar add command PMCOpportunitySummaryAssignOpportunity order command PMCOpportunitySummaryAssignOpportunity 4;
+#channel ==>PMCOpportunitySummaryToolBarActionsPMCOpportunitySummaryToolBar
+add property command_PMCOpportunitySummaryAssignOpportunity on program eServiceSchemaVariableMapping.tcl to command 'PMCOpportunitySummaryAssignOpportunity';

@@ -1,0 +1,15 @@
+del menu 'ECMChangeLegacyMenu';
+add menu 'ECMChangeLegacyMenu'
+	description	'ECMChangeLegacyMenu'
+	label	'EnterpriseChangeMgt.Menu.ChangeType'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'FTRECChangeLegacy'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMChangeLegacyMenu'
+	property 'version'	value	'R216'
+;
+add property menu_ECMChangeLegacyMenu on program eServiceSchemaVariableMapping.tcl to menu 'ECMChangeLegacyMenu';

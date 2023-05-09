@@ -1,0 +1,28 @@
+del command 'RMTTraceabilityPhysicalReportActionLink';
+add command 'RMTTraceabilityPhysicalReportActionLink'
+	description	'Launches the Requirement-Physical Traceability Report'
+	label	'emxRequirements.ActionLink.TraceabilityReport.Physical'
+	href	'${SUITE_DIR}/PortalIntermediate.jsp?portal=RMTSpecificationsPhysicalTraceability&toolbar=&showPageHeader=true&HelpMarker=emxhelptraceabilityreqphysicaloptions&HelpMarker2=emxhelptraceabilityreqphysicalreport&header=emxRequirements.Heading.ReportsCategory'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isVPMInstalled'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Row Select'		'multiple'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTraceabilityPhysicalReportActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementSpecTraceabilityMenu add command RMTTraceabilityPhysicalReportActionLink order command RMTTraceabilityPhysicalReportActionLink 0;
+#channel ==>RMTRequirementSpecTraceabilityMenu
+add property command_RMTTraceabilityPhysicalReportActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTTraceabilityPhysicalReportActionLink';

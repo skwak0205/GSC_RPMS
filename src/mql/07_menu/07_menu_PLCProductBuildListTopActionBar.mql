@@ -1,0 +1,18 @@
+del menu 'PLCProductBuildListTopActionBar';
+add menu 'PLCProductBuildListTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCCreateBuildActionLink'
+	command	'PLCAddExistingProductBuildActionLink'
+	command	'APPSubscription'
+	command	'PLCRemoveBuildActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCProductBuildListTopActionBar'
+	property 'version'	value	'R207'
+;
+add property menu_PLCProductBuildListTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductBuildListTopActionBar';

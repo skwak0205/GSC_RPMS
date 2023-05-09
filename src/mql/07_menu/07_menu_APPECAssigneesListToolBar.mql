@@ -1,0 +1,16 @@
+del menu 'APPECAssigneesListToolBar';
+add menu 'APPECAssigneesListToolBar'
+	description	''
+	label	'emxComponents.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPECAssigneesListActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPECAssigneesListToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPECAssigneesListToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPECAssigneesListToolBar';

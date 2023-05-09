@@ -1,0 +1,19 @@
+del command 'PMCWTSMembershipReport';
+add command 'PMCWTSMembershipReport'
+	description	''
+	label	'emxProgramCentral.WeeklyTimeSheet.Reports.Membership'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'function'		'expandMembershipChildLaborReport'
+	setting	'program'		'emxWeeklyTimeSheet'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWTSMembershipReport'
+	property	'version'	value	'R216'
+;
+modify menu PMCWTSLaborReportMenu add command PMCWTSMembershipReport order command PMCWTSMembershipReport 1;
+#channel ==>PMCWTSLaborReportMenu
+add property command_PMCWTSMembershipReport on program eServiceSchemaVariableMapping.tcl to command 'PMCWTSMembershipReport';

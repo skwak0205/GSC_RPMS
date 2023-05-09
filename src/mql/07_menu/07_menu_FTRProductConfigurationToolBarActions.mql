@@ -1,0 +1,16 @@
+del menu 'FTRProductConfigurationToolBarActions';
+add menu 'FTRProductConfigurationToolBarActions'
+	description	''
+	label	'ProductCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'APPSeparator'
+	command	'FTRRemoveProductConfiguration'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRProductConfigurationToolBarActions'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_FTRProductConfigurationToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'FTRProductConfigurationToolBarActions';

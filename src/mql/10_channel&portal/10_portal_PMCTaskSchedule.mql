@@ -1,0 +1,14 @@
+del portal 'PMCTaskSchedule';
+add portal 'PMCTaskSchedule'
+	description	''
+	label	''
+	href	''
+	channel 	PMCTaskSchedule
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskSchedule'
+	property	'version'	value	'R421.HF7'
+;
+add property portal_PMCTaskSchedule on program eServiceSchemaVariableMapping.tcl to portal 'PMCTaskSchedule';

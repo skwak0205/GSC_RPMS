@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsc.gscInterface.approvalIF">
+    <insert id="insertApproval" parameterType="java.util.Map">
+        insert into APPROVAL_IF (APP_ID, TITLE, CONTENTS, REQUESTER_ID, CREATE_DATE, UPDATE_DATE)
+        values (#{app_id}, #{title}, #{contents}, #{requester_id}, sysdate, sysdate)
+    </insert>
+
+    <insert id="insertApprovalLine" parameterType="java.util.Map">
+        insert into APPROVAL_LINE_IF (APP_ID, APP_SEQ, APP_TYPE, APP_TITLE, USER_ID, START_DATE, END_DATE, APPROVE_YN, IF_DATE, IF_RESULT, IF_MSG, CREATE_DATE, UPDATE_DATE)
+        values (#{app_id}, #{app_seq}, #{app_type}, #{app_title}, #{user_id}, sysdate, NULL, NULL, sysdate, NULL, NULL, sysdate, sysdate)
+    </insert>
+
+    <update id="updateApprovedColumn" parameterType="java.util.Map">
+        update APPROVAL_LINE_IF set END_DATE = TO_DATE(#{end_date}, 'YYYY-MM-DD HH24:MI:SS'), APPROVE_YN = #{approve_yn}, IF_RESULT = #{if_result}, IF_MSG = #{if_msg}, UPDATE_DATE = SYSDATE
+        where APP_ID = #{app_id} and USER_ID = #{user_id}
+    </update>
+</mapper>

@@ -1,0 +1,19 @@
+del command 'PROSProcessStepsPromote';
+add command 'PROSProcessStepsPromote'
+	description	'Change Process steps promote command'
+	label	'enoProcessSteps.Label.Promote'
+	href	'javascript:executeOperation("${OBJECTID}","promote","true")'
+	alt	'enoProcessSteps.Label.Promote'
+	setting	'Target Location'		'detailsDisplay'
+	setting	'Registered Suite'		'ProcessSteps'
+	setting	'Access Function'		'checkPromoteAccess'
+	setting	'Access Program'		'com.dassault_systemes.enovia.processsteps.ENOProcessStepsUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPromote.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProcessSteps'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PROSProcessStepsPromote'
+	property	'version'	value	'R420.HF1'
+;
+#channel ==>
+add property command_PROSProcessStepsPromote on program eServiceSchemaVariableMapping.tcl to command 'PROSProcessStepsPromote';

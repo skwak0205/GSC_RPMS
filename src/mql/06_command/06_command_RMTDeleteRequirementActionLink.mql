@@ -1,0 +1,36 @@
+del command 'RMTDeleteRequirementActionLink';
+add command 'RMTDeleteRequirementActionLink'
+	description	'This will Delete selected Requirement(s)'
+	label	'emxRequirements.ActionLink.Delete'
+	href	'${SUITE_DIR}/DeleteSelected.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'reserved == "FALSE" || reservedby == context.user'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.Delete'
+	user	'System Transition Manager'
+	user	'System Conversion Manager'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Software Engineering Manager'
+	user	'Software Project Manager'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTDeleteRequirementActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTProductRequirementBottomActionBar add command RMTDeleteRequirementActionLink order command RMTDeleteRequirementActionLink 0;
+modify menu RMTModelCandidateRequirementListBottomActionBar add command RMTDeleteRequirementActionLink order command RMTDeleteRequirementActionLink 0;
+modify menu RMTFeatureRequirementBottomActionBar add command RMTDeleteRequirementActionLink order command RMTDeleteRequirementActionLink 0;
+#channel ==>RMTProductRequirementBottomActionBarRMTModelCandidateRequirementListBottomActionBarRMTFeatureRequirementBottomActionBar
+add property command_RMTDeleteRequirementActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTDeleteRequirementActionLink';

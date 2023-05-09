@@ -1,0 +1,21 @@
+del command 'CreatePersonActions';
+add command 'CreatePersonActions'
+	description	'Create Person Command Object'
+	label	'emxComponents.Shortcut.CreatePerson'
+	href	'${COMPONENT_DIR}/emxComponentsCreatePeopleDialogFS.jsp'
+	alt	'emxComponents.Shortcut.CreatePerson'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'CreatePersonActions'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_CreatePersonActions on program eServiceSchemaVariableMapping.tcl to command 'CreatePersonActions';

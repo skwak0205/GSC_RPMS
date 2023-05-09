@@ -1,0 +1,20 @@
+del command 'APPCreateNewAgendaItemCommand';
+add command 'APPCreateNewAgendaItemCommand'
+	description	''
+	label	'emxComponents.Common.CreateNewAgendaItem'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPCreateNewAgendaItem&header=emxComponents.Common.CreateAgendaItem&mode=edit&postProcessJPO=emxMeeting:createAgendaPostProcess&formHeader=emxComponents.Common.CreateAgendaItem&HelpMarker=emxhelpcreateagendaitem'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'isCreateAndDeleteAgendaItemEnabled'
+	setting	'Access Program'		'emxMeeting'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	setting	'Access Mask'		'fromconnect'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateNewAgendaItemCommand'
+	property	'version'	value	'R424.HF5'
+;
+modify menu APPAgendaItemActionToolbar add command APPCreateNewAgendaItemCommand order command APPCreateNewAgendaItemCommand 1;
+#channel ==>APPAgendaItemActionToolbar
+add property command_APPCreateNewAgendaItemCommand on program eServiceSchemaVariableMapping.tcl to command 'APPCreateNewAgendaItemCommand';

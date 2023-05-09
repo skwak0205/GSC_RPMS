@@ -1,0 +1,21 @@
+del command 'ECMCACancel';
+add command 'ECMCACancel'
+	description	'Cancel Change Action'
+	label	'EnterpriseChangeMgt.Command.Cancel'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_CancelCA&formHeader=EnterpriseChangeMgt.Heading.CancelCA&type=type_ChangeAction&toolbar=ECMReviewAffectedItemsToolbar&HelpMarker=emxhelpchangeactioncancel&mode=edit&submitAction=refreshCaller&preProcessJavaScript=preProcessForCancelandHoldCO&postProcessJPO=enoECMChangeActionUX:cancelChangeAction&openerFrame=detailsDisplay&formFieldsOnly=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isCACancelable'
+	setting	'Access Program'		'enoECMChangeAction'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCancel.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCACancel'
+	property	'version'	value	'R419'
+;
+modify menu ECMCAPropertiesToolbar add command ECMCACancel order command ECMCACancel 5;
+#channel ==>ECMCAPropertiesToolbar
+add property command_ECMCACancel on program eServiceSchemaVariableMapping.tcl to command 'ECMCACancel';

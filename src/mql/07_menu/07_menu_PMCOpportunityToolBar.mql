@@ -1,0 +1,15 @@
+del menu 'PMCOpportunityToolBar';
+add menu 'PMCOpportunityToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCOpportunityToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCOpportunityToolBar'
+	property 'version'	value	'R421'
+;
+add property menu_PMCOpportunityToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCOpportunityToolBar';

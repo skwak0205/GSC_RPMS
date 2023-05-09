@@ -1,0 +1,24 @@
+del command 'FTRCreateResourcesActionCommandLink';
+add command 'FTRCreateResourcesActionCommandLink'
+	description	''
+	label	'emxProduct.ActionLink.Create'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_FixedResource&vaultChooser=true&form=FTRFixedResourceForm&header=emxProduct.Heading.FixedResourceCreateNew&targetLocation=slidein&relationship=relationship_ResourceLimit&submitAction=doNothing&nameField=both&autoNameChecked=true&HelpMarker=emxhelpresourcerulescreate&postProcessJPO=emxRule:updateMandatoryAttr&postProcessURL=../configuration/FixedResourceRuleCreateEditPostProcess.jsp&preProcessJavaScript=setMandatory'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateResourcesActionCommandLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRFixedResourceToolBarActionsMenu add command FTRCreateResourcesActionCommandLink order command FTRCreateResourcesActionCommandLink 1;
+#channel ==>FTRFixedResourceToolBarActionsMenu
+add property command_FTRCreateResourcesActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateResourcesActionCommandLink';

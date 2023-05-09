@@ -1,0 +1,326 @@
+################################################################################################
+# Created Date : 2023.03.20
+# Create by Soojung,Kwak
+# Description : Financial Cost Category MQL 생성 Script
+# MQL 파일 : OneDrive\Project\200. Design\200.10 Functional Spec\03.ERP예산\ERP 계정코드-230228.xlsx
+################################################################################################
+
+# 비용 관련 Financial Cost Category 추가
+# Tree 구조로 구성되어 있어 상위 Category와 'Financial Sub Categories' Relationship으로 연결되어 있음
+# 최상위 category는 Expense category와 'Financial Sub Categories' Relationship으로 연결되어 있음
+# label은 emxProgramCentralStringResource_ko.properties에서 관리
+set context user 'Test Everything';
+
+add bus 'Financial Cost Category' '8110' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '811031' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '811040' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '811060' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '811090' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '81201' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812010' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812011' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812012' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812013' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' '81202' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812023' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812024' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812025' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812026' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' '8123' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812310' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812320' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812321' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812330' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812331' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812340' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812341' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812390' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '812391' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8130' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813010' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813011' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813012' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813020' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813030' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813040' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813041' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813043' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813044' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813051' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813062' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813063' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813071' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8131' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813110' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813170' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '813180' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8140' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814010' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814011' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814012' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814013' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814014' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814016' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814030' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814051' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814060' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814061' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814070' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814080' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8141' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814110' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814111' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814120' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8142' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '814200' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8150' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '815010' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '815011' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '815020' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '815030' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '815050' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '815060' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '815061' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '815062' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '815070' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '815080' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8164' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816410' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816420' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816430' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8165' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816510' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816520' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816540' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816550' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816560' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8166' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816610' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816630' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816620' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816640' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816650' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8167' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816710' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816720' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8168' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816810' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816830' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816840' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '816890' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8172' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '817211' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '817290' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8173' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '817316' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '817317' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '817321' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '817322' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '817324' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '817323' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '817325' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '817326' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8180' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818001' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818004' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818005' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818007' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818010' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818011' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818012' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818013' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818014' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818021' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818022' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818051' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818052' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818055' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818056' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818071' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818072' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818077' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818078' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818079' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818080' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818081' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818082' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8181' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818188' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8188' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818810' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '818830' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8190' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '819021' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '819090' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '819099' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8300' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '830010' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '830050' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '830070' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '830090' '-' policy 'Financial Categories';
+
+
+add bus 'Financial Cost Category' '8340' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '834010' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' '834050' '-' policy 'Financial Categories';
+
+
+# 투자 관련 Financial Cost Category 추가
+# Tree 구조로 구성되어 있어 상위 Category와 'Financial Sub Categories' Relationship으로 연결되어 있음
+# 최상위 category는 Investment category와 'Financial Sub Categories' Relationship으로 연결되어 있음
+# label은 emxProgramCentralStringResource_ko.properties에서 관리
+
+set context user 'Test Everything';
+
+add bus 'Financial Cost Category' 'A' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'A01' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A0101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A010101' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'A02' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A0201' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A020101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A0202' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A020201' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'A03' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A0301' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A030101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A030102' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A030103' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A030104' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'A04' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A0401' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A040101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A040102' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A040103' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'A05' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A0501' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'A050101' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'B' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'B01' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'B0101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'B010101' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'B02' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'B0201' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'B020101' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'B03' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'B0301' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'B030101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'B030102' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'B030103' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'C' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'C01' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C0101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C010101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C010102' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'C02' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C0201' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C020101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C020102' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C020103' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C020104' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'C03' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C0301' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C030101' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'C04' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C0401' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C040101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C040102' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C040103' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C040104' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'C05' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C0501' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C050101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'C050102' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'D' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'D01' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'D0101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'D010101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'D010102' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'D010103' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'D02' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'D0201' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'D020101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'D020102' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'D03' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'D0301' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'D030101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'D030102' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'E' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'E01' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'E0101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'E010101' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'F' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'F01' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'F0101' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'F010102' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'F02' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'F0201' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'F020101' '-' policy 'Financial Categories';
+
+add bus 'Financial Cost Category' 'F03' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'F0301' '-' policy 'Financial Categories';
+add bus 'Financial Cost Category' 'F030101' '-' policy 'Financial Categories';

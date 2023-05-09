@@ -1,0 +1,33 @@
+del table 'PMCAddResourceTable' system;
+add table 'PMCAddResourceTable' system
+column #1
+	name	'Person'
+	label	'emxProgramCentral.ResourcePlan.Persons'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getColumnPersonData'
+	setting	'program'		'emxResourceRequest'
+column #2
+	name	'FTE'
+	label	'FTE'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getAddResourceDynamicFTEColumn'
+	setting	'Registered Suite'		'Program Central'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'emxResourceRequest'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddResourceTable'
+	property	'version'	value	'R208'
+;
+add property table_PMCAddResourceTable on program eServiceSchemaVariableMapping.tcl to table 'PMCAddResourceTable' system;

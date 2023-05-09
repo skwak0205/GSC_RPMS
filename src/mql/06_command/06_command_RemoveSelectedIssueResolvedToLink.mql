@@ -1,0 +1,26 @@
+del command 'RemoveSelectedIssueResolvedToLink';
+add command 'RemoveSelectedIssueResolvedToLink'
+	description	'Issue Remove Selected Command Object'
+	label	'emxComponents.Command.RemoveSelectedResolvedToLink'
+	href	'${SUITE_DIR}/emxIssueUtil.jsp?mode=disconnect'
+	alt	'emxComponents.Command.Remove SelectedResolvedToLink'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'RemoveSelectedIssueResolvedToLink'
+	property	'version'	value	'R422'
+;
+modify menu IssueResolvedToListToolBarActions add command RemoveSelectedIssueResolvedToLink order command RemoveSelectedIssueResolvedToLink 0;
+#channel ==>IssueResolvedToListToolBarActions
+add property command_RemoveSelectedIssueResolvedToLink on program eServiceSchemaVariableMapping.tcl to command 'RemoveSelectedIssueResolvedToLink';

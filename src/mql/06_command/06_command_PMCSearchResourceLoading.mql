@@ -1,0 +1,31 @@
+del command 'PMCSearchResourceLoading';
+add command 'PMCSearchResourceLoading'
+	description	''
+	label	'emxProgramCentral.Common.ResourceLoading'
+	href	'${SUITE_DIR}/emxProgramCentralResourceDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/I_ResourceReport32.png'
+	user	'Organization Manager'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Company Representative'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSearchResourceLoading'
+	property	'version'	value	'R424.HF1'
+;
+modify menu PMCPersonSearchResultToolBar add command PMCSearchResourceLoading order command PMCSearchResourceLoading 0;
+modify menu PMCWeeklyTimeSheetReportProjectMemberToolbarMenu add command PMCSearchResourceLoading order command PMCSearchResourceLoading 1;
+modify menu APPPeopleSummaryToolBar add command PMCSearchResourceLoading order command PMCSearchResourceLoading 2;
+#channel ==>PMCPersonSearchResultToolBarPMCWeeklyTimeSheetReportProjectMemberToolbarMenuAPPPeopleSummaryToolBar
+add property command_PMCSearchResourceLoading on program eServiceSchemaVariableMapping.tcl to command 'PMCSearchResourceLoading';

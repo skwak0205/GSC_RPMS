@@ -1,0 +1,21 @@
+del command 'TMCDiscussionAttachmentCommand';
+add command 'TMCDiscussionAttachmentCommand'
+	description	''
+	label	'emxTeamCentral.FindFiles.FindFiles'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxWorkspace:getDisucssionFindfilesResult&table=TMCDiscussionAttachmentsTable&form=TMCDiscussionFindFilesForm&searchCommand=TMCDiscussionAttachmentCommand&SubmitURL=../teamcentral/emxTeamAttachDocuments.jsp&header=emxComponents.Common.SelectContent&customize=false&showClipboard=false&multiColumnSort=false&objectCompare=false&toolbar=GlobalSearchTopActionBar'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDiscussionAttachmentCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCDiscussionAttachmentMenu add command TMCDiscussionAttachmentCommand order command TMCDiscussionAttachmentCommand 0;
+#channel ==>TMCDiscussionAttachmentMenu
+add property command_TMCDiscussionAttachmentCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCDiscussionAttachmentCommand';

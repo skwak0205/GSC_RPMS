@@ -1,0 +1,21 @@
+################################################################################################
+# Created Date : 2023. 03. 01
+# Create by Jungrim Choi
+# Description : Admin menu
+################################################################################################
+#del command 'gscAPPRoleUpdateCommand';
+add command 'gscAPPRoleUpdateCommand'
+    desc 'User Role Update Command'
+    label 'emxComponents.Common.Update'
+    href "${COMMON_DIR}/gscAPPRoleUpdateDialogFS.jsp?source=Admin"
+    setting 'Popup Size' 'Approval'
+    setting 'Registered Suite' 'Components'
+    setting 'Target Location' 'popup'
+property "installer" value "EMD"
+property "application" value "Components"
+property "installed date" value "2023-03-01"
+property "original name" value "gscAPPRoleUpdateCommand"
+property "version" value "R421"
+;
+add property 'command_gscAPPRoleUpdateCommand' on program 'eServiceSchemaVariableMapping.tcl' to command 'gscAPPRoleUpdateCommand';
+

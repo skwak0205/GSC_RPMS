@@ -1,0 +1,41 @@
+del command 'APPRelatedFiles';
+add command 'APPRelatedFiles'
+	description	''
+	label	'emxFramework.RMBMenu.RelatedFiles'
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxAPPQuickFile'
+	setting	'Dynamic Command Function'		'listRelatedFiles'
+	setting	'Registered Suite'		'Framework'
+	setting	'Pull Right'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallDocumentGray.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRelatedFiles'
+	property	'version'	value	'R422'
+;
+modify menu AEFDefaultRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_RouteRMB add command APPRelatedFiles order command APPRelatedFiles 3;
+modify menu type_PersonRMB add command APPRelatedFiles order command APPRelatedFiles 4;
+modify menu type_InboxTaskRMB add command APPRelatedFiles order command APPRelatedFiles 3;
+modify menu TMCWorkspaceRMBMenu add command APPRelatedFiles order command APPRelatedFiles 4;
+modify menu PlmParameterRMB add command APPRelatedFiles order command APPRelatedFiles 3;
+modify menu RecordRetentionRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_ProductsRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_GeneralLibraryRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_LibraryRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_PartLibraryRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_GeneralClassRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_DocumentFamilyRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_PartFamilyRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_ConfigurationOptionRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_ConfigurationFeatureRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_LogicalFeatureRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_ManufacturingFeatureRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+modify menu type_ProductVariantRMB add command APPRelatedFiles order command APPRelatedFiles 5;
+#channel ==>AEFDefaultRMBtype_RouteRMBtype_PersonRMBtype_InboxTaskRMBTMCWorkspaceRMBMenuPlmParameterRMBRecordRetentionRMBtype_ProductsRMBtype_GeneralLibraryRMBtype_LibraryRMBtype_PartLibraryRMBtype_GeneralClassRMBtype_DocumentFamilyRMBtype_PartFamilyRMBtype_ConfigurationOptionRMBtype_ConfigurationFeatureRMBtype_LogicalFeatureRMBtype_ManufacturingFeatureRMBtype_ProductVariantRMB
+add property command_APPRelatedFiles on program eServiceSchemaVariableMapping.tcl to command 'APPRelatedFiles';

@@ -1,0 +1,18 @@
+del command 'APPMyRoute';
+add command 'APPMyRoute'
+	description	'Route Summary'
+	label	'emxComponents.String.RoutesSummary'
+	href	'${COMMON_DIR}/enoCockpit.html?type=RouteCockpit&HelpMarker=emxhelproutes&suiteKey=Components'
+	alt	'emxComponents.String.RoutesSummary'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMyRoute'
+	property	'version'	value	'R418'
+;
+modify menu APPMyRoutes add command APPMyRoute order command APPMyRoute 1;
+#channel ==>APPMyRoutes
+add property command_APPMyRoute on program eServiceSchemaVariableMapping.tcl to command 'APPMyRoute';

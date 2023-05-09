@@ -1,0 +1,19 @@
+del command 'FTRResourceTreeCategory';
+add command 'FTRResourceTreeCategory'
+	description	''
+	label	'emxProduct.Tree.Resources'
+	href	'${COMMON_DIR}/emxTable.jsp?table=FTRFixedResourceList&header=emxProduct.Heading.FixedResource&selection=multiple&program=emxFixedResource:getAllFixedResources&toolbar=FTRFixedResourceToolBar&sortColumnName=Name&HelpMarker=emxhelpresourceruleslist'
+	alt	''
+	setting	'Target Location'		'detailsDisplay'
+	setting	'image'		'${COMMON_DIR}/images/iconSmallFixedResource.gif'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRResourceTreeCategory'
+	property	'version'	value	'R215'
+;
+modify menu FTRFeatureConfigurableRuleTreeCategory add command FTRResourceTreeCategory order command FTRResourceTreeCategory 0;
+#channel ==>FTRFeatureConfigurableRuleTreeCategory
+add property command_FTRResourceTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRResourceTreeCategory';

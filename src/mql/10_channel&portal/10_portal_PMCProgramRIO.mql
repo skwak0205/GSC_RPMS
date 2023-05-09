@@ -1,0 +1,13 @@
+del portal 'PMCProgramRIO';
+add portal 'PMCProgramRIO'
+	description	''
+	label	''
+	href	''
+	channel 	PMCProgramRIO
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProgramRIO'
+	property	'version'	value	'R421'
+;
+add property portal_PMCProgramRIO on program eServiceSchemaVariableMapping.tcl to portal 'PMCProgramRIO';

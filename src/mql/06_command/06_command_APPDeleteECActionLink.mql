@@ -1,0 +1,21 @@
+del command 'APPDeleteECActionLink';
+add command 'APPDeleteECActionLink'
+	description	''
+	label	'emxComponents.Command.Delete'
+	href	'${ROOT_DIR}/components/emxEngineeringChangeUtil.jsp?mode=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Delete'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteECActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECListActionsToolBar add command APPDeleteECActionLink order command APPDeleteECActionLink 0;
+#channel ==>APPECListActionsToolBar
+add property command_APPDeleteECActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteECActionLink';

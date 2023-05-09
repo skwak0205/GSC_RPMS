@@ -1,0 +1,23 @@
+del command 'APPCreatePlant';
+add command 'APPCreatePlant'
+	description	'This command is used to create a new Plant Objects and connect it to the Company'
+	label	'emxComponents.Command.CreateNewPlant'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=APPCreatePlant&nameField=autoName&type=type_Plant&header=emxComponents.Plant.Heading&relationship=relationship_OrganizationPlant&direction=From&submitAction=refreshCaller&findMxLink=false&HelpMarker=emxhelpplantcreate&showClipboard=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP,ENO_MFG_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreatePlant'
+	property	'version'	value	'R424'
+;
+modify menu APPPlantSummaryActionsToolBar add command APPCreatePlant order command APPCreatePlant 1;
+#channel ==>APPPlantSummaryActionsToolBar
+add property command_APPCreatePlant on program eServiceSchemaVariableMapping.tcl to command 'APPCreatePlant';

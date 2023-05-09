@@ -1,0 +1,19 @@
+del command 'CFPModelMasterCompositionTreeCategoryMobile';
+add command 'CFPModelMasterCompositionTreeCategoryMobile'
+	description	''
+	label	'DMCPlanning.TreeCategory.ModelTemplate'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=CFPModel:getMasterComposition&expandProgram=CFPModel:getManagedRevisions&freezePane=Name,Revision&table=CFPMasterFeatureTable&editRootNode=false&selection=multiple&toolbar=CFPMasterFeatureToolbar&header=DMCPlanning.Heading.ModelTemplate&HelpMarker=emxhelpmasterfeatureview&massPromoteDemote=false&objectCompare=false&sortColumnName=Name&editRelationship=relationship_ModelTemplate&editLink=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Licensed Product'		'ENO_CFP_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isAuthoringModeDisabled'
+	setting	'Access Program'		'CFPModelBase'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPModelMasterCompositionTreeCategoryMobile'
+	property	'version'	value	'R418'
+;
+#channel ==>FTRModelLogicalViewChannel
+add property command_CFPModelMasterCompositionTreeCategoryMobile on program eServiceSchemaVariableMapping.tcl to command 'CFPModelMasterCompositionTreeCategoryMobile';

@@ -1,0 +1,16 @@
+del menu 'ECMCAMenuAction';
+add menu 'ECMCAMenuAction'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.ManageCA'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallLifecycle.gif'
+	command	'ECMApproveRejectCA'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMCAMenuAction'
+	property 'version'	value	'R216'
+;
+add property menu_ECMCAMenuAction on program eServiceSchemaVariableMapping.tcl to menu 'ECMCAMenuAction';

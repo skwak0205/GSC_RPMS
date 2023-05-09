@@ -1,0 +1,14 @@
+del portal 'RMTRequirementGroupProperties';
+add portal 'RMTRequirementGroupProperties'
+	description	''
+	label	''
+	href	''
+	channel 	RMTRequirementGroupProperties
+	setting	'Registered Suite'		'Requirements'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementGroupProperties'
+	property	'version'	value	'R419'
+;
+add property portal_RMTRequirementGroupProperties on program eServiceSchemaVariableMapping.tcl to portal 'RMTRequirementGroupProperties';

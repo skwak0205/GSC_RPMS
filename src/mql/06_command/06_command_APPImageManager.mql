@@ -1,0 +1,20 @@
+del command 'APPImageManager';
+add command 'APPImageManager'
+	description	'lists the Images in the parent Object'
+	label	'emxComponents.ImageManager.Images'
+	href	'${COMPONENT_DIR}/emxImageManager.jsp?isPopup=false&toolbar=APPImageManagerToolBar&header=emxComponents.Image.ImageManagerHeading&HelpMarker=emxhelpimagesview'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPImageManager'
+	property	'version'	value	'R419'
+;
+#channel ==>type_BusinessUnitGeneric Mobile Treetype_Parttype_Librariestype_Classificationtype_GeneralLibrarytype_GeneralClasstype_Librarytype_DocumentFamilytype_PartLibrarytype_PartFamilytype_ProjectConcepttype_TaskManagementPMCProjectPropertiesChannel
+add property command_APPImageManager on program eServiceSchemaVariableMapping.tcl to command 'APPImageManager';

@@ -1,0 +1,21 @@
+del command 'APPAccessRequestPropertiesReview';
+add command 'APPAccessRequestPropertiesReview'
+	description	'Command Object to demote Access Request from Approved/Rejected state state to Review state or promote Access Request from Submitted state to Review state'
+	label	'emxComponents.Command.ReviewAccessRequest'
+	href	'${SUITE_DIR}/emxCommonAccessRequestProcess.jsp?mode=Review&fromPropertiesPage=true'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'( current==Submitted || current==Approved )'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Request Reviewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAccessRequestPropertiesReview'
+	property	'version'	value	'R422'
+;
+modify menu APPAccessRequestActionsToolbar add command APPAccessRequestPropertiesReview order command APPAccessRequestPropertiesReview 5;
+#channel ==>APPAccessRequestActionsToolbar
+add property command_APPAccessRequestPropertiesReview on program eServiceSchemaVariableMapping.tcl to command 'APPAccessRequestPropertiesReview';

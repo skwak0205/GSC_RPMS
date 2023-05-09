@@ -1,0 +1,23 @@
+del command 'LBCAddExistingReferenceDocumentActionLink';
+add command 'LBCAddExistingReferenceDocumentActionLink'
+	description	''
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_DOCUMENTS:IS_VERSION_OBJECT!=True&selection=multiple&showInitialResults=true&table=IssueSearchDocumentTable&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects&submitURL=../components/emxCommonConnectObjects.jsp&HelpMarker=emxhelpsearch&isTo=true&srcDestRelName=relationship_ReferenceDocument'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Access Function'		'canDisplayReferenceDocsCommand'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAddExistingReferenceDocumentActionLink'
+	property	'version'	value	'R421'
+;
+modify menu LBCReferenceDocumentSummaryActionsToolBar add command LBCAddExistingReferenceDocumentActionLink order command LBCAddExistingReferenceDocumentActionLink 1;
+#channel ==>LBCReferenceDocumentSummaryActionsToolBar
+add property command_LBCAddExistingReferenceDocumentActionLink on program eServiceSchemaVariableMapping.tcl to command 'LBCAddExistingReferenceDocumentActionLink';

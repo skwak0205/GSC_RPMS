@@ -1,0 +1,26 @@
+del form 'type_HoldCA';
+add form 'type_HoldCA' web
+field #1
+	name	'Warning'
+	label	'EnterpriseChangeMgt.Label.Warning'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Default'		'EnterpriseChangeMgt.HoldCADialog.WarningMsg'
+field #2
+	name	'Reason'
+	label	'EnterpriseChangeMgt.Label.Reason'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Required'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'type_HoldCA'
+	property	'version'	value	'R419'
+;
+add property form_type_HoldCA on program eServiceSchemaVariableMapping.tcl to form 'type_HoldCA';

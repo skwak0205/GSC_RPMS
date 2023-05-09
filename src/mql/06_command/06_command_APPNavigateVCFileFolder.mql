@@ -1,0 +1,25 @@
+del command 'APPNavigateVCFileFolder';
+add command 'APPNavigateVCFileFolder'
+	description	'Command for Navigating a file or folder in DesignSync Store'
+	label	'emxComponents.VersionControl.NavigateVCFileFolderLink'
+	href	'${COMPONENT_DIR}/emxCommonDocumentVCNavigateProcess.jsp?fromPage=NavigateFirst&appendParameters=true'
+	alt	''
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPNavigateVCFileFolder'
+	property	'version'	value	'R422'
+;
+modify menu TMCContentSummaryTopActionBar add command APPNavigateVCFileFolder order command APPNavigateVCFileFolder 4;
+#channel ==>TMCContentSummaryTopActionBar
+add property command_APPNavigateVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'APPNavigateVCFileFolder';

@@ -1,0 +1,24 @@
+del command 'FTRSplitAndReplaceRMBCommand';
+add command 'FTRSplitAndReplaceRMBCommand'
+	description	''
+	label	'emxProduct.Action.SplitReplace'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Dynamic Command Program'		'LogicalFeature'
+	setting	'Dynamic Command Function'		'getSplitAndReplaceRMB'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Access Function'		'isNotProductVariant'
+	setting	'Access Program'		'LogicalFeature'
+	setting	'Hide Mode'		'Mobile'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRSplitAndReplaceRMBCommand'
+	property	'version'	value	'R418'
+;
+modify menu FTRLogicalFeatureRMB add command FTRSplitAndReplaceRMBCommand order command FTRSplitAndReplaceRMBCommand 0;
+#channel ==>FTRLogicalFeatureRMB
+add property command_FTRSplitAndReplaceRMBCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRSplitAndReplaceRMBCommand';

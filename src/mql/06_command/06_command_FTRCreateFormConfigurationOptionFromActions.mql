@@ -1,0 +1,23 @@
+del command 'FTRCreateFormConfigurationOptionFromActions';
+add command 'FTRCreateFormConfigurationOptionFromActions'
+	description	''
+	label	'emxProductLine.ActionLink.CreateConfOption'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ConfigurationOption&typeChooser=false&autoNameChecked=false&showApply=true&nameField=both&vaultChooser=false&submitAction=none&form=type_ConfigurationOptionCreate&header=emxConfiguration.Form.Heading.OptionCreate&HelpMarker=emxhelpconfigurationoptioncreate&postProcessURL=../configuration/ConfigurationFeatureCreatePostProcess.jsp&UIContext=GlobalActions&policy=policy_ConfigurationOption'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateFormConfigurationOptionFromActions'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_FTRCreateFormConfigurationOptionFromActions on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateFormConfigurationOptionFromActions';

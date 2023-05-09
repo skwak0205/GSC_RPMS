@@ -1,0 +1,17 @@
+del menu 'type_MasterFeature';
+add menu 'type_MasterFeature'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_MasterFeature&actionBarName=CFPMasterFeaturePropertiesActionBar&mode=Form&HelpMarker=emxhelpmasterfeatureproperties'
+	alt	''
+	setting	'Registered Suite'		'DMCPlanning'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	command	'CFPMasterFeatureManagedRevision'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'DMCPlanning'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_MasterFeature'
+	property 'version'	value	'R209'
+;
+add property menu_type_MasterFeature on program eServiceSchemaVariableMapping.tcl to menu 'type_MasterFeature';

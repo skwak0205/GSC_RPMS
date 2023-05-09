@@ -1,0 +1,15 @@
+del portal 'IssuePortal';
+add portal 'IssuePortal'
+	description	'Issue Portal Menu'
+	label	''
+	href	''
+	channel 	IssueChannel1,IssueChannel2
+	channel 	IssueChannel3
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssuePortal'
+	property	'version'	value	'10-5'
+;
+add property portal_IssuePortal on program eServiceSchemaVariableMapping.tcl to portal 'IssuePortal';

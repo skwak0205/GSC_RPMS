@@ -1,0 +1,20 @@
+del command 'PLCHierarchyCreateProductDerivationCommand';
+add command 'PLCHierarchyCreateProductDerivationCommand'
+	description	''
+	label	'emxProduct.Derivation.Menu.CreateDerivation'
+	href	'${SUITE_DIR}/PLCHierarchyProductCreatePreProcess.jsp?mode=CreateDerivation&HelpMarker=emxhelpproductderivationcreatenew'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Single'
+	setting	'Image'		'${COMMON_DIR}/images/CreateDerivation16.png'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R420'
+;
+modify menu PLCProductHierarchyProductMenu add command PLCHierarchyCreateProductDerivationCommand order command PLCHierarchyCreateProductDerivationCommand 2;
+modify menu PLCHierarchyProductMenu add command PLCHierarchyCreateProductDerivationCommand order command PLCHierarchyCreateProductDerivationCommand 2;
+#channel ==>PLCProductHierarchyProductMenuPLCHierarchyProductMenu
+add property command_PLCHierarchyCreateProductDerivationCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCHierarchyCreateProductDerivationCommand';

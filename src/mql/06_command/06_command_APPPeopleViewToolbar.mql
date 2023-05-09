@@ -1,0 +1,15 @@
+del command 'APPPeopleViewToolbar';
+add command 'APPPeopleViewToolbar'
+	description	'People and organization view'
+	label	'emxPlmOnline.label.PeopleViewToolbar'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPVPLMPeopleAdminPortal&toolbar=APPVPLMAdminToolBar&header=emxPlmOnline.label.PeopleAdministrationSpace'
+	alt	'emxPlmOnline.label.PeopleViewToolbar'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Image'		'iconAdminPeople.gif'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+modify menu APPVPLMAdminToolBar add command APPPeopleViewToolbar order command APPPeopleViewToolbar 1;
+#channel ==>APPVPLMAdminToolBar
+add property command_APPPeopleViewToolbar on program eServiceSchemaVariableMapping.tcl to command 'APPPeopleViewToolbar';

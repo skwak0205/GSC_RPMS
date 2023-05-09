@@ -1,0 +1,21 @@
+del command 'PLCProductLineMyDesk';
+add command 'PLCProductLineMyDesk'
+	description	'Command Object for Product Line in the My Desk Menu'
+	label	'emxProduct.Menu.ProductLines'
+	href	'${SUITE_DIR}/MyDeskPLSummaryPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Submit'		'true'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductLineMyDesk'
+	property	'version'	value	'R215'
+;
+modify menu PLCMyDesk add command PLCProductLineMyDesk order command PLCProductLineMyDesk 2;
+#channel ==>PLCMyDesk
+add property command_PLCProductLineMyDesk on program eServiceSchemaVariableMapping.tcl to command 'PLCProductLineMyDesk';

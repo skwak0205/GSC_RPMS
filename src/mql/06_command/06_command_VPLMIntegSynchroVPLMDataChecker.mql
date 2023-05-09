@@ -1,0 +1,17 @@
+del command 'VPLMIntegSynchroVPLMDataChecker';
+add command 'VPLMIntegSynchroVPLMDataChecker'
+	description	'Command for validating data objects'
+	label	'emxVPMCentral.VPLM.Label.DataChecker'
+	href	'${SUITE_DIR}/common/emxSynchronizeVPLMDataCheckerDialogFS.jsp?titleKey=emxVPLMSynchro.Synchronization.Command.SyncDataChecker.Title'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Window Height'		'400'
+	setting	'Window Width'		'500'
+	setting	'Registered Suite'		'VPMCentral'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	user	'VPLMAdmin'
+;
+modify menu CollaborationTools add command VPLMIntegSynchroVPLMDataChecker order command VPLMIntegSynchroVPLMDataChecker 0;
+#channel ==>CollaborationTools
+add property command_VPLMIntegSynchroVPLMDataChecker on program eServiceSchemaVariableMapping.tcl to command 'VPLMIntegSynchroVPLMDataChecker';

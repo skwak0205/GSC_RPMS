@@ -1,0 +1,14 @@
+del menu 'AEFSearchActionsToolbar';
+add menu 'AEFSearchActionsToolbar'
+	description	''
+	label	'emxFramework.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFSearchActionsToolbar'
+	property 'version'	value	'10-7'
+;
+add property menu_AEFSearchActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'AEFSearchActionsToolbar';

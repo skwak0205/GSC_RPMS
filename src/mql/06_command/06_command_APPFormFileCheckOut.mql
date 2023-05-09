@@ -1,0 +1,20 @@
+del command 'APPFormFileCheckOut';
+add command 'APPFormFileCheckOut'
+	description	'Document or File Check Out Command Object'
+	label	'emxComponents.Command.CheckOut'
+	href	'javascript:window.checkout_onclick()'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasDocumentCheckOutAccess'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckOut.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFormFileCheckOut'
+	property	'version'	value	'R417'
+;
+modify menu LBCGenericDocumentActionsToolBar add command APPFormFileCheckOut order command APPFormFileCheckOut 4;
+modify menu LBCDocumentSheetActionsToolBar add command APPFormFileCheckOut order command APPFormFileCheckOut 4;
+#channel ==>LBCGenericDocumentActionsToolBarLBCDocumentSheetActionsToolBar
+add property command_APPFormFileCheckOut on program eServiceSchemaVariableMapping.tcl to command 'APPFormFileCheckOut';

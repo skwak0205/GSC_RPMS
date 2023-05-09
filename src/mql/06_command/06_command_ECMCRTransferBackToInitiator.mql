@@ -1,0 +1,25 @@
+del command 'ECMCRTransferBackToInitiator';
+add command 'ECMCRTransferBackToInitiator'
+	description	'Transfer Back To Initiator Command'
+	label	'EnterpriseChangeMgt.Command.TransferBackToInitiator'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=transferBackToInitiator&targetFrame=detailsDisplay'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'($<attribute[attribute_Originator].value>!=owner) && (current==policy.property[state_Create].value) && !($<interface[interface_ChangeOnHold] =="TRUE">)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionTransferToUser.png'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Change Coordinator'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRTransferBackToInitiator'
+	property	'version'	value	'R421'
+;
+modify menu ECMCRPropertiesToolbar add command ECMCRTransferBackToInitiator order command ECMCRTransferBackToInitiator 3;
+#channel ==>ECMCRPropertiesToolbar
+add property command_ECMCRTransferBackToInitiator on program eServiceSchemaVariableMapping.tcl to command 'ECMCRTransferBackToInitiator';

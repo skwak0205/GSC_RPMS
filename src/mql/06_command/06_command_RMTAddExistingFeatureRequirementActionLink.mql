@@ -1,0 +1,31 @@
+del command 'RMTAddExistingFeatureRequirementActionLink';
+add command 'RMTAddExistingFeatureRequirementActionLink'
+	description	'Command Object for Add Existing Requirement to Feature.'
+	label	'emxRequirements.ActionLink.AddExisting'
+	href	'${SUITE_DIR}/RequirementStructureAddExisting.jsp?table=RMTSearchRequirementsTable&toolbar=none&editLink=false&addType=Requirement&relName=relationship_RequirementSatisfiedBy&HelpMarker=emxhelpfullsearch'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Software Engineering Manager'
+	user	'Software Project Manager'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTAddExistingFeatureRequirementActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTFeatureRequirementTopActionBar add command RMTAddExistingFeatureRequirementActionLink order command RMTAddExistingFeatureRequirementActionLink 0;
+#channel ==>RMTFeatureRequirementTopActionBar
+add property command_RMTAddExistingFeatureRequirementActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTAddExistingFeatureRequirementActionLink';

@@ -1,0 +1,31 @@
+del command 'PMCCreateNewFolderDocument';
+add command 'PMCCreateNewFolderDocument'
+	description	'Create New Document object'
+	label	'emxProgramCentral.Command.CreateDocument'
+	href	'${SUITE_DIR}/emxProgramCentralDocumentCreatePreProcess.jsp?documentAction=create&fileRequired=false&mode=workspaceVault'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'CmdName'		'PMCCreateNewFolderDocument'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForFolderAndDocumentActions'
+	setting	'Access Program'		'emxProjectFolder'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateDocument32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateNewFolderDocument'
+	property	'version'	value	'R422'
+;
+modify menu PMCFolderDocumentFileActions add command PMCCreateNewFolderDocument order command PMCCreateNewFolderDocument 1;
+modify menu PMCWorkspaceVaultAddContnetActions add command PMCCreateNewFolderDocument order command PMCCreateNewFolderDocument 1;
+modify menu PMCFolderSummaryToolBar add command PMCCreateNewFolderDocument order command PMCCreateNewFolderDocument 2;
+#channel ==>PMCFolderDocumentFileActionsPMCWorkspaceVaultAddContnetActionsPMCFolderSummaryToolBar
+add property command_PMCCreateNewFolderDocument on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateNewFolderDocument';

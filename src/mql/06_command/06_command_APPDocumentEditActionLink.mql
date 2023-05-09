@@ -1,0 +1,24 @@
+del command 'APPDocumentEditActionLink';
+add command 'APPDocumentEditActionLink'
+	description	'Document Edit Details Command Object'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_DOCUMENTS&mode=edit&HelpMarker=emxhelpdocumenteditdetails&formHeader=emxComponents.Common.EditDetailsHeadingWithoutRev&Export=False&displayCDMFileSummary=true&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_SuspendVersioning].value> != True && current.access[modify] == true) && ($<attribute[attribute_IsVersionObject].value> != True) && (vcfile == FALSE && vcfolder == FALSE)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentEditActionLink'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPDocumentActionsToolBar add command APPDocumentEditActionLink order command APPDocumentEditActionLink 1;
+modify menu TMCDocumentsActionToolbar add command APPDocumentEditActionLink order command APPDocumentEditActionLink 1;
+modify menu FMADocumentsToolbar add command APPDocumentEditActionLink order command APPDocumentEditActionLink 1;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbarFMADocumentsToolbar
+add property command_APPDocumentEditActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentEditActionLink';

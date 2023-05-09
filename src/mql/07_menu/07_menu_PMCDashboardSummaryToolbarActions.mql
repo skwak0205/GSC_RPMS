@@ -1,0 +1,17 @@
+del menu 'PMCDashboardSummaryToolbarActions';
+add menu 'PMCDashboardSummaryToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCDashboardSummaryCreate'
+	command	'APPSeparator'
+	command	'PMCDashboardSummaryDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCDashboardSummaryToolbarActions'
+	property 'version'	value	'10-6'
+;
+add property menu_PMCDashboardSummaryToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCDashboardSummaryToolbarActions';

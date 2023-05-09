@@ -1,0 +1,20 @@
+del command 'APPDecisionsTreeCategory';
+add command 'APPDecisionsTreeCategory'
+	description	''
+	label	'emxComponents.Command.Decisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDecision:getRelatedDecisions&table=APPDecisionsList&header=emxComponents.Header.Decisions&sortColumnName=Name&sortDirection=ascending&toolbar=APPMeetingDecisionsToolbar&selection=multiple&HelpMarker=emxhelpdecisions'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionsTreeCategory'
+	property	'version'	value	'R417'
+;
+modify menu type_Meeting add command APPDecisionsTreeCategory order command APPDecisionsTreeCategory 4;
+modify menu type_ChangeOrder add command APPDecisionsTreeCategory order command APPDecisionsTreeCategory 7;
+modify menu type_ChangeAction add command APPDecisionsTreeCategory order command APPDecisionsTreeCategory 6;
+modify menu type_ChangeRequest add command APPDecisionsTreeCategory order command APPDecisionsTreeCategory 8;
+#channel ==>type_Meetingtype_ChangeOrdertype_ChangeActiontype_ChangeRequestRMTExchangeTrackingRMTRequirementProxyExchangeTracking
+add property command_APPDecisionsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionsTreeCategory';

@@ -1,0 +1,20 @@
+del command 'APPPromoteInboxTask';
+add command 'APPPromoteInboxTask'
+	description	'Command for promoting Inbox Task which require owner review'
+	label	'emxComponents.Button.Promote'
+	href	'${SUITE_DIR}/emxTaskCompletePreProcess.jsp?action=PromoteTask'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'checksToPromoteTask'
+	setting	'Access Program'		'emxInboxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPromote.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPromoteInboxTask'
+	property	'version'	value	'R417'
+;
+modify menu APPInboxTaskDetailsActionsToolbar add command APPPromoteInboxTask order command APPPromoteInboxTask 5;
+#channel ==>APPInboxTaskDetailsActionsToolbar
+add property command_APPPromoteInboxTask on program eServiceSchemaVariableMapping.tcl to command 'APPPromoteInboxTask';

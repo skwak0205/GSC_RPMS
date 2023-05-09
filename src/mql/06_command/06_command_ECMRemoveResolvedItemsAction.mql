@@ -1,0 +1,23 @@
+del command 'ECMRemoveResolvedItemsAction';
+add command 'ECMRemoveResolvedItemsAction'
+	description	'Remove Selected Document for Resolved Items'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMDisconnectProcess.jsp?functionality=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current.access[fromdisconnect] == true) && !($<interface[interface_ChangeOnHold]=="TRUE">)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMRemoveResolvedItemsAction'
+	property	'version'	value	'R417'
+;
+modify menu ECMResolvedItemsToolbar add command ECMRemoveResolvedItemsAction order command ECMRemoveResolvedItemsAction 0;
+#channel ==>ECMResolvedItemsToolbar
+add property command_ECMRemoveResolvedItemsAction on program eServiceSchemaVariableMapping.tcl to command 'ECMRemoveResolvedItemsAction';

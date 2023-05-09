@@ -1,0 +1,17 @@
+del command 'DCRouteAccess';
+add command 'DCRouteAccess'
+	description	'Access Command Object'
+	label	'emxFramework.Command.Access'
+	href	'${SUITE_DIR}/emxRouteMemberSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Access'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallAccess.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCRouteAccess'
+	property	'version'	value	'9-5-0-0'
+;
+#channel ==>
+add property command_DCRouteAccess on program eServiceSchemaVariableMapping.tcl to command 'DCRouteAccess';

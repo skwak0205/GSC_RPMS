@@ -1,0 +1,19 @@
+del command 'AEFTriggerValidationFlatTable';
+add command 'AEFTriggerValidationFlatTable'
+	description	'Command to Validate the Triggers'
+	label	'emxFramework.Command.Label.TriggerValidation'
+	href	'${SUITE_DIR}/emxTable.jsp?table=AEFValidateTrigger&program=emxTriggerValidationBase:getCheckTriggers&header=emxFramework.Label.TriggerValidation&customize=false&multiColumnSort=false&objectBased=false&SubmitURL=../common/emxTriggerIntermediatePage.jsp&SubmitLabel=emxFramework.Button.Next&Style=dialog&CancelLabel=emxFramework.Button.Cancel&CancelButton=true&multipleObjects=false&selection=multiple&HelpMarker=emxhelptriggervalidationrules'
+	alt	'emxFramework.Command.Tooltip.TriggerValidation'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconStatusCheckmark.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTriggerValidationFlatTable'
+	property	'version'	value	'V6R2008-2.0'
+;
+#channel ==>
+add property command_AEFTriggerValidationFlatTable on program eServiceSchemaVariableMapping.tcl to command 'AEFTriggerValidationFlatTable';

@@ -1,0 +1,21 @@
+del command 'PMCWhatIfExperimentStructure';
+add command 'PMCWhatIfExperimentStructure'
+	description	'Related Projects Command Object'
+	label	'emxProgramCentral.WBS.StructuredView'
+	href	'../programcentral/emxProgramCentralWhatIfAnalysis.jsp?mode=Blank'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfExperimentStructure'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCWhatIfExperimentsUpdateChannel
+add property command_PMCWhatIfExperimentStructure on program eServiceSchemaVariableMapping.tcl to command 'PMCWhatIfExperimentStructure';

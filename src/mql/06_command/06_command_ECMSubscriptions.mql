@@ -1,0 +1,22 @@
+del command 'ECMSubscriptions';
+add command 'ECMSubscriptions'
+	description	'Subscribe events under CO and CA objects'
+	label	'EnterpriseChangeMgt.Label.Subscription'
+	href	'${COMPONENT_DIR}/emxSubscriptionDialog.jsp?HelpMarker=emxhelpsubscriptionevents'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Mouse Over Popup'		'enable'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMSubscriptions'
+	property	'version'	value	'R216'
+;
+modify menu ECMCAPropertiesActionsToolbar add command ECMSubscriptions order command ECMSubscriptions 0;
+#channel ==>ECMCAPropertiesActionsToolbar
+add property command_ECMSubscriptions on program eServiceSchemaVariableMapping.tcl to command 'ECMSubscriptions';

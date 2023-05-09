@@ -1,0 +1,10 @@
+del menu 'ctxMsoi_SearchResults_Projects';
+add menu 'ctxMsoi_SearchResults_Projects'
+	description	'Menu for SearchResultsProjects'
+	label	''
+	href	''
+	alt	''
+	command	'ctxMsoiCmd_OpenProject'
+	command	'ctxMsoiCmd_ShowAttributes'
+;
+add property menu_ctxMsoi_SearchResults_Projects on program eServiceSchemaVariableMapping.tcl to menu 'ctxMsoi_SearchResults_Projects';

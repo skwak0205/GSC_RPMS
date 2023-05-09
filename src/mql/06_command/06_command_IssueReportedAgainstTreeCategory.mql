@@ -1,0 +1,23 @@
+del command 'IssueReportedAgainstTreeCategory';
+add command 'IssueReportedAgainstTreeCategory'
+	description	'Issue Reported Against Object'
+	label	'emxComponents.Command.ReportedAgainstList'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonIssue:getAllReportedAgainst&table=IssueReportedAgainstList&header=emxComponents.Heading.ReportedAgainst&toolbar=IssueReportedAgainstListToolBar&selection=multiple&sortColumnName=Name&HelpMarker=emxhelpissuereportedagainst&relationName=relationship_Issue'
+	alt	'emxComponents.Command.ReportedAgainstList'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueReportedAgainstTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_Issue add command IssueReportedAgainstTreeCategory order command IssueReportedAgainstTreeCategory 3;
+#channel ==>type_IssueIssueChannel3
+add property command_IssueReportedAgainstTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'IssueReportedAgainstTreeCategory';

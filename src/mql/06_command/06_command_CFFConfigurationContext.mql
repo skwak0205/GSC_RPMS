@@ -1,0 +1,16 @@
+del command 'CFFConfigurationContext';
+add command 'CFFConfigurationContext'
+	description	'Configuration Context'
+	label	'Effectivity.Command.ConfigurationContext'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=CFFConfigurationContext&header=Effectivity.Heading.ConfigurationContext&selection=multiple&program=emxEffectivityFramework:getConfigurationContextObjects&toolbar=CFFConfigurationContextToolbar&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Licensed Product'		'ENO_CFF_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFConfigurationContext'
+	property	'version'	value	'R215'
+;
+#channel ==>CFFConfigurationContext
+add property command_CFFConfigurationContext on program eServiceSchemaVariableMapping.tcl to command 'CFFConfigurationContext';

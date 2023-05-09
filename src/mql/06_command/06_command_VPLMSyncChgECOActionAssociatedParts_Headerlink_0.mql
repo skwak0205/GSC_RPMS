@@ -1,0 +1,11 @@
+del command 'VPLMSyncChgECOActionAssociatedParts_Headerlink_0';
+add command 'VPLMSyncChgECOActionAssociatedParts_Headerlink_0'
+	description	'Command to Add Associated Part from ECO to Action'
+	label	'emxVPMCentral.Change.Command.ECOActionAssociatedParts_Headerlink_0.Title'
+	href	'${COMMON_DIR}/emxVPLMSyncChgAddAssociatedPartsToVPLMAction.jsp'
+	alt	'AddProductInput'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'VPMCentral'
+;
+#channel ==>
+add property command_VPLMSyncChgECOActionAssociatedParts_Headerlink_0 on program eServiceSchemaVariableMapping.tcl to command 'VPLMSyncChgECOActionAssociatedParts_Headerlink_0';

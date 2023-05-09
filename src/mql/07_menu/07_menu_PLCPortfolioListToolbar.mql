@@ -1,0 +1,19 @@
+del menu 'PLCPortfolioListToolbar';
+add menu 'PLCPortfolioListToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCPortfolioCreateNew'
+	command	'AEFSeparator'
+	command	'PLCPortfolioDelete'
+	menu	'PLCPortfolioListToolbarActions'
+	menu	'PLCPortfolioListToolbarReports'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCPortfolioListToolbar'
+	property 'version'	value	'R421'
+;
+add property menu_PLCPortfolioListToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PLCPortfolioListToolbar';

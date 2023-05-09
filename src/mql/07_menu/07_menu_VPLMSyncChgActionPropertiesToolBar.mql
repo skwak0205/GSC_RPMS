@@ -1,0 +1,9 @@
+del menu 'VPLMSyncChgActionPropertiesToolBar';
+add menu 'VPLMSyncChgActionPropertiesToolBar'
+	description	'VPLM Action ToolBar'
+	label	'emxVPMCentral.Change.Menu.ActionPropertiesToolBar'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'VPMCentral'
+;
+add property menu_VPLMSyncChgActionPropertiesToolBar on program eServiceSchemaVariableMapping.tcl to menu 'VPLMSyncChgActionPropertiesToolBar';

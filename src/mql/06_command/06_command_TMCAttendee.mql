@@ -1,0 +1,22 @@
+del command 'TMCAttendee';
+add command 'TMCAttendee'
+	description	'Attendee Command Object'
+	label	'emxFramework.Command.Attendee'
+	href	'${SUITE_DIR}/emxTeamMeetingAttendeesSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Attendee'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallAttendee.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCAttendee'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCAttendee on program eServiceSchemaVariableMapping.tcl to command 'TMCAttendee';

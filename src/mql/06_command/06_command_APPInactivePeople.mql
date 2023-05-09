@@ -1,0 +1,24 @@
+del command 'APPInactivePeople';
+add command 'APPInactivePeople'
+	description	'Command Object for Inactive People Summary'
+	label	'emxComponents.Command.InactivePeople'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCompany:getInactivePeople&table=APPInactivePeopleSummary&toolbar=APPInactivePeopleSummaryToolbar&HelpMarker=emxhelppeopleinactive&header=emxComponents.InactivePeopleSummary.Heading&selection=multiple&PrinterFriendly=true&sortColumnName=Name&sortDirection=ascending'
+	alt	'emxComponents.Common.InactivePeople'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Supplier Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPInactivePeople'
+	property	'version'	value	'R422'
+;
+modify menu APPAdministration add command APPInactivePeople order command APPInactivePeople 2;
+#channel ==>APPAdministration
+add property command_APPInactivePeople on program eServiceSchemaVariableMapping.tcl to command 'APPInactivePeople';

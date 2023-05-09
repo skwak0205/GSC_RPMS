@@ -1,0 +1,15 @@
+del portal 'AEFLifecyclePowerView';
+add portal 'AEFLifecyclePowerView'
+	description	'Advance Lifecycle View Portal'
+	label	''
+	href	''
+	channel 	AEFLifecycleState
+	channel 	AEFLifecycleTaskSignaturesApprovals
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecyclePowerView'
+	property	'version'	value	'V6R2008-2.0'
+;
+add property portal_AEFLifecyclePowerView on program eServiceSchemaVariableMapping.tcl to portal 'AEFLifecyclePowerView';

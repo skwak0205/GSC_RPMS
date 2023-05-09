@@ -1,0 +1,19 @@
+del command 'FTRConfigurationOptionRemovedEvent';
+add command 'FTRConfigurationOptionRemovedEvent'
+	description	'Configuration Option Removed Event'
+	label	'PublishSubscribe.Event.ConfigurationOptionRemoved'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Configuration Option Removed'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'disconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationOptionRemovedEvent'
+	property	'version'	value	'R215'
+;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command FTRConfigurationOptionRemovedEvent order command FTRConfigurationOptionRemovedEvent 5;
+#channel ==>FTRConfigurationFeatureSubscriptionEvents
+add property command_FTRConfigurationOptionRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRConfigurationOptionRemovedEvent';

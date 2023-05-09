@@ -1,0 +1,25 @@
+del command 'RMTFeatureUseCaseTreeCategory';
+add command 'RMTFeatureUseCaseTreeCategory'
+	description	''
+	label	'emxRequirements.Tree.UseCase'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=RMTUseCaseList&program=emxUseCase:getRelatedUseCases&header=emxRequirements.Heading.UseCase&selection=multiple&topActionbar=RMTFeatureUseCaseTopActionBar&bottomActionbar=RMTFeatureUseCaseBottomActionBar&rel=ProductLineConstants.RELATIONSHIP_FEATURE_USE_CASE&sortColumnName=Name&HelpMarker=emxhelpusecaselist'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'COMMON_DIR/iconSmallUseCase.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTFeatureUseCaseTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_Features add command RMTFeatureUseCaseTreeCategory order command RMTFeatureUseCaseTreeCategory 0;
+modify menu type_ConfigurationFeature add command RMTFeatureUseCaseTreeCategory order command RMTFeatureUseCaseTreeCategory 0;
+modify menu type_LogicalFeature add command RMTFeatureUseCaseTreeCategory order command RMTFeatureUseCaseTreeCategory 0;
+modify menu type_ManufacturingFeature add command RMTFeatureUseCaseTreeCategory order command RMTFeatureUseCaseTreeCategory 0;
+modify menu Msoitype_Features add command RMTFeatureUseCaseTreeCategory order command RMTFeatureUseCaseTreeCategory 6;
+#channel ==>type_Featurestype_ConfigurationFeaturetype_LogicalFeaturetype_ManufacturingFeatureMsoitype_Features
+add property command_RMTFeatureUseCaseTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTFeatureUseCaseTreeCategory';

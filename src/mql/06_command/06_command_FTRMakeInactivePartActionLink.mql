@@ -1,0 +1,20 @@
+del command 'FTRMakeInactivePartActionLink';
+add command 'FTRMakeInactivePartActionLink'
+	description	''
+	label	'emxProduct.ActionLink.MakeInactivePart'
+	href	'${SUITE_DIR}/PartUtil.jsp?mode=Inactive'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Confirm Message'		'emxProduct.Alert.MakeInactivePart'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMakeInactivePartActionLink'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRMakeInactivePartActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRMakeInactivePartActionLink';

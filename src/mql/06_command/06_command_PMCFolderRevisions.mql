@@ -1,0 +1,17 @@
+del command 'PMCFolderRevisions';
+add command 'PMCFolderRevisions'
+	description	'PMCFolderRevisions'
+	label	'emxProgramCentral.Common.Revisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxControlledFolder:getTableControlledFolderRevisionsData&table=PMCControlledFolderRevisionsSummary&sortColumnName=Name&sortDirection=ascending&header=emxProgramCentral.Common.ControlledFolders&HelpMarker=emxhelpcontrolledfolderrevisionssummary&Export=false'
+	alt	'emxProgramCentral.Common.Revisions'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFolderRevisions'
+	property	'version'	value	'R216'
+;
+modify menu PMCtype_ControlledFolder add command PMCFolderRevisions order command PMCFolderRevisions 2;
+#channel ==>PMCtype_ControlledFolder
+add property command_PMCFolderRevisions on program eServiceSchemaVariableMapping.tcl to command 'PMCFolderRevisions';

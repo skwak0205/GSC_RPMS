@@ -1,0 +1,23 @@
+del command 'APPFormatsAddExisting';
+add command 'APPFormatsAddExisting'
+	description	'Formats AddExisting Command Object'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPFormatsSummary&program=emxOrganization:getFormatstoAdd&header=emxComponents.Formats.AddExistingFormats&HelpMarker=emxhelpformatadd&selection=multiple&PrinterFriendly=true&sortColumnName=Name&sortDirection=ascending&multiColumnSort=false&showClipboard=false&Export=false&objectCompare=false&customize=false&SubmitURL=../components/emxCommonConnectObjects.jsp&CancelButton=true&SubmitLabel=emxComponents.Button.Done&srcDestRelName=relationship_SupportedFileFormat&isTo=true'
+	alt	'emxComponents.Common.AddExisting emxComponents.Common.AddExisting'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFormatsAddExisting'
+	property	'version'	value	'R417'
+;
+modify menu APPFormatsSummaryActionToolBar add command APPFormatsAddExisting order command APPFormatsAddExisting 1;
+#channel ==>APPFormatsSummaryActionToolBar
+add property command_APPFormatsAddExisting on program eServiceSchemaVariableMapping.tcl to command 'APPFormatsAddExisting';

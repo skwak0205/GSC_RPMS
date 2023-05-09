@@ -1,0 +1,27 @@
+del command 'PMCDependency';
+add command 'PMCDependency'
+	description	'Dependency Command Object'
+	label	'emxFramework.Command.Dependency'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCTaskDependency&header=emxProgramCentral.Common.DependencyHeading&toolbar=PMCTaskDependencyActionToolbar&freezePane=Name&program=emxTaskBase:getTaskDependencies&selection=multiple&HelpMarker=emxhelpeditdepend&showPageURLIcon=false'
+	alt	'emxFramework.Command.Alt.Dependency'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(to[$<relationship_ProjectAccessKey>].name != "")'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'dependency.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDependency'
+	property	'version'	value	'R422'
+;
+modify menu type_TaskManagement add command PMCDependency order command PMCDependency 5;
+modify menu type_TaskTemplate add command PMCDependency order command PMCDependency 4;
+#channel ==>type_TaskManagementtype_TaskTemplate
+add property command_PMCDependency on program eServiceSchemaVariableMapping.tcl to command 'PMCDependency';

@@ -1,0 +1,27 @@
+del command 'AEFTaskAddApprover';
+add command 'AEFTaskAddApprover'
+	description	'Lifecycle Approvals Task Add Approver functionality'
+	label	'emxFramework.Command.TaskAddApprover'
+	href	'${COMMON_DIR}/emxLifecycleAddApproverFS.jsp'
+	alt	'emxFramework.Command.TaskAddApprover'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'600'
+	setting	'Access Behavior'		'disable'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showAddApproverCommands'
+	setting	'Access Program'		'emxLifecycle'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddTaskApprover.png'
+	user	'3DSRestrictedContributor'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTaskAddApprover'
+	property	'version'	value	'R422'
+;
+modify menu AEFLifecycleApprovalsSummaryToolbar add command AEFTaskAddApprover order command AEFTaskAddApprover 3;
+#channel ==>AEFLifecycleApprovalsSummaryToolbar
+add property command_AEFTaskAddApprover on program eServiceSchemaVariableMapping.tcl to command 'AEFTaskAddApprover';

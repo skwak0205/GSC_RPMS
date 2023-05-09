@@ -1,0 +1,23 @@
+del command 'APPVersionQuickFiles';
+add command 'APPVersionQuickFiles'
+	description	''
+	label	'emxFramework.RMBMenu.Versions'
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxAPPQuickFile'
+	setting	'Dynamic Command Function'		'listFileVersion'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'(policy!="$<policy_Version>")'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallDocumentGray.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPVersionQuickFiles'
+	property	'version'	value	'R423.HF3'
+;
+modify menu type_DOCUMENTSRMB add command APPVersionQuickFiles order command APPVersionQuickFiles 2;
+#channel ==>type_DOCUMENTSRMB
+add property command_APPVersionQuickFiles on program eServiceSchemaVariableMapping.tcl to command 'APPVersionQuickFiles';

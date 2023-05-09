@@ -1,0 +1,31 @@
+del form 'PMCResourcePlanTemplateCreateForm';
+add form 'PMCResourcePlanTemplateCreateForm' web
+field #1
+	name	'Name'
+	label	'emxProgramCentral.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'Validate'		'validateResourceRequestName'
+	setting	'function'		'getNameFieldValue'
+	setting	'program'		'emxResourcePlanTemplate'
+	setting	'Field Type'		'programHTMLOutput'
+field #2
+	name	'Description'
+	label	'emxProgramCentral.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getDescriptionFieldValue'
+	setting	'program'		'emxResourcePlanTemplate'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePlanTemplateCreateForm'
+	property	'version'	value	'R211'
+;
+add property form_PMCResourcePlanTemplateCreateForm on program eServiceSchemaVariableMapping.tcl to form 'PMCResourcePlanTemplateCreateForm';

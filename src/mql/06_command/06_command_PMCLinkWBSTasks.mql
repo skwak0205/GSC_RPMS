@@ -1,0 +1,28 @@
+del command 'PMCLinkWBSTasks';
+add command 'PMCLinkWBSTasks'
+	description	''
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=chainTask'
+	alt	'emxProgramCentral.Common.LinkTasks'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateLink32.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCLinkWBSTasks'
+	property	'version'	value	'R422'
+;
+modify menu PMCWhatIFExperimentActionToolbar add command PMCLinkWBSTasks order command PMCLinkWBSTasks 8;
+modify menu PMCWBSToolBar add command PMCLinkWBSTasks order command PMCLinkWBSTasks 11;
+#channel ==>PMCWhatIFExperimentActionToolbarPMCWBSToolBar
+add property command_PMCLinkWBSTasks on program eServiceSchemaVariableMapping.tcl to command 'PMCLinkWBSTasks';

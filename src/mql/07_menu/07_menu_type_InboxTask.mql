@@ -1,0 +1,19 @@
+del menu 'type_InboxTask';
+add menu 'type_InboxTask'
+	description	''
+	label	'$<attribute[attribute_Title].value>'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPInboxTaskPowerView'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallTask16.png'
+	setting	'Header Lifecycle'		'hide'
+	command	'APPTaskRoute'
+	command	'APPRouteTaskRevisions'
+	command	'APPRouteHistory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_InboxTask'
+	property 'version'	value	'R423.HF1'
+;
+add property menu_type_InboxTask on program eServiceSchemaVariableMapping.tcl to menu 'type_InboxTask';

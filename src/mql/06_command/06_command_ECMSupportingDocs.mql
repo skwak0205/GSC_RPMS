@@ -1,0 +1,17 @@
+del command 'ECMSupportingDocs';
+add command 'ECMSupportingDocs'
+	description	'Supporting Documents Command Object from CO Categoriest'
+	label	'EnterpriseChangeMgt.Command.SupportingDocs'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ECMSupportingDocsToolbar&header=EnterpriseChangeMgt.Heading.SupportingDocs&HelpMarker=emxhelpecrsupportingdocuments&parentRelName=relationship_SupportingDocument'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMSupportingDocs'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_ECMSupportingDocs on program eServiceSchemaVariableMapping.tcl to command 'ECMSupportingDocs';

@@ -1,0 +1,22 @@
+del command 'AEFConsolidatedSearchCollections';
+add command 'AEFConsolidatedSearchCollections'
+	description	''
+	label	'emxFramework.Consolidate.Collections'
+	href	'javascript:openCollections()'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Function'		'isConsolidatedSearch'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallCollection.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFConsolidatedSearchCollections'
+	property	'version'	value	'R216'
+;
+modify menu AEFSearchTypes add command AEFConsolidatedSearchCollections order command AEFConsolidatedSearchCollections 4;
+#channel ==>AEFSearchTypes
+add property command_AEFConsolidatedSearchCollections on program eServiceSchemaVariableMapping.tcl to command 'AEFConsolidatedSearchCollections';

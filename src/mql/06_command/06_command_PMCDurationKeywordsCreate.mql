@@ -1,0 +1,24 @@
+del command 'PMCDurationKeywordsCreate';
+add command 'PMCDurationKeywordsCreate'
+	description	''
+	label	'emxProgramCentral.Common.Create'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCDurationKeywordCreateForm&toolbar=PMCDurationKeywordsCreateToolBarActions&formHeader=emxProgramCentral.DurationKeywords.Create&mode=edit&postProcessURL=../programcentral/emxProgramCentralDurationKeywordsUtil.jsp&FunctionMode=create&HelpMarker=emxhelpkeywordcreate&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessDurationKeywordView'
+	setting	'Access Program'		'emxDurationKeywords'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDurationKeywordsCreate'
+	property	'version'	value	'R422'
+;
+modify menu PMCDurationKeywordsToolBarActions add command PMCDurationKeywordsCreate order command PMCDurationKeywordsCreate 1;
+#channel ==>PMCDurationKeywordsToolBarActions
+add property command_PMCDurationKeywordsCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCDurationKeywordsCreate';

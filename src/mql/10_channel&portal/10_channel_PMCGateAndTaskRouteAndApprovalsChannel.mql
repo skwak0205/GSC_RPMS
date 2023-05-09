@@ -1,0 +1,16 @@
+del channel 'PMCGateAndTaskRouteAndApprovalsChannel';
+add channel 'PMCGateAndTaskRouteAndApprovalsChannel'
+	description	'Channel to Show Routes and Approval commands in Task or Gate'
+	height	'700'
+	label	'emxFramework.Common.PMCGateAndTaskRouteAndApprovalsChannel'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCRoutes','PMCApproval'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateAndTaskRouteAndApprovalsChannel'
+	property	'version'	value	'R421'
+;
+#portal ==>PMCGateAndTaskRouteAndApprovalsPortal
+add property channel_PMCGateAndTaskRouteAndApprovalsChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCGateAndTaskRouteAndApprovalsChannel';

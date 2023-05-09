@@ -1,0 +1,19 @@
+del command 'CFFComposition_MPBreakdown';
+add command 'CFFComposition_MPBreakdown'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Effectivity'
+	setting	'expandProgram'		'ManufacturingPlan:getManufacturingPlanBreakdownComposition'
+	setting	'relationshipType'		'relationship_ManufacturingPlanBreakdown'
+	setting	'binaryKey'		'MPBreakdown'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFComposition_MPBreakdown'
+	property	'version'	value	'R214'
+;
+modify menu CFFChildComposition add command CFFComposition_MPBreakdown order command CFFComposition_MPBreakdown 1;
+#channel ==>CFFChildComposition
+add property command_CFFComposition_MPBreakdown on program eServiceSchemaVariableMapping.tcl to command 'CFFComposition_MPBreakdown';

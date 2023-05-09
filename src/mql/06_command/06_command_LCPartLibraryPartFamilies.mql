@@ -1,0 +1,25 @@
+del command 'LCPartLibraryPartFamilies';
+add command 'LCPartLibraryPartFamilies'
+	description	''
+	label	'emxLibraryCentral.Command.PartLibraryPartFamilies'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxLibraryCentralUtilBase:getSubclasses&table=LCClassificationList&selection=single&sortColumnName=Name&massPromoteDemote=false&sortDirection=ascending&toolbar=LCPartFamilyToolBar&header=emxLibraryCentral.Common.PartFamilies&HelpMarker=emxhelplistpartfamilies'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCPartLibraryPartFamilies'
+	property	'version'	value	'R422'
+;
+modify menu type_PartLibrary add command LCPartLibraryPartFamilies order command LCPartLibraryPartFamilies 4;
+#channel ==>type_PartLibrary
+add property command_LCPartLibraryPartFamilies on program eServiceSchemaVariableMapping.tcl to command 'LCPartLibraryPartFamilies';

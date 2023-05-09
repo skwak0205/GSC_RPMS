@@ -1,0 +1,19 @@
+del form 'ProcessStepDynamicEditForm';
+add form 'ProcessStepDynamicEditForm' web
+field #1
+	name	'Dynamic'
+	businessobject	'empty'
+	label	'empty'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Dynamic Field Function'		'renderDynamicEditForm'
+	setting	'Dynamic Field Program'		'com.dassault_systemes.enovia.processsteps.ENOProcessStepsUI'
+	setting	'Field Type'		'Dynamic'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProcessSteps'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'ProcessStepDynamicEditForm'
+	property	'version'	value	'R421'
+;
+add property form_ProcessStepDynamicEditForm on program eServiceSchemaVariableMapping.tcl to form 'ProcessStepDynamicEditForm';

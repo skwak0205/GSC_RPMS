@@ -1,0 +1,15 @@
+del menu 'PLCRevisionsListToolBar';
+add menu 'PLCRevisionsListToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	menu	'PLCRevisionsListToolBarActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCRevisionsListToolBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_PLCRevisionsListToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCRevisionsListToolBar';

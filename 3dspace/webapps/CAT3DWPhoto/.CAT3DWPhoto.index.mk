@@ -1,0 +1,17 @@
+m|CAT3DWebAppInfraUI\CAT3DWPhoto.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.23007|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\CAT3DWPhoto\CAT3DWPhoto.js|1673059940|15035
+s|CAT3DWebAppInfraUI\CAT3DWPhoto.mweb\src\CAT3DWImage.js|1649096192|6954
+t|win_b64\webapps\CAT3DWPhoto\assets\graphics\G_NXGAddImage.png|1647691673|7094
+s|CAT3DWebAppInfraUI\CAT3DWPhoto.mweb\src\assets\graphics\G_NXGAddImage.png|1637987511|7094
+t|win_b64\webapps\CAT3DWPhoto\assets\graphics\G_NXGAddImage_template.png|1647691673|7399
+s|CAT3DWebAppInfraUI\CAT3DWPhoto.mweb\src\assets\graphics\G_NXGAddImage_template.png|1637987511|7399
+u|CAT3DWebAppInfraUI\CAT3DWPhoto.mweb\src\CAT3DWImageDataService.js|1637987511|1519
+u|CAT3DWebAppInfraUI\CAT3DWPhoto.mweb\src\CAT3DWImageView.js|1673043557|19741
+u|CAT3DWebAppInfraUI\CAT3DWPhoto.mweb\src\CAT3DWImagesManager.js|1649096192|3156
+u|CAT3DWebAppInfraUI\CAT3DWPhoto.mweb\src\CAT3DWPhoto.js|1637987511|0
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

@@ -1,0 +1,19 @@
+del command 'AEFSBCompareMoveFirst';
+add command 'AEFSBCompareMoveFirst'
+	description	''
+	label	'emxFramework.FreezePane.SBCompare.MoveFirst'
+	href	'javascript:moveNextOrPreviousChanges('first')'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionMoveFirst.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBCompareMoveFirst'
+	property	'version'	value	'R419'
+;
+modify menu AEFStructureCompareToolbar add command AEFSBCompareMoveFirst order command AEFSBCompareMoveFirst 3;
+modify menu PMCProjectBaselineCompareToolbar add command AEFSBCompareMoveFirst order command AEFSBCompareMoveFirst 1;
+modify menu PMCWhatIfSyncToolbar add command AEFSBCompareMoveFirst order command AEFSBCompareMoveFirst 3;
+#channel ==>AEFStructureCompareToolbarPMCProjectBaselineCompareToolbarPMCWhatIfSyncToolbar
+add property command_AEFSBCompareMoveFirst on program eServiceSchemaVariableMapping.tcl to command 'AEFSBCompareMoveFirst';

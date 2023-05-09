@@ -1,0 +1,23 @@
+del command 'MassDemote';
+add command 'MassDemote'
+	description	''
+	label	'emxFramework.Common.MassDemote'
+	href	'${COMMON_DIR}/emxMassPromoteDemote.jsp?cmd=Demote'
+	alt	'emxFramework.Common.MassDemote'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canAccessMassDemote'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDemote.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'MassDemote'
+	property	'version'	value	'R423.HF3'
+;
+modify menu Tools add command MassDemote order command MassDemote 6;
+#channel ==>Tools
+add property command_MassDemote on program eServiceSchemaVariableMapping.tcl to command 'MassDemote';

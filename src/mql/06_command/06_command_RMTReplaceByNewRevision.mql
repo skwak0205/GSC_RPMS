@@ -1,0 +1,27 @@
+del command 'RMTReplaceByNewRevision';
+add command 'RMTReplaceByNewRevision'
+	description	'replace object By a new revision.'
+	label	'emxRequirements.Label.RMTReplaceByNewRevision'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=replaceByNewRevision'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isDoReconcileOnReviseAvailable'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallHigherRevision.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTReplaceByNewRevision'
+	property	'version'	value	'V6R2016x.HF2'
+;
+modify menu RMTSpecTreeActionBar add command RMTReplaceByNewRevision order command RMTReplaceByNewRevision 11;
+modify menu RMTStructureBrowserActionsMenu add command RMTReplaceByNewRevision order command RMTReplaceByNewRevision 7;
+modify menu RMTChapTreeActionBar add command RMTReplaceByNewRevision order command RMTReplaceByNewRevision 9;
+modify menu RMTReqGroupActions add command RMTReplaceByNewRevision order command RMTReplaceByNewRevision 3;
+modify menu RMTRequirementUseCaseTopActionBar add command RMTReplaceByNewRevision order command RMTReplaceByNewRevision 3;
+modify menu RMTUseCaseSubUseCaseTopActionBar add command RMTReplaceByNewRevision order command RMTReplaceByNewRevision 3;
+#channel ==>RMTSpecTreeActionBarRMTStructureBrowserActionsMenuRMTChapTreeActionBarRMTReqGroupActionsRMTRequirementUseCaseTopActionBarRMTUseCaseSubUseCaseTopActionBar
+add property command_RMTReplaceByNewRevision on program eServiceSchemaVariableMapping.tcl to command 'RMTReplaceByNewRevision';

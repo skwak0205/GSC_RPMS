@@ -1,0 +1,21 @@
+del menu 'RMTSpecTreeCreateNew';
+add menu 'RMTSpecTreeCreateNew'
+	description	''
+	label	'emxRequirements.ActionLink.Create'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Mode'		'view'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	command	'RMTSpecTreeCreateChapterPreCheck'
+	command	'RMTSpecTreeCreateCommentPreCheck'
+	command	'RMTSpecTreeCreateRequirementPreCheck'
+	command	'RMTSpecTreeCreateSubRequirement'
+	command	'RMTSpecTreeCreateDerivedRequirement'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecTreeCreateNew'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTSpecTreeCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecTreeCreateNew';

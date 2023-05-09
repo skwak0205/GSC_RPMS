@@ -1,0 +1,17 @@
+del menu 'PMCResourceRequestCreateSubscription';
+add menu 'PMCResourceRequestCreateSubscription'
+	description	''
+	label	''
+	href	''
+	alt	'emxProgramCentral.Command.ResourcePlan.CreateSubscription'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallSubscription.gif'
+	command	'PMCResourceRequestPushSubscription'
+	command	'PMCResourceRequestSubscription'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourceRequestCreateSubscription'
+	property 'version'	value	'R213'
+;
+add property menu_PMCResourceRequestCreateSubscription on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourceRequestCreateSubscription';

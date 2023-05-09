@@ -1,0 +1,22 @@
+del command 'FTRModelAddExistingVariability';
+add command 'FTRModelAddExistingVariability'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${SUITE_DIR}/VariabilityAddExistingPreProcess.jsp?isModel=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type.kindof=="type_Model">'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRVariabilityToolbar add command FTRModelAddExistingVariability order command FTRModelAddExistingVariability 8;
+#channel ==>FTRVariabilityToolbar
+add property command_FTRModelAddExistingVariability on program eServiceSchemaVariableMapping.tcl to command 'FTRModelAddExistingVariability';

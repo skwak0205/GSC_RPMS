@@ -1,0 +1,22 @@
+del command 'PMCProgramMyDesk';
+add command 'PMCProgramMyDesk'
+	description	'Program Command Object'
+	label	'emxFramework.MenuItem.Programs'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProgram:getActivePrograms,emxProgram:getInActivePrograms,emxProgram:getAllPrograms&programLabel=emxProgramCentral.Common.ActivePrograms,emxProgramCentral.Common.InactivePrograms,emxProgramCentral.Common.All&table=PMCProgramSummary&selection=multiple&header=emxProgramCentral.Common.Programs&toolbar=PMCMyDeskProgramSummaryToolBar&HelpMarker=emxhelpprogramlist&Export=false&sortColumnName=Name&sortDirection=ascending&StringResourceFileId=emxProgramCentralStringResource'
+	alt	'emxFramework.MenuItem.Programs'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProgramMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyDesk add command PMCProgramMyDesk order command PMCProgramMyDesk 3;
+#channel ==>PMCMyDesk
+add property command_PMCProgramMyDesk on program eServiceSchemaVariableMapping.tcl to command 'PMCProgramMyDesk';

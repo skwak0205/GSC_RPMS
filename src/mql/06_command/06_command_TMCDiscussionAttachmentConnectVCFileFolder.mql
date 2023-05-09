@@ -1,0 +1,26 @@
+del command 'TMCDiscussionAttachmentConnectVCFileFolder';
+add command 'TMCDiscussionAttachmentConnectVCFileFolder'
+	description	'Command for mapping a file or folder in DesignSync to business object'
+	label	'emxComponents.VersionControl.ConnectVCFileFolder'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?showDescription=required&appDir=components&parentRelName=relationship_MessageAttachments&objectAction=connectVCFileFolder&actionURL=emxCommonDocumentVCConnectProcess.jsp&stepOneHeader=emxComponents.Header.ConnectToDesignSyncFileFolder&showTitle=true&showFormat=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMPONENT_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDiscussionAttachmentConnectVCFileFolder'
+	property	'version'	value	'R422'
+;
+modify menu TMCDiscussionAttachmentCreateNew add command TMCDiscussionAttachmentConnectVCFileFolder order command TMCDiscussionAttachmentConnectVCFileFolder 0;
+#channel ==>TMCDiscussionAttachmentCreateNew
+add property command_TMCDiscussionAttachmentConnectVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'TMCDiscussionAttachmentConnectVCFileFolder';

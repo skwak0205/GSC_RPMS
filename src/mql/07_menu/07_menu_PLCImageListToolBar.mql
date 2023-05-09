@@ -1,0 +1,15 @@
+del menu 'PLCImageListToolBar';
+add menu 'PLCImageListToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	menu	'PLCImageListToolBarActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCImageListToolBar'
+	property 'version'	value	'R418'
+;
+add property menu_PLCImageListToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCImageListToolBar';

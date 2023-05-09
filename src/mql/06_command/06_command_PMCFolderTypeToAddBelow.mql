@@ -1,0 +1,25 @@
+del command 'PMCFolderTypeToAddBelow';
+add command 'PMCFolderTypeToAddBelow'
+	description	''
+	label	'emxProgramCentral.Common.Type'
+	href	''
+	alt	''
+	setting	'Range Function'		'getWorkspaceVaultTypes'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'((current.access[modify] == true) && (current.access[fromdisconnect] == true)) && ( (type.kindOf[$<type_ControlledFolder>]==false) || (current.name == Create) )'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Range Program'		'emxProjectFolderBase'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFolderTypeToAddBelow'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCFolderTypeToAddBelow on program eServiceSchemaVariableMapping.tcl to command 'PMCFolderTypeToAddBelow';

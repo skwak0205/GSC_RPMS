@@ -1,0 +1,23 @@
+del command 'FTRGenerateManufacturingEBOM';
+add command 'FTRGenerateManufacturingEBOM'
+	description	'FTRGenerateManufacturingEBOM'
+	label	'emxProduct.ActionLink.FTRGenerateManufacturingEBOM'
+	href	'${SUITE_DIR}/ProductConfigurationUtil.jsp?mode=generateManufacturingEBOM'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showLinksForSalableConfig'
+	setting	'Access Program'		'emxProductConfiguration'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRGenerateManufacturingEBOM'
+	property	'version'	value	'R215'
+;
+modify menu FTRPreviewPlanningBOMToolbar add command FTRGenerateManufacturingEBOM order command FTRGenerateManufacturingEBOM 1;
+#channel ==>FTRPreviewPlanningBOMToolbar
+add property command_FTRGenerateManufacturingEBOM on program eServiceSchemaVariableMapping.tcl to command 'FTRGenerateManufacturingEBOM';

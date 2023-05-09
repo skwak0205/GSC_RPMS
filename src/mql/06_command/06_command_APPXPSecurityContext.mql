@@ -1,0 +1,12 @@
+del command 'APPXPSecurityContext';
+add command 'APPXPSecurityContext'
+	description	''
+	label	'emxPlmOnline.label.Search'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=Context&dir=XP'
+	alt	'emxPlmOnline.label.Search'
+	setting	'Registered Suite'		'VPLMAdministration'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+#channel ==>SecurityContextXPChannel
+add property command_APPXPSecurityContext on program eServiceSchemaVariableMapping.tcl to command 'APPXPSecurityContext';

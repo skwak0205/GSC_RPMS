@@ -1,0 +1,20 @@
+del command 'PMCProjectMemberTimesheet';
+add command 'PMCProjectMemberTimesheet'
+	description	'ProjectMember Command Object'
+	label	'emxFramework.Command.MemberTimesheet'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProjectMember:getMembers&table=PMCMemberTimesheetMonitor&header=emxProgramCentral.Common.Members&HelpMarker=emxhelpmembertimesheet&Export=false&sortColumnName=Name&sortDirection=ascending&isViewMode=true&selection=multiple&editLink=false&hideLaunchButton=true&&showClipboard=false&customize=false&displayView=details&rowGrouping=false&showPageURLIcon=false&findMxLink=false&showRMB=false&massPromoteDemote=false&multiColumnSort=false&objectCompare=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectMemberTimesheet'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCAccess_ResourcePlan
+add property command_PMCProjectMemberTimesheet on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectMemberTimesheet';

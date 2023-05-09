@@ -1,0 +1,44 @@
+del command 'PMCLifecycle';
+add command 'PMCLifecycle'
+	description	'Lifecycle Command Object'
+	label	'emxProgramCentral.ControlledFolder.Lifecycle'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=rmbPMCLifecycle'
+	alt	'emxProgramCentral.ControlledFolder.Lifecycle'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTemplateTaskRMB'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'${COMMON_DIR}/images/I_SmallLifecycle16.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCLifecycle'
+	property	'version'	value	'R421.HF7'
+;
+modify menu PMCWBSRMBActions add command PMCLifecycle order command PMCLifecycle 2;
+modify menu type_TaskManagementRMB add command PMCLifecycle order command PMCLifecycle 2;
+modify menu type_ProjectSpaceRMB add command PMCLifecycle order command PMCLifecycle 2;
+modify menu PMCListProjectRMBMenu add command PMCLifecycle order command PMCLifecycle 0;
+modify menu type_ProjectConceptRMB add command PMCLifecycle order command PMCLifecycle 2;
+modify menu type_Assessment add command PMCLifecycle order command PMCLifecycle 0;
+modify menu type_FinancialItem add command PMCLifecycle order command PMCLifecycle 0;
+modify menu type_Program add command PMCLifecycle order command PMCLifecycle 3;
+modify menu type_ProjectConcept add command PMCLifecycle order command PMCLifecycle 6;
+modify menu type_ProjectTemplate add command PMCLifecycle order command PMCLifecycle 5;
+modify menu type_Quality add command PMCLifecycle order command PMCLifecycle 4;
+modify menu type_Risk add command PMCLifecycle order command PMCLifecycle 6;
+modify menu type_Question add command PMCLifecycle order command PMCLifecycle 0;
+modify menu type_BusinessGoal add command PMCLifecycle order command PMCLifecycle 4;
+modify menu PMCWBSTaskRMBMenu add command PMCLifecycle order command PMCLifecycle 0;
+modify menu type_ProjectTemplateRMB add command PMCLifecycle order command PMCLifecycle 0;
+modify menu type_GateRMB add command PMCLifecycle order command PMCLifecycle 2;
+modify menu PMCFolderColumnRMBMenu add command PMCLifecycle order command PMCLifecycle 1;
+modify menu type_AssessmentRMB add command PMCLifecycle order command PMCLifecycle 1;
+modify menu type_Opportunity add command PMCLifecycle order command PMCLifecycle 5;
+#channel ==>PMCWBSRMBActionstype_TaskManagementRMBtype_ProjectSpaceRMBPMCListProjectRMBMenutype_ProjectConceptRMBtype_Assessmenttype_FinancialItemtype_Programtype_ProjectConcepttype_ProjectTemplatetype_Qualitytype_Risktype_Questiontype_BusinessGoalPMCWBSTaskRMBMenutype_ProjectTemplateRMBtype_GateRMBPMCFolderColumnRMBMenutype_AssessmentRMBtype_OpportunityPMCPropertiesChannelPMCProjectPropertiesChannel
+add property command_PMCLifecycle on program eServiceSchemaVariableMapping.tcl to command 'PMCLifecycle';

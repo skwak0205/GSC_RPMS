@@ -1,0 +1,188 @@
+################################################################################################
+# Created Date : 2020.09.23
+# Create by HanSu,Kim
+# Description : ADG WebForm
+################################################################################################
+
+#del form 'type_emdADG';
+
+add form 'type_emdADG' web
+    field
+        name         Basics
+        label        'emxEngineeringCentral.SectionHeader.Basics'
+        setting      "Field Type" "Section Header"
+        setting      "Registered Suite" "EngineeringCentral"
+	field
+		name  'Type'
+		label 'emxEngineeringCentral.Common.Type'
+		businessobject '$<type>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Admin Type"			"Type"
+        setting "Group Name" "ROW01"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+    field
+        name  'State'
+        label 'emxManufacturerEquivalentPart.Common.State'
+        businessobject '$<current>'
+        alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "ManufacturerEquivalentPart"
+        setting "Group Name" "ROW01"
+        setting "Admin Type"			"State"
+        setting "Editable"			"false"
+        setting "Required"			"false"
+        setting "Group Name" "ROW01"
+        setting "Field Type" 		"basic"
+	field
+		name  'Name'
+		label 'emxEngineeringCentral.Label.ADGNo'
+		businessobject '$<name>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Group Name" "ROW02"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+    field
+        name  'Revision'
+        label 'emxEngineeringCentral.Common.Rev'
+        alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Group Name" "ROW02"
+        setting "Editable"			"false"
+        setting "Field Type" 		"programHTMLOutput"
+        setting "function" "displayRevisionStatusInPartForm"
+        setting "program" "enoFloatOnEBOM"
+	field
+		name  'Title'
+		label 'emxEngineeringCentral.Label.ADGName'
+		businessobject '$<attribute[attribute_V_Name]>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"true"
+        setting "Field Type" 		"attribute"
+        setting "Admin Type"        "attribute_V_Name"
+        setting "Input Type"        "textarea"
+        setting "Required"          "true"
+	field
+		name  'Description'
+		label 'emxEngineeringCentral.Common.Description'
+		businessobject '$<description>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"true"
+        setting "Field Type" 		"basic"
+        setting "Admin Type" 		"description"
+        setting "Input Type"        "textarea"
+	field
+        name 'emdChangeReason'
+        label 'emxEngineeringCentral.Label.ChangeReason'
+        businessobject  '$<attribute[attribute_emdChangeReason]>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"true"
+        setting "Field Type" 		"attribute"
+        setting "Admin Type"        "attribute_emdChangeReason"
+        setting "Input Type"        "textarea"
+    field
+        name "emdSection"
+        label "Section"
+        businessobject  "$<attribute[attribute_emdSection]>"
+        setting "Range Function" "getCommonAttributeRangeByOOTBUI"
+        setting "Input Type" "combobox"
+        setting "Admin Type" "attribute_emdSection"
+        setting "Registered Suite" "EngineeringCentral"
+        setting "Range Program" "emdCommonUtil"
+        setting "Field Type" "attribute"
+        setting "Editable"			"true"
+        setting "Group Name" "ROW03"
+    field
+        name "emdGenerator"
+        label "Generator"
+        businessobject  "$<attribute[attribute_emdGenerator]>"
+        setting "Input Type" "combobox"
+        setting "Admin Type" "attribute_emdGenerator"
+        setting "Registered Suite" "EngineeringCentral"
+        setting "Required" "false"
+        setting "Field Type" "attribute"
+        setting "Editable"			"true"
+        setting "Group Name" "ROW03"
+    field
+        name "emdADGPropulsion"
+        label "Propulsion"
+        businessobject  "$<attribute[attribute_emdADGPropulsion]>"
+        setting "Input Type" "combobox"
+        setting "Admin Type" "attribute_emdADGPropulsion"
+        setting "Registered Suite" "EngineeringCentral"
+        setting "Required" "false"
+        setting "Field Type" "attribute"
+        setting "Editable"			"true"
+        setting "Group Name" "ROW04"
+    field
+        name "emdFunctionalDept"
+        label "emxEngineeringCentral.Label.Sect"
+        businessobject  "$<attribute[attribute_emdFunctionalDept]>"
+        setting "Range Function" "getCommonAttributeRangeByOOTBUI"
+        setting "Input Type" "combobox"
+        setting "Admin Type" "attribute_emdFunctionalDept"
+        setting "Registered Suite" "EngineeringCentral"
+        setting "Range Program" "emdCommonUtil"
+        setting "Field Type" "attribute"
+        setting "Editable"			"true"
+        setting "Group Name" "ROW04"
+	field
+		name  'Owner'
+		label 'emxEngineeringCentral.Common.Owner'
+		businessobject '$<owner>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+        setting "Admin Type" 		"owner"
+        setting "format"            "user"
+    field
+        name  'Originated'
+        label 'emxEngineeringCentral.Label.Originated'
+        businessobject '$<originated>'
+        alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "format"            "date"
+        setting "Group Name"        "Date"
+    field
+        name  'Modified'
+        label 'emxEngineeringCentral.Label.Modified'
+        businessobject '$<modified>'
+        alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "format"            "date"
+        setting "Group Name"        "Date"
+property "installer" value "HHI"
+property "application" value "Framework"
+property "installed date" value "2020-06-19"
+property "original name" value "type_emdADG"
+property "version" value "V6R2019"
+;
+
+add property form_type_emdADG on program eServiceSchemaVariableMapping.tcl to form 'type_emdADG';

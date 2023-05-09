@@ -1,0 +1,25 @@
+del command 'APPCollaborationRequestsAccept';
+add command 'APPCollaborationRequestsAccept'
+	description	'Command for Accepting Collaboration Requests'
+	label	'emxComponents.CollaborationRequests.Accept'
+	href	'${COMPONENT_DIR}/emxComponentsCollaborationRequestAcceptRejectProcess.jsp?mode=accept'
+	alt	'emxComponents.CollaborationRequests.Accept'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAccept.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCollaborationRequestsAccept'
+	property	'version'	value	'R422'
+;
+modify menu APPCollaborationRequestsSummaryActionsToolBar add command APPCollaborationRequestsAccept order command APPCollaborationRequestsAccept 1;
+modify menu APPCollaborationRequestsSummaryToolBar add command APPCollaborationRequestsAccept order command APPCollaborationRequestsAccept 2;
+#channel ==>APPCollaborationRequestsSummaryActionsToolBarAPPCollaborationRequestsSummaryToolBar
+add property command_APPCollaborationRequestsAccept on program eServiceSchemaVariableMapping.tcl to command 'APPCollaborationRequestsAccept';

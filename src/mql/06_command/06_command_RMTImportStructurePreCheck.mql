@@ -1,0 +1,25 @@
+del command 'RMTImportStructurePreCheck';
+add command 'RMTImportStructurePreCheck'
+	description	'Pre-validation of RMTImportStructurePreCheck'
+	label	'emxRequirements.ActionLink.ImportStructure'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=ensureSpecStructureSelection&command=RMTImportStructure'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTImportStructurePreCheck'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeActionBar add command RMTImportStructurePreCheck order command RMTImportStructurePreCheck 3;
+modify menu RMTRichTextEditorActions add command RMTImportStructurePreCheck order command RMTImportStructurePreCheck 3;
+#channel ==>RMTSpecTreeActionBarRMTRichTextEditorActions
+add property command_RMTImportStructurePreCheck on program eServiceSchemaVariableMapping.tcl to command 'RMTImportStructurePreCheck';

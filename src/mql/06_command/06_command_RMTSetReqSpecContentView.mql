@@ -1,0 +1,30 @@
+del command 'RMTSetReqSpecContentView';
+add command 'RMTSetReqSpecContentView'
+	description	'Change the view to Content view'
+	label	'emxRequirements.Button.ContentView'
+	href	'${SUITE_DIR}/ChangeView.jsp?TargetView=sce&menu=RMTSpecStructureDisplay&categoryTreeName=type_SoftwareRequirementSpecification'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Mode'		'view'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isSCEUsed'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionSynchronize.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSetReqSpecContentView'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeToolbar add command RMTSetReqSpecContentView order command RMTSetReqSpecContentView 1;
+#channel ==>RMTSpecTreeToolbar
+add property command_RMTSetReqSpecContentView on program eServiceSchemaVariableMapping.tcl to command 'RMTSetReqSpecContentView';

@@ -1,0 +1,15 @@
+del menu 'LBCReferenceDocumentSummaryToolBar';
+add menu 'LBCReferenceDocumentSummaryToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	menu	'LBCReferenceDocumentSummaryActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCReferenceDocumentSummaryToolBar'
+	property 'version'	value	'R211'
+;
+add property menu_LBCReferenceDocumentSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LBCReferenceDocumentSummaryToolBar';

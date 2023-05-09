@@ -1,0 +1,23 @@
+del command 'PLCProductMakeGoverningProjectActionLink';
+add command 'PLCProductMakeGoverningProjectActionLink'
+	description	''
+	label	'emxProduct.ActionLink.MakeGoverningProject'
+	href	'${SUITE_DIR}/ProductUtil.jsp?mode=GoverningProject'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductMakeGoverningProjectActionLink'
+	property	'version'	value	'R421'
+;
+modify menu PLCProductRoadmapProjectsListToolBarActions add command PLCProductMakeGoverningProjectActionLink order command PLCProductMakeGoverningProjectActionLink 3;
+#channel ==>PLCProductRoadmapProjectsListToolBarActions
+add property command_PLCProductMakeGoverningProjectActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCProductMakeGoverningProjectActionLink';

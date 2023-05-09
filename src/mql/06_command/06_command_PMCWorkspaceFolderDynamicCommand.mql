@@ -1,0 +1,20 @@
+del command 'PMCWorkspaceFolderDynamicCommand';
+add command 'PMCWorkspaceFolderDynamicCommand'
+	description	'This command is used to dynamically create various commands in Menu tree of type Workspace Folder'
+	label	''
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxControlledFolder'
+	setting	'Dynamic Command Function'		'getDynamicCategoriesForWorkSpaceFolder'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkspaceFolderDynamicCommand'
+	property	'version'	value	'R417'
+;
+modify menu PMCtype_ControlledFolder add command PMCWorkspaceFolderDynamicCommand order command PMCWorkspaceFolderDynamicCommand 0;
+modify menu PMCtype_ProjectVault add command PMCWorkspaceFolderDynamicCommand order command PMCWorkspaceFolderDynamicCommand 0;
+#channel ==>PMCtype_ControlledFolderPMCtype_ProjectVault
+add property command_PMCWorkspaceFolderDynamicCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkspaceFolderDynamicCommand';

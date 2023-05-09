@@ -1,0 +1,23 @@
+del command 'PMCProjectDetailsPropertiesAlertPreferences';
+add command 'PMCProjectDetailsPropertiesAlertPreferences'
+	description	'AlertPreferences'
+	label	'emxProgramCentral.Common.Preferences'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=ProjectDetailsPreferences'
+	alt	'emxProgramCentral.Project.AlertPreferences'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.kindOf[$<type_ProjectSpace>]'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPreferences.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectDetailsPropertiesAlertPreferences'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCProjectPropertiesChannel
+add property command_PMCProjectDetailsPropertiesAlertPreferences on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectDetailsPropertiesAlertPreferences';

@@ -1,0 +1,20 @@
+#del attribute 'gscEventType';
+add attribute 'gscEventType'
+ type 'string'
+ description 'Event Type'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscEventType'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscEventType on program eServiceSchemaVariableMapping.tcl to attribute 'gscEventType';
+
+modify attribute 'gscEventType' add range= ET01; #Gate Review
+modify attribute 'gscEventType' add range= ET02; #R&D Review
+modify attribute 'gscEventType' add range= ET03; #External Project Review
+modify attribute 'gscEventType' add range= ET04; #Seed Project Review
+modify attribute 'gscEventType' add range= ET05; #Etc
+

@@ -1,0 +1,28 @@
+del command 'APPMemberListMembersRemoveSelectedActionLink';
+add command 'APPMemberListMembersRemoveSelectedActionLink'
+	description	'SpecCentral Command Object'
+	label	'emxComponents.Command.Remove'
+	href	'../components/emxMemberListUtil.jsp?action=remove'
+	alt	'emxComponents.Command.Remove'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'owner==context.user'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Remove.ConfirmMsg'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMemberListMembersRemoveSelectedActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPMemberListMembersBottomActionBar add command APPMemberListMembersRemoveSelectedActionLink order command APPMemberListMembersRemoveSelectedActionLink 0;
+modify menu APPMemberListMembersActionsToolBar add command APPMemberListMembersRemoveSelectedActionLink order command APPMemberListMembersRemoveSelectedActionLink 0;
+#channel ==>APPMemberListMembersBottomActionBarAPPMemberListMembersActionsToolBar
+add property command_APPMemberListMembersRemoveSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPMemberListMembersRemoveSelectedActionLink';

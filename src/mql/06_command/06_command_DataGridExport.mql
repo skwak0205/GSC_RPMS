@@ -1,0 +1,19 @@
+del command 'DataGridExport';
+add command 'DataGridExport'
+	description	''
+	label	'emxFramework.Common.Tooltip.Export'
+	href	'javascript:StandardFunctions.DataGridExport()'
+	alt	'emxFramework.Common.Tooltip.Export'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Function'		'canExport'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionExcelExport.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridExport'
+	property	'version'	value	'R423.HF5'
+;
+modify menu Tools add command DataGridExport order command DataGridExport 4;
+#channel ==>Tools
+add property command_DataGridExport on program eServiceSchemaVariableMapping.tcl to command 'DataGridExport';

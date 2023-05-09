@@ -1,0 +1,20 @@
+del command 'APPIssueSubscription';
+add command 'APPIssueSubscription'
+	description	'subscription command'
+	label	'emxComponents.Command.Subscriptions'
+	href	'${SUITE_DIR}/emxIssueSubscribeFS.jsp'
+	alt	'emxComponents.Command.Subscriptions'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Mask'		'read'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPIssueSubscription'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPIssueSubscription on program eServiceSchemaVariableMapping.tcl to command 'APPIssueSubscription';

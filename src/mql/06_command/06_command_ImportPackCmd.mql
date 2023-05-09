@@ -1,0 +1,16 @@
+del command 'ImportPackCmd';
+add command 'ImportPackCmd'
+	description	''
+	label	'emxPackagesManagement.label.PackageImport'
+	href	'${SUITE_DIR}/emxPackagesConfigurationImportFS.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'PackagesManagement'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'accessImportPackCmd'
+	setting	'Access Program'		'emxPackagesMngtProgram'
+	setting	'Image'		'${SUITE_DIR}/images/CustoPackImport.png'
+;
+modify menu ManagePackagesToolbar add command ImportPackCmd order command ImportPackCmd 1;
+#channel ==>ManagePackagesToolbar
+add property command_ImportPackCmd on program eServiceSchemaVariableMapping.tcl to command 'ImportPackCmd';

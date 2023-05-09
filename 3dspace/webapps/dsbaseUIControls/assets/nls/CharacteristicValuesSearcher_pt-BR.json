@@ -1,0 +1,11 @@
+{
+  "CVS.optionsChecker.searchEngine.notExisting.error": "Um mecanismo de pesquisa deve ser definido para encontrar valores!",
+  "CVS.optionsChecker.searchEngine.notFunction.error": "‘Uma função é esperada para o mecanismo de pesquisa!",
+  "CVS.optionsChecker.defaultValues.array.error": "Os valores padrão devem estar contidos em uma matriz!",
+  "CVS.optionsChecker.defaultValues.arrayObjects.error": "Uma matriz de objetos é esperada como valores padrão para a entrada!",
+  "CVS.optionsChecker.defaultValues.labelExpected.error": "Uma etiqueta para cada valor padrão é esperada!",
+  "CVS.optionsChecker.defaultValues.valueExpected.error": "Um valor para cada valor padrão é esperado!",
+  "CVS.optionsChecker.onSuggest.notFunction.error": "Uma função é esperada para a opção \"onSuggest\"!",
+  "CVS.optionsChecker.onSelect.notFunction.error": "Uma função é esperada para a opção \"onSelect\"!",
+  "CVS.optionsChecker.onCleanDataset.notFunction.error": "Uma função é esperada para a opção \"onCleanDataset\"!"
+}

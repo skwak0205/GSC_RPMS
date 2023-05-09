@@ -1,0 +1,15 @@
+del menu 'ECMChangeSubscriptionsToolbar';
+add menu 'ECMChangeSubscriptionsToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Label.ChangeSubscription'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMRemoveChangeSubscriptions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMChangeSubscriptionsToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMChangeSubscriptionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMChangeSubscriptionsToolbar';

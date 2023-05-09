@@ -1,0 +1,17 @@
+del channel 'FTRModelLogicalViewChannel';
+add channel 'FTRModelLogicalViewChannel'
+	description	''
+	height	'500'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Configuration'
+	setting		'ChannelID'		'2'
+	command 	'FTRModelCandidateLogicalFeatures','FTRModelCommittedLogicalFeatures','FTRModelCandidateLogicalFeaturesMobile','FTRModelCommittedLogicalFeaturesMobile','CFPModelMasterCompositionTreeCategory','CFPModelMasterCompositionTreeCategoryMobile'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelLogicalViewChannel'
+	property	'version'	value	'R418'
+;
+#portal ==>FTRModelLogicalViewPortal
+add property channel_FTRModelLogicalViewChannel on program eServiceSchemaVariableMapping.tcl to channel 'FTRModelLogicalViewChannel';

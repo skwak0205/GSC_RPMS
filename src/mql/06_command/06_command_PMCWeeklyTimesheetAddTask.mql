@@ -1,0 +1,20 @@
+del command 'PMCWeeklyTimesheetAddTask';
+add command 'PMCWeeklyTimesheetAddTask'
+	description	'Add Task'
+	label	'emxProgramCentral.WeeklyTimesheet.AddTask'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=PMCWeeklyTimesheetAddTask'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconAddTask.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWeeklyTimesheetAddTask'
+	property	'version'	value	'R421'
+;
+modify menu PMCWeeklyTimeSheetToolBarActions add command PMCWeeklyTimesheetAddTask order command PMCWeeklyTimesheetAddTask 1;
+#channel ==>PMCWeeklyTimeSheetToolBarActions
+add property command_PMCWeeklyTimesheetAddTask on program eServiceSchemaVariableMapping.tcl to command 'PMCWeeklyTimesheetAddTask';

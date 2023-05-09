@@ -1,0 +1,19 @@
+del command 'APPCreateWorkflow';
+add command 'APPCreateWorkflow'
+	description	'Command Object for creating the workflow'
+	label	'emxComponents.Workflow.CreateNew'
+	href	'${COMPONENT_DIR}/emxWorkflowCreateSelectProcessFS.jsp'
+	alt	'emxComponents.Workflow.CreateNew'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateWorkflow'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowSummaryActionsToolBar add command APPCreateWorkflow order command APPCreateWorkflow 1;
+#channel ==>APPWorkflowSummaryActionsToolBar
+add property command_APPCreateWorkflow on program eServiceSchemaVariableMapping.tcl to command 'APPCreateWorkflow';

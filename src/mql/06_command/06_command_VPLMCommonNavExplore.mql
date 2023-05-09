@@ -1,0 +1,12 @@
+del command 'VPLMCommonNavExplore';
+add command 'VPLMCommonNavExplore'
+	description	''
+	label	'VPLM.Label.Explore'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=VPLMCommonNavSummary&program=emxVPLMCommonNavUI:getEntity&expandProgram=emxVPLMCommonNavUI:expandEntity&multiColumnSort=false&sortColumnName=none&header=VPLM.Header.NavSummary&showRMB=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMCommonModeler'
+;
+modify menu type_SIMObjSimulationObjectGeneric add command VPLMCommonNavExplore order command VPLMCommonNavExplore 0;
+#channel ==>type_SIMObjSimulationObjectGeneric
+add property command_VPLMCommonNavExplore on program eServiceSchemaVariableMapping.tcl to command 'VPLMCommonNavExplore';

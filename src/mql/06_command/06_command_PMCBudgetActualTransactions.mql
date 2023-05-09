@@ -1,0 +1,20 @@
+del command 'PMCBudgetActualTransactions';
+add command 'PMCBudgetActualTransactions'
+	description	'commant to list Actual Transactions of Budget'
+	label	'emxProgramCentral.Budget.ProjectActualTransaction'
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=listActualTransactions&HelpMarker=emxhelpbudgettransactions'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'isActualTransactionEnabled'
+	setting	'Access Program'		'emxProjectBudget'
+	setting	'Hide Mode'		'mobile'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBudgetActualTransactions'
+	property	'version'	value	'R417'
+;
+#channel ==>PMCProjectBudgetChannel1PMCProjectFinancialChannelPMCFinancials
+add property command_PMCBudgetActualTransactions on program eServiceSchemaVariableMapping.tcl to command 'PMCBudgetActualTransactions';

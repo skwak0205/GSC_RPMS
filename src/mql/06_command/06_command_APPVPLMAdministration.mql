@@ -1,0 +1,13 @@
+del command 'APPVPLMAdministration';
+add command 'APPVPLMAdministration'
+	description	''
+	label	'emxPlmOnline.label.Admin'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPVPLMPeopleAdminPortal&toolbar=APPVPLMAdminToolBar&header=emxPlmOnline.label.PeopleAdministrationSpace'
+	alt	'emxPlmOnline.label.Admin'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+#channel ==>
+add property command_APPVPLMAdministration on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMAdministration';

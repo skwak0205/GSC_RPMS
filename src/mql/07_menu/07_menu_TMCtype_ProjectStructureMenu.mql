@@ -1,0 +1,15 @@
+del menu 'TMCtype_ProjectStructureMenu';
+add menu 'TMCtype_ProjectStructureMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	command	'TMCProjectStructure'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCtype_ProjectStructureMenu'
+	property 'version'	value	'Rossini'
+;
+add property menu_TMCtype_ProjectStructureMenu on program eServiceSchemaVariableMapping.tcl to menu 'TMCtype_ProjectStructureMenu';

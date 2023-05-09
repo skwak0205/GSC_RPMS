@@ -1,0 +1,28 @@
+del form 'type_HoldCR';
+add form 'type_HoldCR' web
+field #1
+	name	'Warning'
+	label	'EnterpriseChangeMgt.Label.Warning'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Default'		'EnterpriseChangeMgt.HoldCRDialog.WarningMsg'
+field #2
+	name	'Reason'
+	label	'EnterpriseChangeMgt.Label.Reason'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Required'		'true'
+	setting	'Validate'		'validateHoldCR'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'type_HoldCR'
+	property	'version'	value	'R216'
+;
+add property form_type_HoldCR on program eServiceSchemaVariableMapping.tcl to form 'type_HoldCR';

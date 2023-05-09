@@ -1,0 +1,28 @@
+del command 'PLCCreateProductActionLink';
+add command 'PLCCreateProductActionLink'
+	description	''
+	label	'emxProduct.Action.Product'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Products&typeChooser=true&autoNameChecked=false&nameField=both&form=type_CreateProduct&header=emxProduct.Heading.ProductCreate&HelpMarker=emxhelpproductcreate&submitAction=none&createJPO=emxProduct:createProductDerivation&Level=0&postProcessURL=../productline/ProductCreatePostProcess.jsp&postProcessJPO=emxProduct:copyProductAttributesToModel'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallCreateProduct.png'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateProductActionLink'
+	property	'version'	value	'R215'
+;
+modify menu PLCProductHierarchyProductMenu add command PLCCreateProductActionLink order command PLCCreateProductActionLink 1;
+modify menu PLCModelProductListTopActionBar add command PLCCreateProductActionLink order command PLCCreateProductActionLink 1;
+modify menu PLCProductListTopActionBar add command PLCCreateProductActionLink order command PLCCreateProductActionLink 0;
+#channel ==>PLCProductHierarchyProductMenuPLCModelProductListTopActionBarPLCProductListTopActionBar
+add property command_PLCCreateProductActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateProductActionLink';

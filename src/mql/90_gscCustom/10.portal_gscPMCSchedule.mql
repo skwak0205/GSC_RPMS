@@ -1,0 +1,15 @@
+#del portal 'gscPMCSchedule';
+add portal 'gscPMCSchedule'
+ description ''
+ label ''
+ href ''
+ channel gscPMCSchedule
+ setting 'Registered Suite'  'ProgramCentral'
+ property 'installer' value 'ENOVIAEngineering'
+ property 'application' value 'ProgramManagementBase'
+ property 'installed date' value '03-23-2023'
+ property 'original name' value 'gscPMCSchedule'
+ property 'version' value 'R216'
+;
+
+add property portal_gscPMCSchedule on program eServiceSchemaVariableMapping.tcl to portal 'gscPMCSchedule';

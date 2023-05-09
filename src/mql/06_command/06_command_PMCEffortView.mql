@@ -1,0 +1,21 @@
+del command 'PMCEffortView';
+add command 'PMCEffortView'
+	description	''
+	label	'emxProgramCentral.Button.EffortView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCProjectTaskEffort'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEffortView'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSTableMenu add command PMCEffortView order command PMCEffortView 5;
+#channel ==>PMCWBSTableMenu
+add property command_PMCEffortView on program eServiceSchemaVariableMapping.tcl to command 'PMCEffortView';

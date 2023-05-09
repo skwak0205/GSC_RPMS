@@ -1,0 +1,22 @@
+del command 'APPPushSubscribeUserGroupAction';
+add command 'APPPushSubscribeUserGroupAction'
+	description	''
+	label	'emxComponents.Button.PushSubscriptionUG'
+	href	'${COMPONENT_DIR}/emxSubscription.jsp?mode=PushSubscribe&userGroup=Yes'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'checkAccessForPushSubscription'
+	setting	'Access Program'		'emxCommonSubscription'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPushSubscribe.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'APPPushSubscribeUserGroupAction'
+	property	'version'	value	'R424.HF2'
+;
+modify menu APPSubscribeMenu add command APPPushSubscribeUserGroupAction order command APPPushSubscribeUserGroupAction 0;
+#channel ==>APPSubscribeMenu
+add property command_APPPushSubscribeUserGroupAction on program eServiceSchemaVariableMapping.tcl to command 'APPPushSubscribeUserGroupAction';

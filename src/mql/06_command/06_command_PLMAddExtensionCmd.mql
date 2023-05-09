@@ -1,0 +1,14 @@
+del command 'PLMAddExtensionCmd';
+add command 'PLMAddExtensionCmd'
+	description	'add extension(s) to the object'
+	label	'emxQualification.label.CustomerExtensionCmd'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=ExtensionToAddListTable&toolbar=PLMExtensionsToolbar&program=emxQualificationProgram:getObjectExtensions&freezePane=extName&selection=multiple&header=emxQualification.label.AddExtensionTableHeader&showPageURLIcon=false&customize=false&showClipboard=false&objectCompare=false&hideLaunchButton=true&HelpMarker=emxhelpcustomerext'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Qualification'
+	setting	'Access Function'		'accessCustomerExtensionCommand'
+	setting	'Access Program'		'emxQualificationProgram'
+;
+modify menu type_PlmParameter add command PLMAddExtensionCmd order command PLMAddExtensionCmd 0;
+#channel ==>type_PlmParameterECMChangePropertyChannel1PLCTestCasePropertiesRMTPropertiesRMTSpecificationsPropertiesRMTChapterPropertiesRMTCommentPropertiesRMTUseCasePropertiesRMTRequirementGroupProperties
+add property command_PLMAddExtensionCmd on program eServiceSchemaVariableMapping.tcl to command 'PLMAddExtensionCmd';

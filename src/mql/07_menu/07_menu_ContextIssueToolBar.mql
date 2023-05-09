@@ -1,0 +1,16 @@
+del menu 'ContextIssueToolBar';
+add menu 'ContextIssueToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Horizontal ToolBar'		'true'
+	menu	'ContextIssueToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'ContextIssueToolBar'
+	property 'version'	value	'R422'
+;
+add property menu_ContextIssueToolBar on program eServiceSchemaVariableMapping.tcl to menu 'ContextIssueToolBar';

@@ -1,0 +1,17 @@
+del channel 'ECMCA3DLiveAffectedItemChannel';
+add channel 'ECMCA3DLiveAffectedItemChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'EnterpriseChangeMgt'
+	setting		'ChannelID'		'2'
+	command 	'ECM3DliveLaunchCA'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCA3DLiveAffectedItemChannel'
+	property	'version'	value	'R216'
+;
+#portal ==>ECMCAAffectedItemsPortal
+add property channel_ECMCA3DLiveAffectedItemChannel on program eServiceSchemaVariableMapping.tcl to channel 'ECMCA3DLiveAffectedItemChannel';

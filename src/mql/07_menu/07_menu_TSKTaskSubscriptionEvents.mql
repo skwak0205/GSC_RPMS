@@ -1,0 +1,9 @@
+del menu 'TSKTaskSubscriptionEvents';
+add menu 'TSKTaskSubscriptionEvents'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'TSKTaskTransactionEvent'
+;
+add property menu_TSKTaskSubscriptionEvents on program eServiceSchemaVariableMapping.tcl to menu 'TSKTaskSubscriptionEvents';

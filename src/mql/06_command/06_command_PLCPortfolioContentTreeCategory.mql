@@ -1,0 +1,17 @@
+del command 'PLCPortfolioContentTreeCategory';
+add command 'PLCPortfolioContentTreeCategory'
+	description	'To view the contents of the Portfolio in Context'
+	label	'emxProduct.Tree.Contents'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCPortfolioContentList&program=emxPortfolio:getContents&header=emxProduct.Heading.Contents&selection=multiple&toolbar=PLCPortfolioContentListToolbar&Export=true&sortColumnName=Name&HelpMarker=emxhelpcontentlist&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPortfolioContentTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_Portfolio add command PLCPortfolioContentTreeCategory order command PLCPortfolioContentTreeCategory 0;
+#channel ==>type_Portfolio
+add property command_PLCPortfolioContentTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCPortfolioContentTreeCategory';

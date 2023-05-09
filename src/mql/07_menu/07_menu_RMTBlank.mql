@@ -1,0 +1,13 @@
+del menu 'RMTBlank';
+add menu 'RMTBlank'
+	description	''
+	label	''
+	href	''
+	alt	''
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTBlank'
+	property 'version'	value	'V6R2013'
+;
+add property menu_RMTBlank on program eServiceSchemaVariableMapping.tcl to menu 'RMTBlank';

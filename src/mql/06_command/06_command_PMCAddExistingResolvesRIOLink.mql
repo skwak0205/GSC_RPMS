@@ -1,0 +1,21 @@
+del command 'PMCAddExistingResolvesRIOLink';
+add command 'PMCAddExistingResolvesRIOLink'
+	description	'Add Existing to Resolves Command Object'
+	label	'emxProgramCentral.Command.PMCAddExistingResolvesLink'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=searchResolvesRIO'
+	alt	'emxProgramCentral.Command.PMCAddExistingResolvesLink'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddExistingResolvesRIOLink'
+	property	'version'	value	'R421.HF6'
+;
+modify menu PMCResolvesItemsRIOToolBarActions add command PMCAddExistingResolvesRIOLink order command PMCAddExistingResolvesRIOLink 1;
+#channel ==>PMCResolvesItemsRIOToolBarActions
+add property command_PMCAddExistingResolvesRIOLink on program eServiceSchemaVariableMapping.tcl to command 'PMCAddExistingResolvesRIOLink';

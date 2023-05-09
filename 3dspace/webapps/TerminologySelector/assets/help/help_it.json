@@ -1,0 +1,8 @@
+{
+"TerminologyManagementCommand.Title":"Gestisci definizione struttura di navigazione",
+"TerminologyManagementCommand.ShortHelp":"Gestisci i riferimenti associati alle strutture di navigazione e le istanze associate ai nodi di navigazione.",
+"AssociateTerminologiesCommand.Title":"Aggiungi alla struttura di navigazione",
+"AssociateTerminologiesCommand.ShortHelp":"Associa i riferimenti selezionati alla struttura di navigazione.",
+"AssociateTermsCommand.Title":"Aggiungi al nodo di navigazione",
+"AssociateTermsCommand.ShortHelp":"Associa le istanze selezionate al nodo di navigazione."
+}

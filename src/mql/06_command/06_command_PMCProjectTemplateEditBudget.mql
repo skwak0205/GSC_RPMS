@@ -1,0 +1,28 @@
+del command 'PMCProjectTemplateEditBudget';
+add command 'PMCProjectTemplateEditBudget'
+	description	''
+	label	'emxProgramCentral.Budget.ProjectTemplateEditBudget'
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=edit&HelpMarker=emxhelpprojectemplatebudgetedit'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isBudgetCreated'
+	setting	'Access Program'		'emxProjectBudget'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateEditBudget'
+	property	'version'	value	'R424'
+;
+modify menu PMCProjectTemplateBudgetToolbarActions add command PMCProjectTemplateEditBudget order command PMCProjectTemplateEditBudget 2;
+#channel ==>PMCProjectTemplateBudgetToolbarActions
+add property command_PMCProjectTemplateEditBudget on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateEditBudget';

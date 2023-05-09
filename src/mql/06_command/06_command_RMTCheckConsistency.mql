@@ -1,0 +1,19 @@
+del command 'RMTCheckConsistency';
+add command 'RMTCheckConsistency'
+	description	'Show report for Covered Structures and Refined Structures'
+	label	'emxRequirements.SCE.Label.CheckConsistencyCmd'
+	href	'javascript:launchCheckConsistencyCmd('consistency')'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Function'		'isCheckConsistencyAvailable'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'${SUITE_DIR}/images/iconReqCmdCheckConsistentLinks.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCheckConsistency'
+	property	'version'	value	'V6R2016'
+;
+modify menu RMTSpecTreeToolbar add command RMTCheckConsistency order command RMTCheckConsistency 0;
+#channel ==>RMTSpecTreeToolbar
+add property command_RMTCheckConsistency on program eServiceSchemaVariableMapping.tcl to command 'RMTCheckConsistency';

@@ -1,0 +1,22 @@
+del command 'TMCProperties';
+add command 'TMCProperties'
+	description	'Workspace Vault Properties Command Object'
+	label	'emxFramework.Command.Properties'
+	href	'${SUITE_DIR}/emxTeamFoldersWorkspaceDetailsFS.jsp'
+	alt	'emxFramework.Command.Alt.Properties'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProperties.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCProperties'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCProperties on program eServiceSchemaVariableMapping.tcl to command 'TMCProperties';

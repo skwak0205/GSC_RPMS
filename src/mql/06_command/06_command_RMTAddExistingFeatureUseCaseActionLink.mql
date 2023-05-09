@@ -1,0 +1,23 @@
+del command 'RMTAddExistingFeatureUseCaseActionLink';
+add command 'RMTAddExistingFeatureUseCaseActionLink'
+	description	''
+	label	'emxRequirements.ActionLink.AddExisting'
+	href	'${SUITE_DIR}/RequirementStructureAddExisting.jsp?table=RMTSearchUseCasesTable&toolbar=none&editLink=false&addType=UseCase&relName=relationship_FeatureUseCase&HelpMarker=emxhelpfullsearch'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTAddExistingFeatureUseCaseActionLink'
+	property	'version'	value	'R216'
+;
+modify menu RMTFeatureUseCaseTopActionBar add command RMTAddExistingFeatureUseCaseActionLink order command RMTAddExistingFeatureUseCaseActionLink 0;
+#channel ==>RMTFeatureUseCaseTopActionBar
+add property command_RMTAddExistingFeatureUseCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTAddExistingFeatureUseCaseActionLink';

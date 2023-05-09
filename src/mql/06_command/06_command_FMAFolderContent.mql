@@ -1,0 +1,22 @@
+del command 'FMAFolderContent';
+add command 'FMAFolderContent'
+	description	''
+	label	'enoFolderManagement.Filter.FolderActualContent'
+	href	''
+	alt	'FolderActualContent'
+	setting	'Registered Suite'		'FolderManagement'
+	setting	'Licensed Product'		'ENOFOL2_TP'
+	setting	'function'		'getFolderContentIds'
+	setting	'program'		'enoFolderManagementFolder'
+	setting	'resetId'		'false'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'FMAFolderContent'
+	property	'version'	value	'R417.HF2'
+;
+modify menu FMAFolderContentProgramMenu add command FMAFolderContent order command FMAFolderContent 0;
+#channel ==>FMAFolderContentProgramMenu
+add property command_FMAFolderContent on program eServiceSchemaVariableMapping.tcl to command 'FMAFolderContent';

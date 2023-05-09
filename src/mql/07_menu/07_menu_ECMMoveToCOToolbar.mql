@@ -1,0 +1,19 @@
+del menu 'ECMMoveToCOToolbar';
+add menu 'ECMMoveToCOToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.MoveToActions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Image'		'${COMMON_DIR}/images/I_ENOMoveToChangeItem.png'
+	menu	'ECMMoveToCOMenu'
+	menu	'ECMMoveToCRMenu'
+	command	'AEFSeparator2'
+	menu	'ECMMoveToCAMenu'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMMoveToCOToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMMoveToCOToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMMoveToCOToolbar';

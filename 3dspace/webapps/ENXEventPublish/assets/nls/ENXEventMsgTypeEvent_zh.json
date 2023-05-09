@@ -1,0 +1,17 @@
+{
+  "created": "已创建",
+  "statusChanged": "已更改状态",
+  "Change": "更改操作",
+  "Document": "文档",
+  "Engineering Item": "工程项目",
+  "Manufacturing Item": "制造项目",
+  "Manufacturing Process": "制造流程",
+  "dsxcad": "CAD 设计集成",
+  "Change Order": "更改指令",
+  "computed": "已计算",
+  "Production Plan": "生产计划",
+  "exchangejobs": "交换作业",
+  "versioned": "已进行版本控制",
+  "SupplierCompany": "供应商公司",
+  "connected": "已连接"
+}

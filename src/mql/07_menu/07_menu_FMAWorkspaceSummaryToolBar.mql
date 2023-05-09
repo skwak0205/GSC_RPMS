@@ -1,0 +1,17 @@
+del menu 'FMAWorkspaceSummaryToolBar';
+add menu 'FMAWorkspaceSummaryToolBar'
+	description	''
+	label	'enoFolderManagement.Toolbar.Actions'
+	href	''
+	alt	'enoFolderManagement.Toolbar.Actions'
+	setting	'Registered Suite'		'FolderManagement'
+	command	'FMAWorkspaceSummaryCreateCommand'
+	command	'TMCWorkspaceSummaryDeleteSelected'
+	command	'TMCChangeOwnerWorkspaceActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'FolderManagement'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'FMAWorkspaceSummaryToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_FMAWorkspaceSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'FMAWorkspaceSummaryToolBar';

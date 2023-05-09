@@ -1,0 +1,22 @@
+del command 'PMCResourceRequestPushSubscription';
+add command 'PMCResourceRequestPushSubscription'
+	description	''
+	label	'emxProgramCentral.ResourceRequest.PushSubscription'
+	href	'${COMPONENT_DIR}/emxPushSubscriptionDialog.jsp?showClipboard=false&editLink=false&expandLevelFilter=false&objectBased=false&multiColumnSort=false&categoryTreeName=null&suiteKey=Components&HelpMarker=emxhelpsubscriptionspush'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPushSubscribe.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestPushSubscription'
+	property	'version'	value	'R421.HF2'
+;
+modify menu PMCResourceRequestCreateSubscription add command PMCResourceRequestPushSubscription order command PMCResourceRequestPushSubscription 1;
+modify menu PMCResourcePoolRequestToolbar add command PMCResourceRequestPushSubscription order command PMCResourceRequestPushSubscription 0;
+#channel ==>PMCResourceRequestCreateSubscriptionPMCResourcePoolRequestToolbar
+add property command_PMCResourceRequestPushSubscription on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestPushSubscription';

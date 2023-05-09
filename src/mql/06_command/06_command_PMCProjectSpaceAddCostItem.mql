@@ -1,0 +1,25 @@
+del command 'PMCProjectSpaceAddCostItem';
+add command 'PMCProjectSpaceAddCostItem'
+	description	'Command for Adding The Cost item'
+	label	'emxProgramCentral.Button.Add'
+	href	'${SUITE_DIR}/emxProgramCentralCostItemCreateDialogFS.jsp?cleanSession=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[delete] == true)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpaceAddCostItem'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectSpaceCostItemToolBarActions add command PMCProjectSpaceAddCostItem order command PMCProjectSpaceAddCostItem 1;
+#channel ==>PMCProjectSpaceCostItemToolBarActions
+add property command_PMCProjectSpaceAddCostItem on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpaceAddCostItem';

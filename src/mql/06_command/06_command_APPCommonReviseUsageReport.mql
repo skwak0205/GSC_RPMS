@@ -1,0 +1,23 @@
+del command 'APPCommonReviseUsageReport';
+add command 'APPCommonReviseUsageReport'
+	description	'Revise Usage Report'
+	label	'emxComponents.Command.ReviseSearch'
+	href	'${COMMON_DIR}/emxSearch.jsp?defaultSearch=APPCommonShowUsageReport&helpMarker=emxhelpsearchusagereport'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReviseSearch.png'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonReviseUsageReport'
+	property	'version'	value	'R418'
+;
+modify menu APPCommonReviseUsageReportToolbar add command APPCommonReviseUsageReport order command APPCommonReviseUsageReport 0;
+#channel ==>APPCommonReviseUsageReportToolbar
+add property command_APPCommonReviseUsageReport on program eServiceSchemaVariableMapping.tcl to command 'APPCommonReviseUsageReport';

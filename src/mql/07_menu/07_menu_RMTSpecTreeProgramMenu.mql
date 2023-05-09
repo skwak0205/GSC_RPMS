@@ -1,0 +1,16 @@
+del menu 'RMTSpecTreeProgramMenu';
+add menu 'RMTSpecTreeProgramMenu'
+	description	''
+	label	'emxRequirements.ActionLink.ScopeChooser'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTSpecTreeUnfilteredView'
+	command	'RMTSpecTreeWithSubView'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecTreeProgramMenu'
+	property 'version'	value	'V6R2015x'
+;
+add property menu_RMTSpecTreeProgramMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecTreeProgramMenu';

@@ -1,0 +1,20 @@
+del command 'ECMRefreshSummaryReport';
+add command 'ECMRefreshSummaryReport'
+	description	'Refresh Summary Report Command'
+	label	'EnterpriseChangeMgt.Common.SummaryReport.RefreshSummaryReport'
+	href	'${SUITE_DIR}/emxECMPdfSummaryReportFS.jsp?generateSummary=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Common.SummaryReport.RefreshConfirmationMessage'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMRefreshSummaryReport'
+	property	'version'	value	'R216'
+;
+modify menu ECMSummaryReportActionsMenu add command ECMRefreshSummaryReport order command ECMRefreshSummaryReport 0;
+#channel ==>ECMSummaryReportActionsMenu
+add property command_ECMRefreshSummaryReport on program eServiceSchemaVariableMapping.tcl to command 'ECMRefreshSummaryReport';

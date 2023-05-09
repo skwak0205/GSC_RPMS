@@ -1,0 +1,16 @@
+del channel 'PMCAccess_ResourcePlan';
+add channel 'PMCAccess_ResourcePlan'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCProjectMember','PMCResourcePlan','PMCProjectMemberTimesheet'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAccess_ResourcePlan'
+	property	'version'	value	'R417'
+;
+#portal ==>PMCAccess_ResourcePlan
+add property channel_PMCAccess_ResourcePlan on program eServiceSchemaVariableMapping.tcl to channel 'PMCAccess_ResourcePlan';

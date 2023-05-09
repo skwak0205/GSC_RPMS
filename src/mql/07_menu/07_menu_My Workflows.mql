@@ -1,0 +1,16 @@
+del menu 'My Workflows';
+add menu 'My Workflows'
+	description	''
+	label	'emxComponents.Menu.Workflows'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPMyWorkflow'
+	command	'APPProcessDefinition'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'My Workflows'
+	property 'version'	value	'R417'
+;
+add property menu_MyWorkflows on program eServiceSchemaVariableMapping.tcl to menu 'My Workflows';

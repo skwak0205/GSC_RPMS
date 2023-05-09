@@ -1,0 +1,16 @@
+del channel 'PMCTaskReferenceDocumentChannel2';
+add channel 'PMCTaskReferenceDocumentChannel2'
+	description	'PMCTaskReferenceDocumentChannel2'
+	height	'260'
+	label	'PMCTaskReferenceDocumentChannel2'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCReferenceDocumentURL'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskReferenceDocumentChannel2'
+	property	'version'	value	'R421'
+;
+#portal ==>PMCTaskReferenceDocumentPortal
+add property channel_PMCTaskReferenceDocumentChannel2 on program eServiceSchemaVariableMapping.tcl to channel 'PMCTaskReferenceDocumentChannel2';

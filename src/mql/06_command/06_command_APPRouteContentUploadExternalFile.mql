@@ -1,0 +1,29 @@
+del command 'APPRouteContentUploadExternalFile';
+add command 'APPRouteContentUploadExternalFile'
+	description	'Upload External File'
+	label	'emxComponents.Common.Upload'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?showDescription=required&JPOName=emxRouteDocumentBase&showFolder=required&folderURL=emxCommonSelectWorkspaceFolderDialogFS.jsp&parentRelName=relationship_VaultedDocuments&objectAction=create&routeContent=true&parentId=RouteWizard'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canUpload'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteContentUploadExternalFile'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteContentSummaryCreateNew add command APPRouteContentUploadExternalFile order command APPRouteContentUploadExternalFile 1;
+#channel ==>APPRouteContentSummaryCreateNew
+add property command_APPRouteContentUploadExternalFile on program eServiceSchemaVariableMapping.tcl to command 'APPRouteContentUploadExternalFile';

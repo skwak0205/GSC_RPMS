@@ -1,0 +1,22 @@
+del command 'FTRDependencyReportProductListActionLink';
+add command 'FTRDependencyReportProductListActionLink'
+	description	''
+	label	'emxProduct.ActionLink.DependencyReport'
+	href	'${SUITE_DIR}/DependencyReportPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallReport.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDependencyReportProductListActionLink'
+	property	'version'	value	'R215'
+;
+modify menu PLCProductListToolBarReports add command FTRDependencyReportProductListActionLink order command FTRDependencyReportProductListActionLink 2;
+#channel ==>PLCProductListToolBarReports
+add property command_FTRDependencyReportProductListActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRDependencyReportProductListActionLink';

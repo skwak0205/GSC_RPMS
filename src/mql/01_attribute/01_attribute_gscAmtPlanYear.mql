@@ -1,0 +1,14 @@
+#del attribute 'gscAmtPlanYear';
+add attribute 'gscAmtPlanYear'
+ type 'string'
+ description '연간 예산액 '
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscAmtPlanYear'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscAmtPlanYear on program eServiceSchemaVariableMapping.tcl to attribute 'gscAmtPlanYear';
+

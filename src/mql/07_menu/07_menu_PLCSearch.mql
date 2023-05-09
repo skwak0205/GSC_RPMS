@@ -1,0 +1,21 @@
+del menu 'PLCSearch';
+add menu 'PLCSearch'
+	description	''
+	label	'emxProduct.Menu.ProductLine'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconMenuProductLine.gif'
+	command	'PLCGlobalSearchProductLinesCommand'
+	command	'PLCGlobalSearchModelsCommand'
+	command	'PLCGlobalSearchProductsCommand'
+	command	'PLCGlobalSearchBuildsCommand'
+	command	'PLCGlobalSearchTestCasesCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCSearch'
+	property 'version'	value	'R216'
+;
+add property menu_PLCSearch on program eServiceSchemaVariableMapping.tcl to menu 'PLCSearch';

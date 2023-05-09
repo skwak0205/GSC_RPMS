@@ -1,0 +1,23 @@
+del command 'PLCPortfolioAddExistingContentActionLink';
+add command 'PLCPortfolioAddExistingContentActionLink'
+	description	'To link an existing model or a product to the context Portfolio'
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Products,type_Model&table=PLCSearchModelsProductsList&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_Portfolio&from=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPortfolioAddExistingContentActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCPortfolioContentListToolbarActions add command PLCPortfolioAddExistingContentActionLink order command PLCPortfolioAddExistingContentActionLink 1;
+#channel ==>PLCPortfolioContentListToolbarActions
+add property command_PLCPortfolioAddExistingContentActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCPortfolioAddExistingContentActionLink';

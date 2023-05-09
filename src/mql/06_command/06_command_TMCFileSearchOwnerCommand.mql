@@ -1,0 +1,21 @@
+del command 'TMCFileSearchOwnerCommand';
+add command 'TMCFileSearchOwnerCommand'
+	description	''
+	label	'emxTeamCentral.Common.FindPeople'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxTeamSearch:getFileSearchOwnerChooser&table=TMCFileSearchOwnerResult&form=TMCFileSearchOwnerChooserForm&searchCommand=TMCFileSearchOwnerCommand&submitURL=../components/emxCommonSelectPerson.jsp&SubmitLabel=emxComponents.Common.Done&header=emxComponents.AddPeople.SelectPeople&suiteKey=Components&displayFullName=true'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCFileSearchOwnerCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCFileSearchOwnerChooser add command TMCFileSearchOwnerCommand order command TMCFileSearchOwnerCommand 0;
+#channel ==>TMCFileSearchOwnerChooser
+add property command_TMCFileSearchOwnerCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCFileSearchOwnerCommand';

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="${rpms.driver}"/>
+                <property name="url" value="${rpms.url}"/>
+                <property name="username" value="${rpms.username}"/>
+                <property name="password" value="${rpms.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="gscDBConfig/mapper/user-mapper.xml" />
+        <mapper resource="gscDBConfig/mapper/dept-mapper.xml" />
+        <mapper resource="gscDBConfig/mapper/patent-mapper.xml" />
+        <mapper resource="gscDBConfig/mapper/approvalLog-mapper.xml" />
+        <mapper resource="gscDBConfig/mapper/financial-mapper.xml" />
+    </mappers>
+</configuration>

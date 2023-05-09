@@ -1,0 +1,27 @@
+del command 'TMCWorkspaceSaveASTemplateCommand';
+add command 'TMCWorkspaceSaveASTemplateCommand'
+	description	''
+	label	'emxTeamCentral.WorkspaceDetails.SaveAsTemplate'
+	href	'${SUITE_DIR}/emxTeamWorkspaceTemplateCreateProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'(current.access[toconnect] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSaveWorkspaceAsTemplate.png'
+	setting	'Confirm Message'		'emxTeamCentral.Workspace.WSTemplateCreationAlert'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceSaveASTemplateCommand'
+	property	'version'	value	'R422.HF5'
+;
+modify menu TMCWorkspaceDetailsActionsToolBar add command TMCWorkspaceSaveASTemplateCommand order command TMCWorkspaceSaveASTemplateCommand 2;
+#channel ==>TMCWorkspaceDetailsActionsToolBar
+add property command_TMCWorkspaceSaveASTemplateCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceSaveASTemplateCommand';

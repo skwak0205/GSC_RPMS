@@ -1,0 +1,30 @@
+del command 'LBCPartLibraryContentAddExisting';
+add command 'LBCPartLibraryContentAddExisting'
+	description	'Part Family Add Existing'
+	label	'emxDocumentCentral.ActionBarCmd.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_PartFamily&formInclutionList=PART_FAMILY_BASE_NUMBER,PART_FAMILY_NAME_GENERATOR_ON,PART_FAMILY_PATTERN_SEPARATOR,PART_FAMILY_PREFIX_PATTERN,PART_FAMILY_SEQUENCE_PATTERN,PART_FAMILY_SUFFIX_PATTERN&hideHeader=true&header=emxLibraryCentral.Search.Results&selection=multiple&excludeOIDprogram=emxLibraryCentralFindObjects:getAddExisitingExcludeOIDs&submitURL=../documentcentral/emxLibraryCentralAddExistingProcess.jsp?HelpMarker=emxhelpfullsearch&useMode=addClass'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromConnect'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'false'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCPartLibraryContentAddExisting'
+	property	'version'	value	'R423.HF4'
+;
+modify menu LCPartFamilyActionsToolBar add command LBCPartLibraryContentAddExisting order command LBCPartLibraryContentAddExisting 2;
+#channel ==>LCPartFamilyActionsToolBar
+add property command_LBCPartLibraryContentAddExisting on program eServiceSchemaVariableMapping.tcl to command 'LBCPartLibraryContentAddExisting';

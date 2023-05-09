@@ -1,0 +1,29 @@
+del command 'PMCCreateNewTaskDeliverable';
+add command 'PMCCreateNewTaskDeliverable'
+	description	'Create New Document object'
+	label	'emxProgramCentral.Command.Document'
+	href	'${SUITE_DIR}/emxProgramCentralDocumentCreatePreProcess.jsp?documentAction=create&fileRequired=false&mode=taskDeliverable'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'((type.kindOf[$<type_Quality>]==false) && ($<current>!=Controlled))'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForDeliverable'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateNewTaskDeliverable'
+	property	'version'	value	'R422'
+;
+modify menu PMCDeliverableSummaryCreateNew add command PMCCreateNewTaskDeliverable order command PMCCreateNewTaskDeliverable 1;
+#channel ==>PMCDeliverableSummaryCreateNew
+add property command_PMCCreateNewTaskDeliverable on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateNewTaskDeliverable';

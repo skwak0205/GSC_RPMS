@@ -1,0 +1,25 @@
+del command 'PMCResourcePoolResourceManagerFilter';
+add command 'PMCResourcePoolResourceManagerFilter'
+	description	''
+	label	'emxProgramCentral.ResourcePool.ResourceManagerFilter'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCResourcePoolSummary&program=emxResourcePool:getTableMyResourcePoolsData&toolbar=PMCResourcePoolToolBar,PMCResourcePoolFilterMenu&freezePane=Name&selection=multiple&HelpMarker=emxhelpresourcepoollist&header=emxProgramCentral.Common.ResourcePool&expandProgram=emxResourcePool:getTableExpandChildResourcePoolsData'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Range Function'		'getAllResourceManagers'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Range Program'		'emxResourcePool'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolResourceManagerFilter'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourcePoolFilterMenu add command PMCResourcePoolResourceManagerFilter order command PMCResourcePoolResourceManagerFilter 0;
+#channel ==>PMCResourcePoolFilterMenu
+add property command_PMCResourcePoolResourceManagerFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePoolResourceManagerFilter';

@@ -1,0 +1,23 @@
+del command 'ECMAddExistingPrerequisites';
+add command 'ECMAddExistingPrerequisites'
+	description	'Prerequisites Add Existing Command Object'
+	label	'EnterpriseChangeMgt.Command.AddExisting'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=AddExistingPrerequisiteCOs&targetRelName=relationship_Prerequisite&isFrom=true&excludeOIDprogram=enoECMChangeUtil:excludePrerequisites'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Propose].value || current==policy.property[state_Prepare].value || current==policy.property[state_InReview].value) && (owner==context.user)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'false'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCODependencyAuthoringActivated'
+	setting	'Access Program'		'enoECMChangeUX'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAddExistingPrerequisites'
+	property	'version'	value	'R216'
+;
+modify menu ECMPrerequisiteActionsToolbar add command ECMAddExistingPrerequisites order command ECMAddExistingPrerequisites 1;
+#channel ==>ECMPrerequisiteActionsToolbar
+add property command_ECMAddExistingPrerequisites on program eServiceSchemaVariableMapping.tcl to command 'ECMAddExistingPrerequisites';

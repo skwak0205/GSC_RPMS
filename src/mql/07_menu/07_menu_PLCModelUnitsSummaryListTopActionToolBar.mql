@@ -1,0 +1,15 @@
+del menu 'PLCModelUnitsSummaryListTopActionToolBar';
+add menu 'PLCModelUnitsSummaryListTopActionToolBar'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCModelUnitsCreateCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCModelUnitsSummaryListTopActionToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_PLCModelUnitsSummaryListTopActionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCModelUnitsSummaryListTopActionToolBar';

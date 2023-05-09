@@ -1,0 +1,2 @@
+del table 'ENCEBOMIndentedSummarySB' system;
+add table 'ENCEBOMIndentedSummarySB' system

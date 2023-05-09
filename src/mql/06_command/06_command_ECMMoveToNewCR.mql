@@ -1,0 +1,23 @@
+del command 'ECMMoveToNewCR';
+add command 'ECMMoveToNewCR'
+	description	'The Move to New CR Actions Link on the CR Affected Items Page'
+	label	'EnterpriseChangeMgt.Command.MovetoNew'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=MoveToNewCR&targetRelName=relationship_ChangeAction&isFrom=true&portalFrame=ECMCRCOAffectedItems'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Create].value || current==policy.property[state_Evaluate].value) && (owner==context.user) && !($<interface[interface_ChangeOnHold]=="TRUE">)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_Moveto22.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMoveToNewCR'
+	property	'version'	value	'R417'
+;
+modify menu ECMMoveToCRMenu add command ECMMoveToNewCR order command ECMMoveToNewCR 0;
+#channel ==>ECMMoveToCRMenu
+add property command_ECMMoveToNewCR on program eServiceSchemaVariableMapping.tcl to command 'ECMMoveToNewCR';

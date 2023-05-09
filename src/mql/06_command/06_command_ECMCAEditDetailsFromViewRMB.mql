@@ -1,0 +1,22 @@
+del command 'ECMCAEditDetailsFromViewRMB';
+add command 'ECMCAEditDetailsFromViewRMB'
+	description	'Edit Change'
+	label	'EnterpriseChangeMgt.Command.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ChangeActionSlidein&formHeader=EnterpriseChangeMgt.Heading.EditCA&HelpMarker=emxhelpchangeactionedit&mode=edit&type=type_ChangeAction&postProcessURL=../enterprisechangemgtapp/ECMCommonRefresh.jsp?functionality=editCAFromRMB'
+	alt	'EnterpriseChangeMgt.Command.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current.access[modify] == TRUE && $<interface[interface_ChangeOnHold] != "TRUE">)'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCAEditDetailsFromViewRMB'
+	property	'version'	value	'R417'
+;
+modify menu ECMCAPropertiesToolbarRMB add command ECMCAEditDetailsFromViewRMB order command ECMCAEditDetailsFromViewRMB 0;
+#channel ==>ECMCAPropertiesToolbarRMB
+add property command_ECMCAEditDetailsFromViewRMB on program eServiceSchemaVariableMapping.tcl to command 'ECMCAEditDetailsFromViewRMB';

@@ -1,0 +1,16 @@
+del command 'APPMeetingAgendaItemAgainstType';
+add command 'APPMeetingAgendaItemAgainstType'
+	description	'Find Object command for Agenda Item'
+	label	'emxComponents.Command.SearchReportedAgainstLink'
+	href	'${SUITE_DIR}/emxFindForm.jsp?suiteKey=Components&program=emxCommonIssueBase:findResolvedToReportedAgainst&table=IssueAddExistingSearchGenericTable&CommandName=APPMeetingAgendaItemAgainstType&sortColumnName=Name&HelpMarker=emxhelpsearchresults&selection=multiple'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingAgendaItemAgainstType'
+	property	'version'	value	'R207'
+;
+modify menu APPAgendaItemTopicChooser add command APPMeetingAgendaItemAgainstType order command APPMeetingAgendaItemAgainstType 0;
+#channel ==>APPAgendaItemTopicChooser
+add property command_APPMeetingAgendaItemAgainstType on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingAgendaItemAgainstType';

@@ -1,0 +1,27 @@
+del command 'LCRetentionDelete';
+add command 'LCRetentionDelete'
+	description	'For Deleteing Retention Schedule'
+	label	'emxDocumentCentral.ActionBarCmd.DeleteSelected'
+	href	'${SUITE_DIR}/emxLibraryCentralRetentionScheduleDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxDocumentCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Record Retention Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCRetentionDelete'
+	property	'version'	value	'R422'
+;
+modify menu LCRetentionRecordSummaryToolbarActions add command LCRetentionDelete order command LCRetentionDelete 0;
+#channel ==>LCRetentionRecordSummaryToolbarActions
+add property command_LCRetentionDelete on program eServiceSchemaVariableMapping.tcl to command 'LCRetentionDelete';

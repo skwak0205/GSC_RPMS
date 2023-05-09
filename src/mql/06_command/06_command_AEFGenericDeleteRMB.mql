@@ -1,0 +1,25 @@
+del command 'AEFGenericDeleteRMB';
+add command 'AEFGenericDeleteRMB'
+	description	'Generic Delete RMB Command'
+	label	'emxFramework.GenericDelete.label'
+	href	'${COMMON_DIR}/emxGenericDeleteProcess.jsp'
+	alt	'emxFramework.GenericDelete.label'
+	setting	'Target Location'		'listHidden'
+	setting	'Dynamic Command Program'		'emxAEFUtil'
+	setting	'Dynamic Command Function'		'getGenericDelete'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxFramework.GenericDelete.confirmMessage'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFGenericDeleteRMB'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_AEFGenericDeleteRMB on program eServiceSchemaVariableMapping.tcl to command 'AEFGenericDeleteRMB';

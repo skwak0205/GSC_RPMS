@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd ">
+  <ds:service name="bps.publicroutes">
+        <ds:license products="ENOBUPS_AP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getUserRoutes" returnedData="idsAndData">
+             <ds:arg arg-name="ispublicservice" arg-value="Yes"/>
+            </ds:jpo>
+			<ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="updateRoutes" processMultiple="true">
+			<ds:arg arg-name="ispublicservice" arg-value="Yes"/>
+            </ds:updatejpo>
+        </ds:data>
+        <ds:ref-subservice name="bps.publicroute-fields"/>
+        <ds:ref-subservice name="members" referenceName="bps.routemember-fields" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteMembers" returnedData="idsAndData">
+                <ds:arg arg-name="ispublicservice" arg-value="Yes"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:ref-subservice>
+        <ds:ref-subservice name="contents" referenceName="bps.routecontentpublic-fields" includeByDefault="no">
+              <ds:data>
+                 <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteContents" returnedData="idsAndData">
+                  <ds:arg arg-name="ispublicservice" arg-value="Yes"/>
+                 </ds:jpo>
+                 <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="updateRouteContent" processMultiple="true">
+                 <ds:arg arg-name="ispublicservice" arg-value="Yes"/>
+                 </ds:updatejpo>
+              </ds:data>
+        </ds:ref-subservice>
+        <ds:ref-subservice name="tasks" referenceName="bps.publicroutetask-fields" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteTasks" returnedData="idsAndData">
+                <ds:arg arg-name="ispublicservice" arg-value="Yes"/>
+                </ds:jpo>
+				 <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="updateRouteTasks" processMultiple="true">
+				 <ds:arg arg-name="ispublicservice" arg-value="Yes"/>
+				 </ds:updatejpo>
+            </ds:data>
+        </ds:ref-subservice>
+        <ds:subservice name="start" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="applyRouteAction">
+                   <ds:arg arg-name="routeAction" arg-value="start"/>
+                   <ds:arg arg-name="ispublicservice" arg-value="Yes"/>
+                </ds:updatejpo>
+            </ds:data>
+    </ds:subservice>
+    <ds:subservice name="stop" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="applyRouteAction">
+                   <ds:arg arg-name="routeAction" arg-value="stop"/>
+                   <ds:arg arg-name="ispublicservice" arg-value="Yes"/>
+                </ds:updatejpo>
+            </ds:data>
+    </ds:subservice>
+    <ds:subservice name="delete" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="deleteRoutes">
+                </ds:updatejpo>
+            </ds:data>
+    </ds:subservice>
+    <ds:subservice name="search" includeByDefault="never">
+            <ds:data>
+               <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="searchRoute" returnedData="idsAndData" />
+            </ds:data>
+			<ds:ref-subservice name="bps.publicroute-fields"/>
+    </ds:subservice>
+  </ds:service>
+  
+    <ds:service name="bps.routecontentpublic-fields">
+      <ds:field name="current"><ds:selectable expression="current" format="state"/></ds:field>
+      <ds:field name="type"><ds:selectable expression="type"/></ds:field>
+  </ds:service>
+  
+  <ds:service name="bps.publicroute-fields">
+      <ds:field name="title"><ds:selectable type="bus" expression="attribute[attribute_Title]" autosave="true"/></ds:field>
+      <ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+      <ds:field name="description"><ds:selectable expression="description" autosave="true"/></ds:field>
+      <ds:field name="state"><ds:selectable expression="current" type="bus" /></ds:field>
+      <ds:field name="routeStatus"><ds:selectable type="bus" expression="attribute[attribute_RouteStatus]"/></ds:field>
+      <ds:field name="routeBasePurpose"><ds:selectable type="bus" expression="attribute[attribute_RouteBasePurpose]" autosave="true"/></ds:field>
+      <ds:field name="AutoStopOnRejection"><ds:selectable type="bus" expression="attribute[attribute_AutoStopOnRejection]" autosave="true"/></ds:field>
+      <ds:field name="routeCompletionAction"><ds:selectable type="bus" expression="attribute[attribute_RouteCompletionAction]" autosave="true"/></ds:field>
+      <ds:field name="DemoteOnRejection"><ds:selectable type="bus" expression="attribute[attribute_DemoteOnRejection]" autosave="true"/></ds:field>
+      <ds:field name="selectRTUsersFromUserGroup"><ds:selectable type="bus" expression="attribute[attribute_ChooseUsersFromUserGroup]"/></ds:field>
+	  <ds:field name="owner"><ds:selectable type="bus" expression="owner" autosave="true"/></ds:field>
+      <ds:field name="attRestrictMembers"><ds:selectable type="bus" expression="attribute[attribute_RestrictMembers]" autosave="true"/></ds:field>
+	  <ds:field name="preserveTaskOwner"><ds:selectable type="bus" expression="attribute[attribute_PreserveTaskOwner]" autosave="true"/></ds:field>
+	  <ds:field name="requiresEsign"><ds:selectable type="bus" expression="attribute[attribute_RequiresESign]" autosave="true"/></ds:field>
+      <ds:field name="attrScope"><ds:selectable type="bus" expression="attribute[attribute_RestrictMembers]"/> <!--conditional include  --> 
+      	<ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="setRouteScope"></ds:fieldjpo>
+      </ds:field>
+      <ds:field name="ownerFullName"><ds:selectable type="key"/>
+        <ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="setOwnerFullName">
+        </ds:fieldjpo>
+      </ds:field>
+	  <ds:field name="activityState">
+     	<ds:selectable type="bus" expression="attribute[attribute_RouteActivityState]"/> <!--conditional include  --> 
+      	<ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="setRouteActivityState"></ds:fieldjpo>
+     </ds:field>
+	  <ds:field name="attribute[Route Base Purpose]"><ds:selectable type="bus" expression="attribute[attribute_RouteBasePurpose]"/></ds:field>
+	  <ds:field name="attribute[Route Completion Action]"><ds:selectable type="bus" expression="attribute[attribute_RouteCompletionAction]" autosave="true"/></ds:field>
+	  <ds:field name="attribute[Restrict Members]"><ds:selectable type="bus" expression="attribute[attribute_RestrictMembers]"/></ds:field>
+	  <ds:field name="attribute[Preserve Task Owner]"><ds:selectable type="bus" expression="attribute[attribute_PreserveTaskOwner]"/></ds:field>
+      <ds:field name="attribute[Auto Stop On Rejection]"><ds:selectable type="bus" expression="attribute[attribute_AutoStopOnRejection]"/></ds:field>
+  	  <ds:field name="attribute[Route Status]"><ds:selectable type="bus" expression="attribute[attribute_RouteStatus]"/></ds:field>
+  </ds:service>
+	
+	<ds:service name="bps.publicroutetask-fields">
+      <ds:field name="title" description="this is the title of the task"><ds:selectable type="key" attribute="Title"/></ds:field>
+      <ds:field name="allowDelegation"><ds:selectable type="key" attribute="Allow Delegation" autosave="true"/></ds:field>
+      <ds:field name="comments"><ds:selectable type="key" attribute="Comments" autosave="true"/></ds:field>
+      <ds:field name="taskAction"><ds:selectable type="key" attribute="Route Action"/></ds:field>
+      <ds:field name="instructions"><ds:selectable type="key" attribute="Route Instructions" autosave="true"/></ds:field>
+      <ds:field name="taskOrder"><ds:selectable type="key" attribute="Route Sequence"/></ds:field>
+      <ds:field name="taskDueDate"><ds:selectable type="key" attribute="Scheduled Completion Date" autosave="true"/></ds:field>
+      <ds:field name="parallelNodeProcessionRule"><ds:selectable type="key" attribute="Parallel Node Procession Rule" autosave="true"/></ds:field>
+      <ds:field name="needsOwnerReview"><ds:selectable type="key" attribute="Review Task" autosave="true"/></ds:field>
+      <ds:field name="reviewersComments"><ds:selectable type="key" attribute="Reviewers Comments" autosave="true"/></ds:field>
+      <ds:field name="taskAssignee"><ds:selectable type="key" /></ds:field>
+      <ds:field name="assigneeType"><ds:selectable type="key" /></ds:field>
+      <ds:field name="routeOwnerTask"><ds:selectable type="key" attribute="Route Owner Task" autosave="true"/></ds:field>
+      <ds:field name="routeOwnerUGChoice"><ds:selectable type="key" attribute="Route Owner UG Choice" autosave="true"/></ds:field>
+      <ds:field name="chooseUsersFromUg"><ds:selectable type="key" attribute="Choose Users From User Group" autosave="true"/></ds:field>
+      <ds:field name="taskAssigneeUsername"><ds:selectable type="key" /></ds:field>
+      <ds:field name="approvalStatus"><ds:selectable type="key" /></ds:field>
+      <ds:field name="name"><ds:selectable type="key" /></ds:field>
+      <ds:field name="type"><ds:selectable type="key" /></ds:field>
+      <ds:field name="current"><ds:selectable type="key" /></ds:field>
+      <ds:field name="task-custom-fields">
+           <ds:customAttributes busTypes="Inbox Task"/>
+      </ds:field>
+  </ds:service>
+  
+</ds:services>
+

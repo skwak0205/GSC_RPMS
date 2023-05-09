@@ -1,0 +1,21 @@
+del command 'APPRouteAddRole';
+add command 'APPRouteAddRole'
+	description	'Command to add roles to the route access'
+	label	'emxComponents.AddMembersDialog.AddRole'
+	href	'${SUITE_DIR}/emxRouteMembersSearch.jsp?fromPage=RouteAccessSummary&memberType=Role'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(to[Route Scope] == False)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteAddRole'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPRouteAddRole on program eServiceSchemaVariableMapping.tcl to command 'APPRouteAddRole';

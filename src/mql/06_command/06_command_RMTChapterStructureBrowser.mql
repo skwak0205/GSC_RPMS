@@ -1,0 +1,29 @@
+del command 'RMTChapterStructureBrowser';
+add command 'RMTChapterStructureBrowser'
+	description	'launch chapter structure browser.'
+	label	'emxRequirements.ActionLink.SpecStructureBrowser'
+	href	'${SUITE_DIR}/PopupLauncher.jsp?expandProgramMenu=RMTSpecTreeProgramMenu&table=RMTSpecStatusTable&freezePane=Name,Title,DUP_Title,Revision&selection=multiple&direction=from&editLink=true&sortColumnName=none&toolbar=RMTChapTreeToolbar&editRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_RequirementBreakdown&resequenceRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_RequirementBreakdown&connectionProgram=emxSpecificationStructureBase:processXMLMessage&multiColumnSort=false&HelpMarker=emxhelpspecificationstructureview&appendURL=StructureEffectivityForExpand|Requirements&expandByDefault=true&TargetView=sb&effectivityRelationship=relationship_SpecificationStructure,relationship_RequirementBreakdown,relationship_DerivedRequirement'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTChapterStructureBrowser'
+	property	'version'	value	'R422'
+;
+modify menu RMTChapterStructureDisplay add command RMTChapterStructureBrowser order command RMTChapterStructureBrowser 1;
+modify menu RMTChapterRichTextEditorActions add command RMTChapterStructureBrowser order command RMTChapterStructureBrowser 2;
+#channel ==>RMTChapterStructureDisplayRMTChapterRichTextEditorActions
+add property command_RMTChapterStructureBrowser on program eServiceSchemaVariableMapping.tcl to command 'RMTChapterStructureBrowser';

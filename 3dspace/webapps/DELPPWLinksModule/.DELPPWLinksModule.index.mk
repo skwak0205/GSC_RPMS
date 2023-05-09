@@ -1,0 +1,10 @@
+m|DELPPWModules\DELPPWLinksModule.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.23003|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\DELPPWLinksModule\DELPPWLinksModule.js|1672780559|14075
+s|DELPPWModules\DELPPWLinksModule.mweb\src\LinksModule.js|1671087130|16752
+u|DELPPWModules\DELPPWLinksModule.mweb\src\LinksUI.js|1672217514|41912
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

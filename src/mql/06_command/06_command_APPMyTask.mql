@@ -1,0 +1,17 @@
+del command 'APPMyTask';
+add command 'APPMyTask'
+	description	'Command Object to Display My Desk Tasks'
+	label	'emxComponents.MyDesk.MyTasks'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxInboxTask:getActiveTasks,emxInboxTask:getMyDeskTasks,emxInboxTask:getCompletedTasks,emxInboxTask:getTasksToBeAccepted&table=APPTaskSummary&programLabel=emxComponents.Filter.Active,emxComponents.Filter.AllTasks,emxComponents.Filter.Complete,emxComponents.Filter.TasksToBeAccepted&header=emxComponents.Common.Tasks&toolbar=APPTaskSummaryToolBar&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelptasks&selectedFilter=emxInboxTask:getActiveTasks&freezePane=Name&displayView=details'
+	alt	'emxComponents.MyDesk.MyTasks'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMyTask'
+	property	'version'	value	'R419'
+;
+#channel ==>My EnoviaTMCMyViewTasksRoutesChannel
+add property command_APPMyTask on program eServiceSchemaVariableMapping.tcl to command 'APPMyTask';

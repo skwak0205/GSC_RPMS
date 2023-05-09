@@ -1,0 +1,25 @@
+del command 'APPCompanyActivate';
+add command 'APPCompanyActivate'
+	description	'Company Activate Selected Command Object'
+	label	'emxComponents.Button.Activate'
+	href	'${COMPONENT_DIR}/emxComponentsCompanyActivateProcess.jsp'
+	alt	'emxComponents.Button.Activate'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActivate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompanyActivate'
+	property	'version'	value	'R417'
+;
+modify menu APPInactiveCompanySummaryActionsToolBar add command APPCompanyActivate order command APPCompanyActivate 1;
+modify menu APPInactiveCompanySummaryToolBar add command APPCompanyActivate order command APPCompanyActivate 0;
+#channel ==>APPInactiveCompanySummaryActionsToolBarAPPInactiveCompanySummaryToolBar
+add property command_APPCompanyActivate on program eServiceSchemaVariableMapping.tcl to command 'APPCompanyActivate';

@@ -1,0 +1,15 @@
+del menu 'PMCBusinessGoalToolProjectSummeryBar';
+add menu 'PMCBusinessGoalToolProjectSummeryBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCBusinessGoalToolProjectSummeryBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCBusinessGoalToolProjectSummeryBar'
+	property 'version'	value	'R15'
+;
+add property menu_PMCBusinessGoalToolProjectSummeryBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCBusinessGoalToolProjectSummeryBar';

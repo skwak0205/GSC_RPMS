@@ -1,0 +1,25 @@
+del command 'CFPViewMPMatrixModelContext';
+add command 'CFPViewMPMatrixModelContext'
+	description	''
+	label	'DMCPlanning.ActionLink.ViewManufacturingPlanMatrix'
+	href	'${SUITE_DIR}/ManufacturingPlanUtil.jsp?mode=ViewManufacturingPlan'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Access Expression'		'$<type.kindof =="type_Model">'
+	setting	'Licensed Product'		'ENO_CFP_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAuthoringModeEnabled'
+	setting	'Access Program'		'CFPModelBase'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPViewMPMatrixModelContext'
+	property	'version'	value	'R418'
+;
+modify menu CFPMPDerivationReports add command CFPViewMPMatrixModelContext order command CFPViewMPMatrixModelContext 0;
+#channel ==>CFPMPDerivationReports
+add property command_CFPViewMPMatrixModelContext on program eServiceSchemaVariableMapping.tcl to command 'CFPViewMPMatrixModelContext';

@@ -1,0 +1,16 @@
+del command 'PMCWeeklyTimeSheetBlank';
+add command 'PMCWeeklyTimeSheetBlank'
+	description	''
+	label	'emxProgramCentral.WeeklyTimesheet.TimeSheetDetails'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=Blank'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWeeklyTimeSheetBlank'
+	property	'version'	value	'R216'
+;
+#channel ==>PMCWeeklyTimeSheetTaskDetails
+add property command_PMCWeeklyTimeSheetBlank on program eServiceSchemaVariableMapping.tcl to command 'PMCWeeklyTimeSheetBlank';

@@ -1,0 +1,19 @@
+del command 'APPRouteEditAccess';
+add command 'APPRouteEditAccess'
+	description	'Command to edit the route access'
+	label	'emxComponents.Common.EditAccess'
+	href	'${SUITE_DIR}/emxRouteEditAccessFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(type=="$<type_Route>")'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteEditAccess'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPRouteEditAccess on program eServiceSchemaVariableMapping.tcl to command 'APPRouteEditAccess';

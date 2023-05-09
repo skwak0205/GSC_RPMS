@@ -1,0 +1,21 @@
+{
+  "XSourcingApps": "Lieferantenartikelqualifikation",
+  "src_target": "Zielelement, das qualifiziert wird ",
+  "src_target_to": "Qualifikationsziel",
+  "src_target_from": "Qualifikationsziel von",
+  "src_context": "Kontext-Konstruktionselement, das für die gleichwertige Qualifikation zwischen gleichwertigem Herstellerelement und Konstruktionselement verwendet wird",
+  "src_context_to": "Konstruktionskontext",
+  "src_context_from": "Konstruktionskontext von",
+  "src_prereq": "Voraussetzung zur Qualifikation",
+  "src_prereq_to": "Voraussetzung zur Qualifikation",
+  "src_prereq_from": "Voraussetzung zur Qualifikation von",
+  "src_usage_context": "Kontext-Anlage, Kontext-Projekt oder Kontext-Produkt, bei denen das Zielelement qualifiziert wird für",
+  "src_usage_context_to": "Qualifikationskontext",
+  "src_usage_context_from": "Qualifikationskontext von",
+  "src_answer_items": "Antwortelemente für die Komponentenanforderung",
+  "src_answer_items_to": "Antwortelement",
+  "src_answer_items_from": "Antwortelement von ",
+  "src_impacted_items": "Eingabeelemente für die Komponentenanforderung",
+  "src_impacted_items_to": "Eingabeelement",
+  "src_impacted_items_from": "Eingabeelement von "
+}

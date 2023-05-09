@@ -1,0 +1,43 @@
+del form 'PMCEditChecklistWebform';
+add form 'PMCEditChecklistWebform' web
+field #1
+	name	'Type'
+	label	'emxProgramCentral.Common.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getTypeCheckList'
+	setting	'Editable'		'false'
+	setting	'program'		'emxChecklist'
+	setting	'Field Type'		'program'
+field #2
+	name	'Name'
+	businessobject	'name'
+	label	'emxProgramCentral.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Admin Type'		'Name'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'Validate'		'isBadNameChars'
+	setting	'Field Type'		'basic'
+field #3
+	name	'Description'
+	businessobject	'description'
+	label	'emxProgramCentral.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Admin Type'		'Description'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Field Type'		'basic'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEditChecklistWebform'
+	property	'version'	value	'R215'
+;
+add property form_PMCEditChecklistWebform on program eServiceSchemaVariableMapping.tcl to form 'PMCEditChecklistWebform';

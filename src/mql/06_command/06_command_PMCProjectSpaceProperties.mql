@@ -1,0 +1,22 @@
+del command 'PMCProjectSpaceProperties';
+add command 'PMCProjectSpaceProperties'
+	description	'Project Properties Command Object'
+	label	'emxFramework.Command.PMCPropertiesPortal'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProjectDetailsViewForm&mode=view&toolbar=PMCProjectDetailsToolbar&formHeader=emxProgramCentral.Common.FormBasics&HelpMarker=emxhelpprojectdetails&Export=false'
+	alt	'emxFramework.Command.Properties'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.Kindof[Project Space]'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'${COMMON_DIR}/images/I_SmallProperties16.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpaceProperties'
+	property	'version'	value	'R422'
+;
+modify menu type_ProjectSpaceRMB add command PMCProjectSpaceProperties order command PMCProjectSpaceProperties 1;
+modify menu PMCListProjectRMBMenu add command PMCProjectSpaceProperties order command PMCProjectSpaceProperties 2;
+modify menu type_ProjectConceptRMB add command PMCProjectSpaceProperties order command PMCProjectSpaceProperties 1;
+#channel ==>type_ProjectSpaceRMBPMCListProjectRMBMenutype_ProjectConceptRMBPMCProjectPropertiesChannel
+add property command_PMCProjectSpaceProperties on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpaceProperties';

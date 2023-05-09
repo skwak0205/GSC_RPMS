@@ -1,0 +1,16 @@
+del menu 'RMTSpecStructureProxyRequirementRMB';
+add menu 'RMTSpecStructureProxyRequirementRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTSpecStructureRemove'
+	menu	'AEFClipboardCollectionsRMB'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecStructureProxyRequirementRMB'
+	property 'version'	value	'V6R2019x'
+;
+add property menu_RMTSpecStructureProxyRequirementRMB on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecStructureProxyRequirementRMB';

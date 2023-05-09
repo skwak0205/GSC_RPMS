@@ -1,0 +1,30 @@
+del command 'LBCMyOwnedDocumentMyDesk';
+add command 'LBCMyOwnedDocumentMyDesk'
+	description	'My Owned Documents Command Object'
+	label	'emxDocumentCentral.MenuItem.MyDocuments'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&HelpMarker=emxhelpmydocuments&program=emxDCUtilsBase:getAllDocumentsList,emxDCUtils:getMyCheckedOutDocs,emxDCUtilsBase:getPendingDocumentsList,emxDCUtilsBase:getRejectedDocumentsList&programLabel=emxDocumentCentral.MenuItem.MyDocuments,emxDocumentCentral.MenuItem.CheckedOut,emxDocumentCentral.MenuItem.MyApproval,emxDocumentCentral.MenuItem.DocumentsRejected&table=DCMyDocumentsApprover&sortColumnName=Name&sortDirection=ascending&header=emxDocumentCentral.Common.MyDocuments&HelpMarker=emxhelpmydocuments&massPromoteDemote=false'
+	alt	'emxDocumentCentral.MenuItem.MyDocuments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP,ENO_LIB_TP'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Release Manager'
+	user	'Reviewer'
+	user	'Author'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCMyOwnedDocumentMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu LBCMyDesk add command LBCMyOwnedDocumentMyDesk order command LBCMyOwnedDocumentMyDesk 4;
+#channel ==>LBCMyDesk
+add property command_LBCMyOwnedDocumentMyDesk on program eServiceSchemaVariableMapping.tcl to command 'LBCMyOwnedDocumentMyDesk';

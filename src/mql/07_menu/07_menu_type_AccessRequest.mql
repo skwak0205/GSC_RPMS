@@ -1,0 +1,22 @@
+del menu 'type_AccessRequest';
+add menu 'type_AccessRequest'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_AccessRequest&mode=View&toolbar=APPAccessRequestToolbar&formHeader=emxComponents.Heading.Properties&HelpMarker=emxhelprequestproperties'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPRequestedAssignees'
+	command	'APPDiscussionCommand'
+	command	'APPRequestedDocuments'
+	command	'AEFHistory'
+	command	'APPReferenceDocumentsTreeCategory'
+	command	'APPAccessRequestRevision'
+	command	'APPRoutes'
+	command	'AEFLifecycle'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_AccessRequest'
+	property 'version'	value	'R208'
+;
+add property menu_type_AccessRequest on program eServiceSchemaVariableMapping.tcl to menu 'type_AccessRequest';

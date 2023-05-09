@@ -1,0 +1,21 @@
+del command 'FTRPreviewApplyBOMCommand';
+add command 'FTRPreviewApplyBOMCommand'
+	description	'FTRPreviewApplyBOMCommand'
+	label	'emxProduct.Button.Apply'
+	href	'javascript:previewBOMApply()'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Mobile'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRPreviewApplyBOMCommand'
+	property	'version'	value	'R420'
+;
+modify menu FTRPreviewBOMTableToolbar add command FTRPreviewApplyBOMCommand order command FTRPreviewApplyBOMCommand 0;
+#channel ==>FTRPreviewBOMTableToolbar
+add property command_FTRPreviewApplyBOMCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRPreviewApplyBOMCommand';

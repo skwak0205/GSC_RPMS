@@ -1,0 +1,26 @@
+del command 'PLCEditAllECTestExecutionTestCaseActionLink';
+add command 'PLCEditAllECTestExecutionTestCaseActionLink'
+	description	'Command for Edit All link'
+	label	'emxProduct.ActionLink.EditAll'
+	href	'${COMMON_DIR}/emxTableEdit.jsp'
+	alt	'emxProduct.ActionLink.EditAll'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'750'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(context.user == owner || context.user == to[Assigned Test Execution].from.name) && (current == "Create" || current == "In Progress" || current == "Review")'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Help Marker'		'emxhelptestexecutiontestcaseedit'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCEditAllECTestExecutionTestCaseActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCTestExecutionTestCaseActionsToolbar add command PLCEditAllECTestExecutionTestCaseActionLink order command PLCEditAllECTestExecutionTestCaseActionLink 0;
+modify menu PLCTestExecutionTestCaseToolbar add command PLCEditAllECTestExecutionTestCaseActionLink order command PLCEditAllECTestExecutionTestCaseActionLink 0;
+#channel ==>PLCTestExecutionTestCaseActionsToolbarPLCTestExecutionTestCaseToolbar
+add property command_PLCEditAllECTestExecutionTestCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCEditAllECTestExecutionTestCaseActionLink';

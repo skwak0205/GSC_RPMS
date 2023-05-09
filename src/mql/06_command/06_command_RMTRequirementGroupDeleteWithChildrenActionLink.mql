@@ -1,0 +1,24 @@
+del command 'RMTRequirementGroupDeleteWithChildrenActionLink';
+add command 'RMTRequirementGroupDeleteWithChildrenActionLink'
+	description	'delete selected groups with their sub groups'
+	label	'emxRequirements.Command.RMTRequirementGroupDeleteWithChildrenActionLink'
+	href	'${SUITE_DIR}/RMTRequirementGroupProcess.jsp?operation=deletewithsub'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.Delete'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementGroupDeleteWithChildrenActionLink'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_RMTRequirementGroupDeleteWithChildrenActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementGroupDeleteWithChildrenActionLink';

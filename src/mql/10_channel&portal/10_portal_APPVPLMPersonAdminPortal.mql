@@ -1,0 +1,8 @@
+del portal 'APPVPLMPersonAdminPortal';
+add portal 'APPVPLMPersonAdminPortal'
+	description	''
+	label	''
+	href	''
+	channel 	PersonVPLMChannel
+;
+add property portal_APPVPLMPersonAdminPortal on program eServiceSchemaVariableMapping.tcl to portal 'APPVPLMPersonAdminPortal';

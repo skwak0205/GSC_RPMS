@@ -1,0 +1,25 @@
+del command 'APPCompanySetAsPrimaryImage';
+add command 'APPCompanySetAsPrimaryImage'
+	description	'APP Set As Primary Image'
+	label	'emxComponents.Command.SetAsPrimary'
+	href	'${COMPONENT_DIR}/emxImageManagerSetPrimaryImage.jsp?'
+	alt	''
+	setting	'Target Location'		'imageHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallPrimaryImage.png'
+	setting	'Confirm Message'		'emxComponents.ImageManager.Confirm.SetAsPrimary'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompanySetAsPrimaryImage'
+	property	'version'	value	'R417'
+;
+modify menu APPCompanyImageManagerActionsToolBar add command APPCompanySetAsPrimaryImage order command APPCompanySetAsPrimaryImage 0;
+#channel ==>APPCompanyImageManagerActionsToolBar
+add property command_APPCompanySetAsPrimaryImage on program eServiceSchemaVariableMapping.tcl to command 'APPCompanySetAsPrimaryImage';

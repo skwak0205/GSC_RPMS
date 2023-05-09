@@ -1,0 +1,14 @@
+del menu 'TMCWorkspaceTemplateSummaryTopActionBar';
+add menu 'TMCWorkspaceTemplateSummaryTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCWorkspaceTemplateSummaryTopActionBar'
+	property 'version'	value	'Rossini'
+;
+add property menu_TMCWorkspaceTemplateSummaryTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'TMCWorkspaceTemplateSummaryTopActionBar';

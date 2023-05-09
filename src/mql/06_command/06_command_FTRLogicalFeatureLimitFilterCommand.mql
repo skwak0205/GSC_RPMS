@@ -1,0 +1,24 @@
+del command 'FTRLogicalFeatureLimitFilterCommand';
+add command 'FTRLogicalFeatureLimitFilterCommand'
+	description	''
+	label	'emxFramework.Basic.Limit'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'false'
+	setting	'Action Label'		'Search'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Default'		'*'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLogicalFeatureLimitFilterCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRLogicalFeatureCustomFilterToolbar add command FTRLogicalFeatureLimitFilterCommand order command FTRLogicalFeatureLimitFilterCommand 2;
+modify menu FTRProductLogicalFeatureCustomFilterToolbar add command FTRLogicalFeatureLimitFilterCommand order command FTRLogicalFeatureLimitFilterCommand 2;
+modify menu FTRProductVariantLogicalFeatureCustomFilterToolbar add command FTRLogicalFeatureLimitFilterCommand order command FTRLogicalFeatureLimitFilterCommand 2;
+#channel ==>FTRLogicalFeatureCustomFilterToolbarFTRProductLogicalFeatureCustomFilterToolbarFTRProductVariantLogicalFeatureCustomFilterToolbar
+add property command_FTRLogicalFeatureLimitFilterCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRLogicalFeatureLimitFilterCommand';

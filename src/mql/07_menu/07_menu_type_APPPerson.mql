@@ -1,0 +1,16 @@
+del menu 'type_APPPerson';
+add menu 'type_APPPerson'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Person&editLink=false&formHeader=emxComponents.Heading.Properties&HelpMarker=emxhelpassignees'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallPerson.gif'
+	setting	'Show Type Icon'		'true'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_APPPerson'
+	property 'version'	value	'R214'
+;
+add property menu_type_APPPerson on program eServiceSchemaVariableMapping.tcl to menu 'type_APPPerson';

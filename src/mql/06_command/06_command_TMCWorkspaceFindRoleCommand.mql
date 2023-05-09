@@ -1,0 +1,20 @@
+del command 'TMCWorkspaceFindRoleCommand';
+add command 'TMCWorkspaceFindRoleCommand'
+	description	''
+	label	'emxTeamCentral.WorkSpaceAddMembersDialog.FindRoles'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxWorkspace:getWorkspaceRoles&table=APPRoleSummary&form=TMCWorkspaceFindRolesForm&searchCommand=TMCWorkspaceFindRoleCommand&sortColumnName=Name&sortDirection=ascending&type=Role&SubmitLabel=emxComponents.Common.Done&customize=false&showClipboard=false&multiColumnSort=false&objectCompare=false&HelpMarker=emxhelpfindroles'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceFindRoleCommand'
+	property	'version'	value	'R216'
+;
+modify menu TMCAddWorkspaceMembersMenu add command TMCWorkspaceFindRoleCommand order command TMCWorkspaceFindRoleCommand 0;
+#channel ==>TMCAddWorkspaceMembersMenu
+add property command_TMCWorkspaceFindRoleCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceFindRoleCommand';

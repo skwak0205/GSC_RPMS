@@ -1,0 +1,27 @@
+del command 'TMCWorkspaceAddMembers';
+add command 'TMCWorkspaceAddMembers'
+	description	''
+	label	'emxTeamCentral.Button.AddWorkspaceMembers'
+	href	'${COMPONENT_DIR}/emxCommonSearch.jsp?formName=emxTableForm&selection=multiple&frameName=pagecontent&searchmode=generic&searchmenu=TMCAddWorkspaceMembersMenu&SubmitURL=../teamcentral/emxTeamMigrationSelectMembersProcess.jsp&header=emxComponents.Common.AddMembers&suiteKey=Components&HelpMarker=emxhelpselectmembers'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'575'
+	setting	'Window Width'		'675'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showWorkspaceAccessCommands'
+	setting	'Access Program'		'emxWorkspace'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceAddMembers'
+	property	'version'	value	'R422'
+;
+modify menu TMCWorkspaceAccessSummaryActionsToolBar add command TMCWorkspaceAddMembers order command TMCWorkspaceAddMembers 1;
+#channel ==>TMCWorkspaceAccessSummaryActionsToolBar
+add property command_TMCWorkspaceAddMembers on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceAddMembers';

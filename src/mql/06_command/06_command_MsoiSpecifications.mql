@@ -1,0 +1,16 @@
+del command 'MsoiSpecifications';
+add command 'MsoiSpecifications'
+	description	'Specifications Command Object for MSOI'
+	label	'emxIEFDesignCenter.Common.Specifications'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=IEFDesktopObjectSummary&relName=relationship_PartSpecification'
+	alt	'emxIEFDesignCenter.Common.Specifications'
+	setting	'Registered Suite'		'IntegrationFramework'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiSpecifications'
+	property	'version'	value	'V6R2022x'
+;
+modify menu Msoitype_Part add command MsoiSpecifications order command MsoiSpecifications 0;
+#channel ==>Msoitype_Part
+add property command_MsoiSpecifications on program eServiceSchemaVariableMapping.tcl to command 'MsoiSpecifications';

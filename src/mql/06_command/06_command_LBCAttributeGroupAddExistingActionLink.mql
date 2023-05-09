@@ -1,0 +1,21 @@
+del command 'LBCAttributeGroupAddExistingActionLink';
+add command 'LBCAttributeGroupAddExistingActionLink'
+	description	'AttributeGroup Add Existing'
+	label	'emxMultipleClassification.ActionBarCmd.AddExisting'
+	href	'${SUITE_DIR}/emxLibraryCentralAddAttributeGroupsLaunchValidation.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromConnect'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddAttributeGroup.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeGroupAddExistingActionLink'
+	property	'version'	value	'R420'
+;
+modify menu MCMAttributeGroupCommandActionsToolBar add command LBCAttributeGroupAddExistingActionLink order command LBCAttributeGroupAddExistingActionLink 1;
+#channel ==>MCMAttributeGroupCommandActionsToolBar
+add property command_LBCAttributeGroupAddExistingActionLink on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeGroupAddExistingActionLink';

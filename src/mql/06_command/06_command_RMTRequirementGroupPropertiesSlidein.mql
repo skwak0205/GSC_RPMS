@@ -1,0 +1,21 @@
+del command 'RMTRequirementGroupPropertiesSlidein';
+add command 'RMTRequirementGroupPropertiesSlidein'
+	description	''
+	label	'emxRequirements.Common.RMTAttributes'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_RequirementGroup&editLink=true&header=emxRequirements.Heading.RequirementGroupProperties'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementGroupPropertiesSlidein'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecStructureFolderRMB add command RMTRequirementGroupPropertiesSlidein order command RMTRequirementGroupPropertiesSlidein 1;
+modify menu type_RequirementGroupRMB add command RMTRequirementGroupPropertiesSlidein order command RMTRequirementGroupPropertiesSlidein 1;
+#channel ==>RMTSpecStructureFolderRMBtype_RequirementGroupRMB
+add property command_RMTRequirementGroupPropertiesSlidein on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementGroupPropertiesSlidein';

@@ -1,0 +1,24 @@
+del command 'FTRAddDesignVariant';
+add command 'FTRAddDesignVariant'
+	description	''
+	label	'emxProduct.ActionLink.AddExistingDesignVariantActionLink'
+	href	'${SUITE_DIR}/DesignVariantPreProcess.jsp?mode=searchDesignVariant'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showDVActionsWhenLFInProductContext'
+	setting	'Access Program'		'LogicalFeature'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionAddDesignVariant.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddDesignVariant'
+	property	'version'	value	'R418'
+;
+modify menu FTRDesignVariantToolbarActions add command FTRAddDesignVariant order command FTRAddDesignVariant 1;
+#channel ==>FTRDesignVariantToolbarActions
+add property command_FTRAddDesignVariant on program eServiceSchemaVariableMapping.tcl to command 'FTRAddDesignVariant';

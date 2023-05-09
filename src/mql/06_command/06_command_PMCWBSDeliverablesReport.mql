@@ -1,0 +1,27 @@
+del command 'PMCWBSDeliverablesReport';
+add command 'PMCWBSDeliverablesReport'
+	description	''
+	label	'emxProgramCentral.Common.DeliverableReport'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=submitDeliverableReport'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForAssigneeOwnerCmd'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/I_DeliverablesReport32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSDeliverablesReport'
+	property	'version'	value	'R423.HF4'
+;
+modify menu PMCWBSToolBarActions add command PMCWBSDeliverablesReport order command PMCWBSDeliverablesReport 1;
+modify menu PMCWBSToolBar add command PMCWBSDeliverablesReport order command PMCWBSDeliverablesReport 3;
+#channel ==>PMCWBSToolBarActionsPMCWBSToolBar
+add property command_PMCWBSDeliverablesReport on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSDeliverablesReport';

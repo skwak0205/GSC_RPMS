@@ -1,0 +1,23 @@
+del command 'PLCAddExistingDocumentActionLink';
+add command 'PLCAddExistingDocumentActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_DOCUMENTS:POLICY!=policy_Version&excludeOIDprogram=emxPLCCommon:excludeConnected&table=PLCSearchDocumentsTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_ReferenceDocument&from=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete" && current.access[fromconnect] == true)'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingDocumentActionLink'
+	property	'version'	value	'R417'
+;
+modify menu ProductDocumentSummaryActionsToolBar add command PLCAddExistingDocumentActionLink order command PLCAddExistingDocumentActionLink 1;
+#channel ==>ProductDocumentSummaryActionsToolBar
+add property command_PLCAddExistingDocumentActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingDocumentActionLink';

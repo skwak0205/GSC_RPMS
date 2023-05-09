@@ -1,0 +1,17 @@
+del menu 'CFPMPDerivationReports';
+add menu 'CFPMPDerivationReports'
+	description	''
+	label	'DMCPlanning.Menu.Reports'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallReport.png'
+	command	'CFPViewManufacturingPlanMatrixLink'
+	command	'CFPViewMPMatrixModelContext'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'DMCPlanning'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'CFPMPDerivationReports'
+	property 'version'	value	'R418'
+;
+add property menu_CFPMPDerivationReports on program eServiceSchemaVariableMapping.tcl to menu 'CFPMPDerivationReports';

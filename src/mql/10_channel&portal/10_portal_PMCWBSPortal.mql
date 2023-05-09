@@ -1,0 +1,14 @@
+del portal 'PMCWBSPortal';
+add portal 'PMCWBSPortal'
+	description	'Project WBS Portal with Gantt Chart'
+	label	''
+	href	''
+	channel 	PMCWBSChannel
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSPortal'
+	property	'version'	value	'R213'
+;
+add property portal_PMCWBSPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCWBSPortal';

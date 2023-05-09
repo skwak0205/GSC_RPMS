@@ -1,0 +1,15 @@
+del portal 'APPInboxTaskPowerView';
+add portal 'APPInboxTaskPowerView'
+	description	''
+	label	''
+	href	''
+	channel 	APPInboxTaskChannel1
+	channel 	APPInboxTaskChannel2
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPInboxTaskPowerView'
+	property	'version'	value	'R216'
+;
+add property portal_APPInboxTaskPowerView on program eServiceSchemaVariableMapping.tcl to portal 'APPInboxTaskPowerView';

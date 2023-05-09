@@ -1,0 +1,10 @@
+del menu 'ctxMsoiCmd_ReviseMenu';
+add menu 'ctxMsoiCmd_ReviseMenu'
+	description	'Menu for Revise'
+	label	''
+	href	''
+	alt	''
+	command	'ctxMsoiCmd_ReviseWithFiles'
+	command	'ctxMsoiCmd_ReviseWithoutFiles'
+;
+add property menu_ctxMsoiCmd_ReviseMenu on program eServiceSchemaVariableMapping.tcl to menu 'ctxMsoiCmd_ReviseMenu';

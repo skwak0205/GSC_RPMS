@@ -1,0 +1,21 @@
+del command 'AEFBackgroundRequests';
+add command 'AEFBackgroundRequests'
+	description	'My Desk Background Requests Command Object'
+	label	'emxFramework.Command.BackgroundRequests'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=AEFBackgroundJobList&sortColumnName=Name,StartDate&sortDirection=ascending,descending&freezePane=Checkbox,Name&program=emxJob:getMyCurrentBackgroundJobs,emxJob:getMyBackgroundJobs,emxJob:getMyCompletedBackgroundJobs,emxJob:getMyFailedBackgroundJobs,emxJob:getMyArchivedBackgroundJobs&programLabel=emxFramework.Filter.Current,emxFramework.Filter.All,emxFramework.Filter.Completed,emxFramework.Filter.Failed,emxFramework.Filter.Archived&parallelLoading=true&pageSize=100&selection=multiple&toolbar=AEFJobRequestToolbar&header=emxFramework.Label.MyBackgroundProcess&HelpMarker=emxhelpbackgroundjobs'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Window Height'		'650'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFBackgroundRequests'
+	property	'version'	value	'R423.HF2'
+;
+modify menu AdminTools add command AEFBackgroundRequests order command AEFBackgroundRequests 6;
+#channel ==>AdminTools
+add property command_AEFBackgroundRequests on program eServiceSchemaVariableMapping.tcl to command 'AEFBackgroundRequests';

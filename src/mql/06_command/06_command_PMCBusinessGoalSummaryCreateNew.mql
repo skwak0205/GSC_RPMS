@@ -1,0 +1,28 @@
+del command 'PMCBusinessGoalSummaryCreateNew';
+add command 'PMCBusinessGoalSummaryCreateNew'
+	description	'Command for CreateNew link on BusinessGoalSummary'
+	label	'emxProgramCentral.Button.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=PMCBusinessGoalCreateForm&type=type_BusinessGoal&header=emxProgramCentral.Common.CreateNewBusinessGoal&Mode=create&postProcessJPO=emxProgramBusinessGoal:createAndConnectBusinessGoal&helpMarker=emxhelpbusinessgoalcreatedialog&submitAction=refreshCaller&showApply=true&targetLocation=slidein'
+	alt	'emxProgramCentral.Button.CreateNew'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'575'
+	setting	'Window Width'		'575'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Business Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBusinessGoalSummaryCreateNew'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBusinessGoalToolBarActions add command PMCBusinessGoalSummaryCreateNew order command PMCBusinessGoalSummaryCreateNew 1;
+modify menu PMCBusinessGoalSummaryTopActionBar add command PMCBusinessGoalSummaryCreateNew order command PMCBusinessGoalSummaryCreateNew 0;
+modify menu PMCMyDeskBusinessGoalToolBarActions add command PMCBusinessGoalSummaryCreateNew order command PMCBusinessGoalSummaryCreateNew 1;
+#channel ==>PMCProjectBusinessGoalToolBarActionsPMCBusinessGoalSummaryTopActionBarPMCMyDeskBusinessGoalToolBarActions
+add property command_PMCBusinessGoalSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PMCBusinessGoalSummaryCreateNew';

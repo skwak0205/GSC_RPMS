@@ -1,0 +1,20 @@
+del command 'ECMCRCOAffectedChangeActions';
+add command 'ECMCRCOAffectedChangeActions'
+	description	'Affected change actions command'
+	label	'EnterpriseChangeMgt.Command.AffectedChangeActions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeOrder:getAffectedChangeActions&table=ECMChangeActionSummary&header=EnterpriseChangeMgt.Change.ProposedChangesSummaryPageHeading&selection=multiple&toolbar=ECMCOAffectedChangeActionListToolbar&sortColumnName=Name&HelpMarker=emxhelpchangeactions&functionality=showCRCOAffectedChangeActions'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRCOAffectedChangeActions'
+	property	'version'	value	'R417'
+;
+modify menu type_ChangeOrder add command ECMCRCOAffectedChangeActions order command ECMCRCOAffectedChangeActions 12;
+modify menu type_ChangeRequest add command ECMCRCOAffectedChangeActions order command ECMCRCOAffectedChangeActions 0;
+#channel ==>type_ChangeOrdertype_ChangeRequest
+add property command_ECMCRCOAffectedChangeActions on program eServiceSchemaVariableMapping.tcl to command 'ECMCRCOAffectedChangeActions';

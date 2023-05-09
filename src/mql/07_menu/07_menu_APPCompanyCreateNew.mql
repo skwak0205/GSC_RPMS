@@ -1,0 +1,17 @@
+del menu 'APPCompanyCreateNew';
+add menu 'APPCompanyCreateNew'
+	description	''
+	label	'emxComponents.Company.MenuItem.CreateNew'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPCompanyCreateActionLink'
+	command	'APPCreateSupplierCompany'
+	command	'APPCreateCustomerCompany'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPCompanyCreateNew'
+	property 'version'	value	'10-7'
+;
+add property menu_APPCompanyCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'APPCompanyCreateNew';

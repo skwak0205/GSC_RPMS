@@ -1,0 +1,20 @@
+del command 'PLCProductLineReferenceDocumentTreeCategory';
+add command 'PLCProductLineReferenceDocumentTreeCategory'
+	description	''
+	label	'emxProduct.Tree.ReferenceDocument'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=PLCDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ProductDocumentSummaryToolBar&header=emxProduct.Menu.Documents&HelpMarker=emxhelprefdoclist&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallDocumentAttachment.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductLineReferenceDocumentTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_PLCProductLine add command PLCProductLineReferenceDocumentTreeCategory order command PLCProductLineReferenceDocumentTreeCategory 8;
+modify menu type_ProductLine add command PLCProductLineReferenceDocumentTreeCategory order command PLCProductLineReferenceDocumentTreeCategory 6;
+#channel ==>type_PLCProductLinetype_ProductLine
+add property command_PLCProductLineReferenceDocumentTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCProductLineReferenceDocumentTreeCategory';

@@ -1,0 +1,23 @@
+del command 'RMTObjectAddedToSpecStructureEvent';
+add command 'RMTObjectAddedToSpecStructureEvent'
+	description	''
+	label	'emxRequirements.Event.ObjectAddedToSpecStructure.Label'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'(policy != "$<policy_RequirementVersion>")'
+	setting	'Event Type'		'Object Added To Spec Structure'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTObjectAddedToSpecStructureEvent'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementEvents add command RMTObjectAddedToSpecStructureEvent order command RMTObjectAddedToSpecStructureEvent 4;
+modify menu RMTChapterEvents add command RMTObjectAddedToSpecStructureEvent order command RMTObjectAddedToSpecStructureEvent 4;
+modify menu RMTCommentEvents add command RMTObjectAddedToSpecStructureEvent order command RMTObjectAddedToSpecStructureEvent 4;
+#channel ==>RMTRequirementEventsRMTChapterEventsRMTCommentEvents
+add property command_RMTObjectAddedToSpecStructureEvent on program eServiceSchemaVariableMapping.tcl to command 'RMTObjectAddedToSpecStructureEvent';

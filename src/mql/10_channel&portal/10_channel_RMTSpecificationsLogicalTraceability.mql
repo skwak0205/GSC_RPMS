@@ -1,0 +1,17 @@
+del channel 'RMTSpecificationsLogicalTraceability';
+add channel 'RMTSpecificationsLogicalTraceability'
+	description	'Channel to Traceability'
+	height	'0'
+	label	'emxRequirements.Common.RMTTraceability'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'Height'		'40%'
+	command 	'RMTTraceabilityLogicalReport'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationsLogicalTraceability'
+	property	'version'	value	'R215'
+;
+#portal ==>RMTSpecificationsLogicalTraceability
+add property channel_RMTSpecificationsLogicalTraceability on program eServiceSchemaVariableMapping.tcl to channel 'RMTSpecificationsLogicalTraceability';

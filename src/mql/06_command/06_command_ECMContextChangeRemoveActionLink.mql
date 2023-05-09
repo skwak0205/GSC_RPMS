@@ -1,0 +1,23 @@
+del command 'ECMContextChangeRemoveActionLink';
+add command 'ECMContextChangeRemoveActionLink'
+	description	'ECMContextChangeRemoveActionLink'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMDisconnectProcess.jsp?functionality=disconnectAffectedItemFromChangeMgmt'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMContextChangeRemoveActionLink'
+	property	'version'	value	'R424'
+;
+modify menu ECMChangeOrderManagementToolbar add command ECMContextChangeRemoveActionLink order command ECMContextChangeRemoveActionLink 0;
+modify menu ECMChangeRequestManagementToolbar add command ECMContextChangeRemoveActionLink order command ECMContextChangeRemoveActionLink 0;
+#channel ==>ECMChangeOrderManagementToolbarECMChangeRequestManagementToolbar
+add property command_ECMContextChangeRemoveActionLink on program eServiceSchemaVariableMapping.tcl to command 'ECMContextChangeRemoveActionLink';

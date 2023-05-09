@@ -1,0 +1,19 @@
+del command 'RMTPropertiesPowerView';
+add command 'RMTPropertiesPowerView'
+	description	''
+	label	'emxRequirements.Common.RMTPropertiesPowerView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=RMTProperties&showPageHeader=true&header=emxRequirements.Heading.PropertiesCategory'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTPropertiesPowerView'
+	property	'version'	value	'R422'
+;
+modify menu type_Requirement add command RMTPropertiesPowerView order command RMTPropertiesPowerView 1;
+#channel ==>type_Requirement
+add property command_RMTPropertiesPowerView on program eServiceSchemaVariableMapping.tcl to command 'RMTPropertiesPowerView';

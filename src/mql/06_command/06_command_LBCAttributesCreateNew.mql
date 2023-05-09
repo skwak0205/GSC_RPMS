@@ -1,0 +1,24 @@
+del command 'LBCAttributesCreateNew';
+add command 'LBCAttributesCreateNew'
+	description	'command to create Classification Attribute'
+	label	'emxLibraryCentral.Attributes.Create'
+	href	'${SUITE_DIR}/emxLibraryCentralAttributeCreationPreProcess.jsp?findMxLink=false&formHeader=emxLibraryCentral.Attributes.Create&HelpMarker=emxhelpclassificationattributecreate&resetForm=true&mode=edit'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Slidein Width'		'500'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributesCreateNew'
+	property	'version'	value	'R422'
+;
+modify menu MCMAttributeActionsToolBar add command LBCAttributesCreateNew order command LBCAttributesCreateNew 1;
+#channel ==>MCMAttributeActionsToolBar
+add property command_LBCAttributesCreateNew on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributesCreateNew';

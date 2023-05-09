@@ -1,0 +1,24 @@
+del command 'APPAddExistingECImpactAnalysisActionLink';
+add command 'APPAddExistingECImpactAnalysisActionLink'
+	description	''
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_ImpactAnalysis&table=AEFGeneralSearchResults&selection=multiple&showSavedQuery=True&searchCollectionEnabled=True&srcDestRelName=relationship_ECImpactAnalysis&isTo=true&submitURL=../components/emxEngineeringChangeUtil.jsp?mode=AddExistingECImpactAnalysis'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasImpactAnalysisLink'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	setting	'Access Mask'		'ToConnect'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddExistingECImpactAnalysisActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECImpactAnalysisListActionsToolBar add command APPAddExistingECImpactAnalysisActionLink order command APPAddExistingECImpactAnalysisActionLink 2;
+#channel ==>APPECImpactAnalysisListActionsToolBar
+add property command_APPAddExistingECImpactAnalysisActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAddExistingECImpactAnalysisActionLink';

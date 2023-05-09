@@ -1,0 +1,24 @@
+del command 'LBCReferenceDocumentDelete';
+add command 'LBCReferenceDocumentDelete'
+	description	'Delete Selected Document'
+	label	'emxComponents.Command.Delete'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRemove.jsp?action=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromdisconnect] == true)'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canDisplayReferenceDocsCommand'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxComponents.Alert.Delete'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCReferenceDocumentDelete'
+	property	'version'	value	'R421'
+;
+modify menu LBCReferenceDocumentSummaryActionsToolBar add command LBCReferenceDocumentDelete order command LBCReferenceDocumentDelete 0;
+#channel ==>LBCReferenceDocumentSummaryActionsToolBar
+add property command_LBCReferenceDocumentDelete on program eServiceSchemaVariableMapping.tcl to command 'LBCReferenceDocumentDelete';

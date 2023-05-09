@@ -1,0 +1,21 @@
+del menu 'APPInboxTaskDetailsActionsToolbar';
+add menu 'APPInboxTaskDetailsActionsToolbar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	'emxComponents.Common.Actions'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPAcceptInboxTask'
+	command	'APPInboxTaskChangeAssignee'
+	command	'APPTaskEdit'
+	command	'APPCompleteTask'
+	command	'APPPromoteInboxTask'
+	command	'APPDemoteInboxTask'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPInboxTaskDetailsActionsToolbar'
+	property 'version'	value	'R420'
+;
+add property menu_APPInboxTaskDetailsActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPInboxTaskDetailsActionsToolbar';

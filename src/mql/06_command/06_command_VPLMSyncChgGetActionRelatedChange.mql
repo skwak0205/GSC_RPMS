@@ -1,0 +1,12 @@
+del command 'VPLMSyncChgGetActionRelatedChange';
+add command 'VPLMSyncChgGetActionRelatedChange'
+	description	'Command to get Related Changes Items on VPLM Action'
+	label	'emxVPMCentral.Change.Command.GetActionRelatedChange.Title'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxECA:getECARelatedChanges&table=VPLMECARelatedObjects&header=emxVPMCentral.Change.Command.GetActionRelatedChange.Title&triggerValidation=false&massPromoteDemote=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPMCentral'
+;
+modify menu type_PLMActionBase add command VPLMSyncChgGetActionRelatedChange order command VPLMSyncChgGetActionRelatedChange 0;
+#channel ==>type_PLMActionBase
+add property command_VPLMSyncChgGetActionRelatedChange on program eServiceSchemaVariableMapping.tcl to command 'VPLMSyncChgGetActionRelatedChange';

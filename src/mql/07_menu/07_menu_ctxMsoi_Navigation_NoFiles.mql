@@ -1,0 +1,16 @@
+del menu 'ctxMsoi_Navigation_NoFiles';
+add menu 'ctxMsoi_Navigation_NoFiles'
+	description	'Menu for NoFiles'
+	label	''
+	href	''
+	alt	''
+	command	'ctxMsoiCmd_Update'
+	command	'ctxMsoiCmd_Separator'
+	command	'ctxMsoiCmd_ReviseWithoutFiles'
+	command	'ctxMsoiCmd_Separator1'
+	command	'ctxMsoiCmd_Delete'
+	command	'ctxMsoiCmd_Separator2'
+	command	'ctxMsoiCmd_Revisions'
+	command	'ctxMsoiCmd_ShowAttributes'
+;
+add property menu_ctxMsoi_Navigation_NoFiles on program eServiceSchemaVariableMapping.tcl to menu 'ctxMsoi_Navigation_NoFiles';

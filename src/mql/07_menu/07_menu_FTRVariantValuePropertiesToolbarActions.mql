@@ -1,0 +1,13 @@
+del menu 'FTRVariantValuePropertiesToolbarActions';
+add menu 'FTRVariantValuePropertiesToolbarActions'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTREditVariantValueActionLink'
+	command	'APPSubscription'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'version'	value	'R421'
+;
+add property menu_FTRVariantValuePropertiesToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'FTRVariantValuePropertiesToolbarActions';

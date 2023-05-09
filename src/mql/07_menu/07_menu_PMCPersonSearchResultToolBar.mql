@@ -1,0 +1,15 @@
+del menu 'PMCPersonSearchResultToolBar';
+add menu 'PMCPersonSearchResultToolBar'
+	description	''
+	label	'emxProgramCentral.SearchResultToolbar'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCSearchResourceLoading'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCPersonSearchResultToolBar'
+	property 'version'	value	'R210'
+;
+add property menu_PMCPersonSearchResultToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCPersonSearchResultToolBar';

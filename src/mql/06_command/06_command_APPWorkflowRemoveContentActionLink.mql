@@ -1,0 +1,22 @@
+del command 'APPWorkflowRemoveContentActionLink';
+add command 'APPWorkflowRemoveContentActionLink'
+	description	'Command Object to remove content from workflow object'
+	label	'emxComponents.Common.RemoveContent'
+	href	'${COMPONENT_DIR}/emxComponentsConfigurableTableDisconnectProcess.jsp'
+	alt	'emxComponents.Common.RemoveContent'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromdisconnect] == true) && (current != "Suspended") && (current != "Completed") && (owner == context.user)'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	setting	'Confirm Message'		'emxComponents.Common.MsgConfirm'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowRemoveContentActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowContentSummaryActionsToolBar add command APPWorkflowRemoveContentActionLink order command APPWorkflowRemoveContentActionLink 0;
+#channel ==>APPWorkflowContentSummaryActionsToolBar
+add property command_APPWorkflowRemoveContentActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowRemoveContentActionLink';

@@ -1,0 +1,18 @@
+del command 'APPPartEditDetails';
+add command 'APPPartEditDetails'
+	description	''
+	label	'emxComponents.Common.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_CommonPart&formHeader=emxComponents.Part.EditPart&mode=edit&HelpMarker=emxhelppartedit&postProcessURL=../documentcentral/emxLibraryCentralPostProcess.jsp'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartEditDetails'
+	property	'version'	value	'10-6-0-1'
+;
+modify menu APPPartDetailsActionsToolBar add command APPPartEditDetails order command APPPartEditDetails 1;
+#channel ==>APPPartDetailsActionsToolBar
+add property command_APPPartEditDetails on program eServiceSchemaVariableMapping.tcl to command 'APPPartEditDetails';

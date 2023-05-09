@@ -1,0 +1,25 @@
+del command 'DCObjectPropertiesSubscribeActionLink';
+add command 'DCObjectPropertiesSubscribeActionLink'
+	description	'Subscribe Action Link on Properties'
+	label	'emxDocumentCentral.ActionBarCmd.Subscribe'
+	href	'${SUITE_DIR}/emxDocumentCentralStart.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'580'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectPropertiesSubscribeActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCObjectPropertiesTopActionbar add command DCObjectPropertiesSubscribeActionLink order command DCObjectPropertiesSubscribeActionLink 5;
+modify menu DCGenericDocumentPropertiesTopActionbar add command DCObjectPropertiesSubscribeActionLink order command DCObjectPropertiesSubscribeActionLink 4;
+modify menu DCFolderPropertiesTopActionbar add command DCObjectPropertiesSubscribeActionLink order command DCObjectPropertiesSubscribeActionLink 4;
+#channel ==>DCObjectPropertiesTopActionbarDCGenericDocumentPropertiesTopActionbarDCFolderPropertiesTopActionbar
+add property command_DCObjectPropertiesSubscribeActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectPropertiesSubscribeActionLink';

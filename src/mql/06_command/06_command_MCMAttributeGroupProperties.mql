@@ -1,0 +1,15 @@
+del command 'MCMAttributeGroupProperties';
+add command 'MCMAttributeGroupProperties'
+	description	'Attribute Group Properties'
+	label	'emxMultipleClassification.Command.Properties'
+	href	'${SUITE_DIR}/emxMultipleClassificationAttributeGroupPropertiesDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'MultipleClassification'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'MCMAttributeGroupProperties'
+	property	'version'	value	'10-6-0-1'
+;
+#channel ==>
+add property command_MCMAttributeGroupProperties on program eServiceSchemaVariableMapping.tcl to command 'MCMAttributeGroupProperties';

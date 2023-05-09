@@ -1,0 +1,25 @@
+del command 'APPRouteTemplateEditDetails';
+add command 'APPRouteTemplateEditDetails'
+	description	'Command to Edit Route Template details'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_RouteTemplate&mode=edit&formHeader=emxComponents.RouteDetailsDialog.Heading&HelpMarker=emxhelpeditroutedetails&Export=false&postProcessJPO=emxRouteTemplate:routeTemplateEditProcess&preProcessJavaScript=reloadRouteTemplateActionField'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'id==last.id&&!(type=="Route Template"&&current=="Active")'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checksToEditRouteTemplate'
+	setting	'Access Program'		'emxRouteTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteTemplateEditDetails'
+	property	'version'	value	'R424'
+;
+modify menu APPRouteTemplatePropertiesActionsToolBar add command APPRouteTemplateEditDetails order command APPRouteTemplateEditDetails 1;
+#channel ==>APPRouteTemplatePropertiesActionsToolBar
+add property command_APPRouteTemplateEditDetails on program eServiceSchemaVariableMapping.tcl to command 'APPRouteTemplateEditDetails';

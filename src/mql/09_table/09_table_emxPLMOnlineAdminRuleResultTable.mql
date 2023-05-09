@@ -1,0 +1,18 @@
+del table 'emxPLMOnlineAdminRuleResultTable' system;
+add table 'emxPLMOnlineAdminRuleResultTable' system
+column #1
+	name	'Name'
+	label	'emxPlmOnline.label.Rules'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminRuleReport.jsp?ruleName=${ROW_ID}'
+	range	''
+	setting	'Target Location'		'_parent'
+	setting	'Auto Filter'		'true'
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'fillRuleColumn'
+	setting	'program'		'emxPLMOnlineAdminAccessesViewProgram'
+;
+add property table_emxPLMOnlineAdminRuleResultTable on program eServiceSchemaVariableMapping.tcl to table 'emxPLMOnlineAdminRuleResultTable' system;

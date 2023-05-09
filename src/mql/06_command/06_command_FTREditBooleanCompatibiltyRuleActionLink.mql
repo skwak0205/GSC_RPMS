@@ -1,0 +1,21 @@
+del command 'FTREditBooleanCompatibiltyRuleActionLink';
+add command 'FTREditBooleanCompatibiltyRuleActionLink'
+	description	'Edit Boolean Compatibility Rule'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_BooleanCompatibilityRule&mode=Edit&formHeader=emxConfiguration.Heading.EditNoRevBooleanCompatibiltyRule&HelpMarker=emxhelpbooleanedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditBooleanCompatibiltyRuleActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRBooleanCompatibilityRulePropertiesTopActionBar add command FTREditBooleanCompatibiltyRuleActionLink order command FTREditBooleanCompatibiltyRuleActionLink 0;
+#channel ==>FTRBooleanCompatibilityRulePropertiesTopActionBar
+add property command_FTREditBooleanCompatibiltyRuleActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTREditBooleanCompatibiltyRuleActionLink';

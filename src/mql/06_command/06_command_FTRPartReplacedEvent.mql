@@ -1,0 +1,21 @@
+del command 'FTRPartReplacedEvent';
+add command 'FTRPartReplacedEvent'
+	description	'Part Replaced Event'
+	label	'PublishSubscribe.Event.PartReplaced'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Part Replaced'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'change type'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRPartReplacedEvent'
+	property	'version'	value	'R417'
+;
+modify menu PLCProductsEvents add command FTRPartReplacedEvent order command FTRPartReplacedEvent 4;
+modify menu FTRLogicalFeatureSubscriptionEvents add command FTRPartReplacedEvent order command FTRPartReplacedEvent 13;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command FTRPartReplacedEvent order command FTRPartReplacedEvent 11;
+#channel ==>PLCProductsEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_FTRPartReplacedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRPartReplacedEvent';

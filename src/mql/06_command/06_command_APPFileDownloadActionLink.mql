@@ -1,0 +1,22 @@
+del command 'APPFileDownloadActionLink';
+add command 'APPFileDownloadActionLink'
+	description	'File Download Command Object'
+	label	'emxComponents.Command.Download'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=download'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[checkout] == true) && ($<attribute[attribute_IsVersionObject].value> == True)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDownload.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFileDownloadActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentActionsToolBar add command APPFileDownloadActionLink order command APPFileDownloadActionLink 11;
+#channel ==>APPDocumentActionsToolBar
+add property command_APPFileDownloadActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPFileDownloadActionLink';

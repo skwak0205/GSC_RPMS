@@ -1,0 +1,19 @@
+del command 'LBCLibraryModifiedEvent';
+add command 'LBCLibraryModifiedEvent'
+	description	'Event holder for Library Modification'
+	label	'emxLibraryCentral.Event.Library_Modified'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Library Modified'
+	setting	'History Bit'		'modify'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCLibraryModifiedEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCDocumentLibrarySubscriptionEvents add command LBCLibraryModifiedEvent order command LBCLibraryModifiedEvent 3;
+modify menu LBCLibrariesSubscriptionEvents add command LBCLibraryModifiedEvent order command LBCLibraryModifiedEvent 3;
+#channel ==>LBCDocumentLibrarySubscriptionEventsLBCLibrariesSubscriptionEvents
+add property command_LBCLibraryModifiedEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCLibraryModifiedEvent';

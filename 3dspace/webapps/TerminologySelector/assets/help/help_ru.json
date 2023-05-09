@@ -1,0 +1,8 @@
+{
+"TerminologyManagementCommand.Title":"Управлять определением структуры просмотра",
+"TerminologyManagementCommand.ShortHelp":"Управлять связанными ссылками на структуры просмотра и связанные с ними экземпляры для узлов просмотра.",
+"AssociateTerminologiesCommand.Title":"Добавить в структуру просмотра",
+"AssociateTerminologiesCommand.ShortHelp":"Связать выбранные ссылки со структурой просмотра.",
+"AssociateTermsCommand.Title":"Добавить в узел просмотра",
+"AssociateTermsCommand.ShortHelp":"Связать выбранные экземпляры с узлом просмотра."
+}

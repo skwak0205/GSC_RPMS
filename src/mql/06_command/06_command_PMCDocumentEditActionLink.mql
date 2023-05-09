@@ -1,0 +1,24 @@
+del command 'PMCDocumentEditActionLink';
+add command 'PMCDocumentEditActionLink'
+	description	'Document Edit Details Command Object'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_DOCUMENTS&mode=edit&HelpMarker=emxhelpdocumenteditdetails&formHeader=emxComponents.Common.EditDetailsHeadingWithoutRev&Export=False&findMxLink=false&postProcessURL=../programcentral/emxProgramCentraFolderUtil.jsp?actionMode=EditDetails'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'CmdName'		'PMCDocumentEditActionLink'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Function'		'hasAccessForFolderAndDocumentActions'
+	setting	'Access Program'		'emxProjectFolder'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDocumentEditActionLink'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCDocumentEditActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCDocumentEditActionLink';

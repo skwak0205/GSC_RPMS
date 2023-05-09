@@ -1,0 +1,23 @@
+del command 'MCMAttributeGroupRemoveActionLink';
+add command 'MCMAttributeGroupRemoveActionLink'
+	description	'AttributeGroup Remove'
+	label	'emxMultipleClassification.ActionBarCmd.Remove'
+	href	'${SUITE_DIR}/emxLibraryCentralAttributeGroupRemoveConfirmation.jsp?action=remove'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'Content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemoveAttributeGroup.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'MCMAttributeGroupRemoveActionLink'
+	property	'version'	value	'R420'
+;
+modify menu MCMAttributeGroupCommandActionsToolBar add command MCMAttributeGroupRemoveActionLink order command MCMAttributeGroupRemoveActionLink 0;
+#channel ==>MCMAttributeGroupCommandActionsToolBar
+add property command_MCMAttributeGroupRemoveActionLink on program eServiceSchemaVariableMapping.tcl to command 'MCMAttributeGroupRemoveActionLink';

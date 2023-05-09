@@ -1,0 +1,24 @@
+del command 'DCDocumentRevisionsReviseWithFiles';
+add command 'DCDocumentRevisionsReviseWithFiles'
+	description	'Revise Document With Files'
+	label	'emxDocumentCentral.Button.ReviseWithFiles'
+	href	'${SUITE_DIR}/emxLibraryCentralIntermediateForm.jsp?mode=revise&reviseWithFiles=true&isClassifiedItem=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showReviseLinks'
+	setting	'Access Program'		'emxDCUtils'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReviseDocumentWithFiles.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCDocumentRevisionsReviseWithFiles'
+	property	'version'	value	'R420'
+;
+modify menu DCDocumentRevisionsActionBar add command DCDocumentRevisionsReviseWithFiles order command DCDocumentRevisionsReviseWithFiles 0;
+modify menu LBCGenericDocumentActionsToolBar add command DCDocumentRevisionsReviseWithFiles order command DCDocumentRevisionsReviseWithFiles 10;
+modify menu LBCDocumentSheetActionsToolBar add command DCDocumentRevisionsReviseWithFiles order command DCDocumentRevisionsReviseWithFiles 10;
+#channel ==>DCDocumentRevisionsActionBarLBCGenericDocumentActionsToolBarLBCDocumentSheetActionsToolBar
+add property command_DCDocumentRevisionsReviseWithFiles on program eServiceSchemaVariableMapping.tcl to command 'DCDocumentRevisionsReviseWithFiles';

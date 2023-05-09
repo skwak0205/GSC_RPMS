@@ -1,0 +1,27 @@
+del command 'APPDocumentUploadExternalFile';
+add command 'APPDocumentUploadExternalFile'
+	description	'Upload External File'
+	label	'emxComponents.Common.Upload'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=createMasterPerFile'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.png'
+	user	'3DSRestrictedAuthor'
+	user	'Global User'
+	user	'VPLMCreator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentUploadExternalFile'
+	property	'version'	value	'R422'
+;
+modify menu APPDiscussionDocumentSummaryActionsToolBar add command APPDocumentUploadExternalFile order command APPDocumentUploadExternalFile 2;
+#channel ==>APPDiscussionDocumentSummaryActionsToolBar
+add property command_APPDocumentUploadExternalFile on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentUploadExternalFile';

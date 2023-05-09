@@ -1,0 +1,19 @@
+del command 'Copy';
+add command 'Copy'
+	description	'Global Search Copy Command'
+	label	'emxComponents.Command.Copy'
+	href	'${COMPONENT_DIR}/emxCommonSearchUtil.jsp?isNewSearch=false'
+	alt	'emxComponents.Command.Copy'
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Single'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'Copy'
+	property	'version'	value	'10-0-1-0'
+;
+modify menu GlobalCopyBottomActionBar add command Copy order command Copy 0;
+#channel ==>GlobalCopyBottomActionBar
+add property command_Copy on program eServiceSchemaVariableMapping.tcl to command 'Copy';

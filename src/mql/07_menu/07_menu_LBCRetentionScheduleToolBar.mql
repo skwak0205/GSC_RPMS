@@ -1,0 +1,15 @@
+del menu 'LBCRetentionScheduleToolBar';
+add menu 'LBCRetentionScheduleToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LBCRetentionScheduleEdit'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCRetentionScheduleToolBar'
+	property 'version'	value	'R211'
+;
+add property menu_LBCRetentionScheduleToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LBCRetentionScheduleToolBar';

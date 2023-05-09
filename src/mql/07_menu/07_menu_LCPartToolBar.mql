@@ -1,0 +1,16 @@
+del menu 'LCPartToolBar';
+add menu 'LCPartToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'LCLibraryEndItemsSearchIn'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCPartToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_LCPartToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCPartToolBar';

@@ -1,0 +1,20 @@
+del menu 'PLCEngineeringChangeTestCaseActionsToolbar';
+add menu 'PLCEngineeringChangeTestCaseActionsToolbar'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'current != "Formal Approval" && current != "Close" && current != "Complete" && current != "Reject"'
+	command	'PLCCreateEngineeringChangeTestCaseActionLink'
+	command	'PLCAddExistingEngineeringChangeTestCaseActionLink'
+	command	'AEFSeparator'
+	command	'PLCRemoveEngineeringChangeTestCaseActionLink'
+	command	'PLCDeleteEngineeringChangeTestCaseActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCEngineeringChangeTestCaseActionsToolbar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_PLCEngineeringChangeTestCaseActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PLCEngineeringChangeTestCaseActionsToolbar';

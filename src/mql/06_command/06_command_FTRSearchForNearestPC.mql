@@ -1,0 +1,19 @@
+del command 'FTRSearchForNearestPC';
+add command 'FTRSearchForNearestPC'
+	description	'Search for the Nearest Product Configuration based on the set of Marketing Features'
+	label	'emxProduct.ActionLink.SearchForNearestPC'
+	href	'${SUITE_DIR}/emxSearchForNearestProductConfiguration.jsp?program=emxFeatureSearchBase:getNearestProductConfigurations&table=FTRSearchProductConfigurationsTable&CommandName=FTRSearchForNearestPC&sortColumnName=Name&header=emxProduct.Heading.SearchForNearest&Style=dialog&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRSearchForNearestPC'
+	property	'version'	value	'V6R2008-2.0'
+;
+modify menu SearchAddExistingChooserMenu add command FTRSearchForNearestPC order command FTRSearchForNearestPC 25;
+modify menu FTRProductConfigurationSearchMenu add command FTRSearchForNearestPC order command FTRSearchForNearestPC 1;
+#channel ==>SearchAddExistingChooserMenuFTRProductConfigurationSearchMenu
+add property command_FTRSearchForNearestPC on program eServiceSchemaVariableMapping.tcl to command 'FTRSearchForNearestPC';

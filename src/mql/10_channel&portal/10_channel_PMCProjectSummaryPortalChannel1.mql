@@ -1,0 +1,16 @@
+del channel 'PMCProjectSummaryPortalChannel1';
+add channel 'PMCProjectSummaryPortalChannel1'
+	description	''
+	height	'400'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCWBS','PMCQuality','PMCProjectBudget'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSummaryPortalChannel1'
+	property	'version'	value	'R211'
+;
+#portal ==>PMCProjectSummaryPortal
+add property channel_PMCProjectSummaryPortalChannel1 on program eServiceSchemaVariableMapping.tcl to channel 'PMCProjectSummaryPortalChannel1';

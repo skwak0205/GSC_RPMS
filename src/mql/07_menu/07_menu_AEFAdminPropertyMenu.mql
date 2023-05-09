@@ -1,0 +1,17 @@
+del menu 'AEFAdminPropertyMenu';
+add menu 'AEFAdminPropertyMenu'
+	description	''
+	label	'emxFramework.AdminProperty.Name'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFRegistrationAdmin'
+	command	'AEFRegistrationState'
+	command	'AEFRegistrationViewer'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFAdminPropertyMenu'
+	property 'version'	value	'10-5-1-2'
+;
+add property menu_AEFAdminPropertyMenu on program eServiceSchemaVariableMapping.tcl to menu 'AEFAdminPropertyMenu';

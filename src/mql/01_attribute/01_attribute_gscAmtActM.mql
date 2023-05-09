@@ -1,0 +1,14 @@
+#del attribute 'gscAmtActM';
+add attribute 'gscAmtActM'
+ type 'string'
+ description '입력 월 실적금액'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscAmtActM'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscAmtActM on program eServiceSchemaVariableMapping.tcl to attribute 'gscAmtActM';
+

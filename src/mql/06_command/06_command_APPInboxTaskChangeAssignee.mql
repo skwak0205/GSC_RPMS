@@ -1,0 +1,22 @@
+del command 'APPInboxTaskChangeAssignee';
+add command 'APPInboxTaskChangeAssignee'
+	description	'Command for changing the assignee of an Inbox Task'
+	label	'emxComponents.Tasks.ChangeAssignee'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPInboxTaskChangeAssignee&mode=edit&formHeader=emxComponents.Tasks.ChangeAssigneeHeader&HelpMarker=emxhelpchangeassignee&showPageURLIcon=false&Export=false&findMxLink=false&preProcessJavaScript=checkDefaultAssigneeSelectionOnLoad&postProcessJPO=emxInboxTask:updateAssignee&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'relationship[$<relationship_RouteTask>].to.attribute[$<attribute_RouteStatus>]!="Stopped"'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'showChangeAssigneeCommand'
+	setting	'Access Program'		'emxInboxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReAssignTask.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPInboxTaskChangeAssignee'
+	property	'version'	value	'R419'
+;
+modify menu APPInboxTaskDetailsActionsToolbar add command APPInboxTaskChangeAssignee order command APPInboxTaskChangeAssignee 2;
+#channel ==>APPInboxTaskDetailsActionsToolbar
+add property command_APPInboxTaskChangeAssignee on program eServiceSchemaVariableMapping.tcl to command 'APPInboxTaskChangeAssignee';

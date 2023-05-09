@@ -1,0 +1,22 @@
+del menu 'My Tools';
+add menu 'My Tools'
+	description	''
+	label	'emxNavigator.UIMenuBar.MyTools'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallAdministration.gif'
+	command	'AEFPowerViewHome'
+	command	'AEFPreferenceToolbar'
+	command	'APPEditContextUserProfile'
+	command	'AEFChangePasswordToolbar'
+	command	'AEFPageHistoryToolbar'
+	command	'AEFIconMailToolbar'
+	command	'AEFHelpAboutToolbar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'My Tools'
+	property 'version'	value	'R211'
+;
+add property menu_MyTools on program eServiceSchemaVariableMapping.tcl to menu 'My Tools';

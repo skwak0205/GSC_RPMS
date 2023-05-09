@@ -1,0 +1,20 @@
+del command 'FTRCopyResourceRuleSearchCommand';
+add command 'FTRCopyResourceRuleSearchCommand'
+	description	'FTRCopyResourceRuleSearchCommand'
+	label	'emxProduct.ActionLink.ResourceRule.search'
+	href	'${SUITE_DIR}/RuleExtensionCopy.jsp?suiteKey=Configuration&table=FTRResourceRuleSearchTable&CommandName=FTRCopyResourceRuleSearchCommand&mode=copyRule&HelpMarker=emxhelpresourcerulecopy'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCopyResourceRuleSearchCommand'
+	property	'version'	value	'R215'
+;
+modify menu SearchAddExistingChooserMenu add command FTRCopyResourceRuleSearchCommand order command FTRCopyResourceRuleSearchCommand 23;
+#channel ==>SearchAddExistingChooserMenu
+add property command_FTRCopyResourceRuleSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRCopyResourceRuleSearchCommand';

@@ -1,0 +1,15 @@
+{
+  "CEV.optionsChecker.rdfServerURL.error": "必须定义 RDF 服务器 URL！",
+  "CEV.optionsChecker.resourceURI.error": "必须定义资源 URI！",
+  "CEV.optionsChecker.constraintsPosition.error": "约束弹出窗口的位置应为“顶部”、“右侧”、“底部”或“左侧”",
+  "CEV.optionsChecker.buttons.types.error": "按钮“{label}”的类型应该是以下选项之一：“主要”、“默认”、“信息”、“成功”、“警告”、“错误”",
+  "CEV.optionsChecker.buttons.specificActions.error": "“{key}”特性的特定操作应该是一个函数！",
+  "CEV.optionsChecker.search.error": "需要一个函数才能搜索“{key}”特性的值！",
+  "CEV.title": "特性编辑器",
+  "CEV.defaultMessage": "检索所有特性时出错...",
+  "CEV.userCharacteristics.title": "用户特性",
+  "CEV.characteristics.title": "特性",
+  "CEV.okButton.content": "确定",
+  "CEV.cancelButton.content": "取消",
+  "CEV.cancelButton.error": "单击“取消”按钮时出错..."
+}

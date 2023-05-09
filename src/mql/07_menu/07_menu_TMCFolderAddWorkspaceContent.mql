@@ -1,0 +1,16 @@
+del menu 'TMCFolderAddWorkspaceContent';
+add menu 'TMCFolderAddWorkspaceContent'
+	description	''
+	label	'emxTeamCentral.Common.Basic'
+	href	''
+	alt	'emxTeamCentral.Common.Basic'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'TeamCentral'
+	command	'TMCFolderSearch'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCFolderAddWorkspaceContent'
+	property 'version'	value	'R418'
+;
+add property menu_TMCFolderAddWorkspaceContent on program eServiceSchemaVariableMapping.tcl to menu 'TMCFolderAddWorkspaceContent';

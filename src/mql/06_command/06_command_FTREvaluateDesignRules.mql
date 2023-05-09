@@ -1,0 +1,25 @@
+del command 'FTREvaluateDesignRules';
+add command 'FTREvaluateDesignRules'
+	description	''
+	label	'emxProduct.ActionLink.FTREvaluateDesignRules'
+	href	'${SUITE_DIR}/ProductConfigurationDesignValidation.jsp?mode=validate'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<expression[LogicalFeatureEnabled]=="true">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showValidateDesignRuleUX'
+	setting	'Access Program'		'emxProductConfiguration'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	user	'VPLMCreator'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREvaluateDesignRules'
+	property	'version'	value	'R423'
+;
+modify menu FTRProductConfigurationPropertiesPageActionBar add command FTREvaluateDesignRules order command FTREvaluateDesignRules 2;
+#channel ==>FTRProductConfigurationPropertiesPageActionBar
+add property command_FTREvaluateDesignRules on program eServiceSchemaVariableMapping.tcl to command 'FTREvaluateDesignRules';

@@ -1,0 +1,18 @@
+del command 'APPWorkflowProperties';
+add command 'APPWorkflowProperties'
+	description	'Displays workflow properties'
+	label	'emxComponents.Common.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Workflow&toolbar=APPWorkflowToolbar&HelpMarker=emxhelpworkflowproperties'
+	alt	'emxComponents.Common.Properties'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'sm_icon_Workflow.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowProperties'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu type_Workflow add command APPWorkflowProperties order command APPWorkflowProperties 1;
+#channel ==>type_Workflow
+add property command_APPWorkflowProperties on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowProperties';

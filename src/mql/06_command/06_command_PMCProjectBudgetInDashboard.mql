@@ -1,0 +1,18 @@
+del command 'PMCProjectBudgetInDashboard';
+add command 'PMCProjectBudgetInDashboard'
+	description	''
+	label	'emxProgramCentral.Budget.ProjectBudget'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCProjectBudgetPlanTable&toolbar=PMCProjectBudgetFilter&selection=none&editLink=false&expandProgram=emxProjectBudget:getTableExpandChildBudgetData&showTabHeader=false&emxExpandFilter=3&customize=false&HelpMarker= emxhelpprojectbudgetlist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetInDashboard'
+	property	'version'	value	'R417'
+;
+#channel ==>PMCGateDashboardChannel2
+add property command_PMCProjectBudgetInDashboard on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudgetInDashboard';

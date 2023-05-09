@@ -1,0 +1,26 @@
+del command 'RMTRequirementStructureDeleteRichText';
+add command 'RMTRequirementStructureDeleteRichText'
+	description	'Delete the Requirement'
+	label	'emxRequirements.Command.RMTStructureBrowserDelete'
+	href	'${SUITE_DIR}/RequirementStructureDeleteRequirement.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.RequirementSBDelete'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementStructureDeleteRichText'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTRequirementStructureDeleteRichText on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementStructureDeleteRichText';

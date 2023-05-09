@@ -1,0 +1,23 @@
+del command 'APPECCloseActionLink';
+add command 'APPECCloseActionLink'
+	description	'Close Engineering Change from Properties page'
+	label	'emxComponents.Command.CloseEC'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ECCloseFSInstance'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Access Program Method'		'showCloseToApprovalList'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current != "Close" && current != "Reject" && current != "Complete")'
+	setting	'Popup Modal'		'true'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECCloseActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECPropertiesActionsToolBar add command APPECCloseActionLink order command APPECCloseActionLink 2;
+#channel ==>APPECPropertiesActionsToolBar
+add property command_APPECCloseActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPECCloseActionLink';

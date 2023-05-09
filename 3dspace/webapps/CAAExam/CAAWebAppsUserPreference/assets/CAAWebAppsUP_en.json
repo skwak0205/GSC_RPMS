@@ -1,0 +1,10 @@
+{
+    "Username_lb"    : "User Name"  ,
+    "Categories_lb"  : "Possible Categories",
+    "all_lb"         : "All categories" ,
+    "1st_lb"         : "First category" ,
+    "2nd_lb"         : "Second category",
+	"3rd_lb"         : "Third category",
+	"OpenFile_lb"    : "Open File",
+	"maxitem_lb"     : "Max items to display"
+}

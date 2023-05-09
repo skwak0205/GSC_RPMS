@@ -1,0 +1,28 @@
+del command 'RMTCommitedRequirementListModelCandidateRequirementActionLink';
+add command 'RMTCommitedRequirementListModelCandidateRequirementActionLink'
+	description	''
+	label	'emxRequirements.ActionLink.CommitedRelationshipList'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRequirement:getCommittedRequirementsList&table=RMTCommitedRequirementList&header=emxRequirements.Table.CommitedRequirementsList'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Product Manager'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCommitedRequirementListModelCandidateRequirementActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTModelCandidateRequirementListTopActionBar add command RMTCommitedRequirementListModelCandidateRequirementActionLink order command RMTCommitedRequirementListModelCandidateRequirementActionLink 3;
+#channel ==>RMTModelCandidateRequirementListTopActionBar
+add property command_RMTCommitedRequirementListModelCandidateRequirementActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTCommitedRequirementListModelCandidateRequirementActionLink';

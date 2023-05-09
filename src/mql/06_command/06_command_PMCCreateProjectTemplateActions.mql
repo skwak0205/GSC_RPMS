@@ -1,0 +1,26 @@
+del command 'PMCCreateProjectTemplateActions';
+add command 'PMCCreateProjectTemplateActions'
+	description	'CreateProjectTemplate Command Object'
+	label	'emxFramework.Shortcut.CreateProjectTemplate'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ProjectTemplate&nameField=None&policy=policy_ProjectTemplate&form=PMCProjectTemplateCreateForm&header=emxProgramCentral.ProgramTop.CreateProjectTemplate&HelpMarker=emxhelpprojecttemplatecreatedialog&postProcessJPO=emxProjectTemplate:performPostProcessActions&submitAction=treeContent&findMxLink=false'
+	alt	'emxFramework.Shortcut.CreateProjectTemplate'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'mobile'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateProjectTemplateActions'
+	property	'version'	value	'R422'
+;
+modify menu PMCActions add command PMCCreateProjectTemplateActions order command PMCCreateProjectTemplateActions 0;
+#channel ==>PMCActions
+add property command_PMCCreateProjectTemplateActions on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateProjectTemplateActions';

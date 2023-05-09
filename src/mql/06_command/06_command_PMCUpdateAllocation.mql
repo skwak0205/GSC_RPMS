@@ -1,0 +1,25 @@
+del command 'PMCUpdateAllocation';
+add command 'PMCUpdateAllocation'
+	description	'Efforts'
+	label	'emxProgramCentral.Common.UpdateAllocation'
+	href	'${SUITE_DIR}/emxProgramCentralUpdateAllocationFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'450'
+	setting	'Window Width'		'750'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCUpdateAllocation'
+	property	'version'	value	'R422'
+;
+modify menu PMCEffortToolbarActions add command PMCUpdateAllocation order command PMCUpdateAllocation 1;
+#channel ==>PMCEffortToolbarActions
+add property command_PMCUpdateAllocation on program eServiceSchemaVariableMapping.tcl to command 'PMCUpdateAllocation';

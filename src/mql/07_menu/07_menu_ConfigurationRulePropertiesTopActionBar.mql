@@ -1,0 +1,12 @@
+del menu 'ConfigurationRulePropertiesTopActionBar';
+add menu 'ConfigurationRulePropertiesTopActionBar'
+	description	'ConfigurationRulePropertiesTopActionBar'
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'EditConfigurationRuleActionLink'
+	command	'EditExpressionRuleActionLink'
+	property 'version'	value	'R421'
+;
+add property menu_ConfigurationRulePropertiesTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'ConfigurationRulePropertiesTopActionBar';

@@ -1,0 +1,35 @@
+del command 'IssueCreateActionLink';
+add command 'IssueCreateActionLink'
+	description	'Create New Issue Command Object'
+	label	'emxComponents.ActionLink.IssueCreate'
+	href	'${ROOT_DIR}/common/emxCreate.jsp?type=type_Issue&typeChooser=true&ReloadOpener=true&header=emxComponents.Heading.IssueCreate&form=type_CreateIssue&nameField=autoName&HelpMarker=emxhelpissuecreate&showApply=true&submitAction=treeContent&StringResourceFileId=emxComponentsStringResource&suiteKey=Components&postProcessJPO=emxCommonIssue:updateIssueDetails&postProcessURL=../components/emxIssueCreateProcess.jsp&fromGlobalActionToolbar=true&preProcessJavaScript=issueCreatePreProcess'
+	alt	'emxComponents.ActionLink.IssueCreate'
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'True'
+	setting	'Access Function'		'showCreateIssue'
+	setting	'Access Program'		'emxCommonIssue'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	setting	'Selectable in Preferences'		'false'
+	user	'3DSRestrictedContributor'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	user	'Customer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueCreateActionLink'
+	property	'version'	value	'R422'
+;
+modify menu Issues add command IssueCreateActionLink order command IssueCreateActionLink 0;
+modify menu APPPartFamilyPartToolBar add command IssueCreateActionLink order command IssueCreateActionLink 1;
+modify menu APPRefDocumentsToolbar add command IssueCreateActionLink order command IssueCreateActionLink 0;
+#channel ==>IssuesAPPPartFamilyPartToolBarAPPRefDocumentsToolbar
+add property command_IssueCreateActionLink on program eServiceSchemaVariableMapping.tcl to command 'IssueCreateActionLink';

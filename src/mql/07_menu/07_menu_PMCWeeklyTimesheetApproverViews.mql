@@ -1,0 +1,16 @@
+del menu 'PMCWeeklyTimesheetApproverViews';
+add menu 'PMCWeeklyTimesheetApproverViews'
+	description	''
+	label	'emxProgramCentral.WeeklyTimesheet.DefaultView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCDefaultApproverView'
+	command	'PMCDetailedApproverView'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWeeklyTimesheetApproverViews'
+	property 'version'	value	'R210'
+;
+add property menu_PMCWeeklyTimesheetApproverViews on program eServiceSchemaVariableMapping.tcl to menu 'PMCWeeklyTimesheetApproverViews';

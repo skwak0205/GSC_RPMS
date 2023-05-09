@@ -1,0 +1,20 @@
+del menu 'type_FinancialItem';
+add menu 'type_FinancialItem'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/emxProgramCentralFinancialItemDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${SUITE_DIR}/iconSmallFinancial.gif'
+	command	'PMCAttachment'
+	command	'PMCBenefitItem'
+	command	'PMCCostItem'
+	command	'PMCHistory'
+	command	'PMCLifecycle'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_FinancialItem'
+	property 'version'	value	'9-5-0-0'
+;
+add property menu_type_FinancialItem on program eServiceSchemaVariableMapping.tcl to menu 'type_FinancialItem';

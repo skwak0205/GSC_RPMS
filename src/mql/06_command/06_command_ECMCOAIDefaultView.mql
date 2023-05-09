@@ -1,0 +1,18 @@
+del command 'ECMCOAIDefaultView';
+add command 'ECMCOAIDefaultView'
+	description	''
+	label	'EnterpriseChangeMgt.Command.ECMCOAIDefaultView'
+	href	'javascript:switchToDefaultView()'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRefresh.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOAIDefaultView'
+	property	'version'	value	'R216'
+;
+modify menu ECMCOAffectedItemsListToolbar add command ECMCOAIDefaultView order command ECMCOAIDefaultView 7;
+#channel ==>ECMCOAffectedItemsListToolbar
+add property command_ECMCOAIDefaultView on program eServiceSchemaVariableMapping.tcl to command 'ECMCOAIDefaultView';

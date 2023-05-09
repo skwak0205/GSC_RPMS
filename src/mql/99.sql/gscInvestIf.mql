@@ -1,0 +1,115 @@
+add attribute  'gscBizNm'
+   description '사업명'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscBizNm"
+;
+add property attribute_gscBizNm on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscBizNm';
+add attribute  'gscDeptNm'
+   description '담당부서'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "HHI"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscDeptNm"
+;
+add property attribute_gscDeptNm on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscDeptNm';
+
+add attribute  'gscLineNo'
+   description '라인'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscLineNo"
+;
+add property attribute_gscLineNo on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscLineNo';
+add attribute  'gscMgmBgtAmt'
+   description '운용예산(C=A+B)'
+   type        'real'
+   default    0
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscMgmBgtAmtmount"
+;
+add property attribute_gscMgmBgtAmt on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscMgmBgtAmt';
+
+add attribute  'gscPlnAmt'
+   description '기초예산(A)'
+   type        'real'
+   default    0
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscPlnamt"
+;
+add property attribute_gscPlnAmt on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscPlnAmt';
+
+add attribute  'gscRemAmt'
+   description '잔여예산(C-D-E)'
+   type        'real'
+   default    0
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscRemAmt"
+;
+add property attribute_gscRemAmt on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscRemAmt';
+
+add attribute  'gscRsltAmt01'
+   description '당해약정(D)'
+   type        'real'
+   default    0
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscRsltAmt01"
+;
+add property attribute_gscRsltAmt01 on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscRsltAmt01';
+add attribute  'gscRsltAmt02'
+   description '당해약정(E)'
+   type        'real'
+   default    0
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscRsltAmt02"
+;
+add property attribute_gscRsltAmt02 on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscRsltAmt02';
+
+add attribute  'gscWbsCd'
+   description 'WBS코드'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscWbsCd"
+;
+add property attribute_gscWbsCd on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscWbsCd';
+
+add type gscInvestIf
+    property 'installed date'     value  '2023.01.10'
+    property 'application'        value  'Framework'
+    property 'original name'      value  'gscInvestIf'
+    property 'installer'          value  'GSC'
+    property 'version'            value  'V6R2019'
+;
+
+add property type_gscInvestIf on prog eServiceSchemaVariableMapping.tcl to  type 'gscInvestIf';
+
+mod policy 'gscInterfaceDeliverable'
+   add type gscInvestIf;
+
+mod type gscInvestIf add attribute gscBizNm,gscDeptNm,gscLineNo,gscMgmBgtAmt,gscPlnAmt,gscRemAmt,gscRsltAmt01,gscRsltAmt02,gscWbsCd;

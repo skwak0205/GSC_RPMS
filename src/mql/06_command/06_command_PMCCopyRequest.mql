@@ -1,0 +1,29 @@
+del command 'PMCCopyRequest';
+add command 'PMCCopyRequest'
+	description	'Copy Request'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=CopyRequest'
+	alt	'emxProgramCentral.Command.ResourcePlan.CopyRequest'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isResourcePlanRequestCommand'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCopyRequest'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourceRequestProcessActions add command PMCCopyRequest order command PMCCopyRequest 4;
+modify menu PMCResourcePlanToolBar add command PMCCopyRequest order command PMCCopyRequest 4;
+modify menu PMCResourcePoolRequestToolbar add command PMCCopyRequest order command PMCCopyRequest 4;
+#channel ==>PMCResourceRequestProcessActionsPMCResourcePlanToolBarPMCResourcePoolRequestToolbar
+add property command_PMCCopyRequest on program eServiceSchemaVariableMapping.tcl to command 'PMCCopyRequest';

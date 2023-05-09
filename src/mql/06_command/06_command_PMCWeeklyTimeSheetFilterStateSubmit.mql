@@ -1,0 +1,21 @@
+del command 'PMCWeeklyTimeSheetFilterStateSubmit';
+add command 'PMCWeeklyTimeSheetFilterStateSubmit'
+	description	'Weekly TimeSheet Filter State Submit'
+	label	'emxProgramCentral.WeeklyTimesheet.submitted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'function'		'displayTimesheetTasksSubmitted'
+	setting	'program'		'emxWeeklyTimeSheet'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWeeklyTimeSheetFilterStateSubmit'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimeSheetApproverFilter add command PMCWeeklyTimeSheetFilterStateSubmit order command PMCWeeklyTimeSheetFilterStateSubmit 2;
+modify menu PMCWeeklyTimeSheetFilter add command PMCWeeklyTimeSheetFilterStateSubmit order command PMCWeeklyTimeSheetFilterStateSubmit 1;
+modify menu PMCTimesheetApproverFilter add command PMCWeeklyTimeSheetFilterStateSubmit order command PMCWeeklyTimeSheetFilterStateSubmit 1;
+#channel ==>PMCWeeklyTimeSheetApproverFilterPMCWeeklyTimeSheetFilterPMCTimesheetApproverFilter
+add property command_PMCWeeklyTimeSheetFilterStateSubmit on program eServiceSchemaVariableMapping.tcl to command 'PMCWeeklyTimeSheetFilterStateSubmit';

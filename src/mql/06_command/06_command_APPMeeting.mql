@@ -1,0 +1,21 @@
+del command 'APPMeeting';
+add command 'APPMeeting'
+	description	''
+	label	'emxComponents.Common.Meetings'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxMeeting:getMeetings&table=APPMeetingSummary&mode=view&toolbar=APPMeetingsTopActionToolbar&selection=multiple&editLink=true&sortColumnName=Name&postProcessJPO=emxMeeting:postProcessRefresh&GlobalContext=false&direction=from&objectCompare=false&FilterFramePage=../common/emxCommonStateFilter.jsp&header=emxComponents.Heading.Meetings&expandProgram=emxMeeting:getTableMeetingData&displayView=details&HelpMarker=emxhelpmeetings'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'displayTreeNodeAccessCheck'
+	setting	'Access Program'		'emxWorkspace'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeeting'
+	property	'version'	value	'R213'
+;
+modify menu type_Project add command APPMeeting order command APPMeeting 3;
+modify menu type_ChangeOrder add command APPMeeting order command APPMeeting 6;
+modify menu type_ChangeRequest add command APPMeeting order command APPMeeting 7;
+modify menu type_Program add command APPMeeting order command APPMeeting 6;
+#channel ==>type_Projecttype_ChangeOrdertype_ChangeRequesttype_ProgramPMCProjectCollaborationChannelPMCGateCollaborationChannel
+add property command_APPMeeting on program eServiceSchemaVariableMapping.tcl to command 'APPMeeting';

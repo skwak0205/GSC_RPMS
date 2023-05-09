@@ -1,0 +1,23 @@
+del command 'PLCAddExistingTestCaseSubTestCaseActionLink';
+add command 'PLCAddExistingTestCaseSubTestCaseActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_TestCase&table=PLCSearchTestCasesTable&excludeOIDprogram=emxTestCase:excludeSubTestCases&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_SubTestCase&isTo=true&cancelLabel=emxProduct.Button.Close'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingTestCaseSubTestCaseActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCTestCaseSubTestCaseTopActionBar add command PLCAddExistingTestCaseSubTestCaseActionLink order command PLCAddExistingTestCaseSubTestCaseActionLink 0;
+#channel ==>PLCTestCaseSubTestCaseTopActionBar
+add property command_PLCAddExistingTestCaseSubTestCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingTestCaseSubTestCaseActionLink';

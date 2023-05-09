@@ -1,0 +1,16 @@
+del menu 'PMCQualityMetricToolbarActions';
+add menu 'PMCQualityMetricToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCAddNewQualityMetric'
+	command	'PMCRemoveQualityMetric'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCQualityMetricToolbarActions'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_PMCQualityMetricToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCQualityMetricToolbarActions';

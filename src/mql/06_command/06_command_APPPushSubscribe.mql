@@ -1,0 +1,21 @@
+del command 'APPPushSubscribe';
+add command 'APPPushSubscribe'
+	description	''
+	label	'emxComponents.Common.Subscribe'
+	href	'${COMPONENT_DIR}/emxSubscription.jsp?enablePush=true&HelpMarker=emxhelpsubscriptionevents'
+	alt	'emxComponents.Common.Subscribe'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPushSubscribe'
+	property	'version'	value	'R419'
+;
+modify menu ECMCOPropertiesToolbar add command APPPushSubscribe order command APPPushSubscribe 7;
+modify menu ECMCAPropertiesToolbar add command APPPushSubscribe order command APPPushSubscribe 3;
+modify menu ECMCRPropertiesToolbar add command APPPushSubscribe order command APPPushSubscribe 7;
+modify menu APPRoutePropertiesActionsToolBar add command APPPushSubscribe order command APPPushSubscribe 0;
+#channel ==>ECMCOPropertiesToolbarECMCAPropertiesToolbarECMCRPropertiesToolbarAPPRoutePropertiesActionsToolBarECMChangeCollaberationChannel
+add property command_APPPushSubscribe on program eServiceSchemaVariableMapping.tcl to command 'APPPushSubscribe';

@@ -1,0 +1,15 @@
+del menu 'RMTRequirementListTopActionBar';
+add menu 'RMTRequirementListTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTCreateRequirement'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementListTopActionBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_RMTRequirementListTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementListTopActionBar';

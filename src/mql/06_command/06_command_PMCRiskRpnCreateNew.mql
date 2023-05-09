@@ -1,0 +1,30 @@
+del command 'PMCRiskRpnCreateNew';
+add command 'PMCRiskRpnCreateNew'
+	description	'Command for Creating New RPN'
+	label	'emxProgramCentral.Risk.CreateRPN'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=isRiskSelected'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateRPN_32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRiskRpnCreateNew'
+	property	'version'	value	'R422'
+;
+modify menu PMCRiskRpnToolBarActions add command PMCRiskRpnCreateNew order command PMCRiskRpnCreateNew 0;
+modify menu PMCRisksSummaryToolBarActions add command PMCRiskRpnCreateNew order command PMCRiskRpnCreateNew 2;
+modify menu PMCRisksSummaryToolBar add command PMCRiskRpnCreateNew order command PMCRiskRpnCreateNew 6;
+#channel ==>PMCRiskRpnToolBarActionsPMCRisksSummaryToolBarActionsPMCRisksSummaryToolBar
+add property command_PMCRiskRpnCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PMCRiskRpnCreateNew';

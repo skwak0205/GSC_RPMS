@@ -1,0 +1,19 @@
+del command 'FTRQuantityRuleSearch';
+add command 'FTRQuantityRuleSearch'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${SUITE_DIR}/QuantityRuleSearch.jsp?suiteKey=Configuration&table=FTRQuantityRuleSearchTable&CommandName=FTRQuantityRuleSearch'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRQuantityRuleSearch'
+	property	'version'	value	'R215'
+;
+modify menu SearchAddExistingChooserMenu add command FTRQuantityRuleSearch order command FTRQuantityRuleSearch 28;
+#channel ==>SearchAddExistingChooserMenu
+add property command_FTRQuantityRuleSearch on program eServiceSchemaVariableMapping.tcl to command 'FTRQuantityRuleSearch';

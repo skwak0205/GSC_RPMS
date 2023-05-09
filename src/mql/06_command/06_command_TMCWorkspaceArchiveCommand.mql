@@ -1,0 +1,26 @@
+del command 'TMCWorkspaceArchiveCommand';
+add command 'TMCWorkspaceArchiveCommand'
+	description	''
+	label	'emxTeamCentral.Button.Archive'
+	href	'${SUITE_DIR}/emxTeamWorkspaceArchive.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'(current == "Active" && current.access[promote] == true)'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionArchiveWorkspace.png'
+	setting	'Confirm Message'		'emxTeamCentral.ArchiveProject.Confirmation'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceArchiveCommand'
+	property	'version'	value	'R422.HF1'
+;
+modify menu TMCWorkspaceDetailsActionsToolBar add command TMCWorkspaceArchiveCommand order command TMCWorkspaceArchiveCommand 5;
+#channel ==>TMCWorkspaceDetailsActionsToolBar
+add property command_TMCWorkspaceArchiveCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceArchiveCommand';

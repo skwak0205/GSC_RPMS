@@ -1,0 +1,17 @@
+del menu 'AEFSearchConsolidatedToolbar';
+add menu 'AEFSearchConsolidatedToolbar'
+	description	''
+	label	'emxFramework.Consolidate.Toolbar'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	menu	'AEFSearchConsolidatedActions'
+	menu	'AEFSearchTypes'
+	command	'AEFSearchResetCriteria'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFSearchConsolidatedToolbar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_AEFSearchConsolidatedToolbar on program eServiceSchemaVariableMapping.tcl to menu 'AEFSearchConsolidatedToolbar';

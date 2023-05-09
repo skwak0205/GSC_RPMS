@@ -1,0 +1,24 @@
+del command 'APPDeleteECImpactAnalysisActionLink';
+add command 'APPDeleteECImpactAnalysisActionLink'
+	description	''
+	label	'emxComponents.Common.Delete'
+	href	'${SUITE_DIR}/emxEngineeringChangeImpactAnalysisUtil.jsp?mode=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasImpactAnalysisLink'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Delete'
+	setting	'Access Mask'		'ToDisconnect'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteECImpactAnalysisActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECImpactAnalysisListActionsToolBar add command APPDeleteECImpactAnalysisActionLink order command APPDeleteECImpactAnalysisActionLink 0;
+#channel ==>APPECImpactAnalysisListActionsToolBar
+add property command_APPDeleteECImpactAnalysisActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteECImpactAnalysisActionLink';

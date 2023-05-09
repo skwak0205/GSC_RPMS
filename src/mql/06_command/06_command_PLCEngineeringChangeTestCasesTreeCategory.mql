@@ -1,0 +1,16 @@
+del command 'PLCEngineeringChangeTestCasesTreeCategory';
+add command 'PLCEngineeringChangeTestCasesTreeCategory'
+	description	'EC Test Cases tree category command'
+	label	'emxProduct.Tree.TestCase'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCTestCaseList&program=emxTestCase:getRelatedTestCases&header=emxProduct.Heading.TestCaseWithoutRevision&selection=multiple&toolbar=PLCEngineeringChangeTestCaseToolbar&rel=relationship_ECTestCase&sortColumnName=Name&HelpMarker=emxhelptestcaselist&freezePane=Name'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCEngineeringChangeTestCasesTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_EngineeringChange add command PLCEngineeringChangeTestCasesTreeCategory order command PLCEngineeringChangeTestCasesTreeCategory 9;
+#channel ==>type_EngineeringChange
+add property command_PLCEngineeringChangeTestCasesTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCEngineeringChangeTestCasesTreeCategory';

@@ -1,0 +1,24 @@
+del command 'APPECRejectActionLink';
+add command 'APPECRejectActionLink'
+	description	'Reject Engineering Change from Properties page'
+	label	'emxComponents.Command.RejectEC'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ECRejectFSInstance'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Access Program Method'		'showRejectToApprovalList'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current != "Close" && current != "Complete" && current != "Reject")'
+	setting	'Popup Modal'		'true'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReject.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECRejectActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECPropertiesActionsToolBar add command APPECRejectActionLink order command APPECRejectActionLink 0;
+#channel ==>APPECPropertiesActionsToolBar
+add property command_APPECRejectActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPECRejectActionLink';

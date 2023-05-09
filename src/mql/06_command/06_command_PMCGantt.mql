@@ -1,0 +1,22 @@
+del command 'PMCGantt';
+add command 'PMCGantt'
+	description	'WBS Command Object'
+	label	'emxProgramCentral.Action.GanttChart'
+	href	'../programcentral/emxProgramCentralWhatIfAnalysis.jsp?mode=GanttChart'
+	alt	'emxFramework.Command.Alt.WBS'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(type.kindOf[$<type_TaskManagement>]!=true)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGantt'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCWBSChannelPMCWhatIfExperimentsUpdateChannelPMCSchedulePMCProjectTemplateWBSChannelPMCFlattenedViewSchedulePMCGanttChartViewSchedulePMCDataGridViewSchedule
+add property command_PMCGantt on program eServiceSchemaVariableMapping.tcl to command 'PMCGantt';

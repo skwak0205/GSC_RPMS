@@ -1,0 +1,26 @@
+del command 'AEFGenericDelete';
+add command 'AEFGenericDelete'
+	description	'Generic Delete Command'
+	label	'emxFramework.GenericDelete.label'
+	href	'${COMMON_DIR}/emxGenericDeleteProcess.jsp'
+	alt	'emxFramework.GenericDelete.label'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxFramework.GenericDelete.confirmMessage'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFGenericDelete'
+	property	'version'	value	'R422'
+;
+modify menu AEFFullSearchMenu add command AEFGenericDelete order command AEFGenericDelete 1;
+modify menu AEFSearchConsolidatedActions add command AEFGenericDelete order command AEFGenericDelete 0;
+modify menu TMCPushSubAddRecipientsToolbar add command AEFGenericDelete order command AEFGenericDelete 0;
+#channel ==>AEFFullSearchMenuAEFSearchConsolidatedActionsTMCPushSubAddRecipientsToolbar
+add property command_AEFGenericDelete on program eServiceSchemaVariableMapping.tcl to command 'AEFGenericDelete';

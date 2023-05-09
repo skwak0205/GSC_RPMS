@@ -1,0 +1,17 @@
+del menu 'PMCResourcePlanToolBarActions';
+add menu 'PMCResourcePlanToolBarActions'
+	description	''
+	label	'emxProgramCentral.Command.ResourcePlan.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'PMCCreateResourcePlan'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourcePlanToolBarActions'
+	property 'version'	value	'R421.HF2'
+;
+add property menu_PMCResourcePlanToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourcePlanToolBarActions';

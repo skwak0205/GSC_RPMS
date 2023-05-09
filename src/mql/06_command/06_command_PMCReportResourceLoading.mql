@@ -1,0 +1,21 @@
+del command 'PMCReportResourceLoading';
+add command 'PMCReportResourceLoading'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Command.ResourceLoadingReport'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePoolPeopleUtil.jsp?mode=ResourcePoolPeopleReport&program=emxResourcePoolReports:getTableResourceLoadingReportData&table=PMCReportResourceLoading&toolbar=PMCReportDateToolbarMenu,PMCReportResourceLoadingProjectFilterMenu&selection=none&submode=PMCResourceLoadingReport&header=emxProgramCentral.ResourcePlanning.Report.ResourceLoadingReport&HelpMarker=emxhelpresourceloadingreport&chartingrequired=false&suiteKey=ProgramCentral&sortColumnName=none&displaymode=Summary'
+	alt	''
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportResourceLoading'
+	property	'version'	value	'R417'
+;
+modify menu PMCWeeklyTimeSheetReportResourcePoolToolbarMenu add command PMCReportResourceLoading order command PMCReportResourceLoading 2;
+#channel ==>PMCWeeklyTimeSheetReportResourcePoolToolbarMenu
+add property command_PMCReportResourceLoading on program eServiceSchemaVariableMapping.tcl to command 'PMCReportResourceLoading';

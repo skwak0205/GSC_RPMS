@@ -1,0 +1,21 @@
+del command 'PMCDecisionsPowerView';
+add command 'PMCDecisionsPowerView'
+	description	''
+	label	'emxProgramCentral.Common.Decisions'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCDecisionPowerView&showPageHeader=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDecisionsPowerView'
+	property	'version'	value	'R422'
+;
+modify menu type_Program add command PMCDecisionsPowerView order command PMCDecisionsPowerView 5;
+#channel ==>type_ProgramPMCProjectCollaborationChannelPMCGateCollaborationChannel
+add property command_PMCDecisionsPowerView on program eServiceSchemaVariableMapping.tcl to command 'PMCDecisionsPowerView';

@@ -1,0 +1,31 @@
+del command 'LBCCreateNewClass';
+add command 'LBCCreateNewClass'
+	description	'Create New Class'
+	label	'emxLibraryCentral.Command.CreateNew'
+	href	'${SUITE_DIR}/emxLibraryCentralIntermediateForm.jsp?form=type_CreateClass&mode=create'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'(owner==context.user) || (locked == FALSE)'
+	setting	'Access Map'		'FromConnect'
+	setting	'Popup Modal'		'true'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCreateNewClass'
+	property	'version'	value	'R422'
+;
+modify menu DCLibraryBookshelvesTopActionbar add command LBCCreateNewClass order command LBCCreateNewClass 1;
+modify menu DCBookshelfBooksTopActionbar add command LBCCreateNewClass order command LBCCreateNewClass 1;
+modify menu LCPartFamilyActionsToolBar add command LBCCreateNewClass order command LBCCreateNewClass 1;
+modify menu LCClassActionsToolBar add command LBCCreateNewClass order command LBCCreateNewClass 1;
+modify menu LBCLibraryBookshelvesActionToolBar add command LBCCreateNewClass order command LBCCreateNewClass 1;
+modify menu LBCBookshelfBooksActionToolBar add command LBCCreateNewClass order command LBCCreateNewClass 1;
+#channel ==>DCLibraryBookshelvesTopActionbarDCBookshelfBooksTopActionbarLCPartFamilyActionsToolBarLCClassActionsToolBarLBCLibraryBookshelvesActionToolBarLBCBookshelfBooksActionToolBar
+add property command_LBCCreateNewClass on program eServiceSchemaVariableMapping.tcl to command 'LBCCreateNewClass';

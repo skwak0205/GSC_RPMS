@@ -1,0 +1,23 @@
+del menu 'APPClassificationSubscriptionEvents';
+add menu 'APPClassificationSubscriptionEvents'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPClassificationContentAddedEvent'
+	command	'APPClassificationContentRemovedEvent'
+	command	'APPClassificationModifiedEvent'
+	command	'APPClassificationDeletedEvent'
+	command	'APPClassificationPromotedToActiveStateEvent'
+	command	'APPClassificationPromotedToObsoleteStateEvent'
+	command	'APPClassificationDemotedToActiveStateEvent'
+	command	'APPClassificationDemotedToInactiveStateEvent'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPClassificationSubscriptionEvents'
+	property 'version'	value	'R417'
+;
+add property menu_APPClassificationSubscriptionEvents on program eServiceSchemaVariableMapping.tcl to menu 'APPClassificationSubscriptionEvents';

@@ -1,0 +1,17 @@
+del menu 'FolderManagementMyDesk';
+add menu 'FolderManagementMyDesk'
+	description	''
+	label	'enoFolderManagement.MyDesk.FolderManagementMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'FolderManagement'
+	setting	'Licensed Product'		'ENOFOL2_TP'
+	command	'WorkspacesExplorerView'
+	command	'FMAWorkspacesCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'FolderManagement'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'FolderManagementMyDesk'
+	property 'version'	value	'R417'
+;
+add property menu_FolderManagementMyDesk on program eServiceSchemaVariableMapping.tcl to menu 'FolderManagementMyDesk';

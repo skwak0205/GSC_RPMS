@@ -1,0 +1,30 @@
+del command 'APPRouteSummarySetTaskEscalation';
+add command 'APPRouteSummarySetTaskEscalation'
+	description	'Command for Task Escalation'
+	label	'emxComponents.TaskEscalation.SetTaskEscalation'
+	href	'${COMPONENT_DIR}/emxRouteSummaryTaskEscalationProcess.jsp'
+	alt	'emxComponents.TaskEscalation.SetTaskEscalation'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canSetTaskEscalation'
+	setting	'Access Program'		'emxRoute'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEscalateTask.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteSummarySetTaskEscalation'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteSummaryActionsToolBar add command APPRouteSummarySetTaskEscalation order command APPRouteSummarySetTaskEscalation 6;
+modify menu APPRouteSummaryTaskActionsToolBar add command APPRouteSummarySetTaskEscalation order command APPRouteSummarySetTaskEscalation 6;
+modify menu PMCRouteSummaryActionsToolBar add command APPRouteSummarySetTaskEscalation order command APPRouteSummarySetTaskEscalation 6;
+#channel ==>APPRouteSummaryActionsToolBarAPPRouteSummaryTaskActionsToolBarPMCRouteSummaryActionsToolBar
+add property command_APPRouteSummarySetTaskEscalation on program eServiceSchemaVariableMapping.tcl to command 'APPRouteSummarySetTaskEscalation';

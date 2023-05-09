@@ -1,0 +1,17 @@
+del menu 'FTRProductConfigSelectedOptionsFilter';
+add menu 'FTRProductConfigSelectedOptionsFilter'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRProductConfigSelectedOptionsAll'
+	command	'FTRProductConfigConfigurationFeatureSelectedOptions'
+	command	'FTRProductConfigComponentFeatureSelectedOptions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRProductConfigSelectedOptionsFilter'
+	property 'version'	value	'R212'
+;
+add property menu_FTRProductConfigSelectedOptionsFilter on program eServiceSchemaVariableMapping.tcl to menu 'FTRProductConfigSelectedOptionsFilter';

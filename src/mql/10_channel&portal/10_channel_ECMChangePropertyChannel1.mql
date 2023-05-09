@@ -1,0 +1,16 @@
+del channel 'ECMChangePropertyChannel1';
+add channel 'ECMChangePropertyChannel1'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'EnterpriseChangeMgt'
+	command 	'ECMCRProperties','ECMCOProperties','ECMCAProperties','ECMCASummaryView','ECMCOPrerequisites','ECMCAPrerequisites','ECMSummaryReport','AEFHistory','PLMAddExtensionCmd'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangePropertyChannel1'
+	property	'version'	value	'R216'
+;
+#portal ==>ECMChangePropertyPortal
+add property channel_ECMChangePropertyChannel1 on program eServiceSchemaVariableMapping.tcl to channel 'ECMChangePropertyChannel1';

@@ -1,0 +1,24 @@
+del command 'PMCListCalendarLocations';
+add command 'PMCListCalendarLocations'
+	description	'description'
+	label	'emxProgramCentral.CompanyLocations.Locations'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCWorkCalendarLocations&program=emxLocation:getLocation&header=emxProgramCentral.Common.CalendarLocations&toolbar=PMCWorkCalendarLocationToolbar&selection=multiple&HelpMarker=emxhelpcalendarlocationlist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'true'
+	user	'Organization Manager'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Company Representative'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCListCalendarLocations'
+	property	'version'	value	'R422.HF4'
+;
+modify menu type_WorkCalendar add command PMCListCalendarLocations order command PMCListCalendarLocations 0;
+#channel ==>type_WorkCalendarPMCCalendarViewChannel1
+add property command_PMCListCalendarLocations on program eServiceSchemaVariableMapping.tcl to command 'PMCListCalendarLocations';

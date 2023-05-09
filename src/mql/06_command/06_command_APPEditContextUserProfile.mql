@@ -1,0 +1,18 @@
+del command 'APPEditContextUserProfile';
+add command 'APPEditContextUserProfile'
+	description	'Command to Edit Profile of the Logged In Person'
+	label	'emxComponents.Person.EditUserProfile'
+	href	'${COMPONENT_DIR}/emxComponentsEditContextUserProfile.jsp'
+	alt	'emxComponents.Person.EditUserProfile'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPEditContextUserProfile'
+	property	'version'	value	'R417'
+;
+#channel ==>My ToolsAEFPersonMenu
+add property command_APPEditContextUserProfile on program eServiceSchemaVariableMapping.tcl to command 'APPEditContextUserProfile';

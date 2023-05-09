@@ -1,0 +1,17 @@
+del menu 'PMCWorkCalendarEventsToolbarActions';
+add menu 'PMCWorkCalendarEventsToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWorkCalendarEventCreateActionLink'
+	command	'AEFSeparator'
+	command	'PMCWorkCalendarEventDeleteActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWorkCalendarEventsToolbarActions'
+	property 'version'	value	'R418'
+;
+add property menu_PMCWorkCalendarEventsToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCWorkCalendarEventsToolbarActions';

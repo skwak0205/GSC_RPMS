@@ -1,0 +1,23 @@
+del command 'APPRouteResumeActionLink';
+add command 'APPRouteResumeActionLink'
+	description	'Command to Resume the Route'
+	label	'emxComponents.Routes.ResumeRoute'
+	href	'${SUITE_DIR}/emxRouteStartPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'checksToRouteResumeActionLink'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionStartResumeRoute.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteResumeActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRoutePropertiesActionsToolBar add command APPRouteResumeActionLink order command APPRouteResumeActionLink 7;
+#channel ==>APPRoutePropertiesActionsToolBar
+add property command_APPRouteResumeActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRouteResumeActionLink';

@@ -1,0 +1,24 @@
+del command 'APPCollaborationPartners';
+add command 'APPCollaborationPartners'
+	description	'Command for displaying Collaboration Partners'
+	label	'emxComponents.CollaborationPartners.Name'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxOrganizationBase:getCollaborationPartners&table=APPCollaborationPartnersSummary&header=emxComponents.CollaborationPartners.Heading&toolbar=APPCollaborationPartnersSummaryToolbar&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelpcollabpartners&PrinterFriendly=true'
+	alt	'emxComponents.CollaborationPartners.Name'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(to[$<relationship_Customer>].from.name != "")'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallCompany.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCollaborationPartners'
+	property	'version'	value	'R421'
+;
+modify menu type_BusinessUnit add command APPCollaborationPartners order command APPCollaborationPartners 13;
+modify menu type_Company add command APPCollaborationPartners order command APPCollaborationPartners 6;
+#channel ==>type_BusinessUnittype_Company
+add property command_APPCollaborationPartners on program eServiceSchemaVariableMapping.tcl to command 'APPCollaborationPartners';

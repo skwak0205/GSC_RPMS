@@ -1,0 +1,17 @@
+del menu 'FTRPreviewBOMTableToolbar';
+add menu 'FTRPreviewBOMTableToolbar'
+	description	''
+	label	'emxProduct.Command.PreviewBOM'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'FTRGenerateEBOMCommand'
+	command	'FTRPreviewApplyBOMCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRPreviewBOMTableToolbar'
+	property 'version'	value	'R418'
+;
+add property menu_FTRPreviewBOMTableToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRPreviewBOMTableToolbar';

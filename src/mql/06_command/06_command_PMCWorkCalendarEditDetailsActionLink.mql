@@ -1,0 +1,21 @@
+del command 'PMCWorkCalendarEditDetailsActionLink';
+add command 'PMCWorkCalendarEditDetailsActionLink'
+	description	''
+	label	'emxProgramCentral.Common.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_WorkCalendar&mode=edit&submitAction=refreshCaller&formHeader=emxProgramCentral.Common.CalendarEditBasics&HelpMarker=emxhelpcalendaredit'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'iconActionEdit.gif'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkCalendarEditDetailsActionLink'
+	property	'version'	value	'R423.HF2'
+;
+modify menu PMCWorkCalendarPropertiesToolbarActions add command PMCWorkCalendarEditDetailsActionLink order command PMCWorkCalendarEditDetailsActionLink 0;
+#channel ==>PMCWorkCalendarPropertiesToolbarActions
+add property command_PMCWorkCalendarEditDetailsActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkCalendarEditDetailsActionLink';

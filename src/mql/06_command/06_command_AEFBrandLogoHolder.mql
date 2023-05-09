@@ -1,0 +1,18 @@
+del command 'AEFBrandLogoHolder';
+add command 'AEFBrandLogoHolder'
+	description	''
+	label	'3DEXPERIENCE'
+	href	''
+	alt	''
+	setting	'Access Behavior'		'disable'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFBrandLogoHolder'
+	property	'version'	value	'R215'
+;
+modify menu AEFGlobalToolbar add command AEFBrandLogoHolder order command AEFBrandLogoHolder 3;
+#channel ==>AEFGlobalToolbar
+add property command_AEFBrandLogoHolder on program eServiceSchemaVariableMapping.tcl to command 'AEFBrandLogoHolder';

@@ -1,0 +1,21 @@
+del command 'IssueRouteTreeCategory';
+add command 'IssueRouteTreeCategory'
+	description	'Issue route Tree Object'
+	label	'emxComponents.Tree.Route'
+	href	'COMPONENT_DIR/emxRouteSummaryFS.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallRoute.png'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueRouteTreeCategory'
+	property	'version'	value	'R420.HF2'
+;
+#channel ==>
+add property command_IssueRouteTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'IssueRouteTreeCategory';

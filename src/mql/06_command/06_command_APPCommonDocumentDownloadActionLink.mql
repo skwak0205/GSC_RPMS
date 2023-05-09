@@ -1,0 +1,36 @@
+del command 'APPCommonDocumentDownloadActionLink';
+add command 'APPCommonDocumentDownloadActionLink'
+	description	'File or Document Download Command Object'
+	label	'emxComponents.Command.Download'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=download&msfBypass=true'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[checkout] == true)'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDownload.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonDocumentDownloadActionLink'
+	property	'version'	value	'R423'
+;
+modify menu APPFileSummaryActionsToolBar add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 7;
+modify menu APPWorkflowDeliverableSummaryActionsToolBar add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 5;
+modify menu DCBookDocumentsActionBar add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 3;
+modify menu DCDocumentSheetActionBar add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 2;
+modify menu ECMSupportingDocsToolbar add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 4;
+modify menu ECMCRSummarySupportingDocsToolBar add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 3;
+modify menu LBCBookDocumentsActionToolBar add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 3;
+modify menu LCClassifiedItemActionToolBar add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 15;
+modify menu PMCContentSummaryToolBarActions add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 5;
+modify menu PMCAssessmentAttachmentsToolBarActions add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 5;
+modify menu FTRPartIssuerDocumentSummaryToolBarActions add command APPCommonDocumentDownloadActionLink order command APPCommonDocumentDownloadActionLink 2;
+#channel ==>APPFileSummaryActionsToolBarAPPWorkflowDeliverableSummaryActionsToolBarDCBookDocumentsActionBarDCDocumentSheetActionBarECMSupportingDocsToolbarECMCRSummarySupportingDocsToolBarLBCBookDocumentsActionToolBarLCClassifiedItemActionToolBarPMCContentSummaryToolBarActionsPMCAssessmentAttachmentsToolBarActionsFTRPartIssuerDocumentSummaryToolBarActions
+add property command_APPCommonDocumentDownloadActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPCommonDocumentDownloadActionLink';

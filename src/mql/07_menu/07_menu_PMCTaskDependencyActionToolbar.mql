@@ -1,0 +1,16 @@
+del menu 'PMCTaskDependencyActionToolbar';
+add menu 'PMCTaskDependencyActionToolbar'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current!=Complete'
+	menu	'PMCTaskDependencyActionMenu'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCTaskDependencyActionToolbar'
+	property 'version'	value	'R423'
+;
+add property menu_PMCTaskDependencyActionToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCTaskDependencyActionToolbar';

@@ -1,0 +1,29 @@
+del command 'LCObjectDeleteSelectedActionLink';
+add command 'LCObjectDeleteSelectedActionLink'
+	description	'Delete Selected on Objects List'
+	label	'emxDocumentCentral.ActionBarCmd.DeleteSelected'
+	href	'${SUITE_DIR}/emxLibraryCentralObjectsDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxDocumentCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCObjectDeleteSelectedActionLink'
+	property	'version'	value	'R422'
+;
+modify menu LCLibrariesActionsToolBar add command LCObjectDeleteSelectedActionLink order command LCObjectDeleteSelectedActionLink 0;
+modify menu LCInProcessClassActionsToolBar add command LCObjectDeleteSelectedActionLink order command LCObjectDeleteSelectedActionLink 0;
+modify menu DCDocumentSheetActionBar add command LCObjectDeleteSelectedActionLink order command LCObjectDeleteSelectedActionLink 0;
+#channel ==>LCLibrariesActionsToolBarLCInProcessClassActionsToolBarDCDocumentSheetActionBar
+add property command_LCObjectDeleteSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'LCObjectDeleteSelectedActionLink';

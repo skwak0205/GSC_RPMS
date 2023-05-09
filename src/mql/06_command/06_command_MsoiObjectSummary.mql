@@ -1,0 +1,15 @@
+del command 'MsoiObjectSummary';
+add command 'MsoiObjectSummary'
+	description	'lists the Objects in the parent Object based on the relationship specified'
+	label	'emxComponents.Command.Documents'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=MsoiDesktopObjectSummary'
+	alt	'emxComponents.Command.Documents'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiObjectSummary'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_MsoiObjectSummary on program eServiceSchemaVariableMapping.tcl to command 'MsoiObjectSummary';

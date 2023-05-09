@@ -1,0 +1,23 @@
+del command 'CreateCompanyActions';
+add command 'CreateCompanyActions'
+	description	'Create Company Command Object'
+	label	'emxComponents.Common.CreateCompany'
+	href	'${COMPONENT_DIR}/emxComponentsCreateCompanyDialogFS.jsp?FromActionsTab=true'
+	alt	'emxComponents.Common.CreateCompany'
+	setting	'Target Location'		'popup'
+	setting	'Access Program Method'		'isHostRep'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Program'		'emxCompany'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'CreateCompanyActions'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_CreateCompanyActions on program eServiceSchemaVariableMapping.tcl to command 'CreateCompanyActions';

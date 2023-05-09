@@ -1,0 +1,20 @@
+del command 'PMCGateAndTaskRouteAndApprovalsCommand';
+add command 'PMCGateAndTaskRouteAndApprovalsCommand'
+	description	'Opens Power View containing Route and Approvals.'
+	label	'emxFramework.Command.PMCGateAndTaskRouteAndApprovalsCommand'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCGateAndTaskRouteAndApprovalsPortal&showPageURLIcon=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'!((type.kindOf[$<type_Gate>]==true) && (policy=="$<policy_ProjectReview>"))'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateAndTaskRouteAndApprovalsCommand'
+	property	'version'	value	'R421.HF1'
+;
+modify menu type_TaskManagement add command PMCGateAndTaskRouteAndApprovalsCommand order command PMCGateAndTaskRouteAndApprovalsCommand 9;
+#channel ==>type_TaskManagement
+add property command_PMCGateAndTaskRouteAndApprovalsCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCGateAndTaskRouteAndApprovalsCommand';

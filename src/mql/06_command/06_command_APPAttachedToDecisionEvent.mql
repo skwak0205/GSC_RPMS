@@ -1,0 +1,17 @@
+del command 'APPAttachedToDecisionEvent';
+add command 'APPAttachedToDecisionEvent'
+	description	'Object attached to Decision using Decision Relationship'
+	label	'emxComponents.Notification.Event.Attached_To_Decision'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Attached To Decision'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAttachedToDecisionEvent'
+	property	'version'	value	'R207'
+;
+modify menu RMTRequirementEvents add command APPAttachedToDecisionEvent order command APPAttachedToDecisionEvent 0;
+#channel ==>RMTRequirementEvents
+add property command_APPAttachedToDecisionEvent on program eServiceSchemaVariableMapping.tcl to command 'APPAttachedToDecisionEvent';

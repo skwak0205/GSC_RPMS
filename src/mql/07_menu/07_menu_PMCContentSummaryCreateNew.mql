@@ -1,0 +1,19 @@
+del menu 'PMCContentSummaryCreateNew';
+add menu 'PMCContentSummaryCreateNew'
+	description	''
+	label	'emxProgramCentral.Button.CreateNew'
+	href	''
+	alt	'emxProgramCentral.Button.CreateNew'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'((current.access[modify]==TRUE) && (current.access[fromconnect]==TRUE)) && ( (type.kindOf[$<type_ControlledFolder>]==false)||(current.name == Create))'
+	command	'PMCCreateNewDocument'
+	command	'AEFSeparator'
+	command	'APPCreateVCFileFolder'
+	command	'APPConnectVCFileFolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCContentSummaryCreateNew'
+	property 'version'	value	'R419'
+;
+add property menu_PMCContentSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'PMCContentSummaryCreateNew';

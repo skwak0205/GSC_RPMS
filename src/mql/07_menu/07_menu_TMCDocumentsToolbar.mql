@@ -1,0 +1,15 @@
+del menu 'TMCDocumentsToolbar';
+add menu 'TMCDocumentsToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	menu	'TMCDocumentsActionToolbar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCDocumentsToolbar'
+	property 'version'	value	'10-5'
+;
+add property menu_TMCDocumentsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'TMCDocumentsToolbar';

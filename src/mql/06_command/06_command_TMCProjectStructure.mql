@@ -1,0 +1,18 @@
+del command 'TMCProjectStructure';
+add command 'TMCProjectStructure'
+	description	'Project Structure Command'
+	label	'emxFramework.Command.ProjectStructure'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Structure Program'		'emxTeamStructureTree'
+	setting	'Structure Function'		'getWorkSpaceFolderList'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCProjectStructure'
+	property	'version'	value	'10-0-0-0'
+;
+modify menu TMCtype_ProjectStructureMenu add command TMCProjectStructure order command TMCProjectStructure 0;
+#channel ==>TMCtype_ProjectStructureMenu
+add property command_TMCProjectStructure on program eServiceSchemaVariableMapping.tcl to command 'TMCProjectStructure';

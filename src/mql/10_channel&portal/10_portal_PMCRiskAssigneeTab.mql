@@ -1,0 +1,14 @@
+del portal 'PMCRiskAssigneeTab';
+add portal 'PMCRiskAssigneeTab'
+	description	'PMCRiskAssigneeTab'
+	label	''
+	href	''
+	channel 	PMCRiskAssigneeTab
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRiskAssigneeTab'
+	property	'version'	value	'R417'
+;
+add property portal_PMCRiskAssigneeTab on program eServiceSchemaVariableMapping.tcl to portal 'PMCRiskAssigneeTab';

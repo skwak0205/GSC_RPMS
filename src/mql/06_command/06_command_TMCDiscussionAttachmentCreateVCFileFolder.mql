@@ -1,0 +1,26 @@
+del command 'TMCDiscussionAttachmentCreateVCFileFolder';
+add command 'TMCDiscussionAttachmentCreateVCFileFolder'
+	description	'Command for creating a file or folder in DesignSync'
+	label	'emxComponents.VersionControl.CreateVCFileFolder'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?showDescription=required&appDir=components&parentRelName=relationship_MessageAttachments&showTitle=true&showFormat=true&objectAction=createVCFileFolder&JPOName=emxVCDocument&methodName=checkinUpdate'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMPONENT_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDiscussionAttachmentCreateVCFileFolder'
+	property	'version'	value	'R422'
+;
+modify menu TMCDiscussionAttachmentCreateNew add command TMCDiscussionAttachmentCreateVCFileFolder order command TMCDiscussionAttachmentCreateVCFileFolder 3;
+#channel ==>TMCDiscussionAttachmentCreateNew
+add property command_TMCDiscussionAttachmentCreateVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'TMCDiscussionAttachmentCreateVCFileFolder';

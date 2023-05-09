@@ -1,0 +1,25 @@
+del command 'RMTSCETreeCollapseAll';
+add command 'RMTSCETreeCollapseAll'
+	description	'Collapse all tree nodes.'
+	label	'emxRequirements.Command.CollapseAll'
+	href	'javascript:SCECollapseAll()'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSCETreeCollapseAll'
+	property	'version'	value	'R422'
+;
+modify menu RMTSCETreeRMB add command RMTSCETreeCollapseAll order command RMTSCETreeCollapseAll 2;
+modify menu RMTSpecificationRMBMenu add command RMTSCETreeCollapseAll order command RMTSCETreeCollapseAll 0;
+#channel ==>RMTSCETreeRMBRMTSpecificationRMBMenu
+add property command_RMTSCETreeCollapseAll on program eServiceSchemaVariableMapping.tcl to command 'RMTSCETreeCollapseAll';

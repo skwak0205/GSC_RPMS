@@ -1,0 +1,2 @@
+del table 'LCMyPartsList' system;
+add table 'LCMyPartsList' system

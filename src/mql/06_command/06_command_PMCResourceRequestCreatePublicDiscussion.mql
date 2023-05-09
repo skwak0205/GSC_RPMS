@@ -1,0 +1,22 @@
+del command 'PMCResourceRequestCreatePublicDiscussion';
+add command 'PMCResourceRequestCreatePublicDiscussion'
+	description	''
+	label	'emxProgramCentral.Command.ResourcePlan.CreatePublicDiscussion'
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=PublicDiscussion'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_PublicDiscuss32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestCreatePublicDiscussion'
+	property	'version'	value	'R421.HF2'
+;
+modify menu PMCResourceRequestDiscussion add command PMCResourceRequestCreatePublicDiscussion order command PMCResourceRequestCreatePublicDiscussion 0;
+modify menu PMCResourcePoolRequestToolbar add command PMCResourceRequestCreatePublicDiscussion order command PMCResourceRequestCreatePublicDiscussion 12;
+#channel ==>PMCResourceRequestDiscussionPMCResourcePoolRequestToolbar
+add property command_PMCResourceRequestCreatePublicDiscussion on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestCreatePublicDiscussion';

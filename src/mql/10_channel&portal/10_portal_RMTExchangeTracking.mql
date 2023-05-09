@@ -1,0 +1,14 @@
+del portal 'RMTExchangeTracking';
+add portal 'RMTExchangeTracking'
+	description	''
+	label	''
+	href	''
+	channel 	RMTExchangeTracking
+	setting	'Registered Suite'		'Requirements'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTExchangeTracking'
+	property	'version'	value	'R216'
+;
+add property portal_RMTExchangeTracking on program eServiceSchemaVariableMapping.tcl to portal 'RMTExchangeTracking';

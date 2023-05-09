@@ -1,0 +1,20 @@
+del command 'APPPotentialSuppliers';
+add command 'APPPotentialSuppliers'
+	description	'Command to display the Potential Suppliers Summary page'
+	label	'emxComponents.PotentialSuppliers.Command'
+	href	'${COMPONENT_DIR}/emxComponentsPotentialSuppliersSummary.jsp'
+	alt	'emxComponents.PotentialSuppliers.Command'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPotentialSuppliers'
+	property	'version'	value	'R216'
+;
+modify menu APPAdministration add command APPPotentialSuppliers order command APPPotentialSuppliers 4;
+#channel ==>APPAdministration
+add property command_APPPotentialSuppliers on program eServiceSchemaVariableMapping.tcl to command 'APPPotentialSuppliers';

@@ -1,0 +1,25 @@
+del command 'ECMChangeManagement';
+add command 'ECMChangeManagement'
+	description	'For showing related CO CA and other change objects'
+	label	'EnterpriseChangeMgt.Label.EnterpriseChangeMgtPowerView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=ECMEnterpriseChangeMgtPortal&header=EnterpriseChangeMgt.Label.ECMChangeCOsCAsLeagcySummaryPageHeading'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'displayConnectedCACOLegacyObjects'
+	setting	'Access Program'		'enoECMChangeUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'ECMChangeManagement'
+	property	'version'	value	'R421'
+;
+modify menu type_DOCUMENTS add command ECMChangeManagement order command ECMChangeManagement 21;
+modify menu type_Products add command ECMChangeManagement order command ECMChangeManagement 11;
+modify menu type_ProductVariant add command ECMChangeManagement order command ECMChangeManagement 0;
+modify menu type_ConfigurationFeature add command ECMChangeManagement order command ECMChangeManagement 14;
+modify menu type_LogicalFeature add command ECMChangeManagement order command ECMChangeManagement 17;
+modify menu type_ManufacturingFeature add command ECMChangeManagement order command ECMChangeManagement 13;
+#channel ==>type_DOCUMENTStype_Productstype_ProductVarianttype_ConfigurationFeaturetype_LogicalFeaturetype_ManufacturingFeature
+add property command_ECMChangeManagement on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeManagement';

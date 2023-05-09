@@ -1,0 +1,23 @@
+del command 'TMCWorkspaceAccess';
+add command 'TMCWorkspaceAccess'
+	description	''
+	label	'emxTeamCentral.TreeNode.Access'
+	href	'${SUITE_DIR}/emxTeamAccessSummaryFS.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallAccess.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceAccess'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCWorkspaceAccess on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceAccess';

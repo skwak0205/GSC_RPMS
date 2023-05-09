@@ -1,0 +1,25 @@
+del command 'PMCRemoveSelectedResolvesLink';
+add command 'PMCRemoveSelectedResolvesLink'
+	description	'Remove Selected Command Object'
+	label	'emxProgramCentral.Command.PMCRemoveSelectedResolvesLink'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=disconnectResolves'
+	alt	'emxProgramCentral.Command.PMCRemoveSelectedResolvesLink'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[fromdisconnect] == true'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProgramCentral.Alert.Remove'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRemoveSelectedResolvesLink'
+	property	'version'	value	'R422'
+;
+modify menu PMCResolvesItemsToolBarActions add command PMCRemoveSelectedResolvesLink order command PMCRemoveSelectedResolvesLink 0;
+#channel ==>PMCResolvesItemsToolBarActions
+add property command_PMCRemoveSelectedResolvesLink on program eServiceSchemaVariableMapping.tcl to command 'PMCRemoveSelectedResolvesLink';

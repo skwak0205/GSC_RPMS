@@ -1,0 +1,17 @@
+del command 'CFPLogicalCreateNewMasterFeature';
+add command 'CFPLogicalCreateNewMasterFeature'
+	description	''
+	label	'DMCPlanning.ActionLink.CreateNewMasterFeature'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_MasterFeature&autoNameChecked=true&showApply=true&typeChooser=true&nameField=both&vaultChooser=true&form=CFPCreateMasterFeature&header=DMCPlanning.ActionLink.CreateNewMasterFeature&relationship=relationship_ModelTemplate&postProcessJPO=MasterFeature:createLogicalFeature&postProcessURL=../dmcplanning/MasterFeatureCreatePostProcess.jsp&suiteKey=DMCPlanning&StringResourceFileId=dmcplanningStringResource&SuiteDirectory=dmcplanning'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPLogicalCreateNewMasterFeature'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_CFPLogicalCreateNewMasterFeature on program eServiceSchemaVariableMapping.tcl to command 'CFPLogicalCreateNewMasterFeature';

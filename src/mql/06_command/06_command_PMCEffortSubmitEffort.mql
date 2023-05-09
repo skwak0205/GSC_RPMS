@@ -1,0 +1,25 @@
+del command 'PMCEffortSubmitEffort';
+add command 'PMCEffortSubmitEffort'
+	description	'Submit Effort'
+	label	'emxProgramCentral.Common.SubmitEffort'
+	href	'${SUITE_DIR}/emxProgramCentralWBSEffortDialogFS.jsp'
+	alt	'emxProgramCentral.Common.SubmitEffort'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEffortSubmitEffort'
+	property	'version'	value	'R422'
+;
+modify menu PMCEffortToolbarActions add command PMCEffortSubmitEffort order command PMCEffortSubmitEffort 3;
+#channel ==>PMCEffortToolbarActions
+add property command_PMCEffortSubmitEffort on program eServiceSchemaVariableMapping.tcl to command 'PMCEffortSubmitEffort';

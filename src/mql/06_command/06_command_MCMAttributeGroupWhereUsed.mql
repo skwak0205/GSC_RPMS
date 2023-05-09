@@ -1,0 +1,18 @@
+del command 'MCMAttributeGroupWhereUsed';
+add command 'MCMAttributeGroupWhereUsed'
+	description	'AttributeGroup Where Used'
+	label	'emxMultipleClassification.Command.WhereUsed'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxMultipleClassificationAttributeGroup:getClassificationsWhereUsed&table=LCClassificationList&sortColumnName=Name&sortDirection=ascending&header=emxMultipleClassification.Common.WhereUsed&HelpMarker=emxhelpattributegrpwhereused&massPromoteDemote=false&triggerValidation=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'image'		'${COMMON_DIR}/iconSmallObjectFolder.gif'
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'MCMAttributeGroupWhereUsed'
+	property	'version'	value	'R214'
+;
+modify menu type_MCMAttributeGroupTreeMenu add command MCMAttributeGroupWhereUsed order command MCMAttributeGroupWhereUsed 2;
+#channel ==>type_MCMAttributeGroupTreeMenu
+add property command_MCMAttributeGroupWhereUsed on program eServiceSchemaVariableMapping.tcl to command 'MCMAttributeGroupWhereUsed';

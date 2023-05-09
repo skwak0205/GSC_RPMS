@@ -1,0 +1,21 @@
+del menu 'type_BusinessGoal';
+add menu 'type_BusinessGoal'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCBusinessGoalForm&toolbar=PMCBusinessGoalToolBar&mode=view&formHeader=emxProgramCentral.Common.FormBasics&HelpMarker=emxhelpbusinessgoaldetails'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${SUITE_DIR}/iconSmallCorpObjective.gif'
+	command	'PMCAttachment'
+	command	'PMCBusinessGoalDashboardDetails'
+	command	'PMCHistory'
+	command	'PMCLifecycle'
+	command	'PMCBusinessGoalProjects'
+	command	'PMCBusinessGoalSubgoals'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_BusinessGoal'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_type_BusinessGoal on program eServiceSchemaVariableMapping.tcl to menu 'type_BusinessGoal';

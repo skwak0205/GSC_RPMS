@@ -1,0 +1,24 @@
+del command 'FTRMyDeskCreateFormConfigurationOptionAction';
+add command 'FTRMyDeskCreateFormConfigurationOptionAction'
+	description	''
+	label	'emxProductLine.ActionLink.CreateConfOption'
+	href	'${SUITE_DIR}/ConfigurationFeatureCreatePreProcess.jsp?strCreationType=type_ConfigurationOption&UIContext=myDesk&HelpMarker=emxhelpconfigurationoptioncreate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Mode'		'edit'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionCreateConfigurationOptions.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMyDeskCreateFormConfigurationOptionAction'
+	property	'version'	value	'R418'
+;
+modify menu FTRMyDeskConfigurationFeaturesActions add command FTRMyDeskCreateFormConfigurationOptionAction order command FTRMyDeskCreateFormConfigurationOptionAction 2;
+#channel ==>FTRMyDeskConfigurationFeaturesActions
+add property command_FTRMyDeskCreateFormConfigurationOptionAction on program eServiceSchemaVariableMapping.tcl to command 'FTRMyDeskCreateFormConfigurationOptionAction';

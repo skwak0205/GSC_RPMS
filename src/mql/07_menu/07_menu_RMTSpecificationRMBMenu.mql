@@ -1,0 +1,16 @@
+del menu 'RMTSpecificationRMBMenu';
+add menu 'RMTSpecificationRMBMenu'
+	description	''
+	label	'RMTSpecificationRMBMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTSCETreeExpandAll'
+	command	'RMTSCETreeCollapseAll'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecificationRMBMenu'
+	property 'version'	value	'V6R2017'
+;
+add property menu_RMTSpecificationRMBMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecificationRMBMenu';

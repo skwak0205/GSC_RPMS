@@ -1,0 +1,16 @@
+del command 'AEFCollabSpace';
+add command 'AEFCollabSpace'
+	description	''
+	label	'AEFCollabSpace'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCollabSpace'
+	property	'version'	value	'R215'
+;
+modify menu AEFMyHome add command AEFCollabSpace order command AEFCollabSpace 0;
+#channel ==>AEFMyHome
+add property command_AEFCollabSpace on program eServiceSchemaVariableMapping.tcl to command 'AEFCollabSpace';

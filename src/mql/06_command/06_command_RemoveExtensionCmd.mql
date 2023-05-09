@@ -1,0 +1,17 @@
+del command 'RemoveExtensionCmd';
+add command 'RemoveExtensionCmd'
+	description	'Command to Delete extension'
+	label	'emxQualification.label.Delete'
+	href	'${SUITE_DIR}/emxQualificationDeleteExtensionFromObject.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Qualification'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${SUITE_DIR}/images/CustoDel_16.gif'
+	setting	'Confirm Message'		'emxQualification.label.ExtensionRemoveFromObjectConfirm'
+;
+modify menu PLMExtensionsToolbar add command RemoveExtensionCmd order command RemoveExtensionCmd 0;
+#channel ==>PLMExtensionsToolbar
+add property command_RemoveExtensionCmd on program eServiceSchemaVariableMapping.tcl to command 'RemoveExtensionCmd';

@@ -1,0 +1,15 @@
+del menu 'PMCDurationKeywordsCreateToolBarActions';
+add menu 'PMCDurationKeywordsCreateToolBarActions'
+	description	''
+	label	'emxProgramCentral.Command.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCDurationKeywordApply'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCDurationKeywordsCreateToolBarActions'
+	property 'version'	value	'R209'
+;
+add property menu_PMCDurationKeywordsCreateToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCDurationKeywordsCreateToolBarActions';

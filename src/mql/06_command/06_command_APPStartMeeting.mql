@@ -1,0 +1,21 @@
+del command 'APPStartMeeting';
+add command 'APPStartMeeting'
+	description	''
+	label	'emxComponents.Common.StartMeeting'
+	href	'${COMPONENT_DIR}/emxMeetingPreprocess.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'showMeetingPromoteStartMeetingCommand'
+	setting	'Access Program'		'emxMeeting'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionStartMeeting.png'
+	setting	'Access Mask'		'promote'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPStartMeeting'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPMeetingPropertiesActionToolbar add command APPStartMeeting order command APPStartMeeting 7;
+#channel ==>APPMeetingPropertiesActionToolbar
+add property command_APPStartMeeting on program eServiceSchemaVariableMapping.tcl to command 'APPStartMeeting';

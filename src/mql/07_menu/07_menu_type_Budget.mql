@@ -1,0 +1,14 @@
+del menu 'type_Budget';
+add menu 'type_Budget'
+	description	''
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=editOption'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_Budget'
+	property 'version'	value	'R210'
+;
+add property menu_type_Budget on program eServiceSchemaVariableMapping.tcl to menu 'type_Budget';

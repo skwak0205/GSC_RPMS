@@ -1,0 +1,24 @@
+del command 'PLCSpecificationRemovedEvent';
+add command 'PLCSpecificationRemovedEvent'
+	description	'Specification Removed Event'
+	label	'PublishSubscribe.Event.SpecificationRemoved'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Specification Removed'
+	setting	'History Bit'		'disconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSpecificationRemovedEvent'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductsEvents add command PLCSpecificationRemovedEvent order command PLCSpecificationRemovedEvent 0;
+modify menu FTRFeaturesEvents add command PLCSpecificationRemovedEvent order command PLCSpecificationRemovedEvent 0;
+modify menu FTRFeatureSubscriptionEvents add command PLCSpecificationRemovedEvent order command PLCSpecificationRemovedEvent 11;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command PLCSpecificationRemovedEvent order command PLCSpecificationRemovedEvent 12;
+modify menu FTRConfigurationOptionSubscriptionEvents add command PLCSpecificationRemovedEvent order command PLCSpecificationRemovedEvent 5;
+modify menu FTRLogicalFeatureSubscriptionEvents add command PLCSpecificationRemovedEvent order command PLCSpecificationRemovedEvent 20;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command PLCSpecificationRemovedEvent order command PLCSpecificationRemovedEvent 18;
+#channel ==>PLCProductsEventsFTRFeaturesEventsFTRFeatureSubscriptionEventsFTRConfigurationFeatureSubscriptionEventsFTRConfigurationOptionSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_PLCSpecificationRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCSpecificationRemovedEvent';

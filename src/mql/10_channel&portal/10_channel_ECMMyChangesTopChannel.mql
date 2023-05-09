@@ -1,0 +1,17 @@
+del channel 'ECMMyChangesTopChannel';
+add channel 'ECMMyChangesTopChannel'
+	description	''
+	height	'260'
+	label	'EnterpriseChangeMgt.Label.TopChannel'
+	href	''
+	setting		'Registered Suite'		'EnterpriseChangeMgt'
+	setting		'ChannelID'		'1'
+	command 	'ECMMyChangeActions','ECMMyChangeOrders','ECMMyChangeRequests','ECMMyChangeTemplates','ECMChangeSubscriptions','ECMChangeLegacy'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMyChangesTopChannel'
+	property	'version'	value	'R421'
+;
+#portal ==>ECMMyChangesPortal
+add property channel_ECMMyChangesTopChannel on program eServiceSchemaVariableMapping.tcl to channel 'ECMMyChangesTopChannel';

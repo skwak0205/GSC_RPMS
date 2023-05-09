@@ -1,0 +1,25 @@
+del command 'PLCCreateProductLineAction';
+add command 'PLCCreateProductLineAction'
+	description	''
+	label	'emxProduct.Action.ProductLine'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ProductLine&typeChooser=false&autoNameChecked=false&showApply=true&submitAction=none&nameField=both&form=type_CreateProductLine&header=emxProductLine.Form.Heading.ProductLineCreate&HelpMarker=emxhelpproductlinecreate&postProcessURL=../productline/ProductLineCreatePostProcess.jsp&UIContext=GlobalActions&policy=policy_ProductLine'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateProductLineAction'
+	property	'version'	value	'R420'
+;
+modify menu PLCActions add command PLCCreateProductLineAction order command PLCCreateProductLineAction 1;
+#channel ==>PLCActions
+add property command_PLCCreateProductLineAction on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateProductLineAction';

@@ -1,0 +1,23 @@
+del command 'PLCPortfolioRemoveContentActionLink';
+add command 'PLCPortfolioRemoveContentActionLink'
+	description	'To de-link a model or a product from the context Portfolio'
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/PortfolioUtil.jsp?mode=DisconnectContent'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPortfolioRemoveContentActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCPortfolioContentListToolbarActions add command PLCPortfolioRemoveContentActionLink order command PLCPortfolioRemoveContentActionLink 0;
+#channel ==>PLCPortfolioContentListToolbarActions
+add property command_PLCPortfolioRemoveContentActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCPortfolioRemoveContentActionLink';

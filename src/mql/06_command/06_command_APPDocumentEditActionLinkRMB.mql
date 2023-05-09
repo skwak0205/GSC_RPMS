@@ -1,0 +1,23 @@
+del command 'APPDocumentEditActionLinkRMB';
+add command 'APPDocumentEditActionLinkRMB'
+	description	'Document Edit Details Command for RMB'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_DOCUMENTS&mode=edit&HelpMarker=emxhelpdocumenteditdetails&formHeader=emxComponents.Common.EditDetailsHeadingWithoutRev&Export=False&findMxLink=false&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[modify] == true) && (revision==last)'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentEditActionLinkRMB'
+	property	'version'	value	'R422'
+;
+modify menu type_DOCUMENTSRMB add command APPDocumentEditActionLinkRMB order command APPDocumentEditActionLinkRMB 0;
+#channel ==>type_DOCUMENTSRMB
+add property command_APPDocumentEditActionLinkRMB on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentEditActionLinkRMB';

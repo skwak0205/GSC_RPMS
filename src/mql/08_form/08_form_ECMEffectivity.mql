@@ -1,0 +1,16 @@
+del form 'ECMEffectivity';
+add form 'ECMEffectivity' web
+field #1
+	name	'DynamicFields'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Dynamic Field Function'		'getEffectivity'
+	setting	'Dynamic Field Program'		'enoECMChangeOrder'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMEffectivity'
+	property	'version'	value	'R216'
+;
+add property form_ECMEffectivity on program eServiceSchemaVariableMapping.tcl to form 'ECMEffectivity';

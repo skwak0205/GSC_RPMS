@@ -1,0 +1,21 @@
+#del attribute 'gscGateType';
+add attribute 'gscGateType'
+ type 'string'
+ description 'Identifies the Business Area'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscGateType'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscGateType on program eServiceSchemaVariableMapping.tcl to attribute 'gscGateType';
+
+modify attribute 'gscGateType' add range= GT01; #Idea (Seed)
+modify attribute 'gscGateType' add range= GT02; #Lab
+modify attribute 'gscGateType' add range= GT03; #Pilot
+modify attribute 'gscGateType' add range= GT04; #실증/사업화 검토
+modify attribute 'gscGateType' add range= GT05; #T/S
+modify attribute 'gscGateType' add range= ''; #공백
+

@@ -1,0 +1,23 @@
+del command 'PMCTaskReferenceDocument';
+add command 'PMCTaskReferenceDocument'
+	description	''
+	label	'emxFramework.Command.Attachment'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCTaskReferenceDocumentPortal'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskReferenceDocument'
+	property	'version'	value	'R422.HF2'
+;
+modify menu type_TaskManagement add command PMCTaskReferenceDocument order command PMCTaskReferenceDocument 3;
+modify menu type_TaskTemplate add command PMCTaskReferenceDocument order command PMCTaskReferenceDocument 2;
+modify menu type_ProjectTemplate add command PMCTaskReferenceDocument order command PMCTaskReferenceDocument 3;
+modify menu type_ProjectConcept add command PMCTaskReferenceDocument order command PMCTaskReferenceDocument 3;
+modify menu type_ProjectSpace add command PMCTaskReferenceDocument order command PMCTaskReferenceDocument 3;
+#channel ==>type_TaskManagementtype_TaskTemplatetype_ProjectTemplatetype_ProjectConcepttype_ProjectSpace
+add property command_PMCTaskReferenceDocument on program eServiceSchemaVariableMapping.tcl to command 'PMCTaskReferenceDocument';

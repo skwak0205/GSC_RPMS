@@ -1,0 +1,17 @@
+del command 'APPECImpactAnalysisTreeCategory';
+add command 'APPECImpactAnalysisTreeCategory'
+	description	'Command Object for Impact Analysis'
+	label	'emxComponents.Command.ImpactAnalysis'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonEngineeringChange:getEngineeringChangeImpactAnalysis&table=APPImpactAnalysisList&header=emxComponents.Heading.ECImpactAnalysis&selection=multiple&toolbar=APPECImpactAnalysisListToolBar&sortColumnName=Name&HelpMarker=emxhelpimpactanalysislist&editLink=true&calculations=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECImpactAnalysisTreeCategory'
+	property	'version'	value	'R216'
+;
+modify menu type_EngineeringChange add command APPECImpactAnalysisTreeCategory order command APPECImpactAnalysisTreeCategory 3;
+#channel ==>type_EngineeringChange
+add property command_APPECImpactAnalysisTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPECImpactAnalysisTreeCategory';

@@ -1,0 +1,7 @@
+del command 'ECHInterOpDeliverableSearch';
+add command 'ECHInterOpDeliverableSearch'
+	description	''
+	label	'null'
+	href	'null'
+	alt	'null'
+add property command_ECHInterOpDeliverableSearch on program eServiceSchemaVariableMapping.tcl to command 'ECHInterOpDeliverableSearch';

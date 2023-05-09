@@ -1,0 +1,22 @@
+del command 'Regions';
+add command 'Regions'
+	description	'Region command'
+	label	'emxComponents.Command.CompanyRegion'
+	href	'${COMMON_DIR}/emxTable.jsp?table=RegionList&program=emxRegion:getRegions&header=emxComponents.Region.RegionHeader&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPRegionToolBar&HelpMarker=emxhelpregions'
+	alt	'emxComponents.Command.CompanyRegion'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(to[$<relationship_Customer>].from.name != "")'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Hide Mode'		'Cloud'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'Regions'
+	property	'version'	value	'R421'
+;
+modify menu type_Company add command Regions order command Regions 13;
+modify menu type_BusinessUnit add command Regions order command Regions 3;
+#channel ==>type_Companytype_BusinessUnit
+add property command_Regions on program eServiceSchemaVariableMapping.tcl to command 'Regions';

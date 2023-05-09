@@ -1,0 +1,17 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통코드 portal
+################################################################################################
+#del portal "gscCommonCodePortal";
+add portal "gscCommonCodePortal"
+    description ""
+    channel gscCommonCodeMaster
+    channel gscCommonCodeDetail
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2023.01.10"
+property "original name"    value "gscCommonCodePortal"
+;
+add property portal_gscCommonCodePortal on program eServiceSchemaVariableMapping.tcl to portal 'gscCommonCodePortal';

@@ -1,0 +1,19 @@
+del command 'LBCAGBackgroundJobs';
+add command 'LBCAGBackgroundJobs'
+	description	'AG Background jobs command'
+	label	'emxMultipleClassification.Command.Background'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&table=LBCBackgroundJobList&sortColumnName=StartDate&sortDirection=descending&program=emxLibraryCentralJobsBase:getMyCurrentBackgroundJobs,emxLibraryCentralJobsBase:getMyBackgroundJobs,emxLibraryCentralJobsBase:getMyCompletedBackgroundJobs,emxLibraryCentralJobsBase:getMyFailedBackgroundJobs,emxLibraryCentralJobsBase:getMyArchivedBackgroundJobs&programLabel=emxMultipleClassification.Filter.Current,emxMultipleClassification.Filter.All,emxMultipleClassification.Filter.Completed,emxMultipleClassification.Filter.Failed,emxMultipleClassification.Filter.Archived&header=emxMultipleClassification.Label.GLBackgroundProcess&HelpMarker=emxhelpbackgroundjobs'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAGBackgroundJobs'
+	property	'version'	value	'R422'
+;
+modify menu type_MCMAttributeGroupTreeMenu add command LBCAGBackgroundJobs order command LBCAGBackgroundJobs 0;
+#channel ==>type_MCMAttributeGroupTreeMenu
+add property command_LBCAGBackgroundJobs on program eServiceSchemaVariableMapping.tcl to command 'LBCAGBackgroundJobs';

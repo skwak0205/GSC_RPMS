@@ -1,0 +1,19 @@
+del command 'CFPMasterFeatureManagedRevision';
+add command 'CFPMasterFeatureManagedRevision'
+	description	''
+	label	'DMCPlanning.TreeCategory.ManagedRevision'
+	href	'${COMMON_DIR}/emxTable.jsp?program=MasterFeature:getManagedRevisions&table=CFPManagedRevisionsListTable&selection=multiple&header=DMCPlanning.Heading.ManagedRevision&HelpMarker=emxhelpmasterfeaturerevisionlist&massPromoteDemote=false&objectCompare=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Window Height'		'800'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DMCPlanning'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPMasterFeatureManagedRevision'
+	property	'version'	value	'R209'
+;
+modify menu type_MasterFeature add command CFPMasterFeatureManagedRevision order command CFPMasterFeatureManagedRevision 0;
+#channel ==>type_MasterFeature
+add property command_CFPMasterFeatureManagedRevision on program eServiceSchemaVariableMapping.tcl to command 'CFPMasterFeatureManagedRevision';

@@ -1,0 +1,27 @@
+del command 'PLCCreateTestCaseActionLink';
+add command 'PLCCreateTestCaseActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Create'
+	href	'${SUITE_DIR}/TestCaseUtil.jsp?Mode=TestCaseCreate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	setting	'Access Mask'		'ToConnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateTestCaseActionLink'
+	property	'version'	value	'V6R2020x'
+;
+modify menu RMTUseCaseTestCaseTopActionBar add command PLCCreateTestCaseActionLink order command PLCCreateTestCaseActionLink 1;
+modify menu RMTRequirementTestCaseTopActionBar add command PLCCreateTestCaseActionLink order command PLCCreateTestCaseActionLink 1;
+modify menu TestCaseTopBottom add command PLCCreateTestCaseActionLink order command PLCCreateTestCaseActionLink 1;
+modify menu FTRFeatureTestCaseTopActionBar add command PLCCreateTestCaseActionLink order command PLCCreateTestCaseActionLink 1;
+#channel ==>RMTUseCaseTestCaseTopActionBarRMTRequirementTestCaseTopActionBarTestCaseTopBottomFTRFeatureTestCaseTopActionBar
+add property command_PLCCreateTestCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateTestCaseActionLink';

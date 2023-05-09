@@ -1,0 +1,7 @@
+{
+"UnifiedExportCommand.Title":"Exportovat jako",
+"UnifiedExportCommand.ShortHelp":"Exportovat vybraný obsah jako geometrie, odvozené výstupy a metadata.",
+"UnifiedExportCommand.LongHelp":"Pomocí funkce Exportovat jako můžete provést export vybraného obsahu 3DExperience a získat související nativní datové proudy CAD, metadata a sekundární formáty souborů.",
+"UnifiedExportCommand.WebHelp":"PsteUserMap/pste-r-ui-ActBar-Tools.htm",
+"UnifiedExportCommand.WebHelp.ENOSC2D_AP":"Sc2dUserMap/sc2d-r-ui-ActBar-Tools.htm"
+}

@@ -1,0 +1,26 @@
+del command 'LBCDocumentLibraryCreateRevision';
+add command 'LBCDocumentLibraryCreateRevision'
+	description	'Create a Revision'
+	label	'emxDocumentCentral.ActionBarCmd.Revise'
+	href	'${SUITE_DIR}/emxLibraryCentralIntermediateForm.jsp?mode=revise'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showReviseLinks'
+	setting	'Access Program'		'emxDCUtils'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallRevision.gif'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Release Manager'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDocumentLibraryCreateRevision'
+	property	'version'	value	'R216'
+;
+modify menu DCObjectRevisionsTopActionbar add command LBCDocumentLibraryCreateRevision order command LBCDocumentLibraryCreateRevision 1;
+#channel ==>DCObjectRevisionsTopActionbar
+add property command_LBCDocumentLibraryCreateRevision on program eServiceSchemaVariableMapping.tcl to command 'LBCDocumentLibraryCreateRevision';

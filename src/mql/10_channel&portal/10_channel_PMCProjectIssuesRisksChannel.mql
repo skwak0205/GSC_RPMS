@@ -1,0 +1,16 @@
+del channel 'PMCProjectIssuesRisksChannel';
+add channel 'PMCProjectIssuesRisksChannel'
+	description	'Issues&Risks Channel'
+	height	'650'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCProjectRisk','ContextIssueListPage'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectIssuesRisksChannel'
+	property	'version'	value	'R210'
+;
+#portal ==>PMCProjectIssuesRisksPortal
+add property channel_PMCProjectIssuesRisksChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCProjectIssuesRisksChannel';

@@ -1,0 +1,20 @@
+del command 'AEFFullSearchSave';
+add command 'AEFFullSearchSave'
+	description	'Command for saved queries'
+	label	''
+	href	''
+	alt	'emxFramework.SavedSearch.Tooltip'
+	setting	'Dynamic Command Program'		'emxAEFFullSearchUtil'
+	setting	'Dynamic Command Function'		'getSavedSearchList'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSaveSearch.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFFullSearchSave'
+	property	'version'	value	'R417'
+;
+modify menu AEFFullSearchMenu add command AEFFullSearchSave order command AEFFullSearchSave 2;
+#channel ==>AEFFullSearchMenu
+add property command_AEFFullSearchSave on program eServiceSchemaVariableMapping.tcl to command 'AEFFullSearchSave';

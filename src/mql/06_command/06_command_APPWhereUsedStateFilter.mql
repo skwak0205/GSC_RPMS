@@ -1,0 +1,21 @@
+del command 'APPWhereUsedStateFilter';
+add command 'APPWhereUsedStateFilter'
+	description	''
+	label	'emxWhereUsed.WhereUsed.StateFilter'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=WhereUsed:getWhereUsed&expandProgram=WhereUsed:getWhereUsed&table=APPWhereUsed&sortColumnName=Type&sortDirection=ascending&toolbar=APPWhereUsedToolbar,APPWhereUsedToolbarFilter&header=emxWhereUsed.Heading.WhereUsed&selection=multiple&HelpMarker=emxhelpwhereusedlist'
+	alt	''
+	setting	'Target Location'		'detailsDisplay'
+	setting	'Range Function'		'getStateFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'WhereUsed'
+	setting	'Range Program'		'WhereUsed'
+	setting	'Select'		'multiple'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'WhereUsed'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWhereUsedStateFilter'
+	property	'version'	value	'R212'
+;
+modify menu APPWhereUsedToolbarFilter add command APPWhereUsedStateFilter order command APPWhereUsedStateFilter 0;
+#channel ==>APPWhereUsedToolbarFilter
+add property command_APPWhereUsedStateFilter on program eServiceSchemaVariableMapping.tcl to command 'APPWhereUsedStateFilter';

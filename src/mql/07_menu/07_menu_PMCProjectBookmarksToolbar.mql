@@ -1,0 +1,15 @@
+del menu 'PMCProjectBookmarksToolbar';
+add menu 'PMCProjectBookmarksToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCProjectBookmarksToolbarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBookmarksToolbar'
+	property 'version'	value	'10-6'
+;
+add property menu_PMCProjectBookmarksToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBookmarksToolbar';

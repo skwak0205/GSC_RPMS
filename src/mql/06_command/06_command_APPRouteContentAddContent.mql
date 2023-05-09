@@ -1,0 +1,27 @@
+del command 'APPRouteContentAddContent';
+add command 'APPRouteContentAddContent'
+	description	'Add Route Content'
+	label	'emxComponents.Common.AddContent'
+	href	'${COMMON_DIR}/emxRouteContentSearchTypes.jsp?table=APPRouteContentSearchResults&showInitialResults=true&form=AddContentSearchForm&selection=multiple&mode=addContenttoRoute&relName=Object Route&frameName=APPContent&submitURL=../components/emxRouteAddContentProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'575'
+	setting	'Window Width'		'575'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canAddContent'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteContentAddContent'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteContentActionsToolBar add command APPRouteContentAddContent order command APPRouteContentAddContent 1;
+#channel ==>APPRouteContentActionsToolBar
+add property command_APPRouteContentAddContent on program eServiceSchemaVariableMapping.tcl to command 'APPRouteContentAddContent';

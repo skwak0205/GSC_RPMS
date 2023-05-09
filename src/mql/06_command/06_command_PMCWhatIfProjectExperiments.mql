@@ -1,0 +1,22 @@
+del command 'PMCWhatIfProjectExperiments';
+add command 'PMCWhatIfProjectExperiments'
+	description	'Related Projects Command Object'
+	label	'emxProgramCentral.Experiment.List'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCWhatIfPortal&showPageHeader=false&HelpMarker=emxhelpexperiments'
+	alt	'emxProgramCentral.Experiment.List'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfProjectExperiments'
+	property	'version'	value	'R422'
+;
+modify menu type_ProjectSpace add command PMCWhatIfProjectExperiments order command PMCWhatIfProjectExperiments 6;
+#channel ==>type_ProjectSpace
+add property command_PMCWhatIfProjectExperiments on program eServiceSchemaVariableMapping.tcl to command 'PMCWhatIfProjectExperiments';

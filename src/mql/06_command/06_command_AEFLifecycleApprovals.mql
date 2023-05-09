@@ -1,0 +1,16 @@
+del command 'AEFLifecycleApprovals';
+add command 'AEFLifecycleApprovals'
+	description	'All of the tasks/signatures on the object'
+	label	'emxFramework.LifecycleTasks.Approvals'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxLifecycle:getAllTaskSignaturesOnObject&table=AEFLifecycleApprovalsSummary&selection=multiple&toolbar=AEFLifecycleApprovalsSummaryToolbar&header=emxFramework.LifecycleTasks.Approvals&editLink=true&objectBased=true&objectCompare=false&HelpMarker=emxhelplifecycleapprovaltab'
+	alt	'emxFramework.LifecycleTasks.Approvals'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecycleApprovals'
+	property	'version'	value	'R214'
+;
+#channel ==>AEFLifecycleTaskSignaturesApprovals
+add property command_AEFLifecycleApprovals on program eServiceSchemaVariableMapping.tcl to command 'AEFLifecycleApprovals';

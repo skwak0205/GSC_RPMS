@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 사업명
+################################################################################################
+
+#del attribute 'gscBizNm';
+add attribute  'gscBizNm'
+   description '사업명'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscBizNm"
+;
+add property attribute_gscBizNm on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscBizNm';
+

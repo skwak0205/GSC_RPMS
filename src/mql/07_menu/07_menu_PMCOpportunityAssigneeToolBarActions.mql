@@ -1,0 +1,15 @@
+del menu 'PMCOpportunityAssigneeToolBarActions';
+add menu 'PMCOpportunityAssigneeToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCAssigneeDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCOpportunityAssigneeToolBarActions'
+	property 'version'	value	'R421'
+;
+add property menu_PMCOpportunityAssigneeToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCOpportunityAssigneeToolBarActions';

@@ -1,0 +1,21 @@
+del command 'PMCSCAccessSummaryAddPerson';
+add command 'PMCSCAccessSummaryAddPerson'
+	description	'Add selected person as project member'
+	label	'emxProgramCentral.SecurityContext.AddUser'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxProjectMember:getSCAccessList&TransactionType=update'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSCAccessSummaryAddPerson'
+	property	'version'	value	'R216'
+;
+modify menu PMCSCAccessSummaryToolBarActions add command PMCSCAccessSummaryAddPerson order command PMCSCAccessSummaryAddPerson 0;
+#channel ==>PMCSCAccessSummaryToolBarActions
+add property command_PMCSCAccessSummaryAddPerson on program eServiceSchemaVariableMapping.tcl to command 'PMCSCAccessSummaryAddPerson';

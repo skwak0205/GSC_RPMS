@@ -1,0 +1,23 @@
+del command 'IssueResolvedToTreeCategory';
+add command 'IssueResolvedToTreeCategory'
+	description	'Issue ResolvedTo TreeCommand Object'
+	label	'emxComponents.Command.ResolvedTo'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonIssue:getAllRelatedResolvedTo&table=IssueResolvedToList&toolbar=IssueResolvedToListToolBar&selection=multiple&sortColumnName=Name&relationName=relationship_ResolvedTo&header=emxComponents.Heading.ResolvedTo&HelpMarker=emxhelpissueresolvedby'
+	alt	'emxComponents.Command.ResolvedTo'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueResolvedToTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_Issue add command IssueResolvedToTreeCategory order command IssueResolvedToTreeCategory 4;
+#channel ==>type_IssueIssueChannel3
+add property command_IssueResolvedToTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'IssueResolvedToTreeCategory';

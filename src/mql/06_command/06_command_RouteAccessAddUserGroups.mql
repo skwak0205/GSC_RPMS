@@ -1,0 +1,21 @@
+del command 'RouteAccessAddUserGroups';
+add command 'RouteAccessAddUserGroups'
+	description	''
+	label	'emxFramework.Common.RouteAccessAddUserGroups'
+	href	'${SUITE_DIR}/emxRouteMembersSearch.jsp?fromPage=RouteAccessSummary&memberType=UserGroup&isUserGroup=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[changesov] && current.access[fromconnect] == true)'
+	setting	'Access Function'		'showCommand'
+	setting	'Access Program'		'emxRouteTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/ENOGroup32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'RouteAccessAddUserGroups'
+	property	'version'	value	'R423.HF4'
+;
+modify menu APPRouteAccessActionsToolbar add command RouteAccessAddUserGroups order command RouteAccessAddUserGroups 2;
+#channel ==>APPRouteAccessActionsToolbar
+add property command_RouteAccessAddUserGroups on program eServiceSchemaVariableMapping.tcl to command 'RouteAccessAddUserGroups';

@@ -1,0 +1,19 @@
+del command 'ECMCREnableEdit';
+add command 'ECMCREnableEdit'
+	description	''
+	label	'emxFramework.TableEdit.Enable_Edit'
+	href	'javascript:editMode()'
+	alt	''
+	setting	'Access Expression'		'(current==policy.property[state_Create].value || current==policy.property[state_Evaluate].value) && (owner==context.user)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCREnableEdit'
+	property	'version'	value	'R422.HF1'
+;
+modify menu ECMCOAffectedItemsListToolbar add command ECMCREnableEdit order command ECMCREnableEdit 0;
+#channel ==>ECMCOAffectedItemsListToolbar
+add property command_ECMCREnableEdit on program eServiceSchemaVariableMapping.tcl to command 'ECMCREnableEdit';

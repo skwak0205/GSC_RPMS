@@ -1,0 +1,21 @@
+del command 'FTRLFContextManufacturingFeatureStructureCompareCommand';
+add command 'FTRLFContextManufacturingFeatureStructureCompareCommand'
+	description	'Command to Compare Manufacturing Views'
+	label	'emxConfiguration.Command.CompareManufacturingViews'
+	href	'${COMMON_DIR}/emxForm.jsp?form=FTRManufacturingFeatureLFStructureCompareForm&mode=Edit&formHeader=emxConfiguration.command.StructureCompare&editLink=true&suiteKey=Configuration&featureType=ManufacturingFeature&isSelfTargeted=true&postProcessURL=../configuration/StructureCompareProcess.jsp&HelpMarker=emxhelpstructurecompareuse'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLFContextManufacturingFeatureStructureCompareCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRLFContextManufacturingFeaturesStructureCompareMenu add command FTRLFContextManufacturingFeatureStructureCompareCommand order command FTRLFContextManufacturingFeatureStructureCompareCommand 0;
+#channel ==>FTRLFContextManufacturingFeaturesStructureCompareMenu
+add property command_FTRLFContextManufacturingFeatureStructureCompareCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRLFContextManufacturingFeatureStructureCompareCommand';

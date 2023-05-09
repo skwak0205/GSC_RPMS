@@ -1,0 +1,18 @@
+del menu 'APPECImplementedItemsListActionsToolBar';
+add menu 'APPECImplementedItemsListActionsToolBar'
+	description	''
+	label	'emxComponents.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPAddExistingECImplementedItemsActionLink'
+	command	'AEFSeparator'
+	command	'APPRemoveECImplementedItemsActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPECImplementedItemsListActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPECImplementedItemsListActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPECImplementedItemsListActionsToolBar';

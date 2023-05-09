@@ -1,0 +1,28 @@
+del form 'type_CancelCO';
+add form 'type_CancelCO' web
+field #1
+	name	'Warning'
+	label	'EnterpriseChangeMgt.Label.Warning'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Default'		'EnterpriseChangeMgt.CancelCODialog.WarningMsg'
+field #2
+	name	'Reason'
+	label	'EnterpriseChangeMgt.Label.Reason'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Required'		'true'
+	setting	'Validate'		'validateCancelCO'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'type_CancelCO'
+	property	'version'	value	'R216'
+;
+add property form_type_CancelCO on program eServiceSchemaVariableMapping.tcl to form 'type_CancelCO';

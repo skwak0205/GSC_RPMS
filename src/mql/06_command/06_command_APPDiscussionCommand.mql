@@ -1,0 +1,50 @@
+del command 'APPDiscussionCommand';
+add command 'APPDiscussionCommand'
+	description	'Discussion Command Object'
+	label	'emxComponents.Common.Discussion'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPDiscussionsList&program=emxDiscussion:getDiscussionList&header=emxComponents.DiscussionSummary.Heading&toolbar=APPDiscussionToolBar&selection=multiple&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpdiscussions&PrinterFriendly=true&TransactionType=update'
+	alt	'emxComponents.Common.Discussion'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(policy != "Template Workspace Vault")'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	user	'Specification Restricted User'
+	user	'Global Template Administrator'
+	user	'Template Administrator'
+	user	'Template Header Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionCommand'
+	property	'version'	value	'R423.HF4'
+;
+modify menu type_Part add command APPDiscussionCommand order command APPDiscussionCommand 6;
+modify menu type_Decision add command APPDiscussionCommand order command APPDiscussionCommand 5;
+modify menu type_AccessRequest add command APPDiscussionCommand order command APPDiscussionCommand 2;
+modify menu type_Issue add command APPDiscussionCommand order command APPDiscussionCommand 7;
+modify menu type_Person add command APPDiscussionCommand order command APPDiscussionCommand 6;
+modify menu type_Project add command APPDiscussionCommand order command APPDiscussionCommand 5;
+modify menu TMCtype_ProjectVault add command APPDiscussionCommand order command APPDiscussionCommand 4;
+modify menu type_ProjectVault add command APPDiscussionCommand order command APPDiscussionCommand 1;
+modify menu type_PartLibrary add command APPDiscussionCommand order command APPDiscussionCommand 2;
+modify menu type_GeneralLibrary add command APPDiscussionCommand order command APPDiscussionCommand 3;
+modify menu type_Library add command APPDiscussionCommand order command APPDiscussionCommand 4;
+modify menu type_GeneralClass add command APPDiscussionCommand order command APPDiscussionCommand 5;
+modify menu type_PartFamily add command APPDiscussionCommand order command APPDiscussionCommand 4;
+modify menu type_Classification add command APPDiscussionCommand order command APPDiscussionCommand 1;
+modify menu type_Libraries add command APPDiscussionCommand order command APPDiscussionCommand 2;
+modify menu type_DocumentFamily add command APPDiscussionCommand order command APPDiscussionCommand 6;
+modify menu type_ChangeOrder add command APPDiscussionCommand order command APPDiscussionCommand 8;
+modify menu type_ChangeRequest add command APPDiscussionCommand order command APPDiscussionCommand 9;
+modify menu type_ResourceRequest add command APPDiscussionCommand order command APPDiscussionCommand 2;
+modify menu type_ProjectConcept add command APPDiscussionCommand order command APPDiscussionCommand 2;
+modify menu type_Risk add command APPDiscussionCommand order command APPDiscussionCommand 3;
+modify menu PMCtype_ProjectVault add command APPDiscussionCommand order command APPDiscussionCommand 1;
+modify menu type_Assessment add command APPDiscussionCommand order command APPDiscussionCommand 2;
+modify menu type_ProjectTemplateVault add command APPDiscussionCommand order command APPDiscussionCommand 1;
+modify menu type_TaskTemplate add command APPDiscussionCommand order command APPDiscussionCommand 6;
+modify menu type_Opportunity add command APPDiscussionCommand order command APPDiscussionCommand 3;
+modify menu type_RequirementGroup add command APPDiscussionCommand order command APPDiscussionCommand 3;
+#channel ==>type_Parttype_Decisiontype_AccessRequesttype_Issuetype_Persontype_ProjectTMCtype_ProjectVaulttype_ProjectVaulttype_PartLibrarytype_GeneralLibrarytype_Librarytype_GeneralClasstype_PartFamilytype_Classificationtype_Librariestype_DocumentFamilytype_ChangeOrdertype_ChangeRequesttype_ResourceRequesttype_ProjectConcepttype_RiskPMCtype_ProjectVaulttype_Assessmenttype_ProjectTemplateVaulttype_TaskTemplatetype_Opportunitytype_RequirementGroupAPPRouteChannel1ECMChangeCollaberationChannelPMCProjectCollaborationChannelPMCGateCollaborationChannelRMTExchangeTracking
+add property command_APPDiscussionCommand on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionCommand';

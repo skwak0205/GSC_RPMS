@@ -1,0 +1,22 @@
+del command 'TMCMeetingAttachments';
+add command 'TMCMeetingAttachments'
+	description	'Meeting Attachments Command Object'
+	label	'emxFramework.Command.Attachments'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&parentRelName=relationship_MeetingAttachments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&bottomActionbar=TMCMeetingAttachmentBottomActionBar&topActionbar=TMCMeetingAttachmentTopActionBar&header=emxFramework.Command.Attachments&HelpMarker=emxhelpmeeting'
+	alt	'emxFramework.Command.Alt.Attachments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallAttachment.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCMeetingAttachments'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCMeetingAttachments on program eServiceSchemaVariableMapping.tcl to command 'TMCMeetingAttachments';

@@ -1,0 +1,9 @@
+del menu 'PLMAssociatedParametersToolbar';
+add menu 'PLMAssociatedParametersToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	menu	'PLMAssociatedParametersActions'
+;
+add property menu_PLMAssociatedParametersToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PLMAssociatedParametersToolbar';

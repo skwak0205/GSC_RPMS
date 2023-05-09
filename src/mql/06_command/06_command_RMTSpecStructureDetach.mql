@@ -1,0 +1,23 @@
+del command 'RMTSpecStructureDetach';
+add command 'RMTSpecStructureDetach'
+	description	'This will Remove the selected element{s} from the structure'
+	label	'emxRequirements.ActionLink.Remove'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=disconnectDerivedRequirement'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'reserved == "FALSE" || reservedby == context.user'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecStructureDetach'
+	property	'version'	value	'R423'
+;
+modify menu RMTSpecCoveredRefinedRemoveDelete add command RMTSpecStructureDetach order command RMTSpecStructureDetach 0;
+#channel ==>RMTSpecCoveredRefinedRemoveDelete
+add property command_RMTSpecStructureDetach on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecStructureDetach';

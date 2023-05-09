@@ -1,0 +1,21 @@
+del menu 'PMCEffortToolbarActions';
+add menu 'PMCEffortToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCUpdateAllocation'
+	command	'PMCEffortAddAssignee'
+	command	'PMCEffortSubmitEffort'
+	command	'AEFSeparator'
+	command	'PMCEffortEditDetails'
+	command	'PMCEffortApproveEffort'
+	command	'PMCRemoveEffort'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCEffortToolbarActions'
+	property 'version'	value	'10-6'
+;
+add property menu_PMCEffortToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCEffortToolbarActions';

@@ -1,0 +1,17 @@
+del menu 'PMCtype_ControlledFolder';
+add menu 'PMCtype_ControlledFolder'
+	description	''
+	label	'$<attribute[attribute_Title]>'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCtype_ControlledFolder'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCControlledFolderDynamicCommand'
+	command	'PMCFolderRevisions'
+	command	'PMCWorkspaceFolderDynamicCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCtype_ControlledFolder'
+	property 'version'	value	'R424.HF5'
+;
+add property menu_PMCtype_ControlledFolder on program eServiceSchemaVariableMapping.tcl to menu 'PMCtype_ControlledFolder';

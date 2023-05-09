@@ -1,0 +1,22 @@
+del command 'PMCRollupEngine';
+add command 'PMCRollupEngine'
+	description	'Added for rollup engine'
+	label	''
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=Rollup'
+	alt	'emxProgramCentral.RollupEngine.Tooltip'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(attribute[Schedule]==Manual&&current.access[modify]==TRUE)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUpdateDates.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRollupEngine'
+	property	'version'	value	'R421.HF1'
+;
+modify menu PMCWBSToolBar add command PMCRollupEngine order command PMCRollupEngine 10;
+modify menu PMCWBSFlatViewToolbar add command PMCRollupEngine order command PMCRollupEngine 6;
+#channel ==>PMCWBSToolBarPMCWBSFlatViewToolbar
+add property command_PMCRollupEngine on program eServiceSchemaVariableMapping.tcl to command 'PMCRollupEngine';

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd">
+
+	<ds:service name="bps.meeting">
+		<ds:license products="ENO_CBS_TP"/>
+		<ds:data>
+			<ds:jpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getMeetings" returnedData="idsAndData"/>
+			<ds:updatejpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="updateMeetings" processMultiple="true"/>
+		</ds:data>
+	
+		<ds:ref-subservice name="bps.meetingBasicFields" includeByDefault="yes"/>
+		
+		<ds:field name="location"><ds:selectable expression="attribute[Meeting Location]" autosave="true"/></ds:field>
+		<ds:field name="startDate"><ds:selectable expression="attribute[Meeting Start Date Time]" type="bus" format="utc" autosave="true"/></ds:field>
+		<ds:field name="duration"><ds:selectable expression="attribute[Meeting Duration]" autosave="true"/></ds:field>
+		<ds:field name="meetingType"><ds:selectable expression="attribute[Meeting Type]"/></ds:field>
+		<ds:field name="subject"><ds:selectable expression="attribute[Title]" autosave="true"/></ds:field>
+		<ds:field name="conferenceCallNumber"><ds:selectable expression="attribute[Conference Call Number]" autosave="true"/></ds:field>
+		<ds:field name="conferenceCallAccessCode"><ds:selectable expression="attribute[Conference Call Access Code]" autosave="true"/></ds:field>
+		<ds:field name="onlineMeetingProvider"><ds:selectable expression="attribute[On Line Meeting Provider]" autosave="true"/></ds:field>
+		<ds:field name="onlineMeetingInstructions"><ds:selectable expression="attribute[On Line Meeting Instructions]" autosave="true"/></ds:field>
+		<ds:field name="owner"><ds:selectable expression="owner" type="bus" autosave="true"/></ds:field>
+		<ds:field name="ownerFullName"><ds:selectable expression="owner" type="bus" format="fullname"/></ds:field>
+		
+		<ds:field name="modifyAccess">
+			<ds:selectable expression="current.access[modify]" type="bus"/>
+			<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getMeetingAccess" localInvokation="true">
+				<ds:arg arg-name="stateField" arg-value="state.transient"/>
+				<ds:arg arg-name="owner" arg-value="owner.transient"/>
+			</ds:fieldjpo>
+		</ds:field>
+		
+		<ds:field name="deleteAccess">
+			<ds:selectable expression="current.access[delete]" type="bus"/>
+			<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getMeetingAccess" localInvokation="true">
+				<ds:arg arg-name="stateField" arg-value="state.transient"/>
+				<ds:arg arg-name="owner" arg-value="owner.transient"/>
+			</ds:fieldjpo>
+		</ds:field>
+		
+		<ds:field name="parentName"><ds:selectable expression="to[Meeting Context].from.name"/>
+			<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getParent" localInvokation="true">
+					<ds:arg arg-name="type" arg-value="name"/>
+					<ds:arg arg-name="title" arg-value="attribute[Title]"/>
+			</ds:fieldjpo>
+		</ds:field>
+		<ds:field name="parentID"><ds:selectable expression="to[Meeting Context].from.id"/>
+			<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getParent" localInvokation="true">
+					<ds:arg arg-name="type" arg-value="id"/>
+					<ds:arg arg-name="title" arg-value="id"/>
+			</ds:fieldjpo>
+		</ds:field>
+		<ds:field name="parentPhysicalId"><ds:selectable expression="to[Meeting Context].from.physicalid"/>
+			<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getParent" localInvokation="true">
+					<ds:arg arg-name="type" arg-value="physicalid"/>
+					<ds:arg arg-name="title" arg-value="physicalid"/>
+			</ds:fieldjpo>
+		</ds:field>
+		<ds:field name="parentType"><ds:selectable expression="to[Meeting Context].from.type"/>
+			<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getParent" localInvokation="true">
+					<ds:arg arg-name="type" arg-value="type"/>
+					<ds:arg arg-name="title" arg-value="type"/>
+			</ds:fieldjpo>
+		</ds:field>
+		
+		<ds:field name="meeting-custom-fields">
+			<ds:customAttributes busTypes="Meeting" />
+		</ds:field>
+		
+		<ds:field name="state.transient" includeByDefault="always" conditionalInclude="modifyAccess,deleteAccess"><ds:selectable expression="current" format="transient"/></ds:field>
+		
+		<ds:field name="owner.transient" includeByDefault="always" conditionalInclude="modifyAccess,deleteAccess"><ds:selectable expression="owner" format="transient"/></ds:field>
+		
+		<ds:ref-subservice name="attendees" referenceName="meeting.attendees" includeByDefault="no"/>
+		
+		<ds:ref-subservice name="agendaItems" referenceName="meeting.agendaitems" includeByDefault="no"/>
+		
+		<ds:ref-subservice name="agendaItemsnew" referenceName="meeting.agendaItemsnew" includeByDefault="no"/>
+		
+		<ds:ref-subservice name="decisions" referenceName="meeting.decisions" includeByDefault="no"/>
+		
+		<ds:ref-subservice name="attachments" referenceName="meeting.attachments" includeByDefault="no"/>
+		
+		<ds:ref-subservice name="promote" referenceName="meeting.promote" includeByDefault="no"/>
+		
+		<ds:subservice name="autoRefresh" includeByDefault="never">
+			<ds:data>
+				<ds:jpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="autoRefreshMeetings" returnedData="idsAndData"/>
+			</ds:data>
+		</ds:subservice>	
+		
+	</ds:service>
+	
+	<ds:service name="meeting.attendees">
+		<ds:data>
+			<ds:jpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getMeetingAttendees" returnedData="idsAndData"/>
+			<ds:updatejpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="updateMeetingAttendee"/>
+		</ds:data>
+		<ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+		<ds:field name="firstname"><ds:selectable expression="attribute[First Name]" type="bus"/></ds:field>
+		<ds:field name="lastname"><ds:selectable expression="attribute[Last Name]" type="bus"/></ds:field>
+		<ds:field name="email"><ds:selectable expression="attribute[Email Address]" type="bus"/></ds:field>
+		<ds:field name="phonenumber"><ds:selectable expression="attribute[Work Phone Number]" type="bus"/></ds:field>
+		<ds:field name="company"><ds:selectable expression="to[Employee].from.attribute[Title]"/></ds:field>
+		<ds:field name="companyName"><ds:selectable expression="to[Employee].from.name"/></ds:field>
+		<ds:field name="objectId"><ds:selectable expression="id" type="bus"/></ds:field>
+		<ds:field name="physicalid"><ds:selectable expression="physicalid" type="bus"/></ds:field>
+	</ds:service>
+	
+	<ds:service name="meeting.agendaitems">
+		<ds:data>
+			<ds:expand relationshipPattern="Agenda Item" getFrom="true" recurseLevels="1"/>
+			<ds:updatejpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="updateMeetingAgendaItems" processMultiple="true"/>
+		</ds:data>
+		<ds:field name="topic"> <ds:selectable expression="attribute[Topic]" type="rel" autosave="true"/></ds:field>
+		<ds:field name="responsibility">
+			<ds:selectable expression="frommid.to.name" type="rel" format="fullname"/>
+		</ds:field>
+		<ds:field name="responsibileOID">
+			<ds:selectable expression="frommid.to.id" type="rel"/>
+		</ds:field>
+		<ds:field name="meetingId"></ds:field>
+		<ds:field name="topicDuration"> <ds:selectable expression="attribute[Topic Duration]" type="rel" autosave="true"/></ds:field>
+		<ds:field name="sequence"> <ds:selectable expression="attribute[Sequence]" type="rel" autosave="true"/>
+			<ds:sort order="1" direction="ascending" type="integer"/>
+		</ds:field>
+		<ds:field name="description"><ds:selectable expression="description" autosave="true"/></ds:field>
+		<ds:field name="topicStartTime"><ds:selectable  type="rel" />
+		<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getTopicStartTime" >
+			</ds:fieldjpo>
+		</ds:field>
+		<ds:field name="owner"><ds:selectable expression="owner" type="rel" format="fullname"/></ds:field>
+		<ds:field name="created"><ds:selectable expression="originated" format="utc" type="rel"/></ds:field>
+		
+		<ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+		<ds:field name="modified"><ds:selectable expression="modified" type="bus"/></ds:field>
+		<ds:field name="title"><ds:selectable expression="attribute[Title]" type="bus"/></ds:field>
+		<ds:field name="state"><ds:selectable expression="current" type="bus"/></ds:field>
+		<ds:field name="typeicon"><ds:image source="businessType" size="icon" type="bus"/></ds:field>
+		<ds:field name="image">
+			<ds:image source="primaryOrType" size="large" fileExtField="fileExtension" type="bus"/>
+		</ds:field>
+	</ds:service>
+	
+	<ds:service name="meeting.agendaItemsnew">
+		<ds:data>
+			<ds:jpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getMeetingAgendaNew" returnedData="idsAndData"/>
+			<ds:updatejpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="updateMeetingAgendaNew" processMultiple="true"/>
+		</ds:data>
+		<ds:field name="topic"> <ds:selectable expression="attribute[Topic]" type="rel"/></ds:field>
+		<ds:field name="responsibility">
+			<ds:selectable expression="frommid.to.name" type="rel" format="fullname"/>
+		</ds:field>
+		<ds:field name="responsibilePerson">
+			<ds:selectable expression="frommid.to.name" type="rel"/>
+		</ds:field>
+		<ds:field name="responsibileOID">
+			<ds:selectable expression="frommid.to.id" type="rel"/>
+		</ds:field>
+		<ds:field name="meetingId"></ds:field>
+		<ds:field name="topicDuration"> <ds:selectable expression="attribute[Topic Duration]" type="rel" autosave="true"/></ds:field>
+		<ds:field name="topicDescription"> <ds:selectable expression="attribute[Topic Description]" type="rel" autosave="true"/></ds:field>
+		
+		<ds:field name="topicStartTime"><ds:selectable  type="rel" />
+		<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getTopicStartTime" >
+			</ds:fieldjpo>
+		</ds:field>
+		
+		<ds:field name="sequence"> <ds:selectable expression="attribute[Sequence]" type="rel" autosave="true"/>
+			<ds:sort order="1" direction="ascending" type="integer"/>
+		</ds:field>
+		<ds:field name="owner"><ds:selectable expression="owner" type="rel" format="fullname"/></ds:field>
+		<ds:field name="created"><ds:selectable expression="originated" format="utc" type="rel"/></ds:field>
+		
+		<ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+		<ds:field name="modified"><ds:selectable expression="modified" type="bus"/></ds:field>
+		<ds:field name="title"><ds:selectable expression="attribute[Title]" type="bus"/></ds:field>
+		<ds:field name="state"><ds:selectable expression="current" type="bus"/></ds:field>
+		<ds:field name="typeicon"><ds:image source="businessType" size="icon" type="bus"/></ds:field>
+		<ds:field name="image">
+			<ds:image source="primaryOrType" size="large" fileExtField="fileExtension" type="bus"/>
+		</ds:field>
+		
+		<ds:ref-subservice name="bps.topicBasicFields" includeByDefault="yes"/>
+	</ds:service>
+	
+	
+	<ds:service name="meeting.decisions">
+		<ds:data>
+			<ds:jpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getMeetingDecisions" returnedData="idsAndData"/>
+			<ds:updatejpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="updateMeetingDecisions"/>
+		</ds:data>
+		<ds:ref-subservice name="bps.meetingBasicFields" includeByDefault="yes"/>
+		<ds:field name="title"><ds:selectable expression="attribute[Title]"/></ds:field>
+		<ds:field name="owner"><ds:selectable expression="owner" type="bus" format="fullname"/></ds:field>
+		<ds:field name="originator"><ds:selectable expression="attribute[Originator]" type="bus" format="fullname"/></ds:field>
+		<ds:field name="revision"><ds:selectable expression="revision"/></ds:field>
+		<ds:field name="decisionContext">
+			<ds:selectable expression="name" type="rel"/>
+			<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getDecisionContext" localInvokation="true">
+			</ds:fieldjpo>
+		</ds:field>
+		<ds:field name="releaseDate">
+			<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getReleaseDate" localInvokation="true">
+			</ds:fieldjpo>
+		</ds:field>
+		
+		<ds:ref-subservice name="discussions" referenceName="meeting.discussions" includeByDefault="yes"/>
+	</ds:service>
+	
+	<ds:service name="meeting.attachments">
+		<ds:data>
+			<ds:jpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getMeetingAttachments" returnedData="idsAndData"/>
+			<ds:updatejpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="updateMeetingAttachment"/>
+		</ds:data>
+		<ds:field name="title"><ds:selectable expression="attribute[Title]"/></ds:field>
+		<ds:field name="revision"><ds:selectable expression="revision"/></ds:field>
+		<ds:field name="fileName"><ds:selectable expression="format.file.name" type="bus"/></ds:field>
+		<ds:field name="lockedBy"><ds:selectable expression="locker" type="bus"/></ds:field>
+		<ds:field name="typeicon"><ds:image source="businessType" size="icon"/></ds:field>
+		<ds:field name="modified"><ds:selectable expression="modified" format="utc"/></ds:field>
+		<ds:field name="image">
+			<ds:image source="primaryOrType" size="large" fileExtField="fileExtension"/>
+		</ds:field>
+		<ds:ref-subservice name="bps.meetingBasicFields" includeByDefault="yes"/>
+	</ds:service>
+	
+	<ds:service name="meeting.promote">
+		<ds:data>
+			<ds:updatejpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="updateMeetingMaturity"/>
+		</ds:data>
+	</ds:service>
+	
+	
+	<ds:service name="meeting.discussions">
+		<ds:data>
+			<ds:jpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getDiscussions" returnedData="idsAndData"/>
+		</ds:data>
+		<ds:ref-subservice name="bps.meetingBasicFields" includeByDefault="yes"/>
+		<ds:field name="subject"><ds:selectable expression="attribute[Subject]"/></ds:field>
+		<ds:field name="replies"><ds:selectable expression="attribute[Count]"/></ds:field>
+		<ds:field name="lastMessage"><ds:selectable expression="modified" format="utc"/></ds:field>
+		<ds:field name="owner"><ds:selectable expression="owner" format="fullname"/></ds:field>
+		<ds:field name="visibility"><ds:selectable expression="policy"></ds:selectable>
+			<ds:fieldjpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getMessageType" localInvokation="true"/>
+		</ds:field>
+	</ds:service>
+	
+	<ds:service name="bps.meetingBasicFields">
+		<ds:field name="name"><ds:selectable expression="name"/></ds:field>
+		<ds:field name="created"><ds:selectable expression="originated" format="utc"/></ds:field>
+		<ds:field name="description"><ds:selectable expression="description" autosave="true"/></ds:field>
+		<ds:field name="state"><ds:selectable expression="current"/>
+			<ds:range registeredSuite="Framework">
+				<ds:rangejpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getStates">
+					<ds:arg arg-name="policy" arg-value="Meeting"/>
+				</ds:rangejpo>
+			</ds:range>
+		</ds:field>
+		<ds:field name="policy" includeByDefault="yes" description="required to support state NLS"><ds:selectable expression="policy" type="bus"/></ds:field>
+		<ds:field name="stateNLS"><ds:selectable expression="current" format="state"/></ds:field>
+		<ds:field name="typeNLS"><ds:selectable expression="type" format="type"/></ds:field>
+		<ds:field name="policyNLS"><ds:selectable expression="policy" format="policy"/></ds:field>
+		<ds:field name="objectId"><ds:selectable expression="id" type="bus"/></ds:field>
+		<ds:field name="project"><ds:selectable expression="project" type="bus"/></ds:field>
+		<ds:field name="projectTitle"><ds:selectable expression="project.property[Title].value" type="bus"/></ds:field>
+	</ds:service>
+	
+	<ds:service name="bps.topicBasicFields">
+		<ds:field name="name"><ds:selectable expression="name"/></ds:field>
+		<ds:field name="created"><ds:selectable expression="originated" format="utc"/></ds:field>
+		<ds:field name="description"><ds:selectable expression="description" autosave="true"/></ds:field>
+		<ds:field name="state"><ds:selectable expression="current"/>
+			<ds:range registeredSuite="Framework">
+				<ds:rangejpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getStates">
+					<ds:arg arg-name="policy" arg-value="Meeting"/>
+				</ds:rangejpo>
+			</ds:range>
+		</ds:field>
+		<ds:field name="policy" includeByDefault="yes" description="required to support state NLS"><ds:selectable expression="policy" type="bus"/></ds:field>
+		<ds:field name="stateNLS"><ds:selectable expression="current" format="state"/></ds:field>
+		<ds:field name="typeNLS"><ds:selectable expression="type" format="type"/></ds:field>
+		<ds:field name="policyNLS"><ds:selectable expression="policy" format="policy"/></ds:field>
+		<ds:field name="objectId"><ds:selectable expression="id" type="bus"/></ds:field>
+		<ds:field name="title"><ds:selectable expression="attribute[Title]" type="bus"/></ds:field>
+		<ds:field name="typeicon"><ds:image source="businessType" size="icon" type="bus"/></ds:field>
+		<ds:field name="image">
+			<ds:image source="primaryOrType" size="large" fileExtField="fileExtension" type="bus"/>
+		</ds:field>
+	</ds:service>
+	
+	  <ds:service name="DOCM.typeDerivatives" includeByDefault="never"> 
+        <ds:data csrf="false">
+            <ds:updatejpo classname="com.dassault_systemes.enovia.meeting.MeetingService" function="getTypeDerivatives" localInvokation="java" processMultiple="true"/>
+        </ds:data>
+    </ds:service>
+	
+</ds:services>
+
+
+

@@ -1,0 +1,26 @@
+del command 'ctxMsoiCmd_Delete';
+add command 'ctxMsoiCmd_Delete'
+	description	'ctxMsoiCmd_Delete'
+	label	'emxMSF.Command.ctxMsoiCmd_Delete'
+	href	''
+	alt	'ctxMsoiCmd_Delete'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_Delete'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Navigation_FileUnlocked add command ctxMsoiCmd_Delete order command ctxMsoiCmd_Delete 8;
+modify menu ctxMsoi_Navigation_Folder add command ctxMsoiCmd_Delete order command ctxMsoiCmd_Delete 1;
+modify menu ctxMsoi_Navigation_MultiFile add command ctxMsoiCmd_Delete order command ctxMsoiCmd_Delete 6;
+modify menu ctxMsoi_Navigation_MultipleSelection add command ctxMsoiCmd_Delete order command ctxMsoiCmd_Delete 0;
+modify menu ctxMsoi_Navigation_NoFiles add command ctxMsoiCmd_Delete order command ctxMsoiCmd_Delete 5;
+modify menu ctxMsoi_SearchResults_FileUnlocked add command ctxMsoiCmd_Delete order command ctxMsoiCmd_Delete 8;
+modify menu ctxMsoi_SearchResults_MultiFile add command ctxMsoiCmd_Delete order command ctxMsoiCmd_Delete 6;
+modify menu ctxMsoi_SearchResults_MultipleSelection add command ctxMsoiCmd_Delete order command ctxMsoiCmd_Delete 0;
+modify menu ctxMsoi_SearchResults_NoFiles add command ctxMsoiCmd_Delete order command ctxMsoiCmd_Delete 5;
+#channel ==>ctxMsoi_Navigation_FileUnlockedctxMsoi_Navigation_FolderctxMsoi_Navigation_MultiFilectxMsoi_Navigation_MultipleSelectionctxMsoi_Navigation_NoFilesctxMsoi_SearchResults_FileUnlockedctxMsoi_SearchResults_MultiFilectxMsoi_SearchResults_MultipleSelectionctxMsoi_SearchResults_NoFiles
+add property command_ctxMsoiCmd_Delete on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_Delete';

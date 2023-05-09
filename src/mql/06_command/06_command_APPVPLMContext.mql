@@ -1,0 +1,12 @@
+del command 'APPVPLMContext';
+add command 'APPVPLMContext'
+	description	''
+	label	'emxPlmOnline.label.Context'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=Context'
+	alt	'emxPlmOnline.label.Context'
+	setting	'Registered Suite'		'VPLMAdministration'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+#channel ==>PeopleChannel
+add property command_APPVPLMContext on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMContext';

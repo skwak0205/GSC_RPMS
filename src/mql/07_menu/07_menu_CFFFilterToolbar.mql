@@ -1,0 +1,10 @@
+del menu 'CFFFilterToolbar';
+add menu 'CFFFilterToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'CFFRefinementsButton'
+	property 'version'	value	'R419'
+;
+add property menu_CFFFilterToolbar on program eServiceSchemaVariableMapping.tcl to menu 'CFFFilterToolbar';

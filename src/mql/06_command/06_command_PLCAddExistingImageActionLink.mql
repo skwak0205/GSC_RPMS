@@ -1,0 +1,26 @@
+del command 'PLCAddExistingImageActionLink';
+add command 'PLCAddExistingImageActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?cancelLabel=emxProduct.Button.Cancel&excludeOIDprogram=emxPLCCommon:excludeConnected&field=TYPES=type_Image&table=PLCSearchImagesTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_Image&from=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingImageActionLink'
+	property	'version'	value	'R421'
+;
+modify menu PLCImageListToolBarActions add command PLCAddExistingImageActionLink order command PLCAddExistingImageActionLink 2;
+modify menu PLCImageListTopActionBar add command PLCAddExistingImageActionLink order command PLCAddExistingImageActionLink 2;
+#channel ==>PLCImageListToolBarActionsPLCImageListTopActionBar
+add property command_PLCAddExistingImageActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingImageActionLink';

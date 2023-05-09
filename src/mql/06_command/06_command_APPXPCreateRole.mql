@@ -1,0 +1,11 @@
+del command 'APPXPCreateRole';
+add command 'APPXPCreateRole'
+	description	''
+	label	'emxPlmOnline.label.Create'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=CreateRole&dir=XP'
+	alt	'emxPlmOnline.label.Create'
+	setting	'Registered Suite'		'VPLMAdministration'
+	user	'VPLMAdmin'
+;
+#channel ==>RoleXPChannel
+add property command_APPXPCreateRole on program eServiceSchemaVariableMapping.tcl to command 'APPXPCreateRole';

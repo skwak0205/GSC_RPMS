@@ -1,0 +1,10 @@
+del channel 'ProjectVPLMChannel';
+add channel 'ProjectVPLMChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	command 	'APPVPLMProjectSearch','APPVPLMProjectCreate'
+;
+#portal ==>APPVPLMProjectAdminPortal
+add property channel_ProjectVPLMChannel on program eServiceSchemaVariableMapping.tcl to channel 'ProjectVPLMChannel';

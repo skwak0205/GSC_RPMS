@@ -1,0 +1,22 @@
+del command 'PMCResourcePlanTemplateCostFTEFilter';
+add command 'PMCResourcePlanTemplateCostFTEFilter'
+	description	''
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralResourcePlanCostFilter.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getCostFTEFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Range Program'		'emxResourceRequest'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePlanTemplateCostFTEFilter'
+	property	'version'	value	'R419'
+;
+modify menu PMCResourceRequestTemplateToolBarActions add command PMCResourcePlanTemplateCostFTEFilter order command PMCResourcePlanTemplateCostFTEFilter 0;
+modify menu PMCResourceRequestTemplateToolBar add command PMCResourcePlanTemplateCostFTEFilter order command PMCResourcePlanTemplateCostFTEFilter 4;
+#channel ==>PMCResourceRequestTemplateToolBarActionsPMCResourceRequestTemplateToolBar
+add property command_PMCResourcePlanTemplateCostFTEFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePlanTemplateCostFTEFilter';

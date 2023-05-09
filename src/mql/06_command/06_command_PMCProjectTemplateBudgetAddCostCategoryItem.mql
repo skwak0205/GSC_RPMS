@@ -1,0 +1,26 @@
+del command 'PMCProjectTemplateBudgetAddCostCategoryItem';
+add command 'PMCProjectTemplateBudgetAddCostCategoryItem'
+	description	''
+	label	'emxProgramCentral.Budget.AddCostCategoryItem'
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=addCostItem'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAddCostItemAvailableTemplate'
+	setting	'Access Program'		'emxProjectBudget'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateBudgetAddCostCategoryItem'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectTemplateBudgetToolbarActions add command PMCProjectTemplateBudgetAddCostCategoryItem order command PMCProjectTemplateBudgetAddCostCategoryItem 3;
+modify menu type_BudgetRMB add command PMCProjectTemplateBudgetAddCostCategoryItem order command PMCProjectTemplateBudgetAddCostCategoryItem 2;
+#channel ==>PMCProjectTemplateBudgetToolbarActionstype_BudgetRMB
+add property command_PMCProjectTemplateBudgetAddCostCategoryItem on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateBudgetAddCostCategoryItem';

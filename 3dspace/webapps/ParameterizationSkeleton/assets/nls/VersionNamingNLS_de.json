@@ -1,0 +1,15 @@
+{
+  "SelectAFile": "Datei auswählen...",
+  "BrowseButtonText": "Durchsuchen",
+  "UploadButtonText": "Hochladen",
+  "ResetButtonText": "Alle erweiterten Folgen zurücksetzen",
+  "DownloadButtonText": "Herunterladen",
+  "DownloadFailedAlert": "Download fehlgeschlagen",
+  "NoFileToUpload": "Nichts hochzuladen, wählen Sie zuerst eine Datei aus",
+  "UploadSuccessAlert": "Datei erfolgreich hochgeladen",
+  "UploadFailedAlert": "Upload der Datei fehlgeschlagen",
+  "ResetSuccessAlert": "Zurücksetzen erfolgreich",
+  "ResetFailedAlert": "Zurücksetzen fehlgeschlagen",
+  "VersionNamingExtHeader": "Definitionen erweiterter Revisionsfolgen hoch-/herunterladen",
+  "VersionNamingExtTooltip": ""
+}

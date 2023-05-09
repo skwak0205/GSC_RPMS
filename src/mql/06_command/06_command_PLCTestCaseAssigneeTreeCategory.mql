@@ -1,0 +1,18 @@
+del command 'PLCTestCaseAssigneeTreeCategory';
+add command 'PLCTestCaseAssigneeTreeCategory'
+	description	''
+	label	'emxProduct.Tree.Assignee'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxAssignee:getAllAssignee&relationName=relationship_AssignedTestCase&table=PLCAssigneeList&header=emxProduct.Heading.TestCase.Assignees&selection=multiple&topActionbar=PLCTestCaseAssigneeListTopActionBar&bottomActionbar=PLCAssigneeListBottomActionBar&sortColumnName=Name&HelpMarker=emxhelpassignees'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/iconSmallPerson.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestCaseAssigneeTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_TestCase add command PLCTestCaseAssigneeTreeCategory order command PLCTestCaseAssigneeTreeCategory 1;
+#channel ==>type_TestCase
+add property command_PLCTestCaseAssigneeTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCTestCaseAssigneeTreeCategory';

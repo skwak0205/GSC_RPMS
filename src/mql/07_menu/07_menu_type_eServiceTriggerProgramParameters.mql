@@ -1,0 +1,14 @@
+del menu 'type_eServiceTriggerProgramParameters';
+add menu 'type_eServiceTriggerProgramParameters'
+	description	''
+	label	'${TYPE} ${NAME} ${REVISION}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_eServiceTriggerProgramParameters&HelpMarker=emxhelptriggerparameterproperties'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_eServiceTriggerProgramParameters'
+	property 'version'	value	'10-7-SP1'
+;
+add property menu_type_eServiceTriggerProgramParameters on program eServiceSchemaVariableMapping.tcl to menu 'type_eServiceTriggerProgramParameters';

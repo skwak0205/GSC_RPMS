@@ -1,0 +1,22 @@
+del command 'ctxMsoiCmd_Lock';
+add command 'ctxMsoiCmd_Lock'
+	description	'ctxMsoiCmd_Lock'
+	label	'emxMSF.Command.ctxMsoiCmd_Lock'
+	href	''
+	alt	'ctxMsoiCmd_Lock'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_Lock'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Navigation_FileUnlocked add command ctxMsoiCmd_Lock order command ctxMsoiCmd_Lock 5;
+modify menu ctxMsoi_Navigation_MultipleSelection add command ctxMsoiCmd_Lock order command ctxMsoiCmd_Lock 3;
+modify menu ctxMsoi_Revisions_VersionUnLocked add command ctxMsoiCmd_Lock order command ctxMsoiCmd_Lock 3;
+modify menu ctxMsoi_SearchResults_FileUnlocked add command ctxMsoiCmd_Lock order command ctxMsoiCmd_Lock 5;
+modify menu ctxMsoi_SearchResults_MultipleSelection add command ctxMsoiCmd_Lock order command ctxMsoiCmd_Lock 3;
+#channel ==>ctxMsoi_Navigation_FileUnlockedctxMsoi_Navigation_MultipleSelectionctxMsoi_Revisions_VersionUnLockedctxMsoi_SearchResults_FileUnlockedctxMsoi_SearchResults_MultipleSelection
+add property command_ctxMsoiCmd_Lock on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_Lock';

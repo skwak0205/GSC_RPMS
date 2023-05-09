@@ -1,0 +1,26 @@
+del command 'PMCWorkspaceVaultBookmarksCreate';
+add command 'PMCWorkspaceVaultBookmarksCreate'
+	description	'Command for creating a Bookmark in workspace vault'
+	label	'emxProgramCentral.Common.CreateBookmark'
+	href	'${SUITE_DIR}/emxProgramCentralDocumentCreatePreProcess.jsp?documentAction=Bookmark'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToCommand'
+	setting	'Access Program'		'emxBookmark'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateFavorite32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkspaceVaultBookmarksCreate'
+	property	'version'	value	'R422'
+;
+modify menu PMCFolderBookmarkActions add command PMCWorkspaceVaultBookmarksCreate order command PMCWorkspaceVaultBookmarksCreate 1;
+modify menu PMCFolderSummaryToolBar add command PMCWorkspaceVaultBookmarksCreate order command PMCWorkspaceVaultBookmarksCreate 3;
+#channel ==>PMCFolderBookmarkActionsPMCFolderSummaryToolBar
+add property command_PMCWorkspaceVaultBookmarksCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkspaceVaultBookmarksCreate';

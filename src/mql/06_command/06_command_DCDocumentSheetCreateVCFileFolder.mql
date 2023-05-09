@@ -1,0 +1,28 @@
+del command 'DCDocumentSheetCreateVCFileFolder';
+add command 'DCDocumentSheetCreateVCFileFolder'
+	description	'Create New VC Document Sheet object'
+	label	'emxComponents.VersionControl.CreateVCFileFolder'
+	href	'${SUITE_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=createVCFileFolder&JPOName=emxVCDocument&methodName=checkinUpdate'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect]==TRUE)'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Author'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCDocumentSheetCreateVCFileFolder'
+	property	'version'	value	'R422'
+;
+modify menu DCDocumentSheetSummaryCreateNew add command DCDocumentSheetCreateVCFileFolder order command DCDocumentSheetCreateVCFileFolder 3;
+#channel ==>DCDocumentSheetSummaryCreateNew
+add property command_DCDocumentSheetCreateVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'DCDocumentSheetCreateVCFileFolder';

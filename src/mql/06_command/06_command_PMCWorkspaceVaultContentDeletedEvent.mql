@@ -1,0 +1,19 @@
+del command 'PMCWorkspaceVaultContentDeletedEvent';
+add command 'PMCWorkspaceVaultContentDeletedEvent'
+	description	''
+	label	'emxProgramCentral.FolderSubscription.Event.Content_Deleted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Event Type'		'Content Deleted'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkspaceVaultContentDeletedEvent'
+	property	'version'	value	'R216'
+;
+modify menu PMCWorkspaceVaultSubscriptionEvents add command PMCWorkspaceVaultContentDeletedEvent order command PMCWorkspaceVaultContentDeletedEvent 2;
+modify menu PMCControlledFolderSubscriptionEvents add command PMCWorkspaceVaultContentDeletedEvent order command PMCWorkspaceVaultContentDeletedEvent 2;
+#channel ==>PMCWorkspaceVaultSubscriptionEventsPMCControlledFolderSubscriptionEvents
+add property command_PMCWorkspaceVaultContentDeletedEvent on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkspaceVaultContentDeletedEvent';

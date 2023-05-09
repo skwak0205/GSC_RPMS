@@ -1,0 +1,30 @@
+del command 'RMTRequirementUseCaseTreeCategory';
+add command 'RMTRequirementUseCaseTreeCategory'
+	description	'Command Object for Use Case in Requirement Menu.'
+	label	'emxRequirements.Tree.UseCase'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=RMTUseCaseList&freezePane=Name,Revision&program=emxUseCase:getRelatedUseCases&header=emxRequirements.Heading.UseCase&selection=multiple&topActionbar=RMTRequirementUseCaseTopActionBar&bottomActionbar=RMTRequirementUseCaseBottomActionBar&rel=relationship_RequirementUseCase&sortColumnName=Name&HelpMarker=emxhelpusecaselist&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'policy != "Requirement Version"'
+	setting	'Access Function'		'showRMTRequirementUseCaseTreeCategory'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'COMMON_DIR/iconSmallUseCase.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementUseCaseTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu Msoitype_Requirement add command RMTRequirementUseCaseTreeCategory order command RMTRequirementUseCaseTreeCategory 0;
+#channel ==>Msoitype_RequirementRMTRelatedObjects
+add property command_RMTRequirementUseCaseTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementUseCaseTreeCategory';

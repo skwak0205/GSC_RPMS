@@ -1,0 +1,25 @@
+del command 'PMCCreateQuestionAndAssign';
+add command 'PMCCreateQuestionAndAssign'
+	description	'Command to create question from template task popup and assign it to that tasks'
+	label	'emxProgramCentral.Common.CreateQuestionAndAssign'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=createQuestionForTemplateTask'
+	alt	'emxProgramCentral.Common.CreateQuestionAndAssign'
+	setting	'Target Location'		'slidein'
+	setting	'CmdName'		'PMCCreateQuestionAndAssign'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isQuestionCommandAccessible'
+	setting	'Access Program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateQuestionAndAssign'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectTemplateTaskQuestionActionsToolBar add command PMCCreateQuestionAndAssign order command PMCCreateQuestionAndAssign 2;
+#channel ==>PMCProjectTemplateTaskQuestionActionsToolBar
+add property command_PMCCreateQuestionAndAssign on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateQuestionAndAssign';

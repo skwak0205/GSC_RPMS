@@ -1,0 +1,10 @@
+del channel 'SecurityContextXPChannel';
+add channel 'SecurityContextXPChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	command 	'APPXPSecurityContext','APPXPCreateSecurityContext'
+;
+#portal ==>APPXPSecurityContextAdminPortal
+add property channel_SecurityContextXPChannel on program eServiceSchemaVariableMapping.tcl to channel 'SecurityContextXPChannel';

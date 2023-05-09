@@ -1,0 +1,22 @@
+del command 'PLCObjectReleasedEvent';
+add command 'PLCObjectReleasedEvent'
+	description	'Object Released Event'
+	label	'PublishSubscribe.Event.Released'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Released'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCObjectReleasedEvent'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductsEvents add command PLCObjectReleasedEvent order command PLCObjectReleasedEvent 21;
+modify menu FTRFeaturesEvents add command PLCObjectReleasedEvent order command PLCObjectReleasedEvent 3;
+modify menu FTRFeatureSubscriptionEvents add command PLCObjectReleasedEvent order command PLCObjectReleasedEvent 3;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command PLCObjectReleasedEvent order command PLCObjectReleasedEvent 3;
+modify menu FTRLogicalFeatureSubscriptionEvents add command PLCObjectReleasedEvent order command PLCObjectReleasedEvent 3;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command PLCObjectReleasedEvent order command PLCObjectReleasedEvent 3;
+#channel ==>PLCProductsEventsFTRFeaturesEventsFTRFeatureSubscriptionEventsFTRConfigurationFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_PLCObjectReleasedEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCObjectReleasedEvent';

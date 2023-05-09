@@ -1,0 +1,16 @@
+del command 'RMTReqGroupRevisions';
+add command 'RMTReqGroupRevisions'
+	description	'show versions of the root reg group'
+	label	'emxComponents.RouteTemplate.Revisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRMTCommon:getRevisions&table=APPDocumentRevisions&toolbar=RMTRevisionsToolBar&header=emxComponents.Common.RevisionsPageHeading&subHeader=emxComponents.Menu.SubHeaderDocuments&HelpMarker=emxhelpdocumentfilerevisions'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTReqGroupRevisions'
+	property	'version'	value	'V6R2016x'
+;
+modify menu type_RequirementGroup add command RMTReqGroupRevisions order command RMTReqGroupRevisions 0;
+#channel ==>type_RequirementGroup
+add property command_RMTReqGroupRevisions on program eServiceSchemaVariableMapping.tcl to command 'RMTReqGroupRevisions';

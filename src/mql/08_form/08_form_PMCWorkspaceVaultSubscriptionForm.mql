@@ -1,0 +1,29 @@
+del form 'PMCWorkspaceVaultSubscriptionForm';
+add form 'PMCWorkspaceVaultSubscriptionForm' web
+field #1
+	name	'Propagate Subscription'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getPropagateSubscriptionCheckboxElement'
+	setting	'program'		'emxProjectFolder'
+	setting	'Field Type'		'programHTMLOutput'
+field #2
+	name	'Subscription Events'
+	label	'emxProgramCentral.FolderSubscription.Eventlist.header.Notification_Events'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getSubscribableEventList'
+	setting	'Submit'		'true'
+	setting	'program'		'emxProjectFolder'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkspaceVaultSubscriptionForm'
+	property	'version'	value	'R210'
+;
+add property form_PMCWorkspaceVaultSubscriptionForm on program eServiceSchemaVariableMapping.tcl to form 'PMCWorkspaceVaultSubscriptionForm';

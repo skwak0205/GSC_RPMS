@@ -1,0 +1,25 @@
+del command 'IssueClassificationCreateNewActionLink';
+add command 'IssueClassificationCreateNewActionLink'
+	description	'Create New Issue Classification Command Object'
+	label	'emxComponents.ActionLink.IssueClassificationCreateNew'
+	href	'${COMPONENT_DIR}/emxIssueCategoryClassificationUtil.jsp?mode=ClassificationCreateCommand'
+	alt	'emxComponents.ActionLink.IssueClassificationCreateNew'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedOwner'
+	user	'Administration Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueClassificationCreateNewActionLink'
+	property	'version'	value	'R422'
+;
+modify menu IssueCategoriesToolBarActions add command IssueClassificationCreateNewActionLink order command IssueClassificationCreateNewActionLink 2;
+#channel ==>IssueCategoriesToolBarActions
+add property command_IssueClassificationCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'IssueClassificationCreateNewActionLink';

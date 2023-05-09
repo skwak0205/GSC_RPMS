@@ -1,0 +1,43 @@
+del table 'APPRouteTemplateRevisionSummary' system;
+add table 'APPRouteTemplateRevisionSummary' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxComponents.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxTree.jsp'
+	range	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'Rev'
+	businessobject	'revision'
+	label	'emxComponents.RouteTemplate.Rev'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Components'
+column #3
+	name	'date'
+	businessobject	'originated'
+	label	'emxComponents.RouteTemplate.CreateDate'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Components'
+	setting	'Display Time'		'true'
+	setting	'format'		'date'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteTemplateRevisionSummary'
+	property	'version'	value	'10-6'
+;
+add property table_APPRouteTemplateRevisionSummary on program eServiceSchemaVariableMapping.tcl to table 'APPRouteTemplateRevisionSummary' system;

@@ -1,0 +1,27 @@
+del command 'APPCommonUsageReport';
+add command 'APPCommonUsageReport'
+	description	'Usage Report'
+	label	'emxComponents.Command.UsageReport'
+	href	'${COMMON_DIR}/emxSearch.jsp?defaultSearch=APPCommonShowUsageReport&helpMarker=emxhelpsearchusagereport'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayUsageReportsCmd'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonUsageReport'
+	property	'version'	value	'R424.HF1'
+;
+modify menu APPReports add command APPCommonUsageReport order command APPCommonUsageReport 1;
+modify menu LBCAdministrationMyDesk add command APPCommonUsageReport order command APPCommonUsageReport 2;
+#channel ==>APPReportsLBCAdministrationMyDesk
+add property command_APPCommonUsageReport on program eServiceSchemaVariableMapping.tcl to command 'APPCommonUsageReport';

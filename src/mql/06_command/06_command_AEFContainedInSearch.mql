@@ -1,0 +1,20 @@
+del command 'AEFContainedInSearch';
+add command 'AEFContainedInSearch'
+	description	'General Search'
+	label	'emxFramework.GlobalSearch.General'
+	href	'${COMMON_DIR}/emxSearchGeneral.jsp'
+	alt	'emxFramework.GlobalSearch.General'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Framework'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFContainedInSearch'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_AEFContainedInSearch on program eServiceSchemaVariableMapping.tcl to command 'AEFContainedInSearch';

@@ -1,0 +1,18 @@
+del command 'LBCBookRevisedEvent';
+add command 'LBCBookRevisedEvent'
+	description	'Event holder for Book Revision'
+	label	'emxLibraryCentral.Event.Book_Revised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Book Revised'
+	setting	'History Bit'		'revisioned'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCBookRevisedEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCBookSubscriptionEvents add command LBCBookRevisedEvent order command LBCBookRevisedEvent 5;
+#channel ==>LBCBookSubscriptionEvents
+add property command_LBCBookRevisedEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCBookRevisedEvent';

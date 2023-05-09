@@ -1,0 +1,8 @@
+{
+  "SplashLoading": "正在載入",
+  "SplashConverting": "正在轉換",
+  "TextFatal": "無法預覽",
+  "DROP_MSG_LP": "將您的內容放置於此處",
+  "PasswordException": "無法開啟 PDF，因為未提供密碼",
+  "Empty_SVG": "檔案無法開啟，因為其為空白"
+}

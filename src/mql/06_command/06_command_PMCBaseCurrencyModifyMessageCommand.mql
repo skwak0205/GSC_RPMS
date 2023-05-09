@@ -1,0 +1,18 @@
+del command 'PMCBaseCurrencyModifyMessageCommand';
+add command 'PMCBaseCurrencyModifyMessageCommand'
+	description	''
+	label	'emxProgramCentral.ProjectBenefitOrBudget.BaseCurrencyModifyMessageCommand'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCBaseCurrencyModifyMessageForm&mode=view'
+	alt	'emxProgramCentral.ProjectBenefitOrBudget.BaseCurrencyModifyMessageCommand'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'isBackgroundTaskActive'
+	setting	'Access Program'		'emxFinancialItem'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBaseCurrencyModifyMessageCommand'
+	property	'version'	value	'R216'
+;
+#channel ==>PMCProjectBudgetChannel1PMCProjectFinancialChannelPMCFinancials
+add property command_PMCBaseCurrencyModifyMessageCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCBaseCurrencyModifyMessageCommand';

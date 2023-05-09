@@ -1,0 +1,19 @@
+del command 'APPWorkflowStartActionLink';
+add command 'APPWorkflowStartActionLink'
+	description	'Workflow start action link'
+	label	'emxComponents.Command.Start'
+	href	'${COMPONENT_DIR}/emxWorkflowAction.jsp?action=start'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current == "Stopped" && owner == context.user)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionStart.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowStartActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowToolbar add command APPWorkflowStartActionLink order command APPWorkflowStartActionLink 2;
+#channel ==>APPWorkflowToolbar
+add property command_APPWorkflowStartActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowStartActionLink';

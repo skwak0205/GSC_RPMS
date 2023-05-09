@@ -1,0 +1,16 @@
+del command 'PMCTaskSchedule';
+add command 'PMCTaskSchedule'
+	description	''
+	label	'emxProgramCentral.WBS.StructuredView'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCTaskWBS'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskSchedule'
+	property	'version'	value	'R421.HF7'
+;
+#channel ==>PMCTaskSchedule
+add property command_PMCTaskSchedule on program eServiceSchemaVariableMapping.tcl to command 'PMCTaskSchedule';

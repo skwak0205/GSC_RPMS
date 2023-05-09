@@ -1,0 +1,15 @@
+del command 'FTRMyDeskVariants';
+add command 'FTRMyDeskVariants'
+	description	''
+	label	'emxProduct.Tree.Variant'
+	href	'${SUITE_DIR}/MyDeskVariantsPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRMyDeskVariabilityMenu add command FTRMyDeskVariants order command FTRMyDeskVariants 1;
+#channel ==>FTRMyDeskVariabilityMenu
+add property command_FTRMyDeskVariants on program eServiceSchemaVariableMapping.tcl to command 'FTRMyDeskVariants';

@@ -1,0 +1,16 @@
+del command 'APPDecisionWhereUsed';
+add command 'APPDecisionWhereUsed'
+	description	''
+	label	'emxComponents.Common.WhereUsed'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxDecision:getWhereUsed&table=APPDecisionWhereUsedTable&header=emxComponents.Header.DecisionWhereUsed&selection=multiple&toolbar=APPDecisionWhereUsedActionBar&HelpMarker=emxhelpdecisionwhereused'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionWhereUsed'
+	property	'version'	value	'R215'
+;
+#channel ==>APPDecisionWhereUsedChannel
+add property command_APPDecisionWhereUsed on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionWhereUsed';

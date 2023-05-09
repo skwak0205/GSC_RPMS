@@ -1,0 +1,8 @@
+{
+"TerminologyManagementCommand.Title":"Suchstrukturdefinition verwalten",
+"TerminologyManagementCommand.ShortHelp":"Zuordnen von verknüpften Referenzen zu Suchstrukturen und von verknüpften Instanzen zu Suchknoten.",
+"AssociateTerminologiesCommand.Title":"Zu Suchstruktur hinzufügen",
+"AssociateTerminologiesCommand.ShortHelp":"Ausgewählte Referenzen mit Suchstruktur verknüpfen.",
+"AssociateTermsCommand.Title":"Zu Suchknoten hinzufügen",
+"AssociateTermsCommand.ShortHelp":"Ausgewählte Instanzen mit Suchknoten verknüpfen."
+}

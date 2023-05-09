@@ -1,0 +1,14 @@
+del portal 'PLCCollaboration';
+add portal 'PLCCollaboration'
+	description	''
+	label	''
+	href	''
+	channel 	PLCCollaboration
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCollaboration'
+	property	'version'	value	'R216'
+;
+add property portal_PLCCollaboration on program eServiceSchemaVariableMapping.tcl to portal 'PLCCollaboration';

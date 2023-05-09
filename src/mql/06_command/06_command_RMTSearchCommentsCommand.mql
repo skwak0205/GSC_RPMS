@@ -1,0 +1,24 @@
+del command 'RMTSearchCommentsCommand';
+add command 'RMTSearchCommentsCommand'
+	description	'Search for existing Comments'
+	label	'emxRequirements.ActionLink.FindComments'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxRequirementSearch:getComments&table=RMTSearchCommentsTable&form=RMTSearchCommentsForm&CommandName=RMTSearchCommentsCommand&sortColumnName=Name'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSearchCommentsCommand'
+	property	'version'	value	'R422'
+;
+modify menu RMTSearchAddExistingChooserMenu add command RMTSearchCommentsCommand order command RMTSearchCommentsCommand 2;
+#channel ==>RMTSearchAddExistingChooserMenu
+add property command_RMTSearchCommentsCommand on program eServiceSchemaVariableMapping.tcl to command 'RMTSearchCommentsCommand';

@@ -1,0 +1,14 @@
+del portal 'RMTSpecificationsChangeControl';
+add portal 'RMTSpecificationsChangeControl'
+	description	''
+	label	''
+	href	''
+	channel 	RMTSpecificationsChangeControl
+	setting	'Registered Suite'		'Requirements'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationsChangeControl'
+	property	'version'	value	'R216'
+;
+add property portal_RMTSpecificationsChangeControl on program eServiceSchemaVariableMapping.tcl to portal 'RMTSpecificationsChangeControl';

@@ -1,0 +1,24 @@
+del command 'PMCDocumentApproval';
+add command 'PMCDocumentApproval'
+	description	'Document Approval Command Object'
+	label	'emxFramework.Command.Approval'
+	href	'${SUITE_DIR}/emxEngrApprovalsSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Approval'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Image'		'${SUITE_DIR}/images/approvals.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDocumentApproval'
+	property	'version'	value	'R423.HF6'
+;
+modify menu type_DOCUMENTS add command PMCDocumentApproval order command PMCDocumentApproval 3;
+#channel ==>type_DOCUMENTS
+add property command_PMCDocumentApproval on program eServiceSchemaVariableMapping.tcl to command 'PMCDocumentApproval';

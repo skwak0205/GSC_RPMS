@@ -1,0 +1,28 @@
+del command 'PMCProjectBookmarksCreate';
+add command 'PMCProjectBookmarksCreate'
+	description	'Command for creating a Bookmark'
+	label	'emxProgramCentral.Common.CreateBookmark'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_URL&typeChooser=false&nameField=keyin&form=PMCBookMarkCreateForm&header=emxProgramCentral.Common.CreateBookmark&HelpMarker=emxhelpbookmarkcreatedialog&postProcessJPO=emxBookmark:connectBookmark&findMxLink=false&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasAccessToCommand'
+	setting	'Access Program'		'emxBookmark'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBookmarksCreate'
+	property	'version'	value	'R421.HF6'
+;
+modify menu PMCFolderColumnRMBMenu add command PMCProjectBookmarksCreate order command PMCProjectBookmarksCreate 2;
+modify menu PMCProjectBookmarksToolbarActions add command PMCProjectBookmarksCreate order command PMCProjectBookmarksCreate 1;
+#channel ==>PMCFolderColumnRMBMenuPMCProjectBookmarksToolbarActions
+add property command_PMCProjectBookmarksCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBookmarksCreate';

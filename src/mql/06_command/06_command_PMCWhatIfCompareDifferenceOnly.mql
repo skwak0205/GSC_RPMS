@@ -1,0 +1,21 @@
+del command 'PMCWhatIfCompareDifferenceOnly';
+add command 'PMCWhatIfCompareDifferenceOnly'
+	description	'Command used to display difference only view'
+	label	'emxProgramCentral.Experiment.CompareDifferenceOnly'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=compareWBS&subMode=DifferenceOnly'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showCompareDiffOnlyCommand'
+	setting	'Access Program'		'emxWhatIfBase'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfCompareDifferenceOnly'
+	property	'version'	value	'R419'
+;
+modify menu PMCWhatIfSyncToolbar add command PMCWhatIfCompareDifferenceOnly order command PMCWhatIfCompareDifferenceOnly 7;
+#channel ==>PMCWhatIfSyncToolbar
+add property command_PMCWhatIfCompareDifferenceOnly on program eServiceSchemaVariableMapping.tcl to command 'PMCWhatIfCompareDifferenceOnly';

@@ -1,0 +1,19 @@
+del command 'FTRManufacturingFeatureAddedEvent';
+add command 'FTRManufacturingFeatureAddedEvent'
+	description	'Manufacturing Feature Added Event'
+	label	'PublishSubscribe.Event.ManufacturingFeatureAdded'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Manufacturing Feature Added In Product Context'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRManufacturingFeatureAddedEvent'
+	property	'version'	value	'R215'
+;
+modify menu PLCProductsEvents add command FTRManufacturingFeatureAddedEvent order command FTRManufacturingFeatureAddedEvent 16;
+#channel ==>PLCProductsEvents
+add property command_FTRManufacturingFeatureAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRManufacturingFeatureAddedEvent';

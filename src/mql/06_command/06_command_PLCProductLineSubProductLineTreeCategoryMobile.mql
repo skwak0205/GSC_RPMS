@@ -1,0 +1,19 @@
+del command 'PLCProductLineSubProductLineTreeCategoryMobile';
+add command 'PLCProductLineSubProductLineTreeCategoryMobile'
+	description	'Command Object for Sub Product lines in the Product Line Menu For Mobile'
+	label	'emxProduct.Tree.SubProductLine'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=emxProductLineBase:getAllRelatedProductLines&table=PLCProductLineList&header=emxProduct.Heading.SubProductLine&selection=multiple&topActionbar=PLCProductLineSubProductLineTopActionBar&bottomActionbar=PLCProductLineSubProductLineBottomActionBar&sortColumnName=Name&editRootNode=false&HelpMarker=emxhelpproductlinesubproductline&isStructure=true&editRelationship=relationship_SubProductLines'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Function'		'isMobileModeEnabled'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProductLine.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductLineSubProductLineTreeCategoryMobile'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_PLCProductLineSubProductLineTreeCategoryMobile on program eServiceSchemaVariableMapping.tcl to command 'PLCProductLineSubProductLineTreeCategoryMobile';

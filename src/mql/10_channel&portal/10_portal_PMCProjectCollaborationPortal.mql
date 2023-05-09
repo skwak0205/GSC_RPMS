@@ -1,0 +1,14 @@
+del portal 'PMCProjectCollaborationPortal';
+add portal 'PMCProjectCollaborationPortal'
+	description	'Collaboration Portal'
+	label	''
+	href	''
+	channel 	PMCProjectCollaborationChannel
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectCollaborationPortal'
+	property	'version'	value	'R210'
+;
+add property portal_PMCProjectCollaborationPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCProjectCollaborationPortal';

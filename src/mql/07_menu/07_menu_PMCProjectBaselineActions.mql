@@ -1,0 +1,17 @@
+del menu 'PMCProjectBaselineActions';
+add menu 'PMCProjectBaselineActions'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectBaselineCreate'
+	command	'PMCProjectBaselineCompare'
+	command	'PMCProjectBaselineDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBaselineActions'
+	property 'version'	value	'R424'
+;
+add property menu_PMCProjectBaselineActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBaselineActions';

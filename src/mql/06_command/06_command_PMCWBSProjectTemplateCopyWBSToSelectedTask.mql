@@ -1,0 +1,28 @@
+del command 'PMCWBSProjectTemplateCopyWBSToSelectedTask';
+add command 'PMCWBSProjectTemplateCopyWBSToSelectedTask'
+	description	''
+	label	'emxProgramCentral.Common.CopyWBSToSelectedTask'
+	href	'${SUITE_DIR}/emxProgramCentralWBSProjectTemplateHiddenProcess.jsp?calledMethod=submitImport'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false && current.access[modify] == true'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Access Mask'		'Modify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSProjectTemplateCopyWBSToSelectedTask'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSProjectTemplateToolBarActions add command PMCWBSProjectTemplateCopyWBSToSelectedTask order command PMCWBSProjectTemplateCopyWBSToSelectedTask 6;
+#channel ==>PMCWBSProjectTemplateToolBarActions
+add property command_PMCWBSProjectTemplateCopyWBSToSelectedTask on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSProjectTemplateCopyWBSToSelectedTask';

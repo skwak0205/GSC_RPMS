@@ -1,0 +1,15 @@
+del menu 'CFFConfigurationContextToolbar';
+add menu 'CFFConfigurationContextToolbar'
+	description	''
+	label	'Effectivity.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Effectivity'
+	menu	'CFFConfigurationContextToolbarActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EffectivityFramework'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'CFFConfigurationContextToolbar'
+	property 'version'	value	'R214'
+;
+add property menu_CFFConfigurationContextToolbar on program eServiceSchemaVariableMapping.tcl to menu 'CFFConfigurationContextToolbar';

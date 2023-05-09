@@ -1,0 +1,23 @@
+del command 'DepartmentCloud';
+add command 'DepartmentCloud'
+	description	'Command Object for DepartmentSummary in Cloud'
+	label	'emxFramework.Command.Department'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCompany:getDepartments&table=APPOrganizationSummary&toolbar=APPDepartmentSummaryToolBar&header=emxComponents.DepartmentSummary.Heading&selection=multiple&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpdepartments&PrinterFriendly=true&customize=false&showRMB=false'
+	alt	'emxFramework.Command.Department'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(to[$<relationship_Customer>].from.name != "")'
+	setting	'Hide Mode'		'!Cloud'
+	setting	'Image value'		'${COMMON_DIR}/images/iconSmallDeparment.gif'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DepartmentCloud'
+	property	'version'	value	'R421'
+;
+modify menu type_Company add command DepartmentCloud order command DepartmentCloud 9;
+modify menu type_BusinessUnit add command DepartmentCloud order command DepartmentCloud 8;
+modify menu type_Department add command DepartmentCloud order command DepartmentCloud 4;
+#channel ==>type_Companytype_BusinessUnittype_Department
+add property command_DepartmentCloud on program eServiceSchemaVariableMapping.tcl to command 'DepartmentCloud';

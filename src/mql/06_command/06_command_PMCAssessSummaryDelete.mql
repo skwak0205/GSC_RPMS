@@ -1,0 +1,28 @@
+del command 'PMCAssessSummaryDelete';
+add command 'PMCAssessSummaryDelete'
+	description	'Command for Delete Selected link on Assessment Summary'
+	label	'emxProgramCentral.Common.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralAssessmentUtil.jsp?mode=deleteAssessment'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAssessmentCreateValid'
+	setting	'Access Program'		'emxAssessment'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssessSummaryDelete'
+	property	'version'	value	'R423.HF6'
+;
+modify menu PMCAssessSummaryToolBar add command PMCAssessSummaryDelete order command PMCAssessSummaryDelete 0;
+modify menu PMCAssessSummaryToolBarActions add command PMCAssessSummaryDelete order command PMCAssessSummaryDelete 0;
+#channel ==>PMCAssessSummaryToolBarPMCAssessSummaryToolBarActions
+add property command_PMCAssessSummaryDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCAssessSummaryDelete';

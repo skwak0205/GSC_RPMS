@@ -1,0 +1,29 @@
+del command 'RMTRichTextEditorExport';
+add command 'RMTRichTextEditorExport'
+	description	''
+	label	'emxRequirements.ActionLink.SCE.Export'
+	href	'javascript:exportToWord()'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${SUITE_DIR}/images/iconReqCmdExportToMSWord.png'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRichTextEditorExport'
+	property	'version'	value	'R422'
+;
+modify menu RMTRichTextEditorToolbar add command RMTRichTextEditorExport order command RMTRichTextEditorExport 2;
+modify menu RMTChapterRichTextEditorToolbar add command RMTRichTextEditorExport order command RMTRichTextEditorExport 1;
+modify menu RMTSpecTreeToolbar add command RMTRichTextEditorExport order command RMTRichTextEditorExport 2;
+#channel ==>RMTRichTextEditorToolbarRMTChapterRichTextEditorToolbarRMTSpecTreeToolbar
+add property command_RMTRichTextEditorExport on program eServiceSchemaVariableMapping.tcl to command 'RMTRichTextEditorExport';

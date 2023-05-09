@@ -1,0 +1,15 @@
+del menu 'APPClassifiedItemObjectAccessToolbar';
+add menu 'APPClassifiedItemObjectAccessToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	menu	'APPClassifiedItemObjectAccessActionsToolbar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'APPClassifiedItemObjectAccessToolbar'
+	property 'version'	value	'10-7'
+;
+add property menu_APPClassifiedItemObjectAccessToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPClassifiedItemObjectAccessToolbar';

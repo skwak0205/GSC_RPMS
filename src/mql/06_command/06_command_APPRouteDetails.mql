@@ -1,0 +1,15 @@
+del command 'APPRouteDetails';
+add command 'APPRouteDetails'
+	description	'Display Route Properties'
+	label	'emxComponents.Common.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Route&mode=view&toolbar=APPRoutePropertiesToolBar&formHeader=emxComponents.Heading.Properties&HelpMarker=emxhelprouteproperties&Export=false&showPageURLIcon=false'
+	alt	'emxComponents.Common.Properties'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteDetails'
+	property	'version'	value	'R216'
+;
+#channel ==>APPRouteChannel1
+add property command_APPRouteDetails on program eServiceSchemaVariableMapping.tcl to command 'APPRouteDetails';

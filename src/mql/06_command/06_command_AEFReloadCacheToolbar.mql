@@ -1,0 +1,20 @@
+del command 'AEFReloadCacheToolbar';
+add command 'AEFReloadCacheToolbar'
+	description	'Reload Cache'
+	label	'emxNavigator.UIMenu.ReloadCache'
+	href	'emxReloadCache.jsp'
+	alt	'emxNavigator.UIMenu.ReloadCache'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReloadCache.gif'
+	user	'Administration Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFReloadCacheToolbar'
+	property	'version'	value	'R216'
+;
+modify menu AdminTools add command AEFReloadCacheToolbar order command AEFReloadCacheToolbar 7;
+#channel ==>AdminTools
+add property command_AEFReloadCacheToolbar on program eServiceSchemaVariableMapping.tcl to command 'AEFReloadCacheToolbar';

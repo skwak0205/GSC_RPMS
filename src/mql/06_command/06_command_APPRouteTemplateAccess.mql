@@ -1,0 +1,21 @@
+del command 'APPRouteTemplateAccess';
+add command 'APPRouteTemplateAccess'
+	description	'Access Command Object'
+	label	'emxFramework.Common.Route.Members'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPRouteAccessSummary&program=emxRoute:getRouteAccessSummaryMemberList&header=emxComponents.ObjectAccess.AccessHeading&HelpMarker=emxhelpaccesses&PrinterFriendly=true&toolbar=APPRouteAccessToolbar&selection=multiple&expandLevelFilterMenu=false&showClipboard=false&multiColumnSort=false&PrinterFriendly=false&objectCompare=false&customize=false&showPageURLIcon=false&showRMB=false&HelpMarker=emxhelprouteeditaccess&sortColumnName=none&displayView=details&findMxLink=false'
+	alt	'emxFramework.Common.Route.Alt.Members'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallAccess.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteTemplateAccess'
+	property	'version'	value	'R422'
+;
+modify menu type_RouteTemplate add command APPRouteTemplateAccess order command APPRouteTemplateAccess 0;
+#channel ==>type_RouteTemplate
+add property command_APPRouteTemplateAccess on program eServiceSchemaVariableMapping.tcl to command 'APPRouteTemplateAccess';

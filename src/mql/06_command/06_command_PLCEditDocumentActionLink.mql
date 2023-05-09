@@ -1,0 +1,22 @@
+del command 'PLCEditDocumentActionLink';
+add command 'PLCEditDocumentActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Document&mode=Edit&formHeader=emxProduct.Heading.Edit&HelpMarker=emxhelprefdocedit'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCEditDocumentActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCDocumentPropertiesTopActionBar add command PLCEditDocumentActionLink order command PLCEditDocumentActionLink 0;
+#channel ==>PLCDocumentPropertiesTopActionBar
+add property command_PLCEditDocumentActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCEditDocumentActionLink';

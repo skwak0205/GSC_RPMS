@@ -1,0 +1,7 @@
+{
+   "NFirst"    : "N First",
+   "Abs"       : "Absolute",
+   "ChangeOp"  : "Select the Preference menu to change the operation",
+   "CheckOp"   : "Is -3 positive?",
+   "Operation" : "The operation {text} is equal to {value}"
+}

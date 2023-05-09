@@ -1,0 +1,22 @@
+#del command 'gscPMCWBSDataGridView';
+add command 'gscPMCWBSDataGridView'
+ description 'WBS Command Object'
+ label 'emxProgramCentral.Label.gscPMCSchedule'
+ href '${SUITE_DIR}/gscProjectManagementUtil.jsp?mode=PMCWBS&subMode=gscPMCWBSDataGridView&lazyLoad=2000&fastColumns=Name'
+ alt 'emxFramework.Command.Alt.WBS'
+ setting 'Target Location'  'content'
+ setting 'Registered Suite'  'ProgramCentral'
+ setting 'Access Expression'  '(type.kindof[Project Space]==true||type.kindof[Project Concept]==true)'
+ setting 'Licensed Product'  'ENO_PGE_TP'
+ setting 'Access Function'  'isDataGridEnabled'
+ setting 'Access Program'  'emxTask'
+ setting 'Image'  'iconTaskSmall.gif'
+ property 'installer' value 'ENOVIAEngineering'
+ property 'application' value 'ProgramManagementBase'
+ property 'installed date' value '03-23-2023'
+ property 'original name' value 'gscPMCWBSDataGridView'
+ property 'version' value 'R422.HF7'
+;
+
+#channel ==>PMCWBSChannelPMCFlattenedViewSchedulePMCSchedulePMCGanttChartViewSchedulePMCDataGridViewSchedule
+add property command_gscPMCWBSDataGridView on program eServiceSchemaVariableMapping.tcl to command 'gscPMCWBSDataGridView';

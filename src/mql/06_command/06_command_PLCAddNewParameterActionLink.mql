@@ -1,0 +1,19 @@
+del command 'PLCAddNewParameterActionLink';
+add command 'PLCAddNewParameterActionLink'
+	description	''
+	label	'emxParameter.Associate.NewParameter'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=PARCreateParameterWebForm&type=type_PlmParameter&typeChooser=false&nameField=both&autoNameChecked=true&policy=policy_ParameterAggregation&submitAction=refreshCaller&showApply=true&relationship=relationship_ParameterAggregation&direction=from&postProcessJPO=emxParameterEdit:updateNewConnection&postProcessURL=../productline/CreateProcess.jsp?Mode=refresh'
+	alt	'emxParameter.Associate.AltNewParameter'
+	setting	'Target Location'		'slidein'
+	setting	'Maximum Length'		'20'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddNewParameterActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCAssociatedParametersToolbar add command PLCAddNewParameterActionLink order command PLCAddNewParameterActionLink 1;
+#channel ==>PLCAssociatedParametersToolbar
+add property command_PLCAddNewParameterActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddNewParameterActionLink';

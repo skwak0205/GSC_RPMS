@@ -1,0 +1,24 @@
+del command 'PMCCalendarProperties';
+add command 'PMCCalendarProperties'
+	description	''
+	label	'emxFramework.Command.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_WorkCalendar&editLink=true&formHeader=emxProgramCentral.Common.CalendarBasics&HelpMarker=emxhelpcalendarpowerview&Export=false&postProcessJPO=emxWorkCalendarBase:postEditCalendarDetailsProcess&mode=view'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	user	'Organization Manager'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Company Representative'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCalendarProperties'
+	property	'version'	value	'R422.HF4'
+;
+modify menu type_WorkCalendar add command PMCCalendarProperties order command PMCCalendarProperties 1;
+#channel ==>type_WorkCalendarPMCCalendarViewChannel1
+add property command_PMCCalendarProperties on program eServiceSchemaVariableMapping.tcl to command 'PMCCalendarProperties';

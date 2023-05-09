@@ -1,0 +1,21 @@
+del menu 'IssueAssigneeListToolBarActions';
+add menu 'IssueAssigneeListToolBarActions'
+	description	''
+	label	'emxComponents.Menu.IssueAssigneeListToolBarActions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[changesov]==true && current != Closed)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'AddExistingIssueAssigneeLink'
+	command	'AddExistingIssueAssigneeUserGroupsLink'
+	command	'AddExistingIssueAssigneeUserGroupsLinkCloud'
+	command	'AEFSeparator'
+	command	'RemoveSelectedIssueAssigneeLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'IssueAssigneeListToolBarActions'
+	property 'version'	value	'R421.HF1'
+;
+add property menu_IssueAssigneeListToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'IssueAssigneeListToolBarActions';

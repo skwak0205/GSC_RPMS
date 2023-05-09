@@ -1,0 +1,16 @@
+del command 'RMTRequirementProxyInformation';
+add command 'RMTRequirementProxyInformation'
+	description	''
+	label	'emxRequirements.Common.InformationCategory'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=RMTRequirementProxyInfo'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementProxyInformation'
+	property	'version'	value	'V6R2019x'
+;
+modify menu type_RequirementProxy add command RMTRequirementProxyInformation order command RMTRequirementProxyInformation 0;
+#channel ==>type_RequirementProxy
+add property command_RMTRequirementProxyInformation on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementProxyInformation';

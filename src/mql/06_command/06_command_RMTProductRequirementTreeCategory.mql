@@ -1,0 +1,22 @@
+del command 'RMTProductRequirementTreeCategory';
+add command 'RMTProductRequirementTreeCategory'
+	description	'Command Object for Requirement in the Product Menu'
+	label	'emxRequirements.Tree.Requirement'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRequirement:getRelatedRequirements&table=RMTRequirementStatusView&editLink=true&header=emxRequirements.Heading.RequirementContext&selection=multiple&topActionbar=RMTProductRequirementTopActionBar&bottomActionbar=RMTProductRequirementBottomActionBar&sortColumnName=Name&HelpMarker=emxhelprequirementlist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'COMMON_DIR/iconSmallUseRequirement.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTProductRequirementTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_Products add command RMTProductRequirementTreeCategory order command RMTProductRequirementTreeCategory 0;
+modify menu Msoitype_Products add command RMTProductRequirementTreeCategory order command RMTProductRequirementTreeCategory 0;
+#channel ==>type_ProductsMsoitype_Products
+add property command_RMTProductRequirementTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTProductRequirementTreeCategory';

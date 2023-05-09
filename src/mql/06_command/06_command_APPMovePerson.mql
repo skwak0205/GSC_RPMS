@@ -1,0 +1,22 @@
+del command 'APPMovePerson';
+add command 'APPMovePerson'
+	description	'Command to move person(s) to other Company'
+	label	'emxComponents.MovePerson.Command'
+	href	'javascript:validatePersonIfEmployee()'
+	alt	'emxComponents.MovePerson.Command'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(type=="$<type_Company>")'
+	setting	'Hide Mode'		'!Cloud'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionMovePerson32.png'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMovePerson'
+	property	'version'	value	'R423'
+;
+modify menu APPPeopleSummaryActionsToolBar add command APPMovePerson order command APPMovePerson 5;
+modify menu APPPeopleSummaryToolBar add command APPMovePerson order command APPMovePerson 7;
+#channel ==>APPPeopleSummaryActionsToolBarAPPPeopleSummaryToolBar
+add property command_APPMovePerson on program eServiceSchemaVariableMapping.tcl to command 'APPMovePerson';

@@ -1,0 +1,17 @@
+del command 'APPECAffectedItemsTreeCategory';
+add command 'APPECAffectedItemsTreeCategory'
+	description	'Affected Items Tree Category'
+	label	'emxComponents.Command.AffectedItems'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonEngineeringChange:getAllAffectedItems&table=APPECAffectedItemsList&header=emxComponents.Heading.ECAffectedItems&selection=multiple&toolbar=APPECAffectedItemsListToolBar&sortColumnName=Name&HelpMarker=emxhelpaffecteditemslist&freezePane=Name&editLink=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECAffectedItemsTreeCategory'
+	property	'version'	value	'R216'
+;
+modify menu type_EngineeringChange add command APPECAffectedItemsTreeCategory order command APPECAffectedItemsTreeCategory 1;
+#channel ==>type_EngineeringChange
+add property command_APPECAffectedItemsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPECAffectedItemsTreeCategory';

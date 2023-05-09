@@ -1,0 +1,17 @@
+{
+  "RISK": "Risiko",
+  "RISKS": "Risiken",
+  "IMPACT": "Auswirkung",
+  "CLASS_TYPE": "Risikotyp",
+  "ABATEMENT": "Sanierungsplan",
+  "RPN": "Risikobewertung",
+  "RISK_TREND": "Risikotrend",
+  "SHOW_COMPLETED": "Abgeschlossene Risiken einblenden",
+  "ALL_CONTEXT_ITEMS": "Alle Kontextrisiken",
+  "ALL_PROJECT_RISKS": "Alle Projektrisiken",
+  "OWNED": "Meine Risiken",
+  "ALL_MY_ASSIGNED_ITEMS": "Alle (Meine Risiken + Zugewiesen)",
+  "PROJECT_RISKS": "Projektrisiken",
+  "SUB_PROJECT_RISKS": "Projekt- und Teilprojektrisiken",
+  "ASSOCIATED_RISKS": "Zugeordnete Risiken"
+}

@@ -1,0 +1,20 @@
+del command 'FTRModelCandidateLogicalFeaturesMobile';
+add command 'FTRModelCandidateLogicalFeaturesMobile'
+	description	''
+	label	'emxConfiguration.Model.CandidateLogicalFeatures'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=LogicalFeature:getCandidateLogicalFeatures&table=FTRModelLogicalFeatureTable&selection=multiple&toolbar=FTRModelCandidateLogicalFeatureToolbar&editRootNode=false&editLink=false&header=emxConfiguration.Model.CandidateLogicalFeatures&HelpMarker=emxhelpmodellogicalview&massPromoteDemote=false&objectCompare=false&editRelationship=relationship_CandidateLogicalFeatures&fromContext=Candidate'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<expression[LogicalFeatureEnabled]=="true">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeEnabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelCandidateLogicalFeaturesMobile'
+	property	'version'	value	'R423'
+;
+#channel ==>FTRModelLogicalViewChannel
+add property command_FTRModelCandidateLogicalFeaturesMobile on program eServiceSchemaVariableMapping.tcl to command 'FTRModelCandidateLogicalFeaturesMobile';

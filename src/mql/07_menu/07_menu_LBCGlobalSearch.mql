@@ -1,0 +1,22 @@
+del menu 'LBCGlobalSearch';
+add menu 'LBCGlobalSearch'
+	description	''
+	label	'emxDocumentCentral.Menu.LCSearch'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LIB_TP,ENO_LBC_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallLibrary.gif'
+	command	'LBCFindLibraries'
+	command	'LBCFindPartFamilies'
+	command	'LBCFindClasses'
+	command	'LBCFindDocumentFamilies'
+	command	'LBCFindParts'
+	command	'LBCFindDocuments'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCGlobalSearch'
+	property 'version'	value	'R216'
+;
+add property menu_LBCGlobalSearch on program eServiceSchemaVariableMapping.tcl to menu 'LBCGlobalSearch';

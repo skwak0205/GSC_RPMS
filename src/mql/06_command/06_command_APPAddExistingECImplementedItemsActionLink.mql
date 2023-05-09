@@ -1,0 +1,24 @@
+del command 'APPAddExistingECImplementedItemsActionLink';
+add command 'APPAddExistingECImplementedItemsActionLink'
+	description	''
+	label	'emxComponents.Command.AddExisting'
+	href	'${SUITE_DIR}/EngineeringChangeSearchPreProcess.jsp?functionality=implementedItems'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showAddRemoveImplementedItemsLink'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	setting	'Access Mask'		'ToConnect'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddExistingECImplementedItemsActionLink'
+	property	'version'	value	'R418'
+;
+modify menu APPECImplementedItemsListActionsToolBar add command APPAddExistingECImplementedItemsActionLink order command APPAddExistingECImplementedItemsActionLink 1;
+#channel ==>APPECImplementedItemsListActionsToolBar
+add property command_APPAddExistingECImplementedItemsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAddExistingECImplementedItemsActionLink';

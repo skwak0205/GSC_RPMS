@@ -1,0 +1,17 @@
+del menu 'PMCQuestionProjectTemplateMenu';
+add menu 'PMCQuestionProjectTemplateMenu'
+	description	''
+	label	'emxProgramCentral.Common.CreateAssignQuestion'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconConfigureQuestionnaire.png'
+	command	'PMCWBSProjectTemplateCreateQuestion'
+	command	'PMCWBSProjectTemplateAssignQuestion'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-29-2022'
+	property 'original name'	value	'PMCQuestionProjectTemplateMenu'
+	property 'version'	value	'R424.HF3'
+;
+add property menu_PMCQuestionProjectTemplateMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCQuestionProjectTemplateMenu';

@@ -1,0 +1,23 @@
+del command 'FTRConfigurationFeatureNameFilterCommand';
+add command 'FTRConfigurationFeatureNameFilterCommand'
+	description	''
+	label	'emxFramework.Basic.Name'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'false'
+	setting	'Action Label'		'Search'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Default'		'*'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationFeatureNameFilterCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRConfigurationFeatureCustomFilterToolbar add command FTRConfigurationFeatureNameFilterCommand order command FTRConfigurationFeatureNameFilterCommand 1;
+modify menu FTRProductConfigurationFeatureCustomFilterToolbar add command FTRConfigurationFeatureNameFilterCommand order command FTRConfigurationFeatureNameFilterCommand 1;
+#channel ==>FTRConfigurationFeatureCustomFilterToolbarFTRProductConfigurationFeatureCustomFilterToolbar
+add property command_FTRConfigurationFeatureNameFilterCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRConfigurationFeatureNameFilterCommand';

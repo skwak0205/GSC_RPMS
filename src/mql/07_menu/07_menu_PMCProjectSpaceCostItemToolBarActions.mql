@@ -1,0 +1,16 @@
+del menu 'PMCProjectSpaceCostItemToolBarActions';
+add menu 'PMCProjectSpaceCostItemToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectSpaceAddCostItem'
+	command	'PMCProjectSpaceDeleteCostItem'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectSpaceCostItemToolBarActions'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_PMCProjectSpaceCostItemToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectSpaceCostItemToolBarActions';

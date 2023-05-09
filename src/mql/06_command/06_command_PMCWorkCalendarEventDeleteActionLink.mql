@@ -1,0 +1,25 @@
+del command 'PMCWorkCalendarEventDeleteActionLink';
+add command 'PMCWorkCalendarEventDeleteActionLink'
+	description	''
+	label	'emxProgramCentral.Button.Delete'
+	href	'${SUITE_DIR}/WorkCalendarUtil.jsp?mode=deleteWorkCalendarException'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ConfirmDelete'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkCalendarEventDeleteActionLink'
+	property	'version'	value	'R423.HF2'
+;
+modify menu PMCWorkCalendarEventsToolbarActions add command PMCWorkCalendarEventDeleteActionLink order command PMCWorkCalendarEventDeleteActionLink 0;
+#channel ==>PMCWorkCalendarEventsToolbarActions
+add property command_PMCWorkCalendarEventDeleteActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkCalendarEventDeleteActionLink';

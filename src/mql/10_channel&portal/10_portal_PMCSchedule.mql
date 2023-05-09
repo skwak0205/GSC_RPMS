@@ -1,0 +1,14 @@
+del portal 'PMCSchedule';
+add portal 'PMCSchedule'
+	description	''
+	label	''
+	href	''
+	channel 	PMCSchedule
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSchedule'
+	property	'version'	value	'R216'
+;
+add property portal_PMCSchedule on program eServiceSchemaVariableMapping.tcl to portal 'PMCSchedule';

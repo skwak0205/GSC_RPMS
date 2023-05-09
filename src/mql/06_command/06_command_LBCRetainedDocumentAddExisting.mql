@@ -1,0 +1,22 @@
+del command 'LBCRetainedDocumentAddExisting';
+add command 'LBCRetainedDocumentAddExisting'
+	description	'Document Add Existing Command Object'
+	label	'emxLibraryCentral.Command.AddExisting'
+	href	'${SUITE_DIR}/emxLibraryCentralSearchIntermediate.jsp?useMode=addRetainedDocuments'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Access Function'		'isInActiveState'
+	setting	'Access Program'		'emxRetainedDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCRetainedDocumentAddExisting'
+	property	'version'	value	'R421'
+;
+modify menu LCRetainedDocumentSummaryActionsToolBar add command LBCRetainedDocumentAddExisting order command LBCRetainedDocumentAddExisting 1;
+#channel ==>LCRetainedDocumentSummaryActionsToolBar
+add property command_LBCRetainedDocumentAddExisting on program eServiceSchemaVariableMapping.tcl to command 'LBCRetainedDocumentAddExisting';

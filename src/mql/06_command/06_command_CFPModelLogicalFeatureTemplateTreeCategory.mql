@@ -1,0 +1,16 @@
+del command 'CFPModelLogicalFeatureTemplateTreeCategory';
+add command 'CFPModelLogicalFeatureTemplateTreeCategory'
+	description	''
+	label	'DMCPlanning.TreeCategory.ModelTemplate'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=MasterFeature:getMasterFeatureStructure&expandProgram=MasterFeature:getManagedRevisions&table=CFPMasterFeatureTable&editRootNode=false&selection=multiple&toolbar=CFPMasterFeatureToolbar&header=DMCPlanning.Heading.ModelTemplate&HelpMarker=emxhelpmasterfeatureview&massPromoteDemote=false&objectCompare=false&sortColumnName=Name&editRelationship=relationship_ModelTemplate&editLink=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'DMCPlanning'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPModelLogicalFeatureTemplateTreeCategory'
+	property	'version'	value	'R212'
+;
+#channel ==>
+add property command_CFPModelLogicalFeatureTemplateTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'CFPModelLogicalFeatureTemplateTreeCategory';

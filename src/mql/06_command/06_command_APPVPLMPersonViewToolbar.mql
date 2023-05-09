@@ -1,0 +1,15 @@
+del command 'APPVPLMPersonViewToolbar';
+add command 'APPVPLMPersonViewToolbar'
+	description	'Person view'
+	label	'emxPlmOnline.label.Person'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPVPLMPersonAdminPortal&toolbar=APPXPAdminToolBar&header=emxPlmOnline.label.ManagePerson'
+	alt	'emxPlmOnline.label.Person'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Access Function'		'isOneClickEnvironment'
+	setting	'Access Program'		'VPLMPosAdminUIOptions'
+	setting	'Image'		'iconSmallXPPerson.gif'
+;
+modify menu APPXPAdminToolBar add command APPVPLMPersonViewToolbar order command APPVPLMPersonViewToolbar 1;
+#channel ==>APPXPAdminToolBar
+add property command_APPVPLMPersonViewToolbar on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMPersonViewToolbar';

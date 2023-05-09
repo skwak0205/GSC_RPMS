@@ -1,0 +1,19 @@
+del command 'APPDecisionCreate';
+add command 'APPDecisionCreate'
+	description	'Create a new Decision and associate to the object'
+	label	'emxComponents.Common.Create'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Decision&typeChooser=true&nameField=both&vaultChooser=true&header=emxComponents.Header.CreateDecision&submitAction=refreshCaller&relationship=relationship_Decision&direction=To&form=APPDecisionCreate&HelpMarker=emxhelpdecisioncreate&ReloadOpener=true'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionCreate'
+	property	'version'	value	'R424.HF3'
+;
+modify menu APPDecisionsActionBar add command APPDecisionCreate order command APPDecisionCreate 1;
+#channel ==>APPDecisionsActionBar
+add property command_APPDecisionCreate on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionCreate';

@@ -1,0 +1,21 @@
+del menu 'type_ManufacturingPlan';
+add menu 'type_ManufacturingPlan'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ManufacturingPlan&actionBarName=CFPManufacturingPlanPropertiesActionBar&mode=Form&HelpMarker=emxhelpmanufacturingplanproperties'
+	alt	''
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Default Category'		'CFPManufacturingPlanBreakdown'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProduct.gif'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	command	'CFPManufacturingPlanReferenceDocumentTreeCategory'
+	command	'CFPManufacturingPlanBreakdown'
+	command	'APPWhereUsed'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'DMCPlanning'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_ManufacturingPlan'
+	property 'version'	value	'R214'
+;
+add property menu_type_ManufacturingPlan on program eServiceSchemaVariableMapping.tcl to menu 'type_ManufacturingPlan';

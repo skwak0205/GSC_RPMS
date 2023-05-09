@@ -1,0 +1,18 @@
+del command 'AEFConversionPreference';
+add command 'AEFConversionPreference'
+	description	'Conversion Preference'
+	label	'emxFramework.Preferences.Conversions'
+	href	'${COMMON_DIR}/emxPrefConversions.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/buttonToolbarPreferences.gif'
+	setting	'Help Marker'		'emxhelppreferencesconversions'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFConversionPreference'
+	property	'version'	value	'R214'
+;
+modify menu General add command AEFConversionPreference order command AEFConversionPreference 1;
+#channel ==>General
+add property command_AEFConversionPreference on program eServiceSchemaVariableMapping.tcl to command 'AEFConversionPreference';

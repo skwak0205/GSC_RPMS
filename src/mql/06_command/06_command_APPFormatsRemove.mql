@@ -1,0 +1,24 @@
+del command 'APPFormatsRemove';
+add command 'APPFormatsRemove'
+	description	'Formats Remove Command Object'
+	label	'emxComponents.Button.Remove'
+	href	'${COMPONENT_DIR}/emxComponentsRemoveFormatsProcess.jsp'
+	alt	'emxComponents.Button.Remove'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.FormatsDialog.MsgConfirm'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFormatsRemove'
+	property	'version'	value	'R417'
+;
+modify menu APPFormatsSummaryActionToolBar add command APPFormatsRemove order command APPFormatsRemove 0;
+#channel ==>APPFormatsSummaryActionToolBar
+add property command_APPFormatsRemove on program eServiceSchemaVariableMapping.tcl to command 'APPFormatsRemove';

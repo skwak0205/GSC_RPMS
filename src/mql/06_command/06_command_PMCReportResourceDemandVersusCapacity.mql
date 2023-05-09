@@ -1,0 +1,19 @@
+del command 'PMCReportResourceDemandVersusCapacity';
+add command 'PMCReportResourceDemandVersusCapacity'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Command.ResourceDemandVersusCapacityReport'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePoolPeopleUtil.jsp?mode=ResourcePoolReport&program=emxResourcePoolReports:getTableResourceDemandVersusCapacityReportData&table=PMCReportDemandVersusCapacityTB&toolbar=PMCReportDateToolbarMenu&selection=none&submode=PMCResourceDemandVsCapacityReport&header=emxProgramCentral.ResourcePlanning.Report.Charts.ResourceDemandReport&HelpMarker=emxhelpresourcedemandbycapacityreport&xaxistitle=emxProgramCentral.ResourcePlanning.Report.Charts.TimeLine&yaxistitle=emxProgramCentral.ResourcePlanning.Report.Charts.NoofResources&charttype=stackedbar&suiteKey=ProgramCentral&threshholdvalue=Capacity&sortColumnName=none'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportResourceDemandVersusCapacity'
+	property	'version'	value	'R419'
+;
+modify menu PMCResourcePoolToolBarActions add command PMCReportResourceDemandVersusCapacity order command PMCReportResourceDemandVersusCapacity 2;
+#channel ==>PMCResourcePoolToolBarActionsPMCResourcePoolReportData
+add property command_PMCReportResourceDemandVersusCapacity on program eServiceSchemaVariableMapping.tcl to command 'PMCReportResourceDemandVersusCapacity';

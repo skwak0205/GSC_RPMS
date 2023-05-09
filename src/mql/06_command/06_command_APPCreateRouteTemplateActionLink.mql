@@ -1,0 +1,26 @@
+del command 'APPCreateRouteTemplateActionLink';
+add command 'APPCreateRouteTemplateActionLink'
+	description	'Route Template Summary Create Route Template Command Object'
+	label	'emxComponents.RouteTemplate.CreateNew'
+	href	'${COMPONENT_DIR}/emxCreateRouteTemplateWizardDialogFS.jsp?init1=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showCreateCommand'
+	setting	'Access Program'		'emxRouteTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedLeader'
+	user	'Global User'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateRouteTemplateActionLink'
+	property	'version'	value	'R423.HF4'
+;
+modify menu APPRouteTemplateSummaryActionsToolBar add command APPCreateRouteTemplateActionLink order command APPCreateRouteTemplateActionLink 1;
+#channel ==>APPRouteTemplateSummaryActionsToolBar
+add property command_APPCreateRouteTemplateActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPCreateRouteTemplateActionLink';

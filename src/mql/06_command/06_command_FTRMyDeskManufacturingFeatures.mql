@@ -1,0 +1,22 @@
+del command 'FTRMyDeskManufacturingFeatures';
+add command 'FTRMyDeskManufacturingFeatures'
+	description	''
+	label	'emxConfiguration.MyDesk.ActionLink.ManufacturingFeatures'
+	href	'${SUITE_DIR}/MyDeskMFSummaryPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Access Function'		'showManufacturingFeaturesUX'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Cloud'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMyDeskManufacturingFeatures'
+	property	'version'	value	'R421'
+;
+modify menu FTRMyDeskLogicalStructure add command FTRMyDeskManufacturingFeatures order command FTRMyDeskManufacturingFeatures 0;
+modify menu FTRMyDesk add command FTRMyDeskManufacturingFeatures order command FTRMyDeskManufacturingFeatures 0;
+#channel ==>FTRMyDeskLogicalStructureFTRMyDesk
+add property command_FTRMyDeskManufacturingFeatures on program eServiceSchemaVariableMapping.tcl to command 'FTRMyDeskManufacturingFeatures';

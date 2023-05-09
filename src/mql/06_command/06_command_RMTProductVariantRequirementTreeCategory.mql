@@ -1,0 +1,28 @@
+del command 'RMTProductVariantRequirementTreeCategory';
+add command 'RMTProductVariantRequirementTreeCategory'
+	description	'Command Object for Requirement in the Product Variant Menu'
+	label	'emxRequirements.Tree.Requirement'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxRequirement:getRelatedRequirements&table=RMTContextRequirementList&editLink=true&header=emxRequirements.Heading.RequirementContext&selection=multiple&topActionbar=RMTProductRequirementTopActionBar&bottomActionbar=RMTProductRequirementBottomActionBar&sortColumnName=Name&HelpMarker=emxhelprequirementlist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'COMMON_DIR/iconSmallUseRequirement.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Product Manager'
+	user	'Requirement Manager'
+	user	'System Engineer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTProductVariantRequirementTreeCategory'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTProductVariantRequirementTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTProductVariantRequirementTreeCategory';

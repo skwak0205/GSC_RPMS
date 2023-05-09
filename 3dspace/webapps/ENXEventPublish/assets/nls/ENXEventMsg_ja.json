@@ -1,0 +1,23 @@
+{
+  "TYPES": "タイプ",
+  "EVENTS": "イベント",
+  "HEADING_SHOW_MORE": "イベント設定を構成するタイプを探し、切り替えボタンを使用して有効/無効にしてください。[保存] ボタンを使用して変更を保存してください。これには時間がかかる場合があります。最近の変更に戻す場合は、[キャンセル] ボタンを使用します。",
+  "HEADING_SHOW_HEADER": "イベント有効化構成",
+  "SAVE": "保存",
+  "CANCEL": "取消し",
+  "ERROR": "エラー",
+  "REFRESH": "更新",
+  "WARNING": "警告",
+  "NOTIFICATION_SUBMIT_MESSAGE": "正常に保存しました...",
+  "NOTIFICATION_CANCEL_MESSAGE": "正常に取り消しました...",
+  "NOTIFICATION_FAILURE_MESSAGE": "イベント設定を変更できませんでした。",
+  "NOTIFICATION_CANCEL_MESSAGE_REASON": "イベント設定を変更できませんでした。理由: ",
+  "NOTIFICATION_VIEW_MESSAGE": "イベント設定を取得できませんでした。",
+  "NOTIFICATION_VIEW_MESSAGE_REASON": "イベント設定を取得できませんでした。理由: ",
+  "NOTIFICATION_REFRESH_MESSAGE": "正常に更新しました...",
+  "LOADINGMESSAGE": "   読込み中...",
+  "NOAGENTERROR": "メッセージの公開を可能にする Integration Agent が作成されていません。Integration Agent が作成されていることを確認してください",
+  "NOCONFIGERROR": "イベント構成が見つからないか、正しくありません。続行するには、イベント構成を変更してください。",
+  "EVPTITLE": "公開イベント管理",
+  "PREF_TENANT": "3DEXPERIENCE Platform"
+}

@@ -1,0 +1,24 @@
+del command 'ECMDeleteCO';
+add command 'ECMDeleteCO'
+	description	'Delete CO'
+	label	'EnterpriseChangeMgt.Command.Delete'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=massCODelete&MassDelete=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Warning.DeleteWarningMsg'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMDeleteCO'
+	property	'version'	value	'R216'
+;
+modify menu ECMCOMenuToolbar add command ECMDeleteCO order command ECMDeleteCO 0;
+modify menu ECMCOSummaryMenuToolbar add command ECMDeleteCO order command ECMDeleteCO 0;
+modify menu ECMCOChangeOrderSummaryMenuToolbar add command ECMDeleteCO order command ECMDeleteCO 0;
+#channel ==>ECMCOMenuToolbarECMCOSummaryMenuToolbarECMCOChangeOrderSummaryMenuToolbar
+add property command_ECMDeleteCO on program eServiceSchemaVariableMapping.tcl to command 'ECMDeleteCO';

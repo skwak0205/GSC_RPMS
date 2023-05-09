@@ -1,0 +1,21 @@
+del command 'PMCActualTransactionCurrencyFilter';
+add command 'PMCActualTransactionCurrencyFilter'
+	description	''
+	label	'emxProgramCentral.ProjectBenefitOrBudget.CurrencyFilter'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=ActualTransactions'
+	alt	'emxProgramCentral.ProjectBenefitOrBudget.CurrencyFilter'
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getBenefitOrBudgetCurrencyFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxProjectBudget'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCActualTransactionCurrencyFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCActualTransactionFilter add command PMCActualTransactionCurrencyFilter order command PMCActualTransactionCurrencyFilter 0;
+#channel ==>PMCActualTransactionFilter
+add property command_PMCActualTransactionCurrencyFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCActualTransactionCurrencyFilter';

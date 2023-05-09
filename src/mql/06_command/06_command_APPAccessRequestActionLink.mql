@@ -1,0 +1,27 @@
+del command 'APPAccessRequestActionLink';
+add command 'APPAccessRequestActionLink'
+	description	'File or Document Download Access Request Command Object'
+	label	'emxComponents.Command.RequestDownloadAccess'
+	href	'${SUITE_DIR}/emxCommonAccessRequestCreateDialogFS.jsp'
+	alt	''
+	setting	'Window Height'		'450'
+	setting	'Window Width'		'525'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'checkForLibraryCentralAccessRequest'
+	setting	'Access Program'		'emxCommonAccessRequest'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDownload.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAccessRequestActionLink'
+	property	'version'	value	'R423.HF2'
+;
+modify menu APPRefDocumentSummaryActionsToolBar add command APPAccessRequestActionLink order command APPAccessRequestActionLink 5;
+modify menu LCClassifiedItemActionToolBar add command APPAccessRequestActionLink order command APPAccessRequestActionLink 18;
+modify menu DCBookDocumentsActionBar add command APPAccessRequestActionLink order command APPAccessRequestActionLink 7;
+modify menu LBCBookDocumentsActionToolBar add command APPAccessRequestActionLink order command APPAccessRequestActionLink 0;
+#channel ==>APPRefDocumentSummaryActionsToolBarLCClassifiedItemActionToolBarDCBookDocumentsActionBarLBCBookDocumentsActionToolBar
+add property command_APPAccessRequestActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAccessRequestActionLink';

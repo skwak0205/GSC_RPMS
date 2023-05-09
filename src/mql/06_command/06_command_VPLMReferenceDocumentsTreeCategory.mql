@@ -1,0 +1,10 @@
+del command 'VPLMReferenceDocumentsTreeCategory';
+add command 'VPLMReferenceDocumentsTreeCategory'
+	description	'VPLM Reference Documents Command Object'
+	label	'emxFramework.Command.VPLMReferenceDocumentsTreeCategory'
+	href	'${COMMON_DIR}/emxVPLMLogon.jsp?urlLogon=emxTable.jsp?program=VPLMDocument:getDocuments&table=APPDocumentSummary&selection=multiple&toolbar=VPLMDocumentToolbar&header=emxFramework.Menu.Documents&HelpMarker=emxhelpcontentlist&parentRelName=PLMDocConnection&parentDirection=from'
+	alt	'emxFramework.Command.Alt.VPLMReferenceDocumentsTreeCategory'
+	setting	'Registered Suite'		'VPLMWebMgt'
+;
+#channel ==>
+add property command_VPLMReferenceDocumentsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'VPLMReferenceDocumentsTreeCategory';

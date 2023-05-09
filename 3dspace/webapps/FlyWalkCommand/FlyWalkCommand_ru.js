@@ -1,0 +1,1 @@
+define("DS/FlyWalkCommand/FlyWalkCommand_ru",{});define("DS/FlyWalkCommand/assets/nls/translation",{StartHelp:"Удерживайте левую кнопку мыши, чтобы выполнить",StartHelp_Touch:"Используйте джойстики, чтобы выполнить",WalkText:"Обход",FlyText:"Облет",DontShow:"Больше не показывать"});

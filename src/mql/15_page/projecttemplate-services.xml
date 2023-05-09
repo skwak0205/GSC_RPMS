@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd">
+
+    <ds:service name="dpm.projecttemplates">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.dpm.projecttemplate.ProjectTemplateService" function="getProjectTemplates" returnedData="idsAndData">
+                <ds:arg arg-name="state" arg-value="Ative"/>
+            </ds:jpo>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.projecttemplate.ProjectTemplateService" function="updateProjectTemplate" localInvokation="true" />
+        </ds:data>
+
+        <ds:ref-subservice name="dpm.basicFields"  includeByDefault="yes"/>
+        <!--<ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>-->
+        <!-- For Gantt Chart Infra :Start -->
+        <ds:field name="nlsType" includeByDefault="no"><ds:selectable expression="type" format="type" type="bus"/></ds:field>
+        <ds:field name="color" includeByDefault="no">  <ds:selectable  expression="attribute[Color]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="pattern" includeByDefault="no"><ds:selectable expression="attribute[FormatPattern]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="ganttConfig" includeByDefault="no">
+            <ds:selectable expression="attribute[ganttConfig]" type="bus"  autosave="true"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getGanttConfig" localInvokation="true">
+           </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="columns" includeByDefault="no" description="Gantt Chart columns">
+            <ds:selectable expression="id" type="bus"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getGanttColumns" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="hasDPMAccess" description="This field will be returned only if the user has DPM license">
+            <ds:label text="0"/>
+            <ds:license products="ENO_PRF_TP"/>
+            <ds:selectable format="transient"/>
+        </ds:field>
+        <ds:field name="estimatedDurationInputValue" description="Duration value">    <ds:selectable expression="attribute[Task Estimated Duration].inputvalue" type="bus" autosave="true"  createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedDurationInputUnit"  description="Duration unit">     <ds:selectable expression="attribute[Task Estimated Duration].inputunit" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedDuration"           description="Estimated duration"><ds:selectable expression="attribute[Task Estimated Duration]" type="bus" autosave="true"  createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="constraintType"  includeByDefault="no" description="Reflects ASAP or ALAP depending on schedule from.">
+            <ds:selectable expression="attribute[Schedule From]" type="bus" createOperation="yes" modifyOperation="no" readOperation="yes"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="convertScheduleFromToConstraint" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="defaultConstraintType"      description="Constraint type">    <ds:selectable expression="attribute[Default Constraint Type]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="scheduleFrom"               description="Scheduling type">    <ds:selectable expression="attribute[Schedule From]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="scheduleBasedOn"            description="Scheduling basis">    <ds:selectable expression="attribute[Schedule Based On]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="projectVisibility"          description="A non-controlling identification of the desired Project access.">    <ds:selectable expression="attribute[Project Visibility]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currency" includeByDefault="no" description="Currency type"> 
+          <ds:selectable expression="attribute[Currency]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+             <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getCurrencyValues">
+                      <ds:arg arg-name="attributeName" arg-value="Currency"/>
+                </ds:rangejpo>
+             </ds:range>
+        </ds:field>
+        <ds:field name="notes"    description="Notes"><ds:selectable expression="attribute[Notes]" type="bus" autosave="true" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="PALId"    description=" The Project Access List object (used for some navigation)" includeByDefault="no"><ds:selectable expression="to[Project Access List].from.id" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="objectId" includeByDefault="no"><ds:selectable expression="id" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="sequenceOrder" includeByDefault="no" description="the task sequence id within a project.">
+            <ds:selectable type="keyrel" createOperation="yes" modifyOperation="yes" readOperation="yes" />
+            <ds:sort type="integer" direction="ascending" order="1" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getSequenceOrder" localInvokation="true">
+                <ds:arg arg-name="taskWBS" arg-value="taskWBS"/>
+                <ds:arg arg-name="palIdField" arg-value="PALId"/>
+            </ds:fieldjpo>
+        </ds:field>
+      <ds:field name="image"  includeByDefault="no" description="The thumbnail or type icon associated to the project object.">
+          <ds:image source="primaryOrType" size="medium"  indexBasedImage="false"/>
+      </ds:field>
+      <ds:field name="project-custom-fields">
+          <ds:customAttributes busTypes="Project Management"/>
+      </ds:field>
+
+        <ds:ref-subservice name="ownerInfo"       includeByDefault="no"/>
+        <ds:ref-subservice name="originatorInfo"  includeByDefault="no"/>
+        <ds:ref-subservice name="tasks"           includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Subtask" getFrom="true" recurseLevels="{level}" chunkSize="300"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskService" function="updateTasks" processMultiple="true"/>
+            </ds:data>
+            <!-- override this definition from tasks as it is N/A in the project services. -->
+            <ds:subservice name="DPMProject" includeByDefault="never" hidden="true"/>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="members" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Member*" getFrom="true"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="updateMembers" />
+            </ds:data>
+        </ds:ref-subservice>
+        
+        <ds:subservice name="background" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="createProjectInBackground" />
+            </ds:data>
+        </ds:subservice>
+       <!-- To get SubTypes of all OOTB types -->
+        <ds:subservice name="subTypesInfo">
+           <ds:data>
+              <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getDerivativeTypes" localInvokation="false" returnedData="idsAndData"/>
+           </ds:data>
+        </ds:subservice>
+        <ds:subservice name="subTypesAndPolicies">
+           <ds:data>
+              <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getTypeAndPolicy" localInvokation="false" returnedData="idsAndData"/>
+           </ds:data>
+        </ds:subservice>
+        <ds:ref-subservice name="folders" referenceName="e6w.workspaceFolders" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.workspace.WorkspaceService" function="getWorkspaceFolders" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.workspace.WorkspaceService" function="updateWorkspaceFolders" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="folderId" referenceName="e6w.workspaceFolders" includeByDefault="never">
+            <ds:data>
+                <ds:expand relationshipPattern="Sub Vaults" getFrom="true" recurseLevels="{foldersLevel}" preserveRoot="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+        <ds:subservice name="performRollup" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="performRollup" />
+            </ds:data>
+        </ds:subservice>
+        <ds:subservice name="search" includeByDefault="never">
+            <ds:data>
+                <ds:indexQuery typePattern="Project Management" keyword="{searchStr}" limitStr="{$top::50}" skipStr="{$skip::0}" sortField="{sortField::relevance}" sortDirection="{sortDirection::desc}" />
+            </ds:data>        
+            <ds:ref-subservice name="dpm.searchFields" />
+        </ds:subservice>
+    </ds:service>
+    <ds:service name="dpm.gscprojecttemplates">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.projecttemplate.ProjectTemplateService" function="getProjectTemplates" returnedData="idsAndData">
+                <ds:arg arg-name="state" arg-value="Ative"/>
+            </ds:jpo>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.projecttemplate.ProjectTemplateService" function="updateProjectTemplate" localInvokation="true" />
+        </ds:data>
+
+        <ds:ref-subservice name="dpm.basicFields"  includeByDefault="yes"/>
+        <!--<ds:ref-subservice name="dpm.accessFields" includeByDefa	ult="yes"/>-->
+        <!-- For Gantt Chart Infra :Start -->
+        <ds:field name="nlsType" includeByDefault="no"><ds:selectable expression="type" format="type" type="bus"/></ds:field>
+        <ds:field name="color" includeByDefault="no">  <ds:selectable  expression="attribute[Color]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="pattern" includeByDefault="no"><ds:selectable expression="attribute[FormatPattern]" type="bus" autosave="true"/></ds:field>
+        <ds:field name="ganttConfig" includeByDefault="no">
+            <ds:selectable expression="attribute[ganttConfig]" type="bus"  autosave="true"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getGanttConfig" localInvokation="true">
+           </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="columns" includeByDefault="no" description="Gantt Chart columns">
+            <ds:selectable expression="id" type="bus"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getGanttColumns" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="hasDPMAccess" description="This field will be returned only if the user has DPM license">
+            <ds:label text="0"/>
+            <ds:license products="ENO_PRF_TP"/>
+            <ds:selectable format="transient"/>
+        </ds:field>
+        <ds:field name="estimatedDurationInputValue" description="Duration value">    <ds:selectable expression="attribute[Task Estimated Duration].inputvalue" type="bus" autosave="true"  createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedDurationInputUnit"  description="Duration unit">     <ds:selectable expression="attribute[Task Estimated Duration].inputunit" type="bus"  createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="estimatedDuration"           description="Estimated duration"><ds:selectable expression="attribute[Task Estimated Duration]" type="bus" autosave="true"  createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="constraintType"  includeByDefault="no" description="Reflects ASAP or ALAP depending on schedule from.">
+            <ds:selectable expression="attribute[Schedule From]" type="bus" createOperation="yes" modifyOperation="no" readOperation="yes"/>
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="convertScheduleFromToConstraint" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="defaultConstraintType"      description="Constraint type">    <ds:selectable expression="attribute[Default Constraint Type]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="scheduleFrom"               description="Scheduling type">    <ds:selectable expression="attribute[Schedule From]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="scheduleBasedOn"            description="Scheduling basis">    <ds:selectable expression="attribute[Schedule Based On]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="projectVisibility"          description="A non-controlling identification of the desired Project access.">    <ds:selectable expression="attribute[Project Visibility]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currency" includeByDefault="no" description="Currency type"> 
+          <ds:selectable expression="attribute[Currency]" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+             <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getCurrencyValues">
+                      <ds:arg arg-name="attributeName" arg-value="Currency"/>
+                </ds:rangejpo>
+             </ds:range>
+        </ds:field>
+        <ds:field name="notes"    description="Notes"><ds:selectable expression="attribute[Notes]" type="bus" autosave="true" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="gscProjectType" description="Project Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_ProjectType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscBusinessArea" description="Business Area" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscBusinessArea]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes" />
+        </ds:field>
+        <ds:field name="gscGateType" description="Stage Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscGateType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscReviewType" description="Review Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscReviewType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscSourcingType" description="Sourcing Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscSourcingType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="businessUnitProject" description="Business Unit Project physicalid"
+                  includeByDefault="no">
+            <ds:selectable expression="to[Business Unit Project].from.physicalid" type="bus" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="PALId"    description=" The Project Access List object (used for some navigation)" includeByDefault="no"><ds:selectable expression="to[Project Access List].from.id" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="objectId" includeByDefault="no"><ds:selectable expression="id" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="sequenceOrder" includeByDefault="no" description="the task sequence id within a project.">
+            <ds:selectable type="keyrel" createOperation="yes" modifyOperation="yes" readOperation="yes" />
+            <ds:sort type="integer" direction="ascending" order="1" />
+            <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getSequenceOrder" localInvokation="true">
+                <ds:arg arg-name="taskWBS" arg-value="taskWBS"/>
+                <ds:arg arg-name="palIdField" arg-value="PALId"/>
+            </ds:fieldjpo>
+        </ds:field>
+      <ds:field name="image"  includeByDefault="no" description="The thumbnail or type icon associated to the project object.">
+          <ds:image source="primaryOrType" size="medium"  indexBasedImage="false"/>
+      </ds:field>
+      <ds:field name="project-custom-fields">
+          <ds:customAttributes busTypes="Project Management"/>
+      </ds:field>
+
+        <ds:ref-subservice name="ownerInfo"       includeByDefault="no"/>
+        <ds:ref-subservice name="originatorInfo"  includeByDefault="no"/>
+        <ds:ref-subservice name="tasks"           includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Subtask" getFrom="true" recurseLevels="{level}" chunkSize="300"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskService" function="updateTasks" processMultiple="true"/>
+            </ds:data>
+            <!-- override this definition from tasks as it is N/A in the project services. -->
+            <ds:subservice name="DPMProject" includeByDefault="never" hidden="true"/>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="members" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Member*" getFrom="true"/>
+                <ds:updatejpo classname="com.gsc.enovia.dpm.gscProjectService" function="updateMembers" />
+            </ds:data>
+        </ds:ref-subservice>
+        
+        <ds:subservice name="background" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="createProjectInBackground" />
+            </ds:data>
+        </ds:subservice>
+       <!-- To get SubTypes of all OOTB types -->
+        <ds:subservice name="subTypesInfo">
+           <ds:data>
+              <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getDerivativeTypes" localInvokation="false" returnedData="idsAndData"/>
+           </ds:data>
+        </ds:subservice>
+        <ds:subservice name="subTypesAndPolicies">
+           <ds:data>
+              <ds:jpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getTypeAndPolicy" localInvokation="false" returnedData="idsAndData"/>
+           </ds:data>
+        </ds:subservice>
+        <ds:ref-subservice name="folders" referenceName="e6w.workspaceFolders" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.workspace.WorkspaceService" function="getWorkspaceFolders" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.workspace.WorkspaceService" function="updateWorkspaceFolders" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="folderId" referenceName="e6w.workspaceFolders" includeByDefault="never">
+            <ds:data>
+                <ds:expand relationshipPattern="Sub Vaults" getFrom="true" recurseLevels="{foldersLevel}" preserveRoot="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+        <ds:subservice name="performRollup" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="performRollup" />
+            </ds:data>
+        </ds:subservice>
+        <ds:subservice name="search" includeByDefault="never">
+            <ds:data>
+                <ds:indexQuery typePattern="Project Management" keyword="{searchStr}" limitStr="{$top::50}" skipStr="{$skip::0}" sortField="{sortField::relevance}" sortDirection="{sortDirection::desc}" />
+            </ds:data>        
+            <ds:ref-subservice name="dpm.searchFields" />
+        </ds:subservice>
+    </ds:service>
+</ds:services>
+

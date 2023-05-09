@@ -1,0 +1,27 @@
+del command 'RMTSpecTreeExportICDActionLink';
+add command 'RMTSpecTreeExportICDActionLink'
+	description	''
+	label	'emxRequirements.ActionLink.ContentReport.ICD'
+	href	'${SUITE_DIR}/CompositeDocumentOptionsFS.jsp?selectedType=Specification&exportType=ICD&HelpMarker=emxhelpsystemdocumentoptions'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isVPMInstalled'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecTreeExportICDActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementSpecExportContent add command RMTSpecTreeExportICDActionLink order command RMTSpecTreeExportICDActionLink 0;
+#channel ==>RMTRequirementSpecExportContent
+add property command_RMTSpecTreeExportICDActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecTreeExportICDActionLink';

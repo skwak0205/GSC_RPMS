@@ -1,0 +1,25 @@
+del command 'RMTRollUpVersionInfoNoAtts';
+add command 'RMTRollUpVersionInfoNoAtts'
+	description	''
+	label	'emxRequirements.ActionLink.NoAttributes'
+	href	'${SUITE_DIR}/RequirementVersionUtil.jsp?mode=rollUp&rollUpMode=None'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRollUpVersionInfoNoAtts'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementVersionRollUp add command RMTRollUpVersionInfoNoAtts order command RMTRollUpVersionInfoNoAtts 2;
+#channel ==>RMTRequirementVersionRollUp
+add property command_RMTRollUpVersionInfoNoAtts on program eServiceSchemaVariableMapping.tcl to command 'RMTRollUpVersionInfoNoAtts';

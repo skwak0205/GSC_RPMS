@@ -1,0 +1,23 @@
+del command 'APPDocumentCheckOutActionLink2';
+add command 'APPDocumentCheckOutActionLink2'
+	description	'Document Check Out Command Object'
+	label	'emxComponents.Command.CheckOut'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=checkout'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasDocumentCheckOutAccess'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckOut.png'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentCheckOutActionLink2'
+	property	'version'	value	'R417'
+;
+modify menu APPNonVersionableFileSummaryActionsToolBar add command APPDocumentCheckOutActionLink2 order command APPDocumentCheckOutActionLink2 3;
+#channel ==>APPNonVersionableFileSummaryActionsToolBar
+add property command_APPDocumentCheckOutActionLink2 on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentCheckOutActionLink2';

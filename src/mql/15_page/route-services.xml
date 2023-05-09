@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd ">
+
+<ds:importServices page="routetemplate-services"/>
+<ds:importServices page="routepublic-services"/>
+<ds:importServices page="routetemplatepublic-services"/>
+  <ds:service name="bps.routes">
+        <ds:license products="ENOBUPS_AP"/>
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getUserRoutes" returnedData="idsAndData" />
+            <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="updateRoutes" processMultiple="true"/>
+        </ds:data>
+
+        <ds:ref-subservice name="bps.routeFields"/>
+  
+        <ds:ref-subservice name="templates" referenceName="bps.routeTemplates" includeByDefault="never">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteTemplates" returnedData="idsAndData" />
+            </ds:data>
+        </ds:ref-subservice>
+        
+        <ds:subservice name="supportedContentTypes" includeByDefault="never">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteContentSearchTypes" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+        
+        <ds:ref-subservice name="tasks" referenceName="bps.routeTasks" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteTasks" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="updateRouteTasks" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>        
+        
+        <ds:ref-subservice name="history" referenceName="bps.routeHistory" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteHistory" returnedData="idsAndData" />
+            </ds:data>
+        </ds:ref-subservice>
+        
+        <ds:ref-subservice name="members" referenceName="bps.routeMembers" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteMembers" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="updateRouteMembers" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+        
+        <ds:ref-subservice name="contentsApprovalStatus" referenceName="bps.routeContentsApprovalStatus" includeByDefault="no">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="getApprovalStatusOnContents" processMultiple="true" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:ref-subservice>
+        
+        <ds:ref-subservice name="attachments" referenceName="bps.routeTaskAttachments" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteTaskAttachemts" returnedData="idsAndData" />
+            </ds:data>
+        </ds:ref-subservice>
+        
+        <ds:ref-subservice name="subscriptions" referenceName="bps.routesubscriptions" includeByDefault="never">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteSubscriptions" returnedData="idsAndData" />
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="updateRouteSubscriptions" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="contents" referenceName="bps.routeContents" includeByDefault="no">
+		      <ds:data>
+	                <ds:expand relationshipPattern="Object Route" getTo="true"/>
+	                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="updateRouteContent" processMultiple="true"/>
+		      </ds:data>
+        </ds:ref-subservice>
+        
+        <ds:subservice name="start" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="applyRouteAction" processMultiple="false">
+                   <ds:arg arg-name="routeAction" arg-value="start"/>
+                </ds:updatejpo>
+            </ds:data>
+        </ds:subservice>
+        
+        <ds:subservice name="stop" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="applyRouteAction" processMultiple="false">
+                   <ds:arg arg-name="routeAction" arg-value="stop"/>
+                </ds:updatejpo>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="resume" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="applyRouteAction" processMultiple="false">
+                   <ds:arg arg-name="routeAction" arg-value="resume"/>
+                </ds:updatejpo>
+            </ds:data>
+        </ds:subservice>
+        
+        <ds:subservice name="restart" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="applyRouteAction" processMultiple="false">
+                   <ds:arg arg-name="routeAction" arg-value="restart"/>
+                </ds:updatejpo>
+            </ds:data>
+        </ds:subservice>
+        
+		<ds:subservice name="splitRouteNodeAndStart" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="splitRouteNodeAndStart" processMultiple="true">
+					<ds:arg arg-name="routeAction" arg-value="start"/>
+                </ds:updatejpo>
+            </ds:data>
+        </ds:subservice>
+		
+		<ds:subservice name="splitRouteNode" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="splitRouteNodeAndStart" processMultiple="true"/>
+            </ds:data>
+        </ds:subservice>
+        
+        <ds:subservice name="savetemplate" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.route.RouteService" function="saveAsRouteTemplate" processMultiple="false" />
+            </ds:data>
+        </ds:subservice>
+        
+  </ds:service>
+  <ds:service name="bps.routeFields">
+      <ds:field name="modified.transient" includeByDefault="always">
+         <ds:selectable expression="modified" type="bus" transient="true" format="timestamp"/>
+         <ds:sort type="date" direction="descending" order="1" /> 
+      </ds:field>
+	  <ds:field name="attrScopeMembers"><ds:selectable type="bus" expression="attribute[attribute_RestrictMembers]"/> <!--conditional include  --> 
+      	<ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="getScopeMembers"></ds:fieldjpo>
+      </ds:field> 
+	  <ds:field name="selectUsersFromUserGroup"><ds:selectable type="bus" expression="from[relationship_InitiatingRouteTemplate].to.attribute[attribute_ChooseUsersFromUserGroup]"/></ds:field>
+      <ds:field name="taskEditSetting"><ds:selectable type="bus" expression="from[relationship_InitiatingRouteTemplate].to.attribute[attribute_TaskEditSetting]"/></ds:field>
+      <ds:field name="linkedRouteTemplate"><ds:selectable type="bus" expression="from[Initiating Route Template].to.from[Link Route Template].to.name"/></ds:field>
+      <ds:field name="originated"><ds:selectable expression="originated" type="bus"/></ds:field>
+      <ds:field name="projectTitle"><ds:selectable expression="project.property[Title].value" type="bus"/></ds:field>
+      <ds:field name="organization"><ds:selectable expression="organization" type="bus"/></ds:field>
+	  <ds:field name="currentRouteNode"><ds:selectable type="bus" expression="attribute[attribute_CurrentRouteNode]"/></ds:field>
+      <ds:field name="sConnectedRTName"><ds:selectable type="bus" expression="from[relationship_InitiatingRouteTemplate].to.name" autosave="true"/></ds:field>
+      <ds:field name="sConnectedRTRevision"><ds:selectable type="bus" expression="from[relationship_InitiatingRouteTemplate].to.revision"/></ds:field>
+      <ds:field name="sConnectedRTTitle"><ds:selectable type="bus" expression="from[relationship_InitiatingRouteTemplate].to.attribute[attribute_Title]"/></ds:field>
+      <ds:field name="modified"><ds:selectable expression="modified" type="bus" format="utc"/> </ds:field>
+      <ds:field name="modifyAccess"><ds:selectable expression="current.access[modify]" type="bus"/></ds:field>
+      <ds:field name="deleteAccess"><ds:selectable expression="current.access[delete]" type="bus"/></ds:field>      
+      <ds:field name="project"><ds:selectable expression="project" type="bus"/></ds:field>
+      <ds:field name="typeicon"><ds:image source="businessType" size="icon"/></ds:field>
+      <ds:field name="autoStartRoute" description="Option to start route during create."><ds:selectable type="key" format="transient"/></ds:field>
+      <ds:field name="templateId"><ds:selectable type="key" format="transient"/></ds:field>
+      <ds:field name="sConnectedRTId"><ds:selectable type="bus" expression="from[relationship_InitiatingRouteTemplate].to.physicalid" autosave="true"/></ds:field>
+      <ds:field name="showAbstainCommand"><ds:selectable type="key"/>
+		<ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteTaskShowAbstainCommand">
+        </ds:fieldjpo>
+	  </ds:field>
+      <ds:field name="actions"><ds:selectable type="key"/>
+      	<ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="setRouteActions">
+      	   <ds:arg arg-name="routeStatusField" arg-value="routeStatus"/>
+      	   <ds:arg arg-name="owner" arg-value="owner"/>
+      	</ds:fieldjpo>
+      </ds:field>
+      <ds:field name="assignees"><ds:selectable type="key"/>
+      <ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteMembersList">
+      </ds:fieldjpo>
+      </ds:field>
+      <ds:field name="stateNLS"><ds:selectable type="key"/>
+      	<ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="getStateNLS">
+      	   <ds:arg arg-name="type" arg-value="Route"/>
+      	   <ds:arg arg-name="state" arg-value="state"/>
+      	</ds:fieldjpo>
+      </ds:field>     
+     <ds:ref-subservice name="bps.publicroute-fields"/>
+  </ds:service>
+  <ds:service name="bps.routeTemplates">
+          <ds:data>
+          <ds:print />
+          </ds:data>
+
+      <ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+      <ds:field name="description"><ds:selectable expression="description" autosave="true"/></ds:field>
+      <ds:field name="originated"><ds:selectable expression="originated" type="bus"/></ds:field>
+ 	  <ds:field name="modified"><ds:selectable expression="modified" type="bus"/> </ds:field>
+ 	  <ds:field name="routeBasePurpose"><ds:selectable type="bus" expression="attribute[attribute_RouteBasePurpose]" autosave="true"/></ds:field>
+      <ds:field name="AutoStopOnRejection"><ds:selectable type="bus" expression="attribute[attribute_AutoStopOnRejection]" autosave="true"/></ds:field>
+      <ds:field name="owner"><ds:selectable type="bus" expression="owner" autosave="true"/></ds:field>
+      <ds:field name="state"><ds:selectable expression="current" type="bus" format="state"/></ds:field>
+  </ds:service>
+
+  
+  <ds:service name="bps.routeTasks">
+          <ds:data>
+          <ds:print />
+          </ds:data> 
+	  <ds:field name="originated"><ds:selectable type="key" /></ds:field>
+	  <ds:field name="assigneePID"><ds:selectable type="key" /></ds:field>
+	  <ds:field name="assigneeSetDueDate"><ds:selectable type="key" attribute="Assignee Set Due Date" autosave="true"/></ds:field>
+      <ds:field name="dateOffsetFrom"><ds:selectable type="key" attribute="Date Offset From" autosave="true"/></ds:field>
+      <ds:field name="dueDateOffset"><ds:selectable type="key" attribute="Due Date Offset" autosave="true"/></ds:field>
+      <ds:field name="reviewTask"><ds:selectable type="key" busTypes="Inbox Task" attribute="Review Task" autosave="true"/></ds:field>
+      <ds:field name="taskRequirement"><ds:selectable type="key" attribute="Task Requirement" autosave="true"/></ds:field>     
+      <ds:field name="routeNodeRelIds"><ds:selectable type="key" format="transient" /></ds:field>
+      <ds:field name="assigneeId"><ds:selectable type="key" /></ds:field>
+      <ds:field name="userGroupAction"><ds:selectable type="key" attribute="User Group Action" autosave="true"/></ds:field>
+      <ds:field name="userGroupInfo"><ds:selectable type="key" attribute="User Group Level Info" autosave="true"/></ds:field>      
+      <ds:field name="routeNodeID"><ds:selectable type="key" format="transient"/></ds:field>
+      <ds:field name="modified"><ds:selectable type="key" /></ds:field>
+      <ds:field name="typeicon"><ds:image source="businessType" size="icon"/></ds:field>
+      <ds:field name="templateTask"><ds:selectable type="key" attribute="Template Task" autosave="true"/></ds:field>
+      <ds:field name="taskDetails"><ds:selectable type="key"/>
+      	<ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="setTaskDetails"></ds:fieldjpo>
+      </ds:field>
+      <ds:field name="ugMembers">
+	      <ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="getUserGroupMembers">
+			<ds:arg arg-name="assigneePID" arg-value="assigneePID"/>
+	      	   <ds:arg arg-name="assigneeType" arg-value="assigneeType"/>
+      </ds:fieldjpo>
+      </ds:field>
+      <ds:field name="stateNLS"><ds:selectable type="key"/>
+      	<ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="getStateNLS">
+      	   <ds:arg arg-name="type" arg-value="type"/>
+      	   <ds:arg arg-name="current" arg-value="current"/>
+      	</ds:fieldjpo>
+      </ds:field>
+      <ds:field name="routeOwnerUGName">
+	      <ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="getRouteOwnerUGChoice">
+			<ds:arg arg-name="routeOwnerUGChoice" arg-value="routeOwnerUGChoice"/>	      	
+      </ds:fieldjpo>
+      </ds:field>  
+      <ds:ref-subservice name="bps.publicroutetask-fields"/>  
+      <ds:ref-subservice name="taskAttachments" referenceName="bps.routeTaskAttachments" includeByDefault="no">
+	       <ds:data>
+	             <ds:jpo classname="com.dassault_systemes.enovia.route.RouteService" function="getTaskAttachments" returnedData="idsAndData" />
+	       </ds:data>
+      </ds:ref-subservice>
+          
+  </ds:service>
+
+	<ds:service name="bps.routeHistory">
+          <ds:data>
+          <ds:print />
+          </ds:data>
+
+      <ds:field name="title" description="this is the title of the task"><ds:selectable type="key" attribute="Title" autosave="true"/></ds:field>
+    
+    </ds:service>
+    
+  <ds:service name="bps.routemember-fields">
+      <ds:field name="accessType"><ds:selectable type="key"/></ds:field>
+      <ds:field name="name"><ds:selectable type="key"/></ds:field>
+      <ds:field name="fullname"><ds:selectable type="key"/></ds:field>
+      <ds:field name="userName"><ds:selectable type="key"/></ds:field>
+  </ds:service>
+  
+  <ds:service name="bps.routeMembers">
+      <ds:data>
+          <ds:print/>
+      </ds:data>
+	  <ds:field name="userAccess"><ds:selectable type="key" autosave="true"/></ds:field>
+      <ds:field name="physicalid"><ds:selectable type="key"/></ds:field>
+      <ds:field name="isRouteOwner"><ds:selectable type="key"/></ds:field>
+      <ds:field name="isLoggedInUserRouteOwner"><ds:selectable type="key"/></ds:field>
+      <ds:ref-subservice name="bps.routemember-fields"/>
+  </ds:service>
+  
+    <ds:service name="bps.routesubscriptions">
+      <ds:data>
+          <ds:print/>
+      </ds:data>
+	  <ds:field name="RouteStarted"><ds:selectable type="key" autosave="true"/></ds:field>
+      <ds:field name="RouteCompleted"><ds:selectable type="key"/></ds:field>
+      <ds:field name="ContentAdded"><ds:selectable type="key"/></ds:field>
+      <ds:field name="ContentRemoved"><ds:selectable type="key"/></ds:field>
+  </ds:service>
+  
+  <ds:service name="bps.routecontent-fields">
+   	  <ds:ref-subservice name="object-fields"/>
+      <ds:field name="description"><ds:selectable expression="description"/></ds:field>
+      <ds:field name="current"><ds:selectable expression="current" format="state"/></ds:field>
+      <ds:field name="type"><ds:selectable expression="type"/></ds:field>
+      <ds:field name="created"><ds:selectable expression="originated" /></ds:field>
+      <ds:field name="owner"><ds:selectable expression="owner" format="fullname"/></ds:field>
+      <ds:field name="modified"><ds:selectable expression="modified"/></ds:field>
+  </ds:service>
+  
+  <ds:service name="bps.routeContents">
+      <ds:data>
+          <ds:print/>
+      </ds:data>
+      <ds:field name="policy"><ds:selectable expression="policy"/></ds:field>
+	  <ds:field name="type_nls"><ds:selectable expression="type" format="type"/></ds:field>
+	  <ds:field name="typeicon"><ds:image source="businessType" size="icon"/></ds:field>
+	  <ds:field name="canDeleteContent"><ds:selectable type="key"/>
+      	<ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="canDeleteContent"></ds:fieldjpo>
+      </ds:field>
+      <ds:field name="maturityBlockingStates"><ds:selectable type="key"/>
+      	<ds:fieldjpo classname="com.dassault_systemes.enovia.route.RouteService" function="getMaturityBlockingStates"></ds:fieldjpo>
+      </ds:field>
+	  <ds:field name="image">
+        <ds:image source="primaryOrType" size="large" fileExtField="fileExtension"/>
+      </ds:field>
+      <ds:ref-subservice name="bps.routecontent-fields"/>
+  </ds:service>
+  
+  <ds:service name="bps.routeTaskAttachments">
+      <ds:data>
+          <ds:print/>
+      </ds:data>
+      <ds:ref-subservice name="object-fields"/>
+      <ds:field name="description"><ds:selectable expression="description"/></ds:field>
+      <ds:field name="current"><ds:selectable expression="current" format="state"/></ds:field>
+      <ds:field name="type"><ds:selectable expression="type"/></ds:field>
+	  <ds:field name="type_nls"><ds:selectable expression="type" format="type"/></ds:field>
+	  <ds:field name="created"><ds:selectable expression="originated" /></ds:field>
+      <ds:field name="owner"><ds:selectable expression="owner" format="fullname"/></ds:field>
+	  <ds:field name="typeicon"><ds:image source="businessType" size="icon"/></ds:field>
+      <ds:field name="modified"><ds:selectable expression="modified"/></ds:field>
+	  <ds:field name="image">
+        <ds:image source="primaryOrType" size="large" fileExtField="fileExtension"/>
+      </ds:field>
+  </ds:service>
+  
+  <ds:service name="bps.routeContentsApprovalStatus">
+      <ds:data>
+          <ds:print/>
+      </ds:data>
+      <ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+      <ds:field name="current"><ds:selectable expression="current" format="state"/></ds:field>
+      <ds:field name="type"><ds:selectable expression="type"/></ds:field>
+      <ds:field name="contentApprovalStatus"><ds:selectable type="key"/></ds:field>
+  </ds:service>
+
+</ds:services>
+

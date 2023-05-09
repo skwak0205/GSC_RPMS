@@ -1,0 +1,32 @@
+del command 'TMCFolderSummaryMoveSelected';
+add command 'TMCFolderSummaryMoveSelected'
+	description	''
+	label	'emxTeamCentral.Common.MoveSelected'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=emxWorkspace:getWorkspaceVaults&table=TMCSelectFolder&menuAction=moveFolder&program=emxWorkspace:getActiveWorkspaces&header=emxTeamCentral.Name.SelectDestinationFolder&cancelLabel=emxTeamCentral.Common.Cancel&submitURL=${SUITE_DIR}/emxTeamMoveCopyFoldersContentProcess.jsp&submitLabel=emxTeamCentral.Common.Done&HelpMarker=emxhelpselectfolder'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'550'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'current.access[fromdisconnect]'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isWsNotInArchiveState'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionMoveFolderOrDocument.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCFolderSummaryMoveSelected'
+	property	'version'	value	'R422'
+;
+modify menu TMCSubFolderSummaryActionsToolBar add command TMCFolderSummaryMoveSelected order command TMCFolderSummaryMoveSelected 5;
+modify menu TMCWorkspaceFolderSummaryActionsToolBar add command TMCFolderSummaryMoveSelected order command TMCFolderSummaryMoveSelected 5;
+#channel ==>TMCSubFolderSummaryActionsToolBarTMCWorkspaceFolderSummaryActionsToolBar
+add property command_TMCFolderSummaryMoveSelected on program eServiceSchemaVariableMapping.tcl to command 'TMCFolderSummaryMoveSelected';

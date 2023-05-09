@@ -1,0 +1,14 @@
+del portal 'PMCSCProjectMembersAccessPortal';
+add portal 'PMCSCProjectMembersAccessPortal'
+	description	'Project Member Power View'
+	label	'emxProgramCentral.Common.Decision'
+	href	''
+	channel 	PMCSCProjectMembersAccessChannel
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSCProjectMembersAccessPortal'
+	property	'version'	value	'R212'
+;
+add property portal_PMCSCProjectMembersAccessPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCSCProjectMembersAccessPortal';

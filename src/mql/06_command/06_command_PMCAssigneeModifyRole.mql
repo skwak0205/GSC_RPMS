@@ -1,0 +1,24 @@
+del command 'PMCAssigneeModifyRole';
+add command 'PMCAssigneeModifyRole'
+	description	'Modify Task Assignee Command'
+	label	'emxProgramCentral.Button.ModifyAssigneeRole'
+	href	'${SUITE_DIR}/emxProgramCentralTaskAssigneeActionsHidden.jsp?command=Modify'
+	alt	'emxProgramCentral.Button.ModifyAssigneeRole'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type!="$<type_Risk>" && (current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Single'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssigneeModifyRole'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCAssigneeModifyRole on program eServiceSchemaVariableMapping.tcl to command 'PMCAssigneeModifyRole';

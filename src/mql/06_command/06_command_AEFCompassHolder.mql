@@ -1,0 +1,16 @@
+del command 'AEFCompassHolder';
+add command 'AEFCompassHolder'
+	description	''
+	label	'AEFCompassHolder'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCompassHolder'
+	property	'version'	value	'R215'
+;
+modify menu AEFGlobalToolbar add command AEFCompassHolder order command AEFCompassHolder 2;
+#channel ==>AEFGlobalToolbar
+add property command_AEFCompassHolder on program eServiceSchemaVariableMapping.tcl to command 'AEFCompassHolder';

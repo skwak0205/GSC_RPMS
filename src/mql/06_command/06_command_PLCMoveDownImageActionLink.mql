@@ -1,0 +1,24 @@
+del command 'PLCMoveDownImageActionLink';
+add command 'PLCMoveDownImageActionLink'
+	description	''
+	label	'emxProduct.ActionLink.MoveDown'
+	href	'${SUITE_DIR}/ImageUtil.jsp?mode=MoveDown'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Single'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCMoveDownImageActionLink'
+	property	'version'	value	'R421'
+;
+modify menu PLCImageListToolBarActions add command PLCMoveDownImageActionLink order command PLCMoveDownImageActionLink 6;
+modify menu PLCImageListBottomActionBar add command PLCMoveDownImageActionLink order command PLCMoveDownImageActionLink 4;
+#channel ==>PLCImageListToolBarActionsPLCImageListBottomActionBar
+add property command_PLCMoveDownImageActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCMoveDownImageActionLink';

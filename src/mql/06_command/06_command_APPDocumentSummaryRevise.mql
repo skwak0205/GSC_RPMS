@@ -1,0 +1,23 @@
+del command 'APPDocumentSummaryRevise';
+add command 'APPDocumentSummaryRevise'
+	description	'Revise Selected Document'
+	label	'emxComponents.Command.Revise'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRevise.jsp?copyFiles=false'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReviseDocument.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentSummaryRevise'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentSummaryActionsToolBar add command APPDocumentSummaryRevise order command APPDocumentSummaryRevise 6;
+#channel ==>APPDocumentSummaryActionsToolBar
+add property command_APPDocumentSummaryRevise on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentSummaryRevise';

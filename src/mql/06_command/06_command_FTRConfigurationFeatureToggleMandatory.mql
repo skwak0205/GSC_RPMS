@@ -1,0 +1,26 @@
+del command 'FTRConfigurationFeatureToggleMandatory';
+add command 'FTRConfigurationFeatureToggleMandatory'
+	description	''
+	label	'emxProduct.ActionLink.ToggleMandatoryFeature'
+	href	'${SUITE_DIR}/ConfigurationFeatureToggleMandatory.jsp?mode=toggleMandatory'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'($<type!="type_ProductVariant">) && ($<type.kindof!="type_CONFIGURATIONFEATURES">)'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallMandatory.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationFeatureToggleMandatory'
+	property	'version'	value	'R421'
+;
+modify menu FTRConfigurationFeaturesToolbar add command FTRConfigurationFeatureToggleMandatory order command FTRConfigurationFeatureToggleMandatory 5;
+#channel ==>FTRConfigurationFeaturesToolbar
+add property command_FTRConfigurationFeatureToggleMandatory on program eServiceSchemaVariableMapping.tcl to command 'FTRConfigurationFeatureToggleMandatory';

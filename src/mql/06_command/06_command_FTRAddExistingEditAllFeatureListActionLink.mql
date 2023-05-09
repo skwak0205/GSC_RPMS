@@ -1,0 +1,17 @@
+del command 'FTRAddExistingEditAllFeatureListActionLink';
+add command 'FTRAddExistingEditAllFeatureListActionLink'
+	description	''
+	label	'emxProduct.ActionLink.EditAll'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingEditAllFeatureListActionLink'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_FTRAddExistingEditAllFeatureListActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingEditAllFeatureListActionLink';

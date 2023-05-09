@@ -1,0 +1,29 @@
+del command 'PMCProjectBenefitDeleteBenefitItem';
+add command 'PMCProjectBenefitDeleteBenefitItem'
+	description	'Command for Deleting the Benefit Item'
+	label	'emxProgramCentral.Common.Delete'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=deleteBudgetBenefitItem'
+	alt	'emxProgramCentral.Common.Delete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCurrentStateFrozen'
+	setting	'Access Program'		'emxBenefitItem'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitDeleteBenefitItem'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBenefitEditPageToolBarActions add command PMCProjectBenefitDeleteBenefitItem order command PMCProjectBenefitDeleteBenefitItem 0;
+modify menu PMCProjectBenefitRMB add command PMCProjectBenefitDeleteBenefitItem order command PMCProjectBenefitDeleteBenefitItem 2;
+modify menu PMCProjectBenefitOperationsToolBar add command PMCProjectBenefitDeleteBenefitItem order command PMCProjectBenefitDeleteBenefitItem 5;
+#channel ==>PMCProjectBenefitEditPageToolBarActionsPMCProjectBenefitRMBPMCProjectBenefitOperationsToolBar
+add property command_PMCProjectBenefitDeleteBenefitItem on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitDeleteBenefitItem';

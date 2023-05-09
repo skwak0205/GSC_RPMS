@@ -1,0 +1,157 @@
+################################################################################################
+# Created Date : 2020.05.20
+# Create by Suhwan,Jang
+# Description : OOTB Copy & Change
+################################################################################################
+# OOTB command copy by Suhwan,Jang 2020/05/20
+copy form 'type_CreateVariantValue' 'type_CreateVariantValue_OOTB';
+
+# field hidden by Suhwan,Jang 2020/05/19
+mod form 'type_CreateVariantValue'
+    field mod name 'Display Text'
+        add setting 'Access Expression' 'false'
+    field mod name 'Owner'
+        add setting 'Access Expression' 'false'
+    field mod name 'DesignResponsibility'
+        add setting 'Access Expression' 'false'
+    field mod name 'CollabSpace'
+        add setting 'Access Expression' 'false'
+    field mod name 'Policy'
+        add setting 'Access Expression' 'false'
+;
+
+# add field ( Function Dept, Order/Project Type, Option Description ) by Suhwan,Jang 2020/05/19
+mod form 'type_CreateVariantValue'
+    field
+        name 'emdOrderProjectType'
+        label 'emxConfiguration.Label.OrderWorkOption'
+        businessobject  '$<attribute[emdOrderProjectType]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Input Type' 'combobox'
+        setting 'Field Type' 'program'
+        setting 'program' 'emdOptionMaster'
+        setting 'function' 'getParentOptionGroupAttribute'
+        setting 'Admin Type' 'attribute_emdOrderProjectType'
+        setting 'Editable' 'false'
+    field
+        name 'emdSpecUse'
+        label 'emxConfiguration.Label.emdSpecUse'
+        businessobject  '$<attribute[emdSpecUse]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'attribute'
+        setting 'Input Type' 'combobox'
+        setting 'Admin Type' 'attribute_emdSpecUse'
+        setting 'Group Name' 'h2'
+        order 10
+    field
+        name 'emdOptionDesc'
+        label 'emxConfiguration.Label.OptionDescription'
+        businessobject  '$<attribute[emdRemark]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'attribute'
+        setting 'Input Type' 'textarea'
+    field
+        name 'emdFunctionalDept'
+        label 'emxConfiguration.Label.FunctionalDept'
+        businessobject  '$<attribute[attribute_emdFunctionalDept]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Input Type' 'combobox'
+        setting 'Admin Type' 'attribute_emdFunctionalDept'
+        setting 'Field Type' 'program'
+        setting 'program' 'emdOptionMaster'
+        setting 'function' 'getParentOptionGroupAttribute'
+        setting 'Editable' 'false'
+;
+
+# change field title by Suhwan,Jang 2020/05/20
+mod form 'type_CreateVariantValue'
+    field mod name 'Type'
+        add setting 'Editable' 'false'
+    field mod name 'Display Name'
+        label 'emxConfiguration.Label.OptionName'
+        add setting 'Validate' 'emdCheckRequired'
+        add setting 'Field Size' '45'
+        remove setting 'OnChange Handler'
+    field mod name 'Name'
+        label 'emxConfiguration.Label.OptionCode'
+        add setting 'Validate' 'emdCheckRequired'
+        remove setting 'OnChange Handler'
+    field mod name 'Description'
+        label 'emxConfiguration.Label.ChangeReason'
+    field mod name 'emdOrderProjectType'
+        add setting 'Field Size' '100'
+    field mod name 'emdFunctionalDept'
+        add setting 'Field Size' '100'
+    field mod name 'emdSpecUse'
+        add setting 'Field Size' '100'
+;
+
+# change order & setting by Suhwan,Jang 2020/05/21
+mod form 'type_CreateVariantValue'
+    field mod name 'Section Header Basic'
+        order '1'
+    field mod name 'Type'
+        order '2'
+    field mod name 'ConfigurationFeature'
+        order '3'
+    field mod name 'ConfigurationFeature1'
+        order '4'
+    field mod name 'Name'
+        order '5'
+    field mod name 'Display Name'
+        order '6'
+    field mod name 'emdSpecUse'
+        order '7'
+    field mod name 'emdOrderProjectType'
+        order '8'
+    field mod name 'emdFunctionalDept'
+        order '9'
+    field mod name 'emdOptionDesc'
+        order '10'
+    field mod name 'Description'
+        order '11'
+;
+
+# Name Field 자동생성을 막기위한 Field by Suhwan,Jang 2020/07/22
+mod form 'type_CreateVariantValue'
+    field
+        name 'Name1'
+        label 'emxConfiguration.Label.OptionCode'
+        businessobject  'name'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'LibraryCentral'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'basic'
+        setting 'Access Expression' 'false'
+;
+
+# Option Code 앞에 Parent Name 표시 by Suhwan,Jang 2020/07/22
+mod form 'type_CreateVariantValue'
+    field mod name 'Name'
+        remove setting 'Input Type'
+        remove setting 'Validate'
+        add setting 'Field Type' 'programHTMLOutput'
+        add setting 'program' 'emdOptionMaster'
+        add setting 'function' 'getOptionCodeField'
+;

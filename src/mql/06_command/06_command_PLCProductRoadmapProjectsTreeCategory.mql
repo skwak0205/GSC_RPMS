@@ -1,0 +1,19 @@
+del command 'PLCProductRoadmapProjectsTreeCategory';
+add command 'PLCProductRoadmapProjectsTreeCategory'
+	description	''
+	label	'emxProduct.Tree.Projects'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCProductRoadmapProjectsTable&header=emxProduct.Heading.Projects&selection=multiple&program=emxProduct:getRelatedProjects&toolbar=PLCProductRoadmapProjectsListToolBar&sortColumnName=Name&HelpMarker=emxhelproadmapprojectslist&massPromoteDemote=false&triggerValidation=false'
+	alt	'emxProduct.Alt.Projects'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isPRGInstalled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductRoadmapProjectsTreeCategory'
+	property	'version'	value	'R418'
+;
+#channel ==>PLCPlanning
+add property command_PLCProductRoadmapProjectsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCProductRoadmapProjectsTreeCategory';

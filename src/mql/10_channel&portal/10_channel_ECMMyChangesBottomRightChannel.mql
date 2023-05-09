@@ -1,0 +1,17 @@
+del channel 'ECMMyChangesBottomRightChannel';
+add channel 'ECMMyChangesBottomRightChannel'
+	description	''
+	height	'260'
+	label	'EnterpriseChangeMgt.Label.RightChannel'
+	href	''
+	setting		'Registered Suite'		'EnterpriseChangeMgt'
+	setting		'ChannelID'		'3'
+	command 	'ECMChangeSubscriptions'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMyChangesBottomRightChannel'
+	property	'version'	value	'R216'
+;
+#portal ==>
+add property channel_ECMMyChangesBottomRightChannel on program eServiceSchemaVariableMapping.tcl to channel 'ECMMyChangesBottomRightChannel';

@@ -1,0 +1,24 @@
+del command 'PMCProjectSpaceAlertPreferences';
+add command 'PMCProjectSpaceAlertPreferences'
+	description	'Template Properties Command Object'
+	label	'emxProgramCentral.Project.AlertPreferences'
+	href	'${SUITE_DIR}/emxProgramCentralProjectAlertSettingsDialogFS.jsp'
+	alt	'emxProgramCentral.Project.AlertPreferences'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProperties.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpaceAlertPreferences'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectSpaceToolBarActions add command PMCProjectSpaceAlertPreferences order command PMCProjectSpaceAlertPreferences 0;
+#channel ==>PMCProjectSpaceToolBarActions
+add property command_PMCProjectSpaceAlertPreferences on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpaceAlertPreferences';

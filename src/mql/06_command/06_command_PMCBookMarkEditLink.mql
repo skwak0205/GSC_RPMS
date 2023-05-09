@@ -1,0 +1,24 @@
+del command 'PMCBookMarkEditLink';
+add command 'PMCBookMarkEditLink'
+	description	'Command for Editing the Bookmark details'
+	label	'emxProgramCentral.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_BookMark&mode=edit&formHeader=emxProgramCentral.Common.EditBookmark&HelpMarker=emxhelpbookmarkdetails&findMxLink=false&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Mask'		'modify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBookMarkEditLink'
+	property	'version'	value	'R422'
+;
+modify menu PMCBookMarkToolbarActions add command PMCBookMarkEditLink order command PMCBookMarkEditLink 0;
+#channel ==>PMCBookMarkToolbarActions
+add property command_PMCBookMarkEditLink on program eServiceSchemaVariableMapping.tcl to command 'PMCBookMarkEditLink';

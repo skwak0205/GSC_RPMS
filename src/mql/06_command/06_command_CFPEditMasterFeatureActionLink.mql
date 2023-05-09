@@ -1,0 +1,19 @@
+del command 'CFPEditMasterFeatureActionLink';
+add command 'CFPEditMasterFeatureActionLink'
+	description	'Edit Details Action Link on Properties Page for Master Feature'
+	label	'DMCPlanning.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_MasterFeature&mode=Edit&formheader=DMCPlanning.Heading.Edit&HelpMarker=emxhelpmasterfeaturepropertiesedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPEditMasterFeatureActionLink'
+	property	'version'	value	'R417'
+;
+modify menu CFPMasterFeaturePropertiesActionBar add command CFPEditMasterFeatureActionLink order command CFPEditMasterFeatureActionLink 0;
+#channel ==>CFPMasterFeaturePropertiesActionBar
+add property command_CFPEditMasterFeatureActionLink on program eServiceSchemaVariableMapping.tcl to command 'CFPEditMasterFeatureActionLink';

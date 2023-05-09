@@ -1,0 +1,19 @@
+del command 'PMCRoutes';
+add command 'PMCRoutes'
+	description	'Command Object to Display Routes'
+	label	'emxProgramCentral.Common.Routes'
+	href	''
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Dynamic Command Program'		'emxTask'
+	setting	'Dynamic Command Function'		'getDynamicRouteCommand'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'!((type.kindOf[$<type_Gate>]==true) && (policy=="$<policy_ProjectReview>"))'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRoutes'
+	property	'version'	value	'R421.HF1'
+;
+#channel ==>PMCGateAndTaskRouteAndApprovalsChannel
+add property command_PMCRoutes on program eServiceSchemaVariableMapping.tcl to command 'PMCRoutes';

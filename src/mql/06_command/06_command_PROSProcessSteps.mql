@@ -1,0 +1,15 @@
+del command 'PROSProcessSteps';
+add command 'PROSProcessSteps'
+	description	'To show Change Process steps'
+	label	'enoProcessSteps.Label.ProcessSteps'
+	href	'${SUITE_DIR}/enoPROSProcessSteps.jsp'
+	alt	'enoProcessSteps.Label.ProcessSteps'
+	setting	'Registered Suite'		'ProcessSteps'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProcessSteps'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PROSProcessSteps'
+	property	'version'	value	'R420.HF1'
+;
+#channel ==>
+add property command_PROSProcessSteps on program eServiceSchemaVariableMapping.tcl to command 'PROSProcessSteps';

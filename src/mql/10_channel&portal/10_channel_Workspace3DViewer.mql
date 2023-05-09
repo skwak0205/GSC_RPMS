@@ -1,0 +1,16 @@
+del channel 'Workspace3DViewer';
+add channel 'Workspace3DViewer'
+	description	'Workspace3DViewer'
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'FolderManagement'
+	command 	'Workspace3DViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'Workspace3DViewer'
+	property	'version'	value	'R417'
+;
+#portal ==>
+add property channel_Workspace3DViewer on program eServiceSchemaVariableMapping.tcl to channel 'Workspace3DViewer';

@@ -1,0 +1,16 @@
+del menu 'APPMemberListsMyDeskToolBar';
+add menu 'APPMemberListsMyDeskToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Horizontal ToolBar'		'true'
+	menu	'APPMemberListsMyDeskActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPMemberListsMyDeskToolBar'
+	property 'version'	value	'R422'
+;
+add property menu_APPMemberListsMyDeskToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPMemberListsMyDeskToolBar';

@@ -1,0 +1,20 @@
+del command 'FTRModelCommittedLogicalFeatures';
+add command 'FTRModelCommittedLogicalFeatures'
+	description	''
+	label	'emxConfiguration.Model.CommittedLogicalFeatures'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=LogicalFeature:getCommittedLogicalFeatures&table=FTRModelLogicalFeatureTable&selection=multiple&toolbar=ECMChangeToolbar&editLink=true&mode=edit&header=emxConfiguration.Model.CommittedLogicalFeatures&HelpMarker=emxhelpmodellogicalview&massPromoteDemote=false&objectCompare=false&editRelationship=relationship_CommittedLogicalFeatures&fromContext=Committed'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<expression[LogicalFeatureEnabled]=="true">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeDisabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelCommittedLogicalFeatures'
+	property	'version'	value	'R423'
+;
+#channel ==>FTRModelLogicalViewChannel
+add property command_FTRModelCommittedLogicalFeatures on program eServiceSchemaVariableMapping.tcl to command 'FTRModelCommittedLogicalFeatures';

@@ -1,0 +1,21 @@
+del command 'APPAbsenceDelegatePersonNewSearch';
+add command 'APPAbsenceDelegatePersonNewSearch'
+	description	'New Search Command'
+	label	'emxComponents.Button.NewSearch'
+	href	'${COMPONENT_DIR}/emxComponentsFindMemberDialogFS.jsp?getValue=name'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAbsenceDelegatePersonNewSearch'
+	property	'version'	value	'R216'
+;
+modify menu APPAbsenceDelegatePersonSearchToolBar add command APPAbsenceDelegatePersonNewSearch order command APPAbsenceDelegatePersonNewSearch 0;
+#channel ==>APPAbsenceDelegatePersonSearchToolBar
+add property command_APPAbsenceDelegatePersonNewSearch on program eServiceSchemaVariableMapping.tcl to command 'APPAbsenceDelegatePersonNewSearch';

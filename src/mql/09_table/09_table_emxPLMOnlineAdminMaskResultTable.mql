@@ -1,0 +1,18 @@
+del table 'emxPLMOnlineAdminMaskResultTable' system;
+add table 'emxPLMOnlineAdminMaskResultTable' system
+column #1
+	name	'Name'
+	label	'emxPlmOnline.label.Masks'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminMaskReport.jsp?maskName=${ROW_ID}'
+	range	''
+	setting	'Target Location'		'_parent'
+	setting	'Auto Filter'		'true'
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'fillMaskColumn'
+	setting	'program'		'emxPLMOnlineAdminAccessesViewProgram'
+;
+add property table_emxPLMOnlineAdminMaskResultTable on program eServiceSchemaVariableMapping.tcl to table 'emxPLMOnlineAdminMaskResultTable' system;

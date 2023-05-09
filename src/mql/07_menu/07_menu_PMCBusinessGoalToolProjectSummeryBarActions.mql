@@ -1,0 +1,20 @@
+del menu 'PMCBusinessGoalToolProjectSummeryBarActions';
+add menu 'PMCBusinessGoalToolProjectSummeryBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'((type.kindOf[$<type_BusinessGoal>]==false || current != Complete) && !(from[$<relationship_SubGoal>]) )'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'PMCProjectCreateMenu'
+	command	'PMCBusinessGoalProjectAddExisting'
+	command	'PMCBusinessGoalProjectRemove'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCBusinessGoalToolProjectSummeryBarActions'
+	property 'version'	value	'R419'
+;
+add property menu_PMCBusinessGoalToolProjectSummeryBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCBusinessGoalToolProjectSummeryBarActions';

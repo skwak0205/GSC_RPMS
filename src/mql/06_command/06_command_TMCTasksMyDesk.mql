@@ -1,0 +1,19 @@
+del command 'TMCTasksMyDesk';
+add command 'TMCTasksMyDesk'
+	description	'Tasks Command Object'
+	label	'emxFramework.MenuItem.Tasks'
+	href	'${SUITE_DIR}/emxTeamMyTaskSummaryFS.jsp'
+	alt	'emxFramework.MenuItem.Tasks'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCTasksMyDesk'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCTasksMyDesk on program eServiceSchemaVariableMapping.tcl to command 'TMCTasksMyDesk';

@@ -1,0 +1,20 @@
+del command 'PLCPortfolioCreateNew';
+add command 'PLCPortfolioCreateNew'
+	description	'Creates a new Portfolio'
+	label	'emxProduct.ActionLink.CreatePortfolio'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Portfolio&typeChooser=true&autoNameChecked=true&nameField=both&form=type_CreatePortfolio&header=emxProduct.Heading.CreatePortfolio&HelpMarker=emxhelpportfoliocreate&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPortfolioCreateNew'
+	property	'version'	value	'R418'
+;
+modify menu PLCPortfolioListToolbar add command PLCPortfolioCreateNew order command PLCPortfolioCreateNew 1;
+#channel ==>PLCPortfolioListToolbar
+add property command_PLCPortfolioCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PLCPortfolioCreateNew';

@@ -1,0 +1,27 @@
+del command 'TMCQuotationsSearchCommand';
+add command 'TMCQuotationsSearchCommand'
+	description	'Search Quotations Command Object'
+	label	'emxFramework.MenuItem.Quotations'
+	href	'${SUITE_DIR}/emxTeamQuotationSearchDialog.jsp'
+	alt	'emxFramework.MenuItem.Quotations'
+	setting	'Target Location'		'searchContent'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Function'		'isSourcingInstalled'
+	setting	'Access Program'		'emxTeamAccess'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCQuotationsSearchCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCGlobalSearchMenu add command TMCQuotationsSearchCommand order command TMCQuotationsSearchCommand 3;
+#channel ==>TMCGlobalSearchMenu
+add property command_TMCQuotationsSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCQuotationsSearchCommand';

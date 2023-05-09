@@ -1,0 +1,15 @@
+del command 'APPFileCheckOutFolderPreference';
+add command 'APPFileCheckOutFolderPreference'
+	description	'File Check Out Folder Prefence setting'
+	label	'emxComponents.DirectoryChooserAppletPreferences.FileCheckOutFolder'
+	href	'${COMPONENT_DIR}/emxPrefFileCheckOutFolder.jsp'
+	alt	'emxComponents.DirectoryChooserAppletPreferences.FileCheckOutFolder'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFileCheckOutFolderPreference'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_APPFileCheckOutFolderPreference on program eServiceSchemaVariableMapping.tcl to command 'APPFileCheckOutFolderPreference';

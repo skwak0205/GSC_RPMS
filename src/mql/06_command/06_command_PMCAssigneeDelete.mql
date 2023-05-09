@@ -1,0 +1,28 @@
+del command 'PMCAssigneeDelete';
+add command 'PMCAssigneeDelete'
+	description	'Delete Task Assignee Command'
+	label	'emxProgramCentral.Common.Remove'
+	href	'${SUITE_DIR}/emxProgramCentralTaskAssigneeActionsHidden.jsp?command=Delete'
+	alt	'emxProgramCentral.Button.RemoveSelected'
+	setting	'Target Location'		'_self'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[delete] == true && current != Complete)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessOnRisk'
+	setting	'Access Program'		'emxRisk'
+	setting	'Row Select'		'Single'
+	setting	'Image'		'${COMMON_DIR}/images/I_RemoveResource_32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssigneeDelete'
+	property	'version'	value	'R422'
+;
+modify menu PMCAssigneeSummaryToolbarActions add command PMCAssigneeDelete order command PMCAssigneeDelete 3;
+modify menu PMCOpportunityAssigneeToolBarActions add command PMCAssigneeDelete order command PMCAssigneeDelete 0;
+#channel ==>PMCAssigneeSummaryToolbarActionsPMCOpportunityAssigneeToolBarActions
+add property command_PMCAssigneeDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCAssigneeDelete';

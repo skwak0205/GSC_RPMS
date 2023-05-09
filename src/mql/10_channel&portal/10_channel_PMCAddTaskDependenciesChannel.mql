@@ -1,0 +1,16 @@
+del channel 'PMCAddTaskDependenciesChannel';
+add channel 'PMCAddTaskDependenciesChannel'
+	description	'Channel to add Task Dependency'
+	height	'260'
+	label	'emxProgramCentral.Common.AddDependency'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCAddInternalTaskDependencies','PMCAddExternalProjectTaskDependencies'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddTaskDependenciesChannel'
+	property	'version'	value	'R215'
+;
+#portal ==>PMCWBSTaskDependencyPortal
+add property channel_PMCAddTaskDependenciesChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCAddTaskDependenciesChannel';

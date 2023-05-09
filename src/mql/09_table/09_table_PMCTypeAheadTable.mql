@@ -1,0 +1,30 @@
+del table 'PMCTypeAheadTable' system;
+add table 'PMCTypeAheadTable' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxProgramCentral.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProgramCentral'
+column #2
+	name	'Type'
+	businessobject	'type'
+	label	'emxProgramCentral.Common.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Admin Type'		'Type'
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTypeAheadTable'
+	property	'version'	value	'R418'
+;
+add property table_PMCTypeAheadTable on program eServiceSchemaVariableMapping.tcl to table 'PMCTypeAheadTable' system;

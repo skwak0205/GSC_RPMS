@@ -1,0 +1,22 @@
+del command 'ENOAuthoringUXCommand';
+add command 'ENOAuthoringUXCommand'
+	description	'To display workunder field on SB page'
+	label	'AuthoringMgtUX.command.SelectWorkUnderChange'
+	href	'../authoringmgtux/AuthoringMgtUXUtil.jsp?mode=displayWorkUnder'
+	alt	'AuthoringMgtUX.command.SelectWorkUnderChange'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'displayWorkUnderUX'
+	setting	'Access Program'		'AuthoringMgtUxUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallActionWorkUnderCA.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'AuthoringMgtUX'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ENOAuthoringUXCommand'
+	property	'version'	value	'R420.HF1'
+;
+modify menu TRMChange add command ENOAuthoringUXCommand order command ENOAuthoringUXCommand 0;
+#channel ==>TRMChange
+add property command_ENOAuthoringUXCommand on program eServiceSchemaVariableMapping.tcl to command 'ENOAuthoringUXCommand';

@@ -1,0 +1,6 @@
+{
+  "notificationAccessUnauthorized": "Sie haben leider keinen Zugriff auf diese Informationen.",
+  "platformManagentName": "Plattformverwaltung",
+  "navigationFailedDashboard": "Das angeforderte Dashboard konnte nicht geöffnet werden.",
+  "fetchingFailedDashboard": "Informationen von diesem Dashboard konnten nicht abgerufen werden."
+}

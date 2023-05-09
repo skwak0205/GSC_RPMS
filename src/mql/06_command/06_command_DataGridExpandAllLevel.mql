@@ -1,0 +1,18 @@
+del command 'DataGridExpandAllLevel';
+add command 'DataGridExpandAllLevel'
+	description	''
+	label	'emxFramework.FreezePane.ExpandAll'
+	href	'javascript:StandardFunctions.expandNodes()'
+	alt	'emxFramework.FreezePane.ExpandAll'
+	setting	'Access Function'		'enableExpandLevel'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionExpandAll.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridExpandAllLevel'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridExpandLevelMenu add command DataGridExpandAllLevel order command DataGridExpandAllLevel 1;
+#channel ==>DataGridExpandLevelMenu
+add property command_DataGridExpandAllLevel on program eServiceSchemaVariableMapping.tcl to command 'DataGridExpandAllLevel';

@@ -1,0 +1,23 @@
+del command 'ECMChangeLegacyFilter';
+add command 'ECMChangeLegacyFilter'
+	description	'Displays all the Change Legacy'
+	label	'EnterpriseChangeMgt.Menu.ChangeType'
+	href	'${SUITE_DIR}/ECMChangeLegacyFilterProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getLegacyChangeFilters'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Mode'		'view'
+	setting	'Range Program'		'enoECMChangeUX'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeLegacyFilter'
+	property	'version'	value	'R216'
+;
+modify menu ECMChangeLegacyToolbar add command ECMChangeLegacyFilter order command ECMChangeLegacyFilter 0;
+#channel ==>ECMChangeLegacyToolbar
+add property command_ECMChangeLegacyFilter on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeLegacyFilter';

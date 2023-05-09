@@ -1,0 +1,11 @@
+del menu 'CollabSpaceAppMenu';
+add menu 'CollabSpaceAppMenu'
+	description	''
+	label	'3DSpace'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'eServiceSuiteCollabSpaceCentral'
+	setting	'Image'		'iconCollabSpaceTransparentMini.png'
+	command	'CollabSpaceAppCmd'
+;
+add property menu_CollabSpaceAppMenu on program eServiceSchemaVariableMapping.tcl to menu 'CollabSpaceAppMenu';

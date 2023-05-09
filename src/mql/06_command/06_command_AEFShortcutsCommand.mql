@@ -1,0 +1,16 @@
+del command 'AEFShortcutsCommand';
+add command 'AEFShortcutsCommand'
+	description	'Shortcuts Command'
+	label	'emxFramework.ShortcutPanel.Shortcuts'
+	href	'javascript:showShortcutPanel()'
+	alt	'emxFramework.Command.Shortcuts'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFShortcutsCommand'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_AEFShortcutsCommand on program eServiceSchemaVariableMapping.tcl to command 'AEFShortcutsCommand';

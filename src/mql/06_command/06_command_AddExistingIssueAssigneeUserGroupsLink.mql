@@ -1,0 +1,22 @@
+del command 'AddExistingIssueAssigneeUserGroupsLink';
+add command 'AddExistingIssueAssigneeUserGroupsLink'
+	description	''
+	label	'emxFramework.Issue.IssueAssigneeAddUserGroups'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Group&mode=IssueaddAsignee&submitLabel=emxFramework.GlobalSearch.Done&table=AEFUserGroupsChooser&form=AEFSearchUserGroupsForm&selection=multiple&submitURL=../components/emxCommonConnectObjects.jsp&showInitialResults=true&srcDestRelName=relationship_AssignedIssue&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects&showInitialResults=true&isTo=false'
+	alt	''
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'((current.access[modify] == true) && (current.access[fromconnect] == true))'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/ENOGroup32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AddExistingIssueAssigneeUserGroupsLink'
+	property	'version'	value	'R423'
+;
+modify menu IssueAssigneeListToolBarActions add command AddExistingIssueAssigneeUserGroupsLink order command AddExistingIssueAssigneeUserGroupsLink 2;
+#channel ==>IssueAssigneeListToolBarActions
+add property command_AddExistingIssueAssigneeUserGroupsLink on program eServiceSchemaVariableMapping.tcl to command 'AddExistingIssueAssigneeUserGroupsLink';

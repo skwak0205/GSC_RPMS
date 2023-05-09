@@ -1,0 +1,29 @@
+del command 'PLCCreateSubProductLineActionLink';
+add command 'PLCCreateSubProductLineActionLink'
+	description	'This is a new command which will create a new Sub ProductLine.this needs to be added in build.'
+	label	'emxProduct.ActionLink.Create'
+	href	'${SUITE_DIR}/ProductLineCreatePreProcess.jsp?strCreationType=type_ProductLine&UIContext=context&HelpMarker=emxhelpproductlinesubproductline'
+	alt	''
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Mode'		'edit'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'linkDisplay'
+	setting	'Access Program'		'emxProductLine'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateSubProductLineActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductLineSubProductLineTopActionBar add command PLCCreateSubProductLineActionLink order command PLCCreateSubProductLineActionLink 1;
+#channel ==>PLCProductLineSubProductLineTopActionBar
+add property command_PLCCreateSubProductLineActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateSubProductLineActionLink';

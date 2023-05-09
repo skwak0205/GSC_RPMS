@@ -1,0 +1,10 @@
+del command 'APPXPManagePreferences';
+add command 'APPXPManagePreferences'
+	description	'Administrator Preferences'
+	label	'emxPlmOnline.label.ManageOption'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=XPAdminPreferences'
+	alt	''
+	setting	'Registered Suite'		'VPLMAdministration'
+;
+#channel ==>AdminPreferencesXPChannel
+add property command_APPXPManagePreferences on program eServiceSchemaVariableMapping.tcl to command 'APPXPManagePreferences';

@@ -1,0 +1,21 @@
+del command 'APPRemoveMeetingAttendee';
+add command 'APPRemoveMeetingAttendee'
+	description	''
+	label	'emxComponents.Common.RemoveAttendee'
+	href	'${COMPONENT_DIR}/emxComponentsRemoveMeetingAttendees.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[changesov]==true && current==Create )'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRemoveMeetingAttendee'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPMeetingsAttendeeActionToolbar add command APPRemoveMeetingAttendee order command APPRemoveMeetingAttendee 0;
+#channel ==>APPMeetingsAttendeeActionToolbar
+add property command_APPRemoveMeetingAttendee on program eServiceSchemaVariableMapping.tcl to command 'APPRemoveMeetingAttendee';

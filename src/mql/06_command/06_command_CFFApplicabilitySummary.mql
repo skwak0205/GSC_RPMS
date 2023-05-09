@@ -1,0 +1,18 @@
+del command 'CFFApplicabilitySummary';
+add command 'CFFApplicabilitySummary'
+	description	'Command to show ApplicabilitySummary'
+	label	'Effectivity.Command.ApplicabilitySummary'
+	href	'${SUITE_DIR}/CFFApplicabilitySummary.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Licensed Product'		'ENO_CFF_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isCFFInstalled'
+	setting	'Access Program'		'enoECMChangeUtil'
+;
+modify menu type_ChangeOrder add command CFFApplicabilitySummary order command CFFApplicabilitySummary 4;
+modify menu type_ChangeAction add command CFFApplicabilitySummary order command CFFApplicabilitySummary 7;
+modify menu type_ChangeRequest add command CFFApplicabilitySummary order command CFFApplicabilitySummary 5;
+modify menu type_Decision add command CFFApplicabilitySummary order command CFFApplicabilitySummary 1;
+#channel ==>type_ChangeOrdertype_ChangeActiontype_ChangeRequesttype_Decision
+add property command_CFFApplicabilitySummary on program eServiceSchemaVariableMapping.tcl to command 'CFFApplicabilitySummary';

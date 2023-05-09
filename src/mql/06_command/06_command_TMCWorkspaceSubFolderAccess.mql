@@ -1,0 +1,24 @@
+del command 'TMCWorkspaceSubFolderAccess';
+add command 'TMCWorkspaceSubFolderAccess'
+	description	''
+	label	'emxTeamCentral.Access.Access'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxWorkspace:getAllWorkspaceAccess,emxWorkspace:getBuyerDeskWorkspaceAccess,emxWorkspace:getPersonsWorkspaceAccess,emxWorkspace:getRolesWorkspaceAccess&table=TMCWorkspaceSubFolderAccessSummary&programLabel=emxTeamCentral.Common.All,emxTeamCentral.Access.BuyerDesk,emxTeamCentral.Access.Persons,emxTeamCentral.Access.Roles&toolbar=TMCWorkspaceFolderAccessSummaryToolBar&selectedFilter=emxWorkspace:getAllWorkspaceAccess&header=emxTeamCentral.Common.FolderAccess&HelpMarker=emxhelpaccesses&customize=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Function'		'displaySubFolderAccessTreeNode'
+	setting	'Access Program'		'emxWorkspace'
+	setting	'Image'		'iconSmallAccess.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceSubFolderAccess'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCWorkspaceSubFolderAccess on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceSubFolderAccess';

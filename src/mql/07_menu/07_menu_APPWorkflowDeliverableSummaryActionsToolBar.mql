@@ -1,0 +1,21 @@
+del menu 'APPWorkflowDeliverableSummaryActionsToolBar';
+add menu 'APPWorkflowDeliverableSummaryActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	menu	'APPContentSummaryCreateNew'
+	command	'APPDeliverableUploadFiles'
+	command	'APPDeliverableAddExistingActionLink'
+	command	'APPSeparator'
+	command	'APPWorkflowDeliverableRemove'
+	command	'APPCommonDocumentDownloadActionLink'
+	command	'APPDocumentSummaryCheckOutActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPWorkflowDeliverableSummaryActionsToolBar'
+	property 'version'	value	'10-7'
+;
+add property menu_APPWorkflowDeliverableSummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPWorkflowDeliverableSummaryActionsToolBar';

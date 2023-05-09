@@ -1,0 +1,15 @@
+del portal 'PMCDeliverablePortal';
+add portal 'PMCDeliverablePortal'
+	description	'Portal to display deliverables'
+	label	'PMCDeliverablePortal'
+	href	''
+	channel 	PMCDeliverableChannel1
+	channel 	PMCDeliverableChannel2
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeliverablePortal'
+	property	'version'	value	'R421'
+;
+add property portal_PMCDeliverablePortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCDeliverablePortal';

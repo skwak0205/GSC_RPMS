@@ -1,0 +1,12 @@
+#del attribute 'gscEventFinishDate';
+add attribute 'gscEventFinishDate'
+ type 'timestamp'
+ description 'Event Finish Date'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:43 KST 2022'
+  property 'original name' value 'Estimated Start Date'
+  property 'Protection' value 'Free'
+  property 'version' value 'R418'
+;
+add property attribute_gscEventFinishDate on program eServiceSchemaVariableMapping.tcl to attribute 'gscEventFinishDate';

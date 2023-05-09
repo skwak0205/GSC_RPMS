@@ -1,0 +1,22 @@
+del command 'ECMSetChangeControlForm';
+add command 'ECMSetChangeControlForm'
+	description	'Set the change control'
+	label	'EnterpriseChangeMgt.Command.SetChangeControl'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=setChangeControlForm'
+	alt	'EnterpriseChangeMgt.Command.SetChangeControl'
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isSetChanageControlAvailable'
+	setting	'Access Program'		'enoECMChangeUX'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallChangeRequiredActive.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'ECMSetChangeControlForm'
+	property	'version'	value	'R421'
+;
+modify menu APPDocumentToolBar add command ECMSetChangeControlForm order command ECMSetChangeControlForm 1;
+#channel ==>APPDocumentToolBar
+add property command_ECMSetChangeControlForm on program eServiceSchemaVariableMapping.tcl to command 'ECMSetChangeControlForm';

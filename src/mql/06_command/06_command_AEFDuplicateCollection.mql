@@ -1,0 +1,24 @@
+del command 'AEFDuplicateCollection';
+add command 'AEFDuplicateCollection'
+	description	'Duplicate the Collection'
+	label	'emxFramework.Collections.DuplicateCollection'
+	href	'${COMMON_DIR}/emxCollectionsDuplicateFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPaste.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFDuplicateCollection'
+	property	'version'	value	'R422'
+;
+modify menu AEFCollectionActionsToolBar add command AEFDuplicateCollection order command AEFDuplicateCollection 3;
+#channel ==>AEFCollectionActionsToolBar
+add property command_AEFDuplicateCollection on program eServiceSchemaVariableMapping.tcl to command 'AEFDuplicateCollection';

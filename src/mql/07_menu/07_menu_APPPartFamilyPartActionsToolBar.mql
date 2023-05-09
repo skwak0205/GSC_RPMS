@@ -1,0 +1,22 @@
+del menu 'APPPartFamilyPartActionsToolBar';
+add menu 'APPPartFamilyPartActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(type == "Part Family")'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPPartFamilyPartCreateNew'
+	command	'APPPartFamilyPartAddExisting'
+	command	'AEFSeparator'
+	command	'LBCClassifiedItemReclassify'
+	command	'APPPartFamilyPartRemove'
+	command	'APPPartFamilyPartDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPPartFamilyPartActionsToolBar'
+	property 'version'	value	'R421'
+;
+add property menu_APPPartFamilyPartActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPPartFamilyPartActionsToolBar';

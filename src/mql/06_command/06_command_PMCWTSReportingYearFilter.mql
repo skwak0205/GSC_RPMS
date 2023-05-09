@@ -1,0 +1,22 @@
+del command 'PMCWTSReportingYearFilter';
+add command 'PMCWTSReportingYearFilter'
+	description	'PMCWTSReportingYearFilter'
+	label	'emxProgramCentral.WeeklyTimesheetReport.ReportingYear'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=reportView'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getReportingYearFilter'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxWeeklyTimeSheet'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWTSReportingYearFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimeSheetReportViewFilterToolbarMenu add command PMCWTSReportingYearFilter order command PMCWTSReportingYearFilter 0;
+modify menu PMCWeeklyTimeSheetReportViewFilterToolbar add command PMCWTSReportingYearFilter order command PMCWTSReportingYearFilter 0;
+#channel ==>PMCWeeklyTimeSheetReportViewFilterToolbarMenuPMCWeeklyTimeSheetReportViewFilterToolbar
+add property command_PMCWTSReportingYearFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCWTSReportingYearFilter';

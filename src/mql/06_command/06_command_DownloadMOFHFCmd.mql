@@ -1,0 +1,12 @@
+del command 'DownloadMOFHFCmd';
+add command 'DownloadMOFHFCmd'
+	description	'Download Collaboration for Microsoft Client Hotfix'
+	label	'emxComponents.DownloadHFBuild.Label'
+	href	'${SUITE_DIR}/DownloadMOF.jsp?isHotfix=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+;
+modify menu DownloadMOFMenu add command DownloadMOFHFCmd order command DownloadMOFHFCmd 0;
+#channel ==>DownloadMOFMenu
+add property command_DownloadMOFHFCmd on program eServiceSchemaVariableMapping.tcl to command 'DownloadMOFHFCmd';

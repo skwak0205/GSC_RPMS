@@ -1,0 +1,15 @@
+del menu 'PMCtype_TaskManagement';
+add menu 'PMCtype_TaskManagement'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCShowParentHierarchy'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCtype_TaskManagement'
+	property 'version'	value	'R421.HF7'
+;
+add property menu_PMCtype_TaskManagement on program eServiceSchemaVariableMapping.tcl to menu 'PMCtype_TaskManagement';

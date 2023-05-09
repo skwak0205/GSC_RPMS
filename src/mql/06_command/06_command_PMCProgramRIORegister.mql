@@ -1,0 +1,20 @@
+del command 'PMCProgramRIORegister';
+add command 'PMCProgramRIORegister'
+	description	''
+	label	'emxProgramCentral.Command.RIORegister'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCProgramRIO&HelpMarker=emxhelpprojectpowerview'
+	alt	'emxProgramCentral.Command.RIORegister'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProgramRIORegister'
+	property	'version'	value	'R422'
+;
+modify menu type_Program add command PMCProgramRIORegister order command PMCProgramRIORegister 0;
+#channel ==>type_Program
+add property command_PMCProgramRIORegister on program eServiceSchemaVariableMapping.tcl to command 'PMCProgramRIORegister';

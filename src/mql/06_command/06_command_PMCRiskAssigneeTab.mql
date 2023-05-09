@@ -1,0 +1,18 @@
+del command 'PMCRiskAssigneeTab';
+add command 'PMCRiskAssigneeTab'
+	description	''
+	label	'emxProgramCentral.ProjectCategory.AccessResourcePlan'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCRiskAssigneeTab&showPageHeader=false&HelpMarker=emxhelpprojectdetails'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRiskAssigneeTab'
+	property	'version'	value	'R417'
+;
+modify menu type_Risk add command PMCRiskAssigneeTab order command PMCRiskAssigneeTab 7;
+modify menu type_Opportunity add command PMCRiskAssigneeTab order command PMCRiskAssigneeTab 7;
+#channel ==>type_Risktype_Opportunity
+add property command_PMCRiskAssigneeTab on program eServiceSchemaVariableMapping.tcl to command 'PMCRiskAssigneeTab';

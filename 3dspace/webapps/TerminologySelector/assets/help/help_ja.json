@@ -1,0 +1,8 @@
+{
+"TerminologyManagementCommand.Title":"参照構造の定義を管理",
+"TerminologyManagementCommand.ShortHelp":"参照構造に関連付けられたリファレンスと参照ノードに関連付けられたインスタンスを管理します。",
+"AssociateTerminologiesCommand.Title":"参照構造に追加",
+"AssociateTerminologiesCommand.ShortHelp":"選択したリファレンスを参照構造に関連付けます。",
+"AssociateTermsCommand.Title":"参照ノードに追加",
+"AssociateTermsCommand.ShortHelp":"選択したインスタンスを参照ノードに関連付けます。"
+}

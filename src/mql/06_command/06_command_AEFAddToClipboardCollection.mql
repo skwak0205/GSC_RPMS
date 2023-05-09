@@ -1,0 +1,23 @@
+del command 'AEFAddToClipboardCollection';
+add command 'AEFAddToClipboardCollection'
+	description	'Adding the selected items to System Clipboard Collections'
+	label	'emxFramework.Collections.AddToClipboardCollection'
+	href	'${COMMON_DIR}/emxCollectionsAddToProcess.jsp?mode=Clipboard'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallClipboardCollections.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFAddToClipboardCollection'
+	property	'version'	value	'R422'
+;
+modify menu AEFClipboardCollections add command AEFAddToClipboardCollection order command AEFAddToClipboardCollection 1;
+#channel ==>AEFClipboardCollections
+add property command_AEFAddToClipboardCollection on program eServiceSchemaVariableMapping.tcl to command 'AEFAddToClipboardCollection';

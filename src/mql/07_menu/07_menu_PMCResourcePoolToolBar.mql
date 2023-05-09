@@ -1,0 +1,15 @@
+del menu 'PMCResourcePoolToolBar';
+add menu 'PMCResourcePoolToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCResourcePoolToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourcePoolToolBar'
+	property 'version'	value	'R208'
+;
+add property menu_PMCResourcePoolToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourcePoolToolBar';

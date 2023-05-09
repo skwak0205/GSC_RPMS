@@ -1,0 +1,20 @@
+del command 'APPLaunch3DPlay';
+add command 'APPLaunch3DPlay'
+	description	''
+	label	'emxComponents.ImageManager.3DPlay'
+	href	'${COMPONENT_DIR}/emxLaunch3DPlay.jsp'
+	alt	''
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionShowHide3D.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLaunch3DPlay'
+	property	'version'	value	'R419'
+;
+#channel ==>
+add property command_APPLaunch3DPlay on program eServiceSchemaVariableMapping.tcl to command 'APPLaunch3DPlay';

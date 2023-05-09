@@ -1,0 +1,22 @@
+del command 'APPCommonShowDownloadReport';
+add command 'APPCommonShowDownloadReport'
+	description	'APPCommonShowDownloadReport'
+	label	'emxComponents.Command.DownloadReport'
+	href	'${COMPONENT_DIR}/emxCommonDownloadReportDialog.jsp'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonShowDownloadReport'
+	property	'version'	value	'R422'
+;
+modify menu APPCommonShowDownloadReportToolbar add command APPCommonShowDownloadReport order command APPCommonShowDownloadReport 0;
+#channel ==>APPCommonShowDownloadReportToolbar
+add property command_APPCommonShowDownloadReport on program eServiceSchemaVariableMapping.tcl to command 'APPCommonShowDownloadReport';

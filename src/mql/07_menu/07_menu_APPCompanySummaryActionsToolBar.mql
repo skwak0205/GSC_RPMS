@@ -1,0 +1,18 @@
+del menu 'APPCompanySummaryActionsToolBar';
+add menu 'APPCompanySummaryActionsToolBar'
+	description	''
+	label	'Components.Toolbar.Actions'
+	href	''
+	alt	'Components.Toolbar.Actions'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPCompanyCreateActionLink'
+	command	'APPCreateSupplierCompany'
+	command	'APPCreateCustomerCompany'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPCompanySummaryActionsToolBar'
+	property 'version'	value	'R420.HF5'
+;
+add property menu_APPCompanySummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPCompanySummaryActionsToolBar';

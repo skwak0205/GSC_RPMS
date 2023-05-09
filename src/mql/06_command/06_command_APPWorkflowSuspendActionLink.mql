@@ -1,0 +1,19 @@
+del command 'APPWorkflowSuspendActionLink';
+add command 'APPWorkflowSuspendActionLink'
+	description	'Workflow Suspend action link'
+	label	'emxComponents.Command.Suspend'
+	href	'${COMPONENT_DIR}/emxWorkflowAction.jsp?action=pause'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current == "Started" && owner == context.user)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPause.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowSuspendActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowToolbar add command APPWorkflowSuspendActionLink order command APPWorkflowSuspendActionLink 4;
+#channel ==>APPWorkflowToolbar
+add property command_APPWorkflowSuspendActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowSuspendActionLink';

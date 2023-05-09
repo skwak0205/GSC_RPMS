@@ -1,0 +1,20 @@
+del command 'FTRPVLogicalFeatures';
+add command 'FTRPVLogicalFeatures'
+	description	''
+	label	'emxProduct.Tree.ComponentFeatureSelectedOptions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?toolbar=FTRProductVariantLogicalFeatureToolbar,FTRProductVariantLogicalFeatureCustomFilterToolbar&expandProgram=emxProductVariant:expandLogicalStructureForProductVariant&table=FTRLogicalFeatureTable&editRootNode=false&selection=multiple&editLink=true&mode=edit&header=emxConfiguration.Heading.LogicalStructures&HelpMarker=emxhelplogicalstructurespage&massPromoteDemote=false&objectCompare=false&appendURL=VariantEffectivity|Effectivity&effectivityFilterMode=150&parentOID=null'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeDisabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRPVLogicalFeatures'
+	property	'version'	value	'R418'
+;
+modify menu type_ProductVariant add command FTRPVLogicalFeatures order command FTRPVLogicalFeatures 9;
+#channel ==>type_ProductVariant
+add property command_FTRPVLogicalFeatures on program eServiceSchemaVariableMapping.tcl to command 'FTRPVLogicalFeatures';

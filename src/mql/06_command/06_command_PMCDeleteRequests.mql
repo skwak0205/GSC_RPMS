@@ -1,0 +1,28 @@
+del command 'PMCDeleteRequests';
+add command 'PMCDeleteRequests'
+	description	'DeleteRequest'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralResourcePlanTemplateUtil.jsp?FunctionMode=deleteResourceRequest'
+	alt	'emxProgramCentral.Command.ResourcePlan.DeleteRequest'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isOwnerOrCoOwner'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxProgramCentral.ResourceRequest.ConfirmDelete'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeleteRequests'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourceRequestTemplateToolBar add command PMCDeleteRequests order command PMCDeleteRequests 2;
+#channel ==>PMCResourceRequestTemplateToolBar
+add property command_PMCDeleteRequests on program eServiceSchemaVariableMapping.tcl to command 'PMCDeleteRequests';

@@ -1,0 +1,18 @@
+del command 'MsoiClosedWBSTasks';
+add command 'MsoiClosedWBSTasks'
+	description	'Closed WBS Tasks Command object specific to MS Office Integration'
+	label	'emxIEFDesignCenter.Common.ClosedWBSTasks'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxMsoiWBSTasksUtil:getCurrentUserWBSTasks&tasks=Complete&table=MsoiWBSTasksSummary'
+	alt	'emxIEFDesignCenter.Common.ClosedWBSTasks'
+	setting	'Registered Suite'		'IntegrationFramework'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiClosedWBSTasks'
+	property	'version'	value	'V6R2022x'
+;
+modify menu Msoitype_WBSTasks add command MsoiClosedWBSTasks order command MsoiClosedWBSTasks 0;
+#channel ==>Msoitype_WBSTasks
+add property command_MsoiClosedWBSTasks on program eServiceSchemaVariableMapping.tcl to command 'MsoiClosedWBSTasks';

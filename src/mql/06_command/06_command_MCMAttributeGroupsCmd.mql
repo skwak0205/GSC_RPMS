@@ -1,0 +1,24 @@
+del command 'MCMAttributeGroupsCmd';
+add command 'MCMAttributeGroupsCmd'
+	description	''
+	label	'emxMultipleClassification.Command.Label.AttributeGroups'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxMultipleClassificationClassification:getAllAttributeGroups,emxMultipleClassificationClassification:getDirectAttributeGroups,emxMultipleClassificationClassification:getInheritedAttributeGroups&programLabel=emxMultipleClassification.filter.All,emxMultipleClassification.filter.Direct,emxMultipleClassification.filter.Inherited&table=MCMAttributeGroupsCommandList&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=MCMAttributeGroupCommandActionsToolBarMenu&header=emxMultipleClassification.Common.Heading.AttributeGroups&HelpMarker=emxhelpclassattributelist&objectCompare=false&displayView=details&objectBased=false'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'MCMAttributeGroupsCmd'
+	property	'version'	value	'R422'
+;
+modify menu type_PartFamily add command MCMAttributeGroupsCmd order command MCMAttributeGroupsCmd 1;
+modify menu type_GeneralClass add command MCMAttributeGroupsCmd order command MCMAttributeGroupsCmd 1;
+modify menu type_Classification add command MCMAttributeGroupsCmd order command MCMAttributeGroupsCmd 8;
+modify menu type_DocumentFamily add command MCMAttributeGroupsCmd order command MCMAttributeGroupsCmd 1;
+#channel ==>type_PartFamilytype_GeneralClasstype_Classificationtype_DocumentFamily
+add property command_MCMAttributeGroupsCmd on program eServiceSchemaVariableMapping.tcl to command 'MCMAttributeGroupsCmd';

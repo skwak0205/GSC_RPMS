@@ -1,0 +1,25 @@
+del command 'PMCQuickCreateResourcePlan';
+add command 'PMCQuickCreateResourcePlan'
+	description	'Quick command to creaat Resource Request'
+	label	'emxProgramCentral.Common.Create'
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=createRequest'
+	alt	'emxProgramCentral.Command.CreateResourceRequest'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCommandEnabled'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCQuickCreateResourcePlan'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCQuickCreateResourcePlan on program eServiceSchemaVariableMapping.tcl to command 'PMCQuickCreateResourcePlan';

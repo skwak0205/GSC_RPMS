@@ -1,0 +1,21 @@
+del command 'ECMCAHold';
+add command 'ECMCAHold'
+	description	'Hold Change Action'
+	label	'EnterpriseChangeMgt.Command.Hold'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_HoldCA&formHeader=EnterpriseChangeMgt.Heading.HoldCA&type=type_ChangeAction&toolbar=ECMReviewAffectedItemsToolbar&HelpMarker=emxhelpchangeactionhold&mode=edit&submitAction=refreshCaller&preProcessJavaScript=preProcessForCancelandHoldCO&postProcessJPO=enoECMChangeActionUX:holdChangeAction&openerFrame=detailsDisplay&formFieldsOnly=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isCAHoldable'
+	setting	'Access Program'		'enoECMChangeAction'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPause.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCAHold'
+	property	'version'	value	'R419'
+;
+modify menu ECMCAPropertiesToolbar add command ECMCAHold order command ECMCAHold 6;
+#channel ==>ECMCAPropertiesToolbar
+add property command_ECMCAHold on program eServiceSchemaVariableMapping.tcl to command 'ECMCAHold';

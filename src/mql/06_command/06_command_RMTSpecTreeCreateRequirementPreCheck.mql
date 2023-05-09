@@ -1,0 +1,26 @@
+del command 'RMTSpecTreeCreateRequirementPreCheck';
+add command 'RMTSpecTreeCreateRequirementPreCheck'
+	description	'Pre-validation of RMTSpecTreeCreateRequirement'
+	label	'emxRequirements.ActionLink.Requirement'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=ensureSpecStructureSelection&command=RMTSpecTreeCreateRequirement'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecTreeCreateRequirementPreCheck'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeCreateNew add command RMTSpecTreeCreateRequirementPreCheck order command RMTSpecTreeCreateRequirementPreCheck 3;
+modify menu RMTSpecTreeCreateNewForChapter add command RMTSpecTreeCreateRequirementPreCheck order command RMTSpecTreeCreateRequirementPreCheck 0;
+#channel ==>RMTSpecTreeCreateNewRMTSpecTreeCreateNewForChapter
+add property command_RMTSpecTreeCreateRequirementPreCheck on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecTreeCreateRequirementPreCheck';

@@ -1,0 +1,22 @@
+del command 'RMTDisplayGraph';
+add command 'RMTDisplayGraph'
+	description	'Display SolidWorks graphset'
+	label	'emxRequirements.Label.DisplayGraph'
+	href	'${COMMON_DIR}/emxVPLMWebTree.jsp?toolbar=RMTSpecTreeToolbar&header=emxRequirements.Heading.TreeGraph'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Function'		'isGraphAvailable'
+	setting	'Access Program'		'emxRMTCommon'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTDisplayGraph'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeActionBar add command RMTDisplayGraph order command RMTDisplayGraph 0;
+#channel ==>RMTSpecTreeActionBarRMTSpecificationsGraph
+add property command_RMTDisplayGraph on program eServiceSchemaVariableMapping.tcl to command 'RMTDisplayGraph';

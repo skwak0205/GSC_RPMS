@@ -1,0 +1,16 @@
+del menu 'ECMReviewAffectedItemsActionToolbar';
+add menu 'ECMReviewAffectedItemsActionToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.ReviewAffectedItems'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMReviewAffectedItems'
+	command	'ECMReviewCAAffectedItems'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMReviewAffectedItemsActionToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMReviewAffectedItemsActionToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMReviewAffectedItemsActionToolbar';

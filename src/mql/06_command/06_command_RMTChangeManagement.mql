@@ -1,0 +1,22 @@
+del command 'RMTChangeManagement';
+add command 'RMTChangeManagement'
+	description	'For showing related CO CA and other change objects'
+	label	'emxRequirements.Lable.ChangeManagement'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=ECMEnterpriseChangeMgtPortal&header=EnterpriseChangeMgt.Label.ECMChangeCOsCAsLeagcySummaryPageHeading'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Function'		'hideECMCommand'
+	setting	'Access Program'		'emxRMTCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTChangeManagement'
+	property	'version'	value	'V6R2016'
+;
+modify menu type_Chapter add command RMTChangeManagement order command RMTChangeManagement 5;
+modify menu type_Comment add command RMTChangeManagement order command RMTChangeManagement 3;
+modify menu type_RequirementGroup add command RMTChangeManagement order command RMTChangeManagement 5;
+modify menu type_UseCase add command RMTChangeManagement order command RMTChangeManagement 2;
+#channel ==>type_Chaptertype_Commenttype_RequirementGrouptype_UseCaseRMTChangeControlRMTSpecificationsChangeControl
+add property command_RMTChangeManagement on program eServiceSchemaVariableMapping.tcl to command 'RMTChangeManagement';

@@ -1,0 +1,23 @@
+del command 'CFPEditManufacturingPlanActionLink';
+add command 'CFPEditManufacturingPlanActionLink'
+	description	'Edit Details Action Link on Properties Page for Product Line'
+	label	'DMCPlanning.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ManufacturingPlan&mode=Edit&formheader=DMCPlanning.Heading.Edit&HelpMarker=emxhelprefdocedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Licensed Product'		'ENO_CFP_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isManufacturingPlanEditable'
+	setting	'Access Program'		'ManufacturingPlan'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPEditManufacturingPlanActionLink'
+	property	'version'	value	'R418'
+;
+modify menu CFPManufacturingPlanPropertiesActionBar add command CFPEditManufacturingPlanActionLink order command CFPEditManufacturingPlanActionLink 0;
+#channel ==>CFPManufacturingPlanPropertiesActionBar
+add property command_CFPEditManufacturingPlanActionLink on program eServiceSchemaVariableMapping.tcl to command 'CFPEditManufacturingPlanActionLink';

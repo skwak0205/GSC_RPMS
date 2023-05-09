@@ -1,0 +1,230 @@
+################################################################################################
+# Created Date : 2020.05.25
+# Create by Suhwan,Jang
+# Description : OOTB Copy & Change
+################################################################################################
+# OOTB command copy by Suhwan,Jang 2020/05/25
+copy form 'type_LogicalFeature' 'type_LogicalFeature_OOTB';
+
+# field hidden by Suhwan,Jang 2020/05/25
+mod form 'type_LogicalFeature'
+    field mod name 'Primary Image'
+        add setting 'Access Expression' 'false'
+    field mod name 'DesignResponsibility'
+        add setting 'Access Expression' 'false'
+    field mod name 'Display Text'
+        add setting 'Access Expression' 'false'
+    field mod name 'PartFamily'
+        add setting 'Access Expression' 'false'
+    field mod name 'Leaf Level'
+        add setting 'Access Expression' 'false'
+    field mod name 'Selection Type'
+        add setting 'Access Expression' 'false'
+    field mod name 'SectionSeparator4'
+        add setting 'Access Expression' 'false'
+    field mod name 'Classification Path'
+        add setting 'Access Expression' 'false'
+    field mod name 'AttributeGroupCollection'
+        add setting 'Access Expression' 'false'
+    field mod name 'Higher Revision Exists'
+        add setting 'Access Expression' 'false'
+    field mod name 'Active EC'
+        add setting 'Access Expression' 'false'
+;
+
+# add field(Generator, Propulsion, Diesel, DF, Gas, Project PFG, Change Reason, Functional Dept, Project BOM Manager) by Suhwan,Jang 2020/05/19
+mod form 'type_LogicalFeature'
+    field
+        name 'emdApplication'
+        label 'emxConfiguration.Label.emdApplication'
+        businessobject  ''
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'programHTMLOutput'
+        setting 'program' 'emdFTRCommonUIUtil'
+        setting 'function' 'showBooleanCheckboxFormProgram'
+        setting 'Update Program' 'emdFTRCommonUIUtil'
+        setting 'Update Function' 'updateBooleanCheckboxFormProgram'
+        setting 'emdBooleanAttributes' 'emdUseGenerator,emdUsePropulsion'
+        setting 'Group Name' 'ROW1'
+    field
+        name 'emdFuelType'
+        label 'emxConfiguration.Label.emdFuelType'
+        businessobject  ''
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'programHTMLOutput'
+        setting 'program' 'emdFTRCommonUIUtil'
+        setting 'function' 'showBooleanCheckboxFormProgram'
+        setting 'Update Program' 'emdFTRCommonUIUtil'
+        setting 'Update Function' 'updateBooleanCheckboxFormProgram'
+        setting 'emdBooleanAttributes' 'emdFuelTypeDiesel,emdFuelTypeDF,emdFuelTypeGas'
+        setting 'Group Name' 'ROW2'
+    field
+        name 'emdProjectPFG'
+        label 'emxConfiguration.Label.emdProjectPFG'
+        businessobject  ''
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'programHTMLOutput'
+        setting 'program' 'emdFTRCommonUIUtil'
+        setting 'function' 'showBooleanCheckboxFormProgram'
+        setting 'Update Program' 'emdFTRCommonUIUtil'
+        setting 'Update Function' 'updateBooleanCheckboxFormProgram'
+        setting 'emdBooleanAttributes' 'emdProjectPFG'
+        setting 'emdBooleanIsHideLabel' 'true'
+        setting 'Group Name' 'ROW3'
+    field
+        name 'emdFunctionalDept'
+        label 'emxConfiguration.Label.FunctionalDept'
+        businessobject  '$<attribute[emdFunctionalDept]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Input Type' 'combobox'
+        setting 'Admin Type' 'attribute_emdFunctionalDept'
+        setting 'Field Type' 'attribute'
+        setting 'Group Name' 'ROW4'
+    field
+        name 'emdShipEngine'
+        label 'emxConfiguration.Label.emdShipEngine'
+        businessobject  '$<attribute[emdShipEngine]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'attribute'
+        setting 'Input Type' 'combobox'
+        setting 'Admin Type' 'attribute_emdShipEngine'
+        setting 'Group Name' 'ROW5'
+    field
+        name 'emdProjectBOMManager'
+        label 'emxConfiguration.Label.emdProjectBOMManager'
+        businessobject  '$<attribute[emdProjectBOMManager]>'
+        alt ''
+        range '${COMMON_DIR}/emxFullSearch.jsp?type=PERSON_CHOOSER&table=APPMemberListPeopleSearchList&selection=single&showInitialResults=false'
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'attribute'
+        setting 'Admin Type' 'attribute_emdProjectBOMManager'
+        setting 'Popup Modal' 'true'
+        setting 'Window Height' '500'
+        setting 'Window Width' '700'
+        setting 'format' 'user'
+;
+
+# change field title by Suhwan,Jang 2020/05/25
+mod form 'type_LogicalFeature'
+    field mod name 'Name'
+        label 'emxConfiguration.Label.PFGCode'
+        add setting 'Validate' 'emdCheckRequired'
+        add setting 'Editable' 'false'
+        add setting 'Group Name' 'ROW1'
+        remove setting 'Vertical Group Name'
+    field mod name 'Display Name'
+        label 'emxConfiguration.Label.PFGName'
+        add setting 'Validate' 'emdPFGNameValidation'
+        add setting 'Field Size' '45'
+        add setting 'Group Name' 'ROW2'
+        remove setting 'Vertical Group Name'
+    field mod name 'Revision'
+        add setting 'Group Name' 'ROW3'
+        remove setting 'Vertical Group Name'
+    field mod name 'Description'
+        label 'emxConfiguration.Label.ChangeReason'
+    field mod name 'Type'
+        add setting 'Editable' 'false'
+        add setting 'Group Name' 'ROW4'
+        remove setting 'Vertical Group Name'
+    field mod name 'Owner'
+        add setting 'Editable' 'false'
+        add setting 'Group Name' 'ROW5'
+        remove setting 'Vertical Group Name'
+    field mod name 'Policy'
+        remove setting 'Group Name'
+        remove setting 'Vertical Group Name'
+;
+
+# change order by Suhwan,Jang 2020/05/26
+mod form 'type_LogicalFeature'
+    field mod name 'BasicsHeader1'
+        order 1
+    field mod name 'Name'
+        order 2
+    field mod name 'emdApplication'
+        order 3
+    field mod name 'Display Name'
+        order 4
+    field mod name 'emdFuelType'
+        order 5
+    field mod name 'Revision'
+        order 6
+    field mod name 'emdProjectPFG'
+        order 7
+    field mod name 'Type'
+        order 8
+    field mod name 'emdFunctionalDept'
+        order 9
+    field mod name 'emdShipEngine'
+        order 10
+    field mod name 'Owner'
+        order 11
+    field mod name 'Policy'
+        order 12
+;
+
+# hidden emdProjectBOMManager by Suhwan,Jang 2020/05/26
+mod form 'type_LogicalFeature'
+    field mod name 'emdProjectBOMManager'
+        add setting 'Access Expression' 'false'
+;
+
+
+
+# 부자재 속성 추가 by MinSung,Kim, 2020/12/14
+
+mod form 'type_LogicalFeature'
+    field mod name 'emdProjectPFG'
+        add setting 'Group Name' 'ROW3_1'
+;
+mod form 'type_LogicalFeature'
+    field
+        name 'emdSubMaterial'
+        label 'emxConfiguration.Attribute.emdSubMaterial'
+        businessobject  ''
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'programHTMLOutput'
+        setting 'program' 'emdFTRCommonUIUtil'
+        setting 'function' 'showBooleanCheckboxFormProgram'
+        setting 'Update Program' 'emdFTRCommonUIUtil'
+        setting 'Update Function' 'updateBooleanCheckboxFormProgram'
+        setting 'emdBooleanAttributes' 'emdSubMaterial'
+        setting 'emdBooleanIsHideLabel' 'true'
+        setting 'Group Name' 'ROW3_1'
+;
+mod form 'type_LogicalFeature' field mod name 'emdSubMaterial' order '8';
+mod form 'type_LogicalFeature' field delete name 'Revision';

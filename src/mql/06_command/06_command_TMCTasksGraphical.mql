@@ -1,0 +1,18 @@
+del command 'TMCTasksGraphical';
+add command 'TMCTasksGraphical'
+	description	'Tasks (Graphical) Command Object'
+	label	'emxFramework.Command.TasksGraphical'
+	href	'${SUITE_DIR}/emxTeamRouteWorkflowFS.jsp'
+	alt	'emxFramework.Command.Alt.TasksGraphical'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallWorkflow.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCTasksGraphical'
+	property	'version'	value	'10-0-0-0'
+;
+modify menu TMCtype_Route add command TMCTasksGraphical order command TMCTasksGraphical 0;
+#channel ==>TMCtype_Route
+add property command_TMCTasksGraphical on program eServiceSchemaVariableMapping.tcl to command 'TMCTasksGraphical';

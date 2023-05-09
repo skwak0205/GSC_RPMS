@@ -1,0 +1,10 @@
+del menu 'VPLMSyncChgECOActionAssociatedObjectToolBar';
+add menu 'VPLMSyncChgECOActionAssociatedObjectToolBar'
+	description	'VPM Associated Objects'
+	label	'emxVPMCentral.Change.Menu.ECOActionAssociatedObjectToolBar.Title'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'VPMCentral'
+	command	'AEFSeparator'
+;
+add property menu_VPLMSyncChgECOActionAssociatedObjectToolBar on program eServiceSchemaVariableMapping.tcl to menu 'VPLMSyncChgECOActionAssociatedObjectToolBar';

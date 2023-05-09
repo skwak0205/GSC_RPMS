@@ -1,0 +1,27 @@
+del command 'APPDownloadPackage';
+add command 'APPDownloadPackage'
+	description	'Download Package'
+	label	'emxFramework.Command.DownloadPackage'
+	href	'${COMPONENT_DIR}/emxComponentsPackageReportDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDownload.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Supplier Representative'
+	user	'Manufacturing Engineer'
+	user	'Supplier Engineer'
+	user	'Supplier Quality Engineer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDownloadPackage'
+	property	'version'	value	'R422'
+;
+modify menu ENCBOMToolBar add command APPDownloadPackage order command APPDownloadPackage 0;
+#channel ==>ENCBOMToolBar
+add property command_APPDownloadPackage on program eServiceSchemaVariableMapping.tcl to command 'APPDownloadPackage';

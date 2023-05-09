@@ -1,0 +1,10 @@
+del channel 'RoleXPChannel';
+add channel 'RoleXPChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	command 	'APPXPRole','APPXPCreateRole'
+;
+#portal ==>APPXPRoleAdminPortal
+add property channel_RoleXPChannel on program eServiceSchemaVariableMapping.tcl to channel 'RoleXPChannel';

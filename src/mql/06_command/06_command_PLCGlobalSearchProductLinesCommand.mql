@@ -1,0 +1,18 @@
+del command 'PLCGlobalSearchProductLinesCommand';
+add command 'PLCGlobalSearchProductLinesCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindProductLines'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_ProductLine&table=PLCSearchProductLinesTable&selection=multiple&showSavedQuery=True&searchCollectionEnabled=True&HelpMarker=emxhelpfullsearch&searchmode=globalsearch&toolbar=PLCFullSearchPLCToolbar'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCGlobalSearchProductLinesCommand'
+	property	'version'	value	'R418'
+;
+modify menu PLCSearch add command PLCGlobalSearchProductLinesCommand order command PLCGlobalSearchProductLinesCommand 1;
+#channel ==>PLCSearch
+add property command_PLCGlobalSearchProductLinesCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCGlobalSearchProductLinesCommand';

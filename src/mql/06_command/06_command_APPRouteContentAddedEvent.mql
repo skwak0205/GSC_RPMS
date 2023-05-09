@@ -1,0 +1,17 @@
+del command 'APPRouteContentAddedEvent';
+add command 'APPRouteContentAddedEvent'
+	description	'Event holder for Route Content Add notifications'
+	label	'emxComponents.Event.Content_Added'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Content Added'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteContentAddedEvent'
+	property	'version'	value	'R212'
+;
+modify menu APPRouteSubscriptionEvents add command APPRouteContentAddedEvent order command APPRouteContentAddedEvent 2;
+#channel ==>APPRouteSubscriptionEvents
+add property command_APPRouteContentAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPRouteContentAddedEvent';

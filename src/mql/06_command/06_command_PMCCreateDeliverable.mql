@@ -1,0 +1,22 @@
+del command 'PMCCreateDeliverable';
+add command 'PMCCreateDeliverable'
+	description	'Create Deliverable Command Object'
+	label	'emxProgramCentral.Common.CreateDeliverable'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_DeliverableIntent&typeChooser=false&nameField=keyin&form=PMCDeliverableCreateForm&header=emxProgramCentral.Common.CreateDeliverable&HelpMarker=emxhelpprogramcreatedialog&mode=create&findMxLink=false&submitAction=refreshCaller&postProcessJPO=emxDeliverable:connectDeliverable'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENODEPL_TP'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateDeliverable'
+	property	'version'	value	'R422'
+;
+modify menu PMCDeliverableActions add command PMCCreateDeliverable order command PMCCreateDeliverable 1;
+#channel ==>PMCDeliverableActions
+add property command_PMCCreateDeliverable on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateDeliverable';

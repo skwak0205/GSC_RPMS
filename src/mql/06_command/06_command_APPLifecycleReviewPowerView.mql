@@ -1,0 +1,17 @@
+del command 'APPLifecycleReviewPowerView';
+add command 'APPLifecycleReviewPowerView'
+	description	'Power View of Lifecycle/Review Node for Object'
+	label	'emxComponents.ObjectPortal.LifecycleReviewPowerView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPLifecycleReviewPortal&header=emxComponents.ObjectPortal.LifecycleReviewPowerViewHeader&HelpMarker=emxhelplifecylepv'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallObjectFolder.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLifecycleReviewPowerView'
+	property	'version'	value	'R420.HF2'
+;
+modify menu type_Part add command APPLifecycleReviewPowerView order command APPLifecycleReviewPowerView 1;
+#channel ==>type_Part
+add property command_APPLifecycleReviewPowerView on program eServiceSchemaVariableMapping.tcl to command 'APPLifecycleReviewPowerView';

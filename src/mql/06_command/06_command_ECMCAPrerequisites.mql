@@ -1,0 +1,20 @@
+del command 'ECMCAPrerequisites';
+add command 'ECMCAPrerequisites'
+	description	'List the connected CAs with Prerequisite relation'
+	label	'EnterpriseChangeMgt.Command.RelatedCAs'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=ECMRelatedCA'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeAction>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'isOldDependencyActivated'
+	setting	'Access Program'		'enoECMChangeUX'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCAPrerequisites'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMChangePropertyChannel1
+add property command_ECMCAPrerequisites on program eServiceSchemaVariableMapping.tcl to command 'ECMCAPrerequisites';

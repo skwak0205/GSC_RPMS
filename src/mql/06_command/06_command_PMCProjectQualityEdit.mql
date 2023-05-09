@@ -1,0 +1,20 @@
+del command 'PMCProjectQualityEdit';
+add command 'PMCProjectQualityEdit'
+	description	''
+	label	'emxProgramCentral.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCQualityForm&mode=edit&formHeader=emxProgramCentral.Common.QualityEditHeading&HelpMarker=emxhelpqualityeditdialog&findMxLink=false&submitAction=refreshCaller'
+	alt	'emxProgramCentral.Button.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Icon'		'images/iconActionEdit.gif'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectQualityEdit'
+	property	'version'	value	'R216'
+;
+modify menu PMCProjectQualityEditToolBar add command PMCProjectQualityEdit order command PMCProjectQualityEdit 0;
+#channel ==>PMCProjectQualityEditToolBar
+add property command_PMCProjectQualityEdit on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectQualityEdit';

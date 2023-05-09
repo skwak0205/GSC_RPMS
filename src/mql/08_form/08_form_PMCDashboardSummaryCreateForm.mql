@@ -1,0 +1,42 @@
+del form 'PMCDashboardSummaryCreateForm';
+add form 'PMCDashboardSummaryCreateForm' web
+field #1
+	name	'DashboardCreateName'
+	label	'emxProgramCentral.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'Validate'		'isBadNameChars'
+	setting	'Editable'		'true'
+	setting	'Field Type'		'textbox'
+field #2
+	name	'AddProject'
+	label	'emxProgramCentral.Common.Dasboard.AddProjects'
+	range	'${COMMON_DIR}/emxFullSearch.jsp?table=PMCGenericProjectSpaceSearchResults&field=TYPES=type_ProjectSpace&selection=multiple&excludeOIDprogram=emxWhatIf:excludeExperimentProject'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'Validate'		'validateProjectName'
+	setting	'Field Type'		'textbox'
+	setting	'Show Clear Button'		'true'
+field #3
+	name	'Description'
+	label	'emxProgramCentral.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Validate'		'isBadNameChars'
+	setting	'Editable'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDashboardSummaryCreateForm'
+	property	'version'	value	'R419'
+;
+add property form_PMCDashboardSummaryCreateForm on program eServiceSchemaVariableMapping.tcl to form 'PMCDashboardSummaryCreateForm';

@@ -1,0 +1,19 @@
+del menu 'PMCtype_ProjectVault';
+add menu 'PMCtype_ProjectVault'
+	description	''
+	label	'$<attribute[attribute_Title].value>'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCtype_ProjectVault'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallFolder.gif'
+	setting	'Header Lifecycle'		'hide'
+	command	'APPDiscussionCommand'
+	command	'PMCProperties'
+	command	'PMCWorkspaceFolderDynamicCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCtype_ProjectVault'
+	property 'version'	value	'R424.HF1'
+;
+add property menu_PMCtype_ProjectVault on program eServiceSchemaVariableMapping.tcl to menu 'PMCtype_ProjectVault';

@@ -1,0 +1,28 @@
+del command 'PMCDeliverableDropZone';
+add command 'PMCDeliverableDropZone'
+	description	'Create a Drop Zone for files and Proxy'
+	label	''
+	href	'${SUITE_DIR}/emxProjectManagementDragAndDrop.jsp?mode=deliverable'
+	alt	'emxProgramCentral.Task.CreateDropZone'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'( ((type.kindOf[$<type_BusinessGoal>]==false) || (current.name != Complete)) && current.access[fromconnect]==true )'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'false'
+	setting	'Access Function'		'hasAccessToPMCContentSummaryToolBarActions'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.png'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeliverableDropZone'
+	property	'version'	value	'R424.HF5'
+;
+modify menu PMCDeliverableSummaryToolBar add command PMCDeliverableDropZone order command PMCDeliverableDropZone 0;
+#channel ==>PMCDeliverableSummaryToolBar
+add property command_PMCDeliverableDropZone on program eServiceSchemaVariableMapping.tcl to command 'PMCDeliverableDropZone';

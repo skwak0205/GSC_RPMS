@@ -1,0 +1,23 @@
+del command 'ECMMoveToChange';
+add command 'ECMMoveToChange'
+	description	'Move To Change'
+	label	'EnterpriseChangeMgt.Command.MoveToChange'
+	href	'${SUITE_DIR}/ECMCandidateItemIntermediate.jsp?mode=MoveToChange'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Propose].value || current==policy.property[state_Prepare].value || current==policy.property[state_Create].value || current==policy.property[state_Evaluate].value) && (owner==context.user) && !($<interface[interface_ChangeOnHold]=="TRUE">)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'false'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/I_ENOMoveToChangeItem.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMoveToChange'
+	property	'version'	value	'R417'
+;
+modify menu ECMCandidateItemsListToolBar add command ECMMoveToChange order command ECMMoveToChange 4;
+#channel ==>ECMCandidateItemsListToolBar
+add property command_ECMMoveToChange on program eServiceSchemaVariableMapping.tcl to command 'ECMMoveToChange';

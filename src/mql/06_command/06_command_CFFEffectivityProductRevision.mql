@@ -1,0 +1,27 @@
+del command 'CFFEffectivityProductRevision';
+add command 'CFFEffectivityProductRevision'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'categoryType'		'series'
+	setting	'sequenceSelectable'		'evaluate[revindex + 1]'
+	setting	'Format'		'structure'
+	setting	'allowRange'		'true'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'expandProgram'		'emxModel:getEffProdDerivationChain'
+	setting	'searchType'		'type_Model'
+	setting	'seriesType'		'Products'
+	setting	'clearSelection'		'true'
+	setting	'Label'		'Effectivity.EffectivityType.ProductRevision'
+	setting	'keyword'		'PR'
+	setting	'table'		'CFFDefinitionTable'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFEffectivityProductRevision'
+	property	'version'	value	'V6R2013'
+;
+modify menu CFFEffectivity add command CFFEffectivityProductRevision order command CFFEffectivityProductRevision 0;
+#channel ==>CFFEffectivity
+add property command_CFFEffectivityProductRevision on program eServiceSchemaVariableMapping.tcl to command 'CFFEffectivityProductRevision';

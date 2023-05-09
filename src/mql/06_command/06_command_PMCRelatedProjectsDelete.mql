@@ -1,0 +1,27 @@
+del command 'PMCRelatedProjectsDelete';
+add command 'PMCRelatedProjectsDelete'
+	description	'Command for Delete Related Projects'
+	label	'emxProgramCentral.Common.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=deleteRelatedProject'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToCommand'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRelatedProjectsDelete'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCRelatedProjectsToolBarActions add command PMCRelatedProjectsDelete order command PMCRelatedProjectsDelete 0;
+#channel ==>PMCRelatedProjectsToolBarActions
+add property command_PMCRelatedProjectsDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCRelatedProjectsDelete';

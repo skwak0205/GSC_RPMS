@@ -1,0 +1,30 @@
+del command 'IssueCloseActionLink';
+add command 'IssueCloseActionLink'
+	description	'Issue CloseCommand Object'
+	label	'emxComponents.ActionLink.CloseIssue'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPIssueCloseForm&mode=edit&formHeader=emxComponents.Heading.IssueClose&HelpMarker=emxhelpissueclose&postProcessJPO=emxCommonIssue:closeIssuePostProcess&submitAction=refreshCaller&findMxLink=false'
+	alt	'emxComponents.ActionLink.Close'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[promote] == true)'
+	setting	'State'		'state_Closed'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'bLinkDisplay'
+	setting	'Access Program'		'emxCommonIssue'
+	setting	'Image'		'${COMMON_DIR}/images/I_FitEndPoint.png'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	user	'Issue Manager'
+	user	'Analyst'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueCloseActionLink'
+	property	'version'	value	'R422'
+;
+modify menu IssuePropertiesToolBarActions add command IssueCloseActionLink order command IssueCloseActionLink 2;
+#channel ==>IssuePropertiesToolBarActions
+add property command_IssueCloseActionLink on program eServiceSchemaVariableMapping.tcl to command 'IssueCloseActionLink';

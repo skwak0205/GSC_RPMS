@@ -1,0 +1,21 @@
+del command 'DCSubscriptionsRemoveSelectedActionLink';
+add command 'DCSubscriptionsRemoveSelectedActionLink'
+	description	'Remove Selected Action Link'
+	label	'emxDocumentCentral.ActionBarCmd.RemoveSelected'
+	href	'${SUITE_DIR}/emxDocumentCentralStart.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxDocumentCentral.Message.RemoveSelected'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCSubscriptionsRemoveSelectedActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCSubscriptionsBottomActionbar add command DCSubscriptionsRemoveSelectedActionLink order command DCSubscriptionsRemoveSelectedActionLink 0;
+#channel ==>DCSubscriptionsBottomActionbar
+add property command_DCSubscriptionsRemoveSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCSubscriptionsRemoveSelectedActionLink';

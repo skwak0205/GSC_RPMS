@@ -1,0 +1,22 @@
+del command 'FTRGBOMDVLimitCustomFilterCommand';
+add command 'FTRGBOMDVLimitCustomFilterCommand'
+	description	''
+	label	'emxFramework.Basic.Limit'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Action Label'		'Limit'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Default'		'*'
+	setting	'Width'		'20'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRGBOMDVLimitCustomFilterCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRGBOMTableDVChooserToolbar add command FTRGBOMDVLimitCustomFilterCommand order command FTRGBOMDVLimitCustomFilterCommand 3;
+#channel ==>FTRGBOMTableDVChooserToolbar
+add property command_FTRGBOMDVLimitCustomFilterCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRGBOMDVLimitCustomFilterCommand';

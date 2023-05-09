@@ -1,0 +1,32 @@
+del command 'PLCMassAssignDesignResponsibility';
+add command 'PLCMassAssignDesignResponsibility'
+	description	''
+	label	'emxProduct.ActionLink.MassAssignRDO'
+	href	'${ROOT_DIR}/productline/SearchUtil.jsp?mode=RDO'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Confirm Message'		'emxProduct.Alert.MassAssignRDO'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCMassAssignDesignResponsibility'
+	property	'version'	value	'R215'
+;
+modify menu FTRProductVariantListToolBarActions add command PLCMassAssignDesignResponsibility order command PLCMassAssignDesignResponsibility 6;
+modify menu FTRSplitViewActionsToolBar add command PLCMassAssignDesignResponsibility order command PLCMassAssignDesignResponsibility 0;
+modify menu FTRManufacturingFeaturesToolbarActions add command PLCMassAssignDesignResponsibility order command PLCMassAssignDesignResponsibility 4;
+modify menu FTRMyDeskLogicalFeatureToolbarActions add command PLCMassAssignDesignResponsibility order command PLCMassAssignDesignResponsibility 0;
+modify menu FTRMyDeskManufacturingFeatureToolbarActionsMenu add command PLCMassAssignDesignResponsibility order command PLCMassAssignDesignResponsibility 3;
+modify menu FTRMyDeskConfigurationFeaturesActions add command PLCMassAssignDesignResponsibility order command PLCMassAssignDesignResponsibility 4;
+modify menu FTRSplitViewActionsMenuToolBar add command PLCMassAssignDesignResponsibility order command PLCMassAssignDesignResponsibility 0;
+modify menu FTRLFContextLogicalFeatureToolbar add command PLCMassAssignDesignResponsibility order command PLCMassAssignDesignResponsibility 4;
+modify menu FTRLFContextManufacturingFeaturesToolbarActions add command PLCMassAssignDesignResponsibility order command PLCMassAssignDesignResponsibility 4;
+modify menu FTRMFContextManufacturingFeaturesToolbarActions add command PLCMassAssignDesignResponsibility order command PLCMassAssignDesignResponsibility 4;
+#channel ==>FTRProductVariantListToolBarActionsFTRSplitViewActionsToolBarFTRManufacturingFeaturesToolbarActionsFTRMyDeskLogicalFeatureToolbarActionsFTRMyDeskManufacturingFeatureToolbarActionsMenuFTRMyDeskConfigurationFeaturesActionsFTRSplitViewActionsMenuToolBarFTRLFContextLogicalFeatureToolbarFTRLFContextManufacturingFeaturesToolbarActionsFTRMFContextManufacturingFeaturesToolbarActions
+add property command_PLCMassAssignDesignResponsibility on program eServiceSchemaVariableMapping.tcl to command 'PLCMassAssignDesignResponsibility';

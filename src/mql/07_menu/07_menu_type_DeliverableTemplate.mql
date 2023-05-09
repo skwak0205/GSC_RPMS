@@ -1,0 +1,16 @@
+del menu 'type_DeliverableTemplate';
+add menu 'type_DeliverableTemplate'
+	description	''
+	label	''
+	href	'${COMMON_DIR}/emxForm.jsp?mode=view&form=PMCDeliverableIntentViewForm&formHeader=emxProgramCentral.Common.FormBasics&PrinterFriendly=true&findMxLink=false&Export=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'AEFLifecycle'
+	command	'DomainAccessTreeCategory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_DeliverableTemplate'
+	property 'version'	value	'R216'
+;
+add property menu_type_DeliverableTemplate on program eServiceSchemaVariableMapping.tcl to menu 'type_DeliverableTemplate';

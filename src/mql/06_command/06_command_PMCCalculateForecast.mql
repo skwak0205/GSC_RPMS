@@ -1,0 +1,23 @@
+del command 'PMCCalculateForecast';
+add command 'PMCCalculateForecast'
+	description	''
+	label	'emxProgramCentral.Schedule.CalculateForecast'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=calculateForecast'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify]==TRUE'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToPMCCalculateForecastCommand'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Image'		'${COMMON_DIR}/images/I_CalculateForecast_32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCalculateForecast'
+	property	'version'	value	'R422.HF4'
+;
+modify menu PMCWBSToolBar add command PMCCalculateForecast order command PMCCalculateForecast 16;
+#channel ==>PMCWBSToolBar
+add property command_PMCCalculateForecast on program eServiceSchemaVariableMapping.tcl to command 'PMCCalculateForecast';

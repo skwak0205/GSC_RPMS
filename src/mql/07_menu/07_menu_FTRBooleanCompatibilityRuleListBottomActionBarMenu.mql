@@ -1,0 +1,16 @@
+del menu 'FTRBooleanCompatibilityRuleListBottomActionBarMenu';
+add menu 'FTRBooleanCompatibilityRuleListBottomActionBarMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRRemoveBooleanCompatibilityRuleActionCommandLink'
+	command	'FTRDeleteBooleanCompatibilityRuleActionCommandLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRBooleanCompatibilityRuleListBottomActionBarMenu'
+	property 'version'	value	'R212'
+;
+add property menu_FTRBooleanCompatibilityRuleListBottomActionBarMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRBooleanCompatibilityRuleListBottomActionBarMenu';

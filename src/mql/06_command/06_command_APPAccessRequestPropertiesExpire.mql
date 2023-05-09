@@ -1,0 +1,20 @@
+del command 'APPAccessRequestPropertiesExpire';
+add command 'APPAccessRequestPropertiesExpire'
+	description	'Command Object to promote Access Request from Approved state to Expired state'
+	label	'emxComponents.Command.ExpireAccessRequest'
+	href	'${SUITE_DIR}/emxCommonAccessRequestProcess.jsp?mode=Expired&fromPropertiesPage=true'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'( current==Approved)'
+	user	'VPLMViewer'
+	user	'Request Reviewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAccessRequestPropertiesExpire'
+	property	'version'	value	'R216'
+;
+modify menu APPAccessRequestActionsToolbar add command APPAccessRequestPropertiesExpire order command APPAccessRequestPropertiesExpire 6;
+#channel ==>APPAccessRequestActionsToolbar
+add property command_APPAccessRequestPropertiesExpire on program eServiceSchemaVariableMapping.tcl to command 'APPAccessRequestPropertiesExpire';

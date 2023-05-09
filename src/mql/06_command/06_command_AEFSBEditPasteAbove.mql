@@ -1,0 +1,19 @@
+del command 'AEFSBEditPasteAbove';
+add command 'AEFSBEditPasteAbove'
+	description	''
+	label	'emxFramework.FreezePane.SBEditActions.PasteAbove'
+	href	'javascript:pasteAbove()'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBEditPasteAbove'
+	property	'version'	value	'R422'
+;
+modify menu AEFSBEditActions add command AEFSBEditPasteAbove order command AEFSBEditPasteAbove 6;
+#channel ==>AEFSBEditActions
+add property command_AEFSBEditPasteAbove on program eServiceSchemaVariableMapping.tcl to command 'AEFSBEditPasteAbove';

@@ -1,0 +1,21 @@
+del command 'ECMChangeCollaberation';
+add command 'ECMChangeCollaberation'
+	description	'Change Collaberation commands'
+	label	'EnterpriseChangeMgt.Command.ChangeCollaberation'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=ECMChangeCollaberationPortal&showPageHeader=true&header=EnterpriseChangeMgt.Heading.ChangeCollaberation'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeCollaberation'
+	property	'version'	value	'R216'
+;
+modify menu type_ChangeOrder add command ECMChangeCollaberation order command ECMChangeCollaberation 9;
+modify menu type_ChangeAction add command ECMChangeCollaberation order command ECMChangeCollaberation 2;
+modify menu type_ChangeRequest add command ECMChangeCollaberation order command ECMChangeCollaberation 10;
+#channel ==>type_ChangeOrdertype_ChangeActiontype_ChangeRequest
+add property command_ECMChangeCollaberation on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeCollaberation';

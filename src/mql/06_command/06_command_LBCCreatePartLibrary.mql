@@ -1,0 +1,22 @@
+del command 'LBCCreatePartLibrary';
+add command 'LBCCreatePartLibrary'
+	description	'Create New Part Library'
+	label	'emxDocumentCentral.Common.CreatePartLibrary'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_PartLibrary&nameField=autoName&form=type_CreateLibrary&createJPO=emxLibraryCentralCommon:createLBCObject&submitAction=refreshCaller&header=emxDocumentCentral.Common.CreateNewPartLibrary&HelpMarker=emxhelpcreatelibrarysimple&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCreatePartLibrary'
+	property	'version'	value	'R423.HF4'
+;
+modify menu LBCCreateLibraryMenu add command LBCCreatePartLibrary order command LBCCreatePartLibrary 1;
+#channel ==>LBCCreateLibraryMenu
+add property command_LBCCreatePartLibrary on program eServiceSchemaVariableMapping.tcl to command 'LBCCreatePartLibrary';

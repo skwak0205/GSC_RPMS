@@ -1,0 +1,15 @@
+{
+  "CEV.optionsChecker.rdfServerURL.error": "必須定義 RDF 伺服器 URL！",
+  "CEV.optionsChecker.resourceURI.error": "必須定義資源 URI！",
+  "CEV.optionsChecker.constraintsPosition.error": "限制快顯視窗的位置應為「上」、「右」、「下」或「左」",
+  "CEV.optionsChecker.buttons.types.error": "按鈕「{label}」的類型應為下列其中一項：「主要」、「預設」、「資訊」、「成功」、「警告」、「錯誤」",
+  "CEV.optionsChecker.buttons.specificActions.error": "「{key}」特性的特定動作應該是一項功能！",
+  "CEV.optionsChecker.search.error": "預期是一項功能，才能搜尋「{key}」特性的值！",
+  "CEV.title": "特性編輯器",
+  "CEV.defaultMessage": "擷取所有特性時發生錯誤...",
+  "CEV.userCharacteristics.title": "使用者特性",
+  "CEV.characteristics.title": "特性",
+  "CEV.okButton.content": "確定",
+  "CEV.cancelButton.content": "取消",
+  "CEV.cancelButton.error": "按一下「取消」按鈕時發生錯誤..."
+}

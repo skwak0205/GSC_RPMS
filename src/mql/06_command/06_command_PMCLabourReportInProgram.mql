@@ -1,0 +1,24 @@
+del command 'PMCLabourReportInProgram';
+add command 'PMCLabourReportInProgram'
+	description	'Labour Report In Program'
+	label	'emxProgramCentral.WeeklyTimeSheetReports.PMCLaborReport'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProjectLaborReport&formHeader=emxProgramCentral.WeeklyTimeSheet.PMCLaborReportOptions&mode=edit&submitAction=doNothing&preProcessURL=../programcentral/emxProgramCentralUtil.jsp?mode=hasAccessProjectLaborReport&postProcessURL=../programcentral/emxProgramCentralUtil.jsp?mode=ProjectLaborReport&SuiteDirectory=programcentral'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_LaborReport32.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCLabourReportInProgram'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProgramProjectSummaryToolBarActions add command PMCLabourReportInProgram order command PMCLabourReportInProgram 0;
+#channel ==>PMCProgramProjectSummaryToolBarActions
+add property command_PMCLabourReportInProgram on program eServiceSchemaVariableMapping.tcl to command 'PMCLabourReportInProgram';

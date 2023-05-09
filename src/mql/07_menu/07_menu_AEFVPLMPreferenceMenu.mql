@@ -1,0 +1,10 @@
+del menu 'AEFVPLMPreferenceMenu';
+add menu 'AEFVPLMPreferenceMenu'
+	description	'User preferences for ENOVIA VPM Multi-Discipline Collaboration Platform'
+	label	'emxVPMCentral.Synchronization.Preferences.Menu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'VPMCentral'
+	command	'AEFVPLMContextPreference'
+;
+add property menu_AEFVPLMPreferenceMenu on program eServiceSchemaVariableMapping.tcl to menu 'AEFVPLMPreferenceMenu';

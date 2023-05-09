@@ -1,0 +1,23 @@
+del command 'APPProductLicensing';
+add command 'APPProductLicensing'
+	description	''
+	label	'emxComponents.Command.Licensing.AssignLicenseByProduct'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPProductLicense&expandProgramMenu=APPProductLicensingProgramMenu&header=emxComponents.Common.Licensing.AssignLicenseByProduct&toolbar=APPProductLicenseToolbar&selection=multiple&expandLevelFilter=false&showClipboard=false&objectCompare=false&customize=false&HelpMarker=emxhelpassignlicensebyproduct&sortColumnName=none&displayView=details'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'false'
+	setting	'Popup Modal'		'true'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPProductLicensing'
+	property	'version'	value	'R424.HF1'
+;
+modify menu APPAdministration add command APPProductLicensing order command APPProductLicensing 0;
+#channel ==>APPAdministration
+add property command_APPProductLicensing on program eServiceSchemaVariableMapping.tcl to command 'APPProductLicensing';

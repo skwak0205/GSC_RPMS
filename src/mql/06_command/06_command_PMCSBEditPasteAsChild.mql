@@ -1,0 +1,20 @@
+del command 'PMCSBEditPasteAsChild';
+add command 'PMCSBEditPasteAsChild'
+	description	'Command to paste task as child'
+	label	'emxFramework.FreezePane.SBEditActions.PasteAsChild'
+	href	'javascript:pasteTaskBelow()'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionInsertRowAfter.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSBEditPasteAsChild'
+	property	'version'	value	'R422'
+;
+modify menu PMCSBEditActions add command PMCSBEditPasteAsChild order command PMCSBEditPasteAsChild 4;
+#channel ==>PMCSBEditActions
+add property command_PMCSBEditPasteAsChild on program eServiceSchemaVariableMapping.tcl to command 'PMCSBEditPasteAsChild';

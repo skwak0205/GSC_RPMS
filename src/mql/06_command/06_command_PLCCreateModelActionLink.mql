@@ -1,0 +1,24 @@
+del command 'PLCCreateModelActionLink';
+add command 'PLCCreateModelActionLink'
+	description	'This will create a new Model under context'
+	label	'emxProduct.ActionLink.Create'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Model&typeChooser=true&showApply=true&autoNameChecked=false&nameField=both&form=type_CreateModel&header=emxProduct.Heading.ModelCreate&HelpMarker=emxhelpmodelcreate&submitAction=refreshCaller&postProcessURL=../productline/ModelCreatePostProcess.jsp&postProcessJPO=emxModel:copyModelAttributesToProduct&policy=policy_Model'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkProductLineState'
+	setting	'Access Program'		'emxModel'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateModelActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductLineModelTopActionBar add command PLCCreateModelActionLink order command PLCCreateModelActionLink 0;
+#channel ==>PLCProductLineModelTopActionBar
+add property command_PLCCreateModelActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateModelActionLink';

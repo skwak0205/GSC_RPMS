@@ -1,0 +1,22 @@
+del command 'APPRequestedAssigneesActionLink';
+add command 'APPRequestedAssigneesActionLink'
+	description	'Add Members Command'
+	label	'emxComponents.Command.DistributionListAddMembers'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Person:CURRENT=policy_Person.state_Active&table=APPMemberListPeopleSearchList&selection=multiple&submitURL=../components/emxCommonConnectObjects.jsp&isTo=false&showInitialResults=true&srcDestRelName=relationship_RequestedAssignee&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects&HelpMarker=emxhelpsearch'
+	alt	'emxComponents.Command.DistributionListAddMembers'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'( owner==context.user && ( current==Submitted || current==Review ) )'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddPerson.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRequestedAssigneesActionLink'
+	property	'version'	value	'R420.HF1'
+;
+modify menu APPRequestedAssigneesActionsToolBar add command APPRequestedAssigneesActionLink order command APPRequestedAssigneesActionLink 1;
+#channel ==>APPRequestedAssigneesActionsToolBar
+add property command_APPRequestedAssigneesActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRequestedAssigneesActionLink';

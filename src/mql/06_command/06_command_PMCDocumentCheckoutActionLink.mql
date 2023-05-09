@@ -1,0 +1,29 @@
+del command 'PMCDocumentCheckoutActionLink';
+add command 'PMCDocumentCheckoutActionLink'
+	description	'Document or File Check Out Command Object'
+	label	'emxProgramCentral.Common.Checkout'
+	href	'${SUITE_DIR}/emxProgramCentralDocumentCreatePreProcess.jsp?documentAction=checkout'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'CmdName'		'PMCDocumentCheckoutActionLink'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForFolderAndDocumentActions'
+	setting	'Access Program'		'emxProjectFolder'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckOut.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDocumentCheckoutActionLink'
+	property	'version'	value	'R422'
+;
+modify menu PMCFolderDocumentFileActions add command PMCDocumentCheckoutActionLink order command PMCDocumentCheckoutActionLink 4;
+#channel ==>PMCFolderDocumentFileActions
+add property command_PMCDocumentCheckoutActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCDocumentCheckoutActionLink';

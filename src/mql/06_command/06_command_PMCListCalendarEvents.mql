@@ -1,0 +1,24 @@
+del command 'PMCListCalendarEvents';
+add command 'PMCListCalendarEvents'
+	description	''
+	label	'emxProgramCentral.WorkCalendar.Exceptions'
+	href	'${SUITE_DIR}/WorkCalendarView.jsp?mode=event'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'true'
+	user	'Organization Manager'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Company Representative'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCListCalendarEvents'
+	property	'version'	value	'R422.HF4'
+;
+modify menu type_WorkCalendar add command PMCListCalendarEvents order command PMCListCalendarEvents 2;
+#channel ==>type_WorkCalendarPMCCalendarViewChannel1
+add property command_PMCListCalendarEvents on program eServiceSchemaVariableMapping.tcl to command 'PMCListCalendarEvents';

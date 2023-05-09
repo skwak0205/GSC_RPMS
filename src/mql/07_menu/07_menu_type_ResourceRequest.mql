@@ -1,0 +1,18 @@
+del menu 'type_ResourceRequest';
+add menu 'type_ResourceRequest'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCResourceRequestNormalForm&toolbar=PMCResourceRequestEditPageToolBar&HelpMarker=emxhelpresourcerequestproperties'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Header Lifecycle'		'hide'
+	command	'PMCResourceRequestPeople'
+	command	'APPDiscussionCommand'
+	command	'AEFHistory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_ResourceRequest'
+	property 'version'	value	'R418'
+;
+add property menu_type_ResourceRequest on program eServiceSchemaVariableMapping.tcl to menu 'type_ResourceRequest';

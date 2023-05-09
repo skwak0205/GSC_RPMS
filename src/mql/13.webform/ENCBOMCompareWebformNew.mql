@@ -1,0 +1,24 @@
+################################################################################################
+# Created Date : 2020.07.15
+# Create by MinSung,Kim
+# Description : ENCBOMCompareWebformNew(EBOM Compare OOTB Webform...
+################################################################################################
+#OOTB Backup
+copy form ENCBOMCompareWebformNew ENCBOMCompareWebformNew_OOTB;
+
+#Field 숨김 처리
+modify form 'ENCBOMCompareWebformNew' web field modify name 'ClassCode' add setting 'Access Expression' 'false';
+
+#Range href 변경 & Popupsize 변경
+modify form 'ENCBOMCompareWebformNew' web field modify name 'BOM1Name'
+    range "javascript:showModalDialog('../common/emdAPPIndentedTable.jsp?showClipboard=false&formName=editDataForm&FilterFramePage=../engineeringcentral/emdENCPartSearchFilter.jsp&FilterFrameSize=1&program=emdPart:searchPartOfIndentedFilter&table=emdENCPartSummaryTable&header=emxEngineeringCentral.Label.SearchPart&hideHeader=true&selection=single&pageSize=30&suiteKey=EngineeringCentral&cancelLabel=emxEngineeringCentral.Button.Close&frameName=pageContent&fieldNameDisplay=BOM1NameDisplay&fieldNameActual=BOM1Name&RevDisplay=BOM1RevisionDisplay&hiddenField=BOM1Revision&hiddenNameField=BOM1NameDispOID&typeAheadTable=ENCTypeAhead&submitURL=../engineeringcentral/emxPartChooser.jsp','1170','760','1170x760')"
+;
+
+modify form 'ENCBOMCompareWebformNew' web field modify name 'BOM2Name'
+    range "javascript:showModalDialog('../common/emdAPPIndentedTable.jsp?showClipboard=false&formName=editDataForm&FilterFramePage=../engineeringcentral/emdENCPartSearchFilter.jsp&FilterFrameSize=1&program=emdPart:searchPartOfIndentedFilter&table=emdENCPartSummaryTable&header=emxEngineeringCentral.Label.SearchPart&hideHeader=true&selection=single&pageSize=30&suiteKey=EngineeringCentral&cancelLabel=emxEngineeringCentral.Button.Close&frameName=pageContent&fieldNameDisplay=BOM2NameDisplay&fieldNameActual=BOM2Name&RevDisplay=BOM2RevisionDisplay&hiddenField=BOM2Revision&hiddenNameField=BOM2NameDispOID&typeAheadTable=ENCTypeAhead&submitURL=../engineeringcentral/emxPartChooser.jsp','1170','760','1170x760')"
+;
+
+#[S] 순서 변경 by MinSung,Kim 2020/08/28
+modify form 'ENCBOMCompareWebformNew' web field modify name 'PUEUEBOMProductConfigurationFilter1' order '14';
+modify form 'ENCBOMCompareWebformNew' web field modify name 'PUEUEBOMProductConfigurationFilter2' order '16';
+#[E] #순서 변경 by MinSung,Kim 2020/08/28

@@ -1,0 +1,15 @@
+del menu 'FTRMergeReplaceEditGBOMToolBarMenu';
+add menu 'FTRMergeReplaceEditGBOMToolBarMenu'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRMergeReplaceRemovePartsActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRMergeReplaceEditGBOMToolBarMenu'
+	property 'version'	value	'R209'
+;
+add property menu_FTRMergeReplaceEditGBOMToolBarMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRMergeReplaceEditGBOMToolBarMenu';

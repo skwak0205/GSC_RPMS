@@ -1,0 +1,23 @@
+del command 'TMCWorkspaceTemplateSubFolders';
+add command 'TMCWorkspaceTemplateSubFolders'
+	description	'Subfolder Command Object'
+	label	'emxFramework.Command.Subfolder'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxWorkspaceTemplate:getWorkspaceTemplateSubFolders&table=TMCWorkspaceTemplateFolderSummary&header=emxFramework.Command.Subfolder&HelpMarker=emxhelpworkspacetemplates'
+	alt	'emxFramework.Command.Alt.Subfolder'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallFolder.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceTemplateSubFolders'
+	property	'version'	value	'R422'
+;
+modify menu TMCWorkspaceTemplateSubfolder add command TMCWorkspaceTemplateSubFolders order command TMCWorkspaceTemplateSubFolders 0;
+#channel ==>TMCWorkspaceTemplateSubfolder
+add property command_TMCWorkspaceTemplateSubFolders on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceTemplateSubFolders';

@@ -1,0 +1,22 @@
+del command 'FTRMergeAndReplace';
+add command 'FTRMergeAndReplace'
+	description	'Merge and Replace Features'
+	label	'emxProduct.Action.MergeReplace'
+	href	'${SUITE_DIR}/FeatureReplaceFS.jsp?mode=MergeReplace&Step=SearchFeature&HelpMarker=emxhelpmergeandreplaceuse'
+	alt	'emxProduct.ActionLink.MergeReplace'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'($<type!="type_ProductVariant">) && (current!=Release)'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionMerge.gif'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMergeAndReplace'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRMergeAndReplace on program eServiceSchemaVariableMapping.tcl to command 'FTRMergeAndReplace';

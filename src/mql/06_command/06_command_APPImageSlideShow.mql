@@ -1,0 +1,22 @@
+del command 'APPImageSlideShow';
+add command 'APPImageSlideShow'
+	description	'Displays the Images in the parent Object one after the other'
+	label	'emxComponents.ActionLink.SlideShow'
+	href	'${COMPONENT_DIR}/emxImageSlideShow.jsp?isPopup=true&toolbar=APPSlideShowToolBar&header=emxComponents.Image.ImageManagerHeading&HelpMarker=emxhelpimagesview'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'650'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPImageSlideShow'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPImageSlideShow on program eServiceSchemaVariableMapping.tcl to command 'APPImageSlideShow';

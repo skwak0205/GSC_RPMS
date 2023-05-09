@@ -1,0 +1,19 @@
+del command 'PMCReportResourceUtilization';
+add command 'PMCReportResourceUtilization'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Command.ResourceUtilization'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePoolPeopleUtil.jsp?mode=ResourcePoolReport&program=emxResourcePoolReports:getTableResourceUtilizationReportData&table=PMCReportResourceUtilization&toolbar=PMCReportDateToolbarMenu&selection=none&submode=PMCResourceUtilizationReport&header=emxProgramCentral.ResourcePlanning.Report.ResourceUtilization&chartingrequired=true&HelpMarker=emxhelpresourceutilizationreport&suiteKey=ProgramCentral&sortColumnName=none&xaxistitle=emxProgramCentral.ResourcePlanning.Report.Charts.TimeLine&yaxistitle=emxProgramCentral.ResourcePlanning.Report.Charts.PercentageOfUtilization&charttype=stackedbar&threshholdvalue=Capacity'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportResourceUtilization'
+	property	'version'	value	'R419'
+;
+modify menu PMCResourcePoolToolBarActions add command PMCReportResourceUtilization order command PMCReportResourceUtilization 3;
+#channel ==>PMCResourcePoolToolBarActionsPMCResourcePoolReportData
+add property command_PMCReportResourceUtilization on program eServiceSchemaVariableMapping.tcl to command 'PMCReportResourceUtilization';

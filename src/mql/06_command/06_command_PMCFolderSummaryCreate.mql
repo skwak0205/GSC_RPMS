@@ -1,0 +1,28 @@
+del command 'PMCFolderSummaryCreate';
+add command 'PMCFolderSummaryCreate'
+	description	'Command to Create New Folder Link'
+	label	'emxProgramCentral.Command.CreateFolder'
+	href	'${SUITE_DIR}/emxProgramCentralFolderCreatePreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'CmdName'		'PMCFolderSummaryCreate'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForFolderAndDocumentActions'
+	setting	'Access Program'		'emxProjectFolder'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFolderSummaryCreate'
+	property	'version'	value	'R422'
+;
+modify menu PMCFolderActions add command PMCFolderSummaryCreate order command PMCFolderSummaryCreate 1;
+modify menu PMCWorkspaceVaultColumnRMBSubMenu add command PMCFolderSummaryCreate order command PMCFolderSummaryCreate 1;
+modify menu PMCFolderSummaryToolBar add command PMCFolderSummaryCreate order command PMCFolderSummaryCreate 1;
+#channel ==>PMCFolderActionsPMCWorkspaceVaultColumnRMBSubMenuPMCFolderSummaryToolBar
+add property command_PMCFolderSummaryCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCFolderSummaryCreate';

@@ -1,0 +1,22 @@
+del command 'ECMCOEditDetailsFromViewRMB';
+add command 'ECMCOEditDetailsFromViewRMB'
+	description	'Edit Change'
+	label	'EnterpriseChangeMgt.Command.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ChangeOrderSlidein&formHeader=EnterpriseChangeMgt.Heading.EditCO&HelpMarker=emxhelpchangeorderedit&mode=edit&preProcessJavaScript=preProcessInEditCO&postProcessJPO=enoECMChangeUX:updateRouteTemplateForChangeEdit&type=type_ChangeOrder&postProcessURL=../enterprisechangemgtapp/ECMCommonRefresh.jsp?functionality=editCOFromRMB'
+	alt	'EnterpriseChangeMgt.Command.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current.access[modify] == TRUE && $<interface[interface_ChangeOnHold] != "TRUE">)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOEditDetailsFromViewRMB'
+	property	'version'	value	'R417'
+;
+modify menu ECMCOPropertiesToolbarRMB add command ECMCOEditDetailsFromViewRMB order command ECMCOEditDetailsFromViewRMB 0;
+#channel ==>ECMCOPropertiesToolbarRMB
+add property command_ECMCOEditDetailsFromViewRMB on program eServiceSchemaVariableMapping.tcl to command 'ECMCOEditDetailsFromViewRMB';

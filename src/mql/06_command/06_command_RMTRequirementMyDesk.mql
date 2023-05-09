@@ -1,0 +1,32 @@
+del command 'RMTRequirementMyDesk';
+add command 'RMTRequirementMyDesk'
+	description	'Command Object for Requirement in the My Desk Menu'
+	label	'emxRequirements.Menu.Requirements'
+	href	'${SUITE_DIR}/PopupLauncher.jsp?program=emxRequirement:getOwnedRequirements,emxRequirement:getGrantedRequirements,emxRequirement:getAllRequirements&programLabel=emxRequirements.Filter.Owned,emxRequirements.Filter.Granted,emxRequirements.Filter.All&table=RMTMyDeskRequirementList&header=emxRequirements.Heading.Requirement&selection=multiple&toolbar=RMTRequirementListToolbar&HelpMarker=emxhelprequirementlist&freezePane=Name,Title,DUP_Title,Revision&editLink=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	user	'System Transition Manager'
+	user	'System Conversion Manager'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Software Engineering Manager'
+	user	'Software Project Manager'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu RMTMyDesk add command RMTRequirementMyDesk order command RMTRequirementMyDesk 1;
+#channel ==>RMTMyDesk
+add property command_RMTRequirementMyDesk on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementMyDesk';

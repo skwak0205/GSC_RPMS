@@ -1,0 +1,22 @@
+del command 'LBCCreateNewReferenceDocument';
+add command 'LBCCreateNewReferenceDocument'
+	description	'Create New Document object'
+	label	'emxComponents.Command.Document'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=create'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Map'		'FromConnect'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canDisplayCreateDefinitionCommand'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCreateNewReferenceDocument'
+	property	'version'	value	'R421'
+;
+modify menu LBCReferenceDocumentSummaryCreateNew add command LBCCreateNewReferenceDocument order command LBCCreateNewReferenceDocument 1;
+#channel ==>LBCReferenceDocumentSummaryCreateNew
+add property command_LBCCreateNewReferenceDocument on program eServiceSchemaVariableMapping.tcl to command 'LBCCreateNewReferenceDocument';

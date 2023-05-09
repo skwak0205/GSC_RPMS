@@ -1,0 +1,15 @@
+del command 'PLCFilterTimelineCommand';
+add command 'PLCFilterTimelineCommand'
+	description	'Filter Timeline command'
+	label	''
+	href	'${COMMON_DIR}/emxTimelineFilterFS.jsp'
+	alt	''
+	setting	'attributeFilterList'		'attribute_Region,attribute_Segment,attribute_Season,attribute_Year,attribute_MilestoneType'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCFilterTimelineCommand'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_PLCFilterTimelineCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCFilterTimelineCommand';

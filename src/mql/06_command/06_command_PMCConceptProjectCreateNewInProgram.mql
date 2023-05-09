@@ -1,0 +1,25 @@
+del command 'PMCConceptProjectCreateNewInProgram';
+add command 'PMCConceptProjectCreateNewInProgram'
+	description	'Create Concept Project In Program'
+	label	'emxProgramCentral.Common.CreateConceptProject'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ProjectConcept&nameField=keyin&policy=policy_ProjectConcept&vaultChooser=false&form=PMCProjectConceptCreateForm&header=emxProgramCentral.Common.ProjectConcept&HelpMarker=emxhelpprojectconceptcreatedialog&postProcessJPO=emxProjectConcept:performPostProcessActions&mode=create&submitAction=refreshCaller&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isProgramInactive'
+	setting	'Access Program'		'emxProgram'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateProjectConcept32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCConceptProjectCreateNewInProgram'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProgramProjectSummaryToolBarActions add command PMCConceptProjectCreateNewInProgram order command PMCConceptProjectCreateNewInProgram 2;
+#channel ==>PMCProgramProjectSummaryToolBarActions
+add property command_PMCConceptProjectCreateNewInProgram on program eServiceSchemaVariableMapping.tcl to command 'PMCConceptProjectCreateNewInProgram';

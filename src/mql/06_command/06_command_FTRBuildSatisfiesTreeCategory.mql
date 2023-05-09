@@ -1,0 +1,20 @@
+del command 'FTRBuildSatisfiesTreeCategory';
+add command 'FTRBuildSatisfiesTreeCategory'
+	description	''
+	label	'emxProduct.Tree.BuildSatisfies'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxFeature:getSatisfiedFeatures&programLabel=emxProduct.Filter.All&table=FTRFeatureList&header=emxProduct.Heading.BuildSatisfies&topActionbar=FTRBuildSatisfiesTopActionBar&bottomActionbar=FTRBuildSatisfiesBottomActionBar&selection=multiple&sortColumnName=Name&HelpMarker=emxhelpbuildsatisfies&freezePane=Name'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallSoftwareFeature.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRBuildSatisfiesTreeCategory'
+	property	'version'	value	'R215'
+;
+modify menu type_HardwareBuild add command FTRBuildSatisfiesTreeCategory order command FTRBuildSatisfiesTreeCategory 1;
+modify menu type_Builds add command FTRBuildSatisfiesTreeCategory order command FTRBuildSatisfiesTreeCategory 1;
+modify menu type_SoftwareBuild add command FTRBuildSatisfiesTreeCategory order command FTRBuildSatisfiesTreeCategory 1;
+#channel ==>type_HardwareBuildtype_Buildstype_SoftwareBuild
+add property command_FTRBuildSatisfiesTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRBuildSatisfiesTreeCategory';

@@ -1,0 +1,20 @@
+del command 'APPFormFileDownload';
+add command 'APPFormFileDownload'
+	description	'File or Document Download Command Object'
+	label	'emxComponents.Command.Download'
+	href	'javascript:window.download_onclick()'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasDocumentDownloadAccess'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDownload.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFormFileDownload'
+	property	'version'	value	'R417'
+;
+modify menu LBCGenericDocumentActionsToolBar add command APPFormFileDownload order command APPFormFileDownload 3;
+modify menu LBCDocumentSheetActionsToolBar add command APPFormFileDownload order command APPFormFileDownload 3;
+#channel ==>LBCGenericDocumentActionsToolBarLBCDocumentSheetActionsToolBar
+add property command_APPFormFileDownload on program eServiceSchemaVariableMapping.tcl to command 'APPFormFileDownload';

@@ -1,0 +1,15 @@
+del menu 'PMCReportPeopleProjectAssignementFilterMenu';
+add menu 'PMCReportPeopleProjectAssignementFilterMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCReportPeopleProjectAssignementFilter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCReportPeopleProjectAssignementFilterMenu'
+	property 'version'	value	'R208'
+;
+add property menu_PMCReportPeopleProjectAssignementFilterMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCReportPeopleProjectAssignementFilterMenu';

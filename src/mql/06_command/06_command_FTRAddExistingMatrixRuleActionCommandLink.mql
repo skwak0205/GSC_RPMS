@@ -1,0 +1,17 @@
+del command 'FTRAddExistingMatrixRuleActionCommandLink';
+add command 'FTRAddExistingMatrixRuleActionCommandLink'
+	description	'FTRAddExistingMatrixRuleActionCommandLink'
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_ConfigurationRule&table=FTRMatrixRulesSearchTable&showInitialResults=false&selection=single&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../configuration/ConfigurationRuleAddExistingPostProcess.jsp?relName=relationship_ConfigurationRules&from=false'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'Confirm Message'	value	'emxProduct.Alert.Remove'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_FTRAddExistingMatrixRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingMatrixRuleActionCommandLink';

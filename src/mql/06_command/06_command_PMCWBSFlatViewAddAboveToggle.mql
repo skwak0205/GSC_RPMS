@@ -1,0 +1,23 @@
+del command 'PMCWBSFlatViewAddAboveToggle';
+add command 'PMCWBSFlatViewAddAboveToggle'
+	description	'Added for flattened schedule view'
+	label	''
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=FlatViewAddAboveTask'
+	alt	'emxProgramCentral.Common.InsertTaskAbove'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForFlattenedView'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionInsertRowBefore.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSFlatViewAddAboveToggle'
+	property	'version'	value	'R421.HF1'
+;
+modify menu PMCWBSFlatViewToolbar add command PMCWBSFlatViewAddAboveToggle order command PMCWBSFlatViewAddAboveToggle 3;
+#channel ==>PMCWBSFlatViewToolbar
+add property command_PMCWBSFlatViewAddAboveToggle on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSFlatViewAddAboveToggle';

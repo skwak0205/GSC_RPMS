@@ -1,0 +1,16 @@
+del command 'PMCExecutionStatusReportCommand';
+add command 'PMCExecutionStatusReportCommand'
+	description	'This command is used to display the project execution report.'
+	label	'emxProgramCentral.StatusReport.Page1'
+	href	'${SUITE_DIR}/ProgramCentralExecutionStatusReport.jsp'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCExecutionStatusReportCommand'
+	property	'version'	value	'R417'
+;
+#channel ==>PMCGateDashboardChannel1
+add property command_PMCExecutionStatusReportCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCExecutionStatusReportCommand';

@@ -1,0 +1,30 @@
+del command 'PMCWBSAddRemoveSelectedDependency';
+add command 'PMCWBSAddRemoveSelectedDependency'
+	description	''
+	label	'emxProgramCentral.Common.AddRemoveSelectedDependency'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=isPortalMode'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_AddRemoveDependency32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSAddRemoveSelectedDependency'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSToolBarActions add command PMCWBSAddRemoveSelectedDependency order command PMCWBSAddRemoveSelectedDependency 6;
+modify menu PMCWhatIfExperimentActionMenu add command PMCWBSAddRemoveSelectedDependency order command PMCWBSAddRemoveSelectedDependency 1;
+modify menu PMCWBSToolBar add command PMCWBSAddRemoveSelectedDependency order command PMCWBSAddRemoveSelectedDependency 4;
+modify menu PMCWhatIFExperimentActionToolbar add command PMCWBSAddRemoveSelectedDependency order command PMCWBSAddRemoveSelectedDependency 3;
+#channel ==>PMCWBSToolBarActionsPMCWhatIfExperimentActionMenuPMCWBSToolBarPMCWhatIFExperimentActionToolbar
+add property command_PMCWBSAddRemoveSelectedDependency on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSAddRemoveSelectedDependency';

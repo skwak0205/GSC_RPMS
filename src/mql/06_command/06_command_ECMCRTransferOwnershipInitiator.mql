@@ -1,0 +1,21 @@
+del command 'ECMCRTransferOwnershipInitiator';
+add command 'ECMCRTransferOwnershipInitiator'
+	description	'Transfer Ownership to Change Initiator'
+	label	'EnterpriseChangeMgt.Command.TransferOwnershipInitiator'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=transferOwnershipToInitiatorForCR&TransferOwnership=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/I_ENORole16.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRTransferOwnershipInitiator'
+	property	'version'	value	'R216'
+;
+modify menu ECMCRTransferOwnershipMenu add command ECMCRTransferOwnershipInitiator order command ECMCRTransferOwnershipInitiator 1;
+#channel ==>ECMCRTransferOwnershipMenu
+add property command_ECMCRTransferOwnershipInitiator on program eServiceSchemaVariableMapping.tcl to command 'ECMCRTransferOwnershipInitiator';

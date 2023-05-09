@@ -1,0 +1,17 @@
+del menu 'LCRetentionRecordSummaryToolbarActions';
+add menu 'LCRetentionRecordSummaryToolbarActions'
+	description	''
+	label	'LibraryCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LCCreateNewRetentionRecord'
+	command	'LCCreateNewRetentionHold'
+	command	'LCRetentionDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCRetentionRecordSummaryToolbarActions'
+	property 'version'	value	'10-7-SP1'
+;
+add property menu_LCRetentionRecordSummaryToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'LCRetentionRecordSummaryToolbarActions';

@@ -1,0 +1,20 @@
+del command 'PMCDateSubmitButton';
+add command 'PMCDateSubmitButton'
+	description	''
+	label	'emxProgramCentral.Common.Select'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=gotoWeek'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Action Label'		'emxProgramCentral.Common.Select'
+	setting	'Submit'		'true'
+	setting	'License Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDateSubmitButton'
+	property	'version'	value	'R417'
+;
+modify menu PMCActualEffortToolbar add command PMCDateSubmitButton order command PMCDateSubmitButton 2;
+#channel ==>PMCActualEffortToolbar
+add property command_PMCDateSubmitButton on program eServiceSchemaVariableMapping.tcl to command 'PMCDateSubmitButton';

@@ -1,0 +1,27 @@
+del command 'APPCDMTOVCConversionFilesActionCheckIn';
+add command 'APPCDMTOVCConversionFilesActionCheckIn'
+	description	'Command for checkin CDM to Design Sync'
+	label	'emxComponents.VersionControl.CheckinVCFileFolder'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=convertCheckinVCFileFolder&JPOName=emxVCDocument&methodName=checkinUpdate'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(format.hasfile == FALSE) && (vcfile == FALSE && vcfolder == FALSE) && (current.access[checkout] == true && current.access[checkin] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMPONENT_DIR}/images/iconActionCheckIn.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCDMTOVCConversionFilesActionCheckIn'
+	property	'version'	value	'R422'
+;
+modify menu APPFileSummaryActionsToolBar add command APPCDMTOVCConversionFilesActionCheckIn order command APPCDMTOVCConversionFilesActionCheckIn 4;
+#channel ==>APPFileSummaryActionsToolBar
+add property command_APPCDMTOVCConversionFilesActionCheckIn on program eServiceSchemaVariableMapping.tcl to command 'APPCDMTOVCConversionFilesActionCheckIn';

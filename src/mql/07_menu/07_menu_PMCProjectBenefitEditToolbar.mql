@@ -1,0 +1,16 @@
+del menu 'PMCProjectBenefitEditToolbar';
+add menu 'PMCProjectBenefitEditToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Hide Mode'		'mobile'
+	command	'PMCProjectBenefitPropertiesEdit'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBenefitEditToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_PMCProjectBenefitEditToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBenefitEditToolbar';

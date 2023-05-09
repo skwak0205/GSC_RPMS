@@ -1,0 +1,19 @@
+del menu 'type_PersonRMB';
+add menu 'type_PersonRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'AEFProperties'
+	command	'AEFSeparator'
+	command	'APPQuickFileList'
+	command	'APPRelatedFiles'
+	command	'APPAllFileDetails'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_PersonRMB'
+	property 'version'	value	'R422'
+;
+add property menu_type_PersonRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_PersonRMB';

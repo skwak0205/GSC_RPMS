@@ -1,0 +1,21 @@
+del command 'AEFCollectionsCreateNew';
+add command 'AEFCollectionsCreateNew'
+	description	'Create New Collection'
+	label	'emxFramework.Command.CreateNew'
+	href	'${COMMON_DIR}/emxCollectionsCreateDialogFS.jsp'
+	alt	'emxFramework.Command.CreateCollection'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCollectionsCreateNew'
+	property	'version'	value	'R417'
+;
+modify menu AEFCollectionActionsToolBar add command AEFCollectionsCreateNew order command AEFCollectionsCreateNew 1;
+#channel ==>AEFCollectionActionsToolBar
+add property command_AEFCollectionsCreateNew on program eServiceSchemaVariableMapping.tcl to command 'AEFCollectionsCreateNew';

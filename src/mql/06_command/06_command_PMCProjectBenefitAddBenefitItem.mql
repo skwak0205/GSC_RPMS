@@ -1,0 +1,30 @@
+del command 'PMCProjectBenefitAddBenefitItem';
+add command 'PMCProjectBenefitAddBenefitItem'
+	description	'Command to add benefit items'
+	label	'emxProgramCentral.ProjectBenefit.Command.AddBenefitItem'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=addBenefitItem&HelpMarker=emxhelpcostcategoryadd'
+	alt	'emxProgramCentral.ProjectBenefit.Command.AddBenefitItem'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAddBenefitItemAvailable'
+	setting	'Access Program'		'emxBenefitItem'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitAddBenefitItem'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBenefitEditPageToolBarActions add command PMCProjectBenefitAddBenefitItem order command PMCProjectBenefitAddBenefitItem 4;
+modify menu PMCProjectBenefitRMB add command PMCProjectBenefitAddBenefitItem order command PMCProjectBenefitAddBenefitItem 1;
+modify menu PMCProjectBenefitOperationsToolBar add command PMCProjectBenefitAddBenefitItem order command PMCProjectBenefitAddBenefitItem 1;
+#channel ==>PMCProjectBenefitEditPageToolBarActionsPMCProjectBenefitRMBPMCProjectBenefitOperationsToolBar
+add property command_PMCProjectBenefitAddBenefitItem on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitAddBenefitItem';

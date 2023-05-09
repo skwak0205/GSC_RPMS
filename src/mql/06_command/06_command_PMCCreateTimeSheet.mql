@@ -1,0 +1,20 @@
+del command 'PMCCreateTimeSheet';
+add command 'PMCCreateTimeSheet'
+	description	'Create Timesheet'
+	label	'emxProgramCentral.Common.Create'
+	href	'${COMMON_DIR}/emxForm.jsp?mode=edit&form=PMCCreateWeeklyTimeSheetForm&postProcessURL=${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=createTimesheet&formHeader=emxProgramCentral.WeeklyTimesheet.CreateTimeSheet&findMxLink=false&HelpMarker=emxhelptimesheetcreate'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateTimeSheet'
+	property	'version'	value	'R421'
+;
+modify menu PMCWeeklyTimeSheetToolBar add command PMCCreateTimeSheet order command PMCCreateTimeSheet 1;
+#channel ==>PMCWeeklyTimeSheetToolBar
+add property command_PMCCreateTimeSheet on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateTimeSheet';

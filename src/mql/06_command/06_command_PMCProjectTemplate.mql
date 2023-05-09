@@ -1,0 +1,24 @@
+del command 'PMCProjectTemplate';
+add command 'PMCProjectTemplate'
+	description	''
+	label	'emxProgramCentral.Common.Project.Template'
+	href	'${COMMON_DIR}/emxCreate.jsp?typeChooser=true&SelectType=single&ReloadOpener=true&nameField=both&autoNameChecked=false&type=type_ProjectSpace&policy=policy_ProjectSpace&form=PMCCreateProjectFromTemplateForm&mode=create&createJPO=emxProjectSpace:createNewProject&postProcessJPO=emxProjectSpace:createAndConnectProject&postProcessURL=../programcentral/emxProgramCentralUtil.jsp?mode=launchProject&submitAction=nothing&toolbar=&findMxLink=false&&showPageURLIcon=false&suiteKey=ProgramCentral&StringResourceFileId=emxProgramCentralStringResource&SuiteDirectory=programcentral&emxSuiteDirectory=programcentral&preProcessJavaScript=disableRTF&header=emxProgramCentral.Common.Project.TemplateHeader&createProject=Template&HelpMarker=emxhelpprojectdetailsspecify'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Slidein Width'		'500'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateFromPrjTemplate32.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplate'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProjectCreateMenu add command PMCProjectTemplate order command PMCProjectTemplate 0;
+#channel ==>PMCProjectCreateMenu
+add property command_PMCProjectTemplate on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplate';

@@ -1,0 +1,21 @@
+del command 'PMCResourcePoolLifecycleFilter';
+add command 'PMCResourcePoolLifecycleFilter'
+	description	''
+	label	'emxProgramCentral.ResourceRequest.ResourcePoolLifecycleFilter'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCResourceRequestSummaryTable&program=emxResourceRequest:getTableResourcePoolRequestData&freezePane=Name&selection=multiple&HelpMarker=emxhelpresourcepoolrequests&header=emxProgramCentral.ResourcePool.Category.ResourceRequestsHeading&editLink=true&expandProgram=emxResourceRequest:getTableExpandChildResourceRequestData&toolbar=PMCResourcePoolRequestToolbar,PMCResourcePoolLifecycleFilterMenu,PMCResourcePoolTimelineMenu&categoryTreeName=PMCResourcePoolTree'
+	alt	''
+	setting	'Range Display Values'		'emxProgramCentral.ResourceRequest.Filter.All,emxProgramCentral.ResourceRequest.Filter.Open,emxProgramCentral.ResourceRequest.Filter.Committed,emxProgramCentral.ResourceRequest.Filter.Rejected'
+	setting	'Target Location'		'detailsDisplay'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Values'		'All,Open,Committed,Rejected'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolLifecycleFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCResourcePoolLifecycleFilterMenu add command PMCResourcePoolLifecycleFilter order command PMCResourcePoolLifecycleFilter 0;
+#channel ==>PMCResourcePoolLifecycleFilterMenu
+add property command_PMCResourcePoolLifecycleFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePoolLifecycleFilter';

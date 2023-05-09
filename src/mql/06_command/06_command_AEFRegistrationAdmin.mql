@@ -1,0 +1,24 @@
+del command 'AEFRegistrationAdmin';
+add command 'AEFRegistrationAdmin'
+	description	'Registration Admin Property'
+	label	'emxFramework.AdminProperty.RegistrationAdmin'
+	href	'${COMMON_DIR}/emxRegistrationAdmin.jsp?HelpMarker=emxhelpregisteradmin'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Help Marker'		'emxhelpregisteradmin'
+	user	'Administration Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFRegistrationAdmin'
+	property	'version'	value	'R417'
+;
+modify menu AEFAdminPropertyMenu add command AEFRegistrationAdmin order command AEFRegistrationAdmin 1;
+#channel ==>AEFAdminPropertyMenu
+add property command_AEFRegistrationAdmin on program eServiceSchemaVariableMapping.tcl to command 'AEFRegistrationAdmin';

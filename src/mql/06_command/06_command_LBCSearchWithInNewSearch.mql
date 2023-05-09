@@ -1,0 +1,25 @@
+del command 'LBCSearchWithInNewSearch';
+add command 'LBCSearchWithInNewSearch'
+	description	'New Search for Search with in'
+	label	'emxDocumentCentral.ActionBarCmd.NewSearch'
+	href	'javascript:top.newSearch()'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionNewSearch.png'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCSearchWithInNewSearch'
+	property	'version'	value	'R418'
+;
+modify menu LCSearchClassifiedItemAtLibraryToolBar add command LBCSearchWithInNewSearch order command LBCSearchWithInNewSearch 0;
+modify menu LCSearchClassifiedItemToolBar add command LBCSearchWithInNewSearch order command LBCSearchWithInNewSearch 0;
+#channel ==>LCSearchClassifiedItemAtLibraryToolBarLCSearchClassifiedItemToolBar
+add property command_LBCSearchWithInNewSearch on program eServiceSchemaVariableMapping.tcl to command 'LBCSearchWithInNewSearch';

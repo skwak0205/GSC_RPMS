@@ -1,0 +1,23 @@
+del command 'APPComponentsFilesTreeCategory';
+add command 'APPComponentsFilesTreeCategory'
+	description	'Components Attachments Command Object'
+	label	'emxComponents.Command.ComponentsFiles'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPAttachmentsList&topActionbar=APPAttachmentsTopActionBar&bottomActionbar=APPAttachmentsBottomActionBar&selection=multiple&header=emxComponents.AttachmentFiles.AttachmentHeading&sortColumnType=Name&sortDirection=ascending'
+	alt	'emxFramework.Command.Alt.ComponentsFiles'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	user	'Global Template Administrator'
+	user	'Template Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPComponentsFilesTreeCategory'
+	property	'version'	value	'R216'
+;
+modify menu APPDiscussionAccess add command APPComponentsFilesTreeCategory order command APPComponentsFilesTreeCategory 2;
+#channel ==>APPDiscussionAccess
+add property command_APPComponentsFilesTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPComponentsFilesTreeCategory';

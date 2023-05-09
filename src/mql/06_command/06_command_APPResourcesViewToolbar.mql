@@ -1,0 +1,17 @@
+del command 'APPResourcesViewToolbar';
+add command 'APPResourcesViewToolbar'
+	description	'Resources View'
+	label	'emxPlmOnline.label.Discipline'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPVPLMResourcesAdminPortal&toolbar=APPXPAdminAdvancedToolBar&header=emxPlmOnline.label.ResourcesAdministrationSpace'
+	alt	'emxPlmOnline.label.ResourcesViewToolbar'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Access Function'		'isOneClickEnvironment'
+	setting	'Access Program'		'VPLMPosAdminUIOptions'
+	setting	'Image'		'iconAdminResources.gif'
+	user	'VPLMAdmin'
+;
+modify menu APPVPLMAdminToolBar add command APPResourcesViewToolbar order command APPResourcesViewToolbar 0;
+modify menu APPXPAdminAdvancedToolBar add command APPResourcesViewToolbar order command APPResourcesViewToolbar 3;
+#channel ==>APPVPLMAdminToolBarAPPXPAdminAdvancedToolBar
+add property command_APPResourcesViewToolbar on program eServiceSchemaVariableMapping.tcl to command 'APPResourcesViewToolbar';

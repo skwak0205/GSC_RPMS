@@ -1,0 +1,11 @@
+del menu 'APPDrawingEvents';
+add menu 'APPDrawingEvents'
+	description	'Events menu for Drawing'
+	label	''
+	href	''
+	alt	''
+	command	'APPDrawingPromoteEvent'
+	command	'APPDrawingMajorRevisionEvent'
+	property 'version'	value	'R424'
+;
+add property menu_APPDrawingEvents on program eServiceSchemaVariableMapping.tcl to menu 'APPDrawingEvents';

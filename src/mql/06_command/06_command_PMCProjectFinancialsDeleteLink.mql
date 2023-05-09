@@ -1,0 +1,30 @@
+del command 'PMCProjectFinancialsDeleteLink';
+add command 'PMCProjectFinancialsDeleteLink'
+	description	'Command for Deleting the Financials for a Project'
+	label	'emxProgramCentral.Budget.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralFinancialItemDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'checkFinDeleteAccess'
+	setting	'Access Program'		'emxProjectBudget'
+	setting	'Row Select'		'single'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectFinancialsDeleteLink'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectTemplateBudgetToolbarActions add command PMCProjectFinancialsDeleteLink order command PMCProjectFinancialsDeleteLink 0;
+modify menu PMCProjectBudgetToolbarActions add command PMCProjectFinancialsDeleteLink order command PMCProjectFinancialsDeleteLink 8;
+modify menu type_BudgetRMB add command PMCProjectFinancialsDeleteLink order command PMCProjectFinancialsDeleteLink 0;
+modify menu PMCProjectFinancialsToolBarActions add command PMCProjectFinancialsDeleteLink order command PMCProjectFinancialsDeleteLink 0;
+#channel ==>PMCProjectTemplateBudgetToolbarActionsPMCProjectBudgetToolbarActionstype_BudgetRMBPMCProjectFinancialsToolBarActions
+add property command_PMCProjectFinancialsDeleteLink on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectFinancialsDeleteLink';

@@ -1,0 +1,22 @@
+del command 'LBCClassifiedItemReclassify';
+add command 'LBCClassifiedItemReclassify'
+	description	'Classified Item Reclassify'
+	label	'emxLibraryCentral.Access.Reclassify'
+	href	'${SUITE_DIR}/emxLibraryCentralReclassifyValidation.jsp?fromPage=classifiedItemsList'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCClassifiedItemReclassify'
+	property	'version'	value	'R420'
+;
+modify menu LCClassifiedItemActionToolBar add command LBCClassifiedItemReclassify order command LBCClassifiedItemReclassify 13;
+modify menu APPPartFamilyPartActionsToolBar add command LBCClassifiedItemReclassify order command LBCClassifiedItemReclassify 4;
+#channel ==>LCClassifiedItemActionToolBarAPPPartFamilyPartActionsToolBar
+add property command_LBCClassifiedItemReclassify on program eServiceSchemaVariableMapping.tcl to command 'LBCClassifiedItemReclassify';

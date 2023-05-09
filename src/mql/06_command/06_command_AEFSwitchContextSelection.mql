@@ -1,0 +1,19 @@
+del command 'AEFSwitchContextSelection';
+add command 'AEFSwitchContextSelection'
+	description	''
+	label	'emxNavigator.UIMenu.SwitchContext'
+	href	'javascript:changeSecurityContextDialog()'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasSecurityContext'
+	setting	'Access Program'		'emxAEFUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSwitchContextSelection'
+	property	'version'	value	'R215'
+;
+modify menu AEFPersonMenu add command AEFSwitchContextSelection order command AEFSwitchContextSelection 2;
+#channel ==>AEFPersonMenu
+add property command_AEFSwitchContextSelection on program eServiceSchemaVariableMapping.tcl to command 'AEFSwitchContextSelection';

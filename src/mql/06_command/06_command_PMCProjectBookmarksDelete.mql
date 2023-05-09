@@ -1,0 +1,31 @@
+del command 'PMCProjectBookmarksDelete';
+add command 'PMCProjectBookmarksDelete'
+	description	'Command for Deleting Bookmark from Summary'
+	label	'emxProgramCentral.Common.DeleteBookmark'
+	href	'${SUITE_DIR}/emxProgramCentralBookmarkDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToCommandDeleteBookmark'
+	setting	'Access Program'		'emxBookmark'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBookmarksDelete'
+	property	'version'	value	'R422'
+;
+modify menu PMCFolderBookmarkActions add command PMCProjectBookmarksDelete order command PMCProjectBookmarksDelete 0;
+modify menu PMCFolderColumnRMBMenu add command PMCProjectBookmarksDelete order command PMCProjectBookmarksDelete 0;
+modify menu PMCProjectBookmarksToolbarActions add command PMCProjectBookmarksDelete order command PMCProjectBookmarksDelete 0;
+modify menu PMCDeliverablesBookmarkToolBar add command PMCProjectBookmarksDelete order command PMCProjectBookmarksDelete 0;
+modify menu PMCReferenceDocumentsBookmarkToolBar add command PMCProjectBookmarksDelete order command PMCProjectBookmarksDelete 0;
+#channel ==>PMCFolderBookmarkActionsPMCFolderColumnRMBMenuPMCProjectBookmarksToolbarActionsPMCDeliverablesBookmarkToolBarPMCReferenceDocumentsBookmarkToolBar
+add property command_PMCProjectBookmarksDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBookmarksDelete';

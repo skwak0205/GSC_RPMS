@@ -1,0 +1,25 @@
+del command 'TMCDiscussionAttachmentsCreateNewActionLink';
+add command 'TMCDiscussionAttachmentsCreateNewActionLink'
+	description	''
+	label	'emxTeamCentral.Common.CreateNewDocument'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?showDescription=required&appDir=components&parentRelName=relationship_MessageAttachments&objectAction=create&showTitle=true&showFormat=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDiscussionAttachmentsCreateNewActionLink'
+	property	'version'	value	'R422'
+;
+modify menu TMCDiscussionAttachmentCreateNew add command TMCDiscussionAttachmentsCreateNewActionLink order command TMCDiscussionAttachmentsCreateNewActionLink 1;
+#channel ==>TMCDiscussionAttachmentCreateNew
+add property command_TMCDiscussionAttachmentsCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'TMCDiscussionAttachmentsCreateNewActionLink';

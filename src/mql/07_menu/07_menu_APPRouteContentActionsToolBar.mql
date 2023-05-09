@@ -1,0 +1,20 @@
+del menu 'APPRouteContentActionsToolBar';
+add menu 'APPRouteContentActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPRouteContentAddContent'
+	menu	'APPRouteContentSummaryCreateNew'
+	command	'APPRouteContentEditLifeCycleBlocks'
+	command	'APPSeparator'
+	command	'APPRouteDocumentRemove'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRouteContentActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPRouteContentActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPRouteContentActionsToolBar';

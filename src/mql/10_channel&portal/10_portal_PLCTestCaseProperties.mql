@@ -1,0 +1,14 @@
+del portal 'PLCTestCaseProperties';
+add portal 'PLCTestCaseProperties'
+	description	''
+	label	''
+	href	''
+	channel 	PLCTestCaseProperties
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductEngineeringChangePortal'
+	property	'version'	value	'R419'
+;
+add property portal_PLCTestCaseProperties on program eServiceSchemaVariableMapping.tcl to portal 'PLCTestCaseProperties';

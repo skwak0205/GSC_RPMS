@@ -1,0 +1,17 @@
+del command 'APPSearchECSatisfiedItemsCommand';
+add command 'APPSearchECSatisfiedItemsCommand'
+	description	'Satisfied Items find command object'
+	label	'emxComponents.Command.Search'
+	href	'${SUITE_DIR}/emxFindForm.jsp?suiteKey=Components&program=emxCommonEngineeringChange:getGeneralSearchResults&table=APPECSatisfiedItemsList&CommandName=APPSearchECSatisfiedItemsCommand&sortColumnName=Name&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchECSatisfiedItemsCommand'
+	property	'version'	value	'10-6'
+;
+modify menu APPECSearchAddExistingChooser add command APPSearchECSatisfiedItemsCommand order command APPSearchECSatisfiedItemsCommand 7;
+#channel ==>APPECSearchAddExistingChooser
+add property command_APPSearchECSatisfiedItemsCommand on program eServiceSchemaVariableMapping.tcl to command 'APPSearchECSatisfiedItemsCommand';

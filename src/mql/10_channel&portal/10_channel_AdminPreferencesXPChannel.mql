@@ -1,0 +1,11 @@
+del channel 'AdminPreferencesXPChannel';
+add channel 'AdminPreferencesXPChannel'
+	description	'Express Administration Preferences'
+	height	'650'
+	label	'Manage Preferences'
+	href	''
+	setting		'Registered Suite'		'Framework'
+	command 	'APPXPManagePreferences'
+;
+#portal ==>APPXPPreferencesAdminPortal
+add property channel_AdminPreferencesXPChannel on program eServiceSchemaVariableMapping.tcl to channel 'AdminPreferencesXPChannel';

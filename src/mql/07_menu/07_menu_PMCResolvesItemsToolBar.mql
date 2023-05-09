@@ -1,0 +1,15 @@
+del menu 'PMCResolvesItemsToolBar';
+add menu 'PMCResolvesItemsToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCResolvesItemsToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResolvesItemsToolBar'
+	property 'version'	value	'R421.HF3'
+;
+add property menu_PMCResolvesItemsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCResolvesItemsToolBar';

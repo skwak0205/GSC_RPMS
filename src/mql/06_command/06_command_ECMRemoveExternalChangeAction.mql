@@ -1,0 +1,20 @@
+del command 'ECMRemoveExternalChangeAction';
+add command 'ECMRemoveExternalChangeAction'
+	description	'Remove  Proxy Change Action From Change Order or Request'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMDisconnectProcess.jsp?functionality=removeExternalChangeAction'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isOSLCCommandCommandAccessible'
+	setting	'Access Program'		'enoECMChangeUX'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMRemoveExternalChangeAction'
+	property	'version'	value	'R421'
+;
+#channel ==>
+add property command_ECMRemoveExternalChangeAction on program eServiceSchemaVariableMapping.tcl to command 'ECMRemoveExternalChangeAction';

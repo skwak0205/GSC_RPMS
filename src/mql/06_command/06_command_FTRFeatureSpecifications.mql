@@ -1,0 +1,25 @@
+del command 'FTRFeatureSpecifications';
+add command 'FTRFeatureSpecifications'
+	description	'lists the specifications in the parent Object'
+	label	'emxProduct.Tree.Specification'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=FeatureSpecificationSummaryToolbar&header=emxProduct.Heading.Specification&parentRelName=relationship_FeaturesSpecification&defaultType=type_Specification&showOwner=required&HelpMarker=emxhelpspeclist&freezePane=Name'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRFeatureSpecifications'
+	property	'version'	value	'R417'
+;
+modify menu type_ConfigurationFeature add command FTRFeatureSpecifications order command FTRFeatureSpecifications 7;
+modify menu type_LogicalFeature add command FTRFeatureSpecifications order command FTRFeatureSpecifications 8;
+modify menu type_ManufacturingFeature add command FTRFeatureSpecifications order command FTRFeatureSpecifications 10;
+modify menu type_ConfigurationOption add command FTRFeatureSpecifications order command FTRFeatureSpecifications 8;
+modify menu Msoitype_Features add command FTRFeatureSpecifications order command FTRFeatureSpecifications 2;
+modify menu type_Variant add command FTRFeatureSpecifications order command FTRFeatureSpecifications 6;
+modify menu type_VariabilityGroup add command FTRFeatureSpecifications order command FTRFeatureSpecifications 6;
+modify menu type_VariantValue add command FTRFeatureSpecifications order command FTRFeatureSpecifications 8;
+modify menu type_VariabilityOption add command FTRFeatureSpecifications order command FTRFeatureSpecifications 8;
+#channel ==>type_ConfigurationFeaturetype_LogicalFeaturetype_ManufacturingFeaturetype_ConfigurationOptionMsoitype_Featurestype_Varianttype_VariabilityGrouptype_VariantValuetype_VariabilityOption
+add property command_FTRFeatureSpecifications on program eServiceSchemaVariableMapping.tcl to command 'FTRFeatureSpecifications';

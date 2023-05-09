@@ -1,0 +1,21 @@
+del command 'FTRGlobalActionCreateVariant';
+add command 'FTRGlobalActionCreateVariant'
+	description	''
+	label	'emxProduct.ActionLink.CreateVariant'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Variant&typeChooser=false&showApply=true&showPolicy=false&autoNameChecked=false&nameField=both&vaultChooser=false&form=type_CreateVariant&submitAction=none&header=emxConfiguration.Form.Heading.CreateVariant&createJPO=ConfigurationFeature:createVariant&HelpMarker=emxhelpvariantcreate&postProcessURL=../configuration/VariantCreatePostProcess.jsp&UIContext=GlobalActions&policy=policy_PerpetualResource'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRGlobalVariabilityMenu add command FTRGlobalActionCreateVariant order command FTRGlobalActionCreateVariant 1;
+#channel ==>FTRGlobalVariabilityMenu
+add property command_FTRGlobalActionCreateVariant on program eServiceSchemaVariableMapping.tcl to command 'FTRGlobalActionCreateVariant';

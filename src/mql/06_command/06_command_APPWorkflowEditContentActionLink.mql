@@ -1,0 +1,19 @@
+del command 'APPWorkflowEditContentActionLink';
+add command 'APPWorkflowEditContentActionLink'
+	description	'Command Object to edit content from workflow object'
+	label	'emxComponents.Button.EditAll'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?massUpdate=false'
+	alt	'emxComponents.Button.EditAll'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(owner == context.user)'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowEditContentActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowContentSummaryActionsToolBar add command APPWorkflowEditContentActionLink order command APPWorkflowEditContentActionLink 2;
+#channel ==>APPWorkflowContentSummaryActionsToolBar
+add property command_APPWorkflowEditContentActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowEditContentActionLink';

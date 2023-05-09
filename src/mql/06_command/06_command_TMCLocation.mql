@@ -1,0 +1,23 @@
+del command 'TMCLocation';
+add command 'TMCLocation'
+	description	'Location Command Object'
+	label	'emxFramework.Command.Location'
+	href	'${SUITE_DIR}/emxTeamLocationSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Location'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallLocation.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCLocation'
+	property	'version'	value	'R422'
+;
+modify menu TMCtype_BusinessUnit add command TMCLocation order command TMCLocation 1;
+#channel ==>TMCtype_BusinessUnit
+add property command_TMCLocation on program eServiceSchemaVariableMapping.tcl to command 'TMCLocation';

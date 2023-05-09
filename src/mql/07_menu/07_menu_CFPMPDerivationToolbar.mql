@@ -1,0 +1,16 @@
+del menu 'CFPMPDerivationToolbar';
+add menu 'CFPMPDerivationToolbar'
+	description	''
+	label	'DMCPlanning.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DMCPlanning'
+	menu	'CFPMPDerivationActions'
+	menu	'CFPMPDerivationReports'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'DMCPlanning'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'CFPMPDerivationToolbar'
+	property 'version'	value	'R215'
+;
+add property menu_CFPMPDerivationToolbar on program eServiceSchemaVariableMapping.tcl to menu 'CFPMPDerivationToolbar';

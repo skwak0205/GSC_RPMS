@@ -1,0 +1,20 @@
+del command 'RMTRelatedObjectsPowerView';
+add command 'RMTRelatedObjectsPowerView'
+	description	''
+	label	'emxRequirements.Common.RMTRelatedObjects'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=RMTRelatedObjetcs&showPageHeader=true&header=emxRequirements.Heading.RelatedObjectsCategory'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRelatedObjectsPowerView'
+	property	'version'	value	'R422'
+;
+modify menu type_Requirement add command RMTRelatedObjectsPowerView order command RMTRelatedObjectsPowerView 4;
+modify menu type_RequirementProxy add command RMTRelatedObjectsPowerView order command RMTRelatedObjectsPowerView 2;
+#channel ==>type_Requirementtype_RequirementProxy
+add property command_RMTRelatedObjectsPowerView on program eServiceSchemaVariableMapping.tcl to command 'RMTRelatedObjectsPowerView';

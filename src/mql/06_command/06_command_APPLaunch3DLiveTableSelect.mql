@@ -1,0 +1,25 @@
+del command 'APPLaunch3DLiveTableSelect';
+add command 'APPLaunch3DLiveTableSelect'
+	description	''
+	label	'emxComponents.ImageManager.3DLiveExamine'
+	href	'${COMPONENT_DIR}/emxLaunch3DLiveExamineCheck.jsp'
+	alt	'emxComponents.ImageManager.3DLiveExamine'
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showOrHide3DLiveExamine'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionShowHide3D.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLaunch3DLiveTableSelect'
+	property	'version'	value	'R419'
+;
+#channel ==>
+add property command_APPLaunch3DLiveTableSelect on program eServiceSchemaVariableMapping.tcl to command 'APPLaunch3DLiveTableSelect';

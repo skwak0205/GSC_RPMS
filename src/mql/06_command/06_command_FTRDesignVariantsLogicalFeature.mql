@@ -1,0 +1,19 @@
+del command 'FTRDesignVariantsLogicalFeature';
+add command 'FTRDesignVariantsLogicalFeature'
+	description	''
+	label	'emxProduct.Tree.DesignVariants'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=FTRConfigurationContextDesignVariantPortal&mode=portal&contextIndependent=yes&header=emxProduct.DesignVariantPortal.ViewDesignVariantHeader&subHeader=emxProduct.DesignVariantPortal.ViewDesignVariantSubHeader&suiteKey=Configuration&HelpMarker=emxhelpdesignvariantview'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDesignVariantsLogicalFeature'
+	property	'version'	value	'R417'
+;
+modify menu type_LogicalFeature add command FTRDesignVariantsLogicalFeature order command FTRDesignVariantsLogicalFeature 3;
+#channel ==>type_LogicalFeature
+add property command_FTRDesignVariantsLogicalFeature on program eServiceSchemaVariableMapping.tcl to command 'FTRDesignVariantsLogicalFeature';

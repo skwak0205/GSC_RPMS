@@ -1,0 +1,18 @@
+del command 'APPIssueModifyEvent';
+add command 'APPIssueModifyEvent'
+	description	'Event for Issue Modification'
+	label	'emxComponents.Event.IssueModify'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Issue Modify'
+	setting	'Is Recursible'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPIssueModifyEvent'
+	property	'version'	value	'10-7'
+;
+modify menu APPIssueEvents add command APPIssueModifyEvent order command APPIssueModifyEvent 1;
+#channel ==>APPIssueEvents
+add property command_APPIssueModifyEvent on program eServiceSchemaVariableMapping.tcl to command 'APPIssueModifyEvent';

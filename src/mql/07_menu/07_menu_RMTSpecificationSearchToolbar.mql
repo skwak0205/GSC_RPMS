@@ -1,0 +1,14 @@
+del menu 'RMTSpecificationSearchToolbar';
+add menu 'RMTSpecificationSearchToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecificationSearchToolbar'
+	property 'version'	value	'V6R2009x'
+;
+add property menu_RMTSpecificationSearchToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecificationSearchToolbar';

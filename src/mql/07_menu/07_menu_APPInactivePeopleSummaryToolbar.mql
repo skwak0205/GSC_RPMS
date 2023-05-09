@@ -1,0 +1,18 @@
+del menu 'APPInactivePeopleSummaryToolbar';
+add menu 'APPInactivePeopleSummaryToolbar'
+	description	''
+	label	'Components.Toolbar.Actions'
+	href	''
+	alt	'Components.Toolbar.Actions'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPInactivePeopleSummaryActionToolbar'
+	command	'AEFSeparator'
+	command	'APPPeopleActivate'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPInactivePeopleSummaryToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_APPInactivePeopleSummaryToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPInactivePeopleSummaryToolbar';

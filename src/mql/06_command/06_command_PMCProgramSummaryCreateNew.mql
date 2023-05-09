@@ -1,0 +1,27 @@
+del command 'PMCProgramSummaryCreateNew';
+add command 'PMCProgramSummaryCreateNew'
+	description	'Command for CreateNew link on ProgramSummary'
+	label	'emxProgramCentral.Button.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Program&typeChooser=true&nameField=keyin&form=PMCProgramCreateForm&header=emxProgramCentral.Common.CreateProgram&HelpMarker=emxhelpprogramcreatedialog&submitAction=refreshCaller&postProcessJPO=emxProgram:connectProgramToCompany&findMxLink=false'
+	alt	'emxProgramCentral.Button.CreateNew'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'550'
+	setting	'Window Width'		'675'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Program Lead'
+	user	'External Program Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProgramSummaryCreateNew'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyDeskProgramSummaryToolBarActions add command PMCProgramSummaryCreateNew order command PMCProgramSummaryCreateNew 1;
+#channel ==>PMCMyDeskProgramSummaryToolBarActions
+add property command_PMCProgramSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PMCProgramSummaryCreateNew';

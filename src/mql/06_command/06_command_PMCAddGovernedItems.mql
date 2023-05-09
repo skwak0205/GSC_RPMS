@@ -1,0 +1,19 @@
+del command 'PMCAddGovernedItems';
+add command 'PMCAddGovernedItems'
+	description	''
+	label	'emxProgramCentral.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Products&table=AppGeneralSearchResult&excludeOIDprogram=emxProgramCentralUtil:excludeAlreadyGovernedItems&selection=multiple&hideHeader=true&submitURL=../programcentral/emxProjectManagementUtil.jsp?mode=addGovernedItems&SuiteDirectory=programcentral&suiteKey=ProgramCentral&cancelLabel=emxProgramCentral.Common.Close&HelpMarker=emxhelpfullsearch'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'hasAccessToAddGovernedItemsAction'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionAddExistingPart.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddGovernedItems'
+	property	'version'	value	'R421'
+;
+modify menu PMCGovernedItemsToolbar add command PMCAddGovernedItems order command PMCAddGovernedItems 1;
+#channel ==>PMCGovernedItemsToolbar
+add property command_PMCAddGovernedItems on program eServiceSchemaVariableMapping.tcl to command 'PMCAddGovernedItems';

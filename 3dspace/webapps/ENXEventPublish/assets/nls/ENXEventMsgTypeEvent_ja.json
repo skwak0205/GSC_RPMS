@@ -1,0 +1,17 @@
+{
+  "created": "作成済み",
+  "statusChanged": "ステータス変更済み",
+  "Change": "変更アクション",
+  "Document": "ドキュメント",
+  "Engineering Item": "エンジニアリング アイテム",
+  "Manufacturing Item": "マニュファクチャリング項目",
+  "Manufacturing Process": "マニュファクチャリング プロセス",
+  "dsxcad": "CAD 設計の統合",
+  "Change Order": "変更指示",
+  "computed": "計算済み",
+  "Production Plan": "生産計画",
+  "exchangejobs": "交換ジョブ",
+  "versioned": "バージョン設定済み",
+  "SupplierCompany": "サプライヤ会社",
+  "connected": "接続"
+}

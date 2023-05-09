@@ -1,0 +1,13 @@
+del menu 'DownloadMOFMenu';
+add menu 'DownloadMOFMenu'
+	description	'Download Collaboration for Microsoft Client Menu'
+	label	'emxComponents.DownloadBuild.MenuLabel'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENOCOMI_AP'
+	setting	'Hide Mode'		'Cloud'
+	command	'DownloadMOF64Cmd'
+	command	'DownloadMOFHFCmd'
+;
+add property menu_DownloadMOFMenu on program eServiceSchemaVariableMapping.tcl to menu 'DownloadMOFMenu';

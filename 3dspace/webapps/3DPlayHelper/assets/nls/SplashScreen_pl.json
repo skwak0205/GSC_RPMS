@@ -1,0 +1,8 @@
+{
+  "SplashLoading": "Ładowanie",
+  "SplashConverting": "Konwertowanie",
+  "TextFatal": "Podgląd nie jest dostępny",
+  "DROP_MSG_LP": "Upuść zawartość tutaj",
+  "PasswordException": "Nie można otworzyć pliku PDF, ponieważ nie podano hasła",
+  "Empty_SVG": "Nie można otworzyć pliku, ponieważ jest on pusty"
+}

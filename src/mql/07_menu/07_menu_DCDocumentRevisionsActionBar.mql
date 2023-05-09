@@ -1,0 +1,17 @@
+del menu 'DCDocumentRevisionsActionBar';
+add menu 'DCDocumentRevisionsActionBar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCObjectRevisionsShowHistoryActionLink'
+	command	'DCDocumentRevisionsRevise'
+	command	'DCDocumentRevisionsReviseWithFiles'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCDocumentRevisionsActionBar'
+	property 'version'	value	'10-5'
+;
+add property menu_DCDocumentRevisionsActionBar on program eServiceSchemaVariableMapping.tcl to menu 'DCDocumentRevisionsActionBar';

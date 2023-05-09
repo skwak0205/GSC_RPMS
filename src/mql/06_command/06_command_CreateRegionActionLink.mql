@@ -1,0 +1,25 @@
+del command 'CreateRegionActionLink';
+add command 'CreateRegionActionLink'
+	description	'Create Region Action Link'
+	label	'emxComponents.Button.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=RegionForm&type=type_Region&header=emxComponents.Heading.RegionCreate&HelpMarker=emxhelpregioncreate&nameField=keyin&createJPO=emxRegion:createRegionObject&postProcessJPO=emxRegion:createRegionPostProcess&submitAction=refreshCaller&mode=create'
+	alt	'emxComponents.Button.CreateNew'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasAccessForRegionDeleteCreateNew'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'CreateRegionActionLink'
+	property	'version'	value	'R417'
+;
+modify menu RegionTopActionBar add command CreateRegionActionLink order command CreateRegionActionLink 1;
+modify menu APPRegionActionsToolBar add command CreateRegionActionLink order command CreateRegionActionLink 1;
+#channel ==>RegionTopActionBarAPPRegionActionsToolBar
+add property command_CreateRegionActionLink on program eServiceSchemaVariableMapping.tcl to command 'CreateRegionActionLink';

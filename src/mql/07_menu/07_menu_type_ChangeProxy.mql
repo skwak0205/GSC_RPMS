@@ -1,0 +1,12 @@
+del menu 'type_ChangeProxy';
+add menu 'type_ChangeProxy'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/enoProxyProperties.jsp'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'original name'	value	'type_ChangeProxy'
+	property 'version'	value	'R421'
+;
+add property menu_type_ChangeProxy on program eServiceSchemaVariableMapping.tcl to menu 'type_ChangeProxy';

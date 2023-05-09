@@ -1,0 +1,23 @@
+del menu 'type_Chapter';
+add menu 'type_Chapter'
+	description	''
+	label	'${NAME} ${REVISION}'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=RMTChapterProperties'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	command	'RMTRevisionsTreeCategory'
+	command	'RMTChapterStructureTreeCategory'
+	command	'RMTChangeManagement'
+	command	'CommonEngineeringChangeTreeCategory'
+	command	'CFFConfigurationCriteria'
+	command	'RMTCloneInfo'
+	command	'DomainAccessTreeCategory'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_Chapter'
+	property 'version'	value	'V6R2018x'
+;
+add property menu_type_Chapter on program eServiceSchemaVariableMapping.tcl to menu 'type_Chapter';

@@ -1,0 +1,15 @@
+del menu 'TMCDiscussionAttachmentMenu';
+add menu 'TMCDiscussionAttachmentMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	command	'TMCDiscussionAttachmentCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCDiscussionAttachmentMenu'
+	property 'version'	value	'R210'
+;
+add property menu_TMCDiscussionAttachmentMenu on program eServiceSchemaVariableMapping.tcl to menu 'TMCDiscussionAttachmentMenu';

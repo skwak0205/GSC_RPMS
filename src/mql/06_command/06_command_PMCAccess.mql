@@ -1,0 +1,23 @@
+del command 'PMCAccess';
+add command 'PMCAccess'
+	description	'Access Command Object'
+	label	'emxFramework.Command.Access'
+	href	'${SUITE_DIR}/emxProgramCentralAccessSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Access'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallAccess.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAccess'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCAccess on program eServiceSchemaVariableMapping.tcl to command 'PMCAccess';

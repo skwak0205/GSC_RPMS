@@ -1,0 +1,11 @@
+del command 'VPLMSyncChgGetActionAttachment';
+add command 'VPLMSyncChgGetActionAttachment'
+	description	'Command to get Attachments on VPLM Action'
+	label	'emxVPMCentral.Change.Command.GetActionAttachment.Title'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxECA:getECAAttachments&table=VPLMECARelatedObjects&header=emxVPMCentral.Change.Command.GetActionAttachment.Title&triggerValidation=false&massPromoteDemote=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPMCentral'
+;
+#channel ==>
+add property command_VPLMSyncChgGetActionAttachment on program eServiceSchemaVariableMapping.tcl to command 'VPLMSyncChgGetActionAttachment';

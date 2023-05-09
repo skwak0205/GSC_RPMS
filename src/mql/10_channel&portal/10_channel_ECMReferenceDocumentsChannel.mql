@@ -1,0 +1,17 @@
+del channel 'ECMReferenceDocumentsChannel';
+add channel 'ECMReferenceDocumentsChannel'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'EnterpriseChangeMgt'
+	setting		'ChannelID'		'1'
+	command 	'ECMCOReferenceDocs'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMReferenceDocumentsChannel'
+	property	'version'	value	'R216'
+;
+#portal ==>ECMRelatedDocumentsPortal
+add property channel_ECMReferenceDocumentsChannel on program eServiceSchemaVariableMapping.tcl to channel 'ECMReferenceDocumentsChannel';

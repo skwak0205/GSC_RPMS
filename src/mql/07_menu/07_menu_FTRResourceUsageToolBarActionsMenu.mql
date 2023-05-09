@@ -1,0 +1,17 @@
+del menu 'FTRResourceUsageToolBarActionsMenu';
+add menu 'FTRResourceUsageToolBarActionsMenu'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRCreateResourceUsageActionCommandLink'
+	command	'AEFSeparator'
+	command	'FTRDeleteResourceUsageActionCommandLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRResourceUsageToolBarActionsMenu'
+	property 'version'	value	'R212'
+;
+add property menu_FTRResourceUsageToolBarActionsMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRResourceUsageToolBarActionsMenu';

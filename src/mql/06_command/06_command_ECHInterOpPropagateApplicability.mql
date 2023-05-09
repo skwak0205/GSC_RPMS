@@ -1,0 +1,7 @@
+del command 'ECHInterOpPropagateApplicability';
+add command 'ECHInterOpPropagateApplicability'
+	description	''
+	label	'null'
+	href	'null'
+	alt	'null'
+add property command_ECHInterOpPropagateApplicability on program eServiceSchemaVariableMapping.tcl to command 'ECHInterOpPropagateApplicability';

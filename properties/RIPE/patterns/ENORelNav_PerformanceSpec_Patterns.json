@@ -1,0 +1,100 @@
+{
+    "relations": [
+        {
+            "name": "performancespecof_from",
+            "queries": [
+                {
+                    "definition": [
+                        {
+                            "navigationType": "relation",
+                            "direction": "from",
+                            "qualityFilter": {
+                                "rel_type": "PerformanceSpecOf"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "performancespecof_to",
+            "queries": [
+                {
+                    "definition": [
+                        {
+                            "navigationType": "relation",
+                            "direction": "to",
+                            "qualityFilter": {
+                                "rel_type": "PerformanceSpecOf"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "performancechar_from",
+            "queries": [
+                {
+                    "definition": [
+                        {
+                            "navigationType": "relation",
+                            "direction": "from",
+                            "qualityFilter": {
+                                "rel_type": "PerformanceChar"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "performancechar_to",
+            "queries": [
+                {
+                    "definition": [
+                        {
+                            "navigationType": "relation",
+                            "direction": "to",
+                            "qualityFilter": {
+                                "rel_type": "PerformanceChar"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "performancetest_from",
+            "queries": [
+                {
+                    "definition": [
+                        {
+                            "navigationType": "relation",
+                            "direction": "from",
+                            "qualityFilter": {
+                                "rel_type": "PerformanceTest"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "performancetest_to",
+            "queries": [
+                {
+                    "definition": [
+                        {
+                            "navigationType": "relation",
+                            "direction": "to",
+                            "qualityFilter": {
+                                "rel_type": "PerformanceTest"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

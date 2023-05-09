@@ -1,0 +1,20 @@
+del command 'PLMAddNewParameterActionLink';
+add command 'PLMAddNewParameterActionLink'
+	description	''
+	label	'emxParameter.Associate.NewParameter'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=PARCreateParameterWebForm&type=type_PlmParameter&typeChooser=false&nameField=both&autoNameChecked=true&policy=policy_ParameterAggregation&submitAction=refreshCaller&showApply=true&relationship=relationship_ParameterAggregation&direction=from&postProcessJPO=emxParameterEdit:updateNewConnection&postProcessURL=${SUITE_DIR}/emxParameterResetCreateForm.jsp'
+	alt	'emxParameter.Associate.AltNewParameter'
+	setting	'Target Location'		'slidein'
+	setting	'Maximum Length'		'20'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Requirement Manager'
+;
+modify menu PLMAssociatedParametersActions add command PLMAddNewParameterActionLink order command PLMAddNewParameterActionLink 1;
+#channel ==>PLMAssociatedParametersActions
+add property command_PLMAddNewParameterActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLMAddNewParameterActionLink';

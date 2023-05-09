@@ -1,0 +1,18 @@
+del menu 'TMCDiscussionAttachmentCreateNew';
+add menu 'TMCDiscussionAttachmentCreateNew'
+	description	''
+	label	'emxTeamCentral.Common.CreateNew'
+	href	''
+	alt	'emxTeamCentral.Common.CreateNew'
+	setting	'Registered Suite'		'TeamCentral'
+	command	'TMCDiscussionAttachmentsCreateNewActionLink'
+	command	'AEFSeparator'
+	command	'TMCDiscussionAttachmentCreateVCFileFolder'
+	command	'TMCDiscussionAttachmentConnectVCFileFolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCDiscussionAttachmentCreateNew'
+	property 'version'	value	'10-7'
+;
+add property menu_TMCDiscussionAttachmentCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'TMCDiscussionAttachmentCreateNew';

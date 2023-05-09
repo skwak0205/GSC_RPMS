@@ -1,0 +1,22 @@
+del command 'PMCWBSFlatViewDelete';
+add command 'PMCWBSFlatViewDelete'
+	description	'Added for flattened schedule view'
+	label	''
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=FlatViewDelete'
+	alt	'emxProgramCentral.Command.DeleteRemove'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSFlatViewDelete'
+	property	'version'	value	'R424.HF2'
+;
+modify menu PMCWBSFlatViewToolbar add command PMCWBSFlatViewDelete order command PMCWBSFlatViewDelete 5;
+#channel ==>PMCWBSFlatViewToolbar
+add property command_PMCWBSFlatViewDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSFlatViewDelete';

@@ -1,0 +1,22 @@
+del menu 'PMCReferenceDocumentSummaryActionsToolBar';
+add menu 'PMCReferenceDocumentSummaryActionsToolBar'
+	description	''
+	label	'emxProgramCentral.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'PMCReferenceDocuemntCreateNew'
+	command	'PMCReferenceDocumentAddProjectContentActionLink'
+	command	'AEFSeparator'
+	command	'PMCDocumentSummaryDownloadActionLink'
+	command	'PMCDocumentSummaryCheckOutActionLink'
+	command	'PMCDocumentRemove'
+	command	'PMCDocumentDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCReferenceDocumentSummaryActionsToolBar'
+	property 'version'	value	'R422.HF7'
+;
+add property menu_PMCReferenceDocumentSummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCReferenceDocumentSummaryActionsToolBar';

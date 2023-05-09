@@ -1,0 +1,21 @@
+del menu 'PMCResourcePoolPeopleToolbarActions';
+add menu 'PMCResourcePoolPeopleToolbarActions'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'checkResourceManagerAccess'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCResourcePoolPeopleAssociateSkill'
+	command	'PMCResourcePoolPeopleAssignToProjectSpaces'
+	command	'PMCResourcePoolPeopleAssignToProjectRequest'
+	menu	'PMCWeeklyTimeSheetReportResourcePoolToolbarMenu'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourcePoolPeopleToolbarActions'
+	property 'version'	value	'R418'
+;
+add property menu_PMCResourcePoolPeopleToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourcePoolPeopleToolbarActions';

@@ -1,0 +1,12 @@
+del command 'VPLMSyncChgActionSummaryRemoveAssociatedParts_Footerlink_0';
+add command 'VPLMSyncChgActionSummaryRemoveAssociatedParts_Footerlink_0'
+	description	'Command to Remove Action to ProductInput connection'
+	label	'emxVPMCentral.Change.Command.ActionSummaryRemoveAssociatedParts_Footerlink_0.Title'
+	href	'removeSelectedActionAssociatedItems()'
+	alt	'RemoveProductInput'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPMCentral'
+	setting	'Javascript'		'true'
+;
+#channel ==>
+add property command_VPLMSyncChgActionSummaryRemoveAssociatedParts_Footerlink_0 on program eServiceSchemaVariableMapping.tcl to command 'VPLMSyncChgActionSummaryRemoveAssociatedParts_Footerlink_0';

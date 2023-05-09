@@ -1,0 +1,22 @@
+del command 'PLCAddExistingProductActionLink';
+add command 'PLCAddExistingProductActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${ROOT_DIR}/components/emxCommonSearch.jsp?searchmode=addexisting&searchmenu=SearchAddExistingChooserMenu&searchcommand=PLCSearchProductsCommand&srcDestRelName=relationship_Products&isTo=true&hideVersions=true&SubmitURL=${SUITE_DIR}/ProductAddExistingIntermediate.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'550'
+	setting	'Window Width'		'720'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingProductActionLink'
+	property	'version'	value	'R215'
+;
+modify menu PLCModelProductListTopActionBar add command PLCAddExistingProductActionLink order command PLCAddExistingProductActionLink 0;
+#channel ==>PLCModelProductListTopActionBar
+add property command_PLCAddExistingProductActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingProductActionLink';

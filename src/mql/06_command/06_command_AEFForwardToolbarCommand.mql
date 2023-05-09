@@ -1,0 +1,17 @@
+del command 'AEFForwardToolbarCommand';
+add command 'AEFForwardToolbarCommand'
+	description	''
+	label	''
+	href	'javascript:getTopWindow().bclist.goForward()'
+	alt	'emxFramework.ForwardToolbarMenu.label'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconMedNext.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFForwardToolbarCommand'
+	property	'version'	value	'R214'
+;
+#channel ==>
+add property command_AEFForwardToolbarCommand on program eServiceSchemaVariableMapping.tcl to command 'AEFForwardToolbarCommand';

@@ -1,0 +1,20 @@
+del command 'PLCAddExistingProductConfigurationBuildActionLink';
+add command 'PLCAddExistingProductConfigurationBuildActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${SUITE_DIR}/BuildCreatePreProcess.jsp?mode=AddExisting'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingProductConfigurationBuildActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCProductConfigurationBuildTopActionBar add command PLCAddExistingProductConfigurationBuildActionLink order command PLCAddExistingProductConfigurationBuildActionLink 2;
+#channel ==>PLCProductConfigurationBuildTopActionBar
+add property command_PLCAddExistingProductConfigurationBuildActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingProductConfigurationBuildActionLink';

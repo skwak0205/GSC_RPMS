@@ -1,0 +1,23 @@
+del command 'CFPModelEffectivityMatrixActionLink';
+add command 'CFPModelEffectivityMatrixActionLink'
+	description	''
+	label	'CFPPlanning.ActionLink.ViewEffectivtyMatrix'
+	href	'${SUITE_DIR}/DesignEffectivityPreProcess.jsp?mode=ViewDerivationEffectivityReport'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Licensed Product'		'ENO_CFP_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAuthoringModeEnabled'
+	setting	'Access Program'		'CFPModelBase'
+	setting	'Hide Mode'		'Mobile'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPModelEffectivityMatrixActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCModelDerivationsReportsToolbar add command CFPModelEffectivityMatrixActionLink order command CFPModelEffectivityMatrixActionLink 1;
+#channel ==>PLCModelDerivationsReportsToolbar
+add property command_CFPModelEffectivityMatrixActionLink on program eServiceSchemaVariableMapping.tcl to command 'CFPModelEffectivityMatrixActionLink';

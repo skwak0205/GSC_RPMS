@@ -1,0 +1,7 @@
+{
+"UnifiedExportCommand.Title":"Exportar como",
+"UnifiedExportCommand.ShortHelp":"Exporta el contenido seleccionado como geometrías, salidas derivadas y metadatos.",
+"UnifiedExportCommand.LongHelp":"Con Exportar como, puede exportar el contenido 3DExperience seleccionado y obtener los archivos de formatos secundarios, metadatos y flujos CAD nativos asociados.",
+"UnifiedExportCommand.WebHelp":"PsteUserMap/pste-r-ui-ActBar-Tools.htm",
+"UnifiedExportCommand.WebHelp.ENOSC2D_AP":"Sc2dUserMap/sc2d-r-ui-ActBar-Tools.htm"
+}

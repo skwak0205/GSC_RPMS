@@ -1,0 +1,22 @@
+del menu 'FTRModelCandidateManufacturingFeatureToolbarActions';
+add menu 'FTRModelCandidateManufacturingFeatureToolbarActions'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'FTRModelCreateCandidateManufacturingFeatureAction'
+	command	'FTRModelAddExistingManufacturingFeatureAction'
+	command	'AEFSeparator'
+	command	'FTRModelCommitManufacturingFeatureAction'
+	command	'AEFSeparator2'
+	command	'FTRRemoveCandidateManufacturingFeatureActionLink'
+	command	'FTRDeleteManufacturingFeatureActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRModelCandidateManufacturingFeatureToolbarActions'
+	property 'version'	value	'R418'
+;
+add property menu_FTRModelCandidateManufacturingFeatureToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'FTRModelCandidateManufacturingFeatureToolbarActions';

@@ -1,0 +1,16 @@
+del command 'APPWorkflowOwnerFind';
+add command 'APPWorkflowOwnerFind'
+	description	'Workflow Owner Find Command Object'
+	label	'emxComponents.Command.SearchPerson'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxWorkflow:getPersons&table=APPPersonSearchResults&form=ECSearchPersonsForm&searchCommand=APPWorkflowOwnerFind&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowOwnerFind'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowPersonSearchMenu add command APPWorkflowOwnerFind order command APPWorkflowOwnerFind 0;
+#channel ==>APPWorkflowPersonSearchMenu
+add property command_APPWorkflowOwnerFind on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowOwnerFind';

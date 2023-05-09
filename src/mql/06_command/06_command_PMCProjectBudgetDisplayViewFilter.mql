@@ -1,0 +1,23 @@
+del command 'PMCProjectBudgetDisplayViewFilter';
+add command 'PMCProjectBudgetDisplayViewFilter'
+	description	'Fiscal Or Timeline Dispaly Command'
+	label	'emxProgramCentral.ProjectBenefitOrBudget.DisplayViewFilter'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=Filter'
+	alt	'emxProgramCentral.ProjectBenefitOrBudget.DisplayViewFilter'
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getBenefitOrBudgetDisplayViewsFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxProjectBudget'
+	setting	'Access Function'		'isBudgetByPhase'
+	setting	'Access Program'		'emxProjectBudget'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetDisplayViewFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCProjectBudgetFilter add command PMCProjectBudgetDisplayViewFilter order command PMCProjectBudgetDisplayViewFilter 0;
+#channel ==>PMCProjectBudgetFilter
+add property command_PMCProjectBudgetDisplayViewFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudgetDisplayViewFilter';

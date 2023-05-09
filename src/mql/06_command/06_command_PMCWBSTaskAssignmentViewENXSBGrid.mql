@@ -1,0 +1,20 @@
+del command 'PMCWBSTaskAssignmentViewENXSBGrid';
+add command 'PMCWBSTaskAssignmentViewENXSBGrid'
+	description	''
+	label	'emxProgramCentral.TaskAssignment.View'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'table'		'PMCWBSAssignmentViewTableENXSBGrid'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSTaskAssignmentViewENXSBGrid'
+	property	'version'	value	'R421.HF6'
+;
+modify menu PMCWBSTableMenuENXSBGrid add command PMCWBSTaskAssignmentViewENXSBGrid order command PMCWBSTaskAssignmentViewENXSBGrid 6;
+#channel ==>PMCWBSTableMenuENXSBGrid
+add property command_PMCWBSTaskAssignmentViewENXSBGrid on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSTaskAssignmentViewENXSBGrid';

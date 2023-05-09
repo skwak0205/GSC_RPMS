@@ -1,0 +1,32 @@
+del command 'RMTUpdateRevision';
+add command 'RMTUpdateRevision'
+	description	'Update selected objects to latest revisions'
+	label	'emxRequirements.ActionLink.UpdateRevision'
+	href	'${SUITE_DIR}/UpdateRevision.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hideUpdateRevisionCmd'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallHigherRevision.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.UpdateRevision'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTUpdateRevision'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeActionBar add command RMTUpdateRevision order command RMTUpdateRevision 10;
+modify menu RMTChapTreeActionBar add command RMTUpdateRevision order command RMTUpdateRevision 8;
+modify menu RMTRichTextEditorActions add command RMTUpdateRevision order command RMTUpdateRevision 10;
+modify menu RMTChapterRichTextEditorActions add command RMTUpdateRevision order command RMTUpdateRevision 7;
+#channel ==>RMTSpecTreeActionBarRMTChapTreeActionBarRMTRichTextEditorActionsRMTChapterRichTextEditorActions
+add property command_RMTUpdateRevision on program eServiceSchemaVariableMapping.tcl to command 'RMTUpdateRevision';

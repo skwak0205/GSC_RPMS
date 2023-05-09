@@ -1,0 +1,18 @@
+del menu 'AEFSearchConsolidatedActions';
+add menu 'AEFSearchConsolidatedActions'
+	description	''
+	label	'emxFramework.Consolidate.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'AEFSaveSearch'
+	command	'AEFSaveAsSearch'
+	command	'AEFGenericDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFSearchConsolidatedActions'
+	property 'version'	value	'R417'
+;
+add property menu_AEFSearchConsolidatedActions on program eServiceSchemaVariableMapping.tcl to menu 'AEFSearchConsolidatedActions';

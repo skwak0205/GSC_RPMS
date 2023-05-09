@@ -1,0 +1,11 @@
+del menu 'FTRExpressionRuleToolbarMenu';
+add menu 'FTRExpressionRuleToolbarMenu'
+	description	'FTRExpressionRuleToolbarMenu'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	menu	'FTRExpressionRuleListActionsMenu'
+	property 'version'	value	'R421'
+;
+add property menu_FTRExpressionRuleToolbarMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRExpressionRuleToolbarMenu';

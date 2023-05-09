@@ -1,0 +1,20 @@
+del command 'ctxMsoiCmd_ReviseWithoutFiles';
+add command 'ctxMsoiCmd_ReviseWithoutFiles'
+	description	'ctxMsoiCmd_ReviseWithoutFiles'
+	label	'emxMSF.Command.ctxMsoiCmd_ReviseWithoutFiles'
+	href	''
+	alt	'ctxMsoiCmd_ReviseWithoutFiles'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_ReviseWithoutFiles'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoiCmd_ReviseMenu add command ctxMsoiCmd_ReviseWithoutFiles order command ctxMsoiCmd_ReviseWithoutFiles 0;
+modify menu ctxMsoi_Navigation_NoFiles add command ctxMsoiCmd_ReviseWithoutFiles order command ctxMsoiCmd_ReviseWithoutFiles 3;
+modify menu ctxMsoi_SearchResults_NoFiles add command ctxMsoiCmd_ReviseWithoutFiles order command ctxMsoiCmd_ReviseWithoutFiles 3;
+#channel ==>ctxMsoiCmd_ReviseMenuctxMsoi_Navigation_NoFilesctxMsoi_SearchResults_NoFiles
+add property command_ctxMsoiCmd_ReviseWithoutFiles on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_ReviseWithoutFiles';

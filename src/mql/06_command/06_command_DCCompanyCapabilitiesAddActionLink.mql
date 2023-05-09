@@ -1,0 +1,24 @@
+del command 'DCCompanyCapabilitiesAddActionLink';
+add command 'DCCompanyCapabilitiesAddActionLink'
+	description	'Add Action Link on Company Capabilities Page'
+	label	'emxDocumentCentral.ActionBarCmd.Add'
+	href	'${SUITE_DIR}/emxDocumentCentralStart.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'600'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCompanyCapabilitiesAddActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCCompanyCapabilitiesTopActionbar add command DCCompanyCapabilitiesAddActionLink order command DCCompanyCapabilitiesAddActionLink 0;
+modify menu DCCompanyFormatsTopActionbar add command DCCompanyCapabilitiesAddActionLink order command DCCompanyCapabilitiesAddActionLink 0;
+#channel ==>DCCompanyCapabilitiesTopActionbarDCCompanyFormatsTopActionbar
+add property command_DCCompanyCapabilitiesAddActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCCompanyCapabilitiesAddActionLink';

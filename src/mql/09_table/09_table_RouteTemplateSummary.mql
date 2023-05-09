@@ -1,0 +1,41 @@
+del table 'RouteTemplateSummary' system;
+add table 'RouteTemplateSummary' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxComponents.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'Revision'
+	businessobject	'revision'
+	label	'emxComponents.Common.Revision'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Components'
+column #3
+	name	'Description'
+	businessobject	'description'
+	label	'emxComponents.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'RouteTemplateSummary'
+	property	'version'	value	'10-5-0-1'
+;
+add property table_RouteTemplateSummary on program eServiceSchemaVariableMapping.tcl to table 'RouteTemplateSummary' system;

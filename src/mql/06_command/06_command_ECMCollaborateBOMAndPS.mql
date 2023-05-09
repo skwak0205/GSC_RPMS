@@ -1,0 +1,19 @@
+del command 'ECMCollaborateBOMAndPS';
+add command 'ECMCollaborateBOMAndPS'
+	description	'Command to collaborate modification done on BOM and Product structures on elements which are change controlled.'
+	label	'EnterpriseChangeMgt.Command.Collaborate'
+	href	'${SUITE_DIR}/ECMCollaborateFS.jsp?titleKey=EnterpriseChangeMgt.Heading.CollaborateStatus'
+	alt	'EnterpriseChangeMgt.Command.Collaborate'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isCollaborateAvailable'
+	setting	'Access Program'		'enoECMChangeUX'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallSyncChangeAction.png'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCollaborateBOMAndPS'
+	property	'version'	value	'R421'
+;
+modify menu ECMCAPropertiesToolbar add command ECMCollaborateBOMAndPS order command ECMCollaborateBOMAndPS 0;
+#channel ==>ECMCAPropertiesToolbar
+add property command_ECMCollaborateBOMAndPS on program eServiceSchemaVariableMapping.tcl to command 'ECMCollaborateBOMAndPS';

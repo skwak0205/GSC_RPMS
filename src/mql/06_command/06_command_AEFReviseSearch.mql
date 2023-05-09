@@ -1,0 +1,22 @@
+del command 'AEFReviseSearch';
+add command 'AEFReviseSearch'
+	description	'Revise Search'
+	label	'emxFramework.GlobalSearch.ReviseSearch'
+	href	'javascript:getTopWindow().reviseSearch()'
+	alt	'emxFramework.GlobalSearch.ReviseSearch'
+	setting	'Target Location'		'searchHidden'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFReviseSearch'
+	property	'version'	value	'10-5'
+;
+modify menu AEFSearchResultToolbar add command AEFReviseSearch order command AEFReviseSearch 0;
+modify menu APPSearchResultToolbar add command AEFReviseSearch order command AEFReviseSearch 1;
+modify menu DCSearchResultToolbar add command AEFReviseSearch order command AEFReviseSearch 1;
+modify menu PMCSearchResultToolbar add command AEFReviseSearch order command AEFReviseSearch 1;
+modify menu RMTSpecificationSearchResultToolbar add command AEFReviseSearch order command AEFReviseSearch 0;
+modify menu RMTRequirementSearchResultToolbar add command AEFReviseSearch order command AEFReviseSearch 1;
+#channel ==>AEFSearchResultToolbarAPPSearchResultToolbarDCSearchResultToolbarPMCSearchResultToolbarRMTSpecificationSearchResultToolbarRMTRequirementSearchResultToolbar
+add property command_AEFReviseSearch on program eServiceSchemaVariableMapping.tcl to command 'AEFReviseSearch';

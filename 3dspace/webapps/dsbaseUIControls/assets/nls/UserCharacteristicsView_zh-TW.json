@@ -1,0 +1,8 @@
+{
+  "UCV.optionsChecker.optionSet.notExisting.error": "必須定義選項組，才能擷取使用者特性！",
+  "UCV.optionsChecker.optionSet.type.error": "必須定義選項組，才能擷取使用者特性！",
+  "UCV.mode.icon.text.switchReadOnly": "切換至唯讀模式",
+  "UCV.mode.icon.text.switchEdit": "切換至編輯模式",
+  "UCV.add.icon.text": "加入使用者特性",
+  "UCV.noUC.error": "沒有可用的使用者特性..."
+}

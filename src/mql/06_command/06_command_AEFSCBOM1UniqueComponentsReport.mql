@@ -1,0 +1,16 @@
+del command 'AEFSCBOM1UniqueComponentsReport';
+add command 'AEFSCBOM1UniqueComponentsReport'
+	description	'Compare BOM1 Unique Components'
+	label	'emxFramework.Common.UniquetoLeftReport'
+	href	'${COMMON_DIR}/emxStructureCompareIntermediate.jsp?fromPage=Unique_toLeft_Report'
+	alt	'emxFramework.Common.UniquetoLeftReport'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSCBOM1UniqueComponentsReport'
+	property	'version'	value	'R214'
+;
+#channel ==>AEFStructureCompareResults
+add property command_AEFSCBOM1UniqueComponentsReport on program eServiceSchemaVariableMapping.tcl to command 'AEFSCBOM1UniqueComponentsReport';

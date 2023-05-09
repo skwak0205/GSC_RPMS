@@ -1,0 +1,16 @@
+del menu 'RMTRequirementSearchType';
+add menu 'RMTRequirementSearchType'
+	description	''
+	label	'emxRequirements.Menu.SearchType'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'AEFSavedSearches'
+	command	'RMTGlobalSearchRequirementsCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementSearchType'
+	property 'version'	value	'V6R2009x'
+;
+add property menu_RMTRequirementSearchType on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementSearchType';

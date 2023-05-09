@@ -1,0 +1,19 @@
+del command 'PMCFolderRoleAccessView';
+add command 'PMCFolderRoleAccessView'
+	description	''
+	label	'emxProgramCentral.Common.PMCFolder.RoleAccessView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCFolderRoleAccessViewTable'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFolderRoleAccessView'
+	property	'version'	value	'R216'
+;
+modify menu PMCFolderTableMenu add command PMCFolderRoleAccessView order command PMCFolderRoleAccessView 2;
+#channel ==>PMCFolderTableMenu
+add property command_PMCFolderRoleAccessView on program eServiceSchemaVariableMapping.tcl to command 'PMCFolderRoleAccessView';

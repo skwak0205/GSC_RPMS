@@ -1,0 +1,49 @@
+################################################################################################
+# Created Date : 2020.07.29
+# Create by Nackwon.Do
+# Description : Workspace Webform
+################################################################################################
+
+# OOTB copy by Nackwon.Do 2020-07-29
+copy form 'type_Workspace' 'type_Workspace_OOTB';
+
+mod form 'type_Workspace'
+    field # S-BOM Manual Item
+        name  'emdManualItem'
+        label 'emxTeamCentral.Label.emdManualItem'
+        businessobject '$<attribute[attribute_emdManualItem]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite'  'TeamCentral'
+        setting 'Required'          'false'
+        setting 'Editable'          'true'
+        setting 'Input Type'        'combobox'
+        setting 'Field Type'        'attribute'
+        setting 'Admin Type'        'attribute_emdManualItem'
+    field # S-BOM Master
+        name  'emdSMaster'
+        label 'emxTeamCentral.Label.emdSMaster'
+        businessobject '$<attribute[attribute_emdSMaster]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite'  'TeamCentral'
+        setting 'Required'          'false'
+        setting 'Editable'          'true'
+        setting 'Input Type'        'combobox'
+        setting 'Field Type'        'attribute'
+        setting 'Admin Type'        'attribute_emdSMaster'
+    field # S-BOM Connected
+        name  'emdConnectedSbom'
+        label 'emxTeamCentral.Label.emdConnectedSBOM'
+        businessobject '$<attribute[attribute_emdConnectedSbom]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite'  'TeamCentral'
+        setting 'Required'          'false'
+        setting 'Editable'          'true'
+        setting 'Field Type'        'attribute'
+        setting 'Admin Type'        'attribute_emdConnectedSbom'
+;

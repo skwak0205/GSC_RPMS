@@ -1,0 +1,22 @@
+del command 'ECMCREditDetailsRMB';
+add command 'ECMCREditDetailsRMB'
+	description	'Edit Change'
+	label	'EnterpriseChangeMgt.Command.Edit'
+	href	'${SUITE_DIR}/ECMIntermediateProcess.jsp?functionality=editCRFromRMB&formHeader=EnterpriseChangeMgt.Heading.EditCR&mode=edit&preProcessJavaScript=preProcessInEditCO&postProcessJPO=enoECMChangeRequestUX:updateRouteTemplateChangeRequestEdit&form=type_ChangeRequestSlidein&type=type_ChangeRequest&HelpMarker=emxhelpchangerequestedit&postProcessURL=../enterprisechangemgtapp/ECMCommonRefresh.jsp'
+	alt	'EnterpriseChangeMgt.Command.EditDetails'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current.access[modify] == TRUE && $<interface[interface_ChangeOnHold] != "TRUE">)'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Access Mask'		'modify'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCREditDetailsRMB'
+	property	'version'	value	'R417'
+;
+modify menu type_ChangeRequestRMB add command ECMCREditDetailsRMB order command ECMCREditDetailsRMB 2;
+#channel ==>type_ChangeRequestRMB
+add property command_ECMCREditDetailsRMB on program eServiceSchemaVariableMapping.tcl to command 'ECMCREditDetailsRMB';

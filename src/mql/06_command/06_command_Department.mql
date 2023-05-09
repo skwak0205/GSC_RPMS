@@ -1,0 +1,31 @@
+del command 'Department';
+add command 'Department'
+	description	'Department Command Object'
+	label	'emxFramework.Command.Department'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCompany:getDepartments&table=APPOrganizationSummary&toolbar=APPDepartmentSummaryToolBar&header=emxComponents.DepartmentSummary.Heading&selection=multiple&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpdepartments&PrinterFriendly=true'
+	alt	'emxFramework.Command.Department'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(to[$<relationship_Customer>].from.name != "")'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallDeparment.gif'
+	user	'Organization Manager'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'Department'
+	property	'version'	value	'R422'
+;
+modify menu type_BusinessUnit add command Department order command Department 6;
+modify menu type_Company add command Department order command Department 7;
+modify menu type_Department add command Department order command Department 3;
+#channel ==>type_BusinessUnittype_Companytype_Department
+add property command_Department on program eServiceSchemaVariableMapping.tcl to command 'Department';

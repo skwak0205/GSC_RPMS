@@ -1,0 +1,22 @@
+del command 'APPPotentialSuppliersActivate';
+add command 'APPPotentialSuppliersActivate'
+	description	'Activate Potential Suppliers'
+	label	'emxComponents.Common.Activate'
+	href	'${SUITE_DIR}/emxComponentsOrganizationActivateProcess.jsp'
+	alt	'emxComponents.Common.Activate'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToPotentialSuppliers'
+	setting	'Access Program'		'emxCompany'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActivate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPotentialSuppliersActivate'
+	property	'version'	value	'R417'
+;
+modify menu APPPotentialSuppliersActionsToolbar add command APPPotentialSuppliersActivate order command APPPotentialSuppliersActivate 3;
+#channel ==>APPPotentialSuppliersActionsToolbar
+add property command_APPPotentialSuppliersActivate on program eServiceSchemaVariableMapping.tcl to command 'APPPotentialSuppliersActivate';

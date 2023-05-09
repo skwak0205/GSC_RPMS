@@ -1,0 +1,17 @@
+del menu 'LBCFolderDomainAccessToolBar';
+add menu 'LBCFolderDomainAccessToolBar'
+	description	''
+	label	'emxFramework.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'DomainAccessAddMember'
+	command	'DomainAccessAddSecurityContext'
+	command	'DomainAccessDeleteAccess'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCFolderDomainAccessToolBar'
+	property 'version'	value	'R419'
+;
+add property menu_LBCFolderDomainAccessToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LBCFolderDomainAccessToolBar';

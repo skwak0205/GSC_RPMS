@@ -1,0 +1,20 @@
+del command 'AEFFullSearchCollection';
+add command 'AEFFullSearchCollection'
+	description	'Command to do Search within Collection'
+	label	'emxFramework.Consolidate.Collections'
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxAEFFullSearchUtil'
+	setting	'Dynamic Command Function'		'getCollectionCommands'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallCollection.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFFullSearchCollection'
+	property	'version'	value	'R417'
+;
+modify menu AEFFullSearchMenu add command AEFFullSearchCollection order command AEFFullSearchCollection 0;
+#channel ==>AEFFullSearchMenu
+add property command_AEFFullSearchCollection on program eServiceSchemaVariableMapping.tcl to command 'AEFFullSearchCollection';

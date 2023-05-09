@@ -1,0 +1,16 @@
+del menu 'type_ProjectTemplateRMB';
+add menu 'type_ProjectTemplateRMB'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectTemplateProperties'
+	command	'PMCLifecycle'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_ProjectTemplateRMB'
+	property 'version'	value	'R417'
+;
+add property menu_type_ProjectTemplateRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_ProjectTemplateRMB';

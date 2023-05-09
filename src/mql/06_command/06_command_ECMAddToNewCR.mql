@@ -1,0 +1,22 @@
+del command 'ECMAddToNewCR';
+add command 'ECMAddToNewCR'
+	description	'The Add to New Change Request Link for the change management powerview from app context eg part--changemgmt'
+	label	'EnterpriseChangeMgt.Command.AddToNewCR'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=ECMAddToNewCR&portalFrame=ECMCRs&targetRelName=relationship_ChangeAffectedItem&isFrom=false'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAddToNewCR'
+	property	'version'	value	'R424'
+;
+modify menu ECMChangeRequestManagementToolbar add command ECMAddToNewCR order command ECMAddToNewCR 2;
+#channel ==>ECMChangeRequestManagementToolbar
+add property command_ECMAddToNewCR on program eServiceSchemaVariableMapping.tcl to command 'ECMAddToNewCR';

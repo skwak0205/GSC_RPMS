@@ -1,0 +1,21 @@
+del command 'ImpactAnalysisCreateNew';
+add command 'ImpactAnalysisCreateNew'
+	description	'Impact Analysis Create New'
+	label	'EnterpriseChangeMgt.Command.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ImpactAnalysis&form=ImpactAnalysisCreate&header=EnterpriseChangeMgt.Heading.CreateNewIA&submitAction=refreshCaller&postProcessJPO=enoECMImpactAnalysis:connectImpactAnalysis&HelpMarker=emxhelpimpactanalysiscreate'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasCreateImpactAnalysisAccess'
+	setting	'Access Program'		'enoECMChangeActionUX'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ImpactAnalysisCreateNew'
+	property	'version'	value	'R417'
+;
+modify menu ImpactAnalysisListActionsToolBar add command ImpactAnalysisCreateNew order command ImpactAnalysisCreateNew 1;
+#channel ==>ImpactAnalysisListActionsToolBar
+add property command_ImpactAnalysisCreateNew on program eServiceSchemaVariableMapping.tcl to command 'ImpactAnalysisCreateNew';

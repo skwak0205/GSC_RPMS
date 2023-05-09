@@ -1,0 +1,18 @@
+del command 'APPRouteHistory';
+add command 'APPRouteHistory'
+	description	'Current Object History'
+	label	'emxFramework.History.History'
+	href	'${COMMON_DIR}/emxHistory.jsp?HistoryMode=CurrentRevision&Header=emxFramework.Characteristic.History'
+	alt	'emxFramework.History.History'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallHistory.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteHistory'
+	property	'version'	value	'R417'
+;
+modify menu type_InboxTask add command APPRouteHistory order command APPRouteHistory 0;
+#channel ==>type_InboxTask
+add property command_APPRouteHistory on program eServiceSchemaVariableMapping.tcl to command 'APPRouteHistory';

@@ -1,0 +1,28 @@
+del command 'ctxMsoiCmd_Download';
+add command 'ctxMsoiCmd_Download'
+	description	'ctxMsoiCmd_Download'
+	label	'emxMSF.Command.ctxMsoiCmd_Download'
+	href	''
+	alt	'ctxMsoiCmd_Download'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_Download'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Navigation_FileLocked add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 2;
+modify menu ctxMsoi_Navigation_FileUnlocked add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 2;
+modify menu ctxMsoi_Navigation_MultiFile add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 1;
+modify menu ctxMsoi_Navigation_MultipleSelection add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 2;
+modify menu ctxMsoi_Revisions_VersionLocked add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 2;
+modify menu ctxMsoi_Revisions_VersionUnLocked add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 2;
+modify menu ctxMsoi_Revisions_OlderVersion add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 0;
+modify menu ctxMsoi_SearchResults_FileLocked add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 2;
+modify menu ctxMsoi_SearchResults_FileUnlocked add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 2;
+modify menu ctxMsoi_SearchResults_MultiFile add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 1;
+modify menu ctxMsoi_SearchResults_MultipleSelection add command ctxMsoiCmd_Download order command ctxMsoiCmd_Download 2;
+#channel ==>ctxMsoi_Navigation_FileLockedctxMsoi_Navigation_FileUnlockedctxMsoi_Navigation_MultiFilectxMsoi_Navigation_MultipleSelectionctxMsoi_Revisions_VersionLockedctxMsoi_Revisions_VersionUnLockedctxMsoi_Revisions_OlderVersionctxMsoi_SearchResults_FileLockedctxMsoi_SearchResults_FileUnlockedctxMsoi_SearchResults_MultiFilectxMsoi_SearchResults_MultipleSelection
+add property command_ctxMsoiCmd_Download on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_Download';

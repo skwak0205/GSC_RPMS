@@ -1,0 +1,17 @@
+del menu 'RMTSearchAddExistingChooserMenu';
+add menu 'RMTSearchAddExistingChooserMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTSearchChaptersCommand'
+	command	'RMTSearchCommentsCommand'
+	command	'RMTSearchUseCasesCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSearchAddExistingChooserMenu'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_RMTSearchAddExistingChooserMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTSearchAddExistingChooserMenu';

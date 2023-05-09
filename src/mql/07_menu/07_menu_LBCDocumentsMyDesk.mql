@@ -1,0 +1,18 @@
+del menu 'LBCDocumentsMyDesk';
+add menu 'LBCDocumentsMyDesk'
+	description	''
+	label	'emxDocumentCentral.Menu.LCDocuments'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LBCMyDocumentsMyDesk'
+	command	'LBCCheckedOutMyDesk'
+	command	'LBCMyApprovalMyDesk'
+	command	'LBCDocumentsRejectedMyDesk'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCDocumentsMyDesk'
+	property 'version'	value	'R211'
+;
+add property menu_LBCDocumentsMyDesk on program eServiceSchemaVariableMapping.tcl to menu 'LBCDocumentsMyDesk';

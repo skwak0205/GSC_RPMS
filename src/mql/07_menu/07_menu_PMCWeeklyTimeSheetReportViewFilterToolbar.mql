@@ -1,0 +1,16 @@
+del menu 'PMCWeeklyTimeSheetReportViewFilterToolbar';
+add menu 'PMCWeeklyTimeSheetReportViewFilterToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PMCWTSViewFilter'
+	command	'PMCWTSProjectStateFilter'
+	command	'PMCWTSReportingYearFilter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWeeklyTimeSheetReportViewFilterToolbar'
+	property 'version'	value	'R210'
+;
+add property menu_PMCWeeklyTimeSheetReportViewFilterToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCWeeklyTimeSheetReportViewFilterToolbar';

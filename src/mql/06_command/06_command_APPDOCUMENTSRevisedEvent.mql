@@ -1,0 +1,18 @@
+del command 'APPDOCUMENTSRevisedEvent';
+add command 'APPDOCUMENTSRevisedEvent'
+	description	'DOCUMENTS Revised Event'
+	label	'emxComponents.DOCUMENTS.Event.Revised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'3DNotificationSupported'		'true'
+	setting	'Event Type'		'Revised'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDOCUMENTSRevisedEvent'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPDOCUMENTSEvents add command APPDOCUMENTSRevisedEvent order command APPDOCUMENTSRevisedEvent 7;
+#channel ==>APPDOCUMENTSEvents
+add property command_APPDOCUMENTSRevisedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPDOCUMENTSRevisedEvent';

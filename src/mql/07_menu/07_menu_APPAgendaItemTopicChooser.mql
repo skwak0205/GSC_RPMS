@@ -1,0 +1,16 @@
+del menu 'APPAgendaItemTopicChooser';
+add menu 'APPAgendaItemTopicChooser'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPMeetingAgendaItemAgainstType'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPAgendaItemTopicChooser'
+	property 'version'	value	'R417'
+;
+add property menu_APPAgendaItemTopicChooser on program eServiceSchemaVariableMapping.tcl to menu 'APPAgendaItemTopicChooser';

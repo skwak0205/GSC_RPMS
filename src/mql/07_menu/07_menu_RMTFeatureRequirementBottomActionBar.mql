@@ -1,0 +1,19 @@
+del menu 'RMTFeatureRequirementBottomActionBar';
+add menu 'RMTFeatureRequirementBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTUpdateRevisionActionLink'
+	command	'AEFSeparator2'
+	command	'RMTReplaceRequirementActionsLink'
+	command	'RMTRemoveRequirementActionLink'
+	command	'RMTDeleteRequirementActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTFeatureRequirementBottomActionBar'
+	property 'version'	value	'V6R2016x'
+;
+add property menu_RMTFeatureRequirementBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTFeatureRequirementBottomActionBar';

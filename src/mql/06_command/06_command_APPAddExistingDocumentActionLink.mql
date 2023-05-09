@@ -1,0 +1,23 @@
+del command 'APPAddExistingDocumentActionLink';
+add command 'APPAddExistingDocumentActionLink'
+	description	''
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_DOCUMENTS:IS_VERSION_OBJECT=False&table=IssueSearchDocumentTable&selection=multiple&suiteKey=Components&StringResourceFileId=emxComponentsStringResource&SuiteDirectory=components&HelpMarker=emxhelpsearch&submitURL=../components/emxCommonConnectObjects.jsp&srcDestRelName=relationship_ReferenceDocument&isTo=true&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddExistingDocumentActionLink'
+	property	'version'	value	'R420.HF1'
+;
+modify menu APPObjectDocumentSummaryActionsToolBar add command APPAddExistingDocumentActionLink order command APPAddExistingDocumentActionLink 1;
+#channel ==>APPObjectDocumentSummaryActionsToolBar
+add property command_APPAddExistingDocumentActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAddExistingDocumentActionLink';

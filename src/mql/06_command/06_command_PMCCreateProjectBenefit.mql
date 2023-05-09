@@ -1,0 +1,25 @@
+del command 'PMCCreateProjectBenefit';
+add command 'PMCCreateProjectBenefit'
+	description	'Create New Project Benefit'
+	label	'emxProgramCentral.ProjectBenefit.Command.CreateProjectBenefit'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Benefit&nameField=both&autoNameChecked=true&policy=policy_FinancialItems&form=PMCProjectBenefitCreateForm&header=emxProgramCentral.ProjectBenefit.Command.CreateProjectBenefit&submitAction=refreshCaller&postProcessJPO=emxBenefitItem:createProjectBenefit&HelpMarker=emxhelpfinancialcreatedialog'
+	alt	'emxProgramCentral.ProjectBenefit.Command.CreateProjectBenefit'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkBenefitCreateAccess'
+	setting	'Access Program'		'emxBenefitItem'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateProjectBenefit'
+	property	'version'	value	'R421'
+;
+modify menu PMCProjectBenefitEditPageToolBarActions add command PMCCreateProjectBenefit order command PMCCreateProjectBenefit 1;
+modify menu PMCProjectBenefitOperationsToolBar add command PMCCreateProjectBenefit order command PMCCreateProjectBenefit 0;
+#channel ==>PMCProjectBenefitEditPageToolBarActionsPMCProjectBenefitOperationsToolBar
+add property command_PMCCreateProjectBenefit on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateProjectBenefit';

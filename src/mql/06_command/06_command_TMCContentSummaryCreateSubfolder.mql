@@ -1,0 +1,26 @@
+del command 'TMCContentSummaryCreateSubfolder';
+add command 'TMCContentSummaryCreateSubfolder'
+	description	'Add Subfolder Command Object'
+	label	'emxTeamCentral.Command.CreateSubFolder'
+	href	'${COMMON_DIR}/emxForm.jsp?form=TMCSubVaultCreate&formHeader=emxTeamCentral.common.CreateNewSubfolder&HelpMarker=emxhelpcreatenewsubfolder&postProcessURL=../teamcentral/emxTeamCreateSubFolders.jsp&mode=edit&findMxLink=false&showPageURLIcon=false&submitAction=doNothing'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'575'
+	setting	'Window Width'		'575'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'getFolderOption'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Image'		'iconActionCreate.gif'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCContentSummaryCreateSubfolder'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_TMCContentSummaryCreateSubfolder on program eServiceSchemaVariableMapping.tcl to command 'TMCContentSummaryCreateSubfolder';

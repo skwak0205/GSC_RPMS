@@ -1,0 +1,16 @@
+del menu 'APPCompanyDetailsToolBar';
+add menu 'APPCompanyDetailsToolBar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPCompanyDetailsActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPCompanyDetailsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPCompanyDetailsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPCompanyDetailsToolBar';

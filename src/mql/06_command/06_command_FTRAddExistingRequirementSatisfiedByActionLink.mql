@@ -1,0 +1,23 @@
+del command 'FTRAddExistingRequirementSatisfiedByActionLink';
+add command 'FTRAddExistingRequirementSatisfiedByActionLink'
+	description	'Command Object for Add Existing Satisfied By to Requirement.'
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_CONFIGURATIONFEATURES,type_LOGICALSTRUCTURES&excludeOIDprogram=emxFeature:getFeatuersListSatisfyingRequirement&table=FTRFeatureSearchResultsTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../configuration/SearchUtil.jsp?mode=AddExisting&relName=relationship_RequirementSatisfiedBy'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingRequirementSatisfiedByActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRRequirementSatisfiedByTopActionBar add command FTRAddExistingRequirementSatisfiedByActionLink order command FTRAddExistingRequirementSatisfiedByActionLink 0;
+#channel ==>FTRRequirementSatisfiedByTopActionBar
+add property command_FTRAddExistingRequirementSatisfiedByActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingRequirementSatisfiedByActionLink';

@@ -1,0 +1,27 @@
+del command 'LBCBookshelfContentAddExisting';
+add command 'LBCBookshelfContentAddExisting'
+	description	'Add Existing Action Link'
+	label	'emxDocumentCentral.ActionBarCmd.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Book&formInclusionList=CreatedOn&hideHeader=true&header=emxLibraryCentral.Search.Results&selection=multiple&table=AEFGeneralSearchResults&excludeOIDprogram=emxLibraryCentralFindObjects:getAddExisitingExcludeOIDs&submitURL=../documentcentral/emxLibraryCentralAddExistingProcess.jsp?calledMethod=partFamilyAddExisting&HelpMarker=emxhelpfullsearch&useMode=addDocumentClassification'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromConnect'
+	setting	'Submit'		'false'
+	setting	'Row Select'		'none'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCBookshelfContentAddExisting'
+	property	'version'	value	'R216'
+;
+modify menu DCBookshelfBooksTopActionbar add command LBCBookshelfContentAddExisting order command LBCBookshelfContentAddExisting 0;
+modify menu LBCBookshelfBooksActionToolBar add command LBCBookshelfContentAddExisting order command LBCBookshelfContentAddExisting 2;
+#channel ==>DCBookshelfBooksTopActionbarLBCBookshelfBooksActionToolBar
+add property command_LBCBookshelfContentAddExisting on program eServiceSchemaVariableMapping.tcl to command 'LBCBookshelfContentAddExisting';

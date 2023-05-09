@@ -1,0 +1,18 @@
+del command 'PMCDefaultApproverView';
+add command 'PMCDefaultApproverView'
+	description	'Default Approver View'
+	label	'emxProgramCentral.WeeklyTimesheet.DefaultView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWeeklyTimeSheetApproverDefaultView'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDefaultApproverView'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimesheetApproverViews add command PMCDefaultApproverView order command PMCDefaultApproverView 1;
+#channel ==>PMCWeeklyTimesheetApproverViews
+add property command_PMCDefaultApproverView on program eServiceSchemaVariableMapping.tcl to command 'PMCDefaultApproverView';

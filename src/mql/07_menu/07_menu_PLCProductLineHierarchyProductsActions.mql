@@ -1,0 +1,18 @@
+del menu 'PLCProductLineHierarchyProductsActions';
+add menu 'PLCProductLineHierarchyProductsActions'
+	description	''
+	label	'emxProduct.Form.Label.Product'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/images/I_Product32.png'
+	command	'PLCProductLineHierarchyCreateProductActionLink'
+	command	'PLCProductLineHierarchyCreateProductDerivationActionLink'
+	command	'PLCProductLineHierarchyAddProductRevisionActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCProductLineHierarchyProductsActions'
+	property 'version'	value	'R418'
+;
+add property menu_PLCProductLineHierarchyProductsActions on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductLineHierarchyProductsActions';

@@ -1,0 +1,17 @@
+del command 'LBCLibraryRevisedEvent';
+add command 'LBCLibraryRevisedEvent'
+	description	'Event holder for Library Revision'
+	label	'emxLibraryCentral.Event.Library_Revised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Library Revised'
+	setting	'History Bit'		'revisioned'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCLibraryRevisedEvent'
+	property	'version'	value	'R212'
+;
+#channel ==>
+add property command_LBCLibraryRevisedEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCLibraryRevisedEvent';

@@ -1,0 +1,16 @@
+del menu 'TMCWorkspaceTemplateSubfolder';
+add menu 'TMCWorkspaceTemplateSubfolder'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/emxTeamFoldersWorkspaceTemplateDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallFolder.gif'
+	command	'TMCWorkspaceTemplateSubFolders'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCWorkspaceTemplateSubfolder'
+	property 'version'	value	'Rossini'
+;
+add property menu_TMCWorkspaceTemplateSubfolder on program eServiceSchemaVariableMapping.tcl to menu 'TMCWorkspaceTemplateSubfolder';

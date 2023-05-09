@@ -1,0 +1,27 @@
+del command 'FTRConfigurationFeatureCopyFrom';
+add command 'FTRConfigurationFeatureCopyFrom'
+	description	''
+	label	'emxProduct.ActionLink.CopyFrom'
+	href	'${SUITE_DIR}/ConfigurationFeatureCopyPreProcess.jsp?functionality=ConfigurationFeatureCopyFrom'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Mode'		'edit'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	setting	'Multilevel Selection Mode'		'false'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationFeatureCopyFrom'
+	property	'version'	value	'R421'
+;
+modify menu FTRConfigurationFeatureCopyMenu add command FTRConfigurationFeatureCopyFrom order command FTRConfigurationFeatureCopyFrom 1;
+#channel ==>FTRConfigurationFeatureCopyMenu
+add property command_FTRConfigurationFeatureCopyFrom on program eServiceSchemaVariableMapping.tcl to command 'FTRConfigurationFeatureCopyFrom';

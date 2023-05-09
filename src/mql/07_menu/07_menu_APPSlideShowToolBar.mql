@@ -1,0 +1,17 @@
+del menu 'APPSlideShowToolBar';
+add menu 'APPSlideShowToolBar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'AEFSlideShowPreviousImage'
+	command	'AEFSlideShowNextImage'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPSlideShowToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPSlideShowToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPSlideShowToolBar';

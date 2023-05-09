@@ -1,0 +1,16 @@
+del channel 'PMCGanttChartViewSchedule';
+add channel 'PMCGanttChartViewSchedule'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCGantt','PMCWBS','PMCWBSDataGridView','PMCWBSFlatView','PMCMilestones','PMCProjectBaseline'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGanttChartViewSchedule'
+	property	'version'	value	'R422.HF6'
+;
+#portal ==>PMCGanttChartViewSchedule
+add property channel_PMCGanttChartViewSchedule on program eServiceSchemaVariableMapping.tcl to channel 'PMCGanttChartViewSchedule';

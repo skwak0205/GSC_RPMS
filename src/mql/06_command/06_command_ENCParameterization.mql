@@ -1,0 +1,17 @@
+del command 'ENCParameterization';
+add command 'ENCParameterization'
+	description	'Command used to store the Engineering Central Parameterization settings'
+	label	''
+	href	''
+	alt	''
+	setting	'UnconfiguredBOMModeSelectedValue'		'QuantityMode'
+	setting	'AutoCollaborationParam'		'false'
+	setting	'DefaultDesignCollaborationParam'		'false'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ENOPartManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'ENCParameterization'
+	property	'version'	value	'R421'
+;
+#channel ==>
+add property command_ENCParameterization on program eServiceSchemaVariableMapping.tcl to command 'ENCParameterization';

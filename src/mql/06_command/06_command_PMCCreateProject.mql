@@ -1,0 +1,24 @@
+del command 'PMCCreateProject';
+add command 'PMCCreateProject'
+	description	''
+	label	'emxProgramCentral.Common.Project.Blank'
+	href	'${COMMON_DIR}/emxCreate.jsp?typeChooser=true&SelectType=single&ReloadOpener=true&nameField=both&autoNameChecked=false&type=type_ProjectSpace&policy=policy_ProjectSpace&form=PMCCreateBlankProjectForm&mode=create&createJPO=emxProjectSpace:createNewProject&postProcessJPO=emxProjectSpace:createAndConnectProject&postProcessURL=../programcentral/emxProgramCentralUtil.jsp?mode=launchProject&submitAction=nothing&HelpMarker=emxhelpprojectdetailsspecify&findMxLink=false&showPageURLIcon=false&suiteKey=ProgramCentral&StringResourceFileId=emxProgramCentralStringResource&SuiteDirectory=programcentral&preProcessJavaScript=setFocusOnNameField&header=emxProgramCentral.Common.Project.BlankHeader&createProject=Blank'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Slidein Width'		'500'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateProject'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProjectCreateMenu add command PMCCreateProject order command PMCCreateProject 1;
+#channel ==>PMCProjectCreateMenu
+add property command_PMCCreateProject on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateProject';

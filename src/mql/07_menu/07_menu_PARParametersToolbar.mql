@@ -1,0 +1,12 @@
+del menu 'PARParametersToolbar';
+add menu 'PARParametersToolbar'
+	description	''
+	label	'emxFramework.Common.Actions'
+	href	''
+	alt	''
+	command	'PARAddAggregatedParameterActionLink'
+	command	'PARAddNewInstantiatedParameterActionLink'
+	command	'PLMAddExistingParameterActionLink'
+	command	'PLMDisconnectParametersActionLink'
+;
+add property menu_PARParametersToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PARParametersToolbar';

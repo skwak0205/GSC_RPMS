@@ -1,0 +1,15 @@
+del command 'PMCDisplayQuestionAnswerData';
+add command 'PMCDisplayQuestionAnswerData'
+	description	''
+	label	'emxProgramCentral.Common.QuestionResponse'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProjectSpace:getRespondedQuestionList&table=PMCQuestionResponseDisplayTable&selection=multiple&Export=true&expandLevelFilter=false&StringResourceFileId=emxProgramCentralStringResource'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-29-2022'
+	property	'original name'	value	'PMCDisplayQuestionAnswerData'
+	property	'version'	value	'R424.HF3'
+;
+#channel ==>PMCProjectPropertiesChannel
+add property command_PMCDisplayQuestionAnswerData on program eServiceSchemaVariableMapping.tcl to command 'PMCDisplayQuestionAnswerData';

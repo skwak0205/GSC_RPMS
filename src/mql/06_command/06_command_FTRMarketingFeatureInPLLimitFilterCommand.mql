@@ -1,0 +1,21 @@
+del command 'FTRMarketingFeatureInPLLimitFilterCommand';
+add command 'FTRMarketingFeatureInPLLimitFilterCommand'
+	description	'FTRMarketingFeatureInPLLimitFilterCommand'
+	label	'emxFramework.Basic.Limit'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Action Label'		'Search'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Default'		'*'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMarketingFeatureInPLLimitFilterCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRFeatureCustomFilterToolbar add command FTRMarketingFeatureInPLLimitFilterCommand order command FTRMarketingFeatureInPLLimitFilterCommand 2;
+#channel ==>FTRFeatureCustomFilterToolbar
+add property command_FTRMarketingFeatureInPLLimitFilterCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRMarketingFeatureInPLLimitFilterCommand';

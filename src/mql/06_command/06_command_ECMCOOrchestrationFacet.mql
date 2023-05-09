@@ -1,0 +1,19 @@
+del command 'ECMCOOrchestrationFacet';
+add command 'ECMCOOrchestrationFacet'
+	description	'Orchestration facet for CO'
+	label	'EnterpriseChangeMgt.Command.ChangeOrchestration'
+	href	'${SUITE_DIR}/ECMCOOrchestration.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'20-05-2021'
+	property	'original name'	value	'ECMCOOrchestrationFacet'
+	property	'version'	value	'R424'
+;
+modify menu type_ChangeOrder add command ECMCOOrchestrationFacet order command ECMCOOrchestrationFacet 2;
+#channel ==>type_ChangeOrder
+add property command_ECMCOOrchestrationFacet on program eServiceSchemaVariableMapping.tcl to command 'ECMCOOrchestrationFacet';

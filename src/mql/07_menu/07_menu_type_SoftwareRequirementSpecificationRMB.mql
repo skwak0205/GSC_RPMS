@@ -1,0 +1,23 @@
+del menu 'type_SoftwareRequirementSpecificationRMB';
+add menu 'type_SoftwareRequirementSpecificationRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTCopyReqSpec'
+	command	'AEFSBSeparator1'
+	command	'RMTSpecificationProperties'
+	command	'RMTSpecRichTextEditor'
+	command	'APPSeparator'
+	command	'AEFLifecycle'
+	menu	'AEFClipboardCollectionsRMB'
+	menu	'RMTRequirementSpecExportContent'
+	command	'RMTDeleteInOneShot'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_SoftwareRequirementSpecificationRMB'
+	property 'version'	value	'V6R2016x'
+;
+add property menu_type_SoftwareRequirementSpecificationRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_SoftwareRequirementSpecificationRMB';

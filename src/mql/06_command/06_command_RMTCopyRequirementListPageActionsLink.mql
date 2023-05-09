@@ -1,0 +1,31 @@
+del command 'RMTCopyRequirementListPageActionsLink';
+add command 'RMTCopyRequirementListPageActionsLink'
+	description	''
+	label	'emxRequirements.Label.CopyReqSpec'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ReqCopyFSInstance&PRCFSParam1=Requirement&PRCFSParam2=ListPage&fromWebApp=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.gif'
+	setting	'Help Marker'		'emxhelprequirementcopy'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCopyRequirementListPageActionsLink'
+	property	'version'	value	'R422'
+;
+modify menu type_RequirementRMB add command RMTCopyRequirementListPageActionsLink order command RMTCopyRequirementListPageActionsLink 1;
+modify menu RMTRequirementListActionMenu add command RMTCopyRequirementListPageActionsLink order command RMTCopyRequirementListPageActionsLink 2;
+#channel ==>type_RequirementRMBRMTRequirementListActionMenu
+add property command_RMTCopyRequirementListPageActionsLink on program eServiceSchemaVariableMapping.tcl to command 'RMTCopyRequirementListPageActionsLink';

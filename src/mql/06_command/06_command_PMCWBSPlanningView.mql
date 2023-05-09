@@ -1,0 +1,18 @@
+del command 'PMCWBSPlanningView';
+add command 'PMCWBSPlanningView'
+	description	''
+	label	'emxProgramCentral.TaskConstriant.WBSPlanningView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWBSPlanningViewTable'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSPlanningView'
+	property	'version'	value	'R216'
+;
+modify menu PMCWBSTableMenu add command PMCWBSPlanningView order command PMCWBSPlanningView 3;
+#channel ==>PMCWBSTableMenu
+add property command_PMCWBSPlanningView on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSPlanningView';

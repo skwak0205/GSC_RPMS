@@ -1,0 +1,17 @@
+del command 'ECMCOChangeOrders';
+add command 'ECMCOChangeOrders'
+	description	'Change Orders Category in CO'
+	label	'EnterpriseChangeMgt.Command.ChangeOrders'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=enoECMChangeOrder:getConnectedChangeOrders&table=ECMCOChangeOrderSummary&header=EnterpriseChangeMgt.Heading.ChangeOrders&selection=multiple&toolbar=ECMCOChangeOrderSummaryMenuToolbar&sortColumnName=Name&HelpMarker=emxhelpchildchangeorders'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCOChangeOrders'
+	property	'version'	value	'R421'
+;
+modify menu type_ChangeOrder add command ECMCOChangeOrders order command ECMCOChangeOrders 11;
+#channel ==>type_ChangeOrder
+add property command_ECMCOChangeOrders on program eServiceSchemaVariableMapping.tcl to command 'ECMCOChangeOrders';

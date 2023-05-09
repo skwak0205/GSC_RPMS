@@ -1,0 +1,15 @@
+#del attribute 'gscPriorityMstNo';
+add attribute 'gscPriorityMstNo'
+ type 'string'
+ description '출원번호'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gsPriorityMstNo'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscPriorityMstNo on program eServiceSchemaVariableMapping.tcl to attribute 'gscPriorityMstNo';
+
+

@@ -1,0 +1,20 @@
+del command 'PLCProductLineSubProductLineTreeCategory';
+add command 'PLCProductLineSubProductLineTreeCategory'
+	description	'Command Object for Sub Product lines in the Product Line Menu'
+	label	'emxProduct.Tree.SubProductLine'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=emxProductLineBase:getAllRelatedProductLines&table=PLCProductLineList&header=emxProduct.Heading.SubProductLine&selection=multiple&topActionbar=PLCProductLineSubProductLineTopActionBar&bottomActionbar=PLCProductLineSubProductLineBottomActionBar&sortColumnName=Name&editRootNode=false&HelpMarker=emxhelpproductlinesubproductline&isStructure=true&editRelationship=relationship_SubProductLines&mode=edit'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Function'		'isMobileModeDisabled'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProductLine.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductLineSubProductLineTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_PLCProductLine add command PLCProductLineSubProductLineTreeCategory order command PLCProductLineSubProductLineTreeCategory 0;
+#channel ==>type_PLCProductLine
+add property command_PLCProductLineSubProductLineTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCProductLineSubProductLineTreeCategory';

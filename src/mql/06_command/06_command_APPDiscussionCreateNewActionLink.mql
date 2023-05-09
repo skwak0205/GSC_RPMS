@@ -1,0 +1,23 @@
+del command 'APPDiscussionCreateNewActionLink';
+add command 'APPDiscussionCreateNewActionLink'
+	description	'Create Discussion Command Object'
+	label	'emxComponents.Common.CreateDiscussion'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=APPCreateDiscussion&formHeader=emxComponents.Common.CreatePublicDiscussion&HelpMarker=emxhelpcreatediscussion&mode=edit&showPageURLIcon=false&createJPO=emxDiscussion:createDiscussionPostProcess&Export=false&findMxLink=false&DiscType=Public&postProcessURL=../components/emxComponentsDiscussionCreateProcess.jsp&submitAction=doNothing&type=type_Message&nameField=autoName&policy=policy_Message&showPolicy=false'
+	alt	'emxComponents.Common.CreateDiscussion'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Specification Restricted User'
+	user	'Template Header Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionCreateNewActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPDiscussionTopActionBar add command APPDiscussionCreateNewActionLink order command APPDiscussionCreateNewActionLink 0;
+#channel ==>APPDiscussionTopActionBar
+add property command_APPDiscussionCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionCreateNewActionLink';

@@ -1,0 +1,19 @@
+del command 'APPWorkflowResumeActionLink';
+add command 'APPWorkflowResumeActionLink'
+	description	'Workflow resume action link'
+	label	'emxComponents.Command.Resume'
+	href	'${COMPONENT_DIR}/emxWorkflowAction.jsp?action=resume'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current == "Suspended" && owner == context.user)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionResume.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowResumeActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowToolbar add command APPWorkflowResumeActionLink order command APPWorkflowResumeActionLink 0;
+#channel ==>APPWorkflowToolbar
+add property command_APPWorkflowResumeActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowResumeActionLink';

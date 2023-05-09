@@ -1,0 +1,20 @@
+del command 'CFFEffectivityDate';
+add command 'CFFEffectivityDate'
+	description	'Command to hold Date Effectivity settings'
+	label	'Effectivity.EffectivityType.Date'
+	href	''
+	alt	''
+	setting	'categoryType'		'date'
+	setting	'Format'		'date'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Label'		'Effectivity.EffectivityType.Date'
+	setting	'keyword'		'DT'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFEffectivityDate'
+	property	'version'	value	'R209'
+;
+modify menu CFFEffectivity add command CFFEffectivityDate order command CFFEffectivityDate 1;
+#channel ==>CFFEffectivity
+add property command_CFFEffectivityDate on program eServiceSchemaVariableMapping.tcl to command 'CFFEffectivityDate';

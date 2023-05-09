@@ -1,0 +1,28 @@
+del command 'TMCConnectVCFileFolder';
+add command 'TMCConnectVCFileFolder'
+	description	'Command for mapping a file or folder in DesignSync to business object'
+	label	'emxComponents.VersionControl.ConnectVCFileFolder'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=connectVCFileFolder&actionURL=emxCommonDocumentVCConnectProcess.jsp&stepOneHeader=emxComponents.Header.ConnectToDesignSyncFileFolder&appDir=teamcentral&parentRelName=relationship_VaultedDocuments&showTitle=true&showFormat=true&showDescription=required&appProcessPage=emxTeamPostCheckinProcess.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isVCCommandsEnabled'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Image'		'${COMPONENT_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCConnectVCFileFolder'
+	property	'version'	value	'R422'
+;
+modify menu TMCContentSummaryCreateNew add command TMCConnectVCFileFolder order command TMCConnectVCFileFolder 0;
+#channel ==>TMCContentSummaryCreateNew
+add property command_TMCConnectVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'TMCConnectVCFileFolder';

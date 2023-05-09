@@ -1,0 +1,31 @@
+del command 'PMCWBSDeleteSelected';
+add command 'PMCWBSDeleteSelected'
+	description	''
+	label	'emxProgramCentral.Common.DeleteSelected'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=submitDeleteTask'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSDeleteSelected'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSRMBActions add command PMCWBSDeleteSelected order command PMCWBSDeleteSelected 0;
+modify menu type_TaskManagementRMB add command PMCWBSDeleteSelected order command PMCWBSDeleteSelected 0;
+modify menu PMCWhatIfExperimentActionMenu add command PMCWBSDeleteSelected order command PMCWBSDeleteSelected 4;
+modify menu PMCRemoveDeleteMenu add command PMCWBSDeleteSelected order command PMCWBSDeleteSelected 2;
+modify menu type_GateRMB add command PMCWBSDeleteSelected order command PMCWBSDeleteSelected 0;
+#channel ==>PMCWBSRMBActionstype_TaskManagementRMBPMCWhatIfExperimentActionMenuPMCRemoveDeleteMenutype_GateRMB
+add property command_PMCWBSDeleteSelected on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSDeleteSelected';

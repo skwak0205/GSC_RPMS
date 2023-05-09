@@ -1,0 +1,14 @@
+del portal 'ECMChangePropertyPortal';
+add portal 'ECMChangePropertyPortal'
+	description	''
+	label	''
+	href	''
+	channel 	ECMChangePropertyChannel1,ECMChangePropertyChannel2
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangePropertyPortal'
+	property	'version'	value	'R216'
+;
+add property portal_ECMChangePropertyPortal on program eServiceSchemaVariableMapping.tcl to portal 'ECMChangePropertyPortal';

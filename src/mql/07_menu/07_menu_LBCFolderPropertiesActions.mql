@@ -1,0 +1,16 @@
+del menu 'LBCFolderPropertiesActions';
+add menu 'LBCFolderPropertiesActions'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	menu	'LBCFolderPropertiesActionsToolbar'
+	command	'LBCFolderEditDetails'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCFolderPropertiesActions'
+	property 'version'	value	'R211'
+;
+add property menu_LBCFolderPropertiesActions on program eServiceSchemaVariableMapping.tcl to menu 'LBCFolderPropertiesActions';

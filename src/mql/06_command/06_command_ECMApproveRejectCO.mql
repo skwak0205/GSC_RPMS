@@ -1,0 +1,25 @@
+del command 'ECMApproveRejectCO';
+add command 'ECMApproveRejectCO'
+	description	'Approve Reject CO'
+	label	'EnterpriseChangeMgt.Command.ApproveReject'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=ChangeTaskMassApproval&MassApproval=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionApproveRejectTask.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMApproveRejectCO'
+	property	'version'	value	'R216'
+;
+modify menu ECMCOMenuToolbar add command ECMApproveRejectCO order command ECMApproveRejectCO 3;
+modify menu ECMCRMenuToolbar add command ECMApproveRejectCO order command ECMApproveRejectCO 3;
+#channel ==>ECMCOMenuToolbarECMCRMenuToolbar
+add property command_ECMApproveRejectCO on program eServiceSchemaVariableMapping.tcl to command 'ECMApproveRejectCO';

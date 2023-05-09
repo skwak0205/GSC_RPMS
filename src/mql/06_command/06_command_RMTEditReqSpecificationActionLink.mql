@@ -1,0 +1,20 @@
+del command 'RMTEditReqSpecificationActionLink';
+add command 'RMTEditReqSpecificationActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_SoftwareRequirementSpecification&mode=Edit&formHeader=emxProduct.Heading.Edit&HelpMarker=emxhelpspecedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTEditReqSpecificationActionLink'
+	property	'version'	value	'V6R2018X'
+;
+modify menu RMTRequirementSpecificationPropertiesActionBar add command RMTEditReqSpecificationActionLink order command RMTEditReqSpecificationActionLink 1;
+#channel ==>RMTRequirementSpecificationPropertiesActionBar
+add property command_RMTEditReqSpecificationActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTEditReqSpecificationActionLink';

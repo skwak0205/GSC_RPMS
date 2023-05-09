@@ -1,0 +1,21 @@
+del command 'PMCAddExistingAffectedItemsLink';
+add command 'PMCAddExistingAffectedItemsLink'
+	description	'Add Existing to Affected Items Command Object'
+	label	'emxProgramCentral.Command.PMCAddExistingAffectedItemsLink'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=searchAffectedItems&relType=relationship_RiskAffectedItems'
+	alt	'emxProgramCentral.Command.PMCAddExistingAffectedItemsLink'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddExistingAffectedItemsLink'
+	property	'version'	value	'R423.HF4'
+;
+modify menu PMCAffectedItemsToolBarActions add command PMCAddExistingAffectedItemsLink order command PMCAddExistingAffectedItemsLink 1;
+#channel ==>PMCAffectedItemsToolBarActions
+add property command_PMCAddExistingAffectedItemsLink on program eServiceSchemaVariableMapping.tcl to command 'PMCAddExistingAffectedItemsLink';

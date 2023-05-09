@@ -1,0 +1,21 @@
+del command 'PMCResourcePoolCategoryBusinessUnits';
+add command 'PMCResourcePoolCategoryBusinessUnits'
+	description	'Shows Resource Pools child business units'
+	label	'emxProgramCentral.ResourcePool.Category.BusinessUnits'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCResourcePoolBusinessUnits&program=emxResourcePool:getTableResourcePoolBusinessUnitData&expandProgram=emxResourcePool:getTableResourcePoolBusinessUnitData&header=emxProgramCentral.ResourcePool.Category.BusinessUnitsHeading&HelpMarker=emxhelpresourcepoolbusinessunits'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.kindof[$<type_Department>] == false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolCategoryBusinessUnits'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourcePoolTree add command PMCResourcePoolCategoryBusinessUnits order command PMCResourcePoolCategoryBusinessUnits 1;
+#channel ==>PMCResourcePoolTree
+add property command_PMCResourcePoolCategoryBusinessUnits on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePoolCategoryBusinessUnits';

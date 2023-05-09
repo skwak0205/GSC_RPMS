@@ -1,0 +1,20 @@
+del command 'PMCMyCalendarWeek';
+add command 'PMCMyCalendarWeek'
+	description	''
+	label	'emxProgramCentral.MyCalendar.Interval.Week'
+	href	'${SUITE_DIR}/emxProgramCentralMyCalendarDispatcher.jsp'
+	alt	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCMyCalendarDay&program=emxMyCalendar:getMyCalendarXAxis&editLink=false&hideHeader=true&toolbar=PMCMyCalendarToolbar'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMyCalendarWeek'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCMyCalendarChannel
+add property command_PMCMyCalendarWeek on program eServiceSchemaVariableMapping.tcl to command 'PMCMyCalendarWeek';

@@ -1,0 +1,22 @@
+del command 'ECMCreateCOUnderCR';
+add command 'ECMCreateCOUnderCR'
+	description	'Create CO under CR current context'
+	label	'EnterpriseChangeMgt.Command.CreateChange'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=CraeteNewCOUnderCR'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasChangeCordinatorRole'
+	setting	'Access Program'		'enoECMChangeUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Global User'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCreateCOUnderCR'
+	property	'version'	value	'R419'
+;
+modify menu ECMCOSummaryMenuToolbar add command ECMCreateCOUnderCR order command ECMCreateCOUnderCR 1;
+#channel ==>ECMCOSummaryMenuToolbar
+add property command_ECMCreateCOUnderCR on program eServiceSchemaVariableMapping.tcl to command 'ECMCreateCOUnderCR';

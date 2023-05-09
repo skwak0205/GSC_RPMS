@@ -1,0 +1,19 @@
+del command 'ECMCreateCAUnderCR';
+add command 'ECMCreateCAUnderCR'
+	description	'Create Change Action under Change Request'
+	label	'EnterpriseChangeMgt.Command.CreateChangeAction'
+	href	'${SUITE_DIR}/ECMSearchUtil.jsp?chooserType=addChangeActionUnderChangeRequest'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Create].value || current==policy.property[state_Evaluate].value) && !($<interface[interface_ChangeOnHold] =="TRUE">) && (current.access[fromconnect] == true) && (type.kindof[$<type_ChangeRequest>])'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCreateCAUnderCR'
+	property	'version'	value	'R423.HF6'
+;
+modify menu ECMCOAffectedChangeActionListToolbar add command ECMCreateCAUnderCR order command ECMCreateCAUnderCR 5;
+#channel ==>ECMCOAffectedChangeActionListToolbar
+add property command_ECMCreateCAUnderCR on program eServiceSchemaVariableMapping.tcl to command 'ECMCreateCAUnderCR';

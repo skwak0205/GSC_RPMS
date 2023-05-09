@@ -1,0 +1,14 @@
+del portal 'WorkspaceExplorerView';
+add portal 'WorkspaceExplorerView'
+	description	''
+	label	''
+	href	''
+	channel 	WorkspacePublicFolders,WorkspaceFolderContent
+	setting	'Registered Suite'		'FolderManagement'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'WorkspaceExplorerView'
+	property	'version'	value	'R417'
+;
+add property portal_WorkspaceExplorerView on program eServiceSchemaVariableMapping.tcl to portal 'WorkspaceExplorerView';

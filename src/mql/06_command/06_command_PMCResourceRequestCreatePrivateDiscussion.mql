@@ -1,0 +1,22 @@
+del command 'PMCResourceRequestCreatePrivateDiscussion';
+add command 'PMCResourceRequestCreatePrivateDiscussion'
+	description	''
+	label	'emxProgramCentral.Command.ResourcePlan.CreatePrivateDiscussion'
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=PrivateDiscussion'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_PrivateDiscuss32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestCreatePrivateDiscussion'
+	property	'version'	value	'R421.HF2'
+;
+modify menu PMCResourceRequestDiscussion add command PMCResourceRequestCreatePrivateDiscussion order command PMCResourceRequestCreatePrivateDiscussion 1;
+modify menu PMCResourcePoolRequestToolbar add command PMCResourceRequestCreatePrivateDiscussion order command PMCResourceRequestCreatePrivateDiscussion 11;
+#channel ==>PMCResourceRequestDiscussionPMCResourcePoolRequestToolbar
+add property command_PMCResourceRequestCreatePrivateDiscussion on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestCreatePrivateDiscussion';

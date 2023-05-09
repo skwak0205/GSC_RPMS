@@ -1,0 +1,14 @@
+del portal 'PMCObjectives';
+add portal 'PMCObjectives'
+	description	'PMCObjectives'
+	label	''
+	href	''
+	channel 	PMCObjectives
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCObjectives'
+	property	'version'	value	'R216'
+;
+add property portal_PMCObjectives on program eServiceSchemaVariableMapping.tcl to portal 'PMCObjectives';

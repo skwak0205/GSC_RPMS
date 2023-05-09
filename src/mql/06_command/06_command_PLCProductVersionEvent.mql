@@ -1,0 +1,16 @@
+del command 'PLCProductVersionEvent';
+add command 'PLCProductVersionEvent'
+	description	'Product Version Event'
+	label	'PublishSubscribe.Event.ProductVersion'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Product Version'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductVersionEvent'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_PLCProductVersionEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCProductVersionEvent';

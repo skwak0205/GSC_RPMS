@@ -1,0 +1,19 @@
+del command 'PMCAddCompanyResourceManager';
+add command 'PMCAddCompanyResourceManager'
+	description	'Command to add resource manager for company'
+	label	'emxProgramCentral.Common.Add'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Person:CURRENT=policy_Person.state_Active:USERROLE=Resource Manager,VPLMProjectLeader,3DSRestrictedLeader&suiteKey=Components&showInitialResults=true&type=PERSON_CHOOSER&selection=multiple&form=AEFSearchPersonForm&table=AEFPersonChooserDetails&submitURL=../programcentral/emxProgramCentralUtil.jsp?mode=addResourceManager'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddCompanyResourceManager'
+	property	'version'	value	'R422'
+;
+modify menu PMCCompanyResourceManagerToolbarActions add command PMCAddCompanyResourceManager order command PMCAddCompanyResourceManager 1;
+#channel ==>PMCCompanyResourceManagerToolbarActions
+add property command_PMCAddCompanyResourceManager on program eServiceSchemaVariableMapping.tcl to command 'PMCAddCompanyResourceManager';

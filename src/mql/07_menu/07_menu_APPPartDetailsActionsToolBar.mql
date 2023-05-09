@@ -1,0 +1,18 @@
+del menu 'APPPartDetailsActionsToolBar';
+add menu 'APPPartDetailsActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPPartEditDetails'
+	command	'APPSubscription'
+	command	'APPPartPushSubscription'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPPartDetailsActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPPartDetailsActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPPartDetailsActionsToolBar';

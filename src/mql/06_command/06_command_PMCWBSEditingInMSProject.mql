@@ -1,0 +1,24 @@
+del command 'PMCWBSEditingInMSProject';
+add command 'PMCWBSEditingInMSProject'
+	description	''
+	label	'emxProgramCentral.Project.LaunchForEditingInMSProject'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=launchForEditInMSProject'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForMSProject'
+	setting	'Access Program'		'emxTask'
+	setting	'Hide Mode'		'mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Access Mask'		'Modify'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSEditingInMSProject'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_PMCWBSEditingInMSProject on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSEditingInMSProject';

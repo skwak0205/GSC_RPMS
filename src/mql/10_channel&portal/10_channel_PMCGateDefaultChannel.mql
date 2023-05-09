@@ -1,0 +1,16 @@
+del channel 'PMCGateDefaultChannel';
+add channel 'PMCGateDefaultChannel'
+	description	'Channel for Default Gate Portal View'
+	height	'700'
+	label	'emxFramework.Common.PMCGateDefaultChannel'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCChecklist'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateDefaultChannel'
+	property	'version'	value	'R421'
+;
+#portal ==>PMCDefaultGatePortal
+add property channel_PMCGateDefaultChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCGateDefaultChannel';

@@ -1,0 +1,20 @@
+del command 'FTRManufacturingFeatureStructure';
+add command 'FTRManufacturingFeatureStructure'
+	description	'Manufacturing Feature Structure Command'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Structure Program'		'ManufacturingFeature'
+	setting	'Submit'		'true'
+	setting	'Structure Function'		'getStructureList'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRManufacturingFeatureStructure'
+	property	'version'	value	'R215'
+;
+modify menu type_FTRManufacturingFeatureStructureMenu add command FTRManufacturingFeatureStructure order command FTRManufacturingFeatureStructure 0;
+#channel ==>type_FTRManufacturingFeatureStructureMenu
+add property command_FTRManufacturingFeatureStructure on program eServiceSchemaVariableMapping.tcl to command 'FTRManufacturingFeatureStructure';

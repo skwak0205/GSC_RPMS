@@ -1,0 +1,27 @@
+del command 'RMTRequirementDocumentationView';
+add command 'RMTRequirementDocumentationView'
+	description	''
+	label	'emxRequirements.ActionLink.TableDocumentation'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgramMenu=RMTRequirementProgramFilterMenu&tableMenu=RMTRequirementTableFilterMenu&selection=multiple&HelpMarker=emxhelpproductfeaturelist&typeFilter=true&relationshipFilter=true&editLink=true&toolbar=RMTRequirementStructureBrowserToolbar'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'function'		'expandDocumentationObjects'
+	setting	'program'		'emxRequirement'
+	setting	'table'		'RMTRequirementDocumentationView'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementDocumentationView'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTRequirementDocumentationView on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementDocumentationView';

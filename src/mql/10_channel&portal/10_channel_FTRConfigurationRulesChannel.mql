@@ -1,0 +1,15 @@
+del channel 'FTRConfigurationRulesChannel';
+add channel 'FTRConfigurationRulesChannel'
+	description	''
+	height	'630'
+	label	''
+	href	''
+	command 	'FTRMatrixRulesCommand','FTRExpressionRulesCommand','FTRBooleanCompatibilityRulesCommand','FTRMarketingPreferenceRulesCommand','FTRResourceRulesCommand','FTRProductCompatibilityRulesCommand','FTRRuleExtensionRulesCommand','FTRProductVariantBooleanCompatibilityRulesCommand','FTRProductVariantMarketingPreferencesRulesCommand','FTRProductVariantResourceRulesCommand','FTRProductVariantRuleExtensionCommand','FTRResourceRulesCommandMobile','FTRProductVariantResourceRulesCommandMobile'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationRulesChannel'
+	property	'version'	value	'R421'
+;
+#portal ==>FTRConfigurationRulesPortal
+add property channel_FTRConfigurationRulesChannel on program eServiceSchemaVariableMapping.tcl to channel 'FTRConfigurationRulesChannel';

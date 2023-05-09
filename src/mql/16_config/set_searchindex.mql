@@ -1,0 +1,3 @@
+set system searchindex file 'C:\Users\jrchoi\Documents\GitHub\gs_3dspace\src\mql\16_config\config.xml';
+
+update searchindex type 'Project Space';

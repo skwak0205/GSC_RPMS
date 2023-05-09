@@ -1,0 +1,17 @@
+del command 'ECMCORelatedDocuments';
+add command 'ECMCORelatedDocuments'
+	description	'CO Related Documents Command Object'
+	label	'EnterpriseChangeMgt.Command.RelatedDocuments'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=ECMRelatedDocumentsPortal&showPageHeader=false&header=EnterpriseChangeMgt.Common.RelatedDocumentsPageHeading'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCORelatedDocuments'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_ECMCORelatedDocuments on program eServiceSchemaVariableMapping.tcl to command 'ECMCORelatedDocuments';

@@ -1,0 +1,20 @@
+del command 'CFPReActivateManufacturingPlansActionLink';
+add command 'CFPReActivateManufacturingPlansActionLink'
+	description	''
+	label	'DMCPlanning.ActionLink.ReActivateManufacturingPlan'
+	href	'${SUITE_DIR}/ReActivateUtil.jsp?'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Confirm Message'		'DMCPlanning.Alert.ReActivate'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPReActivateManufacturingPlansActionLink'
+	property	'version'	value	'R209'
+;
+modify menu CFPArchivedManufacturingPlanToolbarActions add command CFPReActivateManufacturingPlansActionLink order command CFPReActivateManufacturingPlansActionLink 0;
+#channel ==>CFPArchivedManufacturingPlanToolbarActions
+add property command_CFPReActivateManufacturingPlansActionLink on program eServiceSchemaVariableMapping.tcl to command 'CFPReActivateManufacturingPlansActionLink';

@@ -1,0 +1,15 @@
+del menu 'LCFolderStructure';
+add menu 'LCFolderStructure'
+	description	''
+	label	'emxDocumentCentral.Common.Name'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LCFolderStructureCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCFolderStructure'
+	property 'version'	value	'R210'
+;
+add property menu_LCFolderStructure on program eServiceSchemaVariableMapping.tcl to menu 'LCFolderStructure';

@@ -1,0 +1,34 @@
+del form 'ENOAuthoringUXForm';
+add form 'ENOAuthoringUXForm' web
+field #1
+	name	'GroupHeader'
+	label	'AuthoringMgtUX.Label.WorkUnderChange'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Function'		'displayWorkUnderUX'
+	setting	'Access Program'		'AuthoringMgtUxUtil'
+	setting	'Field Type'		'Section Header'
+	setting	'Section Level'		'1'
+field #2
+	name	'ChangeAuthoringContext'
+	label	'AuthoringMgtUX.Label.WorkUnderChange'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'function'		'getWorkUnderFormField'
+	setting	'Access Function'		'displayWorkUnderUX'
+	setting	'Access Program'		'AuthoringMgtUxUtil'
+	setting	'program'		'AuthoringMgtUxUtil'
+	setting	'Field Type'		'programHTMLOutput'
+	setting	'Show Clear Button'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'AuthoringMgtUX'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ENOAuthoringUXForm'
+	property	'version'	value	'R420.HF1'
+;
+add property form_ENOAuthoringUXForm on program eServiceSchemaVariableMapping.tcl to form 'ENOAuthoringUXForm';

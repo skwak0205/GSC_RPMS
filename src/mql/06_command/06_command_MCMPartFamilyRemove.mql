@@ -1,0 +1,28 @@
+del command 'MCMPartFamilyRemove';
+add command 'MCMPartFamilyRemove'
+	description	'Part Family Remove'
+	label	'emxMultipleClassification.Access.Remove'
+	href	'${SUITE_DIR}/emxMultipleClassificationRemoveClassPreProcess.jsp?Mode=Remove'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'Content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'MCMPartFamilyRemove'
+	property	'version'	value	'R422'
+;
+modify menu LCPartFamilyActionsToolBar add command MCMPartFamilyRemove order command MCMPartFamilyRemove 5;
+#channel ==>LCPartFamilyActionsToolBar
+add property command_MCMPartFamilyRemove on program eServiceSchemaVariableMapping.tcl to command 'MCMPartFamilyRemove';

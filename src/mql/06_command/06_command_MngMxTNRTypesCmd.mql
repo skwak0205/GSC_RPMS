@@ -1,0 +1,14 @@
+del command 'MngMxTNRTypesCmd';
+add command 'MngMxTNRTypesCmd'
+	description	''
+	label	'emxPackagesManagement.label.ManageUniquenessKeys'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=MngMxTNRTypesTable&toolbar=none&program=emxPackagesMngtProgram:getIRPCPackagesList&expandProgram=emxPackagesMngtProgram:getMxTNRTypesList&freezePane=packageName&header=emxPackagesManagement.label.DeployExtensionTypesList&submitURL=../PackagesManagement/emxPackagesConfigurationManageMxTNRTypes.jsp&showPageURLIcon=false&customize=false&showClipboard=false&objectCompare=false&jpoAppServerParamList=session:DataCustoCacheIndex&displayView=details&hideLaunchButton=true&submitLabel=emxPackagesManagement.Submit'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'PackagesManagement'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	user	'VPLMAdmin'
+;
+#channel ==>MngUniquenessKeysChannel
+add property command_MngMxTNRTypesCmd on program eServiceSchemaVariableMapping.tcl to command 'MngMxTNRTypesCmd';

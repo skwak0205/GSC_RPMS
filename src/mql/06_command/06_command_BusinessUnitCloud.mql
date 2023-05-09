@@ -1,0 +1,35 @@
+del command 'BusinessUnitCloud';
+add command 'BusinessUnitCloud'
+	description	'Business Unit Command Object in Cloud'
+	label	'emxFramework.Command.BusinessUnit'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCompany:getBusinessUnits&table=APPOrganizationSummary&toolbar=APPBusinessUnitSummaryToolBar&header=emxComponents.BusinessUnitSummary.Heading&selection=multiple&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpbusinessunitslist&PrinterFriendly=true&customize=false'
+	alt	'emxFramework.Command.BusinessUnit'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(to[$<relationship_Customer>].from.name != "")'
+	setting	'Hide Mode'		'!Cloud'
+	setting	'Image value'		'${COMMON_DIR}/images/iconSmallBusinessUnit.gif'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	user	'Supplier'
+	user	'Supplier Representative'
+	user	'Buyer'
+	user	'Supplier Engineer'
+	user	'Advanced Quality Engineer'
+	user	'Buyer Administrator'
+	user	'Supplier Development Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'BusinessUnitCloud'
+	property	'version'	value	'R422'
+;
+modify menu type_BusinessUnit add command BusinessUnitCloud order command BusinessUnitCloud 7;
+modify menu type_Region add command BusinessUnitCloud order command BusinessUnitCloud 0;
+modify menu type_Company add command BusinessUnitCloud order command BusinessUnitCloud 5;
+#channel ==>type_BusinessUnittype_Regiontype_Company
+add property command_BusinessUnitCloud on program eServiceSchemaVariableMapping.tcl to command 'BusinessUnitCloud';

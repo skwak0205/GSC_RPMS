@@ -1,0 +1,23 @@
+del command 'DomainAccessAddSecurityContext';
+add command 'DomainAccessAddSecurityContext'
+	description	''
+	label	'emxFramework.Common.DomainAccessAddSecurityContext'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDomainAccess:getIncludeSecurityContextOIDsList&table=SecurityContexts&selection=multiple&submitURL=${COMMON_DIR}/emxDomainAccessProcess.jsp&displayView=details&customize=false&cellwrap=false&showPageURLIcon=false&objectCompare=false&showClipboard=false&cmdName=addSecurityContext&jpoName=emxDomainAccess&methodName=addSecurityContext&editLink=false&rowGrouping=false&header=emxFramework.Common.DomainAccessAddSecurityContext&parallelLoading=true'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'current.access[changesov]'
+	setting	'Access Function'		'isNotARaceProject'
+	setting	'Access Program'		'emxDomainAccess'
+	setting	'Image'		'${COMMON_DIR}/images/iconShareWithUserCredentials_32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DomainAccessAddSecurityContext'
+	property	'version'	value	'R423'
+;
+modify menu DomainAccessActionToolBar add command DomainAccessAddSecurityContext order command DomainAccessAddSecurityContext 4;
+modify menu LBCFolderDomainAccessToolBar add command DomainAccessAddSecurityContext order command DomainAccessAddSecurityContext 2;
+modify menu PMCMemberSummaryToolBarActions add command DomainAccessAddSecurityContext order command DomainAccessAddSecurityContext 4;
+modify menu PMCBudgetMOASummaryToolBar add command DomainAccessAddSecurityContext order command DomainAccessAddSecurityContext 4;
+#channel ==>DomainAccessActionToolBarLBCFolderDomainAccessToolBarPMCMemberSummaryToolBarActionsPMCBudgetMOASummaryToolBar
+add property command_DomainAccessAddSecurityContext on program eServiceSchemaVariableMapping.tcl to command 'DomainAccessAddSecurityContext';

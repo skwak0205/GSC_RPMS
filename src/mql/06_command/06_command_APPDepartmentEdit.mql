@@ -1,0 +1,23 @@
+del command 'APPDepartmentEdit';
+add command 'APPDepartmentEdit'
+	description	'Edit Department'
+	label	'emxComponents.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Department&HelpMarker=emxhelpdepartmenteditdetails&formHeader=emxComponents.Common.EditDepartment&mode=edit&postProcessJPO=emxDepartment:editDepartmentPostProcess'
+	alt	'emxComponents.Command.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDepartmentEdit'
+	property	'version'	value	'R417'
+;
+modify menu APPDepartmentDetailsActionsToolBar add command APPDepartmentEdit order command APPDepartmentEdit 1;
+#channel ==>APPDepartmentDetailsActionsToolBar
+add property command_APPDepartmentEdit on program eServiceSchemaVariableMapping.tcl to command 'APPDepartmentEdit';

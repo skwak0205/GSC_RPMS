@@ -1,0 +1,4 @@
+<meta charset="UTF-8"/>
+VCXWebLevelExploderGUI.VCXLevelExploderGUICmd.Title="Rozstrzelenie poziomu";
+VCXWebLevelExploderGUI.PreviousLevelButton.Title="Powrót do ostatniego rozstrzelonego widoku";
+VCXWebLevelExploderGUI.RestoreModelButton.Title="Przywróć rozstrzelony model do jego pierwotnego stanu";

@@ -1,0 +1,18 @@
+del menu 'LBCReferenceDocumentSummaryCreateNew';
+add menu 'LBCReferenceDocumentSummaryCreateNew'
+	description	''
+	label	'emxLibraryCentral.Command.CreateNew'
+	href	''
+	alt	'emxLibraryCentral.Command.CreateNew'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'current.access[fromconnect] == true'
+	command	'LBCCreateNewReferenceDocument'
+	command	'LBCConnectReferenceVCFileFolder'
+	command	'LBCCreateReferenceVCFileFolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCReferenceDocumentSummaryCreateNew'
+	property 'version'	value	'R211'
+;
+add property menu_LBCReferenceDocumentSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'LBCReferenceDocumentSummaryCreateNew';

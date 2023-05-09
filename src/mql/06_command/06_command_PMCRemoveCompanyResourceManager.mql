@@ -1,0 +1,20 @@
+del command 'PMCRemoveCompanyResourceManager';
+add command 'PMCRemoveCompanyResourceManager'
+	description	'Remove Resource Manager from Company'
+	label	'emxProgramCentral.Common.Remove'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=removeResourceManager'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ConfirmRemove'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRemoveCompanyResourceManager'
+	property	'version'	value	'R216'
+;
+modify menu PMCCompanyResourceManagerToolbarActions add command PMCRemoveCompanyResourceManager order command PMCRemoveCompanyResourceManager 0;
+#channel ==>PMCCompanyResourceManagerToolbarActions
+add property command_PMCRemoveCompanyResourceManager on program eServiceSchemaVariableMapping.tcl to command 'PMCRemoveCompanyResourceManager';

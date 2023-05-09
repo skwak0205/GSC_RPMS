@@ -1,0 +1,28 @@
+################################################################################################
+# Created Date : 2023. 03. 01
+# Create by Jungrim Choi
+# Description : Admin menu
+################################################################################################
+#del menu "gscAPPAdminMyDesk"; 
+add menu "gscAPPAdminMyDesk"
+    label 'emxFramework.MenuItem.Admin'
+    setting 'Licensed Product' 'ENO_BPS_TP'
+    setting 'Registered Suite' 'ProgramCentral'
+    menu    'gscAPPRoleManagement'
+    command 'gscAPPUserLoginLogListCommand'
+    nothidden
+    property 'application' value 'ProgramCentral'
+    property 'installed date' value '07-10-2020'
+    property 'installer' value 'HHI'
+    property 'original name' value 'emxFramework'
+;
+
+
+add property menu_gscAPPAdminMyDesk on program eServiceSchemaVariableMapping.tcl to menu 'gscAPPAdminMyDesk';
+
+
+# Modify SeungYong,Lee [관리자만 보이도록 권한 추가] -2020.11.07
+mod menu "gscAPPAdminMyDesk" 
+    add setting "Access Expression" "context.user.isassigned[VPLMAdmin]"
+;
+

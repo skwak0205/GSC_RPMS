@@ -1,0 +1,28 @@
+del command 'APPPlant';
+add command 'APPPlant'
+	description	'This command is used to list the Plant Objects associated with the Company'
+	label	'emxComponents.Command.Plant'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxPlant:getPlants&table=APPPlantSummary&toolbar=APPPlantSummaryToolBar&header=emxComponents.PlantSummary.Heading&selection=multiple&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpplants&PrinterFriendly=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP,ENO_MFG_TP'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	user	'Organization Manager'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPlant'
+	property	'version'	value	'R422'
+;
+modify menu type_BusinessUnit add command APPPlant order command APPPlant 4;
+modify menu type_Company add command APPPlant order command APPPlant 11;
+#channel ==>type_BusinessUnittype_Company
+add property command_APPPlant on program eServiceSchemaVariableMapping.tcl to command 'APPPlant';

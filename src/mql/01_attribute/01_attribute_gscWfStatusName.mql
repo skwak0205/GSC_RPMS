@@ -1,0 +1,15 @@
+#del attribute 'gscWfStatusName';
+add attribute 'gscWfStatusName'
+ type 'string'
+ description '현재상태'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gsWfStatusName'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscWfStatusName on program eServiceSchemaVariableMapping.tcl to attribute 'gscWfStatusName';
+
+

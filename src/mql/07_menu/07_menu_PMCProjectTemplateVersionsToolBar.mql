@@ -1,0 +1,16 @@
+del menu 'PMCProjectTemplateVersionsToolBar';
+add menu 'PMCProjectTemplateVersionsToolBar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'PMCProjectTemplateVersionsActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectTemplateVersionsToolBar'
+	property 'version'	value	'R419'
+;
+add property menu_PMCProjectTemplateVersionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectTemplateVersionsToolBar';

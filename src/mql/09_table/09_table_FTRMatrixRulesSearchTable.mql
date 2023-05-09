@@ -1,0 +1,47 @@
+del table 'FTRMatrixRulesSearchTable' system;
+add table 'FTRMatrixRulesSearchTable' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxProduct.Table.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxTree.jsp'
+	range	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Export'		'true'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'Type'
+	businessobject	'type'
+	label	'emxProduct.Table.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Configuration'
+column #3
+	name	'Owner'
+	businessobject	'owner'
+	label	'emxProduct.Table.Owner'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Configuration'
+column #4
+	name	'State'
+	businessobject	'current'
+	label	'emxProduct.Table.State'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Configuration'
+	property	'version'	value	'R418'
+;
+add property table_FTRMatrixRulesSearchTable on program eServiceSchemaVariableMapping.tcl to table 'FTRMatrixRulesSearchTable' system;

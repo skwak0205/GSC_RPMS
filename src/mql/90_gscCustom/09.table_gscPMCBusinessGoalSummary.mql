@@ -1,0 +1,117 @@
+################################################################################################
+# Created Date : 2023.02.02
+# Create by HyungJin,Ju
+# Description : gsc 비즈니스 목표 Table List
+################################################################################################
+
+#del table 'gscPMCBusinessGoalSummary' system;
+add table "gscPMCBusinessGoalSummary" system
+    column
+        name 'gscTitle'
+        label 'emxProgramCentral.Label.gscTitle'
+        businessobject  '$<attribute[attribute_gscTitle].value>'
+        setting 'Registered Suite' 'ProgramCentral'
+        setting 'Admin Type'        'attribute_gscTitle'
+	column
+		name "NamePopup"
+		autoheight "FALSE"
+		autowidth "FALSE"
+		edit "FALSE"
+		href "${COMMON_DIR}/emxTree.jsp"
+		range ""
+		setting "Target Location" "popup"
+		setting "Registered Suite" "ProgramCentral"
+		setting "Column Type" "icon"
+		setting "Column Icon" "images/iconNewWindow.gif"
+		setting "Width" "50"
+	column
+		name "Description"
+		businessobject "description"
+		label "emxProgramCentral.BusinessGoal.GoalDescription"
+		autoheight "FALSE"
+		autowidth "FALSE"
+		edit "FALSE"
+		href ""
+		range ""
+		setting "Registered Suite"  "ProgramCentral"
+		setting "Column Type"  "programHTMLOutput"
+		setting "function"  "getDescription"
+		setting "Export"  "true"
+		setting "program"  "emxProgramBusinessGoal"
+	column
+		name "BusinessBenefit"
+		businessobject "$<attribute[attribute_BusinessBenefit].value>"
+		label "emxProgramCentral.BusinessGoal.BusinessBenefit"
+		autoheight "FALSE"
+		autowidth "FALSE"
+		edit "FALSE"
+		href ""
+		range ""
+		setting "Registered Suite"  "ProgramCentral"
+		setting "Column Type"  "programHTMLOutput"
+		setting "function"  "getBusinessBenefit"
+		setting "Export"  "true"
+		setting "program"  "emxProgramBusinessGoal"
+	column
+		name "BusinessGoalStatus"
+		businessobject "current"
+		label "emxProgramCentral.Common.State"
+		autoheight "FALSE"
+		autowidth "FALSE"
+		edit "FALSE"
+		href ""
+		range ""
+		setting "Admin Type"  "State"
+		setting "Registered Suite"  "ProgramCentral"
+	column
+		name "EffectiveDate"
+		businessobject "$<attribute[attribute_EffectiveDate].value>"
+		label "emxProgramCentral.Common.EffectiveDate"
+		autoheight "FALSE"
+		autowidth "FALSE"
+		edit "FALSE"
+		href ""
+		range ""
+		setting "Registered Suite"  "ProgramCentral"
+		setting "format"  "date"
+		setting "Sort Type"  "date"
+	column
+		name "BusinessUnit"
+		businessobject "$<to[relationship_OrganizationGoal].from.attribute[attribute_Title]>"
+		label "emxProgramCentral.Common.BusinessUnit"
+		autoheight "FALSE"
+		autowidth "FALSE"
+		edit "FALSE"
+		href "${COMMON_DIR}/emxTree.jsp?mode=insert"
+		range ""
+		setting "Registered Suite"  "ProgramCentral"
+		setting "Show Alternate Icon"  "true"
+		setting "Alternate OID expression"  "to[Organization Goal].from.id"
+		setting "Alternate Type expression"  "to[Organization Goal].from.type"
+	column
+		name "Owner"
+		businessobject "owner"
+		label "emxProgramCentral.Common.Owner"
+		autoheight "FALSE"
+		autowidth "FALSE"
+		edit "FALSE"
+		href ""
+		range ""
+		setting "Registered Suite"  "ProgramCentral"
+		setting "Column Type"  "programHTMLOutput"
+		setting "function"  "showOwner"
+		setting "Export"  "true"
+		setting "program"  "emxProgramBusinessGoal"
+	property "installer" value "ENOVIAEngineering"
+	property "application" value "ProgramManagementBase"
+	property "installed date" value "02-02-2023"
+	property "original name" value "gscPMCBusinessGoalSummary"
+	property "version" value "R424"
+;
+add property table_gscPMCBusinessGoalSummary on program eServiceSchemaVariableMapping.tcl to table 'gscPMCBusinessGoalSummary' system;
+
+# Menu Command href Form 수정
+# menu PMCMyDesk -> command PMCBusinessGoalMyDesk 수정
+# Program 및 Table 수정, expandProgram 추가
+# 원본: mod command PMCBusinessGoalMyDesk href '${COMMON_DIR}/emxIndentedTable.jsp?program=emxProgramBusinessGoal:getMyBusinessGoals,emxProgramBusinessGoal:getBusinessUnitBusinessGoals,emxProgramBusinessGoal:getCompanyBusinessGoals&programLabel=emxProgramCentral.BusinessGoal.MyGoals,emxProgramCentral.Common.BusinessUnit,emxProgramCentral.Common.Company&table=PMCBusinessGoalSummary&selection=multiple&header=emxProgramCentral.ProgramTop.BusinessGoals&toolbar=PMCMyDeskBusinessGoalToolBar&HelpMarker=emxhelpbusinessgoalsummary&StringResourceFileId=emxProgramCentralStringResource';
+mod command PMCBusinessGoalMyDesk href '${COMMON_DIR}/emxIndentedTable.jsp?program=emxProgramBusinessGoal:getTopandMyBusinessGoals,emxProgramBusinessGoal:getBusinessUnitBusinessGoals,emxProgramBusinessGoal:getCompanyBusinessGoals&programLabel=emxProgramCentral.BusinessGoal.MyGoals,emxProgramCentral.Common.BusinessUnit,emxProgramCentral.Common.Company&table=gscPMCBusinessGoalSummary&selection=multiple&header=emxProgramCentral.ProgramTop.BusinessGoals&toolbar=PMCMyDeskBusinessGoalToolBar&HelpMarker=emxhelpbusinessgoalsummary&StringResourceFileId=emxProgramCentralStringResource&expandProgram=emxProgramBusinessGoal%3AgetSubGoals';

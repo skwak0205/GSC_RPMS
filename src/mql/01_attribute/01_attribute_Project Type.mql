@@ -1,0 +1,19 @@
+del attribute 'Project Type';
+add attribute 'Project Type'
+	type	'string'
+	description	'Identifies the project type - range value can be customized'
+	 property	'installer'	value	'ENOVIAEngineering'
+	 property	'application'	value	'Framework'
+	 property	'installed date'	value	'Thu Oct 27 15:35:11 KST 2022'
+	 property	'original name'	value	'Project Type'
+	 property	'CustomerExposition'	value	'Programmer'
+	 property	'Protection'	value	'Free'
+	 property	'version'	value	'R212'
+;
+add property attribute_ProjectType on program eServiceSchemaVariableMapping.tcl to attribute 'Project Type';
+
+
+modify attribute 'Project Type' add range= PT01;
+modify attribute 'Project Type' add range= PT02;
+modify attribute 'Project Type' add range= PT03; //기반
+modify attribute 'Project Type' add range= PT04;  // 공통

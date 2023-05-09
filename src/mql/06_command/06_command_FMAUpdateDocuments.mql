@@ -1,0 +1,23 @@
+del command 'FMAUpdateDocuments';
+add command 'FMAUpdateDocuments'
+	description	''
+	label	'enoFolderManagement.Common.UpdateDocuments'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=updateHolder&showFormat=readOnly&showComments=required'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'FolderManagement'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasMultipleFiles'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckIn.png'
+	user	'Global User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'FMAUpdateDocuments'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_FMAUpdateDocuments on program eServiceSchemaVariableMapping.tcl to command 'FMAUpdateDocuments';

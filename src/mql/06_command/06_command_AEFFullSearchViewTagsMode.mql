@@ -1,0 +1,16 @@
+del command 'AEFFullSearchViewTagsMode';
+add command 'AEFFullSearchViewTagsMode'
+	description	'Tags Mode Command'
+	label	'emxFramework.Command.AEFFullSearchViewTagsModeLabel'
+	href	'javascript:parent.changeView(\"TagsMode\")'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFFullSearchViewTagsMode'
+	property	'version'	value	'R215'
+;
+modify menu AEFFullSearchView add command AEFFullSearchViewTagsMode order command AEFFullSearchViewTagsMode 1;
+#channel ==>AEFFullSearchView
+add property command_AEFFullSearchViewTagsMode on program eServiceSchemaVariableMapping.tcl to command 'AEFFullSearchViewTagsMode';

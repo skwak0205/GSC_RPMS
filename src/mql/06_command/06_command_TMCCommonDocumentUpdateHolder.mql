@@ -1,0 +1,31 @@
+del command 'TMCCommonDocumentUpdateHolder';
+add command 'TMCCommonDocumentUpdateHolder'
+	description	'Update All Documents connected to Parent object'
+	label	'emxComponents.Common.UpdateDocuments'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=updateHolder&showFormat=readOnly&showComments=required'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasMultipleFiles'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckIn.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCCommonDocumentUpdateHolder'
+	property	'version'	value	'R422'
+;
+modify menu TMCContentSummaryTopActionBar add command TMCCommonDocumentUpdateHolder order command TMCCommonDocumentUpdateHolder 0;
+#channel ==>TMCContentSummaryTopActionBar
+add property command_TMCCommonDocumentUpdateHolder on program eServiceSchemaVariableMapping.tcl to command 'TMCCommonDocumentUpdateHolder';

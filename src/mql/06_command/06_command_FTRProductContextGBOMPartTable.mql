@@ -1,0 +1,18 @@
+del command 'FTRProductContextGBOMPartTable';
+add command 'FTRProductContextGBOMPartTable'
+	description	''
+	label	'emxProduct.Command.GBOMPartTable'
+	href	'${SUITE_DIR}/showGridEffectivityTablePreProcess.jsp?context=GBOM'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Editable'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductContextGBOMPartTable'
+	property	'version'	value	'R215'
+;
+#channel ==>FTRProductContextViewGBOMPartTableChannel
+add property command_FTRProductContextGBOMPartTable on program eServiceSchemaVariableMapping.tcl to command 'FTRProductContextGBOMPartTable';

@@ -1,0 +1,23 @@
+del command 'RMTSubRequirementSearchCommand';
+add command 'RMTSubRequirementSearchCommand'
+	description	'Opens a Search dialog to search Requirement'
+	label	'emxRequirements.Heading.AddExisting'
+	href	'${SUITE_DIR}/RequirementSearchForm.jsp?header=emxRequirements.Heading.SearchResult&toolbar=RMTRequirementSearchToolbar&program=emxRequirementSearchBase:getRequirements&table=RMTSearchRequirementsTable&CommandName=RMTSubRequirementSearchCommand&sortColumnName=Name&Style=dialog&HelpMarker=emxhelpsearchresults&InclusionList=emxRequirements.Search.Types&resultToolbar=RMTRequirementSearchResultToolbar&SubmitURL=../requirements/RequirementStructureConnectObjects.jsp'
+	alt	''
+	setting	'Target Location'		'SearchContent'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSubRequirementSearchCommand'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTSubRequirementSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'RMTSubRequirementSearchCommand';

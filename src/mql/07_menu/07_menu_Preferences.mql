@@ -1,0 +1,20 @@
+del menu 'Preferences';
+add menu 'Preferences'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	menu	'FeatureConfiguration'
+	menu	'ProductLine'
+	menu	'General'
+	menu	'PARParameterCentral'
+	menu	'Program Central'
+	menu	'RequirementsCentral'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'Preferences'
+	property 'version'	value	'V6R2011x'
+;
+add property menu_Preferences on program eServiceSchemaVariableMapping.tcl to menu 'Preferences';

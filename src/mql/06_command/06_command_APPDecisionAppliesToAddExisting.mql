@@ -1,0 +1,23 @@
+del command 'APPDecisionAppliesToAddExisting';
+add command 'APPDecisionAppliesToAddExisting'
+	description	'Add an existing object to the Decision using Applies To relationship'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=&table=APPDecisionsAddExistingSearch&excludeOIDprogram=emxDecision:excludeDecisionAppliesTo&selection=multiple&cancelLabel=emxComponents.Button.Close&showInitialResults=false&showSavedQuery=True&searchCollectionEnabled=True&HelpMarker=emxhelpfullsearch&submitURL=../components/emxComponentsFullSearchUtil.jsp?mode=Connect&relName=relationship_DecisionAppliesTo&direction=from&addPreCondParam=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == TRUE)'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionAppliesToAddExisting'
+	property	'version'	value	'R420.HF1'
+;
+modify menu APPDecisionAppliesToActionBar add command APPDecisionAppliesToAddExisting order command APPDecisionAppliesToAddExisting 1;
+#channel ==>APPDecisionAppliesToActionBar
+add property command_APPDecisionAppliesToAddExisting on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionAppliesToAddExisting';

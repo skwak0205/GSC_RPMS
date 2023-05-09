@@ -1,0 +1,20 @@
+del command 'LBCFolderAccessRemoveSelected';
+add command 'LBCFolderAccessRemoveSelected'
+	description	'Remove Folder Access'
+	label	'emxDocumentCentral.ActionBarCmd.RemoveSelected'
+	href	'javascript:cut()'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Mode'		'edit'
+	setting	'Access Function'		'hasRevokeAccess'
+	setting	'Access Program'		'emxWorkspaceVault'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCFolderAccessRemoveSelected'
+	property	'version'	value	'R418'
+;
+modify menu LBCFolderAccessAddRemoveMembersAction add command LBCFolderAccessRemoveSelected order command LBCFolderAccessRemoveSelected 0;
+#channel ==>LBCFolderAccessAddRemoveMembersAction
+add property command_LBCFolderAccessRemoveSelected on program eServiceSchemaVariableMapping.tcl to command 'LBCFolderAccessRemoveSelected';

@@ -1,0 +1,16 @@
+del menu 'FTRModelConfigurationFeatureCommitToToolbar';
+add menu 'FTRModelConfigurationFeatureCommitToToolbar'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'FTRModelConfigurationFeatureCommitToActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRModelConfigurationFeatureCommitToToolbar'
+	property 'version'	value	'R418'
+;
+add property menu_FTRModelConfigurationFeatureCommitToToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRModelConfigurationFeatureCommitToToolbar';

@@ -1,0 +1,18 @@
+del command 'FTRVariabilityGroupAddedEvent';
+add command 'FTRVariabilityGroupAddedEvent'
+	description	'Variability Group Added Event'
+	label	'PublishSubscribe.Event.VariabilityGroupAdded'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Variability Group Added In Product Context'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'original name'	value	'FTRVariabilityGroupAddedEvent'
+	property	'version'	value	'R422'
+;
+modify menu PLCProductsEvents add command FTRVariabilityGroupAddedEvent order command FTRVariabilityGroupAddedEvent 12;
+#channel ==>PLCProductsEvents
+add property command_FTRVariabilityGroupAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRVariabilityGroupAddedEvent';

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/"> 
+ <!-- Copyright 2014 , Dassault Systemes. All rights reserved. -->
+ <head>
+    
+    <title>CAA Computation App</title>
+	
+	<!-- Application Metas Start -->
+    <meta name="description" content="Basic AMD use case" />
+    <meta name="keywords" content="Use Case AMD" />
+	<!-- Application Metas End -->
+	
+	<!-- Application Preferences -->
+    <widget:preferences>
+        <widget:preference name="OperationChoice" type="list" label="Operation Choices" defaultValue="NFirst" >
+			<widget:option label="NFirst" value="NFirst"></widget:option>
+			<widget:option label="Abs" value="Abs"></widget:option>
+        </widget:preference>
+    </widget:preferences>
+	
+	<!-- Application JS Start -->
+    <script >
+	    /* global widget , require */
+		require( ['DS/CAAWebAppsOperationBase/complex/ComplexOp',
+		         'DS/CAAWebAppsOperationBase/basic/UnitaryOp',
+				 'i18n!DS/CAAWebAppsOperationApp/assets/nls/AppNLS'], function (complexOp,unitaryOp,NLS) { 
+			'use strict'; 
+		 	   	
+			var myWidget = {	
+			
+				onLoad: function () {			    					
+					var textToDisplay= NLS.get("CheckOp")  + ' ' + complexOp.check1(-3) ;
+					textToDisplay = textToDisplay + '</br></br>' + NLS.get("ChangeOp") ;
+					widget.body.innerHTML=textToDisplay;								
+				},
+
+				onRefresh: function () {
+					var operation= widget.getValue('OperationChoice');
+					var valueOp= -1 ;
+					var textOp='' ;
+					if ( operation === 'NFirst' )  {
+					   textOp='Sum first 10 numbers';
+					   valueOp=unitaryOp.nFirst(10); 							   
+					} 
+					if ( operation === 'Abs' )  {
+						textOp='|-6|';
+						valueOp=unitaryOp.abs(-6); 					
+					}
+					
+					var textToDisplay=NLS.get( "Operation", {text: textOp, value: valueOp} );
+					textToDisplay = textToDisplay + "</br></br>" + NLS.get("ChangeOp") ;
+					widget.body.innerHTML=textToDisplay;		
+				}
+			};
+			
+			widget.addEvent('onLoad', myWidget.onLoad);
+			widget.addEvent('onRefresh', myWidget.onRefresh);
+		} );	
+    </script>
+	<!-- Application JS End -->
+</head>
+<body>
+</body>
+</html>

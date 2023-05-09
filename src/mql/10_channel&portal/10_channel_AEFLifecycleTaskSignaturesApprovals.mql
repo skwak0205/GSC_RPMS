@@ -1,0 +1,17 @@
+del channel 'AEFLifecycleTaskSignaturesApprovals';
+add channel 'AEFLifecycleTaskSignaturesApprovals'
+	description	'For current signatures/tasks and approvals'
+	height	'400'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Framework'
+	setting		'Height'		'80%'
+	command 	'AEFLifecycleTaskSignatures','AEFLifecycleApprovals'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecycleTaskSignaturesApprovals'
+	property	'version'	value	'V6R2008-2.0'
+;
+#portal ==>AEFLifecyclePowerView
+add property channel_AEFLifecycleTaskSignaturesApprovals on program eServiceSchemaVariableMapping.tcl to channel 'AEFLifecycleTaskSignaturesApprovals';

@@ -1,0 +1,21 @@
+del command 'LCPartDelete';
+add command 'LCPartDelete'
+	description	'Delete'
+	label	'emxLibraryCentral.Command.Delete'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCPartDelete'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_LCPartDelete on program eServiceSchemaVariableMapping.tcl to command 'LCPartDelete';

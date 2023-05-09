@@ -1,0 +1,23 @@
+del command 'FTRModelAddExistingLogicalFeatureAction';
+add command 'FTRModelAddExistingLogicalFeatureAction'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${SUITE_DIR}/LogicalFeatureAddExistingPreProcess.jsp?isModel=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'LogicalFeature'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelAddExistingLogicalFeatureAction'
+	property	'version'	value	'R418'
+;
+modify menu FTRModelCandidateLogicalFeatureToolbar add command FTRModelAddExistingLogicalFeatureAction order command FTRModelAddExistingLogicalFeatureAction 2;
+#channel ==>FTRModelCandidateLogicalFeatureToolbar
+add property command_FTRModelAddExistingLogicalFeatureAction on program eServiceSchemaVariableMapping.tcl to command 'FTRModelAddExistingLogicalFeatureAction';

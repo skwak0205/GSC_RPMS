@@ -1,0 +1,22 @@
+del command 'LBCCDocumentFamilySubFamilies';
+add command 'LBCCDocumentFamilySubFamilies'
+	description	'Sub Document Families inside a Document Family'
+	label	'emxLibraryCentral.Command.SubDocumentFamilies'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxLibraryCentralUtil:getSubclasses&table=LCClassificationList&selection=single&sortColumnName=Name&sortDirection=ascending&toolbar=LBCClassSubClassesToolBar&header=emxLibraryCentral.Common.DocumentFamilies&HelpMarker=emxhelpsubclasses'
+	alt	'emxDocumentCentral.TreeCategory.Documents'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCDocumentFamilySubFamilies'
+	property	'version'	value	'R216'
+;
+modify menu type_DocumentFamily add command LBCCDocumentFamilySubFamilies order command LBCCDocumentFamilySubFamilies 10;
+#channel ==>type_DocumentFamily
+add property command_LBCCDocumentFamilySubFamilies on program eServiceSchemaVariableMapping.tcl to command 'LBCCDocumentFamilySubFamilies';

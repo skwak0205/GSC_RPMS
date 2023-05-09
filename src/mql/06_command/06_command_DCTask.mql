@@ -1,0 +1,17 @@
+del command 'DCTask';
+add command 'DCTask'
+	description	'Task Command Object'
+	label	'emxFramework.Command.Task'
+	href	'SUITE_DIR/emxTaskSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Task'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallTask.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCTask'
+	property	'version'	value	'9-5-0-0'
+;
+#channel ==>
+add property command_DCTask on program eServiceSchemaVariableMapping.tcl to command 'DCTask';

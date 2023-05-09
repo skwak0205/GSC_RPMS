@@ -1,0 +1,19 @@
+del command 'ECMCRSupportingDocs';
+add command 'ECMCRSupportingDocs'
+	description	'SupportingDocs Command Object'
+	label	'EnterpriseChangeMgt.Command.SupportingDocs'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ECMCRSummarySupportingDocsToolBar&header=EnterpriseChangeMgt.Common.SupportingDocsPageHeading&HelpMarker=emxhelpsupportingdocuments&parentRelName=relationship_ECRSupportingDocument'
+	alt	'EnterpriseChangeMgt.Command.SupportingDocs'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeRequest>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallObjectFolder.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRSupportingDocs'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMSupportingDocumentsChannel
+add property command_ECMCRSupportingDocs on program eServiceSchemaVariableMapping.tcl to command 'ECMCRSupportingDocs';

@@ -1,0 +1,22 @@
+del command 'PMCDeleteDeliverableTemplate';
+add command 'PMCDeleteDeliverableTemplate'
+	description	'Delete Deliverable Template Object'
+	label	'emxProgramCentral.Common.DeleteDeliverableTemplate'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=deleteDeliverableTemplate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENODEPL_TP'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeleteDeliverableTemplate'
+	property	'version'	value	'R422'
+;
+modify menu PMCDeliverableTemplateActions add command PMCDeleteDeliverableTemplate order command PMCDeleteDeliverableTemplate 0;
+#channel ==>PMCDeliverableTemplateActions
+add property command_PMCDeleteDeliverableTemplate on program eServiceSchemaVariableMapping.tcl to command 'PMCDeleteDeliverableTemplate';

@@ -1,0 +1,21 @@
+del command 'TMCMyViewMyDesk';
+add command 'TMCMyViewMyDesk'
+	description	'MyView Command Object'
+	label	'emxFramework.MenuItem.MyView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=TMCMyViewPortal&header=emxTeamCentral.MyViewFS.Heading&HelpMarker=emxhelpmyview'
+	alt	'emxFramework.MenuItem.MyView'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCMyViewMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu TMCMyDesk add command TMCMyViewMyDesk order command TMCMyViewMyDesk 1;
+#channel ==>TMCMyDesk
+add property command_TMCMyViewMyDesk on program eServiceSchemaVariableMapping.tcl to command 'TMCMyViewMyDesk';

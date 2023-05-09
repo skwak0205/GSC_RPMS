@@ -1,0 +1,24 @@
+del command 'PMCEffortApproveEffort';
+add command 'PMCEffortApproveEffort'
+	description	'Approve Effort'
+	label	'emxProgramCentral.Common.ApproveEffort'
+	href	'${SUITE_DIR}/emxProgramCentralApproveObjects.jsp'
+	alt	'emxFramework.Command.Alt.AddExistingMfgEquivalentParts'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ApprovalWarningMsg'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEffortApproveEffort'
+	property	'version'	value	'R422'
+;
+modify menu PMCEffortToolbarActions add command PMCEffortApproveEffort order command PMCEffortApproveEffort 6;
+#channel ==>PMCEffortToolbarActions
+add property command_PMCEffortApproveEffort on program eServiceSchemaVariableMapping.tcl to command 'PMCEffortApproveEffort';

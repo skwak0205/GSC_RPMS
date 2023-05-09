@@ -1,0 +1,18 @@
+del command 'APPRouteTaskRevisions';
+add command 'APPRouteTaskRevisions'
+	description	'The Inbox Tasks revisions'
+	label	'emxComponents.Common.Revision'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxInboxTask:getTaskRevisions&table=APPRouteTaskRevisions&sortColumnName=Name&header=emxComponents.Common.Revisions&HelpMarker=emxhelptasksrevisions'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteTaskRevisions'
+	property	'version'	value	'R417'
+;
+modify menu type_InboxTask add command APPRouteTaskRevisions order command APPRouteTaskRevisions 2;
+#channel ==>type_InboxTask
+add property command_APPRouteTaskRevisions on program eServiceSchemaVariableMapping.tcl to command 'APPRouteTaskRevisions';

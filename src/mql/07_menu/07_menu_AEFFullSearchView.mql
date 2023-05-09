@@ -1,0 +1,19 @@
+del menu 'AEFFullSearchView';
+add menu 'AEFFullSearchView'
+	description	''
+	label	''
+	href	''
+	alt	'emxFramework.Command.AEFFullSearchView'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'iconActionSearchSpyGlass.png'
+	command	'AEFFullSearchViewTagsMode'
+	command	'AEFFullSearchViewFormBasedMode'
+	command	'AEFFullSearchViewNavigationMode'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFFullSearchView'
+	property 'version'	value	'R216'
+;
+add property menu_AEFFullSearchView on program eServiceSchemaVariableMapping.tcl to menu 'AEFFullSearchView';

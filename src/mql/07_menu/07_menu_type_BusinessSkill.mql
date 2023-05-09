@@ -1,0 +1,17 @@
+del menu 'type_BusinessSkill';
+add menu 'type_BusinessSkill'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=emxBusinessSkill&toolbar=APPBusinessSkillToolBar&mode=view&printerfriendly=true&HelpMarker=emxhelpskillproperties&formHeader=emxComponents.Common.PropertiesPageHeading'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'AEFHistory'
+	command	'APPSubSkills'
+	command	'APPSkillPerson'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_BusinessSkill'
+	property 'version'	value	'10-6'
+;
+add property menu_type_BusinessSkill on program eServiceSchemaVariableMapping.tcl to menu 'type_BusinessSkill';

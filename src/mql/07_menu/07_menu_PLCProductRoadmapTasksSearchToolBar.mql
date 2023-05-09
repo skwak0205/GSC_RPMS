@@ -1,0 +1,16 @@
+del menu 'PLCProductRoadmapTasksSearchToolBar';
+add menu 'PLCProductRoadmapTasksSearchToolBar'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PLCProductRoadmapTaskConnectSelectedAction'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCProductRoadmapTasksSearchToolBar'
+	property 'version'	value	'R418'
+;
+add property menu_PLCProductRoadmapTasksSearchToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductRoadmapTasksSearchToolBar';

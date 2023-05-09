@@ -1,0 +1,24 @@
+del command 'PMCEditRPNDetails';
+add command 'PMCEditRPNDetails'
+	description	'Command for Editing RPN Details'
+	label	'emxProgramCentral.Common.EditDetails'
+	href	'${SUITE_DIR}/emxProgramCentralRPNEditPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkEditAccess'
+	setting	'Access Program'		'emxRPN'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEditRPNDetails'
+	property	'version'	value	'R422'
+;
+modify menu PMCRPNToolbarActions add command PMCEditRPNDetails order command PMCEditRPNDetails 0;
+#channel ==>PMCRPNToolbarActions
+add property command_PMCEditRPNDetails on program eServiceSchemaVariableMapping.tcl to command 'PMCEditRPNDetails';

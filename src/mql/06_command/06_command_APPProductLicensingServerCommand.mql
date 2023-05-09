@@ -1,0 +1,18 @@
+del command 'APPProductLicensingServerCommand';
+add command 'APPProductLicensingServerCommand'
+	description	'Displays list of licenses avaliable in server'
+	label	'emxComponents.Command.ProductLicensingServerCommand'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'function'		'getListOfLicenseServerProducts'
+	setting	'program'		'emxLicense'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPProductLicensingServerCommand'
+	property	'version'	value	'R207'
+;
+modify menu APPProductLicensingProgramMenu add command APPProductLicensingServerCommand order command APPProductLicensingServerCommand 1;
+#channel ==>APPProductLicensingProgramMenu
+add property command_APPProductLicensingServerCommand on program eServiceSchemaVariableMapping.tcl to command 'APPProductLicensingServerCommand';

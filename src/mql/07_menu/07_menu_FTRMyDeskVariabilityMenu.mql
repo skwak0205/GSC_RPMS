@@ -1,0 +1,14 @@
+del menu 'FTRMyDeskVariabilityMenu';
+add menu 'FTRMyDeskVariabilityMenu'
+	description	'My Desk Variability Menu'
+	label	'emxProduct.Menu.Variability'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRMyDeskVariants'
+	command	'FTRMyDeskVariabilityGroups'
+	command	'FTRConfigurationFeaturesMyDesk'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'version'	value	'R421'
+;
+add property menu_FTRMyDeskVariabilityMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRMyDeskVariabilityMenu';

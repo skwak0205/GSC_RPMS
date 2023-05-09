@@ -1,0 +1,17 @@
+del command 'VPLMCreateNewDocument';
+add command 'VPLMCreateNewDocument'
+	description	'Create New Document object'
+	label	'emxFramework.Command.VPLMCreateNewDocument'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=create&JPOName=VPLMDocument&methodName=createDocument'
+	alt	'emxFramework.Command.Alt.VPLMCreateNewDocument'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'VPLMWebMgt'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+;
+modify menu VPLMDocumentActionMenu add command VPLMCreateNewDocument order command VPLMCreateNewDocument 1;
+#channel ==>VPLMDocumentActionMenu
+add property command_VPLMCreateNewDocument on program eServiceSchemaVariableMapping.tcl to command 'VPLMCreateNewDocument';

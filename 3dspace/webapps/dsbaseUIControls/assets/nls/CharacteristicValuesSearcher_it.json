@@ -1,0 +1,11 @@
+{
+  "CVS.optionsChecker.searchEngine.notExisting.error": "È necessario definire un motore di ricerca per trovare i valori.",
+  "CVS.optionsChecker.searchEngine.notFunction.error": "'È prevista una funzione per il motore di ricerca.",
+  "CVS.optionsChecker.defaultValues.array.error": "I valori predefiniti devono essere contenuti in una matrice.",
+  "CVS.optionsChecker.defaultValues.arrayObjects.error": "Una matrice di oggetti è prevista come valori predefiniti dell'input.",
+  "CVS.optionsChecker.defaultValues.labelExpected.error": "È prevista un'etichetta per ogni valore predefinito.",
+  "CVS.optionsChecker.defaultValues.valueExpected.error": "È previsto un valore per ogni valore predefinito.",
+  "CVS.optionsChecker.onSuggest.notFunction.error": "È prevista una funzione per l'opzione \"onSuggest\".",
+  "CVS.optionsChecker.onSelect.notFunction.error": "È prevista una funzione per l'opzione \"onSelect\".",
+  "CVS.optionsChecker.onCleanDataset.notFunction.error": "È prevista una funzione per l'opzione \"onCleanDataset\"."
+}

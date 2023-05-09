@@ -1,0 +1,17 @@
+del command 'ECMMyChangeActions';
+add command 'ECMMyChangeActions'
+	description	'Display CAs'
+	label	'EnterpriseChangeMgt.Command.ChangeAction'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=ECMChangeActionSummary&program=enoECMChangeOrder:getAllChangeActions&selection=multiple&toolbar=ECMCAMenuToolbar&HelpMarker=emxhelpchangeactions'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'true'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMyChangeActions'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMMyChangesTopChannelECMMyChangesBottomLeftChannel
+add property command_ECMMyChangeActions on program eServiceSchemaVariableMapping.tcl to command 'ECMMyChangeActions';

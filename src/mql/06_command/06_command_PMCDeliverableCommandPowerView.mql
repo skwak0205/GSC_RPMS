@@ -1,0 +1,20 @@
+del command 'PMCDeliverableCommandPowerView';
+add command 'PMCDeliverableCommandPowerView'
+	description	'Opens Power View containing Deliverable and Meeting'
+	label	'emxFramework.Command.Deliverable'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCDeliverablePortal'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeliverableCommandPowerView'
+	property	'version'	value	'R424.HF4'
+;
+modify menu type_TaskManagement add command PMCDeliverableCommandPowerView order command PMCDeliverableCommandPowerView 4;
+modify menu type_TaskTemplate add command PMCDeliverableCommandPowerView order command PMCDeliverableCommandPowerView 3;
+#channel ==>type_TaskManagementtype_TaskTemplate
+add property command_PMCDeliverableCommandPowerView on program eServiceSchemaVariableMapping.tcl to command 'PMCDeliverableCommandPowerView';

@@ -1,0 +1,18 @@
+del menu 'PMCResourceRequestLifecycleFilterMenu';
+add menu 'PMCResourceRequestLifecycleFilterMenu'
+	description	''
+	label	'emxProgramCentral.ResourcePool.PMCResourceRequestLifecycleFilterMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCResourceRequestLifecycleFilter'
+	command	'PMCResourceRequestCurrencyFilter'
+	command	'PMCResourceRequestCostsFTEFilter'
+	command	'PMCResourceRequestPhaseTimelineFilter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourceRequestLifecycleFilterMenu'
+	property 'version'	value	'R215'
+;
+add property menu_PMCResourceRequestLifecycleFilterMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourceRequestLifecycleFilterMenu';

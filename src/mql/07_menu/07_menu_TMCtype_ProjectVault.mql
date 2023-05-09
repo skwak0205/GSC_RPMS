@@ -1,0 +1,23 @@
+del menu 'TMCtype_ProjectVault';
+add menu 'TMCtype_ProjectVault'
+	description	''
+	label	'${NAME}($<attribute[attribute_Count].value>)'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxTeamContent:getFolderContentIds&table=TMCContentSummary&header=emxTeamCentral.Name.Content&freezePane=Name&topActionbar=TMCContentSummaryTopActionBar&bottomActionbar=TMCContentSummaryBottomActionBar&selection=multiple&HelpMarker=emxhelpfoldercontent&parentRelName=relationship_VaultedDocuments&displayView=details&FilterFramePage=${COMPONENT_DIR}/emxCommonDocumentCheckoutUtil.jsp&FilterFrameSize=1&emxSuiteDirectory=teamcentral'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Label Function'		'getVaultDisplayName'
+	setting	'Image'		'${COMMON_DIR}/iconSmallFolder.png'
+	setting	'Label Program'		'emxWorkspaceFolder'
+	command	'TMCSubfolder'
+	command	'ContextIssueListPage'
+	command	'TMCRoute'
+	command	'APPDiscussionCommand'
+	command	'TMCWorkspaceFolderProperties'
+	command	'DomainAccessTreeCategory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCtype_ProjectVault'
+	property 'version'	value	'R420.HF2'
+;
+add property menu_TMCtype_ProjectVault on program eServiceSchemaVariableMapping.tcl to menu 'TMCtype_ProjectVault';

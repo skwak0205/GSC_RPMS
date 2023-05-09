@@ -1,0 +1,22 @@
+del menu 'LBCBookDocumentsActionToolBar';
+add menu 'LBCBookDocumentsActionToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	menu	'LBCBookDocumentsCreateActionToolBar'
+	command	'LBCBookContentAddExisting'
+	command	'APPSeparator'
+	command	'APPCommonDocumentDownloadActionLink'
+	command	'DCCommonDocumentCheckOutActionLink'
+	command	'APPSubscriptionMultiObject'
+	command	'LBCDCObjectRemoveSelectedActionLink'
+	command	'APPAccessRequestActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCBookDocumentsActionToolBar'
+	property 'version'	value	'R212'
+;
+add property menu_LBCBookDocumentsActionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LBCBookDocumentsActionToolBar';

@@ -1,0 +1,31 @@
+del command 'APPCompanyCreateActionLink';
+add command 'APPCompanyCreateActionLink'
+	description	'Company Create Command Object'
+	label	'emxComponents.Common.CreateCompany'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_CreateCompany&nameField=autoName&type=type_Company&createJPO=emxCompany:createCompanyObject&mode=create&targetLocation=slidein&companyType=Company&submitAction=treeContent&header=emxComponents.Common.CreateCompany&suiteKey=Components&preProcessJavaScript=clearCompanyFormFields&showPageURLIcon=false&findMxLink=false&HelpMarker=emxhelpcompanycreate'
+	alt	'emxComponents.Common.CreateCompany'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Slidein Width'		'500'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasAccessToCreateCompanies'
+	setting	'Access Program'		'emxCompany'
+	setting	'Image'		'${COMMON_DIR}/images/iconCreateCompany32.png'
+	user	'Organization Manager'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	user	'Supplier Development Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompanyCreateActionLink'
+	property	'version'	value	'R424'
+;
+modify menu APPCompanySummaryActionsToolBar add command APPCompanyCreateActionLink order command APPCompanyCreateActionLink 1;
+modify menu APPCompanyCreateNew add command APPCompanyCreateActionLink order command APPCompanyCreateActionLink 1;
+#channel ==>APPCompanySummaryActionsToolBarAPPCompanyCreateNew
+add property command_APPCompanyCreateActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPCompanyCreateActionLink';

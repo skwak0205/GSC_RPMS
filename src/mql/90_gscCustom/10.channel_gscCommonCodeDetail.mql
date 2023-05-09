@@ -1,0 +1,16 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통코드 detail channel
+################################################################################################
+#del channel "gscCommonCodeDetail";
+add channel "gscCommonCodeDetail"
+    description ""
+    command gscCommonCodeDetailList
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2023.01.10"
+property "original name"    value "gscCommonCodeDetail"
+;
+add property channel_gscCommonCodeDetail on program eServiceSchemaVariableMapping.tcl to channel 'gscCommonCodeDetail';

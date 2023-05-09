@@ -1,0 +1,4 @@
+<meta charset="UTF-8"/>
+TerminologySelector.TerminologyManagementCommand.Title="Управлять определением структуры просмотра";
+TerminologySelector.AssociateTerminologiesCommand.Title="Связать со структурой просмотра";
+TerminologySelector.AssociateTermsCommand.Title="Связать с узлом просмотра";

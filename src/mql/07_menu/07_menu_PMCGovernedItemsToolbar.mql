@@ -1,0 +1,16 @@
+del menu 'PMCGovernedItemsToolbar';
+add menu 'PMCGovernedItemsToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCAddGovernedItems'
+	command	'PMCRemoveGovernedItems'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCGovernedItemsToolbar'
+	property 'version'	value	'R420.HF3'
+;
+add property menu_PMCGovernedItemsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCGovernedItemsToolbar';

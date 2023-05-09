@@ -1,0 +1,14 @@
+del menu 'type_ProjectSnapshot';
+add menu 'type_ProjectSnapshot'
+	description	''
+	label	''
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCWBSViewTable&expandProgram=emxTask:getWBSSubtasks&freezePane=Name&HelpMarker=emxhelpwbstasklist&editLink=false&header=emxProgramCentral.Common.WorkBreakdownStructureSB&sortColumnName=ID&findMxLink=false&showRMB=false&customize=false&rowGrouping=false&showPageURLIcon=false&hideLaunchButton=true&export=false&massPromoteDemote=false&expandLevelFilter=false&showClipboard=false&displayView=details'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_ProjectSnapshot'
+	property 'version'	value	'R216'
+;
+add property menu_type_ProjectSnapshot on program eServiceSchemaVariableMapping.tcl to menu 'type_ProjectSnapshot';

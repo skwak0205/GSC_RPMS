@@ -1,0 +1,7 @@
+del menu 'ECMCOAffectedItemsListToolbar';
+add menu 'ECMCOAffectedItemsListToolbar'
+	description	''
+	label	'null'
+	href	'null'
+	alt	'null'
+add property menu_ECMCOAffectedItemsListToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMCOAffectedItemsListToolbar';

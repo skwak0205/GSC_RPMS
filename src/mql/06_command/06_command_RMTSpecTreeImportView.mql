@@ -1,0 +1,28 @@
+del command 'RMTSpecTreeImportView';
+add command 'RMTSpecTreeImportView'
+	description	''
+	label	'emxRequirements.Label.FullSpecWithSelected'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgramMenu=RMTSpecTreeProgramMenu&tableMenu=RMTSpecTreeTableMenu&freezePane=Name,Revision&selection=multiple&direction=from&editLink=true&sortColumnName=none&toolbar=RMTChapTreeToolbar&editRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_PLMParameterUsage,relationship_RequirementBreakdown&resequenceRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_PLMParameterUsage,relationship_RequirementBreakdown&connectionProgram=emxSpecificationStructureBase:processXMLMessage&multiColumnSort=false&HelpMarker=emxhelpspecificationstructureview'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'function'		'expandTreeWithRefCopyObjects'
+	setting	'Submit'		'true'
+	setting	'program'		'emxSpecificationStructure'
+	setting	'table'		'RMTSpecStructureTable'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecTreeImportView'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeImportProgramMenu add command RMTSpecTreeImportView order command RMTSpecTreeImportView 1;
+#channel ==>RMTSpecTreeImportProgramMenu
+add property command_RMTSpecTreeImportView on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecTreeImportView';

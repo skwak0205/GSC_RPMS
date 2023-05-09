@@ -1,0 +1,21 @@
+del command 'PMCProjectBudgetCurrencyFilter';
+add command 'PMCProjectBudgetCurrencyFilter'
+	description	'Currency Filter Command'
+	label	'emxProgramCentral.ProjectBenefitOrBudget.CurrencyFilter'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=Filter'
+	alt	'emxProgramCentral.ProjectBenefitOrBudget.CurrencyFilter'
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getBenefitOrBudgetCurrencyFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxProjectBudget'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetCurrencyFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCProjectBudgetFilter add command PMCProjectBudgetCurrencyFilter order command PMCProjectBudgetCurrencyFilter 1;
+#channel ==>PMCProjectBudgetFilter
+add property command_PMCProjectBudgetCurrencyFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudgetCurrencyFilter';

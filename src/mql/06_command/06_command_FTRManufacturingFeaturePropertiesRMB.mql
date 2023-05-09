@@ -1,0 +1,19 @@
+del command 'FTRManufacturingFeaturePropertiesRMB';
+add command 'FTRManufacturingFeaturePropertiesRMB'
+	description	''
+	label	'emxProduct.Tree.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ManufacturingFeature&formHeader=emxProduct.Heading.Properties&HelpMarker=emxhelpmanufacturingfeatureview&context=ManufacturingFeature'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRManufacturingFeaturePropertiesRMB'
+	property	'version'	value	'R417'
+;
+modify menu type_ManufacturingFeatureRMB add command FTRManufacturingFeaturePropertiesRMB order command FTRManufacturingFeaturePropertiesRMB 1;
+#channel ==>type_ManufacturingFeatureRMB
+add property command_FTRManufacturingFeaturePropertiesRMB on program eServiceSchemaVariableMapping.tcl to command 'FTRManufacturingFeaturePropertiesRMB';

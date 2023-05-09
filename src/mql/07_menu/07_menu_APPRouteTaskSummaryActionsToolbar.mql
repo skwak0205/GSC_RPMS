@@ -1,0 +1,18 @@
+del menu 'APPRouteTaskSummaryActionsToolbar';
+add menu 'APPRouteTaskSummaryActionsToolbar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	'emxComponents.Common.Actions'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPRouteTaskEditAll'
+	command	'APPRouteTaskSelectAssignee'
+	command	'APPRouteTaskRemove'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRouteTaskSummaryActionsToolbar'
+	property 'version'	value	'R423.HF3'
+;
+add property menu_APPRouteTaskSummaryActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPRouteTaskSummaryActionsToolbar';

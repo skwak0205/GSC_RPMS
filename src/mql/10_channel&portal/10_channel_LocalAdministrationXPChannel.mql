@@ -1,0 +1,10 @@
+del channel 'LocalAdministrationXPChannel';
+add channel 'LocalAdministrationXPChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	command 	'APPXPLocalAdministration'
+;
+#portal ==>APPXPLocalAdministrationPortal
+add property channel_LocalAdministrationXPChannel on program eServiceSchemaVariableMapping.tcl to channel 'LocalAdministrationXPChannel';

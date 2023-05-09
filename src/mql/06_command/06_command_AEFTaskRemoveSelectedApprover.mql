@@ -1,0 +1,23 @@
+del command 'AEFTaskRemoveSelectedApprover';
+add command 'AEFTaskRemoveSelectedApprover'
+	description	'Lifecycle Approvals Remove Selected Approver functionality'
+	label	'emxFramework.Command.TaskRemoveApprover'
+	href	'${COMMON_DIR}/emxLifecycleRemoveApproverProcess.jsp'
+	alt	'emxFramework.Command.TaskRemoveApprover'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	user	'3DSRestrictedContributor'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTaskRemoveSelectedApprover'
+	property	'version'	value	'R422'
+;
+modify menu AEFLifecycleApprovalsSummaryToolbar add command AEFTaskRemoveSelectedApprover order command AEFTaskRemoveSelectedApprover 0;
+#channel ==>AEFLifecycleApprovalsSummaryToolbar
+add property command_AEFTaskRemoveSelectedApprover on program eServiceSchemaVariableMapping.tcl to command 'AEFTaskRemoveSelectedApprover';

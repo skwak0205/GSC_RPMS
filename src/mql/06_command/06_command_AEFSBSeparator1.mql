@@ -1,0 +1,20 @@
+del command 'AEFSBSeparator1';
+add command 'AEFSBSeparator1'
+	description	''
+	label	'AEFSBSeparator1'
+	href	''
+	alt	'AEFSBSeparator1'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Function'		'accessEditSeparator'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Action Type'		'Separator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBSeparator1'
+	property	'version'	value	'V6R2010x.HF1'
+;
+modify menu AEFSBEditInline add command AEFSBSeparator1 order command AEFSBSeparator1 1;
+modify menu type_SoftwareRequirementSpecificationRMB add command AEFSBSeparator1 order command AEFSBSeparator1 2;
+#channel ==>AEFSBEditInlinetype_SoftwareRequirementSpecificationRMB
+add property command_AEFSBSeparator1 on program eServiceSchemaVariableMapping.tcl to command 'AEFSBSeparator1';

@@ -1,0 +1,21 @@
+del menu 'PLCModelDerivationsActionsToolbar';
+add menu 'PLCModelDerivationsActionsToolbar'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PLCModelCreateDerivationActionLink'
+	command	'PLCModelCreateRevisionActionLink'
+	command	'PLCModelDerivationsInsertBeforeActionLink'
+	command	'PLCDerivationsAddToPortfolioActionLink'
+	command	'PLCCopyProductActionLink'
+	command	'PLCDeleteProductActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCModelDerivationsActionsToolbar'
+	property 'version'	value	'R418'
+;
+add property menu_PLCModelDerivationsActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PLCModelDerivationsActionsToolbar';

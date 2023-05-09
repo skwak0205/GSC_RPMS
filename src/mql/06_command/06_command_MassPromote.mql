@@ -1,0 +1,23 @@
+del command 'MassPromote';
+add command 'MassPromote'
+	description	''
+	label	'emxFramework.Common.MassPromote'
+	href	'${COMMON_DIR}/emxMassPromoteDemote.jsp?cmd=Promote'
+	alt	'emxFramework.Common.MassPromote'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canAccessMassPromote'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPromote.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'MassPromote'
+	property	'version'	value	'R423.HF3'
+;
+modify menu Tools add command MassPromote order command MassPromote 5;
+#channel ==>Tools
+add property command_MassPromote on program eServiceSchemaVariableMapping.tcl to command 'MassPromote';

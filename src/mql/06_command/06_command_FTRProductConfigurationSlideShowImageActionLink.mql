@@ -1,0 +1,18 @@
+del command 'FTRProductConfigurationSlideShowImageActionLink';
+add command 'FTRProductConfigurationSlideShowImageActionLink'
+	description	''
+	label	'emxProduct.ActionLink.SlideShow'
+	href	'javascript:parent.frames[1].actionSlideShow()'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductConfigurationSlideShowImageActionLink'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRProductConfigurationSlideShowImageActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRProductConfigurationSlideShowImageActionLink';

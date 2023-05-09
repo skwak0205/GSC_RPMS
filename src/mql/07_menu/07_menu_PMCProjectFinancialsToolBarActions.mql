@@ -1,0 +1,17 @@
+del menu 'PMCProjectFinancialsToolBarActions';
+add menu 'PMCProjectFinancialsToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectFinancialsCreateNew'
+	command	'PMCProjectFinancialsImport'
+	command	'PMCProjectFinancialsDeleteLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectFinancialsToolBarActions'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_PMCProjectFinancialsToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectFinancialsToolBarActions';

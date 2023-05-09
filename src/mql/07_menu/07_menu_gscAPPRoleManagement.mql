@@ -1,0 +1,24 @@
+################################################################################################
+# Created Date : 2023. 03. 01
+# Create by Jungrim Choi
+# Description : Admin menu
+################################################################################################
+#del menu "gscAPPRoleManagement";
+add menu "gscAPPRoleManagement"
+    description "User Role Management"
+    label   "emxComponents.Label.gscAPPRoleManagement"
+    alt     "emxComponents.Label.gscAPPRoleManagement"
+    command 'gscAPPRoleUpdateCommand'
+    #command 'gscAPPPersonRoleSearchCommand'
+    #command 'gscAPPPersonEnoRoleSearchCommand'
+    #command 'gscAPPRoleChangeSearchCommand'
+    setting "Registered Suite" "Components"
+    property "application"      value "Components"
+    property "version"          value "V6R2019"
+    property "installer"        value "GSC"
+    property "installed date"   value "2023.03.01"
+    property "original name"    value "gscAPPRoleManagement"
+;
+
+add property menu_gscAPPRoleManagement on program eServiceSchemaVariableMapping.tcl to menu 'gscAPPRoleManagement';
+

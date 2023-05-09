@@ -1,0 +1,34 @@
+del command 'RMTChapterRichTextEditor';
+add command 'RMTChapterRichTextEditor'
+	description	'Launches Rich-text viewer.'
+	label	'emxRequirements.ActionLink.RichtextEditor'
+	href	'${SUITE_DIR}/PopupLauncher.jsp?expandProgramMenu=RMTSpecTreeProgramMenu&table=RMTSpecStatusTable&RichTextDefinition=RMTRichTextDefinition&toolbar=RMTChapterRichTextEditorToolbar&editLink=true&objectCompare=false&Export=false&PrinterFriendly=false&expandLevelFilter=false&showClipboard=false&multiColumnSort=false&massPromoteDemote=false&triggerValidation=false&AutoFilter=true&CurrencyConverter=false&HelpMarker=emxhelpsce&preSaveJPO=emxRequirement:createNewVersion&sortColumnName=none&appendURL=StructureEffectivity|Requirements&TargetView=sce&editRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_RequirementBreakdown&resequenceRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_RequirementBreakdown&connectionProgram=emxSpecificationStructureBase:processXMLMessage&effectivityRelationship=relationship_SpecificationStructure,relationship_RequirementBreakdown,relationship_DerivedRequirement&expandByDefault=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isSCEUsed'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRichTextEditor.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTChapterRichTextEditor'
+	property	'version'	value	'R422'
+;
+modify menu RMTChapterStructureDisplay add command RMTChapterRichTextEditor order command RMTChapterRichTextEditor 0;
+modify menu RMTChapTreeActionBar add command RMTChapterRichTextEditor order command RMTChapterRichTextEditor 3;
+#channel ==>RMTChapterStructureDisplayRMTChapTreeActionBar
+add property command_RMTChapterRichTextEditor on program eServiceSchemaVariableMapping.tcl to command 'RMTChapterRichTextEditor';

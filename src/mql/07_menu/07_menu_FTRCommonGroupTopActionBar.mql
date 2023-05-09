@@ -1,0 +1,15 @@
+del menu 'FTRCommonGroupTopActionBar';
+add menu 'FTRCommonGroupTopActionBar'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	menu	'FTRCommonGroupCommands'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRCommonGroupTopActionBar'
+	property 'version'	value	'R212'
+;
+add property menu_FTRCommonGroupTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'FTRCommonGroupTopActionBar';

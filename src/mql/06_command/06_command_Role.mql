@@ -1,0 +1,21 @@
+del command 'Role';
+add command 'Role'
+	description	'Role Command Object'
+	label	'emxComponents.Common.Role'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPRoleSummary&program=emxPerson:getAssignedRoleList&toolbar=APPRoleActionsToolBar&header=emxComponents.RoleSummary.Heading&selection=multiple&Export=false&multiColumnSort=false&customize=false&objectCompare=false&showClipboard=false&displayView=details'
+	alt	'emxComponents.Common.Role'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasAccessOnRoleCommand'
+	setting	'Access Program'		'emxPerson'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'iconSmallRole.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'Role'
+	property	'version'	value	'R420.HF2'
+;
+modify menu type_Person add command Role order command Role 1;
+#channel ==>type_Person
+add property command_Role on program eServiceSchemaVariableMapping.tcl to command 'Role';

@@ -1,0 +1,31 @@
+del command 'RMTSearchRequirementsCommand';
+add command 'RMTSearchRequirementsCommand'
+	description	''
+	label	'emxRequirements.ActionLink.FindRequirements'
+	href	'${SUITE_DIR}/RequirementSearchForm.jsp?program=emxRequirementSearch:getRequirements&table=RMTSearchRequirementsTable&CommandName=RMTSearchRequirementsCommand&sortColumnName=Name&Style=dialog&HelpMarker=emxhelpsearchresults&InclusionList=emxRequirements.Search.Types&searchmode=addexisting&resultToolbar=RMTRequirementSearchResultToolbar'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Design Engineer'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Requirement Manager'
+	user	'System Engineer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSearchRequirementsCommand'
+	property	'version'	value	'R422'
+;
+modify menu SearchAddExistingChooserMenu add command RMTSearchRequirementsCommand order command RMTSearchRequirementsCommand 49;
+#channel ==>SearchAddExistingChooserMenu
+add property command_RMTSearchRequirementsCommand on program eServiceSchemaVariableMapping.tcl to command 'RMTSearchRequirementsCommand';

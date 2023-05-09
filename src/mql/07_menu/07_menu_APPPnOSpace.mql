@@ -1,0 +1,10 @@
+del menu 'APPPnOSpace';
+add menu 'APPPnOSpace'
+	description	'PnO My Profile'
+	label	'emxPlmOnline.label.MySpace'
+	href	''
+	alt	'emxPlmOnline.label.MySpace'
+	setting	'Registered Suite'		'VPLMAdministration'
+	command	'APPSpace'
+;
+add property menu_APPPnOSpace on program eServiceSchemaVariableMapping.tcl to menu 'APPPnOSpace';

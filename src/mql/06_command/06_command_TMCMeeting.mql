@@ -1,0 +1,24 @@
+del command 'TMCMeeting';
+add command 'TMCMeeting'
+	description	'Meeting Command Object'
+	label	'emxFramework.Command.Meeting'
+	href	'${SUITE_DIR}/emxTeamMeetingSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Meeting'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Function'		'displayTreeNodeAccessCheck'
+	setting	'Access Program'		'emxWorkspace'
+	setting	'Image'		'iconSmallMeeting.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCMeeting'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCMeeting on program eServiceSchemaVariableMapping.tcl to command 'TMCMeeting';

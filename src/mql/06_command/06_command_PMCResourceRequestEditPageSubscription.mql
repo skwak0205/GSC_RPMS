@@ -1,0 +1,19 @@
+del command 'PMCResourceRequestEditPageSubscription';
+add command 'PMCResourceRequestEditPageSubscription'
+	description	''
+	label	'emxProgramCentral.ResoruceRequest.Subscription'
+	href	'${COMPONENT_DIR}/emxSubscriptionDialog.jsp?suiteKey=Components&HelpMarker=emxhelpdiscussionsubscriptionoptions'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestEditPageSubscription'
+	property	'version'	value	'R417'
+;
+modify menu PMCResourceRequestEditPageCreateSubscription add command PMCResourceRequestEditPageSubscription order command PMCResourceRequestEditPageSubscription 0;
+#channel ==>PMCResourceRequestEditPageCreateSubscription
+add property command_PMCResourceRequestEditPageSubscription on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestEditPageSubscription';

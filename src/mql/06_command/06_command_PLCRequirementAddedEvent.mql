@@ -1,0 +1,25 @@
+del command 'PLCRequirementAddedEvent';
+add command 'PLCRequirementAddedEvent'
+	description	'Requirement Added Event'
+	label	'PublishSubscribe.Event.RequirementAdded'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Requirement Added'
+	setting	'Access Function'		'showRequirementAddedRemovedEvent'
+	setting	'Access Program'		'emxProductLine'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCRequirementAddedEvent'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductsEvents add command PLCRequirementAddedEvent order command PLCRequirementAddedEvent 26;
+modify menu FTRFeaturesEvents add command PLCRequirementAddedEvent order command PLCRequirementAddedEvent 8;
+modify menu FTRFeatureSubscriptionEvents add command PLCRequirementAddedEvent order command PLCRequirementAddedEvent 8;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command PLCRequirementAddedEvent order command PLCRequirementAddedEvent 7;
+modify menu FTRLogicalFeatureSubscriptionEvents add command PLCRequirementAddedEvent order command PLCRequirementAddedEvent 15;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command PLCRequirementAddedEvent order command PLCRequirementAddedEvent 13;
+#channel ==>PLCProductsEventsFTRFeaturesEventsFTRFeatureSubscriptionEventsFTRConfigurationFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_PLCRequirementAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCRequirementAddedEvent';

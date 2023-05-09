@@ -1,0 +1,19 @@
+del command 'APPWorkflowTaskResumeActionLink';
+add command 'APPWorkflowTaskResumeActionLink'
+	description	'Workflow task resume action link'
+	label	'emxComponents.Command.Resume'
+	href	'${COMPONENT_DIR}/emxWorkflowTaskAction.jsp?action=resume'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current == "Suspended" && to[Workflow Task].from.owner == context.user && to[Workflow Task].from.current == "Started")'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionResume.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowTaskResumeActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowTaskPropertiesActionToolbar add command APPWorkflowTaskResumeActionLink order command APPWorkflowTaskResumeActionLink 5;
+#channel ==>APPWorkflowTaskPropertiesActionToolbar
+add property command_APPWorkflowTaskResumeActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowTaskResumeActionLink';

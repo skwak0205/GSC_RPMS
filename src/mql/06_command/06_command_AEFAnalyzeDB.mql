@@ -1,0 +1,19 @@
+del command 'AEFAnalyzeDB';
+add command 'AEFAnalyzeDB'
+	description	'Display DataBase details'
+	label	'emxFramework.AdminTool.AnalyzeDB'
+	href	'${COMMON_DIR}/emxAnalyzeDB.jsp'
+	alt	'emxFramework.AdminTool.AnalyzeDB'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	user	'Administration Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFAnalyzeDB'
+	property	'version'	value	'R216'
+;
+modify menu AdminTools add command AEFAnalyzeDB order command AEFAnalyzeDB 2;
+#channel ==>AdminTools
+add property command_AEFAnalyzeDB on program eServiceSchemaVariableMapping.tcl to command 'AEFAnalyzeDB';

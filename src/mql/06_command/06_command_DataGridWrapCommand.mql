@@ -1,0 +1,18 @@
+del command 'DataGridWrapCommand';
+add command 'DataGridWrapCommand'
+	description	''
+	label	'emxFramework.DisplayMode.UnWrap'
+	href	'javascript:StandardFunctions.wrapText()'
+	alt	'emxFramework.DisplayMode.Wrap'
+	setting	'JS Before Load'		'javascript:StandardFunctions.checkWrap()'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionWordWrapOn.png'
+	setting	'Display View'		'details'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridWrapCommand'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridMenu add command DataGridWrapCommand order command DataGridWrapCommand 7;
+#channel ==>DataGridMenu
+add property command_DataGridWrapCommand on program eServiceSchemaVariableMapping.tcl to command 'DataGridWrapCommand';

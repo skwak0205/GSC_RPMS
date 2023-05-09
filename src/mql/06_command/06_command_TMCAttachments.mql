@@ -1,0 +1,22 @@
+del command 'TMCAttachments';
+add command 'TMCAttachments'
+	description	'Attachments Command Object'
+	label	'emxFramework.Command.Attachments'
+	href	'${SUITE_DIR}/emxCompReadMailAttachmentSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Attachments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallAttachment.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCAttachments'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCAttachments on program eServiceSchemaVariableMapping.tcl to command 'TMCAttachments';

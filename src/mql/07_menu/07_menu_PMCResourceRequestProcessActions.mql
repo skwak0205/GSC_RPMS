@@ -1,0 +1,20 @@
+del menu 'PMCResourceRequestProcessActions';
+add menu 'PMCResourceRequestProcessActions'
+	description	''
+	label	'emxProgramCentral.ResourcePool.RequestRequest.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCResourcePoolProposeRequest'
+	command	'PMCResourcePoolApproveRequest'
+	command	'PMCResourcePoolRejectRequests'
+	command	'PMCCopyRequest'
+	command	'PMCSubmitRequests'
+	command	'PMCDeleteRequest'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourceRequestProcessActions'
+	property 'version'	value	'R215'
+;
+add property menu_PMCResourceRequestProcessActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourceRequestProcessActions';

@@ -1,0 +1,15 @@
+del menu 'DCFolderContentTopActionbar';
+add menu 'DCFolderContentTopActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'LBCFolderContentAddExisting'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCFolderContentTopActionbar'
+	property 'version'	value	'R212'
+;
+add property menu_DCFolderContentTopActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCFolderContentTopActionbar';

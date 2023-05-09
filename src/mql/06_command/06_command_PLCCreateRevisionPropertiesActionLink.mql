@@ -1,0 +1,23 @@
+del command 'PLCCreateRevisionPropertiesActionLink';
+add command 'PLCCreateRevisionPropertiesActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Revise'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=CommonRevisionCreateFSInstance&mode=property'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'current.access[revise] == true && revision == last.revision && current==Release'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateRevisionPropertiesActionLink'
+	property	'version'	value	'V6R2011'
+;
+modify menu RMTRequirementPropertiesTopActionBar add command PLCCreateRevisionPropertiesActionLink order command PLCCreateRevisionPropertiesActionLink 2;
+#channel ==>RMTRequirementPropertiesTopActionBar
+add property command_PLCCreateRevisionPropertiesActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateRevisionPropertiesActionLink';

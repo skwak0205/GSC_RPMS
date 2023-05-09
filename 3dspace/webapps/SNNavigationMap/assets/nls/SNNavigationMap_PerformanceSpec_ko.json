@@ -1,0 +1,12 @@
+{
+  "PerformanceSpec": "성능 사양 관계",
+  "performancespecof": "성능 사양:",
+  "performancespecof_to": "성능 사양:",
+  "performancespecof_from": "성능 사양:",
+  "performancechar": "성능 특성",
+  "performancechar_to": "성능 특성",
+  "performancechar_from": "성능 특성:",
+  "performancetest": "성능 테스트",
+  "performancetest_to": "성능 테스트",
+  "performancetest_from": "성능 테스트:"
+}

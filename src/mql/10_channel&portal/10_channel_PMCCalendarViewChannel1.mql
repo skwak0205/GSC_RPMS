@@ -1,0 +1,17 @@
+del channel 'PMCCalendarViewChannel1';
+add channel 'PMCCalendarViewChannel1'
+	description	''
+	height	'520'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	setting		'ChannelID'		'1'
+	command 	'PMCListCalendarEvents','PMCCalendarProperties','PMCListCalendarLocations'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCalendarViewChannel1'
+	property	'version'	value	'R209'
+;
+#portal ==>PMCCalendarView
+add property channel_PMCCalendarViewChannel1 on program eServiceSchemaVariableMapping.tcl to channel 'PMCCalendarViewChannel1';

@@ -1,0 +1,24 @@
+del command 'AEFLifecycleDemote';
+add command 'AEFLifecycleDemote'
+	description	'Demote Object'
+	label	'emxFramework.Lifecycle.Demote'
+	href	'javascript:lockDemote(\"emxLifecycleProcess.jsp?cmd=demote&toolbar=AEFLifecycleMenuToolBar&header=emxFramework.Lifecycle.LifeCyclePageHeading&export=false\")'
+	alt	''
+	setting	'Printer Friendly'		'false'
+	setting	'Access Behavior'		'disable'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Function'		'hasPreviousState'
+	setting	'Access Program'		'emxLifecycle'
+	setting	'Currency Converter'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDemote.png'
+	setting	'Access Mask'		'Demote'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecycleDemote'
+	property	'version'	value	'R417'
+;
+modify menu AEFLifecycleMenu add command AEFLifecycleDemote order command AEFLifecycleDemote 0;
+modify menu AEFLifecycleMenuToolBar add command AEFLifecycleDemote order command AEFLifecycleDemote 0;
+#channel ==>AEFLifecycleMenuAEFLifecycleMenuToolBar
+add property command_AEFLifecycleDemote on program eServiceSchemaVariableMapping.tcl to command 'AEFLifecycleDemote';

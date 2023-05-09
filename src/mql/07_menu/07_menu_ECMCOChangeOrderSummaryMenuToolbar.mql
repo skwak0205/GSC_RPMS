@@ -1,0 +1,16 @@
+del menu 'ECMCOChangeOrderSummaryMenuToolbar';
+add menu 'ECMCOChangeOrderSummaryMenuToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'ECMCreateCO'
+	menu	'ECMTransferOwnershipMenu'
+	command	'ECMDeleteCO'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'original name'	value	'ECMCOChangeOrderSummaryMenuToolbar'
+	property 'version'	value	'R421'
+;
+add property menu_ECMCOChangeOrderSummaryMenuToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMCOChangeOrderSummaryMenuToolbar';

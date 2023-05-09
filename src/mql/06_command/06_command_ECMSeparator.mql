@@ -1,0 +1,15 @@
+del command 'ECMSeparator';
+add command 'ECMSeparator'
+	description	'Use as separator for toolbar buttons'
+	label	'ECMSeparator'
+	href	''
+	alt	'ECMSeparator'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Action Type'		'Separator'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMSeparator'
+	property	'version'	value	'R419.HF2'
+;
+modify menu ECMChangeToolbar add command ECMSeparator order command ECMSeparator 3;
+#channel ==>ECMChangeToolbar
+add property command_ECMSeparator on program eServiceSchemaVariableMapping.tcl to command 'ECMSeparator';

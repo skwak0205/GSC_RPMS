@@ -1,0 +1,18 @@
+del command 'CFPToggleManagedRevision';
+add command 'CFPToggleManagedRevision'
+	description	'this command is use to Managed Revision of the Master Feature.'
+	label	'DMCPlanning.ActionLink.ToggleManagedRevision'
+	href	'${SUITE_DIR}/ToggleUtil.jsp?mode=Toggle&context=ManagedRevision'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPToggleManagedRevision'
+	property	'version'	value	'R209'
+;
+#channel ==>
+add property command_CFPToggleManagedRevision on program eServiceSchemaVariableMapping.tcl to command 'CFPToggleManagedRevision';

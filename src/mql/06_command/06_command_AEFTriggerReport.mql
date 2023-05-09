@@ -1,0 +1,22 @@
+del command 'AEFTriggerReport';
+add command 'AEFTriggerReport'
+	description	''
+	label	'emxFramework.TriggerReport.TriggerReportHeading'
+	href	'${COMMON_DIR}/emxTriggerReportFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	user	'Administration Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTriggerReport'
+	property	'version'	value	'R417'
+;
+modify menu AdminTools add command AEFTriggerReport order command AEFTriggerReport 5;
+#channel ==>AdminTools
+add property command_AEFTriggerReport on program eServiceSchemaVariableMapping.tcl to command 'AEFTriggerReport';

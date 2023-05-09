@@ -1,0 +1,20 @@
+del command 'AEFJobMonitor';
+add command 'AEFJobMonitor'
+	description	''
+	label	'emxFramework.Command.JobMonitor'
+	href	'${SUITE_DIR}/emxJobProcessFS.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFJobMonitor'
+	property	'version'	value	'R422'
+;
+modify menu type_Job add command AEFJobMonitor order command AEFJobMonitor 1;
+#channel ==>type_Job
+add property command_AEFJobMonitor on program eServiceSchemaVariableMapping.tcl to command 'AEFJobMonitor';

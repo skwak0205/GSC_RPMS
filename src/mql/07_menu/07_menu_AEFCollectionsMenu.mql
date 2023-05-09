@@ -1,0 +1,16 @@
+del menu 'AEFCollectionsMenu';
+add menu 'AEFCollectionsMenu'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxCollectionsDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'iconSmallCollection.gif'
+	command	'AEFCollectionItems'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFCollectionsMenu'
+	property 'version'	value	'R214'
+;
+add property menu_AEFCollectionsMenu on program eServiceSchemaVariableMapping.tcl to menu 'AEFCollectionsMenu';

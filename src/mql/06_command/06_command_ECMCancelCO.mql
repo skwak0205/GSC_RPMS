@@ -1,0 +1,21 @@
+del command 'ECMCancelCO';
+add command 'ECMCancelCO'
+	description	'Cancel CO'
+	label	'EnterpriseChangeMgt.Command.Cancel'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=cancelCOs&MassCancel=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCancel.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCancelCO'
+	property	'version'	value	'R216'
+;
+modify menu ECMCOMenuToolbar add command ECMCancelCO order command ECMCancelCO 5;
+#channel ==>ECMCOMenuToolbar
+add property command_ECMCancelCO on program eServiceSchemaVariableMapping.tcl to command 'ECMCancelCO';

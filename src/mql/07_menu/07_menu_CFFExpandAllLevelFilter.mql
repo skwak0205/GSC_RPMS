@@ -1,0 +1,10 @@
+del menu 'CFFExpandAllLevelFilter';
+add menu 'CFFExpandAllLevelFilter'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'AEFFreezePaneExpandAllLevel'
+	property 'version'	value	'R419'
+;
+add property menu_CFFExpandAllLevelFilter on program eServiceSchemaVariableMapping.tcl to menu 'CFFExpandAllLevelFilter';

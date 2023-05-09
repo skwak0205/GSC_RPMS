@@ -1,0 +1,29 @@
+del command 'TMCMeetingAddWorkspaceContent';
+add command 'TMCMeetingAddWorkspaceContent'
+	description	'Add Subfolder Command Object'
+	label	'emxTeamCentral.Command.AddWorkspaceContent'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_DOCUMENTS:IS_VERSION_OBJECT=False&table=TMCDiscussionAttachmentsTable&selection=multiple&HelpMarker=emxhelpsearch&suiteKey=Components&SuiteDirectory=components&form=TMCDiscussionFindFilesForm&submitURL=../components/emxCommonConnectObjects.jsp&srcDestRelName=relationship_MeetingAttachments&isTo=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'popup'
+	setting	'Access Function'		'checkWorkspaceMeeting'
+	setting	'Access Program'		'emxMeetingBase'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCMeetingAddWorkspaceContent'
+	property	'version'	value	'R422'
+;
+modify menu APPMeetingAttachmentsActionToolbar add command TMCMeetingAddWorkspaceContent order command TMCMeetingAddWorkspaceContent 2;
+modify menu TMCMeetingAttachmentTopActionBar add command TMCMeetingAddWorkspaceContent order command TMCMeetingAddWorkspaceContent 0;
+modify menu APPMeetingAttachmentTopActionBar add command TMCMeetingAddWorkspaceContent order command TMCMeetingAddWorkspaceContent 0;
+#channel ==>APPMeetingAttachmentsActionToolbarTMCMeetingAttachmentTopActionBarAPPMeetingAttachmentTopActionBar
+add property command_TMCMeetingAddWorkspaceContent on program eServiceSchemaVariableMapping.tcl to command 'TMCMeetingAddWorkspaceContent';

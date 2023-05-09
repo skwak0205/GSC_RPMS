@@ -1,0 +1,24 @@
+del command 'PLCProductCreateRevisionActionLink';
+add command 'PLCProductCreateRevisionActionLink'
+	description	''
+	label	'emxProduct.Derivation.Menu.CreateRevision'
+	href	'${SUITE_DIR}/ProductRevisionCreatePreProcess.jsp?UIContext=product&HelpMarker=emxhelpproductrevise'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isVisibleCreateRevision'
+	setting	'Access Program'		'emxProduct'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/CreateRevision16.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductCreateRevisionActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductDerivationsActionsToolbar add command PLCProductCreateRevisionActionLink order command PLCProductCreateRevisionActionLink 2;
+#channel ==>PLCProductDerivationsActionsToolbar
+add property command_PLCProductCreateRevisionActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCProductCreateRevisionActionLink';

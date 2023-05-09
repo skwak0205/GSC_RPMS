@@ -1,0 +1,20 @@
+del command 'APPDiscussions';
+add command 'APPDiscussions'
+	description	''
+	label	'emxComponents.Common.Discussion'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDiscussion:getSubscribedDiscussionList,emxDiscussion:getLast30DaysDiscussions,emxDiscussion:getLast90DaysDiscussions&programLabel=emxComponents.Common.Subscribed,emxComponents.Discussions.last30daysdiscussion,emxComponents.Discussions.last90daysdiscussion&table=APPDiscussionSummary&header=emxComponents.DiscussionsList.Heading&selection=multiple&toolbar=APPDiscussionsToolBar&selectedFilter=emxDiscussion:getSubscribedDiscussionList&sortColumnName=Discussion&sortDirection=ascending&HelpMarker=emxhelpdiscussionsall&PrinterFriendly=true&TransactionType=update'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussions'
+	property	'version'	value	'R422'
+;
+#channel ==>My Enovia
+add property command_APPDiscussions on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussions';

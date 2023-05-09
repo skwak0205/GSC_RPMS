@@ -1,0 +1,23 @@
+del command 'FTRCreateClassFeatureAction';
+add command 'FTRCreateClassFeatureAction'
+	description	'Create Feature under Library Class context'
+	label	'emxProduct.Action.CreateNewFeature'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=FeatureCreateFSInstance&PRCFSParam1=Feature&PRCFSParam2=Action'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateClassFeatureAction'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_FTRCreateClassFeatureAction on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateClassFeatureAction';

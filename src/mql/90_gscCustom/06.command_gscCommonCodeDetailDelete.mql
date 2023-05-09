@@ -1,0 +1,23 @@
+################################################################################################
+# Created Date : 2020.06.10
+# Create by BongJun,Park
+# Description : 공통코드 detail 삭제 command
+################################################################################################
+#del command "gscCommonCodeDetailDelete";
+add command "gscCommonCodeDetailDelete"
+    description ""
+    label   "emxComponents.Command.gscCommonCodeDetailDelete"
+    alt     "emxComponents.Command.gscCommonCodeDetailDelete"
+    href    "../enterprisechangemgtapp/gscECMDeletePreProcess.jsp?deleteJPO=gscCommonCode:deleteCommonCode&TargetFrame=parent"
+    setting "Registered Suite" "Components"
+	setting "Target Location" "listHidden"
+	setting "Submit" "true"
+	setting "Row Select"       "multiple"
+	setting "Image" "${COMMON_DIR}/images/iconActionThrash.png"
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2020.06.10"
+property "original name"    value "gscCommonCodeDetailDelete"
+;
+add property command_gscCommonCodeDetailDelete on program eServiceSchemaVariableMapping.tcl to command 'gscCommonCodeDetailDelete';

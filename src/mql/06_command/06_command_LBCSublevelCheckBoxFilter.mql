@@ -1,0 +1,18 @@
+del command 'LBCSublevelCheckBoxFilter';
+add command 'LBCSublevelCheckBoxFilter'
+	description	''
+	label	'emxDocumentCentral.Search.SubLevel'
+	href	''
+	alt	''
+	setting	'Input Type'		'checkbox'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Default'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCSublevelCheckBoxFilter'
+	property	'version'	value	'R212'
+;
+modify menu LBCRolesGroupsSearchToolbar add command LBCSublevelCheckBoxFilter order command LBCSublevelCheckBoxFilter 3;
+#channel ==>LBCRolesGroupsSearchToolbar
+add property command_LBCSublevelCheckBoxFilter on program eServiceSchemaVariableMapping.tcl to command 'LBCSublevelCheckBoxFilter';

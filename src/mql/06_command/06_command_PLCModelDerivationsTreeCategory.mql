@@ -1,0 +1,19 @@
+del command 'PLCModelDerivationsTreeCategory';
+add command 'PLCModelDerivationsTreeCategory'
+	description	''
+	label	'emxProduct.Tree.ProductDerivations'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxModel:getProductDerivations&table=PLCProductDerivations&sortColumnName=None&expandProgram=emxModel:expandProductDerivationStructure&toolbar=PLCModelDerivationsTableToolbar&header=emxProduct.Heading.ProductDerivations&selection=multiple&freezePane=Revision,DerivationCue,LatestCue&HelpMarker=emxhelpmodelderivationslist&editLink=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Image'		'COMMON_DIR/iconSmallProduct.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCModelDerivationsTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_Model add command PLCModelDerivationsTreeCategory order command PLCModelDerivationsTreeCategory 7;
+#channel ==>type_Model
+add property command_PLCModelDerivationsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCModelDerivationsTreeCategory';

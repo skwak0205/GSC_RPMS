@@ -1,0 +1,22 @@
+del command 'APPLocationEdit';
+add command 'APPLocationEdit'
+	description	'Edit Location'
+	label	'emxComponents.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Location&HelpMarker=emxhelplocationeditdetails&formHeader=emxComponents.LocationDialog.EditLocation&mode=edit&postProcessJPO=emxLocation:editLocation'
+	alt	'emxComponents.Command.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLocationEdit'
+	property	'version'	value	'R419'
+;
+modify menu APPLocationDetailsActionsToolBar add command APPLocationEdit order command APPLocationEdit 0;
+#channel ==>APPLocationDetailsActionsToolBar
+add property command_APPLocationEdit on program eServiceSchemaVariableMapping.tcl to command 'APPLocationEdit';

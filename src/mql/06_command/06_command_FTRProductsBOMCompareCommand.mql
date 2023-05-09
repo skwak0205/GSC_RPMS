@@ -1,0 +1,24 @@
+del command 'FTRProductsBOMCompareCommand';
+add command 'FTRProductsBOMCompareCommand'
+	description	'Command to Compare Logical Views & BOM'
+	label	'emxConfiguration.Command.CompareBOM'
+	href	'${COMMON_DIR}/emxForm.jsp?form=FTRProductsBOMCompareForm&mode=Edit&formHeader=emxConfiguration.Header.Form.CompareToEBOM&editLink=true&suiteKey=Configuration&featureType=BOMCompare&isSelfTargeted=true&postProcessURL=../configuration/StructureCompareProcess.jsp&HelpMarker=emxhelplogicalviewstructurecompare'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type!="type_ProductLine" > && $<type!="type_ProductVariant"> && $<type!="type_LogicalFeature">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductsBOMCompareCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRLogicalFeaturesStructureCompareMenu add command FTRProductsBOMCompareCommand order command FTRProductsBOMCompareCommand 5;
+modify menu FTRLogicalFeatureToolbarReports add command FTRProductsBOMCompareCommand order command FTRProductsBOMCompareCommand 5;
+modify menu FTRPVLogicalFeatureToolbarReports add command FTRProductsBOMCompareCommand order command FTRProductsBOMCompareCommand 5;
+modify menu FTRLFContextLogicalFeatureToolbarReports add command FTRProductsBOMCompareCommand order command FTRProductsBOMCompareCommand 5;
+#channel ==>FTRLogicalFeaturesStructureCompareMenuFTRLogicalFeatureToolbarReportsFTRPVLogicalFeatureToolbarReportsFTRLFContextLogicalFeatureToolbarReports
+add property command_FTRProductsBOMCompareCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRProductsBOMCompareCommand';

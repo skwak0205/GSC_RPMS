@@ -1,0 +1,23 @@
+del command 'PMCQuality';
+add command 'PMCQuality'
+	description	'Quality Command Object'
+	label	'emxFramework.Command.Quality'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxQuality:getAllProjectQuality,emxQuality:getControlledProjectQuality,emxQuality:getActiveProjectQuality&programLabel=emxProgramCentral.Common.All,emxProgramCentral.Common.Controlled,emxProgramCentral.Common.ActiveProjects&table=PMCProjectQuality&toolbar=PMCProjectQualityToolbar&selection=multiple&Export=true&sortColumnName=Name&sortDirection=ascending&header=emxProgramCentral.Common.QualityPageHeading&HelpMarker=emxhelpqualitysummary'
+	alt	'emxFramework.Command.Quality'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'COMMON_DIR/iconSmallQuality.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCQuality'
+	property	'version'	value	'R422.HF6'
+;
+#channel ==>PMCProjectSummaryPortalChannel1PMCObjectives
+add property command_PMCQuality on program eServiceSchemaVariableMapping.tcl to command 'PMCQuality';

@@ -1,0 +1,23 @@
+del command 'IEFUpdateAssignmentsMyDesk';
+add command 'IEFUpdateAssignmentsMyDesk'
+	description	'Update assignments for user'
+	label	'emxIEFDesignCenter.Common.UpdateAssignments'
+	href	'../integrations/DSCGenericActionsUtil.jsp?jsMethodName=showUserChooser'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Printer Friendly'		'true'
+	setting	'Window Height'		'530'
+	setting	'Window Width'		'560'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Access Function'		'checkAccessForVPLMAdminAcrossAllProjects'
+	setting	'Access Program'		'DSCTEAMAccessUtil'
+	setting	'Currency Converter'		'false'
+	setting	'Help Marker'		'emxhelpdsccollections'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFUpdateAssignmentsMyDesk'
+	property	'version'	value	'R424'
+;
+#channel ==>
+add property command_IEFUpdateAssignmentsMyDesk on program eServiceSchemaVariableMapping.tcl to command 'IEFUpdateAssignmentsMyDesk';

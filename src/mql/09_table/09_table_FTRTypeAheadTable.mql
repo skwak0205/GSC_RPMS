@@ -1,0 +1,31 @@
+del table 'FTRTypeAheadTable' system;
+add table 'FTRTypeAheadTable' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxProduct.Table.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Configuration'
+column #2
+	name	'Revision'
+	businessobject	'revision'
+	label	'emxProduct.Table.Revision'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Admin Type'		'Revision'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Field Type'		'Basic'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRTypeAheadTable'
+	property	'version'	value	'R213'
+;
+add property table_FTRTypeAheadTable on program eServiceSchemaVariableMapping.tcl to table 'FTRTypeAheadTable' system;

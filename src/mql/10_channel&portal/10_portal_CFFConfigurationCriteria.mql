@@ -1,0 +1,14 @@
+del portal 'CFFConfigurationCriteria';
+add portal 'CFFConfigurationCriteria'
+	description	''
+	label	''
+	href	''
+	channel 	CFFConfigurationContext
+	setting	'Registered Suite'		'Effectivity'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFConfigurationCriteria'
+	property	'version'	value	'R214'
+;
+add property portal_CFFConfigurationCriteria on program eServiceSchemaVariableMapping.tcl to portal 'CFFConfigurationCriteria';

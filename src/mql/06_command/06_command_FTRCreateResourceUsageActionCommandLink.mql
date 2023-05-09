@@ -1,0 +1,24 @@
+del command 'FTRCreateResourceUsageActionCommandLink';
+add command 'FTRCreateResourceUsageActionCommandLink'
+	description	''
+	label	'emxProduct.ActionLink.CreateResourceUsage'
+	href	'${SUITE_DIR}/AssignResourceUsagePreProcessPage.jsp?mode=CreateResourceUsage&HelpMarker=emxhelpresourceusageassign'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateResourceUsageActionCommandLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRResourceUsageToolBarActionsMenu add command FTRCreateResourceUsageActionCommandLink order command FTRCreateResourceUsageActionCommandLink 1;
+#channel ==>FTRResourceUsageToolBarActionsMenu
+add property command_FTRCreateResourceUsageActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateResourceUsageActionCommandLink';

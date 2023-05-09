@@ -1,0 +1,15 @@
+del command 'FTRModelVariability';
+add command 'FTRModelVariability'
+	description	''
+	label	'emxProduct.Tree.Variant'
+	href	'${SUITE_DIR}/VariabilityPreProcess.jsp?mode=ModelContext'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu type_Model add command FTRModelVariability order command FTRModelVariability 5;
+#channel ==>type_Model
+add property command_FTRModelVariability on program eServiceSchemaVariableMapping.tcl to command 'FTRModelVariability';

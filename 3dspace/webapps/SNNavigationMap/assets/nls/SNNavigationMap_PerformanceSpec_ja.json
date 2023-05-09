@@ -1,0 +1,12 @@
+{
+  "PerformanceSpec": "パフォーマンス仕様関係",
+  "performancespecof": "の性能仕様",
+  "performancespecof_to": "のパフォーマンス仕様",
+  "performancespecof_from": "パフォーマンス仕様",
+  "performancechar": "パフォーマンス特性",
+  "performancechar_to": "パフォーマンス特性",
+  "performancechar_from": "のパフォーマンス特性",
+  "performancetest": "パフォーマンス テスト",
+  "performancetest_to": "パフォーマンス テスト",
+  "performancetest_from": "のパフォーマンス テスト"
+}

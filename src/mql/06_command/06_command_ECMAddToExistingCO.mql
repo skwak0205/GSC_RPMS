@@ -1,0 +1,21 @@
+del command 'ECMAddToExistingCO';
+add command 'ECMAddToExistingCO'
+	description	'The Add to Existing Actions Link on for the generic change management powerview from app context eg part--changemgmt'
+	label	'EnterpriseChangeMgt.Command.AddToExistingCO'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=ECMAddToExistingCO&isFrom=false&portalFrame=ECMCOs'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAddToExistingCO'
+	property	'version'	value	'R417'
+;
+modify menu ECMChangeOrderManagementToolbar add command ECMAddToExistingCO order command ECMAddToExistingCO 1;
+#channel ==>ECMChangeOrderManagementToolbar
+add property command_ECMAddToExistingCO on program eServiceSchemaVariableMapping.tcl to command 'ECMAddToExistingCO';

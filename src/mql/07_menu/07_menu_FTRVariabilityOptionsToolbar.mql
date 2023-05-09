@@ -1,0 +1,14 @@
+del menu 'FTRVariabilityOptionsToolbar';
+add menu 'FTRVariabilityOptionsToolbar'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	command	'FTRFormCreateVariabilityOption'
+	menu	'FTRVariabilityCopyMenu'
+	command	'FTRDeleteVariabilityActionLink'
+	command	'FTRVariabilityGroupsStructureCompare'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'version'	value	'R421'
+;
+add property menu_FTRVariabilityOptionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRVariabilityOptionsToolbar';

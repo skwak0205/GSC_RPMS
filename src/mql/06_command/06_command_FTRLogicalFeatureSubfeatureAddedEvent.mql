@@ -1,0 +1,20 @@
+del command 'FTRLogicalFeatureSubfeatureAddedEvent';
+add command 'FTRLogicalFeatureSubfeatureAddedEvent'
+	description	'Logical Feature Subfeature Added Event'
+	label	'PublishSubscribe.Event.LogicalFeatureSubfeatureAdded'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Logical Feature Subfeature Added'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLogicalFeatureSubfeatureAddedEvent'
+	property	'version'	value	'R215'
+;
+modify menu FTRLogicalFeatureSubscriptionEvents add command FTRLogicalFeatureSubfeatureAddedEvent order command FTRLogicalFeatureSubfeatureAddedEvent 7;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command FTRLogicalFeatureSubfeatureAddedEvent order command FTRLogicalFeatureSubfeatureAddedEvent 5;
+#channel ==>FTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_FTRLogicalFeatureSubfeatureAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRLogicalFeatureSubfeatureAddedEvent';

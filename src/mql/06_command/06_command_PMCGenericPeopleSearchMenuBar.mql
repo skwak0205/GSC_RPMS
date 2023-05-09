@@ -1,0 +1,26 @@
+del command 'PMCGenericPeopleSearchMenuBar';
+add command 'PMCGenericPeopleSearchMenuBar'
+	description	'Menu Bar Generic People Search'
+	label	'emxProgramCentral.Search.People'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?table=PMCCommonPersonSearchTable&field=TYPES=type_Person:CURRENT=policy_Person.state_Active&searchMode=GeneralPeopleTypeMode&selection=multiple&form=PMCCommonPersonSearchForm&toolbar=PMCPersonSearchResultToolBar'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Currency Converter'		'false'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelpfullearch'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGenericPeopleSearchMenuBar'
+	property	'version'	value	'R423.HF2'
+;
+modify menu PMCProgramCentralSearch add command PMCGenericPeopleSearchMenuBar order command PMCGenericPeopleSearchMenuBar 2;
+#channel ==>PMCProgramCentralSearch
+add property command_PMCGenericPeopleSearchMenuBar on program eServiceSchemaVariableMapping.tcl to command 'PMCGenericPeopleSearchMenuBar';

@@ -1,0 +1,21 @@
+del command 'FTRProductVariantLogicalFeatureFilterButton';
+add command 'FTRProductVariantLogicalFeatureFilterButton'
+	description	''
+	label	'emxProduct.Button.Filter'
+	href	'javascript:filterPage()'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Action Label'		'emxProduct.Button.Filter'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductVariantLogicalFeatureFilterButton'
+	property	'version'	value	'R215'
+;
+modify menu FTRProductVariantLogicalFeatureCustomFilterToolbar add command FTRProductVariantLogicalFeatureFilterButton order command FTRProductVariantLogicalFeatureFilterButton 0;
+#channel ==>FTRProductVariantLogicalFeatureCustomFilterToolbar
+add property command_FTRProductVariantLogicalFeatureFilterButton on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariantLogicalFeatureFilterButton';

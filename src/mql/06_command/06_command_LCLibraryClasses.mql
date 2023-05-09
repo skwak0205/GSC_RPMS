@@ -1,0 +1,22 @@
+del command 'LCLibraryClasses';
+add command 'LCLibraryClasses'
+	description	''
+	label	'emxLibraryCentral.Command.LibraryClasses'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxLibraryCentralUtilBase:getSubclasses&table=LCClassificationList&selection=single&sortColumnName=Name&sortDirection=ascending&toolbar=LCClassToolBar&header=emxLibraryCentral.Common.Classifications'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCLibraryClasses'
+	property	'version'	value	'R216'
+;
+modify menu type_Libraries add command LCLibraryClasses order command LCLibraryClasses 1;
+#channel ==>type_Libraries
+add property command_LCLibraryClasses on program eServiceSchemaVariableMapping.tcl to command 'LCLibraryClasses';

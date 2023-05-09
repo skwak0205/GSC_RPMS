@@ -1,0 +1,21 @@
+del command 'FTRRemoveVariabilityActionLink';
+add command 'FTRRemoveVariabilityActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/VariabilityRemoveProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R421'
+;
+modify menu FTRVariabilityToolbar add command FTRRemoveVariabilityActionLink order command FTRRemoveVariabilityActionLink 15;
+#channel ==>FTRVariabilityToolbar
+add property command_FTRRemoveVariabilityActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRRemoveVariabilityActionLink';

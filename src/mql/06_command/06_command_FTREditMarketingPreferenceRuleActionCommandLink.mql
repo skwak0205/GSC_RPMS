@@ -1,0 +1,23 @@
+del command 'FTREditMarketingPreferenceRuleActionCommandLink';
+add command 'FTREditMarketingPreferenceRuleActionCommandLink'
+	description	'Edit Marketing Preference Rule'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=FTRMarketingPreferenceRuleForm&mode=Edit&formHeader=emxConfiguration.Heading.EditNoRev&HelpMarker=emxhelpmarketingpreferenceruleedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxBooleanCompatibility'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditMarketingPreferenceRuleActionCommandLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRMarketingPreferencePropertiesTopActionBarMenu add command FTREditMarketingPreferenceRuleActionCommandLink order command FTREditMarketingPreferenceRuleActionCommandLink 0;
+#channel ==>FTRMarketingPreferencePropertiesTopActionBarMenu
+add property command_FTREditMarketingPreferenceRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTREditMarketingPreferenceRuleActionCommandLink';

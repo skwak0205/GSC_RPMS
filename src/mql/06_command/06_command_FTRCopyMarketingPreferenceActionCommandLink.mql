@@ -1,0 +1,26 @@
+del command 'FTRCopyMarketingPreferenceActionCommandLink';
+add command 'FTRCopyMarketingPreferenceActionCommandLink'
+	description	'Copy Marketing Preference Rule'
+	label	'emxProduct.ActionLink.Copy'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_MarketingPreference&table=MarketingPreferenceSearchTable&showInitialResults=false&selection=single&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpmarketingpreferencerulecopy&submitURL=../configuration/MPRCopyPreProcess.jsp'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCopyMarketingPreferenceActionCommandLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRMarketingPreferenceRulesToolbar add command FTRCopyMarketingPreferenceActionCommandLink order command FTRCopyMarketingPreferenceActionCommandLink 3;
+modify menu FTRMarketingPreferenceListTopActionBarMenu add command FTRCopyMarketingPreferenceActionCommandLink order command FTRCopyMarketingPreferenceActionCommandLink 3;
+#channel ==>FTRMarketingPreferenceRulesToolbarFTRMarketingPreferenceListTopActionBarMenu
+add property command_FTRCopyMarketingPreferenceActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCopyMarketingPreferenceActionCommandLink';

@@ -1,0 +1,26 @@
+del command 'APPNavigateServerCommand';
+add command 'APPNavigateServerCommand'
+	description	'Command for selecting the DesignSync Store from select box'
+	label	'emxComponents.VersionControl.Server'
+	href	'${COMPONENT_DIR}/emxCommonDocumentVCNavigateProcess.jsp?fromPage=Navigate&appendParameters=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getDesignSyncStores'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'Components'
+	setting	'Range Program'		'emxVCDocumentUI'
+	setting	'Access Function'		'hasNavigateAccess'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPNavigateServerCommand'
+	property	'version'	value	'R422'
+;
+modify menu APPVCNavigateToolBar add command APPNavigateServerCommand order command APPNavigateServerCommand 0;
+#channel ==>APPVCNavigateToolBar
+add property command_APPNavigateServerCommand on program eServiceSchemaVariableMapping.tcl to command 'APPNavigateServerCommand';

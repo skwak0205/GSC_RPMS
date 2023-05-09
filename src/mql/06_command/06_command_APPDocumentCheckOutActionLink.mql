@@ -1,0 +1,30 @@
+del command 'APPDocumentCheckOutActionLink';
+add command 'APPDocumentCheckOutActionLink'
+	description	'Document Check Out Command Object'
+	label	'emxComponents.Command.CheckOut'
+	href	'javascript:checkoutSelectedFiles(\"checkout\")'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasDocumentCheckOutAccess'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckOut.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMReleaseManager'
+	user	'VPLMTeamManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentCheckOutActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentActionsToolBar add command APPDocumentCheckOutActionLink order command APPDocumentCheckOutActionLink 4;
+modify menu TMCDocumentsActionToolbar add command APPDocumentCheckOutActionLink order command APPDocumentCheckOutActionLink 3;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbar
+add property command_APPDocumentCheckOutActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentCheckOutActionLink';

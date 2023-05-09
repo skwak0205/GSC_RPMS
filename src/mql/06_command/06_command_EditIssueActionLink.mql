@@ -1,0 +1,25 @@
+del command 'EditIssueActionLink';
+add command 'EditIssueActionLink'
+	description	'Issue Edit Command Object'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Issue&mode=Edit&formHeader=emxComponents.Heading.Edit&HelpMarker=emxhelpissueeditdetails'
+	alt	'emxComponents.Command.EditDetails'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'EditIssueActionLink'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_EditIssueActionLink on program eServiceSchemaVariableMapping.tcl to command 'EditIssueActionLink';

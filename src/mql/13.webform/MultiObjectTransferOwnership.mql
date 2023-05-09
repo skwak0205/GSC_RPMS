@@ -1,0 +1,13 @@
+################################################################################################
+# Created Date : 2020.11.24
+# Create by SeungYong,Lee
+# Description : OOTB 백업 및 수정
+################################################################################################
+
+copy form "MultiObjectTransferOwnership" "MultiObjectTransferOwnership_OOTB";
+
+# 속성추가 by SeungYong,Lee 2020.11.24
+mod form "MultiObjectTransferOwnership"
+    field mod name 'Name'
+    range "../common/emdAPPIndentedTable.jsp?program=emxPerson:searchPersonList&table=emdAPPPersonSummaryTable&selection=single&header=emxFramework.Header.Person.Search&suiteKey=Framework&cancelLabel=emxFramework.Button.Close&FilterFramePage=../common/emdAPPPersonSearchFilter.jsp&FilterFrameSize=-1&submitURL=../common/AEFSearchUtil.jsp&fieldName=PFGPERSON&targetLocation=popup"
+;

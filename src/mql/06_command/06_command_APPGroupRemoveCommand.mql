@@ -1,0 +1,23 @@
+del command 'APPGroupRemoveCommand';
+add command 'APPGroupRemoveCommand'
+	description	'Command for remove group from person'
+	label	'emxComponents.Command.Remove'
+	href	'${SUITE_DIR}/emxComponentsRemoveGroup.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	user	'Global User'
+	user	'VPLMAdmin'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPGroupRemoveCommand'
+	property	'version'	value	'R417'
+;
+modify menu APPGroupActionsToolBar add command APPGroupRemoveCommand order command APPGroupRemoveCommand 0;
+#channel ==>APPGroupActionsToolBar
+add property command_APPGroupRemoveCommand on program eServiceSchemaVariableMapping.tcl to command 'APPGroupRemoveCommand';

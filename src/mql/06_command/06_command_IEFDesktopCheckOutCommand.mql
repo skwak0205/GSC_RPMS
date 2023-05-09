@@ -1,0 +1,25 @@
+del command 'IEFDesktopCheckOutCommand';
+add command 'IEFDesktopCheckOutCommand'
+	description	'IEF Desktop Check Out Command'
+	label	'emxIEFDesignCenter.Common.Open'
+	href	''
+	alt	''
+	setting	'iefcname'		'iefdesktopaction'
+	setting	'iefaction'		'checkout'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'iefdoubleclick'		'true'
+	setting	'focusbrowser'		'false'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	setting	'Row Select'		'single'
+	setting	'iefrefreshpage'		'false'
+	setting	'iefwaitforresponse'		'false'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopCheckOutCommand'
+	property	'version'	value	'R424'
+;
+modify menu IEFDesktopActionsMenu add command IEFDesktopCheckOutCommand order command IEFDesktopCheckOutCommand 1;
+modify menu IEFDesktopMyLockedActionMenu add command IEFDesktopCheckOutCommand order command IEFDesktopCheckOutCommand 1;
+#channel ==>IEFDesktopActionsMenuIEFDesktopMyLockedActionMenu
+add property command_IEFDesktopCheckOutCommand on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopCheckOutCommand';

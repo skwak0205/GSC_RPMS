@@ -1,0 +1,15 @@
+del menu 'RMTRequirementTableFilterMenu';
+add menu 'RMTRequirementTableFilterMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTRequirementStatusView'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementTableFilterMenu'
+	property 'version'	value	'V6R2014'
+;
+add property menu_RMTRequirementTableFilterMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementTableFilterMenu';

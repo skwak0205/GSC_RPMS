@@ -1,0 +1,28 @@
+{
+  "VCXUndoCmd": "Undo Command",
+  "VCXRedoCmd": "Redo Command",
+  "VCXCameraPlayModeCmd": "Play Camera",
+  "VCXCloseExperienceCmd": "Close Experience",
+  "VCXPlayGuidedTourCmd": "Play Guided Tour",
+  "VCXInvertSelectionCmd": "Invert Selection",
+  "VCXShowAllCmd": "Show All",
+  "VCXShowAllGeometriesCmd": "Show All Geometries",
+  "VCXUnghostAllCmd": "Unghost All",
+  "VCXHideSelectionCmd": "Hide Selection",
+  "VCXShowSelectionCmd": "Show Selection",
+  "VCXHideDressupsCmd": "Hide All Dressups",
+  "VCXGhostSelectionCmd": "Ghost Selection",
+  "VCXRestoreActiveViewVisibilityCmd": "Restore Current Scenario Visibility",
+  "VCXMoveRobotOnBBoxCenterCmd": "Set the robot on selection's bounding box center",
+  "VCXTransformCmd": "Transform",
+  "VCXTransformFreeDragCmd": "Free Drag",
+  "VCXPreviewPlayCmd": "Preview Play",
+  "VCXSaveToJSONCmd": "Save to JSON",
+  "GuidedTourTerminateButton": "Terminate Guided Tour",
+  "PreviewModeTooltipTerminateButton": "Terminate Preview Mode command",
+  "PreviewModeTooltipToggleCanvasButton": "Activate/Deactivate the display of paper",
+  "PreviewModeLabelTerminateButton": "STOP PREVIEW",
+  "PreviewModeLabelToggleCanvasButton": "CANVAS",
+  "VCXSelectElementMessage": "Select an object"
+
+}

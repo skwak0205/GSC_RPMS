@@ -1,0 +1,25 @@
+del command 'TMCUnmanagedFilesSearchCommand';
+add command 'TMCUnmanagedFilesSearchCommand'
+	description	'Search Unmanaged Files Command Object'
+	label	'emxFramework.MenuItem.UnmanagedFiles'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Document:IS_VERSION_OBJECT=False:IS_REL_VAULTED_OBJECTS=False:IS_REL_OBJECTROUTE=False&table=TMCFilesSearchResult&suiteKey=Components&selection=multiple&showInitialResults=true'
+	alt	'emxFramework.MenuItem.UnmanagedFiles'
+	setting	'Target Location'		'windowshade'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCUnmanagedFilesSearchCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCGlobalSearchMenu add command TMCUnmanagedFilesSearchCommand order command TMCUnmanagedFilesSearchCommand 0;
+#channel ==>TMCGlobalSearchMenu
+add property command_TMCUnmanagedFilesSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCUnmanagedFilesSearchCommand';

@@ -1,0 +1,24 @@
+del command 'DCAdministrationActivateSelectedActionLink';
+add command 'DCAdministrationActivateSelectedActionLink'
+	description	'Activate Selected Companies'
+	label	'emxDocumentCentral.ActionBarCmd.ActivateSelected'
+	href	'${SUITE_DIR}/emxDocumentCentralStart.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'600'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCAdministrationActivateSelectedActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCCompanyPeopleBottomActionbar add command DCAdministrationActivateSelectedActionLink order command DCAdministrationActivateSelectedActionLink 2;
+modify menu DCAdministrationBottomActionbar add command DCAdministrationActivateSelectedActionLink order command DCAdministrationActivateSelectedActionLink 2;
+#channel ==>DCCompanyPeopleBottomActionbarDCAdministrationBottomActionbar
+add property command_DCAdministrationActivateSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCAdministrationActivateSelectedActionLink';

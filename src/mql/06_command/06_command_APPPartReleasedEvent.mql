@@ -1,0 +1,18 @@
+del command 'APPPartReleasedEvent';
+add command 'APPPartReleasedEvent'
+	description	'Release Part'
+	label	'emxComponents.Event.Part_Released'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(policy == "EC Part")'
+	setting	'Event Type'		'Part Released'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartReleasedEvent'
+	property	'version'	value	'10-7-SP1'
+;
+modify menu APPPartEvents add command APPPartReleasedEvent order command APPPartReleasedEvent 5;
+#channel ==>APPPartEvents
+add property command_APPPartReleasedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPPartReleasedEvent';

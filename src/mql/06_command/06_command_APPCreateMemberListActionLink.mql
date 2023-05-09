@@ -1,0 +1,27 @@
+del command 'APPCreateMemberListActionLink';
+add command 'APPCreateMemberListActionLink'
+	description	'SpecCentral Command Object'
+	label	'emxFramework.Shortcut.CreateNewMemberList'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_MemberList&header=emxFramework.Shortcut.CreateNewMemberList&form=APPMemberListCreateForm&HelpMarker=emxhelpmemberlistcreate1&nameField=both&autoNameChecked=true&createJPO=emxMemberList:createMemberListProcess&submitAction=doNothing&mode=create&postProcessURL=../components/emxComponentsCreateProcessUtil.jsp&DefaultCategory=APPMemberListMembersTreeCategory&preProcessJavaScript=createMemberListOnLoad'
+	alt	'emxFramework.Shortcut.CreateNewMemberList'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'525'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayCreateCommandForResouce'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateMemberListActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPMemberListTopActionBar add command APPCreateMemberListActionLink order command APPCreateMemberListActionLink 0;
+modify menu APPMemberListsMyDeskActionsToolBar add command APPCreateMemberListActionLink order command APPCreateMemberListActionLink 1;
+#channel ==>APPMemberListTopActionBarAPPMemberListsMyDeskActionsToolBar
+add property command_APPCreateMemberListActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPCreateMemberListActionLink';

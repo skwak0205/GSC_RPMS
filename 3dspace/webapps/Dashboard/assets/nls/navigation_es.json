@@ -1,0 +1,6 @@
+{
+  "notificationAccessUnauthorized": "Lo sentimos, no tiene acceso a esta información",
+  "platformManagentName": "Gestión de plataformas",
+  "navigationFailedDashboard": "No se ha podido abrir el panel solicitado.",
+  "fetchingFailedDashboard": "No se ha podido recuperar la información del panel."
+}

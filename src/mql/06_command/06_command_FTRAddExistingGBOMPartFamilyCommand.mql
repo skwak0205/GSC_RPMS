@@ -1,0 +1,28 @@
+del command 'FTRAddExistingGBOMPartFamilyCommand';
+add command 'FTRAddExistingGBOMPartFamilyCommand'
+	description	''
+	label	'emxProduct.ActionLink.AddExistingPartFamily'
+	href	'${ROOT_DIR}/common/emxFullSearch.jsp?field=TYPES=type_PartFamily:CURRENT!=policy_Classification.state_Obsolete&excludeOIDprogram=emxFTRPart:excludeConnectedPartfamilies&table=PLCSearchPartsTable&showInitialResults=false&selection=multiple&submitAction=refreshCaller&header=emxProduct.Heading.Search.GBOM&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../configuration/GBOMAddExistingPostProcess.jsp?mode=AddExisting&context=PartFamily'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'(current!="Obsolete")'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isLogicalFeatureConnectedToVariants'
+	setting	'Access Program'		'emxFTRPart'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionPartFamily.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingGBOMPartFamilyCommand'
+	property	'version'	value	'R418'
+;
+modify menu FTRGBOMStructureToolbarActions add command FTRAddExistingGBOMPartFamilyCommand order command FTRAddExistingGBOMPartFamilyCommand 2;
+modify menu FTRContextGBOMStructureToolbarActions add command FTRAddExistingGBOMPartFamilyCommand order command FTRAddExistingGBOMPartFamilyCommand 2;
+#channel ==>FTRGBOMStructureToolbarActionsFTRContextGBOMStructureToolbarActions
+add property command_FTRAddExistingGBOMPartFamilyCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingGBOMPartFamilyCommand';

@@ -1,0 +1,20 @@
+del command 'DCSearchMyDesk';
+add command 'DCSearchMyDesk'
+	description	'Search Command Object'
+	label	'emxDocumentCentral.MenuItem.Search'
+	href	'${SUITE_DIR}/emxDocumentCentralObjectFindDialogFS.jsp'
+	alt	'emxDocumentCentral.MenuItem.Search'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Popup Modal'		'false'
+	setting	'Selectable in Preferences'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCSearchMyDesk'
+	property	'version'	value	'10-5'
+;
+#channel ==>
+add property command_DCSearchMyDesk on program eServiceSchemaVariableMapping.tcl to command 'DCSearchMyDesk';

@@ -1,0 +1,24 @@
+del command 'LBCLibraryImport';
+add command 'LBCLibraryImport'
+	description	'Library Import command'
+	label	'emxMultipleClassification.Command.Import'
+	href	'${SUITE_DIR}/emxLibraryCentralImportLibraryFS.jsp?AGImport=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCLibraryImport'
+	property	'version'	value	'R422'
+;
+modify menu LCLibrariesActionsToolBar add command LBCLibraryImport order command LBCLibraryImport 4;
+#channel ==>LCLibrariesActionsToolBar
+add property command_LBCLibraryImport on program eServiceSchemaVariableMapping.tcl to command 'LBCLibraryImport';

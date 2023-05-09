@@ -1,0 +1,27 @@
+del command 'AEFProperties';
+add command 'AEFProperties'
+	description	''
+	label	'emxFramework.RMBMenu.Properties'
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxAPPQuickFile'
+	setting	'Dynamic Command Function'		'getProperties'
+	setting	'Registered Suite'		'Framework'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFProperties'
+	property	'version'	value	'R422'
+;
+modify menu AEFDefaultRMB add command AEFProperties order command AEFProperties 1;
+modify menu type_MessageRMB add command AEFProperties order command AEFProperties 1;
+modify menu type_RouteRMB add command AEFProperties order command AEFProperties 1;
+modify menu type_PersonRMB add command AEFProperties order command AEFProperties 1;
+modify menu type_InboxTaskRMB add command AEFProperties order command AEFProperties 1;
+modify menu TMCWorkspaceRMBMenu add command AEFProperties order command AEFProperties 1;
+modify menu type_ImpactAnalysisRMB add command AEFProperties order command AEFProperties 1;
+#channel ==>AEFDefaultRMBtype_MessageRMBtype_RouteRMBtype_PersonRMBtype_InboxTaskRMBTMCWorkspaceRMBMenutype_ImpactAnalysisRMB
+add property command_AEFProperties on program eServiceSchemaVariableMapping.tcl to command 'AEFProperties';

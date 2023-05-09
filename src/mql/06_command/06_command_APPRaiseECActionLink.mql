@@ -1,0 +1,21 @@
+del command 'APPRaiseECActionLink';
+add command 'APPRaiseECActionLink'
+	description	''
+	label	'emxComponents.ActionLink.RaiseEC'
+	href	'${ROOT_DIR}/components/emxEngineeringChangeUtil.jsp?functionality=RaiseECFSInstance&mode=validateRaiseEC&srcDestRelName=relationship_ECAffectedItem&connectAtFrom=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRaiseECActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPWhereUsedToolbar add command APPRaiseECActionLink order command APPRaiseECActionLink 1;
+#channel ==>APPWhereUsedToolbar
+add property command_APPRaiseECActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRaiseECActionLink';

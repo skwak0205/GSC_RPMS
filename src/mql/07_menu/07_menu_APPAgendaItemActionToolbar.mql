@@ -1,0 +1,19 @@
+del menu 'APPAgendaItemActionToolbar';
+add menu 'APPAgendaItemActionToolbar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'isMeetingAttendee'
+	setting	'Access Program'		'emxMeeting'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPCreateNewAgendaItemCommand'
+	command	'APPMeetingDeleteAgendaItem'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPAgendaItemActionToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_APPAgendaItemActionToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPAgendaItemActionToolbar';

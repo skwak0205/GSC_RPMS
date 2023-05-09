@@ -1,0 +1,19 @@
+del command 'DataGridExpandNLevel';
+add command 'DataGridExpandNLevel'
+	description	''
+	label	'emxFramework.FreezePane.ExpandNLevels'
+	href	'javascript:StandardFunctions.expandNodes()'
+	alt	'emxFramework.FreezePane.ExpandNLevels'
+	setting	'Access Function'		'enableExpandLevel'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Level'		'1,2,3,4,5'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSetNodeExpansionLevel.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridExpandNLevel'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridExpandLevelMenu add command DataGridExpandNLevel order command DataGridExpandNLevel 0;
+#channel ==>DataGridExpandLevelMenu
+add property command_DataGridExpandNLevel on program eServiceSchemaVariableMapping.tcl to command 'DataGridExpandNLevel';

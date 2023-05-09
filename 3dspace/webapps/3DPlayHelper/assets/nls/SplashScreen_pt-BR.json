@@ -1,0 +1,8 @@
+{
+  "SplashLoading": "Carregando",
+  "SplashConverting": "Converter",
+  "TextFatal": "Visualização não disponível",
+  "DROP_MSG_LP": "Solte seu conteúdo aqui",
+  "PasswordException": "Não é possível abrir o PDF porque nenhuma senha foi fornecida",
+  "Empty_SVG": "O arquivo não pode ser aberto porque está vazio"
+}

@@ -1,0 +1,35 @@
+del form 'RegionForm';
+add form 'RegionForm' web
+field #1
+	name	'Name'
+	businessobject	'$<name>'
+	label	'emxComponents.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Components'
+	setting	'Required'		'true'
+	setting	'Validate'		'validateName'
+	setting	'Editable'		'true'
+	setting	'Field Type'		'basic'
+field #2
+	name	'Description'
+	businessobject	'$<description>'
+	label	'emxComponents.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'Components'
+	setting	'Required'		'false'
+	setting	'Validate'		'checkBadChars'
+	setting	'Editable'		'true'
+	setting	'Field Type'		'basic'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'RegionForm'
+	property	'version'	value	'R212'
+;
+add property form_RegionForm on program eServiceSchemaVariableMapping.tcl to form 'RegionForm';

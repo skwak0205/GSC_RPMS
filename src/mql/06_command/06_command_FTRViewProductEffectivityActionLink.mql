@@ -1,0 +1,21 @@
+del command 'FTRViewProductEffectivityActionLink';
+add command 'FTRViewProductEffectivityActionLink'
+	description	''
+	label	'emxProduct.ActionLink.ViewEffectivtyMatrix'
+	href	'${SUITE_DIR}/FeatureUtil.jsp?mode=ViewProductEffectivity'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'700'
+	setting	'Window Width'		'650'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRViewProductEffectivityActionLink'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRViewProductEffectivityActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRViewProductEffectivityActionLink';

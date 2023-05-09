@@ -1,0 +1,24 @@
+del command 'FTRMergeAndReplaceRMBCommand';
+add command 'FTRMergeAndReplaceRMBCommand'
+	description	''
+	label	'emxProduct.Action.MergeReplace'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Dynamic Command Program'		'LogicalFeature'
+	setting	'Dynamic Command Function'		'getMergeAndReplaceRMB'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Access Function'		'isNotProductVariant'
+	setting	'Access Program'		'LogicalFeature'
+	setting	'Hide Mode'		'Mobile'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMergeAndReplaceRMBCommand'
+	property	'version'	value	'R418'
+;
+modify menu FTRLogicalFeatureRMB add command FTRMergeAndReplaceRMBCommand order command FTRMergeAndReplaceRMBCommand 6;
+#channel ==>FTRLogicalFeatureRMB
+add property command_FTRMergeAndReplaceRMBCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRMergeAndReplaceRMBCommand';

@@ -1,0 +1,29 @@
+del command 'PMCRelatedProjectsInsertExisting';
+add command 'PMCRelatedProjectsInsertExisting'
+	description	''
+	label	'emxProgramCentral.Common.InsertExistingProjects'
+	href	'${SUITE_DIR}/emxProgramCentralProjectCreateDialogFS.jsp?fromRelatedProjects=true&wizardType=AddExistingRelatedProject&wizardPage=fromAddExistingRelProject&InsertExistingProject=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToCommand'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRelatedProjectsInsertExisting'
+	property	'version'	value	'R422'
+;
+modify menu PMCRelatedProjectsToolBarActions add command PMCRelatedProjectsInsertExisting order command PMCRelatedProjectsInsertExisting 5;
+#channel ==>PMCRelatedProjectsToolBarActions
+add property command_PMCRelatedProjectsInsertExisting on program eServiceSchemaVariableMapping.tcl to command 'PMCRelatedProjectsInsertExisting';

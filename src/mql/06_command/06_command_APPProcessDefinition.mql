@@ -1,0 +1,19 @@
+del command 'APPProcessDefinition';
+add command 'APPProcessDefinition'
+	description	'Command for displaying the process list'
+	label	'emxComponents.Command.ProcessDefinitions'
+	href	'${COMPONENT_DIR}/emxProcessList.jsp?program=emxProcessBase:getProcesses&table=APPProcessSummary&header=emxComponents.Heading.ProcessDetails&PrinterFriendly=true&toolbar=APPProcessListActiontoolbar&Export=false&HelpMarker=emxhelpprocesses'
+	alt	'emxComponents.Command.ProcessDefinitions'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Employee'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPProcessDefinition'
+	property	'version'	value	'R422'
+;
+#channel ==>My Workflows
+add property command_APPProcessDefinition on program eServiceSchemaVariableMapping.tcl to command 'APPProcessDefinition';

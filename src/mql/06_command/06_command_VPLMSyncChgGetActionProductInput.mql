@@ -1,0 +1,12 @@
+del command 'VPLMSyncChgGetActionProductInput';
+add command 'VPLMSyncChgGetActionProductInput'
+	description	'Command to get Product Inputs on VPLM Action'
+	label	'emxVPMCentral.Change.Command.GetActionProductInput.Title'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxECA:getECAReportedAgainst&table=VPLMECARelatedObjects&header=emxVPMCentral.Change.Command.GetActionProductInput.Title&triggerValidation=false&massPromoteDemote=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPMCentral'
+;
+modify menu type_PLMActionBase add command VPLMSyncChgGetActionProductInput order command VPLMSyncChgGetActionProductInput 1;
+#channel ==>type_PLMActionBase
+add property command_VPLMSyncChgGetActionProductInput on program eServiceSchemaVariableMapping.tcl to command 'VPLMSyncChgGetActionProductInput';

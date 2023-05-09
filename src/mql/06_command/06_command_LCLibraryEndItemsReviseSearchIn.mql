@@ -1,0 +1,24 @@
+del command 'LCLibraryEndItemsReviseSearchIn';
+add command 'LCLibraryEndItemsReviseSearchIn'
+	description	'Revise Search In'
+	label	'emxMultipleClassification.ActionBarCmd.ReviseSearchIn'
+	href	'javascript:top.reviseSearch()'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReviseSearch.png'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCLibraryEndItemsReviseSearchIn'
+	property	'version'	value	'R418'
+;
+modify menu LCSearchClassifiedItemToolBar add command LCLibraryEndItemsReviseSearchIn order command LCLibraryEndItemsReviseSearchIn 1;
+#channel ==>LCSearchClassifiedItemToolBar
+add property command_LCLibraryEndItemsReviseSearchIn on program eServiceSchemaVariableMapping.tcl to command 'LCLibraryEndItemsReviseSearchIn';

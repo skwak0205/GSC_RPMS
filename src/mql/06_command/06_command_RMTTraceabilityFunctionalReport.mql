@@ -1,0 +1,27 @@
+del command 'RMTTraceabilityFunctionalReport';
+add command 'RMTTraceabilityFunctionalReport'
+	description	'Launches the Requirement-Functional Traceability Report'
+	label	'emxRequirements.ActionLink.TraceabilityReport.Function'
+	href	'${SUITE_DIR}/VPLMTraceabilityOptionsFS.jsp?reportType=Function&HelpMarker=emxhelptraceabilityreqfunctionoptions&HelpMarker2=emxhelptraceabilityreqfunctionreport'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isVPMInstalled'
+	setting	'Access Program'		'emxRMTCommon'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTraceabilityFunctionalReport'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeTraceability add command RMTTraceabilityFunctionalReport order command RMTTraceabilityFunctionalReport 4;
+#channel ==>RMTSpecTreeTraceabilityRMTSpecificationsTraceabilityRMTSpecificationsFunctionalTraceability
+add property command_RMTTraceabilityFunctionalReport on program eServiceSchemaVariableMapping.tcl to command 'RMTTraceabilityFunctionalReport';

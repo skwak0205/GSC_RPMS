@@ -1,0 +1,22 @@
+del command 'TMCFolder';
+add command 'TMCFolder'
+	description	'Folder Command Object'
+	label	'emxFramework.Command.Folder'
+	href	'${SUITE_DIR}/emxTeamFoldersWorkspaceSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Folder'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallFolder.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCFolder'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCFolder on program eServiceSchemaVariableMapping.tcl to command 'TMCFolder';

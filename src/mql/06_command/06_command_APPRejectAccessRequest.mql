@@ -1,0 +1,23 @@
+del command 'APPRejectAccessRequest';
+add command 'APPRejectAccessRequest'
+	description	'Command Object for Access Request Reject'
+	label	'emxComponents.Command.RejectRequest'
+	href	'${SUITE_DIR}/emxCommonAccessRequestProcess.jsp?mode=Rejected'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReject.png'
+	setting	'Confirm Message'		'emxComponents.AccessRequest.RejectRequestAlertMsg'
+	user	'VPLMViewer'
+	user	'Request Reviewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRejectAccessRequest'
+	property	'version'	value	'R417'
+;
+modify menu APPSummaryAccessRequestActionsToolbar add command APPRejectAccessRequest order command APPRejectAccessRequest 2;
+#channel ==>APPSummaryAccessRequestActionsToolbar
+add property command_APPRejectAccessRequest on program eServiceSchemaVariableMapping.tcl to command 'APPRejectAccessRequest';

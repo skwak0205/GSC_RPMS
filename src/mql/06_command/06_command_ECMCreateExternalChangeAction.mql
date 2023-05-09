@@ -1,0 +1,19 @@
+del command 'ECMCreateExternalChangeAction';
+add command 'ECMCreateExternalChangeAction'
+	description	'Create Proxy Change Action under Change Order or Request'
+	label	'EnterpriseChangeMgt.Command.CreateExternalChange'
+	href	'javascript:loadDelegatedUIForCreateExternalChangeAction()'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Access Function'		'isOSLCCommandCommandAccessible'
+	setting	'Access Program'		'enoECMChangeUX'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateChangeProxy.png'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCreateExternalChangeAction'
+	property	'version'	value	'R421'
+;
+modify menu ECMCOAffectedChangeActionListToolbar add command ECMCreateExternalChangeAction order command ECMCreateExternalChangeAction 2;
+#channel ==>ECMCOAffectedChangeActionListToolbar
+add property command_ECMCreateExternalChangeAction on program eServiceSchemaVariableMapping.tcl to command 'ECMCreateExternalChangeAction';

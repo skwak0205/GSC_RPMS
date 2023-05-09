@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/"> 
+ <!-- Copyright 2014 , Dassault Systemes. All rights reserved. -->
+<head>   
+    
+    <title>Drag Demonstrator Widget App</title>
+	
+	<!-- Application Metas Start -->
+	
+    <meta name="description" content="CAA Web Apps basic use case  Drag and Drop - Drag part" />
+    <meta name="keywords" content="CAA Use Case" />
+   	
+	<!-- Application Metas End -->
+	
+	
+	<!-- Application JS Start -->
+    <script >   
+            /* global widget,require */	
+			require(['DS/DataDragAndDrop/DataDragAndDrop'] , 
+			    function (DataDragAndDrop) {
+				'use strict';
+              
+				var myWidget = {
+						
+					//onLoad: event triggered when the widget is launched  
+					//--------------------------------------------------
+					onLoad: function() {				
+	
+						var html = "<table >" +
+						            "<tr>" +
+						            "<td><label class='myLblTypeJSON' >Drag this label to send this JSON: { Sender: 'CAAWebAppsDnDDrag' , textData : 'JSON text' }</label> </td>"  +
+									"</tr>" +
+									 "<tr>" +
+									"<td><label class='myLblTypeText' >Drag this label to send this text: My Beautiful Text</label> </td>"  +
+									"</tr>" +
+									 "<tr>" +
+									"<td><label class='myLblType' >Drag Status:</label> </td>"  +
+									"<td ><input class='myStatusDrag' type='text' /></td>" + 
+									"</tr>" +
+									"</table>"; 
+							
+						widget.body.innerHTML=html ;
+						
+						//The text in the editor is selected  
+						var theLabelJSON = widget.body.querySelector('.myLblTypeJSON');
+						var theLabelText = widget.body.querySelector('.myLblTypeText');
+						var theStatus    = widget.body.querySelector('.myStatusDrag');
+						
+						//The input text and additional information are sent
+						var datatodragJSON = { Sender: 'CAAWebAppsDnDDrag' , textData : "JSON text" } ;
+						DataDragAndDrop.draggable( theLabelJSON , { 
+							data :  JSON.stringify(datatodragJSON) ,
+                            start: function() {	
+								theStatus.value = 'start' ;
+							}, 
+							stop: function() {
+								theStatus.value = 'stop' ;
+							}}						
+						) ;
+
+                        //The input text is sent
+                        var datatodragText =  "My Beautiful Text" ;						
+						DataDragAndDrop.draggable( theLabelText , { 
+							data :  datatodragText ,
+							start: function() {	
+								theStatus.value = 'start' ;
+							}, 
+							stop: function() {
+								theStatus.value = 'stop' ;
+							}} 
+						) ;								
+					}					
+				};
+     			//
+                //---------				
+				widget.addEvent('onLoad',  myWidget.onLoad);
+		});
+    </script>
+	<!-- Application JS End -->
+</head>
+<body>
+</body>
+</html>

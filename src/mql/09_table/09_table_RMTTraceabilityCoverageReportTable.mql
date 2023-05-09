@@ -1,0 +1,37 @@
+del table 'RMTTraceabilityCoverageReportTable' system;
+add table 'RMTTraceabilityCoverageReportTable' system
+column #1
+	name	'RootRequirementName'
+	label	'emxRequirements.Table.Specifications'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxTree.jsp'
+	range	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Sortable'		'false'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getTraceabilityCoverageSpecName'
+	setting	'Export'		'true'
+	setting	'program'		'emxTraceabilityReport'
+column #2
+	name	'RootRequirementRevision'
+	label	'emxRequirements.Table.Coverage'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Sortable'		'false'
+	setting	'Column Type'		'programHTMLOutput'
+	setting	'function'		'getTraceabilityCoveragePercentage'
+	setting	'Export'		'true'
+	setting	'program'		'emxTraceabilityReport'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTraceabilityCoverageReportTable'
+	property	'version'	value	'R209'
+;
+add property table_RMTTraceabilityCoverageReportTable on program eServiceSchemaVariableMapping.tcl to table 'RMTTraceabilityCoverageReportTable' system;

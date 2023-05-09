@@ -1,0 +1,22 @@
+del command 'PLCReviseProductPlatformPropertiesActionLink';
+add command 'PLCReviseProductPlatformPropertiesActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Revise'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ProductReviseFSInstance&PRCFSParam1=Property&PRCFSParam2=contextProduct'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'$<attribute[attribute_IsVersion] =="FALSE" && (to[relationship_Products].from.from[relationship_ProductPlatform]=="True")>'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCReviseProductPlatformPropertiesActionLink'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_PLCReviseProductPlatformPropertiesActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCReviseProductPlatformPropertiesActionLink';

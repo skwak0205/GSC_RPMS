@@ -1,0 +1,14 @@
+del menu 'PMCProjectSummaryGateToolBarAction';
+add menu 'PMCProjectSummaryGateToolBarAction'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectSummaryGateToolBarAction'
+	property 'version'	value	'R215'
+;
+add property menu_PMCProjectSummaryGateToolBarAction on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectSummaryGateToolBarAction';

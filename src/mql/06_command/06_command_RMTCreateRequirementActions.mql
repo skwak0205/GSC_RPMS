@@ -1,0 +1,25 @@
+del command 'RMTCreateRequirementActions';
+add command 'RMTCreateRequirementActions'
+	description	''
+	label	'emxRequirements.ActionLink.CreateRequirement'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=Creation&form=RMTSpecTreeCreateNewRequirement&type=type_Requirement&submitAction=treeContent&header=emxRequirements.Heading.CreateRequirement'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCreateRequirementActions'
+	property	'version'	value	'R422'
+;
+modify menu RMTActions add command RMTCreateRequirementActions order command RMTCreateRequirementActions 1;
+#channel ==>RMTActions
+add property command_RMTCreateRequirementActions on program eServiceSchemaVariableMapping.tcl to command 'RMTCreateRequirementActions';

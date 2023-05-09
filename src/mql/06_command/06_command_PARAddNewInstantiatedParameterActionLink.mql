@@ -1,0 +1,22 @@
+del command 'PARAddNewInstantiatedParameterActionLink';
+add command 'PARAddNewInstantiatedParameterActionLink'
+	description	''
+	label	'emxParameter.Associate.NewInstantiatedParameter'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=PARCreateParameterWebForm&type=type_PlmParameter&typeChooser=false&nameField=both&autoNameChecked=true&policy=policy_Parameter&submitAction=refreshCaller&showApply=true&relationship=relationship_ParameterUsage&direction=from&postProcessJPO=emxParameterEdit:updateNewConnection&postProcessURL=${SUITE_DIR}/emxParameterResetCreateForm.jsp'
+	alt	'emxParameter.Associate.AltNewInstantiatedParameter'
+	setting	'Target Location'		'slidein'
+	setting	'Maximum Length'		'20'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isInstantiateCommandAvailable'
+	setting	'Access Program'		'emxParameterCreation'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionCreateParam.png'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Requirement Manager'
+;
+modify menu PARParametersToolbar add command PARAddNewInstantiatedParameterActionLink order command PARAddNewInstantiatedParameterActionLink 2;
+#channel ==>PARParametersToolbar
+add property command_PARAddNewInstantiatedParameterActionLink on program eServiceSchemaVariableMapping.tcl to command 'PARAddNewInstantiatedParameterActionLink';

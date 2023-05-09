@@ -1,0 +1,21 @@
+del command 'PLCDeleteRevisionActionLink';
+add command 'PLCDeleteRevisionActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/RevisionUtil.jsp?mode=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(current.access[delete] == true)'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCDeleteRevisionActionLink'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_PLCDeleteRevisionActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCDeleteRevisionActionLink';

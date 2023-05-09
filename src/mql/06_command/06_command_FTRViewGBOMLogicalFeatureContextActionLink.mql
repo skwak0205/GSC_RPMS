@@ -1,0 +1,24 @@
+del command 'FTRViewGBOMLogicalFeatureContextActionLink';
+add command 'FTRViewGBOMLogicalFeatureContextActionLink'
+	description	''
+	label	'emxConfiguration.Action.ViewGBOMSummary'
+	href	'${SUITE_DIR}/ViewGBOMSummaryPreProcess.jsp?mode=viewGBOM'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconPreview.gif'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRViewGBOMLogicalFeatureContextActionLink'
+	property	'version'	value	'R215'
+;
+modify menu FTRLogicalFeatureToolbarReports add command FTRViewGBOMLogicalFeatureContextActionLink order command FTRViewGBOMLogicalFeatureContextActionLink 8;
+modify menu FTRPVLogicalFeatureToolbarReports add command FTRViewGBOMLogicalFeatureContextActionLink order command FTRViewGBOMLogicalFeatureContextActionLink 0;
+modify menu FTRLFContextLogicalFeatureToolbarReports add command FTRViewGBOMLogicalFeatureContextActionLink order command FTRViewGBOMLogicalFeatureContextActionLink 7;
+#channel ==>FTRLogicalFeatureToolbarReportsFTRPVLogicalFeatureToolbarReportsFTRLFContextLogicalFeatureToolbarReports
+add property command_FTRViewGBOMLogicalFeatureContextActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRViewGBOMLogicalFeatureContextActionLink';

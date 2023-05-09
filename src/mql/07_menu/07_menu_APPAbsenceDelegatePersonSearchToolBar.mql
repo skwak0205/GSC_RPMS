@@ -1,0 +1,16 @@
+del menu 'APPAbsenceDelegatePersonSearchToolBar';
+add menu 'APPAbsenceDelegatePersonSearchToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPAbsenceDelegatePersonNewSearch'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPAbsenceDelegatePersonSearchToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPAbsenceDelegatePersonSearchToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPAbsenceDelegatePersonSearchToolBar';

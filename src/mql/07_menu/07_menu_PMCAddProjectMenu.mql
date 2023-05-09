@@ -1,0 +1,21 @@
+del menu 'PMCAddProjectMenu';
+add menu 'PMCAddProjectMenu'
+	description	''
+	label	'emxProgramCentral.Common.AddCopy'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconAddTask.png'
+	command	'PMCWBSInsertExistingProject'
+	command	'PMCWBSAddExistingProject'
+	command	'PMCPassiveAddProject'
+	command	'AEFSeparator'
+	command	'PMCCopyPartialSchedule'
+	command	'PMCImportScheduleFromFile'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCAddProjectMenu'
+	property 'version'	value	'R423.HF7'
+;
+add property menu_PMCAddProjectMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCAddProjectMenu';

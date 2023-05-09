@@ -1,0 +1,21 @@
+del command 'PMCLocationCalendars';
+add command 'PMCLocationCalendars'
+	description	''
+	label	'emxFramework.Type.Calendar'
+	href	'${COMMON_DIR}/emxTable.jsp?table=PMCLocationCalendars&program=emxLocation:getCalendar&header=emxProgramCentral.Common.Calendars&selection=none&HelpMarker=emxhelpcalendarlist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCLocationCalendars'
+	property	'version'	value	'R423.HF2'
+;
+modify menu type_Location add command PMCLocationCalendars order command PMCLocationCalendars 0;
+#channel ==>type_Location
+add property command_PMCLocationCalendars on program eServiceSchemaVariableMapping.tcl to command 'PMCLocationCalendars';

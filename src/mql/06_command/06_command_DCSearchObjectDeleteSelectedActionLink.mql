@@ -1,0 +1,21 @@
+del command 'DCSearchObjectDeleteSelectedActionLink';
+add command 'DCSearchObjectDeleteSelectedActionLink'
+	description	'Delete Selected on Objects List'
+	label	'emxDocumentCentral.ActionBarCmd.DeleteSelected'
+	href	'${SUITE_DIR}/emxDocumentCentralObjectsDeleteProcess.jsp?callPage=SearchPage'
+	alt	''
+	setting	'Target Location'		'searchHidden'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxDocumentCentral.Message.ConfirmDeleteSelected'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCSearchObjectDeleteSelectedActionLink'
+	property	'version'	value	'10-5'
+;
+modify menu DCSearchResultToolbar add command DCSearchObjectDeleteSelectedActionLink order command DCSearchObjectDeleteSelectedActionLink 4;
+#channel ==>DCSearchResultToolbar
+add property command_DCSearchObjectDeleteSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCSearchObjectDeleteSelectedActionLink';

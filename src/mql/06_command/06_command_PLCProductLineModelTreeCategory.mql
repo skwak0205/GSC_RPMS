@@ -1,0 +1,22 @@
+del command 'PLCProductLineModelTreeCategory';
+add command 'PLCProductLineModelTreeCategory'
+	description	'Command Object for Models in the Product Line Menu'
+	label	'emxProduct.Tree.Models'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCModelList&program=emxModel:getModels&header=emxProduct.Heading.Model&selection=multiple&topActionbar=PLCProductLineModelTopActionBar&bottomActionbar=PLCProductLineModelBottomActionBar&Export=true&sortColumnName=Name&HelpMarker=emxhelpmodellist&editLink=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeDisabled'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Image'		'${COMMON_DIR}/iconSmallMoldedPart.gif'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductLineModelTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_PLCProductLine add command PLCProductLineModelTreeCategory order command PLCProductLineModelTreeCategory 7;
+#channel ==>type_PLCProductLine
+add property command_PLCProductLineModelTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCProductLineModelTreeCategory';

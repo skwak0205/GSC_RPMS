@@ -1,0 +1,16 @@
+del command 'PLCTestExecutionReferenceDocumentTreeCategory';
+add command 'PLCTestExecutionReferenceDocumentTreeCategory'
+	description	'Test Execution Reference document tree category command'
+	label	'emxProduct.Tree.ReferenceDocument'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ProductDocumentSummaryToolBar&header=emxProduct.Menu.Documents&HelpMarker=emxhelprefdoclist'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestExecutionReferenceDocumentTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_TestExecution add command PLCTestExecutionReferenceDocumentTreeCategory order command PLCTestExecutionReferenceDocumentTreeCategory 4;
+#channel ==>type_TestExecution
+add property command_PLCTestExecutionReferenceDocumentTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCTestExecutionReferenceDocumentTreeCategory';

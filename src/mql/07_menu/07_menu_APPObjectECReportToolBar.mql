@@ -1,0 +1,16 @@
+del menu 'APPObjectECReportToolBar';
+add menu 'APPObjectECReportToolBar'
+	description	''
+	label	'emxProduct.Menu.Reports'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'APPECEffortReportActionLink'
+	command	'APPECStatusReportActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'APPObjectECReportToolBar'
+	property 'version'	value	'R216'
+;
+add property menu_APPObjectECReportToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPObjectECReportToolBar';

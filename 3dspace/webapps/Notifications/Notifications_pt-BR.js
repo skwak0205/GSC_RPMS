@@ -1,0 +1,1 @@
+define("DS/Notifications/Notifications_pt-BR",{});define("DS/Notifications/assets/nls/translation",{closeAll:"Fechar tudo",closeAllTooltip:"Fechar todas as notificações"});

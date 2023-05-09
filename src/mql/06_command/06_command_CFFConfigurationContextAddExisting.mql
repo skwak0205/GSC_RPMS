@@ -1,0 +1,23 @@
+del command 'CFFConfigurationContextAddExisting';
+add command 'CFFConfigurationContextAddExisting'
+	description	''
+	label	'Effectivity.ActionLink.AddExisting'
+	href	'${SUITE_DIR}/ConfigurationContextAddExistingPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Licensed Product'		'ENO_CFF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'disableAddConfigurationContext'
+	setting	'Access Program'		'emxEffectivityFramework'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFConfigurationContextAddExisting'
+	property	'version'	value	'R418'
+;
+modify menu CFFConfigurationContextToolbarActions add command CFFConfigurationContextAddExisting order command CFFConfigurationContextAddExisting 1;
+#channel ==>CFFConfigurationContextToolbarActions
+add property command_CFFConfigurationContextAddExisting on program eServiceSchemaVariableMapping.tcl to command 'CFFConfigurationContextAddExisting';

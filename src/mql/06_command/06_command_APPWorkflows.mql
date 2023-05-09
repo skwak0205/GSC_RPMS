@@ -1,0 +1,16 @@
+del command 'APPWorkflows';
+add command 'APPWorkflows'
+	description	'Command Object for Workflow display related to the context object'
+	label	'emxComponents.Command.Workflow'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxWorkflow:getInprocessWorkflows,emxWorkflow:getNotStartedWorkflows,emxWorkflow:getMyworkflows,emxWorkflow:getPausedWorkflows,emxWorkflow:getCompletedWorkflowsInLast30Days,emxWorkflow:getCompletedWorkflowsInLast60Days,emxWorkflow:getCompletedWorkflowsInLast90Days&table=APPObjectWorkflowSummary&selection=single&programLabel=emxComponents.Workflow.Filter.Inprocess,emxComponents.Workflow.Filter.notStarted,emxComponents.Common.All,emxComponents.Workflow.Filter.Suspended,emxComponents.Workflow.Filter.CompletedWithin30days,emxComponents.Workflow.Filter.CompletedWithin60days,emxComponents.Workflow.Filter.CompletedWithin90days&toolbar=APPWorkflowSummaryToolBar&header=emxComponents.Heading.ObjectWorkflow'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflows'
+	property	'version'	value	'10-SP2'
+;
+#channel ==>
+add property command_APPWorkflows on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflows';

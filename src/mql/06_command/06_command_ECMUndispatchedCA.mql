@@ -1,0 +1,15 @@
+del command 'ECMUndispatchedCA';
+add command 'ECMUndispatchedCA'
+	description	'Undispached CA in Change Orders channel1'
+	label	'EnterpriseChangeMgt.Command.UndispatchedCA'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=ECMChangeActionTable&program=enoECMChangeRequest:getChangeActionsNotGovernedByCO&selection=multiple&massPromoteDemote=false&hideRootSelection=true&rowGrouping=false&autoFilter=false&export=false&printerFriendly=false&objectCompare=false&triggerValidation=false&showClipboard=false&expandLevelFilterMenu=false&subHeader=EnterpriseChangeMgt.Heading.DispatchEvaluatedCAsSubheading&showTabHeader=true&header=EnterpriseChangeMgt.Heading.UndispatchedCA'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMUndispatchedCA'
+	property	'version'	value	'R419'
+;
+#channel ==>ECMCRChangeOrdersChannnel2
+add property command_ECMUndispatchedCA on program eServiceSchemaVariableMapping.tcl to command 'ECMUndispatchedCA';

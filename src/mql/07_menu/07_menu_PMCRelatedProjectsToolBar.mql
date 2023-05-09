@@ -1,0 +1,15 @@
+del menu 'PMCRelatedProjectsToolBar';
+add menu 'PMCRelatedProjectsToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCRelatedProjectsToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCRelatedProjectsToolBar'
+	property 'version'	value	'10-7'
+;
+add property menu_PMCRelatedProjectsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCRelatedProjectsToolBar';

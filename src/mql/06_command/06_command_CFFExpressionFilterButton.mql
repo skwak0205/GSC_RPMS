@@ -1,0 +1,20 @@
+del command 'CFFExpressionFilterButton';
+add command 'CFFExpressionFilterButton'
+	description	'Command to show the Filter button followend by the effectivity Text Box and Chooser in the Effectivity Toolbar'
+	label	''
+	href	'javascript:void()'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Action Label'		'Effectivity.Button.Filter'
+	setting	'Mode'		'view'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFExpressionFilterButton'
+	property	'version'	value	'R216'
+;
+modify menu CFFEffectivityFrameworkToolbar add command CFFExpressionFilterButton order command CFFExpressionFilterButton 0;
+#channel ==>CFFEffectivityFrameworkToolbar
+add property command_CFFExpressionFilterButton on program eServiceSchemaVariableMapping.tcl to command 'CFFExpressionFilterButton';

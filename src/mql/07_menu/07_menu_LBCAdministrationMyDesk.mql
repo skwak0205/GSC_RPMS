@@ -1,0 +1,18 @@
+del menu 'LBCAdministrationMyDesk';
+add menu 'LBCAdministrationMyDesk'
+	description	''
+	label	'emxDocumentCentral.Common.Administration'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	command	'LBCAttributeGroupsMyDesk'
+	command	'APPCommonUsageReport'
+	command	'APPCommonDownloadReport'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCAdministrationMyDesk'
+	property 'version'	value	'R216'
+;
+add property menu_LBCAdministrationMyDesk on program eServiceSchemaVariableMapping.tcl to menu 'LBCAdministrationMyDesk';

@@ -1,0 +1,21 @@
+del command 'AEFCollectionsAddExisting';
+add command 'AEFCollectionsAddExisting'
+	description	'Add Items to Collection'
+	label	'emxFramework.Command.AddExisting'
+	href	'${COMMON_DIR}/emxCollectionsSearchDialogFS.jsp?collection=true'
+	alt	'emxFramework.Command.AddExisting'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'606'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCollectionsAddExisting'
+	property	'version'	value	'R418'
+;
+modify menu AEFCollectionItemsActionsToolBar add command AEFCollectionsAddExisting order command AEFCollectionsAddExisting 1;
+#channel ==>AEFCollectionItemsActionsToolBar
+add property command_AEFCollectionsAddExisting on program eServiceSchemaVariableMapping.tcl to command 'AEFCollectionsAddExisting';

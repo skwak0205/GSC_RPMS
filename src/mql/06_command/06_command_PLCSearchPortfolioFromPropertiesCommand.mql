@@ -1,0 +1,16 @@
+del command 'PLCSearchPortfolioFromPropertiesCommand';
+add command 'PLCSearchPortfolioFromPropertiesCommand'
+	description	'Adds the Product or Model in contextto a Portfolio'
+	label	'emxProduct.ActionLink.Find'
+	href	'${SUITE_DIR}/emxFindForm.jsp?suiteKey=ProductLine&program=emxProductSearch:searchObjectsGeneric&table=PLCSearchPortfoliosList&CommandName=PLCSearchModelsProductsCommand&sortColumnName=Name&Style=dialog&DefaultType=type_Portfolio&HelpMarker=emxhelpfindselect'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchPortfolioFromPropertiesCommand'
+	property	'version'	value	'R418'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchPortfolioFromPropertiesCommand order command PLCSearchPortfolioFromPropertiesCommand 45;
+#channel ==>SearchAddExistingChooserMenu
+add property command_PLCSearchPortfolioFromPropertiesCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchPortfolioFromPropertiesCommand';

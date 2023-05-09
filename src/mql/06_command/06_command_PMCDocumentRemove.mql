@@ -1,0 +1,33 @@
+del command 'PMCDocumentRemove';
+add command 'PMCDocumentRemove'
+	description	'Remove Selected Document'
+	label	'emxProgramCentral.Common.Remove'
+	href	'${SUITE_DIR}/emxProgramCentralContentRemove.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'CmdName'		'PMCDocumentRemove'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForFolderAndDocumentActions'
+	setting	'Access Program'		'emxProjectFolder'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/I_RemoveDocument32.png'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmRemoveSelectedContent'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDocumentRemove'
+	property	'version'	value	'R424.HF1'
+;
+modify menu PMCFolderDocumentFileActions add command PMCDocumentRemove order command PMCDocumentRemove 0;
+modify menu PMCContentSummaryToolBarActions add command PMCDocumentRemove order command PMCDocumentRemove 4;
+modify menu PMCAssessmentAttachmentsToolBarActions add command PMCDocumentRemove order command PMCDocumentRemove 4;
+modify menu PMCReferenceDocumentSummaryActionsToolBar add command PMCDocumentRemove order command PMCDocumentRemove 5;
+modify menu PMCDeliverableSummaryToolBarActions add command PMCDocumentRemove order command PMCDocumentRemove 4;
+modify menu PMCFolderSummaryToolBar add command PMCDocumentRemove order command PMCDocumentRemove 6;
+#channel ==>PMCFolderDocumentFileActionsPMCContentSummaryToolBarActionsPMCAssessmentAttachmentsToolBarActionsPMCReferenceDocumentSummaryActionsToolBarPMCDeliverableSummaryToolBarActionsPMCFolderSummaryToolBar
+add property command_PMCDocumentRemove on program eServiceSchemaVariableMapping.tcl to command 'PMCDocumentRemove';

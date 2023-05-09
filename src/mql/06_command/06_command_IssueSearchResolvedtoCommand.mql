@@ -1,0 +1,16 @@
+del command 'IssueSearchResolvedtoCommand';
+add command 'IssueSearchResolvedtoCommand'
+	description	'Issue Find Command Object'
+	label	'emxComponents.Command.Search'
+	href	'${SUITE_DIR}/emxFindForm.jsp?suiteKey=Components&program=emxCommonIssueBase:findResolvedToReportedAgainst&table=IssueAddExistingSearchGenericTable&CommandName=IssueSearchResolvedtoCommand&sortColumnName=Name&HelpMarker=emxhelpsearch'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueSearchResolvedtoCommand'
+	property	'version'	value	'R214'
+;
+modify menu SearchIssueAddExistingChooser add command IssueSearchResolvedtoCommand order command IssueSearchResolvedtoCommand 3;
+#channel ==>SearchIssueAddExistingChooser
+add property command_IssueSearchResolvedtoCommand on program eServiceSchemaVariableMapping.tcl to command 'IssueSearchResolvedtoCommand';

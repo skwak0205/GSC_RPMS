@@ -1,0 +1,31 @@
+del command 'TMCWorkspaceAccessRemoveSelected';
+add command 'TMCWorkspaceAccessRemoveSelected'
+	description	''
+	label	'emxTeamCentral.Button.RemoveSelected'
+	href	'${SUITE_DIR}/emxTeamDeleteWorkspaceMembersProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'575'
+	setting	'Window Width'		'575'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showWorkspaceAccessCommands'
+	setting	'Access Program'		'emxWorkspace'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxTeamCentral.Access.RemoveConfirm'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceAccessRemoveSelected'
+	property	'version'	value	'R422'
+;
+modify menu TMCWorkspaceAccessSummaryActionsToolBar add command TMCWorkspaceAccessRemoveSelected order command TMCWorkspaceAccessRemoveSelected 0;
+#channel ==>TMCWorkspaceAccessSummaryActionsToolBar
+add property command_TMCWorkspaceAccessRemoveSelected on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceAccessRemoveSelected';

@@ -1,0 +1,18 @@
+del command 'FTRProductConfigurationLink';
+add command 'FTRProductConfigurationLink'
+	description	''
+	label	'emxProduct.Tree.Configuration'
+	href	'${SUITE_DIR}/ProductConfigurationViewAction.jsp?HelpMarker=emxhelpproductconfigurationcreate'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductConfigurationLink'
+	property	'version'	value	'R418'
+;
+modify menu type_ProductConfiguration add command FTRProductConfigurationLink order command FTRProductConfigurationLink 1;
+#channel ==>type_ProductConfiguration
+add property command_FTRProductConfigurationLink on program eServiceSchemaVariableMapping.tcl to command 'FTRProductConfigurationLink';

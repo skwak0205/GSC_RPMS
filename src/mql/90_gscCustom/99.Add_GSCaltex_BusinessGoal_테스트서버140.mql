@@ -1,0 +1,140 @@
+################################################################################################
+# Created Date : 2023.02.06
+# Create by HyungJin, Ju
+# Description : GSCaltex Business Goal MQL 생성 Script - 테스트서버140
+# MQL 엑셀 Path : OneDrive\Project\200. Design\200.10 Functional Spec\프로젝트 목표(Business Goal)\RPMS 비즈니스 목표 정리 & MQL.xlsx
+################################################################################################
+
+# 테스트 서버
+# Business Goal 생성
+add bus 'Business Goal' '2023년 KPI' '-' policy 'Business Goal' lattice 'eService Production' 'description' '2023년 KPI' 'Comments' '' 'Measure of Success' '' 'Operational Definition' '' 'Business Benefit' '2023년 KPI' 'gscYear' '2023' 'gscTitle' '2023년 KPI' 'gscRatio' '0' 'gscMeasureUnit' '' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' '무재해 사업장 달성' '-' policy 'Business Goal' lattice 'eService Production' 'description' '안전관찰 내재화율 & 안전환경사고' 'Comments' '' 'Measure of Success' '' 'Operational Definition' '- 안전교육 이수 및 안전지침을 반드시 준수
+- 연구소에서 진행하는 프로그램에 적극적으로 참여하고 개선사항을 고민하고 해결안 제시' 'Business Benefit' '무재해 사업장' 'gscYear' '2023' 'gscTitle' '무재해 사업장 달성' 'gscRatio' '0.2' 'gscMeasureUnit' '' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' '안전관찰 내재화율' '-' policy 'Business Goal' lattice 'eService Production' 'description' '안전관찰 내재화율 (선행지표)' 'Comments' '' 'Measure of Success' '선행지표
+1.43%미만
+2.43%이상
+3.49%이상
+4.53%이상
+5.58%이상' 'Operational Definition' '- 안전교육 이수 및 안전지침을 반드시 준수
+- 연구소에서 진행하는 프로그램에 적극적으로 참여하고 개선사항을 고민하고 해결안 제시' 'Business Benefit' '무재해 사업장' 'gscYear' '2023' 'gscTitle' '안전관찰 내재화율' 'gscRatio' '0.1' 'gscMeasureUnit' '%' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' '안전환경사고' '-' policy 'Business Goal' lattice 'eService Production' 'description' '안전환경사고 (결과지표)' 'Comments' '' 'Measure of Success' '선행지표
+1.2건 이상
+2.1건
+3.0건
+4.0건
+5.0건' 'Operational Definition' '- 안전교육 이수 및 안전지침을 반드시 준수
+- 연구소에서 진행하는 프로그램에 적극적으로 참여하고 개선사항을 고민하고 해결안 제시' 'Business Benefit' '무재해 사업장' 'gscYear' '2023' 'gscTitle' '안전환경사고' 'gscRatio' '0.1' 'gscMeasureUnit' '건수' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' '기술연구소 성장모델 및 로드맵 구체화' '-' policy 'Business Goal' lattice 'eService Production' 'description' '기술연구소 성장모델 및 로드맵 구체화 및 승인 (R&D Deliverables 및 최종 Output Image 수립)' 'Comments' '' 'Measure of Success' '선행지표
+1.연구소 내부/사내 워크샵 추진
+2.경영위 보고(안) 마련
+3.경영위 보고
+4.경영위 승인
+5.로드맵 실행' 'Operational Definition' '- 연구소 및 사내 이해관계자와 사전 적극적 협의/협업하여 전략 방향 도출
+- 전략 방향에 대한 구성원 공유 및 피드백 수렴' 'Business Benefit' '기술연구소 중장기 전략' 'gscYear' '2023' 'gscTitle' '기술연구소 성장모델 및 로드맵 구체화' 'gscRatio' '0.3' 'gscMeasureUnit' '달성도' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' 'R&D 과제관리시스템 개선 및 운영' '-' policy 'Business Goal' lattice 'eService Production' 'description' 'R&D 과제관리시스템 개선 및 운영' 'Comments' '' 'Measure of Success' '' 'Operational Definition' '- 연구팀 및 심의부서와의 원활한 Communication 중재
+- 과제관리시스템의 체계적인 매뉴얼화 및 시스템화' 'Business Benefit' '과제별 로드맵 및 예산/인력 승인' 'gscYear' '2023' 'gscTitle' 'R&D 과제관리시스템 개선 및 운영' 'gscRatio' '0.2' 'gscMeasureUnit' '' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' '현사업경쟁력강화과제 및 미래준비과제 심의시스템 운영' '-' policy 'Business Goal' lattice 'eService Production' 'description' '현사업경쟁력강화과제 및 미래준비과제 심의시스템 운영' 'Comments' '' 'Measure of Success' '선행지표
+1.계획대비 30% 지연
+2.계획대비 20% 지연
+3.계획대비 10% 지연
+4.계획대로 추진
+5.' 'Operational Definition' '- 연구팀 및 심의부서와의 원활한 Communication 중재
+- 과제관리시스템의 체계적인 매뉴얼화 및 시스템화' 'Business Benefit' '과제별 로드맵 및 예산/인력 승인' 'gscYear' '2023' 'gscTitle' '현사업경쟁력강화과제 및 미래준비과제 심의시스템 운영' 'gscRatio' '0.1' 'gscMeasureUnit' '달성도' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' 'RPMS 구축' '-' policy 'Business Goal' lattice 'eService Production' 'description' 'RPMS 구축' 'Comments' '' 'Measure of Success' '선행지표
+1.구축안 수립
+2.계약체결
+3.RPMS 착수
+4.RPMS 구축(On Time)
+5.RPMS 구축(조기 완료)' 'Operational Definition' '- 연구팀 및 심의부서와의 원활한 Communication 중재
+- 과제관리시스템의 체계적인 매뉴얼화 및 시스템화' 'Business Benefit' '과제별 로드맵 및 예산/인력 승인' 'gscYear' '2023' 'gscTitle' 'RPMS 구축' 'gscRatio' '0.1' 'gscMeasureUnit' '달성도' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' 'R&D 성과관리' '-' policy 'Business Goal' lattice 'eService Production' 'description' 'R&D 성과관리' 'Comments' '' 'Measure of Success' '' 'Operational Definition' '- 연구소 및 사내 이해관계자와 사전 적극적 협의/협업
+- 주 1회 이상 연구팀과 오프라인 미팅 통해 지속적 교류' 'Business Benefit' '' 'gscYear' '2023' 'gscTitle' 'R&D 성과관리' 'gscRatio' '0.1' 'gscMeasureUnit' '' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' '연구산출물 관리 강화' '-' policy 'Business Goal' lattice 'eService Production' 'description' '연구산출물 (Output) 관리 강화' 'Comments' '' 'Measure of Success' '선행지표
+1.계획대비 30% 지연
+2.계획대비 20% 지연
+3.계획대비 10% 지연
+4.산출물 및 Package 완료
+5.' 'Operational Definition' '- 연구소 및 사내 이해관계자와 사전 적극적 협의/협업
+- 주 1회 이상 연구팀과 오프라인 미팅 통해 지속적 교류' 'Business Benefit' '' 'gscYear' '2023' 'gscTitle' '연구산출물 관리 강화' 'gscRatio' '0.05' 'gscMeasureUnit' '달성도' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' 'R&D 성과 지표 관리' '-' policy 'Business Goal' lattice 'eService Production' 'description' 'R&D 성과 (Outcome) 지표 관리' 'Comments' '' 'Measure of Success' '선행지표
+1.미보고
+2.경영위 보고(안) 준비
+3.경영위 보고(안) 소장님 보고
+4.CEO 보고
+5.' 'Operational Definition' '- 연구소 및 사내 이해관계자와 사전 적극적 협의/협업
+- 주 1회 이상 연구팀과 오프라인 미팅 통해 지속적 교류' 'Business Benefit' '' 'gscYear' '2023' 'gscTitle' 'R&D 성과 지표 관리' 'gscRatio' '0.05' 'gscMeasureUnit' '달성도' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' 'R&D Resource 관리' '-' policy 'Business Goal' lattice 'eService Production' 'description' 'R&D Resource 관리' 'Comments' '' 'Measure of Success' '' 'Operational Definition' '- 연구소 및 사내 이해관계자와 사전 적극적 협의/협업
+- 현업의 요청사항/문제를 최대한 지원하고 솔루션 제공' 'Business Benefit' '' 'gscYear' '2023' 'gscTitle' 'R&D Resource 관리' 'gscRatio' '0.1' 'gscMeasureUnit' '' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' '비용 및 투자 관리' '-' policy 'Business Goal' lattice 'eService Production' 'description' '비용 및 투자 관리' 'Comments' '' 'Measure of Success' '선행지표
+1.
+2.50%
+3.75%
+4.80%
+5.85% 집행' 'Operational Definition' '- 연구소 및 사내 이해관계자와 사전 적극적 협의/협업
+- 현업의 요청사항/문제를 최대한 지원하고 솔루션 제공' 'Business Benefit' '' 'gscYear' '2023' 'gscTitle' '비용 및 투자 관리' 'gscRatio' '0.05' 'gscMeasureUnit' '달성도' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' 'R&D 펀딩 제도 개선' '-' policy 'Business Goal' lattice 'eService Production' 'description' 'R&D 펀딩 제도 개선' 'Comments' '' 'Measure of Success' '선행지표
+1.
+2.경영위 보고(안) 준비
+3.경영위 보고
+4.경영층 승인
+5.실행' 'Operational Definition' '- 연구소 및 사내 이해관계자와 사전 적극적 협의/협업
+- 현업의 요청사항/문제를 최대한 지원하고 솔루션 제공' 'Business Benefit' '' 'gscYear' '2023' 'gscTitle' 'R&D 펀딩 제도 개선' 'gscRatio' '0.05' 'gscMeasureUnit' '달성도' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' 'R&D 조직 및 HR 역량 강화' '-' policy 'Business Goal' lattice 'eService Production' 'description' 'R&D 조직 및 HR 역량 강화' 'Comments' '' 'Measure of Success' '' 'Operational Definition' '- 연구소 및 사내 이해관계자와 사전 적극적 협의/협업
+- 연구원의 고충 및 현장의 소리를 적극 수렴하고 개선하도록 노력함
+- 기술연구소내 조직문화 개선을 위한 다양한 프로그램을 시도함' 'Business Benefit' '수평적/자발적/협업문화 구축' 'gscYear' '2023' 'gscTitle' 'R&D 조직 및 HR 역량 강화' 'gscRatio' '0.1' 'gscMeasureUnit' '' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' '기술연구소 인사제도 개편' '-' policy 'Business Goal' lattice 'eService Production' 'description' '기술연구소 인사제도 개편' 'Comments' '' 'Measure of Success' '선행지표
+1.
+2.CEO 보고(안) 준비
+3.CEO 보고
+4.CEO 승인(1건 이상)
+5.CEO 승인(2건 이상)' 'Operational Definition' '- 연구소 및 사내 이해관계자와 사전 적극적 협의/협업
+- 연구원의 고충 및 현장의 소리를 적극 수렴하고 개선하도록 노력함
+- 기술연구소내 조직문화 개선을 위한 다양한 프로그램을 시도함' 'Business Benefit' '수평적/자발적/협업문화 구축' 'gscYear' '2023' 'gscTitle' '기술연구소 인사제도 개편' 'gscRatio' '0.05' 'gscMeasureUnit' '건수' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+add bus 'Business Goal' '조직문화 개선' '-' policy 'Business Goal' lattice 'eService Production' 'description' '조직문화 개선' 'Comments' '' 'Measure of Success' '선행지표
+1.
+2.
+3.95%
+4.105%
+5.115%' 'Operational Definition' '- 연구소 및 사내 이해관계자와 사전 적극적 협의/협업
+- 연구원의 고충 및 현장의 소리를 적극 수렴하고 개선하도록 노력함
+- 기술연구소내 조직문화 개선을 위한 다양한 프로그램을 시도함' 'Business Benefit' '수평적/자발적/협업문화 구축' 'gscYear' '2023' 'gscTitle' '조직문화 개선' 'gscRatio' '0.05' 'gscMeasureUnit' '전년대비 긍정응답률' 'owner' 'admin_platform' 'Effective Date' '01/01/23';
+
+# Business Goal - Relationship 설정 - Organization Goal [add connection 'Organization Goal' from <Business Unit> to <Business Goal>;]
+# Business Goal 개별 조회 MQL: print bus 'Business Goal' <NAME> <Revision> select physicalid dump;
+add connection 'Organization Goal' from '29614DCF000015A063DCB959000005E6' to '499948B2000028D063E0B0F100000064';
+add connection 'Organization Goal' from '29523ABE00004538636066C800005808' to '499948B2000028D063E0B12F000000C6';
+add connection 'Organization Goal' from '29523ABE00004538636066C800005808' to '499948B2000028D063E0B12F0000010E';
+add connection 'Organization Goal' from '29523ABE00004538636066C800005808' to '499948B2000028D063E0B12F00000156';
+add connection 'Organization Goal' from '29523ABE000045386360677500005E3A' to '499948B2000028D063E0B1300000019E';
+add connection 'Organization Goal' from '29523ABE000045386360677500005E3A' to '499948B2000028D063E0B130000001E6';
+add connection 'Organization Goal' from '29523ABE000045386360677500005E3A' to '499948B2000028D063E0B1300000022E';
+add connection 'Organization Goal' from '29523ABE000045386360677500005E3A' to '499948B2000028D063E0B13100000276';
+add connection 'Organization Goal' from '29523ABE000045386360676400005D5C' to '499948B2000028D063E0B131000002BE';
+add connection 'Organization Goal' from '29523ABE000045386360676400005D5C' to '499948B2000028D063E0B13100000306';
+add connection 'Organization Goal' from '29523ABE000045386360676400005D5C' to '499948B2000028D063E0B1320000034E';
+add connection 'Organization Goal' from '29523ABE000045386360676400005D5C' to '499948B2000028D063E0B13200000396';
+add connection 'Organization Goal' from '29523ABE000045386360676400005D5C' to '499948B2000028D063E0B132000003DE';
+add connection 'Organization Goal' from '29523ABE000045386360676400005D5C' to '499948B2000028D063E0B13200000426';
+add connection 'Organization Goal' from '29523ABE000045386360676400005D5C' to '499948B2000028D063E0B1330000046E';
+add connection 'Organization Goal' from '29523ABE000045386360676400005D5C' to '499948B2000028D063E0B133000004B6';
+add connection 'Organization Goal' from '29523ABE000045386360676400005D5C' to '499948B2000028D063E0B133000004FE';
+
+
+# Business Goal - Relationship 설정 - Sub Goal [add connection 'Sub Goal' from <Parent Goal> to <Sub Goal>;]
+add connection 'Sub Goal' from '499948B2000028D063E0B0F100000064' to '499948B2000028D063E0B12F000000C6';
+add connection 'Sub Goal' from '499948B2000028D063E0B12F000000C6' to '499948B2000028D063E0B12F0000010E';
+add connection 'Sub Goal' from '499948B2000028D063E0B12F000000C6' to '499948B2000028D063E0B12F00000156';
+add connection 'Sub Goal' from '499948B2000028D063E0B0F100000064' to '499948B2000028D063E0B1300000019E';
+add connection 'Sub Goal' from '499948B2000028D063E0B0F100000064' to '499948B2000028D063E0B130000001E6';
+add connection 'Sub Goal' from '499948B2000028D063E0B130000001E6' to '499948B2000028D063E0B1300000022E';
+add connection 'Sub Goal' from '499948B2000028D063E0B130000001E6' to '499948B2000028D063E0B13100000276';
+add connection 'Sub Goal' from '499948B2000028D063E0B0F100000064' to '499948B2000028D063E0B131000002BE';
+add connection 'Sub Goal' from '499948B2000028D063E0B131000002BE' to '499948B2000028D063E0B13100000306';
+add connection 'Sub Goal' from '499948B2000028D063E0B131000002BE' to '499948B2000028D063E0B1320000034E';
+add connection 'Sub Goal' from '499948B2000028D063E0B0F100000064' to '499948B2000028D063E0B13200000396';
+add connection 'Sub Goal' from '499948B2000028D063E0B13200000396' to '499948B2000028D063E0B132000003DE';
+add connection 'Sub Goal' from '499948B2000028D063E0B13200000396' to '499948B2000028D063E0B13200000426';
+add connection 'Sub Goal' from '499948B2000028D063E0B0F100000064' to '499948B2000028D063E0B1330000046E';
+add connection 'Sub Goal' from '499948B2000028D063E0B133000004B6' to '499948B2000028D063E0B133000004B6';
+add connection 'Sub Goal' from '499948B2000028D063E0B133000004B6' to '499948B2000028D063E0B133000004FE';
+

@@ -1,0 +1,27 @@
+del command 'emxRemoveSkillFromPerson';
+add command 'emxRemoveSkillFromPerson'
+	description	'Remove business skill from a person'
+	label	'emxComponents.Command.Remove'
+	href	'${COMPONENT_DIR}/emxComponentsSkillPersonRemoveProcess.jsp'
+	alt	'emxComponents.Command.Remove'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.BusinessSkill.PersonRemoveWarningMsg'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'emxRemoveSkillFromPerson'
+	property	'version'	value	'R422'
+;
+modify menu APPPersonSkillSummaryToolBarActions add command emxRemoveSkillFromPerson order command emxRemoveSkillFromPerson 0;
+#channel ==>APPPersonSkillSummaryToolBarActions
+add property command_emxRemoveSkillFromPerson on program eServiceSchemaVariableMapping.tcl to command 'emxRemoveSkillFromPerson';

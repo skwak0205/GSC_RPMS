@@ -1,0 +1,16 @@
+del menu 'APPSearchCompanyActionsToolBar';
+add menu 'APPSearchCompanyActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Specific'
+	href	''
+	alt	'emxComponents.Common.Specific'
+	setting	'Registered Suite'		'Components'
+	command	'APPSearchForCompanies'
+	command	'APPSearchForBusinessUnits'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPSearchCompanyActionsToolBar'
+	property 'version'	value	'10-5'
+;
+add property menu_APPSearchCompanyActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPSearchCompanyActionsToolBar';

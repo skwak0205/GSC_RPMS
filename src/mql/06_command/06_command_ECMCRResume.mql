@@ -1,0 +1,21 @@
+del command 'ECMCRResume';
+add command 'ECMCRResume'
+	description	'Resume Change'
+	label	'EnterpriseChangeMgt.Command.Resume'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=resumeChangeforCR&targetFrame=detailsDisplay'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'($<interface[interface_ChangeOnHold]=="TRUE"> && owner==context.user)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionResume.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRResume'
+	property	'version'	value	'R216'
+;
+modify menu ECMCRPropertiesToolbar add command ECMCRResume order command ECMCRResume 6;
+#channel ==>ECMCRPropertiesToolbar
+add property command_ECMCRResume on program eServiceSchemaVariableMapping.tcl to command 'ECMCRResume';

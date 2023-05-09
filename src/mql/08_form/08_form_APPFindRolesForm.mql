@@ -1,0 +1,39 @@
+del form 'APPFindRolesForm';
+add form 'APPFindRolesForm' web
+field #1
+	name	'Type'
+	label	'emxComponents.SearchRole.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'function'		'getRolesTypeHTML'
+	setting	'Editable'		'false'
+	setting	'program'		'emxRoleUtil'
+	setting	'Field Type'		'programHTMLOutput'
+field #2
+	name	'Name'
+	label	'emxComponents.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Components'
+	setting	'Default'		'*'
+field #3
+	name	'Level'
+	label	'emxComponents.SearchRole.Level'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'function'		'getRoleLevelsHTMLOutput'
+	setting	'program'		'emxRoleUtil'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFindRolesForm'
+	property	'version'	value	'R211'
+;
+add property form_APPFindRolesForm on program eServiceSchemaVariableMapping.tcl to form 'APPFindRolesForm';

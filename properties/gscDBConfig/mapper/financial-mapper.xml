@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsc.gscInterface.financialIF">
+    <select id="selectBudgetList" parameterType="java.util.Map" resultType="java.util.Map">
+        select ROWID, trim(KOSTL) AS KOSTL, trim(KOSTL_TX) AS KOSTL_TX, trim(SAKNR) AS SAKNR, trim(SAKNR_TX) AS SAKNR_TX, AMT_PLAN_YEAR, AMT_ACT, AMT_ACT_M, WAERS from budget_if
+        where IF_YN = 'N'
+            and update_date >= TO_DATE(#{date}, 'MM/DD/YYYY')
+    </select>
+
+    <select id="selectInvestList" parameterType="java.util.Map" resultType="java.util.Map">
+        select rowid, LINE_NO, BZ_CODE, BZ_NM, WBS_CD, PLN_AMT, TRNS_AMT, MGM_BGT_AMT, RSLT_AMT_01, RSLT_AMT_02, REM_AMT, DEPT_NM from invest_if
+        where 1=1
+            and IF_YN = 'N'
+            and update_date >= TO_DATE(#{date}, 'MM/DD/YYYY')
+    </select>
+
+    <update id="updateBudgetIFColumn" parameterType="java.util.Map">
+        update BUDGET_IF set IF_YN = #{if_yn}, IF_RESULT = #{if_result}, IF_MSG = #{if_msg}
+        where ROWID = #{value}
+    </update>
+
+    <update id="updateInvestIFColumn" parameterType="java.util.Map">
+        update INVEST_IF set IF_YN = #{if_yn}, IF_RESULT = #{if_result}, IF_MSG = #{if_msg}
+        where ROWID = #{value}
+    </update>
+</mapper>

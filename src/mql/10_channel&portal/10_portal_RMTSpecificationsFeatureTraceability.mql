@@ -1,0 +1,15 @@
+del portal 'RMTSpecificationsFeatureTraceability';
+add portal 'RMTSpecificationsFeatureTraceability'
+	description	''
+	label	''
+	href	''
+	channel 	RMTSpecificationsFeatureTraceability
+	channel 	RMTSpecificationsTraceabilityReport
+	setting	'Registered Suite'		'Requirements'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationsFeatureTraceability'
+	property	'version'	value	'R216'
+;
+add property portal_RMTSpecificationsFeatureTraceability on program eServiceSchemaVariableMapping.tcl to portal 'RMTSpecificationsFeatureTraceability';

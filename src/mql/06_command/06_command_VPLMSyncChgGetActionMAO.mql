@@ -1,0 +1,12 @@
+del command 'VPLMSyncChgGetActionMAO';
+add command 'VPLMSyncChgGetActionMAO'
+	description	'Command to get related VPLM Parts for VPLM Actions'
+	label	'emxVPMCentral.Change.Command.SyncChgGetActionMAO.Title'
+	href	'${COMMON_DIR}/emxVPLMSyncChgActionSummaryRelatedPartsFS.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPMCentral'
+;
+modify menu type_PLMTaskAction add command VPLMSyncChgGetActionMAO order command VPLMSyncChgGetActionMAO 0;
+#channel ==>type_PLMTaskAction
+add property command_VPLMSyncChgGetActionMAO on program eServiceSchemaVariableMapping.tcl to command 'VPLMSyncChgGetActionMAO';

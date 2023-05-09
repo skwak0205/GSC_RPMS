@@ -1,0 +1,19 @@
+del command 'AEFFreezePaneExpandMoreLevel';
+add command 'AEFFreezePaneExpandMoreLevel'
+	description	''
+	label	'emxFramework.FreezePane.More'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Level'		'Specify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFFreezePaneExpandMoreLevel'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_AEFFreezePaneExpandMoreLevel on program eServiceSchemaVariableMapping.tcl to command 'AEFFreezePaneExpandMoreLevel';

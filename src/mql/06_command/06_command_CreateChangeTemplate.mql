@@ -1,0 +1,22 @@
+del command 'CreateChangeTemplate';
+add command 'CreateChangeTemplate'
+	description	'Create Change Template Command'
+	label	'EnterpriseChangeMgt.Command.CreateTemplate'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_CreateChangeTemplateSlidein&header=EnterpriseChangeMgt.Command.CreateTemplate&type=type_ChangeTemplate&nameField=both&autoNameChecked=true&preProcessJavaScript=preProcessInCreateTemplate&createJPO=enoECMChangeTemplate:create&submitAction=treeContent&CreateMode=CreateChangeTemplate&HelpMarker=emxhelpchangetemplatecreate'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isChangeTemplateActivated'
+	setting	'Access Program'		'enoECMChangeUX'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CreateChangeTemplate'
+	property	'version'	value	'R216'
+;
+modify menu ChangeManagement add command CreateChangeTemplate order command CreateChangeTemplate 2;
+#channel ==>ChangeManagement
+add property command_CreateChangeTemplate on program eServiceSchemaVariableMapping.tcl to command 'CreateChangeTemplate';

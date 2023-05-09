@@ -1,0 +1,24 @@
+del command 'FTRCreateMarketingPreferenceRuleActionLink';
+add command 'FTRCreateMarketingPreferenceRuleActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Create'
+	href	'${SUITE_DIR}/MarketingPreference.jsp?modetype=create&HelpMarker=emxhelpmarketingpreferencerulecreate'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'createNewLinkDisplay'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateMarketingPreferenceRuleActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRMarketingPreferenceListTopActionBar add command FTRCreateMarketingPreferenceRuleActionLink order command FTRCreateMarketingPreferenceRuleActionLink 1;
+#channel ==>FTRMarketingPreferenceListTopActionBar
+add property command_FTRCreateMarketingPreferenceRuleActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateMarketingPreferenceRuleActionLink';

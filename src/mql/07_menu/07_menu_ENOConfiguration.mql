@@ -1,0 +1,13 @@
+del menu 'ENOConfiguration';
+add menu 'ENOConfiguration'
+	description	''
+	label	'emxDataSpecialization.label.ENOConfiguration'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Image'		'${COMMON_DIR}/images/ENOConfiguration_16.gif'
+	command	'APPXPAdministration'
+	menu	'APPAdministration'
+	command	'APPLoginTicketAdmin'
+;
+add property menu_ENOConfiguration on program eServiceSchemaVariableMapping.tcl to menu 'ENOConfiguration';

@@ -1,0 +1,21 @@
+del command 'PLCApplyRevisionVersionActionLink';
+add command 'PLCApplyRevisionVersionActionLink'
+	description	''
+	label	'emxProduct.ActionLink.ApplyAsRevision'
+	href	'${SUITE_DIR}/ProductUtil.jsp?mode=applyRevision'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCApplyRevisionVersionActionLink'
+	property	'version'	value	'R215'
+;
+modify menu PLCProductVersionListBottomActionBar add command PLCApplyRevisionVersionActionLink order command PLCApplyRevisionVersionActionLink 0;
+#channel ==>PLCProductVersionListBottomActionBar
+add property command_PLCApplyRevisionVersionActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCApplyRevisionVersionActionLink';

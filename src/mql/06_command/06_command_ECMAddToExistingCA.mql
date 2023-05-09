@@ -1,0 +1,20 @@
+del command 'ECMAddToExistingCA';
+add command 'ECMAddToExistingCA'
+	description	''
+	label	'EnterpriseChangeMgt.Command.AddToExistingCA'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=AddToExistingCA&isFrom=false'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMAddToExistingCA'
+	property	'version'	value	'R419'
+;
+modify menu ECMChangeActionManagementToolbar add command ECMAddToExistingCA order command ECMAddToExistingCA 1;
+#channel ==>ECMChangeActionManagementToolbar
+add property command_ECMAddToExistingCA on program eServiceSchemaVariableMapping.tcl to command 'ECMAddToExistingCA';

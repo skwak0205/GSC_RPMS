@@ -1,0 +1,22 @@
+del command 'PLCSpecificationWhereUsedTreeCategory';
+add command 'PLCSpecificationWhereUsedTreeCategory'
+	description	'Specification where used tree category'
+	label	'emxProduct.Tree.WhereUsed'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxPLCCommon:getWhereUsed&FilterFramePage=${SUITE_DIR}/WhereUsedTableFilterInclude.jsp&FilterFrameSize=55&table=PLCWhereUsedList&header=emxProduct.Heading.WhereUsedGeneric&selection=multiple&topActionbar=PLCWhereUsedListTopActionBar&HelpMarker=emxhelpwhereusedlist&command=command_PLCSpecificationWhereUsedTreeCategory'
+	alt	''
+	setting	'ExpandFilterTypes'		'emxProduct.WhereUsed.Specification.ExpandTypes'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'ExpandFilterRelationships'		'emxProduct.WhereUsed.Specification.ExpandRelationships'
+	setting	'IntermediateFilterTypes'		'emxProduct.WhereUsed.IntermediateTypes'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSpecificationWhereUsedTreeCategory'
+	property	'version'	value	'V6R2011x'
+;
+modify menu type_Specification add command PLCSpecificationWhereUsedTreeCategory order command PLCSpecificationWhereUsedTreeCategory 0;
+#channel ==>type_SpecificationRMTSpecificationRelatedObjects
+add property command_PLCSpecificationWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCSpecificationWhereUsedTreeCategory';

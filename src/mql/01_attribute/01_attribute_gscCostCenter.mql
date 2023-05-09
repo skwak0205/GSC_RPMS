@@ -1,0 +1,13 @@
+#del attribute 'gscCostCenter';
+add attribute 'gscCostCenter'
+ type 'string'
+ description 'Identifies the Business Area'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscCostCenter'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscCostCenter on program eServiceSchemaVariableMapping.tcl to attribute 'gscCostCenter';

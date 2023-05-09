@@ -1,0 +1,23 @@
+del command 'PMCReportPeopleProjectAssignementFilter';
+add command 'PMCReportPeopleProjectAssignementFilter'
+	description	''
+	label	'emxProgramCentral.ResourcePlanning.Report.Charts.PeopleProjectAssignmentReportFilter'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePoolPeopleUtil.jsp?mode=ResourcePoolPeopleReportFilter&submitURL=program=emxResourcePoolReports:getTablePeopleProjectAssignmentReportData%26table=PMCReportPeopleProjectAssignment%26toolbar=PMCReportDateToolbarMenu,PMCReportPeopleProjectAssignementFilterMenu%26selection=none%26mode=PMCPeopleProjectAssignmentReport%26header=emxProgramCentral.ResourcePlanning.Report.Charts.PeopleProjectAssignmentReport%26HelpMarker=emxhelppeopleprojectassignmentreport%26chartingrequired=false%26suiteKey=ProgramCentral%26sortColumnName=none'
+	alt	''
+	setting	'Range Display Values'		'emxProgramCentral.People.ProjectAssignmentFilterSummary,emxProgramCentral.People.ProjectAssignmentFilterDetail'
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Values'		'Summary,Detail'
+	setting	'Default'		'Detail'
+	setting	'Width'		'100'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportPeopleProjectAssignementFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCReportPeopleProjectAssignementFilterMenu add command PMCReportPeopleProjectAssignementFilter order command PMCReportPeopleProjectAssignementFilter 0;
+#channel ==>PMCReportPeopleProjectAssignementFilterMenu
+add property command_PMCReportPeopleProjectAssignementFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCReportPeopleProjectAssignementFilter';

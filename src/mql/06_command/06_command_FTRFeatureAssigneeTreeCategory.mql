@@ -1,0 +1,18 @@
+del command 'FTRFeatureAssigneeTreeCategory';
+add command 'FTRFeatureAssigneeTreeCategory'
+	description	''
+	label	'emxProduct.Tree.Assignee'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxAssignee:getAllAssignee&relationName=relationship_AssignedFeature&table=PLCAssigneeList&header=emxProduct.Heading.Assignees&selection=multiple&topActionbar=FTRFeatureAssigneeListTopActionBar&bottomActionbar=FTRAssigneeListBottomActionBar&sortColumnName=Name&HelpMarker=emxhelpassignees'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallPerson.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRFeatureAssigneeTreeCategory'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRFeatureAssigneeTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRFeatureAssigneeTreeCategory';

@@ -1,0 +1,17 @@
+del command 'IssueAssigneeTreeCategory';
+add command 'IssueAssigneeTreeCategory'
+	description	'Issue AssigneeCommand Object'
+	label	'emxComponents.Command.AssigneeList'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=IssueAssigneeList&toolbar=IssueAssigneeListToolBar&selection=multiple&sortColumnName=Name&program=emxCommonIssue:getAllAssignee&relationName=relationship_AssignedIssue&header=emxComponents.Heading.Assignee&HelpMarker=emxhelpissueassignees'
+	alt	'emxComponents.Command.AssigneeList'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueAssigneeTreeCategory'
+	property	'version'	value	'R420'
+;
+modify menu type_Issue add command IssueAssigneeTreeCategory order command IssueAssigneeTreeCategory 1;
+#channel ==>type_IssueIssueChannel2
+add property command_IssueAssigneeTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'IssueAssigneeTreeCategory';

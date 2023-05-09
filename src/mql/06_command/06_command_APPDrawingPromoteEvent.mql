@@ -1,0 +1,13 @@
+del command 'APPDrawingPromoteEvent';
+add command 'APPDrawingPromoteEvent'
+	description	'When Drawing is promoted'
+	label	'emxComponents.Notification.Event.Promoted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Promoted'
+	property	'version'	value	'R424'
+;
+modify menu APPDrawingEvents add command APPDrawingPromoteEvent order command APPDrawingPromoteEvent 1;
+#channel ==>APPDrawingEvents
+add property command_APPDrawingPromoteEvent on program eServiceSchemaVariableMapping.tcl to command 'APPDrawingPromoteEvent';

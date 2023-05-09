@@ -1,0 +1,9 @@
+del table '3DLive Product Configuration' system;
+add table '3DLive Product Configuration' system
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'3DLive Product Configuration'
+	property	'version'	value	'V6R2008-2.0'
+;
+add property table_3DLiveProductConfiguration on program eServiceSchemaVariableMapping.tcl to table '3DLive Product Configuration' system;

@@ -1,0 +1,17 @@
+del command 'CFPModelManufacturingPlanTreeCategory';
+add command 'CFPModelManufacturingPlanTreeCategory'
+	description	''
+	label	'DMCPlanning.Model.Command.ManufacturingPlan'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=CFPModelManufacturingPlanPortal&header=DMCPlanning.Heading.ManufacturingPlanDerivation&SuiteDirectory=dmcplanning&StringResourceFileId=dmcplanningStringResource'
+	alt	''
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Licensed Product'		'ENO_CFP_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPModelManufacturingPlanTreeCategory'
+	property	'version'	value	'R421'
+;
+modify menu type_Model add command CFPModelManufacturingPlanTreeCategory order command CFPModelManufacturingPlanTreeCategory 1;
+#channel ==>type_Model
+add property command_CFPModelManufacturingPlanTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'CFPModelManufacturingPlanTreeCategory';

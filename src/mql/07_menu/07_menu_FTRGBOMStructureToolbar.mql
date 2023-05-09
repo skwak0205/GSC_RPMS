@@ -1,0 +1,15 @@
+del menu 'FTRGBOMStructureToolbar';
+add menu 'FTRGBOMStructureToolbar'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRGBOMStructureToolbar'
+	property 'version'	value	'R418'
+;
+add property menu_FTRGBOMStructureToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRGBOMStructureToolbar';

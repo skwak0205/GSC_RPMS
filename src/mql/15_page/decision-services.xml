@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd">
+
+	<ds:service name="bps.decision">
+		<ds:license products="ENO_CBS_TP"/>
+		<ds:data>
+			<ds:jpo classname="com.dassault_systemes.enovia.decision.DecisionService" function="getDecisions" returnedData="idsAndData"/>
+			<ds:updatejpo classname="com.dassault_systemes.enovia.decision.DecisionService" function="updateDecisions" processMultiple="true"/>
+		</ds:data>
+		<ds:ref-subservice name="bps.decisionBasicFields" includeByDefault="yes"/>
+		<ds:field name="owner"><ds:selectable expression="owner" type="bus" autosave="true"/></ds:field>
+		<ds:field name="ownerFullName"><ds:selectable expression="owner" type="bus" format="fullname"/></ds:field>
+		<ds:field name="modifyAccess"><ds:selectable expression="current.access[modify]" type="bus"/></ds:field>
+        <ds:field name="deleteAccess"><ds:selectable expression="current.access[delete]" type="bus"/></ds:field>
+        <ds:field name="reviseAccess"><ds:selectable expression="current.access[revise]" type="bus"/></ds:field>
+		
+		<ds:ref-subservice name="appliesTo" referenceName="decision.appliesTo" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="relationship_DecisionAppliesTo" getFrom="true" recurseToLevel="1"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.decision.DecisionService" function="updateAppliesTo" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+		
+		<ds:ref-subservice name="referenceDocument" referenceName="decision.referenceDocument" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="relationship_ReferenceDocument" getFrom="true" recurseToLevel="1"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.decision.DecisionService" function="updateDecisionReferenceDocument" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+		
+		<ds:subservice name="revise" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.decision.DecisionService" function="reviseDecision" processMultiple="false">
+                </ds:updatejpo>
+            </ds:data>
+        </ds:subservice>
+			
+	</ds:service>
+	
+	<ds:service name="decision.referenceDocument">
+      <ds:data>
+          <ds:print/>
+      </ds:data>
+
+        <ds:field name="owner"><ds:selectable expression="owner" type="bus" format="fullname" autosave="true"/></ds:field>
+        <ds:field name="fileName"><ds:selectable expression="format.file.name" type="bus"/></ds:field>
+		<ds:field name="lockedBy"><ds:selectable expression="locker" type="bus"/></ds:field>
+		<ds:field name="typeicon"><ds:image source="businessType" size="icon"/></ds:field>
+		<ds:field name="image">
+			<ds:image source="primaryOrType" size="large" fileExtField="fileExtension"/>
+		</ds:field>
+		<ds:ref-subservice name="bps.decisionBasicFields" includeByDefault="yes"/>
+  </ds:service>
+	
+	<ds:service name="decision.appliesTo">
+		 <ds:data>
+          <ds:print/>
+      </ds:data>
+      <ds:field name="owner"><ds:selectable expression="owner" type="bus" format="fullname" autosave="true"/></ds:field>
+		<ds:field name="typeicon"><ds:image source="businessType" size="icon"/></ds:field>
+		<ds:field name="image">
+			<ds:image source="primaryOrType" size="large" fileExtField="fileExtension"/>
+		</ds:field>
+		<ds:ref-subservice name="bps.decisionBasicFields" includeByDefault="yes"/>
+	</ds:service>
+	
+	<ds:service name="bps.decisionBasicFields">
+		<ds:field name="name"><ds:selectable expression="name"/></ds:field>
+		<ds:field name="title"><ds:selectable expression="attribute[Title]" autosave="true"/></ds:field>
+		<ds:field name="originator"><ds:selectable expression="attribute[Originator]" type="bus" format="fullname"/></ds:field>
+		<ds:field name="revision"><ds:selectable expression="revision"/></ds:field>
+		<ds:field name="description"><ds:selectable expression="description" autosave="true"/></ds:field>
+		<ds:field name="originated"><ds:selectable expression="originated" format="utc"/></ds:field>
+		<ds:field name="modified"><ds:selectable expression="modified" format="utc"/></ds:field>
+		<ds:field name="policy" includeByDefault="yes" description="required to support state NLS"><ds:selectable expression="policy" type="bus"/></ds:field>
+		<ds:field name="state"><ds:selectable expression="current"/></ds:field>
+		<ds:field name="stateNLS"><ds:selectable expression="current" format="state"/></ds:field>
+		<ds:field name="typeNLS"><ds:selectable expression="type" format="type"/></ds:field>
+		<ds:field name="policyNLS"><ds:selectable expression="policy" format="policy"/></ds:field>
+		<ds:field name="objectId"><ds:selectable expression="id" type="bus"/></ds:field>
+	</ds:service>
+	
+</ds:services>
+

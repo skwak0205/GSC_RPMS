@@ -1,0 +1,31 @@
+del command 'PMCWBSProjectTemplateAddSubtaskBelow';
+add command 'PMCWBSProjectTemplateAddSubtaskBelow'
+	description	''
+	label	'emxProgramCentral.Common.CreateTask'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=AddTaskBelow'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	setting	'Access Mask'		'Modify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSProjectTemplateAddSubtaskBelow'
+	property	'version'	value	'R422'
+;
+modify menu PMCTemplateAddTaskMenu add command PMCWBSProjectTemplateAddSubtaskBelow order command PMCWBSProjectTemplateAddSubtaskBelow 0;
+modify menu PMCWBSProjectTemplateToolBarActions add command PMCWBSProjectTemplateAddSubtaskBelow order command PMCWBSProjectTemplateAddSubtaskBelow 2;
+modify menu PMCWBSProjectTemplateToolBar add command PMCWBSProjectTemplateAddSubtaskBelow order command PMCWBSProjectTemplateAddSubtaskBelow 1;
+#channel ==>PMCTemplateAddTaskMenuPMCWBSProjectTemplateToolBarActionsPMCWBSProjectTemplateToolBar
+add property command_PMCWBSProjectTemplateAddSubtaskBelow on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSProjectTemplateAddSubtaskBelow';

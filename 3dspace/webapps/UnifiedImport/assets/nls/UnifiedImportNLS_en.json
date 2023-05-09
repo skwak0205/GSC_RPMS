@@ -1,0 +1,21 @@
+{
+  "unifiedImport.action.filesOnDisk": "Files on Disk",
+  "unifiedImport.action.folderOnDisk": "Folder on Disk",
+  "unifiedImport.action.info.browseContent": "Select your content to begin",
+  "unifiedImport.footer.action.cancel": "Cancel",
+  "unifiedImport.footer.action.import": "Import",
+  "unifiedImport.footer.info.importStarting": "Importing..",
+  "unifiedImport.header.title.importMethod": "Import Method",
+  "unifiedImport.header.title.placeholder.chooseMethod": "Choose a method",
+  "unifiedImport.notification.error.noMethod": "No import method is available for your content.",
+  "unifiedImport.notification.error.invalidMethod": "An error has occurred while connecting to the import method.",
+  "unifiedImport.notification.error.contentDisapproved": "Your content cannot be imported. None of the files are supported by the import method.",
+  "unifiedImport.notification.success.processSucceeded": "Your import was started. You will be soon notified about its completion.",
+  "unifiedImport.notification.error.processFailed": "Your import could not be started.",
+  "unifiedImport.statusBar.tooltip.totalNodes": "Files picked by you for import.",
+  "unifiedImport.notification.error.checkinFailed": "Your content could not be uploaded.",
+  "unifiedImport.statusBar.tooltip.invalidNodes": "Excluded Files are the files excluded by the import method rules. These files won't be considered during the import.",
+  "unifiedImport.status.totalFiles": "Total Files",
+  "unifiedImport.status.excludedFiles": "Excluded Files",
+  "unifiedImport.content.accordion.title": "Files"
+}

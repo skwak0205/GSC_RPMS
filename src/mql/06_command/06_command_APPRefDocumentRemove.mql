@@ -1,0 +1,24 @@
+del command 'APPRefDocumentRemove';
+add command 'APPRefDocumentRemove'
+	description	'Remove Selected Document for reference documents'
+	label	'emxComponents.Command.Remove'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRemove.jsp?action=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRefDocumentRemove'
+	property	'version'	value	'R422'
+;
+modify menu APPRefDocumentSummaryActionsToolBar add command APPRefDocumentRemove order command APPRefDocumentRemove 0;
+#channel ==>APPRefDocumentSummaryActionsToolBar
+add property command_APPRefDocumentRemove on program eServiceSchemaVariableMapping.tcl to command 'APPRefDocumentRemove';

@@ -1,0 +1,27 @@
+del command 'PMCChecklistCopyFrom';
+add command 'PMCChecklistCopyFrom'
+	description	''
+	label	'emxProgramCentral.Common.Checklist.ChecklistCopyFrom'
+	href	'${SUITE_DIR}/emxProgramCentralChecklistUtil.jsp?mode=checklistCopyFromWBSGateRMBMenu'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(policy=="$<policy_ProjectReview>") && (type=="$<type_Gate>")'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'checkCreateObjectAccessFunctionProjectLead'
+	setting	'Access Program'		'emxChecklist'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCChecklistCopyFrom'
+	property	'version'	value	'R421.HF5'
+;
+modify menu PMCChecklistActionToolbar add command PMCChecklistCopyFrom order command PMCChecklistCopyFrom 3;
+modify menu PMCGateProjectReviewRMBSubMenu add command PMCChecklistCopyFrom order command PMCChecklistCopyFrom 0;
+modify menu type_GateRMB add command PMCChecklistCopyFrom order command PMCChecklistCopyFrom 7;
+modify menu PMCChecklistTopActionToolbar add command PMCChecklistCopyFrom order command PMCChecklistCopyFrom 2;
+#channel ==>PMCChecklistActionToolbarPMCGateProjectReviewRMBSubMenutype_GateRMBPMCChecklistTopActionToolbar
+add property command_PMCChecklistCopyFrom on program eServiceSchemaVariableMapping.tcl to command 'PMCChecklistCopyFrom';

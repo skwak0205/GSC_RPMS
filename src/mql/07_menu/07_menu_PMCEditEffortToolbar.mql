@@ -1,0 +1,15 @@
+del menu 'PMCEditEffortToolbar';
+add menu 'PMCEditEffortToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCEditEffortToolbarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCEditEffortToolbar'
+	property 'version'	value	'10-6'
+;
+add property menu_PMCEditEffortToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCEditEffortToolbar';

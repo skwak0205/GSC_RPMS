@@ -1,0 +1,27 @@
+del command 'PMCChecklistCreateNew';
+add command 'PMCChecklistCreateNew'
+	description	''
+	label	'emxProgramCentral.Common.Checklist.Checklist'
+	href	'${SUITE_DIR}/emxProgramCentralChecklistUtil.jsp?mode=createChecklist'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(policy=="$<policy_ProjectReview>") && (type=="$<type_Gate>")'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'checkCreateObjectAccessFunctionProjectLead'
+	setting	'Access Program'		'emxChecklist'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCChecklistCreateNew'
+	property	'version'	value	'R421.HF5'
+;
+modify menu type_ChecklistRMB add command PMCChecklistCreateNew order command PMCChecklistCreateNew 1;
+modify menu PMCChecklistActionToolbar add command PMCChecklistCreateNew order command PMCChecklistCreateNew 1;
+modify menu PMCGateProjectReviewRMBSubMenu add command PMCChecklistCreateNew order command PMCChecklistCreateNew 1;
+modify menu type_GateRMB add command PMCChecklistCreateNew order command PMCChecklistCreateNew 6;
+modify menu PMCChecklistTopActionToolbar add command PMCChecklistCreateNew order command PMCChecklistCreateNew 1;
+#channel ==>type_ChecklistRMBPMCChecklistActionToolbarPMCGateProjectReviewRMBSubMenutype_GateRMBPMCChecklistTopActionToolbar
+add property command_PMCChecklistCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PMCChecklistCreateNew';

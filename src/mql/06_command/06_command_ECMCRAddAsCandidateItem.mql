@@ -1,0 +1,20 @@
+del command 'ECMCRAddAsCandidateItem';
+add command 'ECMCRAddAsCandidateItem'
+	description	'CR Add As Candidate Item'
+	label	'EnterpriseChangeMgt.Command.AddExistingCandidate'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=AddExistingCandidate&isFrom=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Create].value || current==policy.property[state_Evaluate].value) && (current.access[modify]) && !($<interface[interface_ChangeOnHold] =="TRUE">) && (type.kindof[$<type_ChangeRequest>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'false'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCRAddAsCandidateItem'
+	property	'version'	value	'R419'
+;
+modify menu ECMCandidateItemsListToolBar add command ECMCRAddAsCandidateItem order command ECMCRAddAsCandidateItem 2;
+#channel ==>ECMCandidateItemsListToolBar
+add property command_ECMCRAddAsCandidateItem on program eServiceSchemaVariableMapping.tcl to command 'ECMCRAddAsCandidateItem';

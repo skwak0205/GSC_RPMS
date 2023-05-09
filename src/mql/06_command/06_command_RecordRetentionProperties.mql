@@ -1,0 +1,16 @@
+del command 'RecordRetentionProperties';
+add command 'RecordRetentionProperties'
+	description	'Displays properties page of Record Retention or Retention Hold'
+	label	'emxLibraryCentral.Command.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_LCRetentionScheduleProperties&toolbar=LBCRetentionScheduleToolBar&HelpMarker=emxhelplibraryrecordproperties&formHeader=emxDocumentCentral.Common.Properties&Export=False'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RecordRetentionProperties'
+	property	'version'	value	'R417'
+;
+modify menu RecordRetentionRMB add command RecordRetentionProperties order command RecordRetentionProperties 1;
+#channel ==>RecordRetentionRMB
+add property command_RecordRetentionProperties on program eServiceSchemaVariableMapping.tcl to command 'RecordRetentionProperties';

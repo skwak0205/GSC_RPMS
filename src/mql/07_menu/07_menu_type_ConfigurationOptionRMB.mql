@@ -1,0 +1,21 @@
+del menu 'type_ConfigurationOptionRMB';
+add menu 'type_ConfigurationOptionRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRConfigurationOptionPropertiesRMB'
+	command	'AEFLifecycle'
+	menu	'AEFClipboardCollectionsRMB'
+	command	'AEFSeparator'
+	command	'APPQuickFileList'
+	command	'APPRelatedFiles'
+	command	'APPAllFileDetails'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_ConfigurationOptionRMB'
+	property 'version'	value	'R214'
+;
+add property menu_type_ConfigurationOptionRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_ConfigurationOptionRMB';

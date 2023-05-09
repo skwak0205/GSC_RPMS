@@ -1,0 +1,19 @@
+del command 'PMCTaskManagmentMultipleOwnershipCommand';
+add command 'PMCTaskManagmentMultipleOwnershipCommand'
+	description	'This command is used to dynamically create multiple ownership command for object of kind task managment'
+	label	''
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxTask'
+	setting	'Dynamic Command Function'		'getDynamicMOACategory'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskManagmentMultipleOwnershipCommand'
+	property	'version'	value	'R420'
+;
+modify menu type_TaskManagement add command PMCTaskManagmentMultipleOwnershipCommand order command PMCTaskManagmentMultipleOwnershipCommand 13;
+#channel ==>type_TaskManagement
+add property command_PMCTaskManagmentMultipleOwnershipCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCTaskManagmentMultipleOwnershipCommand';

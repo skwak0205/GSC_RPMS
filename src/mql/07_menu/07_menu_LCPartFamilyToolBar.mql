@@ -1,0 +1,17 @@
+del menu 'LCPartFamilyToolBar';
+add menu 'LCPartFamilyToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'LCPartFamilyActionsToolBar'
+	command	'LBCSearchWithinAtLibrary'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCPartFamilyToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_LCPartFamilyToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCPartFamilyToolBar';

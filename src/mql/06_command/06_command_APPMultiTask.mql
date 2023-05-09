@@ -1,0 +1,19 @@
+del command 'APPMultiTask';
+add command 'APPMultiTask'
+	description	'Power View of EBOM Node for Part Object'
+	label	'emxComponents.ECRECO.Tasks'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxECO:getActiveTask,emxECO:getAllTask,emxECO:getCompleteTask&programLabel=emxComponents.Filter.Active,emxComponents.Filter.AllTasks,emxComponents.Filter.Complete&table=APPMultiTask&selectedFilter=emxECO:getActiveTask&toolbar=APPMultiTaskToolBar&header=emxComponents.ECRECO.Tasks&HelpMarker=emxhelpecotasks'
+	alt	'emxComponents.ECRECO.Tasks'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/iconSmallObjectFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMultiTask'
+	property	'version'	value	'10-6'
+;
+#channel ==>
+add property command_APPMultiTask on program eServiceSchemaVariableMapping.tcl to command 'APPMultiTask';

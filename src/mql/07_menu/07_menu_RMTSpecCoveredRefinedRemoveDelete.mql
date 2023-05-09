@@ -1,0 +1,17 @@
+del menu 'RMTSpecCoveredRefinedRemoveDelete';
+add menu 'RMTSpecCoveredRefinedRemoveDelete'
+	description	''
+	label	'emxRequirements.ActionLink.DeleteAndRemove'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Mode'		'view'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	command	'RMTSpecStructureDetach'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecCoveredRefinedRemoveDelete'
+	property 'version'	value	'R423'
+;
+add property menu_RMTSpecCoveredRefinedRemoveDelete on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecCoveredRefinedRemoveDelete';

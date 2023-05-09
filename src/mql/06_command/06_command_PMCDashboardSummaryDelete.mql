@@ -1,0 +1,25 @@
+del command 'PMCDashboardSummaryDelete';
+add command 'PMCDashboardSummaryDelete'
+	description	'Command for Deleting Dashboard from Summary'
+	label	'emxProgramCentral.Button.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralDashboardsDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDashboardSummaryDelete'
+	property	'version'	value	'R422'
+;
+modify menu PMCDashboardSummaryToolbarActions add command PMCDashboardSummaryDelete order command PMCDashboardSummaryDelete 0;
+#channel ==>PMCDashboardSummaryToolbarActions
+add property command_PMCDashboardSummaryDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCDashboardSummaryDelete';

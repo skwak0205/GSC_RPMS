@@ -1,0 +1,18 @@
+del menu 'LBCCreateLibraryActionsMenu';
+add menu 'LBCCreateLibraryActionsMenu'
+	description	''
+	label	'emxDocumentCentral.Common.CreateLibrary'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	command	'LBCCreatePartLibraryActions'
+	command	'LBCCreateGeneralLibraryActions'
+	command	'LBCCreateDocumentLibraryActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCCreateLibraryActionsMenu'
+	property 'version'	value	'R216'
+;
+add property menu_LBCCreateLibraryActionsMenu on program eServiceSchemaVariableMapping.tcl to menu 'LBCCreateLibraryActionsMenu';

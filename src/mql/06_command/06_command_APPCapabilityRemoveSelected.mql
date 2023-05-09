@@ -1,0 +1,24 @@
+del command 'APPCapabilityRemoveSelected';
+add command 'APPCapabilityRemoveSelected'
+	description	'Capability Remove Selected Command Object'
+	label	'emxComponents.Common.RemoveSelected'
+	href	'${COMPONENT_DIR}/emxComponentsRemoveCapabilityProcess.jsp'
+	alt	'emxComponents.Common.RemoveSelected'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Common.MsgConfirm'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCapabilityRemoveSelected'
+	property	'version'	value	'R417'
+;
+modify menu APPCapabilitySummaryActionsToolBar add command APPCapabilityRemoveSelected order command APPCapabilityRemoveSelected 0;
+#channel ==>APPCapabilitySummaryActionsToolBar
+add property command_APPCapabilityRemoveSelected on program eServiceSchemaVariableMapping.tcl to command 'APPCapabilityRemoveSelected';

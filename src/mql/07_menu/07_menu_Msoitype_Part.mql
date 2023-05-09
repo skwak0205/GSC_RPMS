@@ -1,0 +1,15 @@
+del menu 'Msoitype_Part';
+add menu 'Msoitype_Part'
+	description	'Menu for showing relationships of type Part as folder in Office Integration'
+	label	''
+	href	''
+	alt	''
+	command	'MsoiReferenceDocuments'
+	command	'MsoiSpecifications'
+	property 'installer'	value	'ENOVIAIntegrationEngineering'
+	property 'application'	value	'IntegrationFramework'
+	property 'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property 'original name'	value	'Msoitype_Part'
+	property 'version'	value	'V6R2022x'
+;
+add property menu_Msoitype_Part on program eServiceSchemaVariableMapping.tcl to menu 'Msoitype_Part';

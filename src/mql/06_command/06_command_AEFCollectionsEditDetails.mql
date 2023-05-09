@@ -1,0 +1,19 @@
+del command 'AEFCollectionsEditDetails';
+add command 'AEFCollectionsEditDetails'
+	description	'Edit Details for Collection'
+	label	'emxFramework.Command.EditDetails'
+	href	'editCollection()'
+	alt	'emxFramework.Command.EditDetails'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	setting	'Javascript'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCollectionsEditDetails'
+	property	'version'	value	'R417'
+;
+modify menu AEFCollectionPropertiesActionsToolBar add command AEFCollectionsEditDetails order command AEFCollectionsEditDetails 0;
+#channel ==>AEFCollectionPropertiesActionsToolBar
+add property command_AEFCollectionsEditDetails on program eServiceSchemaVariableMapping.tcl to command 'AEFCollectionsEditDetails';

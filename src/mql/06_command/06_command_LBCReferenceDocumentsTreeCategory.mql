@@ -1,0 +1,24 @@
+del command 'LBCReferenceDocumentsTreeCategory';
+add command 'LBCReferenceDocumentsTreeCategory'
+	description	''
+	label	'emxComponents.Command.ReferenceDocuments'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=LBCReferenceDocumentSummaryToolBar&header=emxComponents.Header.ReferenceDocuments&HelpMarker=emxhelpcontentlist'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCReferenceDocumentsTreeCategory'
+	property	'version'	value	'R214'
+;
+modify menu type_GeneralClass add command LBCReferenceDocumentsTreeCategory order command LBCReferenceDocumentsTreeCategory 11;
+modify menu type_Classification add command LBCReferenceDocumentsTreeCategory order command LBCReferenceDocumentsTreeCategory 9;
+modify menu type_Libraries add command LBCReferenceDocumentsTreeCategory order command LBCReferenceDocumentsTreeCategory 7;
+modify menu type_PartLibrary add command LBCReferenceDocumentsTreeCategory order command LBCReferenceDocumentsTreeCategory 9;
+modify menu type_GeneralLibrary add command LBCReferenceDocumentsTreeCategory order command LBCReferenceDocumentsTreeCategory 9;
+modify menu type_RetentionRecord add command LBCReferenceDocumentsTreeCategory order command LBCReferenceDocumentsTreeCategory 4;
+modify menu type_RetentionHold add command LBCReferenceDocumentsTreeCategory order command LBCReferenceDocumentsTreeCategory 4;
+modify menu type_DocumentFamily add command LBCReferenceDocumentsTreeCategory order command LBCReferenceDocumentsTreeCategory 12;
+modify menu type_Library add command LBCReferenceDocumentsTreeCategory order command LBCReferenceDocumentsTreeCategory 10;
+#channel ==>type_GeneralClasstype_Classificationtype_Librariestype_PartLibrarytype_GeneralLibrarytype_RetentionRecordtype_RetentionHoldtype_DocumentFamilytype_Library
+add property command_LBCReferenceDocumentsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'LBCReferenceDocumentsTreeCategory';

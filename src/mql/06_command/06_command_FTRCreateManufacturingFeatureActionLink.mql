@@ -1,0 +1,22 @@
+del command 'FTRCreateManufacturingFeatureActionLink';
+add command 'FTRCreateManufacturingFeatureActionLink'
+	description	''
+	label	'emxConfiguration.ActionLink.CreateManufacturingFeature'
+	href	'${SUITE_DIR}/ManufacturingFeatureCreatePreProcess.jsp?strCreationType=type_ManufacturingFeature&UIContext=MyDesk&HelpMarker=emxhelpmanufacturingfeaturecreate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateManufacturingFeatureActionLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRMyDeskManufacturingFeatureToolbarActionsMenu add command FTRCreateManufacturingFeatureActionLink order command FTRCreateManufacturingFeatureActionLink 1;
+#channel ==>FTRMyDeskManufacturingFeatureToolbarActionsMenu
+add property command_FTRCreateManufacturingFeatureActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateManufacturingFeatureActionLink';

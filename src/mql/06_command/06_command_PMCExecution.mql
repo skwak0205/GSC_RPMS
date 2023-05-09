@@ -1,0 +1,17 @@
+del command 'PMCExecution';
+add command 'PMCExecution'
+	description	''
+	label	'emxProgramCentral.ProjectCategory.Execution'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCExecution&showPageHeader=false&HelpMarker=emxhelpprojectdetails&showPageURLIcon=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCExecution'
+	property	'version'	value	'R421'
+;
+modify menu type_ProjectSpace add command PMCExecution order command PMCExecution 5;
+#channel ==>type_ProjectSpace
+add property command_PMCExecution on program eServiceSchemaVariableMapping.tcl to command 'PMCExecution';

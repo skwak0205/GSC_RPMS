@@ -1,0 +1,19 @@
+del command 'RMTInstallRMCPluginCmd';
+add command 'RMTInstallRMCPluginCmd'
+	description	'Install RMC Plugin For MSWord and MSExcel'
+	label	'emxRequirements.Label.RMTInstallRMCPluginCmd'
+	href	'${SUITE_DIR}/RMTInstallRMCPluginCmd.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Hide Mode'		'Mobile'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTInstallRMCPluginCmd'
+	property	'version'	value	'V6R2019x'
+;
+modify menu RMTMyDesk add command RMTInstallRMCPluginCmd order command RMTInstallRMCPluginCmd 0;
+#channel ==>RMTMyDesk
+add property command_RMTInstallRMCPluginCmd on program eServiceSchemaVariableMapping.tcl to command 'RMTInstallRMCPluginCmd';

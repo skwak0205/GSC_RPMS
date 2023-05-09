@@ -1,0 +1,19 @@
+del command 'PMCDocumentRevisions';
+add command 'PMCDocumentRevisions'
+	description	'lists the Revisions for Document Object'
+	label	'emxProgramCentral.Command.Revisions'
+	href	'${SUITE_DIR}/emxProgramCentralDocumentCreatePreProcess.jsp?documentAction=revision&header=emxProgramCentral.Common.RevisionsPageHeading&subHeader=emxProgramCentral.Menu.SubHeaderDocuments'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDocumentRevisions'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCDocumentRevisions on program eServiceSchemaVariableMapping.tcl to command 'PMCDocumentRevisions';

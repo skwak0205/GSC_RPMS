@@ -1,0 +1,19 @@
+del command 'PLCHierarchyCreateProductCommand';
+add command 'PLCHierarchyCreateProductCommand'
+	description	''
+	label	'emxProduct.Action.Product'
+	href	'${SUITE_DIR}/PLCHierarchyProductCreatePreProcess.jsp?mode=CreateProduct'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Single'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallCreateProduct.png'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R420'
+;
+modify menu PLCHierarchyProductMenu add command PLCHierarchyCreateProductCommand order command PLCHierarchyCreateProductCommand 1;
+#channel ==>PLCHierarchyProductMenu
+add property command_PLCHierarchyCreateProductCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCHierarchyCreateProductCommand';

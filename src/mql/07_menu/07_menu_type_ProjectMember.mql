@@ -1,0 +1,15 @@
+del menu 'type_ProjectMember';
+add menu 'type_ProjectMember'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/emxProgramCentralMemberDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallMembers.gif'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_ProjectMember'
+	property 'version'	value	'9-5-0-0'
+;
+add property menu_type_ProjectMember on program eServiceSchemaVariableMapping.tcl to menu 'type_ProjectMember';

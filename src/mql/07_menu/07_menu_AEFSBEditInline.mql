@@ -1,0 +1,18 @@
+del menu 'AEFSBEditInline';
+add menu 'AEFSBEditInline'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'AEFSBSeparator1'
+	menu	'AEFSBCreateNewMenu'
+	menu	'AEFSBAddExistingMenu'
+	command	'AEFSBRemoveRow'
+	command	'AEFSBSeparator2'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFSBEditInline'
+	property 'version'	value	'R213'
+;
+add property menu_AEFSBEditInline on program eServiceSchemaVariableMapping.tcl to menu 'AEFSBEditInline';

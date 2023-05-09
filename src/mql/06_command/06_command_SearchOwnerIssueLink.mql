@@ -1,0 +1,16 @@
+del command 'SearchOwnerIssueLink';
+add command 'SearchOwnerIssueLink'
+	description	'Issue Find Command Object'
+	label	'emxComponents.Command.SearchAssigneeIssueLink'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxCommonIssueBase:getPersons&table=IssueSearchPersonsTable&form=IssueSearchPersonsForm&searchCommand=SearchAssigneeIssueLink&ChangeOwner=true'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'SearchOwnerIssueLink'
+	property	'version'	value	'10-5'
+;
+modify menu SearchIssueAddExistingChooser add command SearchOwnerIssueLink order command SearchOwnerIssueLink 6;
+#channel ==>SearchIssueAddExistingChooser
+add property command_SearchOwnerIssueLink on program eServiceSchemaVariableMapping.tcl to command 'SearchOwnerIssueLink';

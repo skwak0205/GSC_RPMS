@@ -1,0 +1,17 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통 코드 관련 Type 정의
+################################################################################################
+#del type gscCodeMaster;
+add type gscCodeMaster
+    attribute Title
+    attribute gscTitleKO
+    attribute "Sequence Order"
+    property 'installed date'     value  '2023.01.10'
+    property 'application'        value  'Framework'
+    property 'original name'      value  'gscCodeMaster'
+    property 'installer'          value  'GSC'
+    property 'version'            value  'V6R2019'
+;
+add property type_gscCodeMaster on prog eServiceSchemaVariableMapping.tcl to type 'gscCodeMaster';

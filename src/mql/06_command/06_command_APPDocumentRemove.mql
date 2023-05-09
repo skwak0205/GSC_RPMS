@@ -1,0 +1,35 @@
+del command 'APPDocumentRemove';
+add command 'APPDocumentRemove'
+	description	'Remove Selected Document'
+	label	'emxComponents.Command.Remove'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRemove.jsp?action=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromdisconnect] == true)'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentRemove'
+	property	'version'	value	'R422'
+;
+modify menu IssueDocumentSummaryActionsToolBar add command APPDocumentRemove order command APPDocumentRemove 5;
+modify menu APPDocumentSummaryActionsToolBar add command APPDocumentRemove order command APPDocumentRemove 8;
+modify menu TMCDiscussionAttachmentBottomActionBar add command APPDocumentRemove order command APPDocumentRemove 0;
+modify menu TMCMeetingAttachmentBottomActionBar add command APPDocumentRemove order command APPDocumentRemove 0;
+modify menu ECMSupportingDocsToolbar add command APPDocumentRemove order command APPDocumentRemove 6;
+modify menu ECMCRSummarySupportingDocsToolBar add command APPDocumentRemove order command APPDocumentRemove 0;
+modify menu BuildSpecificationSummaryActionsToolbar add command APPDocumentRemove order command APPDocumentRemove 5;
+modify menu ProductSpecificationSummaryActionsToolbar add command APPDocumentRemove order command APPDocumentRemove 5;
+modify menu ProductDocumentSummaryActionsToolBar add command APPDocumentRemove order command APPDocumentRemove 5;
+modify menu FTRPartIssuerDocumentSummaryToolBarActions add command APPDocumentRemove order command APPDocumentRemove 4;
+modify menu FeatureSpecificationSummaryActionsToolbar add command APPDocumentRemove order command APPDocumentRemove 5;
+#channel ==>IssueDocumentSummaryActionsToolBarAPPDocumentSummaryActionsToolBarTMCDiscussionAttachmentBottomActionBarTMCMeetingAttachmentBottomActionBarECMSupportingDocsToolbarECMCRSummarySupportingDocsToolBarBuildSpecificationSummaryActionsToolbarProductSpecificationSummaryActionsToolbarProductDocumentSummaryActionsToolBarFTRPartIssuerDocumentSummaryToolBarActionsFeatureSpecificationSummaryActionsToolbar
+add property command_APPDocumentRemove on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentRemove';

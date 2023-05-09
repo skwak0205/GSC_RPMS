@@ -1,0 +1,7 @@
+del command 'ECHInterOpRemoveApplicability';
+add command 'ECHInterOpRemoveApplicability'
+	description	'Command to handle interoperability to remove the applicability from change object'
+	label	'null'
+	href	'null'
+	alt	'null'
+add property command_ECHInterOpRemoveApplicability on program eServiceSchemaVariableMapping.tcl to command 'ECHInterOpRemoveApplicability';

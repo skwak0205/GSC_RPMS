@@ -1,0 +1,24 @@
+del command 'DepartmentAddExisting';
+add command 'DepartmentAddExisting'
+	description	'Department Add Existing Command Object'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?selection=multiple&submitLabel=emxComponents.Common.Done&cancelLabel=emxComponents.Common.Cancel&cancelButton=true&HelpMarker=emxhelpselectorganization&header=emxComponents.Common.SelectDepartments&suiteKey=Components&table=APPOrganizationSummary&program=emxOrganization:getRootObjectForSelectOrganization&expandProgram=emxDepartment:selectionDepartmentExpandProgram&sortColumnName=Type,Name&isFrom=true&relationshipName=relationship_CompanyDepartment&processURL=emxComponentsAddExistingDepartmentsProcess.jsp&submitURL=../components/emxComponentsSelectOrganizationProcess.jsp&findMxLink=false&massPromoteDemote=false&customize=false&showRMB=false&showClipboard=false&objectCompare=false'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DepartmentAddExisting'
+	property	'version'	value	'R417'
+;
+modify menu PersonDepartmentSummaryTopActionBar add command DepartmentAddExisting order command DepartmentAddExisting 0;
+#channel ==>PersonDepartmentSummaryTopActionBar
+add property command_DepartmentAddExisting on program eServiceSchemaVariableMapping.tcl to command 'DepartmentAddExisting';

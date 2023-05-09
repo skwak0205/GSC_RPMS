@@ -1,0 +1,41 @@
+del form 'PMCProjectBudgetRemovePeriodForm';
+add form 'PMCProjectBudgetRemovePeriodForm' web
+field #1
+	name	'TimeLineInterval'
+	label	'emxProgramCentral.Budget.TimeLineInterval'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getInterval'
+	setting	'program'		'emxProjectBudget'
+	setting	'Field Type'		'programHTMLOutput'
+field #2
+	name	'Delete Period From'
+	label	'emxProgramCentral.Budget.DeletePeriodFrom'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'function'		'getPeriodTo'
+	setting	'program'		'emxProjectBudget'
+	setting	'Field Type'		'programHTMLOutput'
+field #3
+	name	'Interval Periods'
+	label	'emxProgramCentral.Budget.IntervalPeriods'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'function'		'getIntervalPeriodsForDelete'
+	setting	'program'		'emxProjectBudget'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetRemovePeriodForm'
+	property	'version'	value	'R210'
+;
+add property form_PMCProjectBudgetRemovePeriodForm on program eServiceSchemaVariableMapping.tcl to form 'PMCProjectBudgetRemovePeriodForm';

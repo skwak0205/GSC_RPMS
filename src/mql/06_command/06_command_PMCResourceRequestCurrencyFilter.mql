@@ -1,0 +1,23 @@
+del command 'PMCResourceRequestCurrencyFilter';
+add command 'PMCResourceRequestCurrencyFilter'
+	description	''
+	label	'emxProgramCentral.ResourceRequest.CurrencyFilter'
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=LifecycleCurrencyFilter'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getResourceRequestCurrencyFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxResourceRequest'
+	setting	'Access Function'		'showCurrencyFilter'
+	setting	'Access Program'		'emxResourceRequest'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestCurrencyFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCResourceRequestLifecycleFilterMenu add command PMCResourceRequestCurrencyFilter order command PMCResourceRequestCurrencyFilter 2;
+#channel ==>PMCResourceRequestLifecycleFilterMenu
+add property command_PMCResourceRequestCurrencyFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestCurrencyFilter';

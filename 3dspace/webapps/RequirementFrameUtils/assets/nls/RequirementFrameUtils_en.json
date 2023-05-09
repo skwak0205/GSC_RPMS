@@ -1,0 +1,21 @@
+{
+  "activities": "Start Activities",
+  "requirement_definition": "Requirememt",
+  "reqSpec_definition": "Requirememt Specification",
+  "specFolder_definition": "Specification Folder",
+  "my_work": "My work",
+  "recent_items": "Recent Items",
+  "_home" :  "Home",
+
+  "start_activities" : "Start Activities",
+  "createActions" : "Create",
+  "new_SpecFolder" : "Requirement Specification",
+  "new_ReqSpec" : "Specification Folder",
+  "new_Req" : "Requirement",
+  "open_req_spec" : "Open Requirement Objects",
+
+  "quick_access" : "Quick Access",
+  "reqSpec_objects_list": "My Requirement Specifications",
+  "req_objects_list": "My Requirements",
+  "recently_opened" : "Recently Opened"
+}

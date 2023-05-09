@@ -1,0 +1,18 @@
+del command 'APPDOCUMENTSDeletedEvent';
+add command 'APPDOCUMENTSDeletedEvent'
+	description	'DOCUMENTS Deleted Event'
+	label	'emxComponents.DOCUMENTS.Event.Deleted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'3DNotificationSupported'		'false'
+	setting	'Event Type'		'Deleted'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDOCUMENTSDeletedEvent'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPDOCUMENTSEvents add command APPDOCUMENTSDeletedEvent order command APPDOCUMENTSDeletedEvent 5;
+#channel ==>APPDOCUMENTSEvents
+add property command_APPDOCUMENTSDeletedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPDOCUMENTSDeletedEvent';

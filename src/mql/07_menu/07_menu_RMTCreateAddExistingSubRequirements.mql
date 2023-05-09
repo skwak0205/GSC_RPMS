@@ -1,0 +1,17 @@
+del menu 'RMTCreateAddExistingSubRequirements';
+add menu 'RMTCreateAddExistingSubRequirements'
+	description	''
+	label	'emxRequirements.ActionLink.LinkNewSubRequirement'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTCreateAsChildAddExistingSubRequirements'
+	command	'RMTCreateAboveAddExistingSubRequirements'
+	command	'RMTCreateBelowAddExistingSubRequirements'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTCreateAddExistingSubRequirements'
+	property 'version'	value	'V6R2011x'
+;
+add property menu_RMTCreateAddExistingSubRequirements on program eServiceSchemaVariableMapping.tcl to menu 'RMTCreateAddExistingSubRequirements';

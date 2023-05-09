@@ -1,0 +1,16 @@
+del command 'APPXPAdministration';
+add command 'APPXPAdministration'
+	description	''
+	label	'emxPlmOnline.label.XPAdmin'
+	href	'${COMMON_DIR}/emxPLMOnlinePortalForward.jsp'
+	alt	'emxPlmOnline.label.XPAdmin'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Image'		'iconSmallXPAdmin.gif'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+modify menu ENOConfiguration add command APPXPAdministration order command APPXPAdministration 1;
+#channel ==>ENOConfiguration
+add property command_APPXPAdministration on program eServiceSchemaVariableMapping.tcl to command 'APPXPAdministration';

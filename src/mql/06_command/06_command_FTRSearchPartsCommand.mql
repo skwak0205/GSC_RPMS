@@ -1,0 +1,17 @@
+del command 'FTRSearchPartsCommand';
+add command 'FTRSearchPartsCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindParts'
+	href	'${SUITE_DIR}/SearchPartsForm.jsp?program=emxFeatureSearchBase:getParts&table=PLCSearchPartsTable&HelpMarker=emxhelpsearchresults&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRSearchPartsCommand'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRSearchPartsCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRSearchPartsCommand';

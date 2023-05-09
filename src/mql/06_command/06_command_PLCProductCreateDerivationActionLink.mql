@@ -1,0 +1,25 @@
+del command 'PLCProductCreateDerivationActionLink';
+add command 'PLCProductCreateDerivationActionLink'
+	description	''
+	label	'emxProduct.Derivation.Menu.CreateDerivation'
+	href	'${SUITE_DIR}/ProductDerivationCreatePreProcess.jsp?UIContext=product&HelpMarker=emxhelpproductderivationcreatenew'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isProductEvolutionsEnabled'
+	setting	'Access Program'		'emxProduct'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/CreateDerivation16.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductCreateDerivationActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductDerivationsActionsToolbar add command PLCProductCreateDerivationActionLink order command PLCProductCreateDerivationActionLink 1;
+#channel ==>PLCProductDerivationsActionsToolbar
+add property command_PLCProductCreateDerivationActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCProductCreateDerivationActionLink';

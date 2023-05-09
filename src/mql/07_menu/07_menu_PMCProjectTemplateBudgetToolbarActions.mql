@@ -1,0 +1,20 @@
+del menu 'PMCProjectTemplateBudgetToolbarActions';
+add menu 'PMCProjectTemplateBudgetToolbarActions'
+	description	''
+	label	'emxProgramCentral.Budget.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Hide Mode'		'mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCProjectTemplateCreateBudget'
+	command	'PMCProjectTemplateEditBudget'
+	command	'PMCProjectTemplateBudgetAddCostCategoryItem'
+	command	'PMCProjectFinancialsDeleteLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectTemplateBudgetToolbarActions'
+	property 'version'	value	'R422.HF1'
+;
+add property menu_PMCProjectTemplateBudgetToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectTemplateBudgetToolbarActions';

@@ -1,0 +1,18 @@
+del channel 'FTRConfigurationFeatureCopyToFirstStep';
+add channel 'FTRConfigurationFeatureCopyToFirstStep'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Configuration'
+	setting		'Height'		'20'
+	setting		'ChannelID'		'1'
+	command 	'FTRConfigurationFeatureCopyToFirstStep'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationFeatureCopyToFirstStep'
+	property	'version'	value	'R214'
+;
+#portal ==>FTRConfigurationFeatureCopyToPortal
+add property channel_FTRConfigurationFeatureCopyToFirstStep on program eServiceSchemaVariableMapping.tcl to channel 'FTRConfigurationFeatureCopyToFirstStep';

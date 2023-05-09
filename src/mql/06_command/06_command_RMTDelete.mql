@@ -1,0 +1,43 @@
+del command 'RMTDelete';
+add command 'RMTDelete'
+	description	'This will Delete the selected element{s} from the database'
+	label	'emxRequirements.ActionLink.Delete'
+	href	'${SUITE_DIR}/DeleteSelected.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'reserved == "FALSE" || reservedby == context.user'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.Delete'
+	user	'System Transition Manager'
+	user	'System Conversion Manager'
+	user	'Shadow Agent'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Software Engineering Manager'
+	user	'Software Project Manager'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTDelete'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecStructureCommentRMB add command RMTDelete order command RMTDelete 2;
+modify menu RMTDocStructureBrowserActionsMenu add command RMTDelete order command RMTDelete 0;
+modify menu RMTRequirementListBottomActionBar add command RMTDelete order command RMTDelete 0;
+modify menu RMTSpecificationsListBottomActionBar add command RMTDelete order command RMTDelete 0;
+modify menu RMTSpecStructureRequirementRMB add command RMTDelete order command RMTDelete 2;
+modify menu RMTRequirementVersionsActionBar add command RMTDelete order command RMTDelete 0;
+modify menu RMTRequirementVersionsRichTextEditorActionBar add command RMTDelete order command RMTDelete 0;
+modify menu RMTSpecStructureSubRequirementRMB add command RMTDelete order command RMTDelete 2;
+modify menu RMTRequirementListActionMenu add command RMTDelete order command RMTDelete 0;
+#channel ==>RMTSpecStructureCommentRMBRMTDocStructureBrowserActionsMenuRMTRequirementListBottomActionBarRMTSpecificationsListBottomActionBarRMTSpecStructureRequirementRMBRMTRequirementVersionsActionBarRMTRequirementVersionsRichTextEditorActionBarRMTSpecStructureSubRequirementRMBRMTRequirementListActionMenu
+add property command_RMTDelete on program eServiceSchemaVariableMapping.tcl to command 'RMTDelete';

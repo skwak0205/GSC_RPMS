@@ -1,0 +1,23 @@
+del command 'TMCWorkspacesMyDesk';
+add command 'TMCWorkspacesMyDesk'
+	description	'Workspaces Command Object'
+	label	'emxFramework.MenuItem.Workspaces'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxWorkspace:getAllMyDeskWorkspace,emxWorkspace:getActiveMyDeskWorkspace&table=TMCMyDeskWorkspaceSummary&header=emxTeamCentral.Common.Workspace&toolbar=TMCWorkspaceSummaryToolBar&programLabel=emxTeamCentral.Filter.All,emxTeamCentral.Filter.InWork&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelpworkspaces&displayView=details'
+	alt	'emxFramework.MenuItem.Workspaces'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'checkExcangeUserRoleForTEAM'
+	setting	'Access Program'		'DSCTEAMAccessUtil'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspacesMyDesk'
+	property	'version'	value	'R423.HF4'
+;
+modify menu TMCMyDesk add command TMCWorkspacesMyDesk order command TMCWorkspacesMyDesk 2;
+#channel ==>TMCMyDeskTMCMyViewWorkspaceMeetingsChannel
+add property command_TMCWorkspacesMyDesk on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspacesMyDesk';

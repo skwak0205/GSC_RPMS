@@ -1,0 +1,15 @@
+del menu 'FTRLFContextManufacturingFeaturesStructureCompareMenu';
+add menu 'FTRLFContextManufacturingFeaturesStructureCompareMenu'
+	description	''
+	label	'emxConfiguration.Menu.StructureCompare'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRLFContextManufacturingFeatureStructureCompareCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRLFContextManufacturingFeaturesStructureCompareMenu'
+	property 'version'	value	'R212'
+;
+add property menu_FTRLFContextManufacturingFeaturesStructureCompareMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRLFContextManufacturingFeaturesStructureCompareMenu';

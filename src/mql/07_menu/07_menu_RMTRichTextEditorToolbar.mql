@@ -1,0 +1,19 @@
+del menu 'RMTRichTextEditorToolbar';
+add menu 'RMTRichTextEditorToolbar'
+	description	''
+	label	'Toolbar'
+	href	''
+	alt	''
+	menu	'RMTRichTextEditorActions'
+	command	'RMTSetReqSpecStructureView'
+	command	'RMTRichTextEditorExport'
+	command	'AEFLifecycleMassPromote'
+	command	'AEFLifecycleMassDemote'
+	menu	'AEFSBEditActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRichTextEditorToolbar'
+	property 'version'	value	'V6R2014'
+;
+add property menu_RMTRichTextEditorToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRichTextEditorToolbar';

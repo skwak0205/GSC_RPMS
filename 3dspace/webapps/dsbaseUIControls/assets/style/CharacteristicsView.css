@@ -1,0 +1,253 @@
+div.characteristics-view {
+    height: 100%;
+    width: 100%;
+}
+
+
+/********** START DEFAULT **********/
+div.characteristics-view-spinner {
+    width: 100%;
+    text-align: center;
+}
+
+div.characteristics-view-default-message {
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+}
+
+div.characteristics-view-icons-bar {
+    text-align: right;
+    margin-right: 25px;
+    width: 90%;
+    margin: auto;
+}
+
+div.characteristics-view-icons-bar li.big-item {
+    width: 50px !important;
+}
+
+div.characteristics-view .iconbar .iconbar-items-icons .item .fonticon-chevron-down {
+    margin-right: 0;
+    margin-left: -6px;
+    font-size: 14px !important;
+}
+
+div.characteristics-view-icons-bar li.big-item span.fonticon-lang {
+    font-family: inherit !important;
+    font-weight: bold;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 5px;
+}
+
+div.characteristics-view .iconbar .iconbar-items-icons .item .fonticon-lang {
+   font-size: 18px !important;
+}
+
+.characteristics-view-languages-dropdown {
+    min-width: 40px !important;
+}
+
+div.characteristics-view-languages-modal .modal-header {
+    text-align: left;
+}
+
+div.characteristics-view-scroller {
+    height: calc(100% - 40px);
+}
+
+.characteristics-view.characteristics-view-no-scroll  {
+    height: unset !important;
+}
+/********** END DEFAULT **********/
+
+
+/********** START FORM **********/
+form.characteristics-view-form-characteristics {
+    width: 90%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+form.characteristics-view-form-characteristics .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.characteristics-view .form-control:disabled,
+.characteristics-view fieldset:disabled .form-control,
+.characteristics-view textarea:disabled {
+    background-color: #f1f1f1;
+    color: #b4b6ba !important;
+}
+
+
+input.characteristics-view-input.disabled,
+textarea.characteristics-view-input.disabled,
+.input-number.characteristics-view-input input:disabled,
+.select.characteristics-view-input.select-disabled select,
+.select.characteristics-view-input.select-disabled ul,
+.select.characteristics-view-input.select-disabled:before,
+.select.characteristics-view-input.select-disabled:after,
+.toggle.characteristics-view-input.disabled input {
+    cursor: not-allowed !important;
+}
+
+.characteristics-view-input.disabled:not(.toggle),
+.characteristics-editor-view-input.input-number input:disabled {
+    border: 1px solid #e1e2e3;
+    color: #b4b6ba;
+}
+
+div.characteristics-view-input.input-number .btn.number-disabled:before,
+div.characteristics-view-input.input-number .btn:disabled:before {
+    color: #b4b6ba;
+}
+
+div.characteristics-view-input.input-number .btn.number-disabled,
+div.characteristics-view-input.input-number .btn:disabled {
+    border: 1px solid #e1e2e3;
+    background-color: #f1f1f1;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+textarea.characteristics-view-input {
+    resize: vertical;
+}
+
+.input-number.characteristics-view-input button:disabled {
+    pointer-events: unset;
+}
+
+div.characteristics-view-input.toggle .control-label {
+    font-weight: bold;
+}
+
+span.characteristics-view-badge {
+    float: right;
+    margin-top: -6px;
+    margin-bottom: -2px;
+    display: inline-block;
+    position: relative;
+    border: none;
+    background: white !important;
+    color: #77797C !important;
+}
+
+i.characteristics-view-icon:hover {
+    color: black;
+    cursor: pointer;
+}
+
+div.characteristics-view-constraints-list {
+    text-align: left;
+}
+
+div.characteristics-view-popup {
+    z-index: 9999999999;
+}
+
+button.characteristics-view-units-button {
+    border-radius: unset !important;
+}
+
+div.characteristics-view div.unit-conversion-view {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+button.characteristics-view-units-button .fonticon.fonticon-pencil {
+    width: 100%;
+    text-align: center;
+}
+
+div.characteristics-view-input.input-number input:disabled + button.characteristics-view-units-button {
+    border: 1px solid #e1e2e3;
+    background-color: #f1f1f1;
+    color: #b4b6ba;
+    cursor: not-allowed !important;
+    opacity: 1;
+}
+
+.dateTime-date-field {
+    display: inline-block;
+    width: 70%;
+}
+
+.dateTime-time-field {
+    display: inline-block;
+    width: 30%;
+}
+
+
+
+.form-group-nls:hover .input-group-addon {
+    border-right: 1px solid #77797c;
+    border-top: 1px solid #77797c;
+    border-bottom: 1px solid #77797c;
+}
+
+.form-group-nls:hover input.characteristics-view-input-nls:not(.disabled) {
+    border-left: 1px solid #77797c;
+    border-top: 1px solid #77797c;
+    border-bottom: 1px solid #77797c;
+}
+
+.input-group-nls .input-group-addon {
+    background-color: white;
+    border-right: 1px solid #b4b6ba;
+    border-top: 1px solid #b4b6ba;
+    border-bottom: 1px solid #b4b6ba;
+    border-left: none;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+.characteristics-view-input-nls {
+    border-right: none !important;
+}
+
+.characteristics-view-input-nls:focus + .input-group-addon {
+    border-right: 1px solid #368ec4;
+    border-top: 1px solid #368ec4;
+    border-bottom: 1px solid #368ec4;
+}
+
+.characteristics-view-input-nls.disabled + .input-group-addon {
+    background-color: #f1f1f1;
+    color: #b4b6ba !important;
+    border: 1px solid #e1e2e3 !important;
+    border-left: none !important;
+    cursor: not-allowed !important;
+}
+
+.form-group-nls:hover .input-group-addon,
+.form-group-nls:hover .characteristics-view-input-nls,
+.input-group-nls .input-group-addon,
+.characteristics-view-input-nls:focus + .input-group-addon {
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+/********** END FORM **********/
+
+
+/* START IR-794019-3DEXPERIENCER2021x AJY3 Display textarea expand icon under NLS icon */
+div.input-group-nls {
+    width : 100%;
+}
+
+div.input-group-nls span.input-group-addon{
+    padding: 1px;
+    padding-bottom :10px;
+    width : 1px;
+}
+
+div.input-group-nls span.input-group-addon span.fonticon-language{
+    position: absolute;
+    right : 1px;
+    z-index: 10;
+}
+/* END IR-794019-3DEXPERIENCER2021x */

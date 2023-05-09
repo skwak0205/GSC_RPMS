@@ -1,0 +1,19 @@
+del menu 'PMCDeliverablesBookmarkToolBar';
+add menu 'PMCDeliverablesBookmarkToolBar'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Hide Mode'		'mobile'
+	command	'PMCDeliverablesBookmarkCreate'
+	command	'PMCProjectBookmarksDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCDeliverablesBookmarkToolBar'
+	property 'version'	value	'R421'
+;
+add property menu_PMCDeliverablesBookmarkToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCDeliverablesBookmarkToolBar';

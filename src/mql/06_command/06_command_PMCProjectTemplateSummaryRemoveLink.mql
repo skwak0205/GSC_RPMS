@@ -1,0 +1,27 @@
+del command 'PMCProjectTemplateSummaryRemoveLink';
+add command 'PMCProjectTemplateSummaryRemoveLink'
+	description	'Remove Selected link command'
+	label	'emxProgramCentral.Button.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=deleteProjectTemplate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Administrator'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateSummaryRemoveLink'
+	property	'version'	value	'R423.HF5'
+;
+modify menu PMCMyDeskProjectTemplateSummaryToolBarActions add command PMCProjectTemplateSummaryRemoveLink order command PMCProjectTemplateSummaryRemoveLink 3;
+modify menu PMCProjectTemplateVersionsActionsToolBar add command PMCProjectTemplateSummaryRemoveLink order command PMCProjectTemplateSummaryRemoveLink 0;
+#channel ==>PMCMyDeskProjectTemplateSummaryToolBarActionsPMCProjectTemplateVersionsActionsToolBar
+add property command_PMCProjectTemplateSummaryRemoveLink on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateSummaryRemoveLink';

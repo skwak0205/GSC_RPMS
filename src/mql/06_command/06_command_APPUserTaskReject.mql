@@ -1,0 +1,21 @@
+del command 'APPUserTaskReject';
+add command 'APPUserTaskReject'
+	description	'Task Reject Command Object'
+	label	'emxComponents.Button.Reject'
+	href	'${COMPONENT_DIR}/emxUserTasksSummaryLinksProcess.jsp?fromPage=Reject'
+	alt	'emxComponents.Button.Reject'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReject.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPUserTaskReject'
+	property	'version'	value	'R417'
+;
+modify menu APPTaskSummaryActionsToolBar add command APPUserTaskReject order command APPUserTaskReject 2;
+#channel ==>APPTaskSummaryActionsToolBar
+add property command_APPUserTaskReject on program eServiceSchemaVariableMapping.tcl to command 'APPUserTaskReject';

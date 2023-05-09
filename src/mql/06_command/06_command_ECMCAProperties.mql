@@ -1,0 +1,17 @@
+del command 'ECMCAProperties';
+add command 'ECMCAProperties'
+	description	''
+	label	'EnterpriseChangeMgt.Command.ChangeProperties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ChangeAction&type=type_ChangeAction&HelpMarker=emxhelpchangeactionproperties&toolbar=ECMCAPropertiesToolbar&mode=view'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeAction>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCAProperties'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMChangePropertyChannel1
+add property command_ECMCAProperties on program eServiceSchemaVariableMapping.tcl to command 'ECMCAProperties';

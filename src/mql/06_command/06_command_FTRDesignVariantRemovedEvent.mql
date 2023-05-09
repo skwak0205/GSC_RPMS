@@ -1,0 +1,21 @@
+del command 'FTRDesignVariantRemovedEvent';
+add command 'FTRDesignVariantRemovedEvent'
+	description	'Design Variant Removed Event'
+	label	'PublishSubscribe.Event.DesignVariantRemoved'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Design Variant Removed'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'disconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDesignVariantRemovedEvent'
+	property	'version'	value	'R215'
+;
+modify menu FTRFeaturesEvents add command FTRDesignVariantRemovedEvent order command FTRDesignVariantRemovedEvent 5;
+modify menu FTRFeatureSubscriptionEvents add command FTRDesignVariantRemovedEvent order command FTRDesignVariantRemovedEvent 5;
+modify menu FTRLogicalFeatureSubscriptionEvents add command FTRDesignVariantRemovedEvent order command FTRDesignVariantRemovedEvent 5;
+#channel ==>FTRFeaturesEventsFTRFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEvents
+add property command_FTRDesignVariantRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRDesignVariantRemovedEvent';

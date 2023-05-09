@@ -1,0 +1,17 @@
+del menu 'LCClassToolBar';
+add menu 'LCClassToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'LCClassActionsToolBar'
+	command	'LBCSearchWithinAtLibrary'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCClassToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_LCClassToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCClassToolBar';

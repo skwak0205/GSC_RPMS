@@ -1,0 +1,19 @@
+del menu 'Toolbar';
+add menu 'Toolbar'
+	description	''
+	label	''
+	href	''
+	alt	'emxFramework.GlobalToolbar.Tools'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconMedTools.png'
+	command	'MCIReleaseCADTool'
+	menu	'My Tools'
+	menu	'APPAdministration'
+	menu	'AdminTools'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'Toolbar'
+	property 'version'	value	'R211'
+;
+add property menu_Toolbar on program eServiceSchemaVariableMapping.tcl to menu 'Toolbar';

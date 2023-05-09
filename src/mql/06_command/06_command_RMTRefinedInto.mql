@@ -1,0 +1,24 @@
+del command 'RMTRefinedInto';
+add command 'RMTRefinedInto'
+	description	'Allow user to create a refined requirement between two structures'
+	label	'emxRequirements.Label.DerivationRefCmd'
+	href	'javascript:launchDerivationCmd('satisfy')'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${SUITE_DIR}/images/iconReqCmdRefiningDownstream.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRefinedInto'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeToolbar add command RMTRefinedInto order command RMTRefinedInto 7;
+modify menu RMTBufferMenu add command RMTRefinedInto order command RMTRefinedInto 0;
+#channel ==>RMTSpecTreeToolbarRMTBufferMenu
+add property command_RMTRefinedInto on program eServiceSchemaVariableMapping.tcl to command 'RMTRefinedInto';

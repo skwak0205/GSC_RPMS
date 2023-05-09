@@ -1,0 +1,20 @@
+del command 'PMCMyCalendar';
+add command 'PMCMyCalendar'
+	description	''
+	label	'emxProgramCentral.MyCalendar.Label'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCMyCalendar&showPageHeader=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP,ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMyCalendar'
+	property	'version'	value	'R422'
+;
+#channel ==>My Enovia
+add property command_PMCMyCalendar on program eServiceSchemaVariableMapping.tcl to command 'PMCMyCalendar';

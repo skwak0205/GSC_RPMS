@@ -1,0 +1,19 @@
+################################################################################################
+# Created Date : 2020.06.10
+# Create by BongJun,Park
+# Description : 공통코드 Detail list toolbar
+################################################################################################
+#del menu "gscCommonCodeDetailToolbar";
+add menu "gscCommonCodeDetailToolbar"
+    description ""
+    label   "emxComponents.Menu.gscCommonCodeDetailToolbar"
+    alt     "emxComponents.Menu.gscCommonCodeDetailToolbar"
+    menu gscCommonCodeDetailToolbarActions
+    setting "Registered Suite" "Components"
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2020.06.10"
+property "original name"    value "gscCommonCodeDetailToolbar"
+;
+add property menu_gscCommonCodeDetailToolbar on program eServiceSchemaVariableMapping.tcl to menu 'gscCommonCodeDetailToolbar';

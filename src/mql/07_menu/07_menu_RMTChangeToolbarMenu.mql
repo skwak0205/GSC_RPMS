@@ -1,0 +1,18 @@
+del menu 'RMTChangeToolbarMenu';
+add menu 'RMTChangeToolbarMenu'
+	description	''
+	label	'emxRequirements.Menu.ChangeManagement'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Function'		'hideECMCommand'
+	setting	'Access Program'		'emxRMTCommon'
+	menu	'ECMAddToChangeToolbar'
+	menu	'ECMMassChangeToolbar'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTChangeToolbarMenu'
+	property 'version'	value	'V6R2016'
+;
+add property menu_RMTChangeToolbarMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTChangeToolbarMenu';

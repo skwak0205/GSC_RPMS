@@ -1,0 +1,30 @@
+del command 'FTRCreatePartFamily';
+add command 'FTRCreatePartFamily'
+	description	'FTRCreatePartFamily'
+	label	'emxProduct.ActionLink.CreatePartFamily'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_FTRCreatePartFamily&type=type_PartFamily&policy=policy_PartFamily&typeChooser=true&submitAction=refreshCaller&header=emxProduct.DesignTOP.CreatePartFamily&createJPO=emxFTRPart:createPartFamilyJPO&postProcessJPO=emxFTRPart:connectPartFamily&postProcessURL=../configuration/FTRRefreshTreePostProcess.jsp&HelpMarker=emxhelppartfamilycreate'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'(current!="Obsolete")'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isLogicalFeatureConnectedToVariants'
+	setting	'Access Program'		'emxFTRPart'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionCreatePartFamily.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreatePartFamily'
+	property	'version'	value	'R419'
+;
+modify menu FTRGBOMStructureToolbarActions add command FTRCreatePartFamily order command FTRCreatePartFamily 1;
+modify menu FTRContextGBOMStructureToolbarActions add command FTRCreatePartFamily order command FTRCreatePartFamily 1;
+modify menu FTRProductPartListTopActionBar add command FTRCreatePartFamily order command FTRCreatePartFamily 0;
+#channel ==>FTRGBOMStructureToolbarActionsFTRContextGBOMStructureToolbarActionsFTRProductPartListTopActionBar
+add property command_FTRCreatePartFamily on program eServiceSchemaVariableMapping.tcl to command 'FTRCreatePartFamily';

@@ -1,0 +1,22 @@
+del menu 'ECMAddToChangeToolbar';
+add menu 'ECMAddToChangeToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.AddTo'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMAddToExistingChange'
+	command	'ECMAddToNewChange'
+	command	'AEFSeparator'
+	command	'ECMAddToExistingChangeRequest'
+	command	'ECMAddToNewChangeRequest'
+	command	'AEFSeparator2'
+	command	'ECMAddToExistingChangeAction'
+	command	'ECMAddToNewChangeAction'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMAddToChangeToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMAddToChangeToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMAddToChangeToolbar';

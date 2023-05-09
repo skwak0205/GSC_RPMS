@@ -1,0 +1,23 @@
+del command 'LBCCreateDocumentFamilyActions';
+add command 'LBCCreateDocumentFamilyActions'
+	description	'Create New Document Family'
+	label	'emxDocumentCentral.Command.CreateDocumentFamily'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_DocumentFamily,type_Classification&ExclusionList=type_ManufacturingPartFamily&typeChooser=true&nameField=autoName&form=type_CreateClass&createJPO=emxLibraryCentralCommon:createLBCObject&submitAction=treeContent&header=emxDocumentCentral.Command.CreateDocumentFamily&HelpMarker=emxhelpcreatecontainerobject&findMxLink=false'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCreateDocumentFamilyActions'
+	property	'version'	value	'R423.HF4'
+;
+modify menu LBCCreateClassActionsMenu add command LBCCreateDocumentFamilyActions order command LBCCreateDocumentFamilyActions 0;
+#channel ==>LBCCreateClassActionsMenu
+add property command_LBCCreateDocumentFamilyActions on program eServiceSchemaVariableMapping.tcl to command 'LBCCreateDocumentFamilyActions';

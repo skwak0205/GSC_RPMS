@@ -1,0 +1,17 @@
+del command 'PLCAssociatedParametersTreeCategory';
+add command 'PLCAssociatedParametersTreeCategory'
+	description	'Display parameters to a certain object'
+	label	'emxParameter.common.Parameters'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?objectID=${ID}&program=emxTestCase:getAssociatedParameters&table=PLCAssociatedParameters&editLink=true&relationship=relationship_ParameterAggregation&header=emxParameter.Associate.Header&direction=from&toolbar=PLCAssociatedParametersToolbar&selection=multiple&sortColumnName=ParameterType&postProcessJPO=emxParameterEdit:updateTableValues'
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAssociatedParametersTreeCategory'
+	property	'version'	value	'R417'
+;
+modify menu type_TestCase add command PLCAssociatedParametersTreeCategory order command PLCAssociatedParametersTreeCategory 10;
+modify menu type_TestExecution add command PLCAssociatedParametersTreeCategory order command PLCAssociatedParametersTreeCategory 6;
+#channel ==>type_TestCasetype_TestExecution
+add property command_PLCAssociatedParametersTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCAssociatedParametersTreeCategory';

@@ -1,0 +1,14 @@
+del portal 'RMTCommentProperties';
+add portal 'RMTCommentProperties'
+	description	''
+	label	''
+	href	''
+	channel 	RMTCommentProperties
+	setting	'Registered Suite'		'Requirements'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCommentProperties'
+	property	'version'	value	'R419'
+;
+add property portal_RMTCommentProperties on program eServiceSchemaVariableMapping.tcl to portal 'RMTCommentProperties';

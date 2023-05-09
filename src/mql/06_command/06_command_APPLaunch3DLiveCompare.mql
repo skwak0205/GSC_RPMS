@@ -1,0 +1,21 @@
+del command 'APPLaunch3DLiveCompare';
+add command 'APPLaunch3DLiveCompare'
+	description	''
+	label	'emxComponents.ImageManager.3DLiveExamine'
+	href	'${COMPONENT_DIR}/emxLaunchIntermediateCompare3DLiveExamine.jsp'
+	alt	'emxComponents.ImageManager.3DLiveExamine'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showCrossHighlight'
+	setting	'Access Program'		'jpo.plmprovider.NavRep'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionShowHide3D.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLaunch3DLiveCompare'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_APPLaunch3DLiveCompare on program eServiceSchemaVariableMapping.tcl to command 'APPLaunch3DLiveCompare';

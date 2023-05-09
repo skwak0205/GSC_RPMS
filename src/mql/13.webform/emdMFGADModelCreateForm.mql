@@ -1,0 +1,95 @@
+################################################################################################
+# Created Date : 2020.06.18
+# Create by Nackwon.Do
+# Description : AD Model 생성  form
+################################################################################################
+        
+del form 'emdMFGADModelCreateForm';
+
+add form 'emdMFGADModelCreateForm' web
+    field# Basic Info
+        name  'header1'
+        label 'emxEngineeringCentral.SectionHeader.BasicInfo'
+        setting 'Field Type'         'Section Header'
+        setting 'Registered Suite' 'EngineeringCentral'
+    field # 승인도 공사 번호
+        name  'ADModelNo'
+        label 'emxEngineeringCentral.Label.ADModelNo'
+        businessobject '$<name>'
+        setting 'Required'             'false'
+        setting 'Registered Suite'  'EngineeringCentral'
+        setting 'Input Type'        'textbox'
+        setting "Field Type"         "basic"
+    field # Engine Group -> AD EngineGroup
+        name  'emdEngineGroup'
+        label 'emxEngineeringCentral.Command.emdADEngineGroup'
+        #range   '../common/emdAPPIndentedTable.jsp?showClipboard=false&FilterFramePage=../configuration/emdFTREnginGroupSearchFilter.jsp&program=emxModel:searchEngineGroupOfIndentedFilter&table=PLCMyDeskProductList&header=emxConfiguration.Header.SearchEngineGroup&hideHeader=true&selection=single&pageSize=30&suiteKey=Configuration&cancelLabel=emxProduct.ActionLink.Close&submitURL=../common/AEFSearchUtil.jsp'
+        range   '../common/emdAPPIndentedTable.jsp?showClipboard=false&FilterFramePage=../emdManufacturing/emdMFGADGMasterSearchFilter.jsp&program=emdMFGADEngineGroup:searchADEngineGroup&table=emdMFGADGMasterListTable&header=emdManufacturing.Label.StandardApprovalDrawing&hideHeader=true&selection=single&pageSize=30&suiteKey=emdManufacturing&cancelLabel=emdManufacturing.Label.Close&submitURL=../common/AEFSearchUtil.jsp'
+        setting 'Required'            'true'
+        setting 'Registered Suite'  'EngineeringCentral'
+        setting 'Input Type'        'textbox'
+    field # 공사
+        name  'emdProjectNo'
+        label 'emxEngineeringCentral.Common.Project'
+        businessobject '$<attribute[attribute_emdProjectNo]>'
+        #range   '../common/emxIndentedTable.jsp?type=emdADModel&program=emdProject:getManagementProjectList&table=emdMFGManagementProjectListTable&selection=single&header=emdManufacturing.Label.Project&suiteKey=emdManufacturing&submitURL=../engineeringcentral/emdMFGADPostProcess.jsp&cancelLabel=emdManufacturing.Label.Close&FieldModelNo=Name&FieldADModel=Name&FieldModelName=ADModelName&FieldActualName=ADModelNo&FieldSelectedType=emdProjectType&FieldClassification=emdClassification'
+        range "${COMMON_DIR}/emdAPPIndentedTable.jsp??type=emdADModel&showClipboard=false&program=emdMFGApprovalDrawing:searchProject&table=emdMFGManagementProjectListTable&pageSize=30&selection=single&header=emdManufacturing.Label.Project&suiteKey=emdManufacturing&cancelLabel=emdManufacturing.Label.Close&FilterFramePage=../emdManufacturing/emdMFGADProjectSearchFilter.jsp&FilterFrameSize=1&submitURL=../engineeringcentral/emdMFGADPostProcess.jsp&FieldModelNo=Name&FieldADModel=Name&FieldModelName=ADModelName&FieldActualName=ADModelNo&FieldEngineGroup=emdEngineGroup&FieldSelectedType=emdProjectType&FieldClassification=emdClassification&FieldHullNo=emdHullNo"
+        setting 'Required'            'true'
+        setting 'Registered Suite'  'EngineeringCentral'
+        setting 'Input Type'        'textbox'
+    field # 공사명
+        name  'ADModelName'
+        label 'emxEngineeringCentral.Label.ADModelName'
+        businessobject '$<attribute[attribute_Title]>'
+        setting 'Required'            'false'
+        setting 'Registered Suite'  'EngineeringCentral'
+        setting 'Input Type'        'textbox'
+    field # 공사 타입
+        name  'emdProjectType'
+        label 'emxEngineeringCentral.Label.ADProjectType'
+        businessobject '$<attribute[attribute_emdProjectType]>'
+        setting 'Required'            'false'
+        setting 'Registered Suite'  'EngineeringCentral'
+        setting 'Input Type'        'combobox'
+        setting 'Admin Type'        'attribute_emdProjectType'
+        setting 'Field Type'        'attribute'
+    field # Hull No.
+        name  'emdHullNo'
+        label 'emdManufacturing.Label.emdHullNo'
+        businessobject '$<attribute[attribute_emdHullNo]>'
+        setting 'Required'            'false'
+        setting 'Registered Suite'  'emdManufacturing'
+        setting 'Input Type'        'textbox'
+        setting 'Admin Type'        'attribute_emdHullNo'
+        setting 'Field Type'        'attribute'
+    field # 선급1 ,2 ,3
+        name  'emdClassification'
+        label 'emxEngineeringCentral.Label.ADModelClassification'
+        businessobject '$<attribute[attribute_emdClassification]>'
+        setting 'Required'            'false'
+        setting 'Registered Suite'  'EngineeringCentral'
+        setting 'Input Type'        'textbox'
+        setting 'Admin Type'        'attribute_emdClassification'
+        setting 'Field Type'        'attribute'
+    field # Description
+        name  'description'
+        label 'emxEngineeringCentral.Common.Description'
+        businessobject 'description'
+        setting 'Required'            'false'
+        setting 'Registered Suite'  'EngineeringCentral'
+        setting 'Input Type'        'textarea'
+        setting 'Editable'          'true'
+    field # CreateInDefaultValue
+        name  'CreateInDefaultValue'
+        setting 'Field Type'            'programHTMLOutput'
+        setting 'Registered Suite'  'EngineeringCentral'
+        setting 'function'        'setCreateInDefaultValue'
+        setting 'program'          'emdMFGADModel'
+property "installer"         value "HHI"
+property "application"         value "Framework"
+property "installed date"     value "2020-06-25"
+property "original name"     value "emdMFGADModelCreateForm"
+property "version"             value "V6R2019"
+;
+
+add property form_emdMFGADModelCreateForm on program eServiceSchemaVariableMapping.tcl to form 'emdMFGADModelCreateForm';

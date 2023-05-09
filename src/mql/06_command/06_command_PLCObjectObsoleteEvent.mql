@@ -1,0 +1,23 @@
+del command 'PLCObjectObsoleteEvent';
+add command 'PLCObjectObsoleteEvent'
+	description	'Object Obsolete Event'
+	label	'PublishSubscribe.Event.Obsolete'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Obsolete'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCObjectObsoleteEvent'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductsEvents add command PLCObjectObsoleteEvent order command PLCObjectObsoleteEvent 20;
+modify menu FTRFeaturesEvents add command PLCObjectObsoleteEvent order command PLCObjectObsoleteEvent 2;
+modify menu FTRFeatureSubscriptionEvents add command PLCObjectObsoleteEvent order command PLCObjectObsoleteEvent 2;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command PLCObjectObsoleteEvent order command PLCObjectObsoleteEvent 2;
+modify menu FTRLogicalFeatureSubscriptionEvents add command PLCObjectObsoleteEvent order command PLCObjectObsoleteEvent 2;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command PLCObjectObsoleteEvent order command PLCObjectObsoleteEvent 2;
+#channel ==>PLCProductsEventsFTRFeaturesEventsFTRFeatureSubscriptionEventsFTRConfigurationFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_PLCObjectObsoleteEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCObjectObsoleteEvent';

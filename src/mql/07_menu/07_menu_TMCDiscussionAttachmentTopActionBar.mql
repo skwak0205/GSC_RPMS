@@ -1,0 +1,17 @@
+del menu 'TMCDiscussionAttachmentTopActionBar';
+add menu 'TMCDiscussionAttachmentTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	command	'TMCDiscussionAddWorkspaceContent'
+	command	'TMCDiscussionAttachmentsUploadActionLink'
+	menu	'TMCDiscussionAttachmentCreateNew'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCDiscussionAttachmentTopActionBar'
+	property 'version'	value	'10-7'
+;
+add property menu_TMCDiscussionAttachmentTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'TMCDiscussionAttachmentTopActionBar';

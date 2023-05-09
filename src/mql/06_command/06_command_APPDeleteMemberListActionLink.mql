@@ -1,0 +1,27 @@
+del command 'APPDeleteMemberListActionLink';
+add command 'APPDeleteMemberListActionLink'
+	description	'SpecCentral Command Object'
+	label	'emxComponents.Command.DeleteSelected'
+	href	'../components/emxMemberListUtil.jsp?action=deleteDL'
+	alt	'emxComponents.Command.DeleteSelected'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.Delete.ConfirmMsg'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteMemberListActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPMemberListBottomActionBar add command APPDeleteMemberListActionLink order command APPDeleteMemberListActionLink 1;
+modify menu APPMemberListsMyDeskActionsToolBar add command APPDeleteMemberListActionLink order command APPDeleteMemberListActionLink 3;
+#channel ==>APPMemberListBottomActionBarAPPMemberListsMyDeskActionsToolBar
+add property command_APPDeleteMemberListActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteMemberListActionLink';

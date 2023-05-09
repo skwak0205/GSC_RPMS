@@ -1,0 +1,9 @@
+del menu 'type_PnOProject';
+add menu 'type_PnOProject'
+	description	''
+	label	'emxPlmOnline.label.ProjectResults'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminQueryProject.jsp'
+	alt	'Project Results'
+	setting	'Registered Suite'		'VPLMAdministration'
+;
+add property menu_type_PnOProject on program eServiceSchemaVariableMapping.tcl to menu 'type_PnOProject';

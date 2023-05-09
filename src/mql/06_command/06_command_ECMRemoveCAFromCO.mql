@@ -1,0 +1,22 @@
+del command 'ECMRemoveCAFromCO';
+add command 'ECMRemoveCAFromCO'
+	description	'Disconnect Change Action and Change Order'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMDisconnectProcess.jsp?functionality=disconnectChangeAction'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAllowedToRemoveChangeAction'
+	setting	'Access Program'		'enoECMChangeUX'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Alert.Remove'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMRemoveCAFromCO'
+	property	'version'	value	'R422'
+;
+modify menu ECMCOAffectedChangeActionListToolbar add command ECMRemoveCAFromCO order command ECMRemoveCAFromCO 4;
+#channel ==>ECMCOAffectedChangeActionListToolbar
+add property command_ECMRemoveCAFromCO on program eServiceSchemaVariableMapping.tcl to command 'ECMRemoveCAFromCO';

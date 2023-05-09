@@ -1,0 +1,28 @@
+del command 'TMCDiscussion';
+add command 'TMCDiscussion'
+	description	'Discussion Command Object'
+	label	'emxFramework.Command.Discussion'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxTeamDiscussion:getDiscussions&table=TMCDiscussionSummary&selection=multiple&toolbar=TMCDiscussionSummaryToolBar&header=emxTeamCentral.Common.Discussion&HelpMarker=emxhelpdiscussions'
+	alt	'emxFramework.Command.Alt.Discussion'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Function'		'displayTreeNodeAccessCheck'
+	setting	'Access Program'		'emxWorkspace'
+	setting	'Image'		'iconSmallDiscussion.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDiscussion'
+	property	'version'	value	'R422'
+;
+modify menu TMCtype_RequestToSupplier add command TMCDiscussion order command TMCDiscussion 1;
+modify menu TMCtype_RTSQuotation add command TMCDiscussion order command TMCDiscussion 1;
+modify menu TMCtype_Package add command TMCDiscussion order command TMCDiscussion 1;
+modify menu type_Folder add command TMCDiscussion order command TMCDiscussion 3;
+#channel ==>TMCtype_RequestToSupplierTMCtype_RTSQuotationTMCtype_Packagetype_Folder
+add property command_TMCDiscussion on program eServiceSchemaVariableMapping.tcl to command 'TMCDiscussion';

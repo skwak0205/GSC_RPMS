@@ -1,0 +1,21 @@
+del command 'PMCProjectBaselineCompareDifferenceOnly';
+add command 'PMCProjectBaselineCompareDifferenceOnly'
+	description	'Command to display difference only view'
+	label	'emxProgramCentral.Experiment.CompareDifferenceOnly'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=compareProjectBaselines&subMode=DifferenceOnly'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showCompareDiffOnlyCommand'
+	setting	'Access Program'		'emxWhatIfBase'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBaselineCompareDifferenceOnly'
+	property	'version'	value	'R419'
+;
+modify menu PMCProjectBaselineCompareToolbar add command PMCProjectBaselineCompareDifferenceOnly order command PMCProjectBaselineCompareDifferenceOnly 5;
+#channel ==>PMCProjectBaselineCompareToolbar
+add property command_PMCProjectBaselineCompareDifferenceOnly on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBaselineCompareDifferenceOnly';

@@ -1,0 +1,17 @@
+del command 'DCLibraryAccessTreeCategory';
+add command 'DCLibraryAccessTreeCategory'
+	description	'Access Tree Category'
+	label	'emxDocumentCentral.TreeCategory.Access'
+	href	'${SUITE_DIR}/emxDocumentCentralAccessSummaryFS.jsp'
+	alt	'emxDocumentCentral.TreeCategory.Access'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallAccess.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCLibraryAccessTreeCategory'
+	property	'version'	value	'9-5-2-0'
+;
+#channel ==>
+add property command_DCLibraryAccessTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'DCLibraryAccessTreeCategory';

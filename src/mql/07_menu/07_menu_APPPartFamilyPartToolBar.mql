@@ -1,0 +1,19 @@
+del menu 'APPPartFamilyPartToolBar';
+add menu 'APPPartFamilyPartToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPPartFamilyPartActionsToolBar'
+	command	'IssueCreateActionLink'
+	command	'APPLaunch3DPlayTableSelect'
+	command	'LCLibraryEndItemsSearchIn'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPPartFamilyPartToolBar'
+	property 'version'	value	'10-6-0-1'
+;
+add property menu_APPPartFamilyPartToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPPartFamilyPartToolBar';

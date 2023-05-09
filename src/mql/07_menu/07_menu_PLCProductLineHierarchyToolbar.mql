@@ -1,0 +1,21 @@
+del menu 'PLCProductLineHierarchyToolbar';
+add menu 'PLCProductLineHierarchyToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	menu	'PLCProductLineHierarchySubProductLineActions'
+	menu	'PLCProductLineHierarchyModelsActions'
+	menu	'PLCProductLineHierarchyProductsActions'
+	menu	'PLCProductLineHierarchyToolbarActions'
+	command	'AEFSeparator'
+	command	'PLCHierarchyAddToPortfolioCommand'
+	command	'PLCProductHierarchyRemoveCommand'
+	command	'PLCProductHierarchyDeleteCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCProductLineHierarchyToolbar'
+	property 'version'	value	'R418'
+;
+add property menu_PLCProductLineHierarchyToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductLineHierarchyToolbar';

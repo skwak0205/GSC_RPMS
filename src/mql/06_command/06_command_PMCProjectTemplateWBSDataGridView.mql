@@ -1,0 +1,20 @@
+del command 'PMCProjectTemplateWBSDataGridView';
+add command 'PMCProjectTemplateWBSDataGridView'
+	description	'ProjectTemplateWBS Command Object'
+	label	'emxProgramCentral.WBS.DataGridView'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCProjectTemplateWBS&subMode=PMCProjectTemplateWBSDataGridView&lazyLoad=2000&fastColumns=Task Name'
+	alt	'emxFramework.Command.Alt.ProjectTemplatesWBS'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Function'		'isDataGridEnabled'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'iconTaskSmall.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateWBSDataGridView'
+	property	'version'	value	'R422.HF7'
+;
+#channel ==>PMCProjectTemplateWBSChannel
+add property command_PMCProjectTemplateWBSDataGridView on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateWBSDataGridView';

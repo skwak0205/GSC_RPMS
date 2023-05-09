@@ -1,0 +1,28 @@
+del table 'TMCPushSubscriptionAddRecipients' system;
+add table 'TMCPushSubscriptionAddRecipients' system
+column #1
+	name	'Checkbox'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Column Type'		'checkbox'
+column #2
+	name	'Recipients'
+	businessobject	'name'
+	label	'emxTeamCentral.DiscussionSummary.Recipients'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'TeamCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCPushSubscriptionAddRecipients'
+	property	'version'	value	'R210'
+;
+add property table_TMCPushSubscriptionAddRecipients on program eServiceSchemaVariableMapping.tcl to table 'TMCPushSubscriptionAddRecipients' system;

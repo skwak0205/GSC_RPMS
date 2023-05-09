@@ -1,0 +1,15 @@
+del portal 'FTRModelLogicalViewPortal';
+add portal 'FTRModelLogicalViewPortal'
+	description	''
+	label	''
+	href	''
+	channel 	FTRModelLogicalViewChannel
+	setting	'Registered Suite'		'Configuration'
+	setting	'Hide Mode'		'Cloud'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelLogicalViewPortal'
+	property	'version'	value	'R212'
+;
+add property portal_FTRModelLogicalViewPortal on program eServiceSchemaVariableMapping.tcl to portal 'FTRModelLogicalViewPortal';

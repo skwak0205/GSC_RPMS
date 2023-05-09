@@ -1,0 +1,11 @@
+{
+  "CVS.optionsChecker.searchEngine.notExisting.error": "Для поиска значений необходимо определить систему поиска.",
+  "CVS.optionsChecker.searchEngine.notFunction.error": "Для системы поиска ожидается функция.",
+  "CVS.optionsChecker.defaultValues.array.error": "Значения по умолчанию должны содержаться в массиве.",
+  "CVS.optionsChecker.defaultValues.arrayObjects.error": "Массив объектов должен быть задан по умолчанию для ввода.",
+  "CVS.optionsChecker.defaultValues.labelExpected.error": "Ожидается метка для каждого значения по умолчанию.",
+  "CVS.optionsChecker.defaultValues.valueExpected.error": "Ожидается значение для каждого значения по умолчанию.",
+  "CVS.optionsChecker.onSuggest.notFunction.error": "Для параметра \"onSuggest\" ожидается функция.",
+  "CVS.optionsChecker.onSelect.notFunction.error": "Для параметра \"onSelect\" ожидается функция.",
+  "CVS.optionsChecker.onCleanDataset.notFunction.error": "Для параметра \"onCleanDataset\" ожидается функция."
+}

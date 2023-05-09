@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6w"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.3ds.com/enovia/e6w services.xsd ">
+
+  <ds:list name="CollaborativeFolders">
+    <ds:license products="ENO_TEA_TP"/>
+
+    <ds:data editLink="true" ignoreLevel="false">
+      <ds:jpo classname="com.dassault_systemes.enovia.foldermanagement.WorkspaceFolderService" function="getCollaborativeFolders" localInvokation="false" returnedData="idsAndData"/>
+    </ds:data>
+    <ds:updatejpo classname="com.dassault_systemes.enovia.foldermanagement.WorkspaceFolderService" function="updateFolders" localInvokation="false" />
+
+    <ds:field name="validationPath">
+    	<ds:selectable format="transient"/>
+    	<ds:range><ds:item value="../../FolderManagement/emxFolderWidgetValidation.js" display="../../FolderManagement/emxFolderWidgetValidation.js"/></ds:range>        
+    </ds:field>
+
+    <ds:group name="info">
+      <ds:field name="title">
+        <ds:selectable expression="name" type="bus"/>
+        <ds:sort order="1" />
+      </ds:field>
+      <ds:field name="type">
+        <ds:selectable expression="type" type="bus" format="type"/>
+      </ds:field>
+      <ds:field name="workspaceContentTypes">
+        <ds:range><ds:rangejpo classname="com.dassault_systemes.enovia.foldermanagement.WorkspaceFolderService" function="getWorkspaceContentTypes" localInvokation="false"/></ds:range>        
+      </ds:field>
+      <ds:field name="folderContentTypes">
+        <ds:range><ds:rangejpo classname="com.dassault_systemes.enovia.foldermanagement.WorkspaceFolderService" function="getFolderContentTypes" localInvokation="false"/></ds:range>        
+      </ds:field>
+      <ds:field name="typeIcon"><ds:image source="businessType" size="icon"/></ds:field>
+      <ds:field name="modifyAccess" hidden="true"><ds:selectable expression="current.access[changename]" type="bus" format="noxssencoding"/></ds:field>
+      <ds:field name="deleteAccess" hidden="true"><ds:selectable expression="current.access[delete]" type="bus" format="noxssencoding"/></ds:field>
+      <ds:field name="fromconnectAccess" hidden="true"><ds:selectable expression="current.access[fromconnect]" type="bus" format="noxssencoding"/></ds:field>
+      
+      <!-- used to copy an existing folder to a new parent -->
+      <ds:field name="copyFromId" hidden="true"/>
+      <!-- used to move an existing folder to a new parent -->
+      <ds:field name="moveFromId" hidden="true"/>
+      <!-- used to add unknown content to an existing folder -->
+      <ds:field name="unknownContentId" hidden="true"/>
+
+      <ds:field name="hasSubItems"><ds:selectable expression="from[Data Vaults]" type="bus" format="noxssencoding"/>
+        <ds:fieldjpo classname="com.dassault_systemes.enovia.foldermanagement.WorkspaceFolderService" function="checkHasSubFolders" localInvokation="true" />
+      </ds:field>
+      <ds:field name="hasSubFolders"><ds:selectable expression="from[Sub Vaults]" type="bus" format="transient"/></ds:field>
+    </ds:group>
+  </ds:list>
+
+</ds:services>
+

@@ -1,0 +1,15 @@
+{
+  "SelectAFile": "Seleccionar un archivo…",
+  "BrowseButtonText": "Examinar",
+  "UploadButtonText": "Cargar",
+  "ResetButtonText": "Restablecer todas las secuencias extendidas",
+  "DownloadButtonText": "Descargar",
+  "DownloadFailedAlert": "Error al descargar",
+  "NoFileToUpload": "No hay nada que cargar, seleccione un archivo primero",
+  "UploadSuccessAlert": "Archivo cargado correctamente",
+  "UploadFailedAlert": "Error al cargar el archivo",
+  "ResetSuccessAlert": "Restablecimiento realizado correctamente",
+  "ResetFailedAlert": "No se ha podido restablecer",
+  "VersionNamingExtHeader": "Cargar/descargar definiciones de secuencias de revisión ampliada",
+  "VersionNamingExtTooltip": ""
+}

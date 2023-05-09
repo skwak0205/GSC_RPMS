@@ -1,0 +1,25 @@
+del command 'PMCProjectCancel';
+add command 'PMCProjectCancel'
+	description	'Command to Cancel Project from Gate Portal Page'
+	label	'emxProgramCentral.Common.Gate.Cancel'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=TerminateGate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(to[$<relationship_ProjectAccessKey>].from.from[$<relationship_ProjectAccessList>].to.type.kindOf[$<type_ProjectSpace>]==true)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isCancelEnabled'
+	setting	'Access Program'		'emxProjectHoldAndCancel'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCancel.png'
+	setting	'Confirm Message'		'emxProgramCentral.ProjectHoldCancel.TerminateGate'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectCancel'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProjectGateToolBarActions add command PMCProjectCancel order command PMCProjectCancel 0;
+modify menu PMCChecklistTopActionToolbar add command PMCProjectCancel order command PMCProjectCancel 0;
+#channel ==>PMCProjectGateToolBarActionsPMCChecklistTopActionToolbar
+add property command_PMCProjectCancel on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectCancel';

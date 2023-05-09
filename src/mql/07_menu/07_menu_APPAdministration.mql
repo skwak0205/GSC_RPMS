@@ -1,0 +1,20 @@
+del menu 'APPAdministration';
+add menu 'APPAdministration'
+	description	''
+	label	'emxFramework.MenuItem.Administration'
+	href	''
+	alt	'emxFramework.MenuItem.Administration'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallChangeBoard.gif'
+	command	'APPInactiveCompanies'
+	command	'APPInactivePeople'
+	command	'APPCollaborationRequests'
+	command	'APPPotentialSuppliers'
+	command	'APPProductLicensing'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPAdministration'
+	property 'version'	value	'R420.HF2'
+;
+add property menu_APPAdministration on program eServiceSchemaVariableMapping.tcl to menu 'APPAdministration';

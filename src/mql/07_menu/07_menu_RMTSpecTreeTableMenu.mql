@@ -1,0 +1,15 @@
+del menu 'RMTSpecTreeTableMenu';
+add menu 'RMTSpecTreeTableMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTSpecTreeStatusTable'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecTreeTableMenu'
+	property 'version'	value	'V6R2014'
+;
+add property menu_RMTSpecTreeTableMenu on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecTreeTableMenu';

@@ -1,0 +1,16 @@
+del menu 'FTRConfigurationFeatureCustomFilterToolbarForRuleDialog';
+add menu 'FTRConfigurationFeatureCustomFilterToolbarForRuleDialog'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRConfigurationFeatureNameFilterForRuleDialog'
+	command	'FTRConfigurationFeatureFilterButtonForRuleDialog'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRConfigurationFeatureCustomFilterToolbarForRuleDialog'
+	property 'version'	value	'R216'
+;
+add property menu_FTRConfigurationFeatureCustomFilterToolbarForRuleDialog on program eServiceSchemaVariableMapping.tcl to menu 'FTRConfigurationFeatureCustomFilterToolbarForRuleDialog';

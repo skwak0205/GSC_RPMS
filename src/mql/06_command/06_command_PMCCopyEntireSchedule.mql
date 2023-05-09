@@ -1,0 +1,22 @@
+del command 'PMCCopyEntireSchedule';
+add command 'PMCCopyEntireSchedule'
+	description	''
+	label	'emxProgramCentral.CopySchedule.Clone'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=PMCCopyEntireSchedule'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCopyEntireSchedule'
+	property	'version'	value	'R420.HF1'
+;
+modify menu PMCCopySchedule add command PMCCopyEntireSchedule order command PMCCopyEntireSchedule 1;
+#channel ==>PMCCopySchedule
+add property command_PMCCopyEntireSchedule on program eServiceSchemaVariableMapping.tcl to command 'PMCCopyEntireSchedule';

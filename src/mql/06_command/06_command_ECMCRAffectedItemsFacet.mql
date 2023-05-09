@@ -1,0 +1,19 @@
+del command 'ECMCRAffectedItemsFacet';
+add command 'ECMCRAffectedItemsFacet'
+	description	'Affected Items facet for CR'
+	label	'EnterpriseChangeMgt.Command.AffectedItems'
+	href	'${SUITE_DIR}/ECMCRAffectedItems.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeRequest>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRAffectedItemsFacet'
+	property	'version'	value	'R424'
+;
+modify menu type_ChangeRequest add command ECMCRAffectedItemsFacet order command ECMCRAffectedItemsFacet 2;
+#channel ==>type_ChangeRequest
+add property command_ECMCRAffectedItemsFacet on program eServiceSchemaVariableMapping.tcl to command 'ECMCRAffectedItemsFacet';

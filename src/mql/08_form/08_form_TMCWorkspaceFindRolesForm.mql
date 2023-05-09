@@ -1,0 +1,39 @@
+del form 'TMCWorkspaceFindRolesForm';
+add form 'TMCWorkspaceFindRolesForm' web
+field #1
+	name	'Type'
+	label	'emxTeamCentral.CreatePerson.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'function'		'getWorkspaceRolesType'
+	setting	'Editable'		'false'
+	setting	'program'		'emxWorkspace'
+	setting	'Field Type'		'programHTMLOutput'
+field #2
+	name	'Name'
+	label	'emxTeamCentral.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Default'		'*'
+field #3
+	name	'Level'
+	label	'emxTeamCentral.CreatePerson.Level'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'function'		'getRoleLevelsHTMLOutput'
+	setting	'program'		'emxWorkspace'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceFindRolesForm'
+	property	'version'	value	'R210'
+;
+add property form_TMCWorkspaceFindRolesForm on program eServiceSchemaVariableMapping.tcl to form 'TMCWorkspaceFindRolesForm';

@@ -1,0 +1,21 @@
+del command 'FTRPartInclusionRuleUpdatedEvent';
+add command 'FTRPartInclusionRuleUpdatedEvent'
+	description	'Part Inclusion Rule Updated Event'
+	label	'PublishSubscribe.Event.PartInclusionRuleUpdated'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Part Inclusion Rule Updated'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'modify'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRPartInclusionRuleUpdatedEvent'
+	property	'version'	value	'R215'
+;
+modify menu PLCProductsEvents add command FTRPartInclusionRuleUpdatedEvent order command FTRPartInclusionRuleUpdatedEvent 5;
+modify menu FTRLogicalFeatureSubscriptionEvents add command FTRPartInclusionRuleUpdatedEvent order command FTRPartInclusionRuleUpdatedEvent 14;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command FTRPartInclusionRuleUpdatedEvent order command FTRPartInclusionRuleUpdatedEvent 12;
+#channel ==>PLCProductsEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_FTRPartInclusionRuleUpdatedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRPartInclusionRuleUpdatedEvent';

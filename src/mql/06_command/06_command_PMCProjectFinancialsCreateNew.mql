@@ -1,0 +1,26 @@
+del command 'PMCProjectFinancialsCreateNew';
+add command 'PMCProjectFinancialsCreateNew'
+	description	'Command for Creating New RPN'
+	label	'emxProgramCentral.Button.CreateNew'
+	href	'${SUITE_DIR}/emxProgramCentralFinancialCreateDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkFinCreateImportAccess'
+	setting	'Access Program'		'emxFinancialItem'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectFinancialsCreateNew'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectFinancialsToolBarActions add command PMCProjectFinancialsCreateNew order command PMCProjectFinancialsCreateNew 1;
+#channel ==>PMCProjectFinancialsToolBarActions
+add property command_PMCProjectFinancialsCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectFinancialsCreateNew';

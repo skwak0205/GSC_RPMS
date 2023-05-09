@@ -1,0 +1,18 @@
+del menu 'type_InboxTaskRMB';
+add menu 'type_InboxTaskRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'AEFProperties'
+	command	'AEFSeparator'
+	command	'APPRelatedFiles'
+	command	'APPAllFileDetails'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_InboxTaskRMB'
+	property 'version'	value	'R422'
+;
+add property menu_type_InboxTaskRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_InboxTaskRMB';

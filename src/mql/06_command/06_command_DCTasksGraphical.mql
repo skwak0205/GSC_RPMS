@@ -1,0 +1,17 @@
+del command 'DCTasksGraphical';
+add command 'DCTasksGraphical'
+	description	'Tasks (Graphical) Command Object'
+	label	'emxFramework.Command.TasksGraphical'
+	href	'${SUITE_DIR}/emxRouteWorkflowFS.jsp'
+	alt	'emxFramework.Command.Alt.TasksGraphical'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'COMMON_DIR/iconSmallWorkflow.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCTasksGraphical'
+	property	'version'	value	'10-0-0-0'
+;
+#channel ==>
+add property command_DCTasksGraphical on program eServiceSchemaVariableMapping.tcl to command 'DCTasksGraphical';

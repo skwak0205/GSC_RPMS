@@ -1,0 +1,19 @@
+del command 'PMCProgramIssuesList';
+add command 'PMCProgramIssuesList'
+	description	''
+	label	'emxProgramCentral.Menu.Issues'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCIssueList&displayView=details&sortColumnName=Name&header=emxProgramCentral.Menu.Issues&HelpMarker=emxhelpissues&freezePane=Name&hideLaunchButton=true&program=emxRisk:expandProgramGetProjectActiveIssue,emxRisk:expandProgramGetProjectAllIssue,emxRisk:expandProgramGetProjectClosedIssue&programLabel=emxProgramCentral.Filter.Active,emxProgramCentral.Filter.All,emxProgramCentral.Filter.Closed&sortColumnName=Name&freezePane=Name&selection=multiple&autoFilter=false&showClipboard=false&cellwrap=false&rowGrouping=false&expandLevelFilter=false&multiColumnSort=false&massPromoteDemote=false&triggerValidation=false&emxSuiteDirectory=programcentral&StringResourceFileId=emxProgramCentralStringResource&jsTreeID=null'
+	alt	'emxProgramCentral.Menu.Issues'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProgramIssuesList'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCProgramRIO
+add property command_PMCProgramIssuesList on program eServiceSchemaVariableMapping.tcl to command 'PMCProgramIssuesList';

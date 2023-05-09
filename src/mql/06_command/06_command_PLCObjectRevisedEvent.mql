@@ -1,0 +1,21 @@
+del command 'PLCObjectRevisedEvent';
+add command 'PLCObjectRevisedEvent'
+	description	'Object Revised Event'
+	label	'PublishSubscribe.Event.Revised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Revised'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCObjectRevisedEvent'
+	property	'version'	value	'R418'
+;
+modify menu FTRFeaturesEvents add command PLCObjectRevisedEvent order command PLCObjectRevisedEvent 1;
+modify menu FTRFeatureSubscriptionEvents add command PLCObjectRevisedEvent order command PLCObjectRevisedEvent 1;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command PLCObjectRevisedEvent order command PLCObjectRevisedEvent 1;
+modify menu FTRLogicalFeatureSubscriptionEvents add command PLCObjectRevisedEvent order command PLCObjectRevisedEvent 1;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command PLCObjectRevisedEvent order command PLCObjectRevisedEvent 1;
+#channel ==>FTRFeaturesEventsFTRFeatureSubscriptionEventsFTRConfigurationFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_PLCObjectRevisedEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCObjectRevisedEvent';

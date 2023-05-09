@@ -1,0 +1,26 @@
+del command 'TMCDocumentPushSubscriptionsLink';
+add command 'TMCDocumentPushSubscriptionsLink'
+	description	'Document Push Subscriptions Command Object for TeamCentral'
+	label	'emxTeamCentral.Button.PushSubscription'
+	href	'${COMPONENT_DIR}/emxPushSubscriptionDialog.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'575'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isNotVersionObject'
+	setting	'Access Program'		'emxWorkspaceFolder'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPushSubscribe.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDocumentPushSubscriptionsLink'
+	property	'version'	value	'R422'
+;
+modify menu TMCDocumentsActionToolbar add command TMCDocumentPushSubscriptionsLink order command TMCDocumentPushSubscriptionsLink 15;
+#channel ==>TMCDocumentsActionToolbar
+add property command_TMCDocumentPushSubscriptionsLink on program eServiceSchemaVariableMapping.tcl to command 'TMCDocumentPushSubscriptionsLink';

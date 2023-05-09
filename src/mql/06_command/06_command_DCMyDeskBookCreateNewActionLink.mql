@@ -1,0 +1,24 @@
+del command 'DCMyDeskBookCreateNewActionLink';
+add command 'DCMyDeskBookCreateNewActionLink'
+	description	'My Desk Book Create New'
+	label	'emxDocumentCentral.ActionBarCmd.CreateNew'
+	href	'${SUITE_DIR}/emxDocumentCentralDocumentClassificationCreateDialogFS.jsp?type=type_Book'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	user	'Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCMyDeskBookCreateNewActionLink'
+	property	'version'	value	'10-5'
+;
+modify menu DCAllBooksTopActionbar add command DCMyDeskBookCreateNewActionLink order command DCMyDeskBookCreateNewActionLink 1;
+#channel ==>DCAllBooksTopActionbar
+add property command_DCMyDeskBookCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCMyDeskBookCreateNewActionLink';

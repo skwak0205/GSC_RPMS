@@ -1,0 +1,22 @@
+del command 'APPReferenceDocumentQuickFiles';
+add command 'APPReferenceDocumentQuickFiles'
+	description	''
+	label	'emxFramework.RMBMenu.ReferenceDocumentFiles'
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxAPPQuickFile'
+	setting	'Dynamic Command Function'		'listReferenceDocuments'
+	setting	'Registered Suite'		'Framework'
+	setting	'Pull Right'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallDocumentGray.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPReferenceDocumentQuickFiles'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPReferenceDocumentQuickFiles on program eServiceSchemaVariableMapping.tcl to command 'APPReferenceDocumentQuickFiles';

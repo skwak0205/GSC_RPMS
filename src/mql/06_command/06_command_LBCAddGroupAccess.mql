@@ -1,0 +1,16 @@
+del command 'LBCAddGroupAccess';
+add command 'LBCAddGroupAccess'
+	description	'Add Access Groups'
+	label	'emxDocumentCentral.Search.AddGroup'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPGroupSummary&program=emxWorkspaceVault:getRoleGroupSearchResults&selection=multiple&expandLevelFilterMenu=false&customize=false&Export=false&multiColumnSort=false&PrinterFriendly=false&showPageURLIcon=false&showRMB=false&showClipboard=false&objectCompare=false&useMode=addGroup&header=emxDocumentCentral.Search.GroupsSearchResults&submitLabel=emxFramework.Common.Done&cancelLabel=emxFramework.Common.Cancel&cancelButton=true&displayView=details&toolbar=LBCRolesGroupsSearchToolbar&submitURL=../documentcentral/emxLibraryCentralFolderAccessAdd.jsp?useMode=addGroup'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAddGroupAccess'
+	property	'version'	value	'R212'
+;
+modify menu LBCFolderAccessAddMembersActionToolBar add command LBCAddGroupAccess order command LBCAddGroupAccess 0;
+#channel ==>LBCFolderAccessAddMembersActionToolBar
+add property command_LBCAddGroupAccess on program eServiceSchemaVariableMapping.tcl to command 'LBCAddGroupAccess';

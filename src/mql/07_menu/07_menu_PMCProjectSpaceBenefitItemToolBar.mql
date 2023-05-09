@@ -1,0 +1,15 @@
+del menu 'PMCProjectSpaceBenefitItemToolBar';
+add menu 'PMCProjectSpaceBenefitItemToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCProjectSpaceBenefitItemToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectSpaceBenefitItemToolBar'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_PMCProjectSpaceBenefitItemToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectSpaceBenefitItemToolBar';

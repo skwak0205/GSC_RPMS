@@ -1,0 +1,18 @@
+del command 'PMCDefaultView';
+add command 'PMCDefaultView'
+	description	'Default View'
+	label	'emxProgramCentral.WeeklyTimesheet.DefaultView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWeeklyTimeSheetDefaultView'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDefaultView'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimesheetViews add command PMCDefaultView order command PMCDefaultView 1;
+#channel ==>PMCWeeklyTimesheetViews
+add property command_PMCDefaultView on program eServiceSchemaVariableMapping.tcl to command 'PMCDefaultView';

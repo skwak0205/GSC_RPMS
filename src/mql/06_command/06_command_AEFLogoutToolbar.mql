@@ -1,0 +1,19 @@
+del command 'AEFLogoutToolbar';
+add command 'AEFLogoutToolbar'
+	description	'Logout'
+	label	'emxFramework.Home.Logout'
+	href	'javascript:do3DSpaceLogout()'
+	alt	'emxFramework.Home.Logout'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionLogOut.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLogoutToolbar'
+	property	'version'	value	'R420'
+;
+modify menu AEFPowerViewActionsToolbar add command AEFLogoutToolbar order command AEFLogoutToolbar 0;
+modify menu AEFPersonMenu add command AEFLogoutToolbar order command AEFLogoutToolbar 0;
+#channel ==>AEFPowerViewActionsToolbarAEFPersonMenu
+add property command_AEFLogoutToolbar on program eServiceSchemaVariableMapping.tcl to command 'AEFLogoutToolbar';

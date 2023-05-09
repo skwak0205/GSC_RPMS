@@ -1,0 +1,12 @@
+del command 'VPLMSyncChgECOActionSummaryRelatedParts_Headerlink_0';
+add command 'VPLMSyncChgECOActionSummaryRelatedParts_Headerlink_0'
+	description	'Command to Add VPLM Parts'
+	label	'emxVPMCentral.Change.Command.ECOActionSummaryRelatedParts_Headerlink_0.Title'
+	href	'${COMMON_DIR}/emxVPLMSyncChgAddPartsToVPLMAction.jsp'
+	alt	'AddMAO'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'VPMCentral'
+;
+modify menu VPLMSyncChgECOActionsSummaryRelatedPartsToolBar add command VPLMSyncChgECOActionSummaryRelatedParts_Headerlink_0 order command VPLMSyncChgECOActionSummaryRelatedParts_Headerlink_0 1;
+#channel ==>VPLMSyncChgECOActionsSummaryRelatedPartsToolBar
+add property command_VPLMSyncChgECOActionSummaryRelatedParts_Headerlink_0 on program eServiceSchemaVariableMapping.tcl to command 'VPLMSyncChgECOActionSummaryRelatedParts_Headerlink_0';

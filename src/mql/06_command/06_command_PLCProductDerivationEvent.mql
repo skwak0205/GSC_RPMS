@@ -1,0 +1,17 @@
+del command 'PLCProductDerivationEvent';
+add command 'PLCProductDerivationEvent'
+	description	'Product Derivation Event'
+	label	'PublishSubscribe.Event.Derivation'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Product Derived'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductDerivationEvent'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductsEvents add command PLCProductDerivationEvent order command PLCProductDerivationEvent 19;
+#channel ==>PLCProductsEvents
+add property command_PLCProductDerivationEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCProductDerivationEvent';

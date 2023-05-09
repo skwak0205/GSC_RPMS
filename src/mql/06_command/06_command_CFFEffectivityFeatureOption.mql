@@ -1,0 +1,25 @@
+del command 'CFFEffectivityFeatureOption';
+add command 'CFFEffectivityFeatureOption'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'categoryType'		'relational'
+	setting	'relationalCriteria'		'relationship_ConfigurationOption'
+	setting	'Format'		'structure'
+	setting	'Registered Suite'		'Configuration'
+	setting	'expandProgram'		'ConfigurationFeature:getModelConfigurationDictionary'
+	setting	'searchType'		'type_Model'
+	setting	'Label'		'Effectivity.EffectivityType.FeatureOption'
+	setting	'keyword'		'FO'
+	setting	'showAnd'		'true'
+	setting	'showInfinity'		'false'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFEffectivityFeatureOption'
+	property	'version'	value	'R216'
+;
+modify menu CFFEffectivity add command CFFEffectivityFeatureOption order command CFFEffectivityFeatureOption 5;
+#channel ==>CFFEffectivity
+add property command_CFFEffectivityFeatureOption on program eServiceSchemaVariableMapping.tcl to command 'CFFEffectivityFeatureOption';

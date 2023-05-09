@@ -1,0 +1,20 @@
+del command 'FTRStructureBrowserRenameCommonGroupActionCommandLink';
+add command 'FTRStructureBrowserRenameCommonGroupActionCommandLink'
+	description	'Rename an existing Common Group'
+	label	'emxProduct.Command.RenameCommonGroup'
+	href	'${SUITE_DIR}/RenameCommonGroupPreProcess.jsp?fromWhere=StructureBrowser'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRStructureBrowserRenameCommonGroupActionCommandLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRCommonGroupStructureBrowserActionToolbarMenu add command FTRStructureBrowserRenameCommonGroupActionCommandLink order command FTRStructureBrowserRenameCommonGroupActionCommandLink 0;
+#channel ==>FTRCommonGroupStructureBrowserActionToolbarMenu
+add property command_FTRStructureBrowserRenameCommonGroupActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRStructureBrowserRenameCommonGroupActionCommandLink';

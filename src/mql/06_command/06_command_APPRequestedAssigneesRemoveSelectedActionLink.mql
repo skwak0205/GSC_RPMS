@@ -1,0 +1,22 @@
+del command 'APPRequestedAssigneesRemoveSelectedActionLink';
+add command 'APPRequestedAssigneesRemoveSelectedActionLink'
+	description	'Request Access Assignee Object Remove Command Object'
+	label	'emxComponents.Command.Remove'
+	href	'${SUITE_DIR}/emxCommonAccessRequestProcess.jsp?mode=Remove'
+	alt	'emxComponents.Command.Remove'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'( owner==context.user && ( current==Submitted || current==Review ) )'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Remove.ConfirmMsg'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRequestedAssigneesRemoveSelectedActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPRequestedAssigneesActionsToolBar add command APPRequestedAssigneesRemoveSelectedActionLink order command APPRequestedAssigneesRemoveSelectedActionLink 0;
+#channel ==>APPRequestedAssigneesActionsToolBar
+add property command_APPRequestedAssigneesRemoveSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRequestedAssigneesRemoveSelectedActionLink';

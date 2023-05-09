@@ -1,0 +1,24 @@
+del command 'PMCCustomFilterReportChart';
+add command 'PMCCustomFilterReportChart'
+	description	''
+	label	'emxProgramCentral.ResourcePlanning.Report.Chart'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=displayResourcePoolChart'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Action Label'		'emxProgramCentral.ResourcePlanning.Report.Chart'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'CheckChartingRequired'
+	setting	'Access Program'		'emxResourcePoolReports'
+	setting	'Width'		'100'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCustomFilterReportChart'
+	property	'version'	value	'R418'
+;
+modify menu PMCReportDateToolbarMenu add command PMCCustomFilterReportChart order command PMCCustomFilterReportChart 0;
+#channel ==>PMCReportDateToolbarMenu
+add property command_PMCCustomFilterReportChart on program eServiceSchemaVariableMapping.tcl to command 'PMCCustomFilterReportChart';

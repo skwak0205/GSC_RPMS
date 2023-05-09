@@ -1,0 +1,27 @@
+del command 'PLCCreateImageActionLink';
+add command 'PLCCreateImageActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Create'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ImageCreateFSInstance&PRCFSParam1=Image'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateImageActionLink'
+	property	'version'	value	'R421'
+;
+modify menu PLCImageListToolBarActions add command PLCCreateImageActionLink order command PLCCreateImageActionLink 1;
+modify menu PLCImageListTopActionBar add command PLCCreateImageActionLink order command PLCCreateImageActionLink 1;
+#channel ==>PLCImageListToolBarActionsPLCImageListTopActionBar
+add property command_PLCCreateImageActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateImageActionLink';

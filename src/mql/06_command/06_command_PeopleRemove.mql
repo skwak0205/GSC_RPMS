@@ -1,0 +1,26 @@
+del command 'PeopleRemove';
+add command 'PeopleRemove'
+	description	'Remove People Command'
+	label	'emxComponents.Common.Remove'
+	href	'${SUITE_DIR}/emxComponentsConfigurableTablePeopleDisconnectProcess.jsp'
+	alt	'emxComponents.Common.Remove'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionThrash.png'
+	setting	'Confirm Message'		'emxComponents.Common.MsgConfirm'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'PeopleRemove'
+	property	'version'	value	'R420.HF5'
+;
+modify menu PeopleSummaryBottomActionbar add command PeopleRemove order command PeopleRemove 0;
+modify menu APPPeopleSummaryActionsToolBar add command PeopleRemove order command PeopleRemove 6;
+modify menu APPPeopleSummaryToolBar add command PeopleRemove order command PeopleRemove 8;
+#channel ==>PeopleSummaryBottomActionbarAPPPeopleSummaryActionsToolBarAPPPeopleSummaryToolBar
+add property command_PeopleRemove on program eServiceSchemaVariableMapping.tcl to command 'PeopleRemove';

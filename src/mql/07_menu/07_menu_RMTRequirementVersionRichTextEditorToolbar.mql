@@ -1,0 +1,14 @@
+del menu 'RMTRequirementVersionRichTextEditorToolbar';
+add menu 'RMTRequirementVersionRichTextEditorToolbar'
+	description	''
+	label	'Toolbar'
+	href	''
+	alt	''
+	menu	'RMTRequirementVersionsRichTextEditorActionBar'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementVersionRichTextEditorToolbar'
+	property 'version'	value	'V6R2013'
+;
+add property menu_RMTRequirementVersionRichTextEditorToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementVersionRichTextEditorToolbar';

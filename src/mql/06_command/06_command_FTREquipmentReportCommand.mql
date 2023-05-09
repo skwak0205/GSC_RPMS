@@ -1,0 +1,16 @@
+del command 'FTREquipmentReportCommand';
+add command 'FTREquipmentReportCommand'
+	description	'Equipment Report'
+	label	'emxProduct.Command.EquipmentReport'
+	href	'${SUITE_DIR}/ProductPlatformUtil.jsp?mode=eqpReport'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREquipmentReportCommand'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTREquipmentReportCommand on program eServiceSchemaVariableMapping.tcl to command 'FTREquipmentReportCommand';

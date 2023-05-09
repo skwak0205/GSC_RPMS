@@ -1,0 +1,21 @@
+del menu 'LBCFolderAccessAddMembersActionToolBar';
+add menu 'LBCFolderAccessAddMembersActionToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Mode'		'edit'
+	setting	'Access Function'		'hasGrantAccess'
+	setting	'Access Program'		'emxWorkspaceVault'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'LBCAddPersonAccess'
+	command	'LBCAddRoleAccess'
+	command	'LBCAddGroupAccess'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCFolderAccessAddMembersActionToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_LBCFolderAccessAddMembersActionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LBCFolderAccessAddMembersActionToolBar';

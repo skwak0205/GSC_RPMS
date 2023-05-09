@@ -1,0 +1,16 @@
+del menu 'IssueDocumentSummaryToolBar';
+add menu 'IssueDocumentSummaryToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Horizontal ToolBar'		'true'
+	menu	'IssueDocumentSummaryActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'IssueDocumentSummaryToolBar'
+	property 'version'	value	'R422'
+;
+add property menu_IssueDocumentSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'IssueDocumentSummaryToolBar';

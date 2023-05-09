@@ -1,0 +1,24 @@
+del command 'APPLocationsDelete';
+add command 'APPLocationsDelete'
+	description	'Command To Delete Location(s)'
+	label	'emxComponents.Button.Delete'
+	href	'${COMPONENT_DIR}/emxComponentsLocationsDelete.jsp'
+	alt	'emxComponents.Button.Delete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.LocationSummary.MsgConfirm'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLocationsDelete'
+	property	'version'	value	'R417'
+;
+modify menu APPLocationsSummaryActionToolBar add command APPLocationsDelete order command APPLocationsDelete 0;
+#channel ==>APPLocationsSummaryActionToolBar
+add property command_APPLocationsDelete on program eServiceSchemaVariableMapping.tcl to command 'APPLocationsDelete';

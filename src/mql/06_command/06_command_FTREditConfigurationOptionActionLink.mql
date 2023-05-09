@@ -1,0 +1,23 @@
+del command 'FTREditConfigurationOptionActionLink';
+add command 'FTREditConfigurationOptionActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ConfigurationOptionProperties&formMode=Edit&formHeader=emxProduct.Heading.Edit&mode=edit&HelpMarker=emxhelpconfigurationoptionedit&context=ConfigurationOption'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'ConfigurationFeature'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditConfigurationOptionActionLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRConfigurationOptionPropertiesToolbarActions add command FTREditConfigurationOptionActionLink order command FTREditConfigurationOptionActionLink 1;
+#channel ==>FTRConfigurationOptionPropertiesToolbarActions
+add property command_FTREditConfigurationOptionActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTREditConfigurationOptionActionLink';

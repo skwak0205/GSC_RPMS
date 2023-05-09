@@ -1,0 +1,22 @@
+del command 'PLCDeleteDocumentActionLink';
+add command 'PLCDeleteDocumentActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/DocumentUtil.jsp?Mode=Delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCDeleteDocumentActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCBuildDocumentListBottomActionBar add command PLCDeleteDocumentActionLink order command PLCDeleteDocumentActionLink 1;
+#channel ==>PLCBuildDocumentListBottomActionBar
+add property command_PLCDeleteDocumentActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCDeleteDocumentActionLink';

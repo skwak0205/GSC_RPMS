@@ -1,0 +1,25 @@
+del command 'APPFormFileDeleteAllVersions';
+add command 'APPFormFileDeleteAllVersions'
+	description	'Delete Selected File from Document'
+	label	'emxComponents.Command.DeleteFile'
+	href	'javascript:window.deleteAllVersions_onclick()'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_SuspendVersioning].value> != True && current.access[checkin] == true) && ($<attribute[attribute_IsVersionObject].value> != True) && (vcfile == FALSE && vcfolder == FALSE)&& (current.access[todisconnect] == true)'
+	setting	'Access Function'		'allowFileVersioning'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	user	'3DSRestrictedContributor'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFormFileDeleteAllVersions'
+	property	'version'	value	'R422'
+;
+modify menu LBCGenericDocumentActionsToolBar add command APPFormFileDeleteAllVersions order command APPFormFileDeleteAllVersions 0;
+modify menu LBCDocumentSheetActionsToolBar add command APPFormFileDeleteAllVersions order command APPFormFileDeleteAllVersions 0;
+#channel ==>LBCGenericDocumentActionsToolBarLBCDocumentSheetActionsToolBar
+add property command_APPFormFileDeleteAllVersions on program eServiceSchemaVariableMapping.tcl to command 'APPFormFileDeleteAllVersions';

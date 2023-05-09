@@ -1,0 +1,18 @@
+del menu 'FTRMyDeskLogicalFeatureToolbarReports';
+add menu 'FTRMyDeskLogicalFeatureToolbarReports'
+	description	''
+	label	'emxProduct.Menu.Reports'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallReport.png'
+	menu	'FTRMyDeskLogicalFeaturesStructureCompareMenu'
+	command	'FTRMyDeskLogicalFeatureStructureCompareCommand'
+	command	'FTRMyDeskLogicalFeatureBOMCompareCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRMyDeskLogicalFeatureToolbarReports'
+	property 'version'	value	'R418'
+;
+add property menu_FTRMyDeskLogicalFeatureToolbarReports on program eServiceSchemaVariableMapping.tcl to menu 'FTRMyDeskLogicalFeatureToolbarReports';

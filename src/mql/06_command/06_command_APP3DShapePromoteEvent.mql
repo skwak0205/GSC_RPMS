@@ -1,0 +1,13 @@
+del command 'APP3DShapePromoteEvent';
+add command 'APP3DShapePromoteEvent'
+	description	'When 3DShape is promoted'
+	label	'emxComponents.Notification.Event.Promoted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Promoted'
+	property	'version'	value	'R421'
+;
+modify menu APP3DShapeEvents add command APP3DShapePromoteEvent order command APP3DShapePromoteEvent 1;
+#channel ==>APP3DShapeEvents
+add property command_APP3DShapePromoteEvent on program eServiceSchemaVariableMapping.tcl to command 'APP3DShapePromoteEvent';

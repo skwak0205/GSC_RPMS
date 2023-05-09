@@ -1,0 +1,20 @@
+del menu 'PMCProjectBookmarksToolbarActions';
+add menu 'PMCProjectBookmarksToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Hide Mode'		'mobile'
+	command	'PMCProjectBookmarksCreate'
+	command	'APPSeparator'
+	command	'PMCProjectBookmarksDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBookmarksToolbarActions'
+	property 'version'	value	'R419'
+;
+add property menu_PMCProjectBookmarksToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBookmarksToolbarActions';

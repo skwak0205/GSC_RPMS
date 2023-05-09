@@ -1,0 +1,15 @@
+del portal 'PMCTaskReferenceDocumentPortal';
+add portal 'PMCTaskReferenceDocumentPortal'
+	description	'Portal to display reference documents'
+	label	'PMCTaskReferenceDocumentPortal'
+	href	''
+	channel 	PMCTaskReferenceDocumentChannel1
+	channel 	PMCTaskReferenceDocumentChannel2
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskReferenceDocumentPortal'
+	property	'version'	value	'R421'
+;
+add property portal_PMCTaskReferenceDocumentPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCTaskReferenceDocumentPortal';

@@ -1,0 +1,23 @@
+del command 'APPAppletFileRemoveCommand';
+add command 'APPAppletFileRemoveCommand'
+	description	'Remove Selected Files from Applet Dialog'
+	label	'emxComponents.Command.Remove'
+	href	'javascript:removeFiles()'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAppletFileRemoveCommand'
+	property	'version'	value	'R422'
+;
+modify menu APPFileUploadAppletActionsToolBar add command APPAppletFileRemoveCommand order command APPAppletFileRemoveCommand 0;
+modify menu APPFileUploadAppletToolBar add command APPAppletFileRemoveCommand order command APPAppletFileRemoveCommand 0;
+modify menu APPFileUpdateAppletToolbar add command APPAppletFileRemoveCommand order command APPAppletFileRemoveCommand 0;
+#channel ==>APPFileUploadAppletActionsToolBarAPPFileUploadAppletToolBarAPPFileUpdateAppletToolbar
+add property command_APPAppletFileRemoveCommand on program eServiceSchemaVariableMapping.tcl to command 'APPAppletFileRemoveCommand';

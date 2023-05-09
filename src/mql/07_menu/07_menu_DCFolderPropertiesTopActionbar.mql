@@ -1,0 +1,19 @@
+del menu 'DCFolderPropertiesTopActionbar';
+add menu 'DCFolderPropertiesTopActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCObjectPropertiesEditDetailsActionLink'
+	command	'DCObjectPropertiesCopyActionLink'
+	command	'DCObjectPropertiesSearchInActionLink'
+	command	'DCObjectPropertiesSubscribeActionLink'
+	command	'DCObjectPropertiesDeleteActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCFolderPropertiesTopActionbar'
+	property 'version'	value	'9-5-2-0'
+;
+add property menu_DCFolderPropertiesTopActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCFolderPropertiesTopActionbar';

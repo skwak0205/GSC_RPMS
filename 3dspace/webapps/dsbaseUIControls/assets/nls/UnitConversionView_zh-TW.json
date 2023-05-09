@@ -1,0 +1,9 @@
+{
+  "UnCV.optionsChecker.rdfServerURL.error": "必須定義 RDF 伺服器 URL 端點！",
+  "UnCV.optionsChecker.originalValue.notExisting.error": "必須定義原始值！",
+  "UnCV.optionsChecker.originalValue.type.error": "原始值必須是數字！",
+  "UnCV.optionsChecker.quantityURI.error": "必須定義一個數量 (特性類型)！",
+  "UnCV.optionsChecker.unitURI.error": "必須定義單位 URI (尾碼)！",
+  "UnCV.convertedValue": "轉換值",
+  "UnCV.originalValue": "原始值"
+}

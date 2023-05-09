@@ -1,0 +1,20 @@
+del menu 'AEFSBCreateNewMenu';
+add menu 'AEFSBCreateNewMenu'
+	description	''
+	label	''
+	href	'javascript:createNewChildRow()'
+	alt	'emxFramework.FreezePane.SBEditActions.CreateNewRow'
+	setting	'Registered Suite'		'Framework'
+	setting	'Mode'		'edit'
+	setting	'Access Function'		'accessEditAdd'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreateObject.gif'
+	command	'AEFSBInsertNewRowBefore'
+	command	'AEFSBInsertNewRowAfter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFSBCreateNewMenu'
+	property 'version'	value	'R417'
+;
+add property menu_AEFSBCreateNewMenu on program eServiceSchemaVariableMapping.tcl to menu 'AEFSBCreateNewMenu';

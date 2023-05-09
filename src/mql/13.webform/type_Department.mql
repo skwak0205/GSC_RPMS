@@ -1,0 +1,78 @@
+################################################################################################
+# Created Date : 2020.06.17
+# Create by BongJun,Park
+# Description : Department 작성 및 수정 화면
+################################################################################################
+copy form "type_Department" "type_Department_OOTB";
+
+# 속성추가 by BongJun,Park 2020.05.26
+mod form "type_Department"
+    field
+        name 'OrganizationName'
+        label 'emxComponents.Label.OrganizationName'
+        businessobject  '$<attribute[attribute_OrganizationName]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_OrganizationName'
+        setting 'Required'          'true'
+        setting 'Editable'          'true'
+        setting 'Field Type'        'attribute'
+        setting 'Input Type'        'textbox'
+        setting 'OnChange Handler'  'updateDisplayName'
+    field
+        name 'emdOrgFullName'
+        label 'emxComponents.Label.emdOrgFullName'
+        businessobject  '$<attribute[attribute_emdOrgFullName]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_emdOrgFullName'
+        setting 'Required'          'false'
+        setting 'Editable'          'true'
+        setting 'Field Type'        'attribute'
+        setting 'Input Type'        'textbox'
+    field
+        name 'emdManager'
+        label 'emxComponents.Label.emdManager'
+        businessobject  '$<attribute[attribute_emdManager]>'
+        range '${COMMON_DIR}/emxFullSearch.jsp?type=PERSON_CHOOSER'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_emdManager'
+        setting 'Required'          'false'
+        setting 'Editable'          'true'
+        setting 'Field Type'        'attribute'
+        setting 'format'            'user'
+    field
+        name 'AlternateName'
+        label 'emxComponents.Label.AlternateName'
+        businessobject  '$<attribute[attribute_AlternateName]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_AlternateName'
+        setting 'Required'          'false'
+        setting 'Editable'          'true'
+        setting 'Field Type'        'attribute'
+        setting 'Input Type'        'textbox'
+    field
+        mod name 'OrganizationName'
+        order '4'
+    field
+        mod name 'emdOrgFullName'
+        order '5'
+    field
+        mod name 'emdManager'
+        order '6'
+    field
+        mod name 'AlternateName'
+        order '7'
+;
+# label 변경, 부서코드입력시 Organization ID 부서코드와 동일하게 입력
+mod form "type_Department"
+    field
+        mod name 'Name'
+        label 'emxComponents.Label.DeptCode'
+        add setting 'OnChange Handler'  'updateNameToDepartmentID'
+    field
+        mod name 'Department ID'
+        label 'emxComponents.Label.OrganizationID'
+    field
+        mod name 'emdManager'
+        range '${COMMON_DIR}/emxFullSearch.jsp?type=PERSON_CHOOSER'
+        add setting 'format'            'user'
+;

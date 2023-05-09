@@ -1,0 +1,22 @@
+del command 'PLCProductAssociateTasksActionLink';
+add command 'PLCProductAssociateTasksActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AssociateTask'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCProductRoadMapTasksSearchTable&header=emxProduct.Heading.SelectProjects&selection=multiple&program=emxProduct:getConnectedProjects&expandProgram=emxProduct:getAllProjectTasks&toolbar=PLCProductRoadmapTasksSearchToolBar&sortColumnName=ID&HelpMarker=emxhelptasklist&editRelationship=relationship_RelatedProjects&massPromoteDemote=false&objectCompare=false&triggerValidation=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductAssociateTasksActionLink'
+	property	'version'	value	'R421'
+;
+modify menu PLCProductTasksListActions add command PLCProductAssociateTasksActionLink order command PLCProductAssociateTasksActionLink 1;
+#channel ==>PLCProductTasksListActions
+add property command_PLCProductAssociateTasksActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCProductAssociateTasksActionLink';

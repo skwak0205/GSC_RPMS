@@ -1,0 +1,27 @@
+del command 'RMTChapterProperties';
+add command 'RMTChapterProperties'
+	description	''
+	label	'emxRequirements.Tree.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Chapter&actionBarName=RMTChapterPropertiesActionBar&formHeader=emxRequirements.Heading.PropertiesWithoutRevision&HelpMarker=emxhelpchapterproperties'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTChapterProperties'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecStructureChapterRMB add command RMTChapterProperties order command RMTChapterProperties 1;
+modify menu type_ChapterRMB add command RMTChapterProperties order command RMTChapterProperties 1;
+#channel ==>RMTSpecStructureChapterRMBtype_ChapterRMBRMTChapterProperties
+add property command_RMTChapterProperties on program eServiceSchemaVariableMapping.tcl to command 'RMTChapterProperties';

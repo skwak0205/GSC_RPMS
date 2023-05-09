@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/"> 
+ <!-- Copyright 2014 , Dassault Systemes. All rights reserved. -->
+<head>   
+
+    <title>User Preferences Widget App</title>
+	
+	<!-- Application Metas Start -->
+    <meta name="description" content="CAA Web Apps About User Preferences" />
+    <meta name="keywords" content="CAA Use Case" />  	
+	<!-- Application Metas End -->
+	
+	<!-- Application Preferences Start -->
+	<widget:preferences>
+	    <widget:preference type="text" name="username"  label="Username_lb" defaultValue=""   ></widget:preference>
+		
+		<widget:preference type="list" name="category"  label="Categories_lb"  defaultValue="1st"  >
+		    <widget:option value="all" label="all_lb"></widget:option>
+			<widget:option value="1st" label="1st_lb"></widget:option>
+			<widget:option value="2nd" label="2nd_lb"></widget:option>
+			<widget:option value="3rd" label="3rd_lb"></widget:option>	
+		</widget:preference>
+		
+		<widget:preference type="boolean" name="openfile"    label="OpenFile_lb"  defaultValue="true" ></widget:preference>
+        <widget:preference type="range"   name="nb_max_item" label="maxitem_lb"  step="1" min="1" max="10"  defaultValue="2"  ></widget:preference>
+        <widget:preference type="hidden"  name="role"  defaultValue="manager" ></widget:preference>
+	</widget:preferences>
+	<!-- Application Preferences End-->
+	
+	<!-- Application JS Start -->
+    <script >            
+             /* global widget,require */		
+			require(['DS/CAAWebAppsUserPreference/CAAWebAppsUPMngt',
+			         'i18n!DS/CAAWebAppsUserPreference/assets/CAAWebAppsUP'], 
+			function (CAAWebAppsUPMngt,CAAWebAppsUP) {
+			    'use strict';
+				
+				var myWidget = {
+	 
+					//onLoad : event triggered when the widget is launched  
+					// --------------------------------------------------------------------      
+					onLoad: function() {
+						var ligne = CAAWebAppsUPMngt.displayUP(widget.getValue('username'),
+													       widget.getValue('category'),
+														   widget.getValue('openfile'),
+														   widget.getValue('nb_max_item'),
+														   widget.getValue('role'));
+														   
+						widget.body.innerHTML= 'onLoad:' + '<br><br>' + ligne ;							
+					},
+					
+					// onRefresh : event triggered when the end user clicks 'Refresh' 
+					//     or after the Preference dialog box closure (save or cancel).
+					//  -------------------------------------------------------------------- 
+					onRefresh: function() {					    				 
+						var ligne = CAAWebAppsUPMngt.displayUP(widget.getValue('username'),
+													       widget.getValue('category'),
+														   widget.getValue('openfile'),
+														   widget.getValue('nb_max_item'),
+														   widget.getValue('role'));
+														   
+						widget.body.innerHTML= 'onRefresh:' + '<br><br>' + ligne ;			 						
+					}
+				};
+				
+				//Events
+                //---------				
+				widget.addEvent('onLoad',    myWidget.onLoad);
+				widget.addEvent('onRefresh', myWidget.onRefresh);				 
+		});
+    </script>
+	<!-- Application JS End -->
+</head>
+<body>
+</body>
+</html>

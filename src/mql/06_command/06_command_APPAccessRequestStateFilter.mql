@@ -1,0 +1,20 @@
+del command 'APPAccessRequestStateFilter';
+add command 'APPAccessRequestStateFilter'
+	description	'Used for Status Filter in Summary Page.'
+	label	'emxComponents.Common.State'
+	href	'javascript:void(null)'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Range Function'		'getFilterStates'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'Components'
+	setting	'Range Program'		'emxCommonAccessRequest'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAccessRequestStateFilter'
+	property	'version'	value	'10-7'
+;
+modify menu APPSummaryAccessRequestToolbar add command APPAccessRequestStateFilter order command APPAccessRequestStateFilter 1;
+#channel ==>APPSummaryAccessRequestToolbar
+add property command_APPAccessRequestStateFilter on program eServiceSchemaVariableMapping.tcl to command 'APPAccessRequestStateFilter';

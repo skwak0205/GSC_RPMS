@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 생산유형
+################################################################################################
+
+#del attribute 'gscProductType';
+add attribute  'gscProductType'
+  description '생산유형'
+  type        'string'
+  property "application"	  value "Framework"
+  property "version"		  value "V6R2019"
+  property "installer"	  value "gsc"
+  property "installed date" value "2020-05-19"
+  property "original name"  value "gscProductType"
+;
+add property attribute_gscProductType on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscProductType';
+

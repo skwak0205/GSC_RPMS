@@ -1,0 +1,19 @@
+del command 'FTRMyDeskVariabilityGroupsStructureCompare';
+add command 'FTRMyDeskVariabilityGroupsStructureCompare'
+	description	'Command to Compare Variability Group Views'
+	label	'emxConfiguration.command.StructureCompare'
+	href	'${SUITE_DIR}/VariabilityGroupsStructureComparePreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/StructureCompare32.png'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R422'
+;
+modify menu FTRMyDeskVariabilityGroupsToolbar add command FTRMyDeskVariabilityGroupsStructureCompare order command FTRMyDeskVariabilityGroupsStructureCompare 0;
+#channel ==>FTRMyDeskVariabilityGroupsToolbar
+add property command_FTRMyDeskVariabilityGroupsStructureCompare on program eServiceSchemaVariableMapping.tcl to command 'FTRMyDeskVariabilityGroupsStructureCompare';

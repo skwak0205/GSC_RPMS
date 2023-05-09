@@ -1,0 +1,18 @@
+del menu 'AEFClipboardCollectionsRMB';
+add menu 'AEFClipboardCollectionsRMB'
+	description	''
+	label	'emxFramework.RMBMenu.ClipBoardCollection.Label'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'iconActionCopy.gif'
+	command	'AEFAddToClipboardCollectionRMB'
+	command	'AEFNewAddToCollectionsRMB'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFClipboardCollectionsRMB'
+	property 'version'	value	'R211'
+;
+add property menu_AEFClipboardCollectionsRMB on program eServiceSchemaVariableMapping.tcl to menu 'AEFClipboardCollectionsRMB';

@@ -1,0 +1,23 @@
+del command 'SubBusinessUnit';
+add command 'SubBusinessUnit'
+	description	'Sub Business Unit Command Object'
+	label	'emxFramework.Command.SubBusinessUnit'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCompany:getBusinessUnits&table=APPOrganizationSummary&toolbar=APPBusinessUnitSummaryToolBar&header=emxComponents.BusinessUnitSummary.Heading&selection=multiple&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpbusinessunits&PrinterFriendly=true'
+	alt	'emxFramework.Command.SubBusinessUnit'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'iconSmallBusinessUnit.gif'
+	user	'Organization Manager'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'SubBusinessUnit'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_SubBusinessUnit on program eServiceSchemaVariableMapping.tcl to command 'SubBusinessUnit';

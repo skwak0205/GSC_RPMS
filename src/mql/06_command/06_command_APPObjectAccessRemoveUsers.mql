@@ -1,0 +1,21 @@
+del command 'APPObjectAccessRemoveUsers';
+add command 'APPObjectAccessRemoveUsers'
+	description	'This command revokes access from selected users. It should be cloned for implementing for specific type'
+	label	'emxComponents.ActionLink.Remove'
+	href	'${SUITE_DIR}/emxComponentsObjectAccessSetAccessProcess.jsp?action=remove&showAllProgram=&showAllFunction=&pushGrantor=person_CommonAccessGrantor'
+	alt	'emxComponents.ActionLink.Remove'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.ObjectAccess.RemoveConfirm'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectAccessRemoveUsers'
+	property	'version'	value	'R417'
+;
+modify menu APPObjectAccessActionsToolbar add command APPObjectAccessRemoveUsers order command APPObjectAccessRemoveUsers 0;
+#channel ==>APPObjectAccessActionsToolbar
+add property command_APPObjectAccessRemoveUsers on program eServiceSchemaVariableMapping.tcl to command 'APPObjectAccessRemoveUsers';

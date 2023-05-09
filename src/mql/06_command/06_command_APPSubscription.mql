@@ -1,0 +1,46 @@
+del command 'APPSubscription';
+add command 'APPSubscription'
+	description	''
+	label	'emxComponents.Common.Subscribe'
+	href	'${COMPONENT_DIR}/emxSubscriptionDialog.jsp?HelpMarker=emxhelpsubscriptionevents'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.png'
+	setting	'Access Mask'		'read'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSubscription'
+	property	'version'	value	'R422'
+;
+modify menu APPDiscussionViewToolBar add command APPSubscription order command APPSubscription 1;
+modify menu APPPartDetailsActionsToolBar add command APPSubscription order command APPSubscription 2;
+modify menu IssuePropertiesToolBarActions add command APPSubscription order command APPSubscription 0;
+modify menu APPDecisionPropertiesActionBar add command APPSubscription order command APPSubscription 0;
+modify menu APPPartFamilyDetailsActionsToolBar add command APPSubscription order command APPSubscription 2;
+modify menu APPDocumentActionsToolBar add command APPSubscription order command APPSubscription 16;
+modify menu APPDiscussionTreeToolBar add command APPSubscription order command APPSubscription 1;
+modify menu PLCProductPropertiesTopActionBar add command APPSubscription order command APPSubscription 7;
+modify menu PLCProductBuildListTopActionBar add command APPSubscription order command APPSubscription 3;
+modify menu LCObjectDetailsActionsToolBar add command APPSubscription order command APPSubscription 1;
+modify menu LBCGenericDocumentActionsToolBar add command APPSubscription order command APPSubscription 11;
+modify menu LBCDocumentSheetActionsToolBar add command APPSubscription order command APPSubscription 11;
+modify menu RMTRequirementPropertiesTopActionBar add command APPSubscription order command APPSubscription 4;
+modify menu RMTRequirementSpecificationPropertiesActionBar add command APPSubscription order command APPSubscription 2;
+modify menu RMTChapterPropertiesActionBar add command APPSubscription order command APPSubscription 2;
+modify menu RMTCommentPropertiesActionBar add command APPSubscription order command APPSubscription 2;
+modify menu FTRConfigurationFeaturePropertiesToolbarActions add command APPSubscription order command APPSubscription 0;
+modify menu FTRConfigurationOptionPropertiesToolbarActions add command APPSubscription order command APPSubscription 0;
+modify menu FTRLogicalFeatureContextToolBarAction add command APPSubscription order command APPSubscription 0;
+modify menu ManufacturingFeatureContextToolBar add command APPSubscription order command APPSubscription 0;
+modify menu FTRVariantPropertiesToolbarActions add command APPSubscription order command APPSubscription 0;
+modify menu FTRVariabilityGroupPropertiesToolbarActions add command APPSubscription order command APPSubscription 0;
+modify menu FTRVariantValuePropertiesToolbarActions add command APPSubscription order command APPSubscription 0;
+modify menu FTRVariabilityOptionPropertiesToolbarActions add command APPSubscription order command APPSubscription 0;
+#channel ==>APPDiscussionViewToolBarAPPPartDetailsActionsToolBarIssuePropertiesToolBarActionsAPPDecisionPropertiesActionBarAPPPartFamilyDetailsActionsToolBarAPPDocumentActionsToolBarAPPDiscussionTreeToolBarPLCProductPropertiesTopActionBarPLCProductBuildListTopActionBarLCObjectDetailsActionsToolBarLBCGenericDocumentActionsToolBarLBCDocumentSheetActionsToolBarRMTRequirementPropertiesTopActionBarRMTRequirementSpecificationPropertiesActionBarRMTChapterPropertiesActionBarRMTCommentPropertiesActionBarFTRConfigurationFeaturePropertiesToolbarActionsFTRConfigurationOptionPropertiesToolbarActionsFTRLogicalFeatureContextToolBarActionManufacturingFeatureContextToolBarFTRVariantPropertiesToolbarActionsFTRVariabilityGroupPropertiesToolbarActionsFTRVariantValuePropertiesToolbarActionsFTRVariabilityOptionPropertiesToolbarActions
+add property command_APPSubscription on program eServiceSchemaVariableMapping.tcl to command 'APPSubscription';

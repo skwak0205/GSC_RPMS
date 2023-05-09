@@ -1,0 +1,25 @@
+del command 'PLCProductRemoveRoadmapProjectActionLink';
+add command 'PLCProductRemoveRoadmapProjectActionLink'
+	description	''
+	label	'emxProduct.ActionLink.RemoveProject'
+	href	'${SUITE_DIR}/ProductUtil.jsp?mode=DisconnectProjects'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductRemoveRoadmapProjectActionLink'
+	property	'version'	value	'R421'
+;
+modify menu PLCProductRoadmapProjectsListToolBarActions add command PLCProductRemoveRoadmapProjectActionLink order command PLCProductRemoveRoadmapProjectActionLink 0;
+#channel ==>PLCProductRoadmapProjectsListToolBarActions
+add property command_PLCProductRemoveRoadmapProjectActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCProductRemoveRoadmapProjectActionLink';

@@ -1,0 +1,18 @@
+del command 'APPMeetingPromoteStartMeeting';
+add command 'APPMeetingPromoteStartMeeting'
+	description	'To promote meeting from Scheduled to In Progress state'
+	label	'emxComponents.Meeting.StartMeeting'
+	href	'${COMPONENT_DIR}/emxMeetingProcess.jsp?action=Promote&notification=Yes&sReturnPage=null&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'showMeetingPromoteStartMeetingCommand'
+	setting	'Access Program'		'emxMeeting'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingPromoteStartMeeting'
+	property	'version'	value	'R208'
+;
+#channel ==>
+add property command_APPMeetingPromoteStartMeeting on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingPromoteStartMeeting';

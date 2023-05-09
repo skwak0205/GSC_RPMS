@@ -1,0 +1,25 @@
+del command 'RMTAddExistingGroupActionLink';
+add command 'RMTAddExistingGroupActionLink'
+	description	'Add an existing group as a sub group'
+	label	'emxRequirements.Command.RMTAddExistingGroup'
+	href	'${SUITE_DIR}/RMTRequirementGroupProcess.jsp?operation=attachExistingGroup'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTAddExistingGroupActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecificationAttachExistingMenu add command RMTAddExistingGroupActionLink order command RMTAddExistingGroupActionLink 1;
+#channel ==>RMTSpecificationAttachExistingMenu
+add property command_RMTAddExistingGroupActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTAddExistingGroupActionLink';

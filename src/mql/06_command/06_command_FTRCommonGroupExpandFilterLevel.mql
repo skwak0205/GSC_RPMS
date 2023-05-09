@@ -1,0 +1,18 @@
+del command 'FTRCommonGroupExpandFilterLevel';
+add command 'FTRCommonGroupExpandFilterLevel'
+	description	'Expands the Structure to the level specified in Command'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Level'		'2'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCommonGroupExpandFilterLevel'
+	property	'version'	value	'R215'
+;
+modify menu FTRCommonGroupListExpandLevelFilter add command FTRCommonGroupExpandFilterLevel order command FTRCommonGroupExpandFilterLevel 0;
+#channel ==>FTRCommonGroupListExpandLevelFilter
+add property command_FTRCommonGroupExpandFilterLevel on program eServiceSchemaVariableMapping.tcl to command 'FTRCommonGroupExpandFilterLevel';

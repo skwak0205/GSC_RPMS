@@ -1,0 +1,14 @@
+del command 'VPLMSyncChgActionSummaryRemoveParts_Footerlink_0';
+add command 'VPLMSyncChgActionSummaryRemoveParts_Footerlink_0'
+	description	'Command to Remove Action to MAO connection'
+	label	'emxVPMCentral.Change.Command.ActionSummaryRemoveParts_Footerlink_0.Title'
+	href	'removeSelectedActionConnections()'
+	alt	'RemoveMAO'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPMCentral'
+	setting	'Javascript'		'true'
+;
+modify menu VPLMSyncChgTaskActionsSummaryRelatedPartsToolBar add command VPLMSyncChgActionSummaryRemoveParts_Footerlink_0 order command VPLMSyncChgActionSummaryRemoveParts_Footerlink_0 0;
+modify menu VPLMSyncChgECOActionsSummaryRelatedPartsToolBar add command VPLMSyncChgActionSummaryRemoveParts_Footerlink_0 order command VPLMSyncChgActionSummaryRemoveParts_Footerlink_0 0;
+#channel ==>VPLMSyncChgTaskActionsSummaryRelatedPartsToolBarVPLMSyncChgECOActionsSummaryRelatedPartsToolBar
+add property command_VPLMSyncChgActionSummaryRemoveParts_Footerlink_0 on program eServiceSchemaVariableMapping.tcl to command 'VPLMSyncChgActionSummaryRemoveParts_Footerlink_0';

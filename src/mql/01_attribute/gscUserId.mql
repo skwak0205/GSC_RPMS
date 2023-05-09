@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 작성자ID
+################################################################################################
+
+#del attribute 'gscUserId';
+add attribute  'gscUserId'
+   description '작성자ID'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscUserId"
+;
+add property attribute_gscUserId on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscUserId';
+

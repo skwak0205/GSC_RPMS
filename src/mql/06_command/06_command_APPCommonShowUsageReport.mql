@@ -1,0 +1,22 @@
+del command 'APPCommonShowUsageReport';
+add command 'APPCommonShowUsageReport'
+	description	'APPCommonShowUsageReport'
+	label	'emxComponents.Command.UsageReport'
+	href	'${COMPONENT_DIR}/emxCommonUsageReportDialog.jsp'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonShowUsageReport'
+	property	'version'	value	'R422'
+;
+modify menu APPCommonShowUsageReportToolbar add command APPCommonShowUsageReport order command APPCommonShowUsageReport 0;
+#channel ==>APPCommonShowUsageReportToolbar
+add property command_APPCommonShowUsageReport on program eServiceSchemaVariableMapping.tcl to command 'APPCommonShowUsageReport';

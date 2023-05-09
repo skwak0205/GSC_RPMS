@@ -1,0 +1,18 @@
+del command 'ECMCOResolvedItems';
+add command 'ECMCOResolvedItems'
+	description	'COResolvedItems'
+	label	'EnterpriseChangeMgt.Command.ResolvedItems'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeUtil:getAllResolvedItems&table=ECMGeneralTable&header=EnterpriseChangeMgt.Heading.ResolvedItems&selection=multiple&toolbar=ECMResolvedItemsToolbar&sortColumnName=Name&HelpMarker=emxhelpresolveditems'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOResolvedItems'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMChangeContentChannel1
+add property command_ECMCOResolvedItems on program eServiceSchemaVariableMapping.tcl to command 'ECMCOResolvedItems';

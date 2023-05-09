@@ -1,0 +1,13 @@
+del menu 'SMTMyDesk';
+add menu 'SMTMyDesk'
+	description	''
+	label	'emxWSManagement.Menu.ServiceManagement'
+	href	''
+	alt	''
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'SMTMyDesk'
+	property 'version'	value	'R422'
+;
+add property menu_SMTMyDesk on program eServiceSchemaVariableMapping.tcl to menu 'SMTMyDesk';

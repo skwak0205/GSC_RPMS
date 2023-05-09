@@ -1,0 +1,25 @@
+del command 'APPCompanyDeactivate';
+add command 'APPCompanyDeactivate'
+	description	'Command Object for Company Deactivate'
+	label	'emxComponents.Button.Deactivate'
+	href	'${COMPONENT_DIR}/emxComponentsCompanyDeactivateProcess.jsp'
+	alt	'emxComponents.Button.Deactivate'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDeActivate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompanyDeactivate'
+	property	'version'	value	'R420.HF2'
+;
+modify menu APPCompanySummaryToolBar add command APPCompanyDeactivate order command APPCompanyDeactivate 0;
+#channel ==>APPCompanySummaryToolBar
+add property command_APPCompanyDeactivate on program eServiceSchemaVariableMapping.tcl to command 'APPCompanyDeactivate';

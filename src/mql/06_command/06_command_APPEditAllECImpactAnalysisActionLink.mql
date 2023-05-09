@@ -1,0 +1,24 @@
+del command 'APPEditAllECImpactAnalysisActionLink';
+add command 'APPEditAllECImpactAnalysisActionLink'
+	description	'Command for Edit All link'
+	label	'emxComponents.Button.EditAll'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?HelpMarker=emxhelpimpactanalysiseditall'
+	alt	'emxComponents.Button.EditAll'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'750'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasImpactAnalysisLink'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	setting	'Help Marker'		'emxhelpimpactanalysiseditall'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPEditAllECImpactAnalysisActionLink'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_APPEditAllECImpactAnalysisActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPEditAllECImpactAnalysisActionLink';

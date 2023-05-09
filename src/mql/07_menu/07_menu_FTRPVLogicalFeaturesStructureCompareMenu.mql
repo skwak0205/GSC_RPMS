@@ -1,0 +1,16 @@
+del menu 'FTRPVLogicalFeaturesStructureCompareMenu';
+add menu 'FTRPVLogicalFeaturesStructureCompareMenu'
+	description	''
+	label	'emxConfiguration.Menu.StructureCompare'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRProductVariantLFStructureCompareCommand'
+	command	'FTRProductVariantBOMCompareCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRPVLogicalFeaturesStructureCompareMenu'
+	property 'version'	value	'R212'
+;
+add property menu_FTRPVLogicalFeaturesStructureCompareMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRPVLogicalFeaturesStructureCompareMenu';

@@ -1,0 +1,23 @@
+del command 'ECM3DLiveToggleShow';
+add command 'ECM3DLiveToggleShow'
+	description	'Command to Show Cross Highlight button in toolbar'
+	label	'EnterpriseChangeMgt.3DLiveExamine.Show3DLive'
+	href	'${SUITE_DIR}/ECMLaunch3DLiveExamineToggle.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'show3DToggleCommand'
+	setting	'Access Program'		'enoECMChangeUtil'
+	setting	'Hide Mode'		'mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallShowHide3D.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECM3DLiveToggleShow'
+	property	'version'	value	'R216'
+;
+modify menu ECMAddRemoveCAAffectedItemsToolbar add command ECM3DLiveToggleShow order command ECM3DLiveToggleShow 0;
+#channel ==>ECMAddRemoveCAAffectedItemsToolbar
+add property command_ECM3DLiveToggleShow on program eServiceSchemaVariableMapping.tcl to command 'ECM3DLiveToggleShow';

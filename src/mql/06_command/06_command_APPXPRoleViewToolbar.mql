@@ -1,0 +1,14 @@
+del command 'APPXPRoleViewToolbar';
+add command 'APPXPRoleViewToolbar'
+	description	'Role view'
+	label	'emxPlmOnline.label.Role'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPXPRoleAdminPortal&toolbar=APPXPAdminAdvancedToolBar&header=emxPlmOnline.label.ManageRole'
+	alt	'emxPlmOnline.label.Role'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Image'		'iconSmallRole.gif'
+	user	'VPLMAdmin'
+;
+modify menu APPXPAdminAdvancedToolBar add command APPXPRoleViewToolbar order command APPXPRoleViewToolbar 1;
+#channel ==>APPXPAdminAdvancedToolBar
+add property command_APPXPRoleViewToolbar on program eServiceSchemaVariableMapping.tcl to command 'APPXPRoleViewToolbar';

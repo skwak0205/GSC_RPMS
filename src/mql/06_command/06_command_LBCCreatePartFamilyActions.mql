@@ -1,0 +1,22 @@
+del command 'LBCCreatePartFamilyActions';
+add command 'LBCCreatePartFamilyActions'
+	description	'Create New Part Family'
+	label	'emxLibraryCentral.Command.PartFamilyActions'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_PartFamily,type_Classification&ExclusionList=type_ManufacturingPartFamily&typeChooser=true&nameField=autoName&form=type_CreateClass&createJPO=emxLibraryCentralCommon:createLBCObject&submitAction=treeContent&header=emxLibraryCentral.Shortcut.CreatePartFamily&HelpMarker=emxhelpcreatepartfamily&findMxLink=false'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCreatePartFamilyActions'
+	property	'version'	value	'R423.HF4'
+;
+modify menu LBCCreateClassActionsMenu add command LBCCreatePartFamilyActions order command LBCCreatePartFamilyActions 1;
+#channel ==>LBCCreateClassActionsMenu
+add property command_LBCCreatePartFamilyActions on program eServiceSchemaVariableMapping.tcl to command 'LBCCreatePartFamilyActions';

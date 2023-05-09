@@ -1,0 +1,15 @@
+del command 'PAREditParameter';
+add command 'PAREditParameter'
+	description	''
+	label	'emxParameter.Button.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PARCreateParameterWebForm&mode=edit&submitAction=refreshCaller&toolbar=none&postProcessJPO=emxParameterEdit:updateFormValues'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+;
+modify menu PARActionsToolbar add command PAREditParameter order command PAREditParameter 0;
+#channel ==>PARActionsToolbar
+add property command_PAREditParameter on program eServiceSchemaVariableMapping.tcl to command 'PAREditParameter';

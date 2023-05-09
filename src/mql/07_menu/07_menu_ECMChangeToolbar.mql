@@ -1,0 +1,23 @@
+del menu 'ECMChangeToolbar';
+add menu 'ECMChangeToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.ChangeManagement'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Image'		'${COMMON_DIR}/images/iconChange.png'
+	menu	'ECMChangeRequestToolbar'
+	command	'AEFSeparator'
+	menu	'ECMChangeOrderToolbar'
+	command	'AEFSeparator2'
+	menu	'ECMChangeActionToolbar'
+	command	'ECMSeparator'
+	command	'ECMMassRelease'
+	command	'ECMMassObsolete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'ECMChangeToolbar'
+	property 'version'	value	'R421'
+;
+add property menu_ECMChangeToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMChangeToolbar';

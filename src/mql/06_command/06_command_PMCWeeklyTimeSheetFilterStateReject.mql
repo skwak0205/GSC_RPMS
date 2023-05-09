@@ -1,0 +1,21 @@
+del command 'PMCWeeklyTimeSheetFilterStateReject';
+add command 'PMCWeeklyTimeSheetFilterStateReject'
+	description	'Weekly TimeSheet Filter State Rejected'
+	label	'emxProgramCentral.WeeklyTimesheet.Rejected'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'function'		'displayTimesheetTasksRejected'
+	setting	'program'		'emxWeeklyTimeSheet'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWeeklyTimeSheetFilterStateReject'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimeSheetApproverFilter add command PMCWeeklyTimeSheetFilterStateReject order command PMCWeeklyTimeSheetFilterStateReject 0;
+modify menu PMCWeeklyTimeSheetFilter add command PMCWeeklyTimeSheetFilterStateReject order command PMCWeeklyTimeSheetFilterStateReject 3;
+modify menu PMCTimesheetApproverFilter add command PMCWeeklyTimeSheetFilterStateReject order command PMCWeeklyTimeSheetFilterStateReject 0;
+#channel ==>PMCWeeklyTimeSheetApproverFilterPMCWeeklyTimeSheetFilterPMCTimesheetApproverFilter
+add property command_PMCWeeklyTimeSheetFilterStateReject on program eServiceSchemaVariableMapping.tcl to command 'PMCWeeklyTimeSheetFilterStateReject';

@@ -1,0 +1,27 @@
+del command 'TMCPartsSearchCommand';
+add command 'TMCPartsSearchCommand'
+	description	'Search Parts Command Object'
+	label	'emxFramework.MenuItem.Parts'
+	href	'${SUITE_DIR}/emxTeamPartSearchDialog.jsp?mode=findPart'
+	alt	'emxFramework.MenuItem.Parts'
+	setting	'Target Location'		'searchContent'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Function'		'isEngineeringInstalled'
+	setting	'Access Program'		'emxTeamAccess'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCPartsSearchCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCGlobalSearchMenu add command TMCPartsSearchCommand order command TMCPartsSearchCommand 2;
+#channel ==>TMCGlobalSearchMenu
+add property command_TMCPartsSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCPartsSearchCommand';

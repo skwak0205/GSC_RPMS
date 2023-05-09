@@ -1,0 +1,21 @@
+del command 'ECMCAImplementedItems';
+add command 'ECMCAImplementedItems'
+	description	'Implemented Items command'
+	label	'EnterpriseChangeMgt.Command.ImplementedItems'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeAction:getImplementedItems&table=ECMCAImplementedItemSummary&header=EnterpriseChangeMgt.Change.ImplementedItemsSummaryPageHeading&selection=multiple&sortColumnName=Name&HelpMarker=emxhelpimplementeditems'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeAction>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isOldUXForRealized'
+	setting	'Access Program'		'enoECMChangeUtil'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCAImplementedItems'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMCAAffectedItemsChannel
+add property command_ECMCAImplementedItems on program eServiceSchemaVariableMapping.tcl to command 'ECMCAImplementedItems';

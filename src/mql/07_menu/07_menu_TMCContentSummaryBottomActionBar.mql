@@ -1,0 +1,18 @@
+del menu 'TMCContentSummaryBottomActionBar';
+add menu 'TMCContentSummaryBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Horizontal ToolBar'		'true'
+	command	'TMCContentSummaryRemoveSelected'
+	command	'TMCContentSummaryMoveSelected'
+	command	'TMCContentSummaryCopySelected'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCContentSummaryBottomActionBar'
+	property 'version'	value	'R422'
+;
+add property menu_TMCContentSummaryBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'TMCContentSummaryBottomActionBar';

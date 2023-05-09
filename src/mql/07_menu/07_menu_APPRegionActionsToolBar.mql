@@ -1,0 +1,22 @@
+del menu 'APPRegionActionsToolBar';
+add menu 'APPRegionActionsToolBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'hasAccessForCompanyNodes'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'CreateRegionActionLink'
+	command	'RegionAddExisting'
+	command	'APPSeparator'
+	command	'DeleteRegionActionLink'
+	command	'RegionRemoveSelected'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRegionActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPRegionActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPRegionActionsToolBar';

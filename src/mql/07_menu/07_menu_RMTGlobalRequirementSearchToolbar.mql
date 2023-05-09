@@ -1,0 +1,17 @@
+del menu 'RMTGlobalRequirementSearchToolbar';
+add menu 'RMTGlobalRequirementSearchToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTRequirementSearchType'
+	command	'AEFSaveAsSearch'
+	command	'AEFSaveSearch'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTGlobalRequirementSearchToolbar'
+	property 'version'	value	'V6R2009x'
+;
+add property menu_RMTGlobalRequirementSearchToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RMTGlobalRequirementSearchToolbar';

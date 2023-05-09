@@ -1,0 +1,31 @@
+del form 'PMCGateDecision';
+add form 'PMCGateDecision' web
+field #1
+	name	'Name'
+	label	'emxProgramCentral.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getDecisionName'
+	setting	'Editable'		'false'
+	setting	'program'		'emxProjectHoldAndCancel'
+	setting	'Field Type'		'program'
+field #2
+	name	'Description'
+	label	'emxProgramCentral.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Admin Type'		'desctiption'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Editable'		'true'
+	setting	'Field Type'		'basic'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateDecision'
+	property	'version'	value	'R210'
+;
+add property form_PMCGateDecision on program eServiceSchemaVariableMapping.tcl to form 'PMCGateDecision';

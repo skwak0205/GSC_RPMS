@@ -1,0 +1,15 @@
+del portal 'PMCResourcePoolReport';
+add portal 'PMCResourcePoolReport'
+	description	'PMCResourcePoolReport'
+	label	''
+	href	''
+	channel 	PMCResourcePoolReportData
+	channel 	PMCResourcePoolReportChart
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolReport'
+	property	'version'	value	'R417'
+;
+add property portal_PMCResourcePoolReport on program eServiceSchemaVariableMapping.tcl to portal 'PMCResourcePoolReport';

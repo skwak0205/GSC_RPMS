@@ -1,0 +1,25 @@
+del command 'APPDeleteRouteTemplateActionLink';
+add command 'APPDeleteRouteTemplateActionLink'
+	description	'Route Template Summary Delete Selcted Command Object'
+	label	'emxComponents.Common.DeleteSelected'
+	href	'${COMPONENT_DIR}/emxDeleteRouteTemplate.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.RouteTemplate.MsgConfirm'
+	user	'3DSRestrictedLeader'
+	user	'Global User'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteRouteTemplateActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteTemplateSummaryActionsToolBar add command APPDeleteRouteTemplateActionLink order command APPDeleteRouteTemplateActionLink 0;
+#channel ==>APPRouteTemplateSummaryActionsToolBar
+add property command_APPDeleteRouteTemplateActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteRouteTemplateActionLink';

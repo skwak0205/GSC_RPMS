@@ -1,0 +1,14 @@
+del menu 'RMTFullTraceabilityToolbar';
+add menu 'RMTFullTraceabilityToolbar'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	command	'RMTRequirementRichTextEditorReport'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTFullTraceabilityToolbar'
+	property 'version'	value	'V6R2010'
+;
+add property menu_RMTFullTraceabilityToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RMTFullTraceabilityToolbar';

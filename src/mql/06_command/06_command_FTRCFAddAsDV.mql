@@ -1,0 +1,18 @@
+del command 'FTRCFAddAsDV';
+add command 'FTRCFAddAsDV'
+	description	'FTRCFAddAsDV'
+	label	'emxProduct.Table.Label.AddCFAsDV'
+	href	'${SUITE_DIR}/DesignVariantAddPostProcess.jsp?dvMode=slideindv'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionAddDesignVariant.png'
+	property	'original name'	value	'FTRCFAddAsDV'
+	property	'version'	value	'R420'
+;
+modify menu FTRCFAddAsDVMenu add command FTRCFAddAsDV order command FTRCFAddAsDV 0;
+#channel ==>FTRCFAddAsDVMenu
+add property command_FTRCFAddAsDV on program eServiceSchemaVariableMapping.tcl to command 'FTRCFAddAsDV';

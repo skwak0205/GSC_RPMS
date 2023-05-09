@@ -1,0 +1,18 @@
+del menu 'PMCMemberSummaryToolBar';
+add menu 'PMCMemberSummaryToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current!="Archive"'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Horizontal ToolBar'		'true'
+	menu	'PMCMemberSummaryToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCMemberSummaryToolBar'
+	property 'version'	value	'R421.HF7'
+;
+add property menu_PMCMemberSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCMemberSummaryToolBar';

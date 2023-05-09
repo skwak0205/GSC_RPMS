@@ -1,0 +1,18 @@
+del command 'APP3DLiveExaminePreference';
+add command 'APP3DLiveExaminePreference'
+	description	''
+	label	'emxComponents.3DLiveExamine.ShowHidePreference'
+	href	'${SUITE_DIR}/emx3DLiveExaminePreference.jsp'
+	alt	'emxComponents.3DLiveExamine.ShowHidePreference'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/buttonToolbarPreferences.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APP3DLiveExaminePreference'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_APP3DLiveExaminePreference on program eServiceSchemaVariableMapping.tcl to command 'APP3DLiveExaminePreference';

@@ -1,0 +1,28 @@
+del command 'RMTRequirementStructureBrowserOnlyDerived';
+add command 'RMTRequirementStructureBrowserOnlyDerived'
+	description	'Display all the derived Requirements'
+	label	'emxRequirements.Filter.DerivedRequirements'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgramMenu=RMTRequirementStructureProgramFilterMenu&tableMenu=RMTRequirementTableFilterMenu&toolbar=RMTRequirementStructureBrowserToolbar&selection=multiple&HelpMarker=emxhelprequirementstructurebrowser&editLink=true&header=emxRequirements.Heading.RequirementStructureBrowser'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'function'		'getDerivedRequirements'
+	setting	'program'		'emxRequirement'
+	setting	'table'		'RMTRequirementStatusView'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementStructureBrowserOnlyDerived'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementStructureProgramFilterMenu add command RMTRequirementStructureBrowserOnlyDerived order command RMTRequirementStructureBrowserOnlyDerived 3;
+#channel ==>RMTRequirementStructureProgramFilterMenu
+add property command_RMTRequirementStructureBrowserOnlyDerived on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementStructureBrowserOnlyDerived';

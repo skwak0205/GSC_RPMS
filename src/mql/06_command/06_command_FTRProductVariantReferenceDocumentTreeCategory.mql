@@ -1,0 +1,21 @@
+del command 'FTRProductVariantReferenceDocumentTreeCategory';
+add command 'FTRProductVariantReferenceDocumentTreeCategory'
+	description	'Command Object for ReferenceDocuments in the Product Variant Tree Category'
+	label	'emxProduct.Tree.ReferenceDocument'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ProductDocumentSummaryToolBar&header=emxProduct.Menu.Documents&HelpMarker=emxhelprefdoclist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallDocument.gif'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductVariantReferenceDocumentTreeCategory'
+	property	'version'	value	'R417'
+;
+modify menu type_ProductVariant add command FTRProductVariantReferenceDocumentTreeCategory order command FTRProductVariantReferenceDocumentTreeCategory 5;
+#channel ==>type_ProductVariant
+add property command_FTRProductVariantReferenceDocumentTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariantReferenceDocumentTreeCategory';

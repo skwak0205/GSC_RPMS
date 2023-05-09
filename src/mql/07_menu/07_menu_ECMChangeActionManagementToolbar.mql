@@ -1,0 +1,13 @@
+del menu 'ECMChangeActionManagementToolbar';
+add menu 'ECMChangeActionManagementToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'ECMAddToExistingCA'
+	command	'ECMAddToNewCA'
+	command	'AEFSeparator'
+	command	'ECMContextChangeActionRemoveActionLink'
+	property 'version'	value	'R419'
+;
+add property menu_ECMChangeActionManagementToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMChangeActionManagementToolbar';

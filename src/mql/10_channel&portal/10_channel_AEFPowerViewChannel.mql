@@ -1,0 +1,17 @@
+del channel 'AEFPowerViewChannel';
+add channel 'AEFPowerViewChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Framework'
+	setting		'ChannelID'		'1'
+	command 	'APPDashboardUserNewDocs','APPDashboardUserChangedDocs','APPDashboardUserRecentDocs','AEFCollections','PMCProjectSpaceMyDesk'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFPowerViewChannel'
+	property	'version'	value	'10-5'
+;
+#portal ==>AEFPowerView
+add property channel_AEFPowerViewChannel on program eServiceSchemaVariableMapping.tcl to channel 'AEFPowerViewChannel';

@@ -1,0 +1,23 @@
+del command 'APPMemberListsMyDesk';
+add command 'APPMemberListsMyDesk'
+	description	'MyView Command Object'
+	label	'emxFramework.MenuItem.DistributionLists'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxMemberList:getAllDistributionLists,emxMemberList:getOwnedDistributionLists&table=APPMemberList&toolbar=APPMemberListsMyDeskToolBar&programLabel=emxComponents.Common.All,emxComponents.Common.Owned&selection=multiple&header=emxComponents.Header.DistributionList&sortColumnType=Name&sortDirection=ascending&HelpMarker=emxhelpmemberlist'
+	alt	'emxFramework.MenuItem.DistributionLists'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Buyer'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMemberListsMyDesk'
+	property	'version'	value	'R422'
+;
+#channel ==>My Enovia
+add property command_APPMemberListsMyDesk on program eServiceSchemaVariableMapping.tcl to command 'APPMemberListsMyDesk';

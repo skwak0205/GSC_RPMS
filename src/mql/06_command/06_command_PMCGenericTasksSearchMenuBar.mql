@@ -1,0 +1,28 @@
+del command 'PMCGenericTasksSearchMenuBar';
+add command 'PMCGenericTasksSearchMenuBar'
+	description	'Menu Bar Generic Tasks Search'
+	label	'emxProgramCentral.Search.Tasks'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?table=PMCGenericTaskSearchResults&field=TYPES=type_TaskManagement&excludeOIDprogram=emxWhatIf:hideExperimentTask'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Currency Converter'		'false'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGenericTasksSearchMenuBar'
+	property	'version'	value	'R422'
+;
+modify menu PMCProgramCentralSearch add command PMCGenericTasksSearchMenuBar order command PMCGenericTasksSearchMenuBar 4;
+#channel ==>PMCProgramCentralSearch
+add property command_PMCGenericTasksSearchMenuBar on program eServiceSchemaVariableMapping.tcl to command 'PMCGenericTasksSearchMenuBar';

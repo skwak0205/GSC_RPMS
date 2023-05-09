@@ -1,0 +1,21 @@
+del command 'LBCCreateNewFolder';
+add command 'LBCCreateNewFolder'
+	description	'Folder Create New'
+	label	'emxDocumentCentral.ActionBarCmd.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ProjectVault&policy=policy_Project&showPolicy=false&createJPO=emxLibraryCentralCommon:createLBCObject&typeChooser=false&nameField=keyin&form=type_CreateWorkspaceVault&header=emxDocumentCentral.Shortcut.CreateFolder&HelpMarker=emxhelpcreatesimplefolder&submitAction=refreshCaller&findMxLink=false&mode=create'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayCreateNewFolderCmd'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreateFolder.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCreateNewFolder'
+	property	'version'	value	'R424.HF1'
+;
+modify menu DCAllFoldersTopActionbar add command LBCCreateNewFolder order command LBCCreateNewFolder 0;
+#channel ==>DCAllFoldersTopActionbar
+add property command_LBCCreateNewFolder on program eServiceSchemaVariableMapping.tcl to command 'LBCCreateNewFolder';

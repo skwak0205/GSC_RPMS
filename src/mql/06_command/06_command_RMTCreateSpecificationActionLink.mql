@@ -1,0 +1,29 @@
+del command 'RMTCreateSpecificationActionLink';
+add command 'RMTCreateSpecificationActionLink'
+	description	'Opens a Create dialog to create Requirement Specification'
+	label	'emxRequirements.ActionLink.CreateStandaloneRequirementSpecification'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?form=RMTSpecCreation&mode=Creation&type=type_SoftwareRequirementSpecification&submitAction=refreshCaller&header=emxRequirements.ActionLink.CreateStandaloneRequirementSpecification'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'680'
+	setting	'Window Width'		'550'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCreateSpecificationActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecificationsListTopActionBar add command RMTCreateSpecificationActionLink order command RMTCreateSpecificationActionLink 1;
+modify menu RMTSpecificationListActionMenu add command RMTCreateSpecificationActionLink order command RMTCreateSpecificationActionLink 1;
+#channel ==>RMTSpecificationsListTopActionBarRMTSpecificationListActionMenu
+add property command_RMTCreateSpecificationActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTCreateSpecificationActionLink';

@@ -1,0 +1,18 @@
+del command 'AEFExportTablePreference';
+add command 'AEFExportTablePreference'
+	description	'Export Table Preference'
+	label	'emxFramework.Preferences.ExportTable'
+	href	'${COMMON_DIR}/emxPrefExportTable.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/buttonToolbarPreferences.gif'
+	setting	'Help Marker'		'emxhelppreferencesexportformat'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFExportTablePreference'
+	property	'version'	value	'R214'
+;
+modify menu General add command AEFExportTablePreference order command AEFExportTablePreference 2;
+#channel ==>General
+add property command_AEFExportTablePreference on program eServiceSchemaVariableMapping.tcl to command 'AEFExportTablePreference';

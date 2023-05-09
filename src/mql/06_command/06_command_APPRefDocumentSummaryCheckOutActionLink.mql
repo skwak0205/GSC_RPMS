@@ -1,0 +1,26 @@
+del command 'APPRefDocumentSummaryCheckOutActionLink';
+add command 'APPRefDocumentSummaryCheckOutActionLink'
+	description	'Reference Document Check Out Command Object'
+	label	'emxComponents.Command.CheckOut'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=checkout'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[checkout] == true) && current!="Obsolete"'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckOut.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRefDocumentSummaryCheckOutActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRefDocumentSummaryActionsToolBar add command APPRefDocumentSummaryCheckOutActionLink order command APPRefDocumentSummaryCheckOutActionLink 4;
+#channel ==>APPRefDocumentSummaryActionsToolBar
+add property command_APPRefDocumentSummaryCheckOutActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRefDocumentSummaryCheckOutActionLink';

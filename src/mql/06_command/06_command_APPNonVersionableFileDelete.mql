@@ -1,0 +1,25 @@
+del command 'APPNonVersionableFileDelete';
+add command 'APPNonVersionableFileDelete'
+	description	'Delete Selected File from Document'
+	label	'emxComponents.Command.DeleteNonVersionableFile'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRemove.jsp?action=deleteNonVersionableFile'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[checkin] == true)'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.Alert.RemoveFile'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPNonVersionableFileDelete'
+	property	'version'	value	'R422'
+;
+modify menu APPNonVersionableFileSummaryActionsToolBar add command APPNonVersionableFileDelete order command APPNonVersionableFileDelete 0;
+#channel ==>APPNonVersionableFileSummaryActionsToolBar
+add property command_APPNonVersionableFileDelete on program eServiceSchemaVariableMapping.tcl to command 'APPNonVersionableFileDelete';

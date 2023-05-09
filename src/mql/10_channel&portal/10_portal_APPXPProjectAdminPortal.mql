@@ -1,0 +1,9 @@
+del portal 'APPXPProjectAdminPortal';
+add portal 'APPXPProjectAdminPortal'
+	description	'Project Administration portal'
+	label	'emxPlmOnline.label.Project'
+	href	''
+	channel 	ProjectXPChannel
+	setting	'Registered Suite'		'VPLMAdministration'
+;
+add property portal_APPXPProjectAdminPortal on program eServiceSchemaVariableMapping.tcl to portal 'APPXPProjectAdminPortal';

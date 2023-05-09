@@ -1,0 +1,30 @@
+del command 'LBCClassesMyDesk';
+add command 'LBCClassesMyDesk'
+	description	'In Process Classes My Desk command'
+	label	'emxLibraryCentral.Common.Classes'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxLibraryCentralUtil:getAllClasses,emxLibraryCentralUtil:getAllDocumentFamilies,emxLibraryCentralUtil:getAllPartFamilies,emxLibraryCentralUtil:getAllGeneralClasses,emxLibraryCentralUtil:getAllInProcessClasses,emxLibraryCentralUtil:getAllActiveClasses&programLabel=emxDocumentCentral.Common.All,emxLibraryCentral.Common.DocumentFamily,emxLibraryCentral.Common.PartFamily,emxLibraryCentral.Common.GeneralClass,emxLibraryCentral.Common.InProcessClasses,emxLibraryCentral.Common.ActiveClasses&table=LCInProcessClassesList&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=LCInProcessClassToolBar&header=emxLibraryCentral.Common.Classes&HelpMarker=emxhelpinprocessclass'
+	alt	'emxLibraryCentral.Common.Classes'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP,ENO_LIB_TP'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Release Manager'
+	user	'Reviewer'
+	user	'Author'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCClassesMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu LBCMyDesk add command LBCClassesMyDesk order command LBCClassesMyDesk 2;
+#channel ==>LBCMyDesk
+add property command_LBCClassesMyDesk on program eServiceSchemaVariableMapping.tcl to command 'LBCClassesMyDesk';

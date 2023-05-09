@@ -1,0 +1,23 @@
+del command 'AEFGeneralSearch';
+add command 'AEFGeneralSearch'
+	description	'General Search'
+	label	'emxFramework.GlobalSearch.General'
+	href	'${COMMON_DIR}/emxSearchGeneral.jsp'
+	alt	'emxFramework.GlobalSearch.General'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Framework'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedReader'
+	user	'Administration Manager'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFGeneralSearch'
+	property	'version'	value	'R422'
+;
+modify menu AEFGenericSearch add command AEFGeneralSearch order command AEFGeneralSearch 0;
+#channel ==>AEFGenericSearch
+add property command_AEFGeneralSearch on program eServiceSchemaVariableMapping.tcl to command 'AEFGeneralSearch';

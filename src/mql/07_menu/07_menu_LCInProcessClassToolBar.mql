@@ -1,0 +1,17 @@
+del menu 'LCInProcessClassToolBar';
+add menu 'LCInProcessClassToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'LCInProcessClassActionsToolBar'
+	command	'LBCSearchInAtInProcessClass'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCInProcessClassToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_LCInProcessClassToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCInProcessClassToolBar';

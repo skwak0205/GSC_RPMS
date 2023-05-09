@@ -1,0 +1,12 @@
+del command 'APPVPLMProjectSearch';
+add command 'APPVPLMProjectSearch'
+	description	''
+	label	'emxPlmOnline.label.Search'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=Project&dir=XP'
+	alt	'emxPlmOnline.label.Search'
+	setting	'Registered Suite'		'VPLMAdministration'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+#channel ==>ProjectVPLMChannel
+add property command_APPVPLMProjectSearch on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMProjectSearch';

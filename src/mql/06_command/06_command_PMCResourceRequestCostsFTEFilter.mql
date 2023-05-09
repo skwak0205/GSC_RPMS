@@ -1,0 +1,21 @@
+del command 'PMCResourceRequestCostsFTEFilter';
+add command 'PMCResourceRequestCostsFTEFilter'
+	description	''
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=PhaseTimelineCostFTEFilter'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getCostFTEFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxResourceRequest'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestCostsFTEFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCResourceRequestLifecycleFilterMenu add command PMCResourceRequestCostsFTEFilter order command PMCResourceRequestCostsFTEFilter 3;
+#channel ==>PMCResourceRequestLifecycleFilterMenu
+add property command_PMCResourceRequestCostsFTEFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestCostsFTEFilter';

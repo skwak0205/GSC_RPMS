@@ -1,0 +1,20 @@
+del menu 'RMTReqirementStructureStaticRMB';
+add menu 'RMTReqirementStructureStaticRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTStructureBrowserCreateMenu'
+	menu	'RMTStructureBrowserAddExistingMenu'
+	command	'RMTRequirementPropertiesSlidein'
+	command	'AEFLifecycle'
+	menu	'AEFClipboardCollectionsRMB'
+	menu	'RMTRequirementStructureDeleteActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTReqirementStructureStaticRMB'
+	property 'version'	value	'V6R2016x'
+;
+add property menu_RMTReqirementStructureStaticRMB on program eServiceSchemaVariableMapping.tcl to menu 'RMTReqirementStructureStaticRMB';

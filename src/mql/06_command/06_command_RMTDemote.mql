@@ -1,0 +1,25 @@
+del command 'RMTDemote';
+add command 'RMTDemote'
+	description	'Command used to demote object.'
+	label	'emxRequirements.Label.Demote'
+	href	'${SUITE_DIR}/RequirementUtil.jsp?mode=Demote'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Access Behavior'		'disable'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Access Function'		'hasPreviousState'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDemote.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTDemote'
+	property	'version'	value	'R216'
+;
+modify menu RMTRequirementSpecificationPropertiesActionBar add command RMTDemote order command RMTDemote 4;
+modify menu RMTChapterPropertiesActionBar add command RMTDemote order command RMTDemote 4;
+modify menu RMTCommentPropertiesActionBar add command RMTDemote order command RMTDemote 4;
+modify menu RMTRequirementPropertiesTopActionBar add command RMTDemote order command RMTDemote 6;
+#channel ==>RMTRequirementSpecificationPropertiesActionBarRMTChapterPropertiesActionBarRMTCommentPropertiesActionBarRMTRequirementPropertiesTopActionBar
+add property command_RMTDemote on program eServiceSchemaVariableMapping.tcl to command 'RMTDemote';

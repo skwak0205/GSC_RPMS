@@ -1,0 +1,25 @@
+del command 'PMCUnassignQuestion';
+add command 'PMCUnassignQuestion'
+	description	'Command to unassign question from current task in task popup'
+	label	'emxProgramCentral.Common.UnassignQuestion'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=unAssignTaskQuestion'
+	alt	''
+	setting	'Target Location'		'_self'
+	setting	'CmdName'		'PMCUnassignQuestion'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isQuestionCommandAccessible'
+	setting	'Access Program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCUnassignQuestion'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectTemplateTaskQuestionActionsToolBar add command PMCUnassignQuestion order command PMCUnassignQuestion 0;
+#channel ==>PMCProjectTemplateTaskQuestionActionsToolBar
+add property command_PMCUnassignQuestion on program eServiceSchemaVariableMapping.tcl to command 'PMCUnassignQuestion';

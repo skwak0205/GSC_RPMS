@@ -1,0 +1,22 @@
+del command 'APPLaunch3DLiveChannel';
+add command 'APPLaunch3DLiveChannel'
+	description	''
+	label	'emxComponents.ImageManager.3DLiveExamine'
+	href	'${COMPONENT_DIR}/emxLaunch3DLiveExamineCheck.jsp?crossHighlight=true'
+	alt	'emxComponents.ImageManager.3DLiveExamine'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'false'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showCrossHighlight'
+	setting	'Access Program'		'jpo.plmprovider.NavRep'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionShowHide3D.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLaunch3DLiveChannel'
+	property	'version'	value	'R419'
+;
+#channel ==>APP3DLiveChannel
+add property command_APPLaunch3DLiveChannel on program eServiceSchemaVariableMapping.tcl to command 'APPLaunch3DLiveChannel';

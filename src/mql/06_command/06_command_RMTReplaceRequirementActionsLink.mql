@@ -1,0 +1,31 @@
+del command 'RMTReplaceRequirementActionsLink';
+add command 'RMTReplaceRequirementActionsLink'
+	description	''
+	label	'emxRequirements.ActionLink.ReplaceRequirement'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ReqReplaceFSInstance&PRCFSParam1=listPage'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete")'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Help Marker'		'emxhelprequirementreplace'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTReplaceRequirementActionsLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTProductRequirementBottomActionBar add command RMTReplaceRequirementActionsLink order command RMTReplaceRequirementActionsLink 2;
+modify menu RMTFeatureRequirementBottomActionBar add command RMTReplaceRequirementActionsLink order command RMTReplaceRequirementActionsLink 3;
+#channel ==>RMTProductRequirementBottomActionBarRMTFeatureRequirementBottomActionBar
+add property command_RMTReplaceRequirementActionsLink on program eServiceSchemaVariableMapping.tcl to command 'RMTReplaceRequirementActionsLink';

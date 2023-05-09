@@ -1,0 +1,25 @@
+del command 'PLCAddExistingEngineeringChangeTestCaseActionLink';
+add command 'PLCAddExistingEngineeringChangeTestCaseActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_TestCase&excludeOIDprogram=emxPLCCommon:excludeConnected&table=PLCSearchTestCasesTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_ECTestCase&from=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'context.user == owner || context.user == to[Assigned EC].from.name'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	setting	'Access Mask'		'FromConnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingEngineeringChangeTestCaseActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCEngineeringChangeTestCaseActionsToolbar add command PLCAddExistingEngineeringChangeTestCaseActionLink order command PLCAddExistingEngineeringChangeTestCaseActionLink 2;
+#channel ==>PLCEngineeringChangeTestCaseActionsToolbar
+add property command_PLCAddExistingEngineeringChangeTestCaseActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingEngineeringChangeTestCaseActionLink';

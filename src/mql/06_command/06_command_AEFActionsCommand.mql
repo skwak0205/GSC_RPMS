@@ -1,0 +1,18 @@
+del command 'AEFActionsCommand';
+add command 'AEFActionsCommand'
+	description	''
+	label	''
+	href	'javascript: getTopWindow().globalToolbarMenu(\"emxGlobalToolbarMenuSlidein.jsp?menuName=Actions\", \"right\")'
+	alt	'emxFramework.Common.Actions'
+	setting	'Target Location'		'content'
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconMedDashboard.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFActionsCommand'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_AEFActionsCommand on program eServiceSchemaVariableMapping.tcl to command 'AEFActionsCommand';

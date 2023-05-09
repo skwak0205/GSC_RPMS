@@ -1,0 +1,17 @@
+del command 'APPObjectAccess';
+add command 'APPObjectAccess'
+	description	'Command added for generic object access implementation. It should be cloned for implementing for specific type'
+	label	'emxFramework.Command.Access'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPObjectAccessSummary&program=emxObjectAccess:getAccessGrantees&toolbar=APPObjectAccessToolbar&header=emxComponents.ObjectAccess.AccessHeading&sortColumnName=Name&sortDirection=ascending&selection=none&HelpMarker=&PrinterFriendly=true&accessChoice=&showAllProgram=&showAllFunction=&pushGrantor=person_CommonAccessGrantor'
+	alt	'emxFramework.Command.Alt.Access'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallAccess.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectAccess'
+	property	'version'	value	'10-7'
+;
+#channel ==>
+add property command_APPObjectAccess on program eServiceSchemaVariableMapping.tcl to command 'APPObjectAccess';

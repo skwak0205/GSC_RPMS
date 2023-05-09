@@ -1,0 +1,6 @@
+{
+   "KeyChoiceLabel" : "Enter a text"  ,
+   "KeyBodyText1"   : "This is an example of widget with translated texts. In its title, in its contents, as well for the user preference label in the Preferences menu.",
+   "KeyBodyText2"   : "The current iso code > <b>{code}</b>." ,
+   "KeyTitle"       : "For \" {preftext} \""
+}

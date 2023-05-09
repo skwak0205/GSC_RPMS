@@ -1,0 +1,23 @@
+del command 'APPRouteTaskEditAll';
+add command 'APPRouteTaskEditAll'
+	description	'Edit All action for the Route Task'
+	label	'emxComponents.Button.EditAll'
+	href	'${SUITE_DIR}/emxEditAllTasksValidation.jsp'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'id==last.id&&!(type=="Route Template"&&current=="Active")'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checksToShowEditAllTaskCommand'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteTaskEditAll'
+	property	'version'	value	'R421'
+;
+modify menu APPRouteTaskSummaryActionsToolbar add command APPRouteTaskEditAll order command APPRouteTaskEditAll 1;
+#channel ==>APPRouteTaskSummaryActionsToolbar
+add property command_APPRouteTaskEditAll on program eServiceSchemaVariableMapping.tcl to command 'APPRouteTaskEditAll';

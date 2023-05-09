@@ -1,0 +1,10 @@
+del menu 'VPLMSearchAddExistingChooser';
+add menu 'VPLMSearchAddExistingChooser'
+	description	'VPLM Action Menu'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'VPLMIssueSearchDocumentCommand'
+;
+add property menu_VPLMSearchAddExistingChooser on program eServiceSchemaVariableMapping.tcl to menu 'VPLMSearchAddExistingChooser';

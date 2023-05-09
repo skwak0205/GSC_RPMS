@@ -1,0 +1,12 @@
+m|FolderNGUX\BookmarkEditorWebInWin.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.23009|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\BookmarkEditorWebInWin\BookmarkEditorWebInWin.js|1673300300|3037
+s|FolderNGUX\BookmarkEditorWebInWin.mweb\src\BookmarkEditorWebInWin.js|1671807531|4274
+t|win_b64\webapps\BookmarkEditorWebInWin\BookmarkWebInWin.html|1666424653|3261
+s|FolderNGUX\BookmarkEditorWebInWin.mweb\src\BookmarkWebInWin.html|1663161159|3261
+u|FolderNGUX\BookmarkEditorWebInWin.mweb\src\BookmarkWebInWin.js|1673008104|2564
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

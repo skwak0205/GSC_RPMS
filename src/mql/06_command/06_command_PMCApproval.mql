@@ -1,0 +1,23 @@
+del command 'PMCApproval';
+add command 'PMCApproval'
+	description	'Approval Command Object'
+	label	'emxFramework.Command.Approval'
+	href	'${SUITE_DIR}/emxEngrApprovalsSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Approval'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'approvals.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCApproval'
+	property	'version'	value	'R422'
+;
+modify menu type_ProjectConcept add command PMCApproval order command PMCApproval 1;
+#channel ==>type_ProjectConceptPMCProjectApprovalsRoutesChannelPMCGateAndTaskRouteAndApprovalsChannelPMCExecution
+add property command_PMCApproval on program eServiceSchemaVariableMapping.tcl to command 'PMCApproval';

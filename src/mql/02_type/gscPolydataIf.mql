@@ -1,0 +1,23 @@
+################################################################################################
+# Created Date : 2023.03.29
+# Create by jrchoi
+# Description : Polydata 업무요청서 I/F Object
+################################################################################################
+#del type gscPolydataIf;
+add type gscPolydataIf
+    property 'installed date'     value  '2023.01.10'
+    property 'application'        value  'Framework'
+    property 'original name'      value  'gscPolydataIf'
+    property 'installer'          value  'GSC'
+    property 'version'            value  'V6R2019'
+;
+
+add property type_gscPolydataIf on prog eServiceSchemaVariableMapping.tcl to  type 'gscPolydataIf';
+
+mod policy 'gscInterfaceDeliverable'
+   add type gscPolydataIf;
+
+mod type gscPolydataIf add attribute gscNo,gscTitle,gscUserId,gscUserName,gscProductType,gscProductTypeLabel,gscSendDt,gscCloseDt;
+
+
+

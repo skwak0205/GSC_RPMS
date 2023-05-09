@@ -1,0 +1,19 @@
+del command 'DataGridFind';
+add command 'DataGridFind'
+	description	''
+	label	'emxFramework.GSB.Find'
+	href	'javascript:StandardFunctions.showFind()'
+	alt	'emxFramework.GSB.Find'
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionFindInStructure.png'
+	setting	'Display View'		'details'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridFind'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridMenu add command DataGridFind order command DataGridFind 0;
+#channel ==>DataGridMenu
+add property command_DataGridFind on program eServiceSchemaVariableMapping.tcl to command 'DataGridFind';

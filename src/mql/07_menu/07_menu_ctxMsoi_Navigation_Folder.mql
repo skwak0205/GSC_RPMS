@@ -1,0 +1,10 @@
+del menu 'ctxMsoi_Navigation_Folder';
+add menu 'ctxMsoi_Navigation_Folder'
+	description	'Menu for Folder'
+	label	''
+	href	''
+	alt	''
+	command	'ctxMsoiCmd_Delete'
+	command	'ctxMsoiCmd_ShowAttributes'
+;
+add property menu_ctxMsoi_Navigation_Folder on program eServiceSchemaVariableMapping.tcl to menu 'ctxMsoi_Navigation_Folder';

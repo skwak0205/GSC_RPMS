@@ -1,0 +1,16 @@
+del channel 'WorkspaceFolderContent';
+add channel 'WorkspaceFolderContent'
+	description	'WorkspaceFolderContent'
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'FolderManagement'
+	command 	'WorkspaceContent'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'WorkspaceFolderContent'
+	property	'version'	value	'R417'
+;
+#portal ==>WorkspaceExplorerView
+add property channel_WorkspaceFolderContent on program eServiceSchemaVariableMapping.tcl to channel 'WorkspaceFolderContent';

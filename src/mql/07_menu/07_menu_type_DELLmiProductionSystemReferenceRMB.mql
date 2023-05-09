@@ -1,0 +1,9 @@
+del menu 'type_DELLmiProductionSystemReferenceRMB';
+add menu 'type_DELLmiProductionSystemReferenceRMB'
+	description	'VPLM System Right Mouse Button Menu'
+	label	'System RMB'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+;
+add property menu_type_DELLmiProductionSystemReferenceRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_DELLmiProductionSystemReferenceRMB';

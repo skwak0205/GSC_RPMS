@@ -1,0 +1,28 @@
+del command 'LBCSearchInAtInProcessClass';
+add command 'LBCSearchInAtInProcessClass'
+	description	'Search In'
+	label	'emxMultipleClassification.ActionBarCmd.SearchIn'
+	href	'${SUITE_DIR}/emxMultipleClassificationEndItemsSearch.jsp?toolbar=APPBlankToolbar'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearchWithin.png'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCSearchInAtInProcessClass'
+	property	'version'	value	'R422'
+;
+modify menu LCInProcessClassToolBar add command LBCSearchInAtInProcessClass order command LBCSearchInAtInProcessClass 0;
+#channel ==>LCInProcessClassToolBar
+add property command_LBCSearchInAtInProcessClass on program eServiceSchemaVariableMapping.tcl to command 'LBCSearchInAtInProcessClass';

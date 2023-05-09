@@ -1,0 +1,26 @@
+del command 'ContextDeleteIssueCategoryLink';
+add command 'ContextDeleteIssueCategoryLink'
+	description	'Issue category Classification Delete Selected Command Object'
+	label	'emxComponents.ActionLink.Delete'
+	href	'${COMPONENT_DIR}/emxIssueCategoryClassificationUtil.jsp?mode=DeleteCategoryClassification'
+	alt	'emxComponents.ActionLink.Delete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'current.access[fromdisconnect] == true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.Common.CategoryClassificatioDeleteMsgConfirm'
+	user	'3DSRestrictedOwner'
+	user	'Administration Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'ContextDeleteIssueCategoryLink'
+	property	'version'	value	'R422'
+;
+modify menu IssueCategoriesToolBarActions add command ContextDeleteIssueCategoryLink order command ContextDeleteIssueCategoryLink 0;
+#channel ==>IssueCategoriesToolBarActions
+add property command_ContextDeleteIssueCategoryLink on program eServiceSchemaVariableMapping.tcl to command 'ContextDeleteIssueCategoryLink';

@@ -1,0 +1,16 @@
+del channel 'TMCMyViewWorkspaceMeetingsChannel';
+add channel 'TMCMyViewWorkspaceMeetingsChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'TeamCentral'
+	command 	'TMCWorkspacesMyDesk','APPMeetingMyDesk'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCMyViewWorkspaceMeetingsChannel'
+	property	'version'	value	'R207'
+;
+#portal ==>TMCMyViewPortal
+add property channel_TMCMyViewWorkspaceMeetingsChannel on program eServiceSchemaVariableMapping.tcl to channel 'TMCMyViewWorkspaceMeetingsChannel';

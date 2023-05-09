@@ -1,0 +1,18 @@
+del command 'AEFEmailNotificationPreference';
+add command 'AEFEmailNotificationPreference'
+	description	'Email Notification Preference'
+	label	'emxFramework.Preferences.EmailNotification'
+	href	'${COMMON_DIR}/emxPrefEmailNotifications.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/buttonToolbarPreferences.gif'
+	setting	'Help Marker'		'emxhelpreferencesemailnotifications'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFEmailNotificationPreference'
+	property	'version'	value	'R212.HF4'
+;
+modify menu General add command AEFEmailNotificationPreference order command AEFEmailNotificationPreference 7;
+#channel ==>General
+add property command_AEFEmailNotificationPreference on program eServiceSchemaVariableMapping.tcl to command 'AEFEmailNotificationPreference';

@@ -1,0 +1,27 @@
+del command 'RMTCommitSelectedModelCandidateRequirementsActionLink';
+add command 'RMTCommitSelectedModelCandidateRequirementsActionLink'
+	description	''
+	label	'emxRequirements.ActionLink.CommitSelected'
+	href	'${SUITE_DIR}/ModelUtil.jsp?mode=commitCandidateRequirement&HelpMarker=emxhelpmodreqmts'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Confirm Message'		'emxRequirements.Alert.CommitSelected'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCommitSelectedModelCandidateRequirementsActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTModelCandidateRequirementListBottomActionBar add command RMTCommitSelectedModelCandidateRequirementsActionLink order command RMTCommitSelectedModelCandidateRequirementsActionLink 2;
+#channel ==>RMTModelCandidateRequirementListBottomActionBar
+add property command_RMTCommitSelectedModelCandidateRequirementsActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTCommitSelectedModelCandidateRequirementsActionLink';

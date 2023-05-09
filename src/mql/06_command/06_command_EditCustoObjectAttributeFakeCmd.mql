@@ -1,0 +1,17 @@
+del command 'EditCustoObjectAttributeFakeCmd';
+add command 'EditCustoObjectAttributeFakeCmd'
+	description	'Command to Add and edit Extensions'
+	label	'emxQualification.label.ModifyAttributesCmd'
+	href	'${SUITE_DIR}/emxQualificationEditExtensionFS.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Qualification'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isNoCustoAttrsOnObject'
+	setting	'Access Program'		'emxQualificationProgram'
+	setting	'Row Select'		'none'
+;
+modify menu PLMExtensionsToolbar add command EditCustoObjectAttributeFakeCmd order command EditCustoObjectAttributeFakeCmd 4;
+#channel ==>PLMExtensionsToolbar
+add property command_EditCustoObjectAttributeFakeCmd on program eServiceSchemaVariableMapping.tcl to command 'EditCustoObjectAttributeFakeCmd';

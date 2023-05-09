@@ -1,0 +1,19 @@
+del command 'PLCPortfoliosMyDesk';
+add command 'PLCPortfoliosMyDesk'
+	description	'Displays the available Portfolios'
+	label	'emxProduct.Tree.Portfolios'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCPortfolioList&header=emxProduct.Heading.Portfolio&selection=multiple&program=emxPortfolio:getAllPortFolios&toolbar=PLCPortfolioListToolbar&sortColumnName=Name&HelpMarker=emxhelpportfoliolist&mode=insert'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'$<expression[PortfolioEnabled]=="true">'
+	setting	'Submit'		'True'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPortfoliosMyDesk'
+	property	'version'	value	'R423'
+;
+modify menu PLCMyDesk add command PLCPortfoliosMyDesk order command PLCPortfoliosMyDesk 1;
+#channel ==>PLCMyDesk
+add property command_PLCPortfoliosMyDesk on program eServiceSchemaVariableMapping.tcl to command 'PLCPortfoliosMyDesk';

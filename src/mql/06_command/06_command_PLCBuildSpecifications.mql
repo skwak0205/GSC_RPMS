@@ -1,0 +1,19 @@
+del command 'PLCBuildSpecifications';
+add command 'PLCBuildSpecifications'
+	description	'lists the specifications in the parent Object'
+	label	'emxProduct.Tree.Specification'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=BuildSpecificationSummaryToolbar&header=emxProduct.Heading.Specification&parentRelName=relationship_BuildSpecification&defaultType=type_Specification&showOwner=required&HelpMarker=emxhelpspeclist'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCBuildSpecifications'
+	property	'version'	value	'R418'
+;
+modify menu Msoitype_Builds add command PLCBuildSpecifications order command PLCBuildSpecifications 0;
+modify menu type_HardwareBuild add command PLCBuildSpecifications order command PLCBuildSpecifications 10;
+modify menu type_Builds add command PLCBuildSpecifications order command PLCBuildSpecifications 8;
+modify menu type_SoftwareBuild add command PLCBuildSpecifications order command PLCBuildSpecifications 9;
+#channel ==>Msoitype_Buildstype_HardwareBuildtype_Buildstype_SoftwareBuild
+add property command_PLCBuildSpecifications on program eServiceSchemaVariableMapping.tcl to command 'PLCBuildSpecifications';

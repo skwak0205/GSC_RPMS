@@ -1,0 +1,21 @@
+del command 'TMCWorkspaceSubscriptionRemove';
+add command 'TMCWorkspaceSubscriptionRemove'
+	description	''
+	label	'emxTeamCentral.Button.RemoveSelected'
+	href	'${SUITE_DIR}/emxTeamDeleteSubscription.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUnsubscribe.png'
+	setting	'Confirm Message'		'emxTeamCentral.RemoveSubscription.MsgConfirm'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceSubscriptionRemove'
+	property	'version'	value	'R417'
+;
+modify menu TMCWorkspaceSubscriptionActionsToolBar add command TMCWorkspaceSubscriptionRemove order command TMCWorkspaceSubscriptionRemove 0;
+#channel ==>TMCWorkspaceSubscriptionActionsToolBar
+add property command_TMCWorkspaceSubscriptionRemove on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceSubscriptionRemove';

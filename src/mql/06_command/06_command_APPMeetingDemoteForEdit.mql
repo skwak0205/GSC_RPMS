@@ -1,0 +1,21 @@
+del command 'APPMeetingDemoteForEdit';
+add command 'APPMeetingDemoteForEdit'
+	description	'To demote meeting from scheduled to create state'
+	label	'emxComponents.Meeting.DemoteForEdit'
+	href	'${COMPONENT_DIR}/emxMeetingProcess.jsp?action=Demote&notification=Yes&sReturnPage=null&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[modify] != true && current.access[demote] == true)'
+	setting	'Access Function'		'showMeetingDemoteForEditCommand'
+	setting	'Access Program'		'emxMeeting'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDemoteMeetingForEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingDemoteForEdit'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPMeetingPropertiesActionToolbar add command APPMeetingDemoteForEdit order command APPMeetingDemoteForEdit 5;
+#channel ==>APPMeetingPropertiesActionToolbar
+add property command_APPMeetingDemoteForEdit on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingDemoteForEdit';

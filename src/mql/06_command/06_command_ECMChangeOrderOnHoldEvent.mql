@@ -1,0 +1,19 @@
+del command 'ECMChangeOrderOnHoldEvent';
+add command 'ECMChangeOrderOnHoldEvent'
+	description	'Change Order OnHold Event'
+	label	'EnterpriseChangeMgt.Event.Change_Order_OnHold'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>])'
+	setting	'Event Type'		'Change Order On Hold'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeOrderOnHoldEvent'
+	property	'version'	value	'R216'
+;
+modify menu ECMSubscriptionEvents add command ECMChangeOrderOnHoldEvent order command ECMChangeOrderOnHoldEvent 11;
+#channel ==>ECMSubscriptionEvents
+add property command_ECMChangeOrderOnHoldEvent on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeOrderOnHoldEvent';

@@ -1,0 +1,36 @@
+del table 'CFPViewManufacturingPlanMatrixTable' system;
+add table 'CFPViewManufacturingPlanMatrixTable' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'DMCPlanning.Table.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxTree.jsp?mode=insert'
+	range	''
+	setting	'Target Location'		'content'
+	setting	'Auto Filter'		'true'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'Manufacturing Plans'
+	businessobject	'empty'
+	label	'empty'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getManufacturingPlansWithManagedRevisions'
+	setting	'Auto Filter'		'true'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'ManufacturingPlan'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPViewManufacturingPlanMatrixTable'
+	property	'version'	value	'R214'
+;
+add property table_CFPViewManufacturingPlanMatrixTable on program eServiceSchemaVariableMapping.tcl to table 'CFPViewManufacturingPlanMatrixTable' system;

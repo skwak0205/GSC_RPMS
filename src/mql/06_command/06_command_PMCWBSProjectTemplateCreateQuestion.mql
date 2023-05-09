@@ -1,0 +1,30 @@
+del command 'PMCWBSProjectTemplateCreateQuestion';
+add command 'PMCWBSProjectTemplateCreateQuestion'
+	description	'Command to create and assign question to selected project template tasks'
+	label	'emxProgramCentral.Common.CreateQuestion'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=createQuestionsAndConnectToTemplateTask'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'!(to[$<relationship_Question>].from.name != "")'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	setting	'Access Mask'		'Modify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSProjectTemplateCreateQuestion'
+	property	'version'	value	'R424.HF3'
+;
+modify menu PMCWBSProjectTemplateToolBarActions add command PMCWBSProjectTemplateCreateQuestion order command PMCWBSProjectTemplateCreateQuestion 7;
+modify menu PMCQuestionProjectTemplateMenu add command PMCWBSProjectTemplateCreateQuestion order command PMCWBSProjectTemplateCreateQuestion 1;
+#channel ==>PMCWBSProjectTemplateToolBarActionsPMCQuestionProjectTemplateMenu
+add property command_PMCWBSProjectTemplateCreateQuestion on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSProjectTemplateCreateQuestion';

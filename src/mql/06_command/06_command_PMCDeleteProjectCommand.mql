@@ -1,0 +1,21 @@
+del command 'PMCDeleteProjectCommand';
+add command 'PMCDeleteProjectCommand'
+	description	'Command to Remove Project from Dashboard'
+	label	'emxProgramCentral.Project.RemoveSelectedProject'
+	href	'${SUITE_DIR}/emxProgramCentralDashboardsDetailsFS.jsp?mode=remove'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ConfirmDelete'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeleteProjectCommand'
+	property	'version'	value	'R419'
+;
+modify menu PMCDashboardActionsMenu add command PMCDeleteProjectCommand order command PMCDeleteProjectCommand 2;
+#channel ==>PMCDashboardActionsMenu
+add property command_PMCDeleteProjectCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCDeleteProjectCommand';

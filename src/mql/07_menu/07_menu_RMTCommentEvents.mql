@@ -1,0 +1,21 @@
+del menu 'RMTCommentEvents';
+add menu 'RMTCommentEvents'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTObjectReleaseEvent'
+	command	'RMTObjectReviseEvent'
+	command	'RMTObjectOwnerChangeEvent'
+	command	'RMTObjectAddedToSpecStructureEvent'
+	command	'RMTObjectRemovedFromSpecStructureEvent'
+	command	'RMTContentChangedEvent'
+	command	'RMTObjectMajorReviseEvent'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTCommentEvents'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTCommentEvents on program eServiceSchemaVariableMapping.tcl to menu 'RMTCommentEvents';

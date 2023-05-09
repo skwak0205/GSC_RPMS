@@ -1,0 +1,31 @@
+del command 'LCLibraryEndItemsSearchIn';
+add command 'LCLibraryEndItemsSearchIn'
+	description	'Search In'
+	label	'emxMultipleClassification.ActionBarCmd.SearchIn'
+	href	'${SUITE_DIR}/emxMultipleClassificationEndItemsSearch.jsp?toolbar=APPBlankToolbar'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearchWithin.png'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Limited Author'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCLibraryEndItemsSearchIn'
+	property	'version'	value	'R422'
+;
+modify menu LCPartToolBar add command LCLibraryEndItemsSearchIn order command LCLibraryEndItemsSearchIn 0;
+modify menu LCClassifiedItemToolBar add command LCLibraryEndItemsSearchIn order command LCLibraryEndItemsSearchIn 1;
+modify menu LCSearchClassifiedItemActionToolBar add command LCLibraryEndItemsSearchIn order command LCLibraryEndItemsSearchIn 0;
+modify menu APPPartFamilyPartToolBar add command LCLibraryEndItemsSearchIn order command LCLibraryEndItemsSearchIn 0;
+#channel ==>LCPartToolBarLCClassifiedItemToolBarLCSearchClassifiedItemActionToolBarAPPPartFamilyPartToolBar
+add property command_LCLibraryEndItemsSearchIn on program eServiceSchemaVariableMapping.tcl to command 'LCLibraryEndItemsSearchIn';

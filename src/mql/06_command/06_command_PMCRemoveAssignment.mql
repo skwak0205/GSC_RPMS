@@ -1,0 +1,29 @@
+del command 'PMCRemoveAssignment';
+add command 'PMCRemoveAssignment'
+	description	'RemoveAssignment'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=RemoveAssignmentByProjectLead'
+	alt	'emxProgramCentral.Command.ResourcePlan.RemoveAssignment'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isResourcePlanRequestCommand'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_RemoveResource_32.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRemoveAssignment'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourceProcessActions add command PMCRemoveAssignment order command PMCRemoveAssignment 0;
+modify menu PMCResourcePlanToolBar add command PMCRemoveAssignment order command PMCRemoveAssignment 9;
+modify menu PMCResourcePoolRequestToolbar add command PMCRemoveAssignment order command PMCRemoveAssignment 10;
+#channel ==>PMCResourceProcessActionsPMCResourcePlanToolBarPMCResourcePoolRequestToolbar
+add property command_PMCRemoveAssignment on program eServiceSchemaVariableMapping.tcl to command 'PMCRemoveAssignment';

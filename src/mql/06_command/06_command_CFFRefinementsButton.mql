@@ -1,0 +1,13 @@
+del command 'CFFRefinementsButton';
+add command 'CFFRefinementsButton'
+	description	'Command for Refinements in Effectivity Dialog'
+	label	'Effectivity.Label.Refinement'
+	href	'javascript:showAutoFilterDisplayFromEffectivity()'
+	alt	''
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionFilter.png'
+	property	'version'	value	'R419'
+;
+modify menu CFFFilterToolbar add command CFFRefinementsButton order command CFFRefinementsButton 0;
+#channel ==>CFFFilterToolbar
+add property command_CFFRefinementsButton on program eServiceSchemaVariableMapping.tcl to command 'CFFRefinementsButton';

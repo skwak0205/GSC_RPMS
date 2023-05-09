@@ -1,0 +1,21 @@
+del command 'FTRDesignVariantAddedEvent';
+add command 'FTRDesignVariantAddedEvent'
+	description	'Design Variant Added Event'
+	label	'PublishSubscribe.Event.DesignVariantAdded'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Design Variant Added'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDesignVariantAddedEvent'
+	property	'version'	value	'R215'
+;
+modify menu FTRFeaturesEvents add command FTRDesignVariantAddedEvent order command FTRDesignVariantAddedEvent 4;
+modify menu FTRFeatureSubscriptionEvents add command FTRDesignVariantAddedEvent order command FTRDesignVariantAddedEvent 4;
+modify menu FTRLogicalFeatureSubscriptionEvents add command FTRDesignVariantAddedEvent order command FTRDesignVariantAddedEvent 4;
+#channel ==>FTRFeaturesEventsFTRFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEvents
+add property command_FTRDesignVariantAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRDesignVariantAddedEvent';

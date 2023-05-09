@@ -1,0 +1,43 @@
+del table 'AEFUserGroupsChooser' system;
+add table 'AEFUserGroupsChooser' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxFramework.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'Description'
+	businessobject	'description'
+	label	'emxFramework.Basic.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Framework'
+column #3
+	name	'LABEL'
+	businessobject	'name'
+	label	'emxFramework.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Hide Mode'		'!Cloud'
+	setting	'Show Type Icon'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFUserGroupsChooser'
+	property	'version'	value	'R423.HF4'
+;
+add property table_AEFUserGroupsChooser on program eServiceSchemaVariableMapping.tcl to table 'AEFUserGroupsChooser' system;

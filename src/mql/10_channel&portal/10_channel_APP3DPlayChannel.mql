@@ -1,0 +1,16 @@
+del channel 'APP3DPlayChannel';
+add channel 'APP3DPlayChannel'
+	description	'APP3DPlay window in channel'
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Components'
+	command 	'APPLaunch3DPlayChannel'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APP3DPlayChannel'
+	property	'version'	value	'R419'
+;
+#portal ==>
+add property channel_APP3DPlayChannel on program eServiceSchemaVariableMapping.tcl to channel 'APP3DPlayChannel';

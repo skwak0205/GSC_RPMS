@@ -1,0 +1,24 @@
+del command 'PMCProjectReactivate';
+add command 'PMCProjectReactivate'
+	description	'Command to Reactivate Project from Gate Portal Page'
+	label	'emxProgramCentral.Common.Gate.Resume'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCGateDecision&postProcessJPO=emxProjectHoldAndCancel:projectPolicyChangeSequence&mode=edit&formHeader=emxProgramCentral.Header.CreateDecision&HelpMarker=emxhelpdecisioncreate&switch=Resume&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(to[$<relationship_ProjectAccessKey>].from.from[$<relationship_ProjectAccessList>].to.type.kindOf[$<type_ProjectSpace>]==true)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isReactivateEnabled'
+	setting	'Access Program'		'emxProjectHoldAndCancel'
+	setting	'Image'		'${COMMON_DIR}/images/I_CompassPlayerPlay32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectReactivate'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProjectGateToolBarActions add command PMCProjectReactivate order command PMCProjectReactivate 4;
+modify menu PMCChecklistTopActionToolbar add command PMCProjectReactivate order command PMCProjectReactivate 9;
+#channel ==>PMCProjectGateToolBarActionsPMCChecklistTopActionToolbar
+add property command_PMCProjectReactivate on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectReactivate';

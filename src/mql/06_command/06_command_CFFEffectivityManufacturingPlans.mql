@@ -1,0 +1,27 @@
+del command 'CFFEffectivityManufacturingPlans';
+add command 'CFFEffectivityManufacturingPlans'
+	description	'CFFEffectivityManufacturingPlans'
+	label	'CFFEffectivityManufacturingPlans'
+	href	''
+	alt	''
+	setting	'categoryType'		'series'
+	setting	'sequenceSelectable'		'evaluate[revindex + 1]'
+	setting	'Format'		'structure'
+	setting	'allowRange'		'false'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'expandProgram'		'ManufacturingPlan:getEffManufacturingPlanDerivationChain'
+	setting	'searchType'		'type_Model'
+	setting	'seriesType'		'ManufacturingPlan'
+	setting	'Label'		'Effectivity.EffectivityType.ManufacturingPlans'
+	setting	'keyword'		'MP'
+	setting	'includeContextProgram'		'emxPLCCommon:getModelContexts'
+	setting	'table'		'CFPMPEffectivityTable'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFEffectivityManufacturingPlans'
+	property	'version'	value	'R215'
+;
+modify menu CFFEffectivity add command CFFEffectivityManufacturingPlans order command CFFEffectivityManufacturingPlans 4;
+#channel ==>CFFEffectivity
+add property command_CFFEffectivityManufacturingPlans on program eServiceSchemaVariableMapping.tcl to command 'CFFEffectivityManufacturingPlans';

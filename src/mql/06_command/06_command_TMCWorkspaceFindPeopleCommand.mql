@@ -1,0 +1,21 @@
+del command 'TMCWorkspaceFindPeopleCommand';
+add command 'TMCWorkspaceFindPeopleCommand'
+	description	''
+	label	'emxTeamCentral.WorkSpaceAddMembersDialog.FindPeople'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxWorkspace:getAllWorkspaceMembers&table=TMCWorkspaceMembersSearchTable&form=TMCWorkspaceFindPeopleForm&searchCommand=TMCWorkspaceFindPeopleCommand&type=Person&SubmitLabel=emxComponents.Common.Done&customize=false&showClipboard=false&multiColumnSort=false&objectCompare=false&HelpMarker=emxhelpselectmembers'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceFindPeopleCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCAddWorkspaceMembersMenu add command TMCWorkspaceFindPeopleCommand order command TMCWorkspaceFindPeopleCommand 1;
+#channel ==>TMCAddWorkspaceMembersMenu
+add property command_TMCWorkspaceFindPeopleCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceFindPeopleCommand';

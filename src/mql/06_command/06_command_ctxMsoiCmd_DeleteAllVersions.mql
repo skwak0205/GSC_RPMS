@@ -1,0 +1,18 @@
+del command 'ctxMsoiCmd_DeleteAllVersions';
+add command 'ctxMsoiCmd_DeleteAllVersions'
+	description	'ctxMsoiCmd_DeleteAllVersions'
+	label	'emxMSF.Command.ctxMsoiCmd_DeleteAllVersions'
+	href	''
+	alt	'ctxMsoiCmd_DeleteAllVersions'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_DeleteAllVersions'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Revisions_VersionUnLocked add command ctxMsoiCmd_DeleteAllVersions order command ctxMsoiCmd_DeleteAllVersions 0;
+#channel ==>ctxMsoi_Revisions_VersionUnLocked
+add property command_ctxMsoiCmd_DeleteAllVersions on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_DeleteAllVersions';

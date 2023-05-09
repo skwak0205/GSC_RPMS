@@ -1,0 +1,36 @@
+del command 'APPDiscussionDeleteSelectedActionLink';
+add command 'APPDiscussionDeleteSelectedActionLink'
+	description	'Delete Discussion Command Object'
+	label	'emxComponents.Common.DeleteDiscussion'
+	href	'${COMPONENT_DIR}/emxComponentsDiscussionDeleteProcess.jsp'
+	alt	'emxComponents.Common.DeleteDiscussion'
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxFramework.Command.Delete_Warning_Message'
+	user	'Organization Manager'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	user	'Specification Restricted User'
+	user	'Global Template Administrator'
+	user	'Template Administrator'
+	user	'Template Header Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionDeleteSelectedActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDiscussionBottomActionBar add command APPDiscussionDeleteSelectedActionLink order command APPDiscussionDeleteSelectedActionLink 0;
+modify menu APPDiscussionActionsToolBar add command APPDiscussionDeleteSelectedActionLink order command APPDiscussionDeleteSelectedActionLink 0;
+#channel ==>APPDiscussionBottomActionBarAPPDiscussionActionsToolBar
+add property command_APPDiscussionDeleteSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionDeleteSelectedActionLink';

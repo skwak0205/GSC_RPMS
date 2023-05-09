@@ -1,0 +1,15 @@
+{
+  "SelectAFile": "Selecione um arquivo...",
+  "BrowseButtonText": "Procurar",
+  "UploadButtonText": "Carregar",
+  "ResetButtonText": "Redefinir todas as sequências estendidas",
+  "DownloadButtonText": "Fazer Download",
+  "DownloadFailedAlert": "Falha ao fazer download",
+  "NoFileToUpload": "Nada para carregar; primeiro selecione um arquivo",
+  "UploadSuccessAlert": "Arquivo carregado com êxito",
+  "UploadFailedAlert": "Falha ao carregar o arquivo",
+  "ResetSuccessAlert": "Redefinição bem-sucedida",
+  "ResetFailedAlert": "Falha ao redefinir",
+  "VersionNamingExtHeader": "Carregar/baixar definições das sequências de revisão estendida",
+  "VersionNamingExtTooltip": ""
+}

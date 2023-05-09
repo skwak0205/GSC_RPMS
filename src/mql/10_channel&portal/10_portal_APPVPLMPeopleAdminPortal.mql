@@ -1,0 +1,9 @@
+del portal 'APPVPLMPeopleAdminPortal';
+add portal 'APPVPLMPeopleAdminPortal'
+	description	'People Administration portal'
+	label	'emxPlmOnline.label.PeopleViewToolbar'
+	href	''
+	channel 	PeopleChannel
+	setting	'Registered Suite'		'VPLMAdministration'
+;
+add property portal_APPVPLMPeopleAdminPortal on program eServiceSchemaVariableMapping.tcl to portal 'APPVPLMPeopleAdminPortal';

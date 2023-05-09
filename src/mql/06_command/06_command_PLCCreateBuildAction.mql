@@ -1,0 +1,25 @@
+del command 'PLCCreateBuildAction';
+add command 'PLCCreateBuildAction'
+	description	''
+	label	'emxProduct.Action.Build'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_HardwareBuild,type_Builds&autoNameChecked=true&typeChooser=true&nameField=both&vaultChooser=true&form=PLCCreateBuildForm&header=emxProduct.Heading.BuildCreate&HelpMarker=emxhelpbuildcreate&createContext=Actions&submitAction=treeContent&multiBuildCreation=true&relationship=null&postProcessURL=../productline/BuildCreatePostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateBuildAction'
+	property	'version'	value	'R417'
+;
+modify menu PLCActions add command PLCCreateBuildAction order command PLCCreateBuildAction 4;
+#channel ==>PLCActions
+add property command_PLCCreateBuildAction on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateBuildAction';

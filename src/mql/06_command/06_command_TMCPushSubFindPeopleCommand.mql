@@ -1,0 +1,21 @@
+del command 'TMCPushSubFindPeopleCommand';
+add command 'TMCPushSubFindPeopleCommand'
+	description	''
+	label	'emxTeamCentral.WorkSpaceAddMembersDialog.FindPeople'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxWorkspaceSubscription:getRecipientsFindResult&table=TMCPushSubRecipientsTable&form=TMCPushSucsriptionFindPeopleForm&searchCommand=TMCPushSubAddRecipientsCommand&SubmitURL=../components/emxCommonConnectObjects.jsp'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCPushSubFindPeopleCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCPushSubAddRecipientsMenu add command TMCPushSubFindPeopleCommand order command TMCPushSubFindPeopleCommand 0;
+#channel ==>TMCPushSubAddRecipientsMenu
+add property command_TMCPushSubFindPeopleCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCPushSubFindPeopleCommand';

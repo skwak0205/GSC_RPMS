@@ -1,0 +1,21 @@
+del command 'PLCEngineeringChangeRaisedEvent';
+add command 'PLCEngineeringChangeRaisedEvent'
+	description	'Engineering Change Raised Event'
+	label	'PublishSubscribe.Event.EngineeringChangeRaised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Engineering Change Raised'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCEngineeringChangeRaisedEvent'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductsEvents add command PLCEngineeringChangeRaisedEvent order command PLCEngineeringChangeRaisedEvent 24;
+modify menu FTRFeaturesEvents add command PLCEngineeringChangeRaisedEvent order command PLCEngineeringChangeRaisedEvent 6;
+modify menu FTRFeatureSubscriptionEvents add command PLCEngineeringChangeRaisedEvent order command PLCEngineeringChangeRaisedEvent 6;
+modify menu FTRConfigurationOptionSubscriptionEvents add command PLCEngineeringChangeRaisedEvent order command PLCEngineeringChangeRaisedEvent 1;
+#channel ==>PLCProductsEventsFTRFeaturesEventsFTRFeatureSubscriptionEventsFTRConfigurationOptionSubscriptionEvents
+add property command_PLCEngineeringChangeRaisedEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCEngineeringChangeRaisedEvent';

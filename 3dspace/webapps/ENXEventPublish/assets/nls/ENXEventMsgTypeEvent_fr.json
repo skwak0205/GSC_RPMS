@@ -1,0 +1,17 @@
+{
+  "created": "Créé",
+  "statusChanged": "Etat modifié",
+  "Change": "Action de changement",
+  "Document": "Document",
+  "Engineering Item": "Elément d'ingénierie",
+  "Manufacturing Item": "Elément de fabrication",
+  "Manufacturing Process": "Procédé de fabrication",
+  "dsxcad": "Intégration de conception CAO",
+  "Change Order": "Ordre de modification",
+  "computed": "Calculé",
+  "Production Plan": "Plan de production",
+  "exchangejobs": "Travaux d'échange",
+  "versioned": "Versionné",
+  "SupplierCompany": "Société fournisseur",
+  "connected": "Connecté"
+}

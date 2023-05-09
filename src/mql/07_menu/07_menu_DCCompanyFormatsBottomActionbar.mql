@@ -1,0 +1,15 @@
+del menu 'DCCompanyFormatsBottomActionbar';
+add menu 'DCCompanyFormatsBottomActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCObjectRemoveSelectedActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCCompanyFormatsBottomActionbar'
+	property 'version'	value	'9-5-2-0'
+;
+add property menu_DCCompanyFormatsBottomActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCCompanyFormatsBottomActionbar';

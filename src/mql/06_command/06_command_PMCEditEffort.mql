@@ -1,0 +1,22 @@
+del command 'PMCEditEffort';
+add command 'PMCEditEffort'
+	description	'Edit Effort'
+	label	'emxProgramCentral.Common.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCEffortForm&mode=edit&formHeader=emxProgramCentral.Common.FormEditDetails&HelpMarker=emxhelpeffortedit'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'!(current=="Approved" || current =="Submit")'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'iconActionEdit.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEditEffort'
+	property	'version'	value	'R420'
+;
+modify menu PMCEditEffortToolbarActions add command PMCEditEffort order command PMCEditEffort 0;
+#channel ==>PMCEditEffortToolbarActions
+add property command_PMCEditEffort on program eServiceSchemaVariableMapping.tcl to command 'PMCEditEffort';

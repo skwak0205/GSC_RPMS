@@ -1,0 +1,22 @@
+del command 'APPDecisionWhereUsedRemove';
+add command 'APPDecisionWhereUsedRemove'
+	description	'Decision Remove Selected Command Object'
+	label	'emxComponents.ActionLink.Remove'
+	href	'${SUITE_DIR}/emxIssueUtil.jsp?mode=disconnect'
+	alt	'emxComponents.ActionLink.Remove'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromdisconnect] == TRUE)'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionWhereUsedRemove'
+	property	'version'	value	'R417'
+;
+modify menu APPDecisionWhereUsedActionBar add command APPDecisionWhereUsedRemove order command APPDecisionWhereUsedRemove 0;
+#channel ==>APPDecisionWhereUsedActionBar
+add property command_APPDecisionWhereUsedRemove on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionWhereUsedRemove';

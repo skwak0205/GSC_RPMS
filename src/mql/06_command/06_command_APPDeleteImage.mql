@@ -1,0 +1,25 @@
+del command 'APPDeleteImage';
+add command 'APPDeleteImage'
+	description	'Delete Selected Image'
+	label	'emxComponents.Command.Delete'
+	href	'${COMPONENT_DIR}/emxImageManagerDeleteImage.jsp?'
+	alt	''
+	setting	'Target Location'		'imageHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'current.access[modify] == true && current.access[todisconnect]'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.ImageManager.Confirm.DeleteImage'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteImage'
+	property	'version'	value	'R422'
+;
+modify menu APPImageManagerActionsToolBar add command APPDeleteImage order command APPDeleteImage 0;
+#channel ==>APPImageManagerActionsToolBar
+add property command_APPDeleteImage on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteImage';

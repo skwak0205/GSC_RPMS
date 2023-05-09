@@ -1,0 +1,23 @@
+del command 'RMTRequirementAddedEvent';
+add command 'RMTRequirementAddedEvent'
+	description	'Requirement Added Event'
+	label	'PublishSubscribe.Event.RequirementAdded'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Requirement Added'
+	setting	'Access Function'		'showRequirementAddedRemovedEvent'
+	setting	'Access Program'		'emxProductLine'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementAddedEvent'
+	property	'version'	value	'V6R2017x'
+;
+modify menu FTRFeatureSubscriptionEvents add command RMTRequirementAddedEvent order command RMTRequirementAddedEvent 12;
+modify menu FTRLogicalFeatureSubscriptionEvents add command RMTRequirementAddedEvent order command RMTRequirementAddedEvent 24;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command RMTRequirementAddedEvent order command RMTRequirementAddedEvent 16;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command RMTRequirementAddedEvent order command RMTRequirementAddedEvent 22;
+#channel ==>FTRFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRConfigurationFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_RMTRequirementAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementAddedEvent';

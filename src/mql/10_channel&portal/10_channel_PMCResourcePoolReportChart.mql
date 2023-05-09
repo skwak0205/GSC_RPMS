@@ -1,0 +1,16 @@
+del channel 'PMCResourcePoolReportChart';
+add channel 'PMCResourcePoolReportChart'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCResourcePoolReportChart'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolReportChart'
+	property	'version'	value	'R417'
+;
+#portal ==>PMCResourcePoolReport
+add property channel_PMCResourcePoolReportChart on program eServiceSchemaVariableMapping.tcl to channel 'PMCResourcePoolReportChart';

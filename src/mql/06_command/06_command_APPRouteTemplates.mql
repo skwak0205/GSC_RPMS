@@ -1,0 +1,18 @@
+del command 'APPRouteTemplates';
+add command 'APPRouteTemplates'
+	description	'Command Object for Route Template Summary'
+	label	'emxComponents.Command.RouteTemplates'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPRouteTemplateSummary&toolbar=APPRouteTemplateSummaryToolBar&program=emxRouteTemplate:getAllRouteTemplates,emxRouteTemplate:getApprovalRouteTemplates,emxRouteTemplate:getReviewerRouteTemplates,emxRouteTemplate:getStandardRouteTemplates&programLabel=emxComponents.Common.All,emxComponents.Route.Approval,emxComponents.Route.Review,emxComponents.Route.Standard&selection=multiple&header=emxComponents.Common.RouteTemplates&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelproutetemplates'
+	alt	'emxFramework.Command.RouteTemplates'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteTemplates'
+	property	'version'	value	'R417'
+;
+modify menu APPMyRoutes add command APPRouteTemplates order command APPRouteTemplates 0;
+#channel ==>APPMyRoutes
+add property command_APPRouteTemplates on program eServiceSchemaVariableMapping.tcl to command 'APPRouteTemplates';

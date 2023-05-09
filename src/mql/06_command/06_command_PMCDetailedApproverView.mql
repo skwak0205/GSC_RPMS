@@ -1,0 +1,18 @@
+del command 'PMCDetailedApproverView';
+add command 'PMCDetailedApproverView'
+	description	'Detailed Approver View'
+	label	'emxProgramCentral.WeeklyTimesheet.DetailedView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWeeklyTimeSheetApproverDetailedView'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDetailedApproverView'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimesheetApproverViews add command PMCDetailedApproverView order command PMCDetailedApproverView 0;
+#channel ==>PMCWeeklyTimesheetApproverViews
+add property command_PMCDetailedApproverView on program eServiceSchemaVariableMapping.tcl to command 'PMCDetailedApproverView';

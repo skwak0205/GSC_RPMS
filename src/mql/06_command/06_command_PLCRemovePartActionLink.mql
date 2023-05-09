@@ -1,0 +1,22 @@
+del command 'PLCRemovePartActionLink';
+add command 'PLCRemovePartActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/PartUtil.jsp?mode=Disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete")'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCRemovePartActionLink'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_PLCRemovePartActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCRemovePartActionLink';

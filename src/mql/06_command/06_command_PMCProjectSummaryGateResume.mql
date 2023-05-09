@@ -1,0 +1,28 @@
+del command 'PMCProjectSummaryGateResume';
+add command 'PMCProjectSummaryGateResume'
+	description	'Command to Reactivate Project from Gate Portal Page'
+	label	'emxProgramCentral.Common.Gate.Resume'
+	href	'${SUITE_DIR}/emxProgramCentralProjectHoldCancel.jsp?program=emxProjectHoldAndCancel:projectHoldCancelResume&switch=Resume&invokedFrom=StructureBrowser'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Popup Model'		'true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCommandVisible'
+	setting	'Access Program'		'emxProjectHoldAndCancel'
+	setting	'Row Select'		'multi'
+	setting	'Command Name'		'Resume'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionResume.gif'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSummaryGateResume'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectSummaryToolBarActions add command PMCProjectSummaryGateResume order command PMCProjectSummaryGateResume 7;
+#channel ==>PMCProjectSummaryToolBarActions
+add property command_PMCProjectSummaryGateResume on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSummaryGateResume';

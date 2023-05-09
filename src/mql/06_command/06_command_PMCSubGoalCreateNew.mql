@@ -1,0 +1,24 @@
+del command 'PMCSubGoalCreateNew';
+add command 'PMCSubGoalCreateNew'
+	description	'Command for CreateNew Subgoal'
+	label	'emxProgramCentral.Button.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=PMCBusinessGoalCreateForm&type=type_BusinessGoal&header=emxProgramCentral.ProgramTop.BusinessSubgoals&Mode=create&postProcessJPO=emxProgramBusinessGoal:createAndConnectSubGoal&helpMarker=emxhelpbusinessgoalsubgoalsummary&submitAction=refreshCaller&showApply=true&targetLocation=slidein&policy=policy_BusinessGoal&autoFilter=false&expandLevelFilter=false'
+	alt	'emxProgramCentral.Button.CreateNew'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(type.kindOf[$<type_BusinessGoal>]==false || current != Complete) && !(from[$<relationship_BusinessGoalProjectSpace>])'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Business Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSubGoalCreateNew'
+	property	'version'	value	'R421.HF7'
+;
+modify menu PMCBusinessGoalSubgoalToolBarActions add command PMCSubGoalCreateNew order command PMCSubGoalCreateNew 0;
+#channel ==>PMCBusinessGoalSubgoalToolBarActions
+add property command_PMCSubGoalCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PMCSubGoalCreateNew';

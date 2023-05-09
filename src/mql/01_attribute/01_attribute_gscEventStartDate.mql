@@ -1,0 +1,12 @@
+#del attribute 'gscEventStartDate';
+add attribute 'gscEventStartDate'
+ type 'timestamp'
+ description 'Event Start Date'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:43 KST 2022'
+  property 'original name' value 'Estimated Start Date'
+  property 'Protection' value 'Free'
+  property 'version' value 'R418'
+;
+add property attribute_gscEventStartDate on program eServiceSchemaVariableMapping.tcl to attribute 'gscEventStartDate';

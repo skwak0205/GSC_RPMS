@@ -1,0 +1,16 @@
+del command 'IEFDesktopObjectSummary';
+add command 'IEFDesktopObjectSummary'
+	description	'lists the Objects in the parent Object based on the relationship specified'
+	label	'emxComponents.Command.Documents'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=IEFDesktopObjectSummary&toolbar=IEFDesktopActionsMenu'
+	alt	'emxComponents.Command.Documents'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopObjectSummary'
+	property	'version'	value	'R424'
+;
+#channel ==>
+add property command_IEFDesktopObjectSummary on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopObjectSummary';

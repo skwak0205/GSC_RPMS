@@ -1,0 +1,27 @@
+del command 'PMCChecklistDelete';
+add command 'PMCChecklistDelete'
+	description	''
+	label	'emxProgramCentral.Common.Checklist.ChecklistDelete'
+	href	'${SUITE_DIR}/emxProgramCentralChecklistUtil.jsp?mode=delete&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'checkCreateObjectAccessFunctionProjectLead'
+	setting	'Access Program'		'emxChecklist'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ConfirmDelete'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCChecklistDelete'
+	property	'version'	value	'R421.HF5'
+;
+modify menu type_ChecklistRMB add command PMCChecklistDelete order command PMCChecklistDelete 0;
+modify menu type_ChecklistItemRMB add command PMCChecklistDelete order command PMCChecklistDelete 0;
+modify menu PMCChecklistActionToolbar add command PMCChecklistDelete order command PMCChecklistDelete 0;
+modify menu PMCChecklistTopActionToolbar add command PMCChecklistDelete order command PMCChecklistDelete 4;
+#channel ==>type_ChecklistRMBtype_ChecklistItemRMBPMCChecklistActionToolbarPMCChecklistTopActionToolbar
+add property command_PMCChecklistDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCChecklistDelete';

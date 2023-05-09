@@ -1,0 +1,26 @@
+del command 'APPPeopleDeactivate';
+add command 'APPPeopleDeactivate'
+	description	'Deactivate People Command'
+	label	'emxComponents.Common.Deactivate'
+	href	'${SUITE_DIR}/emxComponentsPeopleDeactivateProcess.jsp'
+	alt	'emxComponents.Common.Deactivate'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDeActivate.png'
+	setting	'Confirm Message'		'emxComponents.Alert.DeactivateMsgConfirm'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPeopleDeactivate'
+	property	'version'	value	'R420.HF2'
+;
+modify menu APPPeopleSummaryActionsToolBar add command APPPeopleDeactivate order command APPPeopleDeactivate 0;
+modify menu APPPeopleSummaryToolBar add command APPPeopleDeactivate order command APPPeopleDeactivate 0;
+#channel ==>APPPeopleSummaryActionsToolBarAPPPeopleSummaryToolBar
+add property command_APPPeopleDeactivate on program eServiceSchemaVariableMapping.tcl to command 'APPPeopleDeactivate';

@@ -1,0 +1,15 @@
+del menu 'LCRetentionRecordSummaryToolbar';
+add menu 'LCRetentionRecordSummaryToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	menu	'LCRetentionRecordSummaryToolbarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCRetentionRecordSummaryToolbar'
+	property 'version'	value	'10-7-SP1'
+;
+add property menu_LCRetentionRecordSummaryToolbar on program eServiceSchemaVariableMapping.tcl to menu 'LCRetentionRecordSummaryToolbar';

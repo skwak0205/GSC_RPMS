@@ -1,0 +1,9 @@
+del table '3DLive Part' system;
+add table '3DLive Part' system
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'3DLive Part'
+	property	'version'	value	'10-7-SP1'
+;
+add property table_3DLivePart on program eServiceSchemaVariableMapping.tcl to table '3DLive Part' system;

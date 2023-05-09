@@ -1,0 +1,20 @@
+del command 'FTRProductConfigComponentFeatureSelectedOptions';
+add command 'FTRProductConfigComponentFeatureSelectedOptions'
+	description	'Product Configuration Component Feature selected options'
+	label	'emxProduct.Tree.ComponentFeatureSelectedOptions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgramMenu=FTRProductConfigSelectedOptionsFilter&header=emxProduct.Heading.SelectedOptions&HelpMarker=emxhelpproductfeaturelist&typeFilter=false&relationshipFilter=false&editLink=false&toolbar=FTRFeatureOptionToolBar'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_BPS_TP'
+	setting	'function'		'expandTechnicalFeatureStructureBasedOnSelectedOptions'
+	setting	'program'		'emxProductConfiguration'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductConfigComponentFeatureSelectedOptions'
+	property	'version'	value	'R215'
+;
+modify menu FTRProductConfigSelectedOptionsFilter add command FTRProductConfigComponentFeatureSelectedOptions order command FTRProductConfigComponentFeatureSelectedOptions 0;
+#channel ==>FTRProductConfigSelectedOptionsFilter
+add property command_FTRProductConfigComponentFeatureSelectedOptions on program eServiceSchemaVariableMapping.tcl to command 'FTRProductConfigComponentFeatureSelectedOptions';

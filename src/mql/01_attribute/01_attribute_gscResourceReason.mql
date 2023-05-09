@@ -1,0 +1,20 @@
+#del attribute 'gscResourceReason';
+add attribute 'gscResourceReason'
+ type 'string'
+ description 'Identifies the Business Area'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscResourceReason'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscResourceReason on program eServiceSchemaVariableMapping.tcl to attribute 'gscResourceReason';
+
+modify attribute 'gscResourceReason' add range= RR01; #타본부/자회사전출
+modify attribute 'gscResourceReason' add range= RR02; #퇴직
+modify attribute 'gscResourceReason' add range= RR03; #결원으로인한 충원
+modify attribute 'gscResourceReason' add range= RR04; #신규 사업/업무로 인한 충원
+modify attribute 'gscResourceReason' add range= ''; #공백
+

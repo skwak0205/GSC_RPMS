@@ -1,0 +1,46 @@
+del command 'APPSubscriptionMultiObject';
+add command 'APPSubscriptionMultiObject'
+	description	''
+	label	'emxComponents.Common.Subscribe'
+	href	'${COMPONENT_DIR}/emxSubscriptionDialog.jsp?massPromoteDemote=false&multiColumnSort=false&triggerValidation=false&showClipboard=false&objectCompare=false&expandLevelFilter=false&editLink=false&uiType=null&HelpMarker=emxhelpsubscriptionevents'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSubscriptionMultiObject'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPDecisionsMyDeskActionBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 2;
+modify menu APPDecisionsActionBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 4;
+modify menu LCPartFamilyActionsToolBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 0;
+modify menu LCLibrariesActionsToolBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 7;
+modify menu LCInProcessClassActionsToolBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 2;
+modify menu DCDocumentClassificationContentBottomActionbar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 1;
+modify menu DCBookDocumentsActionBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 5;
+modify menu DCFolderContentBottomActionbar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 0;
+modify menu LBCSearchResultToolBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 2;
+modify menu LBCLibraryBookshelvesActionToolBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 4;
+modify menu LBCBookshelfBooksActionToolBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 4;
+modify menu LBCBookDocumentsActionToolBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 5;
+modify menu LBCFolderContentActionToolBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 3;
+modify menu LCClassifiedItemActionToolBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 17;
+modify menu LCClassActionsToolBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 0;
+modify menu RMTRequirementListBottomActionBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 4;
+modify menu RMTSpecificationsListBottomActionBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 8;
+modify menu RMTSpecTreeActionBar add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 5;
+modify menu RMTStructureBrowserActionsMenu add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 1;
+modify menu RMTRichTextEditorActions add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 5;
+modify menu RMTRequirementRichTextEditorActions add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 0;
+modify menu RMTSpecificationListActionMenu add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 11;
+modify menu RMTRequirementListActionMenu add command APPSubscriptionMultiObject order command APPSubscriptionMultiObject 7;
+#channel ==>APPDecisionsMyDeskActionBarAPPDecisionsActionBarLCPartFamilyActionsToolBarLCLibrariesActionsToolBarLCInProcessClassActionsToolBarDCDocumentClassificationContentBottomActionbarDCBookDocumentsActionBarDCFolderContentBottomActionbarLBCSearchResultToolBarLBCLibraryBookshelvesActionToolBarLBCBookshelfBooksActionToolBarLBCBookDocumentsActionToolBarLBCFolderContentActionToolBarLCClassifiedItemActionToolBarLCClassActionsToolBarRMTRequirementListBottomActionBarRMTSpecificationsListBottomActionBarRMTSpecTreeActionBarRMTStructureBrowserActionsMenuRMTRichTextEditorActionsRMTRequirementRichTextEditorActionsRMTSpecificationListActionMenuRMTRequirementListActionMenu
+add property command_APPSubscriptionMultiObject on program eServiceSchemaVariableMapping.tcl to command 'APPSubscriptionMultiObject';

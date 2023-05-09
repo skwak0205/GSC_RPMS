@@ -1,0 +1,39 @@
+del form 'APPMemberListCreateForm';
+add form 'APPMemberListCreateForm' web
+field #1
+	name	'Description'
+	businessobject	'$<description>'
+	label	'emxComponents.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'Components'
+	setting	'Validate'		'checkBadChars'
+field #2
+	name	'Scope'
+	label	'emxComponents.Common.Scope'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Range Function'		'getScopeForCreation'
+	setting	'Input Type'		'radiobutton'
+	setting	'OnChange Handler'		'changeOwningOrganizationField'
+	setting	'Registered Suite'		'Components'
+	setting	'Range Program'		'emxMemberList'
+field #3
+	name	'owningBU'
+	label	'emxComponents.Common.OwningOrganization'
+	range	'../components/emxComponentsSelectOwningOrganizationDialogFS.jsp?fieldName=owningBUDisplay&fieldNameDisplay=owningBUDisplay&formPopup=true&fieldId=owningBUOID'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'Field Type'		'Basic'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMemberListCreateForm'
+	property	'version'	value	'R421'
+;
+add property form_APPMemberListCreateForm on program eServiceSchemaVariableMapping.tcl to form 'APPMemberListCreateForm';

@@ -1,0 +1,27 @@
+del command 'PMCWBSCreateBaseline';
+add command 'PMCWBSCreateBaseline'
+	description	''
+	label	'emxProgramCentral.Button.CreateBaseline'
+	href	'${SUITE_DIR}/emxProgramCentralWBSBaselineDialogFS.jsp?fromPage=StructureBrowser'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForCreateBaseline'
+	setting	'Access Program'		'emxTask'
+	setting	'Access Mask'		'modify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSCreateBaseline'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSToolBarActions add command PMCWBSCreateBaseline order command PMCWBSCreateBaseline 3;
+#channel ==>PMCWBSToolBarActions
+add property command_PMCWBSCreateBaseline on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSCreateBaseline';

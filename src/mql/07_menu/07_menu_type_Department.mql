@@ -1,0 +1,21 @@
+del menu 'type_Department';
+add menu 'type_Department'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Department&HelpMarker=emxhelpdepartmentproperties&formHeader=emxComponents.Common.Organization.PropertiesPageHeading&toolbar=APPDepartmentDetailsToolBar'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/iconSmallBusinessUnit.gif'
+	setting	'Header Lifecycle'		'hide'
+	command	'People'
+	command	'AEFHistory'
+	command	'Department'
+	command	'DepartmentCloud'
+	command	'PMCCompanyResourceManagerList'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_Department'
+	property 'version'	value	'R216'
+;
+add property menu_type_Department on program eServiceSchemaVariableMapping.tcl to menu 'type_Department';

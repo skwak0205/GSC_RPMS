@@ -1,0 +1,21 @@
+del command 'PMCCopyPreviousAssessment';
+add command 'PMCCopyPreviousAssessment'
+	description	'Copy Previous Assessment'
+	label	'emxProgramCentral.Common.CopyPreviousAssessment'
+	href	'${SUITE_DIR}/emxProgramCentralAssessmentUtil.jsp?mode=copyPrevious'
+	alt	'emxProgramCentral.Common.CopyPreviousAssessment'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'isAssessmentCopyValid'
+	setting	'Access Program'		'emxAssessment'
+	setting	'Image'		'${COMMON_DIR}/images/iconCopyPrevious.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCopyPreviousAssessment'
+	property	'version'	value	'R423.HF6'
+;
+modify menu PMCAssessSummaryToolBar add command PMCCopyPreviousAssessment order command PMCCopyPreviousAssessment 3;
+modify menu PMCAssessSummaryToolBarActions add command PMCCopyPreviousAssessment order command PMCCopyPreviousAssessment 3;
+#channel ==>PMCAssessSummaryToolBarPMCAssessSummaryToolBarActions
+add property command_PMCCopyPreviousAssessment on program eServiceSchemaVariableMapping.tcl to command 'PMCCopyPreviousAssessment';

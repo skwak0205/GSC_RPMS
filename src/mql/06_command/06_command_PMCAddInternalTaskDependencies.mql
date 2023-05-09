@@ -1,0 +1,22 @@
+del command 'PMCAddInternalTaskDependencies';
+add command 'PMCAddInternalTaskDependencies'
+	description	'Command for adding task dependency'
+	label	'emxProgramCentral.Dependency.InteralProjectDependencies'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=addInternalDependencies'
+	alt	''
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'720'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddInternalTaskDependencies'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCAddTaskDependenciesChannel
+add property command_PMCAddInternalTaskDependencies on program eServiceSchemaVariableMapping.tcl to command 'PMCAddInternalTaskDependencies';

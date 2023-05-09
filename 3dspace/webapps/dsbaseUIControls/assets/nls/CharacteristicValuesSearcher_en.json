@@ -1,0 +1,11 @@
+{
+    "CVS.optionsChecker.searchEngine.notExisting.error": "A search engine must be defined in order to find values!",
+    "CVS.optionsChecker.searchEngine.notFunction.error": "'A function is expected for the search engine!",
+    "CVS.optionsChecker.defaultValues.array.error": "Default values must be contained in an array!",
+    "CVS.optionsChecker.defaultValues.arrayObjects.error": "An array of objects is expected as default values for the input!",
+    "CVS.optionsChecker.defaultValues.labelExpected.error": "A label for each default value is expected!",
+    "CVS.optionsChecker.defaultValues.valueExpected.error": "A value for each default value is expected!",
+    "CVS.optionsChecker.onSuggest.notFunction.error": "A function is expected for \"onSuggest\" option!",
+    "CVS.optionsChecker.onSelect.notFunction.error": "A function is expected for \"onSelect\" option!",
+    "CVS.optionsChecker.onCleanDataset.notFunction.error": "A function is expected for \"onCleanDataset\" option!"
+}

@@ -1,0 +1,22 @@
+del command 'LBCCreateGeneralClassActions';
+add command 'LBCCreateGeneralClassActions'
+	description	'CreateNew General Class'
+	label	'emxLibraryCentral.Command.GeneralClassActions'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_GeneralClass,type_Classification&ExclusionList=type_ManufacturingPartFamily&typeChooser=true&nameField=autoName&form=type_CreateClass&createJPO=emxLibraryCentralCommon:createLBCObject&submitAction=treeContent&header=emxLibraryCentral.Shortcut.CreateGeneralClass&HelpMarker=emxhelpcreateclass&findMxLink=false'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCreateGeneralClassActions'
+	property	'version'	value	'R423.HF4'
+;
+modify menu LBCCreateClassActionsMenu add command LBCCreateGeneralClassActions order command LBCCreateGeneralClassActions 2;
+#channel ==>LBCCreateClassActionsMenu
+add property command_LBCCreateGeneralClassActions on program eServiceSchemaVariableMapping.tcl to command 'LBCCreateGeneralClassActions';

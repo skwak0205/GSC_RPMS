@@ -1,0 +1,18 @@
+del menu 'RMTChapterRichTextEditorToolbar';
+add menu 'RMTChapterRichTextEditorToolbar'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTChapterRichTextEditorActions'
+	command	'RMTRichTextEditorExport'
+	command	'RMTSetChapterStructureView'
+	menu	'AEFSBEditActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTChapterRichTextEditorToolbar'
+	property 'version'	value	'V6R2013'
+;
+add property menu_RMTChapterRichTextEditorToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RMTChapterRichTextEditorToolbar';

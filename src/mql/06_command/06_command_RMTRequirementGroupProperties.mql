@@ -1,0 +1,20 @@
+del command 'RMTRequirementGroupProperties';
+add command 'RMTRequirementGroupProperties'
+	description	'view of the groups property'
+	label	'emxRequirements.Tree.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_RequirementGroup&editLink=true&header=emxRequirements.Heading.RequirementGroupProperties'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionView.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementGroupProperties'
+	property	'version'	value	'R422'
+;
+#channel ==>RMTRequirementGroupProperties
+add property command_RMTRequirementGroupProperties on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementGroupProperties';

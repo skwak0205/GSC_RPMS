@@ -1,0 +1,22 @@
+del command 'PMCAffectedItems';
+add command 'PMCAffectedItems'
+	description	'Command for displaying Items causing the Risk'
+	label	'emxProgramCentral.Command.AffectedItems'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCAffectedItemsList&toolbar=PMCAffectedItemsToolBar&freezePane=Name&relationship=relationship_RiskAffectedItems&direction=from&selection=multiple&tableMenu=&header=&HelpMarker=emxhelpAffectedItems&showPageURLIcon=false'
+	alt	'emxProgramCentral.Command.AffectedItems'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Image'		'risk.gif'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAffectedItems'
+	property	'version'	value	'R423.HF4'
+;
+modify menu type_Risk add command PMCAffectedItems order command PMCAffectedItems 1;
+modify menu type_Opportunity add command PMCAffectedItems order command PMCAffectedItems 1;
+#channel ==>type_Risktype_Opportunity
+add property command_PMCAffectedItems on program eServiceSchemaVariableMapping.tcl to command 'PMCAffectedItems';

@@ -1,0 +1,24 @@
+del command 'PMCProjectRejectEffort';
+add command 'PMCProjectRejectEffort'
+	description	'Efforts'
+	label	'emxProgramCentral.Common.RejectEffort'
+	href	'${SUITE_DIR}/emxProgramCentralLaunchEffortRejection.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxProgramCentral.Common.RejectionMsg'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectRejectEffort'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectEffortToolbarActions add command PMCProjectRejectEffort order command PMCProjectRejectEffort 2;
+#channel ==>PMCProjectEffortToolbarActions
+add property command_PMCProjectRejectEffort on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectRejectEffort';

@@ -1,0 +1,23 @@
+del command 'APPPotentialSuppliersRemove';
+add command 'APPPotentialSuppliersRemove'
+	description	'Remove Potential Suppliers'
+	label	'emxComponents.PotentialSuppliers.RemoveAsPotentialSuppliers'
+	href	'${SUITE_DIR}/emxComponentsPotentialSuppliersRemoveProcess.jsp'
+	alt	'emxComponents.PotentialSuppliers.RemoveAsPotentialSuppliers'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToPotentialSuppliers'
+	setting	'Access Program'		'emxCompany'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Common.MsgConfirm'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPotentialSuppliersRemove'
+	property	'version'	value	'R417'
+;
+modify menu APPPotentialSuppliersActionsToolbar add command APPPotentialSuppliersRemove order command APPPotentialSuppliersRemove 0;
+#channel ==>APPPotentialSuppliersActionsToolbar
+add property command_APPPotentialSuppliersRemove on program eServiceSchemaVariableMapping.tcl to command 'APPPotentialSuppliersRemove';

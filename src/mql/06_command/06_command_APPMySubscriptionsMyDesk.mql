@@ -1,0 +1,20 @@
+del command 'APPMySubscriptionsMyDesk';
+add command 'APPMySubscriptionsMyDesk'
+	description	''
+	label	'emxComponents.MyDesk.Subscriptions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxSubscriptionManager:getSubscriptionDetailsforContextUser&table=APPMySubscriptions&toolbar=APPMySubscriptionsToolBar&sortColumnName=Name&sortDirection=ascending&header=emxComponents.Subscriptions.PageHeading&selection=multiple&HelpMarker=emxhelpsubscription&PrinterFriendly=true&displayView=details&rowGrouping=false'
+	alt	'emxComponents.MyDesk.Subscriptions'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMySubscriptionsMyDesk'
+	property	'version'	value	'R422'
+;
+#channel ==>My Enovia
+add property command_APPMySubscriptionsMyDesk on program eServiceSchemaVariableMapping.tcl to command 'APPMySubscriptionsMyDesk';

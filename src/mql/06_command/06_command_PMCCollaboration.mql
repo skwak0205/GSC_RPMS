@@ -1,0 +1,20 @@
+del command 'PMCCollaboration';
+add command 'PMCCollaboration'
+	description	'Collaboration command for Portal view of Gate'
+	label	'emxFramework.Command.PMCCollaboration'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCCollaborationPortal&header=emxProgramCentral.Gate.Portal.Collaboration&export=false&HelpMarker=emxhelpprojectcollaboration&showPageURLIcon=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(to[$<relationship_ProjectAccessKey>].name != "")'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCollaboration'
+	property	'version'	value	'R421'
+;
+modify menu type_TaskManagement add command PMCCollaboration order command PMCCollaboration 2;
+#channel ==>type_TaskManagement
+add property command_PMCCollaboration on program eServiceSchemaVariableMapping.tcl to command 'PMCCollaboration';

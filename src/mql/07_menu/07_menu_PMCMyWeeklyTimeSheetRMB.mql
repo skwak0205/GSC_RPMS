@@ -1,0 +1,16 @@
+del menu 'PMCMyWeeklyTimeSheetRMB';
+add menu 'PMCMyWeeklyTimeSheetRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCCopySelectedTimeSheet'
+	command	'PMCWeeklyTimeSheetDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCMyWeeklyTimeSheetRMB'
+	property 'version'	value	'R210'
+;
+add property menu_PMCMyWeeklyTimeSheetRMB on program eServiceSchemaVariableMapping.tcl to menu 'PMCMyWeeklyTimeSheetRMB';

@@ -1,0 +1,23 @@
+del command 'APPECDocumentSummaryDownloadActionLink';
+add command 'APPECDocumentSummaryDownloadActionLink'
+	description	'Document Download Command Object'
+	label	'emxComponents.Command.Download'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=download'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDownload.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECDocumentSummaryDownloadActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPObjectDocumentSummaryActionsToolBar add command APPECDocumentSummaryDownloadActionLink order command APPECDocumentSummaryDownloadActionLink 3;
+#channel ==>APPObjectDocumentSummaryActionsToolBar
+add property command_APPECDocumentSummaryDownloadActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPECDocumentSummaryDownloadActionLink';

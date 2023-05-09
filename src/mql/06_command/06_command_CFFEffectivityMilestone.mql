@@ -1,0 +1,23 @@
+del command 'CFFEffectivityMilestone';
+add command 'CFFEffectivityMilestone'
+	description	'Command to hold Milestone Effectivity settings'
+	label	'Effectivity.EffectivityType.Milestone'
+	href	''
+	alt	''
+	setting	'categoryType'		'milestone'
+	setting	'Format'		'structure'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'expandProgram'		'emxEffectivityFramework:getConfigContextMilestoneTracks'
+	setting	'searchType'		'type_Model'
+	setting	'Label'		'Effectivity.EffectivityType.Milestone'
+	setting	'keyword'		'MS'
+	setting	'relationship'		'relationship_ConfigurationCriteria,relationship_ConfigurationItem'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFEffectivityMilestone'
+	property	'version'	value	'R215'
+;
+modify menu CFFEffectivity add command CFFEffectivityMilestone order command CFFEffectivityMilestone 3;
+#channel ==>CFFEffectivity
+add property command_CFFEffectivityMilestone on program eServiceSchemaVariableMapping.tcl to command 'CFFEffectivityMilestone';

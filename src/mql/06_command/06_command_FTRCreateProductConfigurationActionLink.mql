@@ -1,0 +1,25 @@
+del command 'FTRCreateProductConfigurationActionLink';
+add command 'FTRCreateProductConfigurationActionLink'
+	description	''
+	label	'emxProduct.ActionLink.CreateProductConfiguration'
+	href	'${SUITE_DIR}/ProductConfigurationCreateProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showCommandForPCCreate'
+	setting	'Access Program'		'emxProductConfiguration'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMCreator'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateProductConfigurationActionLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRProductConfigurationTopActionBar add command FTRCreateProductConfigurationActionLink order command FTRCreateProductConfigurationActionLink 0;
+modify menu FTRProductConfigurationActionToolbar add command FTRCreateProductConfigurationActionLink order command FTRCreateProductConfigurationActionLink 1;
+#channel ==>FTRProductConfigurationTopActionBarFTRProductConfigurationActionToolbar
+add property command_FTRCreateProductConfigurationActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateProductConfigurationActionLink';

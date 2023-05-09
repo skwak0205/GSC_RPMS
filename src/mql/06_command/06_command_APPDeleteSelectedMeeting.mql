@@ -1,0 +1,21 @@
+del command 'APPDeleteSelectedMeeting';
+add command 'APPDeleteSelectedMeeting'
+	description	''
+	label	'emxComponents.Common.DeleteSelectedMeetings'
+	href	'${COMPONENT_DIR}/emxMeetingProcess.jsp?action=Delete&notification=Yes&sReturnPage=MeetingDetails'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteSelectedMeeting'
+	property	'version'	value	'R417'
+;
+modify menu APPMeetingActionToolbar add command APPDeleteSelectedMeeting order command APPDeleteSelectedMeeting 0;
+modify menu APPGlobalMeetingActionsToolbar add command APPDeleteSelectedMeeting order command APPDeleteSelectedMeeting 0;
+#channel ==>APPMeetingActionToolbarAPPGlobalMeetingActionsToolbar
+add property command_APPDeleteSelectedMeeting on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteSelectedMeeting';

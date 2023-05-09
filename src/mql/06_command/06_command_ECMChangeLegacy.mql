@@ -1,0 +1,17 @@
+del command 'ECMChangeLegacy';
+add command 'ECMChangeLegacy'
+	description	'Displays all the Change Legacy'
+	label	'EnterpriseChangeMgt.Command.ChangeLegacy'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=AEFGeneralSearchResults&program=enoECMChangeRequestUX:getLegacyChanges&toolbar=ECMChangeLegacyToolbar&selection=multiple&HelpMarker=emxhelpchangelegacy'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeLegacy'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMMyChangesTopChannelECMEnterpriseChangeMgtChannel
+add property command_ECMChangeLegacy on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeLegacy';

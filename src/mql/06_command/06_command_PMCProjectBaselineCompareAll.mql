@@ -1,0 +1,21 @@
+del command 'PMCProjectBaselineCompareAll';
+add command 'PMCProjectBaselineCompareAll'
+	description	'Command to compare Entire structure'
+	label	'emxProgramCentral.Experiment.CompareEntireStructure'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=compareProjectBaselines&subMode=EntireStructure'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showCompareAllCommand'
+	setting	'Access Program'		'emxWhatIfBase'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBaselineCompareAll'
+	property	'version'	value	'R419'
+;
+modify menu PMCProjectBaselineCompareToolbar add command PMCProjectBaselineCompareAll order command PMCProjectBaselineCompareAll 0;
+#channel ==>PMCProjectBaselineCompareToolbar
+add property command_PMCProjectBaselineCompareAll on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBaselineCompareAll';

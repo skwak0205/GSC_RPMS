@@ -1,0 +1,15 @@
+del menu 'APPCommonReviseMyDownloadsToolbar';
+add menu 'APPCommonReviseMyDownloadsToolbar'
+	description	''
+	label	'emxComponents.Menu.ReviseSearch'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPCommonReviseMyDownloads'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPCommonReviseMyDownloadsToolbar'
+	property 'version'	value	'10-7'
+;
+add property menu_APPCommonReviseMyDownloadsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPCommonReviseMyDownloadsToolbar';

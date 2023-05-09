@@ -1,0 +1,25 @@
+del command 'APPBusinessSkills';
+add command 'APPBusinessSkills'
+	description	'List company business skill / sub skills'
+	label	'emxComponents.Common.BusinessSkills'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPBusinessSkillSummary&selection=multiple&HelpMarker=emxhelpbusinessskillsummary&toolbar=APPBusinessSkillActionsToolbar&expandProgram=emxBusinessSkill:getTableExpandChildBusinessSkillData&header=emxComponents.BusinessSkillSummary.Heading'
+	alt	'emxComponents.Common.BusinessSkills'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(to[$<relationship_Customer>].from.name != "")'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPBusinessSkills'
+	property	'version'	value	'R422'
+;
+modify menu type_Company add command APPBusinessSkills order command APPBusinessSkills 1;
+#channel ==>type_Company
+add property command_APPBusinessSkills on program eServiceSchemaVariableMapping.tcl to command 'APPBusinessSkills';

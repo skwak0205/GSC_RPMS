@@ -1,0 +1,15 @@
+del menu 'PMCReportResourceLoadingProjectFilterMenu';
+add menu 'PMCReportResourceLoadingProjectFilterMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCReportResourceLoadingProjectFilter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCReportResourceLoadingProjectFilterMenu'
+	property 'version'	value	'R208'
+;
+add property menu_PMCReportResourceLoadingProjectFilterMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCReportResourceLoadingProjectFilterMenu';

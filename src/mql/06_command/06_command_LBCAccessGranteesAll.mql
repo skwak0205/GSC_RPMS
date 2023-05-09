@@ -1,0 +1,18 @@
+del command 'LBCAccessGranteesAll';
+add command 'LBCAccessGranteesAll'
+	description	'All Access Grantees'
+	label	'emxLibraryCentral.Filter.All'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'function'		'getFolderAllAccessDetails'
+	setting	'program'		'emxWorkspaceVault'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAccessGranteesAll'
+	property	'version'	value	'R212'
+;
+modify menu LBCFolderAccessList add command LBCAccessGranteesAll order command LBCAccessGranteesAll 1;
+#channel ==>LBCFolderAccessList
+add property command_LBCAccessGranteesAll on program eServiceSchemaVariableMapping.tcl to command 'LBCAccessGranteesAll';

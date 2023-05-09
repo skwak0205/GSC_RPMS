@@ -1,0 +1,15 @@
+del command 'MsoiOpenWBSTasksWithDetails';
+add command 'MsoiOpenWBSTasksWithDetails'
+	description	'MsoiOpenWBSTasksWithDetails'
+	label	'emxIEFDesignCenter.Common.OpenWBSTasks'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxMsoiWBSTasksUtil:getCurrentUserWBSTasks&tasks=&table=MsoiMSFWBSTasksSummary'
+	alt	'MsoiOpenWBSTasksWithDetails'
+	setting	'Registered Suite'		'Integration Framework'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiOpenWBSTasksWithDetails'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_MsoiOpenWBSTasksWithDetails on program eServiceSchemaVariableMapping.tcl to command 'MsoiOpenWBSTasksWithDetails';

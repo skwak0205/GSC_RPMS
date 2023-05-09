@@ -1,0 +1,21 @@
+del command 'APPCloseMeeting';
+add command 'APPCloseMeeting'
+	description	''
+	label	'emxComponents.Common.CloseMeeting'
+	href	'${COMPONENT_DIR}/emxMeetingProcess.jsp?action=CloseMeeting&notification=Yes&sReturnPage=MeetingDetails'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'showCloseMeetingCommand'
+	setting	'Access Program'		'emxMeeting'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCloseMeeting.png'
+	setting	'Access Mask'		'promote'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCloseMeeting'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPMeetingPropertiesActionToolbar add command APPCloseMeeting order command APPCloseMeeting 0;
+#channel ==>APPMeetingPropertiesActionToolbar
+add property command_APPCloseMeeting on program eServiceSchemaVariableMapping.tcl to command 'APPCloseMeeting';

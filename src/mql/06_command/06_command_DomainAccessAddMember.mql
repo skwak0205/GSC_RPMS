@@ -1,0 +1,19 @@
+del command 'DomainAccessAddMember';
+add command 'DomainAccessAddMember'
+	description	''
+	label	'emxFramework.Common.DomainAccessAddMember'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?showInitialResults=true&table=AEFPersonChooserDetails&selection=multiple&form=AEFSearchPersonForm&submitURL=${COMMON_DIR}/emxDomainAccessProcess.jsp&cmdName=addPerson&jpoName=emxDomainAccess&methodName=addMember&field=TYPES=type_Person:CURRENT=policy_Person.state_Active&memberType=Person&HelpMarker=emxhelpsearch&excludeOIDprogram=emxDomainAccess:getExcludePersonList'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'current.access[changesov]'
+	setting	'Image'		'${COMMON_DIR}/images/iconShare_32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DomainAccessAddMember'
+	property	'version'	value	'R423'
+;
+modify menu DomainAccessActionToolBar add command DomainAccessAddMember order command DomainAccessAddMember 1;
+modify menu LBCFolderDomainAccessToolBar add command DomainAccessAddMember order command DomainAccessAddMember 1;
+#channel ==>DomainAccessActionToolBarLBCFolderDomainAccessToolBar
+add property command_DomainAccessAddMember on program eServiceSchemaVariableMapping.tcl to command 'DomainAccessAddMember';

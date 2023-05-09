@@ -1,0 +1,22 @@
+del command 'APPDocumentDiscussions';
+add command 'APPDocumentDiscussions'
+	description	'Common Document Discussion Command Object'
+	label	'emxComponents.Common.Discussion'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPDiscussionsList&program=emxDiscussion:getDiscussionList&toolbar=APPDiscussionToolBar&header=emxComponents.Common.DiscussionsHeading&subHeader=emxComponents.Menu.SubHeaderDocuments&selection=multiple&sortColumnName=LastMessage&sortDirection=descending&HelpMarker=emxhelpdiscussions&PrinterFriendly=true&TransactionType=update'
+	alt	'emxComponents.Common.Discussion'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Image'		'yellowbullet.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentDiscussions'
+	property	'version'	value	'R419'
+;
+modify menu type_DOCUMENTS add command APPDocumentDiscussions order command APPDocumentDiscussions 15;
+modify menu type_GenericDocument add command APPDocumentDiscussions order command APPDocumentDiscussions 17;
+modify menu type_DocumentSheet add command APPDocumentDiscussions order command APPDocumentDiscussions 13;
+modify menu type_Specification add command APPDocumentDiscussions order command APPDocumentDiscussions 1;
+#channel ==>type_DOCUMENTStype_GenericDocumenttype_DocumentSheettype_SpecificationRMTSpecificationsExchangeTracking
+add property command_APPDocumentDiscussions on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentDiscussions';

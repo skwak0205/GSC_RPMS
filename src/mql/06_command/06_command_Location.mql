@@ -1,0 +1,35 @@
+del command 'Location';
+add command 'Location'
+	description	'Location Command Object'
+	label	'emxFramework.Command.Location'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPLocationsSummary&toolbar=APPLocationsSummaryToolBar&program=emxOrganization:getAllLocations&header=emxComponents.LocationSummary.Heading&HelpMarker=emxhelplocations&selection=multiple&PrinterFriendly=true&sortColumnName=Name&sortDirection=ascending'
+	alt	'emxFramework.Command.Location'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'iconSmallLocation.gif'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	user	'Supplier'
+	user	'Supplier Representative'
+	user	'Buyer'
+	user	'Supplier Engineer'
+	user	'Advanced Quality Engineer'
+	user	'Buyer Administrator'
+	user	'Supplier Development Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'Location'
+	property	'version'	value	'R422'
+;
+modify menu type_Company add command Location order command Location 10;
+modify menu type_BusinessUnit add command Location order command Location 1;
+#channel ==>type_Companytype_BusinessUnit
+add property command_Location on program eServiceSchemaVariableMapping.tcl to command 'Location';

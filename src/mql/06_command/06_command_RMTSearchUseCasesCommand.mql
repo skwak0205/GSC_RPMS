@@ -1,0 +1,32 @@
+del command 'RMTSearchUseCasesCommand';
+add command 'RMTSearchUseCasesCommand'
+	description	''
+	label	'emxRequirements.ActionLink.FindUseCases'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxRequirementSearch:getUseCases&table=RMTSearchUseCasesTable&form=RMTSearchUseCasesForm&CommandName=RMTSearchUseCasesCommand&sortColumnName=Name'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Design Engineer'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Requirement Manager'
+	user	'System Engineer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSearchUseCasesCommand'
+	property	'version'	value	'R422'
+;
+modify menu SearchAddExistingChooserMenu add command RMTSearchUseCasesCommand order command RMTSearchUseCasesCommand 50;
+modify menu RMTSearchAddExistingChooserMenu add command RMTSearchUseCasesCommand order command RMTSearchUseCasesCommand 0;
+#channel ==>SearchAddExistingChooserMenuRMTSearchAddExistingChooserMenu
+add property command_RMTSearchUseCasesCommand on program eServiceSchemaVariableMapping.tcl to command 'RMTSearchUseCasesCommand';

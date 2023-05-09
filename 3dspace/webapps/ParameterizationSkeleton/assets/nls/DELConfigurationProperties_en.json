@@ -1,0 +1,12 @@
+{
+  "Apriso3DExpExchangeText"        : "Delmia Apriso Integration",
+  "Apriso3DExpExchangeTooltip"     : "Configure attribute exchange between Delmia Apriso and 3DExperience",
+  "DigitalManufacturingText" : "Authoring rules – items & process",
+  "DigitalManufacturingTooltip"     : "Configure authoring rules – items & process in 3DExperience",
+  "DELPPRLifeCycleSyncManagementText": "Lifecycle rules - Manufacturing Items",
+  "DELPPRLifeCycleSyncManagementTooltip": "Rules to Synchronize LifeCycle for MBOM (items)",
+  "OperationEngineeringText": "Operations Engineering",
+  "OperationEngineeringTooltip": "Configure Operations Engineering",
+  "MfgSessionManagementParameterizationText": "Manufacturing Session Management",
+  "MfgSessionManagementParameterizationTooltip": "Configure Manufacturing Session Management"
+}

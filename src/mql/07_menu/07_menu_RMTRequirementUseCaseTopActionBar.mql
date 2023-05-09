@@ -1,0 +1,19 @@
+del menu 'RMTRequirementUseCaseTopActionBar';
+add menu 'RMTRequirementUseCaseTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTCreateUseCasePreCheck'
+	command	'RMTAddExistingRequirementUseCaseActionLink'
+	menu	'ECMChangeToolbar'
+	command	'RMTReplaceByNewRevision'
+	command	'RMTReplaceByLastRevision'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementUseCaseTopActionBar'
+	property 'version'	value	'V6R2018x'
+;
+add property menu_RMTRequirementUseCaseTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementUseCaseTopActionBar';

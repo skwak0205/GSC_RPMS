@@ -1,0 +1,29 @@
+del command 'LBCClassMove';
+add command 'LBCClassMove'
+	description	'Class Move'
+	label	'emxLibraryCentral.Access.Move'
+	href	'${SUITE_DIR}/emxLibraryCentralSearchIntermediate.jsp?useMode=moveClass'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCClassMove'
+	property	'version'	value	'R422'
+;
+modify menu LCClassActionsToolBar add command LBCClassMove order command LBCClassMove 4;
+modify menu LCPartFamilyActionsToolBar add command LBCClassMove order command LBCClassMove 4;
+#channel ==>LCClassActionsToolBarLCPartFamilyActionsToolBar
+add property command_LBCClassMove on program eServiceSchemaVariableMapping.tcl to command 'LBCClassMove';

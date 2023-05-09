@@ -1,0 +1,25 @@
+del command 'CFFConfigurationContextRemove';
+add command 'CFFConfigurationContextRemove'
+	description	''
+	label	'Effectivity.ActionLink.Remove'
+	href	'${SUITE_DIR}/ConfigurationContextRemoveProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Licensed Product'		'ENO_CFF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'disableRemoveConfigurationContext'
+	setting	'Access Program'		'emxEffectivityFramework'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'Effectivity.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFConfigurationContextRemove'
+	property	'version'	value	'R418'
+;
+modify menu CFFConfigurationContextToolbarActions add command CFFConfigurationContextRemove order command CFFConfigurationContextRemove 0;
+#channel ==>CFFConfigurationContextToolbarActions
+add property command_CFFConfigurationContextRemove on program eServiceSchemaVariableMapping.tcl to command 'CFFConfigurationContextRemove';

@@ -1,0 +1,18 @@
+del menu 'PMCActualEffortToolbar';
+add menu 'PMCActualEffortToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCDatePickerCommand'
+	command	'PMCDateSubmitButton'
+	command	'APPSeparator'
+	command	'PMCSubmitActualEffortCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCActualEffortToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_PMCActualEffortToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCActualEffortToolbar';

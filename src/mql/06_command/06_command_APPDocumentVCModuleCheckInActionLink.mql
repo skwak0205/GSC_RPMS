@@ -1,0 +1,22 @@
+del command 'APPDocumentVCModuleCheckInActionLink';
+add command 'APPDocumentVCModuleCheckInActionLink'
+	description	''
+	label	'emxComponents.Common.Checkin'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=checkinVCFolder&allowFileNameChange=true&noOfFiles=1&showComments=required&showFormat=false&JPOName=emxVCDocument&methodName=checkinUpdate'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasVCModuleCheckinAccess'
+	setting	'Access Program'		'emxVCDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCheckIn.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentVCModuleCheckInActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPDocumentActionsToolBar add command APPDocumentVCModuleCheckInActionLink order command APPDocumentVCModuleCheckInActionLink 0;
+modify menu TMCDocumentsActionToolbar add command APPDocumentVCModuleCheckInActionLink order command APPDocumentVCModuleCheckInActionLink 0;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbar
+add property command_APPDocumentVCModuleCheckInActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentVCModuleCheckInActionLink';

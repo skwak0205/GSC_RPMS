@@ -1,0 +1,27 @@
+del command 'BusinessUnitAddExisting';
+add command 'BusinessUnitAddExisting'
+	description	'BusinessUnit AddExisting Command Object'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?selection=multiple&submitLabel=emxComponents.Common.Done&cancelLabel=emxComponents.Common.Cancel&cancelButton=true&HelpMarker=emxhelpselectorganization&header=emxComponents.Common.SelectBusinessUnit&suiteKey=Components&table=APPOrganizationSummary&program=emxOrganization:getRootObjectForSelectOrganization&expandProgram=emxBusinessUnit:selectionBusinessUnitExpandProgram&sortColumnName=Type,Name&isFrom=true&relationshipName=relationship_OrganizationRegion&processURL=emxComponentsAddExistingBusinessUnitProcess.jsp&mode=AddExisting&submitURL=../components/emxComponentsSelectOrganizationProcess.jsp&findMxLink=false&massPromoteDemote=false&customize=false&showRMB=false&showClipboard=false&objectCompare=false'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForBUAddRemove'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'BusinessUnitAddExisting'
+	property	'version'	value	'R421'
+;
+modify menu BusinessUnitSummaryTopActionBar add command BusinessUnitAddExisting order command BusinessUnitAddExisting 0;
+modify menu APPBusinessUnitSummaryActionsToolBar add command BusinessUnitAddExisting order command BusinessUnitAddExisting 2;
+#channel ==>BusinessUnitSummaryTopActionBarAPPBusinessUnitSummaryActionsToolBar
+add property command_BusinessUnitAddExisting on program eServiceSchemaVariableMapping.tcl to command 'BusinessUnitAddExisting';

@@ -1,0 +1,17 @@
+del command 'APPRouteTaskCompletedEvent';
+add command 'APPRouteTaskCompletedEvent'
+	description	'Event holder for Route Task complete notifications'
+	label	'emxComponents.Event.Task_Completed'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Task Completed'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteTaskCompletedEvent'
+	property	'version'	value	'R212'
+;
+modify menu APPRouteSubscriptionEvents add command APPRouteTaskCompletedEvent order command APPRouteTaskCompletedEvent 4;
+#channel ==>APPRouteSubscriptionEvents
+add property command_APPRouteTaskCompletedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPRouteTaskCompletedEvent';

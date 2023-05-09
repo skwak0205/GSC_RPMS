@@ -1,0 +1,22 @@
+del menu 'ECMCAPropertiesToolbar';
+add menu 'ECMCAPropertiesToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMCAEditDetails'
+	command	'ECMCATransferOwnership'
+	command	'APPPushSubscribe'
+	command	'ECMHtmlSummary'
+	command	'ECMCACancel'
+	command	'ECMCAHold'
+	command	'ECMCAResume'
+	command	'ECMCollaborateBOMAndPS'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMCAPropertiesToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMCAPropertiesToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMCAPropertiesToolbar';

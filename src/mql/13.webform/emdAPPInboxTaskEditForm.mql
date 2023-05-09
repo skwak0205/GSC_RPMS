@@ -1,0 +1,38 @@
+################################################################################################
+# Created Date : 2020.05.26
+# Create by SeungYong,Lee
+# Description : 
+################################################################################################
+#del form "emdAPPInboxTaskEditForm";
+add form "emdAPPInboxTaskEditForm" web
+    field
+        name "Assignee"
+        label "emxComponents.TaskDetails.Assignee"
+        businessobject  "$<owner>"
+        alt ""
+        update ""
+        setting "Input Type" "textbox"
+        setting "Admin Type" "owner"
+        setting "Registered Suite" "Components"
+        setting "format" "user"
+        setting "Editable" "false"
+        setting "Field Type" "basic"
+    field
+        name "Comments"
+        label "emxComponents.Common.Comments"
+        businessobject  "$<attribute[attribute_Comments].value>"
+        alt ""
+        range ""
+        update ""
+        setting "Input Type" "textarea"
+        setting "Registered Suite" "Components"
+        setting "Editable" "true"
+        setting "Access Function" "showTaskComments"
+        setting "Access Program" "emxInboxTask"
+property "installer" value "EMD"
+property "application" value "EngineeringBase"
+property "installed date" value "05-19-2020"
+property "original name" value "emdAPPInboxTaskEditForm"
+property "version" value "R421"
+;
+add property form_emdAPPInboxTaskEditForm on program 'eServiceSchemaVariableMapping.tcl' to form emdAPPInboxTaskEditForm;

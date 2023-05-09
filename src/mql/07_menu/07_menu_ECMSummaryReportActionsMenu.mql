@@ -1,0 +1,15 @@
+del menu 'ECMSummaryReportActionsMenu';
+add menu 'ECMSummaryReportActionsMenu'
+	description	''
+	label	'EnterpriseChangeMgt.Label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMRefreshSummaryReport'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMSummaryReportActionsMenu'
+	property 'version'	value	'R216'
+;
+add property menu_ECMSummaryReportActionsMenu on program eServiceSchemaVariableMapping.tcl to menu 'ECMSummaryReportActionsMenu';

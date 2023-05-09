@@ -1,0 +1,14 @@
+del portal 'PLCPlanning';
+add portal 'PLCPlanning'
+	description	''
+	label	''
+	href	''
+	channel 	PLCPlanning
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPlanning'
+	property	'version'	value	'R216'
+;
+add property portal_PLCPlanning on program eServiceSchemaVariableMapping.tcl to portal 'PLCPlanning';

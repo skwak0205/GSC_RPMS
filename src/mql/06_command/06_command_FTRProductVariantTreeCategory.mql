@@ -1,0 +1,24 @@
+del command 'FTRProductVariantTreeCategory';
+add command 'FTRProductVariantTreeCategory'
+	description	''
+	label	'emxProduct.Tree.Variants'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProductVariant:getProductVariants&table=FTRProductVariantList&header=emxProduct.Heading.ProductVariants&selection=multiple&toolbar=FTRProductVariantListToolBar&sortColumnName=Name&HelpMarker=emxhelpproductvariantview&freezePane=Name&editLink=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<attribute[attribute_IsVersion] =="FALSE">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'showProductVariantsUX'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/iconSmallVersion.gif'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductVariantTreeCategory'
+	property	'version'	value	'R421'
+;
+modify menu type_Products add command FTRProductVariantTreeCategory order command FTRProductVariantTreeCategory 2;
+#channel ==>type_Products
+add property command_FTRProductVariantTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariantTreeCategory';

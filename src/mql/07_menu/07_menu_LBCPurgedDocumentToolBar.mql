@@ -1,0 +1,15 @@
+del menu 'LBCPurgedDocumentToolBar';
+add menu 'LBCPurgedDocumentToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LBCPurgedDocumentEdit'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCPurgedDocumentToolBar'
+	property 'version'	value	'R211'
+;
+add property menu_LBCPurgedDocumentToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LBCPurgedDocumentToolBar';

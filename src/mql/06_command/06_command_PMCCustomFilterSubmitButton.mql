@@ -1,0 +1,21 @@
+del command 'PMCCustomFilterSubmitButton';
+add command 'PMCCustomFilterSubmitButton'
+	description	''
+	label	'emxProgramCentral.Common.Filter'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePoolReportDateFilter.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Action Label'		'emxProgramCentral.Common.Filter'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Width'		'100'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCustomFilterSubmitButton'
+	property	'version'	value	'R418'
+;
+modify menu PMCReportDateToolbarMenu add command PMCCustomFilterSubmitButton order command PMCCustomFilterSubmitButton 3;
+#channel ==>PMCReportDateToolbarMenu
+add property command_PMCCustomFilterSubmitButton on program eServiceSchemaVariableMapping.tcl to command 'PMCCustomFilterSubmitButton';

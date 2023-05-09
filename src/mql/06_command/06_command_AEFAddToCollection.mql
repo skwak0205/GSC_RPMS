@@ -1,0 +1,28 @@
+del command 'AEFAddToCollection';
+add command 'AEFAddToCollection'
+	description	'AEF Add To Collection'
+	label	'emxFramework.Command.AddToCollection'
+	href	'${COMMON_DIR}/emxCollectionsAddToProcess.jsp'
+	alt	'emxFramework.Command.AddToCollection'
+	setting	'Target Location'		'searchHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFAddToCollection'
+	property	'version'	value	'R422'
+;
+modify menu APPSearchResultToolbar add command AEFAddToCollection order command AEFAddToCollection 2;
+modify menu DCSearchResultToolbar add command AEFAddToCollection order command AEFAddToCollection 2;
+modify menu PMCSearchResultToolbar add command AEFAddToCollection order command AEFAddToCollection 0;
+modify menu RMTRequirementSpecificationStructureBrowserActions add command AEFAddToCollection order command AEFAddToCollection 0;
+modify menu RMTRequirementSearchResultToolbar add command AEFAddToCollection order command AEFAddToCollection 0;
+modify menu RMTRequirementSpecificationSearchResultToolbar add command AEFAddToCollection order command AEFAddToCollection 0;
+#channel ==>APPSearchResultToolbarDCSearchResultToolbarPMCSearchResultToolbarRMTRequirementSpecificationStructureBrowserActionsRMTRequirementSearchResultToolbarRMTRequirementSpecificationSearchResultToolbar
+add property command_AEFAddToCollection on program eServiceSchemaVariableMapping.tcl to command 'AEFAddToCollection';

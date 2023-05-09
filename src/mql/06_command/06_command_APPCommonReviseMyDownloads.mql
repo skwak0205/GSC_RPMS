@@ -1,0 +1,18 @@
+del command 'APPCommonReviseMyDownloads';
+add command 'APPCommonReviseMyDownloads'
+	description	'Revise My Downloads'
+	label	'emxComponents.Command.ReviseSearch'
+	href	'${COMMON_DIR}/emxSearch.jsp?defaultSearch=APPCommonShowMyDownloads&helpMarker=emxhelpsearchmydownloads'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReviseSearch.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonReviseMyDownloads'
+	property	'version'	value	'R418'
+;
+modify menu APPCommonReviseMyDownloadsToolbar add command APPCommonReviseMyDownloads order command APPCommonReviseMyDownloads 0;
+#channel ==>APPCommonReviseMyDownloadsToolbar
+add property command_APPCommonReviseMyDownloads on program eServiceSchemaVariableMapping.tcl to command 'APPCommonReviseMyDownloads';

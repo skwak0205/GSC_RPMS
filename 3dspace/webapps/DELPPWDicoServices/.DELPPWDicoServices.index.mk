@@ -1,0 +1,16 @@
+m|DELPPWModels\DELPPWDicoServices.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.23002|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\DELPPWDicoServices\DELPPWDicoServices.js|1672690623|20622
+s|DELPPWModels\DELPPWDicoServices.mweb\src\AttributeConfigExt.js|1670604357|23484
+t|win_b64\webapps\DELPPWDicoServices\assets\json\ModelTypes.json|1667619907|4788
+s|DELPPWModels\DELPPWDicoServices.mweb\src\assets\json\ModelTypes.json|1662715365|4788
+t|win_b64\webapps\DELPPWDicoServices\assets\json\ReadOnlyTypes.json|1658175059|79
+s|DELPPWModels\DELPPWDicoServices.mweb\src\assets\json\ReadOnlyTypes.json|1657542398|79
+u|DELPPWModels\DELPPWDicoServices.mweb\src\CustoXmlUtils.js|1646820480|11053
+u|DELPPWModels\DELPPWDicoServices.mweb\src\DicoUtils.js|1671438611|22573
+u|DELPPWModels\DELPPWDicoServices.mweb\src\ModelConfigExt.js|1658741011|11864
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

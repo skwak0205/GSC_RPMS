@@ -1,0 +1,23 @@
+del command 'APPCompanyImageManager';
+add command 'APPCompanyImageManager'
+	description	'lists the Images in the parent Object'
+	label	'emxComponents.ImageManager.Images'
+	href	'${COMPONENT_DIR}/emxImageManager.jsp?isPopup=false&toolbar=APPCompanyImageManagerToolBar&header=emxComponents.Company.Image.ImageManagerHeading&HelpMarker=emxhelpimagesview'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Hide Mode'		'Cloud'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompanyImageManager'
+	property	'version'	value	'R424'
+;
+modify menu type_Company add command APPCompanyImageManager order command APPCompanyImageManager 15;
+#channel ==>type_Company
+add property command_APPCompanyImageManager on program eServiceSchemaVariableMapping.tcl to command 'APPCompanyImageManager';

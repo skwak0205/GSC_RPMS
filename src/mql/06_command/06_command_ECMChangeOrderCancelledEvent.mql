@@ -1,0 +1,19 @@
+del command 'ECMChangeOrderCancelledEvent';
+add command 'ECMChangeOrderCancelledEvent'
+	description	'Change Order Cancelled Event'
+	label	'EnterpriseChangeMgt.Event.Change_Order_Cancelled'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>])'
+	setting	'Event Type'		'Change Order Cancelled'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeOrderCancelledEvent'
+	property	'version'	value	'R216'
+;
+modify menu ECMSubscriptionEvents add command ECMChangeOrderCancelledEvent order command ECMChangeOrderCancelledEvent 10;
+#channel ==>ECMSubscriptionEvents
+add property command_ECMChangeOrderCancelledEvent on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeOrderCancelledEvent';

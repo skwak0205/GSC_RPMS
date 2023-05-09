@@ -1,0 +1,29 @@
+del form 'APPMovePersonCompany';
+add form 'APPMovePersonCompany' web
+field #1
+	name	'CompanyName'
+	label	'emxComponents.FormLabel.MovePerson.NewOrganization'
+	range	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Company&excludeOIDprogram=emxOrganization:excludeCurrentOrganization&selection=single&table=AEFGeneralSearchResults&submitURL=AEFSearchUtil.jsp'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'Required'		'true'
+	setting	'Type Ahead Mapping'		'LABEL'
+field #2
+	name	'PersonMoveOption'
+	label	'emxComponents.FormLabel.MovePerson.Credentials'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'function'		'getPersonMoveOptionRange'
+	setting	'program'		'emxCompany'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMovePersonCompany'
+	property	'version'	value	'R423.HF5'
+;
+add property form_APPMovePersonCompany on program eServiceSchemaVariableMapping.tcl to form 'APPMovePersonCompany';

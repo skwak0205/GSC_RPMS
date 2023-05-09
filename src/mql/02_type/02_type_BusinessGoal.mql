@@ -1,0 +1,5 @@
+mod type 'Business Goal' add attribute gscYear;
+mod type 'Business Goal' add attribute gscRatio;
+mod type 'Business Goal' add attribute gscMeasureUnit;
+mod type 'Business Goal' add attribute gscGoalMeasure;
+mod type 'Business Goal' add attribute gscTitle;

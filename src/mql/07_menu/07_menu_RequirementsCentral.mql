@@ -1,0 +1,21 @@
+del menu 'RequirementsCentral';
+add menu 'RequirementsCentral'
+	description	''
+	label	'emxRequirements.Menu.RequirementManagement'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	command	'RMTStructureDisplay'
+	command	'RMTPrefExtendedSpecTree'
+	command	'RMTTraceabilityManagement'
+	command	'RMTTreeDisplay'
+	command	'RMTHideSubTypes'
+	command	'RMTOwnershipInheritance'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RequirementsCentral'
+	property 'version'	value	'V6R2018x'
+;
+add property menu_RequirementsCentral on program eServiceSchemaVariableMapping.tcl to menu 'RequirementsCentral';

@@ -1,0 +1,13 @@
+del command 'FTRMatrixRulesCommand';
+add command 'FTRMatrixRulesCommand'
+	description	'FTRMatrixRulesCommand'
+	label	'emxProduct.Tree.MatrixRules'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=FTRMatrixRuleListTable&header=emxProduct.Heading.MatrixRule&selection=multiple&program=ConfigurationRule:getAllConfigurationRuleObjects&toolbar=FTRMatrixRuleToolbarMenu&HelpMarker=emxhelpconfigurablerulesPage'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'($<type.kindof=="type_Products">)&&($<type!="type_ProductVariant">)'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'version'	value	'R418'
+;
+#channel ==>FTRConfigurationRulesChannel
+add property command_FTRMatrixRulesCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRMatrixRulesCommand';

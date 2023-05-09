@@ -1,0 +1,7 @@
+del menu 'FTRFeaturePropertiesTopActionBar';
+add menu 'FTRFeaturePropertiesTopActionBar'
+	description	''
+	label	'null'
+	href	'null'
+	alt	'null'
+add property menu_FTRFeaturePropertiesTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'FTRFeaturePropertiesTopActionBar';

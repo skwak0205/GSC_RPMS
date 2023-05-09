@@ -1,0 +1,17 @@
+del menu 'APPWhereUsedToolbarFilter';
+add menu 'APPWhereUsedToolbarFilter'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'APPWhereUsedLabelFilter'
+	command	'APPWhereUsedTypeFilter'
+	command	'APPWhereUsedStateFilter'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'WhereUsed'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPWhereUsedToolbarFilter'
+	property 'version'	value	'R212'
+;
+add property menu_APPWhereUsedToolbarFilter on program eServiceSchemaVariableMapping.tcl to menu 'APPWhereUsedToolbarFilter';

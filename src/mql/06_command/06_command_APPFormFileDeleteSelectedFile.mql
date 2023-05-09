@@ -1,0 +1,22 @@
+del command 'APPFormFileDeleteSelectedFile';
+add command 'APPFormFileDeleteSelectedFile'
+	description	'Delete Selected File from Document'
+	label	'emxComponents.Command.DeleteNonVersionableFile'
+	href	'javascript:window.deleteSelectedFiles_onclick()'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromdisconnect] == true) && (vcfile == FALSE && vcfolder == FALSE)'
+	setting	'Access Function'		'disallowFileVersioning'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.Alert.RemoveFile'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFormFileDeleteSelectedFile'
+	property	'version'	value	'R420'
+;
+modify menu LBCGenericDocumentActionsToolBar add command APPFormFileDeleteSelectedFile order command APPFormFileDeleteSelectedFile 15;
+modify menu LBCDocumentSheetActionsToolBar add command APPFormFileDeleteSelectedFile order command APPFormFileDeleteSelectedFile 16;
+#channel ==>LBCGenericDocumentActionsToolBarLBCDocumentSheetActionsToolBar
+add property command_APPFormFileDeleteSelectedFile on program eServiceSchemaVariableMapping.tcl to command 'APPFormFileDeleteSelectedFile';

@@ -1,0 +1,21 @@
+del command 'APPDeleteSelectedFiles';
+add command 'APPDeleteSelectedFiles'
+	description	'Delete Selected File from Document'
+	label	'emxComponents.Command.DeleteNonVersionableFile'
+	href	'javascript:window.deleteSelectedFiles_onclick()'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[checkin] == true) && (vcfile == FALSE && vcfolder == FALSE)'
+	setting	'Access Function'		'disallowFileVersioning'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteSelectedFiles'
+	property	'version'	value	'R419'
+;
+modify menu APPDocumentActionsToolBar add command APPDeleteSelectedFiles order command APPDeleteSelectedFiles 21;
+modify menu TMCDocumentsActionToolbar add command APPDeleteSelectedFiles order command APPDeleteSelectedFiles 19;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbar
+add property command_APPDeleteSelectedFiles on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteSelectedFiles';

@@ -1,0 +1,36 @@
+del command 'RMTRequirementRichTextEditor';
+add command 'RMTRequirementRichTextEditor'
+	description	'Launches Rich-text viewer.'
+	label	'emxRequirements.ActionLink.RichtextEditor'
+	href	'${SUITE_DIR}/PopupLauncher.jsp?expandProgramMenu=RMTRequirementStructureProgramFilterMenu&table=RMTRequirementStatusView&RichTextDefinition=RMTRichTextDefinition&toolbar=RMTRequirementRichTextEditorToolbar&editLink=true&objectCompare=false&Export=false&PrinterFriendly=false&expandLevelFilter=false&showClipboard=false&massPromoteDemote=false&triggerValidation=false&AutoFilter=true&CurrencyConverter=false&HelpMarker=emxhelpsce&preSaveJPO=emxRequirement:createNewVersion&appendURL=StructureEffectivity|Requirements&sortColumnName=none&editRelationship=relationship_DerivedRequirement,relationship_RequirementBreakdown&resequenceRelationship=relationship_DerivedRequirement,relationship_RequirementBreakdown&connectionProgram=emxSpecificationStructureBase:processXMLMessage&TargetView=sce&effectivityRelationship=relationship_RequirementBreakdown,relationship_DerivedRequirement&expandByDefault=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isSCEUsed'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRichTextEditor.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementRichTextEditor'
+	property	'version'	value	'R422'
+;
+modify menu RMTStructureBrowserActionsMenu add command RMTRequirementRichTextEditor order command RMTRequirementRichTextEditor 3;
+modify menu RMTProductRequirementTopActionBar add command RMTRequirementRichTextEditor order command RMTRequirementRichTextEditor 0;
+modify menu RMTRequirementStructureDisplay add command RMTRequirementRichTextEditor order command RMTRequirementRichTextEditor 0;
+modify menu type_RequirementRMB add command RMTRequirementRichTextEditor order command RMTRequirementRichTextEditor 2;
+#channel ==>RMTStructureBrowserActionsMenuRMTProductRequirementTopActionBarRMTRequirementStructureDisplaytype_RequirementRMB
+add property command_RMTRequirementRichTextEditor on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementRichTextEditor';

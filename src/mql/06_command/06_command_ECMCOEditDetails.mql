@@ -1,0 +1,22 @@
+del command 'ECMCOEditDetails';
+add command 'ECMCOEditDetails'
+	description	'Edit Change'
+	label	'EnterpriseChangeMgt.Command.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ChangeOrder&postProcessJPO=enoECMChangeUX:updateRouteTemplateForChangeEdit&formHeader=EnterpriseChangeMgt.Heading.EditCO&HelpMarker=emxhelpchangeorderedit&mode=edit&submitAction=refreshCaller&type=type_ChangeOrder'
+	alt	'EnterpriseChangeMgt.Command.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isEditCOAvailable'
+	setting	'Access Program'		'enoECMChangeUX'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOEditDetails'
+	property	'version'	value	'R417'
+;
+modify menu ECMCOPropertiesToolbar add command ECMCOEditDetails order command ECMCOEditDetails 1;
+#channel ==>ECMCOPropertiesToolbar
+add property command_ECMCOEditDetails on program eServiceSchemaVariableMapping.tcl to command 'ECMCOEditDetails';

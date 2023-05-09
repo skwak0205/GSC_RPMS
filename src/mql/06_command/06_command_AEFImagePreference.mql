@@ -1,0 +1,18 @@
+del command 'AEFImagePreference';
+add command 'AEFImagePreference'
+	description	'Images in Tables Or Forms'
+	label	'emxFramework.ImagePreference.ImagesInTablesOrForms'
+	href	'${COMMON_DIR}/emxPrefImages.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/buttonToolbarPreferences.gif'
+	setting	'Help Marker'		'emxhelpimagepreference'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFImagePreference'
+	property	'version'	value	'R214'
+;
+modify menu General add command AEFImagePreference order command AEFImagePreference 8;
+#channel ==>General
+add property command_AEFImagePreference on program eServiceSchemaVariableMapping.tcl to command 'AEFImagePreference';

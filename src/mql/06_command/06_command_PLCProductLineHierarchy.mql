@@ -1,0 +1,19 @@
+del command 'PLCProductLineHierarchy';
+add command 'PLCProductLineHierarchy'
+	description	''
+	label	'emxProduct.Menu.ProductLines'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=emxProductLine:getProductLineHierarchy&table=PLCMyDeskProductLineList&freezePane=Marketing Name,DerivationCue,LatestCue&selection=multiple&toolbar=PLCProductLineHierarchyToolbar&HelpMarker=emxhelpviewingproductlinehierarchy&suiteKey=ProductLine&SuiteDirectory=productline'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductLineHierarchy'
+	property	'version'	value	'R418'
+;
+modify menu type_ProductLine add command PLCProductLineHierarchy order command PLCProductLineHierarchy 3;
+#channel ==>type_ProductLine
+add property command_PLCProductLineHierarchy on program eServiceSchemaVariableMapping.tcl to command 'PLCProductLineHierarchy';

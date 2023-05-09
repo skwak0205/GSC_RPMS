@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 당해약정(D)
+################################################################################################
+
+#del attribute 'gscRsltAmt01';
+add attribute  'gscRsltAmt01'
+   description '당해약정(D)'
+   type        'real'
+   default    0
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscRsltAmt01"
+;
+add property attribute_gscRsltAmt01 on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscRsltAmt01';

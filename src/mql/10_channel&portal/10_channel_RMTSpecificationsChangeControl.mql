@@ -1,0 +1,17 @@
+del channel 'RMTSpecificationsChangeControl';
+add channel 'RMTSpecificationsChangeControl'
+	description	'Channel to Change Control'
+	height	'800'
+	label	'emxRequirements.Common.RMTChangeControl'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'ChannelID'		'1'
+	command 	'CommonEngineeringChangeTreeCategory','RMTChangeManagement','APPDocumentRoutes','CFFConfigurationCriteria','AEFLifecycle','RMTRevisions'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationsChangeControl'
+	property	'version'	value	'R418'
+;
+#portal ==>RMTSpecificationsChangeControl
+add property channel_RMTSpecificationsChangeControl on program eServiceSchemaVariableMapping.tcl to channel 'RMTSpecificationsChangeControl';

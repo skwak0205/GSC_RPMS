@@ -1,0 +1,23 @@
+del table 'PMCWBSForecastViewTableENXSBGrid' system;
+add table 'PMCWBSForecastViewTableENXSBGrid' system
+column #1
+	name	'DynamicColumn'
+	businessobject	'empty'
+	label	'Other'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getPMCWBSForecastViewTableForDataGrid'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'Dynamic'
+	setting	'Editable'		'true'
+	setting	'Dynamic Column Program'		'emxProgramUI'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSForecastViewTableENXSBGrid'
+	property	'version'	value	'R422.HF6'
+;
+add property table_PMCWBSForecastViewTableENXSBGrid on program eServiceSchemaVariableMapping.tcl to table 'PMCWBSForecastViewTableENXSBGrid' system;

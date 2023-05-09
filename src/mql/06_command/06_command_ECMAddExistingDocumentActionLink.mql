@@ -1,0 +1,19 @@
+del command 'ECMAddExistingDocumentActionLink';
+add command 'ECMAddExistingDocumentActionLink'
+	description	'Add Existing command for Document'
+	label	'EnterpriseChangeMgt.Command.AddExisting'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=DocAddExisting&targetRelName=relationship_ReferenceDocument&isFrom=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete") && !($<interface[interface_ChangeOnHold]=="TRUE">)'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMAddExistingDocumentActionLink'
+	property	'version'	value	'R422'
+;
+modify menu ECMSupportingDocsToolbar add command ECMAddExistingDocumentActionLink order command ECMAddExistingDocumentActionLink 2;
+#channel ==>ECMSupportingDocsToolbar
+add property command_ECMAddExistingDocumentActionLink on program eServiceSchemaVariableMapping.tcl to command 'ECMAddExistingDocumentActionLink';

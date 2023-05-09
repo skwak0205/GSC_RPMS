@@ -1,0 +1,14 @@
+del portal 'FTRConfigFeatureSplitViewPortal';
+add portal 'FTRConfigFeatureSplitViewPortal'
+	description	''
+	label	''
+	href	''
+	channel 	FTRConfigFeaturesSplitViewChannel
+	channel 	FTRConfigOptionsSplitViewChannel
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigFeatureSplitViewPortal'
+	property	'version'	value	'R212'
+;
+add property portal_FTRConfigFeatureSplitViewPortal on program eServiceSchemaVariableMapping.tcl to portal 'FTRConfigFeatureSplitViewPortal';

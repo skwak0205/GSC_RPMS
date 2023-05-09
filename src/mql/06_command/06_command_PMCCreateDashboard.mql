@@ -1,0 +1,18 @@
+del command 'PMCCreateDashboard';
+add command 'PMCCreateDashboard'
+	description	'Command to Create Dashboard'
+	label	'emxProgramCentral.Common.CreateDashboard'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCDashboardSummaryCreateForm&formHeader=emxProgramCentral.Common.CreateDashboard&StringResourceFileId=emxProgramCentralStringResource&mode=edit&postProcessURL=../programcentral/emxProgramCentralDashboardsCreateProcess.jsp?mode=createDahsboard'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateDashboard'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_PMCCreateDashboard on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateDashboard';

@@ -1,0 +1,17 @@
+del command 'APPXPAdvancedViewToolbar';
+add command 'APPXPAdvancedViewToolbar'
+	description	''
+	label	'emxPlmOnline.label.Advanced'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPXPRoleAdminPortal&toolbar=APPXPAdminAdvancedToolBar&header=emxPlmOnline.label.ManageRole'
+	alt	'emxPlmOnline.label.Advanced'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Access Function'		'isAdvancedCommandAvailable'
+	setting	'Access Program'		'emxPLMOnlineAdmin'
+	setting	'Image'		'iconSmallXPAdvanced.gif'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+modify menu APPXPAdminToolBar add command APPXPAdvancedViewToolbar order command APPXPAdvancedViewToolbar 0;
+#channel ==>APPXPAdminToolBar
+add property command_APPXPAdvancedViewToolbar on program eServiceSchemaVariableMapping.tcl to command 'APPXPAdvancedViewToolbar';

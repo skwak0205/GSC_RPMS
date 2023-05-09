@@ -1,0 +1,8 @@
+del portal 'APPXPSecurityContextAdminPortal';
+add portal 'APPXPSecurityContextAdminPortal'
+	description	''
+	label	''
+	href	''
+	channel 	SecurityContextXPChannel
+;
+add property portal_APPXPSecurityContextAdminPortal on program eServiceSchemaVariableMapping.tcl to portal 'APPXPSecurityContextAdminPortal';

@@ -1,0 +1,17 @@
+del menu 'type_ImpactAnalysis';
+add menu 'type_ImpactAnalysis'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ImpactAnalysis&toolbar=APPECImpactAnalysisPropertiesToolBar&HelpMarker=emxhelpimpactanalysis&formHeader=EnterpriseChangeMgt.Label.EnterpriseChangeMgtPropertiesHeader&export=false'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	command	'APPReferenceDocumentsTreeCategory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_ImpactAnalysis'
+	property 'version'	value	'10-6'
+;
+add property menu_type_ImpactAnalysis on program eServiceSchemaVariableMapping.tcl to menu 'type_ImpactAnalysis';

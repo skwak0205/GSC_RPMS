@@ -1,0 +1,23 @@
+del menu 'type_Opportunity';
+add menu 'type_Opportunity'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCOpportunityForm&mode=view&toolbar=PMCOpportunityToolBar&formHeader=emxProgramCentral.Common.FormBasics&HelpMarker=emxhelpopportunitydetails&Export=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallSkill.gif'
+	command	'PMCAffectedItems'
+	command	'PMCAttachment'
+	command	'APPDiscussionCommand'
+	command	'PMCHistory'
+	command	'PMCLifecycle'
+	command	'PMCResolvesItems'
+	command	'PMCRiskAssigneeTab'
+	command	'APPRoutes'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_Opportunity'
+	property 'version'	value	'R421.HF3'
+;
+add property menu_type_Opportunity on program eServiceSchemaVariableMapping.tcl to menu 'type_Opportunity';

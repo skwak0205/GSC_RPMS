@@ -1,0 +1,15 @@
+del menu 'PMCProjectSnapshotToolbarActions';
+add menu 'PMCProjectSnapshotToolbarActions'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCProjectSnapshotCompareActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectSnapshotToolbarActions'
+	property 'version'	value	'R216'
+;
+add property menu_PMCProjectSnapshotToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectSnapshotToolbarActions';

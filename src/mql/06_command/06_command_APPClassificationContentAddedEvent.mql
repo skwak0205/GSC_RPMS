@@ -1,0 +1,18 @@
+del command 'APPClassificationContentAddedEvent';
+add command 'APPClassificationContentAddedEvent'
+	description	'Event holder for Content Addition'
+	label	'emxComponents.Event.Content_Added'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Content Added'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPClassificationContentAddedEvent'
+	property	'version'	value	'R212'
+;
+modify menu APPClassificationSubscriptionEvents add command APPClassificationContentAddedEvent order command APPClassificationContentAddedEvent 1;
+modify menu LBCDocumentFamilySubscriptionEvents add command APPClassificationContentAddedEvent order command APPClassificationContentAddedEvent 1;
+#channel ==>APPClassificationSubscriptionEventsLBCDocumentFamilySubscriptionEvents
+add property command_APPClassificationContentAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPClassificationContentAddedEvent';

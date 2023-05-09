@@ -1,0 +1,31 @@
+del command 'RMTRequirementVersionRichTextEditor';
+add command 'RMTRequirementVersionRichTextEditor'
+	description	'Launches Rich-text viewer.'
+	label	'emxRequirements.ActionLink.RichtextEditor'
+	href	'${SUITE_DIR}/RichTextEditorLayout.jsp?selectedProgram=emxRequirement:getCategoryTreeObjects&selectedTable=RMTRequirementVersionRichTextTable&RichTextDefinition=RMTRichTextDefinition&toolbar=RMTRequirementVersionRichTextEditorToolbar&editLink=true&objectCompare=false&Export=false&PrinterFriendly=false&expandLevelFilter=false&showClipboard=false&massPromoteDemote=false&triggerValidation=false&AutoFilter=false&CurrencyConverter=false&HelpMarker=emxhelpsce&selectedRelationship=relationship_RequirementVersion&preSaveJPO=emxRequirement:createNewVersionWithUIUpdate&showParent=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isSCEUsed'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRichTextEditor.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementVersionRichTextEditor'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementVersionsActionBar add command RMTRequirementVersionRichTextEditor order command RMTRequirementVersionRichTextEditor 2;
+#channel ==>RMTRequirementVersionsActionBar
+add property command_RMTRequirementVersionRichTextEditor on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementVersionRichTextEditor';

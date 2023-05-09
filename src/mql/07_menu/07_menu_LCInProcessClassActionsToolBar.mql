@@ -1,0 +1,20 @@
+del menu 'LCInProcessClassActionsToolBar';
+add menu 'LCInProcessClassActionsToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'LBCInProcessCreateClassMenu'
+	command	'APPSeparator'
+	command	'APPSubscriptionMultiObject'
+	command	'DCObjectAddSelectedtoFoldersActionLink'
+	command	'LCObjectDeleteSelectedActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCInProcessClassActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_LCInProcessClassActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCInProcessClassActionsToolBar';

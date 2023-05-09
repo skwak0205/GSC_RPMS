@@ -1,0 +1,16 @@
+del menu 'FTRProductConfigurationPageHelpToolBar';
+add menu 'FTRProductConfigurationPageHelpToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallAdministration.png'
+	command	'FTRProductConfigurationPageHelpAction'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRProductConfigurationPageHelpToolBar'
+	property 'version'	value	'R418'
+;
+add property menu_FTRProductConfigurationPageHelpToolBar on program eServiceSchemaVariableMapping.tcl to menu 'FTRProductConfigurationPageHelpToolBar';

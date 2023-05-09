@@ -1,0 +1,15 @@
+del channel 'PLCProductEngineeringChangeChannel';
+add channel 'PLCProductEngineeringChangeChannel'
+	description	''
+	height	'630'
+	label	''
+	href	''
+	command 	'CommonEngineeringChangeTreeCategory','ContextIssueListPage'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductEngineeringChangeChannel'
+	property	'version'	value	'R216'
+;
+#portal ==>PLCProductEngineeringChangePortal
+add property channel_PLCProductEngineeringChangeChannel on program eServiceSchemaVariableMapping.tcl to channel 'PLCProductEngineeringChangeChannel';

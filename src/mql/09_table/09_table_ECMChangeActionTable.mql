@@ -1,0 +1,29 @@
+del table 'ECMChangeActionTable' system;
+add table 'ECMChangeActionTable' system
+column #1
+	name	'Title'
+	businessobject	'$<attribute[attribute_Synopsis].value>'
+	label	'EnterpriseChangeMgt.Label.Title'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Draggable'		'true'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'Name'
+	businessobject	'name'
+	label	'EnterpriseChangeMgt.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMChangeActionTable'
+	property	'version'	value	'R419'
+;
+add property table_ECMChangeActionTable on program eServiceSchemaVariableMapping.tcl to table 'ECMChangeActionTable' system;

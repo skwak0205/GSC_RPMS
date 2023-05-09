@@ -1,0 +1,16 @@
+del menu 'PLCBuildListBottomActionBar';
+add menu 'PLCBuildListBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCDeleteBuildActionLink'
+	command	'AEFSeparator'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCBuildListBottomActionBar'
+	property 'version'	value	'R213'
+;
+add property menu_PLCBuildListBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCBuildListBottomActionBar';

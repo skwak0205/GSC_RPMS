@@ -1,0 +1,18 @@
+del menu 'PMCProjectDetailsToolbarActions';
+add menu 'PMCProjectDetailsToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCProjectDetailsPropertiesEdit'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectDetailsToolbarActions'
+	property 'version'	value	'R423.HF7'
+;
+add property menu_PMCProjectDetailsToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectDetailsToolbarActions';

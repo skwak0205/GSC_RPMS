@@ -1,0 +1,19 @@
+del command 'APPEditAccessRequest';
+add command 'APPEditAccessRequest'
+	description	'Command Object for Edit Access Request'
+	label	'emxComponents.Common.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_AccessRequest&mode=edit&printerfriendly=true&HelpMarker=emxhelprequesteditdetails&formHeader=emxComponents.Common.FormEditDetailsHeadingWithoutRev'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPEditAccessRequest'
+	property	'version'	value	'R417'
+;
+modify menu APPAccessRequestActionsToolbar add command APPEditAccessRequest order command APPEditAccessRequest 1;
+#channel ==>APPAccessRequestActionsToolbar
+add property command_APPEditAccessRequest on program eServiceSchemaVariableMapping.tcl to command 'APPEditAccessRequest';

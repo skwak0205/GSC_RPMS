@@ -1,0 +1,26 @@
+del command 'APPRouteConnectVCFileFolder';
+add command 'APPRouteConnectVCFileFolder'
+	description	'Command for mapping a file or folder in DesignSync to business object'
+	label	'emxComponents.VersionControl.ConnectVCFileFolder'
+	href	'${SUITE_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=connectVCFileFolder&JPOName=emxRouteDocument&actionURL=emxCommonDocumentVCConnectProcess.jsp&stepOneHeader=emxComponents.Header.ConnectToDesignSyncFileFolder&showDescription=required&showFolder=required&folderURL=emxCommonSelectWorkspaceFolderDialogFS.jsp&parentRelName=relationship_VaultedDocuments&routeContent=true&parentId=RouteWizard'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteConnectVCFileFolder'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteContentSummaryCreateNew add command APPRouteConnectVCFileFolder order command APPRouteConnectVCFileFolder 0;
+#channel ==>APPRouteContentSummaryCreateNew
+add property command_APPRouteConnectVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'APPRouteConnectVCFileFolder';

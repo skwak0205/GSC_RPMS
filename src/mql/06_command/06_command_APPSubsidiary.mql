@@ -1,0 +1,33 @@
+del command 'APPSubsidiary';
+add command 'APPSubsidiary'
+	description	'Subsidiary Command Object'
+	label	'emxComponents.Command.Subsidiaries'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCompany:getSubsidiaries&table=APPOrganizationSummary&toolbar=APPSubsidiarySummaryToolBar&header=emxComponents.SubsidiarySummary.Heading&selection=multiple&sortDirection=ascending&HelpMarker=emxhelpsubsidiaries&PrinterFriendly=true'
+	alt	'emxComponents.Command.Subsidiaries'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(to[$<relationship_Customer>].from.name != "")'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallCompany.gif'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Supplier'
+	user	'Supplier Representative'
+	user	'Buyer'
+	user	'Supplier Engineer'
+	user	'Advanced Quality Engineer'
+	user	'Buyer Administrator'
+	user	'Supplier Development Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSubsidiary'
+	property	'version'	value	'R422.HF1'
+;
+modify menu type_Company add command APPSubsidiary order command APPSubsidiary 14;
+#channel ==>type_Company
+add property command_APPSubsidiary on program eServiceSchemaVariableMapping.tcl to command 'APPSubsidiary';

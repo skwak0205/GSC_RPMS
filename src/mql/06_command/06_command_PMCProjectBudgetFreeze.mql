@@ -1,0 +1,28 @@
+del command 'PMCProjectBudgetFreeze';
+add command 'PMCProjectBudgetFreeze'
+	description	''
+	label	'emxProgramCentral.Budget.Freeze'
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=freezeBudget'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'CmdName'		'PMCProjectBudgetFreeze'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCurrentStateFrozen'
+	setting	'Access Program'		'emxProjectBudget'
+	setting	'Image'		'${COMMON_DIR}/images/I_FreezeBudget32.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetFreeze'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBudgetToolbarActions add command PMCProjectBudgetFreeze order command PMCProjectBudgetFreeze 4;
+modify menu PMCProjectBudgetToolbar add command PMCProjectBudgetFreeze order command PMCProjectBudgetFreeze 3;
+#channel ==>PMCProjectBudgetToolbarActionsPMCProjectBudgetToolbar
+add property command_PMCProjectBudgetFreeze on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudgetFreeze';

@@ -1,0 +1,19 @@
+del command 'FTRModelCatalog';
+add command 'FTRModelCatalog'
+	description	'Command Object for Catalog in the Model Tree Category'
+	label	'emxProduct.Tree.ModelCatalog'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxModel:getAllCatalogs,emxModel:getEffectiveCatalogs,emxModel:getAllActiveCatalogs&programLabel=emxProduct.Filter.All,emxProduct.Filter.Effective,emxProduct.Filter.AllActive&table=FTRModelCatalogList&header=emxProduct.Common.ModelCatalogPageHeading&selection=multiple&sortColumnName=Name&sortDirection=ascending&ExportData=false&HelpMarker=emxhelpcatalog'
+	alt	'emxProduct.Menu.ModelCatalog'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProductConfiguration.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelCatalog'
+	property	'version'	value	'R417'
+;
+modify menu type_Model add command FTRModelCatalog order command FTRModelCatalog 3;
+#channel ==>type_Model
+add property command_FTRModelCatalog on program eServiceSchemaVariableMapping.tcl to command 'FTRModelCatalog';

@@ -1,0 +1,22 @@
+del command 'PMCAddTemplateCoOwner';
+add command 'PMCAddTemplateCoOwner'
+	description	''
+	label	'emxProgramCentral.Common.Add'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=FindCompanyAdminList'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'false'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isOwnerOrCoOwner'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/PRSPAddSharedTable.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddTemplateCoOwner'
+	property	'version'	value	'R419'
+;
+modify menu PMCTemplateCoOwnerToolBar add command PMCAddTemplateCoOwner order command PMCAddTemplateCoOwner 1;
+#channel ==>PMCTemplateCoOwnerToolBar
+add property command_PMCAddTemplateCoOwner on program eServiceSchemaVariableMapping.tcl to command 'PMCAddTemplateCoOwner';

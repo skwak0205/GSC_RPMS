@@ -1,0 +1,22 @@
+del command 'APPObjectRouteStartedEvent';
+add command 'APPObjectRouteStartedEvent'
+	description	'Object Route Started Event'
+	label	'emxComponents.Route.Event.Route_Started'
+	href	''
+	alt	''
+	setting	'Force Recursion'		'true'
+	setting	'Registered Suite'		'Components'
+	setting	'3DNotificationSupported'		'false'
+	setting	'Event Type'		'Route Started'
+	setting	'Recurse Relationship'		'$<relationship_ObjectRoute>,$<relationship_RouteScope>'
+	setting	'Is Recursible'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectRouteStartedEvent'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPRouteSubscriptionEvents add command APPObjectRouteStartedEvent order command APPObjectRouteStartedEvent 1;
+modify menu APPDOCUMENTSEvents add command APPObjectRouteStartedEvent order command APPObjectRouteStartedEvent 8;
+#channel ==>APPRouteSubscriptionEventsAPPDOCUMENTSEvents
+add property command_APPObjectRouteStartedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPObjectRouteStartedEvent';

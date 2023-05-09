@@ -1,0 +1,11 @@
+del command 'AEFVPLMContextPreference';
+add command 'AEFVPLMContextPreference'
+	description	'Set the VPLM security context for synchronization'
+	label	'emxVPMCentral.Synchronization.Preferences.VPLMContext'
+	href	'${SUITE_DIR}/common/emxVPLMContextPreference.jsp'
+	alt	''
+	setting	'Registered Suite'		'VPMCentral'
+;
+modify menu AEFVPLMPreferenceMenu add command AEFVPLMContextPreference order command AEFVPLMContextPreference 0;
+#channel ==>AEFVPLMPreferenceMenu
+add property command_AEFVPLMContextPreference on program eServiceSchemaVariableMapping.tcl to command 'AEFVPLMContextPreference';

@@ -1,0 +1,18 @@
+del menu 'PMCCreateResourcePlanTemplate';
+add menu 'PMCCreateResourcePlanTemplate'
+	description	''
+	label	'emxProgramCentral.Command.ResourcePlan.CreateNew'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Hide Mode'		'mobile'
+	command	'PMCCreateNewResourcePlanTemplate'
+	command	'PMCCloneResourcePlanTemplate'
+	command	'PMCDeleteResourcePlanTemplate'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCCreateResourcePlanTemplate'
+	property 'version'	value	'R417'
+;
+add property menu_PMCCreateResourcePlanTemplate on program eServiceSchemaVariableMapping.tcl to menu 'PMCCreateResourcePlanTemplate';

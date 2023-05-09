@@ -1,0 +1,15 @@
+del menu 'type_ProjectBaseline';
+add menu 'type_ProjectBaseline'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=defaultLaunchProjectBaselines'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Header Lifecycle'		'hide'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_ProjectBaseline'
+	property 'version'	value	'R422.HF7'
+;
+add property menu_type_ProjectBaseline on program eServiceSchemaVariableMapping.tcl to menu 'type_ProjectBaseline';

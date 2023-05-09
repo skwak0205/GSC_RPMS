@@ -1,0 +1,17 @@
+del command 'PMCGateDashboardCommandPowerView';
+add command 'PMCGateDashboardCommandPowerView'
+	description	'Command for opening Gate Dashboard Present in Project Tree'
+	label	'emxFramework.Command.PMCGateDashboardCommand'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCGateDashboardPortal&showPageHeader=false&HelpMarker=emxhelpdashboardschedule'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateDashboardCommandPowerView'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_PMCGateDashboardCommandPowerView on program eServiceSchemaVariableMapping.tcl to command 'PMCGateDashboardCommandPowerView';

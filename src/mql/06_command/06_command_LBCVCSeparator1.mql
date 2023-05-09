@@ -1,0 +1,19 @@
+del command 'LBCVCSeparator1';
+add command 'LBCVCSeparator1'
+	description	'LBC VC Separator1'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Function'		'canDisplayGenericDocVcCommands'
+	setting	'Access Program'		'emxLibraryCentralUtil'
+	setting	'Action Type'		'Separator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCVCSeparator1'
+	property	'version'	value	'R422.HF1'
+;
+modify menu LCDocumentSummaryCreateNew add command LBCVCSeparator1 order command LBCVCSeparator1 8;
+#channel ==>LCDocumentSummaryCreateNew
+add property command_LBCVCSeparator1 on program eServiceSchemaVariableMapping.tcl to command 'LBCVCSeparator1';

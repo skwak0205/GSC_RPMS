@@ -1,0 +1,21 @@
+del command 'APPDSCObjectAccessEditAccess';
+add command 'APPDSCObjectAccessEditAccess'
+	description	'This command is used for editing the granted access of users.'
+	label	'emxComponents.Common.EditAccess'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?program=emxObjectAccess:getAccessGrantees&sortColumnName=Name&sortDirection=ascending&table=APPObjectAccessSummary&header=emxComponents.Common.EditAccess&massUpdate=true&accessChoice=Read_WO_Download,Read,Read_Write,Add,Remove,Add_Remove&showAllProgram=emxObjectAccess&showAllFunction=hasAccessRoles&pushGrantor=person_CommonAccessGrantor&HelpMarker=emxhelpaccessedit&editMode=true&postProcessURL=${SUITE_DIR}/emxComponentsObjectAccessSetAccessProcess.jsp'
+	alt	'emxComponents.Common.EditAccess'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	setting	'Popup Modal'		'true'
+	user	'Integration User'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'APPDSCObjectAccessEditAccess'
+	property	'version'	value	'R424'
+;
+#channel ==>
+add property command_APPDSCObjectAccessEditAccess on program eServiceSchemaVariableMapping.tcl to command 'APPDSCObjectAccessEditAccess';

@@ -1,0 +1,22 @@
+del command 'RemoveSelectedIssueAssigneeLink';
+add command 'RemoveSelectedIssueAssigneeLink'
+	description	'Issue Remove Selected Command Object'
+	label	'emxComponents.Command.RemoveSelectedAssigneeLink'
+	href	'${SUITE_DIR}/emxIssueUtil.jsp?mode=disconnectAssignee'
+	alt	'emxComponents.Command.Remove SelectedAssigneeLink'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromdisconnect] == true)'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'RemoveSelectedIssueAssigneeLink'
+	property	'version'	value	'R421'
+;
+modify menu IssueAssigneeListToolBarActions add command RemoveSelectedIssueAssigneeLink order command RemoveSelectedIssueAssigneeLink 0;
+#channel ==>IssueAssigneeListToolBarActions
+add property command_RemoveSelectedIssueAssigneeLink on program eServiceSchemaVariableMapping.tcl to command 'RemoveSelectedIssueAssigneeLink';

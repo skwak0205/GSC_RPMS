@@ -1,0 +1,21 @@
+del command 'PLCPortfolioListViewRoadmapActionLink';
+add command 'PLCPortfolioListViewRoadmapActionLink'
+	description	''
+	label	'emxProduct.ActionLink.ViewProductRoadmap'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxPortfolio:getPortfolioProducts&sortColumnName=Name&table=PLCProductRoadmapList&header=emxProduct.Heading.RoadmapReport&selection=multiple&Style=PrinterFriendly'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multiple'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPortfolioListViewRoadmapActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCPortfolioListToolbarReports add command PLCPortfolioListViewRoadmapActionLink order command PLCPortfolioListViewRoadmapActionLink 1;
+#channel ==>PLCPortfolioListToolbarReports
+add property command_PLCPortfolioListViewRoadmapActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCPortfolioListViewRoadmapActionLink';

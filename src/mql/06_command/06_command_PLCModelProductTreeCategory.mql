@@ -1,0 +1,17 @@
+del command 'PLCModelProductTreeCategory';
+add command 'PLCModelProductTreeCategory'
+	description	''
+	label	'emxProduct.Tree.ProductRevisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProduct:getModelProducts&table=PLCProductList&header=emxProduct.Heading.Product&selection=multiple&toolbar=PLCModelProductListToolBar&sortColumnName=Name&HelpMarker=emxhelpproductlist&editLink=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/iconSmallProduct.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCModelProductTreeCategory'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_PLCModelProductTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCModelProductTreeCategory';

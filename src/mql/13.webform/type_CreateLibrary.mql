@@ -1,0 +1,11 @@
+################################################################################################
+# Created Date : 2020.05.18
+# Create by MinSung,Kim
+# Description : 라이브러리 등록
+################################################################################################
+
+#OOTB 백업
+copy form type_CreateLibrary type_CreateLibrary_OOTB;
+
+#Type Field Readonly 처리
+modify form type_CreateLibrary field modify name 'Type' setting 'Editable' 'false';

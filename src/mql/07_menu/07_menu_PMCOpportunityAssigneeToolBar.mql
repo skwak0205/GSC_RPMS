@@ -1,0 +1,15 @@
+del menu 'PMCOpportunityAssigneeToolBar';
+add menu 'PMCOpportunityAssigneeToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCOpportunityAssigneeToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCOpportunityAssigneeToolBar'
+	property 'version'	value	'R421'
+;
+add property menu_PMCOpportunityAssigneeToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCOpportunityAssigneeToolBar';

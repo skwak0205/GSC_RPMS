@@ -1,0 +1,9 @@
+del portal 'MngUKConfigurationPortal';
+add portal 'MngUKConfigurationPortal'
+	description	'Manage Uniqueness Keys Portal'
+	label	'emxPackagesManagement.label.ManageUniquenessKeysPortal'
+	href	''
+	channel 	MngUniquenessKeysChannel
+	setting	'Registered Suite'		'PackagesManagement'
+;
+add property portal_MngUKConfigurationPortal on program eServiceSchemaVariableMapping.tcl to portal 'MngUKConfigurationPortal';

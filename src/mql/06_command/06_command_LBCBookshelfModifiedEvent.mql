@@ -1,0 +1,18 @@
+del command 'LBCBookshelfModifiedEvent';
+add command 'LBCBookshelfModifiedEvent'
+	description	'Event holder for Bookshelf Modification'
+	label	'emxLibraryCentral.Event.Bookshelf_Modified'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Bookshelf Modified'
+	setting	'History Bit'		'modify'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCBookshelfModifiedEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCBookshelfSubscriptionEvents add command LBCBookshelfModifiedEvent order command LBCBookshelfModifiedEvent 3;
+#channel ==>LBCBookshelfSubscriptionEvents
+add property command_LBCBookshelfModifiedEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCBookshelfModifiedEvent';

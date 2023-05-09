@@ -1,0 +1,20 @@
+del command 'PMCConnectedPlan';
+add command 'PMCConnectedPlan'
+	description	'Governing Project'
+	label	'Governing Project'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDeliverable:getConnectedProjectPlan&table=PMCProjectSpaceMyDesk&freezePane=Name&mode=view&sortColumnName=Name&header=Connected Plan'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENODEPL_TP'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCConnectedPlan'
+	property	'version'	value	'R422'
+;
+modify menu type_DeliverableIntent add command PMCConnectedPlan order command PMCConnectedPlan 4;
+#channel ==>type_DeliverableIntent
+add property command_PMCConnectedPlan on program eServiceSchemaVariableMapping.tcl to command 'PMCConnectedPlan';

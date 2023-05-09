@@ -1,0 +1,19 @@
+del command 'LBCFolderContent';
+add command 'LBCFolderContent'
+	description	'Fodler Content'
+	label	'emxDocumentCentral.TreeCategory.Content'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxDCUtils:getFolderContents&table=DCObjectsStandard&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=LBCFolderContentToolBar&header=emxDocumentCentral.Common.Content&HelpMarker=emxhelpfoldercontent'
+	alt	'emxDocumentCentral.TreeCategory.Content'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'VPLMViewer'
+	user	'Employee'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCFolderContent'
+	property	'version'	value	'R216'
+;
+modify menu DCtype_ProjectVault add command LBCFolderContent order command LBCFolderContent 3;
+#channel ==>DCtype_ProjectVault
+add property command_LBCFolderContent on program eServiceSchemaVariableMapping.tcl to command 'LBCFolderContent';

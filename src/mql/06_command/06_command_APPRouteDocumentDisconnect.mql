@@ -1,0 +1,32 @@
+del command 'APPRouteDocumentDisconnect';
+add command 'APPRouteDocumentDisconnect'
+	description	'Disconnect Selected Route'
+	label	'emxComponents.Command.Remove'
+	href	'${COMPONENT_DIR}/emxAppRouteContentDisconnect.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canRemoveContent'
+	setting	'Access Program'		'emxRoute'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteDocumentDisconnect'
+	property	'version'	value	'R422'
+;
+modify menu APPRouteSummaryTaskActionsToolBar add command APPRouteDocumentDisconnect order command APPRouteDocumentDisconnect 0;
+modify menu APPRouteSummaryActionsToolBar add command APPRouteDocumentDisconnect order command APPRouteDocumentDisconnect 0;
+modify menu PMCRouteSummaryActionsToolBar add command APPRouteDocumentDisconnect order command APPRouteDocumentDisconnect 0;
+#channel ==>APPRouteSummaryTaskActionsToolBarAPPRouteSummaryActionsToolBarPMCRouteSummaryActionsToolBar
+add property command_APPRouteDocumentDisconnect on program eServiceSchemaVariableMapping.tcl to command 'APPRouteDocumentDisconnect';

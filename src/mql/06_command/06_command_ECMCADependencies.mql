@@ -1,0 +1,21 @@
+del command 'ECMCADependencies';
+add command 'ECMCADependencies'
+	description	'Change Dependencies Items'
+	label	'EnterpriseChangeMgt.Command.Dependency'
+	href	'${SUITE_DIR}/ECMChangeDependency.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Access Function'		'isDependencyActivated'
+	setting	'Access Program'		'enoECMChangeUX'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCADependencies'
+	property	'version'	value	'R421'
+;
+modify menu type_ChangeOrder add command ECMCADependencies order command ECMCADependencies 3;
+modify menu type_ChangeAction add command ECMCADependencies order command ECMCADependencies 0;
+#channel ==>type_ChangeOrdertype_ChangeAction
+add property command_ECMCADependencies on program eServiceSchemaVariableMapping.tcl to command 'ECMCADependencies';

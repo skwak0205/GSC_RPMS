@@ -1,0 +1,26 @@
+del command 'PLCDeleteImageActionLink';
+add command 'PLCDeleteImageActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/ImageUtil.jsp?mode=Delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCDeleteImageActionLink'
+	property	'version'	value	'R421'
+;
+modify menu PLCImageListToolBarActions add command PLCDeleteImageActionLink order command PLCDeleteImageActionLink 0;
+modify menu PLCImageListBottomActionBar add command PLCDeleteImageActionLink order command PLCDeleteImageActionLink 1;
+#channel ==>PLCImageListToolBarActionsPLCImageListBottomActionBar
+add property command_PLCDeleteImageActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCDeleteImageActionLink';

@@ -1,0 +1,21 @@
+del command 'PMCBusinessGoalMyDesk';
+add command 'PMCBusinessGoalMyDesk'
+	description	'Business Goal Command Object'
+	label	'emxFramework.MenuItem.BusinessGoals'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProgramBusinessGoal:getMyBusinessGoals,emxProgramBusinessGoal:getBusinessUnitBusinessGoals,emxProgramBusinessGoal:getCompanyBusinessGoals&programLabel=emxProgramCentral.BusinessGoal.MyGoals,emxProgramCentral.Common.BusinessUnit,emxProgramCentral.Common.Company&table=PMCBusinessGoalSummary&selection=multiple&header=emxProgramCentral.ProgramTop.BusinessGoals&toolbar=PMCMyDeskBusinessGoalToolBar&HelpMarker=emxhelpbusinessgoalsummary&StringResourceFileId=emxProgramCentralStringResource'
+	alt	'emxFramework.MenuItem.BusinessGoals'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBusinessGoalMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyDesk add command PMCBusinessGoalMyDesk order command PMCBusinessGoalMyDesk 7;
+#channel ==>PMCMyDesk
+add property command_PMCBusinessGoalMyDesk on program eServiceSchemaVariableMapping.tcl to command 'PMCBusinessGoalMyDesk';

@@ -1,0 +1,18 @@
+del command 'AEFCollectionItems';
+add command 'AEFCollectionItems'
+	description	'Collection Items Summary'
+	label	'emxFramework.Command.Items'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxAEFCollection:getObjects&table=AEFCollectionItems&toolbar=AEFCollectionItemsToolBar&objectBased=true&HelpMarker=emxhelpcollectionitems&sortColumnName=Name&header=emxFramework.Command.AEFItems&selection=multiple&PrinterFriendly=true&showClipboard=false&displayView=details'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallObjectFolder.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCollectionItems'
+	property	'version'	value	'R420.HF2'
+;
+modify menu AEFCollectionsMenu add command AEFCollectionItems order command AEFCollectionItems 0;
+#channel ==>AEFCollectionsMenu
+add property command_AEFCollectionItems on program eServiceSchemaVariableMapping.tcl to command 'AEFCollectionItems';

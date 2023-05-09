@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd">
+
+
+<!-- ******************************************* -->
+<!-- ****************   ASSESSMENT  ************ -->
+<!-- ****************   FUN107763  ************ -->
+<!-- ******************************************* -->
+
+   <ds:service name="dpm.assessments">
+       <ds:license products="ENOPRPR_AP"/>
+       <ds:data>
+            <ds:jpo       classname="com.dassault_systemes.enovia.dpm.AssessmentService" function="getAssessmentsDetails" returnedData="idsAndData" localInvokation="java" />
+             <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.AssessmentService" function="updateAssessments" localInvokation="java" processMultiple="true" />
+       </ds:data>
+
+       <ds:field name="assessmentdate.transient" includeByDefault="always">
+          <ds:selectable expression="attribute[Assessment.Assessment Date]" transient="true" format="timestamp"/>
+          <ds:sort sortable="true" type="date" direction="descending" order="1"/>
+        </ds:field>
+        
+       <ds:field name="originateddate.transient" includeByDefault="always">
+          <ds:selectable expression="originated" transient="true" format="timestamp"/>
+          <ds:sort sortable="true" type="date" direction="descending" order="2"/>
+        </ds:field>
+
+        <ds:field name="title"                  description="Title of the Asessment">                                        <ds:selectable expression="attribute[Title]" type="bus" autosave="true" createOperation="required" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="name"                   description="The Assessment name. (Assessments are auto named)">             <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"               description="(unique discriminator only, Assessments are not revisioned)">   <ds:selectable expression="revision"     type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="contextId" includeByDefault="yes"  description="The object ID Assessment is created for (i.e., Project).  This is required for Create.">        <ds:selectable expression="to[Project Assessment].from.physicalid"         type="bus" createOperation="required" modifyOperation="yes" readOperation="yes"/></ds:field>
+
+        <ds:field name="policy" description="The current policy of the object."><ds:selectable createOperation="yes" modifyOperation="yes" readOperation="yes" expression="policy"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.AssessmentService" function="getPolicies">
+                      <ds:arg arg-name="type" arg-value="Assessment"/>
+              </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="state" description="The current maturity of the object."><ds:selectable createOperation="yes" modifyOperation="yes" readOperation="yes" expression="current"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.AssessmentService" function="getAllPolicyStates">
+                    <ds:arg arg-name="type" arg-value="Assessment"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="description"            description="Description of the object.">                                <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+
+        <ds:field name="originated"             description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="originator"             description="The user who originally created the object.">               <ds:selectable expression="attribute[Originator]"        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="modified"               description="Date of last modification of the object.">                  <ds:selectable expression="modified"   format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+		
+		<ds:field name="organization"       description="The Organization the object was created in."   >    <ds:selectable expression="organization" type="bus"  createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+		<ds:field name="project"           description="Collaborative Space (name) the Project was created in."> <ds:selectable expression="project" type="bus" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+		
+        <ds:field name="owner"                  description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="assessmentDate"         description="The date of the Project Assessment">                        <ds:selectable expression="attribute[Assessment.Assessment Date]" type="bus" format="isodate" autosave="true" createOperation="required" modifyOperation="yes" readOperation="yes"/></ds:field>
+
+<!--    <ds:field name="assessment"             description="General Status">         <ds:selectable expression="attribute[Assessment Status]"        type="bus" format="range"    autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>  -->
+        <ds:field name="assessment"             description="General Status">         <ds:selectable expression="attribute[Assessment Status]"        type="bus"   autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>
+        </ds:field>
+        <ds:field name="scope"                  description="Scope Status">           <ds:selectable expression="attribute[Assessment.Scope Status]"             type="bus"   autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>
+           <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getAttributeRange">
+                    <ds:arg arg-name="attribute" arg-value="Scope Status"/>
+                </ds:rangejpo>
+           </ds:range>
+        </ds:field>
+        <ds:field name="schedule"               description="Schedule Status">        <ds:selectable expression="attribute[Schedule Status]"          type="bus"   autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>
+        </ds:field>
+        <ds:field name="cost"                   description="Finance Status">         <ds:selectable expression="attribute[Finance Status]"           type="bus"   autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>
+        </ds:field>
+        <ds:field name="quality"                description="Quality Status">         <ds:selectable expression="attribute[Assessment.Quality Status]"           type="bus"   autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>
+           <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getAttributeRange">
+                    <ds:arg arg-name="attribute" arg-value="Quality Status"/>
+                </ds:rangejpo>
+           </ds:range>
+        </ds:field>
+        <ds:field name="resource"               description="Resource Status">         <ds:selectable expression="attribute[Resource Status]"          type="bus"  autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>
+        </ds:field>
+        <ds:field name="communication"          description="Communication Status">    <ds:selectable expression="attribute[Assessment.Communication Status]"     type="bus"  autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>
+           <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getAttributeRange">
+                    <ds:arg arg-name="attribute" arg-value="Communication Status"/>
+                </ds:rangejpo>
+           </ds:range>
+        </ds:field>
+        <ds:field name="risk"                   description="Risk Status">             <ds:selectable expression="attribute[Risk Status]"              type="bus"  autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>
+        </ds:field>
+        <ds:field name="procurement"            description="Procurement Status">      <ds:selectable expression="attribute[Assessment.Procurement Status]"       type="bus"  autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>
+           <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getAttributeRange">
+                    <ds:arg arg-name="attribute" arg-value="Procurement Status"/>
+                </ds:rangejpo>
+           </ds:range>
+        </ds:field>
+        <ds:field name="stakeholders"           description="Stakeholders Status">     <ds:selectable expression="attribute[Assessment.Stakeholders Status]"      type="bus"  autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/>
+           <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getAttributeRange">
+                    <ds:arg arg-name="attribute" arg-value="Stakeholders Status"/>
+                </ds:rangejpo>
+           </ds:range>
+        </ds:field>
+        <ds:field name="assessmentCmnts"     description="General Comments">        <ds:selectable expression="attribute[Assessment Comments]"      type="bus"                   autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+        <ds:field name="scopeCmnts"          description="Scope Comments">          <ds:selectable expression="attribute[Assessment.Scope Comments]"           type="bus"                   autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+        <ds:field name="scheduleCmnts"       description="Schedule Comments">       <ds:selectable expression="attribute[Schedule Comments]"        type="bus"                   autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+        <ds:field name="costCmnts"           description="Finance Comments">        <ds:selectable expression="attribute[Finance Comments]"         type="bus"                   autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+        <ds:field name="qualityCmnts"        description="Quality Comments">        <ds:selectable expression="attribute[Assessment.Quality Comments]"         type="bus"                   autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+        <ds:field name="resourceCmnts"       description="Resource Comments">       <ds:selectable expression="attribute[Resource Comments]"        type="bus"                  autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+        <ds:field name="communicationCmnts"  description="Communication Comments">  <ds:selectable expression="attribute[Assessment.Communication Comments]"   type="bus"                  autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+        <ds:field name="riskCmnts"           description="Risk Comments">           <ds:selectable expression="attribute[Risk Comments]"            type="bus"                  autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+        <ds:field name="procurementCmnts"    description="Procurement Comments">    <ds:selectable expression="attribute[Assessment.Procurement Comments]"     type="bus"                  autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+        <ds:field name="stakeholdersCmnts"   description="Stakeholders Comments">   <ds:selectable expression="attribute[Assessment.Stakeholders Comments]"    type="bus"                  autosave="true" createOperation="yes"  modifyOperation="yes"  readOperation="yes"/></ds:field>
+
+        <ds:field name="typeicon">
+            <ds:image source="businessType"  size="icon" />
+        </ds:field>
+
+
+        <ds:field name="modifyAccess"      description="Whether the user has modify access to the Risk."   includeByDefault="no(private)">    <ds:selectable expression="current.access[modify,changename]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="deleteAccess"      description="Whether the user has delete access to the Risk."   includeByDefault="no(private)">             <ds:selectable expression="current.access[delete]"            type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="promoteAccess"     description="Whether the user has promote access to the Risk."  includeByDefault="no(private)">            <ds:selectable expression="current.access[promote]"           type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="demoteAccess"      description="Whether the user has demote access to the Risk."   includeByDefault="no(private)">             <ds:selectable expression="current.access[demote]"            type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="fromConnectAccess" description="Whether the user has connect access to the Risk."  includeByDefault="no(private)">            <ds:selectable expression="current.access[fromconnect]"       type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="toConnectAccess"   description="Whether the user has connect access to the Risk."  includeByDefault="no(private)">            <ds:selectable expression="current.access[toconnect]"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+<!--        <ds:field name="project"           description="Collaborative Space (project) the Risk was created in.">  includeByDefault="no(private)      <ds:selectable expression="project" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+-->
+
+        <ds:field name="statusOfAssessment" includeByDefault="no(private)"  description="List of Assessment status parameters.">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.AssessmentService"    function="getAssessmentStatusRange" localInvokation="java">
+              </ds:rangejpo>
+          </ds:range>
+        </ds:field>
+
+        <ds:field name="statusResolutionPoints" includeByDefault="no(private)"  description="Resolution Point For Spider Chart">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.AssessmentService"    function="getStatusResolutionPointForSpiderChart" localInvokation="java">
+               <ds:arg arg-name="sort"     arg-value="RedDown,Red,RedUp,YellowDown,Yellow,YellowUp,GreenDown,Green,GreenUp"/>
+              </ds:rangejpo>
+          </ds:range>
+        </ds:field>
+
+       <ds:ref-subservice name="ownerInfo"         referenceName="assessment.ownerInfo"        includeByDefault="no"/>
+       <ds:ref-subservice name="originatorInfo"    referenceName="assessment.originatorInfo"   includeByDefault="no"/>
+
+       <ds:ref-subservice name="references" referenceName="assessment.references" includeByDefault="no">
+       </ds:ref-subservice>
+
+       <ds:ref-subservice name="context" referenceName="assessment.context" includeByDefault="no">
+            <ds:data>
+
+                <ds:jpo       classname="com.dassault_systemes.enovia.risk.RiskContext" function="getContext" returnedData="idsAndData"  localInvokation="java" >
+                  <ds:arg arg-name="relationshiptype" arg-value="Project Assessment"/>
+                </ds:jpo>
+            </ds:data>
+       </ds:ref-subservice>
+
+<!--
+
+        <ds:subservice name="search" includeByDefault="never">
+            <ds:data>
+                <ds:indexQuery typePattern="Assessment" keyword="{searchStr}" limit="50"/>
+            </ds:data>
+
+            <ds:field name="name"           description="The object name.">                   <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+            <ds:field name="typeicon"       >                                                 <ds:image source="businessType"         size="icon" /></ds:field>
+            <ds:field name="state"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+            <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+            <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        </ds:subservice>
+-->
+        
+   </ds:service>
+
+   <ds:service name="assessment.ownerInfo" >
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="owner" arg-value="true"/>
+            </ds:jpo>
+        </ds:data>
+        <ds:field name="name.transient" includeByDefault="always"><ds:selectable expression="name" transient="true" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="name">      <ds:selectable expression="name"                   type="bus"/></ds:field>
+        <ds:field name="firstname"> <ds:selectable expression="attribute[First Name]"  type="bus"/></ds:field>
+        <ds:field name="lastname">  <ds:selectable expression="attribute[Last Name]"   type="bus"/></ds:field>
+        <ds:field name="title">     <ds:selectable expression="attribute[Title]"       type="bus"/></ds:field>
+
+        <!-- <ds:ref-subservice name="assessment.imageFields2" /> -->
+        <ds:field name="icon" includeByDefault="yes">
+           <ds:selectable   expression="name"               type="bus"/>
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getResourceImage" localInvokation="true"/>
+       </ds:field>
+       <ds:field name="image">
+            <ds:image source="primaryOrType" size="medium"/>
+        </ds:field>
+   </ds:service>
+
+   <ds:service name="assessment.originatorInfo" >
+        <ds:data>
+            <ds:jpo classname="com.dassault_systemes.enovia.risk.RiskService" function="getPerson" localInvokation="false" returnedData="idsAndData">
+                <ds:arg arg-name="originator" arg-value="true"/>
+            </ds:jpo>
+        </ds:data>
+        <ds:field name="name.transient" includeByDefault="always"><ds:selectable expression="name" transient="true" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="name">      <ds:selectable expression="name"                   type="bus"/></ds:field>
+        <ds:field name="firstname"> <ds:selectable expression="attribute[First Name]"  type="bus"/></ds:field>
+        <ds:field name="lastname">  <ds:selectable expression="attribute[Last Name]"   type="bus"/></ds:field>
+        <ds:field name="title">     <ds:selectable expression="attribute[Title]"       type="bus"/></ds:field>
+
+        <ds:field name="icon" includeByDefault="yes">
+           <ds:selectable   expression="name"               type="bus"/>
+           <ds:fieldjpo classname="com.dassault_systemes.enovia.dpm.ProjectService" function="getResourceImage" localInvokation="true"/>
+       </ds:field>
+       <ds:field name="image">
+            <ds:image source="primaryOrType" size="medium"/>
+        </ds:field>
+   </ds:service>
+
+    <ds:service name="assessment.references" includeByDefault="yes">
+        <ds:data>
+             <ds:jpo       classname="com.dassault_systemes.enovia.risk.RiskReferences" function="getRelatedFiles" localInvokation="false" returnedData="idsAndData">
+                  <ds:arg  arg-name="relationshiptype" arg-value="Reference Document"/>
+             </ds:jpo>
+             <ds:updatejpo classname="com.dassault_systemes.enovia.risk.RiskReferences" function="updateRelatedFiles">
+                  <ds:arg  arg-name="relationshiptype" arg-value="Reference Document"/>
+             </ds:updatejpo>
+        </ds:data>
+
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"       description="(unique discriminator only, Risks are not revisioned)">     <ds:selectable expression="revision"     type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeicon"       >                                                                        <ds:image source="businessType"         size="icon" /></ds:field>
+        <ds:field name="description"    description="Description of the object.">                                <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">                          <ds:selectable expression="originated" format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object.">               <ds:selectable expression="attribute[Originator]"        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+
+
+        <ds:field name="icon" includeByDefault="yes">
+            <ds:image source="businessType" size="small"/>
+        </ds:field>
+        <ds:field name="image">
+            <ds:image source="primaryOrType" size="medium"/>
+        </ds:field>
+<!--
+        <ds:field name="typesForSearch">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.AssessmentService"    function="getRangeTypeDerivatives">
+                 <ds:arg arg-name="relKey"           arg-value="referenceTypesForSearch"/>
+                 <ds:arg arg-name="searchtypes"      arg-value="DOCUMENTS"/>
+                 <ds:arg arg-name="relationshipType" arg-value="Reference Document"/>
+                 <ds:arg arg-name="relationshipDir"  arg-value="totype"/>
+               </ds:rangejpo>
+          </ds:range>
+       </ds:field>
+-->
+
+    </ds:service>
+
+   <ds:service name="assessment.context" >
+        <ds:data>
+            <ds:print />
+        </ds:data>
+        <ds:field name="title"          description="Title information if used, otherwise the object name.">     <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">                                          <ds:selectable expression="name"         type="bus"      createOperation="no" modifyOperation="no" readOperation="yes"  /></ds:field>
+        <ds:field name="description"    description="Description of the object.">                                <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="state"          description="Current lifecycle state">                                   <ds:selectable expression="current"                      createOperation="no"  modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc"      createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+        <ds:field name="owner"          description="The current owner of the object." >                         <ds:selectable expression="owner"                        createOperation="no"  modifyOperation="no"  readOperation="yes"/></ds:field>
+
+        <ds:field name="project"        description="Collaborative Space (name) the Project was created in."> <ds:selectable expression="project" createOperation="yes" modifyOperation="no" readOperation="yes"/></ds:field>
+
+        <ds:field name="image">
+            <ds:image source="primaryOrType" size="medium"/>
+        </ds:field>
+        <ds:field name="thumbnail">
+            <ds:image source="primaryImage" size="thumbnail"/>
+        </ds:field>
+
+        <ds:field name="typesForSearch">
+          <ds:selectable transient="true"/>
+          <ds:range>
+              <ds:rangejpo classname="com.dassault_systemes.enovia.dpm.ProjectService"    function="getRangeTypeDerivatives">
+                  <ds:arg arg-name="relKey"           arg-value="contextTypesForAssessment"/>
+                  <ds:arg arg-name="searchtypes"      arg-value="Project Space, Project Concept"/>
+              </ds:rangejpo>
+          </ds:range>
+       </ds:field>
+
+   </ds:service>
+
+</ds:services>
+

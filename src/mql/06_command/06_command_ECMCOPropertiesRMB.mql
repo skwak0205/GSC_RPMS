@@ -1,0 +1,21 @@
+del command 'ECMCOPropertiesRMB';
+add command 'ECMCOPropertiesRMB'
+	description	''
+	label	'EnterpriseChangeMgt.Command.ChangeProperties'
+	href	'${SUITE_DIR}/ECMIntermediateProcess.jsp?functionality=viewCOFromRMB&formHeader=EnterpriseChangeMgt.Heading.ChangeProperties&mode=view&form=type_ChangeOrderSlidein&type=type_ChangeOrder&toolbar=ECMCOPropertiesToolbarRMB&HelpMarker=emxhelpchangeorderproperties'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>])'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallProperties.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOPropertiesRMB'
+	property	'version'	value	'R216'
+;
+modify menu type_ChangeOrderRMB add command ECMCOPropertiesRMB order command ECMCOPropertiesRMB 1;
+#channel ==>type_ChangeOrderRMB
+add property command_ECMCOPropertiesRMB on program eServiceSchemaVariableMapping.tcl to command 'ECMCOPropertiesRMB';

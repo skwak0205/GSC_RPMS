@@ -1,0 +1,19 @@
+del menu 'PMCMyCalendarToolbar';
+add menu 'PMCMyCalendarToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCMyCalendarPrevious'
+	command	'PMCMyCalendarNext'
+	command	'PMCMyCalendarTaskTypes'
+	command	'PMCMyCalendarDateBox'
+	command	'PMCMyCalendarSubmitButton'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCMyCalendarToolbar'
+	property 'version'	value	'R214'
+;
+add property menu_PMCMyCalendarToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCMyCalendarToolbar';

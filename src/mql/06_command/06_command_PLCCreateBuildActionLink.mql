@@ -1,0 +1,26 @@
+del command 'PLCCreateBuildActionLink';
+add command 'PLCCreateBuildActionLink'
+	description	''
+	label	'emxProduct.BuildSummary.CreateNew'
+	href	'${SUITE_DIR}/BuildCreatePreProcess.jsp?mode=CreateNew'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateBuildActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCProductConfigurationBuildTopActionBar add command PLCCreateBuildActionLink order command PLCCreateBuildActionLink 1;
+modify menu PLCProductBuildListTopActionBar add command PLCCreateBuildActionLink order command PLCCreateBuildActionLink 1;
+modify menu FTRProductConfigurationBuildTopActionBar add command PLCCreateBuildActionLink order command PLCCreateBuildActionLink 1;
+#channel ==>PLCProductConfigurationBuildTopActionBarPLCProductBuildListTopActionBarFTRProductConfigurationBuildTopActionBar
+add property command_PLCCreateBuildActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateBuildActionLink';

@@ -1,0 +1,20 @@
+del menu 'RMTRequirementSpecificationPropertiesActionBar';
+add menu 'RMTRequirementSpecificationPropertiesActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTEditReqSpecificationActionLink'
+	command	'APPSubscription'
+	command	'RMTPromote'
+	command	'RMTDemote'
+	command	'RMTTypeReserve'
+	command	'RMTTypeUnreserve'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementSpecificationPropertiesActionBar'
+	property 'version'	value	'V6R2018X'
+;
+add property menu_RMTRequirementSpecificationPropertiesActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementSpecificationPropertiesActionBar';

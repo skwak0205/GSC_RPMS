@@ -1,0 +1,21 @@
+del command 'AEFJobReStart';
+add command 'AEFJobReStart'
+	description	'Restarting the Job'
+	label	'emxFramework.Job.Restart'
+	href	'${COMMON_DIR}/emxJobRestart.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'(current == "Completed" || current == "Archived" ) && ($<attribute[attribute_CompletionStatus].value> == "Failed" || $<attribute[attribute_CompletionStatus].value> == "Aborted") && $<attribute[attribute_RestartPoint].value> != ""'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFJobReStart'
+	property	'version'	value	'R216'
+;
+modify menu JobActions add command AEFJobReStart order command AEFJobReStart 1;
+#channel ==>JobActions
+add property command_AEFJobReStart on program eServiceSchemaVariableMapping.tcl to command 'AEFJobReStart';

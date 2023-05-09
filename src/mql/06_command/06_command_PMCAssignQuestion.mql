@@ -1,0 +1,26 @@
+del command 'PMCAssignQuestion';
+add command 'PMCAssignQuestion'
+	description	'Command to list questions of template for assigning current task in task popup'
+	label	'emxProgramCentral.Common.AssignQuestion'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=assignQuestionForTemplateTask'
+	alt	'emxProgramCentral.Button.Add'
+	setting	'Target Location'		'popup'
+	setting	'CmdName'		'PMCAssignQuestion'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isQuestionCommandAccessible'
+	setting	'Access Program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssignQuestion'
+	property	'version'	value	'R424.HF3'
+;
+modify menu PMCProjectTemplateTaskQuestionActionsToolBar add command PMCAssignQuestion order command PMCAssignQuestion 1;
+#channel ==>PMCProjectTemplateTaskQuestionActionsToolBar
+add property command_PMCAssignQuestion on program eServiceSchemaVariableMapping.tcl to command 'PMCAssignQuestion';

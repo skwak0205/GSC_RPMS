@@ -1,0 +1,15 @@
+del menu 'PMCProjectQualityToolbar';
+add menu 'PMCProjectQualityToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCProjectQualityToolbarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectQualityToolbar'
+	property 'version'	value	'10-6'
+;
+add property menu_PMCProjectQualityToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectQualityToolbar';

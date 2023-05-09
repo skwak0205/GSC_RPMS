@@ -1,0 +1,21 @@
+################################################################################################
+# Created Date : 2023. 03. 01
+# Create by Jungrim Choi
+# Description : Admin menu
+################################################################################################
+#del command gscAPPPersonRoleSearchCommand;
+add command gscAPPPersonRoleSearchCommand
+    label 'emxComponents.Header.VPLM.PersonRole.Search'
+    href '${COMMON_DIR}/gscAPPIndentedTable.jsp?showClipboard=false&FilterFramePage=../common/gscAPPPersonRoleSearchFilter.jsp&FilterFrameSize=1&program=gscAPPInterfaceUserLog:searchPersonRoleList&table=gscAPPPersonRoleSummaryTable&header=emxComponents.Header.VPLM.PersonRole.Search&hideHeader=true&selection=multiple&pageSize=30&sortColumnName=FullName&sortDirection=ascending'
+    setting "Registered Suite" "Components"
+    setting "Target Location"  "content"
+    setting "Submit"           "true"
+    setting "Row Select"       "single"
+    property "installer" value "gsc"
+    property "application" value "Framework"
+    property "installed date" value "2023-03-01"
+    property "original name" value "gscAPPPersonRoleSearchCommand"
+    property "version" value "R421"
+;
+
+add property 'command_gscAPPPersonRoleSearchCommand' on program 'eServiceSchemaVariableMapping.tcl' to command 'gscAPPPersonRoleSearchCommand';

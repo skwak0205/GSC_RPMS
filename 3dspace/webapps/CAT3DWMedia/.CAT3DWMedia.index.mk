@@ -1,0 +1,12 @@
+m|CAT3DWebAppInfraUI\CAT3DWMedia.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.22323|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\CAT3DWMedia\CAT3DWMedia.js|1668832440|8545
+s|CAT3DWebAppInfraUI\CAT3DWMedia.mweb\src\CAT3DWMedia.js|1668812477|6433
+u|CAT3DWebAppInfraUI\CAT3DWMedia.mweb\src\CAT3DWMediaDataService.js|1637987511|1519
+u|CAT3DWebAppInfraUI\CAT3DWMedia.mweb\src\CAT3DWMediaManager.js|1649096192|7084
+u|CAT3DWebAppInfraUI\CAT3DWMedia.mweb\src\CAT3DWMediaView.js|1668812477|5276
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

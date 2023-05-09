@@ -1,0 +1,15 @@
+del menu 'PMCProjectTemplateBudgetToolbar';
+add menu 'PMCProjectTemplateBudgetToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCProjectTemplateBudgetToolbarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectTemplateBudgetToolbar'
+	property 'version'	value	'R210'
+;
+add property menu_PMCProjectTemplateBudgetToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectTemplateBudgetToolbar';

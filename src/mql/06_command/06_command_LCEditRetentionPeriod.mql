@@ -1,0 +1,24 @@
+del command 'LCEditRetentionPeriod';
+add command 'LCEditRetentionPeriod'
+	description	'For Mass Edit'
+	label	'emxLibraryCentral.Command.EditRetentionPeriod'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?HelpMarker=emxhelplibraryeditretaintionperiod&header=emxLibraryCentral.Command.RetainedDocuments'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'450'
+	setting	'Window Width'		'730'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'type != "Retention Hold"'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isInActiveState'
+	setting	'Access Program'		'emxRetainedDocumentBase'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCEditRetentionPeriod'
+	property	'version'	value	'R210'
+;
+#channel ==>
+add property command_LCEditRetentionPeriod on program eServiceSchemaVariableMapping.tcl to command 'LCEditRetentionPeriod';

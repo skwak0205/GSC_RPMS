@@ -1,0 +1,19 @@
+del command 'PLCDistributionsTreeCategory';
+add command 'PLCDistributionsTreeCategory'
+	description	''
+	label	'emxProduct.Tree.Distribution'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxBuildBase:getDistribFiles&table=PLCBuildDistributionsList&selection=multiple&toolbar=PLCBuildDistributionsToolBar&header=emxProduct.Heading.Distributions&HelpMarker=emxhelpbuilddistributions'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/iconSmallBuild.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCDistributionsTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_HardwareBuild add command PLCDistributionsTreeCategory order command PLCDistributionsTreeCategory 3;
+modify menu type_Builds add command PLCDistributionsTreeCategory order command PLCDistributionsTreeCategory 2;
+modify menu type_SoftwareBuild add command PLCDistributionsTreeCategory order command PLCDistributionsTreeCategory 2;
+#channel ==>type_HardwareBuildtype_Buildstype_SoftwareBuild
+add property command_PLCDistributionsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCDistributionsTreeCategory';

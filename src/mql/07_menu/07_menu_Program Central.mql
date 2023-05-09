@@ -1,0 +1,16 @@
+del menu 'Program Central';
+add menu 'Program Central'
+	description	''
+	label	'emxProgramCentral.Preferences.ProgramCentral'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP,ENO_PGE_TP'
+	command	'Notification Preferences'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'Program Central'
+	property 'version'	value	'R216'
+;
+add property menu_ProgramCentral on program eServiceSchemaVariableMapping.tcl to menu 'Program Central';

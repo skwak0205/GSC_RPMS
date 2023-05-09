@@ -1,0 +1,14 @@
+del menu 'LCSearchToolBarSetSchedule';
+add menu 'LCSearchToolBarSetSchedule'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCSearchToolBarSetSchedule'
+	property 'version'	value	'10-7-SP1'
+;
+add property menu_LCSearchToolBarSetSchedule on program eServiceSchemaVariableMapping.tcl to menu 'LCSearchToolBarSetSchedule';

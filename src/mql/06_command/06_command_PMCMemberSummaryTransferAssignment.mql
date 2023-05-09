@@ -1,0 +1,27 @@
+del command 'PMCMemberSummaryTransferAssignment';
+add command 'PMCMemberSummaryTransferAssignment'
+	description	'Command for Transfering Assignment on Member Summary'
+	label	'emxProgramCentral.Command.TransferAssignment'
+	href	'${SUITE_DIR}/emxProgramCentralMemberTransferDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccess'
+	setting	'Access Program'		'emxProjectMember'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionTransferToUser.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMemberSummaryTransferAssignment'
+	property	'version'	value	'R421.HF7'
+;
+modify menu PMCMemberSummaryToolBarActions add command PMCMemberSummaryTransferAssignment order command PMCMemberSummaryTransferAssignment 0;
+#channel ==>PMCMemberSummaryToolBarActions
+add property command_PMCMemberSummaryTransferAssignment on program eServiceSchemaVariableMapping.tcl to command 'PMCMemberSummaryTransferAssignment';

@@ -1,0 +1,18 @@
+del command 'APPTaskRemoveSelected';
+add command 'APPTaskRemoveSelected'
+	description	'Task Remove Command Object'
+	label	'emxComponents.Button.RemoveSelected'
+	href	'${COMPONENT_DIR}/emxTasksSummaryLinksProcess.jsp?fromPage=RemoveCommand'
+	alt	'emxComponents.Button.RemoveSelected'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPTaskRemoveSelected'
+	property	'version'	value	'10-5'
+;
+#channel ==>
+add property command_APPTaskRemoveSelected on program eServiceSchemaVariableMapping.tcl to command 'APPTaskRemoveSelected';

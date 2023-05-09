@@ -1,0 +1,18 @@
+del command 'PMCResourceRequestRemoveAssignmentEvent';
+add command 'PMCResourceRequestRemoveAssignmentEvent'
+	description	''
+	label	'emxProgramCentral.ResourceRequest.RemoveAssignmentEvent'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Event Type'		'Remove Assignment'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestRemoveAssignmentEvent'
+	property	'version'	value	'R216'
+;
+modify menu PMCResourceRequestEvents add command PMCResourceRequestRemoveAssignmentEvent order command PMCResourceRequestRemoveAssignmentEvent 2;
+#channel ==>PMCResourceRequestEvents
+add property command_PMCResourceRequestRemoveAssignmentEvent on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestRemoveAssignmentEvent';

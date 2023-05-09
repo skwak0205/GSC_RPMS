@@ -1,0 +1,16 @@
+del menu 'LCRetentionScheduleSummaryActionsToolBar';
+add menu 'LCRetentionScheduleSummaryActionsToolBar'
+	description	''
+	label	'LibraryCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LBCRetentionScheduleAddExisting'
+	command	'LCRemove'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCRetentionScheduleSummaryActionsToolBar'
+	property 'version'	value	'R212'
+;
+add property menu_LCRetentionScheduleSummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCRetentionScheduleSummaryActionsToolBar';

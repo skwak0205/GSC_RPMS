@@ -1,0 +1,16 @@
+del command 'AEFSCDifferenceOnlyReport';
+add command 'AEFSCDifferenceOnlyReport'
+	description	'Strucuture Compare Differences Only Results'
+	label	'emxFramework.Common.DifferenceOnlyReport'
+	href	'${COMMON_DIR}/emxStructureCompareIntermediate.jsp?fromPage=Difference_Only_Report'
+	alt	'emxFramework.Common.DifferenceOnlyReport'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSCDifferenceOnlyReport'
+	property	'version'	value	'R214'
+;
+#channel ==>AEFStructureCompareResults
+add property command_AEFSCDifferenceOnlyReport on program eServiceSchemaVariableMapping.tcl to command 'AEFSCDifferenceOnlyReport';

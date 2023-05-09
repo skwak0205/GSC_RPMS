@@ -1,0 +1,17 @@
+del menu 'Generic Mobile Tree';
+add menu 'Generic Mobile Tree'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=AEFDynamicAttributesForm&Export=false'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'AEFLifecycle'
+	command	'APPImageManager'
+	command	'APPDocuments'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'Generic Mobile Tree'
+	property 'version'	value	'R215'
+;
+add property menu_GenericMobileTree on program eServiceSchemaVariableMapping.tcl to menu 'Generic Mobile Tree';

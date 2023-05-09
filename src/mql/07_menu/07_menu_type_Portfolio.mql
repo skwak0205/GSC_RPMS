@@ -1,0 +1,15 @@
+del menu 'type_Portfolio';
+add menu 'type_Portfolio'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/PortfolioUtil.jsp?form=type_Portfolio&toolbar=PLCPortfolioPropertiesToolbar&mode=Form&HelpMarker=emxhelpportfoliodetails'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCPortfolioContentTreeCategory'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_Portfolio'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_type_Portfolio on program eServiceSchemaVariableMapping.tcl to menu 'type_Portfolio';

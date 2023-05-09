@@ -1,0 +1,17 @@
+del command 'PMCProjectBudget';
+add command 'PMCProjectBudget'
+	description	''
+	label	'emxProgramCentral.Budget.ProjectBudget'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCProjectBudgetPlanTable&toolbar=PMCProjectBudgetToolbar,PMCProjectBudgetFilter&selection=multiple&hideHeader=true&header=emxProgramCentral.Budget.ProjectBudget&editLink=true&expandProgram=emxProjectBudget:getTableExpandChildBudgetData&HelpMarker=emxhelpprojectbudgetlist&emxExpandFilter=3&generateReport=false&customize=false&preProcessJPO=emxProjectBudget:preProcessCheckForEdit&postProcessJPO=emxProgramCentralUtil:postProcessPortalCmdSBRefresh&cellwrap=false&hideRootSelection=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudget'
+	property	'version'	value	'R424.HF2'
+;
+#channel ==>PMCProjectBudgetChannel1PMCProjectSummaryPortalChannel1PMCProjectFinancialChannelPMCFinancials
+add property command_PMCProjectBudget on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudget';

@@ -1,0 +1,19 @@
+del command 'PMCDashboardProjects';
+add command 'PMCDashboardProjects'
+	description	'Dashboard for Projects'
+	label	'emxProgramCentral.String.ProjectsDashboard'
+	href	'${SUITE_DIR}/emxProgramCentralDashboardProjects.jsp?collapse=3&header=emxProgramCentral.String.ProjectsDashboard&HelpMarker=emxhelpprojectsummaryreport'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDashboardProjects'
+	property	'version'	value	'R419'
+;
+modify menu PMCMyDesk add command PMCDashboardProjects order command PMCDashboardProjects 0;
+modify menu type_Program add command PMCDashboardProjects order command PMCDashboardProjects 1;
+#channel ==>PMCMyDesktype_Program
+add property command_PMCDashboardProjects on program eServiceSchemaVariableMapping.tcl to command 'PMCDashboardProjects';

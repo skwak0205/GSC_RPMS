@@ -1,0 +1,24 @@
+del command 'PMCRemoveTaskFromQuestion';
+add command 'PMCRemoveTaskFromQuestion'
+	description	'Command to assign tasks to question'
+	label	'emxProgramCentral.Common.RemoveTasks'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=removeQuestionTask'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToQuestionCommands'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionGenericRemove.png'
+	setting	'Confirm Message'		'emxProgramCentral.Question.RemoveQuestionTaskConfirmationMessage'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRemoveTaskFromQuestion'
+	property	'version'	value	'R424.HF4'
+;
+modify menu PMCQuestionToolbarActions add command PMCRemoveTaskFromQuestion order command PMCRemoveTaskFromQuestion 0;
+modify menu PMCQuestionToolbar add command PMCRemoveTaskFromQuestion order command PMCRemoveTaskFromQuestion 0;
+#channel ==>PMCQuestionToolbarActionsPMCQuestionToolbar
+add property command_PMCRemoveTaskFromQuestion on program eServiceSchemaVariableMapping.tcl to command 'PMCRemoveTaskFromQuestion';

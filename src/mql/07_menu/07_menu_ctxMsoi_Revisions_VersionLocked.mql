@@ -1,0 +1,11 @@
+del menu 'ctxMsoi_Revisions_VersionLocked';
+add menu 'ctxMsoi_Revisions_VersionLocked'
+	description	'Menu for Version Locked'
+	label	''
+	href	''
+	alt	''
+	command	'ctxMsoiCmd_Open'
+	command	'ctxMsoiCmd_Download'
+	command	'ctxMsoiCmd_Unlock'
+;
+add property menu_ctxMsoi_Revisions_VersionLocked on program eServiceSchemaVariableMapping.tcl to menu 'ctxMsoi_Revisions_VersionLocked';

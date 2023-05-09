@@ -1,0 +1,28 @@
+del command 'DCConnectVCFileFolder';
+add command 'DCConnectVCFileFolder'
+	description	'Command for mapping a file or folder in DesignSync to business object'
+	label	'emxComponents.VersionControl.ConnectVCFileFolder'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=connectVCFileFolder&actionURL=emxCommonDocumentVCConnectProcess.jsp&stepOneHeader=emxComponents.Header.ConnectToDesignSyncFileFolder&appProcessPage=emxDocumentCentralGenericDocumentSetActionsDialogFS.jsp&appDir=documentcentral&defaultType=type_GenericDocument'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Map'		'FromConnect'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasDesignSyncServer'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'VPLMViewer'
+	user	'Author'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCConnectVCFileFolder'
+	property	'version'	value	'R216'
+;
+modify menu DCBookDocumentSummaryCreateNew add command DCConnectVCFileFolder order command DCConnectVCFileFolder 0;
+modify menu LBCBookDocumentsCreateActionToolBar add command DCConnectVCFileFolder order command DCConnectVCFileFolder 0;
+#channel ==>DCBookDocumentSummaryCreateNewLBCBookDocumentsCreateActionToolBar
+add property command_DCConnectVCFileFolder on program eServiceSchemaVariableMapping.tcl to command 'DCConnectVCFileFolder';

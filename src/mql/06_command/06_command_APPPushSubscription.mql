@@ -1,0 +1,22 @@
+del command 'APPPushSubscription';
+add command 'APPPushSubscription'
+	description	'Command to initiate Push Subscriptions'
+	label	'emxComponents.Button.PushSubscription'
+	href	'${SUITE_DIR}/emxPushSubscriptionDialog.jsp?HelpMarker=emxhelpsubscriptionspush'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPushSubscribe.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPushSubscription'
+	property	'version'	value	'R417'
+;
+modify menu APPPartFamilyDetailsActionsToolBar add command APPPushSubscription order command APPPushSubscription 0;
+modify menu APPDocumentActionsToolBar add command APPPushSubscription order command APPPushSubscription 19;
+modify menu LCObjectDetailsActionsToolBar add command APPPushSubscription order command APPPushSubscription 2;
+modify menu LBCGenericDocumentActionsToolBar add command APPPushSubscription order command APPPushSubscription 12;
+modify menu LBCDocumentSheetActionsToolBar add command APPPushSubscription order command APPPushSubscription 12;
+#channel ==>APPPartFamilyDetailsActionsToolBarAPPDocumentActionsToolBarLCObjectDetailsActionsToolBarLBCGenericDocumentActionsToolBarLBCDocumentSheetActionsToolBar
+add property command_APPPushSubscription on program eServiceSchemaVariableMapping.tcl to command 'APPPushSubscription';

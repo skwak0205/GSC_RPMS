@@ -1,0 +1,34 @@
+del command 'RMTTypeUnreserve';
+add command 'RMTTypeUnreserve'
+	description	''
+	label	'emxRequirements.ActionLink.Unreserve'
+	href	'${SUITE_DIR}/RequirementUtil.jsp?mode=UnReserve'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUnlock.gif'
+	user	'System Transition Manager'
+	user	'System Conversion Manager'
+	user	'Shadow Agent'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Software Engineering Manager'
+	user	'Software Project Manager'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTypeUnreserve'
+	property	'version'	value	'R422'
+;
+modify menu RMTChapterPropertiesActionBar add command RMTTypeUnreserve order command RMTTypeUnreserve 0;
+modify menu RMTCommentPropertiesActionBar add command RMTTypeUnreserve order command RMTTypeUnreserve 0;
+modify menu RMTRequirementSpecificationPropertiesActionBar add command RMTTypeUnreserve order command RMTTypeUnreserve 0;
+modify menu RMTUseCasePropertiesTopActionBar add command RMTTypeUnreserve order command RMTTypeUnreserve 0;
+#channel ==>RMTChapterPropertiesActionBarRMTCommentPropertiesActionBarRMTRequirementSpecificationPropertiesActionBarRMTUseCasePropertiesTopActionBar
+add property command_RMTTypeUnreserve on program eServiceSchemaVariableMapping.tcl to command 'RMTTypeUnreserve';

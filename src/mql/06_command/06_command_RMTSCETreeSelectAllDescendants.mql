@@ -1,0 +1,24 @@
+del command 'RMTSCETreeSelectAllDescendants';
+add command 'RMTSCETreeSelectAllDescendants'
+	description	'Select all descendant nodes.'
+	label	'emxRequirements.Command.SelectAllDescendants'
+	href	'javascript:SCESelectAllDescendants()'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSCETreeSelectAllDescendants'
+	property	'version'	value	'R422'
+;
+modify menu RMTSCETreeRMB add command RMTSCETreeSelectAllDescendants order command RMTSCETreeSelectAllDescendants 7;
+#channel ==>RMTSCETreeRMB
+add property command_RMTSCETreeSelectAllDescendants on program eServiceSchemaVariableMapping.tcl to command 'RMTSCETreeSelectAllDescendants';

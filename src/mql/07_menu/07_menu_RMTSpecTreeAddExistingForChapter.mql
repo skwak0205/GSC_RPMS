@@ -1,0 +1,19 @@
+del menu 'RMTSpecTreeAddExistingForChapter';
+add menu 'RMTSpecTreeAddExistingForChapter'
+	description	''
+	label	'emxRequirements.ActionLink.AddExisting'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Mode'		'view'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	command	'RMTSpecTreeAddChapter'
+	command	'RMTSpecTreeAddComment'
+	command	'RMTSpecTreeAddRequirement'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecTreeAddExistingForChapter'
+	property 'version'	value	'V6R2014'
+;
+add property menu_RMTSpecTreeAddExistingForChapter on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecTreeAddExistingForChapter';

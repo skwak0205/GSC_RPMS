@@ -1,0 +1,22 @@
+del command 'FTRSplitAndReplace';
+add command 'FTRSplitAndReplace'
+	description	'Merge and Split Features'
+	label	'emxProduct.Action.SplitReplace'
+	href	'${SUITE_DIR}/FeatureUtil.jsp?mode=SplitReplace&Step=SplitReplace&HelpMarker=emxhelpsplitandreplaceuse'
+	alt	'emxProduct.Action.SplitReplace'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'($<type!="type_ProductVariant">) && (current!=Release)'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSplit.gif'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRSplitAndReplace'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRSplitAndReplace on program eServiceSchemaVariableMapping.tcl to command 'FTRSplitAndReplace';

@@ -1,0 +1,7 @@
+del menu 'LCObjectDetailsActionsToolBar';
+add menu 'LCObjectDetailsActionsToolBar'
+	description	''
+	label	'null'
+	href	'null'
+	alt	'null'
+add property menu_LCObjectDetailsActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCObjectDetailsActionsToolBar';

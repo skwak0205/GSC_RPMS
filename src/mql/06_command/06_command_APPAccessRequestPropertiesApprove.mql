@@ -1,0 +1,22 @@
+del command 'APPAccessRequestPropertiesApprove';
+add command 'APPAccessRequestPropertiesApprove'
+	description	'Command Object to promote Access Request from Submitted/Review state state to Approved state'
+	label	'emxComponents.Command.ApproveAccessRequest'
+	href	'${SUITE_DIR}/emxCommonAccessRequestProcess.jsp?mode=Approved&fromPropertiesPage=true'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'( current==Submitted || current==Review )'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionApprove.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Request Reviewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAccessRequestPropertiesApprove'
+	property	'version'	value	'R422'
+;
+modify menu APPAccessRequestActionsToolbar add command APPAccessRequestPropertiesApprove order command APPAccessRequestPropertiesApprove 3;
+#channel ==>APPAccessRequestActionsToolbar
+add property command_APPAccessRequestPropertiesApprove on program eServiceSchemaVariableMapping.tcl to command 'APPAccessRequestPropertiesApprove';

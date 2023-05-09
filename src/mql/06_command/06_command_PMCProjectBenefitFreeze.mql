@@ -1,0 +1,27 @@
+del command 'PMCProjectBenefitFreeze';
+add command 'PMCProjectBenefitFreeze'
+	description	'Promote benefit to plan frozen'
+	label	'emxProgramCentral.ProjectBenefit.Command.Freeze'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=freezeBenefit'
+	alt	'emxProgramCentral.ProjectBenefit.Command.Freeze'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCurrentStateFrozen'
+	setting	'Access Program'		'emxBenefitItem'
+	setting	'Image'		'${COMMON_DIR}/images/I_FreezeBudget32.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitFreeze'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBenefitEditPageToolBarActions add command PMCProjectBenefitFreeze order command PMCProjectBenefitFreeze 3;
+modify menu PMCProjectBenefitOperationsToolBar add command PMCProjectBenefitFreeze order command PMCProjectBenefitFreeze 3;
+#channel ==>PMCProjectBenefitEditPageToolBarActionsPMCProjectBenefitOperationsToolBar
+add property command_PMCProjectBenefitFreeze on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitFreeze';

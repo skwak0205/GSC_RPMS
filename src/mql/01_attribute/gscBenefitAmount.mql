@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 공헌금액
+################################################################################################
+
+#del attribute 'gscBenefitAmount';
+add attribute  'gscBenefitAmount'
+   description '공헌금액'
+   type        'real'
+   default    ''
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "HHI"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscBenefitAmount"
+;
+add property attribute_gscBenefitAmount on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscBenefitAmount';

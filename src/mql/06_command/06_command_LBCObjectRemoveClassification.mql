@@ -1,0 +1,22 @@
+del command 'LBCObjectRemoveClassification';
+add command 'LBCObjectRemoveClassification'
+	description	'Remove Classification from object'
+	label	'emxLibraryCentral.Common.Remove'
+	href	'${SUITE_DIR}/emxLibraryCentralClassificationIntermediate.jsp?classificationMode=removeClassification'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'Content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'ToDisconnect'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCObjectRemoveClassification'
+	property	'version'	value	'R419'
+;
+modify menu LBCObjectClassificationActionsToolBar add command LBCObjectRemoveClassification order command LBCObjectRemoveClassification 0;
+#channel ==>LBCObjectClassificationActionsToolBar
+add property command_LBCObjectRemoveClassification on program eServiceSchemaVariableMapping.tcl to command 'LBCObjectRemoveClassification';

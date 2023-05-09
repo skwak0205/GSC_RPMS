@@ -1,0 +1,20 @@
+del table 'PMCReportResourceLoading' system;
+add table 'PMCReportResourceLoading' system
+column #1
+	name	'Dynamic Column'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getDynamicColumnsResourceLoadingReport'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'emxResourcePoolReports'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportResourceLoading'
+	property	'version'	value	'R208'
+;
+add property table_PMCReportResourceLoading on program eServiceSchemaVariableMapping.tcl to table 'PMCReportResourceLoading' system;

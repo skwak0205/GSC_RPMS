@@ -1,0 +1,23 @@
+del command 'PMCSCProjectAccess';
+add command 'PMCSCProjectAccess'
+	description	'Project access list based on security context'
+	label	'emxProgramCentral.SecurityContext.AccessList'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProjectMember:getSCAccessList&table=PMCSCProjectAccessSummary&toolbar=PMCSCAccessSummaryToolBar&selection=multiple&header=emxProgramCentral.SecurityContext.AccessListLabel&HelpMarker=emxhelpprojectmembers&Export=false&sortColumnName=Name&sortDirection=ascending&isViewMode=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'program[emxProjectMember -method isSecurityContextAccessEnabled] == true'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'sm_icon_Member.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSCProjectAccess'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCSCProjectAccess on program eServiceSchemaVariableMapping.tcl to command 'PMCSCProjectAccess';

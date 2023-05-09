@@ -1,0 +1,23 @@
+del command 'PMCBusinessGoalProjects';
+add command 'PMCBusinessGoalProjects'
+	description	'Business Goal Projects Object'
+	label	'emxFramework.Command.Project'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProgramBusinessGoal:getProjectSummary&table=PMCBusinessGoalProjectSummary&selection=multiple&header=emxProgramCentral.ProgramTop.BusinessGoalNameProject&toolbar=PMCBusinessGoalToolProjectSummeryBar&HelpMarker=emxhelpbusinessgoalprojectsummary&rowGrouping=false&displayView=details&showClipboard=false&Export=false&showPageURLIcon=false&ShowFilterAction=false&typeFilter=false&customize=false&multiColumnSort=false&objectCompare=false&autoFilter=false&triggerValidation=false&massPromoteDemote=false&hideHeader=true'
+	alt	'emxFramework.Command.Project'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'iconProjectSmall.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBusinessGoalProjects'
+	property	'version'	value	'R422'
+;
+modify menu type_BusinessGoal add command PMCBusinessGoalProjects order command PMCBusinessGoalProjects 5;
+#channel ==>type_BusinessGoal
+add property command_PMCBusinessGoalProjects on program eServiceSchemaVariableMapping.tcl to command 'PMCBusinessGoalProjects';

@@ -1,0 +1,25 @@
+del command 'ECMRemoveCARelatedCAs';
+add command 'ECMRemoveCARelatedCAs'
+	description	'Remove Child CAs from Realated CAs'
+	label	'EnterpriseChangeMgt.Command.Remove'
+	href	'${SUITE_DIR}/ECMDisconnectProcess.jsp?functionality=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current == policy.property[state_Prepare].value || current == policy.property[state_InWork].value || current == policy.property[state_InApproval].value || current == policy.property[state_Approved].value)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCODependencyAuthoringActivated'
+	setting	'Access Program'		'enoECMChangeUX'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'EnterpriseChangeMgt.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMRemoveCARelatedCAs'
+	property	'version'	value	'R417'
+;
+modify menu ECMAddRemoveCARelatedCAsToolbar add command ECMRemoveCARelatedCAs order command ECMRemoveCARelatedCAs 2;
+#channel ==>ECMAddRemoveCARelatedCAsToolbar
+add property command_ECMRemoveCARelatedCAs on program eServiceSchemaVariableMapping.tcl to command 'ECMRemoveCARelatedCAs';

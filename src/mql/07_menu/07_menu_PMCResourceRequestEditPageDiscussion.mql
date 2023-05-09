@@ -1,0 +1,16 @@
+del menu 'PMCResourceRequestEditPageDiscussion';
+add menu 'PMCResourceRequestEditPageDiscussion'
+	description	''
+	label	'emxProgramCentral.Command.ResourcePlan.CreateDiscussion'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCResourceRequestEditPageCreatePrivateDiscussion'
+	command	'PMCResourceRequestEditPageCreatePublicDiscussion'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourceRequestEditPageDiscussion'
+	property 'version'	value	'R208'
+;
+add property menu_PMCResourceRequestEditPageDiscussion on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourceRequestEditPageDiscussion';

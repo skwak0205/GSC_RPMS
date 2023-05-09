@@ -1,0 +1,23 @@
+del command 'PMCProjectBudgetViewsReportFilter';
+add command 'PMCProjectBudgetViewsReportFilter'
+	description	'Interval Filter Command'
+	label	'emxProgramCentral.ProjectBenefitOrBudget.ViewFilter'
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=reportBudget'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getBudgetViewsReportFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxProjectBudget'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetViewsReportFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCProjectBudgetReportFilter add command PMCProjectBudgetViewsReportFilter order command PMCProjectBudgetViewsReportFilter 4;
+#channel ==>PMCProjectBudgetReportFilter
+add property command_PMCProjectBudgetViewsReportFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudgetViewsReportFilter';

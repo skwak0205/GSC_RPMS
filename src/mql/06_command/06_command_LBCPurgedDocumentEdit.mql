@@ -1,0 +1,22 @@
+del command 'LBCPurgedDocumentEdit';
+add command 'LBCPurgedDocumentEdit'
+	description	'LBC Purged Document Edit'
+	label	'emxDocumentCentral.ActionBarCmd.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_PurgedRecord&HelpMarker=emxhelplibrarypurgedrecordproperties&formHeader=emxDocumentCentral.Common.Edit&Export=False&mode=edit&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCPurgedDocumentEdit'
+	property	'version'	value	'R216'
+;
+modify menu LBCPurgedDocumentToolBar add command LBCPurgedDocumentEdit order command LBCPurgedDocumentEdit 0;
+#channel ==>LBCPurgedDocumentToolBar
+add property command_LBCPurgedDocumentEdit on program eServiceSchemaVariableMapping.tcl to command 'LBCPurgedDocumentEdit';

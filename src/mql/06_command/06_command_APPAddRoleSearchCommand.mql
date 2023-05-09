@@ -1,0 +1,21 @@
+del command 'APPAddRoleSearchCommand';
+add command 'APPAddRoleSearchCommand'
+	description	''
+	label	'emxComponents.AddMembers.SelectRole'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?table=APPRoleSummary&form=APPFindRolesForm&searchCommand=APPAddRoleSearchCommand&SubmitLabel=emxComponents.Common.Done&customize=false&showClipboard=false&multiColumnSort=false&objectCompare=false&HelpMarker=emxhelpselectmembers&toolbar=APPGlobalAddExistingToolBar'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddRoleSearchCommand'
+	property	'version'	value	'R422'
+;
+modify menu APPAddRolesSearchMenu add command APPAddRoleSearchCommand order command APPAddRoleSearchCommand 0;
+#channel ==>APPAddRolesSearchMenu
+add property command_APPAddRoleSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'APPAddRoleSearchCommand';

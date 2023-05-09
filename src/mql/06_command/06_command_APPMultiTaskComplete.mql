@@ -1,0 +1,21 @@
+del command 'APPMultiTaskComplete';
+add command 'APPMultiTaskComplete'
+	description	'Command for Multi Task Complete link'
+	label	'emxComponents.Tasks.Complete'
+	href	'${COMMON_DIR}/emxUserTasksMassApproveLinksProcess.jsp?fromPage=APPMultiTaskComplete'
+	alt	'emxComponents.Tasks.Complete'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallObjectFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMultiTaskComplete'
+	property	'version'	value	'R417'
+;
+modify menu APPMultiTaskActionsToolBar add command APPMultiTaskComplete order command APPMultiTaskComplete 0;
+#channel ==>APPMultiTaskActionsToolBar
+add property command_APPMultiTaskComplete on program eServiceSchemaVariableMapping.tcl to command 'APPMultiTaskComplete';

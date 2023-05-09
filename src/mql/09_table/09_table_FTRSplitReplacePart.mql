@@ -1,0 +1,36 @@
+del table 'FTRSplitReplacePart' system;
+add table 'FTRSplitReplacePart' system
+column #1
+	name	'PartNumber'
+	businessobject	'name'
+	label	'emxProduct.Table.PartNumber'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Auto Filter'		'true'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Field Type'		'basic'
+	setting	'Width'		'100'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'Features'
+	label	'emxProduct.Table.Feature'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getSplitFeatureColumns'
+	setting	'Auto Filter'		'true'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'LogicalFeature'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRSplitReplacePart'
+	property	'version'	value	'R215'
+;
+add property table_FTRSplitReplacePart on program eServiceSchemaVariableMapping.tcl to table 'FTRSplitReplacePart' system;

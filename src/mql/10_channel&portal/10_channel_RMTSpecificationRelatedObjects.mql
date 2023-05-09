@@ -1,0 +1,17 @@
+del channel 'RMTSpecificationRelatedObjects';
+add channel 'RMTSpecificationRelatedObjects'
+	description	'Channel for Specification related Objects'
+	height	'800'
+	label	'emxRequirements.Common.RMTRelatedObjects'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'ChannelID'		'1'
+	command 	'RMTFullTraceabilityReport','PLCSpecificationWhereUsedTreeCategory','RMTCloneInfo'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationRelatedObjects'
+	property	'version'	value	'R215'
+;
+#portal ==>RMTSpecificationRelatedObjetcs
+add property channel_RMTSpecificationRelatedObjects on program eServiceSchemaVariableMapping.tcl to channel 'RMTSpecificationRelatedObjects';

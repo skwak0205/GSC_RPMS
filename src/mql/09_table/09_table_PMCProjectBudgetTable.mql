@@ -1,0 +1,34 @@
+del table 'PMCProjectBudgetTable' system;
+add table 'PMCProjectBudgetTable' system
+column #1
+	name	'Item'
+	businessobject	'empty'
+	label	'emxProgramCentral.Budget.Item'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'program'
+	setting	'function'		'getColumnBudgetNameData'
+	setting	'program'		'emxProjectBudget'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'Template Enforcement'
+	businessobject	'atribute'
+	label	'emxProgramCentral.Budget.TemplateEnforcement'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetTable'
+	property	'version'	value	'R211'
+;
+add property table_PMCProjectBudgetTable on program eServiceSchemaVariableMapping.tcl to table 'PMCProjectBudgetTable' system;

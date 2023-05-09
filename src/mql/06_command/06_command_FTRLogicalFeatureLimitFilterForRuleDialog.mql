@@ -1,0 +1,25 @@
+del command 'FTRLogicalFeatureLimitFilterForRuleDialog';
+add command 'FTRLogicalFeatureLimitFilterForRuleDialog'
+	description	''
+	label	'emxFramework.Basic.Limit'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Action Label'		'Search'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Default'		'*'
+	setting	'Width'		'20'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLogicalFeatureLimitFilterForRuleDialog'
+	property	'version'	value	'R215'
+;
+modify menu FTRLogicalFeatureCustomFilterToolbarForRuleDialog add command FTRLogicalFeatureLimitFilterForRuleDialog order command FTRLogicalFeatureLimitFilterForRuleDialog 2;
+modify menu FTRProductCustomFilterToolbarForRuleDialog add command FTRLogicalFeatureLimitFilterForRuleDialog order command FTRLogicalFeatureLimitFilterForRuleDialog 2;
+modify menu FTRProductCustomFilterToolbarModelForRuleDialog add command FTRLogicalFeatureLimitFilterForRuleDialog order command FTRLogicalFeatureLimitFilterForRuleDialog 2;
+modify menu FTRLogicalFeatureCustomFilterToolbarForPVContext add command FTRLogicalFeatureLimitFilterForRuleDialog order command FTRLogicalFeatureLimitFilterForRuleDialog 2;
+#channel ==>FTRLogicalFeatureCustomFilterToolbarForRuleDialogFTRProductCustomFilterToolbarForRuleDialogFTRProductCustomFilterToolbarModelForRuleDialogFTRLogicalFeatureCustomFilterToolbarForPVContext
+add property command_FTRLogicalFeatureLimitFilterForRuleDialog on program eServiceSchemaVariableMapping.tcl to command 'FTRLogicalFeatureLimitFilterForRuleDialog';

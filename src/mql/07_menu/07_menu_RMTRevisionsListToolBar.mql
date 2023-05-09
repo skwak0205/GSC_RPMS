@@ -1,0 +1,15 @@
+del menu 'RMTRevisionsListToolBar';
+add menu 'RMTRevisionsListToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTRevisionsListToolBarActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRevisionsListToolBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_RMTRevisionsListToolBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRevisionsListToolBar';

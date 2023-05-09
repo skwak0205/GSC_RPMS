@@ -1,0 +1,1 @@
+define("DS/FlyWalkCommand/FlyWalkCommand_zh",{});define("DS/FlyWalkCommand/assets/nls/translation",{StartHelp:"按住鼠标左键",StartHelp_Touch:"使用操纵杆",WalkText:"步行",FlyText:"飞行",DontShow:"不再显示"});

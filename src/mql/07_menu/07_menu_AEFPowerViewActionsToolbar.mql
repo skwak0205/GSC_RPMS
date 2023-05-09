@@ -1,0 +1,15 @@
+del menu 'AEFPowerViewActionsToolbar';
+add menu 'AEFPowerViewActionsToolbar'
+	description	''
+	label	'emxNavigator.UIMenuBar.Shortcuts'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFLogoutToolbar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFPowerViewActionsToolbar'
+	property 'version'	value	'10-0-1-1'
+;
+add property menu_AEFPowerViewActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'AEFPowerViewActionsToolbar';

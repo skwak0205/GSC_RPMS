@@ -1,0 +1,26 @@
+del command 'FTRCreateFormConfigurationFeatureFromActions';
+add command 'FTRCreateFormConfigurationFeatureFromActions'
+	description	''
+	label	'emxProductLine.ActionLink.CreateConfFeature'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ConfigurationFeature&typeChooser=false&showApply=true&showPolicy=false&autoNameChecked=false&nameField=both&createJPO=ConfigurationFeature:createAndConnectConfigurationFeature&vaultChooser=false&submitAction=none&form=type_ConfigurationFeatureCreate&header=emxConfiguration.Form.Heading.FeatureCreate&HelpMarker=emxhelpconfigurationfeaturecreate&postProcessURL=../configuration/ConfigurationFeatureCreatePostProcess.jsp&UIContext=GlobalActions&policy=policy_ConfigurationFeature'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showConfigurationFeatureUX'
+	setting	'Access Program'		'ConfigurationFeature'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateFormConfigurationFeatureFromActions'
+	property	'version'	value	'R422'
+;
+modify menu FTRGlobalVariabilityMenu add command FTRCreateFormConfigurationFeatureFromActions order command FTRCreateFormConfigurationFeatureFromActions 0;
+#channel ==>FTRGlobalVariabilityMenu
+add property command_FTRCreateFormConfigurationFeatureFromActions on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateFormConfigurationFeatureFromActions';

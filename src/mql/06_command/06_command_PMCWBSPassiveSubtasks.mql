@@ -1,0 +1,21 @@
+del command 'PMCWBSPassiveSubtasks';
+add command 'PMCWBSPassiveSubtasks'
+	description	''
+	label	'emxProgramCentral.PassiveSubtask.PassiveTasks'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getPassiveSubtasks'
+	setting	'Access Function'		'isNotFromRMB'
+	setting	'Access Program'		'emxTask'
+	setting	'program'		'emxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSPassiveSubtasks'
+	property	'version'	value	'R422.HF5'
+;
+modify menu PMCWBSTaskListMenu add command PMCWBSPassiveSubtasks order command PMCWBSPassiveSubtasks 0;
+modify menu PMCWBSListMenu add command PMCWBSPassiveSubtasks order command PMCWBSPassiveSubtasks 0;
+#channel ==>PMCWBSTaskListMenuPMCWBSListMenu
+add property command_PMCWBSPassiveSubtasks on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSPassiveSubtasks';

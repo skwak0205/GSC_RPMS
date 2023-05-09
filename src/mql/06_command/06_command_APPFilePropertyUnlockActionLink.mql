@@ -1,0 +1,23 @@
+del command 'APPFilePropertyUnlockActionLink';
+add command 'APPFilePropertyUnlockActionLink'
+	description	'File Unlock Command Object'
+	label	'emxComponents.Command.Unlock'
+	href	'${COMPONENT_DIR}/emxCommonDocumentUnlock.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> == True && locked == true && current.access[unlock] == true && locker == context.user) || (vcfile && vcfile.locked == TRUE && current.access[unlock] == true)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUnlock.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFilePropertyUnlockActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentActionsToolBar add command APPFilePropertyUnlockActionLink order command APPFilePropertyUnlockActionLink 8;
+modify menu TMCDocumentsActionToolbar add command APPFilePropertyUnlockActionLink order command APPFilePropertyUnlockActionLink 11;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbar
+add property command_APPFilePropertyUnlockActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPFilePropertyUnlockActionLink';

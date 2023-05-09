@@ -1,0 +1,16 @@
+del command 'PLCTestCaseProperties';
+add command 'PLCTestCaseProperties'
+	description	''
+	label	'emxProduct.Command.Label.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_TestCase&actionBarName=PLCTestCasePropertiesTopActionBar&formHeader=emxProduct.Heading.TestCaseForm&HelpMarker=emxhelptestcasedetails'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	user	'VPLMCreator'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestCaseProperties'
+	property	'version'	value	'R419'
+;
+#channel ==>PLCTestCaseProperties
+add property command_PLCTestCaseProperties on program eServiceSchemaVariableMapping.tcl to command 'PLCTestCaseProperties';

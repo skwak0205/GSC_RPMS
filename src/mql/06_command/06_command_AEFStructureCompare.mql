@@ -1,0 +1,20 @@
+del command 'AEFStructureCompare';
+add command 'AEFStructureCompare'
+	description	'Structure Compare command'
+	label	'emxFramework.command.StructureCompare'
+	href	'${COMMON_DIR}/emxAdvancedStructureCompare.jsp?HelpMarker=emxhelpadvstructurecompare'
+	alt	'emxFramework.command.StructureCompare'
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFStructureCompare'
+	property	'version'	value	'R214'
+;
+#channel ==>
+add property command_AEFStructureCompare on program eServiceSchemaVariableMapping.tcl to command 'AEFStructureCompare';

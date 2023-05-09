@@ -1,0 +1,20 @@
+del command 'AEFSearchResetCriteria';
+add command 'AEFSearchResetCriteria'
+	description	''
+	label	'emxFramework.ResetCriteria'
+	href	'javascript:resetSearchCriteria()'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRefresh.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSearchResetCriteria'
+	property	'version'	value	'R216'
+;
+modify menu AEFSearchConsolidatedToolbar add command AEFSearchResetCriteria order command AEFSearchResetCriteria 0;
+#channel ==>AEFSearchConsolidatedToolbar
+add property command_AEFSearchResetCriteria on program eServiceSchemaVariableMapping.tcl to command 'AEFSearchResetCriteria';

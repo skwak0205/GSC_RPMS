@@ -1,0 +1,15 @@
+del menu 'ProductDocumentSummaryActionsToolBarRWA';
+add menu 'ProductDocumentSummaryActionsToolBarRWA'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Function'		'hideEditLink'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPDocumentSummaryDownloadActionLink'
+	command	'APPDocumentSummaryCheckOutActionLink'
+	property 'version'	value	'R420'
+;
+add property menu_ProductDocumentSummaryActionsToolBarRWA on program eServiceSchemaVariableMapping.tcl to menu 'ProductDocumentSummaryActionsToolBarRWA';

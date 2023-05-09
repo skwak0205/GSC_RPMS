@@ -1,0 +1,18 @@
+del command 'APPWorkflowTaskDeliverableCommand';
+add command 'APPWorkflowTaskDeliverableCommand'
+	description	'Deliverable Command Object'
+	label	'emxComponents.Workflow.Deliverables'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPWorkflowDeliverableSummaryToolBar&header=emxComponents.Workflow.TaskDeliverables&HelpMarker=emxhelpworkflowtaskdeliverables&parentRelName=relationship_TaskDeliverable'
+	alt	'emxComponents.Workflow.Deliverables'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'sm_icon_Deliverable.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowTaskDeliverableCommand'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu type_WorkflowTask add command APPWorkflowTaskDeliverableCommand order command APPWorkflowTaskDeliverableCommand 1;
+#channel ==>type_WorkflowTask
+add property command_APPWorkflowTaskDeliverableCommand on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowTaskDeliverableCommand';

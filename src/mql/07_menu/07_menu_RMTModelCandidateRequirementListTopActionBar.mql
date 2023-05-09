@@ -1,0 +1,18 @@
+del menu 'RMTModelCandidateRequirementListTopActionBar';
+add menu 'RMTModelCandidateRequirementListTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTCreateRequirementModel'
+	command	'RMTAddExistingModelCandidateRequirementActionLink'
+	command	'RMTCommitedRequirementListModelCandidateRequirementActionLink'
+	command	'AEFSeparator'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTModelCandidateRequirementListTopActionBar'
+	property 'version'	value	'V6R2016x'
+;
+add property menu_RMTModelCandidateRequirementListTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTModelCandidateRequirementListTopActionBar';

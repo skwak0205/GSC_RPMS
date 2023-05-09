@@ -1,0 +1,30 @@
+del command 'PMCWBSProjectTemplateAddRemoveSelectedDependency';
+add command 'PMCWBSProjectTemplateAddRemoveSelectedDependency'
+	description	''
+	label	'emxProgramCentral.Common.AddRemoveSelectedDependency'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=isPortalMode'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_AddRemoveDependency32.png'
+	setting	'Access Mask'		'Modify'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSProjectTemplateAddRemoveSelectedDependency'
+	property	'version'	value	'R424.HF3'
+;
+modify menu PMCWBSProjectTemplateToolBarActions add command PMCWBSProjectTemplateAddRemoveSelectedDependency order command PMCWBSProjectTemplateAddRemoveSelectedDependency 9;
+modify menu PMCWBSProjectTemplateToolBar add command PMCWBSProjectTemplateAddRemoveSelectedDependency order command PMCWBSProjectTemplateAddRemoveSelectedDependency 6;
+#channel ==>PMCWBSProjectTemplateToolBarActionsPMCWBSProjectTemplateToolBar
+add property command_PMCWBSProjectTemplateAddRemoveSelectedDependency on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSProjectTemplateAddRemoveSelectedDependency';

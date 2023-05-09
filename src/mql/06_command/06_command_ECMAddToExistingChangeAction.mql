@@ -1,0 +1,22 @@
+del command 'ECMAddToExistingChangeAction';
+add command 'ECMAddToExistingChangeAction'
+	description	'The Add to Exisiting Actions Link on for the generic add to change menu'
+	label	'EnterpriseChangeMgt.Command.AddToExistingCA'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=AddToExistingChangeAction&isFrom=false'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMAddToExistingChangeAction'
+	property	'version'	value	'R419'
+;
+modify menu ECMAddToChangeToolbar add command ECMAddToExistingChangeAction order command ECMAddToExistingChangeAction 7;
+modify menu ECMChangeActionToolbar add command ECMAddToExistingChangeAction order command ECMAddToExistingChangeAction 1;
+#channel ==>ECMAddToChangeToolbarECMChangeActionToolbar
+add property command_ECMAddToExistingChangeAction on program eServiceSchemaVariableMapping.tcl to command 'ECMAddToExistingChangeAction';

@@ -1,0 +1,27 @@
+del command 'RMTModelCandidateRequirementTreeCategory';
+add command 'RMTModelCandidateRequirementTreeCategory'
+	description	''
+	label	'emxRequirements.Tree.CandidateRequirements'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=RMTCandidateRequirementList&program=emxModel:getCandidateRequirements&header=emxRequirements.Heading.CandidateRequirement&selection=multiple&topActionbar=RMTModelCandidateRequirementListTopActionBar&bottomActionbar=RMTModelCandidateRequirementListBottomActionBar&sortColumnName=Name&HelpMarker=emxhelprequirementlist&editLink=true&formInclusionList=CONTAINED_IN_PRODUCTS,CONTAINED_IN_SPECIFICATIONS&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'COMMON_DIR/iconSmallUseRequirement.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTModelCandidateRequirementTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_Model add command RMTModelCandidateRequirementTreeCategory order command RMTModelCandidateRequirementTreeCategory 0;
+#channel ==>type_Model
+add property command_RMTModelCandidateRequirementTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTModelCandidateRequirementTreeCategory';

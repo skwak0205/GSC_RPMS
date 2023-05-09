@@ -1,0 +1,16 @@
+del menu 'LCLibraryStructure';
+add menu 'LCLibraryStructure'
+	description	''
+	label	'emxDocumentCentral.Common.Name'
+	href	'${SUITE_DIR}/'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LCLibraryStructureCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCLibraryStructure'
+	property 'version'	value	'R210'
+;
+add property menu_LCLibraryStructure on program eServiceSchemaVariableMapping.tcl to menu 'LCLibraryStructure';

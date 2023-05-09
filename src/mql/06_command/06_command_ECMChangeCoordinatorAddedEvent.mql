@@ -1,0 +1,19 @@
+del command 'ECMChangeCoordinatorAddedEvent';
+add command 'ECMChangeCoordinatorAddedEvent'
+	description	'CO Change Coordinator Added Event'
+	label	'EnterpriseChangeMgt.Event.Modification_Of_Attributes'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>] || type.kindof[$<type_ChangeRequest>])'
+	setting	'Event Type'		'Attribute Modified'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMChangeCoordinatorAddedEvent'
+	property	'version'	value	'R216'
+;
+modify menu ECMSubscriptionEvents add command ECMChangeCoordinatorAddedEvent order command ECMChangeCoordinatorAddedEvent 9;
+#channel ==>ECMSubscriptionEvents
+add property command_ECMChangeCoordinatorAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'ECMChangeCoordinatorAddedEvent';

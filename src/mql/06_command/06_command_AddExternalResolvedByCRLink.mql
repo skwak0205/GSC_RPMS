@@ -1,0 +1,20 @@
+del command 'AddExternalResolvedByCRLink';
+add command 'AddExternalResolvedByCRLink'
+	description	'Add External resource as resolved by'
+	label	'emxComponents.Command.AddExternalReportedAgainstLink'
+	href	'javascript:loadDelegatedUIAddExistsChangeRequest()'
+	alt	'emxComponents.Command.AddExternalReportedAgainstLink'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Access Function'		'isOslcConfigured'
+	setting	'Access Program'		'enoProxyObjectUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddOSLCResource.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AddExternalResolvedByCRLink'
+	property	'version'	value	'R421.HF1'
+;
+modify menu IssueResolvedToListToolBarActions add command AddExternalResolvedByCRLink order command AddExternalResolvedByCRLink 3;
+#channel ==>IssueResolvedToListToolBarActions
+add property command_AddExternalResolvedByCRLink on program eServiceSchemaVariableMapping.tcl to command 'AddExternalResolvedByCRLink';

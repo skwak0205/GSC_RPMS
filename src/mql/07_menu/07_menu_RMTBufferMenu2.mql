@@ -1,0 +1,14 @@
+del menu 'RMTBufferMenu2';
+add menu 'RMTBufferMenu2'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	menu	'RMTReqGroupActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTBufferMenu2'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTBufferMenu2 on program eServiceSchemaVariableMapping.tcl to menu 'RMTBufferMenu2';

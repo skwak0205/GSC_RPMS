@@ -1,0 +1,16 @@
+#del menu 'gscPMCProjectConceptDetailsToolbar';
+add menu 'gscPMCProjectConceptDetailsToolbar'
+ description ''
+ label 'ProgramCentral.Toolbar.Actions'
+ href ''
+ alt ''
+ setting 'Registered Suite'  'ProgramCentral'
+ setting 'Image'  '${COMMON_DIR}/images/iconActionActions.png'
+ menu 'gscPMCProjectConceptDetailsToolbarActions'
+ property 'installer' value 'ENOVIAEngineering'
+ property 'application' value 'ProgramManagementBase'
+ property 'installed date' value '03-15-2023'
+ property 'original name' value 'gscPMCProjectConceptDetailsToolbar'
+ property 'version' value 'R423.HF7'
+;
+add property menu_gscPMCProjectConceptDetailsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'gscPMCProjectConceptDetailsToolbar';

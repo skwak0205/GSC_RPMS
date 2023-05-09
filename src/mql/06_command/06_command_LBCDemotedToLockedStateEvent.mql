@@ -1,0 +1,19 @@
+del command 'LBCDemotedToLockedStateEvent';
+add command 'LBCDemotedToLockedStateEvent'
+	description	'Event holder for demotion to Locked state'
+	label	'emxLibraryCentral.Event.Demoted_To_Locked_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Demoted To Locked State'
+	setting	'History Bit'		'demote to Locked'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDemotedToLockedStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCBookshelfSubscriptionEvents add command LBCDemotedToLockedStateEvent order command LBCDemotedToLockedStateEvent 0;
+modify menu LBCBookSubscriptionEvents add command LBCDemotedToLockedStateEvent order command LBCDemotedToLockedStateEvent 0;
+#channel ==>LBCBookshelfSubscriptionEventsLBCBookSubscriptionEvents
+add property command_LBCDemotedToLockedStateEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCDemotedToLockedStateEvent';

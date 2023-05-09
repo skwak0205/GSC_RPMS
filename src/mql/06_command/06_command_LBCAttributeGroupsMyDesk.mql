@@ -1,0 +1,23 @@
+del command 'LBCAttributeGroupsMyDesk';
+add command 'LBCAttributeGroupsMyDesk'
+	description	'Attribute Groups'
+	label	'emxMultipleClassification.Command.AttributeGroups'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxMultipleClassificationAttributeGroup:getAllAttributeGroups&table=MCMAttributeGroupsList&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=MCMAttributeGroupToolBar&header=emxMultipleClassification.Common.AttributeGroup&HelpMarker=emxhelpattributegrouplist&Export=false&suiteKey=LibraryCentral&hyperlink=true&displayView=details&showRMB=false&objectCompare=false&objectBased=false&showClipboard=false'
+	alt	'emxMultipleClassification.Command.AttributeGroups'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeGroupsMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu LBCAdministrationMyDesk add command LBCAttributeGroupsMyDesk order command LBCAttributeGroupsMyDesk 1;
+#channel ==>LBCAdministrationMyDesk
+add property command_LBCAttributeGroupsMyDesk on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeGroupsMyDesk';

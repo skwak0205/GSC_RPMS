@@ -1,0 +1,19 @@
+del command 'CFPManufacturingPlanReferenceDocumentTreeCategory';
+add command 'CFPManufacturingPlanReferenceDocumentTreeCategory'
+	description	''
+	label	'DMCPlanning.TreeCategory.ReferenceDocument'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ProductDocumentSummaryToolBar&header=DMCPlanning.Heading.ReferenceDocuments&HelpMarker=emxhelprefdoclist&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Licensed Product'		'ENO_CFP_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallDocument.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPManufacturingPlanReferenceDocumentTreeCategory'
+	property	'version'	value	'R216'
+;
+modify menu type_ManufacturingPlan add command CFPManufacturingPlanReferenceDocumentTreeCategory order command CFPManufacturingPlanReferenceDocumentTreeCategory 3;
+#channel ==>type_ManufacturingPlan
+add property command_CFPManufacturingPlanReferenceDocumentTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'CFPManufacturingPlanReferenceDocumentTreeCategory';

@@ -1,0 +1,16 @@
+del command 'IssueSearchCompanyCommand';
+add command 'IssueSearchCompanyCommand'
+	description	'Issue Find Command Object'
+	label	'emxComponents.Command.SearchCompanyIssueLink'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxCommonIssueBase:getCompanies&table=IssueSearchCompanyTable&form=IssueSearchCompanyForm&HelpMarker=emxhelpsearchresults&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueSearchCompanyCommand'
+	property	'version'	value	'10-6'
+;
+modify menu SearchIssueAddExistingChooser add command IssueSearchCompanyCommand order command IssueSearchCompanyCommand 5;
+#channel ==>SearchIssueAddExistingChooser
+add property command_IssueSearchCompanyCommand on program eServiceSchemaVariableMapping.tcl to command 'IssueSearchCompanyCommand';

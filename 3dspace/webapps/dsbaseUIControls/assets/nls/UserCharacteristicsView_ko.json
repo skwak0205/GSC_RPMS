@@ -1,0 +1,8 @@
+{
+  "UCV.optionsChecker.optionSet.notExisting.error": "사용자 특성을 검색하려면 옵션 세트를 정의해야 합니다!",
+  "UCV.optionsChecker.optionSet.type.error": "사용자 특성을 검색하려면 옵션 세트를 정의해야 합니다!",
+  "UCV.mode.icon.text.switchReadOnly": "읽기 전용 모드로 전환",
+  "UCV.mode.icon.text.switchEdit": "편집 모드로 전환",
+  "UCV.add.icon.text": "사용자 특성 추가",
+  "UCV.noUC.error": "사용할 수 있는 사용자 특성이 없습니다..."
+}

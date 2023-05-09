@@ -1,0 +1,15 @@
+del command 'ECMCATransferOwnershipCASummary';
+add command 'ECMCATransferOwnershipCASummary'
+	description	'Edit Change'
+	label	'EnterpriseChangeMgt.Command.TransferOwnership'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=transferOwnership&TransferOwnership=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_ImmTransferToUser.png'
+;
+#channel ==>
+add property command_ECMCATransferOwnershipCASummary on program eServiceSchemaVariableMapping.tcl to command 'ECMCATransferOwnershipCASummary';

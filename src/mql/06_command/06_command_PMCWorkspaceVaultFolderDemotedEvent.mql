@@ -1,0 +1,18 @@
+del command 'PMCWorkspaceVaultFolderDemotedEvent';
+add command 'PMCWorkspaceVaultFolderDemotedEvent'
+	description	''
+	label	'emxProgramCentral.FolderSubscription.Event.Folder_Demoted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Event Type'		'Folder Demoted'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkspaceVaultFolderDemotedEvent'
+	property	'version'	value	'R216'
+;
+modify menu PMCControlledFolderSubscriptionEvents add command PMCWorkspaceVaultFolderDemotedEvent order command PMCWorkspaceVaultFolderDemotedEvent 0;
+#channel ==>PMCControlledFolderSubscriptionEvents
+add property command_PMCWorkspaceVaultFolderDemotedEvent on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkspaceVaultFolderDemotedEvent';

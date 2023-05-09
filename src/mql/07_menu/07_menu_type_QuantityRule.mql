@@ -1,0 +1,16 @@
+del menu 'type_QuantityRule';
+add menu 'type_QuantityRule'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_QuantityRule&actionBarName=PLCQuantityRulePropertiesTopActionBar&formHeader=emxProduct.Heading.Properties&HelpMarker=emxhelpquantityrule'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'AEFLifecycle'
+	command	'AEFHistory'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_QuantityRule'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_type_QuantityRule on program eServiceSchemaVariableMapping.tcl to menu 'type_QuantityRule';

@@ -1,0 +1,21 @@
+del command 'PLCTestExecutionAssigneesAddExistingActionLink';
+add command 'PLCTestExecutionAssigneesAddExistingActionLink'
+	description	'Text Execution Assignees Add existing action link'
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Person&excludeOIDprogram=emxPLCCommon:excludeConnected&table=PLCSearchPersonsTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_AssignedTestExecution&from=false'
+	alt	''
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(current == "Create" || current == "In Progress" || current == "Review") && (current.access[toconnect] == true)'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestExecutionAssigneesAddExistingActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCTestExecutionAssigneesActionsToolbar add command PLCTestExecutionAssigneesAddExistingActionLink order command PLCTestExecutionAssigneesAddExistingActionLink 1;
+#channel ==>PLCTestExecutionAssigneesActionsToolbar
+add property command_PLCTestExecutionAssigneesAddExistingActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCTestExecutionAssigneesAddExistingActionLink';

@@ -1,0 +1,47 @@
+del form 'BPSUserSearchForm';
+add form 'BPSUserSearchForm' web
+field #1
+	name	'Type'
+	label	'emxFramework.Basic.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Admin Type'		'type'
+	setting	'Registered Suite'		'Framework'
+	setting	'Editable'		'false'
+	setting	'Default'		'type_Person'
+field #2
+	name	'Name'
+	label	'emxFramework.Basic.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Framework'
+field #3
+	name	'FirstName'
+	label	'emxFramework.Attribute.FirstName'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Framework'
+field #4
+	name	'LastName'
+	label	'emxFramework.Attribute.LastName'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Framework'
+field #5
+	name	'Member'
+	label	'emxFramework.FullTextSearch.MEMBER'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registerd Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'BPSUserSearchForm'
+	property	'version'	value	'R417'
+;
+add property form_BPSUserSearchForm on program eServiceSchemaVariableMapping.tcl to form 'BPSUserSearchForm';

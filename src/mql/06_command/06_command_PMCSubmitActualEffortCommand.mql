@@ -1,0 +1,19 @@
+del command 'PMCSubmitActualEffortCommand';
+add command 'PMCSubmitActualEffortCommand'
+	description	''
+	label	'emxProgramCentral.Common.SubmitEffort'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=submitEffortsAgainstAssignments'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'License Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSubmitActualEffortCommand'
+	property	'version'	value	'R417'
+;
+modify menu PMCActualEffortToolbar add command PMCSubmitActualEffortCommand order command PMCSubmitActualEffortCommand 0;
+#channel ==>PMCActualEffortToolbar
+add property command_PMCSubmitActualEffortCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCSubmitActualEffortCommand';

@@ -1,0 +1,18 @@
+del command 'LBCAccessGranteesRole';
+add command 'LBCAccessGranteesRole'
+	description	'Role Access Grantees'
+	label	'emxDocumentCentral.Common.Role'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'function'		'getFolderRoleAccessDetails'
+	setting	'program'		'emxWorkspaceVault'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAccessGranteesRole'
+	property	'version'	value	'R212'
+;
+modify menu LBCFolderAccessList add command LBCAccessGranteesRole order command LBCAccessGranteesRole 0;
+#channel ==>LBCFolderAccessList
+add property command_LBCAccessGranteesRole on program eServiceSchemaVariableMapping.tcl to command 'LBCAccessGranteesRole';

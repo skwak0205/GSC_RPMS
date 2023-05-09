@@ -1,0 +1,17 @@
+del command 'ENOFOL3WorkspaceConnectObjectEvent';
+add command 'ENOFOL3WorkspaceConnectObjectEvent'
+	description	''
+	label	'emxComponents.Notification.Event.Item_Attached'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'NXContentAdded'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'ENOFOL3WorkspaceConnectObjectEvent'
+	property	'version'	value	'R423'
+;
+modify menu ENOFOL3WorkspaceEvent add command ENOFOL3WorkspaceConnectObjectEvent order command ENOFOL3WorkspaceConnectObjectEvent 3;
+#channel ==>ENOFOL3WorkspaceEvent
+add property command_ENOFOL3WorkspaceConnectObjectEvent on program eServiceSchemaVariableMapping.tcl to command 'ENOFOL3WorkspaceConnectObjectEvent';

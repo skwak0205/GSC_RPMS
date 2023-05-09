@@ -1,0 +1,24 @@
+del command 'FTRRemoveBooleanCompatibilityRuleActionLink';
+add command 'FTRRemoveBooleanCompatibilityRuleActionLink'
+	description	'RemoveBooleanCompatibilityRule'
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/BooleanCompatibilityUtil.jsp?mode=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'createNewLinkDisplay'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRRemoveBooleanCompatibilityRuleActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRBooleanCompatibilityRuleListBottomActionBar add command FTRRemoveBooleanCompatibilityRuleActionLink order command FTRRemoveBooleanCompatibilityRuleActionLink 1;
+#channel ==>FTRBooleanCompatibilityRuleListBottomActionBar
+add property command_FTRRemoveBooleanCompatibilityRuleActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRRemoveBooleanCompatibilityRuleActionLink';

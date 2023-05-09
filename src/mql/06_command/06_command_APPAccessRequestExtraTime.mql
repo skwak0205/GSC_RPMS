@@ -1,0 +1,18 @@
+del command 'APPAccessRequestExtraTime';
+add command 'APPAccessRequestExtraTime'
+	description	'Command Object for Access Request Extra Time'
+	label	'emxComponents.Command.ExtendRequest'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_AccessRequest&toolbar=APPAccessRequestToolbar&mode=edit&printerfriendly=true&HelpMarker=emxhelprequesteditdetails&formHeader=emxComponents.Common.FormEditDetailsHeadingWithoutRev&postProcessURL=${COMPONENT_DIR}/emxCommonAccessRequestProcess.jsp?mode=Extend'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAccessRequestExtraTime'
+	property	'version'	value	'10-7'
+;
+modify menu APPSummaryAccessRequestActionsToolbar add command APPAccessRequestExtraTime order command APPAccessRequestExtraTime 3;
+#channel ==>APPSummaryAccessRequestActionsToolbar
+add property command_APPAccessRequestExtraTime on program eServiceSchemaVariableMapping.tcl to command 'APPAccessRequestExtraTime';

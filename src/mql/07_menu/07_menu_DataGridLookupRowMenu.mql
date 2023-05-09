@@ -1,0 +1,18 @@
+del menu 'DataGridLookupRowMenu';
+add menu 'DataGridLookupRowMenu'
+	description	''
+	label	'emxFramework.GridView.LookupRow'
+	href	''
+	alt	'emxFramework.GridView.LookupRow'
+	setting	'Access Function'		'canLookupRow'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	command	'DataGridLookupRowAboveCommand'
+	command	'DataGridLookupRowBelowCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'DataGridLookupRowMenu'
+	property 'version'	value	'R423.HF3'
+;
+add property menu_DataGridLookupRowMenu on program eServiceSchemaVariableMapping.tcl to menu 'DataGridLookupRowMenu';

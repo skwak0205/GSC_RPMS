@@ -1,0 +1,19 @@
+del command 'LBCObjectClassification';
+add command 'LBCObjectClassification'
+	description	'Classification from Object'
+	label	'emxLibraryCentral.Common.Classify'
+	href	'${SUITE_DIR}/emxLibraryCentralClassificationIntermediate.jsp?form=LBCObjectClassificationForm&mode=edit&formHeader=emxLibraryCentral.Header.Classify&classificationMode=classification&HelpMarker=emxhelplbcclassifyobject&formFieldsOnly=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'ToConnect'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCObjectClassification'
+	property	'version'	value	'R421'
+;
+modify menu LBCObjectClassificationActionsToolBar add command LBCObjectClassification order command LBCObjectClassification 1;
+#channel ==>LBCObjectClassificationActionsToolBar
+add property command_LBCObjectClassification on program eServiceSchemaVariableMapping.tcl to command 'LBCObjectClassification';

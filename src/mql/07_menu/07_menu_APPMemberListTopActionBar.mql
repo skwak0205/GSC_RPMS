@@ -1,0 +1,15 @@
+del menu 'APPMemberListTopActionBar';
+add menu 'APPMemberListTopActionBar'
+	description	''
+	label	'${NAME}'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPCreateMemberListActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPMemberListTopActionBar'
+	property 'version'	value	'10-0-1-1'
+;
+add property menu_APPMemberListTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'APPMemberListTopActionBar';

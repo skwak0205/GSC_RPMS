@@ -1,0 +1,23 @@
+del menu 'DCBookDocumentsActionBar';
+add menu 'DCBookDocumentsActionBar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	menu	'DCBookDocumentSummaryCreateNew'
+	command	'LBCBookContentAddExisting'
+	command	'APPSeparator'
+	command	'APPCommonDocumentDownloadActionLink'
+	command	'DCCommonDocumentCheckOutActionLink'
+	command	'APPSubscriptionMultiObject'
+	command	'DCObjectRemoveSelectedActionLink'
+	command	'APPAccessRequestActionLink'
+	command	'AEFSeparator2'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCBookDocumentsActionBar'
+	property 'version'	value	'R212'
+;
+add property menu_DCBookDocumentsActionBar on program eServiceSchemaVariableMapping.tcl to menu 'DCBookDocumentsActionBar';

@@ -1,0 +1,23 @@
+del command 'PMCWBSEffortFilter';
+add command 'PMCWBSEffortFilter'
+	description	'Effort Filter'
+	label	'emxProgramCentral.Common.Status'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=PMCWBSEffortFilter'
+	alt	''
+	setting	'Range Display Values'		'emxProgramCentral.Common.All,emxProgramCentral.WeeklyTimesheet.submitted,emxProgramCentral.WeeklyTimesheet.Approved,emxProgramCentral.WeeklyTimesheet.Rejected'
+	setting	'Target Location'		'PMCWBS'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'showEffortFilter'
+	setting	'Access Program'		'emxEffortManagement'
+	setting	'Range Values'		'All,Submitted,Approved,Rejected'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSEffortFilter'
+	property	'version'	value	'R418'
+;
+modify menu PMCWBSToolBar add command PMCWBSEffortFilter order command PMCWBSEffortFilter 5;
+#channel ==>PMCWBSToolBar
+add property command_PMCWBSEffortFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSEffortFilter';

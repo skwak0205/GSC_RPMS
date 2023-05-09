@@ -1,0 +1,23 @@
+del command 'RMTRequirementRemovedEvent';
+add command 'RMTRequirementRemovedEvent'
+	description	'Requirement Removed Event'
+	label	'PublishSubscribe.Event.RequirementRemoved'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Requirement Removed'
+	setting	'Access Function'		'showRequirementAddedRemovedEvent'
+	setting	'Access Program'		'emxProductLine'
+	setting	'History Bit'		'disconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementRemovedEvent'
+	property	'version'	value	'V6R2017x'
+;
+modify menu FTRFeatureSubscriptionEvents add command RMTRequirementRemovedEvent order command RMTRequirementRemovedEvent 0;
+modify menu FTRLogicalFeatureSubscriptionEvents add command RMTRequirementRemovedEvent order command RMTRequirementRemovedEvent 0;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command RMTRequirementRemovedEvent order command RMTRequirementRemovedEvent 0;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command RMTRequirementRemovedEvent order command RMTRequirementRemovedEvent 0;
+#channel ==>FTRFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRConfigurationFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_RMTRequirementRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementRemovedEvent';

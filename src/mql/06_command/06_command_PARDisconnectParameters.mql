@@ -1,0 +1,22 @@
+del command 'PARDisconnectParameters';
+add command 'PARDisconnectParameters'
+	description	'Command to disconnect an object from a parameter'
+	label	'emxParameter.Associate.RemoveObject'
+	href	'${SUITE_DIR}/emxParameterRemove.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'VPLMLocalCrossPrjContextAccess'
+	user	'VPLMLocalCrossOrgContextAccess'
+	user	'VPLMSecuredCrossAccess'
+	user	'Requirement Manager'
+;
+modify menu PARWhereUsedActionToolBar add command PARDisconnectParameters order command PARDisconnectParameters 0;
+#channel ==>PARWhereUsedActionToolBar
+add property command_PARDisconnectParameters on program eServiceSchemaVariableMapping.tcl to command 'PARDisconnectParameters';

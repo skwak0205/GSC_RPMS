@@ -1,0 +1,20 @@
+del menu 'FTRMyDeskLogicalFeatureToolbar';
+add menu 'FTRMyDeskLogicalFeatureToolbar'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRCreateLogicalFeatureActionLink'
+	command	'AEFSeparator'
+	command	'FTRDeleteLogicalFeatureActionLink'
+	menu	'FTRMyDeskLogicalFeatureToolbarActions'
+	menu	'FTRMyDeskLogicalFeatureToolbarReports'
+	menu	'ECMChangeToolbar'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRMyDeskLogicalFeatureToolbar'
+	property 'version'	value	'R421'
+;
+add property menu_FTRMyDeskLogicalFeatureToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRMyDeskLogicalFeatureToolbar';

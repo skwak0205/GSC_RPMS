@@ -1,0 +1,8 @@
+{
+  "SplashLoading": "Probíhá načítání",
+  "SplashConverting": "Probíhá převod",
+  "TextFatal": "Náhled není k dispozici.",
+  "DROP_MSG_LP": "Přetáhněte obsah sem",
+  "PasswordException": "Soubor PDF nelze otevřít, protože nebylo zadáno žádné heslo",
+  "Empty_SVG": "Soubor nelze otevřít, protože je prázdný"
+}

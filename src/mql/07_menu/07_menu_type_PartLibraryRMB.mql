@@ -1,0 +1,20 @@
+del menu 'type_PartLibraryRMB';
+add menu 'type_PartLibraryRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LBCRMBPartLibraryViewDetails'
+	command	'AEFSeparator'
+	command	'AEFLifecycle'
+	command	'APPQuickFileList'
+	command	'APPRelatedFiles'
+	command	'APPAllFileDetails'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_PartLibraryRMB'
+	property 'version'	value	'R216'
+;
+add property menu_type_PartLibraryRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_PartLibraryRMB';

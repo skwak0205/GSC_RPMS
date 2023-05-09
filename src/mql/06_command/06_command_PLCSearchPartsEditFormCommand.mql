@@ -1,0 +1,21 @@
+del command 'PLCSearchPartsEditFormCommand';
+add command 'PLCSearchPartsEditFormCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindParts'
+	href	'${SUITE_DIR}/SearchPartDialog.jsp?mode=findPart&frameName=searchPane&formName=editDataForm&fieldNameDisplay=topLevelPartDisplay&fieldNameActual=topLevelPart'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Popup Modal'		'false'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchPartsEditFormCommand'
+	property	'version'	value	'R418'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchPartsEditFormCommand order command PLCSearchPartsEditFormCommand 48;
+#channel ==>SearchAddExistingChooserMenu
+add property command_PLCSearchPartsEditFormCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchPartsEditFormCommand';

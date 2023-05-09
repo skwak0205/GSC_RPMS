@@ -1,0 +1,15 @@
+del menu 'ResetToDefaults';
+add menu 'ResetToDefaults'
+	description	''
+	label	'emxFramework.ResetCommand.label'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'Reset'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'ResetToDefaults'
+	property 'version'	value	'V6R2011x'
+;
+add property menu_ResetToDefaults on program eServiceSchemaVariableMapping.tcl to menu 'ResetToDefaults';

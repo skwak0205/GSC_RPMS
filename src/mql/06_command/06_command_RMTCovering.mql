@@ -1,0 +1,24 @@
+del command 'RMTCovering';
+add command 'RMTCovering'
+	description	'Allow user to create a covering requirement between two structures'
+	label	'emxRequirements.Label.DerivationCovCmd'
+	href	'javascript:launchDerivationCmd('cover')'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${SUITE_DIR}/images/iconReqCmdCoveringUpstream.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCovering'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeToolbar add command RMTCovering order command RMTCovering 6;
+modify menu RMTBufferMenu add command RMTCovering order command RMTCovering 3;
+#channel ==>RMTSpecTreeToolbarRMTBufferMenu
+add property command_RMTCovering on program eServiceSchemaVariableMapping.tcl to command 'RMTCovering';

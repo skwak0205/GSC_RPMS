@@ -1,0 +1,20 @@
+del command 'PLCPortfolioListViewTimelineActionLink';
+add command 'PLCPortfolioListViewTimelineActionLink'
+	description	''
+	label	'emxProduct.ActionLink.ViewTimeline'
+	href	'${SUITE_DIR}/PortfolioViewTimeline.jsp?mode=List'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Popup Modal'		'false'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multiple'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPortfolioListViewTimelineActionLink'
+	property	'version'	value	'R418'
+;
+modify menu PLCPortfolioListToolbarReports add command PLCPortfolioListViewTimelineActionLink order command PLCPortfolioListViewTimelineActionLink 0;
+#channel ==>PLCPortfolioListToolbarReports
+add property command_PLCPortfolioListViewTimelineActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCPortfolioListViewTimelineActionLink';

@@ -1,0 +1,15 @@
+#del attribute 'gscRegDate';
+add attribute 'gscRegDate'
+ type 'string'
+ description '등록일자'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscRegDate'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscRegDate on program eServiceSchemaVariableMapping.tcl to attribute 'gscRegDate';
+
+

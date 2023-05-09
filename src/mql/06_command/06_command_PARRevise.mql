@@ -1,0 +1,18 @@
+del command 'PARRevise';
+add command 'PARRevise'
+	description	'Command to revise the parameter'
+	label	'emxParameter.common.NewRevision'
+	href	'${SUITE_DIR}/emxParameterRevise.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Access Function'		'accessReviseCommand'
+	setting	'Access Program'		'emxParameter'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Requirement Manager'
+;
+modify menu PARRevisionsToolBar add command PARRevise order command PARRevise 0;
+#channel ==>PARRevisionsToolBar
+add property command_PARRevise on program eServiceSchemaVariableMapping.tcl to command 'PARRevise';

@@ -1,0 +1,19 @@
+del command 'FTRProductConfigurationFlatViewSelectedOptions';
+add command 'FTRProductConfigurationFlatViewSelectedOptions'
+	description	'Product Configuration selected options flat view'
+	label	'emxProduct.Tree.SelectedOptions'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxProductConfiguration:getSelectedOptions&inquiryLabel=All&table=FTRProductConfigurationSelectedOptionsList&header=emxProduct.Heading.SelectedOptions&HelpMarker=emxhelpproductconfigurationlistoptions'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallOption.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductConfigurationFlatViewSelectedOptions'
+	property	'version'	value	'R215'
+;
+modify menu FTRProductConfigurationViewToolBarActions add command FTRProductConfigurationFlatViewSelectedOptions order command FTRProductConfigurationFlatViewSelectedOptions 0;
+#channel ==>FTRProductConfigurationViewToolBarActions
+add property command_FTRProductConfigurationFlatViewSelectedOptions on program eServiceSchemaVariableMapping.tcl to command 'FTRProductConfigurationFlatViewSelectedOptions';

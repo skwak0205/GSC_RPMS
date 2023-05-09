@@ -1,0 +1,18 @@
+del command 'APPClassificationDemotedToActiveStateEvent';
+add command 'APPClassificationDemotedToActiveStateEvent'
+	description	'Event holder for demotion to Active state'
+	label	'emxComponents.Event.Classification_Demoted_To_Active_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Classification Demoted To Active State'
+	setting	'History Bit'		'demote to Active'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPClassificationDemotedToActiveStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu APPClassificationSubscriptionEvents add command APPClassificationDemotedToActiveStateEvent order command APPClassificationDemotedToActiveStateEvent 7;
+#channel ==>APPClassificationSubscriptionEvents
+add property command_APPClassificationDemotedToActiveStateEvent on program eServiceSchemaVariableMapping.tcl to command 'APPClassificationDemotedToActiveStateEvent';

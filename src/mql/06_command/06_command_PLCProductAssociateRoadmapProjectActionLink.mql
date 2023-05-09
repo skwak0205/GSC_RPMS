@@ -1,0 +1,21 @@
+del command 'PLCProductAssociateRoadmapProjectActionLink';
+add command 'PLCProductAssociateRoadmapProjectActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AssociateProject'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCProductRoadMapSearchTable&header=emxProduct.Heading.SelectProjects&selection=multiple&program=emxProduct:getAllProjects&expandProgram=emxProduct:expandProjects&toolbar=PLCProductRoadmapProjectsSearchToolBar&sortColumnName=Name&HelpMarker=emxhelproadmapassociateprojects&editRelationship=relationship_RelatedProjects&massPromoteDemote=false&objectCompare=false&triggerValidation=false'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductAssociateRoadmapProjectActionLink'
+	property	'version'	value	'R421'
+;
+modify menu PLCProductRoadmapProjectsListToolBarActions add command PLCProductAssociateRoadmapProjectActionLink order command PLCProductAssociateRoadmapProjectActionLink 1;
+#channel ==>PLCProductRoadmapProjectsListToolBarActions
+add property command_PLCProductAssociateRoadmapProjectActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCProductAssociateRoadmapProjectActionLink';

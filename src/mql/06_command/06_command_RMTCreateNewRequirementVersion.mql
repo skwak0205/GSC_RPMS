@@ -1,0 +1,26 @@
+del command 'RMTCreateNewRequirementVersion';
+add command 'RMTCreateNewRequirementVersion'
+	description	''
+	label	'emxRequirements.ActionLink.CreateVersion'
+	href	'${SUITE_DIR}/RequirementVersionUtil.jsp?mode=create'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'current.access[fromconnect]==true'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCreateNewRequirementVersion'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementVersionsActionBar add command RMTCreateNewRequirementVersion order command RMTCreateNewRequirementVersion 1;
+modify menu RMTRequirementVersionsRichTextEditorActionBar add command RMTCreateNewRequirementVersion order command RMTCreateNewRequirementVersion 1;
+#channel ==>RMTRequirementVersionsActionBarRMTRequirementVersionsRichTextEditorActionBar
+add property command_RMTCreateNewRequirementVersion on program eServiceSchemaVariableMapping.tcl to command 'RMTCreateNewRequirementVersion';

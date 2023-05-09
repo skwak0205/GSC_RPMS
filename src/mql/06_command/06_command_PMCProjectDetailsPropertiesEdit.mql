@@ -1,0 +1,21 @@
+del command 'PMCProjectDetailsPropertiesEdit';
+add command 'PMCProjectDetailsPropertiesEdit'
+	description	'Edit Project Details Properties'
+	label	'emxProgramCentral.Button.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProjectDetailsViewForm&mode=edit&&postProcessJPO=emxProjectConcept:performPostProcessActionsEdit&findMxLink=false&formHeader=emxProgramCentral.Common.ProjectBasicsEdit&HelpMarker=emxhelpprojecteditdialog&submitAction=refreshCaller&Export=false'
+	alt	'emxProgramCentral.Button.Edit'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'((current.access[modify] == true) && (current!=Complete))'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectDetailsPropertiesEdit'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProjectDetailsToolbarActions add command PMCProjectDetailsPropertiesEdit order command PMCProjectDetailsPropertiesEdit 0;
+#channel ==>PMCProjectDetailsToolbarActions
+add property command_PMCProjectDetailsPropertiesEdit on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectDetailsPropertiesEdit';

@@ -1,0 +1,19 @@
+del command 'PMCDatePickerCommand';
+add command 'PMCDatePickerCommand'
+	description	''
+	label	'emxProgramCentral.Common.Date'
+	href	''
+	alt	''
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'format'		'date'
+	setting	'License Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDatePickerCommand'
+	property	'version'	value	'R417'
+;
+modify menu PMCActualEffortToolbar add command PMCDatePickerCommand order command PMCDatePickerCommand 1;
+#channel ==>PMCActualEffortToolbar
+add property command_PMCDatePickerCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCDatePickerCommand';

@@ -1,0 +1,24 @@
+del command 'PMCDocumentDelete';
+add command 'PMCDocumentDelete'
+	description	'Delete Selected Document'
+	label	'emxProgramCentral.Command.Delete'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=deleteDocument'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProgramCentral.Alert.Delete'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDocumentDelete'
+	property	'version'	value	'R422.HF7'
+;
+modify menu PMCReferenceDocumentSummaryActionsToolBar add command PMCDocumentDelete order command PMCDocumentDelete 0;
+#channel ==>PMCReferenceDocumentSummaryActionsToolBar
+add property command_PMCDocumentDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCDocumentDelete';

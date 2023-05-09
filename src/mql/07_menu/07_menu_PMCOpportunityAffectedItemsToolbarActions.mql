@@ -1,0 +1,14 @@
+del menu 'PMCOpportunityAffectedItemsToolbarActions';
+add menu 'PMCOpportunityAffectedItemsToolbarActions'
+	description	''
+	label	'ProgramCentral.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCOpportunityAffectedItemsToolbarActions'
+	property 'version'	value	'R421'
+;
+add property menu_PMCOpportunityAffectedItemsToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCOpportunityAffectedItemsToolbarActions';

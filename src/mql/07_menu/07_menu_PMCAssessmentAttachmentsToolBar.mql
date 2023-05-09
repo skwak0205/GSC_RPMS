@@ -1,0 +1,15 @@
+del menu 'PMCAssessmentAttachmentsToolBar';
+add menu 'PMCAssessmentAttachmentsToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCAssessmentAttachmentsToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCAssessmentAttachmentsToolBar'
+	property 'version'	value	'10-5'
+;
+add property menu_PMCAssessmentAttachmentsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCAssessmentAttachmentsToolBar';

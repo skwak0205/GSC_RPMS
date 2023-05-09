@@ -1,0 +1,22 @@
+del command 'APPDiscussionRemoveContent';
+add command 'APPDiscussionRemoveContent'
+	description	'Remove Selected Content'
+	label	'emxComponents.Command.Remove'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRemove.jsp?action=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'current.access[fromdisconnect]'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionRemoveContent'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPDiscussionDocumentSummaryActionsToolBar add command APPDiscussionRemoveContent order command APPDiscussionRemoveContent 0;
+#channel ==>APPDiscussionDocumentSummaryActionsToolBar
+add property command_APPDiscussionRemoveContent on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionRemoveContent';

@@ -1,0 +1,24 @@
+del command 'PMCWBSDeletedTasks';
+add command 'PMCWBSDeletedTasks'
+	description	''
+	label	'emxProgramCentral.Common.WBSDeletedTasks'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'function'		'getWBSDeletedSubtasks'
+	setting	'Access Function'		'isNotFromRMB'
+	setting	'Access Program'		'emxTask'
+	setting	'program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSDeletedTasks'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCWBSDeletedTasks on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSDeletedTasks';

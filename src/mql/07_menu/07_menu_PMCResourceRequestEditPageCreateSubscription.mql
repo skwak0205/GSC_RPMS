@@ -1,0 +1,16 @@
+del menu 'PMCResourceRequestEditPageCreateSubscription';
+add menu 'PMCResourceRequestEditPageCreateSubscription'
+	description	''
+	label	'emxProgramCentral.Command.ResourcePlan.CreateSubscription'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCResourceRequestEditPagePushSubscription'
+	command	'PMCResourceRequestEditPageSubscription'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourceRequestEditPageCreateSubscription'
+	property 'version'	value	'R208'
+;
+add property menu_PMCResourceRequestEditPageCreateSubscription on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourceRequestEditPageCreateSubscription';

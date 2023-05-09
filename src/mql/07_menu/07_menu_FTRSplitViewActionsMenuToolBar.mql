@@ -1,0 +1,15 @@
+del menu 'FTRSplitViewActionsMenuToolBar';
+add menu 'FTRSplitViewActionsMenuToolBar'
+	description	''
+	label	'FTRSplitViewActionsMenuToolBar'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'PLCMassAssignDesignResponsibility'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRSplitViewActionsMenuToolBar'
+	property 'version'	value	'R212'
+;
+add property menu_FTRSplitViewActionsMenuToolBar on program eServiceSchemaVariableMapping.tcl to menu 'FTRSplitViewActionsMenuToolBar';

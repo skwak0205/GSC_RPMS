@@ -1,0 +1,23 @@
+del command 'PMCProjectTaskPropertiesAlertPreferences';
+add command 'PMCProjectTaskPropertiesAlertPreferences'
+	description	'AlertPreferences'
+	label	'emxProgramCentral.Project.AlertPreferences'
+	href	'${SUITE_DIR}/emxProgramCentralTaskAlertSettingsDialogFS.jsp'
+	alt	'emxProgramCentral.Project.AlertPreferences'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTaskPropertiesAlertPreferences'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCProjectTaskPropertiesAlertPreferences on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTaskPropertiesAlertPreferences';

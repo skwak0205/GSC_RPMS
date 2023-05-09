@@ -1,0 +1,16 @@
+del menu 'PLCModelProductBottomActionBar';
+add menu 'PLCModelProductBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PLCDeleteProductActionLink'
+	command	'PLCCopyProductActionLink'
+	command	'PLCRemoveProductActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCModelProductBottomActionBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_PLCModelProductBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCModelProductBottomActionBar';

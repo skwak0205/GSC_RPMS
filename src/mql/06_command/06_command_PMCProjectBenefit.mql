@@ -1,0 +1,19 @@
+del command 'PMCProjectBenefit';
+add command 'PMCProjectBenefit'
+	description	'Project benefit main command'
+	label	'emxProgramCentral.Common.Benefits'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCProjectBenefitSummaryTable&toolbar=PMCProjectBenefitOperationsToolBar,PMCProjectBenefitFilter&freezePane=Name&selection=multiple&header=emxProgramCentral.ProjectBenefit.Benefit&expandProgram=emxBenefitItem:getTableExpandChildProjectBenefitData&editLink=true&postProcessJPO=emxProgramCentralUtil:postProcessPortalCmdSBRefresh&HelpMarker=emxhelpfinancialitemsummary&emxExpandFilter=3&customize=false&preProcessJPO=emxBenefitItem:preProcessCheckForEdit&cellwrap=false&hideRootSelection=true'
+	alt	'emxProgramCentral.Common.Benefits'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'isProjectBenefitCommandAccessible'
+	setting	'Access Program'		'emxBenefitItemBase'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefit'
+	property	'version'	value	'R421.HF2'
+;
+#channel ==>PMCProjectFinancialChannelPMCFinancials
+add property command_PMCProjectBenefit on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefit';

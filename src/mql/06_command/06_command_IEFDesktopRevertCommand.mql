@@ -1,0 +1,22 @@
+del command 'IEFDesktopRevertCommand';
+add command 'IEFDesktopRevertCommand'
+	description	'IEF Desktop Revert Command'
+	label	'emxIEFDesignCenter.Common.Revert'
+	href	''
+	alt	''
+	setting	'iefcname'		'iefdesktopaction'
+	setting	'iefaction'		'revert'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	setting	'Row Select'		'multi'
+	setting	'iefrefreshpage'		'true'
+	setting	'iefwaitforresponse'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopRevertCommand'
+	property	'version'	value	'R424'
+;
+modify menu IEFDesktopLocalWorkspaceActionMenu add command IEFDesktopRevertCommand order command IEFDesktopRevertCommand 3;
+#channel ==>IEFDesktopLocalWorkspaceActionMenu
+add property command_IEFDesktopRevertCommand on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopRevertCommand';

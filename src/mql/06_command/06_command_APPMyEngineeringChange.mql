@@ -1,0 +1,17 @@
+del command 'APPMyEngineeringChange';
+add command 'APPMyEngineeringChange'
+	description	'Engineering Change List page'
+	label	'emxComponents.Command.EngineeringChange'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonEngineeringChange:getAllActiveEC,emxCommonEngineeringChange:getOwnedActiveEC,emxCommonEngineeringChange:getAssignedActiveEC,emxCommonEngineeringChange:getOwnedInActiveEC,emxCommonEngineeringChange:getAssignedInActiveEC&programLabel=emxComponents.Filter.AllActive,emxComponents.Filter.OwnedActive,emxComponents.Filter.AssignedActive,emxComponents.Filter.OwnedInActive,emxComponents.Filter.AssignedInActive&sortColumnName=Name&table=APPECList&header=emxComponents.Heading.MyEngineeringChanges&selection=multiple&toolbar=APPECListMenuToolBar&HelpMarker=emxhelpengchangelist&StringResourceFileId=emxComponentsStringResource'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMyEngineeringChange'
+	property	'version'	value	'R216'
+;
+modify menu APPMyEngineeringChanges add command APPMyEngineeringChange order command APPMyEngineeringChange 1;
+#channel ==>APPMyEngineeringChanges
+add property command_APPMyEngineeringChange on program eServiceSchemaVariableMapping.tcl to command 'APPMyEngineeringChange';

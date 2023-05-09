@@ -1,0 +1,18 @@
+del command 'PLCProductHierarchyCreateModelCommand';
+add command 'PLCProductHierarchyCreateModelCommand'
+	description	''
+	label	'emxProduct.Action.Model'
+	href	'${SUITE_DIR}/PLCHierarchyModelCreatePreProcess.jsp?UIContext=MyDeskProducts'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreateModel.png'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R420'
+;
+modify menu PLCProductListToolBar add command PLCProductHierarchyCreateModelCommand order command PLCProductHierarchyCreateModelCommand 1;
+#channel ==>PLCProductListToolBar
+add property command_PLCProductHierarchyCreateModelCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCProductHierarchyCreateModelCommand';

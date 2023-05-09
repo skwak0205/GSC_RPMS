@@ -1,0 +1,22 @@
+del command 'AEFConsolidatedSearch';
+add command 'AEFConsolidatedSearch'
+	description	''
+	label	'emxFramework.Consolidate.Search'
+	href	'${COMMON_DIR}/emxSearchConsolidatedView.jsp?defaultSearch=AEFGeneralSearch&table=AEFConsolidatedSearchResults&showClipboard=true&selection=multiple&searchType=Consolidated'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFConsolidatedSearch'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_AEFConsolidatedSearch on program eServiceSchemaVariableMapping.tcl to command 'AEFConsolidatedSearch';

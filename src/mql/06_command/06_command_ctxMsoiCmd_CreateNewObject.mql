@@ -1,0 +1,18 @@
+del command 'ctxMsoiCmd_CreateNewObject';
+add command 'ctxMsoiCmd_CreateNewObject'
+	description	'ctxMsoiCmd_CreateNewObject'
+	label	'emxMSF.Command.ctxMsoiCmd_CreateNewObject'
+	href	''
+	alt	'ctxMsoiCmd_CreateNewObject'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_CreateNewObject'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Navigation_Background add command ctxMsoiCmd_CreateNewObject order command ctxMsoiCmd_CreateNewObject 1;
+#channel ==>ctxMsoi_Navigation_Background
+add property command_ctxMsoiCmd_CreateNewObject on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_CreateNewObject';

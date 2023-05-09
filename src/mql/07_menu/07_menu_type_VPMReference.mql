@@ -1,0 +1,10 @@
+del menu 'type_VPMReference';
+add menu 'type_VPMReference'
+	description	'VPLM Product'
+	label	'${TYPE} ${NAME} ${REVISION}'
+	href	'${COMMON_DIR}/emxVPLMCommonNavPropertiesFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'iconSmallDefault.gif'
+;
+add property menu_type_VPMReference on program eServiceSchemaVariableMapping.tcl to menu 'type_VPMReference';

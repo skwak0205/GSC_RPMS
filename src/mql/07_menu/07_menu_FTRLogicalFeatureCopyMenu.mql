@@ -1,0 +1,13 @@
+del menu 'FTRLogicalFeatureCopyMenu';
+add menu 'FTRLogicalFeatureCopyMenu'
+	description	''
+	label	'emxProduct.Menu.Copy'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	command	'FTRCopyFromLogicalFeatureContextActionLink'
+	command	'FTRCopyToLogicalFeatureContextActionLink'
+	property 'version'	value	'R420'
+;
+add property menu_FTRLogicalFeatureCopyMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRLogicalFeatureCopyMenu';

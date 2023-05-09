@@ -1,0 +1,16 @@
+del command 'ECMCAs';
+add command 'ECMCAs'
+	description	''
+	label	'EnterpriseChangeMgt.Command.ChangeAction'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeUtil:getConnectedChanges&functionality=isChangeActionTab&toolbar=ECMChangeActionManagementToolbar&table=ECMChangeSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&PrinterFriendly=true&HelpMarker=emxhelpchangeactionsection'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCAs'
+	property	'version'	value	'R419'
+;
+#channel ==>ECMEnterpriseChangeMgtChannel
+add property command_ECMCAs on program eServiceSchemaVariableMapping.tcl to command 'ECMCAs';

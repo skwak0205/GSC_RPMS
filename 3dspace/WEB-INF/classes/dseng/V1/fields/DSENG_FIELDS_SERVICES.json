@@ -1,0 +1,12 @@
+{
+    "dsmveng:attribute.partNumber": {
+        "property": "attribute[EnterpriseExtension.V_PartNumber]",
+        "key": "partNumber"
+    },
+    "dsmveng:programe.CP.EnterpriseReference.Details": {
+        "property": "computed",
+        "key": "dseng:EnterpriseReference",
+        "example": "com.dassault_systemes.enovia.xapps.dseng.implementations.dsengOpenAPIImpl.getEnterpriseReferencePartNumber",
+        "index": [{"index": "ds6wg:EnterpriseExtension.V_PartNumber", "key":"partNumber"}]
+    }
+}

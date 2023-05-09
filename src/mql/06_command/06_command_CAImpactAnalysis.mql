@@ -1,0 +1,18 @@
+del command 'CAImpactAnalysis';
+add command 'CAImpactAnalysis'
+	description	'Command Object for Impact Analysis'
+	label	'EnterpriseChangeMgt.Command.ImpactAnalysis'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonEngineeringChange:getEngineeringChangeImpactAnalysis&table=APPImpactAnalysisList&header=emxComponents.Heading.ECImpactAnalysis&selection=multiple&toolbar=APPECImpactAnalysisListToolBar&sortColumnName=Name&HelpMarker=emxhelpimpactanalysislist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeAction>])'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CAImpactAnalysis'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_CAImpactAnalysis on program eServiceSchemaVariableMapping.tcl to command 'CAImpactAnalysis';

@@ -1,0 +1,22 @@
+del command 'PMCProjectTemplateQuestionEdit';
+add command 'PMCProjectTemplateQuestionEdit'
+	description	''
+	label	'emxProgramCentral.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCQuestionForm&mode=edit&formHeader=emxProgramCentral.Common.EditQuestion&HelpMarker=emxhelpquestionedit&findMxLink=false&submitAction=refreshCaller'
+	alt	'emxProgramCentral.Button.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Icon'		'../common/images/iconActionEdit.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateQuestionEdit'
+	property	'version'	value	'R422'
+;
+modify menu ProjectTemplateQuestionToolBar add command PMCProjectTemplateQuestionEdit order command PMCProjectTemplateQuestionEdit 0;
+#channel ==>ProjectTemplateQuestionToolBar
+add property command_PMCProjectTemplateQuestionEdit on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateQuestionEdit';

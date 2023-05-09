@@ -1,0 +1,22 @@
+del command 'PMCReportResourceLoadingProjectFilter';
+add command 'PMCReportResourceLoadingProjectFilter'
+	description	''
+	label	'emxProgramCentral.ResourcePlanning.Report.Charts.ResourceLoadingProjectFilter'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePoolPeopleUtil.jsp?mode=ResourcePoolPeopleReportFilter&submitURL=program=emxResourcePoolReports:getTableResourceLoadingReportData%26table=PMCReportResourceLoading%26toolbar=PMCReportDateToolbarMenu,PMCReportResourceLoadingProjectFilterMenu%26selection=none%26mode=PMCResourceLoadingReport%26header=emxProgramCentral.ResourcePlanning.Report.ResourceLoadingReport%26HelpMarker=emxhelpresourceloadingreport%26chartingrequired=false%26suiteKey=ProgramCentral%26sortColumnName=none%26displaymode=Summary'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getAllResourceLoadingReport'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxResourcePoolReports'
+	setting	'Width'		'100'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportResourceLoadingProjectFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCReportResourceLoadingProjectFilterMenu add command PMCReportResourceLoadingProjectFilter order command PMCReportResourceLoadingProjectFilter 0;
+#channel ==>PMCReportResourceLoadingProjectFilterMenu
+add property command_PMCReportResourceLoadingProjectFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCReportResourceLoadingProjectFilter';

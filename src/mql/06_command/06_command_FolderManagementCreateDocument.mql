@@ -1,0 +1,22 @@
+del command 'FolderManagementCreateDocument';
+add command 'FolderManagementCreateDocument'
+	description	''
+	label	'enoFolderManagement.Common.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=TMCDocumentCreate&mode=Creation&type=type_Document&nameField=both&header=emxTeamCentral.Common.CreateNewDocument&addToCallerFrame=WorkspaceContent&createJPO=emxCommonDocumentUI:createDocument&postProcessURL=../components/emxCommonDocumentCreatePostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'FolderManagement'
+	setting	'Access Expression'		'current.access[fromconnect]== true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'FolderManagementCreateDocument'
+	property	'version'	value	'R417.HF2'
+;
+modify menu FolderContentActions add command FolderManagementCreateDocument order command FolderManagementCreateDocument 1;
+#channel ==>FolderContentActions
+add property command_FolderManagementCreateDocument on program eServiceSchemaVariableMapping.tcl to command 'FolderManagementCreateDocument';

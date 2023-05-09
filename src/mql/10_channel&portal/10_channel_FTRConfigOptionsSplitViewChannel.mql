@@ -1,0 +1,15 @@
+del channel 'FTRConfigOptionsSplitViewChannel';
+add channel 'FTRConfigOptionsSplitViewChannel'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	command 	'FTRConfigurationOptionsSplitViewCommand'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigOptionsSplitViewChannel'
+	property	'version'	value	'R212'
+;
+#portal ==>FTRConfigFeatureSplitViewPortal
+add property channel_FTRConfigOptionsSplitViewChannel on program eServiceSchemaVariableMapping.tcl to channel 'FTRConfigOptionsSplitViewChannel';

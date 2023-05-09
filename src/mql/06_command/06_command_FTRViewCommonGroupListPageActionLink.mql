@@ -1,0 +1,23 @@
+del command 'FTRViewCommonGroupListPageActionLink';
+add command 'FTRViewCommonGroupListPageActionLink'
+	description	'Display the Common Group List for the selected Design Variant'
+	label	'emxProduct.CommonValuesStructureBrowser.CommonGroupListForDesignVariant'
+	href	'${SUITE_DIR}/ViewCommonGroupListPage.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showViewCommonGroupAction'
+	setting	'Access Program'		'LogicalFeature'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRViewCommonGroupListPageActionLink'
+	property	'version'	value	'R215'
+;
+modify menu FTRDesignVariantToolbarActions add command FTRViewCommonGroupListPageActionLink order command FTRViewCommonGroupListPageActionLink 4;
+#channel ==>FTRDesignVariantToolbarActions
+add property command_FTRViewCommonGroupListPageActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRViewCommonGroupListPageActionLink';

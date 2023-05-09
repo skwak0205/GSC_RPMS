@@ -1,0 +1,15 @@
+del menu 'PMCOpenExternalProjectToolBar';
+add menu 'PMCOpenExternalProjectToolBar'
+	description	''
+	label	'PMCOpenExternalProjectToolBar'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCOpenExternalProject'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCOpenExternalProjectToolBar'
+	property 'version'	value	'R22.HF4'
+;
+add property menu_PMCOpenExternalProjectToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCOpenExternalProjectToolBar';

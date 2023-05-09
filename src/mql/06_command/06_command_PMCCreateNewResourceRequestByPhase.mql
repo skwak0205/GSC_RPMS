@@ -1,0 +1,29 @@
+del command 'PMCCreateNewResourceRequestByPhase';
+add command 'PMCCreateNewResourceRequestByPhase'
+	description	'Create new Resource Request by Phase'
+	label	'emxProgramCentral.Command.CreateResourceRequestByPhase'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_ResourceRequest&nameField=both&autoNameChecked=true&policy=policy_ResourceRequest&form=PMCResourceRequestByPhaseCreateForm&header=emxProgramCentral.Common.CreateNewResourceRequestByPhase&HelpMarker=emxhelpresourcerequestphasecreate&submitAction=refreshCaller&postProcessJPO=emxResourceRequest:createResourcePlanByPhase'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isCreateByPhaseEnabled'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateNewResourceRequestByPhase'
+	property	'version'	value	'R422'
+;
+modify menu PMCCreateResourcePlan add command PMCCreateNewResourceRequestByPhase order command PMCCreateNewResourceRequestByPhase 0;
+modify menu PMCResourcePlanToolBar add command PMCCreateNewResourceRequestByPhase order command PMCCreateNewResourceRequestByPhase 2;
+#channel ==>PMCCreateResourcePlanPMCResourcePlanToolBar
+add property command_PMCCreateNewResourceRequestByPhase on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateNewResourceRequestByPhase';

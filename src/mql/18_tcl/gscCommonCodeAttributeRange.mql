@@ -1,0 +1,60 @@
+################################################################################################
+# Created Date : 2020.06.05
+# Create by GeonHwan,Bae
+# Description : Code Range Value
+################################################################################################
+#del prog gscCommonCodeAttributeRange;
+#add program gscCommonCodeAttributeRange !pipe code '';
+    
+mod program gscCommonCodeAttributeRange
+    !pipe
+    code 'tcl;
+eval {
+    # set the event
+    set event [mql get env EVENT]
+    
+    # set the choices
+    set aryAttributeNames {}
+    
+    set attr_name [mql get env ATTRNAME]
+    
+    # set the output variable (arg 0 is this programs name)
+    set output [mql get env 0]
+
+    # test event, and either generate choices, or test value
+    if { $event == "attribute choices"} {
+        # note that choices are returned in a global RPE variable
+        
+        set sCodeRangeResult {mql temp query bus gscCodeMaster * \"$attr_name\" orderby attribute\[Sequence Order\] where \"current==Active\" select name dump |}
+        set mqlret [catch {eval $sCodeRangeResult} outstr]
+
+        if {$mqlret == 0} {
+            set aryAttributeInfos   [split $outstr \n]
+
+            foreach sAttributeDetail $aryAttributeInfos {
+                set aryAttributeDeatil   [split $sAttributeDetail |]
+                set sCode                [lindex $aryAttributeDeatil 3]
+                
+                lappend aryAttributeNames $sCode
+            }
+            mql set env global $output $aryAttributeNames
+        } else {
+            if {$outstr == "FALSE"} {
+                set lErrorSet [list "" "This attribute range not exists."]
+                set mqlret 1
+            }
+        }
+    } else {
+        # note that choices are returned in a global RPE variable
+        set attr_value [mql get env ATTRVALUE]
+        
+        set sCodeRangeResult {mql print bus gscCodeMaster \"$attr_value\" \"$attr_name\"  select exists dump |}
+        set mqlret [catch {eval $sCodeRangeResult} outstr]
+
+        if {$mqlret == 0} {
+            exit 0
+        } else {
+            exit 1
+        }
+    }
+}';

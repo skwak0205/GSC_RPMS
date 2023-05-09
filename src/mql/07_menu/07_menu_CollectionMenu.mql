@@ -1,0 +1,16 @@
+del menu 'CollectionMenu';
+add menu 'CollectionMenu'
+	description	''
+	label	'emxFramework.Collections.AddToClipboardCollection'
+	href	''
+	alt	'emxFramework.Collections.AddToClipboardCollection'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddToClipboard.png'
+	command	'AddToClipboard'
+	command	'NewAddToCollections'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'CollectionMenu'
+	property 'version'	value	'R423.HF3'
+;
+add property menu_CollectionMenu on program eServiceSchemaVariableMapping.tcl to menu 'CollectionMenu';

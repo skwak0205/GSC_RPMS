@@ -1,0 +1,19 @@
+del command 'CFPCreateNewMasterFeature';
+add command 'CFPCreateNewMasterFeature'
+	description	''
+	label	'DMCPlanning.ActionLink.CreateNewMasterFeature'
+	href	'${SUITE_DIR}/CreateUtil.jsp?mode=CreateNewMasterFeature'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPCreateNewMasterFeature'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_CFPCreateNewMasterFeature on program eServiceSchemaVariableMapping.tcl to command 'CFPCreateNewMasterFeature';

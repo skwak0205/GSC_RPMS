@@ -1,0 +1,23 @@
+del command 'RMTCreateTargetSearchCommand';
+add command 'RMTCreateTargetSearchCommand'
+	description	'Display the TargetSpecification SearchPage'
+	label	'emxRequirements.Label.TargetSpecification'
+	href	'${SUITE_DIR}/RequirementSearchForm.jsp?program=emxRequirementSearchBase:getRequirements&table=RMTSearchSpecificationsTable&InclusionList=emxRequirements.Search.Target.Types&resultToolbar=RMTSpecificationSearchResultToolbar&CommandName=RMTCreateTargetSearchCommand&sortColumnName=Name&Style=dialog&containedInFlag=false&HelpMarker=emxhelpsearchresults&SubmitURL=../requirements/MultiObjectSelect.jsp&showToolbar=false'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Help Marker'		'emxhelpsearch'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCreateTargetSearchCommand'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTCreateTargetSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'RMTCreateTargetSearchCommand';

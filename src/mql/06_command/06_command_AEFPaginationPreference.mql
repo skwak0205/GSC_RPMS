@@ -1,0 +1,18 @@
+del command 'AEFPaginationPreference';
+add command 'AEFPaginationPreference'
+	description	'Pagination Preference'
+	label	'emxFramework.Preferences.Pagination'
+	href	'${COMMON_DIR}/emxPrefPagination.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/buttonToolbarPreferences.gif'
+	setting	'Help Marker'		'emxhelppreferencespagination'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFPaginationPreference'
+	property	'version'	value	'R214'
+;
+modify menu General add command AEFPaginationPreference order command AEFPaginationPreference 4;
+#channel ==>General
+add property command_AEFPaginationPreference on program eServiceSchemaVariableMapping.tcl to command 'AEFPaginationPreference';

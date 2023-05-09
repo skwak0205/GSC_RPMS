@@ -1,0 +1,14 @@
+del menu 'ECMMoveToCAMenu';
+add menu 'ECMMoveToCAMenu'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.ChangeActions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallChangeAction.png'
+	setting	'Expanded'		'true'
+	command	'ECMMoveToExistingCA'
+	command	'ECMMoveToNewCA'
+	property 'version'	value	'R422.HF1'
+;
+add property menu_ECMMoveToCAMenu on program eServiceSchemaVariableMapping.tcl to menu 'ECMMoveToCAMenu';

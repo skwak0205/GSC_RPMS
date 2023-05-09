@@ -1,0 +1,12 @@
+{
+"DMUMarkupHdr.Title":"Marquage",
+"DMUMarkupHdr.ShortHelp":"Crée un marquage lié au contexte chargé. Si plusieurs contextes sont chargés dans la session, sélectionnez-en un dans la boîte de dialogue Marquage.",
+"DMUMarkupHdr.LongHelp":"Dans la boîte de dialogue Marquage, sélectionnez un contexte (le cas échéant) et saisissez le nom et la description du marquage.",
+"DMUOldMarkupHdr.Title":"Ancien marquage",
+"DMUOldMarkupHdr.ShortHelp":"Crée un ancien marquage lié au contexte chargé. Si plusieurs contextes sont chargés dans la session, sélectionnez-en un dans la boîte de dialogue Marquage.",
+"DMUOldMarkupHdr.LongHelp":"Dans la boîte de dialogue Marquage, sélectionnez un contexte (le cas échéant) et saisissez le nom et la description du marquage.",
+"DMURenameMarkupHdr.Title":"Renommer",
+"DMURenameMarkupHdr.ShortHelp":"Met à jour le nom d'un marquage",
+"DMUMarkupHdr.WebHelp":"D3reUserMap/d3re-t-ReviewsManage.htm#t-CreateaReview",
+"DMUOldMarkupHdr.WebHelp":"D3reUserMap/d3re-t-ReviewsManage.htm#t-CreateaReview"
+}

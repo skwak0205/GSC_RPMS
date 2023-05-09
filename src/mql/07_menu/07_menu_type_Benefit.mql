@@ -1,0 +1,14 @@
+del menu 'type_Benefit';
+add menu 'type_Benefit'
+	description	''
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=editOption'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_Benefit'
+	property 'version'	value	'R210'
+;
+add property menu_type_Benefit on program eServiceSchemaVariableMapping.tcl to menu 'type_Benefit';

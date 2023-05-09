@@ -1,0 +1,14 @@
+del command 'FTRMyDeskVariability';
+add command 'FTRMyDeskVariability'
+	description	''
+	label	'emxProduct.Tree.Variability'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=FTRMyDeskVariabilityPortal&header=emxProduct.Tree.Variability&HelpMarker='
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+#channel ==>
+add property command_FTRMyDeskVariability on program eServiceSchemaVariableMapping.tcl to command 'FTRMyDeskVariability';

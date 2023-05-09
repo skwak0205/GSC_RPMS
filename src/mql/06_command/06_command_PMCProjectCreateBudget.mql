@@ -1,0 +1,23 @@
+del command 'PMCProjectCreateBudget';
+add command 'PMCProjectCreateBudget'
+	description	''
+	label	'emxProgramCentral.Budget.ProjectCreateBudget'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Budget&nameField=both&autoNameChecked=true&policy=policy_FinancialItems&form=PMCProjectBudgetCreateForm&mode=edit&header=emxProgramCentral.Budget.CreateNewBudget&submitAction=refreshCaller&relationship=relationship_ProjectFinancialItem&postProcessJPO=emxProjectBudget:createProjectBudget&HelpMarker=emxhelpprojectbudgetcreate&postProcessURL=../programcentral/emxProgramCentralUtil.jsp?mode=refreshBudget'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkFinCreateImportAccess'
+	setting	'Access Program'		'emxFinancialItem'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectCreateBudget'
+	property	'version'	value	'R421'
+;
+modify menu PMCProjectBudgetToolbarActions add command PMCProjectCreateBudget order command PMCProjectCreateBudget 1;
+modify menu PMCProjectBudgetToolbar add command PMCProjectCreateBudget order command PMCProjectCreateBudget 0;
+#channel ==>PMCProjectBudgetToolbarActionsPMCProjectBudgetToolbar
+add property command_PMCProjectCreateBudget on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectCreateBudget';

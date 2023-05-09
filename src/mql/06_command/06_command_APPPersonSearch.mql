@@ -1,0 +1,24 @@
+del command 'APPPersonSearch';
+add command 'APPPersonSearch'
+	description	'Command for Person Search'
+	label	'emxComponents.AddPeople.Step2Heading'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Person:CURRENT=policy_Person.state_Active&table=APPPersonSearchResults&form=BPSUserSearchForm&selection=multiple&showInitialResults=true'
+	alt	'emxComponents.AddPeople.Step2Heading'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Supplier Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPersonSearch'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPPersonSearch on program eServiceSchemaVariableMapping.tcl to command 'APPPersonSearch';

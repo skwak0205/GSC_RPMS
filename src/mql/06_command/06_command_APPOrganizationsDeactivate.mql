@@ -1,0 +1,24 @@
+del command 'APPOrganizationsDeactivate';
+add command 'APPOrganizationsDeactivate'
+	description	'Deactivate Organizations'
+	label	'emxComponents.Common.Deactivate'
+	href	'${SUITE_DIR}/emxComponentsOrganizationDeactivateProcess.jsp'
+	alt	'emxComponents.Common.Deactivate'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDeActivate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPOrganizationsDeactivate'
+	property	'version'	value	'R420.HF2'
+;
+modify menu APPBusinessUnitSummaryActionsToolBar add command APPOrganizationsDeactivate order command APPOrganizationsDeactivate 0;
+#channel ==>APPBusinessUnitSummaryActionsToolBar
+add property command_APPOrganizationsDeactivate on program eServiceSchemaVariableMapping.tcl to command 'APPOrganizationsDeactivate';

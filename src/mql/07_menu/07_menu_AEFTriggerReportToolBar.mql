@@ -1,0 +1,15 @@
+del menu 'AEFTriggerReportToolBar';
+add menu 'AEFTriggerReportToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	menu	'AEFTriggerReportActionToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFTriggerReportToolBar'
+	property 'version'	value	'10-7'
+;
+add property menu_AEFTriggerReportToolBar on program eServiceSchemaVariableMapping.tcl to menu 'AEFTriggerReportToolBar';

@@ -1,0 +1,19 @@
+del command 'FTRProductVariantSpecifications';
+add command 'FTRProductVariantSpecifications'
+	description	'lists the specifications in the parent Object'
+	label	'emxProduct.Tree.Specification'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=ProductSpecificationSummaryToolbar&header=emxProduct.Heading.SpecificationWithoutRevision&parentRelName=relationship_ProductSpecification&defaultType=type_Specification&showOwner=required&HelpMarker=emxhelpspeclist&freezePane=Name'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductVariantSpecifications'
+	property	'version'	value	'R215'
+;
+modify menu type_ProductVariant add command FTRProductVariantSpecifications order command FTRProductVariantSpecifications 7;
+#channel ==>type_ProductVariant
+add property command_FTRProductVariantSpecifications on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariantSpecifications';

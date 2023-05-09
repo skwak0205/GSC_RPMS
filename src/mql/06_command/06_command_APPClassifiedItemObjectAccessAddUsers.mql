@@ -1,0 +1,22 @@
+del command 'APPClassifiedItemObjectAccessAddUsers';
+add command 'APPClassifiedItemObjectAccessAddUsers'
+	description	'This command provides add users functionality to the Classified Items for giving them granted access'
+	label	'emxComponents.Command.Add'
+	href	'${SUITE_DIR}/emxComponentsObjectAccessUsersDialogFS.jsp?accessChoice=Read_WO_Download,Read,Read_Write,Add,Remove,Add_Remove&addUserType=person,role,group&showAllProgram=emxObjectAccess&showAllFunction=hasAccessRoles&pushGrantor=person_CommonAccessGrantor&lbcAccess=true'
+	alt	'emxComponents.Command.Add'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasAccessRoles'
+	setting	'Access Program'		'emxObjectAccess'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'APPClassifiedItemObjectAccessAddUsers'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_APPClassifiedItemObjectAccessAddUsers on program eServiceSchemaVariableMapping.tcl to command 'APPClassifiedItemObjectAccessAddUsers';

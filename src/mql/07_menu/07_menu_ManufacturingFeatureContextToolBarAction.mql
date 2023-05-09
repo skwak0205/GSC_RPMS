@@ -1,0 +1,15 @@
+del menu 'ManufacturingFeatureContextToolBarAction';
+add menu 'ManufacturingFeatureContextToolBarAction'
+	description	''
+	label	'emxProduct.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	menu	'ManufacturingFeatureContextToolBar'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ManufacturingFeatureContextToolBarAction'
+	property 'version'	value	'R212'
+;
+add property menu_ManufacturingFeatureContextToolBarAction on program eServiceSchemaVariableMapping.tcl to menu 'ManufacturingFeatureContextToolBarAction';

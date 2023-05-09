@@ -1,0 +1,15 @@
+{
+  "SelectAFile": "Vyberte soubor...",
+  "BrowseButtonText": "Procházet",
+  "UploadButtonText": "Odeslat",
+  "ResetButtonText": "Resetovat všechny rozšířené sekvence",
+  "DownloadButtonText": "Stáhnout",
+  "DownloadFailedAlert": "Stahování selhalo",
+  "NoFileToUpload": "Nic k odeslání, nejprve vyberte soubor",
+  "UploadSuccessAlert": "Soubor byl úspěšně odeslán",
+  "UploadFailedAlert": "Odeslání souboru se nezdařilo",
+  "ResetSuccessAlert": "Resetování proběhlo úspěšně",
+  "ResetFailedAlert": "Resetování se nezdařilo",
+  "VersionNamingExtHeader": "Odeslat/stáhnout definice rozšířených pořadí revizí",
+  "VersionNamingExtTooltip": ""
+}

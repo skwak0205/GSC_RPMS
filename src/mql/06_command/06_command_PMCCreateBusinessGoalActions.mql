@@ -1,0 +1,22 @@
+del command 'PMCCreateBusinessGoalActions';
+add command 'PMCCreateBusinessGoalActions'
+	description	'CreateBusinessGoal Command Object'
+	label	'emxFramework.Shortcut.CreateBusinessGoal'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=PMCBusinessGoalCreateForm&type=type_BusinessGoal&header=emxProgramCentral.Common.CreateNewBusinessGoal&Mode=create&postProcessJPO=emxProgramBusinessGoal:createAndConnectBusinessGoal&helpMarker=emxhelpbusinessgoalcreatedialog&submitAction=refreshCaller&showApply=true&targetLocation=slidein'
+	alt	'emxFramework.Shortcut.CreateBusinessGoal'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Business Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateBusinessGoalActions'
+	property	'version'	value	'R422'
+;
+modify menu PMCActions add command PMCCreateBusinessGoalActions order command PMCCreateBusinessGoalActions 3;
+#channel ==>PMCActions
+add property command_PMCCreateBusinessGoalActions on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateBusinessGoalActions';

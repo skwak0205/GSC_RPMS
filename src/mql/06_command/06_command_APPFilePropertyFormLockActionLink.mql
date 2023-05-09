@@ -1,0 +1,21 @@
+del command 'APPFilePropertyFormLockActionLink';
+add command 'APPFilePropertyFormLockActionLink'
+	description	'File Lock Command Object. Useful for webform pages'
+	label	'emxComponents.Command.Lock'
+	href	'${COMPONENT_DIR}/emxCommonDocumentLock.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(vcfile && vcfile.locked == FALSE && current.access[lock] == true)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionLock.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPFilePropertyFormLockActionLink'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPFilePropertyFormLockActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPFilePropertyFormLockActionLink';

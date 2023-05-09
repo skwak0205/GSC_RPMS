@@ -1,0 +1,50 @@
+del command 'APPRoutes';
+add command 'APPRoutes'
+	description	'Command Object to Display Routes'
+	label	'emxComponents.Common.Route'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRoute:getMyRoutes,emxRoute:getActiveRoutes,emxRoute:getInActiveRoutes&table=APPObjectRouteSummary&header=emxComponents.Routes.Heading2&toolbar=APPRouteSummaryToolBar&programLabel=emxComponents.Filter.All,emxComponents.Filter.Active,emxComponents.Filter.Complete&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelproutes&displayView=details&rowGrouping=false'
+	alt	'emxComponents.Common.Route'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRoutes'
+	property	'version'	value	'R216'
+;
+modify menu type_Issue add command APPRoutes order command APPRoutes 6;
+modify menu type_PartFamily add command APPRoutes order command APPRoutes 8;
+modify menu type_AccessRequest add command APPRoutes order command APPRoutes 7;
+modify menu type_Library add command APPRoutes order command APPRoutes 8;
+modify menu type_Libraries add command APPRoutes order command APPRoutes 4;
+modify menu type_PartLibrary add command APPRoutes order command APPRoutes 7;
+modify menu type_GeneralLibrary add command APPRoutes order command APPRoutes 7;
+modify menu type_Classification add command APPRoutes order command APPRoutes 6;
+modify menu type_GeneralClass add command APPRoutes order command APPRoutes 8;
+modify menu type_PLCProductLine add command APPRoutes order command APPRoutes 1;
+modify menu type_TestCase add command APPRoutes order command APPRoutes 7;
+modify menu type_RetentionRecord add command APPRoutes order command APPRoutes 0;
+modify menu type_RetentionHold add command APPRoutes order command APPRoutes 0;
+modify menu type_DocumentFamily add command APPRoutes order command APPRoutes 9;
+modify menu type_ProductLine add command APPRoutes order command APPRoutes 7;
+modify menu type_HardwareBuild add command APPRoutes order command APPRoutes 9;
+modify menu type_Builds add command APPRoutes order command APPRoutes 9;
+modify menu type_SoftwareBuild add command APPRoutes order command APPRoutes 8;
+modify menu type_Specification add command APPRoutes order command APPRoutes 10;
+modify menu type_PLCDocument add command APPRoutes order command APPRoutes 3;
+modify menu type_ProjectConcept add command APPRoutes order command APPRoutes 10;
+modify menu type_Risk add command APPRoutes order command APPRoutes 0;
+modify menu type_UseCase add command APPRoutes order command APPRoutes 8;
+modify menu type_Opportunity add command APPRoutes order command APPRoutes 0;
+modify menu type_ProductVariant add command APPRoutes order command APPRoutes 6;
+modify menu type_ConfigurationFeature add command APPRoutes order command APPRoutes 10;
+modify menu type_LogicalFeature add command APPRoutes order command APPRoutes 11;
+modify menu type_ManufacturingFeature add command APPRoutes order command APPRoutes 9;
+modify menu type_ConfigurationOption add command APPRoutes order command APPRoutes 7;
+modify menu type_Variant add command APPRoutes order command APPRoutes 8;
+modify menu type_VariabilityGroup add command APPRoutes order command APPRoutes 8;
+modify menu type_VariantValue add command APPRoutes order command APPRoutes 7;
+modify menu type_VariabilityOption add command APPRoutes order command APPRoutes 7;
+modify menu type_ProjectTemplate add command APPRoutes order command APPRoutes 0;
+#channel ==>type_Issuetype_PartFamilytype_AccessRequesttype_Librarytype_Librariestype_PartLibrarytype_GeneralLibrarytype_Classificationtype_GeneralClasstype_PLCProductLinetype_TestCasetype_RetentionRecordtype_RetentionHoldtype_DocumentFamilytype_ProductLinetype_HardwareBuildtype_Buildstype_SoftwareBuildtype_Specificationtype_PLCDocumenttype_ProjectConcepttype_Risktype_UseCasetype_Opportunitytype_ProductVarianttype_ConfigurationFeaturetype_LogicalFeaturetype_ManufacturingFeaturetype_ConfigurationOptiontype_Varianttype_VariabilityGrouptype_VariantValuetype_VariabilityOptiontype_ProjectTemplateAPPLifecycleReviewChannelECMChangePropertyChannel2PLCProductsDefaultChannelPMCProjectApprovalsRoutesChannelPMCExecutionRMTChangeControl
+add property command_APPRoutes on program eServiceSchemaVariableMapping.tcl to command 'APPRoutes';

@@ -1,0 +1,17 @@
+#del menu 'gscPMCWBSListMenu';
+add menu 'gscPMCWBSListMenu'
+ description ''
+ label ''
+ href ''
+ alt ''
+ setting 'Registered Suite' 'ProgramCentral'
+ command 'PMCWBSAll'
+ property 'installer' value 'ENOVIAEngineering'
+ property 'application' value 'ProgramManagementBase'
+ property 'installed date' value '03-23-2022'
+ property 'original name' value 'gscPMCWBSListMenu'
+ property 'version' value 'R422.HF5'
+;
+
+add property menu_gscPMCWBSListMenu on program eServiceSchemaVariableMapping.tcl to menu 'gscPMCWBSListMenu';
+

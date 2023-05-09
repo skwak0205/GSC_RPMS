@@ -1,0 +1,10 @@
+del command 'PLMAssociatedParametersTreeCategory';
+add command 'PLMAssociatedParametersTreeCategory'
+	description	'Display parameters  to a certain object'
+	label	'emxParameter.common.Parameters'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?objectID=${ID}&program=emxParameterConnect:getUserAssociatedParameters,emxParameterConnect:getAssociatedParameters&programLabel=emxParameter.Filter.Owned,emxParameter.Filter.All&table=PLMAssociatedParameters&editLink=true&relationship=relationship_ParameterUsage,relationship_ParameterAggregation&header=emxParameter.Associate.Header&direction=from&toolbar=PLMAssociatedParametersToolbar&selection=multiple&sortColumnName=ParameterType&postProcessJPO=emxParameterEdit:updateTableValues'
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+;
+#channel ==>
+add property command_PLMAssociatedParametersTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLMAssociatedParametersTreeCategory';

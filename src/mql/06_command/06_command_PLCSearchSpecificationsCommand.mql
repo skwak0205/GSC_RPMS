@@ -1,0 +1,17 @@
+del command 'PLCSearchSpecificationsCommand';
+add command 'PLCSearchSpecificationsCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindSpecifications'
+	href	'${SUITE_DIR}/SearchSpecificationsForm.jsp?program=emxProductSearch:getSpecifications&table=PLCSearchSpecificationsTable&sortColumnName=Name&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchSpecificationsCommand'
+	property	'version'	value	'R418'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchSpecificationsCommand order command PLCSearchSpecificationsCommand 39;
+#channel ==>SearchAddExistingChooserMenu
+add property command_PLCSearchSpecificationsCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchSpecificationsCommand';

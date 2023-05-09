@@ -1,0 +1,22 @@
+del command 'ECMHtmlSummary';
+add command 'ECMHtmlSummary'
+	description	'Html Summary Report Command'
+	label	'EnterpriseChangeMgt.Common.HTMLReport'
+	href	'${SUITE_DIR}/emxECMSummaryReportFS.jsp'
+	alt	'EnterpriseChangeMgt.Common.SummaryReportHeader'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/I_ENOHtmlReport32.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMHtmlSummary'
+	property	'version'	value	'R424'
+;
+modify menu ECMCOPropertiesToolbar add command ECMHtmlSummary order command ECMHtmlSummary 0;
+modify menu ECMCAPropertiesToolbar add command ECMHtmlSummary order command ECMHtmlSummary 4;
+modify menu ECMCRPropertiesToolbar add command ECMHtmlSummary order command ECMHtmlSummary 0;
+#channel ==>ECMCOPropertiesToolbarECMCAPropertiesToolbarECMCRPropertiesToolbar
+add property command_ECMHtmlSummary on program eServiceSchemaVariableMapping.tcl to command 'ECMHtmlSummary';

@@ -1,0 +1,22 @@
+del command 'FTRVariabilityMakeMandatory';
+add command 'FTRVariabilityMakeMandatory'
+	description	''
+	label	'emxConfiguration.ActionLink.MakeMandatoryFeature'
+	href	'${SUITE_DIR}/VariabilityToggleMandatory.jsp?mode=makeMandatory'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type.kindof=="type_Model">'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallMandatory.png'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R421'
+;
+modify menu FTRVariabilityToolbar add command FTRVariabilityMakeMandatory order command FTRVariabilityMakeMandatory 10;
+#channel ==>FTRVariabilityToolbar
+add property command_FTRVariabilityMakeMandatory on program eServiceSchemaVariableMapping.tcl to command 'FTRVariabilityMakeMandatory';

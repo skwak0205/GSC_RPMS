@@ -1,0 +1,26 @@
+del command 'FTRCopyResourceRuleActionLink';
+add command 'FTRCopyResourceRuleActionLink'
+	description	'CopyResourceRule'
+	label	'emxProduct.ActionLink.Copy'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_FixedResource&table=FTRResourceRuleSearchTable&selection=single&HelpMarker=emxhelpresourcerulecopy&submitAction=refreshCaller&hideHeader=true&submitURL=../configuration/SearchUtil.jsp?functionality=Resource'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'createNewLinkDisplay'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCopyResourceRuleActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRFixedResourceToolBarActions add command FTRCopyResourceRuleActionLink order command FTRCopyResourceRuleActionLink 3;
+modify menu FTRResourcesListTopActionBar add command FTRCopyResourceRuleActionLink order command FTRCopyResourceRuleActionLink 3;
+#channel ==>FTRFixedResourceToolBarActionsFTRResourcesListTopActionBar
+add property command_FTRCopyResourceRuleActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCopyResourceRuleActionLink';

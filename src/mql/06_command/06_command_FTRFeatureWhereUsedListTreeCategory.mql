@@ -1,0 +1,21 @@
+del command 'FTRFeatureWhereUsedListTreeCategory';
+add command 'FTRFeatureWhereUsedListTreeCategory'
+	description	'Features where used tree category'
+	label	'emxProduct.Tree.WhereUsed'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxRule:getWhereUsed&FilterFramePage=${SUITE_DIR}/WhereUsedTableFilterInclude.jsp&FilterFrameSize=55&table=PLCWhereUsedList&header=emxProduct.Heading.WhereUsedGeneric&selection=multiple&topActionbar=PLCWhereUsedListTopActionBar&HelpMarker=emxhelpwhereusedlist&command=command_FTRFeatureWhereUsedListTreeCategory'
+	alt	''
+	setting	'ExpandFilterTypes'		'emxProduct.WhereUsed.Feature.ExpandTypes'
+	setting	'Registered Suite'		'Configuration'
+	setting	'ExpandFilterRelationships'		'emxProduct.WhereUsed.Feature.ExpandRelationships'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'IntermediateFilterTypes'		'emxProduct.WhereUsed.IntermediateTypes'
+	setting	'Image'		'${COMMON_DIR}/iconSmallFeature.gif'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRFeatureWhereUsedListTreeCategory'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRFeatureWhereUsedListTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRFeatureWhereUsedListTreeCategory';

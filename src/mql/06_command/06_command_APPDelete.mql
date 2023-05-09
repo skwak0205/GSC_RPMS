@@ -1,0 +1,21 @@
+del command 'APPDelete';
+add command 'APPDelete'
+	description	'Global Search Delete'
+	label	'emxComponents.Common.Delete'
+	href	'${COMPONENT_DIR}/emxCommonDeleteObjects.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxFramework.Command.Delete_Warning_Message'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDelete'
+	property	'version'	value	'10-5'
+;
+modify menu APPSearchResultToolbar add command APPDelete order command APPDelete 0;
+#channel ==>APPSearchResultToolbar
+add property command_APPDelete on program eServiceSchemaVariableMapping.tcl to command 'APPDelete';

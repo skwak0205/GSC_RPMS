@@ -1,0 +1,17 @@
+del command 'RMTTreeDisplay';
+add command 'RMTTreeDisplay'
+	description	'Tree Display Settings'
+	label	'emxRequirements.SCE.Label.SCETreeDisplaySettings'
+	href	'${SUITE_DIR}/TreeDisplaySettings.jsp?HelpMarker=emxhelppreferences'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionSettings.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTreeDisplay'
+	property	'version'	value	'V6R2016'
+;
+modify menu RequirementsCentral add command RMTTreeDisplay order command RMTTreeDisplay 4;
+#channel ==>RequirementsCentral
+add property command_RMTTreeDisplay on program eServiceSchemaVariableMapping.tcl to command 'RMTTreeDisplay';

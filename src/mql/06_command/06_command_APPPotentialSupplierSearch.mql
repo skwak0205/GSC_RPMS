@@ -1,0 +1,17 @@
+del command 'APPPotentialSupplierSearch';
+add command 'APPPotentialSupplierSearch'
+	description	'Command for General Search by default Company'
+	label	'emxComponents.Common.General'
+	href	'${COMPONENT_DIR}/emxComponentsPotentialSupplierSearchDialog.jsp?typename=Company'
+	alt	'emxComponents.Common.General'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPotentialSupplierSearch'
+	property	'version'	value	'10-5'
+;
+modify menu APPPotentialSupplierSearchToolBar add command APPPotentialSupplierSearch order command APPPotentialSupplierSearch 0;
+#channel ==>APPPotentialSupplierSearchToolBar
+add property command_APPPotentialSupplierSearch on program eServiceSchemaVariableMapping.tcl to command 'APPPotentialSupplierSearch';

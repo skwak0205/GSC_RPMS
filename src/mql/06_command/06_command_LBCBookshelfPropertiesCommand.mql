@@ -1,0 +1,17 @@
+del command 'LBCBookshelfPropertiesCommand';
+add command 'LBCBookshelfPropertiesCommand'
+	description	'Library Properties'
+	label	'emxDocumentCentral.Common.CommandProperties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_DCCommonProperties&toolbar=LBCDCObjectDetailsToolBar&HelpMarker=emxhelpcontainerproperties&formHeader=emxDocumentCentral.Common.Properties&Export=False&findMxLink=false'
+	alt	'emxDocumentCentral.Common.CommandProperties'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallObjectFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCBookshelfPropertiesCommand'
+	property	'version'	value	'R211'
+;
+#channel ==>
+add property command_LBCBookshelfPropertiesCommand on program eServiceSchemaVariableMapping.tcl to command 'LBCBookshelfPropertiesCommand';

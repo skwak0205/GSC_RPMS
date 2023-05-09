@@ -1,0 +1,19 @@
+del command 'CFFComposition_ProductRevise';
+add command 'CFFComposition_ProductRevise'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Effectivity'
+	setting	'expandProgram'		'LogicalFeature:getProductComposition'
+	setting	'relationshipType'		'relationship_Products'
+	setting	'binaryKey'		'EffectivityMatrix'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFComposition_ProductRevise'
+	property	'version'	value	'R215'
+;
+modify menu CFFChildComposition add command CFFComposition_ProductRevise order command CFFComposition_ProductRevise 0;
+#channel ==>CFFChildComposition
+add property command_CFFComposition_ProductRevise on program eServiceSchemaVariableMapping.tcl to command 'CFFComposition_ProductRevise';

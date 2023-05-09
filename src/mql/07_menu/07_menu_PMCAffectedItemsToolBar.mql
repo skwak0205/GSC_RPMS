@@ -1,0 +1,15 @@
+del menu 'PMCAffectedItemsToolBar';
+add menu 'PMCAffectedItemsToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCAffectedItemsToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCAffectedItemsToolBar'
+	property 'version'	value	'R423.HF4'
+;
+add property menu_PMCAffectedItemsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCAffectedItemsToolBar';

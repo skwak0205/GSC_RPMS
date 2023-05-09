@@ -1,0 +1,20 @@
+del command 'PMCProgramProperties';
+add command 'PMCProgramProperties'
+	description	'Program Properties Command Object'
+	label	'emxFramework.Command.PMCPropertiesPortal'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProgramForm&mode=view&toolbar=PMCProgramPropertiesToolBar&formHeader=emxProgramCentral.Common.FormBasics&HelpMarker=emxhelpprogramdetails&Export=false'
+	alt	'emxFramework.Command.Properties'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type.Kindof[Program]'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'${COMMON_DIR}/images/I_SmallProperties16.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProgramProperties'
+	property	'version'	value	'R422'
+;
+modify menu PMCListProjectRMBMenu add command PMCProgramProperties order command PMCProgramProperties 1;
+#channel ==>PMCListProjectRMBMenu
+add property command_PMCProgramProperties on program eServiceSchemaVariableMapping.tcl to command 'PMCProgramProperties';

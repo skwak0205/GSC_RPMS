@@ -1,0 +1,1285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd ">
+	<ds:service name="ApplicabilityTypeInfo">
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:field name="applicabilityType">
+			<ds:selectable type="bus" expression="evaluate[if type.kindof[Change Request] then 'Change Request' else if type.kindof[Change Order] then 'Change Order' else if type.kindof[Decision] then 'Decision' else if type.kindof[Change Action] then 'Change Action' else '']"/>
+		</ds:field>
+	</ds:service>
+  <ds:service name="ChangeManagementUX.changeorder">
+        <ds:data>
+            <ds:jpo       classname="ChgUXServicesChangeOrder" function="getChangeOrders" returnedData="idsAndData" localInvokation="false"/>
+			<ds:updatejpo classname="ChgUXServicesChangeOrder" function="updateChangeOrder" localInvokation="false" processMultiple="true"/>
+        </ds:data>
+        
+        <ds:ref-subservice name="ChangeManagementUX.basicFields"  includeByDefault="yes"/>
+        
+        <ds:field name="severity"          description="The severity of object"><ds:selectable expression="attribute[Severity]" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="severityNLS"          description="The NLS severity of object"><ds:selectable expression="attribute[Severity]" format="range" modifyOperation="no" readOperation="yes"/></ds:field>
+		
+		<ds:field name="dueDate"            description="The actual state date of object"> <ds:selectable expression="attribute[Estimated Completion Date]" format="utc" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="changeCoordinator" description="The Change Coordinator of object"> <ds:selectable expression="from[Change Coordinator].to.name" /> </ds:field>
+		<ds:field name="changeCoordinatorFullName"  includeByDefault="yes" description="Full Name of the person">
+            <ds:selectable expression="from[Change Coordinator].to.name" type="bus" format="fullname"/>
+		</ds:field>
+        
+		<ds:field name="ecm_change_on_hold" description="Is change order on hold"><ds:selectable expression="interface[Change On Hold]" modifyOperation="yes" readOperation="yes"/></ds:field>
+		
+		<ds:ref-subservice name="changeorchestration" referenceName="ChangeManagementUX.changeorchestration" includeByDefault="never"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeOrder" function="getChangeOrchestration" returnedData="idsAndData" localInvokation="false"/>	
+			</ds:data>
+		</ds:ref-subservice>
+		
+		<ds:ref-subservice name="members" referenceName="ChangeManagementUX.members" includeByDefault="never"/>  
+		
+		<ds:ref-subservice name="changerequest" referenceName="ChangeManagementUX.changeorder.changerequest" includeByDefault="never"/> 
+
+		<ds:subservice name="resume" includeByDefault="never">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesChangeOrder" function="processChangeOrderAction" processMultiple="false" localInvokation="false">
+					<ds:arg arg-name="action" arg-value="resume"/>
+				</ds:updatejpo>
+            </ds:data>
+				<ds:field name="reason" description="The comments associated with the resume action."><ds:selectable /></ds:field>
+		</ds:subservice>
+
+		<ds:subservice name="hold" includeByDefault="never">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesChangeOrder" function="processChangeOrderAction" processMultiple="false" localInvokation="false">
+					<ds:arg arg-name="action" arg-value="hold"/>
+				</ds:updatejpo>
+			</ds:data>
+			<ds:field name="reason" description="The comments associated with the hold action."><ds:selectable /></ds:field>
+		</ds:subservice>		
+
+		<ds:subservice name="cancel" includeByDefault="never">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesChangeOrder" function="processChangeOrderAction" processMultiple="false" localInvokation="false">
+					<ds:arg arg-name="action" arg-value="cancel"/>
+				</ds:updatejpo>
+			</ds:data>
+			<ds:field name="reason" description="The comments associated with the cancel action."><ds:selectable /></ds:field>
+		</ds:subservice> 		
+<!--		
+		<ds:ref-subservice name="access" referenceName="ChangeManagementUX.accessBitFields" includeByDefault="never"/> 
+-->	
+		<ds:subservice name="access" includeByDefault="never">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeOrder" function="getChangeOrderAccessBits" returnedData="idsAndData" localInvokation="false"/>
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.accessBitFields"  includeByDefault="yes"/>
+		</ds:subservice>		
+	
+		<ds:ref-subservice name="issues" referenceName="ChangeManagementUX.issues" includeByDefault="no"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeOrder" function="getIssues" returnedData="idsAndData" localInvokation="false"/>					
+			</ds:data>
+		</ds:ref-subservice>
+		
+		<ds:ref-subservice name="reportedAgainst" referenceName="ChangeManagementUX.reportedAgainst" includeByDefault="no"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeOrder" function="getReportedAgainstItems" returnedData="idsAndData" localInvokation="false"/>
+				<ds:updatejpo classname="ChgUXServicesChangeOrder" function="updateReportedAgainstItems" processMultiple="true" localInvokation="false"/>					
+			</ds:data>
+		</ds:ref-subservice>	
+	
+   </ds:service>
+   
+  <ds:service name="ChangeManagementUX.basicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="owner"       description="The owner of the object">         <ds:selectable expression="owner"    type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person">
+            <ds:selectable expression="owner" type="bus" format="fullname"/>
+		</ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="description"    description="Description of the object.">         <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="title"    description="Title of the object.">         <ds:selectable expression="attribute[Title]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"         size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+	
+  <ds:service name="ChangeManagementUX.dateFields">
+  	<ds:field name="actualStateDate"    description="The actual state date of object"> <ds:selectable expression="attribute[Actual Start Date]" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+  	<ds:field name="actualCompletionDate" description="The actual end date of object"> <ds:selectable expression="attribute[Actual Completion Date]" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+  	<ds:field name="dueDate"            description="The actual state date of object"> <ds:selectable expression="attribute[Estimated Completion Date]" format="utc" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+  </ds:service>
+  
+  <ds:service name="ChangeManagementUX.changeorchestration" includeByDefault="never" >
+		<ds:data>
+			<!-- <ds:print/>	-->
+			<ds:jpo classname="ChgUXServicesChangeOrder" function="getChangeOrchestrationInfo" returnedData="idsAndData" localInvokation="false"/>	
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.changeOrchestrationBasicFields"  includeByDefault="yes"/>
+		<ds:ref-subservice name="ChangeManagementUX.changeOrchestrationFields"  includeByDefault="yes"/>	
+		<ds:field name="ecm_change_on_hold" description="Is change on hold"><ds:selectable expression="interface[Change On Hold]" modifyOperation="yes" readOperation="yes"/></ds:field>	
+		<ds:field name="isChangeAction" description="Is kind of change action type"><ds:selectable expression="type.kindof[Change Action]" readOperation="yes"/></ds:field>		
+
+		<ds:subservice name="connect" includeByDefault="never">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesChangeOrder" function="processChangeOrchestrationAction" processMultiple="true" localInvokation="false">
+					<ds:arg arg-name="action" arg-value="connect"/>
+				</ds:updatejpo>
+			</ds:data>
+		</ds:subservice>
+		
+		<ds:subservice name="disconnect" includeByDefault="never">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesChangeOrder" function="processChangeOrchestrationAction" processMultiple="true" localInvokation="false">
+					<ds:arg arg-name="action" arg-value="disconnect"/>
+				</ds:updatejpo>
+			</ds:data>
+		</ds:subservice>		
+		
+   </ds:service>
+  
+  <ds:service name="ChangeManagementUX.changeOrchestrationBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="owner"       description="The owner of the object">         <ds:selectable expression="owner"    type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person">
+            <ds:selectable expression="owner" type="bus" format="fullname"/>
+		</ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="description"    description="Description of the object.">         <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="title"    description="Title of the object.">         <ds:selectable expression="evaluate[if type.kindof[Change Order] then attribute[Title] else attribute[Synopsis]]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+	
+  <ds:service name="ChangeManagementUX.changeOrchestrationFields">
+        <ds:field name="severity"          description="The severity of object"><ds:selectable expression="attribute[Severity]" type="bus" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="severityNLS"          description="The NLS severity of object"><ds:selectable expression="attribute[Severity]" type="bus" format="range" modifyOperation="no" readOperation="yes"/></ds:field>		
+		<ds:field name="dueDate"            description="The actual state date of object"> <ds:selectable expression="attribute[Estimated Completion Date]" type="bus" format="utc" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="changeCoordinator" description="The Change Coordinator of object"> <ds:selectable expression="from[Change Coordinator].to.name" type="bus" /> </ds:field>
+		<ds:field name="changeCoordinatorFullName"  includeByDefault="yes" description="Full Name of the person">
+            <ds:selectable expression="from[Change Coordinator].to.name" type="bus" format="fullname"/>
+		</ds:field>
+  </ds:service>
+  <ds:service name="ChangeManagementUX.members" includeByDefault="never" >
+		<ds:data>
+			<ds:jpo classname="ChgUXServicesChangeOrder" function="getMembers" returnedData="idsAndData" localInvokation="false"/>		
+			<ds:updatejpo classname="ChgUXServicesChangeOrder" function="updateMembers" processMultiple="true" localInvokation="false"/>	
+		</ds:data>
+		<ds:field name="name"  includeByDefault="yes" description="Name of route template or full name of person"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="userid"  includeByDefault="yes" description="Name of the person"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title"  includeByDefault="yes" description="Title of user group"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="groupURI"  includeByDefault="yes" description="User group URI"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="roles"  includeByDefault="yes" description="roles of the member" ><ds:selectable multivalue="true" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>		
+		<!-- Input Fields for update operation -->
+		<ds:field name="role"  includeByDefault="never" description="Role of member"><ds:selectable modifyOperation="yes" readOperation="no"/></ds:field>
+		<ds:field name="user"  includeByDefault="never" description="user name"><ds:selectable modifyOperation="yes" readOperation="no"/></ds:field>
+		<ds:field name="list"  includeByDefault="never" description="route template list or member list value" ><ds:selectable modifyOperation="yes" readOperation="no"/></ds:field>       		
+  </ds:service>
+  
+  <ds:service name="ChangeManagementUX.changeorder.changerequest" includeByDefault="never" >
+        <ds:data>
+			<ds:jpo classname="ChgUXServicesChangeOrder" function="getCOChangeRequest" returnedData="idsAndData" localInvokation="false"/>
+        </ds:data>
+		
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="attribute[Title]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+  </ds:service>	
+
+	<ds:service name="ChangeManagementUX.accessBitFields"> 
+		<ds:field name="Delete" description="Delete access bit"><ds:selectable /></ds:field>
+		<ds:field name="RemoveReferential" description="Remove Referential content access bit"><ds:selectable /></ds:field>
+		<ds:field name="Cancel" description="Cancel access bit"><ds:selectable /></ds:field>
+		<ds:field name="TransferOwnership" description="Transfer Ownership access bit"><ds:selectable /></ds:field>
+		<ds:field name="Edit" description="Edit access bit"><ds:selectable /></ds:field>
+		<ds:field name="Promote" description="Promote access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddReferential" description="Add Referential content access bit"><ds:selectable /></ds:field>
+		<ds:field name="ManageRouteTemplates" description="Manage Route Templates access bit"><ds:selectable /></ds:field>
+		<ds:field name="Demote" description="Demote access bit"><ds:selectable /></ds:field>
+		<ds:field name="ManageGovernedChanges" description="Manage Governed Changes access bit"><ds:selectable /></ds:field>
+		<ds:field name="SetApplicability" description="Set Applicability access bit"><ds:selectable /></ds:field>
+		<ds:field name="SetCoordinator" description="Set Coordinator access bit"><ds:selectable /></ds:field>
+		<ds:field name="Hold" description="Hold access bit"><ds:selectable /></ds:field>
+		<ds:field name="Resume" description="Resume access bit"><ds:selectable /></ds:field>
+		<ds:field name="ManageReportedAgainst" description="Manage Reported Against access bit"><ds:selectable /></ds:field>
+		<ds:field name="ManageFollowers" description="Manage Followers access bit"><ds:selectable /></ds:field>		
+	</ds:service>  
+
+
+	<ds:service name="ChangeManagementUX.issues" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.issuesBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+
+	<ds:service name="ChangeManagementUX.issuesBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="attribute[Title]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+
+	<ds:service name="ChangeManagementUX.reportedAgainst" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.reportedAgainstBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.reportedAgainstBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+
+
+	<!-- Change Request web service definition -->
+	<ds:service name="ChangeManagementUX.changerequest">
+		<ds:data>
+			<ds:jpo classname="ChgUXServicesChangeRequest" function="getChangeRequests" returnedData="idsAndData" localInvokation="false"/>
+		</ds:data>
+
+        <ds:field name="type" description="The object type"> <ds:selectable expression="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/> </ds:field>
+        <ds:field name="typeNLS" description="The object type"> <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/> </ds:field>
+        <ds:field name="name" description="The object name."> <ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy" description="The policy of the object"> <ds:selectable expression="policy" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/> </ds:field>
+        <ds:field name="policyNLS" description="The policy of the object"> <ds:selectable expression="policy" format="policy" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/> </ds:field>
+        <ds:field name="description" description="Description of the object."> <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="title" description="Title of the object."> <ds:selectable expression="attribute[Title]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="current" description="Current lifecycle state"> <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="currentNLS" description="Current lifecycle state"> <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="originated" description="The creation date of the object."> <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization" description="The obejct organization">  <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project" description="The obejct project"> <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /> </ds:field>
+        <ds:field name="modified" description="Date of last modification to any object information."> <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/> </ds:field>
+        <ds:field name="originator" description="The user who originally created the object." includeByDefault="always"> <ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/> </ds:field>
+        <ds:field name="icon"> <ds:image source="businessType" size="icon"/> </ds:field>
+        <ds:field name="previewicon"> <ds:image source="primaryOrType" size="large" /> </ds:field>
+
+		<ds:field name="severity" description="The severity of object"> <ds:selectable expression="attribute[Severity]" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="severityNLS" description="The NLS severity of object"> <ds:selectable expression="attribute[Severity]" format="range" modifyOperation="no" readOperation="yes"/> </ds:field>		
+		<ds:field name="dueDate" description="The actual state date of object"> <ds:selectable expression="attribute[Estimated Completion Date]" format="utc" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="changeCoordinator" description="The Change Coordinator of object"> <ds:selectable expression="from[Change Coordinator].to.name" /> </ds:field>
+		<ds:field name="changeCoordinatorFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="from[Change Coordinator].to.name" type="bus" format="fullname"/>
+		</ds:field>		
+		<ds:field name="ecm_change_on_hold" description="Is change request on hold"> <ds:selectable expression="interface[Change On Hold]" modifyOperation="yes" readOperation="yes"/> </ds:field> 	
+		<ds:field name="changeActions" description="List of change actions"> <ds:selectable multivalue="true" modifyOperation="no" readOperation="yes"/> </ds:field> 	
+		<ds:field name="changeOrders" description="List of change orders"> <ds:selectable multivalue="true" modifyOperation="no" readOperation="yes"/> </ds:field> 			
+
+		<ds:ref-subservice name="members" referenceName="ChangeManagementUX.CR.members" includeByDefault="never"/>
+		<ds:ref-subservice name="resume" referenceName="ChangeManagementUX.CR.resume" includeByDefault="never"/>
+		<ds:ref-subservice name="hold" referenceName="ChangeManagementUX.CR.hold" includeByDefault="never"/>
+		<ds:ref-subservice name="cancel" referenceName="ChangeManagementUX.CR.cancel" includeByDefault="never"/>		
+		<ds:ref-subservice name="cancelChangeAnalysis" referenceName="ChangeManagementUX.CR.cancelChangeAnalysis" includeByDefault="never"/>
+		<ds:ref-subservice name="duplicateChangeAnalysis" referenceName="ChangeManagementUX.CR.duplicateChangeAnalysis" includeByDefault="never"/>
+		<ds:ref-subservice name="moveAffectedItems" referenceName="ChangeManagementUX.CR.moveAffectedItems" includeByDefault="never"/>
+		<ds:ref-subservice name="setWhyForAffectedItems" referenceName="ChangeManagementUX.CR.setWhyForAffectedItems" includeByDefault="never"/>
+		<ds:ref-subservice name="changeOrchestration" referenceName="ChangeManagementUX.CR.changeorchestration" includeByDefault="never"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeRequest" function="getChangeOrchestration" returnedData="idsAndData" localInvokation="false"/>	
+			</ds:data>
+		</ds:ref-subservice>
+		
+		<ds:ref-subservice name="affectedItems" referenceName="ChangeManagementUX.CR.affectedItems" includeByDefault="never"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeRequest" function="getAffectedItems" returnedData="idsAndData" localInvokation="false"/>	
+				<ds:updatejpo classname="ChgUXServicesChangeRequest" function="updateAffectedItems" processMultiple="true" localInvokation="false"/>	
+			</ds:data>
+		</ds:ref-subservice>
+		
+		<ds:ref-subservice name="impactAnalysis" referenceName="ChangeManagementUX.CR.impactAnalysis" includeByDefault="never"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeRequest" function="getImpactAnalysis" returnedData="idsAndData" localInvokation="false"/>	
+			</ds:data>
+		</ds:ref-subservice>
+
+		<ds:subservice name="impactAnalysisSummary" includeByDefault="never"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeRequest" function="getImpactAnalysisSummary" returnedData="idsAndData" localInvokation="false"/>	
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.CR.impactAnalysisBasicFields"  includeByDefault="yes"/>	
+			<ds:field name="impactBasisCount" description="Number of impact basis"> <ds:selectable modifyOperation="no" readOperation="yes"/> </ds:field> 	
+			<ds:field name="impactedItemsCount" description="Number of impacted items"> <ds:selectable modifyOperation="no" readOperation="yes"/> </ds:field> 
+			<ds:field name="contributorsCount" description="Number of contributors"> <ds:selectable modifyOperation="no" readOperation="yes"/> </ds:field> 	
+			<ds:field name="attachmentCount" description="Number of attachments"> <ds:selectable modifyOperation="no" readOperation="yes"/> </ds:field> 
+			<ds:field name="cancelComment" description="Cancel Comments"> <ds:selectable modifyOperation="no" readOperation="yes"/> </ds:field> 
+		</ds:subservice>		
+
+		<ds:ref-subservice name="reportedAgainst" referenceName="ChangeManagementUX.CR.reportedAgainst" includeByDefault="no"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeRequest" function="getReportedAgainstItems" returnedData="idsAndData" localInvokation="false"/>
+				<ds:updatejpo classname="ChgUXServicesChangeRequest" function="updateReportedAgainstItems" processMultiple="true" localInvokation="false"/>					
+			</ds:data>
+		</ds:ref-subservice>
+		
+		<ds:ref-subservice name="contexts" referenceName="ChangeManagementUX.CR.contexts" includeByDefault="no"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeRequest" function="getContextItems" returnedData="idsAndData" localInvokation="false"/>
+				<ds:updatejpo classname="ChgUXServicesChangeRequest" function="updateContextItems" processMultiple="true" localInvokation="false"/>					
+			</ds:data>
+		</ds:ref-subservice>	
+		
+		<ds:ref-subservice name="attachment" referenceName="ChangeManagementUX.CR.attachment" includeByDefault="no"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeRequest" function="getAttachment" returnedData="idsAndData" localInvokation="false"/>	
+			</ds:data>
+		</ds:ref-subservice>
+		
+		<ds:ref-subservice name="issues" referenceName="ChangeManagementUX.CR.issues" includeByDefault="no"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeRequest" function="getIssues" returnedData="idsAndData" localInvokation="false"/>
+			</ds:data>
+		</ds:ref-subservice>	
+		
+		<ds:subservice name="access" includeByDefault="never">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeRequest" function="getChangeRequestAccessBits" returnedData="idsAndData" localInvokation="false"/>
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.CR.accessBitFields"  includeByDefault="yes"/>
+		</ds:subservice>		
+		
+	</ds:service> 
+	
+	<ds:service name="ChangeManagementUX.CR.members" includeByDefault="never" >
+		<ds:data>
+			<ds:jpo classname="ChgUXServicesChangeRequest" function="getMembers" returnedData="idsAndData" localInvokation="false"/>		
+			<ds:updatejpo classname="ChgUXServicesChangeRequest" function="updateMembers" processMultiple="true" localInvokation="false"/>	
+		</ds:data>
+		<ds:field name="name"  includeByDefault="yes" description="Name of route template or full name of person"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="userid"  includeByDefault="yes" description="Name of the person"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title"  includeByDefault="yes" description="Title of user group"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="groupURI"  includeByDefault="yes" description="User group URI"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="roles"  includeByDefault="yes" description="roles of the member" ><ds:selectable multivalue="true" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>		
+		<!-- Input Fields for update operation -->
+		<ds:field name="role"  includeByDefault="never" description="Role of member"><ds:selectable modifyOperation="yes" readOperation="no"/></ds:field>
+		<ds:field name="user"  includeByDefault="never" description="user name"><ds:selectable modifyOperation="yes" readOperation="no"/></ds:field>
+		<ds:field name="list"  includeByDefault="never" description="route template list or member list value" ><ds:selectable modifyOperation="yes" readOperation="no"/></ds:field>       		
+	</ds:service>
+	
+	<ds:service name="ChangeManagementUX.CR.resume" includeByDefault="never">
+		<ds:data>
+			<ds:updatejpo classname="ChgUXServicesChangeRequest" function="processChangeRequestAction" processMultiple="false" localInvokation="false">
+				<ds:arg arg-name="action" arg-value="resume"/>
+			</ds:updatejpo>
+		</ds:data>
+			<ds:field name="reason" description="The comments associated with the resume action."><ds:selectable /></ds:field>
+	</ds:service>
+
+	<ds:service name="ChangeManagementUX.CR.hold" includeByDefault="never">
+		<ds:data>
+			<ds:updatejpo classname="ChgUXServicesChangeRequest" function="processChangeRequestAction" processMultiple="false" localInvokation="false">
+				<ds:arg arg-name="action" arg-value="hold"/>
+			</ds:updatejpo>
+		</ds:data>
+		<ds:field name="reason" description="The comments associated with the hold action."><ds:selectable /></ds:field>
+	</ds:service>		
+
+	<ds:service name="ChangeManagementUX.CR.cancel" includeByDefault="never">
+		<ds:data>
+			<ds:updatejpo classname="ChgUXServicesChangeRequest" function="processChangeRequestAction" processMultiple="false" localInvokation="false">
+				<ds:arg arg-name="action" arg-value="cancel"/>
+			</ds:updatejpo>
+		</ds:data>
+		<ds:field name="reason" description="The comments associated with the cancel action."><ds:selectable /></ds:field>
+	</ds:service>
+
+	<ds:service name="ChangeManagementUX.CR.moveAffectedItems" includeByDefault="never">
+		<ds:data>
+			<ds:updatejpo classname="ChgUXServicesChangeRequest" function="moveAffectedItems" processMultiple="false" localInvokation="false">
+			</ds:updatejpo>
+		</ds:data>
+	</ds:service>
+
+	<ds:service name="ChangeManagementUX.CR.setWhyForAffectedItems" includeByDefault="never">
+		<ds:data>
+			<ds:updatejpo classname="ChgUXServicesChangeRequest" function="setWhyForAffectedItems" processMultiple="true" localInvokation="false">
+			</ds:updatejpo>
+		</ds:data>
+	</ds:service>
+
+	<ds:service name="ChangeManagementUX.CR.cancelChangeAnalysis" includeByDefault="never">
+		<ds:data>
+			<ds:updatejpo classname="ChgUXServicesChangeRequest" function="cancelChangeAnalysis" processMultiple="true" localInvokation="false">
+				<ds:arg arg-name="action" arg-value="cancel"/>
+			</ds:updatejpo>
+		</ds:data>
+	</ds:service> 	
+	
+	<ds:service name="ChangeManagementUX.CR.duplicateChangeAnalysis" includeByDefault="never">
+		<ds:data>
+			<ds:updatejpo classname="ChgUXServicesChangeRequest" function="duplicateChangeAnalysis" processMultiple="true" localInvokation="false">				
+			</ds:updatejpo>
+		</ds:data>
+	</ds:service> 	
+
+    <ds:service name="ChangeManagementUX.CR.changeorchestration" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CR.changeOrchestrationBasicFields"  includeByDefault="yes"/>
+		<ds:ref-subservice name="ChangeManagementUX.CR.changeOrchestrationFields"  includeByDefault="yes"/>
+		<ds:field name="ecm_change_on_hold" description="Is change on hold"><ds:selectable expression="interface[Change On Hold]" modifyOperation="yes" readOperation="yes"/></ds:field>	
+		<ds:field name="isChangeAction" description="Is kind of change action type"><ds:selectable expression="type.kindof[Change Action]" readOperation="yes"/></ds:field>				
+		<ds:field name="proposed"  description="list of proposed items" ><ds:selectable multivalue="true" modifyOperation="no" readOperation="yes"/></ds:field>
+
+		<ds:subservice name="connect" includeByDefault="never">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesChangeRequest" function="processChangeOrchestrationAction" processMultiple="true" localInvokation="false">
+					<ds:arg arg-name="action" arg-value="connect"/>
+				</ds:updatejpo>
+			</ds:data>
+		</ds:subservice>
+		
+		<ds:subservice name="disconnect" includeByDefault="never">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesChangeRequest" function="processChangeOrchestrationAction" processMultiple="true" localInvokation="false">
+					<ds:arg arg-name="action" arg-value="disconnect"/>
+				</ds:updatejpo>
+			</ds:data>
+		</ds:subservice>
+		
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.CR.changeOrchestrationBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="owner"       description="The owner of the object">         <ds:selectable expression="owner"    type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person">
+            <ds:selectable expression="owner" type="bus" format="fullname"/>
+		</ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="description"    description="Description of the object.">         <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="title"    description="Title of the object.">         <ds:selectable expression="evaluate[if type.kindof[Change Order] then attribute[Title] else attribute[Synopsis]]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+
+  <ds:service name="ChangeManagementUX.CR.changeOrchestrationFields">
+        <ds:field name="severity"          description="The severity of object"><ds:selectable expression="attribute[Severity]" type="bus" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="severityNLS"          description="The NLS severity of object"><ds:selectable expression="attribute[Severity]" type="bus" format="range" modifyOperation="no" readOperation="yes"/></ds:field>		
+		<ds:field name="dueDate"            description="The actual state date of object"> <ds:selectable expression="attribute[Estimated Completion Date]" type="bus" format="utc" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="changeCoordinator" description="The Change Coordinator of object"> <ds:selectable expression="from[Change Coordinator].to.name" type="bus" /> </ds:field>
+		<ds:field name="changeCoordinatorFullName"  includeByDefault="yes" description="Full Name of the person">
+            <ds:selectable expression="from[Change Coordinator].to.name" type="bus" format="fullname"/>
+		</ds:field>
+  </ds:service>
+  
+	<ds:service name="ChangeManagementUX.CR.affectedItems" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CR.affectedItemsBasicFields"  includeByDefault="yes"/>			
+		<ds:subservice name="impactAnalysis"></ds:subservice>		
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.CR.affectedItemsBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>	
+
+	<ds:service name="ChangeManagementUX.AI.impactAnalysis" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.AI.impactAnalysisBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.AI.impactAnalysisBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+
+	<ds:service name="ChangeManagementUX.CR.impactAnalysis" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CR.impactAnalysisBasicFields"  includeByDefault="yes"/>			
+		<ds:subservice name="impactBasis" includeByDefault="no">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesChangeRequest" function="updateIAImpactBasis" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+		</ds:subservice>
+		<ds:subservice name="impactedItems" includeByDefault="no">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesChangeRequest" function="updateIAImpactedItems" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+		</ds:subservice>
+		<ds:subservice name="contributors" includeByDefault="no">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesChangeRequest" function="updateImpactAnalysisContributors" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+		</ds:subservice>
+		<ds:ref-subservice name="attachment" referenceName="ChangeManagementUX.IA.attachment" includeByDefault="yes"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeRequest" function="getImpactAnalysisAttachment" returnedData="idsAndData" localInvokation="false"/>	
+			</ds:data>
+		</ds:ref-subservice>
+		<ds:subservice name="access" includeByDefault="never">
+			<ds:ref-subservice name="ChangeManagementUX.IA.accessBitFields"  includeByDefault="yes"/>
+		</ds:subservice>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.CR.impactAnalysisBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>	
+
+	<ds:service name="ChangeManagementUX.IA.impactBasis" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.IA.impactBasisBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.IA.impactBasisBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+
+	<ds:service name="ChangeManagementUX.IA.impactedItems" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.IA.impactedItemsBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.IA.impactedItemsBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+
+	<ds:service name="ChangeManagementUX.IA.attachment" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.IA.attachmentBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.IA.attachmentBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+	
+	<ds:service name="ChangeManagementUX.IA.contributors" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.IA.contributorsBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.IA.contributorsBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="personFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="name" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>	
+
+	<ds:service name="ChangeManagementUX.CR.reportedAgainst" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CR.reportedAgainstBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.CR.reportedAgainstBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+
+	<ds:service name="ChangeManagementUX.CR.contexts" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CR.contextBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.CR.contextBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+
+	<ds:service name="ChangeManagementUX.CR.attachment" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CR.attachmentBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.CR.attachmentBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>		
+	
+	<ds:service name="ChangeManagementUX.CR.accessBitFields"> 
+		<ds:field name="Delete" description="Delete access bit"><ds:selectable /></ds:field>
+		<ds:field name="RemoveReferential" description="Remove Referential content access bit"><ds:selectable /></ds:field>
+		<ds:field name="Cancel" description="Cancel access bit"><ds:selectable /></ds:field>
+		<ds:field name="TransferOwnership" description="Transfer Ownership access bit"><ds:selectable /></ds:field>
+		<ds:field name="Edit" description="Edit access bit"><ds:selectable /></ds:field>
+		<ds:field name="Promote" description="Promote access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddReferential" description="Add Referential content access bit"><ds:selectable /></ds:field>
+		<ds:field name="ManageRouteTemplates" description="Manage Route Templates access bit"><ds:selectable /></ds:field>
+		<ds:field name="Demote" description="Demote access bit"><ds:selectable /></ds:field>
+		<ds:field name="SetApplicability" description="Set Applicability access bit"><ds:selectable /></ds:field>
+		<ds:field name="SetCoordinator" description="Set Coordinator access bit"><ds:selectable /></ds:field>
+		<ds:field name="Hold" description="Hold access bit"><ds:selectable /></ds:field>
+		<ds:field name="Resume" description="Resume access bit"><ds:selectable /></ds:field>
+		<ds:field name="ManageReportedAgainst" description="Manage reported against items"><ds:selectable /></ds:field>
+		<ds:field name="ManageImplementingChanges" description="Manage implementing changes"><ds:selectable /></ds:field>
+		<ds:field name="ManageContext" description="Manage context"><ds:selectable /></ds:field>
+		<ds:field name="ManageChangeAnalysis" description="Manage change analysis"><ds:selectable /></ds:field>
+		<ds:field name="ManageFollowers" description="Manage followers"><ds:selectable /></ds:field>
+		<ds:field name="ManageAffectedItem" description="Manage affected items"><ds:selectable /></ds:field>		
+	</ds:service>  	
+
+	<ds:service name="ChangeManagementUX.IA.accessBitFields"> 
+		<ds:field name="RemoveAssignee" description="Remove assignee access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddImpactedItems" description="Add impacted items access bit"><ds:selectable /></ds:field>
+		<ds:field name="ManageAttachments" description="Manage attachment access bit"><ds:selectable /></ds:field>
+		<ds:field name="TransferOwnership" description="Transfer Ownership access bit"><ds:selectable /></ds:field>
+		<ds:field name="Edit" description="Edit access bit"><ds:selectable /></ds:field>
+		<ds:field name="Hold" description="Hold access bit"><ds:selectable /></ds:field>
+		<ds:field name="Resume" description="Resume access bit"><ds:selectable /></ds:field>
+		<ds:field name="Cancel" description="Cancel access bit"><ds:selectable /></ds:field>		
+		<ds:field name="Promote" description="Promote access bit"><ds:selectable /></ds:field>
+		<ds:field name="RemoveImpactBasis" description="Remove impact basis access bit"><ds:selectable /></ds:field>
+		<ds:field name="RemoveImpactedItems" description="Remove impacted items access bit"><ds:selectable /></ds:field>
+		<ds:field name="Demote" description="Demote access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddAssignee" description="Add assignee access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddImpactBasis" description="Add impact basis access bit"><ds:selectable /></ds:field>	
+	</ds:service>  	
+
+	<ds:service name="ChangeManagementUX.CR.issues" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CR.issuesBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.CR.issuesBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="attribute[Title]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+	
+	<!-- Connected Change of object web service definition --> 
+	<ds:service name="ChangeManagementUX.connectedChange">
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:subservice name="proposedChangeActions" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesConnectedChange" function="getProposedChangeActions" returnedData="idsAndData" localInvokation="false"/>
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.CA.basicFields"  includeByDefault="yes"/>			
+		</ds:subservice>
+		<ds:subservice name="connectImpactedItemsAsProposed" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesConnectedChange" function="connectImpactedItemsAsProposed" returnedData="idsAndData" localInvokation="false"/>
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.CA.basicFields"  includeByDefault="yes"/>			
+		</ds:subservice>
+		<ds:subservice name="connectAffectedItemsAsAnalysisBasis" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesConnectedChange" function="connectAffectedItemsAsAnalysisBasis" returnedData="idsAndData" localInvokation="false"/>
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.AI.impactAnalysisBasicFields"  includeByDefault="yes"/>			
+		</ds:subservice>
+		<ds:subservice name="mergeChangeAction" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesConnectedChange" function="mergeChangeAction" returnedData="idsAndData" localInvokation="false"/>
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.CA.basicFields"  includeByDefault="yes"/>			
+		</ds:subservice>
+		<ds:subservice name="genericResourceFetch" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesConnectedChange" function="genericResourceFetch" returnedData="idsAndData" localInvokation="false"/>
+			</ds:data>	
+		</ds:subservice>
+		
+		<!-- VMN8 -->
+		<ds:subservice name="fetchApplicabilityFrom" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesConnectedChange" function="fetchApplicabilityFrom" returnedData="idsAndData" localInvokation="false"/>
+			</ds:data>	
+		</ds:subservice>
+
+		<ds:subservice name="orchestrateItemsForChange" includeByDefault="no">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesConnectedChange" function="orchestrateItemsForChange" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+		</ds:subservice>
+		
+		<ds:subservice name="license" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesConnectedChange" function="getLicense" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+		</ds:subservice>
+		
+		
+		
+	</ds:service>
+		
+	<ds:service name="ChangeManagementUX.CA.basicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="attribute[Synopsis]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+        <ds:field name="severity"          description="The severity of object"><ds:selectable expression="attribute[Severity]" type="bus" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="severityNLS"          description="The NLS severity of object"><ds:selectable expression="attribute[Severity]" type="bus" format="range" modifyOperation="no" readOperation="yes"/></ds:field>		
+				<ds:field name="dueDate"            description="The actual state date of object"> <ds:selectable expression="attribute[Estimated Completion Date]" type="bus" format="utc" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+				<ds:field name="ecm_change_on_hold" description="Is change request on hold"> <ds:selectable expression="interface[Change On Hold]" modifyOperation="yes" readOperation="yes"/> </ds:field> 	
+    </ds:service>
+	
+	<!-- Impact Analysis service definition -->
+	<ds:service name="ChangeManagementUX.impactAnalysis" >
+		<ds:data>
+			<ds:jpo classname="ChgUXServicesImpactAnalysis" function="getImpactAnalysisInfo" returnedData="idsAndData" localInvokation="false"/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CR.impactAnalysisBasicFields"  includeByDefault="yes"/>
+		<ds:field name="impactBasisCount" description="Number of impact basis"> <ds:selectable modifyOperation="no" readOperation="yes"/> </ds:field> 	
+		<ds:field name="impactedItemsCount" description="Number of impacted items"> <ds:selectable modifyOperation="no" readOperation="yes"/> </ds:field> 
+		<ds:field name="contributorsCount" description="Number of contributors"> <ds:selectable modifyOperation="no" readOperation="yes"/> </ds:field> 	
+		<ds:field name="attachmentCount" description="Number of attachments"> <ds:selectable modifyOperation="no" readOperation="yes"/> </ds:field> 		
+		<ds:subservice name="impactBasis" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesImpactAnalysis" function="getImpactBasis" returnedData="ids" localInvokation="false"/>
+				<ds:updatejpo classname="ChgUXServicesImpactAnalysis" function="updateImpactBasis" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.IA.impactBasisBasicFields"  includeByDefault="yes"/>	
+		</ds:subservice>
+		<ds:subservice name="impactedItems" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesImpactAnalysis" function="getImpactedItems" returnedData="ids" localInvokation="false"/>
+				<ds:updatejpo classname="ChgUXServicesImpactAnalysis" function="updateImpactedItems" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.IA.impactedItemsBasicFields"  includeByDefault="yes"/>
+		</ds:subservice>
+		<ds:subservice name="contributors" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesImpactAnalysis" function="getContributors" returnedData="ids" localInvokation="false"/>
+				<ds:updatejpo classname="ChgUXServicesImpactAnalysis" function="updateContributors" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.IA.contributorsBasicFields"  includeByDefault="yes"/>
+		</ds:subservice>
+		<ds:subservice name="attachment" includeByDefault="no"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesImpactAnalysis" function="getAttachment" returnedData="idsAndData" localInvokation="false"/>	
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.IA.attachmentBasicFields"  includeByDefault="yes"/>
+		</ds:subservice>
+		<ds:subservice name="access" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesImpactAnalysis" function="getAccessBits" returnedData="idsAndData" localInvokation="false"/>	
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.IA.accessBitFields"  includeByDefault="yes"/>
+		</ds:subservice>
+
+		<ds:subservice name="setWhyForImpactBasis" includeByDefault="no">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesImpactAnalysis" function="setWhyForImpactBasis" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+		</ds:subservice>
+
+		<ds:subservice name="setWhyForImpactedItems" includeByDefault="no">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesImpactAnalysis" function="setWhyForImpactedItems" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+		</ds:subservice>
+		<ds:subservice name="setStatusForImpactedItems" includeByDefault="no">
+			<ds:data>				
+				<ds:updatejpo classname="ChgUXServicesImpactAnalysis" function="setStatusForImpactedItems" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+		</ds:subservice>
+				
+		<ds:subservice name="implementingChangeActions" includeByDefault="no">
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesImpactAnalysis" function="getImplementingChangeActions" returnedData="ids" localInvokation="false"/>
+			</ds:data>
+			<ds:ref-subservice name="ChangeManagementUX.CA.basicFields"  includeByDefault="yes"/>
+		</ds:subservice>
+
+
+		<ds:subservice name="connectImpactedItemsAsProposed" includeByDefault="no">
+			<ds:data>
+				<ds:updatejpo classname="ChgUXServicesImpactAnalysis" function="connectImpactedItemsAsProposedAndCAtoIA" processMultiple="true" localInvokation="false"/>
+			</ds:data>
+		</ds:subservice>
+				
+	</ds:service>	
+
+	
+	<ds:service name="ChangeManagementUX.changeaction">
+		<ds:data>
+			<ds:jpo classname="ChgUXServicesChangeAction" function="getChangeActions" returnedData="idsAndData" localInvokation="false"/>
+		</ds:data>
+		
+		
+		<ds:ref-subservice name="ChangeManagementUX.CA.basicFields"  includeByDefault="yes"/>
+        
+		<ds:field name="description"    description="Description of the object.">         <ds:selectable expression="description"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/></ds:field>
+		
+		<ds:field name="groupId" description="The group physical id of Change Action"> <ds:selectable expression="from[Change Action Group].to.physicalid" type="bus" /> </ds:field>
+		<ds:field name="groupName" description="The group name id of Change Action"> <ds:selectable expression="from[Change Action Group].to.name" type="bus" /> </ds:field>
+
+		
+		<ds:ref-subservice name="members" referenceName="ChangeManagementUX.CA.members" includeByDefault="never"/>
+		<ds:ref-subservice name="resume" referenceName="ChangeManagementUX.CA.resume" includeByDefault="never"/>
+		<ds:ref-subservice name="hold" referenceName="ChangeManagementUX.CA.hold" includeByDefault="never"/>
+		<ds:ref-subservice name="cancel" referenceName="ChangeManagementUX.CA.cancel" includeByDefault="never"/>
+		<ds:ref-subservice name="changeorder" referenceName="ChangeManagementUX.changeaction.changeorder" includeByDefault="never"/>
+		<ds:ref-subservice name="contexts" referenceName="ChangeManagementUX.CA.contexts" includeByDefault="no"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeAction" function="getContextItems" returnedData="idsAndData" localInvokation="false"/>
+				<ds:updatejpo classname="ChgUXServicesChangeAction" function="updateContextItems" processMultiple="true" localInvokation="false"/>					
+			</ds:data>
+		</ds:ref-subservice>
+		
+		<ds:ref-subservice name="issues" referenceName="ChangeManagementUX.CA.issues" includeByDefault="no"> 
+			<ds:data>
+				<ds:jpo classname="ChgUXServicesChangeAction" function="getIssues" returnedData="idsAndData" localInvokation="false"/>
+			</ds:data>
+		</ds:ref-subservice>	
+		
+		<ds:ref-subservice name="access" referenceName="ChangeManagementUX.CA.access" includeByDefault="no" /> 
+		
+	</ds:service>
+	
+	<ds:service name="ChangeManagementUX.CA.issues" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CA.issuesBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.CA.issuesBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="attribute[Title]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+	
+    
+	<!--this part is for documentation purpose only-->
+	<ds:service name="ChangeManagementUX.CA.accessBitFields"> 
+		<ds:field name="Delete" description="Delete access bit"><ds:selectable /></ds:field>
+		<ds:field name="OpenReferential" description="Open Referential content access bit"><ds:selectable /></ds:field>
+		<ds:field name="DeleteCO" description="Delete parent CO access bit"><ds:selectable /></ds:field>
+		<ds:field name="Cancel" description="Cancel access bit"><ds:selectable /></ds:field>
+		<ds:field name="WorkUnder" description="Work Under access bit"><ds:selectable /></ds:field>
+		<ds:field name="DeleteContext" description="Delete context content access bit"><ds:selectable /></ds:field>
+		<ds:field name="RealizedTransfer" description="Transfer Realized access bit"><ds:selectable /></ds:field>
+		<ds:field name="FlowdownFrom" description="Flowdown From access bit"><ds:selectable /></ds:field>
+		<ds:field name="Edit" description="Edit access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddContributor" description="Add Contributor access bit"><ds:selectable /></ds:field>
+		<ds:field name="Reject" description="Reject access bit"><ds:selectable /></ds:field>
+		<ds:field name="DeleteReferential" description="Remove Referential content access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddReferential" description="Add Referential content access bit"><ds:selectable /></ds:field>
+		<ds:field name="proposedStatusAsNotStarted" description="Allow proposed status as Not Started access bit"><ds:selectable /></ds:field>
+		<ds:field name="RemoveFollower" description="Remove Follower access bit"><ds:selectable /></ds:field>
+		<ds:field name="SetApplicability" description="Set Applicability access bit"><ds:selectable /></ds:field>
+		<ds:field name="RemoveFromGroup" description="Remove From Group access bit"><ds:selectable /></ds:field>
+		<ds:field name="Approve" description="Approve access bit"><ds:selectable /></ds:field>
+		<ds:field name="FlowdownTo" description="Flowdown To access bit"><ds:selectable /></ds:field>
+		<ds:field name="RemoveReviewer" description="Remove Reviewer access bit"><ds:selectable /></ds:field>
+		<ds:field name="Automation" description="Automation access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddReviewer" description="Add Reviewer access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddContext" description="Add Context content access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddToGroup" description="Add To Group access bit"><ds:selectable /></ds:field>
+		<ds:field name="proposedStatusAsStarted" description="Allow proposed status as Started access bit"><ds:selectable /></ds:field>
+		<ds:field name="Promote" description="Promote access bit"><ds:selectable /></ds:field>
+		<ds:field name="DeleteProposed" description="Delete Proposed access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddFollower" description="Add Follower access bit"><ds:selectable /></ds:field>
+		<ds:field name="Synchronization" description="Synchronization access bit"><ds:selectable /></ds:field>
+		<ds:field name="RemoveContributor" description="Remove Contributor access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddProposed" description="Add Proposed access bit"><ds:selectable /></ds:field>
+		<ds:field name="AddCO" description="Add parent CO access bit"><ds:selectable /></ds:field>		
+		<ds:field name="proposedStatusAsIgnored" description="Allow proposed status as Ignored access bit"><ds:selectable /></ds:field>
+		<ds:field name="Demote" description="Demote access bit"><ds:selectable /></ds:field>
+		<ds:field name="Transfer" description="Transfer access bit"><ds:selectable /></ds:field>
+		<ds:field name="proposedStatusAsRejected" description="Allow proposed status as Rejected access bit"><ds:selectable /></ds:field>
+		<ds:field name="ImpactAnalysis" description="Access bit for impact analysis"><ds:selectable /></ds:field>
+		<ds:field name="proposedStatusAsComplete" description="Allow proposed status as Complete access bit"><ds:selectable /></ds:field>
+		<ds:field name="Hold" description="Hold access bit"><ds:selectable /></ds:field>
+		<ds:field name="Resume" description="Resume access bit"><ds:selectable /></ds:field>		
+	</ds:service>
+
+	<ds:service name="ChangeManagementUX.CA.members" includeByDefault="never" >
+		<ds:data>
+			<ds:jpo classname="ChgUXServicesChangeAction" function="getMembers" returnedData="idsAndData" localInvokation="false"/>		
+			<ds:updatejpo classname="ChgUXServicesChangeAction" function="updateMembers" processMultiple="true" localInvokation="false"/>	
+		</ds:data>
+		<ds:field name="name"  includeByDefault="yes" description="Name of route template or full name of person"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="userid"  includeByDefault="yes" description="Name of the person"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title"  includeByDefault="yes" description="Title of user group"><ds:selectable modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="roles"  includeByDefault="yes" description="roles of the member" ><ds:selectable multivalue="true" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>		
+		<!-- Input Fields for update operation -->
+		<ds:field name="role"  includeByDefault="never" description="Role of member"><ds:selectable modifyOperation="yes" readOperation="no"/></ds:field>
+		<ds:field name="user"  includeByDefault="never" description="user name"><ds:selectable modifyOperation="yes" readOperation="no"/></ds:field>
+		<ds:field name="list"  includeByDefault="never" description="route template list or member list value" ><ds:selectable modifyOperation="yes" readOperation="no"/></ds:field>       		
+	</ds:service>  
+	<ds:service name="ChangeManagementUX.CA.resume" includeByDefault="never">
+		<ds:data>
+			<ds:updatejpo classname="ChgUXServicesChangeAction" function="processChangeActionAction" processMultiple="false" localInvokation="false">
+				<ds:arg arg-name="action" arg-value="resume"/>
+			</ds:updatejpo>
+		</ds:data>
+			<ds:field name="reason" description="The comments associated with the resume action."><ds:selectable /></ds:field>
+	</ds:service>
+
+	<ds:service name="ChangeManagementUX.CA.hold" includeByDefault="never">
+		<ds:data>
+			<ds:updatejpo classname="ChgUXServicesChangeAction" function="processChangeActionAction" processMultiple="false" localInvokation="false">
+				<ds:arg arg-name="action" arg-value="hold"/>
+			</ds:updatejpo>
+		</ds:data>
+		<ds:field name="reason" description="The comments associated with the hold action."><ds:selectable /></ds:field>
+	</ds:service>		
+
+	<ds:service name="ChangeManagementUX.CA.cancel" includeByDefault="never">
+		<ds:data>
+			<ds:updatejpo classname="ChgUXServicesChangeAction" function="processChangeActionAction" processMultiple="false" localInvokation="false">
+				<ds:arg arg-name="action" arg-value="cancel"/>
+			</ds:updatejpo>
+		</ds:data>
+		<ds:field name="reason" description="The comments associated with the cancel action."><ds:selectable /></ds:field>
+	</ds:service> 	
+	
+	<ds:service name="ChangeManagementUX.CA.access" includeByDefault="never">
+		<ds:data>
+			<ds:jpo classname="ChgUXServicesChangeAction" function="getChangeActionAccessBits" returnedData="idsAndData" localInvokation="false"/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CA.accessBitFields"  includeByDefault="yes"/>
+	</ds:service>
+	
+	<ds:service name="ChangeManagementUX.CA.contexts" includeByDefault="never" >
+		<ds:data>
+			<ds:print/>
+		</ds:data>
+		<ds:ref-subservice name="ChangeManagementUX.CA.contextBasicFields"  includeByDefault="yes"/>			
+	</ds:service>
+  
+	<ds:service name="ChangeManagementUX.CA.contextBasicFields">
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="revision"           description="The object revision.">         <ds:selectable expression="revision"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else if attribute[Display Name] != '' then attribute[Display Name] else if attribute[Marketing Name] != '' then attribute[Marketing Name] else if type.attribute[PLMEntity.V_Name] == TRUE then attribute[PLMEntity.V_Name] else if type.attribute[V_Name] == TRUE then attribute[V_Name] else name ]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+				<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+    </ds:service>
+    <ds:service name="ChangeManagementUX.changeaction.changeorder" includeByDefault="never" >
+        <ds:data>
+			<ds:jpo classname="ChgUXServicesChangeAction" function="getCAChangeOrder" returnedData="idsAndData" localInvokation="false"/>
+        </ds:data>
+		
+        <ds:field name="type"           description="The object type">         <ds:selectable expression="type"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="typeNLS"           description="The object type">         <ds:selectable expression="type" format="type" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="name"           description="The object name.">         <ds:selectable expression="name"         type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="title" description="Title of the object."> <ds:selectable expression="attribute[Title]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+		<ds:field name="owner" description="The owner of the object"> <ds:selectable expression="owner" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/> </ds:field>
+        <ds:field name="ownerFullName"  includeByDefault="yes" description="Full Name of the person"> <ds:selectable expression="owner" type="bus" format="fullname"/> </ds:field>
+        <ds:field name="policy"         description="The policy of the object">           <ds:selectable expression="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="policyNLS"         description="The policy of the object">           <ds:selectable expression="policy" format="policy"     type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+		<ds:field name="current"          description="Current lifecycle state">            <ds:selectable expression="current" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="currentNLS"          description="Current lifecycle state">            <ds:selectable expression="current" format="state" createOperation="no" modifyOperation="yes" readOperation="yes"/></ds:field>
+        <ds:field name="originated"     description="The creation date of the object.">   <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="organization"   description="The obejct organization">            <ds:selectable expression="organization" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="project"        description="The obejct project">                 <ds:selectable expression="project" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes" /></ds:field>
+        <ds:field name="modified"       description="Date of last modification to any object information.">      <ds:selectable expression="modified"   format="utc" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="originator"     description="The user who originally created the object." includeByDefault="always"><ds:selectable expression="attribute[Originator]" format="transient" createOperation="no" modifyOperation="no" readOperation="yes"/></ds:field>
+        <ds:field name="icon"       >       <ds:image source="businessType"     size="icon" /></ds:field>
+        <ds:field name="previewicon"  >     <ds:image source="primaryOrType"    size="large" /></ds:field>
+  </ds:service>
+</ds:services>
+

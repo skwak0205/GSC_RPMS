@@ -1,0 +1,16 @@
+del command 'AEFAttachmentsTreeCategory';
+add command 'AEFAttachmentsTreeCategory'
+	description	'Mail Attachments'
+	label	'emxFramework.IconMail.Attachments'
+	href	'emxCompMailAttachmentSummaryFS.jsp'
+	alt	'emxNavigator.UIMenu.ChangePassword'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'iconSmallAttachment.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFAttachmentsTreeCategory'
+	property	'version'	value	'9-5-0-0'
+;
+#channel ==>Icon Mail
+add property command_AEFAttachmentsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'AEFAttachmentsTreeCategory';

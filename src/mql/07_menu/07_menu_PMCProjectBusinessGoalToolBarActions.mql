@@ -1,0 +1,19 @@
+del menu 'PMCProjectBusinessGoalToolBarActions';
+add menu 'PMCProjectBusinessGoalToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	command	'PMCBusinessGoalSummaryCreateNew'
+	command	'PMCBusinessGoalAddExisting'
+	command	'PMCBusinessGoalRemove'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBusinessGoalToolBarActions'
+	property 'version'	value	'R419'
+;
+add property menu_PMCProjectBusinessGoalToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBusinessGoalToolBarActions';

@@ -1,0 +1,27 @@
+del command 'BusinessUnitRemoveSelected';
+add command 'BusinessUnitRemoveSelected'
+	description	'Business Unit Remove Selected Command Object'
+	label	'emxComponents.Common.RemoveSelected'
+	href	'${COMPONENT_DIR}/emxComponentsConfigurableTableDisconnectProcess.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForBUAddRemove'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Common.MsgConfirm'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'BusinessUnitRemoveSelected'
+	property	'version'	value	'R421'
+;
+modify menu BusinessUnitSummaryBottomActionBar add command BusinessUnitRemoveSelected order command BusinessUnitRemoveSelected 0;
+modify menu APPBusinessUnitSummaryActionsToolBar add command BusinessUnitRemoveSelected order command BusinessUnitRemoveSelected 5;
+#channel ==>BusinessUnitSummaryBottomActionBarAPPBusinessUnitSummaryActionsToolBar
+add property command_BusinessUnitRemoveSelected on program eServiceSchemaVariableMapping.tcl to command 'BusinessUnitRemoveSelected';

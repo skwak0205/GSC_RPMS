@@ -1,0 +1,20 @@
+del command 'AEFPageURL';
+add command 'AEFPageURL'
+	description	''
+	label	'emxFramework.Common.Tooltip.PageURL'
+	href	'javascript:copyURL()'
+	alt	'emxFramework.Common.Tooltip.PageURL'
+	setting	'Target Location'		'listHidden'
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Function'		'hasAccessPageURL'
+	setting	'Access Program'		'emxAEFUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFPageURL'
+	property	'version'	value	'R419'
+;
+modify menu AEFShareMenu add command AEFPageURL order command AEFPageURL 0;
+#channel ==>AEFShareMenu
+add property command_AEFPageURL on program eServiceSchemaVariableMapping.tcl to command 'AEFPageURL';

@@ -1,0 +1,25 @@
+del command 'PLCRequirementRemovedEvent';
+add command 'PLCRequirementRemovedEvent'
+	description	'Requirement Removed Event'
+	label	'PublishSubscribe.Event.RequirementRemoved'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Event Type'		'Requirement Removed'
+	setting	'Access Function'		'showRequirementAddedRemovedEvent'
+	setting	'Access Program'		'emxProductLine'
+	setting	'History Bit'		'disconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCRequirementRemovedEvent'
+	property	'version'	value	'R418'
+;
+modify menu PLCProductsEvents add command PLCRequirementRemovedEvent order command PLCRequirementRemovedEvent 27;
+modify menu FTRFeaturesEvents add command PLCRequirementRemovedEvent order command PLCRequirementRemovedEvent 9;
+modify menu FTRFeatureSubscriptionEvents add command PLCRequirementRemovedEvent order command PLCRequirementRemovedEvent 9;
+modify menu FTRConfigurationFeatureSubscriptionEvents add command PLCRequirementRemovedEvent order command PLCRequirementRemovedEvent 8;
+modify menu FTRLogicalFeatureSubscriptionEvents add command PLCRequirementRemovedEvent order command PLCRequirementRemovedEvent 16;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command PLCRequirementRemovedEvent order command PLCRequirementRemovedEvent 14;
+#channel ==>PLCProductsEventsFTRFeaturesEventsFTRFeatureSubscriptionEventsFTRConfigurationFeatureSubscriptionEventsFTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_PLCRequirementRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'PLCRequirementRemovedEvent';

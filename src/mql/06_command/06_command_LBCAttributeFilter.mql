@@ -1,0 +1,19 @@
+del command 'LBCAttributeFilter';
+add command 'LBCAttributeFilter'
+	description	''
+	label	'emxLibraryCentral.Command.Filter.Attribute'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Action Label'		'emxLibraryCentral.Command.Filter.Attribute'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeFilter'
+	property	'version'	value	'R421'
+;
+modify menu LBCAttributeAddExisting add command LBCAttributeFilter order command LBCAttributeFilter 0;
+#channel ==>LBCAttributeAddExisting
+add property command_LBCAttributeFilter on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeFilter';

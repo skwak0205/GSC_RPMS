@@ -1,0 +1,19 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통코드 Master list toolbar
+################################################################################################
+#del menu "gscCommonCodeMasterToolbar";
+add menu "gscCommonCodeMasterToolbar"
+    description ""
+    label   "emxComponents.Menu.gscCommonCodeMasterToolbar"
+    alt     "emxComponents.Menu.gscCommonCodeMasterToolbar"
+    menu gscCommonCodeMasterToolbarActions
+    setting "Registered Suite" "Components"
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2023.01.10"
+property "original name"    value "gscCommonCodeMasterToolbar"
+;
+add property menu_gscCommonCodeMasterToolbar on program eServiceSchemaVariableMapping.tcl to menu 'gscCommonCodeMasterToolbar';

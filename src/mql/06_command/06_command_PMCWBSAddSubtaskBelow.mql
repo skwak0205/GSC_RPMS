@@ -1,0 +1,33 @@
+del command 'PMCWBSAddSubtaskBelow';
+add command 'PMCWBSAddSubtaskBelow'
+	description	''
+	label	'emxProgramCentral.Common.CreateTask'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=AddTaskBelow'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSAddSubtaskBelow'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSRMBActions add command PMCWBSAddSubtaskBelow order command PMCWBSAddSubtaskBelow 4;
+modify menu type_TaskManagementRMB add command PMCWBSAddSubtaskBelow order command PMCWBSAddSubtaskBelow 5;
+modify menu type_ProjectConceptRMB add command PMCWBSAddSubtaskBelow order command PMCWBSAddSubtaskBelow 3;
+modify menu PMCAddTaskMenu add command PMCWBSAddSubtaskBelow order command PMCWBSAddSubtaskBelow 0;
+modify menu type_GateRMB add command PMCWBSAddSubtaskBelow order command PMCWBSAddSubtaskBelow 5;
+modify menu PMCWBSToolBar add command PMCWBSAddSubtaskBelow order command PMCWBSAddSubtaskBelow 1;
+modify menu PMCWhatIFExperimentActionToolbar add command PMCWBSAddSubtaskBelow order command PMCWBSAddSubtaskBelow 1;
+#channel ==>PMCWBSRMBActionstype_TaskManagementRMBtype_ProjectConceptRMBPMCAddTaskMenutype_GateRMBPMCWBSToolBarPMCWhatIFExperimentActionToolbar
+add property command_PMCWBSAddSubtaskBelow on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSAddSubtaskBelow';

@@ -1,0 +1,23 @@
+del command 'PLCRevisionsTreeCategory';
+add command 'PLCRevisionsTreeCategory'
+	description	''
+	label	'emxProduct.Tree.Revisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCRevisionsList&header=emxProduct.Heading.ProductRevisions&selection=multiple&program=emxPLCCommon:getAllRevisions&toolbar=PLCRevisionsListToolBar&sortColumnName=Name&HelpMarker=emxhelprevisionlist&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'policy != "Requirement Version"'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallRevision.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCRevisionsTreeCategory'
+	property	'version'	value	'V6R2010'
+;
+modify menu type_TestCase add command PLCRevisionsTreeCategory order command PLCRevisionsTreeCategory 12;
+modify menu type_ConfigurationFeature add command PLCRevisionsTreeCategory order command PLCRevisionsTreeCategory 9;
+modify menu type_LogicalFeature add command PLCRevisionsTreeCategory order command PLCRevisionsTreeCategory 10;
+modify menu type_ManufacturingFeature add command PLCRevisionsTreeCategory order command PLCRevisionsTreeCategory 8;
+#channel ==>type_TestCasetype_ConfigurationFeaturetype_LogicalFeaturetype_ManufacturingFeature
+add property command_PLCRevisionsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCRevisionsTreeCategory';

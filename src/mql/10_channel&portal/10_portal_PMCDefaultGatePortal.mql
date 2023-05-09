@@ -1,0 +1,14 @@
+del portal 'PMCDefaultGatePortal';
+add portal 'PMCDefaultGatePortal'
+	description	'Default Portal for Gate View'
+	label	'PMCDefaultGatePortal'
+	href	''
+	channel 	PMCGateDefaultChannel
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDefaultGatePortal'
+	property	'version'	value	'R210'
+;
+add property portal_PMCDefaultGatePortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCDefaultGatePortal';

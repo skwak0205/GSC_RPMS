@@ -1,0 +1,14 @@
+del menu 'FTRLogicalFeatureReplaceMenu';
+add menu 'FTRLogicalFeatureReplaceMenu'
+	description	''
+	label	'emxConfiguration.Menu.LogicalStructureReplace'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionReplace.png'
+	command	'FTRReplaceLogicalFeatureContextActionLink'
+	command	'FTRMergeReplaceLogicalFeatureContextActionLink'
+	command	'FTRSplitReplaceLogicalFeatureContextActionLink'
+	property 'version'	value	'R420'
+;
+add property menu_FTRLogicalFeatureReplaceMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRLogicalFeatureReplaceMenu';

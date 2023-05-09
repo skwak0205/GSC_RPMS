@@ -1,0 +1,16 @@
+del channel 'PMCPowerViewChannel';
+add channel 'PMCPowerViewChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCRiskMyDesk'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCPowerViewChannel'
+	property	'version'	value	'R215'
+;
+#portal ==>
+add property channel_PMCPowerViewChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCPowerViewChannel';

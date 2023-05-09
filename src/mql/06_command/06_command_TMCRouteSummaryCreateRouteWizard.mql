@@ -1,0 +1,27 @@
+del command 'TMCRouteSummaryCreateRouteWizard';
+add command 'TMCRouteSummaryCreateRouteWizard'
+	description	'Command for CreateRouteWizard link on RouteSummary'
+	label	'emxComponents.Routes.CreateNew'
+	href	'${COMPONENT_DIR}/emxRouteWizardCreateDialogFS.jsp?init1=true'
+	alt	'emxComponents.Routes.CreateNew'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedContributor'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRouteSummaryCreateRouteWizard'
+	property	'version'	value	'R423.HF3'
+;
+modify menu TMCRouteSummaryTopActionBar add command TMCRouteSummaryCreateRouteWizard order command TMCRouteSummaryCreateRouteWizard 2;
+#channel ==>TMCRouteSummaryTopActionBar
+add property command_TMCRouteSummaryCreateRouteWizard on program eServiceSchemaVariableMapping.tcl to command 'TMCRouteSummaryCreateRouteWizard';

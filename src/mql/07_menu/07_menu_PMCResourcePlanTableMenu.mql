@@ -1,0 +1,15 @@
+del menu 'PMCResourcePlanTableMenu';
+add menu 'PMCResourcePlanTableMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCResourcePlanView'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourcePlanTableMenu'
+	property 'version'	value	'R208'
+;
+add property menu_PMCResourcePlanTableMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourcePlanTableMenu';

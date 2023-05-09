@@ -1,0 +1,21 @@
+del command 'LCRetentionSchedule';
+add command 'LCRetentionSchedule'
+	description	'Displays the list Retention Record and Record Hold connected to Document'
+	label	'emxLibraryCentral.Command.LCRetentionSchedule'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&table=LCRetentionScheduleDocument&program=emxRetainedDocument:getRetentionSchedules&header=emxLibraryCentral.Header.RetentionSchedules&toolbar=LCRetentionScheduleSummaryToolBar&selection=multiple&HelpMarker=emxhelplibdocretentionsched'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Access Function'		'retentionFeatureEnabled'
+	setting	'Access Program'		'emxRetentionRecordBase'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCRetentionSchedule'
+	property	'version'	value	'R214'
+;
+modify menu type_DOCUMENTS add command LCRetentionSchedule order command LCRetentionSchedule 16;
+modify menu type_GenericDocument add command LCRetentionSchedule order command LCRetentionSchedule 18;
+#channel ==>type_DOCUMENTStype_GenericDocument
+add property command_LCRetentionSchedule on program eServiceSchemaVariableMapping.tcl to command 'LCRetentionSchedule';

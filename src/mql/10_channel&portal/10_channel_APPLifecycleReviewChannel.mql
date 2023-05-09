@@ -1,0 +1,17 @@
+del channel 'APPLifecycleReviewChannel';
+add channel 'APPLifecycleReviewChannel'
+	description	''
+	height	'400'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Components'
+	setting		'ChannelID'		'1'
+	command 	'AEFLifecycle','APPRoutes'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLifecycleReviewChannel'
+	property	'version'	value	'10-6'
+;
+#portal ==>APPLifecycleReviewPortal
+add property channel_APPLifecycleReviewChannel on program eServiceSchemaVariableMapping.tcl to channel 'APPLifecycleReviewChannel';

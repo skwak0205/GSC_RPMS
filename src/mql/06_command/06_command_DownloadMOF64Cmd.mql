@@ -1,0 +1,12 @@
+del command 'DownloadMOF64Cmd';
+add command 'DownloadMOF64Cmd'
+	description	'Download Collaboration for Microsoft Client'
+	label	'R2022x'
+	href	'${SUITE_DIR}/DownloadMOF.jsp?isHotfix=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+;
+modify menu DownloadMOFMenu add command DownloadMOF64Cmd order command DownloadMOF64Cmd 1;
+#channel ==>DownloadMOFMenu
+add property command_DownloadMOF64Cmd on program eServiceSchemaVariableMapping.tcl to command 'DownloadMOF64Cmd';

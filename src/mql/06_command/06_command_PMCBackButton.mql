@@ -1,0 +1,21 @@
+del command 'PMCBackButton';
+add command 'PMCBackButton'
+	description	'PMC Back Button Command'
+	label	'emxProgramCentral.Command.ReviseSearch'
+	href	'javascript:getSearchData()'
+	alt	'emxProgramCentral.Command.ReviseSearch'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'JavaScript Include'		'../programcentral/emxProgramCentralUIFormValidation.js'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBackButton'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectContentSearchResultsActions add command PMCBackButton order command PMCBackButton 0;
+#channel ==>PMCProjectContentSearchResultsActions
+add property command_PMCBackButton on program eServiceSchemaVariableMapping.tcl to command 'PMCBackButton';

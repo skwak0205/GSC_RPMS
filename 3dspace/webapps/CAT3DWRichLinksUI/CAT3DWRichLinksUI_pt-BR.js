@@ -1,0 +1,1 @@
+define("DS/CAT3DWRichLinksUI/CAT3DWRichLinksUI_pt-BR",{});define("DS/CAT3DWRichLinksUI/assets/nls/CAT3DWRichLinkHtmlView",{authorPrep:"por",communityPrep:"em"});

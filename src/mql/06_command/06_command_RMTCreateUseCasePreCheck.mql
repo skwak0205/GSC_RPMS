@@ -1,0 +1,20 @@
+del command 'RMTCreateUseCasePreCheck';
+add command 'RMTCreateUseCasePreCheck'
+	description	'Create a RUse Case and link it to the selected Req'
+	label	'emxRequirements.ActionLink.Create'
+	href	'${SUITE_DIR}/RequirementUtil.jsp?mode=EnsureSourceReqForUseCase'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCreateUseCasePreCheck'
+	property	'version'	value	'V6R2015x'
+;
+modify menu RMTRequirementUseCaseTopActionBar add command RMTCreateUseCasePreCheck order command RMTCreateUseCasePreCheck 1;
+#channel ==>RMTRequirementUseCaseTopActionBar
+add property command_RMTCreateUseCasePreCheck on program eServiceSchemaVariableMapping.tcl to command 'RMTCreateUseCasePreCheck';

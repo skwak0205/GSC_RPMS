@@ -1,0 +1,22 @@
+del command 'APPBusinessUnitEdit';
+add command 'APPBusinessUnitEdit'
+	description	'Command to edit the BusinessUnit'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_BusinessUnit&HelpMarker=emxhelpbusinesseditdetails&formHeader=emxComponents.Common.EditBusinessUnit&mode=edit&postProcessJPO=emxCompany:validateUniqueness'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPBusinessUnitEdit'
+	property	'version'	value	'R417'
+;
+modify menu APPBusinessUnitDetailsToolBarActions add command APPBusinessUnitEdit order command APPBusinessUnitEdit 1;
+#channel ==>APPBusinessUnitDetailsToolBarActions
+add property command_APPBusinessUnitEdit on program eServiceSchemaVariableMapping.tcl to command 'APPBusinessUnitEdit';

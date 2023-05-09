@@ -1,0 +1,23 @@
+del command 'DCObjectPropertiesDeleteActionLink';
+add command 'DCObjectPropertiesDeleteActionLink'
+	description	'Delete Action Link on Properties'
+	label	'emxDocumentCentral.ActionBarCmd.Delete'
+	href	''
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectPropertiesDeleteActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCObjectPropertiesTopActionbar add command DCObjectPropertiesDeleteActionLink order command DCObjectPropertiesDeleteActionLink 0;
+modify menu DCGenericDocumentPropertiesTopActionbar add command DCObjectPropertiesDeleteActionLink order command DCObjectPropertiesDeleteActionLink 0;
+modify menu DCFolderPropertiesTopActionbar add command DCObjectPropertiesDeleteActionLink order command DCObjectPropertiesDeleteActionLink 0;
+#channel ==>DCObjectPropertiesTopActionbarDCGenericDocumentPropertiesTopActionbarDCFolderPropertiesTopActionbar
+add property command_DCObjectPropertiesDeleteActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectPropertiesDeleteActionLink';

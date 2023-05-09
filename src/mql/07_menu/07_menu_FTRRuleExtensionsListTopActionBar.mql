@@ -1,0 +1,18 @@
+del menu 'FTRRuleExtensionsListTopActionBar';
+add menu 'FTRRuleExtensionsListTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRCreateRuleExtensionsActionLink'
+	command	'FTRAddExistingRuleExtensionRuleActionLink'
+	command	'FTRCopyRuleExtensionRuleActionLink'
+	command	'FTRRemoveRuleExtensionRuleActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRRuleExtensionsListTopActionBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_FTRRuleExtensionsListTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'FTRRuleExtensionsListTopActionBar';

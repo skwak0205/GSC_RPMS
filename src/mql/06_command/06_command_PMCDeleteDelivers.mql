@@ -1,0 +1,22 @@
+del command 'PMCDeleteDelivers';
+add command 'PMCDeleteDelivers'
+	description	'Remove Delivers from Deliverable'
+	label	'emxProgramCentral.Common.RemoveDelivers'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=deletedelivers'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENODEPL_TP'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeleteDelivers'
+	property	'version'	value	'R422'
+;
+modify menu PMCDeliversActions add command PMCDeleteDelivers order command PMCDeleteDelivers 0;
+#channel ==>PMCDeliversActions
+add property command_PMCDeleteDelivers on program eServiceSchemaVariableMapping.tcl to command 'PMCDeleteDelivers';

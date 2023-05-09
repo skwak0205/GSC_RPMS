@@ -1,0 +1,17 @@
+del menu 'LCObjectDetailsToolBar';
+add menu 'LCObjectDetailsToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'LCObjectDetailsActionsToolBar'
+	command	'LCObjectEditDetails'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCObjectDetailsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_LCObjectDetailsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCObjectDetailsToolBar';

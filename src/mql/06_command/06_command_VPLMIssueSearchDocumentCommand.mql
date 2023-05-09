@@ -1,0 +1,11 @@
+del command 'VPLMIssueSearchDocumentCommand';
+add command 'VPLMIssueSearchDocumentCommand'
+	description	'Issue Find Document Command Object'
+	label	'emxComponents.Command.SearchDocumentIssueLink'
+	href	'${COMPONENT_DIR}/emxIssueSearchDocumentsForm.jsp?program=emxCommonIssueBase:getDocuments&table=IssueSearchDocumentTable&commandName=addexisting&HelpMarker=emxhelpsearchresults&SubmitURL=${COMMON_DIR}/emxVPLMConnectObjects.jsp'
+	alt	''
+	setting	'Registered Suite'		'Components'
+;
+modify menu VPLMSearchAddExistingChooser add command VPLMIssueSearchDocumentCommand order command VPLMIssueSearchDocumentCommand 0;
+#channel ==>VPLMSearchAddExistingChooser
+add property command_VPLMIssueSearchDocumentCommand on program eServiceSchemaVariableMapping.tcl to command 'VPLMIssueSearchDocumentCommand';

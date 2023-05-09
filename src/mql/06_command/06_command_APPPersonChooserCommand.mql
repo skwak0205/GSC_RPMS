@@ -1,0 +1,16 @@
+del command 'APPPersonChooserCommand';
+add command 'APPPersonChooserCommand'
+	description	'Command object to find Requested Assignees.'
+	label	'emxComponents.Command.RequestedAssignees'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxCommonIssueBase:getPersons&table=IssueSearchPersonsTable&form=IssueSearchPersonsForm&searchCommand=APPPersonChooserCommand&ChangeOwner=false'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPersonChooserCommand'
+	property	'version'	value	'10-7'
+;
+modify menu APPPersonChooserMenu add command APPPersonChooserCommand order command APPPersonChooserCommand 0;
+#channel ==>APPPersonChooserMenu
+add property command_APPPersonChooserCommand on program eServiceSchemaVariableMapping.tcl to command 'APPPersonChooserCommand';

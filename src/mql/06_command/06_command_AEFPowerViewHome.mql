@@ -1,0 +1,16 @@
+del command 'AEFPowerViewHome';
+add command 'AEFPowerViewHome'
+	description	'My Home'
+	label	'emxFramework.String.HomeDashboard'
+	href	'${COMMON_DIR}/enoCockpit.html?type=HomePageCockpit&HelpMarker=emxhelpnewhomepage'
+	alt	'emxFramework.String.HomeDashboard'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFPowerViewHome'
+	property	'version'	value	'R420'
+;
+#channel ==>My EnoviaMy Tools
+add property command_AEFPowerViewHome on program eServiceSchemaVariableMapping.tcl to command 'AEFPowerViewHome';

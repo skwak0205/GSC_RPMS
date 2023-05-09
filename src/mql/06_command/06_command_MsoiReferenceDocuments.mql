@@ -1,0 +1,16 @@
+del command 'MsoiReferenceDocuments';
+add command 'MsoiReferenceDocuments'
+	description	'Reference Documents Command Object for MSOI'
+	label	'emxIEFDesignCenter.Common.ReferenceDocuments'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=IEFDesktopObjectSummary&relName=relationship_ReferenceDocument'
+	alt	'emxIEFDesignCenter.Common.ReferenceDocuments'
+	setting	'Registered Suite'		'IntegrationFramework'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiReferenceDocuments'
+	property	'version'	value	'V6R2022x'
+;
+modify menu Msoitype_Part add command MsoiReferenceDocuments order command MsoiReferenceDocuments 1;
+#channel ==>Msoitype_Part
+add property command_MsoiReferenceDocuments on program eServiceSchemaVariableMapping.tcl to command 'MsoiReferenceDocuments';

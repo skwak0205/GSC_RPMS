@@ -1,0 +1,14 @@
+  .convertBtn{
+    background: transparent url(./assets/Dollar.png) no-repeat center;
+	margin: 0 4px 0 4px;
+	vertical-align: middle;
+	background-size: auto;
+	cursor: pointer;
+	height: 28px;
+	width: 32px;
+	border: 0px;
+  }
+  .euroLbl{
+    color: #00ff00 ;
+  }
+  

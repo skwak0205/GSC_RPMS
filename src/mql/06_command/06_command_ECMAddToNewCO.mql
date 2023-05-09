@@ -1,0 +1,22 @@
+del command 'ECMAddToNewCO';
+add command 'ECMAddToNewCO'
+	description	'The Add to New Change Actions Link for the generic change management powerview from app context eg part--changemgmt'
+	label	'EnterpriseChangeMgt.Command.AddToNewCO'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=ECMAddToNewCO&portalFrame=ECMCOs&targetRelName=relationship_ChangeAffectedItem&isFrom=false'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Global User'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAddToNewCO'
+	property	'version'	value	'R417'
+;
+modify menu ECMChangeOrderManagementToolbar add command ECMAddToNewCO order command ECMAddToNewCO 2;
+#channel ==>ECMChangeOrderManagementToolbar
+add property command_ECMAddToNewCO on program eServiceSchemaVariableMapping.tcl to command 'ECMAddToNewCO';

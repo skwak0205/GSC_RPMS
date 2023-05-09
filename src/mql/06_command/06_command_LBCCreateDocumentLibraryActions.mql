@@ -1,0 +1,23 @@
+del command 'LBCCreateDocumentLibraryActions';
+add command 'LBCCreateDocumentLibraryActions'
+	description	'Create New Document Library'
+	label	'emxDocumentCentral.Common.CreateDocumentLibrary'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Library&nameField=autoName&form=type_CreateLibrary&createJPO=emxLibraryCentralCommon:createLBCObject&submitAction=treeContent&header=emxDocumentCentral.Common.CreateNewDocumentLibrary&HelpMarker=emxhelpcreatelibrarysimple&findMxLink=false'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCCreateDocumentLibraryActions'
+	property	'version'	value	'R423.HF4'
+;
+modify menu LBCCreateLibraryActionsMenu add command LBCCreateDocumentLibraryActions order command LBCCreateDocumentLibraryActions 0;
+#channel ==>LBCCreateLibraryActionsMenu
+add property command_LBCCreateDocumentLibraryActions on program eServiceSchemaVariableMapping.tcl to command 'LBCCreateDocumentLibraryActions';

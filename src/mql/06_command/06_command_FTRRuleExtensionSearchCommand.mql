@@ -1,0 +1,19 @@
+del command 'FTRRuleExtensionSearchCommand';
+add command 'FTRRuleExtensionSearchCommand'
+	description	'FTRRuleExtensionSearchCommand'
+	label	'emxProduct.ActionLink.RuleExtension.search'
+	href	'${SUITE_DIR}/RuleExtensionSearch.jsp?suiteKey=Configuration&table=FTRRuleExtensionSearchTable&CommandName=FTRRuleExtensionSearchCommand'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRRuleExtensionSearchCommand'
+	property	'version'	value	'R215'
+;
+modify menu SearchAddExistingChooserMenu add command FTRRuleExtensionSearchCommand order command FTRRuleExtensionSearchCommand 17;
+#channel ==>SearchAddExistingChooserMenu
+add property command_FTRRuleExtensionSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRRuleExtensionSearchCommand';

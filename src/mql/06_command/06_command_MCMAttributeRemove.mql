@@ -1,0 +1,28 @@
+del command 'MCMAttributeRemove';
+add command 'MCMAttributeRemove'
+	description	'AttributeGroup Remove'
+	label	'emxMultipleClassification.Access.Remove'
+	href	'${SUITE_DIR}/emxMultipleClassificationAttributeGroupRemoveProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'Content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	setting	'Confirm Message'		'emxMultipleClassification.Removed.Message1'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'MCMAttributeRemove'
+	property	'version'	value	'R422'
+;
+modify menu MCMAttributeActionsToolBar add command MCMAttributeRemove order command MCMAttributeRemove 6;
+#channel ==>MCMAttributeActionsToolBar
+add property command_MCMAttributeRemove on program eServiceSchemaVariableMapping.tcl to command 'MCMAttributeRemove';

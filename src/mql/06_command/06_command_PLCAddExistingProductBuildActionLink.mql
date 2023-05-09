@@ -1,0 +1,24 @@
+del command 'PLCAddExistingProductBuildActionLink';
+add command 'PLCAddExistingProductBuildActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Builds:HAS_PRODUCT_BUILD=FALSE:HAS_PRODUCT_CONFIGURATION_BUILD=FALSE:HAS_MODEL_BUILD=FALSE&table=PLCSearchBuildConfigurationTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_ProductBuild&from=false&isUNTOper=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkAccessForProdConfig'
+	setting	'Access Program'		'emxBuild'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingProductBuildActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCProductBuildListTopActionBar add command PLCAddExistingProductBuildActionLink order command PLCAddExistingProductBuildActionLink 2;
+#channel ==>PLCProductBuildListTopActionBar
+add property command_PLCAddExistingProductBuildActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingProductBuildActionLink';

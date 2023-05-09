@@ -1,0 +1,40 @@
+del command 'APPQuickFileList';
+add command 'APPQuickFileList'
+	description	''
+	label	'emxFramework.RMBMenu.Files'
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxAPPQuickFile'
+	setting	'Dynamic Command Function'		'listQuickFiles'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'(policy!="$<policy_Version>")'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallDocumentGray.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPQuickFileList'
+	property	'version'	value	'R423.HF3'
+;
+modify menu AEFDefaultRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_DOCUMENTSRMB add command APPQuickFileList order command APPQuickFileList 1;
+modify menu type_PersonRMB add command APPQuickFileList order command APPQuickFileList 3;
+modify menu TMCWorkspaceRMBMenu add command APPQuickFileList order command APPQuickFileList 3;
+modify menu PlmParameterRMB add command APPQuickFileList order command APPQuickFileList 2;
+modify menu RecordRetentionRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_ProductsRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_GeneralLibraryRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_LibraryRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_PartLibraryRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_GeneralClassRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_DocumentFamilyRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_PartFamilyRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_ConfigurationOptionRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_ConfigurationFeatureRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_LogicalFeatureRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_ManufacturingFeatureRMB add command APPQuickFileList order command APPQuickFileList 4;
+modify menu type_ProductVariantRMB add command APPQuickFileList order command APPQuickFileList 4;
+#channel ==>AEFDefaultRMBtype_DOCUMENTSRMBtype_PersonRMBTMCWorkspaceRMBMenuPlmParameterRMBRecordRetentionRMBtype_ProductsRMBtype_GeneralLibraryRMBtype_LibraryRMBtype_PartLibraryRMBtype_GeneralClassRMBtype_DocumentFamilyRMBtype_PartFamilyRMBtype_ConfigurationOptionRMBtype_ConfigurationFeatureRMBtype_LogicalFeatureRMBtype_ManufacturingFeatureRMBtype_ProductVariantRMB
+add property command_APPQuickFileList on program eServiceSchemaVariableMapping.tcl to command 'APPQuickFileList';

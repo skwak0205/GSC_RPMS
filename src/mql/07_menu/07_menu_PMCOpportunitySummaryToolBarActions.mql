@@ -1,0 +1,21 @@
+del menu 'PMCOpportunitySummaryToolBarActions';
+add menu 'PMCOpportunitySummaryToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCOpportunitySummaryCreateNewOpportunity'
+	command	'PMCOpportunityRpnCreateNew'
+	command	'APPSeparator'
+	command	'PMCOpportunitySummaryAssignOpportunity'
+	command	'PMCOpportunitySummaryDeleteOpportunity'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCOpportunitySummaryToolBarActions'
+	property 'version'	value	'R421.HF2'
+;
+add property menu_PMCOpportunitySummaryToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCOpportunitySummaryToolBarActions';

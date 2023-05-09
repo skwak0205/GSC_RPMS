@@ -1,0 +1,23 @@
+del command 'IssueCategoryCreateNewActionLink';
+add command 'IssueCategoryCreateNewActionLink'
+	description	'Create New Issue Category Command Object'
+	label	'emxComponents.ActionLink.IssueCategoryCreateNew'
+	href	'${COMPONENT_DIR}/emxIssueCategoryClassificationUtil.jsp?mode=CategoryCreateCommand'
+	alt	'emxComponents.ActionLink.IssueCategoryCreateNew'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/ENOCreateIssueCategory32.png'
+	user	'Administration Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueCategoryCreateNewActionLink'
+	property	'version'	value	'R422'
+;
+modify menu IssueCategoriesToolBarActions add command IssueCategoryCreateNewActionLink order command IssueCategoryCreateNewActionLink 1;
+#channel ==>IssueCategoriesToolBarActions
+add property command_IssueCategoryCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'IssueCategoryCreateNewActionLink';

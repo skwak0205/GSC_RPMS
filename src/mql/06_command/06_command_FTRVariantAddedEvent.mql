@@ -1,0 +1,18 @@
+del command 'FTRVariantAddedEvent';
+add command 'FTRVariantAddedEvent'
+	description	'Variant Added Event'
+	label	'PublishSubscribe.Event.VariantAdded'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Variant Added In Product Context'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'create'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'original name'	value	'FTRVariantAddedEvent'
+	property	'version'	value	'R422'
+;
+modify menu PLCProductsEvents add command FTRVariantAddedEvent order command FTRVariantAddedEvent 10;
+#channel ==>PLCProductsEvents
+add property command_FTRVariantAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRVariantAddedEvent';

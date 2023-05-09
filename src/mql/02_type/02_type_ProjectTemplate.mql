@@ -1,0 +1,4 @@
+mod type 'Project Template'
+ add attribute gscTitle,gscBusinessArea,gscSourcingType,gscReviewType,gscGateType;
+mod type 'Project Template'
+ remove attribute gscBusinessArea,gscSourcingType,gscReviewType,gscGateType;

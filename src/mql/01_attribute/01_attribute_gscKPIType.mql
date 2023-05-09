@@ -1,0 +1,19 @@
+#del attribute 'gscKPIType';
+add attribute 'gscKPIType'
+ type 'string'
+ description 'Identifies KPI type'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscKPIType'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscKPIType on program eServiceSchemaVariableMapping.tcl to attribute 'gscKPIType';
+
+modify attribute 'gscKPIType' add range= Operational;
+modify attribute 'gscKPIType' add range= Strategic;
+modify attribute 'gscKPIType' add range= Safety;
+
+modify type 'Business Goal' add attribute gscKPIType;

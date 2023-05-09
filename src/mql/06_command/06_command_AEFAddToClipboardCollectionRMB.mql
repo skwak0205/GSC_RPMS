@@ -1,0 +1,24 @@
+del command 'AEFAddToClipboardCollectionRMB';
+add command 'AEFAddToClipboardCollectionRMB'
+	description	'Adding the selected items to System Clipboard Collections'
+	label	'emxFramework.Collections.AddToClipboardCollection'
+	href	'${COMMON_DIR}/emxCollectionsAddToProcess.jsp?mode=Clipboard'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/IconSmallAddToClipboard16.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFAddToClipboardCollectionRMB'
+	property	'version'	value	'R422'
+;
+modify menu AEFClipboardCollectionsRMB add command AEFAddToClipboardCollectionRMB order command AEFAddToClipboardCollectionRMB 1;
+modify menu AEFDefaultAppRMB add command AEFAddToClipboardCollectionRMB order command AEFAddToClipboardCollectionRMB 1;
+modify menu AEFDefaultRMB add command AEFAddToClipboardCollectionRMB order command AEFAddToClipboardCollectionRMB 7;
+modify menu TMCWorkspaceRMBMenu add command AEFAddToClipboardCollectionRMB order command AEFAddToClipboardCollectionRMB 6;
+#channel ==>AEFClipboardCollectionsRMBAEFDefaultAppRMBAEFDefaultRMBTMCWorkspaceRMBMenu
+add property command_AEFAddToClipboardCollectionRMB on program eServiceSchemaVariableMapping.tcl to command 'AEFAddToClipboardCollectionRMB';

@@ -1,0 +1,22 @@
+del command 'APPDSCObjectAccessAddUsers';
+add command 'APPDSCObjectAccessAddUsers'
+	description	'This command provides add users functionality for giving them granted access.'
+	label	'emxComponents.Command.Add'
+	href	'${SUITE_DIR}/emxComponentsObjectAccessUsersDialogFS.jsp?accessChoice=Read_WO_Download,Read,Read_Write,Add,Remove,Add_Remove&addUserType=person,role,group&showAllProgram=emxObjectAccess&showAllFunction=hasAccessRoles&pushGrantor=person_CommonAccessGrantor'
+	alt	'emxComponents.Command.Add'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'Integration User'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'APPDSCObjectAccessAddUsers'
+	property	'version'	value	'R424'
+;
+#channel ==>
+add property command_APPDSCObjectAccessAddUsers on program eServiceSchemaVariableMapping.tcl to command 'APPDSCObjectAccessAddUsers';

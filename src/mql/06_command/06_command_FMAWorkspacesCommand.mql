@@ -1,0 +1,19 @@
+del command 'FMAWorkspacesCommand';
+add command 'FMAWorkspacesCommand'
+	description	'Workspaces Command Object'
+	label	'enoFolderManagement.Common.Workspaces'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxWorkspace:getAllMyDeskWorkspace,emxWorkspace:getActiveMyDeskWorkspace&table=FMAWorkspaceSummary&header=enoFolderManagement.Common.Workspace&toolbar=FMAWorkspaceSummaryToolBar&programLabel=enoFolderManagement.Filter.All,enoFolderManagement.Filter.Active&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelpworkspaces&displayView=details'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'FolderManagement'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'FMAWorkspacesCommand'
+	property	'version'	value	'R417'
+;
+modify menu FolderManagementMyDesk add command FMAWorkspacesCommand order command FMAWorkspacesCommand 0;
+#channel ==>FolderManagementMyDesk
+add property command_FMAWorkspacesCommand on program eServiceSchemaVariableMapping.tcl to command 'FMAWorkspacesCommand';

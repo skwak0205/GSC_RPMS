@@ -1,0 +1,33 @@
+del table 'PLCMilestoneTrackActionsTable' system;
+add table 'PLCMilestoneTrackActionsTable' system
+column #1
+	name	'Discipline'
+	businessobject	'empty'
+	label	'emxProductLine.Common.Discipline'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Column Type'		'program'
+	setting	'function'		'getMilestoneTrackDisciplines'
+	setting	'Export'		'true'
+	setting	'program'		'emxPLCMilestones'
+column #2
+	name	'dummy'
+	businessobject	'revision'
+	label	'emxProduct.Table.Blank'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCMilestoneTrackActionsTable'
+	property	'version'	value	'R215'
+;
+add property table_PLCMilestoneTrackActionsTable on program eServiceSchemaVariableMapping.tcl to table 'PLCMilestoneTrackActionsTable' system;

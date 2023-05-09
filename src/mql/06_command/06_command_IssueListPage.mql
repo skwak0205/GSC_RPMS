@@ -1,0 +1,26 @@
+del command 'IssueListPage';
+add command 'IssueListPage'
+	description	'Issue Summary'
+	label	'emxFramework.String.IssuesSummary'
+	href	'${COMMON_DIR}/enoCockpit.html?type=IssueCockpit&HelpMarker=emxhelpissues&suiteKey=Components'
+	alt	'emxFramework.String.IssuesSummary'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Image'		'COMMON_DIR/iconSmallIssue.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	user	'Customer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueListPage'
+	property	'version'	value	'R422'
+;
+#channel ==>My Enovia
+add property command_IssueListPage on program eServiceSchemaVariableMapping.tcl to command 'IssueListPage';

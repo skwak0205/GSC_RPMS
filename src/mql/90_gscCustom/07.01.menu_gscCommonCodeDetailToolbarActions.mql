@@ -1,0 +1,20 @@
+################################################################################################
+# Created Date : 2020.06.10
+# Create by BongJun,Park
+# Description : 공통코드 Detail list toolbar actions
+################################################################################################
+#del menu "gscCommonCodeDetailToolbarActions";
+add menu "gscCommonCodeDetailToolbarActions"
+    description ""
+    label 'emxComponents.label.Actions'
+    alt   'emxComponents.label.Actions'
+    command gscCommonCodeDetailCreate
+    command gscCommonCodeDetailDelete
+    setting "Registered Suite" "Components"
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2020.06.10"
+property "original name"    value "gscCommonCodeDetailToolbarActions"
+;
+add property menu_gscCommonCodeDetailToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'gscCommonCodeDetailToolbarActions';

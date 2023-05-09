@@ -1,0 +1,18 @@
+del command 'AEFToggleBrowserToolbarPreference';
+add command 'AEFToggleBrowserToolbarPreference'
+	description	'Toggle Toolbar Preference'
+	label	'emxFramework.Preferences.ToggleToolbar'
+	href	'${COMMON_DIR}/emxPrefToggleBrowserToolbar.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/buttonToolbarPreferences.gif'
+	setting	'Help Marker'		'emxhelppreferencestogglebrowser'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFToggleBrowserToolbarPreference'
+	property	'version'	value	'R214'
+;
+modify menu General add command AEFToggleBrowserToolbarPreference order command AEFToggleBrowserToolbarPreference 6;
+#channel ==>General
+add property command_AEFToggleBrowserToolbarPreference on program eServiceSchemaVariableMapping.tcl to command 'AEFToggleBrowserToolbarPreference';

@@ -1,0 +1,25 @@
+del command 'DCObjectDeleteSelectedActionLink';
+add command 'DCObjectDeleteSelectedActionLink'
+	description	'Delete Selected on Objects List'
+	label	'emxDocumentCentral.ActionBarCmd.DeleteSelected'
+	href	'${SUITE_DIR}/emxLibraryCentralObjectsDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDeleteFolder.png'
+	setting	'Confirm Message'		'emxDocumentCentral.Message.ConfirmDeleteSelected'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectDeleteSelectedActionLink'
+	property	'version'	value	'R418'
+;
+modify menu DCDocumentClassificationsBottomActionbar add command DCObjectDeleteSelectedActionLink order command DCObjectDeleteSelectedActionLink 1;
+modify menu DCGenericDocumentDocumentSheetsBottomActionbar add command DCObjectDeleteSelectedActionLink order command DCObjectDeleteSelectedActionLink 0;
+modify menu DCAllFoldersBottomActionbar add command DCObjectDeleteSelectedActionLink order command DCObjectDeleteSelectedActionLink 0;
+modify menu DCCompanyLocationsBottomActionbar add command DCObjectDeleteSelectedActionLink order command DCObjectDeleteSelectedActionLink 0;
+#channel ==>DCDocumentClassificationsBottomActionbarDCGenericDocumentDocumentSheetsBottomActionbarDCAllFoldersBottomActionbarDCCompanyLocationsBottomActionbar
+add property command_DCObjectDeleteSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectDeleteSelectedActionLink';

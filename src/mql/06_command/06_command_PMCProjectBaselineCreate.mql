@@ -1,0 +1,27 @@
+del command 'PMCProjectBaselineCreate';
+add command 'PMCProjectBaselineCreate'
+	description	'PMCProjectBaselineCreate'
+	label	'emxProgramCentral.Experiment.Create'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=ProjectBaseline'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true && (current!= Review && current!= Complete && current!= Archive && current!= Cancel)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToCreateCommand'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	setting	'Confirm Message'		'emxProgramCentral.ProjectBaseline.CreateWarning'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBaselineCreate'
+	property	'version'	value	'R423.HF6'
+;
+modify menu PMCProjectBaselineActions add command PMCProjectBaselineCreate order command PMCProjectBaselineCreate 1;
+#channel ==>PMCProjectBaselineActions
+add property command_PMCProjectBaselineCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBaselineCreate';

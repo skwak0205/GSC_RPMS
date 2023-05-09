@@ -1,0 +1,15 @@
+del menu 'APPRouteSummaryTaskToolBar';
+add menu 'APPRouteSummaryTaskToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	menu	'APPRouteSummaryTaskActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRouteSummaryTaskToolBar'
+	property 'version'	value	'R419'
+;
+add property menu_APPRouteSummaryTaskToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPRouteSummaryTaskToolBar';

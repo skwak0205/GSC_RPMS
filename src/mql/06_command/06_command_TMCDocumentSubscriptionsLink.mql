@@ -1,0 +1,23 @@
+del command 'TMCDocumentSubscriptionsLink';
+add command 'TMCDocumentSubscriptionsLink'
+	description	'Document Subscriptions Command Object for TeamCentral'
+	label	'emxFramework.Command.Subscription'
+	href	'${COMPONENT_DIR}/emxSubscriptionDialog.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'575'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.png'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDocumentSubscriptionsLink'
+	property	'version'	value	'R417'
+;
+modify menu TMCDocumentsActionToolbar add command TMCDocumentSubscriptionsLink order command TMCDocumentSubscriptionsLink 14;
+#channel ==>TMCDocumentsActionToolbar
+add property command_TMCDocumentSubscriptionsLink on program eServiceSchemaVariableMapping.tcl to command 'TMCDocumentSubscriptionsLink';

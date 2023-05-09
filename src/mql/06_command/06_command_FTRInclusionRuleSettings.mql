@@ -1,0 +1,26 @@
+del command 'FTRInclusionRuleSettings';
+add command 'FTRInclusionRuleSettings'
+	description	'Settings for Inclusion Rule'
+	label	''
+	href	''
+	alt	''
+	setting	'Comparison Operator'		'RuleDialogComparisonOperatorForInclusionRule.jsp'
+	setting	'Completed Rule'		'RuleDialogCompletedRule.jsp'
+	setting	'Access Expression'		'false'
+	setting	'ValidationForLeftExpression'		'RuleDialogValidationsForLEInInclusionRule.js'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'ValidationForContextSelector'		'RuleDialogValidationsForContxtSelectorInIR.js'
+	setting	'Basics'		'NA'
+	setting	'ValidationForRightExpression'		'RuleDialogValidationsForREInInclusionRule.js'
+	setting	'Left Expression'		'NA'
+	setting	'ValidationForCompletedRule'		'RuleDialogValidationsForCompletedRuleInInclusionRule.js'
+	setting	'Context Selector'		'RuleDialogContextSelectorForInclusionRule.jsp'
+	setting	'Right Expression'		'RuleDialogRightExpression.jsp'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRInclusionRuleSettings'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRInclusionRuleSettings on program eServiceSchemaVariableMapping.tcl to command 'FTRInclusionRuleSettings';

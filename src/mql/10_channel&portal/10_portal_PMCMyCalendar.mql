@@ -1,0 +1,14 @@
+del portal 'PMCMyCalendar';
+add portal 'PMCMyCalendar'
+	description	''
+	label	''
+	href	''
+	channel 	PMCMyCalendarChannel
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMyCalendar'
+	property	'version'	value	'R214'
+;
+add property portal_PMCMyCalendar on program eServiceSchemaVariableMapping.tcl to portal 'PMCMyCalendar';

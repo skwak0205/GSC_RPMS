@@ -1,0 +1,22 @@
+del menu 'PMCWorkspaceVaultSubscriptionEvents';
+add menu 'PMCWorkspaceVaultSubscriptionEvents'
+	description	''
+	label	'emxProgramCentral.WorkspaceVault.WorkspaceVaultSubscriptionEvents'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWorkspaceVaultContentAddedEvent'
+	command	'PMCWorkspaceVaultContentDeletedEvent'
+	command	'PMCWorkspaceVaultContentRemovedEvent'
+	command	'PMCWorkspaceVaultContentModifiedEvent'
+	command	'PMCWorkspaceVaultContentRevisedEvent'
+	command	'PMCWorkspaceVaultAddedEvent'
+	command	'PMCWorkspaceVaultDeletedEvent'
+	command	'PMCWorkspaceVaultModifiedEvent'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWorkspaceVaultSubscriptionEvents'
+	property 'version'	value	'R212'
+;
+add property menu_PMCWorkspaceVaultSubscriptionEvents on program eServiceSchemaVariableMapping.tcl to menu 'PMCWorkspaceVaultSubscriptionEvents';

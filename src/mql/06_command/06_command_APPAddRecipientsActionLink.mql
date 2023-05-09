@@ -1,0 +1,23 @@
+del command 'APPAddRecipientsActionLink';
+add command 'APPAddRecipientsActionLink'
+	description	''
+	label	'emxComponents.PushedRecipients.AddRecipients'
+	href	'${COMMON_DIR}/emxSearch.jsp?defaultSearch=APPSubscriptionsSearchForPerson&toolbar=APPSubscriptionsSearchPersonToolbar&helpMarker=emxhelpselectuser'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddRecipientsActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPPushSubscriptionsToolbar add command APPAddRecipientsActionLink order command APPAddRecipientsActionLink 1;
+#channel ==>APPPushSubscriptionsToolbar
+add property command_APPAddRecipientsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAddRecipientsActionLink';

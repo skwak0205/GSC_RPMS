@@ -1,0 +1,18 @@
+del command 'ECMMyChangesView';
+add command 'ECMMyChangesView'
+	description	'My Changes View'
+	label	'EnterpriseChangeMgt.Command.MyChanges'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=ECMMyChangesPortal&header=EnterpriseChangeMgt.Heading.ChangeManagement&showPageHeader=true&HelpMarker=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMyChangesView'
+	property	'version'	value	'R418'
+;
+modify menu ECMMyDesk add command ECMMyChangesView order command ECMMyChangesView 0;
+#channel ==>ECMMyDesk
+add property command_ECMMyChangesView on program eServiceSchemaVariableMapping.tcl to command 'ECMMyChangesView';

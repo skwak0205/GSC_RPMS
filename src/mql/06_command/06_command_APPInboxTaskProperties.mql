@@ -1,0 +1,16 @@
+del command 'APPInboxTaskProperties';
+add command 'APPInboxTaskProperties'
+	description	'Command Object to Display Properties'
+	label	'emxComponents.Common.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_InboxTask&formHeader=emxComponents.Common.TaskDetails&HelpMarker=emxhelptaskproperties&Export=false&findMxLink=false&toolbar=APPInboxTaskActionsToolbar&showRouteContent=false'
+	alt	'emxComponents.Common.Properties'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPInboxTaskProperties'
+	property	'version'	value	'R211'
+;
+#channel ==>APPInboxTaskChannel1
+add property command_APPInboxTaskProperties on program eServiceSchemaVariableMapping.tcl to command 'APPInboxTaskProperties';

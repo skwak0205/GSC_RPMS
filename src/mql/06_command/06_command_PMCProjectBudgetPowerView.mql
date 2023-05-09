@@ -1,0 +1,18 @@
+del command 'PMCProjectBudgetPowerView';
+add command 'PMCProjectBudgetPowerView'
+	description	''
+	label	'emxProgramCentral.Budget.ProjectBudget'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCProjectBudgetPortal&header=emxProgramCentral.ObjectPortal.Header&HelpMarker=emxhelpprojectbudgetlist&showPageHeader=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessToCommand'
+	setting	'Access Program'		'emxProjectBudget'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetPowerView'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_PMCProjectBudgetPowerView on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBudgetPowerView';

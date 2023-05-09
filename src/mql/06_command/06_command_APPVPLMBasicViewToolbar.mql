@@ -1,0 +1,15 @@
+del command 'APPVPLMBasicViewToolbar';
+add command 'APPVPLMBasicViewToolbar'
+	description	'Basic view'
+	label	'emxPlmOnline.label.Basic'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPVPLMPersonAdminPortal&toolbar=APPXPAdminToolBar&header=emxPlmOnline.label.ManagePerson'
+	alt	'emxPlmOnline.label.Basic'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Access Function'		'isOneClickEnvironment'
+	setting	'Access Program'		'VPLMPosAdminUIOptions'
+	setting	'Image'		'iconSmallXPPerson.gif'
+;
+modify menu APPXPAdminAdvancedToolBar add command APPVPLMBasicViewToolbar order command APPVPLMBasicViewToolbar 0;
+#channel ==>APPXPAdminAdvancedToolBar
+add property command_APPVPLMBasicViewToolbar on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMBasicViewToolbar';

@@ -1,0 +1,36 @@
+del table 'FTRRuleFeature' system;
+add table 'FTRRuleFeature' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxProduct.Table.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'emxTree.jsp?mode=insert'
+	range	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Column Type'		'program'
+	setting	'function'		'getNameRev'
+	setting	'program'		'emxPLCCommon'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'Name1'
+	businessobject	'$<attribute[attribute_MarketingName].value>'
+	label	'emxFramework.Attribute.Marketing_Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Width'		'540'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRRuleFeature'
+	property	'version'	value	'V6R2008-2.0'
+;
+add property table_FTRRuleFeature on program eServiceSchemaVariableMapping.tcl to table 'FTRRuleFeature' system;

@@ -1,0 +1,16 @@
+del command 'AEFCoachmarkCommand';
+add command 'AEFCoachmarkCommand'
+	description	''
+	label	'emxNavigator.UIMenuBar.GetStarted'
+	href	'javascript:emxUINavigator.loadCoachmark(true)'
+	alt	'emxNavigator.UIMenuBar.GetStarted'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCoachmarkCommand'
+	property	'version'	value	'R215'
+;
+modify menu AEFHelpMenu add command AEFCoachmarkCommand order command AEFCoachmarkCommand 1;
+#channel ==>AEFHelpMenu
+add property command_AEFCoachmarkCommand on program eServiceSchemaVariableMapping.tcl to command 'AEFCoachmarkCommand';

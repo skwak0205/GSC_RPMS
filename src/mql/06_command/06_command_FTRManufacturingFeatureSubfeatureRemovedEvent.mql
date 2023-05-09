@@ -1,0 +1,20 @@
+del command 'FTRManufacturingFeatureSubfeatureRemovedEvent';
+add command 'FTRManufacturingFeatureSubfeatureRemovedEvent'
+	description	'Manufacturing Feature Subfeature Removed Event'
+	label	'PublishSubscribe.Event.ManufacturingFeatureSubfeatureRemoved'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Manufacturing Feature Subfeature Removed'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'disconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRManufacturingFeatureSubfeatureRemovedEvent'
+	property	'version'	value	'R215'
+;
+modify menu FTRLogicalFeatureSubscriptionEvents add command FTRManufacturingFeatureSubfeatureRemovedEvent order command FTRManufacturingFeatureSubfeatureRemovedEvent 10;
+modify menu FTRManufacturingFeatureSubscriptionEvents add command FTRManufacturingFeatureSubfeatureRemovedEvent order command FTRManufacturingFeatureSubfeatureRemovedEvent 8;
+#channel ==>FTRLogicalFeatureSubscriptionEventsFTRManufacturingFeatureSubscriptionEvents
+add property command_FTRManufacturingFeatureSubfeatureRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRManufacturingFeatureSubfeatureRemovedEvent';

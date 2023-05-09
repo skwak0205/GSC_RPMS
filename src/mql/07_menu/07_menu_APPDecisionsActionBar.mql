@@ -1,0 +1,22 @@
+del menu 'APPDecisionsActionBar';
+add menu 'APPDecisionsActionBar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPDecisionCreate'
+	command	'APPDecisionAddExisting'
+	command	'AEFSeparator'
+	command	'APPSubscriptionMultiObject'
+	command	'AEFSeparator2'
+	command	'APPDecisionRemoveLink'
+	command	'APPDecisionDeleteActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPDecisionsActionBar'
+	property 'version'	value	'R424.HF4'
+;
+add property menu_APPDecisionsActionBar on program eServiceSchemaVariableMapping.tcl to menu 'APPDecisionsActionBar';

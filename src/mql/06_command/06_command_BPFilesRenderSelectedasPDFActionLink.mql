@@ -1,0 +1,36 @@
+del command 'BPFilesRenderSelectedasPDFActionLink';
+add command 'BPFilesRenderSelectedasPDFActionLink'
+	description	'Render Selected as PDF Action Link'
+	label	'emxBatchPrintPDF.PDF.RenderDialog'
+	href	'${SUITE_DIR}/emxBatchPrintPDFRenderProcess.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Access Program Method'		'isRNDEnabled'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Access Expression'		'((current.access[checkin] == true) && ((type=="$<type_GenericDocument>") || (type=="$<type_DocumentSheet>") || (type.kindof[$<type_GenericDocument>])))'
+	setting	'Submit'		'true'
+	setting	'Access Program'		'emxPDFUtil'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPDF.gif'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Technical Writer'
+	user	'Document Management Administrator'
+	user	'Release Manager'
+	user	'Reviewer'
+	user	'Author'
+	user	'Limited Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'BPFilesRenderSelectedasPDFActionLink'
+	property	'version'	value	'R216'
+;
+modify menu APPFileSummaryActionsToolBar add command BPFilesRenderSelectedasPDFActionLink order command BPFilesRenderSelectedasPDFActionLink 0;
+modify menu LBCDocumentSheetActionsToolBar add command BPFilesRenderSelectedasPDFActionLink order command BPFilesRenderSelectedasPDFActionLink 14;
+#channel ==>APPFileSummaryActionsToolBarLBCDocumentSheetActionsToolBar
+add property command_BPFilesRenderSelectedasPDFActionLink on program eServiceSchemaVariableMapping.tcl to command 'BPFilesRenderSelectedasPDFActionLink';

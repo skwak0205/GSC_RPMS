@@ -1,0 +1,16 @@
+del menu 'APPECImpactAnalysisPropertiesActionsToolBar';
+add menu 'APPECImpactAnalysisPropertiesActionsToolBar'
+	description	''
+	label	'emxComponents.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPECImpactAnalysisEditDetailsActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPECImpactAnalysisPropertiesActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPECImpactAnalysisPropertiesActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPECImpactAnalysisPropertiesActionsToolBar';

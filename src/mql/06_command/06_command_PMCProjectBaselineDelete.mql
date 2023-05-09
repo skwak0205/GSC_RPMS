@@ -1,0 +1,26 @@
+del command 'PMCProjectBaselineDelete';
+add command 'PMCProjectBaselineDelete'
+	description	'Delete Selected Project Baseline'
+	label	'emxProgramCentral.Experiment.Delete'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=deleteProjectBaseline'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[modify] == true && (current!= Review && current!= Complete && current!= Archive && current!= Cancel)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBaselineDelete'
+	property	'version'	value	'R424'
+;
+modify menu PMCProjectBaselineActions add command PMCProjectBaselineDelete order command PMCProjectBaselineDelete 0;
+#channel ==>PMCProjectBaselineActions
+add property command_PMCProjectBaselineDelete on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBaselineDelete';

@@ -1,0 +1,11 @@
+{
+  "CVS.optionsChecker.searchEngine.notExisting.error": "Un moteur de recherche doit être défini afin de trouver les valeurs !",
+  "CVS.optionsChecker.searchEngine.notFunction.error": "'Une fonction est attendue pour le moteur de recherche !",
+  "CVS.optionsChecker.defaultValues.array.error": "Les valeurs par défaut doivent être contenues dans un tableau !",
+  "CVS.optionsChecker.defaultValues.arrayObjects.error": "Un tableau d'objets est attendu en tant que valeurs par défaut pour l'entrée !",
+  "CVS.optionsChecker.defaultValues.labelExpected.error": "Un libellé est attendu pour chaque valeur par défaut !",
+  "CVS.optionsChecker.defaultValues.valueExpected.error": "Une valeur est attendue pour chaque valeur par défaut !",
+  "CVS.optionsChecker.onSuggest.notFunction.error": "Une fonction est attendue pour l'option \"surSuggestion\" !",
+  "CVS.optionsChecker.onSelect.notFunction.error": "Une fonction est attendue pour l'option \"surSélection\" !",
+  "CVS.optionsChecker.onCleanDataset.notFunction.error": "Une fonction est attendue pour l'option \"surEnsembleDonnéesNettoyé\" !"
+}

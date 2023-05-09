@@ -1,0 +1,15 @@
+del menu 'IssueReportedAgainstListToolBar';
+add menu 'IssueReportedAgainstListToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	menu	'IssueReportedAgainstListToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'IssueReportedAgainstListToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_IssueReportedAgainstListToolBar on program eServiceSchemaVariableMapping.tcl to menu 'IssueReportedAgainstListToolBar';

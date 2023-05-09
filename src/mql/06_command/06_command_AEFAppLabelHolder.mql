@@ -1,0 +1,18 @@
+del command 'AEFAppLabelHolder';
+add command 'AEFAppLabelHolder'
+	description	''
+	label	'Central'
+	href	''
+	alt	''
+	setting	'Access Behavior'		'disable'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'false'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFAppLabelHolder'
+	property	'version'	value	'R215'
+;
+modify menu AEFGlobalToolbar add command AEFAppLabelHolder order command AEFAppLabelHolder 4;
+#channel ==>AEFGlobalToolbar
+add property command_AEFAppLabelHolder on program eServiceSchemaVariableMapping.tcl to command 'AEFAppLabelHolder';

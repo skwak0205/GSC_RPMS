@@ -1,0 +1,17 @@
+del command 'ctxMsoiCmd_EnoviaSearch';
+add command 'ctxMsoiCmd_EnoviaSearch'
+	description	'ctxMsoiCmd_EnoviaSearch'
+	label	'emxMSF.Command.ctxMsoiCmd_EnoviaSearch'
+	href	''
+	alt	'ctxMsoiCmd_EnoviaSearch'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_EnoviaSearch'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_ctxMsoiCmd_EnoviaSearch on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_EnoviaSearch';

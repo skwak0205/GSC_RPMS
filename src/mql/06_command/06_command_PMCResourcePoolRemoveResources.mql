@@ -1,0 +1,27 @@
+del command 'PMCResourcePoolRemoveResources';
+add command 'PMCResourcePoolRemoveResources'
+	description	'Remove Resources'
+	label	'emxProgramCentral.ResourcePool.Command.RemoveResources'
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=PreremoveResourcesByResourceManager'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isResourcePoolRequestSummaryTable'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_RemoveResource_32.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolRemoveResources'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourceProcessActions add command PMCResourcePoolRemoveResources order command PMCResourcePoolRemoveResources 3;
+modify menu PMCResourcePoolRequestToolbar add command PMCResourcePoolRemoveResources order command PMCResourcePoolRemoveResources 9;
+#channel ==>PMCResourceProcessActionsPMCResourcePoolRequestToolbar
+add property command_PMCResourcePoolRemoveResources on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePoolRemoveResources';

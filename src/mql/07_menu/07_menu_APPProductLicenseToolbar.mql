@@ -1,0 +1,19 @@
+del menu 'APPProductLicenseToolbar';
+add menu 'APPProductLicenseToolbar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'canModifyPersonLicense'
+	setting	'Access Program'		'emxLicense'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPLicenseAddUser'
+	command	'APPLicenseRemoveUser'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPProductLicenseToolbar'
+	property 'version'	value	'R421.HF1'
+;
+add property menu_APPProductLicenseToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPProductLicenseToolbar';

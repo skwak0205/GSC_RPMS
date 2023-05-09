@@ -1,0 +1,8 @@
+{
+  "UCV.optionsChecker.optionSet.notExisting.error": "Pro načtení uživatelských vlastností musí být definována sada možností!",
+  "UCV.optionsChecker.optionSet.type.error": "Pro načtení uživatelských vlastností musí být definována sada možností!",
+  "UCV.mode.icon.text.switchReadOnly": "Přepnout do režimu jen pro čtení",
+  "UCV.mode.icon.text.switchEdit": "Přepnout do režimu úprav",
+  "UCV.add.icon.text": "Přidat vlastnost uživatele",
+  "UCV.noUC.error": "Nejsou k dispozici žádné vlastnosti uživatele..."
+}

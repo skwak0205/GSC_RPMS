@@ -1,0 +1,16 @@
+del command 'APPWhereUsedRData';
+add command 'APPWhereUsedRData'
+	description	''
+	label	'emxWhereUsed.Command.Related'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=WhereUsed:getWhereUsed&table=APPWhereUsedRelated&sortColumnName=Type&sortDirection=ascending&relationshipFilter=true&freezePane=Name,Revision&header=emxWhereUsed.Heading.WhereUsed&selection=multiple&HelpMarker=emxhelpwhereused&dataType=related'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'WhereUsed'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'WhereUsed'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWhereUsedRData'
+	property	'version'	value	'R214'
+;
+#channel ==>APPWhereUsedChannelPLCCollaboration
+add property command_APPWhereUsedRData on program eServiceSchemaVariableMapping.tcl to command 'APPWhereUsedRData';

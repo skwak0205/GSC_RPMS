@@ -1,0 +1,26 @@
+del command 'RMTFeatureRequirementTreeCategory';
+add command 'RMTFeatureRequirementTreeCategory'
+	description	'Command Object for Requirement in the Feature Menu'
+	label	'emxRequirements.Tree.SatisfiedRequirement'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRequirement:getRelatedRequirements&table=RMTContextRequirementList&freezePane=Name&header=emxRequirements.Heading.SatisfiedRequirement&editLink=true&selection=multiple&topActionbar=RMTFeatureRequirementTopActionBar&bottomActionbar=RMTFeatureRequirementBottomActionBar&sortColumnName=Name&HelpMarker=emxhelpfeaturesatisfiedreq'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'COMMON_DIR/iconSmallUseRequirement.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTFeatureRequirementTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_Features add command RMTFeatureRequirementTreeCategory order command RMTFeatureRequirementTreeCategory 1;
+modify menu type_ConfigurationFeature add command RMTFeatureRequirementTreeCategory order command RMTFeatureRequirementTreeCategory 15;
+modify menu type_LogicalFeature add command RMTFeatureRequirementTreeCategory order command RMTFeatureRequirementTreeCategory 18;
+modify menu type_ManufacturingFeature add command RMTFeatureRequirementTreeCategory order command RMTFeatureRequirementTreeCategory 14;
+modify menu Msoitype_Features add command RMTFeatureRequirementTreeCategory order command RMTFeatureRequirementTreeCategory 0;
+#channel ==>type_Featurestype_ConfigurationFeaturetype_LogicalFeaturetype_ManufacturingFeatureMsoitype_Features
+add property command_RMTFeatureRequirementTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTFeatureRequirementTreeCategory';

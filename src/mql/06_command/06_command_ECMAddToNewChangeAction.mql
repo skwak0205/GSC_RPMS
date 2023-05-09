@@ -1,0 +1,21 @@
+del command 'ECMAddToNewChangeAction';
+add command 'ECMAddToNewChangeAction'
+	description	'The Add to New Change Actions Link for the generic add to change menu'
+	label	'EnterpriseChangeMgt.Command.AddToNewCA'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=AddToNewChangeAction'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMAddToNewChangeAction'
+	property	'version'	value	'R419'
+;
+modify menu ECMAddToChangeToolbar add command ECMAddToNewChangeAction order command ECMAddToNewChangeAction 0;
+modify menu ECMChangeActionToolbar add command ECMAddToNewChangeAction order command ECMAddToNewChangeAction 0;
+#channel ==>ECMAddToChangeToolbarECMChangeActionToolbar
+add property command_ECMAddToNewChangeAction on program eServiceSchemaVariableMapping.tcl to command 'ECMAddToNewChangeAction';

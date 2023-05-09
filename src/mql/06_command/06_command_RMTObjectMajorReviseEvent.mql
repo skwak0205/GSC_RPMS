@@ -1,0 +1,24 @@
+del command 'RMTObjectMajorReviseEvent';
+add command 'RMTObjectMajorReviseEvent'
+	description	''
+	label	'emxRequirements.Event.ObjectRevised.Label'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'(policy != "$<policy_RequirementVersion>") && (policy.majorsequence != "")'
+	setting	'Event Type'		'Object MajorRevised'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTObjectMajorReviseEvent'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementSpecificationEvents add command RMTObjectMajorReviseEvent order command RMTObjectMajorReviseEvent 0;
+modify menu RMTRequirementEvents add command RMTObjectMajorReviseEvent order command RMTObjectMajorReviseEvent 10;
+modify menu RMTChapterEvents add command RMTObjectMajorReviseEvent order command RMTObjectMajorReviseEvent 0;
+modify menu RMTCommentEvents add command RMTObjectMajorReviseEvent order command RMTObjectMajorReviseEvent 0;
+#channel ==>RMTRequirementSpecificationEventsRMTRequirementEventsRMTChapterEventsRMTCommentEvents
+add property command_RMTObjectMajorReviseEvent on program eServiceSchemaVariableMapping.tcl to command 'RMTObjectMajorReviseEvent';

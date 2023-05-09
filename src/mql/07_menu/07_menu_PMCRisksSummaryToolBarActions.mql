@@ -1,0 +1,22 @@
+del menu 'PMCRisksSummaryToolBarActions';
+add menu 'PMCRisksSummaryToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCRisksSummaryCreateNewRisk'
+	command	'PMCRiskRpnCreateNew'
+	command	'PMCRisksSummaryImportRisks'
+	command	'APPSeparator'
+	command	'PMCRisksSummaryAssignRisks'
+	command	'PMCRisksSummaryDeleteRisks'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCRisksSummaryToolBarActions'
+	property 'version'	value	'R421.HF2'
+;
+add property menu_PMCRisksSummaryToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCRisksSummaryToolBarActions';

@@ -1,0 +1,21 @@
+del command 'LBCDocumentLibraryContent';
+add command 'LBCDocumentLibraryContent'
+	description	'Content inside Document Libary'
+	label	'emxLibraryCentral.Command.DocumentFamilies'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxLibraryCentralUtilBase:getSubclasses&table=LCClassificationList&selection=single&sortColumnName=Name&massPromoteDemote=false&sortDirection=ascending&toolbar=LCClassToolBar&header=emxLibraryCentral.Common.DocumentFamilies&HelpMarker=emxhelpclasses'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Library User'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDocumentLibraryContent'
+	property	'version'	value	'R421'
+;
+modify menu type_Library add command LBCDocumentLibraryContent order command LBCDocumentLibraryContent 3;
+#channel ==>type_Library
+add property command_LBCDocumentLibraryContent on program eServiceSchemaVariableMapping.tcl to command 'LBCDocumentLibraryContent';

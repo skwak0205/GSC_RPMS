@@ -1,0 +1,17 @@
+del menu 'AEFLifecycleMenu';
+add menu 'AEFLifecycleMenu'
+	description	''
+	label	'emxFramework.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'AEFLifecyclePromote'
+	command	'AEFLifecycleDemote'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFLifecycleMenu'
+	property 'version'	value	'R417'
+;
+add property menu_AEFLifecycleMenu on program eServiceSchemaVariableMapping.tcl to menu 'AEFLifecycleMenu';

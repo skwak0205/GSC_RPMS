@@ -1,0 +1,19 @@
+del command 'DataGridRemoveRowCommand';
+add command 'DataGridRemoveRowCommand'
+	description	''
+	label	'emxFramework.GridView.RemoveRow'
+	href	'javascript:StandardFunctions.removeInsertedRow()'
+	alt	'emxFramework.GridView.RemoveRow'
+	setting	'Access Function'		'canRemoveRow'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridRemoveRowCommand'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridMenu add command DataGridRemoveRowCommand order command DataGridRemoveRowCommand 5;
+#channel ==>DataGridMenu
+add property command_DataGridRemoveRowCommand on program eServiceSchemaVariableMapping.tcl to command 'DataGridRemoveRowCommand';

@@ -1,0 +1,21 @@
+del command 'PLCBuildWhereUsedTreeCategory';
+add command 'PLCBuildWhereUsedTreeCategory'
+	description	'Builds where used tree category'
+	label	'emxProduct.Tree.WhereUsed'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxPLCCommon:getWhereUsed&FilterFrameSize=55&table=PLCWhereUsedList&header=emxProduct.Heading.WhereUsedGeneric&selection=multiple&topActionbar=PLCWhereUsedListTopActionBar&HelpMarker=emxhelpwhereusedlist&command=command_PLCBuildWhereUsedTreeCategory'
+	alt	''
+	setting	'ExpandFilterTypes'		'emxProduct.WhereUsed.Build.ExpandTypes'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'ExpandFilterRelationships'		'emxProduct.WhereUsed.Build.ExpandRelationships'
+	setting	'IntermediateFilterTypes'		'emxProduct.WhereUsed.IntermediateTypes'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCBuildWhereUsedTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_HardwareBuild add command PLCBuildWhereUsedTreeCategory order command PLCBuildWhereUsedTreeCategory 0;
+modify menu type_Builds add command PLCBuildWhereUsedTreeCategory order command PLCBuildWhereUsedTreeCategory 0;
+modify menu type_SoftwareBuild add command PLCBuildWhereUsedTreeCategory order command PLCBuildWhereUsedTreeCategory 0;
+#channel ==>type_HardwareBuildtype_Buildstype_SoftwareBuild
+add property command_PLCBuildWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCBuildWhereUsedTreeCategory';

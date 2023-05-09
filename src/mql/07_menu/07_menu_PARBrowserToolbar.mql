@@ -1,0 +1,10 @@
+del menu 'PARBrowserToolbar';
+add menu 'PARBrowserToolbar'
+	description	'General toolbar with Actions and Edit menus'
+	label	'emxParameter.common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	menu	'PARActionsToolbar'
+;
+add property menu_PARBrowserToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PARBrowserToolbar';

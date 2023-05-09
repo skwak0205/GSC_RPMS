@@ -1,0 +1,13 @@
+del command 'FTRExpressionRulesCommand';
+add command 'FTRExpressionRulesCommand'
+	description	'FTRExpressionRulesCommand'
+	label	'emxProduct.Tree.ExpressionRules'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=FTRExpressionRuleListTable&header=emxProduct.Heading.ExpressionRule&selection=multiple&program=ConfigurationRule:getExpressionRules&toolbar=FTRExpressionRuleToolbarMenu&HelpMarker=emxhelpexpressionrule'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'($<type.kindof=="type_Products">)&&($<type!="type_ProductVariant">)'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'version'	value	'R421'
+;
+#channel ==>FTRConfigurationRulesChannel
+add property command_FTRExpressionRulesCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRExpressionRulesCommand';

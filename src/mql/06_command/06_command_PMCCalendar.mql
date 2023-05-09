@@ -1,0 +1,21 @@
+del command 'PMCCalendar';
+add command 'PMCCalendar'
+	description	''
+	label	'emxProgramCentral.WorkCalendar.WorkCalendars'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCCompanyWorkCalendars&program=emxWorkCalendar:getCalendar&header=emxProgramCentral.WorkCalendar.WorkCalendars&toolbar=PMCCompanyWorkCalendarToolbar&selection=multiple&HelpMarker=emxhelpcalendarlist&editLink=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCalendar'
+	property	'version'	value	'R422.HF4'
+;
+modify menu type_Company add command PMCCalendar order command PMCCalendar 3;
+#channel ==>type_Company
+add property command_PMCCalendar on program eServiceSchemaVariableMapping.tcl to command 'PMCCalendar';

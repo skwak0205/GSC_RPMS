@@ -1,0 +1,14 @@
+del menu 'DepartmentSummaryBottomActionBar';
+add menu 'DepartmentSummaryBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'DepartmentDeleteSelected'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'DepartmentSummaryBottomActionBar'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_DepartmentSummaryBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'DepartmentSummaryBottomActionBar';

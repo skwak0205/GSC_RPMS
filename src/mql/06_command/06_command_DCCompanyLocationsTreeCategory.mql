@@ -1,0 +1,18 @@
+del command 'DCCompanyLocationsTreeCategory';
+add command 'DCCompanyLocationsTreeCategory'
+	description	'Locations Tree Category'
+	label	'emxDocumentCentral.TreeCategory.Locations'
+	href	'${SUITE_DIR}/emxDocumentCentralStartFrameSet.jsp?topActionbar=DCCompanyLocationsTopActionbar&bottomActionbar=DCCompanyLocationsBottomActionbar&header=emxDocumentCentral.Common.Locations'
+	alt	'emxDocumentCentral.TreeCategory.Locations'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallCompanyFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCompanyLocationsTreeCategory'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCtype_Company add command DCCompanyLocationsTreeCategory order command DCCompanyLocationsTreeCategory 3;
+#channel ==>DCtype_Company
+add property command_DCCompanyLocationsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'DCCompanyLocationsTreeCategory';

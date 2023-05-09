@@ -1,0 +1,15 @@
+del menu 'Default Tree';
+add menu 'Default Tree'
+	description	''
+	label	'${TYPE} ${NAME} ${REVISION}'
+	href	'emxDynamicAttributes.jsp?HelpMarker=emxhelptriggerparameterproperties'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'iconSmallDefault.gif'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'Default Tree'
+	property 'version'	value	'R209'
+;
+add property menu_DefaultTree on program eServiceSchemaVariableMapping.tcl to menu 'Default Tree';

@@ -1,0 +1,18 @@
+del command 'PMCDetailedView';
+add command 'PMCDetailedView'
+	description	'Detailed View'
+	label	'emxProgramCentral.WeeklyTimesheet.DetailedView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWeeklyTimeSheetDetailedView'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDetailedView'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimesheetViews add command PMCDetailedView order command PMCDetailedView 0;
+#channel ==>PMCWeeklyTimesheetViews
+add property command_PMCDetailedView on program eServiceSchemaVariableMapping.tcl to command 'PMCDetailedView';

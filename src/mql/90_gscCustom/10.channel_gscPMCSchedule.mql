@@ -1,0 +1,17 @@
+#del channel 'gscPMCSchedule';
+add channel 'gscPMCSchedule'
+ description ''
+ height '260'
+ label ''
+ href ''
+ setting  'Registered Suite'  'ProgramCentral'
+ command  'PMCGantt','gscPMCWBSDataGridView','PMCMilestones','PMCProjectBaseline'
+ property 'installer' value 'ENOVIAEngineering'
+ property 'application' value 'ProgramManagementBase'
+ property 'installed date' value '03-23-2023'
+ property 'original name' value 'gscPMCSchedule'
+ property 'version' value 'R422.HF6'
+;
+
+#portal ==>gscPMCSchedule
+add property channel_gscPMCSchedule on program eServiceSchemaVariableMapping.tcl to channel 'gscPMCSchedule';

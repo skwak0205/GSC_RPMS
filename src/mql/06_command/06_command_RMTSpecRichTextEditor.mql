@@ -1,0 +1,36 @@
+del command 'RMTSpecRichTextEditor';
+add command 'RMTSpecRichTextEditor'
+	description	'Launches Rich-text viewer.'
+	label	'emxRequirements.ActionLink.RichtextEditor'
+	href	'${SUITE_DIR}/PopupLauncher.jsp?expandProgramMenu=RMTSpecTreeProgramMenu&table=RMTSpecStatusTable&RichTextDefinition=RMTRichTextDefinition&toolbar=RMTRichTextEditorToolbar&editLink=true&objectCompare=false&Export=false&PrinterFriendly=false&expandLevelFilter=false&showClipboard=false&multiColumnSort=false&massPromoteDemote=false&triggerValidation=false&AutoFilter=true&CurrencyConverter=false&HelpMarker=emxhelpsce&preSaveJPO=emxRequirement:createNewVersion&sortColumnName=none&appendURL=StructureEffectivity|Requirements&TargetView=sce&editRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_RequirementBreakdown&resequenceRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_RequirementBreakdown&connectionProgram=emxSpecificationStructureBase:processXMLMessage&effectivityRelationship=relationship_SpecificationStructure,relationship_RequirementBreakdown,relationship_DerivedRequirement&expandByDefault=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isSCEUsed'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRichTextEditor.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecRichTextEditor'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecificationsListBottomActionBar add command RMTSpecRichTextEditor order command RMTSpecRichTextEditor 3;
+modify menu RMTSpecTreeActionBar add command RMTSpecRichTextEditor order command RMTSpecRichTextEditor 2;
+modify menu RMTSpecStructureDisplay add command RMTSpecRichTextEditor order command RMTSpecRichTextEditor 0;
+modify menu type_SoftwareRequirementSpecificationRMB add command RMTSpecRichTextEditor order command RMTSpecRichTextEditor 4;
+#channel ==>RMTSpecificationsListBottomActionBarRMTSpecTreeActionBarRMTSpecStructureDisplaytype_SoftwareRequirementSpecificationRMB
+add property command_RMTSpecRichTextEditor on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecRichTextEditor';

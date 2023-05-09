@@ -1,0 +1,4 @@
+<meta charset="UTF-8"/>
+VCXWebLevelExploderGUI.VCXLevelExploderGUICmd.Title="Detonador de nível";
+VCXWebLevelExploderGUI.PreviousLevelButton.Title="Voltar para a vista explodida";
+VCXWebLevelExploderGUI.RestoreModelButton.Title="Restaurar o modelo explodido ao estado original";

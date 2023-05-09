@@ -1,0 +1,16 @@
+del command 'FTRConfigurationFeaturesSplitViewCommand';
+add command 'FTRConfigurationFeaturesSplitViewCommand'
+	description	''
+	label	'emxConfiguration.SplitView.ConfigurationFeatures'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=ConfigurationFeature:getConfigurationFeatureStructure&table=FTRConfigFeaturesSplitViewTable&toolbar=FTRSplitViewActionsMenuToolBar&selection=multiple'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationFeaturesSplitViewCommand'
+	property	'version'	value	'R215'
+;
+#channel ==>FTRConfigFeaturesSplitViewChannel
+add property command_FTRConfigurationFeaturesSplitViewCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRConfigurationFeaturesSplitViewCommand';

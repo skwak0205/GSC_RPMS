@@ -1,0 +1,24 @@
+del command 'FTRCreateProductFeatureActionLink';
+add command 'FTRCreateProductFeatureActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Create'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=FeatureCreateFSInstance&PRCFSParam1=Feature'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete")'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateProductFeatureActionLink'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_FTRCreateProductFeatureActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateProductFeatureActionLink';

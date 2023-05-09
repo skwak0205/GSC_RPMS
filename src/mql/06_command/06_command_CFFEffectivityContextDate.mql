@@ -1,0 +1,21 @@
+del command 'CFFEffectivityContextDate';
+add command 'CFFEffectivityContextDate'
+	description	'Command to hold Context Date Effectivity settings'
+	label	'Effectivity.EffectivityType.Date'
+	href	''
+	alt	''
+	setting	'categoryType'		'contextDate'
+	setting	'Format'		'date'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'searchType'		'type_Model'
+	setting	'Label'		'Effectivity.EffectivityType.Date'
+	setting	'keyword'		'CD'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFEffectivityContextDate'
+	property	'version'	value	'R215'
+;
+modify menu CFFEffectivity add command CFFEffectivityContextDate order command CFFEffectivityContextDate 2;
+#channel ==>CFFEffectivity
+add property command_CFFEffectivityContextDate on program eServiceSchemaVariableMapping.tcl to command 'CFFEffectivityContextDate';

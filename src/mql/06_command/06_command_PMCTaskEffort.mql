@@ -1,0 +1,25 @@
+del command 'PMCTaskEffort';
+add command 'PMCTaskEffort'
+	description	'Efforts'
+	label	'emxProgramCentral.Common.Effort'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxEffortManagement:getObjectList&table=PMCTaskEffort&header=emxProgramCentral.Effort.EffortTitle&selection=none&sortDirection=ascending&PrinterFriendly=true&HelpMarker=emxhelpefforttasklist&showPageURLIcon=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'policy == "$<policy_ProjectTask>" && (to[$<relationship_ProjectAccessKey>].name != "")'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskEffort'
+	property	'version'	value	'R422'
+;
+modify menu type_TaskManagement add command PMCTaskEffort order command PMCTaskEffort 6;
+#channel ==>type_TaskManagement
+add property command_PMCTaskEffort on program eServiceSchemaVariableMapping.tcl to command 'PMCTaskEffort';

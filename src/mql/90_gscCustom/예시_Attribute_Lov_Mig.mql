@@ -1,0 +1,1195 @@
+################################################################################################
+# Created Date : 2023.01
+# Create by HyungJin, Ju
+# Description : Code Master MQL 생성 Script
+################################################################################################
+
+#[S] 사양/EBOM Common Code by MinSung,Kim 2020/07/07
+###################[B] Security Grade(gscSecurityGrade)
+#Code Master
+add bus 'gscCodeMaster' 'gscSecurityGrade' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Security Grade' Description 'Security Grade';
+
+#Code List
+add bus 'gscCodeMaster' 'SH' 'gscSecurityGrade' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'HHI Security Components' Description 'HHI Security Components';
+add bus 'gscCodeMaster' 'SM' 'gscSecurityGrade' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'MAKER Security Components' Description 'MAKER Security Components';
+add bus 'gscCodeMaster' '1H' 'gscSecurityGrade' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'HHI Controlled Components' Description 'HHI Controlled Components';
+add bus 'gscCodeMaster' '1M' 'gscSecurityGrade' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'MAKER Controlled Components' Description 'MAKER Controlled Components';
+add bus 'gscCodeMaster' '2H' 'gscSecurityGrade' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'HHI Components' Description 'HHI Components';
+add bus 'gscCodeMaster' '2M' 'gscSecurityGrade' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title 'MAKER Components' Description 'MAKER Components';
+add bus 'gscCodeMaster' '3H' 'gscSecurityGrade' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title 'HHI Standard Item' Description 'HHI Standard Item';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscSecurityGrade' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'SH' 'gscSecurityGrade';
+connect bus 'gscCodeMaster' 'gscSecurityGrade' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'SM' 'gscSecurityGrade';
+connect bus 'gscCodeMaster' 'gscSecurityGrade' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '1H' 'gscSecurityGrade';
+connect bus 'gscCodeMaster' 'gscSecurityGrade' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '1M' 'gscSecurityGrade';
+connect bus 'gscCodeMaster' 'gscSecurityGrade' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '2H' 'gscSecurityGrade';
+connect bus 'gscCodeMaster' 'gscSecurityGrade' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '2M' 'gscSecurityGrade';
+connect bus 'gscCodeMaster' 'gscSecurityGrade' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '3H' 'gscSecurityGrade';
+
+# Title 에 Code 추가 by Suhwan,Jang 2020/10/15
+mod bus 'gscCodeMaster' 'SH' 'gscSecurityGrade' Title 'SH : HHI Security Components' gscTitleKO 'SH : HHI Security Components';
+mod bus 'gscCodeMaster' 'SM' 'gscSecurityGrade' Title 'SM : MAKER Security Components' gscTitleKO 'SM : MAKER Security Components';
+mod bus 'gscCodeMaster' '1H' 'gscSecurityGrade' Title '1H : HHI Controlled Components' gscTitleKO '1H : HHI Controlled Components';
+mod bus 'gscCodeMaster' '1M' 'gscSecurityGrade' Title '1M : MAKER Controlled Components' gscTitleKO '1M : MAKER Controlled Components';
+mod bus 'gscCodeMaster' '2H' 'gscSecurityGrade' Title '2H : HHI Components' gscTitleKO '2H : HHI Components';
+mod bus 'gscCodeMaster' '2M' 'gscSecurityGrade' Title '2M : MAKER Components' gscTitleKO '2M : MAKER Components';
+mod bus 'gscCodeMaster' '3H' 'gscSecurityGrade' Title '3H : HHI Standard Item' gscTitleKO '3H : HHI Standard Item';
+
+
+
+
+
+
+####################### 아래는 참고용
+###################[E] Security Grade(gscSecurityGrade)
+
+
+###################[B] Drawing Distribution(gscDrawingDistribution)
+#Code Master
+add bus 'gscCodeMaster' 'gscDrawingDistribution' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Drawing Distribution' Description 'Drawing Distribution';
+
+#Code List
+add bus 'gscCodeMaster' 'A82' 'gscDrawingDistribution' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Assembly';
+add bus 'gscCodeMaster' 'C32' 'gscDrawingDistribution' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'Raw Material+crankshaft+machining+assembly';
+add bus 'gscCodeMaster' 'C52' 'gscDrawingDistribution' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'Machining+assembly';
+add bus 'gscCodeMaster' 'F32' 'gscDrawingDistribution' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'Crankshaft+machining+assembly';
+add bus 'gscCodeMaster' 'P82' 'gscDrawingDistribution' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'Piping assembly';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscDrawingDistribution' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'A82' 'gscDrawingDistribution';
+connect bus 'gscCodeMaster' 'gscDrawingDistribution' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'C32' 'gscDrawingDistribution';
+connect bus 'gscCodeMaster' 'gscDrawingDistribution' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'C52' 'gscDrawingDistribution';
+connect bus 'gscCodeMaster' 'gscDrawingDistribution' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'F32' 'gscDrawingDistribution';
+connect bus 'gscCodeMaster' 'gscDrawingDistribution' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'P82' 'gscDrawingDistribution';
+
+# Title 에 Code 추가 by Suhwan,Jang 2020/10/15
+mod bus 'gscCodeMaster' 'A82' 'gscDrawingDistribution' Title 'A82 : Assembly' gscTitleKO 'A82 : Assembly';
+mod bus 'gscCodeMaster' 'C32' 'gscDrawingDistribution' Title 'C32 : Raw Material+crankshaft+machining+assembly' gscTitleKO 'C32 : Raw Material+crankshaft+machining+assembly';
+mod bus 'gscCodeMaster' 'C52' 'gscDrawingDistribution' Title 'C52 : Machining+assembly' gscTitleKO 'C52 : Machining+assembly';
+mod bus 'gscCodeMaster' 'F32' 'gscDrawingDistribution' Title 'F32 : Crankshaft+machining+assembly' gscTitleKO 'F32 : Crankshaft+machining+assembly';
+mod bus 'gscCodeMaster' 'P82' 'gscDrawingDistribution' Title 'P82 : Piping assembly' gscTitleKO 'P82 : Piping assembly';
+
+###################[E] Drawing Distribution(gscDrawingDistribution)
+
+
+###################[B] Functional Dept.(gscFunctionalDept)
+#Code Master
+add bus 'gscCodeMaster' 'gscFunctionalDept' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Functional Dept.' Description 'Functional Dept.';
+
+#Code List
+add bus 'gscCodeMaster' 'B0' 'gscFunctionalDept' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Basic';
+add bus 'gscCodeMaster' 'B1' 'gscFunctionalDept' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'Structure';
+add bus 'gscCodeMaster' 'B2' 'gscFunctionalDept' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'Performance';
+add bus 'gscCodeMaster' 'B3' 'gscFunctionalDept' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'Piping';
+add bus 'gscCodeMaster' 'B4' 'gscFunctionalDept' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'Electric';
+add bus 'gscCodeMaster' 'B7' 'gscFunctionalDept' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title 'Development' gscTitleKO 'Development';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscFunctionalDept' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B0' 'gscFunctionalDept';
+connect bus 'gscCodeMaster' 'gscFunctionalDept' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B1' 'gscFunctionalDept';
+connect bus 'gscCodeMaster' 'gscFunctionalDept' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B2' 'gscFunctionalDept';
+connect bus 'gscCodeMaster' 'gscFunctionalDept' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B3' 'gscFunctionalDept';
+connect bus 'gscCodeMaster' 'gscFunctionalDept' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B4' 'gscFunctionalDept';
+connect bus 'gscCodeMaster' 'gscFunctionalDept' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B7' 'gscFunctionalDept';
+###################[E] Functional Dept.(gscFunctionalDept)
+
+###################[B] Cylinder(gscCylinder)
+#Code Master
+add bus 'gscCodeMaster' 'gscCylinder' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Cylinder' Description 'Cylinder';
+
+#Code List
+add bus 'gscCodeMaster' '5' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '5';
+add bus 'gscCodeMaster' '6' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title '6';
+add bus 'gscCodeMaster' '7' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title '7';
+add bus 'gscCodeMaster' '8' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title '8';
+add bus 'gscCodeMaster' '9' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title '9';
+add bus 'gscCodeMaster' 'A' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title '10';
+add bus 'gscCodeMaster' 'B' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title '12';
+add bus 'gscCodeMaster' 'C' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title '14';
+add bus 'gscCodeMaster' 'D' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title '16';
+add bus 'gscCodeMaster' 'E' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '10' Title '18';
+add bus 'gscCodeMaster' 'F' 'gscCylinder' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '11' Title '20';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '5' 'gscCylinder';
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '6' 'gscCylinder';
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '7' 'gscCylinder';
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '8' 'gscCylinder';
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '9' 'gscCylinder';
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'A' 'gscCylinder';
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B' 'gscCylinder';
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'C' 'gscCylinder';
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'D' 'gscCylinder';
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'E' 'gscCylinder';
+connect bus 'gscCodeMaster' 'gscCylinder' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'F' 'gscCylinder';
+###################[E] Cylinder(gscCylinder)
+
+
+###################[B] Bore Size(gscBoreSize)
+#Code Master
+add bus 'gscCodeMaster' 'gscBoreSize' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Bore Size' Description 'Bore Size';
+
+#Code List
+add bus 'gscCodeMaster' 'A' 'gscBoreSize' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '17';
+add bus 'gscCodeMaster' 'B' 'gscBoreSize' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title '21';
+add bus 'gscCodeMaster' 'C' 'gscBoreSize' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title '22';
+add bus 'gscCodeMaster' 'D' 'gscBoreSize' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title '25';
+add bus 'gscCodeMaster' 'E' 'gscBoreSize' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title '27';
+add bus 'gscCodeMaster' 'F' 'gscBoreSize' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title '32';
+add bus 'gscCodeMaster' 'G' 'gscBoreSize' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title '35';
+add bus 'gscCodeMaster' 'H' 'gscBoreSize' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title '46';
+add bus 'gscCodeMaster' 'I' 'gscBoreSize' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title '54';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscBoreSize' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'A' 'gscBoreSize';
+connect bus 'gscCodeMaster' 'gscBoreSize' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B' 'gscBoreSize';
+connect bus 'gscCodeMaster' 'gscBoreSize' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'C' 'gscBoreSize';
+connect bus 'gscCodeMaster' 'gscBoreSize' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'D' 'gscBoreSize';
+connect bus 'gscCodeMaster' 'gscBoreSize' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'E' 'gscBoreSize';
+connect bus 'gscCodeMaster' 'gscBoreSize' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'F' 'gscBoreSize';
+connect bus 'gscCodeMaster' 'gscBoreSize' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'G' 'gscBoreSize';
+connect bus 'gscCodeMaster' 'gscBoreSize' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'H' 'gscBoreSize';
+connect bus 'gscCodeMaster' 'gscBoreSize' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'I' 'gscBoreSize';
+###################[E] Bore Size(gscBoreSize)
+
+
+###################[B] Fuel Type(gscFuelType)
+#Code Master
+add bus 'gscCodeMaster' 'gscFuelType' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Fuel Type' Description 'Fuel Type';
+
+#Code List
+add bus 'gscCodeMaster' 'D' 'gscFuelType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Diesel';
+add bus 'gscCodeMaster' 'G' 'gscFuelType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'Gas';
+add bus 'gscCodeMaster' 'T' 'gscFuelType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'Dual Fuel';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscFuelType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'D' 'gscFuelType';
+connect bus 'gscCodeMaster' 'gscFuelType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'G' 'gscFuelType';
+connect bus 'gscCodeMaster' 'gscFuelType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'T' 'gscFuelType';
+###################[E] Fuel Type(gscFuelType)
+
+
+###################[B] Application(gscApplication)
+#Code Master
+add bus 'gscCodeMaster' 'gscApplication' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Application' Description 'Application';
+
+#Code List
+add bus 'gscCodeMaster' 'G' 'gscApplication' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Genset';
+add bus 'gscCodeMaster' 'P' 'gscApplication' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'Propulsion';
+
+mod bus 'gscCodeMaster' 'G' 'gscApplication' Title 'Generator Set' gscTitleKO 'Generator Set';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscApplication' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'G' 'gscApplication';
+connect bus 'gscCodeMaster' 'gscApplication' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'P' 'gscApplication';
+###################[E] Application(gscApplication)
+
+
+###################[B] Design(gscDesign)
+#Code Master
+add bus 'gscCodeMaster' 'gscDesign' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Design' Description 'Design';
+
+#Code List
+add bus 'gscCodeMaster' 'B' 'gscDesign' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Base';
+add bus 'gscCodeMaster' 'U' 'gscDesign' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'UPRATE';
+add bus 'gscCodeMaster' 'M' 'gscDesign' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'TANKER';
+add bus 'gscCodeMaster' 'C' 'gscDesign' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'CLEAN';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscDesign' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B' 'gscDesign';
+connect bus 'gscCodeMaster' 'gscDesign' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'U' 'gscDesign';
+connect bus 'gscCodeMaster' 'gscDesign' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'M' 'gscDesign';
+connect bus 'gscCodeMaster' 'gscDesign' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'C' 'gscDesign';
+
+###################[E] Design(gscDesign)
+
+###################[B] Project Document(ProjectDocument)
+add bus 'gscCodeMaster' 'ProjectDocument' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Project Document' Description 'Project Document Name List';
+
+add bus 'gscCodeMaster' 'POS' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'POS' Description 'POS';
+add bus 'gscCodeMaster' 'EOD' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'EOD' Description 'EOD';
+add bus 'gscCodeMaster' 'Extra Option' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'Extra Option' Description 'Extra Option';
+add bus 'gscCodeMaster' 'Yard Approval' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'Yard Approval' Description 'Yard Approval';
+add bus 'gscCodeMaster' 'Class Approval' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'Class Approval' Description 'Class Approval';
+add bus 'gscCodeMaster' 'TVC' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title 'TVC' Description 'TVC';
+add bus 'gscCodeMaster' 'Working Drawing' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title 'Working Drawing' Description 'Working Drawing';
+add bus 'gscCodeMaster' 'Project Information' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title 'Project Information' Description 'Project Information';
+add bus 'gscCodeMaster' 'Preliminary Technical File' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '10' Title 'Preliminary Technical File' Description 'Preliminary Technical File';
+add bus 'gscCodeMaster' 'Generator Efficiency' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '11' Title 'Generator Efficiency' Description 'Generator Efficiency';
+add bus 'gscCodeMaster' 'Special Requirement' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '12' Title 'Special Requirement' Description 'Special Requirement';
+add bus 'gscCodeMaster' 'Packing List' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '13' Title 'Packing List' Description 'Packing List';
+add bus 'gscCodeMaster' 'Generator Shaft Drawing' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '14' Title 'Generator Shaft Drawing' gscTitleKO 'Generator Shaft Drawing' Description 'Generator Shaft Drawing';
+add bus 'gscCodeMaster' 'Generator Outline Dimension' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '15' Title 'Generator Outline Dimension' gscTitleKO 'Generator Outline Dimension' Description 'Generator Outline Dimension';
+add bus 'gscCodeMaster' 'Generator Comment' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '16' Title 'Generator Comment' gscTitleKO 'Generator Comment' Description 'Generator Comment';
+add bus 'gscCodeMaster' 'Generator Approval Drawing' 'ProjectDocument' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '17' Title 'Generator Approval Drawing' gscTitleKO 'Generator Approval Drawing' Description 'Generator Approval Drawing';
+
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'POS' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'EOD' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Extra Option' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Yard Approval' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Class Approval' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'TVC' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Working Drawing' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Project Information' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Preliminary Technical File' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Generator Efficiency' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Special Requirement' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Packing List' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Generator Shaft Drawing' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Generator Outline Dimension' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Generator Comment' 'ProjectDocument';
+connect bus 'gscCodeMaster' 'ProjectDocument' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Generator Approval Drawing' 'ProjectDocument';
+###################[E] Project Document(ProjectDocument)
+#[E] 사양/EBOM Common Code by MinSung,Kim 2020/07/07
+
+
+
+
+
+#add by Jongseok.Hyun [S]
+###################[B] (gscDesignChangeYN)
+
+add bus 'gscCodeMaster' 'gscDesignChangeYN' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Design Change YN' Description 'Design Change YN';
+
+add bus 'gscCodeMaster' 'Y' 'gscDesignChangeYN' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Yes' Description 'Yes';
+add bus 'gscCodeMaster' 'N' 'gscDesignChangeYN' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'No' Description 'No';
+
+connect bus 'gscCodeMaster' 'gscDesignChangeYN' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y' 'gscDesignChangeYN';
+connect bus 'gscCodeMaster' 'gscDesignChangeYN' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'N' 'gscDesignChangeYN';
+
+###################[E] (gscDesignChangeYN)
+
+###################[B] (gscMOType)
+
+add bus 'gscCodeMaster' 'gscMOType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'MO Type' Description 'MO Type';
+
+add bus 'gscCodeMaster' '1' 'gscMOType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '공사옵션초도' Description '1. 공사옵션초도';
+add bus 'gscCodeMaster' '2' 'gscMOType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title '공사옵션변경' Description '2. 공사옵션변경';
+add bus 'gscCodeMaster' '3' 'gscMOType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title '공사BOM초도' Description '3. 공사BOM초도';
+add bus 'gscCodeMaster' '4' 'gscMOType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title '공사BOM변경' Description '4. 공사BOM변경';
+
+connect bus 'gscCodeMaster' 'gscMOType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '1' 'gscMOType';
+connect bus 'gscCodeMaster' 'gscMOType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '2' 'gscMOType';
+connect bus 'gscCodeMaster' 'gscMOType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '3' 'gscMOType';
+connect bus 'gscCodeMaster' 'gscMOType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '4' 'gscMOType';
+
+###################[E] (gscMOType)
+
+###################[B] (gscEOType)
+
+add bus 'gscCodeMaster' 'gscEOType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'EO Type' Description 'EO Type';
+
+add bus 'gscCodeMaster' '1' 'gscEOType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '초도' Description '초도';
+add bus 'gscCodeMaster' '2' 'gscEOType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title '변경' Description '변경';
+
+connect bus 'gscCodeMaster' 'gscEOType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '1' 'gscEOType';
+connect bus 'gscCodeMaster' 'gscEOType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '2' 'gscEOType';
+
+###################[E] (gscEOType)
+
+###################[B] (gscOCOType)
+
+add bus 'gscCodeMaster' 'gscOCOType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'EO Type' Description 'EO Type';
+
+add bus 'gscCodeMaster' '1' 'gscOCOType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '초도' Description '초도';
+add bus 'gscCodeMaster' '2' 'gscOCOType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title '변경' Description '변경';
+
+connect bus 'gscCodeMaster' 'gscOCOType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '1' 'gscOCOType';
+connect bus 'gscCodeMaster' 'gscOCOType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '2' 'gscOCOType';
+
+###################[E] (gscOCOType)
+
+###################[B] (gscChangeActionCode)
+
+add bus 'gscCodeMaster' 'gscChangeActionCode' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Change Action Code' Description 'Change Action Code';
+
+add bus 'gscCodeMaster' 'A' 'gscChangeActionCode' owner 'creator' vault 'eService Production' policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Description '무상/폐기(운항 포함)'   Title   'A. 무상/폐기(운항 포함)';
+add bus 'gscCodeMaster' 'B' 'gscChangeActionCode' owner 'creator' vault 'eService Production' policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Description '무상/폐기(운항 미포함)' Title    'B. 무상/폐기(운항 미포함)';
+add bus 'gscCodeMaster' 'C' 'gscChangeActionCode' owner 'creator' vault 'eService Production' policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Description '유상(Stock 소진)'   Title    'C. 유상(Stock 소진)';
+add bus 'gscCodeMaster' 'D' 'gscChangeActionCode' owner 'creator' vault 'eService Production' policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Description '유상'              Title    'D. 유상';
+add bus 'gscCodeMaster' 'E' 'gscChangeActionCode' owner 'creator' vault 'eService Production' policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Description '유상/옵션'          Title     'E. 유상/옵션';
+add bus 'gscCodeMaster' 'F' 'gscChangeActionCode' owner 'creator' vault 'eService Production' policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Description '기술정보'           Title     'F. 기술정보';
+
+connect bus 'gscCodeMaster' 'gscChangeActionCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'A' 'gscChangeActionCode';
+connect bus 'gscCodeMaster' 'gscChangeActionCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B' 'gscChangeActionCode';
+connect bus 'gscCodeMaster' 'gscChangeActionCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'C' 'gscChangeActionCode';
+connect bus 'gscCodeMaster' 'gscChangeActionCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'D' 'gscChangeActionCode';
+connect bus 'gscCodeMaster' 'gscChangeActionCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'E' 'gscChangeActionCode';
+connect bus 'gscCodeMaster' 'gscChangeActionCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'F' 'gscChangeActionCode';
+
+###################[E] (gscChangeActionCode)
+
+###################[B] (gscProcessState)
+
+add bus 'gscCodeMaster' 'gscProcessState' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Process State' Description 'Process State';
+
+del bus 'gscCodeMaster' '1' 'gscProcessState';
+del bus 'gscCodeMaster' '2' 'gscProcessState';
+del bus 'gscCodeMaster' '3' 'gscProcessState';
+del bus 'gscCodeMaster' '4' 'gscProcessState';
+del bus 'gscCodeMaster' '5' 'gscProcessState';
+del bus 'gscCodeMaster' '6' 'gscProcessState';
+del bus 'gscCodeMaster' '7' 'gscProcessState';
+
+add bus 'gscCodeMaster' '1' 'gscProcessState' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '1. 부품 사외제작 중' Description '1. 부품 사외제작 중';
+add bus 'gscCodeMaster' '2' 'gscProcessState' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title '2. 사내 소재/가공' Description '2. 사내 소재/가공';
+add bus 'gscCodeMaster' '3' 'gscProcessState' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title '3. 선조립' Description '3. 선조립';
+add bus 'gscCodeMaster' '4' 'gscProcessState' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title '4. 종조립' Description '4. 종조립';
+add bus 'gscCodeMaster' '5' 'gscProcessState' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title '5. 공식시운전' Description '5. 공식시운전';
+add bus 'gscCodeMaster' '6' 'gscProcessState' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title '6. 해상시운전' Description '6. 해상시운전';
+add bus 'gscCodeMaster' '7' 'gscProcessState' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title '7. 인도/Site 설치 후' Description '7. 인도/Site 설치 후';
+
+connect bus 'gscCodeMaster' 'gscProcessState' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '1' 'gscProcessState';
+connect bus 'gscCodeMaster' 'gscProcessState' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '2' 'gscProcessState';
+connect bus 'gscCodeMaster' 'gscProcessState' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '3' 'gscProcessState';
+connect bus 'gscCodeMaster' 'gscProcessState' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '4' 'gscProcessState';
+connect bus 'gscCodeMaster' 'gscProcessState' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '5' 'gscProcessState';
+connect bus 'gscCodeMaster' 'gscProcessState' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '6' 'gscProcessState';
+connect bus 'gscCodeMaster' 'gscProcessState' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '7' 'gscProcessState';
+
+###################[E] (gscProcessState)
+
+###################[B] (gscChangeClassification)
+
+add bus 'gscCodeMaster' 'gscChangeClassification' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Change Classification' Description 'Change Classification';
+
+add bus 'gscCodeMaster' 'S' 'gscChangeClassification' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '단순조치' Description '단순조치';
+add bus 'gscCodeMaster' 'N' 'gscChangeClassification' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title '일반' Description '일반';
+add bus 'gscCodeMaster' 'M' 'gscChangeClassification' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title '마이너체인지' Description '마이너체인지';
+
+connect bus 'gscCodeMaster' 'gscChangeClassification' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'S' 'gscChangeClassification';
+connect bus 'gscCodeMaster' 'gscChangeClassification' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'N' 'gscChangeClassification';
+connect bus 'gscCodeMaster' 'gscChangeClassification' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'M' 'gscChangeClassification';
+
+###################[E] (gscChangeClassification)
+
+###################[B] (gscChangeCode)
+
+add bus 'gscCodeMaster' 'gscChangeCode' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Change Code' Description 'Change Code';
+
+del bus 'gscCodeMaster' 'I' 'gscChangeCode';
+del bus 'gscCodeMaster' 'O' 'gscChangeCode';
+del bus 'gscCodeMaster' 'Y' 'gscChangeCode';
+del bus 'gscCodeMaster' 'H' 'gscChangeCode';
+del bus 'gscCodeMaster' 'V' 'gscChangeCode';
+del bus 'gscCodeMaster' 'P' 'gscChangeCode';
+del bus 'gscCodeMaster' 'C' 'gscChangeCode';
+del bus 'gscCodeMaster' 'Q' 'gscChangeCode';
+del bus 'gscCodeMaster' 'F' 'gscChangeCode';
+del bus 'gscCodeMaster' 'M' 'gscChangeCode';
+add bus 'gscCodeMaster' 'I' 'gscChangeCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '초도 생성' Description 'I.초도생성';
+add bus 'gscCodeMaster' 'O' 'gscChangeCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'Owner 요구 설계변경' Description 'O. Owner 요구 설계변경';
+add bus 'gscCodeMaster' 'Y' 'gscChangeCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title '조선소 요구 설계변경' Description 'Y. 조선소 요구 설계변경';
+add bus 'gscCodeMaster' 'H' 'gscChangeCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title '당사 설계변경 - 설계불량 후속조치' Description 'H. 당사 설계변경 - 설계불량 후속조치';
+add bus 'gscCodeMaster' 'V' 'gscChangeCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title '당사 설계변경 - 제작불량 후속조치' Description 'V. 당사 설계변경 - 제작불량 후속조치';
+add bus 'gscCodeMaster' 'P' 'gscChangeCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title '당사 설계변경 - 조립성 개선' Description 'P. 당사 설계변경 - 조립성 개선';
+add bus 'gscCodeMaster' 'C' 'gscChangeCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title '당사 설계변경 - 재료비 절감' Description 'C. 당사 설계변경 - 재료비 절감';
+add bus 'gscCodeMaster' 'Q' 'gscChangeCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title '당사 설계변경 - 품질향상' Description 'Q. 당사 설계변경 - 품질향상';
+add bus 'gscCodeMaster' 'F' 'gscChangeCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title 'Owner 공급 도면 불량' Description 'F. Owner 공급 도면 불량';
+add bus 'gscCodeMaster' 'M' 'gscChangeCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '10' Title '원인 및 책임소재 불명' Description 'M. 원인 및 책임소재 불명';
+
+connect bus 'gscCodeMaster' 'gscChangeCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'I' 'gscChangeCode';
+connect bus 'gscCodeMaster' 'gscChangeCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'O' 'gscChangeCode';
+connect bus 'gscCodeMaster' 'gscChangeCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y' 'gscChangeCode';
+connect bus 'gscCodeMaster' 'gscChangeCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'H' 'gscChangeCode';
+connect bus 'gscCodeMaster' 'gscChangeCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'V' 'gscChangeCode';
+connect bus 'gscCodeMaster' 'gscChangeCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'P' 'gscChangeCode';
+connect bus 'gscCodeMaster' 'gscChangeCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'C' 'gscChangeCode';
+connect bus 'gscCodeMaster' 'gscChangeCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Q' 'gscChangeCode';
+connect bus 'gscCodeMaster' 'gscChangeCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'F' 'gscChangeCode';
+connect bus 'gscCodeMaster' 'gscChangeCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'M' 'gscChangeCode';
+
+###################[E] (gscChangeCode)
+
+###################[B] (gscFromERPYN)
+
+add bus 'gscCodeMaster' 'gscFromERPYN' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'From ERP YN' Description 'From ERP YN';
+
+add bus 'gscCodeMaster' 'Y' 'gscFromERPYN' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Y : ERP생성' Description 'Y : ERP생성';
+add bus 'gscCodeMaster' 'N' 'gscFromERPYN' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'N : PDM생성' Description 'N : PDM생성';
+
+connect bus 'gscCodeMaster' 'gscFromERPYN' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y' 'gscFromERPYN';
+connect bus 'gscCodeMaster' 'gscFromERPYN' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'N' 'gscFromERPYN';
+
+###################[E] (gscFromERPYN)
+
+#add by Jongseok.Hyun [E]
+
+###################[B] (gscReservedType)
+
+add bus 'gscCodeMaster' 'gscReservedType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Reserved Type' Description 'Reserved Type' gscTitleKO 'Reserved Type';
+
+add bus 'gscCodeMaster' 'C' 'gscReservedType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Modeling Part' Description 'Modeling Part' gscTitleKO 'Modeling Part';
+add bus 'gscCodeMaster' 'T' 'gscReservedType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'Table Drawing' Description 'Table Drawing' gscTitleKO 'Table Drawing';
+add bus 'gscCodeMaster' 'S' 'gscReservedType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'Spec Document' Description 'Spec Document' gscTitleKO 'Spec Document';
+add bus 'gscCodeMaster' 'M' 'gscReservedType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'Project BOM Only Part' Description 'Project BOM Only Part' gscTitleKO 'Project BOM Only Part';
+# A Type 추가 by Suhwan,Jang 2020/10/14
+add bus 'gscCodeMaster' 'A' 'gscReservedType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'Approval Drawing' Description 'Approval Drawing' gscTitleKO 'Approval Drawing';
+
+connect bus 'gscCodeMaster' 'gscReservedType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'C' 'gscReservedType';
+connect bus 'gscCodeMaster' 'gscReservedType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'T' 'gscReservedType';
+connect bus 'gscCodeMaster' 'gscReservedType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'S' 'gscReservedType';
+connect bus 'gscCodeMaster' 'gscReservedType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'M' 'gscReservedType';
+# A Type 추가 by Suhwan,Jang 2020/10/14
+connect bus 'gscCodeMaster' 'gscReservedType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'A' 'gscReservedType';
+
+###################[E] (gscReservedType)
+
+###################[B] (gscEODType)
+
+add bus 'gscCodeMaster' 'gscEODType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'EOD Type' Description 'EOD Type' gscTitleKO 'EOD Type';
+
+add bus 'gscCodeMaster' 'G' 'gscEODType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Genaral' Description 'Genaral' gscTitleKO 'Genaral';
+add bus 'gscCodeMaster' 'O' 'gscEODType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'Option' Description 'Option' gscTitleKO 'Option';
+
+connect bus 'gscCodeMaster' 'gscEODType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'G' 'gscEODType';
+connect bus 'gscCodeMaster' 'gscEODType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'O' 'gscEODType';
+
+###################[E] (gscEODType)
+
+###################[B] (gscBSheetChangeType)
+add bus 'gscCodeMaster' 'gscBSheetChangeType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'B-Sheet Change Type Type' Description 'B-Sheet Change Type';
+
+add bus 'gscCodeMaster' 'A' 'gscBSheetChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'ADD' description 'Add';
+add bus 'gscCodeMaster' 'C' 'gscBSheetChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'CHANGE' description 'Change';
+add bus 'gscCodeMaster' 'D' 'gscBSheetChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'DELETE' description 'Delete';
+add bus 'gscCodeMaster' 'R' 'gscBSheetChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'REPLACE' description 'Replace';
+add bus 'gscCodeMaster' 'M' 'gscBSheetChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'MOVE' description 'Move';
+add bus 'gscCodeMaster' 'O' 'gscBSheetChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title 'OPT' description 'Option Change';
+add bus 'gscCodeMaster' 'U' 'gscBSheetChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title 'Rev.Change' description 'Revision Change';
+add bus 'gscCodeMaster' 'N' 'gscBSheetChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title 'UNIT' description 'Unit Change';
+add bus 'gscCodeMaster' 'Q' 'gscBSheetChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title 'Q/C' description 'Quantity Change';
+
+connect  bus 'gscCodeMaster' 'gscBSheetChangeType' '-' rel gscCodeParentAndChild to 'gscCodeMaster' 'A' 'gscBSheetChangeType'; 
+connect  bus 'gscCodeMaster' 'gscBSheetChangeType' '-' rel gscCodeParentAndChild to 'gscCodeMaster' 'C' 'gscBSheetChangeType'; 
+connect  bus 'gscCodeMaster' 'gscBSheetChangeType' '-' rel gscCodeParentAndChild to 'gscCodeMaster' 'D' 'gscBSheetChangeType'; 
+connect  bus 'gscCodeMaster' 'gscBSheetChangeType' '-' rel gscCodeParentAndChild to 'gscCodeMaster' 'R' 'gscBSheetChangeType'; 
+connect  bus 'gscCodeMaster' 'gscBSheetChangeType' '-' rel gscCodeParentAndChild to 'gscCodeMaster' 'M' 'gscBSheetChangeType'; 
+connect  bus 'gscCodeMaster' 'gscBSheetChangeType' '-' rel gscCodeParentAndChild to 'gscCodeMaster' 'O' 'gscBSheetChangeType'; 
+connect  bus 'gscCodeMaster' 'gscBSheetChangeType' '-' rel gscCodeParentAndChild to 'gscCodeMaster' 'U' 'gscBSheetChangeType'; 
+connect  bus 'gscCodeMaster' 'gscBSheetChangeType' '-' rel gscCodeParentAndChild to 'gscCodeMaster' 'N' 'gscBSheetChangeType'; 
+connect  bus 'gscCodeMaster' 'gscBSheetChangeType' '-' rel gscCodeParentAndChild to 'gscCodeMaster' 'Q' 'gscBSheetChangeType';
+
+###################[E] (gscBSheetChangeType)
+
+###################[B] AR Type(gscARType)
+#Code Master
+add bus 'gscCodeMaster' 'gscARType' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'AR Type' Description 'Approval Request Type';
+
+#Code List
+add bus 'gscCodeMaster' 'PMA' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'ERP GENERAL/STANDARD PART MASTER CREATION' Description 'ERP GENERAL/STANDARD PART MASTER CREATION';
+add bus 'gscCodeMaster' 'PDA' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'POS SPEC DOCUMENT' Description 'POS SPEC DOCUMENT';
+add bus 'gscCodeMaster' 'SMA' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'SERVICE MANUAL' Description 'SERVICE MANUAL';
+add bus 'gscCodeMaster' 'GAD' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'GENERAL APPROVAL DRAWING' Description 'GENERAL APPROVAL DRAWING';
+add bus 'gscCodeMaster' 'ADA' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'AD PART APPROVAL' Description 'AD PART APPROVAL';
+add bus 'gscCodeMaster' 'YAD' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title 'YARD AD DISTRIBUTION' Description 'YARD AD DISTRIBUTION';
+add bus 'gscCodeMaster' 'SAD' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title 'SHIP AD DISTRIBUTION' Description 'SHIP AD DISTRIBUTION';
+add bus 'gscCodeMaster' 'GDA' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title 'GENERAL DOCUMENT' Description 'GENERAL DOCUMENT';
+add bus 'gscCodeMaster' 'SAA' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title 'SOURCE PART' Description 'SOURCE PART';
+add bus 'gscCodeMaster' 'POA' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '10' Title 'PART OBSOLETE' Description 'PART OBSOLETE';
+add bus 'gscCodeMaster' 'CSA' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '11' Title 'CHANGE STANDARD TABLE PART' Description 'CHANGE STANDARD TABLE PART';
+add bus 'gscCodeMaster' 'SRR' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '12' Title 'STANDARD PART REG-REQUEST' Description 'STANDARD PART REG-REQUEST';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PMA' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PDA' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'SMA' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'GAD' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ADA' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'YAD' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'SAD' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'GDA' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'SAA' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'POA' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'CSA' 'gscARType';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'SRR' 'gscARType';
+
+###################[E] AR Type (gscARType)
+
+###################[B] (gscCheckListClassification)
+
+add bus 'gscCodeMaster' 'gscCheckListClassification' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Check List Classification' Description 'EO Type';
+
+add bus 'gscCodeMaster' '1' 'gscCheckListClassification' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '초도' Description '초도';
+add bus 'gscCodeMaster' '2' 'gscCheckListClassification' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title '변경' Description '변경';
+add bus 'gscCodeMaster' '3' 'gscCheckListClassification' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title '공통' Description '공통';
+
+connect bus 'gscCodeMaster' 'gscCheckListClassification' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '1' 'gscCheckListClassification';
+connect bus 'gscCodeMaster' 'gscCheckListClassification' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '2' 'gscCheckListClassification';
+connect bus 'gscCodeMaster' 'gscCheckListClassification' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '3' 'gscCheckListClassification';
+
+###################[E] (gscCheckListClassification)
+
+###################[B] (gscCheckListType)
+
+add bus 'gscCodeMaster' 'gscCheckListType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Check List Type' Description 'EO Type';
+
+add bus 'gscCodeMaster' 'gscSOChangeOrder' 'gscCheckListType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'SOCO' Description 'SO Change Order';
+add bus 'gscCodeMaster' 'gscEngineeringOrder' 'gscCheckListType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'EO' Description 'Engineering Order';
+add bus 'gscCodeMaster' 'gscOrderOptionListOrder' 'gscCheckListType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'OCO' Description 'Order Option Change Order';
+add bus 'gscCodeMaster' 'gscManufacturingOrder' 'gscCheckListType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'MO' Description 'Manufacturing Order';
+
+connect bus 'gscCodeMaster' 'gscCheckListType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscSOChangeOrder' 'gscCheckListType';
+connect bus 'gscCodeMaster' 'gscCheckListType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscEngineeringOrder' 'gscCheckListType';
+connect bus 'gscCodeMaster' 'gscCheckListType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscOrderOptionListOrder' 'gscCheckListType';
+connect bus 'gscCodeMaster' 'gscCheckListType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscManufacturingOrder' 'gscCheckListType';
+
+###################[E] (gscCheckListType)
+
+###################[B] (gscPartWorkingType)
+
+add bus 'gscCodeMaster' 'gscPartWorkingType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Part Working Type' Description 'Part Working Type';
+
+add bus 'gscCodeMaster' 'D' 'gscPartWorkingType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Internal' Description 'Internal';
+add bus 'gscCodeMaster' 'E' 'gscPartWorkingType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'External' Description 'External';
+
+connect bus 'gscCodeMaster' 'gscPartWorkingType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'D' 'gscPartWorkingType';
+connect bus 'gscCodeMaster' 'gscPartWorkingType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'E' 'gscPartWorkingType';
+
+###################[E] (gscPartWorkingType)
+
+###################[B] (gscCheckListType)
+
+add bus 'gscCodeMaster' 'gscVPMReference.gscPartType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'CAD Part Type' Description 'CAD Part Type';
+
+add bus 'gscCodeMaster' 'CAD_Only' 'gscVPMReference.gscPartType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'CAD Only' Description 'CAD Only';
+add bus 'gscCodeMaster' 'General' 'gscVPMReference.gscPartType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'General' Description 'General';
+add bus 'gscCodeMaster' 'Standard' 'gscVPMReference.gscPartType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'Standard' Description 'Standard';
+add bus 'gscCodeMaster' 'Table_Standard' 'gscVPMReference.gscPartType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'Table Standard' Description 'Table Standard';
+add bus 'gscCodeMaster' 'Approval' 'gscVPMReference.gscPartType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'Approval' Description 'Approval';
+add bus 'gscCodeMaster' 'Source' 'gscVPMReference.gscPartType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title 'Source' Description 'Source';
+
+connect bus 'gscCodeMaster' 'gscVPMReference.gscPartType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'CAD_Only' 'gscVPMReference.gscPartType';
+connect bus 'gscCodeMaster' 'gscVPMReference.gscPartType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'General' 'gscVPMReference.gscPartType';
+connect bus 'gscCodeMaster' 'gscVPMReference.gscPartType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Standard' 'gscVPMReference.gscPartType';
+connect bus 'gscCodeMaster' 'gscVPMReference.gscPartType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Table_Standard' 'gscVPMReference.gscPartType';
+connect bus 'gscCodeMaster' 'gscVPMReference.gscPartType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Approval' 'gscVPMReference.gscPartType';
+connect bus 'gscCodeMaster' 'gscVPMReference.gscPartType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Source' 'gscVPMReference.gscPartType';
+###################[E] (gscCheckListType)
+
+###################[B] (gscDocumentType)
+
+add bus 'gscCodeMaster' 'gscDocumentType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Document Type' Description 'Document Type';
+
+add bus 'gscCodeMaster' 'General_Document' 'gscDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'General Document' Description 'General Document';
+add bus 'gscCodeMaster' 'Drawing'          'gscDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'Drawing' Description 'Drawing';
+add bus 'gscCodeMaster' 'Q_SPEC'           'gscDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'Q-SPEC' Description 'Q-SPEC';
+add bus 'gscCodeMaster' 'Other_SPEC'       'gscDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'Other SPEC' Description 'Other SPEC';
+add bus 'gscCodeMaster' 'PO_SPEC'          'gscDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'PO SPEC' Description 'POS';
+add bus 'gscCodeMaster' 'Approval_Drawing' 'gscDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title 'Approval Drawing' Description 'Approval Drawing';
+add bus 'gscCodeMaster' 'Maker_Drawing'    'gscDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title 'Maker Drawing' Description 'Maker Drawing';
+
+connect bus 'gscCodeMaster' 'gscDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'General_Document' 'gscDocumentType';
+connect bus 'gscCodeMaster' 'gscDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Drawing'          'gscDocumentType';
+connect bus 'gscCodeMaster' 'gscDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Q_SPEC'           'gscDocumentType';
+connect bus 'gscCodeMaster' 'gscDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Other_SPEC'       'gscDocumentType';
+connect bus 'gscCodeMaster' 'gscDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PO_SPEC'          'gscDocumentType';
+connect bus 'gscCodeMaster' 'gscDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Approval_Drawing' 'gscDocumentType';
+connect bus 'gscCodeMaster' 'gscDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Maker_Drawing'    'gscDocumentType';
+###################[E] (gscDocumentType)
+
+###################[B] (gscServiceDocumentType)
+add bus 'gscCodeMaster' 'gscServiceDocumentType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Service Document Type' Description 'Service Document Type';
+
+add bus 'gscCodeMaster' 'General_Instruction'            'gscServiceDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'General Instruction' Description 'General Instruction';
+add bus 'gscCodeMaster' 'Operation_Instruction'          'gscServiceDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'Operation Instruction' Description 'Operation Instruction';
+add bus 'gscCodeMaster' 'Maintenance_Instruction'        'gscServiceDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'Maintenance Instruction' Description 'Maintenance Instruction';
+add bus 'gscCodeMaster' 'Assembly_Drawing_&_Partlist'    'gscServiceDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'Assembly Drawing Partlist' Description 'Assembly Drawing & Partlist';
+add bus 'gscCodeMaster' '3D_Authoring_Document'          'gscServiceDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title '3D Authoring Document' Description '3D Authoring Document';
+
+connect bus 'gscCodeMaster' 'gscServiceDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'General_Instruction'            'gscServiceDocumentType';
+connect bus 'gscCodeMaster' 'gscServiceDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Operation_Instruction'          'gscServiceDocumentType';
+connect bus 'gscCodeMaster' 'gscServiceDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Maintenance_Instruction'        'gscServiceDocumentType';
+connect bus 'gscCodeMaster' 'gscServiceDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Assembly_Drawing_&_Partlist'    'gscServiceDocumentType';
+connect bus 'gscCodeMaster' 'gscServiceDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '3D_Authoring_Document'          'gscServiceDocumentType';
+###################[E] (gscServiceDocumentType)
+
+###################[B] (gscARADGYardDistributionType)
+add bus 'gscCodeMaster' 'gscARADGYardDistributionType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'AD Distribution Phase' Description 'Yard AD Distribution Phase';
+
+add bus 'gscCodeMaster' 'CD' 'gscARADGYardDistributionType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'CUSTOMER DISTRIBUTION' Description 'CUSTOMER DISTRIBUTION';
+add bus 'gscCodeMaster' 'MD' 'gscARADGYardDistributionType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'MANUFACTURING DISTRIBUTION' Description 'MANUFACTURING DISTRIBUTION';
+add bus 'gscCodeMaster' 'MC' 'gscARADGYardDistributionType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'MANUFACTURING COMPLETE' Description 'MANUFACTURING COMPLETE';
+
+connect bus 'gscCodeMaster' 'gscARADGYardDistributionType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'CD' 'gscARADGYardDistributionType';
+connect bus 'gscCodeMaster' 'gscARADGYardDistributionType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'MD' 'gscARADGYardDistributionType';
+connect bus 'gscCodeMaster' 'gscARADGYardDistributionType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'MC' 'gscARADGYardDistributionType';
+###################[E] (gscARADGYardDistributionType)
+
+###################[B] (gscVPLMRoleCode)
+add bus 'gscCodeMaster' 'gscVPLMRoleCode' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'VPLM Role Code' Description 'VPLM Role Code';
+
+add bus 'gscCodeMaster' 'VPLMViewer'               'gscVPLMRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'VPLM Viewer' Description 'VPLM Viewer';
+add bus 'gscCodeMaster' 'VPLMCreator'              'gscVPLMRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'VPLM Creator' Description 'VPLM Creator';
+add bus 'gscCodeMaster' 'VPLMAdmin'                'gscVPLMRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'VPLM Admin' Description 'VPLM Admin';
+add bus 'gscCodeMaster' 'VPLMProjectLeader'        'gscVPLMRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'VPLM Project Leader' Description 'VPLM Project Leader';
+add bus 'gscCodeMaster' 'VPLMProjectAdministrator' 'gscVPLMRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'VPLM Project Administrator' Description 'VPLM Project Administrator';
+
+connect bus 'gscCodeMaster' 'gscVPLMRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'VPLMViewer'        'gscVPLMRoleCode';
+connect bus 'gscCodeMaster' 'gscVPLMRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'VPLMCreator'       'gscVPLMRoleCode';
+connect bus 'gscCodeMaster' 'gscVPLMRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'VPLMAdmin'         'gscVPLMRoleCode';
+connect bus 'gscCodeMaster' 'gscVPLMRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'VPLMProjectLeader' 'gscVPLMRoleCode';
+connect bus 'gscCodeMaster' 'gscVPLMRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'VPLMProjectAdministrator' 'gscVPLMRoleCode';
+###################[E] (gscVPLMRoleCode)
+
+###################[B] (gscCollabSpaceCode)
+add bus 'gscCodeMaster' 'gscCollabSpaceCode' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Space Code' Description 'Space Code';
+
+add bus 'gscCodeMaster' 'HIMSEN'   'gscCollabSpaceCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'HIMSEN' Description 'HIMSEN';
+add bus 'gscCodeMaster' 'STANDARD' 'gscCollabSpaceCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'STANDARD' Description 'STANDARD';
+
+connect bus 'gscCodeMaster' 'gscCollabSpaceCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'HIMSEN'    'gscCollabSpaceCode';
+connect bus 'gscCodeMaster' 'gscCollabSpaceCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'STANDARD'  'gscCollabSpaceCode';
+###################[E] (gscCollabSpaceCode)
+
+###################[B] (gscHimSenDeptCode)
+add bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'HIMSEN Department Code' Description 'HIMSEN Department Code';
+
+add bus 'gscCodeMaster' 'SALES'         'gscHimSenDeptCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'SALES' Description 'SALES';
+add bus 'gscCodeMaster' 'PURCHASING'    'gscHimSenDeptCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'PURCHASING' Description 'PURCHASING';
+add bus 'gscCodeMaster' 'QUALITY'       'gscHimSenDeptCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'QUALITY' Description 'QUALITY';
+add bus 'gscCodeMaster' 'PRODUTION'     'gscHimSenDeptCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'PRODUTION' Description 'PRODUTION';
+add bus 'gscCodeMaster' 'DESIGN'        'gscHimSenDeptCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'DESIGN' Description 'DESIGN';
+add bus 'gscCodeMaster' 'BASIC'         'gscHimSenDeptCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title 'BASIC' Description 'BASIC';
+add bus 'gscCodeMaster' 'STRUCTURE'     'gscHimSenDeptCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title 'STRUCTURE' Description 'STRUCTURE';
+add bus 'gscCodeMaster' 'PERFORMANCE'   'gscHimSenDeptCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title 'PERFORMANCE' Description 'PERFORMANCE';
+add bus 'gscCodeMaster' 'PIPING'        'gscHimSenDeptCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title 'PIPING' Description 'PIPING';
+add bus 'gscCodeMaster' 'ELECTRIC'      'gscHimSenDeptCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '10' Title 'ELECTRIC' Description 'ELECTRIC';
+
+connect bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'SALES'         'gscHimSenDeptCode';
+connect bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PURCHASING'    'gscHimSenDeptCode';
+connect bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'QUALITY'       'gscHimSenDeptCode';
+connect bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PRODUTION'     'gscHimSenDeptCode';
+connect bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'DESIGN'        'gscHimSenDeptCode';
+connect bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'BASIC'         'gscHimSenDeptCode';
+connect bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'STRUCTURE'     'gscHimSenDeptCode';
+connect bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PERFORMANCE'   'gscHimSenDeptCode';
+connect bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PIPING'        'gscHimSenDeptCode';
+connect bus 'gscCodeMaster' 'gscHimSenDeptCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ELECTRIC'      'gscHimSenDeptCode';
+###################[E] (gscHimSenDeptCode)
+
+###################[B] (gscEnoviaAppCode)
+add bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Enovia App Code List' Description 'Enovia App Code List';
+
+add bus 'gscCodeMaster' 'ENOVAMA_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'ENOVAMA_AP' Description 'ENOVAMA_AP';
+add bus 'gscCodeMaster' 'ENOROCO_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'ENOROCO_AP' Description 'ENOROCO_AP';
+add bus 'gscCodeMaster' 'ENOREQL_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'ENOREQL_AP' Description 'ENOREQL_AP';
+add bus 'gscCodeMaster' 'ENOPRPR_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'ENOPRPR_AP' Description 'ENOPRPR_AP';
+add bus 'gscCodeMaster' 'ENOPACL_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'ENOPACL_AP' Description 'ENOPACL_AP';
+add bus 'gscCodeMaster' 'ENOENBO_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title 'ENOENBO_AP' Description 'ENOENBO_AP';
+add bus 'gscCodeMaster' 'ENOCOBO_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title 'ENOCOBO_AP' Description 'ENOCOBO_AP';
+add bus 'gscCodeMaster' 'ENOCORE_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title 'ENOCORE_AP' Description 'ENOCORE_AP';
+add bus 'gscCodeMaster' 'ENOCOCL_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title 'ENOCOCL_AP' Description 'ENOCOCL_AP';
+add bus 'gscCodeMaster' 'ENOCLRE_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '10' Title 'ENOCLRE_AP' Description 'ENOCLRE_AP';
+add bus 'gscCodeMaster' 'ENOBUPS_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '11' Title 'ENOBUPS_AP' Description 'ENOBUPS_AP';
+add bus 'gscCodeMaster' 'X3DMOCU_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '12' Title 'X3DMOCU_AP' Description 'X3DMOCU_AP';
+add bus 'gscCodeMaster' 'MAP-gscHHIMFG_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '13' Title 'MAP-gscHHIMFG_AP' Description 'MAP-gscHHIMFG_AP';
+add bus 'gscCodeMaster' 'MAP-gscHHISCM_AP' 'gscEnoviaAppCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '14' Title 'MAP-gscHHISCM_AP' Description 'MAP-gscHHISCM_AP';
+
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOVAMA_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOROCO_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOREQL_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOPRPR_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOPACL_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOENBO_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOCOBO_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOCORE_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOCOCL_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOCLRE_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOBUPS_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'X3DMOCU_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'MAP-gscHHIMFG_AP' 'gscEnoviaAppCode';
+connect bus 'gscCodeMaster' 'gscEnoviaAppCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'MAP-gscHHISCM_AP' 'gscEnoviaAppCode';
+###################[E] (gscEnoviaAppCode)
+
+###################[B] (gscEnoviaRoleCode)
+add bus 'gscCodeMaster' 'gscEnoviaRoleCode' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Enovia Role Code' Description 'Enovia Role Code';
+
+add bus 'gscCodeMaster' 'gscVariantManager' 'gscEnoviaRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'gscVariantManager' Description 'gscVariantManager';
+add bus 'gscCodeMaster' 'gscMFGADManager' 'gscEnoviaRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'gscMFGADManager' Description 'gscMFGADManager';
+add bus 'gscCodeMaster' 'gscMFGADCreator' 'gscEnoviaRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'gscMFGADCreator' Description 'gscMFGADCreator';
+add bus 'gscCodeMaster' 'gscMFGADLeader' 'gscEnoviaRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'gscMFGADLeader' Description 'gscMFGADCreator';
+
+connect bus 'gscCodeMaster' 'gscEnoviaRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscVariantManager' 'gscEnoviaRoleCode';
+connect bus 'gscCodeMaster' 'gscEnoviaRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscMFGADManager' 'gscEnoviaRoleCode';
+connect bus 'gscCodeMaster' 'gscEnoviaRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscMFGADCreator' 'gscEnoviaRoleCode';
+connect bus 'gscCodeMaster' 'gscEnoviaRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscMFGADLeader' 'gscEnoviaRoleCode';
+###################[E] (gscEnoviaRoleCode)
+###################[E] (gscEnoviaRoleCode)
+
+###################[B] (gscAPPRoleChangeType)
+add bus 'gscCodeMaster' 'gscAPPRoleChangeType' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Role Change Type' Description 'Role Change Type';
+
+add bus 'gscCodeMaster' 'VPLM' 'gscAPPRoleChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'VPLM' Description 'VPLM';
+add bus 'gscCodeMaster' 'ENOVIA' 'gscAPPRoleChangeType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'ENOVIA' Description 'ENOVIA';
+
+connect bus 'gscCodeMaster' 'gscAPPRoleChangeType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'VPLM' 'gscAPPRoleChangeType';
+connect bus 'gscCodeMaster' 'gscAPPRoleChangeType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ENOVIA' 'gscAPPRoleChangeType';
+###################[E] (gscAPPRoleChangeType)
+
+###################[B] AR Type(gscERType)
+#Code Master
+add bus 'gscCodeMaster' 'gscERType' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'ER Type' Description 'Unit Extension Request Type';
+
+#Code List
+add bus 'gscCodeMaster' 'IL' 'gscERType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'Initial Unit Extension' Description 'Initial Unit Extension';
+add bus 'gscCodeMaster' 'PL' 'gscERType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'Partial Unit Extension' Description 'Partial Unit Extension';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscERType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'IL' 'gscERType';
+connect bus 'gscCodeMaster' 'gscERType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PL' 'gscERType';
+
+# 조직도상 과정보
+add bus  gscCodeMaster gscOrgGroup -  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'    Title '조직도상의 과' gscTitleKO '조직도상의 과'  Description '조직도상의 과' ;
+
+add bus  gscCodeMaster K113 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order'  1 Title 'K113-힘센추진3과' gscTitleKO 'K113-힘센추진3과' description 'K113-힘센추진3과';
+add bus  gscCodeMaster K1N1 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order'  2 Title 'K1N1-경영기획과' gscTitleKO 'K1N1-경영기획과' description 'K1N1-경영기획과';
+add bus  gscCodeMaster K1N2 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order'  3 Title 'K1N2-사업개발과' gscTitleKO 'K1N2-사업개발과' description 'K1N2-사업개발과';
+add bus  gscCodeMaster K1N3 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order'  4 Title 'K1N3-IPP추진과' gscTitleKO 'K1N3-IPP추진과' description 'K1N3-IPP추진과';
+add bus  gscCodeMaster K1N4 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order'  5 Title 'K1N4-DT추진과' gscTitleKO 'K1N4-DT추진과' description 'K1N4-DT추진과';
+add bus  gscCodeMaster K1Q1 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order'  6 Title 'K1Q1-기술기획' gscTitleKO 'K1Q1-기술기획' description 'K1Q1-기술기획';
+add bus  gscCodeMaster K1Q2 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order'  7 Title 'K1Q2-원자력펌프' gscTitleKO 'K1Q2-원자력펌프' description 'K1Q2-원자력펌프';
+add bus  gscCodeMaster K1T1 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order'  8 Title 'K1T1-터보차져기술과' gscTitleKO 'K1T1-터보차져기술과' description 'K1T1-터보차져기술과';
+add bus  gscCodeMaster K1U1 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order'  9 Title 'K1U1-제품정보혁신과' gscTitleKO 'K1U1-제품정보혁신과' description 'K1U1-제품정보혁신과';
+add bus  gscCodeMaster K210 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 10 Title 'K210-대형엔진기술부' gscTitleKO 'K210-대형엔진기술부' description 'K210-대형엔진기술부';
+add bus  gscCodeMaster K211 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 11 Title 'K211-대형기술1과' gscTitleKO 'K211-대형기술1과' description 'K211-대형기술1과';
+add bus  gscCodeMaster K212 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 12 Title 'K212-대형기술2과' gscTitleKO 'K212-대형기술2과' description 'K212-대형기술2과';
+add bus  gscCodeMaster K213 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 13 Title 'K213-대형기술3과' gscTitleKO 'K213-대형기술3과' description 'K213-대형기술3과';
+add bus  gscCodeMaster K214 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 14 Title 'K214-대형기술4과' gscTitleKO 'K214-대형기술4과' description 'K214-대형기술4과';
+add bus  gscCodeMaster K215 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 15 Title 'K215-대형기술5과' gscTitleKO 'K215-대형기술5과' description 'K215-대형기술5과';
+add bus  gscCodeMaster K217 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 16 Title 'K217-기술영업과' gscTitleKO 'K217-기술영업과' description 'K217-기술영업과';
+add bus  gscCodeMaster K219 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 17 Title 'K219-환경기계' gscTitleKO 'K219-환경기계' description 'K219-환경기계';
+add bus  gscCodeMaster K220 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 18 Title 'K220-산업기계기술부' gscTitleKO 'K220-산업기계기술부' description 'K220-산업기계기술부';
+add bus  gscCodeMaster K221 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 19 Title 'K221-수평펌프과' gscTitleKO 'K221-수평펌프과' description 'K221-수평펌프과';
+add bus  gscCodeMaster K222 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 20 Title 'K222-수직펌프과' gscTitleKO 'K222-수직펌프과' description 'K222-수직펌프과';
+add bus  gscCodeMaster K223 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 21 Title 'K223-박용펌프과' gscTitleKO 'K223-박용펌프과' description 'K223-박용펌프과';
+add bus  gscCodeMaster K224 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 22 Title 'K224-펌프보증과' gscTitleKO 'K224-펌프보증과' description 'K224-펌프보증과';
+add bus  gscCodeMaster K225 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 23 Title 'K225-전기제어과' gscTitleKO 'K225-전기제어과' description 'K225-전기제어과';
+add bus  gscCodeMaster K22F gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 24 Title 'K22F-터보압축기과' gscTitleKO 'K22F-터보압축기과' description 'K22F-터보압축기과';
+add bus  gscCodeMaster K22J gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 25 Title 'K22J-터보기계과' gscTitleKO 'K22J-터보기계과' description 'K22J-터보기계과';
+add bus  gscCodeMaster K240 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 26 Title 'K240-엔진선행기술부' gscTitleKO 'K240-엔진선행기술부' description 'K240-엔진선행기술부';
+add bus  gscCodeMaster K241 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 27 Title 'K241-기술1과' gscTitleKO 'K241-기술1과' description 'K241-기술1과';
+add bus  gscCodeMaster K242 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 28 Title 'K242-기술2과' gscTitleKO 'K242-기술2과' description 'K242-기술2과';
+add bus  gscCodeMaster K243 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 29 Title 'K243-기술3과' gscTitleKO 'K243-기술3과' description 'K243-기술3과';
+add bus  gscCodeMaster K244 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 30 Title 'K244-기술4과' gscTitleKO 'K244-기술4과' description 'K244-기술4과';
+add bus  gscCodeMaster K245 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 31 Title 'K245-기술5과' gscTitleKO 'K245-기술5과' description 'K245-기술5과';
+add bus  gscCodeMaster K246 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 32 Title 'K246-방산기술과' gscTitleKO 'K246-방산기술과' description 'K246-방산기술과';
+add bus  gscCodeMaster K249 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 33 Title 'K249-환경기계' gscTitleKO 'K249-환경기계' description 'K249-환경기계';
+add bus  gscCodeMaster K2D0 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 34 Title 'K2D0-힘센엔진기술부' gscTitleKO 'K2D0-힘센엔진기술부' description 'K2D0-힘센엔진기술부';
+add bus  gscCodeMaster K2D1 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 35 Title 'K2D1-양산엔진' gscTitleKO 'K2D1-양산엔진' description 'K2D1-양산엔진';
+add bus  gscCodeMaster K2D2 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 36 Title 'K2D2-양산엔진' gscTitleKO 'K2D2-양산엔진' description 'K2D2-양산엔진';
+add bus  gscCodeMaster K2D3 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 37 Title 'K2D3-양산엔진' gscTitleKO 'K2D3-양산엔진' description 'K2D3-양산엔진';
+add bus  gscCodeMaster K2D4 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 38 Title 'K2D4-양산엔진' gscTitleKO 'K2D4-양산엔진' description 'K2D4-양산엔진';
+add bus  gscCodeMaster K2D5 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 39 Title 'K2D5-양산엔진' gscTitleKO 'K2D5-양산엔진' description 'K2D5-양산엔진';
+add bus  gscCodeMaster K2F0 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 40 Title 'K2F0-박용기계종합기술부' gscTitleKO 'K2F0-박용기계종합기술부' description 'K2F0-박용기계종합기술부';
+add bus  gscCodeMaster K2F2 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 41 Title 'K2F2-박용기계2과' gscTitleKO 'K2F2-박용기계2과' description 'K2F2-박용기계2과';
+add bus  gscCodeMaster K2F3 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 42 Title 'K2F3-박용기계3과' gscTitleKO 'K2F3-박용기계3과' description 'K2F3-박용기계3과';
+add bus  gscCodeMaster K2F4 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 43 Title 'K2F4-박용기계4과' gscTitleKO 'K2F4-박용기계4과' description 'K2F4-박용기계4과';
+add bus  gscCodeMaster K2F5 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 44 Title 'K2F5-박용기계5과' gscTitleKO 'K2F5-박용기계5과' description 'K2F5-박용기계5과';
+add bus  gscCodeMaster K2FA gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 45 Title 'K2FA-박용기계1과' gscTitleKO 'K2FA-박용기계1과' description 'K2FA-박용기계1과';
+add bus  gscCodeMaster K2J1 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 46 Title 'K2J1-제어기술1과' gscTitleKO 'K2J1-제어기술1과' description 'K2J1-제어기술1과';
+add bus  gscCodeMaster K2J2 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 47 Title 'K2J2-제어기술2과' gscTitleKO 'K2J2-제어기술2과' description 'K2J2-제어기술2과';
+add bus  gscCodeMaster K2J3 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 48 Title 'K2J3-제어기술3과' gscTitleKO 'K2J3-제어기술3과' description 'K2J3-제어기술3과';
+add bus  gscCodeMaster K2J4 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 49 Title 'K2J4-제어기술4과' gscTitleKO 'K2J4-제어기술4과' description 'K2J4-제어기술4과';
+add bus  gscCodeMaster K2L1 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 50 Title 'K2L1-기술영업1과' gscTitleKO 'K2L1-기술영업1과' description 'K2L1-기술영업1과';
+add bus  gscCodeMaster K2L2 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 51 Title 'K2L2-기술영업2과' gscTitleKO 'K2L2-기술영업2과' description 'K2L2-기술영업2과';
+add bus  gscCodeMaster K2L3 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 52 Title 'K2L3-기술영업3과' gscTitleKO 'K2L3-기술영업3과' description 'K2L3-기술영업3과';
+add bus  gscCodeMaster K2L4 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 53 Title 'K2L4-기술영업4과' gscTitleKO 'K2L4-기술영업4과' description 'K2L4-기술영업4과';
+add bus  gscCodeMaster K2O1 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 54 Title 'K2O1-엔진기계DT추진팀' gscTitleKO 'K2O1-엔진기계DT추진팀' description 'K2O1-엔진기계DT추진팀';
+add bus  gscCodeMaster K421 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 55 Title 'K421-기술운영과' gscTitleKO 'K421-기술운영과' description 'K421-기술운영과';
+add bus  gscCodeMaster K481 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 56 Title 'K481-기술운영과' gscTitleKO 'K481-기술운영과' description 'K481-기술운영과';
+add bus  gscCodeMaster K491 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 57 Title 'K491-힘센조립1과' gscTitleKO 'K491-힘센조립1과' description 'K491-힘센조립1과';
+add bus  gscCodeMaster K611 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 58 Title 'K611-DT추진과' gscTitleKO 'K611-DT추진과' description 'K611-DT추진과';
+add bus  gscCodeMaster K790 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 59 Title 'K790-로봇자동화기술부' gscTitleKO 'K790-로봇자동화기술부' description 'K790-로봇자동화기술부';
+add bus  gscCodeMaster K791 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 60 Title 'K791-자동화제품개발과' gscTitleKO 'K791-자동화제품개발과' description 'K791-자동화제품개발과';
+add bus  gscCodeMaster K792 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 61 Title 'K792-자동화기술과' gscTitleKO 'K792-자동화기술과' description 'K792-자동화기술과';
+add bus  gscCodeMaster K79A gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 62 Title 'K79A-로봇적용기술과' gscTitleKO 'K79A-로봇적용기술과' description 'K79A-로봇적용기술과';
+add bus  gscCodeMaster K79B gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 63 Title 'K79B-제어기술과' gscTitleKO 'K79B-제어기술과' description 'K79B-제어기술과';
+add bus  gscCodeMaster K79F gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 64 Title 'K79F-로봇제품기술1과' gscTitleKO 'K79F-로봇제품기술1과' description 'K79F-로봇제품기술1과';
+add bus  gscCodeMaster K79I gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 65 Title 'K79I-로봇제품기술2과' gscTitleKO 'K79I-로봇제품기술2과' description 'K79I-로봇제품기술2과';
+add bus  gscCodeMaster K9I1 gscOrgGroup  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 66 Title 'K9I1-전장기술팀' gscTitleKO 'K9I1-전장기술팀' description 'K9I1-전장기술팀';
+
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K113' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K1N1' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K1N2' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K1N3' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K1N4' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K1Q1' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K1Q2' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K1T1' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K1U1' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K210' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K211' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K212' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K213' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K214' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K215' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K217' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K219' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K220' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K221' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K222' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K223' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K224' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K225' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K22F' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K22J' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K240' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K241' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K242' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K243' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K244' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K245' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K246' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K249' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2D0' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2D1' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2D2' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2D3' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2D4' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2D5' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2F0' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2F2' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2F3' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2F4' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2F5' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2FA' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2J1' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2J2' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2J3' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2J4' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2L1' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2L2' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2L3' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2L4' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K2O1' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K421' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K481' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K491' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K611' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K790' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K791' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K792' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K79A' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K79B' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K79F' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K79I' 'gscOrgGroup';
+connect bus gscCodeMaster gscOrgGroup - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'K9I1' 'gscOrgGroup';
+
+
+# 인터페이스 Name by BongJun,Park 2020.09.11
+add bus  gscCodeMaster InterfaceName -  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  Description '인터페이스 Name' Title '인터페이스 Name' ;
+
+add bus  gscCodeMaster 'Dept'               InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 1     Title 'Dept'             gscTitleKO '부서정보 I/F'        Description '부서정보 I/F';
+add bus  gscCodeMaster 'EnginePlate'        InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 2     Title 'EnginePlate'      gscTitleKO '엔진명판정보 I/F'     Description '엔진명판정보 I/F';
+add bus  gscCodeMaster 'PartListItem'       InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 3     Title 'PartListItem'     gscTitleKO '공사BOM I/F'         Description '공사BOM I/F';
+add bus  gscCodeMaster 'ERPStatus'          InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 4     Title 'ERPStatus'        gscTitleKO '공사 상태 I/F'        Description '공사 상태 I/F';
+add bus  gscCodeMaster 'StandardPart'       InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 5     Title 'StandardPart'     gscTitleKO '표준품 자재마스터 I/F'  Description '표준품 자재마스터 I/F';
+add bus  gscCodeMaster 'Part'               InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 6     Title 'Part'             gscTitleKO 'Part 자재마스터 I/F'   Description 'Part 자재마스터 I/F';
+add bus  gscCodeMaster 'EngineColor'        InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 7     Title 'EngineColor'      gscTitleKO '엔진도장색상 I/F'      Description '엔진도장색상 I/F';
+add bus  gscCodeMaster 'ParentProject'      InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 8     Title 'ParentProject'    gscTitleKO '모공사정보 I/F'        Description '모공사정보 I/F';
+add bus  gscCodeMaster 'User'               InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 9     Title 'User'             gscTitleKO '사용자정보 I/F'       Description '사용자정보 I/F';
+add bus  gscCodeMaster 'DeliveryDate'       InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 10    Title 'DeliveryDate'     gscTitleKO '공사일정 I/F'         Description '공사일정 I/F';
+add bus  gscCodeMaster 'Project'            InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 11    Title 'Project'          gscTitleKO '공사정보'            Description '공사정보';
+add bus  gscCodeMaster 'PartManagementNo'   InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 12    Title 'PartManagementNo' gscTitleKO '부품관리번호 I/F'     Description '부품관리번호 I/F';
+add bus  gscCodeMaster 'DesignSchedule'     InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 13    Title 'DesignSchedule' gscTitleKO '설계일정기준정보 I/F'     Description '설계일정기준정보 I/F';
+
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Dept' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'EnginePlate' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PartListItem' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ERPStatus' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'StandardPart' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Part' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'EngineColor' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ParentProject' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'User' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'DeliveryDate' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Project' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PartManagementNo' 'InterfaceName';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'DesignSchedule' 'InterfaceName';
+
+#  by BongJun,Park 2020.09.14
+add bus  gscCodeMaster InterfaceResult -  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  Description '인터페이스 Result' Title '인터페이스 Result' ;
+
+add bus  gscCodeMaster 'S' InterfaceResult  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 1  Title 'S' gscTitleKO 'S'  Description 'S';
+add bus  gscCodeMaster 'F' InterfaceResult  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 2  Title 'F' gscTitleKO 'F'  Description 'F';
+
+connect bus gscCodeMaster InterfaceResult - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'S' 'InterfaceResult';
+connect bus gscCodeMaster InterfaceResult - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'F' 'InterfaceResult';
+
+# 공사 Application 공통코드 by Suhwan,Jang 2020-09-14
+###################[B] Application (gscEngineApplication)
+#Code Master
+add bus 'gscCodeMaster' 'gscEngineApplication' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Engine Application' Description 'Project Engine Application';
+
+#Code List
+add bus 'gscCodeMaster' '1' 'gscEngineApplication' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '주기' Description '주기';
+add bus 'gscCodeMaster' '2' 'gscEngineApplication' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title '보기' Description '보기';
+add bus 'gscCodeMaster' '3' 'gscEngineApplication' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title '발전' Description '발전';
+add bus 'gscCodeMaster' '4' 'gscEngineApplication' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'CKD' Description 'CKD';
+add bus 'gscCodeMaster' '5' 'gscEngineApplication' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title '전기추진' Description '전기추진';
+add bus 'gscCodeMaster' '6' 'gscEngineApplication' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title '원자력' Description '원자력';
+add bus 'gscCodeMaster' '7' 'gscEngineApplication' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title 'PKD' Description 'PKD';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscEngineApplication' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '1' 'gscEngineApplication';
+connect bus 'gscCodeMaster' 'gscEngineApplication' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '2' 'gscEngineApplication';
+connect bus 'gscCodeMaster' 'gscEngineApplication' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '3' 'gscEngineApplication';
+connect bus 'gscCodeMaster' 'gscEngineApplication' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '4' 'gscEngineApplication';
+connect bus 'gscCodeMaster' 'gscEngineApplication' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '5' 'gscEngineApplication';
+connect bus 'gscCodeMaster' 'gscEngineApplication' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '6' 'gscEngineApplication';
+connect bus 'gscCodeMaster' 'gscEngineApplication' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' '7' 'gscEngineApplication';
+###################[E] Application (gscEngineApplication)
+
+# 인터페이스 코드 미사용 삭제 by BongJun,Park 2020.09.15
+###################[B] Application
+del bus  gscCodeMaster 'ERPStatus' InterfaceName;
+###################[E] Application
+
+
+#[S] mod by Jongseok.Hyun - 2020.09.16
+mod bus 'gscCodeMaster' 'SAD' 'gscARType' Title 'CLASS AD DISTRIBUTION' Description 'CLASS AD DISTRIBUTION';
+
+mod bus 'gscCodeMaster' 'CD' 'gscARADGYardDistributionType' Title 'APPROVAL DRAWING' Description 'APPROVAL DRAWING';
+mod bus 'gscCodeMaster' 'MD' 'gscARADGYardDistributionType' Title 'WORKING DRAWING' Description 'WORKING DRAWING';
+mod bus 'gscCodeMaster' 'MC' 'gscARADGYardDistributionType' Title 'FINAL' Description 'FINAL';
+#[E] mod by Jongseok.Hyun - 2020.09.16
+
+
+#[S] 공정코드 추가 by MinSung,Kim 2020/09/23
+###################[B] 공정코드 (gscProcessCode)
+#Code Master
+add bus 'gscCodeMaster' 'gscProcessCode' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'Process Code' Description 'Process Code';
+
+#Code List
+add bus 'gscCodeMaster' 'H' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '사급부품' Description '사급부품';
+add bus 'gscCodeMaster' 'Y' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'TOOL류' Description 'TOOL류';
+add bus 'gscCodeMaster' 'Y1' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title '조립시 사용되는 T00L(89 그룹중) WORKING TOOL 로 차용 사용, A-PM Control Unit' Description '조립시 사용되는 T00L(89 그룹중) WORKING TOOL 로 차용 사용, A-PM Control Unit';
+add bus 'gscCodeMaster' 'Y2' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'YARD 설치 TOOL(PACKAGE 적용 SPARE/TOOL)' Description 'YARD 설치 TOOL(PACKAGE 적용 SPARE/TOOL)';
+add bus 'gscCodeMaster' 'Y4' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'Jacket Water Pre-Heating Unit' Description 'Jacket Water Pre-Heating Unit';
+add bus 'gscCodeMaster' 'Y5' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title 'H.F.O/D.O Change Over Control Panel, Emergency M.D.O Pump Unit' Description 'H.F.O/D.O Change Over Control Panel, Emergency M.D.O Pump Unit';
+add bus 'gscCodeMaster' 'Y6' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title 'YARD 공급품,  YARD 설치 보기재' Description 'YARD 공급품,  YARD 설치 보기재';
+add bus 'gscCodeMaster' 'Y7' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title 'Local Control Panel With Pre-L.O Pump Starter (또는 Pre-L.O Pump Starter, 또는 Pre-L.O Pump Starter' Description 'Local Control Panel With Pre-L.O Pump Starter (또는 Pre-L.O Pump Starter, 또는 Pre-L.O Pump Starter';
+add bus 'gscCodeMaster' 'Y8' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title 'Pressure Regulating V/V For Fuel Oil, Flexible Hose' Description 'Pressure Regulating V/V For Fuel Oil, Flexible Hose';
+add bus 'gscCodeMaster' 'Y9' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '10' Title 'Exhaust Gas Silencer' Description 'Exhaust Gas Silencer';
+add bus 'gscCodeMaster' 'Y10' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '11' Title '조립/시운전용 LOOSE ITEM (1. 분류: LOOSE ITEM, 2. 입고장소: 조립창고, 3. 사용: 조립, 시운전)' Description '조립/시운전용 LOOSE ITEM (1. 분류: LOOSE ITEM, 2. 입고장소: 조립창고, 3. 사용: 조립, 시운전)';
+add bus 'gscCodeMaster' 'Z1B' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '12' Title 'Spare 공급품-중형' Description 'Spare 공급품-중형';
+add bus 'gscCodeMaster' 'Z2B' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '13' Title 'Working Spare(해체 및 재조립용 spare)-중형' Description 'Working Spare(해체 및 재조립용 spare)-중형';
+add bus 'gscCodeMaster' 'Z5' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '14' Title 'EXTRA ITEM(영업 추가 공급)' Description 'EXTRA ITEM(영업 추가 공급)';
+add bus 'gscCodeMaster' 'Z6B' 'gscProcessCode' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '15' Title 'Working Spare(Z2B의 재조립 물량)-중형' Description 'Working Spare(Z2B의 재조립 물량)-중형';
+
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'H' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y1' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y2' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y4' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y5' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y6' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y7' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y8' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y9' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y10' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Z1B' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Z2B' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Z5' 'gscProcessCode';
+connect bus 'gscCodeMaster' 'gscProcessCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Z6B' 'gscProcessCode';
+
+###################[E] 공정코드 (gscProcessCode)
+
+#[E] 공정코드 추가 by MinSung,Kim 2020/09/23
+
+
+# [S] ERP Status 추가 by Suhwan,Jang 2020/09/26
+###################[B] ERP Status (gscERPStatus)
+#Code Master
+add bus 'gscCodeMaster' 'gscERPStatus' '-' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'ERP Status' Description 'ERP Status';
+
+#Code List
+add bus 'gscCodeMaster' 'STAR' 'gscERPStatus' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title '프로젝트 착수' gscTitleKO '프로젝트 착수' Description '프로젝트 착수';
+add bus 'gscCodeMaster' 'ACTI' 'gscERPStatus' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title '프로젝트 수행' gscTitleKO '프로젝트 수행' Description '프로젝트 수행';
+add bus 'gscCodeMaster' 'DEFE' 'gscERPStatus' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title '프로젝트 보류' gscTitleKO '프로젝트 보류' Description '프로젝트 보류';
+add bus 'gscCodeMaster' 'STOP' 'gscERPStatus' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title '프로젝트 중단' gscTitleKO '프로젝트 중단' Description '프로젝트 중단';
+add bus 'gscCodeMaster' 'CANC' 'gscERPStatus' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title '프로젝트 취소' gscTitleKO '프로젝트 취소' Description '프로젝트 취소';
+add bus 'gscCodeMaster' 'CONF' 'gscERPStatus' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title '프로젝트 준공' gscTitleKO '프로젝트 준공' Description '프로젝트 준공';
+add bus 'gscCodeMaster' 'FICL' 'gscERPStatus' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '7' Title '매출 완료' gscTitleKO '매출 완료' Description '매출 완료';
+add bus 'gscCodeMaster' 'FINI' 'gscERPStatus' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title '프로젝트 완료' gscTitleKO '프로젝트 완료' Description '프로젝트 완료';
+add bus 'gscCodeMaster' 'UBUD' 'gscERPStatus' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title '예산조정' gscTitleKO '예산조정' Description '예산조정';
+
+#Connect Code Master To Code List
+connect bus 'gscCodeMaster' 'gscERPStatus' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'STAR' 'gscERPStatus';
+connect bus 'gscCodeMaster' 'gscERPStatus' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ACTI' 'gscERPStatus';
+connect bus 'gscCodeMaster' 'gscERPStatus' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'DEFE' 'gscERPStatus';
+connect bus 'gscCodeMaster' 'gscERPStatus' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'STOP' 'gscERPStatus';
+connect bus 'gscCodeMaster' 'gscERPStatus' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'CANC' 'gscERPStatus';
+connect bus 'gscCodeMaster' 'gscERPStatus' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'CONF' 'gscERPStatus';
+connect bus 'gscCodeMaster' 'gscERPStatus' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'FICL' 'gscERPStatus';
+connect bus 'gscCodeMaster' 'gscERPStatus' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'FINI' 'gscERPStatus';
+connect bus 'gscCodeMaster' 'gscERPStatus' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'UBUD' 'gscERPStatus';
+
+###################[E] ERP Status (gscERPStatus)
+#[E] ERP Status 추가 by Suhwan,Jang 2020/09/26
+
+#[S] Interface POR발행계획 코드 추가 by BongJun,Park 2020.10.05
+add bus  gscCodeMaster 'PORPlan'   InterfaceName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 12    Title 'PORPlan' gscTitleKO 'POR발행계획 I/F'     Description 'POR발행계획 I/F';
+connect bus gscCodeMaster InterfaceName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PORPlan' 'InterfaceName';
+#[E] Interface POR발행계획 코드 추가 by BongJun,Park 2020.10.05
+
+#[S]gscARType Code Master 수정 by DK.KIM 2020.10.13
+mod bus 'gscCodeMaster' 'PMA' 'gscARType' Title 'ERP GENERAL/STANDARD PART MASTER CREATION' Description 'ERP GENERAL/STANDARD PART MASTER CREATION';
+#[E]gscARType Code Master 수정 by DK.KIM 2020.10.13
+
+#[S]gscPORApplyType Code Master 수정 by DK.KIM 2020.10.15
+add bus  gscCodeMaster gscPORApplyType -  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  Description 'Apply Type' Title 'Apply Type' ;
+add bus  gscCodeMaster 'A' gscPORApplyType  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 1  Title 'A' gscTitleKO 'A'  Description 'A';
+add bus  gscCodeMaster 'B' gscPORApplyType  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 2  Title 'B' gscTitleKO 'B'  Description 'B';
+connect bus gscCodeMaster gscPORApplyType - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'A' 'gscPORApplyType';
+connect bus gscCodeMaster gscPORApplyType - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B' 'gscPORApplyType';
+#[E]gscEngineClassification Code Master 수정 by DK.KIM 2020.10.15
+
+#[S] 부품관리번호 추가 by BongJun,Park 2020.10.16
+add bus 'General Library' 'Part Management Number' - owner 'admin_platform' vault 'eService Production'  policy 'Libraries' current 'Active' 'Originator' 'admin_platform' 'Title' '부품관리번호' ;
+#[E] 부품관리번호 추가 by BongJun,Park 2020.10.16
+
+#[E] 회사코드변경 by BongJun,Park 2020.10.16
+mod bus "Company" "Company Name" "-" "Organization ID" "300";
+#[E] 회사코드변경 by BongJun,Park 2020.10.16
+
+#[S]gscARType Code Master 수정 by DK.KIM 2020.10.20
+mod bus 'gscCodeMaster' 'CSA' 'gscARType' Title 'STANDARD TABLE PART APPROVAL' Description 'STANDARD TABLE PART APPROVAL';
+#[E]gscARType Code Master 수정 by DK.KIM 2020.10.20
+
+#[S]gscDocumentType Code Master 추가, by SeungYong,Lee 2020.10.26
+add bus 'gscCodeMaster' 'Drawing'       'gscDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '8' Title 'Drawing' Description 'Drawing';
+add bus 'gscCodeMaster' 'Specification' 'gscDocumentType' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '9' Title 'Specification' Description 'Specification';
+
+connect bus 'gscCodeMaster' 'gscDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Drawing'       'gscDocumentType';
+connect bus 'gscCodeMaster' 'gscDocumentType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Specification' 'gscDocumentType';
+
+#[E]gscDocumentType Code Master 추가, by SeungYong,Lee 2020.10.26
+
+#[S]gscARType Code Master 수정 by DK.KIM 2020.10.13
+mod bus 'gscCodeMaster' 'PMA' 'gscARType' Title 'ERP GENERAL/STANDARD PART MASTER CREATION' Description 'ERP GENERAL/STANDARD PART MASTER CREATION';
+#[E]gscARType Code Master 수정 by DK.KIM 2020.10.13
+
+#[S]gscPORApplyType Code Master 수정 by DK.KIM 2020.10.15
+add bus  gscCodeMaster gscPORApplyType -  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  Description 'Apply Type' Title 'Apply Type' ;
+add bus  gscCodeMaster 'A' gscPORApplyType  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 1  Title 'A' gscTitleKO 'A'  Description 'A';
+add bus  gscCodeMaster 'B' gscPORApplyType  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 2  Title 'B' gscTitleKO 'B'  Description 'B';
+connect bus gscCodeMaster gscPORApplyType - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'A' 'gscPORApplyType';
+connect bus gscCodeMaster gscPORApplyType - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'B' 'gscPORApplyType';
+#[E]gscEngineClassification Code Master 수정 by DK.KIM 2020.10.15
+
+#[S]gscADGClassification Code Master 추가 by HanSu.kim 2020.11.06
+add bus  gscCodeMaster gscADGClassification -  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  Description 'Classification' Title 'Classification' ;
+add bus  gscCodeMaster 'Y' gscADGClassification  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 1  Title 'Yard' gscTitleKO 'Yard'  Description 'Yard';
+add bus  gscCodeMaster 'C' gscADGClassification  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 2  Title 'Class' gscTitleKO 'Class'  Description 'Class';
+add bus  gscCodeMaster 'S' gscADGClassification  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 3  Title 'Class' gscTitleKO 'Class'  Description 'Class';
+connect bus gscCodeMaster gscADGClassification - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Y' 'gscADGClassification';
+connect bus gscCodeMaster gscADGClassification - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'C' 'gscADGClassification';
+connect bus gscCodeMaster gscADGClassification - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'S' 'gscADGClassification';
+#[E]gscADGClassification Code Master 추가 by HanSu.kim 2020.11.06
+
+#[S]gscARType Code Master 수정 by DK.KIM 2020.11.11
+add bus 'gscCodeMaster' 'SMP' 'gscARType' owner 'admin_platform' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '12' Title 'S-BOM MAKER PART APPROVAL' Description 'S-BOM MAKER PART APPROVAL';
+connect bus 'gscCodeMaster' 'gscARType' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'SMP' 'gscARType';
+#[E]gscARType Code Master 수정 by DK.KIM 2020.11.11
+
+#[S]gscARType Code Master 수정 by DK.KIM 2020.11.12
+mod bus 'gscCodeMaster' 'PDA' 'gscARType' Title 'SPEC DOCUMENT' Description 'SPEC DOCUMENT';
+mod bus 'gscCodeMaster' 'GAD' 'gscARType' Title 'CAD PART APPROVAL' Description 'CAD PART APPROVAL';
+mod bus 'gscCodeMaster' 'SAD' 'gscARType' Title 'CLASS AD DISTRIBUTION' Description 'CLASS AD DISTRIBUTION';
+mod bus 'gscCodeMaster' 'GDA' 'gscARType' Title 'GENERAL DOCUMENT' Description 'GENERAL DOCUMENT';
+mod bus 'gscCodeMaster' 'CSA' 'gscARType' Title 'STANDARD TABLE PART APPROVAL' Description 'STANDARD TABLE PART APPROVAL';
+mod bus 'gscCodeMaster' 'SAA' 'gscARType' Title 'SOURCE/MODULE' Description 'SOURCE/MODULE';
+#[E]gscARType Code Master 수정 by DK.KIM 2020.11.12
+
+#[S]gscARType Code Master 수정 by DK.KIM 2020.11.13
+mod bus 'gscCodeMaster' 'GAD' 'gscARType' Title 'CAD PART APPROVAL' Description 'CAD PART APPROVAL';
+#[E]gscARType Code Master 수정 by DK.KIM 2020.11.13
+
+#[S]gscARType Code Master 수정 by DK.KIM 2020.12.01
+mod bus 'gscCodeMaster' 'CSA' 'gscARType' Title 'TABLE STANDARD PART APPROVAL' Description 'TABLE STANDARD PART APPROVAL';
+#[E]gscARType Code Master 수정 by DK.KIM 2020.12.01
+
+#[S]gscSection Code Master 추가 by HanSu.kim 2020.11.19
+add bus  gscCodeMaster gscSection -  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  Description 'Section' Title 'Section' ;
+add bus  gscCodeMaster '01' gscSection  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 1  Title '01. Specification' gscTitleKO '01. Specification'  Description '01. Specification';
+add bus  gscCodeMaster '02' gscSection  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 2  Title '02. Arrangement' gscTitleKO '02. Arrangement'  Description '02. Arrangement';
+add bus  gscCodeMaster '03' gscSection  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 3  Title '03. System Diagram' gscTitleKO '03. System Diagram'  Description '03. System Diagram';
+add bus  gscCodeMaster '04' gscSection  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 4  Title '04. Instruction & Information' gscTitleKO '04. Instruction & Information'  Description '04. Instruction & Information';
+add bus  gscCodeMaster '05' gscSection  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 5  Title '05. Equipment (Losse Supply)' gscTitleKO '05. Equipment (Losse Supply)'  Description '05. Equipment (Losse Supply)';
+add bus  gscCodeMaster '06' gscSection  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 6  Title '06. Spare & Tool Parts' gscTitleKO '06. Spare & Tool Parts'  Description '06. Spare & Tool Parts';
+add bus  gscCodeMaster '07' gscSection  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 7  Title '07. Control & Monitoring System' gscTitleKO '07. Control & Monitoring System'  Description '07. Control & Monitoring System';
+add bus  gscCodeMaster '08' gscSection  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  'Sequence Order' 8  Title '08. Alternator' gscTitleKO '08. Alternator'  Description '08. Alternator';
+connect bus gscCodeMaster gscSection - rel 'gscCodeParentAndChild' to 'gscCodeMaster' '01' 'gscSection';
+connect bus gscCodeMaster gscSection - rel 'gscCodeParentAndChild' to 'gscCodeMaster' '02' 'gscSection';
+connect bus gscCodeMaster gscSection - rel 'gscCodeParentAndChild' to 'gscCodeMaster' '03' 'gscSection';
+connect bus gscCodeMaster gscSection - rel 'gscCodeParentAndChild' to 'gscCodeMaster' '04' 'gscSection';
+connect bus gscCodeMaster gscSection - rel 'gscCodeParentAndChild' to 'gscCodeMaster' '05' 'gscSection';
+connect bus gscCodeMaster gscSection - rel 'gscCodeParentAndChild' to 'gscCodeMaster' '06' 'gscSection';
+connect bus gscCodeMaster gscSection - rel 'gscCodeParentAndChild' to 'gscCodeMaster' '07' 'gscSection';
+connect bus gscCodeMaster gscSection - rel 'gscCodeParentAndChild' to 'gscCodeMaster' '08' 'gscSection';
+#[E]gscSection Code Master 추가 by HanSu.kim 2020.11.19
+
+#[S] Batch Name by BongJun,Park 2020.11.26
+add bus  gscCodeMaster "BatchName" "-"  vault 'eService Production'  policy 'gscCodeMaster' current 'Active'  Description 'Batch Name' Title 'Batch Name' ;
+
+add bus gscCodeMaster 'CSFinalBOM' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 1 Title 'CSFinalBOM' gscTitleKO 'CSFinalBOM' Description 'CSFinalBOM';
+add bus gscCodeMaster 'PORPlan' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 2 Title 'PORPlan' gscTitleKO 'PORPlan' Description 'PORPlan';
+add bus gscCodeMaster 'ProjectDeliveryDate' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 3 Title 'ProjectDeliveryDate' gscTitleKO 'ProjectDeliveryDate' Description 'ProjectDeliveryDate';
+add bus gscCodeMaster 'BusinessUnit' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 4 Title 'BusinessUnit' gscTitleKO 'BusinessUnit' Description 'BusinessUnit';
+add bus gscCodeMaster 'SMG' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 5 Title 'SMG' gscTitleKO 'SMG' Description 'SMG';
+add bus gscCodeMaster 'ProjectBOM' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 6 Title 'ProjectBOM' gscTitleKO 'ProjectBOM' Description 'ProjectBOM';
+add bus gscCodeMaster 'Drawing' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 7 Title 'Drawing' gscTitleKO 'Drawing' Description 'Drawing';
+add bus gscCodeMaster 'PartManagement' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 8 Title 'PartManagement' gscTitleKO 'PartManagement' Description 'PartManagement';
+add bus gscCodeMaster 'ProjectInfo' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 9 Title 'ProjectInfo' gscTitleKO 'ProjectInfo' Description 'ProjectInfo';
+add bus gscCodeMaster 'MO' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 10 Title 'MO' gscTitleKO 'MO' Description 'MO';
+add bus gscCodeMaster 'Document' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 11 Title 'Document' gscTitleKO 'Document' Description 'Document';
+add bus gscCodeMaster 'Person' BatchName  vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' 12 Title 'Person' gscTitleKO 'Person' Description 'Person';
+
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'CSFinalBOM' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PORPlan' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ProjectDeliveryDate' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'BusinessUnit' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'SMG' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ProjectBOM' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Drawing' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PartManagement' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ProjectInfo' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'MO' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Document' 'BatchName';
+connect bus gscCodeMaster BatchName - rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'Person' 'BatchName';
+#[E] Batch Name by BongJun,Park 2020.11.26
+
+#[S] gscAPPOrganization by SeungYong,Lee 2020.12.10
+add bus 'gscCodeMaster' 'gscAPPOrganization' '-' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' Title 'organization' Description 'organization';
+
+add bus 'gscCodeMaster' 'BASIC'       'gscAPPOrganization' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '1' Title 'BASIC'       Description 'BASIC';
+add bus 'gscCodeMaster' 'STRUCTURE'   'gscAPPOrganization' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '2' Title 'STRUCTURE'   Description 'STRUCTURE';
+add bus 'gscCodeMaster' 'PERFORMANCE' 'gscAPPOrganization' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'PERFORMANCE' Description 'PERFORMANCE';
+add bus 'gscCodeMaster' 'PIPE'        'gscAPPOrganization' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'PIPE'        Description 'PIPE';
+add bus 'gscCodeMaster' 'ELECTRIC'    'gscAPPOrganization' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'ELECTRIC'    Description 'ELECTRIC';
+add bus 'gscCodeMaster' 'MOVING'      'gscAPPOrganization' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title 'MOVING'      Description 'MOVING';
+
+connect bus 'gscCodeMaster' 'gscAPPOrganization' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'BASIC'       'gscAPPOrganization';
+connect bus 'gscCodeMaster' 'gscAPPOrganization' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'STRUCTURE'   'gscAPPOrganization';
+connect bus 'gscCodeMaster' 'gscAPPOrganization' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PERFORMANCE' 'gscAPPOrganization';
+connect bus 'gscCodeMaster' 'gscAPPOrganization' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'PIPE'        'gscAPPOrganization';
+connect bus 'gscCodeMaster' 'gscAPPOrganization' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'ELECTRIC'    'gscAPPOrganization';
+connect bus 'gscCodeMaster' 'gscAPPOrganization' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'MOVING'      'gscAPPOrganization';
+#[E] gscAPPOrganization by SeungYong,Lee 2020.12.10
+
+# [S] gscEnoviaRoleCode 코드 추가 by SeungYong,Lee 2020-12-17
+add bus 'gscCodeMaster' 'gscMFGADCreator' 'gscEnoviaRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '3' Title 'gscMFGADCreator' Description 'gscMFGADCreator';
+add bus 'gscCodeMaster' 'gscMFGADLeader'  'gscEnoviaRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '4' Title 'gscMFGADLeader' Description 'gscMFGADLeader';
+add bus 'gscCodeMaster' 'gscSVCCreator'   'gscEnoviaRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '5' Title 'gscSVCCreator' Description 'gscSVCCreator';
+add bus 'gscCodeMaster' 'gscSVCManager'   'gscEnoviaRoleCode' owner 'creator' vault 'eService Production'  policy 'gscCodeMaster' current 'Active' 'Sequence Order' '6' Title 'gscSVCManager' Description 'gscSVCManager';
+
+connect bus 'gscCodeMaster' 'gscEnoviaRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscMFGADCreator' 'gscEnoviaRoleCode';
+connect bus 'gscCodeMaster' 'gscEnoviaRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscMFGADLeader' 'gscEnoviaRoleCode';
+connect bus 'gscCodeMaster' 'gscEnoviaRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscSVCCreator' 'gscEnoviaRoleCode';
+connect bus 'gscCodeMaster' 'gscEnoviaRoleCode' '-' rel 'gscCodeParentAndChild' to 'gscCodeMaster' 'gscSVCManager' 'gscEnoviaRoleCode';
+# [E] gscEnoviaRoleCode 코드 추가 by SeungYong,Lee 2020-12-17

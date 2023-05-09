@@ -1,0 +1,25 @@
+del command 'PMCDashboardSummaryCreate';
+add command 'PMCDashboardSummaryCreate'
+	description	'Command for creating a Dashboard'
+	label	'emxProgramCentral.Common.CreateDashboard'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCDashboardSummaryCreateForm&formHeader=emxProgramCentral.Common.CreateDashboard&StringResourceFileId=emxProgramCentralStringResource&mode=edit&postProcessURL=../programcentral/emxProgramCentralDashboardsCreateProcess.jsp&HelpMarker=emxhelpdashboardcreatedialog'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDashboardSummaryCreate'
+	property	'version'	value	'R422'
+;
+modify menu PMCDashboardSummaryToolbarActions add command PMCDashboardSummaryCreate order command PMCDashboardSummaryCreate 1;
+#channel ==>PMCDashboardSummaryToolbarActions
+add property command_PMCDashboardSummaryCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCDashboardSummaryCreate';

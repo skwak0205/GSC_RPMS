@@ -1,0 +1,16 @@
+del menu 'type_BooleanCompatibilityRule';
+add menu 'type_BooleanCompatibilityRule'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=FTRBooleanCompatibilityRuleForm&actionBarName=FTRBooleanCompatibilityRulePropertiesTopActionBarMenu&formHeader=emxConfigurationMgmt.Heading.Properties&HelpMarker=emxhelpbooleandetails'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'AEFLifecycle'
+	command	'AEFHistory'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_BooleanCompatibilityRule'
+	property 'version'	value	'R216'
+;
+add property menu_type_BooleanCompatibilityRule on program eServiceSchemaVariableMapping.tcl to menu 'type_BooleanCompatibilityRule';

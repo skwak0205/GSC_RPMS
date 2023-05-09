@@ -1,0 +1,89 @@
+del command 'AEFHistory';
+add command 'AEFHistory'
+	description	'Current Object History'
+	label	'emxFramework.History.History'
+	href	'${COMMON_DIR}/emxHistory.jsp?HistoryMode=CurrentRevision&Header=emxFramework.Common.History&HelpMarker=emxhelphistory'
+	alt	'emxFramework.History.History'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallHistory.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFHistory'
+	property	'version'	value	'R424.HF1'
+;
+modify menu type_BusinessUnit add command AEFHistory order command AEFHistory 9;
+modify menu type_Issue add command AEFHistory order command AEFHistory 0;
+modify menu type_Person add command AEFHistory order command AEFHistory 3;
+modify menu type_Job add command AEFHistory order command AEFHistory 0;
+modify menu type_RouteTemplate add command AEFHistory order command AEFHistory 4;
+modify menu APPDiscussionAccess add command AEFHistory order command AEFHistory 0;
+modify menu type_Department add command AEFHistory order command AEFHistory 2;
+modify menu type_Message add command AEFHistory order command AEFHistory 1;
+modify menu type_BusinessSkill add command AEFHistory order command AEFHistory 1;
+modify menu type_PartFamily add command AEFHistory order command AEFHistory 5;
+modify menu type_EngineeringChange add command AEFHistory order command AEFHistory 5;
+modify menu type_ImpactAnalysis add command AEFHistory order command AEFHistory 1;
+modify menu type_Part add command AEFHistory order command AEFHistory 3;
+modify menu type_Workflow add command AEFHistory order command AEFHistory 0;
+modify menu type_WorkflowTask add command AEFHistory order command AEFHistory 0;
+modify menu type_Plant add command AEFHistory order command AEFHistory 2;
+modify menu type_Decision add command AEFHistory order command AEFHistory 0;
+modify menu type_Meeting add command AEFHistory order command AEFHistory 0;
+modify menu type_MemberList add command AEFHistory order command AEFHistory 0;
+modify menu TMCtype_Message add command AEFHistory order command AEFHistory 2;
+modify menu TMCtype_Route add command AEFHistory order command AEFHistory 4;
+modify menu TMCtype_InboxTask add command AEFHistory order command AEFHistory 0;
+modify menu type_AccessRequest add command AEFHistory order command AEFHistory 4;
+modify menu type_Libraries add command AEFHistory order command AEFHistory 3;
+modify menu type_PlmParameter add command AEFHistory order command AEFHistory 1;
+modify menu type_ComposedParameter add command AEFHistory order command AEFHistory 1;
+modify menu type_PartLibrary add command AEFHistory order command AEFHistory 5;
+modify menu type_GeneralLibrary add command AEFHistory order command AEFHistory 5;
+modify menu type_Classification add command AEFHistory order command AEFHistory 4;
+modify menu type_GeneralClass add command AEFHistory order command AEFHistory 6;
+modify menu type_ChangeTemplate add command AEFHistory order command AEFHistory 0;
+modify menu type_Model add command AEFHistory order command AEFHistory 12;
+modify menu type_PLCProductLine add command AEFHistory order command AEFHistory 4;
+modify menu type_TestCase add command AEFHistory order command AEFHistory 3;
+modify menu type_TestExecution add command AEFHistory order command AEFHistory 2;
+modify menu type_RetentionRecord add command AEFHistory order command AEFHistory 2;
+modify menu type_RetentionHold add command AEFHistory order command AEFHistory 2;
+modify menu type_DocumentFamily add command AEFHistory order command AEFHistory 7;
+modify menu type_Library add command AEFHistory order command AEFHistory 6;
+modify menu DCtype_ProjectVault add command AEFHistory order command AEFHistory 4;
+modify menu type_PurgedRecord add command AEFHistory order command AEFHistory 1;
+modify menu type_ResourceRequest add command AEFHistory order command AEFHistory 0;
+modify menu type_BudgetRMB add command AEFHistory order command AEFHistory 3;
+modify menu type_ProductLine add command AEFHistory order command AEFHistory 0;
+modify menu type_HardwareBuild add command AEFHistory order command AEFHistory 5;
+modify menu type_Builds add command AEFHistory order command AEFHistory 4;
+modify menu type_SoftwareBuild add command AEFHistory order command AEFHistory 4;
+modify menu type_Specification add command AEFHistory order command AEFHistory 7;
+modify menu type_PLCDocument add command AEFHistory order command AEFHistory 1;
+modify menu type_QuantityRule add command AEFHistory order command AEFHistory 0;
+modify menu type_UseCase add command AEFHistory order command AEFHistory 4;
+modify menu type_Chapter add command AEFHistory order command AEFHistory 1;
+modify menu type_Comment add command AEFHistory order command AEFHistory 1;
+modify menu type_RequirementGroup add command AEFHistory order command AEFHistory 2;
+modify menu type_ProductConfiguration add command AEFHistory order command AEFHistory 3;
+modify menu type_ProductVariant add command AEFHistory order command AEFHistory 1;
+modify menu type_ConfigurationFeature add command AEFHistory order command AEFHistory 13;
+modify menu type_BooleanCompatibilityRule add command AEFHistory order command AEFHistory 0;
+modify menu type_LogicalFeature add command AEFHistory order command AEFHistory 14;
+modify menu type_ManufacturingFeature add command AEFHistory order command AEFHistory 1;
+modify menu type_ConfigurationOption add command AEFHistory order command AEFHistory 2;
+modify menu type_MarketingPreference add command AEFHistory order command AEFHistory 0;
+modify menu type_FixedResource add command AEFHistory order command AEFHistory 0;
+modify menu type_ProductCompatibilityRule add command AEFHistory order command AEFHistory 1;
+modify menu type_RuleExtension add command AEFHistory order command AEFHistory 1;
+modify menu type_ConfigurationRule add command AEFHistory order command AEFHistory 1;
+modify menu type_Variant add command AEFHistory order command AEFHistory 11;
+modify menu type_VariabilityGroup add command AEFHistory order command AEFHistory 11;
+modify menu type_VariantValue add command AEFHistory order command AEFHistory 2;
+modify menu type_VariabilityOption add command AEFHistory order command AEFHistory 2;
+modify menu type_ManufacturingPlan add command AEFHistory order command AEFHistory 1;
+modify menu type_MasterFeature add command AEFHistory order command AEFHistory 1;
+#channel ==>type_BusinessUnittype_Issuetype_Persontype_Jobtype_RouteTemplateAPPDiscussionAccesstype_Departmenttype_Messagetype_BusinessSkilltype_PartFamilytype_EngineeringChangetype_ImpactAnalysistype_Parttype_Workflowtype_WorkflowTasktype_Planttype_Decisiontype_Meetingtype_MemberListTMCtype_MessageTMCtype_RouteTMCtype_InboxTasktype_AccessRequesttype_Librariestype_PlmParametertype_ComposedParametertype_PartLibrarytype_GeneralLibrarytype_Classificationtype_GeneralClasstype_ChangeTemplatetype_Modeltype_PLCProductLinetype_TestCasetype_TestExecutiontype_RetentionRecordtype_RetentionHoldtype_DocumentFamilytype_LibraryDCtype_ProjectVaulttype_PurgedRecordtype_ResourceRequesttype_BudgetRMBtype_ProductLinetype_HardwareBuildtype_Buildstype_SoftwareBuildtype_Specificationtype_PLCDocumenttype_QuantityRuletype_UseCasetype_Chaptertype_Commenttype_RequirementGrouptype_ProductConfigurationtype_ProductVarianttype_ConfigurationFeaturetype_BooleanCompatibilityRuletype_LogicalFeaturetype_ManufacturingFeaturetype_ConfigurationOptiontype_MarketingPreferencetype_FixedResourcetype_ProductCompatibilityRuletype_RuleExtensiontype_ConfigurationRuletype_Varianttype_VariabilityGrouptype_VariantValuetype_VariabilityOptiontype_ManufacturingPlantype_MasterFeatureAPPRouteChannel1ECMChangePropertyChannel1PLCProductsDefaultChannelRMTPropertiesRMTSpecificationsPropertiesRMTRequirementProxyInfo
+add property command_AEFHistory on program eServiceSchemaVariableMapping.tcl to command 'AEFHistory';

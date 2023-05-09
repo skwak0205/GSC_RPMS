@@ -1,0 +1,43 @@
+del table 'PMCProjectTemplateCoOwnersTable' system;
+add table 'PMCProjectTemplateCoOwnersTable' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxProgramCentral.Common.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxTree.jsp?Mode=view'
+	range	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'format'		'user'
+	setting	'Field Type'		'basic'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'E-mail'
+	businessobject	'$<attribute[attribute_EmailAddress].value>'
+	label	'emxProgramCentral.CommonPeopleSearch.Email'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'format'		'email'
+column #3
+	name	'Phone'
+	businessobject	'$<attribute[attribute_WorkPhoneNumber].value>'
+	label	'emxProgramCentral.CompanyBUs.Phone'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateCoOwnersTable'
+	property	'version'	value	'R419'
+;
+add property table_PMCProjectTemplateCoOwnersTable on program eServiceSchemaVariableMapping.tcl to table 'PMCProjectTemplateCoOwnersTable' system;

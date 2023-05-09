@@ -1,0 +1,19 @@
+del menu 'PMCProjectBudgetFilter';
+add menu 'PMCProjectBudgetFilter'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectBudgetCurrencyFilter'
+	command	'PMCProjectBudgetIntervalFilter'
+	command	'PMCProjectBudgetViewsFilter'
+	command	'PMCProjectBudgetFiscalYearFilter'
+	command	'PMCProjectBudgetDisplayViewFilter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBudgetFilter'
+	property 'version'	value	'R211'
+;
+add property menu_PMCProjectBudgetFilter on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBudgetFilter';

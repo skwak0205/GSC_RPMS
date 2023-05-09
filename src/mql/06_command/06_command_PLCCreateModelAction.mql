@@ -1,0 +1,26 @@
+del command 'PLCCreateModelAction';
+add command 'PLCCreateModelAction'
+	description	'This will create a new Model from actions'
+	label	'emxProduct.Action.Model'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Model&typeChooser=true&autoNameChecked=false&nameField=both&form=type_CreateModel&header=emxProduct.Heading.ModelCreate&HelpMarker=emxhelpmodelcreate&submitAction=treeContent&UIContext=GlobalActions&postProcessJPO=emxModel:copyModelAttributesToProduct&policy=policy_Model'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCreateModelAction'
+	property	'version'	value	'R418'
+;
+modify menu PLCActions add command PLCCreateModelAction order command PLCCreateModelAction 2;
+#channel ==>PLCActions
+add property command_PLCCreateModelAction on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateModelAction';

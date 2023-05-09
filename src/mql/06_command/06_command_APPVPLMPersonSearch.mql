@@ -1,0 +1,12 @@
+del command 'APPVPLMPersonSearch';
+add command 'APPVPLMPersonSearch'
+	description	''
+	label	'emxPlmOnline.label.Search'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=Person&dir=XP'
+	alt	'emxPlmOnline.label.Search'
+	setting	'Registered Suite'		'VPLMAdministration'
+	user	'VPLMAdmin'
+	user	'Local Administrator'
+;
+#channel ==>PersonVPLMChannel
+add property command_APPVPLMPersonSearch on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMPersonSearch';

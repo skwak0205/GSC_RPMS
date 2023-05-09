@@ -1,0 +1,23 @@
+del command 'APPBusinessSkillCreate';
+add command 'APPBusinessSkillCreate'
+	description	''
+	label	'emxComponents.Common.CreateSkill'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_BusinessSkill&typeChooser=true&form=emxBusinessSkill&header=emxComponents.Common.CreateSkill&HelpMarker=emxhelpskillcreate&postProcessJPO=emxBusinessSkill:createPostProcess&submitAction=refreshCaller&mode=create'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPBusinessSkillCreate'
+	property	'version'	value	'R417'
+;
+modify menu APPBusinessSkillActions add command APPBusinessSkillCreate order command APPBusinessSkillCreate 1;
+#channel ==>APPBusinessSkillActions
+add property command_APPBusinessSkillCreate on program eServiceSchemaVariableMapping.tcl to command 'APPBusinessSkillCreate';

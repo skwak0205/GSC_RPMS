@@ -1,0 +1,16 @@
+del menu 'APPResultPersonToolbar';
+add menu 'APPResultPersonToolbar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPPersonNewSearch'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPResultPersonToolbar'
+	property 'version'	value	'R417'
+;
+add property menu_APPResultPersonToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPResultPersonToolbar';

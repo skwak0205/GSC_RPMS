@@ -1,0 +1,15 @@
+del menu 'PMCProgramPropertiesToolBar';
+add menu 'PMCProgramPropertiesToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProgramEdit'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProgramPropertiesToolBar'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_PMCProgramPropertiesToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProgramPropertiesToolBar';

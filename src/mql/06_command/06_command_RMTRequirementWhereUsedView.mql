@@ -1,0 +1,27 @@
+del command 'RMTRequirementWhereUsedView';
+add command 'RMTRequirementWhereUsedView'
+	description	'Display the sub and derived Requirements in Where Used view'
+	label	'emxRequirements.Filter.WhereUsed'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgramMenu=RMTRequirementStructureProgramFilterMenu&tableMenu=RMTRequirementTableFilterMenu&selection=multiple&HelpMarker=emxhelpproductfeaturelist&editLink=true&toolbar=RMTRequirementStructureBrowserToolbar'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'function'		'getSub_DerivedRequirements'
+	setting	'program'		'emxRequirement'
+	setting	'table'		'RMTRequirementWhereUsedView'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementWhereUsedView'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTRequirementWhereUsedView on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementWhereUsedView';

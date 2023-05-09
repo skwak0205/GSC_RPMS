@@ -1,0 +1,11 @@
+del command 'PARPrefDimension';
+add command 'PARPrefDimension'
+	description	''
+	label	'emxParameter.common.Dimensions'
+	href	'${SUITE_DIR}/emxParameterPrefDimension.jsp'
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+;
+modify menu PARParameterCentral add command PARPrefDimension order command PARPrefDimension 0;
+#channel ==>PARParameterCentral
+add property command_PARPrefDimension on program eServiceSchemaVariableMapping.tcl to command 'PARPrefDimension';

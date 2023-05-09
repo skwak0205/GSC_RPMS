@@ -1,0 +1,21 @@
+del menu 'PMCActions';
+add menu 'PMCActions'
+	description	''
+	label	'emxFramework.Command.PMCSubMenuActions'
+	href	''
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	command	'PMCCreateProgramActions'
+	menu	'PMCProjectCreateMenu'
+	command	'PMCCreateProjectConceptActions'
+	command	'PMCCreateBusinessGoalActions'
+	command	'PMCCreateProjectTemplateActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCActions'
+	property 'version'	value	'R417'
+;
+add property menu_PMCActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCActions';

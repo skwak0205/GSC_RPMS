@@ -1,0 +1,20 @@
+del command 'PLCReviseTestCase';
+add command 'PLCReviseTestCase'
+	description	''
+	label	'emxProduct.ActionLink.Revise'
+	href	'${SUITE_DIR}/TestCaseUtil.jsp?Mode=reviseSubTestCase'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	user	'VPLMCreator'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCReviseTestCase'
+	property	'version'	value	'R418'
+;
+modify menu PLCTestCaseSubTestCaseBottomActionBar add command PLCReviseTestCase order command PLCReviseTestCase 3;
+#channel ==>PLCTestCaseSubTestCaseBottomActionBar
+add property command_PLCReviseTestCase on program eServiceSchemaVariableMapping.tcl to command 'PLCReviseTestCase';

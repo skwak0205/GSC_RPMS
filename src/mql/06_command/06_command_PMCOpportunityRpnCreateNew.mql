@@ -1,0 +1,29 @@
+del command 'PMCOpportunityRpnCreateNew';
+add command 'PMCOpportunityRpnCreateNew'
+	description	'Command for Creating New RPN'
+	label	'emxProgramCentral.Opportunity.CreateOPN'
+	href	'${SUITE_DIR}/emxProgramCentralRiskUtil.jsp?mode=isOpportunitySelected'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateRPN_32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCOpportunityRpnCreateNew'
+	property	'version'	value	'R422'
+;
+modify menu PMCOpportunitySummaryToolBarActions add command PMCOpportunityRpnCreateNew order command PMCOpportunityRpnCreateNew 2;
+modify menu PMCOpportunitySummaryToolBar add command PMCOpportunityRpnCreateNew order command PMCOpportunityRpnCreateNew 3;
+#channel ==>PMCOpportunitySummaryToolBarActionsPMCOpportunitySummaryToolBar
+add property command_PMCOpportunityRpnCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PMCOpportunityRpnCreateNew';

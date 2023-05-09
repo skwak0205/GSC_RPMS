@@ -1,0 +1,19 @@
+del menu 'APPECListActionsToolBar';
+add menu 'APPECListActionsToolBar'
+	description	''
+	label	'emxComponents.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPCreateNewECActionLink'
+	command	'AEFSeparator'
+	command	'AEFSeparator2'
+	command	'APPDeleteECActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPECListActionsToolBar'
+	property 'version'	value	'R418.B2'
+;
+add property menu_APPECListActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPECListActionsToolBar';

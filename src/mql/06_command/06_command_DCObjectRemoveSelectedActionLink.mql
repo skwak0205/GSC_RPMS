@@ -1,0 +1,28 @@
+del command 'DCObjectRemoveSelectedActionLink';
+add command 'DCObjectRemoveSelectedActionLink'
+	description	'Remove Selected Action Link'
+	label	'emxDocumentCentral.Access.Remove'
+	href	'${SUITE_DIR}/emxDocumentCentralObjectRemoveContentsProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Submit'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'multi'
+	setting	'Confirm Message'		'emxDocumentCentral.Message.ConfirmRemoveSelected'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectRemoveSelectedActionLink'
+	property	'version'	value	'10-6-0-1'
+;
+modify menu DCBookDocumentsActionBar add command DCObjectRemoveSelectedActionLink order command DCObjectRemoveSelectedActionLink 6;
+modify menu DCDocumentClassificationContentBottomActionbar add command DCObjectRemoveSelectedActionLink order command DCObjectRemoveSelectedActionLink 0;
+modify menu DCFilesBottomActionbar add command DCObjectRemoveSelectedActionLink order command DCObjectRemoveSelectedActionLink 0;
+modify menu DCBookDocumentsBottomActionbar add command DCObjectRemoveSelectedActionLink order command DCObjectRemoveSelectedActionLink 1;
+modify menu DCFolderContentBottomActionbar add command DCObjectRemoveSelectedActionLink order command DCObjectRemoveSelectedActionLink 1;
+modify menu DCCompanyCapabilitiesBottomActionbar add command DCObjectRemoveSelectedActionLink order command DCObjectRemoveSelectedActionLink 0;
+modify menu DCCompanyFormatsBottomActionbar add command DCObjectRemoveSelectedActionLink order command DCObjectRemoveSelectedActionLink 0;
+#channel ==>DCBookDocumentsActionBarDCDocumentClassificationContentBottomActionbarDCFilesBottomActionbarDCBookDocumentsBottomActionbarDCFolderContentBottomActionbarDCCompanyCapabilitiesBottomActionbarDCCompanyFormatsBottomActionbar
+add property command_DCObjectRemoveSelectedActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectRemoveSelectedActionLink';

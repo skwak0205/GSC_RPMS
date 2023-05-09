@@ -1,0 +1,26 @@
+del command 'APPECEffortReportActionLink';
+add command 'APPECEffortReportActionLink'
+	description	''
+	label	'emxComponents.Command.APPECEffortReportActionLink'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonEngineeringChange:getECReportObjects&table=APPECEffortReportList&header=emxComponents.Heading.ECEffortReport&Export=false&Style=PrinterFriendly'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallReport.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECEffortReportActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECListMenuToolBar add command APPECEffortReportActionLink order command APPECEffortReportActionLink 1;
+modify menu APPObjectECActionsToolBar add command APPECEffortReportActionLink order command APPECEffortReportActionLink 3;
+modify menu APPObjectECListToolBar add command APPECEffortReportActionLink order command APPECEffortReportActionLink 1;
+modify menu APPObjectECReportToolBar add command APPECEffortReportActionLink order command APPECEffortReportActionLink 1;
+#channel ==>APPECListMenuToolBarAPPObjectECActionsToolBarAPPObjectECListToolBarAPPObjectECReportToolBar
+add property command_APPECEffortReportActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPECEffortReportActionLink';

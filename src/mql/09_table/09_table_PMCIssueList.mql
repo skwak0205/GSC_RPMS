@@ -1,0 +1,20 @@
+del table 'PMCIssueList' system;
+add table 'PMCIssueList' system
+column #1
+	name	'DynamicColumn'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getIssuseDynamicColumns'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'emxStatusReport'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCIssueList'
+	property	'version'	value	'R421'
+;
+add property table_PMCIssueList on program eServiceSchemaVariableMapping.tcl to table 'PMCIssueList' system;

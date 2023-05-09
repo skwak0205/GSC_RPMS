@@ -1,0 +1,17 @@
+del menu 'FTRProductConfigurationFeatureCustomFilterToolbar';
+add menu 'FTRProductConfigurationFeatureCustomFilterToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRConfigurationFeatureNameFilterCommand'
+	command	'FTRConfigurationFeatureLimitFilterCommand'
+	command	'FTRProductConfigurationFeatureFilterButton'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRProductConfigurationFeatureCustomFilterToolbar'
+	property 'version'	value	'R212'
+;
+add property menu_FTRProductConfigurationFeatureCustomFilterToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRProductConfigurationFeatureCustomFilterToolbar';

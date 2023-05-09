@@ -1,0 +1,23 @@
+del command 'APPMemberListMembersTreeCategory';
+add command 'APPMemberListMembersTreeCategory'
+	description	'DistributionList Command Object'
+	label	'emxComponents.Command.DistributionListMembers'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxMemberList:getMembers,emxMemberList:getPersons,emxMemberList:getGroups&table=APPMemberListMembersSummary&HelpMarker=emxhelpmemberlistmembers&toolbar=APPMemberListMembersToolBar&header=emxComponents.Header.Members&selection=multiple&programLabel=emxComponents.MemberList.Filter.All,emxComponents.MemberList.Filter.Person,emxComponents.MemberList.Filter.Group&triggerValidation=false&massPromoteDemote=false&displayView=details&expandLevelFilter=false&showFullName=true'
+	alt	'emxComponents.Command.DistributionListMembers'
+	setting	'Target Location'		'content'
+	setting	'Tree Scope ID'		'listid'
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMemberListMembersTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_MemberList add command APPMemberListMembersTreeCategory order command APPMemberListMembersTreeCategory 2;
+#channel ==>type_MemberList
+add property command_APPMemberListMembersTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPMemberListMembersTreeCategory';

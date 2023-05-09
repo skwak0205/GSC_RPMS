@@ -1,0 +1,16 @@
+del channel 'PMCGateDashboardChannel2';
+add channel 'PMCGateDashboardChannel2'
+	description	'To be shown in Gate Dashboard'
+	height	'375'
+	label	'emxFramework.Common.PMCGateDashboardChannel2'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCProjectBudgetInDashboard','PMCProjectBenefitInDashboard','PMCProjectMemberInDashboard','PMCProjectSpacePropertiesInDashboard'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateDashboardChannel2'
+	property	'version'	value	'R210'
+;
+#portal ==>PMCGateDashboardPortal
+add property channel_PMCGateDashboardChannel2 on program eServiceSchemaVariableMapping.tcl to channel 'PMCGateDashboardChannel2';

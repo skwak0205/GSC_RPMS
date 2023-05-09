@@ -1,0 +1,15 @@
+del menu 'PMCProjectTaskToolbarActions';
+add menu 'PMCProjectTaskToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectTaskPropertiesEdit'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectTaskToolbarActions'
+	property 'version'	value	'R418'
+;
+add property menu_PMCProjectTaskToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectTaskToolbarActions';

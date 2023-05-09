@@ -1,0 +1,18 @@
+del command 'APPClassificationPromotedToActiveStateEvent';
+add command 'APPClassificationPromotedToActiveStateEvent'
+	description	'Event holder for promotion to Active state'
+	label	'emxComponents.Event.Classification_Promoted_To_Active_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Classification Promoted To Active State'
+	setting	'History Bit'		'promote to Active'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPClassificationPromotedToActiveStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu APPClassificationSubscriptionEvents add command APPClassificationPromotedToActiveStateEvent order command APPClassificationPromotedToActiveStateEvent 5;
+#channel ==>APPClassificationSubscriptionEvents
+add property command_APPClassificationPromotedToActiveStateEvent on program eServiceSchemaVariableMapping.tcl to command 'APPClassificationPromotedToActiveStateEvent';

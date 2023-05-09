@@ -1,0 +1,33 @@
+del command 'APPCapabilities';
+add command 'APPCapabilities'
+	description	'Capability Command Object'
+	label	'emxComponents.Capabilities.Name'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxOrganization:getCapabilites&table=APPCapabilitySummary&toolbar=APPCapabilitySummaryToolBar&header=emxComponents.Capabilities.Heading&selection=multiple&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpcapabilities&PrinterFriendly=true'
+	alt	'emxComponents.Capabilities.Name'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(to[$<relationship_Customer>].from.name != "")'
+	setting	'Licensed Product'		'ENO_BPS_TP,ENO_SUP_TP'
+	setting	'Access Function'		'isHostOrOrganizationMember'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Hide Mode'		'Cloud'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Supplier'
+	user	'Supplier Representative'
+	user	'Buyer'
+	user	'Supplier Engineer'
+	user	'Advanced Quality Engineer'
+	user	'Buyer Administrator'
+	user	'Supplier Development Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCapabilities'
+	property	'version'	value	'R422'
+;
+modify menu type_BusinessUnit add command APPCapabilities order command APPCapabilities 11;
+modify menu type_Company add command APPCapabilities order command APPCapabilities 4;
+#channel ==>type_BusinessUnittype_Company
+add property command_APPCapabilities on program eServiceSchemaVariableMapping.tcl to command 'APPCapabilities';

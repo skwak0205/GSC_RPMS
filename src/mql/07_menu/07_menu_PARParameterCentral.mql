@@ -1,0 +1,10 @@
+del menu 'PARParameterCentral';
+add menu 'PARParameterCentral'
+	description	''
+	label	'emxParameter.common.Parameters'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	command	'PARPrefDimension'
+;
+add property menu_PARParameterCentral on program eServiceSchemaVariableMapping.tcl to menu 'PARParameterCentral';

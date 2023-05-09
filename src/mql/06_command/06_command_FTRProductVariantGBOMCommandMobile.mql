@@ -1,0 +1,23 @@
+del command 'FTRProductVariantGBOMCommandMobile';
+add command 'FTRProductVariantGBOMCommandMobile'
+	description	'Command Object for Parts & Part Family in the Product Variant Tree Category'
+	label	'emxProduct.Tree.GBOM'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=FTRGBOMStructureTable&program=emxFTRPart:getCompleteGBOMStructure&selection=multiple&header=emxProduct.Heading.Parts&toolbar=FTRGBOMStructureToolbarActions&type=type_Part&editLink=false&HelpMarker=emxhelpgbom&appendURL=VariantEffectivity|Effectivity&effectivityFilterMode=150'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeEnabled'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Image'		'${COMMON_DIR}/iconSmallPart.gif'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductVariantGBOMCommandMobile'
+	property	'version'	value	'R418'
+;
+modify menu type_ProductVariant add command FTRProductVariantGBOMCommandMobile order command FTRProductVariantGBOMCommandMobile 16;
+#channel ==>type_ProductVariant
+add property command_FTRProductVariantGBOMCommandMobile on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariantGBOMCommandMobile';

@@ -1,0 +1,28 @@
+del command 'TMCWorkspaceSummaryCreateCommand';
+add command 'TMCWorkspaceSummaryCreateCommand'
+	description	''
+	label	'emxTeamCentral.Button.CreateProject'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=TMCWorkspaceCreate&header=emxTeamCentral.Workspace.CreateNewWorkspace&nameField=autoName&createJPO=emxWorkspace:createWorkspaceProcess&HelpMarker=emxhelpcreatenewworkspace&postProcessURL=../teamcentral/emxTeamCreateWorkspacePostProcess.jsp&findMxLink=false&submitAction=doNothing&policy=policy_Project&type=type_Project&showPolicy=false'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'575'
+	setting	'Window Width'		'575'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedContributor'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceSummaryCreateCommand'
+	property	'version'	value	'R24.HF1'
+;
+modify menu TMCWorkspaceSummaryActionsToolBar add command TMCWorkspaceSummaryCreateCommand order command TMCWorkspaceSummaryCreateCommand 1;
+#channel ==>TMCWorkspaceSummaryActionsToolBar
+add property command_TMCWorkspaceSummaryCreateCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceSummaryCreateCommand';

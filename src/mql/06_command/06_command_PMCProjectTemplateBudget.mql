@@ -1,0 +1,17 @@
+del command 'PMCProjectTemplateBudget';
+add command 'PMCProjectTemplateBudget'
+	description	''
+	label	'emxProgramCentral.Budget.ProjectBudget'
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=templateBudget'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateBudget'
+	property	'version'	value	'R419'
+;
+modify menu type_ProjectTemplate add command PMCProjectTemplateBudget order command PMCProjectTemplateBudget 1;
+#channel ==>type_ProjectTemplate
+add property command_PMCProjectTemplateBudget on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateBudget';

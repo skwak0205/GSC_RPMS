@@ -1,0 +1,28 @@
+del command 'LCObjectEditDetails';
+add command 'LCObjectEditDetails'
+	description	''
+	label	'emxDocumentCentral.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_LCCommonProperties&formHeader=emxDocumentCentral.Common.Edit&mode=edit&HelpMarker=emxhelpeditclasslibrary&submitAction=refreshCaller&Export=False&postProcessURL=${SUITE_DIR}/emxLibraryCentralPostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasModifyAccess'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCObjectEditDetails'
+	property	'version'	value	'R422'
+;
+modify menu LCObjectDetailsToolBar add command LCObjectEditDetails order command LCObjectEditDetails 0;
+#channel ==>LCObjectDetailsToolBar
+add property command_LCObjectEditDetails on program eServiceSchemaVariableMapping.tcl to command 'LCObjectEditDetails';

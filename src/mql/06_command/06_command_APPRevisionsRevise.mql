@@ -1,0 +1,18 @@
+del command 'APPRevisionsRevise';
+add command 'APPRevisionsRevise'
+	description	''
+	label	'emxComponents.ActionLink.CreateNewRevision'
+	href	'${SUITE_DIR}/emxRevise.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[revise] == true)'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRevisionsRevise'
+	property	'version'	value	'V6R2008-2.0'
+;
+modify menu APPRevisionsToolBar add command APPRevisionsRevise order command APPRevisionsRevise 0;
+#channel ==>APPRevisionsToolBar
+add property command_APPRevisionsRevise on program eServiceSchemaVariableMapping.tcl to command 'APPRevisionsRevise';

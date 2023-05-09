@@ -1,0 +1,8 @@
+{
+  "UCV.optionsChecker.optionSet.notExisting.error": "必须定义选项集才能检索用户特性！",
+  "UCV.optionsChecker.optionSet.type.error": "必须定义选项集才能检索用户特性！",
+  "UCV.mode.icon.text.switchReadOnly": "切换为只读模式",
+  "UCV.mode.icon.text.switchEdit": "切换到编辑模式",
+  "UCV.add.icon.text": "添加用户特性",
+  "UCV.noUC.error": "没有可用的用户特性..."
+}

@@ -1,0 +1,23 @@
+del menu 'IssueResolvedToListToolBarActions';
+add menu 'IssueResolvedToListToolBarActions'
+	description	''
+	label	'emxComponents.Menu.IssueResolvedToListToolBarActions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'current != Closed'
+	setting	'Access Function'		'bCommandDisplay'
+	setting	'Access Program'		'emxCommonIssue'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'IssueResolvedToCreateActionLink'
+	command	'AddExistingIssueResolvedToLink'
+	command	'AddExternalResolvedByCRLink'
+	command	'AEFSeparator'
+	command	'RemoveSelectedIssueResolvedToLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'IssueResolvedToListToolBarActions'
+	property 'version'	value	'R421.HF1'
+;
+add property menu_IssueResolvedToListToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'IssueResolvedToListToolBarActions';

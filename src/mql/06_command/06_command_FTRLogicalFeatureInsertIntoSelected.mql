@@ -1,0 +1,19 @@
+del command 'FTRLogicalFeatureInsertIntoSelected';
+add command 'FTRLogicalFeatureInsertIntoSelected'
+	description	''
+	label	'emxConfiguration.label.InsertintoSelected'
+	href	'javascript:logicalFeatureCopyOperation()'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionInsertRowAfter.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLogicalFeatureInsertIntoSelected'
+	property	'version'	value	'R418'
+;
+modify menu FTRLogicalFeatureCopyToStepTwoMenu add command FTRLogicalFeatureInsertIntoSelected order command FTRLogicalFeatureInsertIntoSelected 0;
+#channel ==>FTRLogicalFeatureCopyToStepTwoMenu
+add property command_FTRLogicalFeatureInsertIntoSelected on program eServiceSchemaVariableMapping.tcl to command 'FTRLogicalFeatureInsertIntoSelected';

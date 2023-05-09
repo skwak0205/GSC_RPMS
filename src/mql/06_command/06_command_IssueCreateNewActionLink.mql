@@ -1,0 +1,36 @@
+del command 'IssueCreateNewActionLink';
+add command 'IssueCreateNewActionLink'
+	description	'Create New Issue Command Object'
+	label	'emxComponents.ActionLink.IssueCreate'
+	href	'${ROOT_DIR}/common/emxCreate.jsp?type=type_Issue&typeChooser=true&ReloadOpener=true&header=emxComponents.Heading.IssueCreate&form=type_CreateIssue&nameField=autoName&HelpMarker=emxhelpissuecreate&showApply=true&StringResourceFileId=emxComponentsStringResource&suiteKey=Components&postProcessJPO=emxCommonIssue:updateIssueDetails&postProcessURL=../components/emxIssueCreateProcess.jsp&preProcessJavaScript=issueCreatePreProcess'
+	alt	'emxComponents.ActionLink.IssueCreate'
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'current.access[toconnect]'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'True'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMReleaseManager'
+	user	'VPLMTeamManager'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	user	'Customer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueCreateNewActionLink'
+	property	'version'	value	'R422'
+;
+modify menu IssueToolBarActions add command IssueCreateNewActionLink order command IssueCreateNewActionLink 1;
+modify menu ContextIssueToolBarActions add command IssueCreateNewActionLink order command IssueCreateNewActionLink 1;
+#channel ==>IssueToolBarActionsContextIssueToolBarActions
+add property command_IssueCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'IssueCreateNewActionLink';

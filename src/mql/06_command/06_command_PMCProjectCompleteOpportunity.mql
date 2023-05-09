@@ -1,0 +1,20 @@
+del command 'PMCProjectCompleteOpportunity';
+add command 'PMCProjectCompleteOpportunity'
+	description	'Opportunity Table Filter Command'
+	label	'emxProgramCentral.Common.CompletedProjects'
+	href	''
+	alt	'emxFramework.Command.Alt.Opportunity'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'function'		'getCompletedRisks'
+	setting	'program'		'emxRisk'
+	setting	'Image'		'opportunity.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectCompleteOpportunity'
+	property	'version'	value	'R421'
+;
+modify menu PMCOpportunityListMenu add command PMCProjectCompleteOpportunity order command PMCProjectCompleteOpportunity 2;
+#channel ==>PMCOpportunityListMenu
+add property command_PMCProjectCompleteOpportunity on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectCompleteOpportunity';

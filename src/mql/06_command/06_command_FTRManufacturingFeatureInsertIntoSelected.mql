@@ -1,0 +1,20 @@
+del command 'FTRManufacturingFeatureInsertIntoSelected';
+add command 'FTRManufacturingFeatureInsertIntoSelected'
+	description	''
+	label	'emxConfiguration.label.InsertintoSelected'
+	href	'${SUITE_DIR}/ManufacturingFeatureCopyToPostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRManufacturingFeatureInsertIntoSelected'
+	property	'version'	value	'R215'
+;
+modify menu FTRManufacturingFeatureCopyToStepTwoMenu add command FTRManufacturingFeatureInsertIntoSelected order command FTRManufacturingFeatureInsertIntoSelected 0;
+#channel ==>FTRManufacturingFeatureCopyToStepTwoMenu
+add property command_FTRManufacturingFeatureInsertIntoSelected on program eServiceSchemaVariableMapping.tcl to command 'FTRManufacturingFeatureInsertIntoSelected';

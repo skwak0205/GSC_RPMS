@@ -1,0 +1,25 @@
+del command 'PMCProjectTaskPropertiesEdit';
+add command 'PMCProjectTaskPropertiesEdit'
+	description	'Edit Project Task Properties'
+	label	''
+	href	'${COMMON_DIR}/emxForm.jsp?mode=edit&form=PMCProjectTaskViewForm&formHeader=emxProgramCentral.Common.Edit&PrinterFriendly=true&HelpMarker=emxhelpwbstaskedit&findMxLink=false&submitAction=doNothing&portalCmdName=PMCWBS&Export=false&showTabHeader=true&postProcessURL=../programcentral/emxProjectManagementUtil.jsp?mode=refreshAfterEdit'
+	alt	'emxProgramCentral.Button.Edit'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canEditTaskProperties'
+	setting	'Access Program'		'emxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTaskPropertiesEdit'
+	property	'version'	value	'R424.HF2'
+;
+modify menu PMCProjectTaskToolbarActions add command PMCProjectTaskPropertiesEdit order command PMCProjectTaskPropertiesEdit 0;
+#channel ==>PMCProjectTaskToolbarActions
+add property command_PMCProjectTaskPropertiesEdit on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTaskPropertiesEdit';

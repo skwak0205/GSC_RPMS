@@ -1,0 +1,25 @@
+del command 'PMCEditRiskDetails';
+add command 'PMCEditRiskDetails'
+	description	'Command for Editing Risk Details'
+	label	'emxProgramCentral.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCRiskForm&mode=edit&postProcessJPO=emxRisk:updateFinishDate&formHeader=emxProgramCentral.Common.HeaderRiskEditDetails&HelpMarker=emxhelpriskeditdetailsdialog&findMxLink=false&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'CmdName'		'PMCEditRiskDetails'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessOnRisk'
+	setting	'Access Program'		'emxRisk'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEditRiskDetails'
+	property	'version'	value	'R423.HF6'
+;
+modify menu PMCRiskToolBarActions add command PMCEditRiskDetails order command PMCEditRiskDetails 0;
+#channel ==>PMCRiskToolBarActions
+add property command_PMCEditRiskDetails on program eServiceSchemaVariableMapping.tcl to command 'PMCEditRiskDetails';

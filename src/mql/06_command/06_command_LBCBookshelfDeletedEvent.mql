@@ -1,0 +1,17 @@
+del command 'LBCBookshelfDeletedEvent';
+add command 'LBCBookshelfDeletedEvent'
+	description	'Event holder for Bookshelf Deletion'
+	label	'emxLibraryCentral.Event.Bookshelf_Deleted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Bookshelf Deleted'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCBookshelfDeletedEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCBookshelfSubscriptionEvents add command LBCBookshelfDeletedEvent order command LBCBookshelfDeletedEvent 6;
+#channel ==>LBCBookshelfSubscriptionEvents
+add property command_LBCBookshelfDeletedEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCBookshelfDeletedEvent';

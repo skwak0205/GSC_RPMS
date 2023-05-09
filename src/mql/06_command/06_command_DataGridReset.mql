@@ -1,0 +1,19 @@
+del command 'DataGridReset';
+add command 'DataGridReset'
+	description	''
+	label	'emxFramework.FreezePane.Action.Reset'
+	href	'javascript:StandardFunctions.resetEdits()'
+	alt	'emxFramework.FreezePane.Action.Reset'
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Function'		'canReset'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridReset'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridMenu add command DataGridReset order command DataGridReset 4;
+#channel ==>DataGridMenu
+add property command_DataGridReset on program eServiceSchemaVariableMapping.tcl to command 'DataGridReset';

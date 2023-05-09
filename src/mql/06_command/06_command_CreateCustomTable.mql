@@ -1,0 +1,16 @@
+del command 'CreateCustomTable';
+add command 'CreateCustomTable'
+	description	''
+	label	'emxFramework.CustomizeTable.CreateNew'
+	href	'javascript:StandardFunctions.createCustomTable()'
+	alt	'emxFramework.CustomizeTable.CreateNew'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'CreateCustomTable'
+	property	'version'	value	'R423.HF5'
+;
+modify menu DataGridTableFilterMenu add command CreateCustomTable order command CreateCustomTable 0;
+#channel ==>DataGridTableFilterMenu
+add property command_CreateCustomTable on program eServiceSchemaVariableMapping.tcl to command 'CreateCustomTable';

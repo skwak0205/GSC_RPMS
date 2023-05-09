@@ -1,0 +1,16 @@
+del menu 'APPDiscussionTopActionBar';
+add menu 'APPDiscussionTopActionBar'
+	description	''
+	label	'${NAME}'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/iconSmallOrganization.gif'
+	command	'APPDiscussionCreateNewActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPDiscussionTopActionBar'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_APPDiscussionTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'APPDiscussionTopActionBar';

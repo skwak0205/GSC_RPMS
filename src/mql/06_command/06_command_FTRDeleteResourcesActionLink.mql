@@ -1,0 +1,25 @@
+del command 'FTRDeleteResourcesActionLink';
+add command 'FTRDeleteResourcesActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/FixedResourceUtil.jsp?mode=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'createNewLinkDisplay'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDeleteResourcesActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRFixedResourceToolBarActions add command FTRDeleteResourcesActionLink order command FTRDeleteResourcesActionLink 0;
+modify menu FTRResourcesListBottomActionBar add command FTRDeleteResourcesActionLink order command FTRDeleteResourcesActionLink 0;
+#channel ==>FTRFixedResourceToolBarActionsFTRResourcesListBottomActionBar
+add property command_FTRDeleteResourcesActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRDeleteResourcesActionLink';

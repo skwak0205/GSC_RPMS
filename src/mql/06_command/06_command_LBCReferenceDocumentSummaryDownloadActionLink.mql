@@ -1,0 +1,20 @@
+del command 'LBCReferenceDocumentSummaryDownloadActionLink';
+add command 'LBCReferenceDocumentSummaryDownloadActionLink'
+	description	'Document Download Command Object'
+	label	'emxComponents.Command.Download'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckout.jsp?action=download'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDownload.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCReferenceDocumentSummaryDownloadActionLink'
+	property	'version'	value	'R215'
+;
+modify menu LBCReferenceDocumentSummaryActionsToolBar add command LBCReferenceDocumentSummaryDownloadActionLink order command LBCReferenceDocumentSummaryDownloadActionLink 3;
+#channel ==>LBCReferenceDocumentSummaryActionsToolBar
+add property command_LBCReferenceDocumentSummaryDownloadActionLink on program eServiceSchemaVariableMapping.tcl to command 'LBCReferenceDocumentSummaryDownloadActionLink';

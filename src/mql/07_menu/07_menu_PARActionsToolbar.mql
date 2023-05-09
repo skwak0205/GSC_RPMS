@@ -1,0 +1,12 @@
+del menu 'PARActionsToolbar';
+add menu 'PARActionsToolbar'
+	description	'Actions toolbar to create and delete parameters'
+	label	'emxParameter.common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	command	'PARCreateParameter'
+	command	'PARDeleteParameter'
+	command	'PAREditParameter'
+;
+add property menu_PARActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PARActionsToolbar';

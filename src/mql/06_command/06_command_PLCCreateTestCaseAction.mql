@@ -1,0 +1,20 @@
+del command 'PLCCreateTestCaseAction';
+add command 'PLCCreateTestCaseAction'
+	description	''
+	label	'emxProduct.Heading.TestCaseCreate'
+	href	'${COMMON_DIR}/emxCreate.jsp?submitAction=refreshCaller&type=type_TestCase&policy=policy_TestCase&typeChooser=true&nameField=both&form=PLCCreateTestCase&showApply=true&suiteKey=ProductLine&windowMode=slidein&targetLocation=slidein&autoNameChecked=true&postProcessURL=${SUITE_DIR}/CreateProcess.jsp?Mode=refreshTopWindow'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'True'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'application'	value	'ProductLine'
+	property	'version'	value	'R422'
+;
+modify menu TestCasesToolbar add command PLCCreateTestCaseAction order command PLCCreateTestCaseAction 1;
+#channel ==>TestCasesToolbar
+add property command_PLCCreateTestCaseAction on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateTestCaseAction';

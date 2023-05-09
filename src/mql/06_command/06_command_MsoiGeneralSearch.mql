@@ -1,0 +1,16 @@
+del command 'MsoiGeneralSearch';
+add command 'MsoiGeneralSearch'
+	description	'General Search Results Command Object'
+	label	'emxIEFDesignCenter.Header.SearchResults'
+	href	'${COMMON_DIR}/emxTable.jsp?program=IEFSearch:refreshSearchResults&table=IEFDesktopDocumentSummary'
+	alt	'Search Results'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'IntegrationFramework'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiGeneralSearch'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>IEF ENOVIA Root
+add property command_MsoiGeneralSearch on program eServiceSchemaVariableMapping.tcl to command 'MsoiGeneralSearch';

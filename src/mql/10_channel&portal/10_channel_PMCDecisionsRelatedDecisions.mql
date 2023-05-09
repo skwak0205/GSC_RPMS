@@ -1,0 +1,16 @@
+del channel 'PMCDecisionsRelatedDecisions';
+add channel 'PMCDecisionsRelatedDecisions'
+	description	'Related Decisions'
+	height	'300'
+	label	'emxProgramCentral.Common.RelatedDecisions'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCDecisionsRelatedDecisions'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDecisionsRelatedDecisions'
+	property	'version'	value	'R207'
+;
+#portal ==>PMCDecisionPowerView
+add property channel_PMCDecisionsRelatedDecisions on program eServiceSchemaVariableMapping.tcl to channel 'PMCDecisionsRelatedDecisions';

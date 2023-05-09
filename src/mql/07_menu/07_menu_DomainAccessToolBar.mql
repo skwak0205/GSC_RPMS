@@ -1,0 +1,17 @@
+del menu 'DomainAccessToolBar';
+add menu 'DomainAccessToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Horizontal ToolBar'		'true'
+	menu	'DomainAccessActionToolBar'
+	menu	'DomainAccessFolderActionToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'DomainAccessToolBar'
+	property 'version'	value	'R422'
+;
+add property menu_DomainAccessToolBar on program eServiceSchemaVariableMapping.tcl to menu 'DomainAccessToolBar';

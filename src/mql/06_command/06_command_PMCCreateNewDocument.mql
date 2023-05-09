@@ -1,0 +1,28 @@
+del command 'PMCCreateNewDocument';
+add command 'PMCCreateNewDocument'
+	description	'Create New Document object'
+	label	'emxProgramCentral.Command.Document'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=create&fileRequired=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canCreateNewDocForAttachment'
+	setting	'Access Program'		'emxTaskBase'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateNewDocument'
+	property	'version'	value	'R422'
+;
+modify menu PMCContentSummaryCreateNew add command PMCCreateNewDocument order command PMCCreateNewDocument 1;
+#channel ==>PMCContentSummaryCreateNew
+add property command_PMCCreateNewDocument on program eServiceSchemaVariableMapping.tcl to command 'PMCCreateNewDocument';

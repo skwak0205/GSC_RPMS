@@ -1,0 +1,27 @@
+del command 'APPDeleteAllVersions';
+add command 'APPDeleteAllVersions'
+	description	'Delete Selected File from Document'
+	label	'emxComponents.Command.DeleteFile'
+	href	'javascript:window.deleteAllVersions_onclick()'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(policy != "Version") && (current.access[todisconnect] == true) && (revision==last) && (current.access[modify] == true)'
+	setting	'Access Function'		'allowFileVersioning'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDeleteAll.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteAllVersions'
+	property	'version'	value	'R424.HF3'
+;
+modify menu APPDocumentActionsToolBar add command APPDeleteAllVersions order command APPDeleteAllVersions 20;
+modify menu TMCDocumentsActionToolbar add command APPDeleteAllVersions order command APPDeleteAllVersions 18;
+modify menu FMADocumentsToolbar add command APPDeleteAllVersions order command APPDeleteAllVersions 0;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbarFMADocumentsToolbar
+add property command_APPDeleteAllVersions on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteAllVersions';

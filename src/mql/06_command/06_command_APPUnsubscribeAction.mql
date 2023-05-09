@@ -1,0 +1,20 @@
+del command 'APPUnsubscribeAction';
+add command 'APPUnsubscribeAction'
+	description	''
+	label	'emxComponents.command.Unsubscribe'
+	href	'${COMPONENT_DIR}/emxSubscription.jsp?mode=unSubscribe'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUnsubscribe.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPUnsubscribeAction'
+	property	'version'	value	'R216'
+;
+modify menu APPSubscriptionMenu add command APPUnsubscribeAction order command APPUnsubscribeAction 0;
+#channel ==>APPSubscriptionMenu
+add property command_APPUnsubscribeAction on program eServiceSchemaVariableMapping.tcl to command 'APPUnsubscribeAction';

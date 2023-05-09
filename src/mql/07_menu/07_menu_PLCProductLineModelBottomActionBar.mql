@@ -1,0 +1,17 @@
+del menu 'PLCProductLineModelBottomActionBar';
+add menu 'PLCProductLineModelBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCAddToPortfolioActionLink'
+	command	'AEFSeparator'
+	command	'PLCRemoveModelActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCProductLineModelBottomActionBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_PLCProductLineModelBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductLineModelBottomActionBar';

@@ -1,0 +1,17 @@
+del menu 'PMCProjectTemplateTaskQuestionActionsToolBar';
+add menu 'PMCProjectTemplateTaskQuestionActionsToolBar'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCAssignQuestion'
+	command	'PMCCreateQuestionAndAssign'
+	command	'PMCUnassignQuestion'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectTemplateTaskQuestionActionsToolBar'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_PMCProjectTemplateTaskQuestionActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectTemplateTaskQuestionActionsToolBar';

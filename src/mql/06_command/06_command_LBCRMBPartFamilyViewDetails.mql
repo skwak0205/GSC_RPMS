@@ -1,0 +1,18 @@
+del command 'LBCRMBPartFamilyViewDetails';
+add command 'LBCRMBPartFamilyViewDetails'
+	description	''
+	label	'emxComponents.Common.PropertiesHeader'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_PartFamily&toolbar=APPPartFamilyDetailsToolBar&HelpMarker=emxhelppartfamilyproperties&formHeader=emxComponents.Common.RegionPropertiesHeader&Export=False'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCRMBPartFamilyViewDetails'
+	property	'version'	value	'R216'
+;
+modify menu type_PartFamilyRMB add command LBCRMBPartFamilyViewDetails order command LBCRMBPartFamilyViewDetails 1;
+#channel ==>type_PartFamilyRMB
+add property command_LBCRMBPartFamilyViewDetails on program eServiceSchemaVariableMapping.tcl to command 'LBCRMBPartFamilyViewDetails';

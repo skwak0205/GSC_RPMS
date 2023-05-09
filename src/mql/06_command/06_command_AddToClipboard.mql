@@ -1,0 +1,20 @@
+del command 'AddToClipboard';
+add command 'AddToClipboard'
+	description	''
+	label	'emxFramework.Collections.AddToClipboardCollection'
+	href	'${COMMON_DIR}/emxCollectionsAddToProcess.jsp?mode=Clipboard'
+	alt	'emxFramework.Collections.AddToClipboardCollection'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallClipboardCollections.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AddToClipboard'
+	property	'version'	value	'R423.HF3'
+;
+modify menu CollectionMenu add command AddToClipboard order command AddToClipboard 1;
+#channel ==>CollectionMenu
+add property command_AddToClipboard on program eServiceSchemaVariableMapping.tcl to command 'AddToClipboard';

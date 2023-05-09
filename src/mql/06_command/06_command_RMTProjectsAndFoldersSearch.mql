@@ -1,0 +1,26 @@
+del command 'RMTProjectsAndFoldersSearch';
+add command 'RMTProjectsAndFoldersSearch'
+	description	'Opens generic search dialog page for projects.'
+	label	'emxFramework.GlobalSearch.ReviseSearch'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?showToolbar=true&toolbar=RMTRequirementSpecificationSearchToolbar&table=RMTProjectFolderList&field=TYPES=type_ProjectSpace&program=emxRequirementSpecificationBase:getActiveProjectFolders&SubmitLabel=emxFramework.Common.Done&cancelButton=true&cancelLabel=emxFramework.Common.Cancel&expandProgram=emxRequirementSpecificationBase:getProjectFolders&direction=from&submitURL=../requirements/SpecificationConnectToFolderProcess.jsp&selection=multiple'
+	alt	''
+	setting	'Target Location'		'_parent'
+	setting	'Registered Suite'		'Framework'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTProjectsAndFoldersSearch'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementSpecificationStructureBrowserActions add command RMTProjectsAndFoldersSearch order command RMTProjectsAndFoldersSearch 1;
+modify menu RMTRequirementSpecificationSearchResultToolbar add command RMTProjectsAndFoldersSearch order command RMTProjectsAndFoldersSearch 1;
+#channel ==>RMTRequirementSpecificationStructureBrowserActionsRMTRequirementSpecificationSearchResultToolbar
+add property command_RMTProjectsAndFoldersSearch on program eServiceSchemaVariableMapping.tcl to command 'RMTProjectsAndFoldersSearch';

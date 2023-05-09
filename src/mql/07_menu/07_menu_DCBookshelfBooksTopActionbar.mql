@@ -1,0 +1,16 @@
+del menu 'DCBookshelfBooksTopActionbar';
+add menu 'DCBookshelfBooksTopActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'LBCCreateNewClass'
+	command	'LBCBookshelfContentAddExisting'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCBookshelfBooksTopActionbar'
+	property 'version'	value	'R212'
+;
+add property menu_DCBookshelfBooksTopActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCBookshelfBooksTopActionbar';

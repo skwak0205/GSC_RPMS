@@ -1,0 +1,22 @@
+del command 'AEFSBEditUndo';
+add command 'AEFSBEditUndo'
+	description	''
+	label	'emxFramework.FreezePane.SBEditActions.Undo'
+	href	'javascript:undo()'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUndo.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBEditUndo'
+	property	'version'	value	'R422'
+;
+modify menu AEFSBEditActions add command AEFSBEditUndo order command AEFSBEditUndo 1;
+modify menu PMCSBEditActions add command AEFSBEditUndo order command AEFSBEditUndo 5;
+modify menu PMCFolderSBEditActions add command AEFSBEditUndo order command AEFSBEditUndo 0;
+#channel ==>AEFSBEditActionsPMCSBEditActionsPMCFolderSBEditActions
+add property command_AEFSBEditUndo on program eServiceSchemaVariableMapping.tcl to command 'AEFSBEditUndo';

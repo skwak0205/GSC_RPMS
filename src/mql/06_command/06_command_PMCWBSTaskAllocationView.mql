@@ -1,0 +1,21 @@
+del command 'PMCWBSTaskAllocationView';
+add command 'PMCWBSTaskAllocationView'
+	description	''
+	label	'emxProgramCentral.TaskAllocation.View'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'table'		'PMCWBSAssignmentAllocationViewTable'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSTaskAllocationView'
+	property	'version'	value	'R424.HF2'
+;
+modify menu PMCWBSTableMenu add command PMCWBSTaskAllocationView order command PMCWBSTaskAllocationView 2;
+#channel ==>PMCWBSTableMenu
+add property command_PMCWBSTaskAllocationView on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSTaskAllocationView';

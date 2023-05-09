@@ -1,0 +1,22 @@
+del command 'FTRPreciseBOMCategory';
+add command 'FTRPreciseBOMCategory'
+	description	''
+	label	'emxProduct.Tree.PreciseBOM'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProductConfiguration:getPreciseBOMForPC&inquiryLabel=All&table=FTRPCPreciseBOMList&header=emxProduct.Heading.PreciseBOM&sortColumnName=Name&HelpMarker=emxhelpproductconfigurationlistprecisebom'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<expression[LogicalFeatureEnabled]=="true">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallPart.gif'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRPreciseBOMCategory'
+	property	'version'	value	'R423'
+;
+modify menu type_ProductConfiguration add command FTRPreciseBOMCategory order command FTRPreciseBOMCategory 6;
+#channel ==>type_ProductConfiguration
+add property command_FTRPreciseBOMCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRPreciseBOMCategory';

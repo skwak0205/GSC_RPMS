@@ -1,0 +1,7 @@
+{
+"UnifiedExportCommand.Title":"Eksportuj jako",
+"UnifiedExportCommand.ShortHelp":"Eksportuj wybraną zawartość jako geometrie, wyprowadzone dane wyjściowe i metadane.",
+"UnifiedExportCommand.LongHelp":"Za pomocą opcji Eksportuj jako można eksportować wybraną zawartość 3DExperience i uzyskiwać skojarzone natywne strumienie CAD, metadane i pliki formatów drugorzędnych.",
+"UnifiedExportCommand.WebHelp":"PsteUserMap/pste-r-ui-ActBar-Tools.htm",
+"UnifiedExportCommand.WebHelp.ENOSC2D_AP":"Sc2dUserMap/sc2d-r-ui-ActBar-Tools.htm"
+}

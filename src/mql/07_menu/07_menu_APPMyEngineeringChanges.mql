@@ -1,0 +1,17 @@
+del menu 'APPMyEngineeringChanges';
+add menu 'APPMyEngineeringChanges'
+	description	''
+	label	'emxComponents.Menu.EngineeringChange'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPMyEngineeringChange'
+	command	'AEFSeparator'
+	command	'APPCreateNewECActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPMyEngineeringChanges'
+	property 'version'	value	'10-6'
+;
+add property menu_APPMyEngineeringChanges on program eServiceSchemaVariableMapping.tcl to menu 'APPMyEngineeringChanges';

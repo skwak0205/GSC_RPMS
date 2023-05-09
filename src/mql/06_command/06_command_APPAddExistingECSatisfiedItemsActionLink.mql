@@ -1,0 +1,30 @@
+del command 'APPAddExistingECSatisfiedItemsActionLink';
+add command 'APPAddExistingECSatisfiedItemsActionLink'
+	description	''
+	label	'emxComponents.Command.AddExisting'
+	href	'${SUITE_DIR}/EngineeringChangeSearchPreProcess.jsp?functionality=resolvedItems'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true && current != Closed)'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasSatisfiedItemsLink'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	setting	'Access Mask'		'ToConnect'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddExistingECSatisfiedItemsActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPECSatisfiedItemsListActionsToolBar add command APPAddExistingECSatisfiedItemsActionLink order command APPAddExistingECSatisfiedItemsActionLink 1;
+#channel ==>APPECSatisfiedItemsListActionsToolBar
+add property command_APPAddExistingECSatisfiedItemsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAddExistingECSatisfiedItemsActionLink';

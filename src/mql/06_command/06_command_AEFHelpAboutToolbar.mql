@@ -1,0 +1,19 @@
+del command 'AEFHelpAboutToolbar';
+add command 'AEFHelpAboutToolbar'
+	description	'Help About'
+	label	'emxFramework.About.About'
+	href	'emxHelpAboutFS.jsp'
+	alt	'emxFramework.About.About'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'550'
+	setting	'Window Width'		'500'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFHelpAboutToolbar'
+	property	'version'	value	'R417'
+;
+#channel ==>My ToolsAdminTools
+add property command_AEFHelpAboutToolbar on program eServiceSchemaVariableMapping.tcl to command 'AEFHelpAboutToolbar';

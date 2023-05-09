@@ -1,0 +1,13 @@
+del menu 'PLCBuildDocumentListTopActionBar';
+add menu 'PLCBuildDocumentListTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCBuildDocumentListTopActionBar'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_PLCBuildDocumentListTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCBuildDocumentListTopActionBar';

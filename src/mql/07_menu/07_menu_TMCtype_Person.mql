@@ -1,0 +1,16 @@
+del menu 'TMCtype_Person';
+add menu 'TMCtype_Person'
+	description	''
+	label	'$<attribute[attribute_LastName].value>, $<attribute[attribute_FirstName].value>'
+	href	'${SUITE_DIR}/emxTeamPeopleDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallPerson.gif'
+	command	'TMCRole'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCtype_Person'
+	property 'version'	value	'9-5-2-0'
+;
+add property menu_TMCtype_Person on program eServiceSchemaVariableMapping.tcl to menu 'TMCtype_Person';

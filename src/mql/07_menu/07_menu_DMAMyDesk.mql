@@ -1,0 +1,12 @@
+del menu 'DMAMyDesk';
+add menu 'DMAMyDesk'
+	description	''
+	label	'emxPackagesManagement.label.MenuDMAMyDesk'
+	href	''
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'PackagesManagement'
+	setting	'Licensed Product'		'X3DMOCU_AP'
+	command	'ManagePackagesCmd'
+;
+add property menu_DMAMyDesk on program eServiceSchemaVariableMapping.tcl to menu 'DMAMyDesk';

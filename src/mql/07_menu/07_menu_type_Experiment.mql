@@ -1,0 +1,14 @@
+del menu 'type_Experiment';
+add menu 'type_Experiment'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/emxProgramCentralWhatIfAnalysis.jsp?mode=launchWBS'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_Experiment'
+	property 'version'	value	'R424.HF2'
+;
+add property menu_type_Experiment on program eServiceSchemaVariableMapping.tcl to menu 'type_Experiment';

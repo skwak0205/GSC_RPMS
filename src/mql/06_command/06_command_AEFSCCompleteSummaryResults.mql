@@ -1,0 +1,16 @@
+del command 'AEFSCCompleteSummaryResults';
+add command 'AEFSCCompleteSummaryResults'
+	description	'Strucuture Compare Complete Summary Report'
+	label	'emxFramework.Common.CompleteSummary'
+	href	'${COMMON_DIR}/emxStructureCompareIntermediate.jsp?fromPage=Complete_Summary_Report'
+	alt	'emxFramework.Common.CompleteSummary'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSCCompleteSummaryResults'
+	property	'version'	value	'R214'
+;
+#channel ==>AEFStructureCompareResults
+add property command_AEFSCCompleteSummaryResults on program eServiceSchemaVariableMapping.tcl to command 'AEFSCCompleteSummaryResults';

@@ -1,0 +1,21 @@
+del command 'PLCDocumentWhereUsedTreeCategory';
+add command 'PLCDocumentWhereUsedTreeCategory'
+	description	''
+	label	'emxProduct.Tree.WhereUsed'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxReferenceDocument:getWhereUsed&table=PLCDocumentWhereUsedList&relationshipName=relationship_ReferenceDocument&header=emxProduct.Heading.WhereUsed&sortColumnName=Name&HelpMarker=emxhelpwhereusedlist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCDocumentWhereUsedTreeCategory'
+	property	'version'	value	'V6R2008-2.0'
+;
+modify menu type_PLCDocument add command PLCDocumentWhereUsedTreeCategory order command PLCDocumentWhereUsedTreeCategory 0;
+#channel ==>type_PLCDocument
+add property command_PLCDocumentWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCDocumentWhereUsedTreeCategory';

@@ -1,0 +1,14 @@
+del menu 'VPLMDocumentActionMenu';
+add menu 'VPLMDocumentActionMenu'
+	description	'VPLM Action Menu'
+	label	'emxFramework.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'VPLMWebMgt'
+	command	'VPLMCreateNewDocument'
+	command	'VPLMAddExistingDocumentActionLink'
+	command	'AEFSeparator'
+	command	'VPLMDocumentRemove'
+	command	'VPLMDocumentDelete'
+;
+add property menu_VPLMDocumentActionMenu on program eServiceSchemaVariableMapping.tcl to menu 'VPLMDocumentActionMenu';

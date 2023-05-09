@@ -1,0 +1,19 @@
+del command 'PMCResolvesRIOCommand';
+add command 'PMCResolvesRIOCommand'
+	description	'Command for displaying Items being resolved using ResolveTo and ResolvingProject'
+	label	'emxProgramCentral.Command.ResolvesLabel'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCResolvesRIOTable&toolbar=PMCResolvesItemsRIOToolBarActions&program=emxProjectSpace:getResolvesItemsForAProject&freezePane=Name&selection=multiple&tableMenu=&header=&HelpMarker=emxhelpresolvesitems&showPageURLIcon=false'
+	alt	'emxProgramCentral.Command.ResolvesLabel'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Access Function'		'hasAccessTaskResolves'
+	setting	'Access Program'		'emxTaskBase'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResolvesRIOCommand'
+	property	'version'	value	'R424.HF2'
+;
+#channel ==>PMCProjectPropertiesChannelPMCPropertiesChannel
+add property command_PMCResolvesRIOCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCResolvesRIOCommand';

@@ -1,0 +1,25 @@
+del command 'PMCProjectSummaryExport';
+add command 'PMCProjectSummaryExport'
+	description	'Command for Export'
+	label	'emxProgramCentral.Common.Export'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=ProjectExport'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionExportToDocument.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSummaryExport'
+	property	'version'	value	'R423.HF7'
+;
+modify menu PMCProjectSummaryToolBarActions add command PMCProjectSummaryExport order command PMCProjectSummaryExport 3;
+#channel ==>PMCProjectSummaryToolBarActions
+add property command_PMCProjectSummaryExport on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSummaryExport';

@@ -1,0 +1,19 @@
+del command 'PLCTestCaseSubTestCaseTreeCategory';
+add command 'PLCTestCaseSubTestCaseTreeCategory'
+	description	''
+	label	'emxProduct.Tree.SubTestCase'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCTestCaseList&program=emxTestCase:getRelatedTestCases&header=emxProduct.Heading.TestCase.SubTestCases&selection=multiple&topActionbar=PLCTestCaseSubTestCaseTopActionBar&bottomActionbar=PLCTestCaseSubTestCaseBottomActionBar&rel=relationship_SubTestCase&sortColumnName=Name&HelpMarker=emxhelptestcaselistsubtestcase&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/iconSmallTestCase.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestCaseSubTestCaseTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu type_TestCase add command PLCTestCaseSubTestCaseTreeCategory order command PLCTestCaseSubTestCaseTreeCategory 8;
+modify menu Msoitype_TestCase add command PLCTestCaseSubTestCaseTreeCategory order command PLCTestCaseSubTestCaseTreeCategory 0;
+#channel ==>type_TestCaseMsoitype_TestCase
+add property command_PLCTestCaseSubTestCaseTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCTestCaseSubTestCaseTreeCategory';

@@ -1,0 +1,10 @@
+del channel 'PersonVPLMChannel';
+add channel 'PersonVPLMChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	command 	'APPVPLMPersonSearch'
+;
+#portal ==>APPVPLMPersonAdminPortal
+add property channel_PersonVPLMChannel on program eServiceSchemaVariableMapping.tcl to channel 'PersonVPLMChannel';

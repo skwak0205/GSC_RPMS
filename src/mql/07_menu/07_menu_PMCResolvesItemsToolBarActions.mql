@@ -1,0 +1,18 @@
+del menu 'PMCResolvesItemsToolBarActions';
+add menu 'PMCResolvesItemsToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'PMCAddExistingResolvesLink'
+	command	'AEFSeparator'
+	command	'PMCRemoveSelectedResolvesLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResolvesItemsToolBarActions'
+	property 'version'	value	'R421.HF3'
+;
+add property menu_PMCResolvesItemsToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCResolvesItemsToolBarActions';

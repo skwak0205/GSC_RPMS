@@ -1,0 +1,20 @@
+del command 'PMCCustomFilterFromDateBox';
+add command 'PMCCustomFilterFromDateBox'
+	description	''
+	label	'emxProgramCentral.Common.ResourceLoading.From'
+	href	''
+	alt	''
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'format'		'date'
+	setting	'Width'		'100'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCustomFilterFromDateBox'
+	property	'version'	value	'R216'
+;
+modify menu PMCReportDateToolbarMenu add command PMCCustomFilterFromDateBox order command PMCCustomFilterFromDateBox 1;
+#channel ==>PMCReportDateToolbarMenu
+add property command_PMCCustomFilterFromDateBox on program eServiceSchemaVariableMapping.tcl to command 'PMCCustomFilterFromDateBox';

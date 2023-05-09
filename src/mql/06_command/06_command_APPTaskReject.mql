@@ -1,0 +1,18 @@
+del command 'APPTaskReject';
+add command 'APPTaskReject'
+	description	'Task Reject Command Object'
+	label	'emxComponents.Button.RejectSelected'
+	href	'${COMPONENT_DIR}/emxTasksSummaryLinksProcess.jsp?fromPage=RejectCommand'
+	alt	'emxComponents.Button.RejectSelected'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPTaskReject'
+	property	'version'	value	'10-5'
+;
+#channel ==>
+add property command_APPTaskReject on program eServiceSchemaVariableMapping.tcl to command 'APPTaskReject';

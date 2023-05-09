@@ -1,0 +1,20 @@
+del command 'ECMAddExistingSupportingDocs';
+add command 'ECMAddExistingSupportingDocs'
+	description	'Supporting Documents Add Existing Command Object'
+	label	'EnterpriseChangeMgt.Command.AddExisting'
+	href	'${SUITE_DIR}/ECMFullSearchPreProcess.jsp?functionality=AddExisting&targetRelName=relationship_SupportingDocument&isFrom=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'false'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAddExistingSupportingDocs'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_ECMAddExistingSupportingDocs on program eServiceSchemaVariableMapping.tcl to command 'ECMAddExistingSupportingDocs';

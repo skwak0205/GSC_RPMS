@@ -1,0 +1,17 @@
+m|XCTWebExperienceModel\StudioResourceModelWeb.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.0.22078|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\StudioResourceModelWeb\StudioResourceModelWeb.js|1647692200|7114
+s|XCTWebExperienceModel\StudioResourceModelWeb.mweb\src\extensions\CATE3DXKeyframerResourceAsset.js|1644485002|2164
+u|XCTWebExperienceModel\StudioResourceModelWeb.mweb\src\extensions\CATE3DXPictureResourceAsset.js|1644485002|3860
+u|XCTWebExperienceModel\StudioResourceModelWeb.mweb\src\extensions\CATE3DXSoundResourceAsset.js|1644485002|3398
+u|XCTWebExperienceModel\StudioResourceModelWeb.mweb\src\extensions\CATE3DXURLResourceAsset.js|1644485002|2117
+u|XCTWebExperienceModel\StudioResourceModelWeb.mweb\src\extensions\CATE3DXURLResourceAssetHolder.js|1643103998|1099
+u|XCTWebExperienceModel\StudioResourceModelWeb.mweb\src\interfaces\CATI3DXKeyframerResourceAsset.js|1643103998|1053
+u|XCTWebExperienceModel\StudioResourceModelWeb.mweb\src\interfaces\CATI3DXPictureResourceAsset.js|1644485002|1603
+u|XCTWebExperienceModel\StudioResourceModelWeb.mweb\src\interfaces\CATI3DXSoundResourceAsset.js|1644485002|1327
+u|XCTWebExperienceModel\StudioResourceModelWeb.mweb\src\interfaces\CATI3DXURLResourceAsset.js|1643103998|999
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

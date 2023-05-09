@@ -1,0 +1,17 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 라인
+################################################################################################
+
+#del attribute 'gscLineNo';
+add attribute  'gscLineNo'
+   description '라인'
+   type        'string'
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscLineNo"
+;
+add property attribute_gscLineNo on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscLineNo';

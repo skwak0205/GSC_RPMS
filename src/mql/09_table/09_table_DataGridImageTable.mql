@@ -1,0 +1,20 @@
+del table 'DataGridImageTable' system;
+add table 'DataGridImageTable' system
+column #1
+	name	'Image'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Auto Filter'		'false'
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'Image'
+	setting	'format'		'format_mxThumbnailImage'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridImageTable'
+	property	'version'	value	'R423.HF3'
+;
+add property table_DataGridImageTable on program eServiceSchemaVariableMapping.tcl to table 'DataGridImageTable' system;

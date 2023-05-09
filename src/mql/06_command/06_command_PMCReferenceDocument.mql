@@ -1,0 +1,18 @@
+del command 'PMCReferenceDocument';
+add command 'PMCReferenceDocument'
+	description	''
+	label	'emxFramework.Command.Attachment'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxTask:getReferenceDocuments&table=PMCDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=PMCReferenceDocumentSummaryToolBar&header=emxProgramCentral.Common.Documents&HelpMarker=emxhelprefdoclist&freezePane=Name'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReferenceDocument'
+	property	'version'	value	'R424'
+;
+#channel ==>PMCTaskReferenceDocumentChannel1
+add property command_PMCReferenceDocument on program eServiceSchemaVariableMapping.tcl to command 'PMCReferenceDocument';

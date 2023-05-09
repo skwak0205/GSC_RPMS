@@ -1,0 +1,11 @@
+del command 'APPVPLMDesignTable';
+add command 'APPVPLMDesignTable'
+	description	''
+	label	'emxPlmOnline.label.DesignTable'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminGlobal.jsp?source=DesignTable'
+	alt	'emxPlmOnline.label.DesignTable'
+	setting	'Registered Suite'		'Framework'
+	user	'VPLMAdmin'
+;
+#channel ==>
+add property command_APPVPLMDesignTable on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMDesignTable';

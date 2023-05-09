@@ -1,0 +1,21 @@
+#del attribute 'gscGateResult';
+add attribute 'gscGateResult'
+ type 'string'
+ description 'Gate Review Result'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscGateResult'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscGateResult on program eServiceSchemaVariableMapping.tcl to attribute 'gscGateResult';
+
+modify attribute 'gscGateResult' add range= Approved;
+modify attribute 'gscGateResult' add range= Hold;
+modify attribute 'gscGateResult' add range= Cancel;
+
+modify type 'Project Space' add attribute gscGateResult;
+modify type 'Project Concept' add attribute gscGateResult;
+modify attribute 'gscGateResult' default Approved;

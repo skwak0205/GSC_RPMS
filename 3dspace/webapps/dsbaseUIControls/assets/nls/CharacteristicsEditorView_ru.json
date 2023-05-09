@@ -1,0 +1,15 @@
+{
+  "CEV.optionsChecker.rdfServerURL.error": "Необходимо определить URL-адрес сервера RDF.",
+  "CEV.optionsChecker.resourceURI.error": "Необходимо определить URI ресурса.",
+  "CEV.optionsChecker.constraintsPosition.error": "Всплывающее окно ограничений должно быть \"сверху\", \"справа\", \"снизу\" или \"слева\"",
+  "CEV.optionsChecker.buttons.types.error": "Тип для кнопки '{label}' должен быть одним из следующих: \"основной\", \"по умолчанию\", \"информация\", \"успешно\", \"предупреждение\", \"ошибка\"",
+  "CEV.optionsChecker.buttons.specificActions.error": "Конкретное действие для характеристики '{key}' должно быть функцией.",
+  "CEV.optionsChecker.search.error": "Для поиска значений для характеристики '{key}' ожидается функция.",
+  "CEV.title": "Редактор характеристик",
+  "CEV.defaultMessage": "Ошибка при извлечении всех характеристик...",
+  "CEV.userCharacteristics.title": "Пользовательские характеристики",
+  "CEV.characteristics.title": "Характеристика",
+  "CEV.okButton.content": "ОК",
+  "CEV.cancelButton.content": "Отмена",
+  "CEV.cancelButton.error": "Ошибка при нажатии кнопки \"Отмена\"..."
+}

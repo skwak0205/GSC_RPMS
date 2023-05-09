@@ -1,0 +1,26 @@
+del command 'PMCAddGatesFromDeliverablePlan';
+add command 'PMCAddGatesFromDeliverablePlan'
+	description	'Add Gates From Deliverable Plan'
+	label	'emxProgramCentral.DeliverablePlanning.AddGatesFromDeliverablePlan'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCAddGatesFromDeliverablePlanTable&selection=multiple&program=emxProjectSpace:getAllDeliverablePlanGates&header=emxProgramCentral.DeliverablePlanning.SelectGates&submitURL=${SUITE_DIR}/emxProgramCentralAddGateAsShadowGate.jsp&submitLabel=emxFramework.Button.Submit'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isAddingShadowGateEnabled'
+	setting	'Access Program'		'emxProjectSpace'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddGatesFromDeliverablePlan'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSToolBarActions add command PMCAddGatesFromDeliverablePlan order command PMCAddGatesFromDeliverablePlan 2;
+#channel ==>PMCWBSToolBarActions
+add property command_PMCAddGatesFromDeliverablePlan on program eServiceSchemaVariableMapping.tcl to command 'PMCAddGatesFromDeliverablePlan';

@@ -1,0 +1,19 @@
+del command 'ECMAffectedItemAddedEvent';
+add command 'ECMAffectedItemAddedEvent'
+	description	'Affected Item Added Event'
+	label	'EnterpriseChangeMgt.Event.Proposed_Changes_Added'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>] || type.kindof[$<type_ChangeRequest>] || type.kindof[$<type_ChangeAction>])'
+	setting	'Event Type'		'Affected Item Added'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAffectedItemAddedEvent'
+	property	'version'	value	'R216'
+;
+modify menu ECMSubscriptionEvents add command ECMAffectedItemAddedEvent order command ECMAffectedItemAddedEvent 1;
+#channel ==>ECMSubscriptionEvents
+add property command_ECMAffectedItemAddedEvent on program eServiceSchemaVariableMapping.tcl to command 'ECMAffectedItemAddedEvent';

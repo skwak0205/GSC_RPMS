@@ -1,0 +1,22 @@
+del command 'APPClassifiedItemObjectAccessEditAccess';
+add command 'APPClassifiedItemObjectAccessEditAccess'
+	description	'This command provides Edit Access functionality to the Classified Items for editing the granted accesses of users'
+	label	'emxComponents.Common.Edit'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?program=emxObjectAccess:getAccessGrantees&sortColumnName=Name&sortDirection=ascending&table=APPObjectAccessSummary&header=emxComponents.Common.EditAccess&massUpdate=true&accessChoice=Read_WO_Download,Read,Read_Write,Add,Remove,Add_Remove&showAllProgram=emxObjectAccess&showAllFunction=hasAccessRoles&pushGrantor=person_CommonAccessGrantor&HelpMarker=emxhelpaccessedit&editMode=true&postProcessURL=${SUITE_DIR}/emxComponentsObjectAccessSetAccessProcess.jsp'
+	alt	'emxComponents.Common.EditAccess'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasAccessRoles'
+	setting	'Access Program'		'emxObjectAccess'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'APPClassifiedItemObjectAccessEditAccess'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_APPClassifiedItemObjectAccessEditAccess on program eServiceSchemaVariableMapping.tcl to command 'APPClassifiedItemObjectAccessEditAccess';

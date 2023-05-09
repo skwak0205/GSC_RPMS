@@ -1,0 +1,28 @@
+del command 'RMTSetReqStructureView';
+add command 'RMTSetReqStructureView'
+	description	'Change the view to Structure view'
+	label	'emxRequirements.Button.StructureView'
+	href	'${SUITE_DIR}/ChangeView.jsp?TargetView=sb&menu=RMTRequirementStructureDisplay&categoryTreeName=type_Requirement'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Mode'		'view'
+	setting	'Submit'		'true'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionSynchronize.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSetReqStructureView'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementRichTextEditorToolbar add command RMTSetReqStructureView order command RMTSetReqStructureView 1;
+#channel ==>RMTRequirementRichTextEditorToolbar
+add property command_RMTSetReqStructureView on program eServiceSchemaVariableMapping.tcl to command 'RMTSetReqStructureView';

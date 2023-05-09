@@ -1,0 +1,17 @@
+del menu 'PMCListProjectRMBMenu';
+add menu 'PMCListProjectRMBMenu'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProgramProperties'
+	command	'PMCProjectSpaceProperties'
+	command	'PMCLifecycle'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCListProjectRMBMenu'
+	property 'version'	value	'R422'
+;
+add property menu_PMCListProjectRMBMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCListProjectRMBMenu';

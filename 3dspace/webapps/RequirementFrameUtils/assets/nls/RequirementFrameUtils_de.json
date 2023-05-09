@@ -1,0 +1,19 @@
+{
+  "activities": "Aktivitäten starten",
+  "requirement_definition": "Anforderung",
+  "reqSpec_definition": "Anforderungsspezifikation",
+  "specFolder_definition": "Spezifikationsordner",
+  "my_work": "Meine Arbeit",
+  "recent_items": "Neueste Elemente",
+  "_home": "Startseite",
+  "start_activities": "Aktivitäten starten",
+  "createActions": "Erstellen",
+  "new_SpecFolder": "Anforderungsspezifikation",
+  "new_ReqSpec": "Spezifikationsordner",
+  "new_Req": "Voraussetzung",
+  "open_req_spec": "Anforderungsobjekte öffnen",
+  "quick_access": "Schnellzugriff",
+  "reqSpec_objects_list": "Meine Anforderungsspezifikationen",
+  "req_objects_list": "Meine Anforderungen",
+  "recently_opened": "Kürzlich geöffnet"
+}

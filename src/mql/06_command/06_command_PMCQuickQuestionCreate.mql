@@ -1,0 +1,21 @@
+del command 'PMCQuickQuestionCreate';
+add command 'PMCQuickQuestionCreate'
+	description	'Quick command to creaat Question'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=quickCreateQuestion'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'false'
+	setting	'Access Function'		'isOwnerOrCoOwner'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCQuickQuestionCreate'
+	property	'version'	value	'R421'
+;
+#channel ==>
+add property command_PMCQuickQuestionCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCQuickQuestionCreate';

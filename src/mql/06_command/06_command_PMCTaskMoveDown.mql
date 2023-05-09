@@ -1,0 +1,29 @@
+del command 'PMCTaskMoveDown';
+add command 'PMCTaskMoveDown'
+	description	'PMCTaskMoveDown'
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?SubMode=moveDown&mode=MoveTasks'
+	alt	'emxProgramCentral.TaskIndentaion.MoveDown'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconMoveDown.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskMoveDown'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSToolBar add command PMCTaskMoveDown order command PMCTaskMoveDown 9;
+modify menu PMCWhatIFExperimentActionToolbar add command PMCTaskMoveDown order command PMCTaskMoveDown 7;
+modify menu PMCWBSProjectTemplateToolBar add command PMCTaskMoveDown order command PMCTaskMoveDown 8;
+#channel ==>PMCWBSToolBarPMCWhatIFExperimentActionToolbarPMCWBSProjectTemplateToolBar
+add property command_PMCTaskMoveDown on program eServiceSchemaVariableMapping.tcl to command 'PMCTaskMoveDown';

@@ -1,0 +1,17 @@
+del command 'PMCProjectMemberInDashboard';
+add command 'PMCProjectMemberInDashboard'
+	description	''
+	label	'emxFramework.Command.Member'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProjectMember:getMembers&table=PMCProjectMemberSummary&selection=multiple&header=emxProgramCentral.Common.Members&HelpMarker=emxhelpprojectmembers&Export=false&sortColumnName=Name&sortDirection=ascending&isViewMode=true'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectMemberInDashboard'
+	property	'version'	value	'R417'
+;
+#channel ==>PMCGateDashboardChannel2
+add property command_PMCProjectMemberInDashboard on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectMemberInDashboard';

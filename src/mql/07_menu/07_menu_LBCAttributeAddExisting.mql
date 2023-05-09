@@ -1,0 +1,18 @@
+del menu 'LBCAttributeAddExisting';
+add menu 'LBCAttributeAddExisting'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LBCAttributeNameMatches'
+	command	'LBCAttributeType'
+	command	'LBCUnusedAttribute'
+	command	'LBCAttributeFilter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCAttributeAddExisting'
+	property 'version'	value	'R211'
+;
+add property menu_LBCAttributeAddExisting on program eServiceSchemaVariableMapping.tcl to menu 'LBCAttributeAddExisting';

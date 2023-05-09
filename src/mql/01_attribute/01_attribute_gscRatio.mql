@@ -1,0 +1,12 @@
+#del attribute 'gscRatio';
+add attribute 'gscRatio'
+    type 'real'
+	description 'to store gscRatio for early design cycle'
+	property 'installer' value 'ENOVIAEngineering'
+    property 'application' value 'Framework'
+    property 'installed date' value 'Thu Oct 27 15:41:00 KST 2022'
+    property 'original name' value 'gscRatio'
+    property 'Protection' value 'Free'
+    property 'version' value 'R215'
+;
+add property attribute_gscRatio on program eServiceSchemaVariableMapping.tcl to attribute 'gscRatio';

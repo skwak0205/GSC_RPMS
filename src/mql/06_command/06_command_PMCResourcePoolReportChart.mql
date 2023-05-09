@@ -1,0 +1,20 @@
+del command 'PMCResourcePoolReportChart';
+add command 'PMCResourcePoolReportChart'
+	description	''
+	label	'emxProgramCentral.ResourcePlanning.Report.Chart'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=blankResourcePoolChart'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'CheckChartingRequired'
+	setting	'Access Program'		'emxResourcePoolReports'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolReportChart'
+	property	'version'	value	'R417'
+;
+#channel ==>PMCResourcePoolReportChart
+add property command_PMCResourcePoolReportChart on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePoolReportChart';

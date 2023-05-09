@@ -1,0 +1,15 @@
+#del attribute 'gscYear';
+add attribute 'gscYear'
+ type 'integer'
+ description 'Identifies the Year'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscYear'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscYear on program eServiceSchemaVariableMapping.tcl to attribute 'gscYear';
+
+

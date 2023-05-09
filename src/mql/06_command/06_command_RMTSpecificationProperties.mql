@@ -1,0 +1,29 @@
+del command 'RMTSpecificationProperties';
+add command 'RMTSpecificationProperties'
+	description	''
+	label	'emxRequirements.Common.RMTAttributes'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_SoftwareRequirementSpecification&actionBarName=RMTRequirementSpecificationPropertiesActionBar&editLink=false&HelpMarker=emxhelpspecproperties'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationProperties'
+	property	'version'	value	'R422'
+;
+modify menu type_SoftwareRequirementSpecificationRMB add command RMTSpecificationProperties order command RMTSpecificationProperties 3;
+modify menu RMTSpecStructureSpecRMB add command RMTSpecificationProperties order command RMTSpecificationProperties 1;
+#channel ==>type_SoftwareRequirementSpecificationRMBRMTSpecStructureSpecRMBRMTSpecificationsProperties
+add property command_RMTSpecificationProperties on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecificationProperties';

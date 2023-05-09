@@ -1,0 +1,16 @@
+del menu 'FMAFolderContentProgramMenu';
+add menu 'FMAFolderContentProgramMenu'
+	description	''
+	label	'enoFolderManagement.FMAFolderContentProgramMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'FolderManagement'
+	command	'FMAFolderFilteredContent'
+	command	'FMAFolderContent'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'FolderManagement'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'FMAFolderContentProgramMenu'
+	property 'version'	value	'R417.HF2'
+;
+add property menu_FMAFolderContentProgramMenu on program eServiceSchemaVariableMapping.tcl to menu 'FMAFolderContentProgramMenu';

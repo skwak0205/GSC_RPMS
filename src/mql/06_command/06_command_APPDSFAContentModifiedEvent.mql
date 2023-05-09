@@ -1,0 +1,16 @@
+del command 'APPDSFAContentModifiedEvent';
+add command 'APPDSFAContentModifiedEvent'
+	description	'DSFA Content Modified Event'
+	label	'emxComponents.DOCUMENTS.Event.Content_Modified'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Content Modified'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDSFAContentModifiedEvent'
+	property	'version'	value	'10-7'
+;
+#channel ==>
+add property command_APPDSFAContentModifiedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPDSFAContentModifiedEvent';

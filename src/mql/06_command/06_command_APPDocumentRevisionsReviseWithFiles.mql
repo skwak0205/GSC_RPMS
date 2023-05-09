@@ -1,0 +1,25 @@
+del command 'APPDocumentRevisionsReviseWithFiles';
+add command 'APPDocumentRevisionsReviseWithFiles'
+	description	'Revise Document With Files'
+	label	'emxComponents.Command.ReviseWithFiles'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRevise.jsp?copyFiles=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True && (id == last.id) && current.access[revise] == true)'
+	setting	'Access Function'		'showReviseCommands'
+	setting	'Access Program'		'emxECMDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReviseDocumentWithFiles.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentRevisionsReviseWithFiles'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentRevisionsActionsToolBar add command APPDocumentRevisionsReviseWithFiles order command APPDocumentRevisionsReviseWithFiles 0;
+#channel ==>APPDocumentRevisionsActionsToolBar
+add property command_APPDocumentRevisionsReviseWithFiles on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentRevisionsReviseWithFiles';

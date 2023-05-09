@@ -1,0 +1,23 @@
+del command 'PMCWBSViewingInMSProject';
+add command 'PMCWBSViewingInMSProject'
+	description	''
+	label	'emxProgramCentral.Project.LaunchForOpeningInMSProject'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=launchForViewInMSProject'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForMSProject'
+	setting	'Access Program'		'emxTask'
+	setting	'Hide Mode'		'mobile'
+	setting	'Row Select'		'multiple'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSViewingInMSProject'
+	property	'version'	value	'R419'
+;
+modify menu PMCWBSToolBarActions add command PMCWBSViewingInMSProject order command PMCWBSViewingInMSProject 0;
+#channel ==>PMCWBSToolBarActions
+add property command_PMCWBSViewingInMSProject on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSViewingInMSProject';

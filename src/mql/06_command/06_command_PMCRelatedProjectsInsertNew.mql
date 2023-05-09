@@ -1,0 +1,29 @@
+del command 'PMCRelatedProjectsInsertNew';
+add command 'PMCRelatedProjectsInsertNew'
+	description	''
+	label	'emxProgramCentral.Common.InsertNewProjects'
+	href	'${SUITE_DIR}/emxProgramCentralCommonFS.jsp?functionality=CreateProjectSpaceStep1&suiteKey=eServiceSuiteProgramCentral&topLinks=false&bottomLinks=false&fromRelatedProjects=true&InsertNewProject=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToCommand'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRelatedProjectsInsertNew'
+	property	'version'	value	'R422'
+;
+modify menu PMCRelatedProjectsToolBarActions add command PMCRelatedProjectsInsertNew order command PMCRelatedProjectsInsertNew 4;
+#channel ==>PMCRelatedProjectsToolBarActions
+add property command_PMCRelatedProjectsInsertNew on program eServiceSchemaVariableMapping.tcl to command 'PMCRelatedProjectsInsertNew';

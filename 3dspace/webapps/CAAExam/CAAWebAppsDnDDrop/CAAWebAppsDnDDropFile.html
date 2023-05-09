@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?> 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/"> 
+ <!-- Copyright 2014 , Dassault Systemes. All rights reserved. -->
+<head>   
+    
+    <title>Drop Demonstrator Widget App</title>
+	
+	<!-- Application Metas Start -->
+	
+    <meta name="description" content="CAA Web Apps basic use case  Drag and Drop - Drop part" />
+    <meta name="keywords" content="CAA Use Case" />
+   	
+	<!-- Application Metas End -->
+	
+	
+	<!-- Application JS Start -->
+    <script >   
+            /* global widget,require */	
+			require(['DS/DataDragAndDrop/DataDragAndDrop'] , 
+			    function (DataDragAndDrop) {
+				'use strict';
+              
+				var myWidget = {
+						
+					//onLoad: event triggered when the widget is launched  
+					//--------------------------------------------------
+					onLoad: function() {				
+						var html = "<table >" +
+						            "<tr>" +
+						            "<td><label class='myLblType' >Drop in the editor:</label> </td>"  +
+									"<td><input class='myInputType' type='text' size='60' /></td>" + 
+									"</tr>" +
+									 "<tr>" +
+									"<td><label class='myLblType' >Drop Status:</label> </td>"  +
+									"<td><input class='myStatusDrop' type='text' /></td>" + 
+									"</tr>" +
+									"</table>";
+						
+						widget.body.innerHTML=html ;
+						
+						var theInput = widget.body.querySelector('.myInputType');
+						var theStatus = widget.body.querySelector('.myStatusDrop');
+						
+						DataDragAndDrop.droppable( theInput , {  
+							drop : function(data) {							    
+								theInput.value = data ;
+								theStatus.value = 'drop' ;
+							},
+							enter: function() {	
+								theStatus.value = 'enter' ;
+							},
+							over: function() {	
+								theStatus.value = 'over' ;
+							}, 
+							leave: function() {
+								theStatus.value = 'leave' ;
+							}
+						}) ;	
+					}
+					
+				};
+     			//
+                //---------				
+				widget.addEvent('onLoad',  myWidget.onLoad);
+		});
+    </script>
+	<!-- Application JS End -->
+</head>
+<body>
+</body>
+</html>

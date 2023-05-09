@@ -1,0 +1,19 @@
+del command 'DomainAccessFolderAddUserGroups';
+add command 'DomainAccessFolderAddUserGroups'
+	description	''
+	label	'emxFramework.Common.DomainAccessAddUserGroups'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?showInitialResults=true&table=AEFUserGroupsChooser&selection=multiple&form=AEFSearchUserGroupsForm&submitURL=${COMMON_DIR}/emxDomainAccessProcess.jsp&cmdName=addUserGroups&jpoName=emxDomainAccess&methodName=addUserGroups&field=TYPES=type_Group:CURRENT=policy_Person.state_Active&HelpMarker=emxhelpsearch&excludeOIDprogram=emxDomainAccess:getExcludeUserGroupsList&includeOIDprogram=emxWorkspaceFolder:getWorkspaceVaultAddUserGroupIncludeIDs'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'current.access[changesov]'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconShareWithUserGroup_32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DomainAccessFolderAddUserGroups'
+	property	'version'	value	'R423'
+;
+modify menu DomainAccessFolderActionToolBar add command DomainAccessFolderAddUserGroups order command DomainAccessFolderAddUserGroups 3;
+#channel ==>DomainAccessFolderActionToolBar
+add property command_DomainAccessFolderAddUserGroups on program eServiceSchemaVariableMapping.tcl to command 'DomainAccessFolderAddUserGroups';

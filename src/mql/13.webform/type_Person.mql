@@ -1,0 +1,48 @@
+################################################################################################
+# Created Date : 2020.06.08
+# Create by BongJun,Park
+# Description : Person 기본 form
+################################################################################################
+
+copy form "type_Person" "type_Person_OOTB";
+
+# 속성추가 by BongJun,Park 2020.06.08
+mod form "type_Person"
+    field
+        name 'emdFunctionalDept'
+        label 'emxComponents.Label.emdFunctionalDept'
+        alt   'emxComponents.Label.emdFunctionalDept'
+        businessobject  '$<attribute[attribute_emdFunctionalDept]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Required'          'false'
+        setting "Column Type" 		"program"
+		setting 'program' 			'emdCommonUtil'
+		setting 'function' 			'displayCommonCodeValue'
+        setting 'Editable'          'true'
+        setting "Input Type"        "checkbox"
+        setting "Range Program"     "emdCommonUtil"
+        setting "Range Function"    "getCommonAttributeRangeByOOTBUI"
+        setting "Admin Type"        "attribute_emdFunctionalDept"
+        setting 'Update Program'    'emdCommonUtil'
+        setting 'Update Function'   'updateDetailCode'
+;
+
+mod form "type_Person"
+    field
+        name  "emdOrgGroup"
+        label "emxComponents.Label.emdOrgGroup"
+        alt   "emxComponents.Label.emdOrgGroup"
+        businessobject   "$<attribute[attribute_emdOrgGroup]>"
+        setting "Admin Type" "attribute_emdOrgGroup"
+        setting "Column Type" "program"
+        setting "Editable" "true"
+        setting "Input Type" "combobox"
+        setting "Range Function" "getCommonAttributeRangeByOOTBUI"
+        setting "Range Program" "emdCommonUtil"
+        setting "Registered Suite" "Components"
+        setting "Required" "true"
+        setting "Update Function" "updateDetailCode"
+        setting "Update Program" "emdCommonUtil"
+        setting "function" "displayCommonCodeValue"
+        setting "program" "emdCommonUtil"
+;

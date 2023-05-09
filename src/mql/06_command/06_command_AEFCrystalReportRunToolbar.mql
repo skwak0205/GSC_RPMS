@@ -1,0 +1,22 @@
+del command 'AEFCrystalReportRunToolbar';
+add command 'AEFCrystalReportRunToolbar'
+	description	'Crystal Report Run'
+	label	'emxFramework.CrystalReport.RunReport'
+	href	'${COMMON_DIR}/emxCrystalReportRunReportDialog.jsp'
+	alt	'emxFramework.CrystalReport.RunReport'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'240'
+	setting	'Window Width'		'450'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'true'
+	setting	'Help Marker'		'emxhelprunreport'
+	user	'Administration Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCrystalReportRunToolbar'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_AEFCrystalReportRunToolbar on program eServiceSchemaVariableMapping.tcl to command 'AEFCrystalReportRunToolbar';

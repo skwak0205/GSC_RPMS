@@ -1,0 +1,19 @@
+del command 'ECMCOAttachmentFacet';
+add command 'ECMCOAttachmentFacet'
+	description	'Attachment facet for CO'
+	label	'EnterpriseChangeMgt.Command.Attachments'
+	href	'${SUITE_DIR}/ECMAttachment.jsp?parentType=Change Order'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'20-05-2021'
+	property	'original name'	value	'ECMCOAttachmentFacet'
+	property	'version'	value	'R424'
+;
+modify menu type_ChangeOrder add command ECMCOAttachmentFacet order command ECMCOAttachmentFacet 5;
+#channel ==>type_ChangeOrder
+add property command_ECMCOAttachmentFacet on program eServiceSchemaVariableMapping.tcl to command 'ECMCOAttachmentFacet';

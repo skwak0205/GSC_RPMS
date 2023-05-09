@@ -1,0 +1,41 @@
+del form 'CFFEffectivityFrameworkForm';
+add form 'CFFEffectivityFrameworkForm' web
+field #1
+	name	'Effectivity'
+	label	'Effectivity.Form.Label.Effectivity'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Field Type'		'Section Header'
+field #2
+	name	'ItemEffectivity'
+	label	'Effectivity.Form.Label.ItemEffectivity'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'function'		'getItemEffectivityEditDisplay'
+	setting	'Update Program'		'emxEffectivityFramework'
+	setting	'program'		'emxEffectivityFramework'
+	setting	'Update Function'		'updateObjectEffectivityTypes'
+	setting	'Field Type'		'programHTMLOutput'
+field #3
+	name	'EffectivityExpression'
+	label	'Effectivity.Form.Label.EffectivityExpression'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'function'		'getEffectivityExpressionDisplay'
+	setting	'Update Program'		'emxEffectivityFramework'
+	setting	'program'		'emxEffectivityFramework'
+	setting	'Update Function'		'updateObjectExpression'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFEffectivityFrameworkForm'
+	property	'version'	value	'R209'
+;
+add property form_CFFEffectivityFrameworkForm on program eServiceSchemaVariableMapping.tcl to form 'CFFEffectivityFrameworkForm';

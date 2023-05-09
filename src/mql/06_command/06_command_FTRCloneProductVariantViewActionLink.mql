@@ -1,0 +1,25 @@
+del command 'FTRCloneProductVariantViewActionLink';
+add command 'FTRCloneProductVariantViewActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Clone'
+	href	'${ROOT_DIR}/components/emxCommonFS.jsp?functionality=ProductVariantCloneFSInstance&PRCFSParam1=ProductVariant&PRCFSParam2=contextProductVariant&mode=viewClone'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'730'
+	setting	'Window Width'		'600'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showLinkForProductVariant'
+	setting	'Access Program'		'emxProductVariant'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCloneProductVariantViewActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRViewProductVariantToolBarActions add command FTRCloneProductVariantViewActionLink order command FTRCloneProductVariantViewActionLink 2;
+#channel ==>FTRViewProductVariantToolBarActions
+add property command_FTRCloneProductVariantViewActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCloneProductVariantViewActionLink';

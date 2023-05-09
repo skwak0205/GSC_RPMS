@@ -1,0 +1,18 @@
+del command 'FTRMFSystemArchitectureTreeCategory';
+add command 'FTRMFSystemArchitectureTreeCategory'
+	description	''
+	label	'emxConfiguration.ActionLink.LogicalStructures'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=FTRMFSystemArchitecture&header=emxConfiguration.Heading.LogicalStructures&HelpMarker=emxhelplogicalstructurespage'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRMFSystemArchitectureTreeCategory'
+	property	'version'	value	'R215'
+;
+modify menu type_ManufacturingFeature add command FTRMFSystemArchitectureTreeCategory order command FTRMFSystemArchitectureTreeCategory 6;
+#channel ==>type_ManufacturingFeature
+add property command_FTRMFSystemArchitectureTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'FTRMFSystemArchitectureTreeCategory';

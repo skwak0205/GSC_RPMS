@@ -1,0 +1,25 @@
+del command 'APPInboxTaskContentRemoveAction';
+add command 'APPInboxTaskContentRemoveAction'
+	description	'Remove Selected Document'
+	label	'emxComponents.Command.Remove'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRemove.jsp?action=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showRemoveContentLink'
+	setting	'Access Program'		'emxInboxTask'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPInboxTaskContentRemoveAction'
+	property	'version'	value	'R420'
+;
+modify menu APPInboxTaskContentTopActionBar add command APPInboxTaskContentRemoveAction order command APPInboxTaskContentRemoveAction 0;
+#channel ==>APPInboxTaskContentTopActionBar
+add property command_APPInboxTaskContentRemoveAction on program eServiceSchemaVariableMapping.tcl to command 'APPInboxTaskContentRemoveAction';

@@ -1,0 +1,19 @@
+del command 'APPMeetingPromote';
+add command 'APPMeetingPromote'
+	description	''
+	label	'emxComponents.Button.Promote'
+	href	'${COMPONENT_DIR}/emxMeetingProcess.jsp?action=Promote&notification=Yes&sReturnPage=null&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'showPromoteMeeting'
+	setting	'Access Program'		'emxMeeting'
+	setting	'Confirm Message'		'emxTeamCentral.MeetingDetails.ConfirmationMsg'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingPromote'
+	property	'version'	value	'R207'
+;
+#channel ==>
+add property command_APPMeetingPromote on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingPromote';

@@ -1,0 +1,17 @@
+del channel 'RMTChapterProperties';
+add channel 'RMTChapterProperties'
+	description	'Chapter Properties'
+	height	'0'
+	label	'emxRequirements.Common.RMTPropertiesPowerView'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'Height'		'40%'
+	command 	'RMTChapterProperties','PLMAddExtensionCmd'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTChapterProperties'
+	property	'version'	value	'R419'
+;
+#portal ==>RMTChapterProperties
+add property channel_RMTChapterProperties on program eServiceSchemaVariableMapping.tcl to channel 'RMTChapterProperties';

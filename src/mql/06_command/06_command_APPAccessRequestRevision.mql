@@ -1,0 +1,18 @@
+del command 'APPAccessRequestRevision';
+add command 'APPAccessRequestRevision'
+	description	'Access Request Revision Command Object'
+	label	'emxComponents.Common.Revision'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxRouteTemplate:getRevisions&table=APPRouteTemplateRevisionSummary&header=emxComponents.Common.Revisions&bottomActionbar=APPRouteTemplateRevisionsActionsToolBar&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelprequestrevisions'
+	alt	'emxComponents.Common.Revision'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'iconSmallRevision.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAccessRequestRevision'
+	property	'version'	value	'10-7'
+;
+modify menu type_AccessRequest add command APPAccessRequestRevision order command APPAccessRequestRevision 6;
+#channel ==>type_AccessRequest
+add property command_APPAccessRequestRevision on program eServiceSchemaVariableMapping.tcl to command 'APPAccessRequestRevision';

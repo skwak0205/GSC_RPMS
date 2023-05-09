@@ -1,0 +1,16 @@
+del channel 'PMCTaskSchedule';
+add channel 'PMCTaskSchedule'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCTaskSchedule'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskSchedule'
+	property	'version'	value	'R421.HF7'
+;
+#portal ==>PMCTaskSchedule
+add property channel_PMCTaskSchedule on program eServiceSchemaVariableMapping.tcl to channel 'PMCTaskSchedule';

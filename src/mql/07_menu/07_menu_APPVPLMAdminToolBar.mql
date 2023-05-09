@@ -1,0 +1,12 @@
+del menu 'APPVPLMAdminToolBar';
+add menu 'APPVPLMAdminToolBar'
+	description	''
+	label	'emxPlmOnline.label.AdminBar'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'iconSmallPeople.gif'
+	command	'APPPeopleViewToolbar'
+	command	'APPResourcesViewToolbar'
+;
+add property menu_APPVPLMAdminToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPVPLMAdminToolBar';

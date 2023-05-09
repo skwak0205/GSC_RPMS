@@ -1,0 +1,13 @@
+del menu 'type_PLMReference';
+add menu 'type_PLMReference'
+	description	''
+	label	''
+	href	'${COMMON_DIR}/emxVPLMCommonNavPropertiesFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'VPLMCommonModeler'
+	setting	'Type Icon Program'		'emxVPLMCommonNavUI'
+	setting	'Label Function'		'getTreeLabel'
+	setting	'Type Icon Function'		'getTreeIcon'
+	setting	'Label Program'		'emxVPLMCommonNavUI'
+;
+add property menu_type_PLMReference on program eServiceSchemaVariableMapping.tcl to menu 'type_PLMReference';

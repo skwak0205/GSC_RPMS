@@ -1,0 +1,30 @@
+del command 'APPDocumentCheckInActionLink';
+add command 'APPDocumentCheckInActionLink'
+	description	'Document Check In Command Object'
+	label	'emxComponents.Command.AddFiles'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?objectAction=checkin&msfBypass=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasDocumentAddFilesAccess'
+	setting	'Access Program'		'emxCommonDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAppend.png'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMReleaseManager'
+	user	'VPLMTeamManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentCheckInActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentActionsToolBar add command APPDocumentCheckInActionLink order command APPDocumentCheckInActionLink 9;
+modify menu TMCDocumentsActionToolbar add command APPDocumentCheckInActionLink order command APPDocumentCheckInActionLink 6;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbar
+add property command_APPDocumentCheckInActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentCheckInActionLink';

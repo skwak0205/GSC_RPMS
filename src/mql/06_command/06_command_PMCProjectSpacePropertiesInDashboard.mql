@@ -1,0 +1,17 @@
+del command 'PMCProjectSpacePropertiesInDashboard';
+add command 'PMCProjectSpacePropertiesInDashboard'
+	description	''
+	label	'emxFramework.Command.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProjectDetailsViewForm&mode=view&formHeader=emxProgramCentral.Common.FormBasics&HelpMarker=emxhelpprojectdetails&Export=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpacePropertiesInDashboard'
+	property	'version'	value	'R417'
+;
+#channel ==>PMCGateDashboardChannel2
+add property command_PMCProjectSpacePropertiesInDashboard on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpacePropertiesInDashboard';

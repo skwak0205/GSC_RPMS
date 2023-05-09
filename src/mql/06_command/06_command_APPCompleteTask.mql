@@ -1,0 +1,21 @@
+del command 'APPCompleteTask';
+add command 'APPCompleteTask'
+	description	'Complete action for the Inbox Task'
+	label	'emxComponents.Command.Complete'
+	href	'${SUITE_DIR}/emxTaskCompletePreProcess.jsp?action=Complete'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'displayCompleteLink'
+	setting	'Access Program'		'emxInboxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCompleteTask.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompleteTask'
+	property	'version'	value	'R417'
+;
+modify menu APPInboxTaskDetailsActionsToolbar add command APPCompleteTask order command APPCompleteTask 4;
+#channel ==>APPInboxTaskDetailsActionsToolbar
+add property command_APPCompleteTask on program eServiceSchemaVariableMapping.tcl to command 'APPCompleteTask';

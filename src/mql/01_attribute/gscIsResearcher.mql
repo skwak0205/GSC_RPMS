@@ -1,0 +1,19 @@
+#del attribute 'gscIsResearcher';
+add attribute 'gscIsResearcher'
+ type 'string'
+ default 'N'
+ description '연구원여부'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscIsResearcher'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscIsResearcher on program eServiceSchemaVariableMapping.tcl to attribute 'gscIsResearcher';
+
+modify attribute 'gscIsResearcher' add range= Y;
+modify attribute 'gscIsResearcher' add range= N;
+
+modify type Person add attribute gscIsResearcher;

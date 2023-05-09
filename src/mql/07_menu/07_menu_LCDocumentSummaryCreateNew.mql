@@ -1,0 +1,23 @@
+del menu 'LCDocumentSummaryCreateNew';
+add menu 'LCDocumentSummaryCreateNew'
+	description	''
+	label	'emxLibraryCentral.Command.CreateNew'
+	href	''
+	alt	'emxLibraryCentral.Command.CreateNew'
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LCDocumentCreateNew'
+	command	'LCCreateVCFileFolder'
+	command	'LCConnectVCFileFolder'
+	command	'LBCVCSeparator'
+	command	'LCGenericDocumentCreateNew'
+	command	'LCGenericDocumentCreateVCFileFolder'
+	command	'LCGenericDocumentConnectVCFileFolder'
+	command	'LBCVCSeparator1'
+	command	'APPPartFamilyPartCreateNew'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCDocumentSummaryCreateNew'
+	property 'version'	value	'R212'
+;
+add property menu_LCDocumentSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'LCDocumentSummaryCreateNew';

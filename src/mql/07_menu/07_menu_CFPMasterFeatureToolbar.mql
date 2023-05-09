@@ -1,0 +1,15 @@
+del menu 'CFPMasterFeatureToolbar';
+add menu 'CFPMasterFeatureToolbar'
+	description	''
+	label	'DMCPlanning.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DMCPlanning'
+	menu	'CFPMasterFeatureToolbarActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'DMCPlanning'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'CFPMasterFeatureToolbar'
+	property 'version'	value	'R209'
+;
+add property menu_CFPMasterFeatureToolbar on program eServiceSchemaVariableMapping.tcl to menu 'CFPMasterFeatureToolbar';

@@ -1,0 +1,30 @@
+del command 'RMTUseCaseWhereUsedTreeCategory';
+add command 'RMTUseCaseWhereUsedTreeCategory'
+	description	'UseCase where used tree category'
+	label	'emxRequirements.Tree.WhereUsed'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxPLCCommon:getWhereUsed&FilterFramePage=${SUITE_DIR}/WhereUsedTableFilterInclude.jsp&FilterFrameSize=55&table=PLCWhereUsedList&header=emxRequirements.Heading.WhereUsedGeneric&selection=multiple&topActionbar=PLCWhereUsedListTopActionBar&HelpMarker=emxhelpwhereusedlist&command=command_RMTUseCaseWhereUsedTreeCategory'
+	alt	''
+	setting	'ExpandFilterTypes'		'emxRequirements.WhereUsed.UseCase.ExpandTypes'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'ExpandFilterRelationships'		'emxRequirements.WhereUsed.UseCase.ExpandRelationships'
+	setting	'IntermediateFilterTypes'		'emxRequirements.WhereUsed.IntermediateTypes'
+	setting	'Image'		'COMMON_DIR/iconSmallObjectFolder.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTUseCaseWhereUsedTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_UseCase add command RMTUseCaseWhereUsedTreeCategory order command RMTUseCaseWhereUsedTreeCategory 11;
+#channel ==>type_UseCase
+add property command_RMTUseCaseWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTUseCaseWhereUsedTreeCategory';

@@ -1,0 +1,17 @@
+del command 'PLCPlanning';
+add command 'PLCPlanning'
+	description	''
+	label	'emxProductLine.CategoryTab.Planning'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PLCPlanning&HelpMarker=emxhelpproductdetails&header=emxProduct.Heading.Portal.PropertiesWithRev'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPlanning'
+	property	'version'	value	'R418'
+;
+modify menu type_Products add command PLCPlanning order command PLCPlanning 14;
+#channel ==>type_Products
+add property command_PLCPlanning on program eServiceSchemaVariableMapping.tcl to command 'PLCPlanning';

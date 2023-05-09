@@ -1,0 +1,16 @@
+del command 'AEFLifecycleTaskSignatures';
+add command 'AEFLifecycleTaskSignatures'
+	description	'The Current Tasks/Signature on the object'
+	label	'emxFramework.LifecycleTasks.TaskSignatures'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxLifecycle:getCurrentTaskSignaturesOnObject&table=AEFLifecycleTaskSignaturesSummary&toolbar=AEFLifecycleTasksToolbar&FilterFramePage=${COMMON_DIR}/emxLifecycleTasksSignaturesFilter.jsp&FilterFrameSize=40&sortColumnName=Name&objectBased=false&HelpMarker=emxhelplifecycletasks&header=emxFramework.ObjectPortal.LifecycleReviewPowerViewHeader'
+	alt	'emxFramework.LifecycleTasks.TaskSignatures'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecycleTaskSignatures'
+	property	'version'	value	'R417'
+;
+#channel ==>AEFLifecycleTaskSignaturesApprovals
+add property command_AEFLifecycleTaskSignatures on program eServiceSchemaVariableMapping.tcl to command 'AEFLifecycleTaskSignatures';

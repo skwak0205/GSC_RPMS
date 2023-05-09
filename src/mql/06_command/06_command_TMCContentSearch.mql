@@ -1,0 +1,22 @@
+del command 'TMCContentSearch';
+add command 'TMCContentSearch'
+	description	'New search Command Object'
+	label	'emxTeamCentral.Button.NewSearch'
+	href	'${SUITE_DIR}/emxTeamFindContentDialogFS.jsp'
+	alt	'emxTeamCentral.Button.NewSearch'
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'TeamCentral'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCContentSearch'
+	property	'version'	value	'R422'
+;
+modify menu TMCContentSearchTopActionBar add command TMCContentSearch order command TMCContentSearch 0;
+#channel ==>TMCContentSearchTopActionBar
+add property command_TMCContentSearch on program eServiceSchemaVariableMapping.tcl to command 'TMCContentSearch';

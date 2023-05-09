@@ -1,0 +1,27 @@
+del command 'ECMCOTransferOwnership';
+add command 'ECMCOTransferOwnership'
+	description	'Transfer Ownership of CO to Change Coordinator'
+	label	'EnterpriseChangeMgt.Command.TransferOwnership'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_TransferOwnership&formHeader=EnterpriseChangeMgt.Heading.CRCOTransferOwnership&mode=edit&submitAction=refreshCaller&postProcessJPO=enoECMChangeUX:transferOwnership&HelpMarker=emxhelptransferowner&formFieldsOnly=true'
+	alt	'EnterpriseChangeMgt.Command.TransferOwnership'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isTransferCOAvailable'
+	setting	'Access Program'		'enoECMChangeOrderUX'
+	setting	'Mouse Over Popup'		'enable'
+	setting	'Image'		'${COMMON_DIR}/images/I_ImmTransferToUser.png'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Change Coordinator'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOTransferOwnership'
+	property	'version'	value	'R421'
+;
+modify menu ECMCOPropertiesToolbar add command ECMCOTransferOwnership order command ECMCOTransferOwnership 2;
+#channel ==>ECMCOPropertiesToolbar
+add property command_ECMCOTransferOwnership on program eServiceSchemaVariableMapping.tcl to command 'ECMCOTransferOwnership';

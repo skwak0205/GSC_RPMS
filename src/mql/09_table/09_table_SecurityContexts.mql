@@ -1,0 +1,33 @@
+del table 'SecurityContexts' system;
+add table 'SecurityContexts' system
+column #1
+	name	'Org'
+	label	'emxFramework.SecurityContextSelection.Organization'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'getSCOrganizations'
+	setting	'program'		'emxDomainAccess'
+column #2
+	name	'Project'
+	label	'emxFramework.SecurityContextSelection.Project'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'getSCProjects'
+	setting	'program'		'emxDomainAccess'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'SecurityContexts'
+	property	'version'	value	'R420.HF3'
+;
+add property table_SecurityContexts on program eServiceSchemaVariableMapping.tcl to table 'SecurityContexts' system;

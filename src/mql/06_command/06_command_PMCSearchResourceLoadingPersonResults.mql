@@ -1,0 +1,20 @@
+del command 'PMCSearchResourceLoadingPersonResults';
+add command 'PMCSearchResourceLoadingPersonResults'
+	description	''
+	label	'emxProgramCentral.Common.ResourceLoading'
+	href	'javascript:parent.frames[1].resourceLoading()'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Row Select'		'multi'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCSearchResourceLoadingPersonResults'
+	property	'version'	value	'R423.HF2'
+;
+#channel ==>
+add property command_PMCSearchResourceLoadingPersonResults on program eServiceSchemaVariableMapping.tcl to command 'PMCSearchResourceLoadingPersonResults';

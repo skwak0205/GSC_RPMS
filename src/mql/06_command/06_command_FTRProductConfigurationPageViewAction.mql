@@ -1,0 +1,19 @@
+del command 'FTRProductConfigurationPageViewAction';
+add command 'FTRProductConfigurationPageViewAction'
+	description	'View Product Configuration'
+	label	'emxProduct.ActionLink.ViewProductConfiguration'
+	href	'javascript:frames[1].viewPCAction()'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDisableEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductConfigurationPageViewAction'
+	property	'version'	value	'R418'
+;
+modify menu FTRProductConfigurationPageViewToolBar add command FTRProductConfigurationPageViewAction order command FTRProductConfigurationPageViewAction 1;
+#channel ==>FTRProductConfigurationPageViewToolBar
+add property command_FTRProductConfigurationPageViewAction on program eServiceSchemaVariableMapping.tcl to command 'FTRProductConfigurationPageViewAction';

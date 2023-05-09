@@ -1,0 +1,27 @@
+del command 'IssueDocumentListPage';
+add command 'IssueDocumentListPage'
+	description	'Command Object for Reference Documents Related Issues List Page'
+	label	'emxComponents.Command.IssueDocuments'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonIssue:getRelatedIssues&sortColumnName=Name&table=IssueList&header=emxComponents.Menu.IssueDocuments&selection=multiple&HelpMarker=emxhelpissues'
+	alt	'emxComponents.Menu.IssueDocuments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'showRollupIssue'
+	setting	'Access Program'		'emxCommonIssue'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallIssue.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	user	'Customer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueDocumentListPage'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_IssueDocumentListPage on program eServiceSchemaVariableMapping.tcl to command 'IssueDocumentListPage';

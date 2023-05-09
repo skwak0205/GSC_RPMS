@@ -1,0 +1,27 @@
+del command 'PMCWBSAssignByProjectRole';
+add command 'PMCWBSAssignByProjectRole'
+	description	'Command for Assign by Project Role'
+	label	'emxProgramCentral.Header.AutomaticAssignment'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=submitAssignByProjectRole'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/I_AssignUser16.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSAssignByProjectRole'
+	property	'version'	value	'R422'
+;
+modify menu PMCAssignMenu add command PMCWBSAssignByProjectRole order command PMCWBSAssignByProjectRole 0;
+#channel ==>PMCAssignMenu
+add property command_PMCWBSAssignByProjectRole on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSAssignByProjectRole';

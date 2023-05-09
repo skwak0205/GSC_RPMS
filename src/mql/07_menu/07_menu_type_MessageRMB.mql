@@ -1,0 +1,18 @@
+del menu 'type_MessageRMB';
+add menu 'type_MessageRMB'
+	description	''
+	label	'emxFramework.RMBMenu.type_MessageRMB'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFProperties'
+	command	'AEFLifecycle'
+	command	'AEFSeparator'
+	command	'APPAllFileDetails'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_MessageRMB'
+	property 'version'	value	'R423.HF3'
+;
+add property menu_type_MessageRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_MessageRMB';

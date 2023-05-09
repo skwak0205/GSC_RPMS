@@ -1,0 +1,16 @@
+del menu 'RegionBottomActionBar';
+add menu 'RegionBottomActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'DeleteRegionActionLink'
+	command	'RegionRemoveSelected'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'RegionBottomActionBar'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_RegionBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RegionBottomActionBar';

@@ -1,0 +1,27 @@
+del command 'APPDocumentRevise';
+add command 'APPDocumentRevise'
+	description	'Revise Selected Document'
+	label	'emxComponents.Command.Revise'
+	href	'${COMPONENT_DIR}/emxCommonDocumentRevise.jsp?copyFiles=false'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'((vcfile == FALSE && vcfolder == FALSE && vcmodule == FALSE) && ($<attribute[attribute_IsVersionObject].value> != True) && (id == last.id) && current.access[revise] == true)'
+	setting	'Access Function'		'showReviseCommands'
+	setting	'Access Program'		'emxECMDocument'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReviseDocument.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentRevise'
+	property	'version'	value	'R422'
+;
+modify menu APPDocumentActionsToolBar add command APPDocumentRevise order command APPDocumentRevise 14;
+modify menu TMCDocumentsActionToolbar add command APPDocumentRevise order command APPDocumentRevise 12;
+modify menu FMADocumentsToolbar add command APPDocumentRevise order command APPDocumentRevise 2;
+#channel ==>APPDocumentActionsToolBarTMCDocumentsActionToolbarFMADocumentsToolbar
+add property command_APPDocumentRevise on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentRevise';

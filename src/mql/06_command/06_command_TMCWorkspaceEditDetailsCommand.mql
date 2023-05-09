@@ -1,0 +1,28 @@
+del command 'TMCWorkspaceEditDetailsCommand';
+add command 'TMCWorkspaceEditDetailsCommand'
+	description	''
+	label	'emxTeamCentral.Button.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Workspace&mode=edit&HelpMarker=emxhelpeditworkspacedetails&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Window Height'		'575'
+	setting	'Window Width'		'575'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceEditDetailsCommand'
+	property	'version'	value	'R422.HF1'
+;
+modify menu TMCWorkspaceDetailsActionsToolBar add command TMCWorkspaceEditDetailsCommand order command TMCWorkspaceEditDetailsCommand 1;
+modify menu FMAWorkspaceDetailsToolBar add command TMCWorkspaceEditDetailsCommand order command TMCWorkspaceEditDetailsCommand 1;
+#channel ==>TMCWorkspaceDetailsActionsToolBarFMAWorkspaceDetailsToolBar
+add property command_TMCWorkspaceEditDetailsCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceEditDetailsCommand';

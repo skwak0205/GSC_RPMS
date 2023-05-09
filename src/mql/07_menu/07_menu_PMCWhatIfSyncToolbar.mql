@@ -1,0 +1,22 @@
+del menu 'PMCWhatIfSyncToolbar';
+add menu 'PMCWhatIfSyncToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWhatIfLeftSync'
+	command	'PMCWhatIfRightSync'
+	command	'AEFSBCompareMoveFirst'
+	command	'AEFSBCompareMoveNext'
+	command	'AEFSBCompareMovePrevious'
+	command	'AEFSBCompareMoveLast'
+	command	'PMCWhatIfCompareDifferenceOnly'
+	command	'PMCWhatIfCompareAll'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWhatIfSyncToolbar'
+	property 'version'	value	'R419'
+;
+add property menu_PMCWhatIfSyncToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCWhatIfSyncToolbar';

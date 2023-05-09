@@ -1,0 +1,19 @@
+del menu 'PMCWeeklyTimeSheetToolBarActions';
+add menu 'PMCWeeklyTimeSheetToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWeeklyTimesheetAddTask'
+	command	'AEFSeparator2'
+	command	'PMCWeeklyTimesheetSubmit'
+	command	'AEFSeparator'
+	command	'PMCDeleteTimeSheetTask'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWeeklyTimeSheetToolBarActions'
+	property 'version'	value	'R215'
+;
+add property menu_PMCWeeklyTimeSheetToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCWeeklyTimeSheetToolBarActions';

@@ -1,0 +1,21 @@
+del command 'APPUserTaskComplete';
+add command 'APPUserTaskComplete'
+	description	'Task Complete Command Object'
+	label	'emxComponents.Button.Complete'
+	href	'${COMPONENT_DIR}/emxUserTasksSummaryLinksProcess.jsp?fromPage=Complete'
+	alt	'emxComponents.Button.Complete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCompleteTask.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPUserTaskComplete'
+	property	'version'	value	'R417'
+;
+modify menu APPTaskSummaryActionsToolBar add command APPUserTaskComplete order command APPUserTaskComplete 1;
+#channel ==>APPTaskSummaryActionsToolBar
+add property command_APPUserTaskComplete on program eServiceSchemaVariableMapping.tcl to command 'APPUserTaskComplete';

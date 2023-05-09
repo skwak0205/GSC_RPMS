@@ -1,0 +1,14 @@
+del portal 'FTRConfigurationRulesPortal';
+add portal 'FTRConfigurationRulesPortal'
+	description	''
+	label	''
+	href	''
+	channel 	FTRConfigurationRulesChannel
+	setting	'Registered Suite'		'Configuration'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationRulesPortal'
+	property	'version'	value	'R212'
+;
+add property portal_FTRConfigurationRulesPortal on program eServiceSchemaVariableMapping.tcl to portal 'FTRConfigurationRulesPortal';

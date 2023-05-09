@@ -1,0 +1,5 @@
+mod type 'Resource Request'
+ add attribute gscResourceReason,gscResourceRole,gscResourceServiceType,gscResourceTransferType;
+
+mod type 'Resource Request' add attribute gscYear;
+mod type 'Resource Request' add attribute gscResourceName;

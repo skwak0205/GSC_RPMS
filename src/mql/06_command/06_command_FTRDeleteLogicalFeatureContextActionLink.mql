@@ -1,0 +1,28 @@
+del command 'FTRDeleteLogicalFeatureContextActionLink';
+add command 'FTRDeleteLogicalFeatureContextActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Delete'
+	href	'${SUITE_DIR}/LogicalFeatureDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDeleteLogicalFeatureContextActionLink'
+	property	'version'	value	'R421'
+;
+modify menu FTRLogicalFeatureToolbar add command FTRDeleteLogicalFeatureContextActionLink order command FTRDeleteLogicalFeatureContextActionLink 0;
+modify menu FTRModelCandidateLogicalFeatureToolbar add command FTRDeleteLogicalFeatureContextActionLink order command FTRDeleteLogicalFeatureContextActionLink 0;
+modify menu FTRLogicalFeatureSearchMenu add command FTRDeleteLogicalFeatureContextActionLink order command FTRDeleteLogicalFeatureContextActionLink 0;
+modify menu FTRLFContextLogicalFeatureToolbar add command FTRDeleteLogicalFeatureContextActionLink order command FTRDeleteLogicalFeatureContextActionLink 0;
+#channel ==>FTRLogicalFeatureToolbarFTRModelCandidateLogicalFeatureToolbarFTRLogicalFeatureSearchMenuFTRLFContextLogicalFeatureToolbar
+add property command_FTRDeleteLogicalFeatureContextActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRDeleteLogicalFeatureContextActionLink';

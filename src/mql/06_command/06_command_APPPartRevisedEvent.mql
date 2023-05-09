@@ -1,0 +1,18 @@
+del command 'APPPartRevisedEvent';
+add command 'APPPartRevisedEvent'
+	description	'Revise Part'
+	label	'emxComponents.Event.Part_Revised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(policy == "EC Part")'
+	setting	'Event Type'		'Part Revised'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartRevisedEvent'
+	property	'version'	value	'10-7-SP1'
+;
+modify menu APPPartEvents add command APPPartRevisedEvent order command APPPartRevisedEvent 1;
+#channel ==>APPPartEvents
+add property command_APPPartRevisedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPPartRevisedEvent';

@@ -1,0 +1,16 @@
+del menu 'APPMemberListMembersBottomActionBar';
+add menu 'APPMemberListMembersBottomActionBar'
+	description	''
+	label	'${NAME}'
+	href	''
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	command	'APPMemberListMembersRemoveSelectedActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPMemberListMembersBottomActionBar'
+	property 'version'	value	'10-0-1-1'
+;
+add property menu_APPMemberListMembersBottomActionBar on program eServiceSchemaVariableMapping.tcl to menu 'APPMemberListMembersBottomActionBar';

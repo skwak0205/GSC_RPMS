@@ -1,0 +1,20 @@
+del command 'APPDiscussionView';
+add command 'APPDiscussionView'
+	description	'View filter'
+	label	'emxComponents.Common.View'
+	href	'javascript:doFilter()'
+	alt	'emxComponents.Common.View'
+	setting	'Range Display Values'		'emxComponents.Discussion.Flat, emxComponents.Discussion.Threaded'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'Components'
+	setting	'JavaScript Include'		'../components/emxUIComponentsDiscussion.js'
+	setting	'Range Values'		'emxComponents.Discussion.Flat,emxComponents.Discussion.Threaded'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionView'
+	property	'version'	value	'V6R2008-2.0'
+;
+modify menu APPDiscussionViewToolBar add command APPDiscussionView order command APPDiscussionView 4;
+#channel ==>APPDiscussionViewToolBar
+add property command_APPDiscussionView on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionView';

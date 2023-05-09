@@ -1,0 +1,21 @@
+del command 'APPAccessRequestPropertiesSubmit';
+add command 'APPAccessRequestPropertiesSubmit'
+	description	'Command Object to demote Access Request from Review state to Submitted state'
+	label	'emxComponents.Command.SubmitAccessRequest'
+	href	'${SUITE_DIR}/emxCommonAccessRequestProcess.jsp?mode=Submitted&fromPropertiesPage=true'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'( current==Review || current==Rejected )'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Request Reviewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAccessRequestPropertiesSubmit'
+	property	'version'	value	'R422'
+;
+modify menu APPAccessRequestActionsToolbar add command APPAccessRequestPropertiesSubmit order command APPAccessRequestPropertiesSubmit 0;
+#channel ==>APPAccessRequestActionsToolbar
+add property command_APPAccessRequestPropertiesSubmit on program eServiceSchemaVariableMapping.tcl to command 'APPAccessRequestPropertiesSubmit';

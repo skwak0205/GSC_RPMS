@@ -1,0 +1,20 @@
+del command 'ECMCOImpactAnalysis';
+add command 'ECMCOImpactAnalysis'
+	description	'Command Object for Impact Analysis for ECM'
+	label	'EnterpriseChangeMgt.Command.ImpactAnalysis'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMImpactAnalysis:getImpactAnalysisForCO&table=ImpactAnalysisList&header=EnterpriseChangeMgt.Label.ImpactAnalysis&selection=multiple&toolbar=ImpactAnalysisListToolBar&sortColumnName=Name&HelpMarker=emxhelpimpactanalysis&calculations=true&appendURL=ImpactAnalysis|EnterpriseChangeMgt'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOImpactAnalysis'
+	property	'version'	value	'R216'
+;
+modify menu type_ChangeOrder add command ECMCOImpactAnalysis order command ECMCOImpactAnalysis 10;
+modify menu type_ChangeRequest add command ECMCOImpactAnalysis order command ECMCOImpactAnalysis 11;
+#channel ==>type_ChangeOrdertype_ChangeRequest
+add property command_ECMCOImpactAnalysis on program eServiceSchemaVariableMapping.tcl to command 'ECMCOImpactAnalysis';

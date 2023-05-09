@@ -1,0 +1,27 @@
+del command 'PMCRisksSummaryAssignRisks';
+add command 'PMCRisksSummaryAssignRisks'
+	description	'Command for Assign Risk link on Risks Summary'
+	label	'emxProgramCentral.Common.AddAssignee'
+	href	'${SUITE_DIR}/emxProgramCentralTaskAssigneeActionsHidden.jsp?command=AddRiskAssignee'
+	alt	''
+	setting	'Target Location'		'listhidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/I_AddMember32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRisksSummaryAssignRisks'
+	property	'version'	value	'R422'
+;
+modify menu PMCRisksSummaryToolBarActions add command PMCRisksSummaryAssignRisks order command PMCRisksSummaryAssignRisks 5;
+modify menu PMCRisksSummaryToolBar add command PMCRisksSummaryAssignRisks order command PMCRisksSummaryAssignRisks 7;
+#channel ==>PMCRisksSummaryToolBarActionsPMCRisksSummaryToolBar
+add property command_PMCRisksSummaryAssignRisks on program eServiceSchemaVariableMapping.tcl to command 'PMCRisksSummaryAssignRisks';

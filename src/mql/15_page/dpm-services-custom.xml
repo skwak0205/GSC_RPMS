@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ds:services xmlns:ds="http://www.3ds.com/enovia/e6wv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.3ds.com/enovia/e6wv2 servicesv2.xsd">
+
+    <!-- ******************************************* -->
+    <!-- ****************  PROJECT  **************** -->
+    <!-- ******************************************* -->
+
+    <ds:service name="dpm.gscprojects">
+
+        <ds:license products="ENO_PGE_TP"/>
+
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getProjects"
+                    returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.gscProjectService" function="updateProjectSpace"
+                          localInvokation="true"/>
+        </ds:data>
+        <ds:ref-subservice name="dpm.basicFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="dpm.dateFields" includeByDefault="yes"/>
+
+        <ds:field name="projectType">
+            <ds:selectable transient="true"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.gsc.enovia.dpm.gscProjectService" function="getTypes">
+                    <ds:arg arg-name="type" arg-value="Project Space"/>
+                    <ds:arg arg-name="excludeTypeName" arg-value="Experiment,Project Baseline,Project Snapshot"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+        <!-- For Gantt Chart Infra :Start -->
+        <ds:field name="nlsType" includeByDefault="no">
+            <ds:selectable expression="type" format="type" type="bus"/>
+        </ds:field>
+        <ds:field name="color" includeByDefault="no">
+            <ds:selectable expression="attribute[Color]" type="bus" autosave="true"/>
+        </ds:field>
+        <ds:field name="pattern" includeByDefault="no">
+            <ds:selectable expression="attribute[FormatPattern]" type="bus" autosave="true"/>
+        </ds:field>
+        <ds:field name="dpmTaskCalendar" includeByDefault="no" description="dpmTaskCalendar">
+            <ds:selectable type="key" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getDpmTaskCalendar"
+                         localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="ganttConfig" includeByDefault="no">
+            <ds:selectable expression="attribute[ganttConfig]" type="bus" autosave="true"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getGanttConfig"
+                         localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="checkIfPromoteReadyTaskCommandVisible" includeByDefault="no">
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService"
+                         function="checkIfPromoteReadyTaskCommandVisible" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="kindofBaseline" includeByDefault="no">
+            <ds:selectable expression="type.kindof[Project Baseline]" type="bus"/>
+        </ds:field>
+        <ds:field name="kindofExperiment" includeByDefault="no">
+            <ds:selectable expression="type.kindof[Experiment]" type="bus"/>
+        </ds:field>
+        <ds:field name="kindofTemplate" includeByDefault="no">
+            <ds:selectable expression="type.kindof[Project Template]" type="bus"/>
+        </ds:field>
+        <ds:field name="kindofConcept" includeByDefault="no">
+            <ds:selectable expression="type.kindof[Project Concept]" type="bus"/>
+        </ds:field>
+        <ds:field name="experimentProjectState" includeByDefault="no">
+            <ds:selectable expression="to[Experiment].from.current" type="bus"/>
+        </ds:field>
+        <ds:field name="routeId" includeByDefault="no">
+            <ds:selectable expression="from[Object Route].to.id" type="bus"/>
+        </ds:field>
+        <ds:field name="columns" includeByDefault="no" description="Gantt Chart columns">
+            <ds:selectable expression="id" type="bus"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getGanttColumns"
+                         localInvokation="true"/>
+        </ds:field>
+
+
+        <ds:field name="percentComplete" description="Percentage complete of project">
+            <ds:selectable expression="attribute[Percent Complete]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="percentCompleteBasedOn"
+                  description="This attribute stores the value of parameter based on which the percent complete is calculated">
+            <ds:selectable expression="attribute[Percent Complete Based On]" type="bus" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="lagCalendar" description="Lag Calendar">
+            <ds:selectable expression="attribute[Lag Calendar]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="hasDPMAccess" description="This field will be returned only if the user has DPM license">
+            <ds:label text="0"/>
+            <ds:license products="ENO_PRF_TP"/>
+            <ds:selectable format="transient"/>
+        </ds:field>
+        <ds:field name="estimatedDurationInputValue" description="Duration value">
+            <ds:selectable expression="attribute[Task Estimated Duration].inputvalue" type="bus" autosave="true"
+                           createOperation="no" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="estimatedDurationInputUnit" description="Duration unit">
+            <ds:selectable expression="attribute[Task Estimated Duration].inputunit" type="bus" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="estimatedDuration" description="Estimated duration">
+            <ds:selectable expression="attribute[Task Estimated Duration]" type="bus" autosave="true"
+                           createOperation="no" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="actualDuration" description="Actual duration">
+            <ds:selectable expression="attribute[Task Actual Duration]" type="bus" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="forecastDuration">
+            <ds:selectable busInterfaces="DPMForecast" createOperation="yes" modifyOperation="yes" readOperation="yes"
+                           expression="attribute[Forecast Duration]" type="bus"/>
+        </ds:field>
+        <ds:field name="forecastStartDate">
+            <ds:selectable busInterfaces="DPMForecast" expression="attribute[Forecast Start Date]" type="bus"
+                           format="isodate" autosave="true"/>
+        </ds:field>
+        <ds:field name="forecastFinishDate">
+            <ds:selectable busInterfaces="DPMForecast" expression="attribute[Forecast Finish Date]" type="bus"
+                           format="isodate" autosave="true"/>
+        </ds:field>
+        <ds:field name="constraintType" includeByDefault="no"
+                  description="Reflects ASAP or ALAP depending on schedule from.">
+            <ds:selectable expression="attribute[Schedule From]" type="bus" createOperation="yes" modifyOperation="no"
+                           readOperation="yes"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService"
+                         function="convertScheduleFromToConstraint" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="constraintDate" description="Constraint date">
+            <ds:selectable expression="attribute[Task Constraint Date]" type="bus" format="isodate" autosave="true"
+                           createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="defaultConstraintType" description="Constraint type">
+            <ds:selectable expression="attribute[Default Constraint Type]" type="bus" autosave="true"
+                           createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="scheduleFrom" description="Scheduling type">
+            <ds:selectable expression="attribute[Schedule From]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="scheduleBasedOn" description="Scheduling basis">
+            <ds:selectable expression="attribute[Schedule Based On]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="projectVisibility"
+                  description="A non-controlling identification of the desired Project access.">
+            <ds:selectable expression="attribute[Project Visibility]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="currency" includeByDefault="no" description="Currency type">
+            <ds:selectable expression="attribute[Currency]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.gsc.enovia.dpm.gscProjectService" function="getCurrencyValues">
+                    <ds:arg arg-name="attributeName" arg-value="Currency"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="notes" description="Notes">
+            <ds:selectable expression="attribute[Notes]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+
+        <!-- Edited by HyungJin, Ju 2023-05-08 -->
+		<!-- <ds:field name="businessUnitId" includeByDefault="yes" description="Business Unit Id">
+			<ds:selectable expression="to[Business Unit Project].from.physicalid" createOperation="required" modifyOperation="yes" readOperation="yes"/>
+		</ds:field> -->
+		<ds:field name="objectRoute_current" description="relationship[Object Route].to.current" includeByDefault="yes">
+            <ds:selectable expression="relationship[Object Route].to.current" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="objectRoute_gscAppUUID" description="relationship[Object Route].to.attribute[gscAppUUID].value" includeByDefault="yes">
+            <ds:selectable expression="relationship[Object Route].to.attribute[gscAppUUID].value" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="owner" description="owner" includeByDefault="yes">
+            <ds:selectable expression="owner" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="ownerName" description="The current owner of the object." includeByDefault="always">
+            <ds:selectable expression="owner" format="transient" createOperation="no" modifyOperation="yes"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscTitle" description="Project Title" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscTitle]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscProjectType" description="Project Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_ProjectType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscBusinessArea" description="Business Area" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscBusinessArea]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes" />
+        </ds:field>
+        <ds:field name="gscGateType" description="Stage Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscGateType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscReviewType" description="Review Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscReviewType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscIsCurrentYearReview" description="Is Current Year Review" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscIsCurrentYearReview]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscFundingType" description="Funding Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscFundingType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscSourcingType" description="Sourcing Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscSourcingType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscProjectSite" description="Project Site" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscProjectSite]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscProjectSite" description="Project Site" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscProjectSite]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscCostCenter" description="Cost Center" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscCostCenter]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscGateResult" description="Gate Result" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscGateResult]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="hasTask" description="hasTask" includeByDefault="yes">
+            <ds:selectable expression="from[Subtask]" type="bus" autosave="false" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="businessUnitProject" description="Business Unit Project physicalid"
+                  includeByDefault="no">
+            <ds:selectable expression="to[Business Unit Project].from.physicalid" type="bus" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="initiatedTemplateProject" description="Project Template physicalid"
+                  includeByDefault="no">
+            <ds:selectable expression="from[Initiated Template Project].to.physicalid" type="bus" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="parentProject" description="Parent Project physicalid"
+                  includeByDefault="no">
+            <ds:selectable expression="to[Subtask].from.physicalid" type="bus" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscBenefitAmount" description="Benefit Amount" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscBenefitAmount]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscProductAmount" description="Product Amount" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscProductAmount]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscOffsetAmount" description="Offset Amount" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscOffsetAmount]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>		
+		<ds:field name="state" description="state current" includeByDefault="yes">
+            <ds:selectable expression="current" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <!-- Edited by HyungJin, Ju 2023-05-08 -->
+
+        <!-- Edited by Soojung, Kwak 2023-04-17 -->
+        <ds:field name="gscBudgetAmount" description="Budget Amount" includeByDefault="yes">
+            <ds:selectable expression="attribute[gscBudgetAmount]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+
+        <ds:field name="gscInvestAmount" description="Invest Amount" includeByDefault="yes">
+            <ds:selectable expression="attribute[gscInvestAmount]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+
+        <ds:field name="gscPatentCount" description="Patent Count" includeByDefault="yes">
+            <ds:selectable expression="id" type="bus"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getPatentCount"
+                         localInvokation="true"/>
+        </ds:field>
+        <!-- Edited by Soojung, Kwak 2023-04-17 -->
+
+        <ds:field name="status" includeByDefault="no">
+            <ds:selectable expression="State" type="bus"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getStatus"
+                         localInvokation="true"/>
+        </ds:field>
+        <ds:field name="PALId" description=" The Project Access List object (used for some navigation)"
+                  includeByDefault="no">
+            <ds:selectable expression="to[Project Access List].from.id" type="bus" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="objectId" includeByDefault="no">
+            <ds:selectable expression="id" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+
+
+        <ds:field name="sequenceOrder" includeByDefault="no" description="the task sequence id within a project.">
+            <ds:selectable type="keyrel" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+            <ds:sort type="integer" direction="ascending" order="1"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getSequenceOrder"
+                         localInvokation="true">
+                <ds:arg arg-name="taskWBS" arg-value="taskWBS"/>
+                <ds:arg arg-name="palIdField" arg-value="PALId"/>
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="typesForSearch">
+            <ds:selectable transient="true"/>
+            <ds:range>
+                <ds:rangejpo classname="com.gsc.enovia.dpm.gscProjectService"
+                             function="getRangeTypeDerivatives">
+                    <ds:arg arg-name="relKey" arg-value="contextTypesForProjectGantt"/>
+                    <ds:arg arg-name="searchtypes" arg-value="Project Space, Project Concept"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="image" includeByDefault="no"
+                  description="The thumbnail or type icon associated to the project object.">
+            <ds:image source="primaryOrType" size="medium" indexBasedImage="false"/>
+        </ds:field>
+
+        <ds:field name="project-custom-fields">
+            <ds:customAttributes busTypes="Project Management"/>
+        </ds:field>
+        <!--
+        <ds:ref-subservice name="dpm.projects-custom-fields"/>
+        -->
+
+        <!-- related data -->
+		<!-- Hyungjin Ju, 230418 -->
+		<ds:ref-subservice name="budget" referenceName="gscProjectBudgetIf" includeByDefault="yes">
+            <ds:data>
+                <ds:expand relationshipPattern="gscProjectBudgetIf" getFrom="true" getTo="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+		<!-- <ds:ref-subservice name="businessGoal" referenceName="gscBusinessGoalProjectSpace" includeByDefault="yes"> -->
+		<ds:ref-subservice name="businessGoal" referenceName="gscBusinessGoalProjectSpace" includeByDefault="yes">
+            <ds:data>
+                <ds:expand relationshipPattern="Business Goal Project Space" getFrom="true" getTo="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+		<!-- Hyungjin Ju, 230418 -->
+
+        <!-- Soojung Kwak, 230419 -->
+        <ds:ref-subservice name="invest" referenceName="gscProjectInvestIf" includeByDefault="yes">
+            <ds:data>
+                <ds:expand relationshipPattern="gscProjectInvestIf" getFrom="true" getTo="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+        <!-- Soojung Kwak, 230419 -->
+
+        <ds:ref-subservice name="programList" referenceName="programsNameList" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Program Project" getFrom="false" getTo="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+
+        <ds:ref-subservice name="ownerInfo" includeByDefault="no"/>
+        <ds:ref-subservice name="originatorInfo" includeByDefault="no"/>
+        <ds:ref-subservice name="tasks" referenceName="gsctasks" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Subtask" getFrom="true" recurseLevels="{level}" chunkSize="300"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskService" function="updateTasks"
+                              processMultiple="true"/>
+            </ds:data>
+            <!-- override this definition from tasks as it is N/A in the project services. -->
+            <ds:subservice name="DPMProject" includeByDefault="never" hidden="true"/>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="baselines" includeByDefault="no(private)">
+            <ds:data>
+                <ds:expand relationshipPattern="Project Baseline" getFrom="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="assessments" referenceName="dpm.assessments" includeByDefault="no(private)">
+            <ds:data>
+                <!--            <ds:expand relationshipPattern="Project Assessment" getFrom="true" />  -->
+                <ds:jpo classname="com.dassault_systemes.enovia.dpm.AssessmentService" function="getAssessments"
+                        returnedData="idsAndData"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.AssessmentService"
+                              function="updateAssessments" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="members" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Member*" getFrom="true"/>
+                <ds:updatejpo classname="com.gsc.enovia.dpm.gscProjectService" function="updateMembers"/>
+            </ds:data>
+        </ds:ref-subservice>
+        <ds:ref-subservice name="relatedprojects" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Related Projects" getFrom="true" getTo="false"/>
+                <ds:updatejpo classname="com.gsc.enovia.dpm.gscProjectService" function="updateRelatedProjects"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="risks" referenceName="dpm.risks" includeByDefault="no">
+        </ds:ref-subservice>
+
+        <ds:subservice name="getFloatValues" includeByDefault="no(private)">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getProjectFloatValues"
+                        localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="palIdField" arg-value="PALId"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="getForecastValues" includeByDefault="no(private)">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getProjectForecastValues"
+                        localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="palIdField" arg-value="PALId"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="promoteSuccessor" includeByDefault="no(private)">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="promoteSuccessor"
+                        localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="palIdField" arg-value="PALId"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <!-- To get SubTypes of all OOTB types -->
+        <ds:subservice name="subTypesInfo">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getDerivativeTypes"
+                        localInvokation="false" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+        <ds:subservice name="subTypesAndPolicies">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getTypeAndPolicy"
+                        localInvokation="false" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:ref-subservice name="dpm.opportunities" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="allrisks" referenceName="dpm.allrisks" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="dpm.allopportunities" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="milestones" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+
+        <ds:ref-subservice name="issues" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getProjectIssues"
+                        returnedData="idsAndData"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:subservice name="programId" includeByDefault="never">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getProgramProjects"
+                        returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:ref-subservice name="folders" referenceName="e6w.workspaceFolders" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.workspace.WorkspaceService"
+                        function="getWorkspaceFolders" returnedData="idsAndData"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.workspace.WorkspaceService"
+                              function="updateWorkspaceFolders" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="folderId" referenceName="e6w.workspaceFolders" includeByDefault="never">
+            <ds:data>
+                <ds:expand relationshipPattern="Sub Vaults" getFrom="true" recurseLevels="{foldersLevel}"
+                           preserveRoot="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="calendar" referenceName="tsk.calendar" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Default Calendar" getFrom="true"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskService" function="updateCalendar"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:subservice name="performRollup" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.gsc.enovia.dpm.gscProjectService" function="performRollup"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="search" includeByDefault="never">
+            <ds:data>
+                <ds:indexQuery typePattern="Project Management" keyword="{searchStr}" limitStr="{$top::50}"
+                               skipStr="{$skip::0}" sortField="{sortField::relevance}"
+                               sortDirection="{sortDirection::desc}"/>
+            </ds:data>
+            <ds:ref-subservice name="dpm.searchFields"/>
+        </ds:subservice>
+        <ds:ref-subservice name="referencedocuments" referenceName="project.references" includeByDefault="yes"/>
+        <ds:ref-subservice name="gscpatents"  referenceName="dpm.gscpatents" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="gscProjectPatent" getFrom="true"/>
+            </ds:data>
+
+        </ds:ref-subservice>
+    </ds:service>
+
+    <ds:service name="members">
+        <ds:data>
+            <ds:print/>
+        </ds:data>
+        <ds:ref-subservice name="dpm.personFields"/>
+        <ds:field name="projectAccess">
+            <ds:selectable expression="attribute[Project Access]" type="rel" createOperation="yes" modifyOperation="yes"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscRatio">
+            <ds:selectable expression="attribute[gscRatio]" type="rel" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+    </ds:service>
+    <ds:service name="relatedprojects">
+        <ds:data>
+            <ds:print/>
+        </ds:data>
+        <ds:ref-subservice name="dpm.basicFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="dpm.dateFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="ownerInfo" includeByDefault="no"/>
+        <ds:field name="owner" includeByDefault="no" description="The current owner of the object.">
+            <ds:selectable expression="owner" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscTitle" description="Project Title" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscTitle]" type="bus" autosave="false" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscProjectType" description="Project Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_ProjectType]" type="bus" autosave="false" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscBusinessArea" description="Business Area" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscBusinessArea]" type="bus" autosave="false" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscGateType" description="Stage Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscGateType]" type="bus" autosave="false" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscReviewType" description="Review Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscReviewType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscGateResult" description="Review gscGateResult" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscGateResult]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscIsCurrentYearReview" description="Is Current Year Review" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscIsCurrentYearReview]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscIsTeamProject" description="Is Team Project" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscIsTeamProject]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscFundingType" description="Funding Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscFundingType]" type="bus" autosave="false" createOperation="no"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscSourcingType" description="Sourcing Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscSourcingType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscProjectSite" description="Project Site" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscProjectSite]" type="bus" autosave="false" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscProjectSite" description="Project Site" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscProjectSite]" type="bus" autosave="false" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+
+    </ds:service>
+
+    <!-- ******************************************* -->
+    <!-- ****************   PROJECT BUDGETS  ************** -->
+    <!-- ******************************************* -->
+
+    <ds:service name="dpm.gscprojectbudgets">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscProjectBudgetService" function="getProjectBudgets"
+                    returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.gscProjectBudgetService" function="updateProjectBudgets"
+                          localInvokation="true"/>
+        </ds:data>
+        <ds:field name="projectId" includeByDefault="no" description="Project Id">
+            <ds:selectable expression="to[Project Financial Item].from.physicalid" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="businessUnitId" includeByDefault="no" description="Business Unit Id">
+            <ds:selectable expression="from[gscFinancialBusinessUnit].to.physicalid" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscYear" includeByDefault="no" description="gscYear">
+            <ds:selectable expression="attribute[gscYear]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscCostCenter" includeByDefault="no" description="gscCostCenter">
+            <ds:selectable expression="attribute[gscCostCenter]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="estimatedCost" includeByDefault="no" description="estimatedCost">
+            <ds:selectable expression="attribute[Estimated Cost]"  autosave="true" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="originator" includeByDefault="no" description="Originator">
+            <ds:selectable expression="attribute[Originator]" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="actualCost" includeByDefault="no" description="Actual Cost">
+            <ds:selectable expression="attribute[Actual Cost]" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="costInterval" includeByDefault="no" description="Cost Interval">
+            <ds:selectable expression="attribute[Cost Interval]" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="plannedCost" includeByDefault="no" description="Planned Cost">
+            <ds:selectable expression="attribute[Planned Cost]"  autosave="true" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="totalBudgetCost" includeByDefault="no" description="Total Budget Cost">
+            <ds:selectable expression="attribute[Total Budget Cost]" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="actualTransactionRollup" includeByDefault="no" description="Actual Transaction Rollup">
+            <ds:selectable expression="attribute[Actual Transaction Rollup]" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="notes" includeByDefault="no" description="Notes">
+            <ds:selectable expression="attribute[Notes]"  autosave="true" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+
+        <ds:ref-subservice name="dpm.basicFields" includeByDefault="yes"/>
+        <ds:field name="owner" includeByDefault="no" description="The current owner of the object.">
+            <ds:selectable expression="owner" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+
+        <ds:field name="projectbudget-custom-fields">
+            <ds:customAttributes busTypes="Budget"/>
+        </ds:field>
+    </ds:service>
+
+    <!-- ******************************************* -->
+    <!-- ****************   BUDGETS COST ITEM  ************** -->
+    <!-- ******************************************* -->
+
+    <ds:service name="dpm.gscbudgetcostitems">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscBudgetCostItemService" function="getBudgetCostItems"
+                    returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.gscBudgetCostItemService" function="updateBudgetCostItems"
+                          localInvokation="true"/>
+        </ds:data>
+        <ds:field name="parentId" includeByDefault="no" description="Budget Id">
+            <ds:selectable expression="to[Financial Items].from.physicalid" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="projectId" includeByDefault="no" description="Project Id">
+            <ds:selectable expression="to[Financial Items].from.to[Project Financial Item].from.physicalid" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="businessUnitId" includeByDefault="no" description="Business Unit Id">
+            <ds:selectable expression="to[Financial Items].from.from[gscFinancialBusinessUnit].to.physicalid" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscYear" includeByDefault="no" description="gscYear">
+            <ds:selectable expression="to[Financial Items].from.attribute[gscYear]" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="estimatedCost" includeByDefault="no" description="estimatedCost">
+            <ds:selectable expression="attribute[Estimated Cost]" autosave="true" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="originator" includeByDefault="no" description="Originator">
+            <ds:selectable expression="attribute[Originator]" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="actualCost" includeByDefault="no" description="Actual Cost">
+            <ds:selectable expression="attribute[Actual Cost]" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="ledgerAccountNumber" includeByDefault="no" description="Ledger Account Number">
+            <ds:selectable expression="attribute[Ledger Account Number]"  autosave="true" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="plannedCost" includeByDefault="no" description="Planned Cost">
+            <ds:selectable expression="attribute[Planned Cost]" createOperation="yes" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="notes" includeByDefault="no" description="Notes">
+            <ds:selectable expression="attribute[Notes]"  autosave="true" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.basicFields" includeByDefault="yes"/>
+        <ds:field name="owner" includeByDefault="no" description="The current owner of the object.">
+            <ds:selectable expression="owner" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+    </ds:service>
+
+    <!-- ******************************************* -->
+    <!-- *************  BUSINESS GOAL  ************* -->
+    <!-- ******************************************* -->
+
+    <!-- Edited by HyungJin, Ju 2023-01-17 -->
+
+    <ds:service name="dpm.gscbusinessgoals">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscBusinessGoalService" function="getBusinessGoals"
+                    returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.gscBusinessGoalService" function="updateBusinessGoals"
+                          localInvokation="true"/>
+        </ds:data>
+        <ds:field name="projectId" includeByDefault="yes" description="Project Id">
+            <ds:selectable expression="from[Business Goal Project Space].to.physicalid" createOperation="required" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<!--<ds:field name="gscBusinessGoalTeam" includeByDefault="yes" description="Project Id">
+            <ds:selectable expression="from[gscBusinessGoalTeam].to.physicalid" createOperation="required" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>-->
+        <ds:field name="parentId" includeByDefault="yes" description="Parent Business Unit Id">
+            <ds:selectable expression="to[Sub Goal].from.physicalid" createOperation="required" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="businessUnitId" includeByDefault="yes" description="Business Unit Id">
+            <ds:selectable expression="to[Organization Goal].from.physicalid" createOperation="required" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscBusinessGoalTeam" includeByDefault="yes" description="gscBusinessGoalTeam">
+            <ds:selectable expression="from[gscBusinessGoalTeam].to.physicalid" createOperation="required" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscTitle" includeByDefault="no" description="Title">
+            <ds:selectable expression="attribute[gscTitle]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscYear" includeByDefault="no" description="gscYear">
+            <ds:selectable expression="attribute[gscYear]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="originator" includeByDefault="no" description="Originator">
+            <ds:selectable expression="attribute[Originator]"  type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="measureofSuccess" includeByDefault="no" description="Measure Of Success">
+            <ds:selectable expression="attribute[Measure of Success]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscMeasureofSuccess2" includeByDefault="no" description="Measure Of Success 2">
+            <ds:selectable expression="attribute[gscMeasureofSuccess2]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscMeasureofSuccess3" includeByDefault="no" description="Measure Of Success 3">
+            <ds:selectable expression="attribute[gscMeasureofSuccess3]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscMeasureofSuccess4" includeByDefault="no" description="Measure Of Success 4">
+            <ds:selectable expression="attribute[gscMeasureofSuccess4]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscMeasureofSuccess5" includeByDefault="no" description="Measure Of Success 5">
+            <ds:selectable expression="attribute[gscMeasureofSuccess5]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="operationalDefinition" includeByDefault="no" description="Operational Definition">
+            <ds:selectable expression="attribute[Operational Definition]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="businessBenefit" includeByDefault="no" description="Business Benefit">
+            <ds:selectable expression="attribute[Business Benefit]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscRatio" includeByDefault="no" description="gscRatio">
+            <ds:selectable expression="attribute[gscRatio]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscMeasureUnit" includeByDefault="no" description="gscMeasureUnit">
+            <ds:selectable expression="attribute[gscMeasureUnit]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscGoalMeasure" includeByDefault="no" description="gscGoalMeasure">
+            <ds:selectable expression="attribute[gscGoalMeasure]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscKPIType" includeByDefault="no" description="gscKPIType">
+            <ds:selectable expression="attribute[gscKPIType]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="comments" includeByDefault="no" description="Notes">
+            <ds:selectable expression="attribute[Comments]"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="description" includeByDefault="yes" description="description">
+            <ds:selectable expression="description"  type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.basicFields" includeByDefault="yes"/>
+        <ds:field name="owner" includeByDefault="yes" description="The current owner of the object.">
+            <ds:selectable expression="owner" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+    </ds:service>
+
+    <!-- ******************************************* -->
+    <!-- ***********  RESOURCE REQUESTS  *********** -->
+    <!-- ******************************************* -->
+
+    <!-- Edited by HyungJin, Ju 2023-01-19 -->
+
+    <ds:service name="dpm.gscresourcerequests">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscResourceRequestService" function="getResourceRequests"
+                    returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.gscResourceRequestService" function="updateResourceRequests"
+                          localInvokation="true"/>
+        </ds:data>
+        <ds:field name="projectId" includeByDefault="no" description="Project Id">
+            <ds:selectable expression="to[Resource Plan].from.physicalid" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="businessUnitId" includeByDefault="no" description="Business Unit Id">
+            <ds:selectable expression="from[Resource Pool].to.physicalid" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscResourceServiceType" includeByDefault="no" description="gscResourceServiceType">
+            <ds:selectable expression="attribute[gscResourceServiceType]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscYear" includeByDefault="no" description="gscYear">
+            <ds:selectable expression="attribute[gscYear]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="originator" includeByDefault="no" description="Originator">
+            <ds:selectable expression="attribute[Originator]" autosave="true" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscResourceTransferType" includeByDefault="no" description="gscResourceTransferType">
+            <ds:selectable expression="attribute[gscResourceTransferType]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="startDate" includeByDefault="no" description="Start Date">
+            <ds:selectable expression="attribute[Start Date]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscResourceName" includeByDefault="no" description="gscResourceName">
+            <ds:selectable expression="attribute[gscResourceName]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscResourceRole" includeByDefault="no" description="gscResourceRole">
+            <ds:selectable expression="attribute[gscResourceRole]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscResourceReason" includeByDefault="no" description="gscResourceReason">
+            <ds:selectable expression="attribute[gscResourceReason]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.basicFields" includeByDefault="yes"/>
+        <ds:field name="owner" includeByDefault="no" description="The current owner of the object.">
+            <ds:selectable expression="owner" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+    </ds:service>
+
+    <ds:service name="dpm.gsccommoncodes">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.common.gscCommonCodeService" function="getCommonCodes"
+                    returnedData="idsAndData"/>
+        </ds:data>
+        <ds:field name="code" includeByDefault="no" description="code">
+            <ds:selectable expression="revision" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="title" includeByDefault="no" description="Title">
+            <ds:selectable expression="attribute[Title]" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="value" includeByDefault="no" description="Value">
+            <ds:selectable expression="name" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="title_ko" includeByDefault="no" description="Korean Title">
+            <ds:selectable expression="attribute[gscTitleKO]" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="sequenceOrder" includeByDefault="no" description="Sequence Order">
+            <ds:selectable expression="attribute[Sequence Order]" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.basicFields" includeByDefault="yes"/>
+        <ds:field name="owner" includeByDefault="no" description="The current owner of the object.">
+            <ds:selectable expression="owner" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+    </ds:service>
+
+    <!-- ******************************************* -->
+    <!-- ****************  PATENTS  **************** -->
+    <!-- ******************************************* -->
+
+    <!-- Edited by HyungJin, Ju 2023-01-26 -->
+
+    <ds:service name="dpm.gscpatents">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscPatentService" function="getPatents"
+                    returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.gscPatentService" function="updatePatents"
+                          localInvokation="true"/>
+        </ds:data>
+        <ds:field name="projectId" includeByDefault="no" description="projectId">
+            <ds:selectable expression="to[gscProjectPatent].from.physicalid" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscRegNo" includeByDefault="no" description="gscRegNo">
+            <ds:selectable expression="attribute[gscRegNo]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscRegDate" includeByDefault="no" description="gscRegDate">
+            <ds:selectable expression="attribute[gscRegDate]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscPriorityMstNo" includeByDefault="no" description="gscPriorityMstNo">
+            <ds:selectable expression="attribute[gscPriorityMstNo]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscPriorityDate" includeByDefault="no" description="gscPriorityDate">
+            <ds:selectable expression="attribute[gscPriorityDate]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscMstNo" includeByDefault="no" description="gscMstNo">
+            <ds:selectable expression="attribute[gscMstNo]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscKoName" includeByDefault="no" description="gscKoName">
+            <ds:selectable expression="attribute[gscKoName]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscKoAppTitle" includeByDefault="no" description="gscKoAppTitle">
+            <ds:selectable expression="attribute[gscKoAppTitle]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscCountryNameTitle" includeByDefault="no" description="gscCountryNameTitle">
+            <ds:selectable expression="attribute[gscCountryNameTitle]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscUpdDatetime" includeByDefault="no" description="gscUpdDatetime">
+            <ds:selectable expression="attribute[gscUpdDatetime]" autosave="false" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscWfStatusName" includeByDefault="no" description="gscWfStatusName">
+            <ds:selectable expression="attribute[gscWfStatusName]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+    </ds:service>
+
+    <!-- ******************************************* -->
+    <!-- ****************  Route  **************** -->
+    <!-- ******************************************* -->
+
+    <!-- Edited by SoojungKwak, 2023-01-30 -->
+
+    <ds:service name="dpm.gscRoutes">
+        <ds:license products="ENOBUPS_AP"/>
+        <ds:data>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.gscRouteService" function="updateRouteTask" localInvokation="true" />
+        </ds:data>
+    </ds:service>
+
+    <!-- ******************************************* -->
+    <!-- ************  PROJECT CONCEPT  ************ -->
+    <!-- ******************************************* -->
+
+    <!-- Edited by HyungJin, Ju 2023-03-13 -->
+
+    <ds:service name="dpm.gscprojectconcepts">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.projectconcept.gscProjectConceptService" function="getProjectConcepts"
+                    returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.projectconcept.gscProjectConceptService" function="updateProjectConcept"
+                          localInvokation="true"/>
+        </ds:data>
+        <ds:ref-subservice name="dpm.basicFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="dpm.accessFields" includeByDefault="yes"/>
+        <ds:ref-subservice name="dpm.dateFields" includeByDefault="yes"/>
+
+        <ds:field name="projectType">
+            <ds:selectable transient="true"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.gsc.enovia.dpm.gscProjectService" function="getTypes">
+                    <ds:arg arg-name="type" arg-value="Project Space"/>
+                    <ds:arg arg-name="excludeTypeName" arg-value="Experiment,Project Baseline,Project Snapshot"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+        <!-- For Gantt Chart Infra :Start -->
+        <ds:field name="nlsType" includeByDefault="no">
+            <ds:selectable expression="type" format="type" type="bus"/>
+        </ds:field>
+        <ds:field name="color" includeByDefault="no">
+            <ds:selectable expression="attribute[Color]" type="bus" autosave="true"/>
+        </ds:field>
+        <ds:field name="pattern" includeByDefault="no">
+            <ds:selectable expression="attribute[FormatPattern]" type="bus" autosave="true"/>
+        </ds:field>
+        <ds:field name="dpmTaskCalendar" includeByDefault="no" description="dpmTaskCalendar">
+            <ds:selectable type="key" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getDpmTaskCalendar"
+                         localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="ganttConfig" includeByDefault="no">
+            <ds:selectable expression="attribute[ganttConfig]" type="bus" autosave="true"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getGanttConfig"
+                         localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="checkIfPromoteReadyTaskCommandVisible" includeByDefault="no">
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService"
+                         function="checkIfPromoteReadyTaskCommandVisible" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="kindofBaseline" includeByDefault="no">
+            <ds:selectable expression="type.kindof[Project Baseline]" type="bus"/>
+        </ds:field>
+        <ds:field name="kindofExperiment" includeByDefault="no">
+            <ds:selectable expression="type.kindof[Experiment]" type="bus"/>
+        </ds:field>
+        <ds:field name="kindofTemplate" includeByDefault="no">
+            <ds:selectable expression="type.kindof[Project Template]" type="bus"/>
+        </ds:field>
+        <ds:field name="kindofConcept" includeByDefault="no">
+            <ds:selectable expression="type.kindof[Project Concept]" type="bus"/>
+        </ds:field>
+        <ds:field name="experimentProjectState" includeByDefault="no">
+            <ds:selectable expression="to[Experiment].from.current" type="bus"/>
+        </ds:field>
+        <ds:field name="routeId" includeByDefault="no">
+            <ds:selectable expression="from[Object Route].to.id" type="bus"/>
+        </ds:field>
+        <ds:field name="columns" includeByDefault="no" description="Gantt Chart columns">
+            <ds:selectable expression="id" type="bus"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getGanttColumns"
+                         localInvokation="true"/>
+        </ds:field>
+
+
+        <ds:field name="percentComplete" description="Percentage complete of project">
+            <ds:selectable expression="attribute[Percent Complete]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="percentCompleteBasedOn"
+                  description="This attribute stores the value of parameter based on which the percent complete is calculated">
+            <ds:selectable expression="attribute[Percent Complete Based On]" type="bus" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="lagCalendar" description="Lag Calendar">
+            <ds:selectable expression="attribute[Lag Calendar]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="hasDPMAccess" description="This field will be returned only if the user has DPM license">
+            <ds:label text="0"/>
+            <ds:license products="ENO_PRF_TP"/>
+            <ds:selectable format="transient"/>
+        </ds:field>
+        <ds:field name="estimatedDurationInputValue" description="Duration value">
+            <ds:selectable expression="attribute[Task Estimated Duration].inputvalue" type="bus" autosave="true"
+                           createOperation="no" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="estimatedDurationInputUnit" description="Duration unit">
+            <ds:selectable expression="attribute[Task Estimated Duration].inputunit" type="bus" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="estimatedDuration" description="Estimated duration">
+            <ds:selectable expression="attribute[Task Estimated Duration]" type="bus" autosave="true"
+                           createOperation="no" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="actualDuration" description="Actual duration">
+            <ds:selectable expression="attribute[Task Actual Duration]" type="bus" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="forecastDuration">
+            <ds:selectable busInterfaces="DPMForecast" createOperation="yes" modifyOperation="yes" readOperation="yes"
+                           expression="attribute[Forecast Duration]" type="bus"/>
+        </ds:field>
+        <ds:field name="forecastStartDate">
+            <ds:selectable busInterfaces="DPMForecast" expression="attribute[Forecast Start Date]" type="bus"
+                           format="isodate" autosave="true"/>
+        </ds:field>
+        <ds:field name="forecastFinishDate">
+            <ds:selectable busInterfaces="DPMForecast" expression="attribute[Forecast Finish Date]" type="bus"
+                           format="isodate" autosave="true"/>
+        </ds:field>
+        <ds:field name="constraintType" includeByDefault="no"
+                  description="Reflects ASAP or ALAP depending on schedule from.">
+            <ds:selectable expression="attribute[Schedule From]" type="bus" createOperation="yes" modifyOperation="no"
+                           readOperation="yes"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService"
+                         function="convertScheduleFromToConstraint" localInvokation="true"/>
+        </ds:field>
+        <ds:field name="constraintDate" description="Constraint date">
+            <ds:selectable expression="attribute[Task Constraint Date]" type="bus" format="isodate" autosave="true"
+                           createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="defaultConstraintType" description="Constraint type">
+            <ds:selectable expression="attribute[Default Constraint Type]" type="bus" autosave="true"
+                           createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="scheduleFrom" description="Scheduling type">
+            <ds:selectable expression="attribute[Schedule From]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="scheduleBasedOn" description="Scheduling basis">
+            <ds:selectable expression="attribute[Schedule Based On]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="projectVisibility"
+                  description="A non-controlling identification of the desired Project access.">
+            <ds:selectable expression="attribute[Project Visibility]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="currency" includeByDefault="no" description="Currency type">
+            <ds:selectable expression="attribute[Currency]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+            <ds:range registeredSuite="Framework">
+                <ds:rangejpo classname="com.gsc.enovia.dpm.gscProjectService" function="getCurrencyValues">
+                    <ds:arg arg-name="attributeName" arg-value="Currency"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="notes" description="Notes">
+            <ds:selectable expression="attribute[Notes]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+
+        <ds:field name="owner" description="owner" includeByDefault="yes">
+            <ds:selectable expression="owner" type="bus" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="title" description="Title information if used, otherwise the object name.">
+            <ds:selectable expression="evaluate[if attribute[Title] != '' then attribute[Title] else name]" type="bus"
+                           createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscProjectType" description="Project Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_ProjectType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscBusinessArea" description="Business Area" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscBusinessArea]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes" />
+        </ds:field>
+        <ds:field name="gscReviewType" description="Review Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscReviewType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="businessUnitProject" description="Business Unit Project physicalid"
+                  includeByDefault="no">
+            <ds:selectable expression="to[Business Unit Project].from.physicalid" type="bus" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="hasTask" description="hasTask" includeByDefault="yes">
+            <ds:selectable expression="from[Subtask]" type="bus" autosave="false" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="estimatedStartDate" includeByDefault="no" description="Estimated Start Date">
+            <ds:selectable expression="attribute[Task Estimated Start Date]" autosave="false" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="initiatedTemplateProject" description="Project Template physicalid"
+                  includeByDefault="no">
+            <ds:selectable expression="from[Initiated Template Project].to.physicalid" type="bus" createOperation="yes"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <!--        Custom  End by jrchoi 2022.12.26-->
+
+        <ds:field name="status" includeByDefault="no">
+            <ds:selectable expression="State" type="bus"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getStatus"
+                         localInvokation="true"/>
+        </ds:field>
+        <ds:field name="PALId" description=" The Project Access List object (used for some navigation)"
+                  includeByDefault="no">
+            <ds:selectable expression="to[Project Access List].from.id" type="bus" createOperation="no"
+                           modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="objectId" includeByDefault="no">
+            <ds:selectable expression="id" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="referencedocuments" referenceName="project.references" includeByDefault="yes"/>
+
+
+        <ds:field name="sequenceOrder" includeByDefault="no" description="the task sequence id within a project.">
+            <ds:selectable type="keyrel" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+            <ds:sort type="integer" direction="ascending" order="1"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscProjectService" function="getSequenceOrder"
+                         localInvokation="true">
+                <ds:arg arg-name="taskWBS" arg-value="taskWBS"/>
+                <ds:arg arg-name="palIdField" arg-value="PALId"/>
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="typesForSearch">
+            <ds:selectable transient="true"/>
+            <ds:range>
+                <ds:rangejpo classname="com.gsc.enovia.dpm.gscProjectService"
+                             function="getRangeTypeDerivatives">
+                    <ds:arg arg-name="relKey" arg-value="contextTypesForProjectGantt"/>
+                    <ds:arg arg-name="searchtypes" arg-value="Project Space, Project Concept"/>
+                </ds:rangejpo>
+            </ds:range>
+        </ds:field>
+
+        <ds:field name="image" includeByDefault="no"
+                  description="The thumbnail or type icon associated to the project object.">
+            <ds:image source="primaryOrType" size="medium" indexBasedImage="false"/>
+        </ds:field>
+
+        <ds:field name="project-custom-fields">
+            <ds:customAttributes busTypes="Project Management"/>
+        </ds:field>
+        <!--
+        <ds:ref-subservice name="dpm.projects-custom-fields"/>
+        -->
+
+        <!-- related data -->
+
+        <ds:ref-subservice name="programList" referenceName="programsNameList" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Program Project" getFrom="false" getTo="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+
+        <ds:ref-subservice name="ownerInfo" includeByDefault="no"/>
+        <ds:ref-subservice name="originatorInfo" includeByDefault="no"/>
+        <ds:ref-subservice name="tasks" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Subtask" getFrom="true" recurseLevels="{level}" chunkSize="300"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskService" function="updateTasks"
+                              processMultiple="true"/>
+            </ds:data>
+            <!-- override this definition from tasks as it is N/A in the project services. -->
+            <ds:subservice name="DPMProject" includeByDefault="never" hidden="true"/>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="baselines" includeByDefault="no(private)">
+            <ds:data>
+                <ds:expand relationshipPattern="Project Baseline" getFrom="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="assessments" referenceName="dpm.assessments" includeByDefault="no(private)">
+            <ds:data>
+                <!--            <ds:expand relationshipPattern="Project Assessment" getFrom="true" />  -->
+                <ds:jpo classname="com.dassault_systemes.enovia.dpm.AssessmentService" function="getAssessments"
+                        returnedData="idsAndData"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.dpm.AssessmentService"
+                              function="updateAssessments" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="members" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Member*" getFrom="true"/>
+                <ds:updatejpo classname="com.gsc.enovia.dpm.gscProjectService" function="updateMembers"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:subservice name="background" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.gsc.enovia.dpm.gscProjectService"
+                              function="createProjectInBackground"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:ref-subservice name="risks" referenceName="dpm.risks" includeByDefault="no">
+        </ds:ref-subservice>
+
+        <ds:subservice name="getFloatValues" includeByDefault="no(private)">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getProjectFloatValues"
+                        localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="palIdField" arg-value="PALId"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="getForecastValues" includeByDefault="no(private)">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getProjectForecastValues"
+                        localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="palIdField" arg-value="PALId"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="promoteSuccessor" includeByDefault="no(private)">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="promoteSuccessor"
+                        localInvokation="false" returnedData="idsAndData">
+                    <ds:arg arg-name="palIdField" arg-value="PALId"/>
+                </ds:jpo>
+            </ds:data>
+        </ds:subservice>
+
+        <!-- To get SubTypes of all OOTB types -->
+        <ds:subservice name="subTypesInfo">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getDerivativeTypes"
+                        localInvokation="false" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+        <ds:subservice name="subTypesAndPolicies">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getTypeAndPolicy"
+                        localInvokation="false" returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:ref-subservice name="dpm.opportunities" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="allrisks" referenceName="dpm.allrisks" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="dpm.allopportunities" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="milestones" includeByDefault="no(private)">
+        </ds:ref-subservice>
+
+
+        <ds:ref-subservice name="issues" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getProjectIssues"
+                        returnedData="idsAndData"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:subservice name="programId" includeByDefault="never">
+            <ds:data>
+                <ds:jpo classname="com.gsc.enovia.dpm.gscProjectService" function="getProgramProjects"
+                        returnedData="idsAndData"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:ref-subservice name="folders" referenceName="e6w.workspaceFolders" includeByDefault="no">
+            <ds:data>
+                <ds:jpo classname="com.dassault_systemes.enovia.workspace.WorkspaceService"
+                        function="getWorkspaceFolders" returnedData="idsAndData"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.workspace.WorkspaceService"
+                              function="updateWorkspaceFolders" processMultiple="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="folderId" referenceName="e6w.workspaceFolders" includeByDefault="never">
+            <ds:data>
+                <ds:expand relationshipPattern="Sub Vaults" getFrom="true" recurseLevels="{foldersLevel}"
+                           preserveRoot="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:ref-subservice name="calendar" referenceName="tsk.calendar" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Default Calendar" getFrom="true"/>
+                <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskService" function="updateCalendar"/>
+            </ds:data>
+        </ds:ref-subservice>
+
+        <ds:subservice name="performRollup" includeByDefault="never">
+            <ds:data>
+                <ds:updatejpo classname="com.gsc.enovia.dpm.gscProjectService" function="performRollup"/>
+            </ds:data>
+        </ds:subservice>
+
+        <ds:subservice name="search" includeByDefault="never">
+            <ds:data>
+                <ds:indexQuery typePattern="Project Management" keyword="{searchStr}" limitStr="{$top::50}"
+                               skipStr="{$skip::0}" sortField="{sortField::relevance}"
+                               sortDirection="{sortDirection::desc}"/>
+            </ds:data>
+            <ds:ref-subservice name="dpm.searchFields"/>
+        </ds:subservice>
+
+    </ds:service>
+    <ds:service name="project.references" includeByDefault="yes">
+        <ds:data>
+            <ds:jpo       classname="com.dassault_systemes.enovia.tskv2.TaskReferences" function="getRelatedFiles" localInvokation="false" returnedData="idsAndData">
+                <ds:arg  arg-name="relationshiptype" arg-value="Reference Document"/>
+            </ds:jpo>
+            <ds:updatejpo classname="com.dassault_systemes.enovia.tskv2.TaskReferences" function="updateRelatedFiles">
+                <ds:arg  arg-name="relationshiptype" arg-value="Reference Document"/>
+            </ds:updatejpo>
+        </ds:data>
+        <ds:ref-subservice name="object-fields" description="based on global fields in foundation-services"/>
+        <!--   <ds:ref-subservice name="file-fields" description="based on file specific global fields in foundation-services"/>    -->
+        <ds:field name="linkURL"><ds:selectable busTypes="URL" expression="attribute[Link URL]" type="bus"/></ds:field>
+        <ds:field name="referencesRelationship"><ds:selectable format="transient"/>
+            <ds:range>
+                <ds:item value="parentDirection" display="from"/>
+                <ds:item value="parentRelName" display="Reference Document"/>
+            </ds:range>
+        </ds:field>
+    </ds:service>
+
+    <!-- ******************************************* -->
+    <!-- ***************  PROFILES  **************** -->
+    <!-- ******************************************* -->
+
+    <!-- Edited by HyungJin, Ju 2023-03-21 -->
+
+    <ds:service name="dpm.gscprofiles">
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscProfileService" function="getProfiles"
+                    returnedData="idsAndData"/>
+        </ds:data>
+		<!-- <ds:field name="businessUnitId" includeByDefault="yes" description="Business Unit Employee">
+            <ds:selectable expression="to[Business Unit Employee].from.physicalid" createOperation="required" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscYear" includeByDefault="no" description="gscYear">
+			<ds:selectable expression="attribute[gscYear]"  autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+		</ds:field> -->
+        <ds:field name="id" description="physicalid">
+            <ds:selectable expression="physicalid" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="objectId" description="objectId">
+            <ds:selectable expression="id" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="username" description="The user account name">
+            <ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="name" description="The user account name">
+            <ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="firstname" description="The user's first name">
+            <ds:selectable expression="attribute[First Name]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="lastname" description="The user's last name">
+            <ds:selectable expression="attribute[Last Name]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="fullname"><ds:selectable expression="name" type="bus" format="fullname" createOperation="no" modifyOperation="no"
+                                                 readOperation="yes"/></ds:field>
+        <ds:field name="email" description="The user's email address" includeByDefault="no">
+            <ds:selectable expression="attribute[Email Address]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="country" description="Country" includeByDefault="no">
+            <ds:selectable expression="attribute[Country]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="deptcode" description="deptcode" includeByDefault="no">
+            <ds:selectable expression="to[Member|from.type=='Business Unit'].from.name" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="deptname" description="deptname" includeByDefault="no">
+            <ds:selectable expression="to[Member|from.type=='Business Unit'].from.attribute[Title]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="deptId" description="deptId" includeByDefault="no">
+            <ds:selectable expression="to[Member|from.type=='Business Unit'].from.physicalid" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="status" description="status" includeByDefault="no">
+            <ds:selectable expression="current" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscisresearcher" description="gscisresearcher" includeByDefault="no">
+            <ds:selectable expression="attribute[gscIsResearcher]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="role" description="group" includeByDefault="no">
+            <ds:selectable expression="to[Group Member].from.name" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="policy" description="policy" includeByDefault="no">
+            <ds:selectable expression="policy" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="created" description="Date of last creation to any object information.">
+            <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="modified" description="Date of last modification to any object information.">
+            <ds:selectable expression="modified" format="utc" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="products"  description="License Product" includeByDefault="no">
+            <ds:selectable  expression="name" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscBusinessUnitService"
+                         function="getLicensedProducts" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:field name="defaultsecuritycontext"  description="License Product" includeByDefault="no">
+            <ds:selectable  expression="name" type="bus" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscBusinessUnitService"
+                         function="getLicensedProducts" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+        <ds:subservice name="calendar" includeByDefault="no">
+            <ds:data>
+                <!-- recurse to "rel". -->
+                <ds:expand relationshipPattern="Work Place,Calendar" getFrom="true" recurseToLevel="-2"/>
+            </ds:data>
+
+            <ds:field name="title" description="Common description for the calendar">
+                <ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no"
+                               readOperation="yes"/>
+            </ds:field>
+        </ds:subservice>
+        <ds:ref-subservice name="gscpersonprojects" includeByDefault="no">
+            <ds:data>
+                <ds:expand relationshipPattern="Member" typePattern="type_ProjectSpace,type_ProjectConcept" getFrom="false" getTo="true"/>
+            </ds:data>
+        </ds:ref-subservice>
+    </ds:service>
+
+    <!-- ******************************************* -->
+    <!-- *************  BUSINESS UNIT  ************* -->
+    <!-- ******************************************* -->
+
+    <!-- Edited by HyungJin, Ju 2023-04-04 -->
+
+    <ds:service name="dpm.gscbusinessunits">
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscBusinessUnitService" function="getBusinessUnits"
+                    returnedData="idsAndData"/>
+        </ds:data>
+        <ds:field name="id" description="physicalid">
+            <ds:selectable expression="physicalid" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="title" description="title">
+            <ds:selectable expression="attribute[Title]" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="objectId" description="objectId">
+            <ds:selectable expression="id" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="name" description="The user account name">
+            <ds:selectable expression="name" type="bus" createOperation="no" modifyOperation="no" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="status" description="status" includeByDefault="no">
+            <ds:selectable expression="current" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="policy" description="policy" includeByDefault="no">
+            <ds:selectable expression="policy" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="created" description="Date of last creation to any object information.">
+            <ds:selectable expression="originated" format="utc" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="modified" description="Date of last modification to any object information.">
+            <ds:selectable expression="modified" format="utc" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+
+
+        <!-- Edited by HyungJin, Ju 2023-04-04 -->
+        <!--ds:field name="getActiveMemberCount" includeByDefault="no">
+            <ds:selectable type="key" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscBusinessUnitService"
+                         function="getEstimatedMemberCount" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="getResourcePoolMemberCount" includeByDefault="no">
+            <ds:selectable type="key" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscBusinessUnitService"
+                         function="getEstimatedMemberCount" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field>
+
+        <ds:field name="getEstimatedMemberCount" includeByDefault="no">
+            <ds:selectable type="key" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+            <ds:fieldjpo classname="com.gsc.enovia.dpm.gscBusinessUnitService"
+                         function="getEstimatedMemberCount" localInvokation="true">
+            </ds:fieldjpo>
+        </ds:field-->
+        <!-- Edited by HyungJin, Ju 2023-04-04 -->
+    </ds:service>
+	
+	<!-- ******************************************* -->
+    <!-- ***************  POLYDATA  **************** -->
+    <!-- ******************************************* -->
+
+    <!-- Edited by HyungJin, Ju 2023-05-04 -->
+
+    <ds:service name="dpm.gscpolydataIf">
+        <ds:license products="ENO_PGE_TP"/>
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscPolydataIfService" function="getPolydataIfs"
+                    returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.gscPolydataIfService" function="updatePolydataIfs"
+                          localInvokation="true"/>
+        </ds:data>
+        <ds:field name="taskId" includeByDefault="no" description="taskId">
+            <ds:selectable expression="to[gscInterfaceDeliverable].from.physicalid" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscTitle" includeByDefault="no" description="gscTitle">
+            <ds:selectable expression="attribute[gscTitle]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscNo" includeByDefault="no" description="gscNo">
+            <ds:selectable expression="attribute[gscNo]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscUserId" includeByDefault="no" description="gscUserId">
+            <ds:selectable expression="attribute[gscUserId]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscUserName" includeByDefault="no" description="gscUserName">
+            <ds:selectable expression="attribute[gscUserName]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscProductType" includeByDefault="no" description="gscProductType">
+            <ds:selectable expression="attribute[gscProductType]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscProductTypeLabel" includeByDefault="no" description="gscProductTypeLabel">
+            <ds:selectable expression="attribute[gscProductTypeLabel]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscSendDt" includeByDefault="no" description="gscSendDt">
+            <ds:selectable expression="attribute[gscSendDt]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+		<ds:field name="gscCloseDt" includeByDefault="no" description="gscCloseDt">
+            <ds:selectable expression="attribute[gscCloseDt]" autosave="true" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+    </ds:service>
+	<!-- Edited by HyungJin, Ju 2023-05-04 -->
+	
+    <ds:service name="gscpersonprojects">
+        <ds:data>
+            <ds:print/>
+        </ds:data>
+        <ds:field name="projectAccess">
+            <ds:selectable expression="attribute[Project Access]" type="rel" createOperation="yes" modifyOperation="yes"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscRatio">
+            <ds:selectable expression="attribute[gscRatio]" type="rel" createOperation="yes" modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:ref-subservice name="dpm.basicFields" includeByDefault="yes"/>
+        <ds:field name="percentComplete" description="Percentage complete of project">
+            <ds:selectable expression="attribute[Percent Complete]" type="bus" createOperation="no" modifyOperation="no"
+                           readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscTitle" description="Project Title" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscTitle]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscProjectType" description="Project Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_ProjectType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscBusinessArea" description="Business Area" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscBusinessArea]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes" />
+        </ds:field>
+        <ds:field name="gscGateType" description="Stage Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscGateType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscReviewType" description="Review Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscReviewType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscIsCurrentYearReview" description="Is Current Year Review" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscIsCurrentYearReview]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscFundingType" description="Funding Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscFundingType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscSourcingType" description="Sourcing Type" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscSourcingType]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+        <ds:field name="gscProjectSite" description="Project Site" includeByDefault="yes">
+            <ds:selectable expression="attribute[attribute_gscProjectSite]" type="bus" autosave="true" createOperation="yes"
+                           modifyOperation="yes" readOperation="yes"/>
+        </ds:field>
+    </ds:service>
+    <ds:service name="gscdocuments">
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscDocumentService" function="getDocuments"
+                    returnedData="idsAndData"/>
+        </ds:data>
+
+        <ds:ref-subservice name="e6w.documents.fields" includeByDefault="yes"/>
+    </ds:service>
+	<!-- Hyungjin Ju, 230418 -->
+	<ds:service name="gscProjectBudgetIf" includeByDefault="yes">
+        <ds:data>
+            <ds:print />
+        </ds:data>
+
+        <ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+		<ds:field name="id"><ds:selectable expression="id" type="bus"/></ds:field>
+        <ds:field name="physicalid"><ds:selectable expression="physicalid" type="bus"/></ds:field>
+        <ds:field name="gscKostl"><ds:selectable expression="attribute[gscKostl]" type="bus"/></ds:field>
+		<ds:field name="gscKostlTx"><ds:selectable expression="attribute[gscKostlTx]" type="bus"/></ds:field>
+		<ds:field name="gscAmtAct"><ds:selectable expression="attribute[gscAmtAct]" type="bus"/></ds:field>
+		<ds:field name="gscAmtActM"><ds:selectable expression="attribute[gscAmtActM]" type="bus"/></ds:field>
+		<ds:field name="gscAmtPlanYear"><ds:selectable expression="attribute[gscAmtPlanYear]" type="bus"/></ds:field>
+		<ds:field name="gscSaknrTx"><ds:selectable expression="attribute[gscSaknrTx]" type="bus"/></ds:field>
+		<ds:field name="gscWaers"><ds:selectable expression="attribute[gscWaers]" type="bus"/></ds:field>
+		<ds:field name="gscSaknr"><ds:selectable expression="attribute[gscSaknr]" type="bus"/></ds:field>
+		<ds:field name="revision"><ds:selectable expression="revision" type="bus"/></ds:field>
+		
+    </ds:service>
+	
+	<ds:service name="gscBusinessGoalProjectSpace" includeByDefault="yes">
+        <ds:data>
+            <ds:print />
+        </ds:data>
+
+        <ds:field name="projectId"><ds:selectable expression="from[Business Goal Project Space].to.physicalid" type="bus"/></ds:field>
+		<ds:field name="parentId"><ds:selectable expression="id" type="bus"/></ds:field>
+		<ds:field name="businessUnitId"><ds:selectable expression="to[Organization Goal].from.physicalid" type="bus"/></ds:field>
+		<ds:field name="gscBusinessGoalTeam"><ds:selectable expression="from[gscBusinessGoalTeam].to.physicalid" type="bus"/></ds:field>
+        <ds:field name="gscYear"><ds:selectable expression="attribute[gscYear]"  type="bus"/></ds:field>
+        <ds:field name="originator"><ds:selectable expression="attribute[Originator]"  type="bus"/></ds:field>
+        <ds:field name="measureofSuccess"><ds:selectable expression="attribute[Measure of Success]"  type="bus"/></ds:field>
+        <ds:field name="operationalDefinition"><ds:selectable expression="attribute[Operational Definition]"  type="bus"/></ds:field>
+        <ds:field name="businessBenefit"><ds:selectable expression="attribute[Business Benefit]"  type="bus"/></ds:field>
+        <ds:field name="gscRatio"><ds:selectable expression="attribute[gscRatio]"  type="bus"/></ds:field>
+        <ds:field name="gscMeasureUnit"><ds:selectable expression="attribute[gscMeasureUnit]"  type="bus"/></ds:field>
+        <ds:field name="gscGoalMeasure"><ds:selectable expression="attribute[gscGoalMeasure]"  type="bus"/></ds:field>
+		<ds:field name="gscKPIType"><ds:selectable expression="attribute[gscKPIType]"  type="bus"/></ds:field>
+        <ds:field name="comments"><ds:selectable expression="attribute[Comments]"  type="bus"/></ds:field>
+		<ds:field name="description"><ds:selectable expression="description"  type="bus"/></ds:field>
+		<ds:field name="owner"><ds:selectable expression="owner" type="bus"/></ds:field>		
+    </ds:service>
+	<!-- Hyungjin Ju, 230418 -->
+
+    <!-- Soojung Kwak, 230419 -->
+    <ds:service name="gscProjectInvestIf" includeByDefault="yes">
+        <ds:data>
+            <ds:jpo classname="com.gsc.enovia.dpm.gscProjectInvestService" function="getProjectInvest"
+                    returnedData="idsAndData"/>
+            <ds:updatejpo classname="com.gsc.enovia.dpm.gscProjectInvestService" function="updateProjectInvestIf"
+                          localInvokation="true"/>
+        </ds:data>
+
+        <ds:field name="name"><ds:selectable expression="name" type="bus"/></ds:field>
+        <ds:field name="id"><ds:selectable expression="id" type="bus"/></ds:field>
+        <ds:field name="physicalid"><ds:selectable expression="physicalid" type="bus"/></ds:field>
+        <ds:field name="gscBizNm"><ds:selectable expression="attribute[gscBizNm]" type="bus"/></ds:field>
+        <ds:field name="gscDeptNm"><ds:selectable expression="attribute[gscDeptNm]" type="bus"/></ds:field>
+        <ds:field name="gscLineNo"><ds:selectable expression="attribute[gscLineNo]" type="bus"/></ds:field>
+        <ds:field name="gscRemAmt"><ds:selectable expression="attribute[gscRemAmt]" type="bus"/></ds:field>
+        <ds:field name="gscRsltAmt01"><ds:selectable expression="attribute[gscRsltAmt01]" type="bus"/></ds:field>
+        <ds:field name="gscRsltAmt02"><ds:selectable expression="attribute[gscRsltAmt02]" type="bus"/></ds:field>
+        <ds:field name="gscWbsCd"><ds:selectable expression="attribute[gscWbsCd]" type="bus"/></ds:field>
+        <ds:field name="gscMgmBgtAmt"><ds:selectable expression="attribute[gscMgmBgtAmt]" type="bus"/></ds:field>
+        <ds:field name="gscPlnAmt"><ds:selectable expression="attribute[gscPlnAmt]" type="bus"/></ds:field>
+        <ds:field name="revision"><ds:selectable expression="revision" type="bus"/></ds:field>
+        <ds:ref-subservice name="dpm.basicFields" includeByDefault="yes"/>
+    </ds:service>
+    <!-- Soojung Kwak, 230419 -->
+</ds:services>
+

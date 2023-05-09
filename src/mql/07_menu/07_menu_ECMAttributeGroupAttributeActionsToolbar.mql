@@ -1,0 +1,16 @@
+del menu 'ECMAttributeGroupAttributeActionsToolbar';
+add menu 'ECMAttributeGroupAttributeActionsToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMAttributeGroupAttributeAddExisting'
+	command	'ECMAttributeGroupAttributeRemove'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMAttributeGroupAttributeActionsToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMAttributeGroupAttributeActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMAttributeGroupAttributeActionsToolbar';

@@ -1,0 +1,9 @@
+del portal 'APPXPPreferencesAdminPortal';
+add portal 'APPXPPreferencesAdminPortal'
+	description	'Preferences Administration'
+	label	'Manage Options'
+	href	''
+	channel 	AdminPreferencesXPChannel
+	setting	'Registered Suite'		'Framework'
+;
+add property portal_APPXPPreferencesAdminPortal on program eServiceSchemaVariableMapping.tcl to portal 'APPXPPreferencesAdminPortal';

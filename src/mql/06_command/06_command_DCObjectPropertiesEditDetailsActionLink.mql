@@ -1,0 +1,26 @@
+del command 'DCObjectPropertiesEditDetailsActionLink';
+add command 'DCObjectPropertiesEditDetailsActionLink'
+	description	'Edit Details Action Link on Properties'
+	label	'emxDocumentCentral.ActionBarCmd.EditDetails'
+	href	'${SUITE_DIR}/emxDocumentCentralObjectEditDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'580'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectPropertiesEditDetailsActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCObjectPropertiesTopActionbar add command DCObjectPropertiesEditDetailsActionLink order command DCObjectPropertiesEditDetailsActionLink 1;
+modify menu DCGenericDocumentPropertiesTopActionbar add command DCObjectPropertiesEditDetailsActionLink order command DCObjectPropertiesEditDetailsActionLink 1;
+modify menu DCFolderPropertiesTopActionbar add command DCObjectPropertiesEditDetailsActionLink order command DCObjectPropertiesEditDetailsActionLink 1;
+modify menu DCCompanyPropertiesTopActionbar add command DCObjectPropertiesEditDetailsActionLink order command DCObjectPropertiesEditDetailsActionLink 0;
+#channel ==>DCObjectPropertiesTopActionbarDCGenericDocumentPropertiesTopActionbarDCFolderPropertiesTopActionbarDCCompanyPropertiesTopActionbar
+add property command_DCObjectPropertiesEditDetailsActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectPropertiesEditDetailsActionLink';

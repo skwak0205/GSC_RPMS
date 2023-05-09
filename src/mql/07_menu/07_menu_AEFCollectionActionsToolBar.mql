@@ -1,0 +1,20 @@
+del menu 'AEFCollectionActionsToolBar';
+add menu 'AEFCollectionActionsToolBar'
+	description	''
+	label	'emxFramework.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'AEFCollectionsCreateNew'
+	command	'AEFSeparator'
+	command	'AEFDuplicateCollection'
+	command	'AEFSeparator2'
+	command	'AEFCollectionDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFCollectionActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_AEFCollectionActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'AEFCollectionActionsToolBar';

@@ -1,0 +1,32 @@
+del table 'PMCReportDemandVersusCapacityTB' system;
+add table 'PMCReportDemandVersusCapacityTB' system
+column #1
+	name	'Monthly Breakdown'
+	label	'emxProgramCentral.ResourcePlanning.Report.MonthlyBreakdown'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'program'
+	setting	'function'		'getColumnRowHeaderData'
+	setting	'program'		'emxResourcePoolReports'
+column #2
+	name	'Month Object Dynamic Column'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getDynamicMonthYearColumns'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'emxResourcePoolReports'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportDemandVersusCapacityTB'
+	property	'version'	value	'R208'
+;
+add property table_PMCReportDemandVersusCapacityTB on program eServiceSchemaVariableMapping.tcl to table 'PMCReportDemandVersusCapacityTB' system;

@@ -1,0 +1,17 @@
+del menu 'type_ChangeActionRMB';
+add menu 'type_ChangeActionRMB'
+	description	''
+	label	'${NAME}'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMCAPropertiesRMB'
+	command	'ECMCAEditDetailsRMB'
+	command	'AEFLifecycle'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_ChangeActionRMB'
+	property 'version'	value	'R216'
+;
+add property menu_type_ChangeActionRMB on program eServiceSchemaVariableMapping.tcl to menu 'type_ChangeActionRMB';

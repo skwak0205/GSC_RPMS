@@ -1,0 +1,21 @@
+del command 'APPMeetingAttachmentRemove';
+add command 'APPMeetingAttachmentRemove'
+	description	''
+	label	'emxComponents.Common.RemoveMeetingAttachment'
+	href	'${COMPONENT_DIR}/emxMeetingAttachmentsRemove.jsp?action=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingAttachmentRemove'
+	property	'version'	value	'R417'
+;
+modify menu APPMeetingAttachmentBottomActionBar add command APPMeetingAttachmentRemove order command APPMeetingAttachmentRemove 0;
+modify menu APPMeetingAttachmentsActionToolbar add command APPMeetingAttachmentRemove order command APPMeetingAttachmentRemove 0;
+#channel ==>APPMeetingAttachmentBottomActionBarAPPMeetingAttachmentsActionToolbar
+add property command_APPMeetingAttachmentRemove on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingAttachmentRemove';

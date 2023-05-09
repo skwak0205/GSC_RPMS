@@ -1,0 +1,8 @@
+{
+  "SplashLoading": "Loading",
+  "SplashConverting": "Converting",
+  "TextFatal": "Preview not available",
+  "DROP_MSG_LP": "Drop your content here",
+  "PasswordException" : "PDF cannot be opened because no password has been provided",
+  "Empty_SVG" : "File cannot be opened because it is empty"
+}

@@ -1,0 +1,16 @@
+del command 'PMCProjectApprovalsRoutesPowerView';
+add command 'PMCProjectApprovalsRoutesPowerView'
+	description	'Approvals&Routes PowerView command'
+	label	'emxFramework.Command.ApprovalsRoutes'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCProjectApprovalsRoutesPortal&showPageHeader=false&HelpMarker=emxhelpapprovalsummary'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectApprovalsRoutesPowerView'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_PMCProjectApprovalsRoutesPowerView on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectApprovalsRoutesPowerView';

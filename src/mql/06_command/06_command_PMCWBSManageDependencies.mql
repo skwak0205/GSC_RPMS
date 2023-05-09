@@ -1,0 +1,23 @@
+del command 'PMCWBSManageDependencies';
+add command 'PMCWBSManageDependencies'
+	description	''
+	label	'emxProgramCentral.Common.ManageDependencies'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=manageDependencies'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSManageDependencies'
+	property	'version'	value	'R422'
+;
+#channel ==>PMCTaskDependenciesChannel
+add property command_PMCWBSManageDependencies on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSManageDependencies';

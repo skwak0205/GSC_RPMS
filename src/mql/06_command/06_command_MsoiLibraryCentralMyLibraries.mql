@@ -1,0 +1,16 @@
+del command 'MsoiLibraryCentralMyLibraries';
+add command 'MsoiLibraryCentralMyLibraries'
+	description	'UI3 based My Desk Libraries Command object specific to MS Office Integration'
+	label	'emxLibraryCentral.Command.Libraries'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxLibraryCentralUtil:getAllLibraries,emxLibraryCentralUtil:getAllDocumentLibraries,emxLibraryCentralUtil:getAllGeneralLibraries,emxLibraryCentralUtil:getAllPartLibraries&programLabel=emxDocumentCentral.Common.All,emxLibraryCentral.Common.DocumentLibrary,emxLibraryCentral.Common.GeneralLibrary,emxLibraryCentral.Common.PartLibrary&table=LCLibraryList&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=LCLibrariesToolBar&header=emxDocumentCentral.Common.Libraries&HelpMarker=emxhelplibrarylist&path=Library'
+	alt	'emxLibraryCentral.Command.Libraries'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiLibraryCentralMyLibraries'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>IEF ENOVIA Root
+add property command_MsoiLibraryCentralMyLibraries on program eServiceSchemaVariableMapping.tcl to command 'MsoiLibraryCentralMyLibraries';

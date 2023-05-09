@@ -1,0 +1,17 @@
+del command 'APPLocationNewSearch';
+add command 'APPLocationNewSearch'
+	description	'APP Location Search Command Object'
+	label	'emxComponents.Button.NewSearch'
+	href	'${COMPONENT_DIR}/emxComponentsLocationSearchDialogFS.jsp?fieldName=Location&SubmitURL=../components/emxComponentsChooserProcess.jsp'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLocationNewSearch'
+	property	'version'	value	'10-7'
+;
+modify menu APPLocationSearchToolBar add command APPLocationNewSearch order command APPLocationNewSearch 0;
+#channel ==>APPLocationSearchToolBar
+add property command_APPLocationNewSearch on program eServiceSchemaVariableMapping.tcl to command 'APPLocationNewSearch';

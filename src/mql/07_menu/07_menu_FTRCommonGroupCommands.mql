@@ -1,0 +1,17 @@
+del menu 'FTRCommonGroupCommands';
+add menu 'FTRCommonGroupCommands'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRAddCommonGroupActionLink'
+	command	'FTRRemoveCommonGroupActionLink'
+	command	'FTRRenameCommonGroupActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRCommonGroupCommands'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_FTRCommonGroupCommands on program eServiceSchemaVariableMapping.tcl to menu 'FTRCommonGroupCommands';

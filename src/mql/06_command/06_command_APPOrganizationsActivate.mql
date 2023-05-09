@@ -1,0 +1,24 @@
+del command 'APPOrganizationsActivate';
+add command 'APPOrganizationsActivate'
+	description	'Activate Organizations'
+	label	'emxComponents.Common.Activate'
+	href	'${SUITE_DIR}/emxComponentsOrganizationActivateProcess.jsp'
+	alt	'emxComponents.Common.Activate'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActivate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPOrganizationsActivate'
+	property	'version'	value	'R420.HF2'
+;
+modify menu APPBusinessUnitSummaryActionsToolBar add command APPOrganizationsActivate order command APPOrganizationsActivate 6;
+#channel ==>APPBusinessUnitSummaryActionsToolBar
+add property command_APPOrganizationsActivate on program eServiceSchemaVariableMapping.tcl to command 'APPOrganizationsActivate';

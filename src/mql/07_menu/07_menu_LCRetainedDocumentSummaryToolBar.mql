@@ -1,0 +1,15 @@
+del menu 'LCRetainedDocumentSummaryToolBar';
+add menu 'LCRetainedDocumentSummaryToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	menu	'LCRetainedDocumentSummaryActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCRetainedDocumentSummaryToolBar'
+	property 'version'	value	'10-7-SP1'
+;
+add property menu_LCRetainedDocumentSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCRetainedDocumentSummaryToolBar';

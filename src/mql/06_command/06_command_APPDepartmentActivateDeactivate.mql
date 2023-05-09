@@ -1,0 +1,23 @@
+del command 'APPDepartmentActivateDeactivate';
+add command 'APPDepartmentActivateDeactivate'
+	description	'Command to activate or deactivate department'
+	label	'emxComponents.Common.ActivateDeActivate'
+	href	'${COMPONENT_DIR}/emxComponentsOrganizationActivateDeactivateProcess.jsp'
+	alt	'emxComponents.Common.ActivateDeActivate'
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActivateDeActivate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDepartmentActivateDeactivate'
+	property	'version'	value	'R420.HF2'
+;
+modify menu APPDepartmentDetailsActionsToolBar add command APPDepartmentActivateDeactivate order command APPDepartmentActivateDeactivate 0;
+#channel ==>APPDepartmentDetailsActionsToolBar
+add property command_APPDepartmentActivateDeactivate on program eServiceSchemaVariableMapping.tcl to command 'APPDepartmentActivateDeactivate';

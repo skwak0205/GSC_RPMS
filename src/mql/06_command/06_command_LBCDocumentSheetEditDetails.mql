@@ -1,0 +1,24 @@
+del command 'LBCDocumentSheetEditDetails';
+add command 'LBCDocumentSheetEditDetails'
+	description	'Document Sheet Edit'
+	label	'emxDocumentCentral.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_DocumentSheet&mode=edit&HelpMarker=emxhelpeditobject&formHeader=emxDocumentCentral.Common.Edit&Export=False&findMxLink=false&displayCDMFileSummary=true'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasModifyAccess'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallDocument.gif'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCDocumentSheetEditDetails'
+	property	'version'	value	'R216'
+;
+modify menu LBCDocumentSheetActionsToolBar add command LBCDocumentSheetEditDetails order command LBCDocumentSheetEditDetails 1;
+#channel ==>LBCDocumentSheetActionsToolBar
+add property command_LBCDocumentSheetEditDetails on program eServiceSchemaVariableMapping.tcl to command 'LBCDocumentSheetEditDetails';

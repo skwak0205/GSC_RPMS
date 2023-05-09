@@ -1,0 +1,18 @@
+del command 'PMCResourcePlanView';
+add command 'PMCResourcePlanView'
+	description	''
+	label	'emxProgramCentral.Button.WBSView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCResourcePlanViewTable'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePlanView'
+	property	'version'	value	'R216'
+;
+modify menu PMCResourcePlanTableMenu add command PMCResourcePlanView order command PMCResourcePlanView 0;
+#channel ==>PMCResourcePlanTableMenu
+add property command_PMCResourcePlanView on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePlanView';

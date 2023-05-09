@@ -1,0 +1,4 @@
+#이경준책임
+set context user C16890 pass Qwer1234 role ctx::VPLMProjectLeader.R17000.RPMS;
+#조정희책임
+set context user C13869 pass Qwer1234 role ctx::VPLMProjectLeader.R58000.RPMS;

@@ -1,0 +1,17 @@
+del command 'DataGridLookupRowAboveCommand';
+add command 'DataGridLookupRowAboveCommand'
+	description	''
+	label	'emxFramework.GridView.LookupRowAbove'
+	href	'javascript:StandardFunctions.lookupRowAbove()'
+	alt	'emxFramework.GridView.LookupRowAbove'
+	setting	'Access Function'		'canLookupRow'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridLookupRowAboveCommand'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridLookupRowMenu add command DataGridLookupRowAboveCommand order command DataGridLookupRowAboveCommand 1;
+#channel ==>DataGridLookupRowMenu
+add property command_DataGridLookupRowAboveCommand on program eServiceSchemaVariableMapping.tcl to command 'DataGridLookupRowAboveCommand';

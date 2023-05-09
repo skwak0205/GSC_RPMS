@@ -1,0 +1,23 @@
+del command 'PMCWTSViewFilter';
+add command 'PMCWTSViewFilter'
+	description	''
+	label	'emxProgramCentral.WeeklyTimeSheet.Reports.View'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=reportView'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getFilterStates'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Range Program'		'emxWeeklyTimeSheetBase'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWTSViewFilter'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimeSheetReportViewToolbarMenu add command PMCWTSViewFilter order command PMCWTSViewFilter 0;
+modify menu PMCWeeklyTimeSheetReportViewFilterToolbarMenu add command PMCWTSViewFilter order command PMCWTSViewFilter 1;
+modify menu PMCWeeklyTimeSheetReportViewFilterToolbar add command PMCWTSViewFilter order command PMCWTSViewFilter 1;
+#channel ==>PMCWeeklyTimeSheetReportViewToolbarMenuPMCWeeklyTimeSheetReportViewFilterToolbarMenuPMCWeeklyTimeSheetReportViewFilterToolbar
+add property command_PMCWTSViewFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCWTSViewFilter';

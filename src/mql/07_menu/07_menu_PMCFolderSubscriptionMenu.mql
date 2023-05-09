@@ -1,0 +1,17 @@
+del menu 'PMCFolderSubscriptionMenu';
+add menu 'PMCFolderSubscriptionMenu'
+	description	''
+	label	'emxProgramCentral.FolderSubscription.FolderSubscriptions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallSubscription.gif'
+	command	'PMCWorkspaceVaultPushSubscription'
+	command	'PMCWorkspaceVaultDocumentPushSubscription'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCFolderSubscriptionMenu'
+	property 'version'	value	'R417'
+;
+add property menu_PMCFolderSubscriptionMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCFolderSubscriptionMenu';

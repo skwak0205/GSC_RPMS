@@ -1,0 +1,22 @@
+del menu 'RMTSCETreeRMB';
+add menu 'RMTSCETreeRMB'
+	description	''
+	label	'RMTSCETreeRMB'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTSCETreeExpandAll'
+	command	'RMTSCETreeCollapseAll'
+	command	'AEFSeparator'
+	command	'RMTSCETreeSelectAllChildren'
+	command	'RMTSCETreeUnselectAllChildren'
+	command	'AEFSeparator2'
+	command	'RMTSCETreeSelectAllDescendants'
+	command	'RMTSCETreeUnselectAllDescendants'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSCETreeRMB'
+	property 'version'	value	'V6R2013'
+;
+add property menu_RMTSCETreeRMB on program eServiceSchemaVariableMapping.tcl to menu 'RMTSCETreeRMB';

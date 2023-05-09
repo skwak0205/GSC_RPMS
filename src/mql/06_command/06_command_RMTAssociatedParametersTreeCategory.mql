@@ -1,0 +1,18 @@
+del command 'RMTAssociatedParametersTreeCategory';
+add command 'RMTAssociatedParametersTreeCategory'
+	description	'Display parameters to a certain object.'
+	label	'emxRequirements.Associate.Parameters'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?objectID=${ID}&program=emxParameterUtilitiesRmt:getAssociatedParameters&table=PLMAssociatedParameters&editLink=true&relationship=relationship_ParameterUsage&header=emxParameter.Associate.Header&direction=from&toolbar=PLMAssociatedParametersToolbar&selection=multiple&sortColumnName=ParameterType'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTAssociatedParametersTreeCategory'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTAssociatedParametersTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTAssociatedParametersTreeCategory';

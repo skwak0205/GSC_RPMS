@@ -1,0 +1,14 @@
+del menu 'type_PlmParameter';
+add menu 'type_PlmParameter'
+	description	''
+	label	'$<name>, $<revision>'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PARCreateParameterWebForm&mode=view&editLink=true&submitAction=refreshCaller&toolbar=none&postProcessJPO=emxParameterEdit:updateFormValues'
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	command	'AEFHistory'
+	command	'AEFLifecycle'
+	command	'PARWhereUsedTreeCategory'
+	command	'PARRevisionsTreeCategory'
+	command	'PLMAddExtensionCmd'
+;
+add property menu_type_PlmParameter on program eServiceSchemaVariableMapping.tcl to menu 'type_PlmParameter';

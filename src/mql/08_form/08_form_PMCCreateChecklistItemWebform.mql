@@ -1,0 +1,30 @@
+del form 'PMCCreateChecklistItemWebform';
+add form 'PMCCreateChecklistItemWebform' web
+field #1
+	name	'Description'
+	businessobject	'description'
+	label	'emxProgramCentral.Common.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'ProgramCentral'
+field #2
+	name	'Response Type'
+	businessobject	'$<attribute[attribute_ResponseType].value>'
+	label	'emxProgramCentral.Common.Checklist.ResponseType'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Range Function'		'getResponseType'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'Range Program'		'emxChecklist'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCreateChecklistItemWebform'
+	property	'version'	value	'R210'
+;
+add property form_PMCCreateChecklistItemWebform on program eServiceSchemaVariableMapping.tcl to form 'PMCCreateChecklistItemWebform';

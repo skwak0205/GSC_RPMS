@@ -1,0 +1,18 @@
+del menu 'PMCReportDateToolbarMenu';
+add menu 'PMCReportDateToolbarMenu'
+	description	''
+	label	'emxProgramCentral.Report.PMCReportDateToolbarMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCCustomFilterFromDateBox'
+	command	'PMCCustomFilterToDateBox'
+	command	'PMCCustomFilterSubmitButton'
+	command	'PMCCustomFilterReportChart'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCReportDateToolbarMenu'
+	property 'version'	value	'R210'
+;
+add property menu_PMCReportDateToolbarMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCReportDateToolbarMenu';

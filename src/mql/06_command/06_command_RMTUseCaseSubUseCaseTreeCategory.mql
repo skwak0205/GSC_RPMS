@@ -1,0 +1,28 @@
+del command 'RMTUseCaseSubUseCaseTreeCategory';
+add command 'RMTUseCaseSubUseCaseTreeCategory'
+	description	''
+	label	'emxRequirements.Tree.SubUseCase'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=RMTUseCaseList&freezePane=Name&program=emxUseCase:getRelatedUseCases&header=emxRequirements.Heading.UseCase.SubUseCases&selection=multiple&topActionbar=RMTUseCaseSubUseCaseTopActionBar&bottomActionbar=RMTUseCaseSubUseCaseBottomActionBar&rel=relationship_SubUseCases&sortColumnName=Name&HelpMarker=emxhelpusecaselistsubusecase'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'COMMON_DIR/iconSmallUseCase.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTUseCaseSubUseCaseTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_UseCase add command RMTUseCaseSubUseCaseTreeCategory order command RMTUseCaseSubUseCaseTreeCategory 9;
+modify menu Msoitype_UseCase add command RMTUseCaseSubUseCaseTreeCategory order command RMTUseCaseSubUseCaseTreeCategory 0;
+#channel ==>type_UseCaseMsoitype_UseCase
+add property command_RMTUseCaseSubUseCaseTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTUseCaseSubUseCaseTreeCategory';

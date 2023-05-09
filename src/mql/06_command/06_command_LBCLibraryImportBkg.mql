@@ -1,0 +1,24 @@
+del command 'LBCLibraryImportBkg';
+add command 'LBCLibraryImportBkg'
+	description	'Library Import command background'
+	label	'emxMultipleClassification.Command.ImportBkg'
+	href	'${SUITE_DIR}/emxLibraryCentralImportLibraryFS.jsp?AGImport=false&bkgprocess=true&heading=bkg'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCLibraryImportBkg'
+	property	'version'	value	'R422'
+;
+modify menu LCLibrariesActionsToolBar add command LBCLibraryImportBkg order command LBCLibraryImportBkg 5;
+#channel ==>LCLibrariesActionsToolBar
+add property command_LBCLibraryImportBkg on program eServiceSchemaVariableMapping.tcl to command 'LBCLibraryImportBkg';

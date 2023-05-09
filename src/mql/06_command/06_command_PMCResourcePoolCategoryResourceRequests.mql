@@ -1,0 +1,20 @@
+del command 'PMCResourcePoolCategoryResourceRequests';
+add command 'PMCResourcePoolCategoryResourceRequests'
+	description	'Shows Resource Pools child resource requests'
+	label	'emxProgramCentral.ResourcePool.Category.ResourceRequests'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCResourceRequestSummaryTable&program=emxResourceRequest:getTableResourcePoolRequestData&freezePane=Name&selection=multiple&HelpMarker=emxhelpresourcepoolrequests&header=emxProgramCentral.ResourcePool.Category.ResourceRequestsHeading&editLink=true&expandProgram=emxResourceRequest:getTableExpandChildResourceRequestData&toolbar=PMCResourcePoolRequestToolbar&postProcessJPO=emxResourceRequestBase:postProcessRefreshTable'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePoolCategoryResourceRequests'
+	property	'version'	value	'R422'
+;
+modify menu PMCResourcePoolTree add command PMCResourcePoolCategoryResourceRequests order command PMCResourcePoolCategoryResourceRequests 3;
+#channel ==>PMCResourcePoolTree
+add property command_PMCResourcePoolCategoryResourceRequests on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePoolCategoryResourceRequests';

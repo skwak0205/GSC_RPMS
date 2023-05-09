@@ -1,0 +1,22 @@
+del command 'PMCAssignmentMyDesk';
+add command 'PMCAssignmentMyDesk'
+	description	'Assignment Command Object'
+	label	'emxFramework.MenuItem.Assignments'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxTask:getAssignedWBSTask,emxTask:getAllWBSTask,emxTask:getCompletedWBSTask&programLabel=emxProgramCentral.Common.AssignedTasks,emxProgramCentral.Common.All,emxProgramCentral.Common.CompletedTasks&table=PMCAssignedWBSTaskSummary&toolbar=PMCActualEffortToolbar&header=emxProgramCentral.Common.Assignments&sortColumnName=EstFinishDate&sortDirection=ascending&Export=false&HelpMarker=emxhelpassignmentsummary&editLink=true&selection=multiple&freezePane=WBSTaskName&StringResourceFileId=emxProgramCentralStringResource&postProcessJPO=emxWeeklyTimeSheet:postProcessRefresh'
+	alt	'emxFramework.MenuItem.Assignments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssignmentMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyDesk add command PMCAssignmentMyDesk order command PMCAssignmentMyDesk 2;
+#channel ==>PMCMyDesk
+add property command_PMCAssignmentMyDesk on program eServiceSchemaVariableMapping.tcl to command 'PMCAssignmentMyDesk';

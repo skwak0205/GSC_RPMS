@@ -1,0 +1,32 @@
+del table 'DomainProjects' system;
+add table 'DomainProjects' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxFramework.Common.Project'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'Access'
+	businessobject	'type'
+	label	'emxFramework.Common.Access'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Admin Type'		'Type'
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DomainProjects'
+	property	'version'	value	'R215'
+;
+add property table_DomainProjects on program eServiceSchemaVariableMapping.tcl to table 'DomainProjects' system;

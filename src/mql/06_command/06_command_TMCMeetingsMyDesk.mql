@@ -1,0 +1,19 @@
+del command 'TMCMeetingsMyDesk';
+add command 'TMCMeetingsMyDesk'
+	description	'Meetings Command Object'
+	label	'emxFramework.MenuItem.Meetings'
+	href	'${SUITE_DIR}/emxTeamMyMeetingSummaryFS.jsp'
+	alt	'emxFramework.MenuItem.Meetings'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCMeetingsMyDesk'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCMeetingsMyDesk on program eServiceSchemaVariableMapping.tcl to command 'TMCMeetingsMyDesk';

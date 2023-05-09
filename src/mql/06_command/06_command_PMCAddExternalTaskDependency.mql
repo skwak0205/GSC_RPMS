@@ -1,0 +1,26 @@
+del command 'PMCAddExternalTaskDependency';
+add command 'PMCAddExternalTaskDependency'
+	description	'Command for adding external task dependency'
+	label	'emxProgramCentral.Dependency.ExternalProject'
+	href	'${SUITE_DIR}/emxProgramCentralCommonFS.jsp?suiteKey=eServiceSuiteProgramCentral&topLinks=false&bottomLinks=false&wizType=Clone&p_button=Next&pageName=StartPage&functionality=ExternalCrossProjectDependencyStep1&externalDependency=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'720'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasAccessToExternalTask'
+	setting	'Access Program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddExternalTaskDependency'
+	property	'version'	value	'R422'
+;
+modify menu PMCTaskDependencyActionMenu add command PMCAddExternalTaskDependency order command PMCAddExternalTaskDependency 2;
+#channel ==>PMCTaskDependencyActionMenu
+add property command_PMCAddExternalTaskDependency on program eServiceSchemaVariableMapping.tcl to command 'PMCAddExternalTaskDependency';

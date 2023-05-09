@@ -1,0 +1,22 @@
+del command 'APPDocumentRevisions';
+add command 'APPDocumentRevisions'
+	description	'lists the Document Revisions'
+	label	'emxComponents.RouteTemplate.Revisions'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getRevisions&table=APPDocumentRevisions&toolbar=APPDocumentRevisionsToolBar&header=emxComponents.Common.RevisionsPageHeading&subHeader=emxComponents.Menu.SubHeaderDocuments&HelpMarker=emxhelpdocumentfilerevisions'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDocumentRevisions'
+	property	'version'	value	'R422'
+;
+modify menu type_DOCUMENTS add command APPDocumentRevisions order command APPDocumentRevisions 11;
+modify menu type_Specification add command APPDocumentRevisions order command APPDocumentRevisions 11;
+modify menu FMAtype_Document add command APPDocumentRevisions order command APPDocumentRevisions 1;
+#channel ==>type_DOCUMENTStype_SpecificationFMAtype_Document
+add property command_APPDocumentRevisions on program eServiceSchemaVariableMapping.tcl to command 'APPDocumentRevisions';

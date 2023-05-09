@@ -1,0 +1,18 @@
+del command 'AEFTriggerValidationSB';
+add command 'AEFTriggerValidationSB'
+	description	'Command to Validate the Triggers'
+	label	'emxFramework.Command.Label.TriggerValidation'
+	href	'javascript:triggerValidation()'
+	alt	'emxFramework.Command.Tooltip.TriggerValidation'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconStatusCheckmark.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTriggerValidationSB'
+	property	'version'	value	'V6R2008-2.0'
+;
+#channel ==>
+add property command_AEFTriggerValidationSB on program eServiceSchemaVariableMapping.tcl to command 'AEFTriggerValidationSB';

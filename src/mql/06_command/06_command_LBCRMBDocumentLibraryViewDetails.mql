@@ -1,0 +1,18 @@
+del command 'LBCRMBDocumentLibraryViewDetails';
+add command 'LBCRMBDocumentLibraryViewDetails'
+	description	''
+	label	'emxLibraryCentral.Command.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_LCCommonProperties&toolbar=LCObjectDetailsToolBar&HelpMarker=emxhelpcontainerproperties&formHeader=emxDocumentCentral.Common.Properties&Export=False&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCRMBDocumentLibraryViewDetails'
+	property	'version'	value	'R216'
+;
+modify menu type_LibraryRMB add command LBCRMBDocumentLibraryViewDetails order command LBCRMBDocumentLibraryViewDetails 1;
+#channel ==>type_LibraryRMB
+add property command_LBCRMBDocumentLibraryViewDetails on program eServiceSchemaVariableMapping.tcl to command 'LBCRMBDocumentLibraryViewDetails';

@@ -1,0 +1,17 @@
+del command 'PLCSearchCompanyCommand';
+add command 'PLCSearchCompanyCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindCompany'
+	href	'${COMMON_DIR}/emxFormEditDisplay.jsp?program=emxProductSearch:getCompanies&table=PLCSearchCompanyTable&form=PLCSearchCompanyForm&HelpMarker=emxhelpsearchresults&CommandName=PLCSearchCompanyCommand&sortColumnName=Name'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCSearchCompanyCommand'
+	property	'version'	value	'R418'
+;
+modify menu SearchAddExistingChooserMenu add command PLCSearchCompanyCommand order command PLCSearchCompanyCommand 1;
+#channel ==>SearchAddExistingChooserMenu
+add property command_PLCSearchCompanyCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCSearchCompanyCommand';

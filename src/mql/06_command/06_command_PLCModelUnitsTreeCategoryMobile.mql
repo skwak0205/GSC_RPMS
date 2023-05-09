@@ -1,0 +1,19 @@
+del command 'PLCModelUnitsTreeCategoryMobile';
+add command 'PLCModelUnitsTreeCategoryMobile'
+	description	'Displays all the builds defined for the model For Mobile'
+	label	'emxProductLine.CategoryTabMenu.Builds'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCUnitsSummaryList&header=emxProduct.Heading.Units&program=emxBuild:getAllRelatedBuilds&topActionbar=PLCModelUnitsSummaryListTopActionToolBar&sortColumnName=Name&HelpMarker=emxhelpbuildslist&editLink=false&selection=multiple'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Function'		'isMobileModeEnabled'
+	setting	'Access Program'		'emxPLCCommon'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCModelUnitsTreeCategoryMobile'
+	property	'version'	value	'R418'
+;
+modify menu type_Model add command PLCModelUnitsTreeCategoryMobile order command PLCModelUnitsTreeCategoryMobile 14;
+#channel ==>type_Model
+add property command_PLCModelUnitsTreeCategoryMobile on program eServiceSchemaVariableMapping.tcl to command 'PLCModelUnitsTreeCategoryMobile';

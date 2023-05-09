@@ -1,0 +1,19 @@
+del command 'APPRouteTaskSelectAssignee';
+add command 'APPRouteTaskSelectAssignee'
+	description	'Command to select assignees from user group'
+	label	'emxComponents.Command.selectAssignee'
+	href	'javascript:launchSelectAssigneeModal()'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'checksToShowSelectAssignee'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/UserGroupAssignment.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteTaskSelectAssignee'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPRouteTaskSummaryActionsToolbar add command APPRouteTaskSelectAssignee order command APPRouteTaskSelectAssignee 2;
+#channel ==>APPRouteTaskSummaryActionsToolbar
+add property command_APPRouteTaskSelectAssignee on program eServiceSchemaVariableMapping.tcl to command 'APPRouteTaskSelectAssignee';

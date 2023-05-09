@@ -1,0 +1,23 @@
+del command 'PMCWorkspaceVaultDocumentSubscription';
+add command 'PMCWorkspaceVaultDocumentSubscription'
+	description	''
+	label	'emxProgramCentral.DocumentSubscription.Subscription'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCWorkspaceVaultDocumentSubscriptionForm&formHeader=emxProgramCentral.DocumentSubscription.Header&mode=edit&postProcessJPO=emxProjectFolder:createSubscriptionProcess&HelpMarker=emxhelpdocumentsubscribe&toolbar=null&showClipboard=false&objectCompare=false&showPageURLIcon=false&submitAction=doNothing'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToDocumentSubscriptionInFolderView'
+	setting	'Access Program'		'emxBookmark'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallSubscription.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkspaceVaultDocumentSubscription'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_PMCWorkspaceVaultDocumentSubscription on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkspaceVaultDocumentSubscription';

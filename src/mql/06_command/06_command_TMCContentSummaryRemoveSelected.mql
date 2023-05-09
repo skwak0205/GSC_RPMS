@@ -1,0 +1,33 @@
+del command 'TMCContentSummaryRemoveSelected';
+add command 'TMCContentSummaryRemoveSelected'
+	description	'Content Summary Remove Selected Command Object'
+	label	'emxTeamCentral.Command.Remove'
+	href	'${COMMON_DIR}/emxForm.jsp?form=TMCRemoveContentConfirmation&mode=edit&formFieldsOnly=true&postProcessURL=../teamcentral/emxTeamDeleteContent.jsp&preProcessJPO=emxWorkspaceFolder:removeFolderContentPreProcess&formHeader=emxTeamCentral.DeleteContentFS.Heading&HelpMarker=emxhelpremovecontentconfirmation&submitAction=refreshcaller'
+	alt	'emxTeamCentral.Button.RemoveSelected'
+	setting	'Popup Size'		'Small'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasRemoveContent'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCContentSummaryRemoveSelected'
+	property	'version'	value	'R422'
+;
+modify menu TMCContentSummaryBottomActionBar add command TMCContentSummaryRemoveSelected order command TMCContentSummaryRemoveSelected 1;
+#channel ==>TMCContentSummaryBottomActionBar
+add property command_TMCContentSummaryRemoveSelected on program eServiceSchemaVariableMapping.tcl to command 'TMCContentSummaryRemoveSelected';

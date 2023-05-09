@@ -1,0 +1,16 @@
+del channel 'PMCGateCollaborationChannel';
+add channel 'PMCGateCollaborationChannel'
+	description	'Channel for Collaboration Portal'
+	height	'700'
+	label	'emxFramework.Common.PMCGateCollaborationChannel'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCDecisionsPowerView','APPDiscussionCommand','APPMeeting'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateCollaborationChannel'
+	property	'version'	value	'R424.HF1'
+;
+#portal ==>PMCCollaborationPortal
+add property channel_PMCGateCollaborationChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCGateCollaborationChannel';

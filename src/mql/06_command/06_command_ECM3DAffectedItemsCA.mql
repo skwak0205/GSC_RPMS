@@ -1,0 +1,17 @@
+del command 'ECM3DAffectedItemsCA';
+add command 'ECM3DAffectedItemsCA'
+	description	'Command to display the portal showing CA affected items'
+	label	'EnterpriseChangeMgt.Command.ECM3DAffectedItems'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeAction:getAffectedItems&table=ECMCAAffectedItemSummary&header=EnterpriseChangeMgt.Change.AffectedItemsSummaryPageHeading&selection=multiple&sortColumnName=Name&HelpMarker=emxhelpaffecteditems&toolbar=ECMAddRemoveCAAffectedItemsToolbar&selectHandler=highlight3DCAAffectedItem&postProcessJPO=enoECMChangeActionUX:editAffectedItemsPostProcess'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECM3DAffectedItemsCA'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMCAAffectedItemsChannel
+add property command_ECM3DAffectedItemsCA on program eServiceSchemaVariableMapping.tcl to command 'ECM3DAffectedItemsCA';

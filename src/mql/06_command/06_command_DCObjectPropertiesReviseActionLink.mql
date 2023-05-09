@@ -1,0 +1,19 @@
+del command 'DCObjectPropertiesReviseActionLink';
+add command 'DCObjectPropertiesReviseActionLink'
+	description	'Revise Action Link on Properties'
+	label	'emxDocumentCentral.ActionBarCmd.Revise'
+	href	'${SUITE_DIR}/emxLibraryCentralIntermediateForm.jsp?mode=revise'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectPropertiesReviseActionLink'
+	property	'version'	value	'R211'
+;
+modify menu DCObjectPropertiesTopActionbar add command DCObjectPropertiesReviseActionLink order command DCObjectPropertiesReviseActionLink 3;
+modify menu DCGenericDocumentPropertiesTopActionbar add command DCObjectPropertiesReviseActionLink order command DCObjectPropertiesReviseActionLink 3;
+#channel ==>DCObjectPropertiesTopActionbarDCGenericDocumentPropertiesTopActionbar
+add property command_DCObjectPropertiesReviseActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectPropertiesReviseActionLink';

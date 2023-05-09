@@ -1,0 +1,20 @@
+del command 'PMCWBSViewENXSBGrid';
+add command 'PMCWBSViewENXSBGrid'
+	description	''
+	label	'emxProgramCentral.Button.WBSView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWBSViewTableENXSBGrid'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSViewENXSBGrid'
+	property	'version'	value	'R421.HF6'
+;
+modify menu PMCWBSTableMenuENXSBGrid add command PMCWBSViewENXSBGrid order command PMCWBSViewENXSBGrid 1;
+#channel ==>PMCWBSTableMenuENXSBGrid
+add property command_PMCWBSViewENXSBGrid on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSViewENXSBGrid';

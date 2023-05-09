@@ -1,0 +1,26 @@
+del command 'TMCCreatePushSubscriptionWorkspaceCommand';
+add command 'TMCCreatePushSubscriptionWorkspaceCommand'
+	description	''
+	label	'emxTeamCentral.DiscussionSummary.PushSubscription'
+	href	'${SUITE_DIR}/emxTeamCreatePushSubscriptionDialogFS.jsp?discussion=discussion'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'575'
+	setting	'Window Width'		'575'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPushSubscribe.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCCreatePushSubscriptionWorkspaceCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCWorkspaceDetailsActionsToolBar add command TMCCreatePushSubscriptionWorkspaceCommand order command TMCCreatePushSubscriptionWorkspaceCommand 0;
+#channel ==>TMCWorkspaceDetailsActionsToolBar
+add property command_TMCCreatePushSubscriptionWorkspaceCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCCreatePushSubscriptionWorkspaceCommand';

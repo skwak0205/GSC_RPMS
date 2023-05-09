@@ -1,0 +1,27 @@
+del command 'IssueChangeTypeActionLink';
+add command 'IssueChangeTypeActionLink'
+	description	'Issue Change Type Command Object'
+	label	'emxComponents.ActionLink.ChangeType'
+	href	'${COMMON_DIR}/emxForm.jsp?form=APPIssueChangeTypeForm&mode=edit&formHeader=emxComponents.Heading.IssueChangeType&HelpMarker=emxhelpissuechangetype&submitAction=refreshCaller&findMxLink=false'
+	alt	'emxComponents.ActionLink.ChangeType'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'True'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionChangeIssueType.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	user	'Issue Manager'
+	user	'Analyst'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueChangeTypeActionLink'
+	property	'version'	value	'R422'
+;
+modify menu IssuePropertiesToolBarActions add command IssueChangeTypeActionLink order command IssueChangeTypeActionLink 1;
+#channel ==>IssuePropertiesToolBarActions
+add property command_IssueChangeTypeActionLink on program eServiceSchemaVariableMapping.tcl to command 'IssueChangeTypeActionLink';

@@ -1,0 +1,9 @@
+del command 'Notification Preferences';
+add command 'Notification Preferences'
+	description	'NotificationPreferences'
+	label	'emxProgramCentral.Preferences.NotificationPreference'
+	href	'${SUITE_DIR}/emxProgramCentralPrefNotification.jsp'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Help Marker'		'emxhelppreferencenotification'
+add property command_NotificationPreferences on program eServiceSchemaVariableMapping.tcl to command 'Notification Preferences';

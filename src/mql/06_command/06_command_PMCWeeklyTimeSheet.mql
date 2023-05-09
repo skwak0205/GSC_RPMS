@@ -1,0 +1,26 @@
+del command 'PMCWeeklyTimeSheet';
+add command 'PMCWeeklyTimeSheet'
+	description	'My WeeklyTimeSheet Command'
+	label	'emxProgramCentral.WeeklyTimesheet.WeeklyTimeSheet'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCWeeklyTimeSheet&header=emxProgramCentral.WeeklyTimesheet.WeeklyTimeSheet&HelpMarker=emxhelptimesheetlist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconColHeadTime.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWeeklyTimeSheet'
+	property	'version'	value	'R422'
+;
+modify menu PMCMyDesk add command PMCWeeklyTimeSheet order command PMCWeeklyTimeSheet 10;
+#channel ==>PMCMyDesk
+add property command_PMCWeeklyTimeSheet on program eServiceSchemaVariableMapping.tcl to command 'PMCWeeklyTimeSheet';

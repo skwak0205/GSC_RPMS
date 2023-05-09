@@ -1,0 +1,21 @@
+del command 'RMTChildRequirementLinkStatusChangedEvent';
+add command 'RMTChildRequirementLinkStatusChangedEvent'
+	description	''
+	label	'emxRequirements.Event.ChildRequirementLinkStatusChanged.Label'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'(policy != "$<policy_RequirementVersion>")'
+	setting	'Event Type'		'Child Requirement Link Status Changed'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTChildRequirementLinkStatusChangedEvent'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementEvents add command RMTChildRequirementLinkStatusChangedEvent order command RMTChildRequirementLinkStatusChangedEvent 9;
+#channel ==>RMTRequirementEvents
+add property command_RMTChildRequirementLinkStatusChangedEvent on program eServiceSchemaVariableMapping.tcl to command 'RMTChildRequirementLinkStatusChangedEvent';

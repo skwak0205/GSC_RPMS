@@ -1,0 +1,25 @@
+del command 'APPDiscussionCreatePrivate';
+add command 'APPDiscussionCreatePrivate'
+	description	''
+	label	'emxComponents.Common.CreatePrivateDiscussion'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=APPCreateDiscussion&formHeader=emxComponents.Common.CreatePrivateDiscussion&HelpMarker=emxhelpcreatediscussion&mode=edit&showPageURLIcon=false&createJPO=emxDiscussion:createDiscussionPostProcess&Export=false&findMxLink=false&DiscType=Private&postProcessURL=../components/emxComponentsDiscussionCreateProcess.jsp&submitAction=doNothing&type=type_Message&policy=policy_PrivateMessage&showPolicy=false&nameField=autoName'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isPrivateUser'
+	setting	'Access Program'		'emxDiscussion'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedContributor'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'VPLMTeamManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionCreatePrivate'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPDiscussionActionsToolBar add command APPDiscussionCreatePrivate order command APPDiscussionCreatePrivate 2;
+#channel ==>APPDiscussionActionsToolBar
+add property command_APPDiscussionCreatePrivate on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionCreatePrivate';

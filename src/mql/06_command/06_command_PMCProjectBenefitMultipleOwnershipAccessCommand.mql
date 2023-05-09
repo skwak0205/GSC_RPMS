@@ -1,0 +1,18 @@
+del command 'PMCProjectBenefitMultipleOwnershipAccessCommand';
+add command 'PMCProjectBenefitMultipleOwnershipAccessCommand'
+	description	'This command opens Multiple Ownerhship Access page for Project Benefit'
+	label	'emxProgramCentral.Common.DomainAccessTreeCategory'
+	href	'${SUITE_DIR}/emxProgramCentralBenefitUtil.jsp?mode=redirectToMultipleOwnershipPageForBenefit'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessOnBenefitMultiOwnershipAccessCommand'
+	setting	'Access Program'		'emxFinancialItem'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitMultipleOwnershipAccessCommand'
+	property	'version'	value	'R424.HF1'
+;
+#channel ==>PMCProjectFinancialChannel
+add property command_PMCProjectBenefitMultipleOwnershipAccessCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitMultipleOwnershipAccessCommand';

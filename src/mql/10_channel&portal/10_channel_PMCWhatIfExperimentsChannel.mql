@@ -1,0 +1,17 @@
+del channel 'PMCWhatIfExperimentsChannel';
+add channel 'PMCWhatIfExperimentsChannel'
+	description	''
+	height	'800'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	setting		'ChannelID'		'1'
+	command 	'PMCWhatIfProjectExperimentsList','PMCProjectSnapshots'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfExperimentsChannel'
+	property	'version'	value	'R216'
+;
+#portal ==>PMCWhatIfPortal
+add property channel_PMCWhatIfExperimentsChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCWhatIfExperimentsChannel';

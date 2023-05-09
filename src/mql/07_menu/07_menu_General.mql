@@ -1,0 +1,23 @@
+del menu 'General';
+add menu 'General'
+	description	''
+	label	'emxFramework.Preferences.General'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFConversionPreference'
+	command	'AEFExportTablePreference'
+	command	'AEFHomePagePreference'
+	command	'AEFPaginationPreference'
+	command	'AEFTimeZonePreference'
+	command	'AEFToggleBrowserToolbarPreference'
+	command	'AEFEmailNotificationPreference'
+	command	'AEFImagePreference'
+	command	'APPDiscussionPreference'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'General'
+	property 'version'	value	'R421'
+;
+add property menu_General on program eServiceSchemaVariableMapping.tcl to menu 'General';

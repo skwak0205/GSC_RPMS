@@ -1,0 +1,19 @@
+del command 'LBCInProcessLibrariesMyDesk';
+add command 'LBCInProcessLibrariesMyDesk'
+	description	'In Process Libraries'
+	label	'emxLibraryCentral.Command.InProcessLibraries'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxLibraryCentralUtil:getAllInprocessLibraries,emxLibraryCentralUtil:getAllInprocessDocumentLibraries,emxLibraryCentralUtil:getAllInprocessGeneralLibraries,emxLibraryCentralUtil:getAllInprocessPartLibraries&programLabel=emxDocumentCentral.Common.All,emxLibraryCentral.Common.DocumentLibrary,emxLibraryCentral.Common.GeneralLibrary,emxLibraryCentral.Common.PartLibrary&table=LCLibraryList&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=LCLibrariesToolBar&header=emxLibraryCentral.Common.InProcessLibraries&HelpMarker=emxhelplibrarylist&path=LibraryMaintanence'
+	alt	'emxLibraryCentral.Command.InProcessLibraries'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCInProcessLibrariesMyDesk'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_LBCInProcessLibrariesMyDesk on program eServiceSchemaVariableMapping.tcl to command 'LBCInProcessLibrariesMyDesk';

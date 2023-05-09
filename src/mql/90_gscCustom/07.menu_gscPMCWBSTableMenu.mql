@@ -1,0 +1,33 @@
+#del menu 'gscPMCWBSTableMenu';
+add menu 'gscPMCWBSTableMenu'
+ description ''
+ label ''
+ href ''
+ alt ''
+ setting 'Registered Suite'  'ProgramCentral'
+ command 'PMCWBSTaskAssignmentView'
+ property 'installer' value 'ENOVIAEngineering'
+ property 'application' value 'ProgramManagementBase'
+ property 'installed date' value '03-23-2022'
+ property 'original name' value 'gscPMCWBSTableMenu'
+ property 'version' value 'R422.HF4'
+;
+
+add property menu_gscPMCWBSTableMenu on program eServiceSchemaVariableMapping.tcl to menu 'gscPMCWBSTableMenu';
+
+# [ENOVIA] Project - Schedule 에 해당하는 menu 'type_Project' 수정 및 gscPMCSchedule 생성 (기존 PMCSchedule 에서 변경)
+# menu 'type_Project' history 참고
+
+
+
+
+# Portal 'PMCSchedule'
+# [ENOVIA] Project - Schedule - 'Structured View' Command 'PMCWBS' href URL 변경 ->> JSP 수정 gscProjectManagementUtil.jsp 사용
+# 기본: mod command PMCWBS href '${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCWBS';
+# tableMenu: PMCWBSTableMenu -> gscPMCWBSTableMenu
+# expandProgramMenu: PMCWBSListMenu -> gscPMCWBSListMenu
+# custom url: https://rpmsdev.gscaltex.co.kr/3dspace/common/emxIndentedTable.jsp?tableMenu=gscPMCWBSTableMenu&expandProgramMenu=gscPMCWBSListMenu&freezePane=Name&selection=multiple&HelpMarker=emxhelpdatagridtable&header=emxProgramCentral.Common.WorkBreakdownStructureSB&sortColumnName=ID&findMxLink=false&editRelationship=relationship_Subtask&suiteKey=ProgramCentral&SuiteDirectory=programcentral&resequenceRelationship=relationship_Subtask&connectionProgram=emxTask:cutPasteTasksInWBS&postProcessJPO=emxTask:updateScheduleChanges&hideLaunchButton=true&parallelLoading=true&objectId=15741.36097.45387.35709&showPageURLIcon=false&cacheEditAccessProgram=true&toolbar=PMCWBSToolBar&editLink=true&massPromoteDemote=true&SuiteDirectory=programcentral&showPageHeader=false&treeLabel=HJ+TEST+-+%ED%85%8C%EC%8A%A4%ED%8A%B8+%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8&parentOID=15741.36097.45387.35709&emxSuiteDirectory=programcentral&HelpMarker=emxhelpprojectadvancedreport&portalMode=true&StringResourceFileId=emxProgramCentralStringResource&mode=PMCWBS&portalCmdName=PMCWBS&jsTreeID=null&suiteKey=ProgramCentral&portal=PMCSchedule&objectId=15741.36097.45387.35709&maxCellsToDraw=2000&scrollPageSize=50
+# JSP 변경: emxProjectManagementUtil -> gscProjectManagementUtil, SubMode 추가: gscPMCWBS
+# mod command PMCWBS href '${SUITE_DIR}/gscProjectManagementUtil.jsp?mode=PMCWBS&subMode=gscPMCWBS';
+
+

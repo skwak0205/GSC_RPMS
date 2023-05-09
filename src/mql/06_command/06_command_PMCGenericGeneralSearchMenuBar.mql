@@ -1,0 +1,29 @@
+del command 'PMCGenericGeneralSearchMenuBar';
+add command 'PMCGenericGeneralSearchMenuBar'
+	description	'Menu Bar Generic General Search'
+	label	'emxProgramCentral.Search.General'
+	href	'${SUITE_DIR}/emxProgramCentralFolderSearchFiles.jsp?UnmanagedFiles=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGenericGeneralSearchMenuBar'
+	property	'version'	value	'R422'
+;
+modify menu PMCProgramCentralSearch add command PMCGenericGeneralSearchMenuBar order command PMCGenericGeneralSearchMenuBar 0;
+#channel ==>PMCProgramCentralSearch
+add property command_PMCGenericGeneralSearchMenuBar on program eServiceSchemaVariableMapping.tcl to command 'PMCGenericGeneralSearchMenuBar';

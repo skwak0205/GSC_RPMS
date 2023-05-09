@@ -1,0 +1,24 @@
+del command 'RMTSCETreeUnselectAllDescendants';
+add command 'RMTSCETreeUnselectAllDescendants'
+	description	'Unselect all descendant nodes.'
+	label	'emxRequirements.Command.UnselectAllDescendants'
+	href	'javascript:SCEUnselectAllDescendants()'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSCETreeUnselectAllDescendants'
+	property	'version'	value	'R422'
+;
+modify menu RMTSCETreeRMB add command RMTSCETreeUnselectAllDescendants order command RMTSCETreeUnselectAllDescendants 0;
+#channel ==>RMTSCETreeRMB
+add property command_RMTSCETreeUnselectAllDescendants on program eServiceSchemaVariableMapping.tcl to command 'RMTSCETreeUnselectAllDescendants';

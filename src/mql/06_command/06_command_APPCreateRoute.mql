@@ -1,0 +1,33 @@
+del command 'APPCreateRoute';
+add command 'APPCreateRoute'
+	description	'Command Object for Quick Create Route'
+	label	'emxComponents.Common.CreateRoute'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Route&header=emxComponents.Common.CreateRoute&form=APPRouteCreate&HelpMarker=emxhelpcreatenewroute&nameField=both&createJPO=emxRoute:createRouteProcess&submitAction=doNothing&mode=create&postProcessURL=../components/emxComponentsCreateProcessUtil.jsp&autoNameChecked=true&showPageURLIcon=false'
+	alt	'emxComponents.Common.CreateRoute'
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Window Width'		'600'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(policy == "Inbox Task" && current == Complete)'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'emxCheckCreateRoutesAccess'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreateRoute.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateRoute'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPRouteSummaryActionsToolBar add command APPCreateRoute order command APPCreateRoute 1;
+modify menu AppActionRoute add command APPCreateRoute order command APPCreateRoute 1;
+modify menu APPRouteSummaryTaskActionsToolBar add command APPCreateRoute order command APPCreateRoute 1;
+modify menu PMCRouteSummaryActionsToolBar add command APPCreateRoute order command APPCreateRoute 1;
+#channel ==>APPRouteSummaryActionsToolBarAppActionRouteAPPRouteSummaryTaskActionsToolBarPMCRouteSummaryActionsToolBar
+add property command_APPCreateRoute on program eServiceSchemaVariableMapping.tcl to command 'APPCreateRoute';

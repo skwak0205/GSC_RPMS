@@ -1,0 +1,15 @@
+del menu 'type_RMTUseCaseStructureMenu';
+add menu 'type_RMTUseCaseStructureMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTUseCaseStructure'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_RMTUseCaseStructureMenu'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_type_RMTUseCaseStructureMenu on program eServiceSchemaVariableMapping.tcl to menu 'type_RMTUseCaseStructureMenu';

@@ -1,0 +1,19 @@
+del command 'FTRResourceRuleSearchCommand';
+add command 'FTRResourceRuleSearchCommand'
+	description	'ResourceRuleSearchCommand'
+	label	'emxProduct.ActionLink.ResourceRule.search'
+	href	'${SUITE_DIR}/ResourceRuleSearch.jsp?suiteKey=Configuration&table=FTRResourceRuleSearchTable&CommandName=FTRResourceRuleSearchCommand'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRResourceRuleSearchCommand'
+	property	'version'	value	'R215'
+;
+modify menu SearchAddExistingChooserMenu add command FTRResourceRuleSearchCommand order command FTRResourceRuleSearchCommand 16;
+#channel ==>SearchAddExistingChooserMenu
+add property command_FTRResourceRuleSearchCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRResourceRuleSearchCommand';

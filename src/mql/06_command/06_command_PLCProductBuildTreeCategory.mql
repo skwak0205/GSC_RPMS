@@ -1,0 +1,24 @@
+del command 'PLCProductBuildTreeCategory';
+add command 'PLCProductBuildTreeCategory'
+	description	''
+	label	'emxProductLine.CategoryTabMenu.Builds'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCMyDeskBuildList&editLink=true&header=emxProduct.Heading.BuildContext&selection=multiple&program=emxBuild:getOwnedProductBuilds,emxBuild:getAllProductBuilds&programLabel=emxProduct.Filter.Owned,emxProduct.Filter.All&topActionbar=PLCProductBuildListTopActionBar&bottomActionbar=PLCBuildListBottomActionBar&sortColumnName=Name&HelpMarker=emxhelpbuildslist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Access Function'		'showEditLink'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Image'		'${COMMON_DIR}/iconSmallSoftwareBuild.gif'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductBuildTreeCategory'
+	property	'version'	value	'R418'
+;
+modify menu Msoitype_Products add command PLCProductBuildTreeCategory order command PLCProductBuildTreeCategory 3;
+#channel ==>Msoitype_ProductsPLCPlanning
+add property command_PLCProductBuildTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCProductBuildTreeCategory';

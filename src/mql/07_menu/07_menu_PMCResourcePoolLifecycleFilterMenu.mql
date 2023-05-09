@@ -1,0 +1,15 @@
+del menu 'PMCResourcePoolLifecycleFilterMenu';
+add menu 'PMCResourcePoolLifecycleFilterMenu'
+	description	''
+	label	'emxProgramCentral.ResourcePool.PMCResourcePoolLifecycleFilterMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCResourcePoolLifecycleFilter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourcePoolLifecycleFilterMenu'
+	property 'version'	value	'R210'
+;
+add property menu_PMCResourcePoolLifecycleFilterMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourcePoolLifecycleFilterMenu';

@@ -1,0 +1,14 @@
+del portal 'PMCGateAndTaskRouteAndApprovalsPortal';
+add portal 'PMCGateAndTaskRouteAndApprovalsPortal'
+	description	''
+	label	''
+	href	''
+	channel 	PMCGateAndTaskRouteAndApprovalsChannel
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateAndTaskRouteAndApprovalsPortal'
+	property	'version'	value	'R210'
+;
+add property portal_PMCGateAndTaskRouteAndApprovalsPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCGateAndTaskRouteAndApprovalsPortal';

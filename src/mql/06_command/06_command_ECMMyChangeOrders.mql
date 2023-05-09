@@ -1,0 +1,16 @@
+del command 'ECMMyChangeOrders';
+add command 'ECMMyChangeOrders'
+	description	'Change Order tab'
+	label	'EnterpriseChangeMgt.Command.ChangeOrder'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=ECMChangeOrderSummary&program=enoECMChangeOrder:getMyChangeOrders&direction=from&relationshipFilter=false&selection=multiple&toolbar=ECMCOMenuToolbar&showPageHeader=true&typeFilter=false&relationship=relationship_ChangeBreakdown&editLink=false&header=EnterpriseChangeMgt.Menu.ECM&HelpMarker=emxhelpchangeorder'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMMyChangeOrders'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMMyChangesTopChannel
+add property command_ECMMyChangeOrders on program eServiceSchemaVariableMapping.tcl to command 'ECMMyChangeOrders';

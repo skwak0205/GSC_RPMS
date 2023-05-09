@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.02.06
+# Create by HyungJin, Ju
+# Description : GSCaltex Business Goal MQL 생성 Script - 운영서버
+# MQL 엑셀 Path : OneDrive\Project\200. Design\200.10 Functional Spec\프로젝트 목표(Business Goal)\RPMS 비즈니스 목표 정리 & MQL.xlsx
+################################################################################################
+
+# 운영 서버
+# Business Goal 생성
+
+
+# Business Goal - Relationship 설정 - Organization Goal [add connection 'Organization Goal' from <Business Unit> to <Business Goal>;]
+# Business Goal 개별 조회 MQL: print bus 'Business Goal' <NAME> <Revision> select physicalid dump;
+
+
+# Business Goal - Relationship 설정 - Sub Goal [add connection 'Sub Goal' from <Parent Goal> to <Sub Goal>;]
+
+

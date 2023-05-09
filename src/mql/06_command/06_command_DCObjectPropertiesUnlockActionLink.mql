@@ -1,0 +1,22 @@
+del command 'DCObjectPropertiesUnlockActionLink';
+add command 'DCObjectPropertiesUnlockActionLink'
+	description	'Unlock Action Link on Properties'
+	label	'emxDocumentCentral.ActionBarCmd.Unlock'
+	href	''
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectPropertiesUnlockActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCObjectPropertiesTopActionbar add command DCObjectPropertiesUnlockActionLink order command DCObjectPropertiesUnlockActionLink 7;
+modify menu DCGenericDocumentPropertiesTopActionbar add command DCObjectPropertiesUnlockActionLink order command DCObjectPropertiesUnlockActionLink 6;
+#channel ==>DCObjectPropertiesTopActionbarDCGenericDocumentPropertiesTopActionbar
+add property command_DCObjectPropertiesUnlockActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectPropertiesUnlockActionLink';

@@ -1,0 +1,26 @@
+del command 'RMTUseCaseProperties';
+add command 'RMTUseCaseProperties'
+	description	''
+	label	'emxRequirements.Tree.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_UseCase&actionBarName=RMTUseCasePropertiesTopActionBar&formHeader=emxRequirements.Heading.Properties&HelpMarker=emxhelpusecasedetails'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTUseCaseProperties'
+	property	'version'	value	'R422'
+;
+modify menu type_UseCaseRMB add command RMTUseCaseProperties order command RMTUseCaseProperties 1;
+#channel ==>type_UseCaseRMBRMTUseCaseProperties
+add property command_RMTUseCaseProperties on program eServiceSchemaVariableMapping.tcl to command 'RMTUseCaseProperties';

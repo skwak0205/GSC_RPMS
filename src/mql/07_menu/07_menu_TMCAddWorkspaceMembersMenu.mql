@@ -1,0 +1,16 @@
+del menu 'TMCAddWorkspaceMembersMenu';
+add menu 'TMCAddWorkspaceMembersMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	command	'TMCWorkspaceFindPeopleCommand'
+	command	'TMCWorkspaceFindRoleCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCAddWorkspaceMembersMenu'
+	property 'version'	value	'R210'
+;
+add property menu_TMCAddWorkspaceMembersMenu on program eServiceSchemaVariableMapping.tcl to menu 'TMCAddWorkspaceMembersMenu';

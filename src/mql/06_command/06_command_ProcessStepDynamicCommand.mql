@@ -1,0 +1,16 @@
+del command 'ProcessStepDynamicCommand';
+add command 'ProcessStepDynamicCommand'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'com.dassault_systemes.enovia.processsteps.ENOProcessStepsUI'
+	setting	'Dynamic Command Function'		'getDynamicCommand'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProcessSteps'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'ProcessStepDynamicCommand'
+	property	'version'	value	'R420.HF1'
+;
+#channel ==>ProcessStepDefaultChannel
+add property command_ProcessStepDynamicCommand on program eServiceSchemaVariableMapping.tcl to command 'ProcessStepDynamicCommand';

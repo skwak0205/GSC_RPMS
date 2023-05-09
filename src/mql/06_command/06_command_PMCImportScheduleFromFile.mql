@@ -1,0 +1,27 @@
+del command 'PMCImportScheduleFromFile';
+add command 'PMCImportScheduleFromFile'
+	description	''
+	label	'emxProgramCentral.Common.CopyFromFile'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=PMCImportScheduleFromFile'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current!="Review" && current!="Complete"'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_CopyFromFile32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCImportScheduleFromFile'
+	property	'version'	value	'R422.HF5'
+;
+modify menu PMCCopySchedule add command PMCImportScheduleFromFile order command PMCImportScheduleFromFile 0;
+modify menu PMCAddProjectMenu add command PMCImportScheduleFromFile order command PMCImportScheduleFromFile 0;
+modify menu PMCWBSProjectTemplateToolBarActions add command PMCImportScheduleFromFile order command PMCImportScheduleFromFile 4;
+modify menu PMCAddProjectTemplateMenu add command PMCImportScheduleFromFile order command PMCImportScheduleFromFile 0;
+#channel ==>PMCCopySchedulePMCAddProjectMenuPMCWBSProjectTemplateToolBarActionsPMCAddProjectTemplateMenu
+add property command_PMCImportScheduleFromFile on program eServiceSchemaVariableMapping.tcl to command 'PMCImportScheduleFromFile';

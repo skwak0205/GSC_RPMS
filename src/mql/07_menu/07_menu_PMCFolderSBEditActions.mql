@@ -1,0 +1,21 @@
+del menu 'PMCFolderSBEditActions';
+add menu 'PMCFolderSBEditActions'
+	description	''
+	label	'emxProgramCentral.Common.CutPaste'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Mode'		'edit'
+	setting	'Access Function'		'accessEditActions'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCut.png'
+	command	'AEFSBEditCut'
+	command	'AEFSBEditPasteAsChild'
+	command	'AEFSBEditUndo'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCFolderSBEditActions'
+	property 'version'	value	'R421.HF3'
+;
+add property menu_PMCFolderSBEditActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCFolderSBEditActions';

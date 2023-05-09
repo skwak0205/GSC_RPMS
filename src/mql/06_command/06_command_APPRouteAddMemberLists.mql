@@ -1,0 +1,21 @@
+del command 'APPRouteAddMemberLists';
+add command 'APPRouteAddMemberLists'
+	description	'Command to add member lists to the route access'
+	label	'emxComponents.AddMembersDialog.AddMemberList'
+	href	'${SUITE_DIR}/emxRouteMembersSearch.jsp?fromPage=RouteAccessSummary&memberType=MemberList'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(to[Route Scope] == False)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteAddMemberLists'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPRouteAddMemberLists on program eServiceSchemaVariableMapping.tcl to command 'APPRouteAddMemberLists';

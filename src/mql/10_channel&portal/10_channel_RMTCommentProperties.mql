@@ -1,0 +1,17 @@
+del channel 'RMTCommentProperties';
+add channel 'RMTCommentProperties'
+	description	'Comment Properties'
+	height	'0'
+	label	'emxRequirements.Common.RMTPropertiesPowerView'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'Height'		'40%'
+	command 	'RMTCommentProperties','PLMAddExtensionCmd'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTCommentProperties'
+	property	'version'	value	'R419'
+;
+#portal ==>RMTCommentProperties
+add property channel_RMTCommentProperties on program eServiceSchemaVariableMapping.tcl to channel 'RMTCommentProperties';

@@ -1,0 +1,15 @@
+del menu 'PLCProductHierarchyProductMenu';
+add menu 'PLCProductHierarchyProductMenu'
+	description	''
+	label	'emxProduct.Menu.Product'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Image'		'${COMMON_DIR}/images/I_Product32.png'
+	command	'PLCCreateProductActionLink'
+	command	'PLCHierarchyCreateProductDerivationCommand'
+	command	'PLCHierarchyCreateProductRevisionCommand'
+	command	'PLCProductDerivationsInsertBeforeActionLink'
+	property 'version'	value	'R420'
+;
+add property menu_PLCProductHierarchyProductMenu on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductHierarchyProductMenu';

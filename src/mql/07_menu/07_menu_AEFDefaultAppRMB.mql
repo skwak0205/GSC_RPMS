@@ -1,0 +1,16 @@
+del menu 'AEFDefaultAppRMB';
+add menu 'AEFDefaultAppRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFAddToClipboardCollectionRMB'
+	command	'AEFNewAddToCollectionsRMB'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFDefaultAppRMB'
+	property 'version'	value	'R422'
+;
+add property menu_AEFDefaultAppRMB on program eServiceSchemaVariableMapping.tcl to menu 'AEFDefaultAppRMB';

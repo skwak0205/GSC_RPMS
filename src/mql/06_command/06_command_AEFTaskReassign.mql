@@ -1,0 +1,20 @@
+del command 'AEFTaskReassign';
+add command 'AEFTaskReassign'
+	description	'Lifecycle Approvals Task Reassign functionality'
+	label	'emxFramework.Command.Reassign'
+	href	'${COMMON_DIR}/emxLifecycleTaskReassignPreProcess.jsp'
+	alt	'emxFramework.Command.Reassign'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReAssignTask.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTaskReassign'
+	property	'version'	value	'R421'
+;
+modify menu AEFLifecycleApprovalsSummaryToolbar add command AEFTaskReassign order command AEFTaskReassign 2;
+#channel ==>AEFLifecycleApprovalsSummaryToolbar
+add property command_AEFTaskReassign on program eServiceSchemaVariableMapping.tcl to command 'AEFTaskReassign';

@@ -1,0 +1,29 @@
+del command 'LBCAttributesAddExisting';
+add command 'LBCAttributesAddExisting'
+	description	'AttributeGroup Add Existing'
+	label	'emxMultipleClassification.Access.AddExisting'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxMultipleClassificationAttributeGroup:getAttributeList&table=LBCAttributeList&selection=multiple&header=emxMultipleClassification.AttributeChooser.SelectAttribute&HelpMarker=emxhelpselectattribute&sortColumnName=Name&sortDirection=ascending&objectCompare=false&Export=false&toolbar=LBCAttributeAddExisting&expandLevelFilterMenu=false&PrinterFriendly=false&showClipboard=false&showPageURLIcon=false&submitLabel=emxDocumentCentral.Common.Done&cancelLabel=emxDocumentCentral.Common.Cancel&cancelButton=true&filter=false&submitURL=../documentcentral/emxLibraryCentralAddAttributesPreProcess.jsp&displayView=details&freezePane=ActualName,Name'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributesAddExisting'
+	property	'version'	value	'R422'
+;
+modify menu MCMAttributeActionsToolBar add command LBCAttributesAddExisting order command LBCAttributesAddExisting 2;
+#channel ==>MCMAttributeActionsToolBar
+add property command_LBCAttributesAddExisting on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributesAddExisting';

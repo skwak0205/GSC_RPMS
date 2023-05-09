@@ -1,0 +1,33 @@
+
+################################################################################################
+# Created Date : 2023.02.06
+# Create by Jungrim Choi
+# Description : Event related Tasks
+################################################################################################
+
+#del relationship gscEventTask;
+add relationship gscEventTask
+  description "Event to Project"
+  from
+    type "gscEvent"
+    revision none
+    clone none
+    cardinality many
+    propagateconnection
+    !propagatemodify
+  to
+    type "Task Management"
+    revision none
+    clone none
+    cardinality many
+    propagateconnection
+    !propagatemodify
+    nothidden
+    property 'installed date'     value  '01-06-2023'
+    property 'application'        value  'ProgramCentral'
+    property 'original name'      value  'gscEventTask'
+    property 'installer'          value  'jrchoi'
+    property 'version'            value  'V6R2022'
+;
+
+add property relationship_gscEventTask on program eServiceSchemaVariableMapping.tcl to relationship 'gscEventTask';

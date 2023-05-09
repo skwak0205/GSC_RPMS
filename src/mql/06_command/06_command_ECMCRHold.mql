@@ -1,0 +1,21 @@
+del command 'ECMCRHold';
+add command 'ECMCRHold'
+	description	'Hold Change'
+	label	'EnterpriseChangeMgt.Command.Hold'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_HoldCR&formHeader=EnterpriseChangeMgt.Heading.HoldCR&toolbar=ECMReviewAffectedItemsToolbar&HelpMarker=emxhelpchangerequesthold&mode=edit&submitAction=refreshCaller&preProcessJavaScript=preProcessForCancelandHoldCO&postProcessJPO=enoECMChangeRequestUX:holdChangeRequest&openerFrame=detailsDisplay&formFieldsOnly=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(current==policy.property[state_Prepare].value || current==policy.property[state_InWork].value || current==policy.property[state_InApproval].value) && (owner==context.user) && !($<interface[interface_ChangeOnHold] =="TRUE">)'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPause.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRHold'
+	property	'version'	value	'R417'
+;
+modify menu ECMCRPropertiesToolbar add command ECMCRHold order command ECMCRHold 5;
+#channel ==>ECMCRPropertiesToolbar
+add property command_ECMCRHold on program eServiceSchemaVariableMapping.tcl to command 'ECMCRHold';

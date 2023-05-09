@@ -1,0 +1,18 @@
+del command 'APPSearchForPerson';
+add command 'APPSearchForPerson'
+	description	'Command object for Search For Person'
+	label	'emxComponents.Common.FindPerson'
+	href	'${COMPONENT_DIR}/emxComponentsPersonSearch.jsp'
+	alt	'emxComponents.Common.FindPerson'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearchForPerson.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchForPerson'
+	property	'version'	value	'R417'
+;
+modify menu APPSearchPersonToolbar add command APPSearchForPerson order command APPSearchForPerson 0;
+#channel ==>APPSearchPersonToolbar
+add property command_APPSearchForPerson on program eServiceSchemaVariableMapping.tcl to command 'APPSearchForPerson';

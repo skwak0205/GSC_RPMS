@@ -1,0 +1,17 @@
+del menu 'PMCProjectBenefitFilter';
+add menu 'PMCProjectBenefitFilter'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectBenefitCurrencyFilter'
+	command	'PMCProjectBenefitIntervalFilter'
+	command	'PMCProjectBenefitViewsFilter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBenefitFilter'
+	property 'version'	value	'R210'
+;
+add property menu_PMCProjectBenefitFilter on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBenefitFilter';

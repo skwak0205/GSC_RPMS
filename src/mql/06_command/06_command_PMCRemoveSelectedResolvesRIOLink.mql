@@ -1,0 +1,22 @@
+del command 'PMCRemoveSelectedResolvesRIOLink';
+add command 'PMCRemoveSelectedResolvesRIOLink'
+	description	'Remove Selected Command Object'
+	label	'emxProgramCentral.Command.PMCRemoveSelectedResolvesLink'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=disconnectResolvesRIO'
+	alt	'emxProgramCentral.Command.PMCRemoveSelectedResolvesLink'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current.access[fromdisconnect] == true'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProgramCentral.Alert.Remove'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRemoveSelectedResolvesRIOLink'
+	property	'version'	value	'R421.HF6'
+;
+modify menu PMCResolvesItemsRIOToolBarActions add command PMCRemoveSelectedResolvesRIOLink order command PMCRemoveSelectedResolvesRIOLink 0;
+#channel ==>PMCResolvesItemsRIOToolBarActions
+add property command_PMCRemoveSelectedResolvesRIOLink on program eServiceSchemaVariableMapping.tcl to command 'PMCRemoveSelectedResolvesRIOLink';

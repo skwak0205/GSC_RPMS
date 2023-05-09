@@ -1,0 +1,28 @@
+del command 'RMTSpecTreeWithSubView';
+add command 'RMTSpecTreeWithSubView'
+	description	''
+	label	'emxRequirements.Label.FullSpecWithSub'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgramMenu=RMTSpecTreeProgramMenu&tableMenu=RMTSpecTreeTableMenu&freezePane=Name,Revision&selection=multiple&direction=from&editLink=true&sortColumnName=none&toolbar=RMTChapTreeToolbar&editRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_RequirementBreakdown&resequenceRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_RequirementBreakdown&connectionProgram=emxSpecificationStructureBase:processXMLMessage&multiColumnSort=false&HelpMarker=emxhelpspecificationstructureview'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'function'		'expandTreeWithSubRequirements'
+	setting	'Submit'		'true'
+	setting	'program'		'emxSpecificationStructure'
+	setting	'table'		'RMTSpecStructureTable'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecTreeWithSubView'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecTreeProgramMenu add command RMTSpecTreeWithSubView order command RMTSpecTreeWithSubView 0;
+#channel ==>RMTSpecTreeProgramMenu
+add property command_RMTSpecTreeWithSubView on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecTreeWithSubView';

@@ -1,0 +1,25 @@
+del command 'RMTSCETreeExpandAll';
+add command 'RMTSCETreeExpandAll'
+	description	'Expand all tree nodes.'
+	label	'emxRequirements.Command.ExpandAll'
+	href	'javascript:SCEExpandAll()'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSCETreeExpandAll'
+	property	'version'	value	'R422'
+;
+modify menu RMTSCETreeRMB add command RMTSCETreeExpandAll order command RMTSCETreeExpandAll 1;
+modify menu RMTSpecificationRMBMenu add command RMTSCETreeExpandAll order command RMTSCETreeExpandAll 1;
+#channel ==>RMTSCETreeRMBRMTSpecificationRMBMenu
+add property command_RMTSCETreeExpandAll on program eServiceSchemaVariableMapping.tcl to command 'RMTSCETreeExpandAll';

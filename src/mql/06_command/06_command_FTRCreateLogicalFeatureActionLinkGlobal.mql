@@ -1,0 +1,24 @@
+del command 'FTRCreateLogicalFeatureActionLinkGlobal';
+add command 'FTRCreateLogicalFeatureActionLinkGlobal'
+	description	''
+	label	'emxConfiguration.ActionLink.CreateLogicalFeature'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_LogicalFeature&autoNameChecked=false&vaultChooser=false&typeChooser=true&showApply=true&nameField=both&form=FTRCreateLogicalFeature&header=emxConfiguration.Heading.CreateLogicalFeature&relationship=null&submitAction=treeContent&HelpMarker=emxhelplogicalfeaturecreate&policy=policy_LogicalFeature'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<expression[LogicalFeatureEnabled]=="true">'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateLogicalFeatureActionLinkGlobal'
+	property	'version'	value	'R423'
+;
+modify menu FTRActions add command FTRCreateLogicalFeatureActionLinkGlobal order command FTRCreateLogicalFeatureActionLinkGlobal 1;
+#channel ==>FTRActions
+add property command_FTRCreateLogicalFeatureActionLinkGlobal on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateLogicalFeatureActionLinkGlobal';

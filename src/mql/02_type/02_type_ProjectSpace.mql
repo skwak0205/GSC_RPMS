@@ -1,0 +1,9 @@
+mod type 'Project Space'
+ add attribute gscBusinessArea,gscFundingType,gscSourcingType,gscReviewType,gscIsCurrentYearReview,gscGateType,gscCostCenter,gscProjectSite;
+mod type 'Project Space' add attribute 'Project Type';
+mod type 'Project Space' add attribute 'gscTitle';
+
+mod type 'Project Space' add attribute 'gscProductAmount';
+mod type 'Project Space' add attribute 'gscOffsetAmount';
+mod type 'Project Space' add attribute 'gscBenefitAmount';
+

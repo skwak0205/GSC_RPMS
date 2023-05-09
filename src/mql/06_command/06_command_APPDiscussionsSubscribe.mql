@@ -1,0 +1,27 @@
+del command 'APPDiscussionsSubscribe';
+add command 'APPDiscussionsSubscribe'
+	description	''
+	label	'emxComponents.Common.CreateSubscribeLink'
+	href	'${COMPONENT_DIR}/emxComponentsDiscussionSubscriptionProcess.jsp?action=subscribe'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showSubscribeCommand'
+	setting	'Access Program'		'emxDiscussion'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.png'
+	setting	'Confirm Message'		'emxComponents.DiscussionSubscribe.Message'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDiscussionsSubscribe'
+	property	'version'	value	'R422'
+;
+modify menu APPDiscussionsActionsToolBar add command APPDiscussionsSubscribe order command APPDiscussionsSubscribe 1;
+modify menu APPDiscussionToolBar add command APPDiscussionsSubscribe order command APPDiscussionsSubscribe 1;
+#channel ==>APPDiscussionsActionsToolBarAPPDiscussionToolBar
+add property command_APPDiscussionsSubscribe on program eServiceSchemaVariableMapping.tcl to command 'APPDiscussionsSubscribe';

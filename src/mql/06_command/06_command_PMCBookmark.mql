@@ -1,0 +1,24 @@
+del command 'PMCBookmark';
+add command 'PMCBookmark'
+	description	'Bookmark Command Object'
+	label	'emxProgramCentral.Common.FolderBookmark'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxBookmark:getBookmarks&table=PMCBookmarkSummary&toolbar=PMCProjectBookmarksToolbar&selection=multiple&editLink=true&Export=false&sortColumnName=Name&sortDirection=ascending&header=emxProgramCentral.Common.Bookmarks&HelpMarker=emxhelpbookmarksummary&hideLaunchButton=true&showRMB=false&customize=false&displayView=details&autoFilter=false&showPageURLIcon=false&rowGrouping=false&findMxLink=false&multiColumnSort=false&objectCompare=false&showClipboard=false&postProcessJPO=emxProgramCentralUtil:postProcessRefresh'
+	alt	'emxFramework.Command.Alt.Bookmark'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'sm_icon_Bookmark.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBookmark'
+	property	'version'	value	'R423.HF1'
+;
+modify menu type_Quality add command PMCBookmark order command PMCBookmark 2;
+modify menu type_TaskTemplate add command PMCBookmark order command PMCBookmark 1;
+#channel ==>type_Qualitytype_TaskTemplate
+add property command_PMCBookmark on program eServiceSchemaVariableMapping.tcl to command 'PMCBookmark';

@@ -1,0 +1,20 @@
+del command 'ECMCOPrerequisites';
+add command 'ECMCOPrerequisites'
+	description	'List the connected COs with Prerequisite relation'
+	label	'EnterpriseChangeMgt.Command.Dependency'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=enoECMChangeOrder:getPrerequisites&hideRootSelection=true&table=ECMPrerequisiteSummary&header=EnterpriseChangeMgt.Heading.Dependency&selection=multiple&toolbar=ECMPrerequisiteToolbar&sortColumnName=Name&HelpMarker=emxhelpprerequisites'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'isOldDependencyActivated'
+	setting	'Access Program'		'enoECMChangeUX'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOPrerequisites'
+	property	'version'	value	'R421'
+;
+#channel ==>ECMChangePropertyChannel1
+add property command_ECMCOPrerequisites on program eServiceSchemaVariableMapping.tcl to command 'ECMCOPrerequisites';

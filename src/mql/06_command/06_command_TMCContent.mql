@@ -1,0 +1,24 @@
+del command 'TMCContent';
+add command 'TMCContent'
+	description	'Content Command Object'
+	label	'emxFramework.Command.Content'
+	href	'${SUITE_DIR}/emxTeamContentSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Content'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallContent.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCContent'
+	property	'version'	value	'R422'
+;
+modify menu type_Folder add command TMCContent order command TMCContent 2;
+modify menu TMCtype_Route add command TMCContent order command TMCContent 2;
+#channel ==>type_FolderTMCtype_Route
+add property command_TMCContent on program eServiceSchemaVariableMapping.tcl to command 'TMCContent';

@@ -1,0 +1,32 @@
+del command 'RMTRequirementSpecificationMyDesk';
+add command 'RMTRequirementSpecificationMyDesk'
+	description	'Command Object for Requirement Specification in the My Desk Menu'
+	label	'emxRequirements.Menu.RequirementsSpecifications'
+	href	'${SUITE_DIR}/PopupLauncher.jsp?expandProgram=emxRequirementGroup:expandGroup&program=emxRequirementSpecification:getOwnedSpecsAndGroups,emxRequirementSpecification:getAllSpecsAndGroups,emxRequirementSpecification:getAllRequirementSpecifications,emxRequirementSpecification:getOwnedRequirementSpecifications&programLabel=emxRequirements.Filter.Owned,emxRequirements.Filter.All,emxRequirements.Filter.AllSpec,emxRequirements.Filter.OwnedSpec&table=RMTRequirementSpecificationsList&header=emxRequirements.Heading.RequirementSpecifications&selection=multiple&toolbar=RMTBufferMenu&HelpMarker=emxhelpspecificationlist&freezePane=Name,Title,DUP_Title,Revision&editLink=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	user	'System Transition Manager'
+	user	'System Conversion Manager'
+	user	'Shadow Agent'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Software Engineering Manager'
+	user	'Software Project Manager'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementSpecificationMyDesk'
+	property	'version'	value	'R422'
+;
+modify menu RMTMyDesk add command RMTRequirementSpecificationMyDesk order command RMTRequirementSpecificationMyDesk 2;
+#channel ==>RMTMyDesk
+add property command_RMTRequirementSpecificationMyDesk on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementSpecificationMyDesk';

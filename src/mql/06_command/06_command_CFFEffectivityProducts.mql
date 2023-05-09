@@ -1,0 +1,26 @@
+del command 'CFFEffectivityProducts';
+add command 'CFFEffectivityProducts'
+	description	'CFFEffectivityProducts'
+	label	'CFFEffectivityProducts'
+	href	''
+	alt	''
+	setting	'categoryType'		'series'
+	setting	'sequenceSelectable'		'evaluate[revindex + 1]'
+	setting	'Format'		'structure'
+	setting	'allowRange'		'false'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'expandProgram'		'emxModel:getEffProdDerivationChain'
+	setting	'searchType'		'type_Model'
+	setting	'seriesType'		'Products'
+	setting	'Label'		'Effectivity.EffectivityType.Products'
+	setting	'keyword'		'PD'
+	setting	'includeContextProgram'		'emxPLCCommon:getModelContexts'
+	setting	'table'		'PLCEffectivityProducts'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFEffectivityProducts'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_CFFEffectivityProducts on program eServiceSchemaVariableMapping.tcl to command 'CFFEffectivityProducts';

@@ -1,0 +1,26 @@
+del command 'emxAddPersonToSkill';
+add command 'emxAddPersonToSkill'
+	description	'Connect peoples to a business skill'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMPONENT_DIR}/emxComponentsAddPersonToBusinessSkill.jsp?fromPage=AddPersonToBusinessSkill'
+	alt	'emxComponents.Common.AddExisting'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'CheckForParentSkill'
+	setting	'Access Program'		'emxBusinessSkill'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'emxAddPersonToSkill'
+	property	'version'	value	'R422'
+;
+modify menu APPSkillPersonSummaryToolBarActions add command emxAddPersonToSkill order command emxAddPersonToSkill 1;
+#channel ==>APPSkillPersonSummaryToolBarActions
+add property command_emxAddPersonToSkill on program eServiceSchemaVariableMapping.tcl to command 'emxAddPersonToSkill';

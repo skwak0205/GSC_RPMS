@@ -1,0 +1,23 @@
+del command 'PMCWBSBaselineView';
+add command 'PMCWBSBaselineView'
+	description	''
+	label	'emxProgramCentral.Button.BaselineView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'hasAccessToBaselineView'
+	setting	'Access Program'		'emxTask'
+	setting	'table'		'PMCWBSBaseLineViewTable'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSBaselineView'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSTableMenu add command PMCWBSBaselineView order command PMCWBSBaselineView 4;
+#channel ==>PMCWBSTableMenu
+add property command_PMCWBSBaselineView on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSBaselineView';

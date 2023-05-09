@@ -1,0 +1,22 @@
+del command 'ECMCreateCR';
+add command 'ECMCreateCR'
+	description	'CreateChangeRequest Command Object'
+	label	'EnterpriseChangeMgt.Command.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_CreateChangeRequest&header=EnterpriseChangeMgt.Command.CreateChangeRequest&type=type_ChangeRequest&nameField=autoname&createJPO=enoECMChangeRequest:createChangeRequest&typeChooser=true&submitAction=refreshCaller&preProcessJavaScript=setRO&HelpMarker=emxhelpchangerequestcreate'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCreateCR'
+	property	'version'	value	'R216'
+;
+modify menu ECMCRMenuToolbar add command ECMCreateCR order command ECMCreateCR 1;
+#channel ==>ECMCRMenuToolbar
+add property command_ECMCreateCR on program eServiceSchemaVariableMapping.tcl to command 'ECMCreateCR';

@@ -1,0 +1,16 @@
+del command 'AEFFullSearchViewFormBasedMode';
+add command 'AEFFullSearchViewFormBasedMode'
+	description	'Tags Mode Command'
+	label	'emxFramework.Command.AEFFullSearchViewFormBasedModeLabel'
+	href	'javascript:parent.changeView(\"FormBasedMode\")'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFFullSearchViewFormBasedMode'
+	property	'version'	value	'R215'
+;
+modify menu AEFFullSearchView add command AEFFullSearchViewFormBasedMode order command AEFFullSearchViewFormBasedMode 2;
+#channel ==>AEFFullSearchView
+add property command_AEFFullSearchViewFormBasedMode on program eServiceSchemaVariableMapping.tcl to command 'AEFFullSearchViewFormBasedMode';

@@ -1,0 +1,16 @@
+del command 'LCRetainedDocuments';
+add command 'LCRetainedDocuments'
+	description	'Retained Documents Command for Retention Record and Retention Hold'
+	label	'emxLibraryCentral.Command.RetainedDocuments'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&table=LCRetainedDocumentTable&program=emxRetainedDocument:getAllDocuments,emxRetainedDocument:getScheduledDocuments,emxRetainedDocument:getPurgedDocuments&programLabel=emxLibraryCentral.Filter.All,emxLibraryCentral.Filter.Scheduled,emxLibraryCentral.Filter.Purged&toolbar=LCRetainedDocumentSummaryToolBar&header=emxLibraryCentral.Header.RetainedDocuments&HelpMarker=emxhelplibraryretaineddocuments&selection=multiple'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCRetainedDocuments'
+	property	'version'	value	'R214'
+;
+modify menu type_RetentionRecord add command LCRetainedDocuments order command LCRetainedDocuments 5;
+#channel ==>type_RetentionRecord
+add property command_LCRetainedDocuments on program eServiceSchemaVariableMapping.tcl to command 'LCRetainedDocuments';

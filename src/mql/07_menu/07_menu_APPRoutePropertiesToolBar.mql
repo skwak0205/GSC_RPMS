@@ -1,0 +1,18 @@
+del menu 'APPRoutePropertiesToolBar';
+add menu 'APPRoutePropertiesToolBar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Horizontal ToolBar'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPRoutePropertiesActionsToolBar'
+	command	'RouteTransferOwnership'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRoutePropertiesToolBar'
+	property 'version'	value	'R422.HF1'
+;
+add property menu_APPRoutePropertiesToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPRoutePropertiesToolBar';

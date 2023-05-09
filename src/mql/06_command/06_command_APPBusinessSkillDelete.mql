@@ -1,0 +1,24 @@
+del command 'APPBusinessSkillDelete';
+add command 'APPBusinessSkillDelete'
+	description	''
+	label	'emxComponents.Command.DeleteSelected'
+	href	'${SUITE_DIR}/emxComponentsSkillDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.Common.ConfirmMessage'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPBusinessSkillDelete'
+	property	'version'	value	'R417'
+;
+modify menu APPBusinessSkillActions add command APPBusinessSkillDelete order command APPBusinessSkillDelete 0;
+#channel ==>APPBusinessSkillActions
+add property command_APPBusinessSkillDelete on program eServiceSchemaVariableMapping.tcl to command 'APPBusinessSkillDelete';

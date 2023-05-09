@@ -1,0 +1,21 @@
+del command 'PMCWBSPowerView';
+add command 'PMCWBSPowerView'
+	description	'WBS Command Object'
+	label	'emxFramework.Command.WBS'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCWBSPortal&showPageHeader=false&HelpMarker=emxhelpwbstasklist'
+	alt	'emxFramework.Command.Alt.WBS'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSPowerView'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCWBSPowerView on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSPowerView';

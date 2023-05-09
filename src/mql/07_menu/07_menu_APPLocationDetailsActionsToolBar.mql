@@ -1,0 +1,16 @@
+del menu 'APPLocationDetailsActionsToolBar';
+add menu 'APPLocationDetailsActionsToolBar'
+	description	''
+	label	'Components.Toolbar.Actions'
+	href	''
+	alt	'Components.Toolbar.Actions'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPLocationEdit'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPLocationDetailsActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPLocationDetailsActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPLocationDetailsActionsToolBar';

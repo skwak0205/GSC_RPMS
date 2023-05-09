@@ -1,0 +1,17 @@
+del command 'ECMCOs';
+add command 'ECMCOs'
+	description	'For showing related CA objects'
+	label	'EnterpriseChangeMgt.Command.ChangeOrder'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeUtil:getConnectedChanges&functionality=isChangeOrderTab&toolbar=ECMChangeOrderManagementToolbar&table=ECMChangeSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&PrinterFriendly=true&HelpMarker=emxhelpchangeordersection'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCOs'
+	property	'version'	value	'R417'
+;
+#channel ==>ECMEnterpriseChangeMgtChannel
+add property command_ECMCOs on program eServiceSchemaVariableMapping.tcl to command 'ECMCOs';

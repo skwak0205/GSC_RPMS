@@ -1,0 +1,27 @@
+del command 'RouteTemplateFormRevise';
+add command 'RouteTemplateFormRevise'
+	description	'Revise Document'
+	label	'emxComponents.RouteTemplate.Revise'
+	href	'${COMPONENT_DIR}/emxCommonRouteTemplateRevise.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'id==last.id&&(type=="Route Template"&&current=="Active")'
+	setting	'Access Function'		'showReviseCommand'
+	setting	'Access Program'		'emxRouteTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReviseDocument.png'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'RouteTemplateFormRevise'
+	property	'version'	value	'R423.HF4'
+;
+modify menu APPRouteTemplatePropertiesActionsToolBar add command RouteTemplateFormRevise order command RouteTemplateFormRevise 3;
+#channel ==>APPRouteTemplatePropertiesActionsToolBar
+add property command_RouteTemplateFormRevise on program eServiceSchemaVariableMapping.tcl to command 'RouteTemplateFormRevise';

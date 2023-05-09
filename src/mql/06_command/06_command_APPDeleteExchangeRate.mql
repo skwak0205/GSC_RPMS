@@ -1,0 +1,22 @@
+del command 'APPDeleteExchangeRate';
+add command 'APPDeleteExchangeRate'
+	description	'Delete Currency Exchnage Rate Command Object'
+	label	'emxComponents.Common.DeleteSelected'
+	href	'${SUITE_DIR}/emxComponentsCurrencyExchangeRateUtil.jsp?mode=delete'
+	alt	'emxComponents.Common.DeleteSelected'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.CurrencyExchangeRateSummary.DeleteConfirm'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDeleteExchangeRate'
+	property	'version'	value	'R417'
+;
+modify menu APPCurrencyExchangeRateSummaryToolBar add command APPDeleteExchangeRate order command APPDeleteExchangeRate 0;
+modify menu APPCurrencyExchangeRateSummaryActionsToolBar add command APPDeleteExchangeRate order command APPDeleteExchangeRate 0;
+#channel ==>APPCurrencyExchangeRateSummaryToolBarAPPCurrencyExchangeRateSummaryActionsToolBar
+add property command_APPDeleteExchangeRate on program eServiceSchemaVariableMapping.tcl to command 'APPDeleteExchangeRate';

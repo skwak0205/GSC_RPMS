@@ -1,0 +1,18 @@
+del command 'LBCAttributeGroupNameMatches';
+add command 'LBCAttributeGroupNameMatches'
+	description	''
+	label	'emxMultipleClassification.AttributeGroupChooser.Name'
+	href	''
+	alt	''
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Default'		'*'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeGroupNameMatches'
+	property	'version'	value	'R211'
+;
+modify menu LBCAttributeGroupAddExisting add command LBCAttributeGroupNameMatches order command LBCAttributeGroupNameMatches 2;
+#channel ==>LBCAttributeGroupAddExisting
+add property command_LBCAttributeGroupNameMatches on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeGroupNameMatches';

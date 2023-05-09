@@ -1,0 +1,22 @@
+del command 'PMCCompanyResourceManagerList';
+add command 'PMCCompanyResourceManagerList'
+	description	'List Resource Managers of Company'
+	label	'emxProgramCentral.Common.ResourceManagement'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxResourcePool:getCompanyResourceManagerList&table=PMCCompanyResourceManagerListTable&selection=multiple&sortColumnName=Name&header=emxProgramCentral.Common.ResourceManager&toolbar=PMCCompanyResourceManagerToolbarActions'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCompanyResourceManagerList'
+	property	'version'	value	'R216'
+;
+modify menu type_Company add command PMCCompanyResourceManagerList order command PMCCompanyResourceManagerList 0;
+modify menu type_BusinessUnit add command PMCCompanyResourceManagerList order command PMCCompanyResourceManagerList 0;
+modify menu type_Department add command PMCCompanyResourceManagerList order command PMCCompanyResourceManagerList 0;
+#channel ==>type_Companytype_BusinessUnittype_Department
+add property command_PMCCompanyResourceManagerList on program eServiceSchemaVariableMapping.tcl to command 'PMCCompanyResourceManagerList';

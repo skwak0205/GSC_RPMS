@@ -1,0 +1,22 @@
+del command 'APPReferenceDocumentsTreeCategory';
+add command 'APPReferenceDocumentsTreeCategory'
+	description	''
+	label	'emxComponents.Command.ReferenceDocuments'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPObjectDocumentSummaryToolBar&header=emxComponents.Menu.Documents&HelpMarker=emxhelpcontentlist&freezePane=Name'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPReferenceDocumentsTreeCategory'
+	property	'version'	value	'R216'
+;
+modify menu type_EngineeringChange add command APPReferenceDocumentsTreeCategory order command APPReferenceDocumentsTreeCategory 7;
+modify menu type_ImpactAnalysis add command APPReferenceDocumentsTreeCategory order command APPReferenceDocumentsTreeCategory 0;
+modify menu type_Decision add command APPReferenceDocumentsTreeCategory order command APPReferenceDocumentsTreeCategory 2;
+modify menu type_DecisionRMB add command APPReferenceDocumentsTreeCategory order command APPReferenceDocumentsTreeCategory 3;
+modify menu type_DOCUMENTS add command APPReferenceDocumentsTreeCategory order command APPReferenceDocumentsTreeCategory 5;
+modify menu type_AccessRequest add command APPReferenceDocumentsTreeCategory order command APPReferenceDocumentsTreeCategory 5;
+modify menu type_ImpactAnalysisRMB add command APPReferenceDocumentsTreeCategory order command APPReferenceDocumentsTreeCategory 0;
+#channel ==>type_EngineeringChangetype_ImpactAnalysistype_Decisiontype_DecisionRMBtype_DOCUMENTStype_AccessRequesttype_ImpactAnalysisRMB
+add property command_APPReferenceDocumentsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPReferenceDocumentsTreeCategory';

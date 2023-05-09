@@ -1,0 +1,17 @@
+del menu 'RMTAddExistingSubDerivedRequirementsToolbar';
+add menu 'RMTAddExistingSubDerivedRequirementsToolbar'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTAddExistingSubDerivedRequirements'
+	menu	'RMTCreateAddExistingSubRequirements'
+	menu	'RMTCreateAddExistingDerivedRequirements'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTAddExistingSubDerivedRequirementsToolbar'
+	property 'version'	value	'V6R2011x'
+;
+add property menu_RMTAddExistingSubDerivedRequirementsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RMTAddExistingSubDerivedRequirementsToolbar';

@@ -1,0 +1,19 @@
+del command 'PMCReportResourceDemandBySkill';
+add command 'PMCReportResourceDemandBySkill'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Command.ResourceDemandBySkillReport'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePoolPeopleUtil.jsp?mode=ResourcePoolReport&program=emxResourcePoolReports:getTableResourceDemandBySkillReportData&table=PMCReportResourceDemandBySkill&toolbar=PMCReportDateToolbarMenu&selection=none&submode=PMCResourceDemandBySkillReport&header=emxProgramCentral.ResourcePlanning.Report.Charts.ResourceDemandBySkillReport&HelpMarker=emxhelpresourcedemandbyskillreport&xaxistitle=emxProgramCentral.ResourcePlanning.Report.Charts.TimeLine&yaxistitle=emxProgramCentral.ResourcePlanning.Report.Charts.NoofResources&charttype=stackedbar&suiteKey=ProgramCentral&threshholdvalue=Capacity&sortColumnName=none'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCReportResourceDemandBySkill'
+	property	'version'	value	'R419'
+;
+modify menu PMCResourcePoolToolBarActions add command PMCReportResourceDemandBySkill order command PMCReportResourceDemandBySkill 0;
+#channel ==>PMCResourcePoolToolBarActionsPMCResourcePoolReportData
+add property command_PMCReportResourceDemandBySkill on program eServiceSchemaVariableMapping.tcl to command 'PMCReportResourceDemandBySkill';

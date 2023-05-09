@@ -1,0 +1,17 @@
+del channel 'RMTTraceability';
+add channel 'RMTTraceability'
+	description	'Channel to Traceability'
+	height	'0'
+	label	'emxRequirements.Common.RMTTraceability'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'Height'		'40%'
+	command 	'RMTDisplayGraphUtil','RMTTraceabilityRequirementReport','RMTTraceabilityFeatureReport','RMTTraceabilityTestCaseReport','RMTTraceabilityParameterReport'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTraceability'
+	property	'version'	value	'R417'
+;
+#portal ==>RMTTraceability
+add property channel_RMTTraceability on program eServiceSchemaVariableMapping.tcl to channel 'RMTTraceability';

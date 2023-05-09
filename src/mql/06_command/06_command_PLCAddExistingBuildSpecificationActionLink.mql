@@ -1,0 +1,22 @@
+del command 'PLCAddExistingBuildSpecificationActionLink';
+add command 'PLCAddExistingBuildSpecificationActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Specification&emxPLCCommon:excludeConnected&table=PLCSearchSpecificationsTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../productline/SearchUtil.jsp?mode=AddExisting&relName=relationship_BuildSpecification&from=false&cancelLabel=emxProduct.Button.Close'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCAddExistingBuildSpecificationActionLink'
+	property	'version'	value	'R417'
+;
+modify menu BuildSpecificationSummaryActionsToolbar add command PLCAddExistingBuildSpecificationActionLink order command PLCAddExistingBuildSpecificationActionLink 1;
+#channel ==>BuildSpecificationSummaryActionsToolbar
+add property command_PLCAddExistingBuildSpecificationActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCAddExistingBuildSpecificationActionLink';

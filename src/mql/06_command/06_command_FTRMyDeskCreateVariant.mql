@@ -1,0 +1,19 @@
+del command 'FTRMyDeskCreateVariant';
+add command 'FTRMyDeskCreateVariant'
+	description	''
+	label	'emxProduct.ActionLink.CreateVariant'
+	href	'${SUITE_DIR}/MyDeskCreateVariantPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateVariant.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRMyDeskVariantsToolbar add command FTRMyDeskCreateVariant order command FTRMyDeskCreateVariant 1;
+#channel ==>FTRMyDeskVariantsToolbar
+add property command_FTRMyDeskCreateVariant on program eServiceSchemaVariableMapping.tcl to command 'FTRMyDeskCreateVariant';

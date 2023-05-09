@@ -1,0 +1,21 @@
+del command 'APPInactiveCompanies';
+add command 'APPInactiveCompanies'
+	description	'Command Object for Inactive Company Summary'
+	label	'emxComponents.Command.InactiveCompanies'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPCompaniesSummary&toolbar=APPInactiveCompanySummaryToolBar&program=emxCompany:getAllInActiveCompanies&header=emxComponents.InactiveCompanySummary.Heading&HelpMarker=emxhelpcompanyinactive&selection=multiple&PrinterFriendly=true&sortColumnName=Name&sortDirection=ascending'
+	alt	'emxComponents.Command.InactiveCompanies'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPInactiveCompanies'
+	property	'version'	value	'R422'
+;
+modify menu APPAdministration add command APPInactiveCompanies order command APPInactiveCompanies 1;
+#channel ==>APPAdministration
+add property command_APPInactiveCompanies on program eServiceSchemaVariableMapping.tcl to command 'APPInactiveCompanies';

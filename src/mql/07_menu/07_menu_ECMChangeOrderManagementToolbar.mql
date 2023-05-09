@@ -1,0 +1,19 @@
+del menu 'ECMChangeOrderManagementToolbar';
+add menu 'ECMChangeOrderManagementToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	command	'ECMAddToExistingCO'
+	command	'ECMAddToNewCO'
+	command	'AEFSeparator'
+	command	'ECMContextChangeRemoveActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMChangeOrderManagementToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMChangeOrderManagementToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMChangeOrderManagementToolbar';

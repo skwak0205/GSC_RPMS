@@ -1,0 +1,11 @@
+del channel 'PeopleChannel';
+add channel 'PeopleChannel'
+	description	'People view Administration'
+	height	'620'
+	label	'emxPlmOnline.label.PeopleViewToolbar'
+	href	''
+	setting		'Registered Suite'		'VPLMAdministration'
+	command 	'APPVPLMPerson','APPVPLMContext','APPVPLMOrganization','APPVPLMProject','APPVPLMRole','APPVPLMLocalAdministration'
+;
+#portal ==>APPVPLMPeopleAdminPortal
+add property channel_PeopleChannel on program eServiceSchemaVariableMapping.tcl to channel 'PeopleChannel';

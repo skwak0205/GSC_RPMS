@@ -1,0 +1,12 @@
+del command 'ECMCOContent';
+add command 'ECMCOContent'
+	description	'CO Content commands'
+	label	'EnterpriseChangeMgt.Command.ChangeContent'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=ECMCOContentPortal&showPageHeader=true&header=EnterpriseChangeMgt.Heading.ChangeContent'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	property	'Target Location'	value	'content'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_ECMCOContent on program eServiceSchemaVariableMapping.tcl to command 'ECMCOContent';

@@ -1,0 +1,18 @@
+del menu 'TMCtype_InboxTask';
+add menu 'TMCtype_InboxTask'
+	description	''
+	label	'$<attribute[attribute_Title].value>'
+	href	'${SUITE_DIR}/emxTeamTaskDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallTask16.png'
+	command	'TMCRouteContent'
+	command	'TMCRoute'
+	command	'AEFHistory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCtype_InboxTask'
+	property 'version'	value	'R423.HF1'
+;
+add property menu_TMCtype_InboxTask on program eServiceSchemaVariableMapping.tcl to menu 'TMCtype_InboxTask';

@@ -1,0 +1,16 @@
+del menu 'PMCAddTaskMenu';
+add menu 'PMCAddTaskMenu'
+	description	''
+	label	'emxProgramCentral.Common.AddTask'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWBSInsertTaskAbove'
+	command	'PMCWBSAddSubtaskBelow'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCAddTaskMenu'
+	property 'version'	value	'R417'
+;
+add property menu_PMCAddTaskMenu on program eServiceSchemaVariableMapping.tcl to menu 'PMCAddTaskMenu';

@@ -1,0 +1,27 @@
+del command 'RMTDeleteGroupActionLink';
+add command 'RMTDeleteGroupActionLink'
+	description	'delete selected groups'
+	label	'emxRequirements.Command.RMTRequirementGroupDelete'
+	href	'${SUITE_DIR}/RMTRequirementGroupProcess.jsp?operation=delete'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxRequirements.Alert.Delete'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTDeleteGroupActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTSpecificationDeleteAndDetachMenu add command RMTDeleteGroupActionLink order command RMTDeleteGroupActionLink 1;
+#channel ==>RMTSpecificationDeleteAndDetachMenu
+add property command_RMTDeleteGroupActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTDeleteGroupActionLink';

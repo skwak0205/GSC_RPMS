@@ -1,0 +1,21 @@
+################################################################################################
+# Created Date : 2023. 03. 01
+# Create by Jungrim Choi
+# Description : Admin menu
+#################################################################################################
+#del command gscAPPPersonEnoRoleSearchCommand;
+add command gscAPPPersonEnoRoleSearchCommand
+    label 'emxComponents.Header.Enovia.PersonRole.Search'
+    href '${COMMON_DIR}/gscAPPIndentedTable.jsp?showClipboard=false&FilterFramePage=../common/gscAPPPersonEnoRoleSearchFilter.jsp&FilterFrameSize=1&program=gscAPPInterfaceUserLog:searchEnoviaRolelist&table=gscAPPPersonRoleSummaryTable&header=emxComponents.Header.Enovia.PersonRole.Search&hideHeader=true&selection=multiple&pageSize=30&sortColumnName=FullName&sortDirection=ascending'
+    setting "Registered Suite" "Components"
+    setting "Target Location"  "content"
+    setting "Submit"           "true"
+    setting "Row Select"       "single"
+    property "installer" value "gsc"
+    property "application" value "Framework"
+    property "installed date" value "2020-07-29"
+    property "original name" value "gscAPPPersonEnoRoleSearchCommand"
+    property "version" value "R421"
+;
+
+add property 'command_gscAPPPersonEnoRoleSearchCommand' on program 'eServiceSchemaVariableMapping.tcl' to command 'gscAPPPersonEnoRoleSearchCommand';

@@ -1,0 +1,30 @@
+del command 'RMTRequirementTestCaseTreeCategory';
+add command 'RMTRequirementTestCaseTreeCategory'
+	description	'Command Object for Test Case in Requirement Menu.'
+	label	'emxRequirements.Tree.TestCase'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCTestCaseList&program=emxTestCase:getRelatedTestCases&header=emxRequirements.Heading.TestCase&selection=multiple&toolbar=TRMChange&rel=relationship_RequirementValidation&sortColumnName=Name&HelpMarker=emxhelptestcaselist&freezePane=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'policy != "Requirement Version"'
+	setting	'Access Function'		'showRMTRequirementTestCaseTreeCategory'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'COMMON_DIR/iconSmallTestCase.gif'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementTestCaseTreeCategory'
+	property	'version'	value	'V6R2020x'
+;
+modify menu Msoitype_Requirement add command RMTRequirementTestCaseTreeCategory order command RMTRequirementTestCaseTreeCategory 3;
+#channel ==>Msoitype_RequirementRMTRelatedObjects
+add property command_RMTRequirementTestCaseTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementTestCaseTreeCategory';

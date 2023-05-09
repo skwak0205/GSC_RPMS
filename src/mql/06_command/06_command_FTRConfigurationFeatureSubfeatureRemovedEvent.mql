@@ -1,0 +1,18 @@
+del command 'FTRConfigurationFeatureSubfeatureRemovedEvent';
+add command 'FTRConfigurationFeatureSubfeatureRemovedEvent'
+	description	'Configuration Feature Subfeature Removed Event'
+	label	'PublishSubscribe.Event.ConfigurationFeatureSubfeatureRemoved'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Configuration Feature Subfeature Removed'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'disconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationFeatureSubfeatureRemovedEvent'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRConfigurationFeatureSubfeatureRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRConfigurationFeatureSubfeatureRemovedEvent';

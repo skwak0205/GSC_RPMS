@@ -1,0 +1,25 @@
+del command 'FTRLFContextCreateManufacturingFeatureContextActionLink';
+add command 'FTRLFContextCreateManufacturingFeatureContextActionLink'
+	description	''
+	label	'emxConfiguration.ActionLink.CreateManufacturingFeature'
+	href	'${SUITE_DIR}/ManufacturingFeatureCreatePreProcess.jsp?strCreationType=type_ManufacturingFeature&UIContext=LogicalFeature&HelpMarker=emxhelpmanufacturingfeaturecreate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Mode'		'edit'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'ManufacturingFeature'
+	setting	'Hide Mode'		'Mobile,Cloud'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLFContextCreateManufacturingFeatureContextActionLink'
+	property	'version'	value	'R418'
+;
+modify menu FTRLFContextManufacturingFeaturesToolbarActions add command FTRLFContextCreateManufacturingFeatureContextActionLink order command FTRLFContextCreateManufacturingFeatureContextActionLink 1;
+#channel ==>FTRLFContextManufacturingFeaturesToolbarActions
+add property command_FTRLFContextCreateManufacturingFeatureContextActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRLFContextCreateManufacturingFeatureContextActionLink';

@@ -1,0 +1,21 @@
+del command 'PLCEditSpecificationActionLink';
+add command 'PLCEditSpecificationActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Specification&mode=Edit&formHeader=emxProduct.Heading.Edit&HelpMarker=emxhelpspecedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCEditSpecificationActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCSpecificationPropertiesTopActionBar add command PLCEditSpecificationActionLink order command PLCEditSpecificationActionLink 0;
+#channel ==>PLCSpecificationPropertiesTopActionBar
+add property command_PLCEditSpecificationActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCEditSpecificationActionLink';

@@ -1,0 +1,8 @@
+{
+"TerminologyManagementCommand.Title":"Gestionar definición de estructura de exploración",
+"TerminologyManagementCommand.ShortHelp":"Administrar referencias asociadas a estructuras de exploración e instancias asociadas a nodos de exploración.",
+"AssociateTerminologiesCommand.Title":"Agregar a estructura de exploración",
+"AssociateTerminologiesCommand.ShortHelp":"Asociar las referencias seleccionadas con estructura de exploración.",
+"AssociateTermsCommand.Title":"Agregar al nodo de exploración",
+"AssociateTermsCommand.ShortHelp":"Asociar instancias seleccionadas con nodo de exploración."
+}

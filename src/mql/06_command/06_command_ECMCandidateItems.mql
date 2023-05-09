@@ -1,0 +1,18 @@
+del command 'ECMCandidateItems';
+add command 'ECMCandidateItems'
+	description	'Candidate Items command'
+	label	'EnterpriseChangeMgt.Command.CandidateItem'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeAssessment:getCandidateItems&table=ECMCandidateItemTable&selection=multiple&toolbar=ECMCandidateItemsListToolBar&sortColumnName=Name&HelpMarker=emxhelpcandidateitems&massPromoteDemote=false&selectHandler=highlight3DCandidateItem&header=EnterpriseChangeMgt.Heading.CandidateItems'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>] || type.kindof[$<type_ChangeRequest>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCandidateItems'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMCandidateItemsChannelECMChangeContentChannel1
+add property command_ECMCandidateItems on program eServiceSchemaVariableMapping.tcl to command 'ECMCandidateItems';

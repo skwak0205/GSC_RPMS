@@ -1,0 +1,19 @@
+del command 'APPECEditDetailsActionLink';
+add command 'APPECEditDetailsActionLink'
+	description	'EC Properties edit link'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_EngineeringChange&mode=edit&formHeader=emxComponents.Heading.EditEngineeringChange&HelpMarker=emxhelpengchangeeditdetails&sortColumnName=Name'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(context.user==owner || current.access[modify] == true || current.access[changename] == true || current.access[changeowner] == true || current.access[changepolicy] == true || current.access[changevault] == true || current.access[changetype] == true)&& (current != Close && current != Reject)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECEditDetailsActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECPropertiesActionsToolBar add command APPECEditDetailsActionLink order command APPECEditDetailsActionLink 1;
+#channel ==>APPECPropertiesActionsToolBar
+add property command_APPECEditDetailsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPECEditDetailsActionLink';

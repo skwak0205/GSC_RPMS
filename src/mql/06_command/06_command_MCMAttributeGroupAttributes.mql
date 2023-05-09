@@ -1,0 +1,16 @@
+del command 'MCMAttributeGroupAttributes';
+add command 'MCMAttributeGroupAttributes'
+	description	'Attribute Group Attributes'
+	label	'emxMultipleClassification.Common.Attributes'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=ActualName,Name&program=emxMultipleClassificationAttributeGroup:getRelatedAttributes&table=MCMAttributesList&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=MCMAttributeToolBar&header=emxMultipleClassification.AttributeGroup.Attributes&HelpMarker=emxhelpattributeslist&objectCompare=false&Export=false&showRMB=false&displayView=details&showClipboard=false'
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'MCMAttributeGroupAttributes'
+	property	'version'	value	'R423.HF5'
+;
+modify menu type_MCMAttributeGroupTreeMenu add command MCMAttributeGroupAttributes order command MCMAttributeGroupAttributes 1;
+#channel ==>type_MCMAttributeGroupTreeMenu
+add property command_MCMAttributeGroupAttributes on program eServiceSchemaVariableMapping.tcl to command 'MCMAttributeGroupAttributes';

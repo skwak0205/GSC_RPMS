@@ -1,0 +1,11 @@
+{
+  "CVS.optionsChecker.searchEngine.notExisting.error": "Pro vyhledávání hodnot musí být definován vyhledávač!",
+  "CVS.optionsChecker.searchEngine.notFunction.error": "Očekává se funkce pro vyhledávač!",
+  "CVS.optionsChecker.defaultValues.array.error": "Výchozí hodnoty musí být zadány v poli!",
+  "CVS.optionsChecker.defaultValues.arrayObjects.error": "Jako výchozí hodnoty pro vstup se očekává pole objektů!",
+  "CVS.optionsChecker.defaultValues.labelExpected.error": "Očekává se popisek pro každou výchozí hodnotu!",
+  "CVS.optionsChecker.defaultValues.valueExpected.error": "Očekává se hodnota pro každou výchozí hodnotu!",
+  "CVS.optionsChecker.onSuggest.notFunction.error": "Očekává se funkce pro možnost \"onSuggest\"!",
+  "CVS.optionsChecker.onSelect.notFunction.error": "Očekává se funkce pro možnost \"onSelect\"!",
+  "CVS.optionsChecker.onCleanDataset.notFunction.error": "Očekává se funkce pro možnost \"onCleanDataset\"!"
+}

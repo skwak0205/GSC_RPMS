@@ -1,0 +1,15 @@
+del menu 'type_PLCTestCaseStructureMenu';
+add menu 'type_PLCTestCaseStructureMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCTestCaseStructure'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'type_PLCTestCaseStructureMenu'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_type_PLCTestCaseStructureMenu on program eServiceSchemaVariableMapping.tcl to menu 'type_PLCTestCaseStructureMenu';

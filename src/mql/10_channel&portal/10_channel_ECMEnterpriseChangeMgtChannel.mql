@@ -1,0 +1,16 @@
+del channel 'ECMEnterpriseChangeMgtChannel';
+add channel 'ECMEnterpriseChangeMgtChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'EnterpriseChangeMgt'
+	command 	'ECMCAs','ECMNewCRs','ECMCOs','ECMChangeLegacy','ECMCRs'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMEnterpriseChangeMgtChannel'
+	property	'version'	value	'R216'
+;
+#portal ==>ECMEnterpriseChangeMgtPortal
+add property channel_ECMEnterpriseChangeMgtChannel on program eServiceSchemaVariableMapping.tcl to channel 'ECMEnterpriseChangeMgtChannel';

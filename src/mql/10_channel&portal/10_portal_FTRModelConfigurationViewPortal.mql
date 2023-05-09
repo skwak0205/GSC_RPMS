@@ -1,0 +1,14 @@
+del portal 'FTRModelConfigurationViewPortal';
+add portal 'FTRModelConfigurationViewPortal'
+	description	''
+	label	''
+	href	''
+	channel 	FTRModelConfigurationViewChannel
+	setting	'Registered Suite'		'Configuration'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelConfigurationViewPortal'
+	property	'version'	value	'R212'
+;
+add property portal_FTRModelConfigurationViewPortal on program eServiceSchemaVariableMapping.tcl to portal 'FTRModelConfigurationViewPortal';

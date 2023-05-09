@@ -1,0 +1,24 @@
+del command 'RMTRequirementPropertiesSlidein';
+add command 'RMTRequirementPropertiesSlidein'
+	description	''
+	label	'emxRequirements.Common.RMTAttributes'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_RequirementSlidein&actionBarName=RMTRequirementPropertiesTopActionBar&formHeader=emxRequirements.Heading.PropertiesWithoutRevision&HelpMarker=emxhelprequirementdetails&postProcessURL=${SUITE_DIR}/SpecificationProcess.jsp?mode=refreshTable&ObjectToRefresh=${ID}'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementPropertiesSlidein'
+	property	'version'	value	'R422'
+;
+modify menu type_RequirementRMB add command RMTRequirementPropertiesSlidein order command RMTRequirementPropertiesSlidein 4;
+modify menu RMTSpecStructureSubRequirementRMB add command RMTRequirementPropertiesSlidein order command RMTRequirementPropertiesSlidein 3;
+modify menu RMTSpecStructureRequirementRMB add command RMTRequirementPropertiesSlidein order command RMTRequirementPropertiesSlidein 3;
+modify menu RMTReqirementStructureStaticRMB add command RMTRequirementPropertiesSlidein order command RMTRequirementPropertiesSlidein 1;
+#channel ==>type_RequirementRMBRMTSpecStructureSubRequirementRMBRMTSpecStructureRequirementRMBRMTReqirementStructureStaticRMB
+add property command_RMTRequirementPropertiesSlidein on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementPropertiesSlidein';

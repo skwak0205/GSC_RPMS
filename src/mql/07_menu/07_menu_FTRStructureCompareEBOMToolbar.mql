@@ -1,0 +1,15 @@
+del menu 'FTRStructureCompareEBOMToolbar';
+add menu 'FTRStructureCompareEBOMToolbar'
+	description	''
+	label	'emxFramework.Menu.AEFStructureCompareMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRSBCompareSyncToLeft'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRStructureCompareEBOMToolbar'
+	property 'version'	value	'R212'
+;
+add property menu_FTRStructureCompareEBOMToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRStructureCompareEBOMToolbar';

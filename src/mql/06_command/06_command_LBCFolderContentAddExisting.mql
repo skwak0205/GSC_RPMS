@@ -1,0 +1,22 @@
+del command 'LBCFolderContentAddExisting';
+add command 'LBCFolderContentAddExisting'
+	description	'Add Content to Folder'
+	label	'emxDocumentCentral.ActionBarCmd.AddContent'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Libraries,type_Classification,type_DOCUMENTS,type_Part,type_SupplierEquivalentPart&hideHeader=true&header=emxLibraryCentral.Search.Results&selection=multiple&submitURL=../documentcentral/emxLibraryCentralAddExistingProcess.jsp?HelpMarker=emxhelpfullsearch&useMode=addToFolder'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromConnect'
+	setting	'Submit'		'false'
+	setting	'Row Select'		'none'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCFolderContentAddExisting'
+	property	'version'	value	'R423.HF4'
+;
+modify menu DCFolderContentTopActionbar add command LBCFolderContentAddExisting order command LBCFolderContentAddExisting 0;
+modify menu LBCFolderContentActionToolBar add command LBCFolderContentAddExisting order command LBCFolderContentAddExisting 1;
+#channel ==>DCFolderContentTopActionbarLBCFolderContentActionToolBar
+add property command_LBCFolderContentAddExisting on program eServiceSchemaVariableMapping.tcl to command 'LBCFolderContentAddExisting';

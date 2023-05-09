@@ -1,0 +1,25 @@
+del command 'APPRemoveECAssigneeActionLink';
+add command 'APPRemoveECAssigneeActionLink'
+	description	''
+	label	'emxComponents.Command.Remove'
+	href	'${SUITE_DIR}/emxEngineeringChangeUtil.jsp?mode=disconnectAssignee'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'owner==context.user'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showAddRemoveAssigneesLink'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	setting	'Access Mask'		'ToDisconnect'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRemoveECAssigneeActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECAssigneesListActionsToolBar add command APPRemoveECAssigneeActionLink order command APPRemoveECAssigneeActionLink 0;
+#channel ==>APPECAssigneesListActionsToolBar
+add property command_APPRemoveECAssigneeActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRemoveECAssigneeActionLink';

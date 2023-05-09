@@ -1,0 +1,16 @@
+del channel 'IssueChannel2';
+add channel 'IssueChannel2'
+	description	'IssueChannel2 which shows Assignee list'
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Components'
+	command 	'IssueAssigneeTreeCategory'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueChannel2'
+	property	'version'	value	'10-5'
+;
+#portal ==>IssuePortal
+add property channel_IssueChannel2 on program eServiceSchemaVariableMapping.tcl to channel 'IssueChannel2';

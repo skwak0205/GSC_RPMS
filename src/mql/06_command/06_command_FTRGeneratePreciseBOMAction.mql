@@ -1,0 +1,25 @@
+del command 'FTRGeneratePreciseBOMAction';
+add command 'FTRGeneratePreciseBOMAction'
+	description	''
+	label	'emxProduct.ActionLink.GeneratePBOM'
+	href	'${SUITE_DIR}/PreciseBOMProcess.jsp?mode=generatePBOM&place=listpage'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<expression[LogicalFeatureEnabled]=="true">'
+	setting	'Command'		'MainWindow'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showLinkForPBOM'
+	setting	'Access Program'		'emxProductConfiguration'
+	setting	'Hide Mode'		'Mobile'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRGeneratePreciseBOMAction'
+	property	'version'	value	'R423'
+;
+modify menu FTRProductConfigurationPropertiesPageActionBar add command FTRGeneratePreciseBOMAction order command FTRGeneratePreciseBOMAction 3;
+#channel ==>FTRProductConfigurationPropertiesPageActionBar
+add property command_FTRGeneratePreciseBOMAction on program eServiceSchemaVariableMapping.tcl to command 'FTRGeneratePreciseBOMAction';

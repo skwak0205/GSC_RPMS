@@ -1,0 +1,27 @@
+del command 'ctxMsoiCmd_ShowAttributes';
+add command 'ctxMsoiCmd_ShowAttributes'
+	description	'ctxMsoiCmd_ShowAttributes'
+	label	'emxMSF.Command.ctxMsoiCmd_ShowAttributes'
+	href	''
+	alt	'ctxMsoiCmd_ShowAttributes'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_ShowAttributes'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Navigation_FileLocked add command ctxMsoiCmd_ShowAttributes order command ctxMsoiCmd_ShowAttributes 0;
+modify menu ctxMsoi_Navigation_FileUnlocked add command ctxMsoiCmd_ShowAttributes order command ctxMsoiCmd_ShowAttributes 0;
+modify menu ctxMsoi_Navigation_Folder add command ctxMsoiCmd_ShowAttributes order command ctxMsoiCmd_ShowAttributes 0;
+modify menu ctxMsoi_Navigation_MultiFile add command ctxMsoiCmd_ShowAttributes order command ctxMsoiCmd_ShowAttributes 0;
+modify menu ctxMsoi_Navigation_NoFiles add command ctxMsoiCmd_ShowAttributes order command ctxMsoiCmd_ShowAttributes 0;
+modify menu ctxMsoi_SearchResults_FileLocked add command ctxMsoiCmd_ShowAttributes order command ctxMsoiCmd_ShowAttributes 0;
+modify menu ctxMsoi_SearchResults_FileUnlocked add command ctxMsoiCmd_ShowAttributes order command ctxMsoiCmd_ShowAttributes 0;
+modify menu ctxMsoi_SearchResults_MultiFile add command ctxMsoiCmd_ShowAttributes order command ctxMsoiCmd_ShowAttributes 0;
+modify menu ctxMsoi_SearchResults_NoFiles add command ctxMsoiCmd_ShowAttributes order command ctxMsoiCmd_ShowAttributes 0;
+modify menu ctxMsoi_SearchResults_Projects add command ctxMsoiCmd_ShowAttributes order command ctxMsoiCmd_ShowAttributes 0;
+#channel ==>ctxMsoi_Navigation_FileLockedctxMsoi_Navigation_FileUnlockedctxMsoi_Navigation_FolderctxMsoi_Navigation_MultiFilectxMsoi_Navigation_NoFilesctxMsoi_SearchResults_FileLockedctxMsoi_SearchResults_FileUnlockedctxMsoi_SearchResults_MultiFilectxMsoi_SearchResults_NoFilesctxMsoi_SearchResults_Projects
+add property command_ctxMsoiCmd_ShowAttributes on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_ShowAttributes';

@@ -1,0 +1,19 @@
+del command 'LBCAttributeGroupNameOrAttribute';
+add command 'LBCAttributeGroupNameOrAttribute'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Range Function'		'getNameMachesList'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Range Program'		'emxMultipleClassificationAttributeGroup'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCAttributeGroupNameOrAttribute'
+	property	'version'	value	'R211'
+;
+modify menu LBCAttributeGroupAddExisting add command LBCAttributeGroupNameOrAttribute order command LBCAttributeGroupNameOrAttribute 1;
+#channel ==>LBCAttributeGroupAddExisting
+add property command_LBCAttributeGroupNameOrAttribute on program eServiceSchemaVariableMapping.tcl to command 'LBCAttributeGroupNameOrAttribute';

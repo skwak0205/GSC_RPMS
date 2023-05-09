@@ -1,0 +1,20 @@
+del command 'ECM3DliveLaunchCOCR';
+add command 'ECM3DliveLaunchCOCR'
+	description	'Command to display Cross Highlight'
+	label	'EnterpriseChangeMgt.Command.ECM3DliveLaunch'
+	href	'../components/emxLaunch3DLiveExamineCheck.jsp?crossHighlight=true&expandRelationship=relationship_ReportedAgainstChange&expandDirection=from&selectHandler=highlightSBAffectedItem'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeOrder>] || type.kindof[$<type_ChangeRequest>])'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showAffectedItem3DChannelCOCR'
+	setting	'Access Program'		'enoECMChangeUtil'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECM3DliveLaunchCOCR'
+	property	'version'	value	'R216'
+;
+#channel ==>ECM3DLiveAffectedItemChannelECMChangeContentChannel2
+add property command_ECM3DliveLaunchCOCR on program eServiceSchemaVariableMapping.tcl to command 'ECM3DliveLaunchCOCR';

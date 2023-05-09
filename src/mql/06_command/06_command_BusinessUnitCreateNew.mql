@@ -1,0 +1,28 @@
+del command 'BusinessUnitCreateNew';
+add command 'BusinessUnitCreateNew'
+	description	'Business Unit Create New Command Object'
+	label	'emxComponents.Button.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_CreateBusinessUnit&nameField=autoName&type=type_BusinessUnit&createJPO=emxBusinessUnit:createBusinessUnitObject&mode=create&targetLocation=slidein&companyType=Customer&submitAction=treeContent&header=emxComponents.Common.CreateBusinessUnit&suiteKey=Components&preProcessJavaScript=clearCompanyFormFields&howPageURLIcon=false&findMxLink=false&HelpMarker=emxhelpcompanycreate'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Slidein Width'		'500'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasAccessForBUPeopleCreateNew'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'BusinessUnitCreateNew'
+	property	'version'	value	'R424'
+;
+modify menu BusinessUnitSummaryTopActionBar add command BusinessUnitCreateNew order command BusinessUnitCreateNew 1;
+modify menu APPBusinessUnitSummaryActionsToolBar add command BusinessUnitCreateNew order command BusinessUnitCreateNew 1;
+#channel ==>BusinessUnitSummaryTopActionBarAPPBusinessUnitSummaryActionsToolBar
+add property command_BusinessUnitCreateNew on program eServiceSchemaVariableMapping.tcl to command 'BusinessUnitCreateNew';

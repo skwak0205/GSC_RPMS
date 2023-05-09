@@ -1,0 +1,28 @@
+del command 'TMCContentSummaryCreateNewActionLink';
+add command 'TMCContentSummaryCreateNewActionLink'
+	description	''
+	label	'emxTeamCentral.Common.Document'
+	href	'${COMPONENT_DIR}/emxCommonDocumentPreCheckin.jsp?appDir=teamcentral&appProcessPage=emxTeamPostCheckinProcess.jsp&JPOName=emxTeamDocumentBase&parentRelName=relationship_VaultedDocuments&objectAction=create&showTitle=true&showFormat=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasWorkspaceAndFileUpload'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedAuthor'
+	user	'Global User'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCContentSummaryCreateNewActionLink'
+	property	'version'	value	'R423.HF3'
+;
+modify menu TMCContentSummaryCreateNew add command TMCContentSummaryCreateNewActionLink order command TMCContentSummaryCreateNewActionLink 1;
+#channel ==>TMCContentSummaryCreateNew
+add property command_TMCContentSummaryCreateNewActionLink on program eServiceSchemaVariableMapping.tcl to command 'TMCContentSummaryCreateNewActionLink';

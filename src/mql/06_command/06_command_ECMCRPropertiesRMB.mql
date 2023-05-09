@@ -1,0 +1,21 @@
+del command 'ECMCRPropertiesRMB';
+add command 'ECMCRPropertiesRMB'
+	description	''
+	label	'EnterpriseChangeMgt.Command.ChangeProperties'
+	href	'${SUITE_DIR}/ECMIntermediateProcess.jsp?functionality=viewCRFromRMB&formHeader=EnterpriseChangeMgt.Heading.ChangeProperties&mode=view&form=type_ChangeRequestSlidein&type=type_ChangeRequest&toolbar=ECMCRPropertiesToolbarRMB&HelpMarker=emxhelpchangerequestproperties'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeRequest>])'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallProperties.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRPropertiesRMB'
+	property	'version'	value	'R216'
+;
+modify menu type_ChangeRequestRMB add command ECMCRPropertiesRMB order command ECMCRPropertiesRMB 1;
+#channel ==>type_ChangeRequestRMB
+add property command_ECMCRPropertiesRMB on program eServiceSchemaVariableMapping.tcl to command 'ECMCRPropertiesRMB';

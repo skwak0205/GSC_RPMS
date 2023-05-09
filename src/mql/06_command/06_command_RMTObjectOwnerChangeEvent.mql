@@ -1,0 +1,23 @@
+del command 'RMTObjectOwnerChangeEvent';
+add command 'RMTObjectOwnerChangeEvent'
+	description	''
+	label	'emxRequirements.Event.ObjectOwnerChanged.Label'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Event Type'		'Object Owner Changed'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTObjectOwnerChangeEvent'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementEvents add command RMTObjectOwnerChangeEvent order command RMTObjectOwnerChangeEvent 3;
+modify menu RMTRequirementSpecificationEvents add command RMTObjectOwnerChangeEvent order command RMTObjectOwnerChangeEvent 8;
+modify menu RMTChapterEvents add command RMTObjectOwnerChangeEvent order command RMTObjectOwnerChangeEvent 3;
+modify menu RMTCommentEvents add command RMTObjectOwnerChangeEvent order command RMTObjectOwnerChangeEvent 3;
+#channel ==>RMTRequirementEventsRMTRequirementSpecificationEventsRMTChapterEventsRMTCommentEvents
+add property command_RMTObjectOwnerChangeEvent on program eServiceSchemaVariableMapping.tcl to command 'RMTObjectOwnerChangeEvent';

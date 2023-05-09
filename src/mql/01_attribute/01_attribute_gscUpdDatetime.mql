@@ -1,0 +1,15 @@
+#del attribute 'gscUpdDatetime';
+add attribute 'gscUpdDatetime'
+ type 'string'
+ description '수정일자'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscUpdDatetime'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscUpdDatetime on program eServiceSchemaVariableMapping.tcl to attribute 'gscUpdDatetime';
+
+

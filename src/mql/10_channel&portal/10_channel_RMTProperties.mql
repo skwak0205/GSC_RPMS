@@ -1,0 +1,17 @@
+del channel 'RMTProperties';
+add channel 'RMTProperties'
+	description	'Channel to Properties'
+	height	'800'
+	label	'emxRequirements.Common.RMTProperties'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'ChannelID'		'1'
+	command 	'RMTRequirementProperties','PLMAddExtensionCmd','PARParametersTreeCategory','RMTRequirementReferenceDocumentTreeCategory','DomainAccessTreeCategory','AEFHistory'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTProperties'
+	property	'version'	value	'R417'
+;
+#portal ==>RMTProperties
+add property channel_RMTProperties on program eServiceSchemaVariableMapping.tcl to channel 'RMTProperties';

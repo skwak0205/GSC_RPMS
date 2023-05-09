@@ -1,0 +1,16 @@
+del channel 'PLCTestCaseProperties';
+add channel 'PLCTestCaseProperties'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProductLine'
+	command 	'PLCTestCaseProperties','PLMAddExtensionCmd'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCCollaboration'
+	property	'version'	value	'R419'
+;
+#portal ==>PLCTestCaseProperties
+add property channel_PLCTestCaseProperties on program eServiceSchemaVariableMapping.tcl to channel 'PLCTestCaseProperties';

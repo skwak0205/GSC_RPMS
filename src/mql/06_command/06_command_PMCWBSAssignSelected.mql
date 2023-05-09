@@ -1,0 +1,33 @@
+del command 'PMCWBSAssignSelected';
+add command 'PMCWBSAssignSelected'
+	description	''
+	label	'emxProgramCentral.Common.AssignSelected'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=submitAssignTask'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(!((to[Project Access Key].from.from[Project Access List].to.type.kindof[Project Template]==TRUE) || (type.kindof[Project Template]==TRUE)))'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSRMBCommand'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/I_AddMember32.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSAssignSelected'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSRMBActions add command PMCWBSAssignSelected order command PMCWBSAssignSelected 7;
+modify menu type_TaskManagementRMB add command PMCWBSAssignSelected order command PMCWBSAssignSelected 3;
+modify menu PMCAssignMenu add command PMCWBSAssignSelected order command PMCWBSAssignSelected 1;
+modify menu PMCWBSToolBar add command PMCWBSAssignSelected order command PMCWBSAssignSelected 2;
+modify menu PMCWhatIFExperimentActionToolbar add command PMCWBSAssignSelected order command PMCWBSAssignSelected 2;
+modify menu type_GateRMB add command PMCWBSAssignSelected order command PMCWBSAssignSelected 3;
+#channel ==>PMCWBSRMBActionstype_TaskManagementRMBPMCAssignMenuPMCWBSToolBarPMCWhatIFExperimentActionToolbartype_GateRMB
+add property command_PMCWBSAssignSelected on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSAssignSelected';

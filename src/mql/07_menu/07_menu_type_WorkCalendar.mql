@@ -1,0 +1,18 @@
+del menu 'type_WorkCalendar';
+add menu 'type_WorkCalendar'
+	description	''
+	label	'${NAME}'
+	href	'${SUITE_DIR}/WorkCalendarView.jsp?mode=workweek'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'iconCalendar.gif'
+	command	'PMCCalendarProperties'
+	command	'PMCListCalendarEvents'
+	command	'PMCListCalendarLocations'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_WorkCalendar'
+	property 'version'	value	'R422.HF4'
+;
+add property menu_type_WorkCalendar on program eServiceSchemaVariableMapping.tcl to menu 'type_WorkCalendar';

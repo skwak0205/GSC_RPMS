@@ -1,0 +1,21 @@
+del command 'PMCFolderMemberAccessView';
+add command 'PMCFolderMemberAccessView'
+	description	''
+	label	'emxProgramCentral.Common.PMCFolder.MemberAccessView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Access Function'		'isProjectSpaceVaultSummaryTable'
+	setting	'Access Program'		'emxProjectFolder'
+	setting	'table'		'PMCFolderMemberAccessViewTable'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFolderMemberAccessView'
+	property	'version'	value	'R216'
+;
+modify menu PMCFolderTableMenu add command PMCFolderMemberAccessView order command PMCFolderMemberAccessView 0;
+#channel ==>PMCFolderTableMenu
+add property command_PMCFolderMemberAccessView on program eServiceSchemaVariableMapping.tcl to command 'PMCFolderMemberAccessView';

@@ -1,0 +1,23 @@
+del command 'FTRFormCreateVariabilityOption';
+add command 'FTRFormCreateVariabilityOption'
+	description	''
+	label	'emxProduct.ActionLink.CreateVariabilityOption'
+	href	'${SUITE_DIR}/VariabilityOptionCreatePreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Mode'		'edit'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateVariabilityOption.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRVariabilityOptionsToolbar add command FTRFormCreateVariabilityOption order command FTRFormCreateVariabilityOption 1;
+#channel ==>FTRVariabilityOptionsToolbar
+add property command_FTRFormCreateVariabilityOption on program eServiceSchemaVariableMapping.tcl to command 'FTRFormCreateVariabilityOption';

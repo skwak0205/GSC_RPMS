@@ -1,0 +1,27 @@
+del command 'RegionAddExisting';
+add command 'RegionAddExisting'
+	description	'Region AddExisting Command Object'
+	label	'emxComponents.Common.AddExisting'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?selection=multiple&isAddExisting=true&submitLabel=emxComponents.Common.Done&cancelLabel=emxComponents.Common.Cancel&cancelButton=true&HelpMarker=emxhelpselectorganization&header=emxComponentsCentral.Common.SelectRegion&suiteKey=Components&table=APPOrganizationSummary&program=emxOrganization:getRootObjectForSelectOrganization&expandProgram=emxRegion:selectionRegionExpandProgram&sortColumnName=Type,Name&isFrom=false&relationshipName=relationship_OrganizationRegion&processURL=emxComponentsRegionUtil.jsp&mode=AddExisting&submitURL=../components/emxComponentsSelectOrganizationProcess.jsp&findMxLink=false&massPromoteDemote=false&customize=false&showRMB=false&showClipboard=false&objectCompare=false'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForLocationRegionAddRemove'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'RegionAddExisting'
+	property	'version'	value	'R417'
+;
+modify menu RegionTopActionBar add command RegionAddExisting order command RegionAddExisting 0;
+modify menu APPRegionActionsToolBar add command RegionAddExisting order command RegionAddExisting 2;
+#channel ==>RegionTopActionBarAPPRegionActionsToolBar
+add property command_RegionAddExisting on program eServiceSchemaVariableMapping.tcl to command 'RegionAddExisting';

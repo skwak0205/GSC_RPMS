@@ -1,0 +1,16 @@
+del command 'APPWorkflowDeliverables';
+add command 'APPWorkflowDeliverables'
+	description	'lists the deliverables objects of Workflow'
+	label	'emxComponents.Workflow.Deliverables'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPWorkflowRollupDeliverablesSummary&program=emxWorkflow:getRollupDeliverables&header=emxComponents.Workflow.RollupDeliverables&HelpMarker=emxhelpworkflowdeliverables'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowDeliverables'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu type_Workflow add command APPWorkflowDeliverables order command APPWorkflowDeliverables 4;
+#channel ==>type_Workflow
+add property command_APPWorkflowDeliverables on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowDeliverables';

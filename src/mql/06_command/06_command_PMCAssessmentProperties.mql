@@ -1,0 +1,18 @@
+del command 'PMCAssessmentProperties';
+add command 'PMCAssessmentProperties'
+	description	''
+	label	'emxFramework.Command.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCAssessmentForm&mode=view&toolbar=PMCAssessmentToolbar&formHeader=emxProgramCentral.Common.FormBasics&HelpMarker=emxhelpassessmentdetailsdialog'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallProperties.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssessmentProperties'
+	property	'version'	value	'R420'
+;
+modify menu type_AssessmentRMB add command PMCAssessmentProperties order command PMCAssessmentProperties 0;
+#channel ==>type_AssessmentRMB
+add property command_PMCAssessmentProperties on program eServiceSchemaVariableMapping.tcl to command 'PMCAssessmentProperties';

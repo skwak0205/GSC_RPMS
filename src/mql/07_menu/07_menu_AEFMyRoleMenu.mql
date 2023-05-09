@@ -1,0 +1,15 @@
+del menu 'AEFMyRoleMenu';
+add menu 'AEFMyRoleMenu'
+	description	''
+	label	'emxFramework.Command.MyRole'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFMyRoleCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFMyRoleMenu'
+	property 'version'	value	'R417'
+;
+add property menu_AEFMyRoleMenu on program eServiceSchemaVariableMapping.tcl to menu 'AEFMyRoleMenu';

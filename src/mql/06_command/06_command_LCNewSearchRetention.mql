@@ -1,0 +1,18 @@
+del command 'LCNewSearchRetention';
+add command 'LCNewSearchRetention'
+	description	'For New Search'
+	label	'emxDocumentCentral.ActionBarCmd.NewSearch'
+	href	'${SUITE_DIR}/emxLibraryCentralScheduleFindDialogFS.jsp?DialogAction=AddChildren&baseType=type_RetentionRecord&fromAction=AddExistingSchedule'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Submit'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCNewSearchRetention'
+	property	'version'	value	'10-7-SP1'
+;
+modify menu LCSearchToolBarRetentionSchedule add command LCNewSearchRetention order command LCNewSearchRetention 0;
+#channel ==>LCSearchToolBarRetentionSchedule
+add property command_LCNewSearchRetention on program eServiceSchemaVariableMapping.tcl to command 'LCNewSearchRetention';

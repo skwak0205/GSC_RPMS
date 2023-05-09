@@ -1,0 +1,26 @@
+del command 'IssueDetails';
+add command 'IssueDetails'
+	description	'Issue Details Command Object'
+	label	'emxComponents.ActionLink.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Issue&mode=View&toolbar=IssuePropertiesToolBar&formHeader=emxComponents.Heading.Properties&HelpMarker=emxhelpissueproperties&editLink=true'
+	alt	'emxComponents.ActionLink.Properties'
+	setting	'Target Location'		'content'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'True'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	user	'Customer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueDetails'
+	property	'version'	value	'R422'
+;
+#channel ==>IssueChannel1
+add property command_IssueDetails on program eServiceSchemaVariableMapping.tcl to command 'IssueDetails';

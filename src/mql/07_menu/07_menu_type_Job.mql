@@ -1,0 +1,17 @@
+del menu 'type_Job';
+add menu 'type_Job'
+	description	''
+	label	'${NAME}'
+	href	'emxForm.jsp?form=type_Job&header=emxFramework.Job.Properties&toolbar=JobActions'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Default Category'		'AEFJobMonitor'
+	command	'AEFJobMonitor'
+	command	'AEFHistory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'type_Job'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_type_Job on program eServiceSchemaVariableMapping.tcl to menu 'type_Job';

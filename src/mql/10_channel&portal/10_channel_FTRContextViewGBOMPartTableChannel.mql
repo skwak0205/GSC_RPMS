@@ -1,0 +1,17 @@
+del channel 'FTRContextViewGBOMPartTableChannel';
+add channel 'FTRContextViewGBOMPartTableChannel'
+	description	''
+	height	'500'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Configuration'
+	setting		'ChannelID'		'1'
+	command 	'FTRContextGBOMPartTable','FTRContextInactiveVariants','FTRContextInactiveParts'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRContextViewGBOMPartTableChannel'
+	property	'version'	value	'R212'
+;
+#portal ==>FTRContextViewGBOMPartTablePortal
+add property channel_FTRContextViewGBOMPartTableChannel on program eServiceSchemaVariableMapping.tcl to channel 'FTRContextViewGBOMPartTableChannel';

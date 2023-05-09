@@ -1,0 +1,24 @@
+del command 'ECMCATransferOwnership';
+add command 'ECMCATransferOwnership'
+	description	'Edit Change'
+	label	'EnterpriseChangeMgt.Command.TransferOwnership'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_TransferOwnership&formHeader=EnterpriseChangeMgt.Heading.CATransferOwnership&mode=edit&submitAction=refreshCaller&postProcessJPO=enoECMChangeActionUX:transferOwnership&HelpMarker=emxhelptransferowner&formFieldsOnly=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENOWCHA_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isChangeActionTransferable'
+	setting	'Access Program'		'enoECMChangeActionUX'
+	setting	'Mouse Over Popup'		'enable'
+	setting	'Image'		'${COMMON_DIR}/images/I_ImmTransferToUser.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCATransferOwnership'
+	property	'version'	value	'R216'
+;
+modify menu ECMCAPropertiesActionsToolbar add command ECMCATransferOwnership order command ECMCATransferOwnership 2;
+modify menu ECMCAPropertiesToolbar add command ECMCATransferOwnership order command ECMCATransferOwnership 2;
+#channel ==>ECMCAPropertiesActionsToolbarECMCAPropertiesToolbar
+add property command_ECMCATransferOwnership on program eServiceSchemaVariableMapping.tcl to command 'ECMCATransferOwnership';

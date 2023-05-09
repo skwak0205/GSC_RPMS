@@ -1,0 +1,14 @@
+del menu 'PLCProductVersionListTopActionBar';
+add menu 'PLCProductVersionListTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'PLCCreateVersionActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCProductVersionListTopActionBar'
+	property 'version'	value	'R213'
+;
+add property menu_PLCProductVersionListTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'PLCProductVersionListTopActionBar';

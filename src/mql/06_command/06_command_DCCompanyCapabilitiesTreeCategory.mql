@@ -1,0 +1,18 @@
+del command 'DCCompanyCapabilitiesTreeCategory';
+add command 'DCCompanyCapabilitiesTreeCategory'
+	description	'Capabilities Tree Category'
+	label	'emxDocumentCentral.TreeCategory.Capabilities'
+	href	'${SUITE_DIR}/emxDocumentCentralStartFrameSet.jsp?topActionbar=DCCompanyCapabilitiesTopActionbar&bottomActionbar=DCCompanyCapabilitiesBottomActionbar&header=emxDocumentCentral.Common.Capabilities'
+	alt	'emxDocumentCentral.TreeCategory.Capabilities'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallFormFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCCompanyCapabilitiesTreeCategory'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCtype_Company add command DCCompanyCapabilitiesTreeCategory order command DCCompanyCapabilitiesTreeCategory 1;
+#channel ==>DCtype_Company
+add property command_DCCompanyCapabilitiesTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'DCCompanyCapabilitiesTreeCategory';

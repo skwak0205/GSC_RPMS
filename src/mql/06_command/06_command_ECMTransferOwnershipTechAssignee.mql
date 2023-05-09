@@ -1,0 +1,21 @@
+del command 'ECMTransferOwnershipTechAssignee';
+add command 'ECMTransferOwnershipTechAssignee'
+	description	'Transfer Ownership to Technical Assignee'
+	label	'EnterpriseChangeMgt.Command.TransferOwnershipTechAssignee'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=transferOwnershipToTechnicalAssignee&TransferOwnership=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionTransferOwnership.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMTransferOwnershipTechAssignee'
+	property	'version'	value	'R216'
+;
+modify menu ECMCATransferOwnershipMenu add command ECMTransferOwnershipTechAssignee order command ECMTransferOwnershipTechAssignee 0;
+#channel ==>ECMCATransferOwnershipMenu
+add property command_ECMTransferOwnershipTechAssignee on program eServiceSchemaVariableMapping.tcl to command 'ECMTransferOwnershipTechAssignee';

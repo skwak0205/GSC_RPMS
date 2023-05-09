@@ -1,0 +1,20 @@
+del command 'APPWorkflowReassign';
+add command 'APPWorkflowReassign'
+	description	'Command Object for reassigning the workflow from action menu on the workflow summary page'
+	label	'emxComponents.ActionLink.ChangeOwner'
+	href	'${COMPONENT_DIR}/emxWorkflowAction.jsp?action=reassign'
+	alt	'emxComponents.ActionLink.ChangeOwner'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowReassign'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowSummaryActionsToolBar add command APPWorkflowReassign order command APPWorkflowReassign 5;
+modify menu APPObjectWorkflowActionsToolBar add command APPWorkflowReassign order command APPWorkflowReassign 5;
+#channel ==>APPWorkflowSummaryActionsToolBarAPPObjectWorkflowActionsToolBar
+add property command_APPWorkflowReassign on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowReassign';

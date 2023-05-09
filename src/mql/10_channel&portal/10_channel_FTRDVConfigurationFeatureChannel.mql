@@ -1,0 +1,17 @@
+del channel 'FTRDVConfigurationFeatureChannel';
+add channel 'FTRDVConfigurationFeatureChannel'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Configuration'
+	setting		'ChannelID'		'3'
+	command 	'FTRDVConfigurationFeatureCommand'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDVConfigurationFeatureChannel'
+	property	'version'	value	'R214'
+;
+#portal ==>FTRConfigurationDesignVariantPortal
+add property channel_FTRDVConfigurationFeatureChannel on program eServiceSchemaVariableMapping.tcl to channel 'FTRDVConfigurationFeatureChannel';

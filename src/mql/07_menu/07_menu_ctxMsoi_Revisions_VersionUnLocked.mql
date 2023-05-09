@@ -1,0 +1,13 @@
+del menu 'ctxMsoi_Revisions_VersionUnLocked';
+add menu 'ctxMsoi_Revisions_VersionUnLocked'
+	description	'Menu for Version Unlocked'
+	label	''
+	href	''
+	alt	''
+	command	'ctxMsoiCmd_Open'
+	command	'ctxMsoiCmd_Download'
+	command	'ctxMsoiCmd_Lock'
+	command	'ctxMsoiCmd_DeleteThisVersion'
+	command	'ctxMsoiCmd_DeleteAllVersions'
+;
+add property menu_ctxMsoi_Revisions_VersionUnLocked on program eServiceSchemaVariableMapping.tcl to menu 'ctxMsoi_Revisions_VersionUnLocked';

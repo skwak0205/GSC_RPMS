@@ -1,0 +1,16 @@
+del command 'MsoiProjectFolderContent';
+add command 'MsoiProjectFolderContent'
+	description	'Command to get folders of sub typed projects'
+	label	'emxFramework.Command.Folder'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxProjectFolder:getProjectFolder&table=IEFDesktopObjectSummary'
+	alt	'emxFramework.Command.Folder'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'IntegrationFramework'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiProjectFolderContent'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_MsoiProjectFolderContent on program eServiceSchemaVariableMapping.tcl to command 'MsoiProjectFolderContent';

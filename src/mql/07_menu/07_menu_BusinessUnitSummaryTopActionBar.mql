@@ -1,0 +1,15 @@
+del menu 'BusinessUnitSummaryTopActionBar';
+add menu 'BusinessUnitSummaryTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'BusinessUnitCreateNew'
+	command	'BusinessUnitAddExisting'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'BusinessUnitSummaryTopActionBar'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_BusinessUnitSummaryTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'BusinessUnitSummaryTopActionBar';

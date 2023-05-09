@@ -1,0 +1,20 @@
+del command 'PMCWeeklyTimesheetSubmit';
+add command 'PMCWeeklyTimesheetSubmit'
+	description	'Submit'
+	label	'emxProgramCentral.WeeklyTimesheet.Submit'
+	href	'${SUITE_DIR}/emxProgramCentralWeeklyTimesheetUtil.jsp?mode=preSubmitTimesheet'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current!="Approved" && current!="Submit"'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWeeklyTimesheetSubmit'
+	property	'version'	value	'R216'
+;
+modify menu PMCWeeklyTimeSheetToolBarActions add command PMCWeeklyTimesheetSubmit order command PMCWeeklyTimesheetSubmit 3;
+modify menu PMCWeeklyTimeSheetViewRMB add command PMCWeeklyTimesheetSubmit order command PMCWeeklyTimesheetSubmit 1;
+#channel ==>PMCWeeklyTimeSheetToolBarActionsPMCWeeklyTimeSheetViewRMB
+add property command_PMCWeeklyTimesheetSubmit on program eServiceSchemaVariableMapping.tcl to command 'PMCWeeklyTimesheetSubmit';

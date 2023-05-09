@@ -1,0 +1,16 @@
+del menu 'APPIssueEvents';
+add menu 'APPIssueEvents'
+	description	''
+	label	'emxComponents.Event.IssueModified'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPIssueModifyEvent'
+	command	'APPObjectNewDiscussionEvent'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPIssueEvents'
+	property 'version'	value	'R210'
+;
+add property menu_APPIssueEvents on program eServiceSchemaVariableMapping.tcl to menu 'APPIssueEvents';

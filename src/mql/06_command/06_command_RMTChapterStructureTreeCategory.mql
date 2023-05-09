@@ -1,0 +1,29 @@
+del command 'RMTChapterStructureTreeCategory';
+add command 'RMTChapterStructureTreeCategory'
+	description	'launch chapter structure browser.'
+	label	'emxRequirements.Tree.Structure'
+	href	'${SUITE_DIR}/StructureDisplay.jsp?menu=RMTChapterStructureDisplay'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTChapterStructureTreeCategory'
+	property	'version'	value	'R422'
+;
+modify menu type_ChapterRMB add command RMTChapterStructureTreeCategory order command RMTChapterStructureTreeCategory 2;
+modify menu type_Chapter add command RMTChapterStructureTreeCategory order command RMTChapterStructureTreeCategory 4;
+#channel ==>type_ChapterRMBtype_Chapter
+add property command_RMTChapterStructureTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTChapterStructureTreeCategory';

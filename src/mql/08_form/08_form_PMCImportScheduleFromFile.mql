@@ -1,0 +1,19 @@
+del form 'PMCImportScheduleFromFile';
+add form 'PMCImportScheduleFromFile' web
+field #1
+	name	'FilePath'
+	label	'emxProgramCentral.Common.ImportFromFile'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'function'		'getImportField'
+	setting	'program'		'emxProjectSpace'
+	setting	'Field Type'		'programHTMLOutput'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCImportScheduleFromFile'
+	property	'version'	value	'R418'
+;
+add property form_PMCImportScheduleFromFile on program eServiceSchemaVariableMapping.tcl to form 'PMCImportScheduleFromFile';

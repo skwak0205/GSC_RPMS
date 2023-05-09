@@ -1,0 +1,27 @@
+del command 'IssueRollupListPage';
+add command 'IssueRollupListPage'
+	description	'Command Object for Issue Rollup List Page'
+	label	'emxComponents.Command.IssueRollup'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonIssue:getRollupIssues&sortColumnName=Name&table=IssueList&header=emxComponents.Menu.IssueRollup&selection=multiple&HelpMarker=emxhelpissues'
+	alt	'emxComponents.Menu.IssueRollup'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'showRollupIssue'
+	setting	'Access Program'		'emxCommonIssue'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallIssue.gif'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Issue Manager'
+	user	'Analyst'
+	user	'Customer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'IssueRollupListPage'
+	property	'version'	value	'R422'
+;
+modify menu type_Part add command IssueRollupListPage order command IssueRollupListPage 8;
+#channel ==>type_Part
+add property command_IssueRollupListPage on program eServiceSchemaVariableMapping.tcl to command 'IssueRollupListPage';

@@ -1,0 +1,19 @@
+del command 'PLCHierarchyAddModelCommand';
+add command 'PLCHierarchyAddModelCommand'
+	description	''
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${SUITE_DIR}/PLCHierarchyModelAddExistingPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R420'
+;
+modify menu PLCHierarchyModelMenu add command PLCHierarchyAddModelCommand order command PLCHierarchyAddModelCommand 0;
+#channel ==>PLCHierarchyModelMenu
+add property command_PLCHierarchyAddModelCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCHierarchyAddModelCommand';

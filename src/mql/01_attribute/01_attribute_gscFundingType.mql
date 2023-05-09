@@ -1,0 +1,26 @@
+#del attribute 'gscFundingType';
+add attribute 'gscFundingType'
+ type 'string'
+ description 'Identifies the Business Area'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscFundingType'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscFundingType on program eServiceSchemaVariableMapping.tcl to attribute 'gscFundingType';
+
+modify attribute 'gscFundingType' add range= FT01; #Corporate
+modify attribute 'gscFundingType' add range= FT02; #사업부 (S&T)
+modify attribute 'gscFundingType' add range= FT03; #사업부 (O&P)
+modify attribute 'gscFundingType' add range= FT04; #사업부 (윤활유)
+modify attribute 'gscFundingType' add range= FT05; #사업부 (M&M)
+modify attribute 'gscFundingType' add range= FT06; #사업부 (방향족)
+modify attribute 'gscFundingType' add range= FT07; #사업부 (SHE)
+modify attribute 'gscFundingType' add range= FT08; #사업부 (C&L전략)
+modify attribute 'gscFundingType' add range= FT09; #사업부 (Polymer)
+modify attribute 'gscFundingType' add range= '';
+modify attribute 'gscFundingType' multivalue;
+

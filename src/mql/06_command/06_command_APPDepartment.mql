@@ -1,0 +1,25 @@
+del command 'APPDepartment';
+add command 'APPDepartment'
+	description	'Department Command Object'
+	label	'emxFramework.Command.Department'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCompany:getDepartmentsforPeople&table=APPOrganizationSummary&toolbar=APPPersonDepartmentSummaryToolBar&header=emxComponents.DepartmentSummary.Heading&selection=multiple&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpdepartments&PrinterFriendly=true'
+	alt	'emxFramework.Command.Department'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallDeparment.gif'
+	user	'Organization Manager'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDepartment'
+	property	'version'	value	'R422'
+;
+modify menu type_Person add command APPDepartment order command APPDepartment 2;
+#channel ==>type_Person
+add property command_APPDepartment on program eServiceSchemaVariableMapping.tcl to command 'APPDepartment';

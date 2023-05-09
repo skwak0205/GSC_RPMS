@@ -1,0 +1,23 @@
+{
+  "PaginationLabel": "Seite {1} von {2}",
+  "Undefined": "nicht definiert",
+  "inputNoFileChosen": "Keine Datei ausgewählt",
+  "AutoCompletePlaceHolder": "Wert eingeben",
+  "AutoCompleteNoValueFound": "Kein Wert gefunden",
+  "tagcloud": "Cloud-Ansicht",
+  "smallthumbnail": "Miniaturbildansicht",
+  "bigthumbnail": "Große Miniaturbildanzeige",
+  "imagewallthumbnail": "Wandminiaturbild",
+  "smalltile": "Kachelansicht",
+  "bigtile": "Großkachelansicht",
+  "textualtile": "Textkachelansicht",
+  "datagridview": "Datenrasteransicht",
+  "mixed": "Gemischte Ansicht",
+  "large": "Große Ansicht",
+  "graphlist": "Zeitachsenansicht",
+  "list": "Kompakte Ansicht",
+  "kanban": "Kanban-Ansicht",
+  "graph": "Diagrammansicht",
+  "gantt": "Gantt-Ansicht",
+  "map": "Planansicht"
+}

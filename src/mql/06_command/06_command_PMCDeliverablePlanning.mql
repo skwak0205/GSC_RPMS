@@ -1,0 +1,23 @@
+del command 'PMCDeliverablePlanning';
+add command 'PMCDeliverablePlanning'
+	description	'Deliverable Planning Functionality'
+	label	'Deliverable Planning'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?toolbar=PMCDeliverableActions&program=emxDeliverable:getDeliverables&table=PMCPlanDeliverableTable&freezePane=Name&selection=multiple&HelpMarker=emxhelpwbstasklist&editLink=true&findMxLink=false&direction=from&hideHeader=true&expandProgram=emxDeliverable:getSubDeliverables&postProcessJPO=emxTask:postProcessRefresh'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'DPG'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconColHeadTime.gif'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeliverablePlanning'
+	property	'version'	value	'R422'
+;
+modify menu DPGMyDesk add command PMCDeliverablePlanning order command PMCDeliverablePlanning 1;
+#channel ==>DPGMyDesk
+add property command_PMCDeliverablePlanning on program eServiceSchemaVariableMapping.tcl to command 'PMCDeliverablePlanning';

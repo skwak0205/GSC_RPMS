@@ -1,0 +1,20 @@
+del command 'ECMCreateCAUnderCO';
+add command 'ECMCreateCAUnderCO'
+	description	'Create Change Action under Change Order'
+	label	'EnterpriseChangeMgt.Command.CreateChangeAction'
+	href	'${SUITE_DIR}/ECMSearchUtil.jsp?chooserType=addChangeActionUnderChangeOrder'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAllowedToCreateChangeAction'
+	setting	'Access Program'		'enoECMChangeUX'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'original name'	value	'ECMCreateCAUnderCO'
+	property	'version'	value	'R422'
+;
+modify menu ECMCOAffectedChangeActionListToolbar add command ECMCreateCAUnderCO order command ECMCreateCAUnderCO 1;
+#channel ==>ECMCOAffectedChangeActionListToolbar
+add property command_ECMCreateCAUnderCO on program eServiceSchemaVariableMapping.tcl to command 'ECMCreateCAUnderCO';

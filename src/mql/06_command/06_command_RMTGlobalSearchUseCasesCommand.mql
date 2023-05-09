@@ -1,0 +1,32 @@
+del command 'RMTGlobalSearchUseCasesCommand';
+add command 'RMTGlobalSearchUseCasesCommand'
+	description	''
+	label	'emxRequirements.ActionLink.FindUseCases'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_UseCase&table=RMTGlobalSearchUseCasesTable&selection=multiple&cancelLabel=emxRequirements.Button.Close&searchmode=globalsearch&showInitialResults=false&showSavedQuery=True&searchCollectionEnabled=True&HelpMarker=emxhelpfullsearch'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Design Engineer'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Requirement Manager'
+	user	'System Engineer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTGlobalSearchUseCasesCommand'
+	property	'version'	value	'R422'
+;
+modify menu RMTSearch add command RMTGlobalSearchUseCasesCommand order command RMTGlobalSearchUseCasesCommand 3;
+#channel ==>RMTSearch
+add property command_RMTGlobalSearchUseCasesCommand on program eServiceSchemaVariableMapping.tcl to command 'RMTGlobalSearchUseCasesCommand';

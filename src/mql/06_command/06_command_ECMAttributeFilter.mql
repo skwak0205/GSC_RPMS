@@ -1,0 +1,20 @@
+del command 'ECMAttributeFilter';
+add command 'ECMAttributeFilter'
+	description	'Attribute filter command for Change Template in ECM'
+	label	'EnterpriseChangeMgt.Command.Filter.Attribute'
+	href	'${SUITE_DIR}/ECMUtil.jsp?functionality=filterAttribute&filter=true'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Action Label'		'EnterpriseChangeMgt.Command.Filter'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMAttributeFilter'
+	property	'version'	value	'R216'
+;
+modify menu ECMAttributeAddExisting add command ECMAttributeFilter order command ECMAttributeFilter 0;
+#channel ==>ECMAttributeAddExisting
+add property command_ECMAttributeFilter on program eServiceSchemaVariableMapping.tcl to command 'ECMAttributeFilter';

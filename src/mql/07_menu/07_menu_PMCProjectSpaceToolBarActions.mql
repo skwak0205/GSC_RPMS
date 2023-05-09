@@ -1,0 +1,16 @@
+del menu 'PMCProjectSpaceToolBarActions';
+add menu 'PMCProjectSpaceToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCProjectSpaceEdit'
+	command	'PMCProjectSpaceAlertPreferences'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectSpaceToolBarActions'
+	property 'version'	value	'10-5'
+;
+add property menu_PMCProjectSpaceToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectSpaceToolBarActions';

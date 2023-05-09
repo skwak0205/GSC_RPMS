@@ -1,0 +1,17 @@
+del channel 'RMTSpecificationsExchangeTracking';
+add channel 'RMTSpecificationsExchangeTracking'
+	description	'Channel to Exchanges Tracking'
+	height	'800'
+	label	'emxRequirements.Common.ExchangeTracking'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'ChannelID'		'1'
+	command 	'APPDocumentDiscussions','ContextIssueListPage'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationsExchangeTracking'
+	property	'version'	value	'R215'
+;
+#portal ==>RMTSpecificationsExchangeTracking
+add property channel_RMTSpecificationsExchangeTracking on program eServiceSchemaVariableMapping.tcl to channel 'RMTSpecificationsExchangeTracking';

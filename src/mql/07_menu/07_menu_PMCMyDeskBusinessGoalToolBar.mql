@@ -1,0 +1,15 @@
+del menu 'PMCMyDeskBusinessGoalToolBar';
+add menu 'PMCMyDeskBusinessGoalToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	menu	'PMCMyDeskBusinessGoalToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCMyDeskBusinessGoalToolBar'
+	property 'version'	value	'11-0-0-0'
+;
+add property menu_PMCMyDeskBusinessGoalToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCMyDeskBusinessGoalToolBar';

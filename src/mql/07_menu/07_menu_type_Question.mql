@@ -1,0 +1,16 @@
+del menu 'type_Question';
+add menu 'type_Question'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCQuestionForm&mode=view&toolbar=ProjectTemplateQuestionToolBar&formHeader=emxProgramCentral.Common.QuestionsPageHeading&HelpMarker=emxhelpquestionproperties&Export=false'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallQuestion.gif'
+	command	'PMCLifecycle'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_Question'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_type_Question on program eServiceSchemaVariableMapping.tcl to menu 'type_Question';

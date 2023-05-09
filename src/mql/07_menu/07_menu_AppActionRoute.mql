@@ -1,0 +1,19 @@
+del menu 'AppActionRoute';
+add menu 'AppActionRoute'
+	description	''
+	label	'emxFramework.MenuItem.Routes'
+	href	''
+	alt	'emxFramework.MenuItem.Routes'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallRoute.png'
+	command	'APPCreateRoute'
+	command	'APPCreateRouteActionLink'
+	command	'APPCreateSimpleRoute'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AppActionRoute'
+	property 'version'	value	'R420.HF2'
+;
+add property menu_AppActionRoute on program eServiceSchemaVariableMapping.tcl to menu 'AppActionRoute';

@@ -1,0 +1,23 @@
+del command 'FTRValidateProductConfigurationAction';
+add command 'FTRValidateProductConfigurationAction'
+	description	''
+	label	'emxProduct.ActionLink.FTREvaluateMarketingRules'
+	href	'${SUITE_DIR}/ProductConfigurationValidation.jsp?mode=validate'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showLinksForSalableConfig'
+	setting	'Access Program'		'emxProductConfiguration'
+	setting	'Hide Mode'		'Mobile'
+	user	'VPLMCreator'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRValidateProductConfigurationAction'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_FTRValidateProductConfigurationAction on program eServiceSchemaVariableMapping.tcl to command 'FTRValidateProductConfigurationAction';

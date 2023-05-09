@@ -1,0 +1,30 @@
+del command 'TMCFolderSummaryUnlinkSelected';
+add command 'TMCFolderSummaryUnlinkSelected'
+	description	''
+	label	'emxTeamCentral.Common.UnlinkSelected'
+	href	'${SUITE_DIR}/emxTeamUnlinkSelectedFoldersProcess.jsp'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'current.access[fromdisconnect]'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isWsNotInArchiveState'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUnlinkFolder.png'
+	setting	'Confirm Message'		'emxTeamCentral.UnlinkFolders.Confirmation'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCFolderSummaryUnlinkSelected'
+	property	'version'	value	'R422'
+;
+modify menu TMCSubFolderSummaryActionsToolBar add command TMCFolderSummaryUnlinkSelected order command TMCFolderSummaryUnlinkSelected 8;
+modify menu TMCWorkspaceFolderSummaryActionsToolBar add command TMCFolderSummaryUnlinkSelected order command TMCFolderSummaryUnlinkSelected 8;
+#channel ==>TMCSubFolderSummaryActionsToolBarTMCWorkspaceFolderSummaryActionsToolBar
+add property command_TMCFolderSummaryUnlinkSelected on program eServiceSchemaVariableMapping.tcl to command 'TMCFolderSummaryUnlinkSelected';

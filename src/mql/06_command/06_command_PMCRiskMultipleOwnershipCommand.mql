@@ -1,0 +1,18 @@
+del command 'PMCRiskMultipleOwnershipCommand';
+add command 'PMCRiskMultipleOwnershipCommand'
+	description	'This command is used to dynamically create multiple ownership command for Risk object'
+	label	''
+	href	''
+	alt	''
+	setting	'Dynamic Command Program'		'emxRisk'
+	setting	'Dynamic Command Function'		'getDynamicRiskCategory'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRiskMultipleOwnershipCommand'
+	property	'version'	value	'R417'
+;
+#channel ==>PMCRiskAssigneeTab
+add property command_PMCRiskMultipleOwnershipCommand on program eServiceSchemaVariableMapping.tcl to command 'PMCRiskMultipleOwnershipCommand';

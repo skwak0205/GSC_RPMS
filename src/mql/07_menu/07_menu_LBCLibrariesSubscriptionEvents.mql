@@ -1,0 +1,21 @@
+del menu 'LBCLibrariesSubscriptionEvents';
+add menu 'LBCLibrariesSubscriptionEvents'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'LBCContentAddedEvent'
+	command	'LBCContentRemovedEvent'
+	command	'LBCLibraryModifiedEvent'
+	command	'LBCLibraryDeletedEvent'
+	command	'LBCPromotedToActiveStateEvent'
+	command	'LBCPromotedToObsoleteStateEvent'
+	command	'LBCDemotedToActiveStateEvent'
+	command	'LBCDemotedToInactiveStateEvent'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCLibrariesSubscriptionEvents'
+	property 'version'	value	'R212'
+;
+add property menu_LBCLibrariesSubscriptionEvents on program eServiceSchemaVariableMapping.tcl to menu 'LBCLibrariesSubscriptionEvents';

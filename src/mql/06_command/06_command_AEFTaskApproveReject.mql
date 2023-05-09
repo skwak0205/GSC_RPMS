@@ -1,0 +1,20 @@
+del command 'AEFTaskApproveReject';
+add command 'AEFTaskApproveReject'
+	description	'Task Approve / Reject functionality'
+	label	'emxFramework.Command.TaskApproveReject'
+	href	'${COMMON_DIR}/emxLifecycleApproveRejectPreProcess.jsp'
+	alt	'emxFramework.Command.TaskApproveReject'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionApproveRejectTask.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTaskApproveReject'
+	property	'version'	value	'R421'
+;
+modify menu AEFLifecycleApprovalsSummaryToolbar add command AEFTaskApproveReject order command AEFTaskApproveReject 1;
+#channel ==>AEFLifecycleApprovalsSummaryToolbar
+add property command_AEFTaskApproveReject on program eServiceSchemaVariableMapping.tcl to command 'AEFTaskApproveReject';

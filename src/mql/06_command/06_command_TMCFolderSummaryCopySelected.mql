@@ -1,0 +1,32 @@
+del command 'TMCFolderSummaryCopySelected';
+add command 'TMCFolderSummaryCopySelected'
+	description	''
+	label	'emxTeamCentral.Common.CopySelected'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=emxWorkspace:getWorkspaceVaults&table=TMCSelectFolder&menuAction=copyFolder&program=emxWorkspace:getActiveWorkspaces&header=emxTeamCentral.Name.SelectDestinationFolder&cancelLabel=emxTeamCentral.Common.Cancel&submitURL=${SUITE_DIR}/emxTeamMoveCopyFoldersContentProcess.jsp&submitLabel=emxTeamCentral.Common.Done&HelpMarker=emxhelpselectfolder'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'550'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isWsNotInArchiveState'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreateDependentDefect.png'
+	setting	'Confirm Message'		'emxTeamCentral.Folders.CopyFolderWarning'
+	user	'3DSRestrictedContributor'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCFolderSummaryCopySelected'
+	property	'version'	value	'R422.HF1'
+;
+modify menu TMCSubFolderSummaryActionsToolBar add command TMCFolderSummaryCopySelected order command TMCFolderSummaryCopySelected 4;
+modify menu TMCWorkspaceFolderSummaryActionsToolBar add command TMCFolderSummaryCopySelected order command TMCFolderSummaryCopySelected 4;
+#channel ==>TMCSubFolderSummaryActionsToolBarTMCWorkspaceFolderSummaryActionsToolBar
+add property command_TMCFolderSummaryCopySelected on program eServiceSchemaVariableMapping.tcl to command 'TMCFolderSummaryCopySelected';

@@ -1,0 +1,15 @@
+del menu 'CFPArchivedManufacturingPlanToolbar';
+add menu 'CFPArchivedManufacturingPlanToolbar'
+	description	''
+	label	'DMCPlanning.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DMCPlanning'
+	menu	'CFPArchivedManufacturingPlanToolbarActions'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'DMCPlanning'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'CFPArchivedManufacturingPlanToolbar'
+	property 'version'	value	'R209'
+;
+add property menu_CFPArchivedManufacturingPlanToolbar on program eServiceSchemaVariableMapping.tcl to menu 'CFPArchivedManufacturingPlanToolbar';

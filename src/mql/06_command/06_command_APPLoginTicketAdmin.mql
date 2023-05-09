@@ -1,0 +1,12 @@
+del command 'APPLoginTicketAdmin';
+add command 'APPLoginTicketAdmin'
+	description	''
+	label	'emxLogin.label.LoginTicketAdmin'
+	href	'${COMMON_DIR}/emxLoginTicketAdmin.jsp'
+	alt	'emxLogin.label.LoginTicketAdmin'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+;
+modify menu ENOConfiguration add command APPLoginTicketAdmin order command APPLoginTicketAdmin 0;
+#channel ==>ENOConfiguration
+add property command_APPLoginTicketAdmin on program eServiceSchemaVariableMapping.tcl to command 'APPLoginTicketAdmin';

@@ -1,0 +1,28 @@
+del command 'PMCRisksSummaryCreateNewRisk';
+add command 'PMCRisksSummaryCreateNewRisk'
+	description	'Command to Create New Risk Link from Risk Summary'
+	label	'emxProgramCentral.Risk.CreateRisk'
+	href	'${SUITE_DIR}/emxProjectManagementUtil.jsp?mode=createNewRiskOpportunity'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRisksSummaryCreateNewRisk'
+	property	'version'	value	'R422'
+;
+modify menu PMCRisksSummaryToolBarActions add command PMCRisksSummaryCreateNewRisk order command PMCRisksSummaryCreateNewRisk 1;
+modify menu PMCRisksSummaryToolBar add command PMCRisksSummaryCreateNewRisk order command PMCRisksSummaryCreateNewRisk 2;
+#channel ==>PMCRisksSummaryToolBarActionsPMCRisksSummaryToolBar
+add property command_PMCRisksSummaryCreateNewRisk on program eServiceSchemaVariableMapping.tcl to command 'PMCRisksSummaryCreateNewRisk';

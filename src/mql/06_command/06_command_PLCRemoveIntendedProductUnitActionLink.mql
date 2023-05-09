@@ -1,0 +1,22 @@
+del command 'PLCRemoveIntendedProductUnitActionLink';
+add command 'PLCRemoveIntendedProductUnitActionLink'
+	description	''
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/BuildUtil.jsp?mode=Disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Delete'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCRemoveIntendedProductUnitActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCIntendedProductUnitTopActionBar add command PLCRemoveIntendedProductUnitActionLink order command PLCRemoveIntendedProductUnitActionLink 0;
+#channel ==>PLCIntendedProductUnitTopActionBar
+add property command_PLCRemoveIntendedProductUnitActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCRemoveIntendedProductUnitActionLink';

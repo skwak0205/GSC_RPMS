@@ -1,0 +1,25 @@
+del command 'PMCAddCopyWBS';
+add command 'PMCAddCopyWBS'
+	description	''
+	label	'emxProgramCentral.Common.addCopyWBS'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=importWBSURL'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddCopyWBS'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSProjectTemplateToolBarActions add command PMCAddCopyWBS order command PMCAddCopyWBS 1;
+#channel ==>PMCWBSProjectTemplateToolBarActions
+add property command_PMCAddCopyWBS on program eServiceSchemaVariableMapping.tcl to command 'PMCAddCopyWBS';

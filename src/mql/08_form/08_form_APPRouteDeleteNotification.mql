@@ -1,0 +1,42 @@
+del form 'APPRouteDeleteNotification';
+add form 'APPRouteDeleteNotification' web
+field #1
+	name	'Header'
+	label	'emxComponents.DeleteRoute.DeleteMessage'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'Field Type'		'Section Header'
+field #2
+	name	'NotificationMessage'
+	label	'emxComponents.DeleteRoute.Notification'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'Components'
+field #3
+	name	'Seperator'
+	label	'(Untitled)'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'Field Type'		'Section Separator'
+field #4
+	name	'FooterMessage'
+	label	'emxComponents.DeleteRoute.ConfirmMessage'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Registered Suite'		'Components'
+	setting	'Field Type'		'Section Header'
+	setting	'Section Level'		'2'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteDeleteNotification'
+	property	'version'	value	'R212'
+;
+add property form_APPRouteDeleteNotification on program eServiceSchemaVariableMapping.tcl to form 'APPRouteDeleteNotification';

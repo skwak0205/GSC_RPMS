@@ -1,0 +1,12 @@
+del menu 'SubTestExeToolbar';
+add menu 'SubTestExeToolbar'
+	description	'Menu Description'
+	label	'emxProduct.Menu.ProductLine'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	command	'PLCAddExistingTestExeSubExeActionLink'
+	command	'PLCRemoveTestExeActionLink'
+	property 'version'	value	'R421.HF2'
+;
+add property menu_SubTestExeToolbar on program eServiceSchemaVariableMapping.tcl to menu 'SubTestExeToolbar';

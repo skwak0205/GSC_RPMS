@@ -1,0 +1,16 @@
+del command 'ECMCRProperties';
+add command 'ECMCRProperties'
+	description	''
+	label	'EnterpriseChangeMgt.Command.ChangeProperties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ChangeRequest&type=type_ChangeRequest&HelpMarker=emxhelpchangerequestproperties&header=EnterpriseChangeMgt.Heading.ChangeProperties&toolbar=ECMCRPropertiesToolbar&mode=view'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'(type.kindof[$<type_ChangeRequest>])'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMCRProperties'
+	property	'version'	value	'R216'
+;
+#channel ==>ECMChangePropertyChannel1
+add property command_ECMCRProperties on program eServiceSchemaVariableMapping.tcl to command 'ECMCRProperties';

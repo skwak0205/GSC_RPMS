@@ -1,0 +1,19 @@
+del form 'LBCObjectClassificationEditAttributes';
+add form 'LBCObjectClassificationEditAttributes' web
+field #1
+	name	'LBC Classification Attributes'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Ediatble'		'true'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Dynamic Field Function'		'getClassificationAttributesForClassificationEditForm'
+	setting	'Dynamic Field Program'		'emxLibraryCentralClassificationAttributes'
+	setting	'Field Type'		'Dynamic'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCObjectClassificationEditAttributes'
+	property	'version'	value	'R215'
+;
+add property form_LBCObjectClassificationEditAttributes on program eServiceSchemaVariableMapping.tcl to form 'LBCObjectClassificationEditAttributes';

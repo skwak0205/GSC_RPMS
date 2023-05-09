@@ -1,0 +1,20 @@
+del menu 'IEFDesktopActionsMenu';
+add menu 'IEFDesktopActionsMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'iefcname'		'IEFDesktopActionsMenu'
+	setting	'Registered Suite'		'IntegrationFramework'
+	setting	'iefrefreshpage'		'false'
+	setting	'iefwaitforresponse'		'true'
+	command	'IEFDesktopCheckOutCommand'
+	command	'IEFDesktopLockCommand'
+	command	'IEFDesktopUnlockCommand'
+	property 'installer'	value	'ENOVIAIntegrationEngineering'
+	property 'application'	value	'IntegrationFramework'
+	property 'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property 'original name'	value	'IEFDesktopActionsMenu'
+	property 'version'	value	'R424'
+;
+add property menu_IEFDesktopActionsMenu on program eServiceSchemaVariableMapping.tcl to menu 'IEFDesktopActionsMenu';

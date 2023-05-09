@@ -1,0 +1,23 @@
+del menu 'PMCProjectBenefitOperationsToolBar';
+add menu 'PMCProjectBenefitOperationsToolBar'
+	description	''
+	label	'emxProgramCentral.ProjectBenefit.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Function'		'hasAccess'
+	setting	'Access Program'		'emxBenefitItem'
+	command	'PMCProjectBenefitAddBenefitItem'
+	command	'PMCProjectBenefitAddPeriod'
+	command	'PMCProjectBenefitFreeze'
+	command	'PMCProjectBenefitDeletePeriod'
+	command	'PMCProjectBenefitDeleteBenefitItem'
+	menu	'PMCProjectBenefitEditPageToolBarActions'
+	command	'PMCCreateProjectBenefit'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectBenefitOperationsToolBar'
+	property 'version'	value	'R421.HF3'
+;
+add property menu_PMCProjectBenefitOperationsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectBenefitOperationsToolBar';

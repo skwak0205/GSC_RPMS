@@ -1,0 +1,15 @@
+del menu 'PMCBusinessGoalSummaryTopActionBar';
+add menu 'PMCBusinessGoalSummaryTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCBusinessGoalSummaryCreateNew'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCBusinessGoalSummaryTopActionBar'
+	property 'version'	value	'10-0-0-0'
+;
+add property menu_PMCBusinessGoalSummaryTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCBusinessGoalSummaryTopActionBar';

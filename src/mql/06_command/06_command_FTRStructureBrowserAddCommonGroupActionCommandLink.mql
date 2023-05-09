@@ -1,0 +1,21 @@
+del command 'FTRStructureBrowserAddCommonGroupActionCommandLink';
+add command 'FTRStructureBrowserAddCommonGroupActionCommandLink'
+	description	'Add a New Common Group and add selected Common Values'
+	label	'emxProduct.Command.AddCommonValues'
+	href	'${SUITE_DIR}/AddCommonGroupPreProcess.jsp?fromWhere=StructureBrowser'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRStructureBrowserAddCommonGroupActionCommandLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRCommonGroupStructureBrowserActionToolbarMenu add command FTRStructureBrowserAddCommonGroupActionCommandLink order command FTRStructureBrowserAddCommonGroupActionCommandLink 1;
+#channel ==>FTRCommonGroupStructureBrowserActionToolbarMenu
+add property command_FTRStructureBrowserAddCommonGroupActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRStructureBrowserAddCommonGroupActionCommandLink';

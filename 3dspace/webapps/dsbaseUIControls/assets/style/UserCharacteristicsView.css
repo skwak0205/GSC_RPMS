@@ -1,0 +1,70 @@
+div.user-characteristics-view form.characteristics-view-form-characteristics .form-group {
+    white-space: nowrap;
+}
+
+div.user-characteristics-view-input.autocomplete,
+div.user-characteristics-view-input.select,
+.input-number.user-characteristics-view-input,
+textarea.user-characteristics-view-input,
+.toggle.user-characteristics-view-input {
+    display: inline-flex !important;
+}
+
+div.user-characteristics-view-input[type="text"],
+input.user-characteristics-view-input:not(.input-number) {
+    display: inline-block !important;
+}
+
+div.user-characteristics-view-input.autocomplete,
+div.user-characteristics-view-input.select,
+div.user-characteristics-view-input[type="text"],
+input.user-characteristics-view-input,
+.input-number.user-characteristics-view-input,
+textarea.user-characteristics-view-input,
+.toggle.user-characteristics-view-input {
+    width: 95%;
+}
+
+textarea.user-characteristics-view-input + i {
+    position: relative;
+}
+
+div.user-characteristics-view-input.select {
+    height: 38px;
+}
+
+div.user-characteristics-view-input.select .select-dropdown {
+    margin-top: 48px;
+}
+
+div.user-characteristics-view div.characteristic-values-searcher.autocomplete-suggests {
+    margin-top: 42px;
+}
+
+i.user-chracteristics-view-remove {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.user-characteristics-view-default-message {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.user-characteristics-view-default-message i.fonticon-list-add {
+    cursor: pointer;
+    color: #E8E8E8;
+    font-size: 4em;
+}
+
+.user-characteristics-view-not-available-default-message {
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+}
+
+.characteristics-view-switch-button.iconbar li.disabled {
+    cursor: not-allowed !important;
+    pointer-events: unset;
+}

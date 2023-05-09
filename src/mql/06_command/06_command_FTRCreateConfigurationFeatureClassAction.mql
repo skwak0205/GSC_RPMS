@@ -1,0 +1,23 @@
+del command 'FTRCreateConfigurationFeatureClassAction';
+add command 'FTRCreateConfigurationFeatureClassAction'
+	description	''
+	label	'emxProductLine.ActionLink.CreateConfFeature'
+	href	'${SUITE_DIR}/ConfigurationFeatureCreatePreProcess.jsp?strCreationType=type_ConfigurationFeature&UIContext=Classification&HelpMarker=emxhelpconfigurationfeaturecreate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'true'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Access Function'		'showConfigurationFeatureUX'
+	setting	'Access Program'		'ConfigurationFeature'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCreateConfigurationFeatureClassAction'
+	property	'version'	value	'R423'
+;
+modify menu LCClassifiedItemActionToolBar add command FTRCreateConfigurationFeatureClassAction order command FTRCreateConfigurationFeatureClassAction 3;
+#channel ==>LCClassifiedItemActionToolBar
+add property command_FTRCreateConfigurationFeatureClassAction on program eServiceSchemaVariableMapping.tcl to command 'FTRCreateConfigurationFeatureClassAction';

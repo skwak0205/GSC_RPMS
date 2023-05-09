@@ -1,0 +1,22 @@
+del command 'TMCWorkspaceProperties';
+add command 'TMCWorkspaceProperties'
+	description	''
+	label	'emxTeamCentral.WorkspaceDetailsFS.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Workspace&mode=view&toolbar=TMCWorkspaceDetialsToolBar&HelpMarker=emxhelpworkspaceproperties'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceProperties'
+	property	'version'	value	'R422'
+;
+modify menu type_Project add command TMCWorkspaceProperties order command TMCWorkspaceProperties 8;
+#channel ==>type_Project
+add property command_TMCWorkspaceProperties on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceProperties';

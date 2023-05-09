@@ -1,0 +1,16 @@
+del menu 'ECMChangeRequestToolbar';
+add menu 'ECMChangeRequestToolbar'
+	description	''
+	label	'EnterpriseChangeMgt.Menu.ChangeRequest'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallChangeRequest.png'
+	setting	'Expanded'		'true'
+	command	'ECMAddToExistingChangeRequest'
+	command	'ECMAddToNewChangeRequest'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'original name'	value	'ECMChangeRequestToolbar'
+	property 'version'	value	'R420'
+;
+add property menu_ECMChangeRequestToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMChangeRequestToolbar';

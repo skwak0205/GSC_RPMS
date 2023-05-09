@@ -1,0 +1,15 @@
+del portal 'TMCMyViewPortal';
+add portal 'TMCMyViewPortal'
+	description	''
+	label	''
+	href	''
+	channel 	TMCMyViewWorkspaceMeetingsChannel
+	channel 	TMCMyViewTasksRoutesChannel
+	setting	'Registered Suite'		'TeamCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCMyViewPortal'
+	property	'version'	value	'10-5-SP1'
+;
+add property portal_TMCMyViewPortal on program eServiceSchemaVariableMapping.tcl to portal 'TMCMyViewPortal';

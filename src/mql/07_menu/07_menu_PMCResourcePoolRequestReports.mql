@@ -1,0 +1,20 @@
+del menu 'PMCResourcePoolRequestReports';
+add menu 'PMCResourcePoolRequestReports'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Reports'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	command	'PMCReportResourceDemandSummaryPerPool'
+	command	'PMCReportResourceDemandVersusCapacityPerPool'
+	command	'PMCReportResourceUtilizationPerPool'
+	command	'PMCReportProjectAssignmentPerPool'
+	command	'PMCReportResourceDemandBySkillPerPool'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourcePoolRequestReports'
+	property 'version'	value	'R417'
+;
+add property menu_PMCResourcePoolRequestReports on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourcePoolRequestReports';

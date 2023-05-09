@@ -1,0 +1,17 @@
+del command 'APPECImplementedItemsTreeCategory';
+add command 'APPECImplementedItemsTreeCategory'
+	description	'Command Object for Implemented Items'
+	label	'emxComponents.Command.ImplementedItems'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxCommonEngineeringChange:getAllImplementedItems&table=APPECImplementedItemsList&header=emxComponents.Heading.ECImplementedItems&selection=multiple&toolbar=APPECImplementedItemsListToolBar&sortColumnName=Name&HelpMarker=emxhelpimplementeditemslist'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPECImplementedItemsTreeCategory'
+	property	'version'	value	'R216'
+;
+modify menu type_EngineeringChange add command APPECImplementedItemsTreeCategory order command APPECImplementedItemsTreeCategory 4;
+#channel ==>type_EngineeringChange
+add property command_APPECImplementedItemsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPECImplementedItemsTreeCategory';

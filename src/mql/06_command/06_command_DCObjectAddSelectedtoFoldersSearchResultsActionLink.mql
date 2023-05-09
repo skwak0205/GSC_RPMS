@@ -1,0 +1,25 @@
+del command 'DCObjectAddSelectedtoFoldersSearchResultsActionLink';
+add command 'DCObjectAddSelectedtoFoldersSearchResultsActionLink'
+	description	'Add Selected to Folders on Objects List'
+	label	'emxDocumentCentral.Common.AddToFolder'
+	href	'${SUITE_DIR}/emxLibraryCentralSearchIntermediate.jsp?useMode=addToFolders'
+	alt	'${SUITE_DIR}/emxDocumentCentralFolderSelectDialogFS.jsp?callPage=SearchPage&dialogAction=AddChildren'
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'450'
+	setting	'Window Width'		'750'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddToFolder.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectAddSelectedtoFoldersSearchResultsActionLink'
+	property	'version'	value	'R419'
+;
+modify menu DCSearchResultToolbar add command DCObjectAddSelectedtoFoldersSearchResultsActionLink order command DCObjectAddSelectedtoFoldersSearchResultsActionLink 3;
+modify menu LBCSearchResultToolBar add command DCObjectAddSelectedtoFoldersSearchResultsActionLink order command DCObjectAddSelectedtoFoldersSearchResultsActionLink 0;
+#channel ==>DCSearchResultToolbarLBCSearchResultToolBar
+add property command_DCObjectAddSelectedtoFoldersSearchResultsActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectAddSelectedtoFoldersSearchResultsActionLink';

@@ -1,0 +1,17 @@
+del menu 'PMCWeeklyTimeSheetApproverViewRMB';
+add menu 'PMCWeeklyTimeSheetApproverViewRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'type=="Effort" || type=="Task"'
+	command	'PMCApproveEffortTimeSheet'
+	command	'PMCRejectEffortTimeSheet'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWeeklyTimeSheetApproverViewRMB'
+	property 'version'	value	'R210'
+;
+add property menu_PMCWeeklyTimeSheetApproverViewRMB on program eServiceSchemaVariableMapping.tcl to menu 'PMCWeeklyTimeSheetApproverViewRMB';

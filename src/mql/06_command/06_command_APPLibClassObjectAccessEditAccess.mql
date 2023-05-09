@@ -1,0 +1,25 @@
+del command 'APPLibClassObjectAccessEditAccess';
+add command 'APPLibClassObjectAccessEditAccess'
+	description	'This command provides Edit Access functionality to the Library and Class type objects for editing the granted accesses of users'
+	label	'emxComponents.Common.Edit'
+	href	'${COMMON_DIR}/emxTableEdit.jsp?program=emxObjectAccess:getAccessGrantees&sortColumnName=Name&sortDirection=ascending&table=APPObjectAccessSummary&header=emxComponents.Common.EditAccess&massUpdate=true&accessChoice=Read_WO_Download,Add,Remove,Add_Remove&showAllProgram=emxObjectAccess&showAllFunction=hasLibrarianRole&pushGrantor=person_CommonAccessGrantor&HelpMarker=emxhelpaccessedit&editMode=true&postProcessURL=${SUITE_DIR}/emxComponentsObjectAccessSetAccessProcess.jsp'
+	alt	'emxComponents.Common.EditAccess'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'875'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(owner==context.user) || (locked == FALSE)'
+	setting	'Access Map'		'FromConnect'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'APPLibClassObjectAccessEditAccess'
+	property	'version'	value	'R419'
+;
+#channel ==>
+add property command_APPLibClassObjectAccessEditAccess on program eServiceSchemaVariableMapping.tcl to command 'APPLibClassObjectAccessEditAccess';

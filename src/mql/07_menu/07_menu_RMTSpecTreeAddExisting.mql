@@ -1,0 +1,21 @@
+del menu 'RMTSpecTreeAddExisting';
+add menu 'RMTSpecTreeAddExisting'
+	description	''
+	label	'emxRequirements.ActionLink.AddExisting'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Mode'		'view'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	command	'RMTSpecTreeAddChapter'
+	command	'RMTSpecTreeAddComment'
+	command	'RMTSpecTreeAddRequirement'
+	command	'RMTStructureBrowserAddExistingSubRequirementPreCheck'
+	command	'RMTStructureBrowserAddExistingDerivedRequirementPreCheck'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecTreeAddExisting'
+	property 'version'	value	'V6R2017x'
+;
+add property menu_RMTSpecTreeAddExisting on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecTreeAddExisting';

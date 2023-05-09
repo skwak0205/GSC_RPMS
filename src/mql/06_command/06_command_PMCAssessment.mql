@@ -1,0 +1,22 @@
+del command 'PMCAssessment';
+add command 'PMCAssessment'
+	description	'Assessment Command Object'
+	label	'emxFramework.Command.Assessment'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxAssessment:getAssessment&table=PMCAssessmentSummary&selection=multiple&sortColumnName=AssessmentDate&sortDirection=descending&toolbar=PMCAssessSummaryToolBar&header=emxProgramCentral.Common.AssessmentsPageHeading&HelpMarker=emxhelpassessmentsummary&Export=false&freezePane=Name'
+	alt	'emxFramework.Command.Alt.Assessment'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'${SUITE_DIR}/iconSmallAssessment.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssessment'
+	property	'version'	value	'R215'
+;
+#channel ==>PMCProjectSummaryPortalChannel3PMCExecution
+add property command_PMCAssessment on program eServiceSchemaVariableMapping.tcl to command 'PMCAssessment';

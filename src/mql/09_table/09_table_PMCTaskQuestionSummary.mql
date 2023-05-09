@@ -1,0 +1,41 @@
+del table 'PMCTaskQuestionSummary' system;
+add table 'PMCTaskQuestionSummary' system
+column #1
+	name	'Name'
+	businessobject	'name'
+	label	'emxProgramCentral.Common.QuestionName'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxTree.jsp?mode=insert&AppendParameters=true'
+	range	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Show Type Icon'		'false'
+column #2
+	name	'Description'
+	businessobject	'description'
+	label	'emxProgramCentral.Common.QuestionDescription'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProgramCentral'
+column #3
+	name	'Task Transfer'
+	relationship	'$<attribute[attribute_TaskTransfer].value>'
+	label	'emxProgramCentral.Common.Answer'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskQuestionSummary'
+	property	'version'	value	'R215'
+;
+add property table_PMCTaskQuestionSummary on program eServiceSchemaVariableMapping.tcl to table 'PMCTaskQuestionSummary' system;

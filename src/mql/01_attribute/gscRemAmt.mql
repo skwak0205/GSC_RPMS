@@ -1,0 +1,19 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 잔여예산(C-D-E)
+################################################################################################
+
+#del attribute 'gscRemAmt';
+add attribute  'gscRemAmt'
+   description '잔여예산(C-D-E)'
+   type        'real'
+   default    0
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "gsc"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscRemAmt"
+;
+add property attribute_gscRemAmt on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscRemAmt';
+

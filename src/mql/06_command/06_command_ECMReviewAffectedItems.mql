@@ -1,0 +1,22 @@
+del command 'ECMReviewAffectedItems';
+add command 'ECMReviewAffectedItems'
+	description	'Affected Items command'
+	label	'EnterpriseChangeMgt.Command.ReviewProposedChanges'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=enoECMChangeOrder:getAffectedItems&table=ECMCOAffectedItemsTable&header=EnterpriseChangeMgt.Change.ProposedChangesSummaryPageHeading&selection=multiple&sortColumnName=Name&HelpMarker=emxhelpaffecteditems'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_ECM_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isNonCAContext'
+	setting	'Access Program'		'enoECMChangeUtil'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMReviewAffectedItems'
+	property	'version'	value	'R417'
+;
+modify menu ECMReviewAffectedItemsActionToolbar add command ECMReviewAffectedItems order command ECMReviewAffectedItems 1;
+#channel ==>ECMReviewAffectedItemsActionToolbar
+add property command_ECMReviewAffectedItems on program eServiceSchemaVariableMapping.tcl to command 'ECMReviewAffectedItems';

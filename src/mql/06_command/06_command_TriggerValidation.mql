@@ -1,0 +1,22 @@
+del command 'TriggerValidation';
+add command 'TriggerValidation'
+	description	''
+	label	'emxFramework.Command.Tooltip.TriggerValidation'
+	href	'javascript:StandardFunctions.triggerValidation()'
+	alt	'emxFramework.Command.Tooltip.TriggerValidation'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'canAccessTriggerValidation'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionValidate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TriggerValidation'
+	property	'version'	value	'R423.HF3'
+;
+modify menu Tools add command TriggerValidation order command TriggerValidation 1;
+#channel ==>Tools
+add property command_TriggerValidation on program eServiceSchemaVariableMapping.tcl to command 'TriggerValidation';

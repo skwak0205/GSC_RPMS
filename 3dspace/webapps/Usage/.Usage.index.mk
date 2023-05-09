@@ -1,0 +1,17 @@
+m|WebappsUtils\Usage.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.23002|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\Usage\Usage.js|1672690656|18861
+s|WebappsUtils\Usage.mweb\src\AbstractTracker.js|1518076729|2309
+t|win_b64\webapps\Usage\assets\dist\ds-analytics.js|1672690654|29994
+s|WebappsUtils\Usage.mweb\src\assets\dist\ds-analytics.js|1671465949|29994
+u|WebappsUtils\Usage.mweb\src\ActionTracker.js|1542125984|765
+u|WebappsUtils\Usage.mweb\src\Events.js|1671469484|802
+u|WebappsUtils\Usage.mweb\src\GDPR.js|1663249951|3795
+u|WebappsUtils\Usage.mweb\src\TrackerAPI.js|1671534285|25761
+u|WebappsUtils\Usage.mweb\src\UsageManager.js|1582736903|735
+u|WebappsUtils\Usage.mweb\src\UsageShardingManager.js|1671465948|31240
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

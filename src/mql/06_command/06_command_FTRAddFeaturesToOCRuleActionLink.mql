@@ -1,0 +1,21 @@
+del command 'FTRAddFeaturesToOCRuleActionLink';
+add command 'FTRAddFeaturesToOCRuleActionLink'
+	description	''
+	label	'emxProduct.ActionLink.AddFeatures'
+	href	'${ROOT_DIR}/components/emxCommonSearch.jsp?frameName=tmpname&formName=tmpname&fieldNameDisplay=tmpname&fieldNameActual=tmpname&searchmode=chooser&searchmenu=SearchAddExistingChooserMenu&selection=single&searchcommand=FTRRulesSearchFeaturesCommand&SubmitURL=../configuration/AddFeaturesOCRule.jsp?fromOC=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddFeaturesToOCRuleActionLink'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRAddFeaturesToOCRuleActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddFeaturesToOCRuleActionLink';

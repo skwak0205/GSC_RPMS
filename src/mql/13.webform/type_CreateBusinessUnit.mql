@@ -1,0 +1,79 @@
+################################################################################################
+# Created Date : 2020.05.25
+# Create by BongJun,Park
+# Description : BusinessUnit 생성 화면
+################################################################################################
+
+copy form "type_CreateBusinessUnit" "type_CreateBusinessUnit_OOTB";
+
+# 속성추가 및 컬럼 순서 변경 by BongJun,Park 2020.05.25
+mod form "type_CreateBusinessUnit"
+    field
+        name 'OrganizationName'
+        label 'emxComponents.Label.OrganizationName'
+        businessobject  '$<attribute[attribute_OrganizationName]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_OrganizationName'
+        setting 'Required'          'true'
+        setting 'Editable'          'true'
+        setting 'Field Type'        'attribute'
+        setting 'Input Type'        'textbox'
+        setting 'OnChange Handler'  'updateDisplayName'
+    field
+        name 'emdOrgFullName'
+        label 'emxComponents.Label.emdOrgFullName'
+        businessobject  '$<attribute[attribute_emdOrgFullName]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_emdOrgFullName'
+        setting 'Required'          'false'
+        setting 'Editable'          'true'
+        setting 'Field Type'        'attribute'
+        setting 'Input Type'        'textbox'
+    field
+        name 'emdManager'
+        label 'emxComponents.Label.emdManager'
+        businessobject  '$<attribute[attribute_emdManager]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_emdManager'
+        setting 'Required'          'false'
+        setting 'Editable'          'true'
+        setting 'Field Type'        'attribute'
+        setting 'Input Type'        'textbox'
+    field
+        name 'AlternateName'
+        label 'emxComponents.Label.AlternateName'
+        businessobject  '$<attribute[attribute_AlternateName]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_AlternateName'
+        setting 'Required'          'false'
+        setting 'Editable'          'true'
+        setting 'Field Type'        'attribute'
+        setting 'Input Type'        'textbox'
+    field
+        mod name 'OrganizationName'
+        order '3'
+    field
+        mod name 'emdOrgFullName'
+        order '4'
+    field
+        mod name 'emdManager'
+        order '5'
+    field
+        mod name 'AlternateName'
+        order '6'
+;
+
+# label 변경, 부서코드입력시 Organization ID 부서코드와 동일하게 입력
+mod form "type_CreateBusinessUnit"
+    field
+        mod name 'Name'
+        label 'emxComponents.Label.DeptCode'
+        add setting 'OnChange Handler'  'updateNameToOrganizationID'
+    field
+        mod name 'Organization ID'
+        label 'emxComponents.Label.OrganizationID'
+    field
+        mod name 'emdManager'
+        range '${COMMON_DIR}/emxFullSearch.jsp?type=PERSON_CHOOSER'
+        add setting 'format'            'user'
+;

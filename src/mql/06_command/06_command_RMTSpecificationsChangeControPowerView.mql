@@ -1,0 +1,19 @@
+del command 'RMTSpecificationsChangeControPowerView';
+add command 'RMTSpecificationsChangeControPowerView'
+	description	''
+	label	'emxRequirements.Common.RMTChangeControPowerView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=RMTSpecificationsChangeControl&showPageHeader=true&header=emxRequirements.Heading.ChangeControlCategory'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationsChangeControPowerView'
+	property	'version'	value	'R422'
+;
+modify menu type_SoftwareRequirementSpecification add command RMTSpecificationsChangeControPowerView order command RMTSpecificationsChangeControPowerView 3;
+#channel ==>type_SoftwareRequirementSpecification
+add property command_RMTSpecificationsChangeControPowerView on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecificationsChangeControPowerView';

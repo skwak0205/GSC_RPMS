@@ -1,0 +1,15 @@
+del menu 'DCSubscriptionsBottomActionbar';
+add menu 'DCSubscriptionsBottomActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCSubscriptionsRemoveSelectedActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCSubscriptionsBottomActionbar'
+	property 'version'	value	'9-5-2-0'
+;
+add property menu_DCSubscriptionsBottomActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCSubscriptionsBottomActionbar';

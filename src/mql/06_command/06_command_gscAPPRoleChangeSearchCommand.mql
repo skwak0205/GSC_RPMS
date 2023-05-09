@@ -1,0 +1,28 @@
+################################################################################################
+# Created Date : 2023. 03. 01
+# Create by Jungrim Choi
+# Description : Admin menu
+################################################################################################
+#del command gscAPPRoleChangeSearchCommand;
+add command gscAPPRoleChangeSearchCommand
+    label 'emxComponents.Header.RoleChange.Search'
+    href '${COMMON_DIR}/gscAPPIndentedTable.jsp?showClipboard=false&FilterFramePage=../common/gscAPPRoleChangeLogSearchFilter.jsp&FilterFrameSize=1&program=gscAPPInterfaceRoleChangeLog:selectPersonRoleChangeLogList&table=gscAPPRoleChangeSummaryTable&header=emxComponents.Header.RoleChange.Search&hideHeader=true&selection=single&pageSize=30'
+    setting "Registered Suite" "Components"
+    setting "Target Location"  "content"
+    setting "Submit"           "true"
+    setting "Row Select"       "single"
+    user all
+    property "installer" value "gsc"
+    property "application" value "Framework"
+    property "installed date" value "03-01-2023"
+    property "original name" value "gscAPPRoleChangeSearchCommand"
+    property "version" value "R421"
+;
+
+add property 'command_gscAPPRoleChangeSearchCommand' on program 'eServiceSchemaVariableMapping.tcl' to command 'gscAPPRoleChangeSearchCommand';
+
+#[S] Add by SeungYong,Lee [SortColumnName 추가] -2020.09.27
+mod command gscAPPRoleChangeSearchCommand   
+    href '${COMMON_DIR}/gscAPPIndentedTable.jsp?showClipboard=false&FilterFramePage=../common/gscAPPRoleChangeLogSearchFilter.jsp&FilterFrameSize=1&program=gscAPPInterfaceRoleChangeLog:selectPersonRoleChangeLogList&table=gscAPPRoleChangeSummaryTable&header=emxComponents.Header.RoleChange.Search&hideHeader=true&selection=single&pageSize=30&sortColumnName=none'
+;
+#[E] Add by SeungYong,Lee [SortColumnName 추가] -2020.09.27

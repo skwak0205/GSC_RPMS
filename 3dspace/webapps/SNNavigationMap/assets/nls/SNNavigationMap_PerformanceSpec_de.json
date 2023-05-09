@@ -1,0 +1,12 @@
+{
+  "PerformanceSpec": "Beziehungen zu Leistungsspezifikation",
+  "performancespecof": "Leistungsspezifikation von",
+  "performancespecof_to": "Leistungsspezifikation von",
+  "performancespecof_from": "Leistungsspezifikationen",
+  "performancechar": "Leistungsmerkmal",
+  "performancechar_to": "Leistungsmerkmale",
+  "performancechar_from": "Leistungsmerkmal von",
+  "performancetest": "Leistungstest",
+  "performancetest_to": "Leistungstests",
+  "performancetest_from": "Leistungstest von"
+}

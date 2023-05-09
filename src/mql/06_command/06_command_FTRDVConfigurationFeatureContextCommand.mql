@@ -1,0 +1,17 @@
+del command 'FTRDVConfigurationFeatureContextCommand';
+add command 'FTRDVConfigurationFeatureContextCommand'
+	description	''
+	label	'emxConfiguration.Label.Command.VariabilityDVTopChannel'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?objectCompare=false&expandProgram=LogicalFeature:getActiveInactiveDesignVariants&program=LogicalFeature:getActiveInactiveDesignVariants&table=FTRDVNonContextConfigurationFeatureTable&toolbar=FTRDesignVariantToolbar&header=emxProduct.DesignVariantStructureBrowser.ViewDesignVariantHeader&HelpMarker=emxhelpdesignvariantview&selection=multiple'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDVConfigurationFeatureContextCommand'
+	property	'version'	value	'R417'
+;
+#channel ==>FTRDVConfigurationFeatureContextChannel
+add property command_FTRDVConfigurationFeatureContextCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRDVConfigurationFeatureContextCommand';

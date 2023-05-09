@@ -1,0 +1,19 @@
+del menu 'RMTSpecTreeExportContent';
+add menu 'RMTSpecTreeExportContent'
+	description	''
+	label	'emxRequirements.ActionLink.ContentReport'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Function'		'showReqSpecContentReportMenu'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Image'		'${SUITE_DIR}/images/iconActionExportToDocument.gif'
+	command	'RMTSpecTreeExportXML'
+	command	'RMTSpecTreeExportICD'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecTreeExportContent'
+	property 'version'	value	'V6R2018x'
+;
+add property menu_RMTSpecTreeExportContent on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecTreeExportContent';

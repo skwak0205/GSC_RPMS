@@ -1,0 +1,19 @@
+del menu 'TMCMyDesk';
+add menu 'TMCMyDesk'
+	description	''
+	label	'emxFramework.Command.TMCSubMenuMyDesk'
+	href	''
+	alt	'emxFramework.Command.Alt.TMCSubMenuMyDesk'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallChangeBoard.gif'
+	command	'TMCMyViewMyDesk'
+	command	'TMCWorkspacesMyDesk'
+	command	'TMCWorkspaceTemplatesMyDesk'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCMyDesk'
+	property 'version'	value	'R417'
+;
+add property menu_TMCMyDesk on program eServiceSchemaVariableMapping.tcl to menu 'TMCMyDesk';

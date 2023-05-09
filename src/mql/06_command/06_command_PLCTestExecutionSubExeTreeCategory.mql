@@ -1,0 +1,16 @@
+del command 'PLCTestExecutionSubExeTreeCategory';
+add command 'PLCTestExecutionSubExeTreeCategory'
+	description	''
+	label	'emxProduct.Tree.SubTestExe'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCTestExecutionList&program=emxTestExecution:getRelatedTestExe&selection=multiple&sortColumnName=Name&freezePane=Name&toolbar=SubTestExeToolbar'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Function'		'isStandAloneTCEnabled'
+	setting	'Access Program'		'emxTestCase'
+	setting	'Image'		'${COMMON_DIR}/iconSmallTestCase.gif'
+	property	'version'	value	'R422'
+;
+modify menu type_TestExecution add command PLCTestExecutionSubExeTreeCategory order command PLCTestExecutionSubExeTreeCategory 0;
+#channel ==>type_TestExecution
+add property command_PLCTestExecutionSubExeTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCTestExecutionSubExeTreeCategory';

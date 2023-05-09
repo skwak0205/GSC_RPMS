@@ -1,0 +1,16 @@
+del channel 'PMCExecution';
+add channel 'PMCExecution'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCAssessment','PMCProjectIssue','PMCProjectRisk','PMCProjectOpportunity','APPRoutes','PMCApproval'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCExecution'
+	property	'version'	value	'R421.HF5'
+;
+#portal ==>PMCExecution
+add property channel_PMCExecution on program eServiceSchemaVariableMapping.tcl to channel 'PMCExecution';

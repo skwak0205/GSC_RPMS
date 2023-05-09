@@ -1,0 +1,27 @@
+del command 'APPWhereUsed';
+add command 'APPWhereUsed'
+	description	'where used tree category'
+	label	'emxWhereUsed.Command.WhereUsed'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPWhereUsedPortal&header=emxWhereUsed.Heading.WhereUsed'
+	alt	''
+	setting	'Registered Suite'		'WhereUsed'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'WhereUsed'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWhereUsed'
+	property	'version'	value	'R213'
+;
+modify menu type_DOCUMENTS add command APPWhereUsed order command APPWhereUsed 1;
+modify menu type_ProductConfiguration add command APPWhereUsed order command APPWhereUsed 7;
+modify menu type_ProductVariant add command APPWhereUsed order command APPWhereUsed 13;
+modify menu type_ConfigurationFeature add command APPWhereUsed order command APPWhereUsed 12;
+modify menu type_LogicalFeature add command APPWhereUsed order command APPWhereUsed 13;
+modify menu type_ManufacturingFeature add command APPWhereUsed order command APPWhereUsed 12;
+modify menu type_ConfigurationOption add command APPWhereUsed order command APPWhereUsed 0;
+modify menu type_Variant add command APPWhereUsed order command APPWhereUsed 10;
+modify menu type_VariabilityGroup add command APPWhereUsed order command APPWhereUsed 10;
+modify menu type_VariantValue add command APPWhereUsed order command APPWhereUsed 10;
+modify menu type_VariabilityOption add command APPWhereUsed order command APPWhereUsed 10;
+modify menu type_ManufacturingPlan add command APPWhereUsed order command APPWhereUsed 0;
+#channel ==>type_DOCUMENTStype_ProductConfigurationtype_ProductVarianttype_ConfigurationFeaturetype_LogicalFeaturetype_ManufacturingFeaturetype_ConfigurationOptiontype_Varianttype_VariabilityGrouptype_VariantValuetype_VariabilityOptiontype_ManufacturingPlan
+add property command_APPWhereUsed on program eServiceSchemaVariableMapping.tcl to command 'APPWhereUsed';

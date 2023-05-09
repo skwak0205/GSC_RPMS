@@ -1,0 +1,24 @@
+del command 'DCObjectAddSelectedtoFoldersActionLink';
+add command 'DCObjectAddSelectedtoFoldersActionLink'
+	description	'Add Selected to Folders on Objects List'
+	label	'emxDocumentCentral.ActionBarCmd.AddSelectedtoFolders'
+	href	'${SUITE_DIR}/emxLibraryCentralSearchIntermediate.jsp?useMode=addToFoldersFromListPage'
+	alt	''
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Printer Friendly'		'false'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'true'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddToFolder.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCObjectAddSelectedtoFoldersActionLink'
+	property	'version'	value	'R421'
+;
+modify menu DCDocumentClassificationsBottomActionbar add command DCObjectAddSelectedtoFoldersActionLink order command DCObjectAddSelectedtoFoldersActionLink 0;
+modify menu LCLibrariesActionsToolBar add command DCObjectAddSelectedtoFoldersActionLink order command DCObjectAddSelectedtoFoldersActionLink 8;
+modify menu LCInProcessClassActionsToolBar add command DCObjectAddSelectedtoFoldersActionLink order command DCObjectAddSelectedtoFoldersActionLink 3;
+#channel ==>DCDocumentClassificationsBottomActionbarLCLibrariesActionsToolBarLCInProcessClassActionsToolBar
+add property command_DCObjectAddSelectedtoFoldersActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCObjectAddSelectedtoFoldersActionLink';

@@ -1,0 +1,20 @@
+del menu 'AEFStructureCompareToolbar';
+add menu 'AEFStructureCompareToolbar'
+	description	''
+	label	'emxFramework.Menu.AEFStructureCompareMenu'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFSBCompareSyncToLeft'
+	command	'AEFSBCompareSyncToRight'
+	command	'AEFSBCompareMoveFirst'
+	command	'AEFSBCompareMoveNext'
+	command	'AEFSBCompareMovePrevious'
+	command	'AEFSBCompareMoveLast'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFStructureCompareToolbar'
+	property 'version'	value	'R419'
+;
+add property menu_AEFStructureCompareToolbar on program eServiceSchemaVariableMapping.tcl to menu 'AEFStructureCompareToolbar';

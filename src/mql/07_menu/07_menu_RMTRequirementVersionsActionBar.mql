@@ -1,0 +1,18 @@
+del menu 'RMTRequirementVersionsActionBar';
+add menu 'RMTRequirementVersionsActionBar'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTCreateNewRequirementVersion'
+	menu	'RMTRequirementVersionRollUp'
+	command	'RMTRequirementVersionRichTextEditor'
+	command	'RMTDelete'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTRequirementVersionsActionBar'
+	property 'version'	value	'V6R2010'
+;
+add property menu_RMTRequirementVersionsActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTRequirementVersionsActionBar';

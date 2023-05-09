@@ -1,0 +1,18 @@
+del command 'PMCTransferAssignmentMoveBack';
+add command 'PMCTransferAssignmentMoveBack'
+	description	'Command for Moving Back to Transfering Assignment'
+	label	'emxProgramCentral.Common.Back'
+	href	'${SUITE_DIR}/emxProgramCentralMemberTransferDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTransferAssignmentMoveBack'
+	property	'version'	value	'R216'
+;
+modify menu PMCTransferAssignmentToolbar add command PMCTransferAssignmentMoveBack order command PMCTransferAssignmentMoveBack 0;
+#channel ==>PMCTransferAssignmentToolbar
+add property command_PMCTransferAssignmentMoveBack on program eServiceSchemaVariableMapping.tcl to command 'PMCTransferAssignmentMoveBack';

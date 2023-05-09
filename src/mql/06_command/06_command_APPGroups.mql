@@ -1,0 +1,26 @@
+del command 'APPGroups';
+add command 'APPGroups'
+	description	'Group Command Object'
+	label	'emxComponents.Common.Group'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPGroupSummary&program=emxPerson:getAssignedGroupList&toolbar=APPGroupActionsToolBar&header=emxComponents.GroupSummary.Heading&selection=multiple&helpMarker=emxhelpcompanypeoplegroups&Export=false&multiColumnSort=false&customize=false&objectCompare=false&showClipboard=false&displayView=details'
+	alt	'emxComponents.Common.Group'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'iconSmallGroup.gif'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Supplier Representative'
+	user	'Buyer Administrator'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPGroups'
+	property	'version'	value	'R422'
+;
+modify menu type_Person add command APPGroups order command APPGroups 4;
+#channel ==>type_Person
+add property command_APPGroups on program eServiceSchemaVariableMapping.tcl to command 'APPGroups';

@@ -1,0 +1,19 @@
+del menu 'LCClassifiedItemToolBar';
+add menu 'LCClassifiedItemToolBar'
+	description	''
+	label	'emxDocumentCentral.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'LCClassifiedItemActionToolBar'
+	command	'LCLibraryEndItemsSearchIn'
+	command	'LBCSetRetentionSchedule'
+	command	'LBCIssueCreateActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LCClassifiedItemToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_LCClassifiedItemToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LCClassifiedItemToolBar';

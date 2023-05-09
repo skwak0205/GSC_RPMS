@@ -1,0 +1,19 @@
+del command 'FTRProductVariantPropertiesRMB';
+add command 'FTRProductVariantPropertiesRMB'
+	description	''
+	label	'emxProduct.Tree.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_ProductVariant&toolbar=FTRProductVariantPropertiesToolBar&formHeader=emxProduct.Heading.ProductVariantProperties'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductVariantPropertiesRMB'
+	property	'version'	value	'R417'
+;
+modify menu type_ProductVariantRMB add command FTRProductVariantPropertiesRMB order command FTRProductVariantPropertiesRMB 1;
+#channel ==>type_ProductVariantRMB
+add property command_FTRProductVariantPropertiesRMB on program eServiceSchemaVariableMapping.tcl to command 'FTRProductVariantPropertiesRMB';

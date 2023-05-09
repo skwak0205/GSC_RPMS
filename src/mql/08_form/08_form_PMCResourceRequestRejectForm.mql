@@ -1,0 +1,20 @@
+del form 'PMCResourceRequestRejectForm';
+add form 'PMCResourceRequestRejectForm' web
+field #1
+	name	'Comment'
+	businessobject	'empty'
+	label	'emxProgramCentral.Common.CommentsForRejection'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	setting	'Input Type'		'textarea'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Required'		'true'
+	setting	'Editable'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestRejectForm'
+	property	'version'	value	'R208'
+;
+add property form_PMCResourceRequestRejectForm on program eServiceSchemaVariableMapping.tcl to form 'PMCResourceRequestRejectForm';

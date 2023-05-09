@@ -1,0 +1,9 @@
+{
+  "UnCV.optionsChecker.rdfServerURL.error": "Необходимо определить конечную точку URL-адреса сервера RDF.",
+  "UnCV.optionsChecker.originalValue.notExisting.error": "Необходимо определить исходное значение.",
+  "UnCV.optionsChecker.originalValue.type.error": "Исходное значение должно быть числом.",
+  "UnCV.optionsChecker.quantityURI.error": "Необходимо определить количество (тип характеристики).",
+  "UnCV.optionsChecker.unitURI.error": "Необходимо определить единичный URI (суффикс).",
+  "UnCV.convertedValue": "Преобразованное значение",
+  "UnCV.originalValue": "Исходное значение"
+}

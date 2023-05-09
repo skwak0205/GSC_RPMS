@@ -1,0 +1,15 @@
+del menu 'CFFParentComposition';
+add menu 'CFFParentComposition'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'CFFComposition_MPBuilds'
+	command	'CFFComposition_ProductBuilds'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EffectivityFramework'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'CFFParentComposition'
+	property 'version'	value	'R212'
+;
+add property menu_CFFParentComposition on program eServiceSchemaVariableMapping.tcl to menu 'CFFParentComposition';

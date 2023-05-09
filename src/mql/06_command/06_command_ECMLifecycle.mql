@@ -1,0 +1,17 @@
+del command 'ECMLifecycle';
+add command 'ECMLifecycle'
+	description	'Command to provide Life cycle'
+	label	'EnterpriseChangeMgt.Common.Review'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=AEFLifecyclePowerView&showPageHeader=false&HelpMarker=emxhelplifecylepv&postProcessPage=${SUITE_DIR}/ECMUtil.jsp&functionality=portalRefresh'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallLifecycle.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EnterpriseChangeMgt'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'ECMLifecycle'
+	property	'version'	value	'R417'
+;
+#channel ==>ECMChangePropertyChannel2
+add property command_ECMLifecycle on program eServiceSchemaVariableMapping.tcl to command 'ECMLifecycle';

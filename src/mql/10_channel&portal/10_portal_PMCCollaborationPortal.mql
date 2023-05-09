@@ -1,0 +1,14 @@
+del portal 'PMCCollaborationPortal';
+add portal 'PMCCollaborationPortal'
+	description	'Collaboration Portal in Gate View'
+	label	'emxFramework.Command.PMCCollaborationPortal'
+	href	''
+	channel 	PMCGateCollaborationChannel
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCollaborationPortal'
+	property	'version'	value	'R210'
+;
+add property portal_PMCCollaborationPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCCollaborationPortal';

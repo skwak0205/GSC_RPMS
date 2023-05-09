@@ -1,0 +1,15 @@
+del menu 'FTRManufacturingFeaturesStructureCompareMenu';
+add menu 'FTRManufacturingFeaturesStructureCompareMenu'
+	description	''
+	label	'emxConfiguration.Menu.StructureCompare'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRProductsMFStructureCompareCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRManufacturingFeaturesStructureCompareMenu'
+	property 'version'	value	'R212'
+;
+add property menu_FTRManufacturingFeaturesStructureCompareMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRManufacturingFeaturesStructureCompareMenu';

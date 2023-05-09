@@ -1,0 +1,25 @@
+del command 'PMCProjectBusinessGoalSummaryCreateNew';
+add command 'PMCProjectBusinessGoalSummaryCreateNew'
+	description	'Command for CreateNew link on BusinessGoalSummary'
+	label	'emxProgramCentral.Button.CreateNew'
+	href	'${SUITE_DIR}/emxProgramCentralSearchBusinessGoalProcess.jsp?mode=createProject'
+	alt	'emxProgramCentral.Button.CreateNew'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'current!="Complete"'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToAddProjectCommand'
+	setting	'Access Program'		'emxProgramBusinessGoal'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Business Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBusinessGoalSummaryCreateNew'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCProjectBusinessGoalSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBusinessGoalSummaryCreateNew';

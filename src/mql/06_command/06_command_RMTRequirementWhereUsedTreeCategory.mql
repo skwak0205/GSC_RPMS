@@ -1,0 +1,28 @@
+del command 'RMTRequirementWhereUsedTreeCategory';
+add command 'RMTRequirementWhereUsedTreeCategory'
+	description	'Requirements where used tree category'
+	label	'emxRequirements.Tree.WhereUsed'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxPLCCommon:getWhereUsed&table=PLCWhereUsedList&header=emxRequirements.Heading.WhereUsedGeneric&selection=multiple&topActionbar=PLCWhereUsedListTopActionBar&HelpMarker=emxhelpwhereusedlist&command=command_RMTRequirementWhereUsedTreeCategory'
+	alt	''
+	setting	'ExpandFilterTypes'		'emxRequirements.WhereUsed.Requirement.ExpandTypes'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Expression'		'policy != "Requirement Version"'
+	setting	'ExpandFilterRelationships'		'emxRequirements.WhereUsed.Requirement.ExpandRelationships'
+	setting	'IntermediateFilterTypes'		'emxRequirements.WhereUsed.IntermediateTypes'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementWhereUsedTreeCategory'
+	property	'version'	value	'R422'
+;
+#channel ==>RMTRelatedObjects
+add property command_RMTRequirementWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementWhereUsedTreeCategory';

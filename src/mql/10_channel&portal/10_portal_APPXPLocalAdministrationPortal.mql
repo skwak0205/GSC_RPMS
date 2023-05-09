@@ -1,0 +1,8 @@
+del portal 'APPXPLocalAdministrationPortal';
+add portal 'APPXPLocalAdministrationPortal'
+	description	''
+	label	''
+	href	''
+	channel 	LocalAdministrationXPChannel
+;
+add property portal_APPXPLocalAdministrationPortal on program eServiceSchemaVariableMapping.tcl to portal 'APPXPLocalAdministrationPortal';

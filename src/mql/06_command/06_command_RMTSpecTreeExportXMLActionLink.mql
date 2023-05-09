@@ -1,0 +1,28 @@
+del command 'RMTSpecTreeExportXMLActionLink';
+add command 'RMTSpecTreeExportXMLActionLink'
+	description	''
+	label	'emxRequirements.ActionLink.ContentReport.XML'
+	href	'${SUITE_DIR}/CompositeDocumentOptionsFS.jsp?selectedType=Specification&exportType=XML&HelpMarker=emxhelpcompositedocumentoptions'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecTreeExportXMLActionLink'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementSpecExportContent add command RMTSpecTreeExportXMLActionLink order command RMTSpecTreeExportXMLActionLink 1;
+#channel ==>RMTRequirementSpecExportContent
+add property command_RMTSpecTreeExportXMLActionLink on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecTreeExportXMLActionLink';

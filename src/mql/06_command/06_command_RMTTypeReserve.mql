@@ -1,0 +1,34 @@
+del command 'RMTTypeReserve';
+add command 'RMTTypeReserve'
+	description	''
+	label	'emxRequirements.ActionLink.Reserve'
+	href	'${SUITE_DIR}/RequirementUtil.jsp?mode=Reserve'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionLockforEdit.gif'
+	user	'System Transition Manager'
+	user	'System Conversion Manager'
+	user	'Shadow Agent'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Product Manager'
+	user	'Software Engineer'
+	user	'Software Engineering Manager'
+	user	'Software Project Manager'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTTypeReserve'
+	property	'version'	value	'R422'
+;
+modify menu RMTChapterPropertiesActionBar add command RMTTypeReserve order command RMTTypeReserve 5;
+modify menu RMTCommentPropertiesActionBar add command RMTTypeReserve order command RMTTypeReserve 5;
+modify menu RMTRequirementSpecificationPropertiesActionBar add command RMTTypeReserve order command RMTTypeReserve 5;
+modify menu RMTUseCasePropertiesTopActionBar add command RMTTypeReserve order command RMTTypeReserve 2;
+#channel ==>RMTChapterPropertiesActionBarRMTCommentPropertiesActionBarRMTRequirementSpecificationPropertiesActionBarRMTUseCasePropertiesTopActionBar
+add property command_RMTTypeReserve on program eServiceSchemaVariableMapping.tcl to command 'RMTTypeReserve';

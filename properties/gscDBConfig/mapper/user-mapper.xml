@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gsc.gscInterface.userIF">
+    <select id="selectUserList" parameterType="java.util.Map" resultType="java.util.Map">
+        select distinct(u.emp_id), u.emp_name, u.dept_id, u.dept_name, NVL(u.E_MAIL, 'null') as E_MAIL, u.POSITION_NAME, u.CUR_NAME
+        FROM (
+                SELECT DEPT_ID, DEPT_NAME, PARENT_CODE, CAP_EMPL_NO, DEPT_USEYN, IF_YN, UPDATE_DATE
+                FROM DEPT_IF
+                START WITH DEPT_ID = 'F00050' or PARENT_CODE = 'F00050' -- 시작 위치를 정함
+                CONNECT BY PARENT_CODE = PRIOR DEPT_ID -- 자식데이터를 지정
+                ORDER SIBLINGS BY DEPT_ID
+              ) a, user_if u
+        where trim(a.dept_id) = trim(u.dept_id)
+            and a.dept_useyn = 'Y'
+            and u.if_yn = 'N'
+            and a.update_date >= TO_DATE(#{date}, 'MM/DD/YYYY')
+        order by u.emp_id desc
+    </select>
+
+    <update id="updateIFColumn" parameterType="java.util.Map">
+        update USER_IF set IF_YN = #{if_yn}, IF_RESULT = #{if_result}, IF_MSG = #{if_msg}
+        where trim(EMP_ID) = #{value}
+    </update>
+</mapper>

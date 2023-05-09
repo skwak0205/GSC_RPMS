@@ -1,0 +1,19 @@
+del command 'FTRVariabilityCopyTo';
+add command 'FTRVariabilityCopyTo'
+	description	''
+	label	'emxProduct.ActionLink.CopyTo'
+	href	'${SUITE_DIR}/ConfigurationFeatureCopyPreProcess.jsp?functionality=ConfigurationFeatureCopyTo&variabilityMode=Variability'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R421'
+;
+modify menu FTRVariabilityCopyMenu add command FTRVariabilityCopyTo order command FTRVariabilityCopyTo 0;
+#channel ==>FTRVariabilityCopyMenu
+add property command_FTRVariabilityCopyTo on program eServiceSchemaVariableMapping.tcl to command 'FTRVariabilityCopyTo';

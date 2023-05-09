@@ -1,0 +1,19 @@
+del command 'TMCWorkspaceTemplateEditDetailsCommand';
+add command 'TMCWorkspaceTemplateEditDetailsCommand'
+	description	''
+	label	'emxTeamCentral.Button.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=TMCWorkspaceTemplate&mode=edit&HelpMarker=emxhelpeditworkspacedetails&postProcessJPO=emxWorkspaceTemplate:updateTemplateAvailability'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceTemplateEditDetailsCommand'
+	property	'version'	value	'R422.HF1'
+;
+modify menu TMCWorkspaceTemplateDetailsActionsToolBar add command TMCWorkspaceTemplateEditDetailsCommand order command TMCWorkspaceTemplateEditDetailsCommand 0;
+#channel ==>TMCWorkspaceTemplateDetailsActionsToolBar
+add property command_TMCWorkspaceTemplateEditDetailsCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceTemplateEditDetailsCommand';

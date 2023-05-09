@@ -1,0 +1,21 @@
+del command 'FTRDesignVariantNameFilterCommand';
+add command 'FTRDesignVariantNameFilterCommand'
+	description	'FTRDesignVariantNameFilterCommand'
+	label	'emxFramework.Basic.Name'
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'textbox'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Action Label'		'Search'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Default'		'*'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRDesignVariantNameFilterCommand'
+	property	'version'	value	'R215'
+;
+modify menu FTRDVConfigurationOptionsCustomFilterToolbar add command FTRDesignVariantNameFilterCommand order command FTRDesignVariantNameFilterCommand 1;
+#channel ==>FTRDVConfigurationOptionsCustomFilterToolbar
+add property command_FTRDesignVariantNameFilterCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRDesignVariantNameFilterCommand';

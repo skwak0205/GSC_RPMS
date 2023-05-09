@@ -1,0 +1,25 @@
+del command 'RMTRequirementGroupCreateActions';
+add command 'RMTRequirementGroupCreateActions'
+	description	'create a new requirement group'
+	label	'emxRequirements.Heading.CreateSpecificationsFolder'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=Creation&form=RMTRequirementGroup&type=type_RequirementGroup&submitAction=treeContent&header=emxRequirements.Heading.CreateStandaloneSpecificationsFolder'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'VPLMCreator'
+	user	'VPLMProjectLeader'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementGroupCreateActions'
+	property	'version'	value	'R422'
+;
+modify menu RMTActions add command RMTRequirementGroupCreateActions order command RMTRequirementGroupCreateActions 0;
+#channel ==>RMTActions
+add property command_RMTRequirementGroupCreateActions on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementGroupCreateActions';

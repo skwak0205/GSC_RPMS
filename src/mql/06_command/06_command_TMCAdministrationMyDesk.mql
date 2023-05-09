@@ -1,0 +1,18 @@
+del command 'TMCAdministrationMyDesk';
+add command 'TMCAdministrationMyDesk'
+	description	'Administration Command Object'
+	label	'emxFramework.MenuItem.Administration'
+	href	'${SUITE_DIR}/emxTeamMyAdministrationSummaryFS.jsp'
+	alt	'emxFramework.MenuItem.Administration'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCAdministrationMyDesk'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_TMCAdministrationMyDesk on program eServiceSchemaVariableMapping.tcl to command 'TMCAdministrationMyDesk';

@@ -1,0 +1,7 @@
+del menu 'ENCChangeAction';
+add menu 'ENCChangeAction'
+	description	''
+	label	'null'
+	href	'null'
+	alt	'null'
+add property menu_ENCChangeAction on program eServiceSchemaVariableMapping.tcl to menu 'ENCChangeAction';

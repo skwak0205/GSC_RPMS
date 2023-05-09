@@ -1,0 +1,16 @@
+del command 'PLCPreviewBOMGenerateEBOM';
+add command 'PLCPreviewBOMGenerateEBOM'
+	description	''
+	label	'emxProduct.ActionLink.PLCGenerateEBOM'
+	href	'${SUITE_DIR}/ProductConfigurationUtil.jsp?mode=generateMarketingEBOM'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCPreviewBOMGenerateEBOM'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_PLCPreviewBOMGenerateEBOM on program eServiceSchemaVariableMapping.tcl to command 'PLCPreviewBOMGenerateEBOM';

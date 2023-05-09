@@ -1,0 +1,16 @@
+del channel 'PMCFinancials';
+add channel 'PMCFinancials'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCProjectBudget','PMCBudgetActualTransactions','PMCBaseCurrencyModifyMessageCommand','PMCProjectBenefit'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFinancials'
+	property	'version'	value	'R216'
+;
+#portal ==>
+add property channel_PMCFinancials on program eServiceSchemaVariableMapping.tcl to channel 'PMCFinancials';

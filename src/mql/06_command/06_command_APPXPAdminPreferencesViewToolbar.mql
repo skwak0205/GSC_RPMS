@@ -1,0 +1,14 @@
+del command 'APPXPAdminPreferencesViewToolbar';
+add command 'APPXPAdminPreferencesViewToolbar'
+	description	'Admin Preferences'
+	label	'emxPlmOnline.label.Options'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPXPPreferencesAdminPortal&toolbar=APPXPAdminToolBar&header=emxPlmOnline.label.ManageOption'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Image'		'iconSmallXPAdmin.gif'
+	user	'VPLMAdmin'
+;
+modify menu APPXPAdminToolBar add command APPXPAdminPreferencesViewToolbar order command APPXPAdminPreferencesViewToolbar 5;
+#channel ==>APPXPAdminToolBar
+add property command_APPXPAdminPreferencesViewToolbar on program eServiceSchemaVariableMapping.tcl to command 'APPXPAdminPreferencesViewToolbar';

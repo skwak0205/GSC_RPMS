@@ -1,0 +1,28 @@
+del command 'RemoveSelectedIssueReportedAgainstLink';
+add command 'RemoveSelectedIssueReportedAgainstLink'
+	description	'Issue Remove Selected Command Object'
+	label	'emxComponents.Command.RemoveSelectedReportedAgainstLink'
+	href	'${SUITE_DIR}/emxIssueUtil.jsp?mode=disconnect&command=RemoveReportedAgainst'
+	alt	'emxComponents.Command.RemoveSelectedReportedAgainstLink'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromdisconnect] == true)'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Remove'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'RemoveSelectedIssueReportedAgainstLink'
+	property	'version'	value	'R422'
+;
+modify menu IssueReportedAgainstListToolBarActions add command RemoveSelectedIssueReportedAgainstLink order command RemoveSelectedIssueReportedAgainstLink 0;
+#channel ==>IssueReportedAgainstListToolBarActions
+add property command_RemoveSelectedIssueReportedAgainstLink on program eServiceSchemaVariableMapping.tcl to command 'RemoveSelectedIssueReportedAgainstLink';

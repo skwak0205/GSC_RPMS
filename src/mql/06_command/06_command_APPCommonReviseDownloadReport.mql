@@ -1,0 +1,23 @@
+del command 'APPCommonReviseDownloadReport';
+add command 'APPCommonReviseDownloadReport'
+	description	'Revise Download Report'
+	label	'emxComponents.Command.ReviseSearch'
+	href	'${COMMON_DIR}/emxSearch.jsp?defaultSearch=APPCommonShowDownloadReport&helpMarker=emxhelpsearchdownloadreport'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReviseSearch.png'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCommonReviseDownloadReport'
+	property	'version'	value	'R418'
+;
+modify menu APPCommonReviseDownloadReportToolbar add command APPCommonReviseDownloadReport order command APPCommonReviseDownloadReport 0;
+#channel ==>APPCommonReviseDownloadReportToolbar
+add property command_APPCommonReviseDownloadReport on program eServiceSchemaVariableMapping.tcl to command 'APPCommonReviseDownloadReport';

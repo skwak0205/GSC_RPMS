@@ -1,0 +1,22 @@
+del command 'ctxMsoiCmd_Unlock';
+add command 'ctxMsoiCmd_Unlock'
+	description	'ctxMsoiCmd_Unlock'
+	label	'emxMSF.Command.ctxMsoiCmd_Unlock'
+	href	''
+	alt	'ctxMsoiCmd_Unlock'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_Unlock'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Navigation_FileLocked add command ctxMsoiCmd_Unlock order command ctxMsoiCmd_Unlock 5;
+modify menu ctxMsoi_Navigation_MultipleSelection add command ctxMsoiCmd_Unlock order command ctxMsoiCmd_Unlock 4;
+modify menu ctxMsoi_Revisions_VersionLocked add command ctxMsoiCmd_Unlock order command ctxMsoiCmd_Unlock 0;
+modify menu ctxMsoi_SearchResults_FileLocked add command ctxMsoiCmd_Unlock order command ctxMsoiCmd_Unlock 5;
+modify menu ctxMsoi_SearchResults_MultipleSelection add command ctxMsoiCmd_Unlock order command ctxMsoiCmd_Unlock 4;
+#channel ==>ctxMsoi_Navigation_FileLockedctxMsoi_Navigation_MultipleSelectionctxMsoi_Revisions_VersionLockedctxMsoi_SearchResults_FileLockedctxMsoi_SearchResults_MultipleSelection
+add property command_ctxMsoiCmd_Unlock on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_Unlock';

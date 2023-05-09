@@ -1,0 +1,19 @@
+del command 'FTRQuantityRuleProductsSearchcommand';
+add command 'FTRQuantityRuleProductsSearchcommand'
+	description	''
+	label	'emxProduct.ActionLink.FindProducts'
+	href	'${SUITE_DIR}/QuantityRuleSearchProductForm.jsp?program=emxFeatureSearch:getProductsForQuantityRule&table=PLCSearchProductsTable&CommandName=FTRQuantityRuleProductsSearchcommand&sortColumnName=Name&header=emxProduct.Heading.Search&Style=dialog&HelpMarker=emxhelpsearchresults'
+	alt	''
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Help Marker'		'emxhelpsearch'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRQuantityRuleProductsSearchcommand'
+	property	'version'	value	'R215'
+;
+modify menu SearchAddExistingChooserMenu add command FTRQuantityRuleProductsSearchcommand order command FTRQuantityRuleProductsSearchcommand 32;
+#channel ==>SearchAddExistingChooserMenu
+add property command_FTRQuantityRuleProductsSearchcommand on program eServiceSchemaVariableMapping.tcl to command 'FTRQuantityRuleProductsSearchcommand';

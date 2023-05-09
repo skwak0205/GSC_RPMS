@@ -1,0 +1,17 @@
+del menu 'APPRouteTemplateRevisionsActionsToolBar';
+add menu 'APPRouteTemplateRevisionsActionsToolBar'
+	description	''
+	label	'TeamCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPRouteTemplateRevisionActionLink'
+	command	'RouteTemplateRevise'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRouteTemplateRevisionsActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPRouteTemplateRevisionsActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPRouteTemplateRevisionsActionsToolBar';

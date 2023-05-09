@@ -1,0 +1,16 @@
+del command 'FTRRemoveMatrixRuleActionCommandLink';
+add command 'FTRRemoveMatrixRuleActionCommandLink'
+	description	'FTRRemoveMatrixRuleActionCommandLink'
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/ConfigurationRuleDisconnectPostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_FTRRemoveMatrixRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRRemoveMatrixRuleActionCommandLink';

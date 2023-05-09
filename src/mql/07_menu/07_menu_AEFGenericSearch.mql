@@ -1,0 +1,14 @@
+del menu 'AEFGenericSearch';
+add menu 'AEFGenericSearch'
+	description	''
+	label	''
+	href	''
+	alt	''
+	command	'AEFGeneralSearch'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFGenericSearch'
+	property 'version'	value	'V6R2009x'
+;
+add property menu_AEFGenericSearch on program eServiceSchemaVariableMapping.tcl to menu 'AEFGenericSearch';

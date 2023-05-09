@@ -1,0 +1,19 @@
+del command 'LBCBOMClassificationView';
+add command 'LBCBOMClassificationView'
+	description	'Open BOM in classification View'
+	label	'emxLibraryCentral.Command.BOMClassificationView'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?expandProgram=emxPart:getEBOMsWithRelSelectables&table=LBCBOMIndentedSummary&header=emxLibraryCentral.BOM.ClassificationView&showApply=false&selection=single&selectHandler=refreshClassificationView&HelpMarker=emxhelpviewclassificationattribute'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Function'		'isENGInstalled'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCBOMClassificationView'
+	property	'version'	value	'R215'
+;
+#channel ==>LBCObjectClassificationBOM
+add property command_LBCBOMClassificationView on program eServiceSchemaVariableMapping.tcl to command 'LBCBOMClassificationView';

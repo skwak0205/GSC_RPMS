@@ -1,0 +1,19 @@
+del menu 'RequirementSpecificationSummaryActionsToolbar';
+add menu 'RequirementSpecificationSummaryActionsToolbar'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTCreateReqSpecAndLinkToReq'
+	command	'RMTAddExistingRequirementSpecificationActionLink'
+	command	'APPSeparator'
+	command	'APPDocumentSummaryDownloadActionLink'
+	command	'APPDocumentSummaryCheckOutActionLink'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RequirementSpecificationSummaryActionsToolbar'
+	property 'version'	value	'V6R2015x'
+;
+add property menu_RequirementSpecificationSummaryActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'RequirementSpecificationSummaryActionsToolbar';

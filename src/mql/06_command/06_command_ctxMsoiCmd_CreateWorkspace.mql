@@ -1,0 +1,18 @@
+del command 'ctxMsoiCmd_CreateWorkspace';
+add command 'ctxMsoiCmd_CreateWorkspace'
+	description	'ctxMsoiCmd_CreateWorkspace'
+	label	'emxMSF.Command.ctxMsoiCmd_CreateWorkspace'
+	href	''
+	alt	'ctxMsoiCmd_CreateWorkspace'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_CreateWorkspace'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Navigation_Background add command ctxMsoiCmd_CreateWorkspace order command ctxMsoiCmd_CreateWorkspace 2;
+#channel ==>ctxMsoi_Navigation_Background
+add property command_ctxMsoiCmd_CreateWorkspace on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_CreateWorkspace';

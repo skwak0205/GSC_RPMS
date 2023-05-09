@@ -1,0 +1,10 @@
+{
+    "UCV.optionsChecker.optionSet.notExisting.error": "Option set must be defined to retrieve user characteristics!",
+    "UCV.optionsChecker.optionSet.type.error": "Option set must be defined to retrieve user characteristics!",
+
+    "UCV.mode.icon.text.switchReadOnly": "Switch to read-only mode",
+    "UCV.mode.icon.text.switchEdit": "Switch to edit mode",
+    "UCV.add.icon.text": "Add a user characteristic",
+    
+    "UCV.noUC.error": "There are no user characteristics available..."
+}

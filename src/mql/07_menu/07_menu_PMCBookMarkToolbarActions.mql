@@ -1,0 +1,15 @@
+del menu 'PMCBookMarkToolbarActions';
+add menu 'PMCBookMarkToolbarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCBookMarkEditLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCBookMarkToolbarActions'
+	property 'version'	value	'V6R2008-1'
+;
+add property menu_PMCBookMarkToolbarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCBookMarkToolbarActions';

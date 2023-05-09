@@ -1,0 +1,20 @@
+del command 'APPDemoteInboxTask';
+add command 'APPDemoteInboxTask'
+	description	'Command for demoting Inbox Task which require owner review'
+	label	'emxComponents.Button.Demote'
+	href	'${SUITE_DIR}/emxTaskCompletePreProcess.jsp?action=DemoteTask'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'checksToDemoteTask'
+	setting	'Access Program'		'emxInboxTask'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDemote.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDemoteInboxTask'
+	property	'version'	value	'R417'
+;
+modify menu APPInboxTaskDetailsActionsToolbar add command APPDemoteInboxTask order command APPDemoteInboxTask 0;
+#channel ==>APPInboxTaskDetailsActionsToolbar
+add property command_APPDemoteInboxTask on program eServiceSchemaVariableMapping.tcl to command 'APPDemoteInboxTask';

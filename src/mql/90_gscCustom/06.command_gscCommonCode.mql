@@ -1,0 +1,25 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통코드 Main command
+################################################################################################
+#del command "gscCommonCode";
+add command "gscCommonCode"
+    description ""
+    label   "emxComponents.Command.gscCommonCode"
+    alt     "emxComponents.Command.gscCommonCode"
+    href    '${COMMON_DIR}/emxPortal.jsp?portal=gscCommonCodePortal&header=emxComponents.Command.gscCommonCode'
+    setting "Registered Suite" "Components"
+    setting 'Target Location' 'content'
+    user "VPLMAdmin"
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2023.01.10"
+property "original name"    value "gscCommonCode"
+;
+add property command_gscCommonCode on program eServiceSchemaVariableMapping.tcl to command 'gscCommonCode';
+
+# 'Project Management' Channel Command 추가
+# command PMCMyDesk
+modify menu PMCMyDesk add command gscCommonCode order command gscCommonCode 12;

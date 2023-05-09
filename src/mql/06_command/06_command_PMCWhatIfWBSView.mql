@@ -1,0 +1,18 @@
+del command 'PMCWhatIfWBSView';
+add command 'PMCWhatIfWBSView'
+	description	''
+	label	'emxProgramCentral.Button.WBSView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'table'		'PMCWhatIfWBSViewTable'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWhatIfWBSView'
+	property	'version'	value	'R216'
+;
+modify menu PMCWhatIfTableMenu add command PMCWhatIfWBSView order command PMCWhatIfWBSView 1;
+#channel ==>PMCWhatIfTableMenu
+add property command_PMCWhatIfWBSView on program eServiceSchemaVariableMapping.tcl to command 'PMCWhatIfWBSView';

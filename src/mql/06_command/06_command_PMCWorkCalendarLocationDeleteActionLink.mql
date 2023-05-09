@@ -1,0 +1,26 @@
+del command 'PMCWorkCalendarLocationDeleteActionLink';
+add command 'PMCWorkCalendarLocationDeleteActionLink'
+	description	''
+	label	'emxComponents.Button.Remove'
+	href	'${COMPONENT_DIR}/emxComponentsConfigurableTableDisconnectProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.Common.MsgConfirm'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWorkCalendarLocationDeleteActionLink'
+	property	'version'	value	'R423.HF5'
+;
+modify menu PMCWorkCalendarLocationToolbarActions add command PMCWorkCalendarLocationDeleteActionLink order command PMCWorkCalendarLocationDeleteActionLink 0;
+#channel ==>PMCWorkCalendarLocationToolbarActions
+add property command_PMCWorkCalendarLocationDeleteActionLink on program eServiceSchemaVariableMapping.tcl to command 'PMCWorkCalendarLocationDeleteActionLink';

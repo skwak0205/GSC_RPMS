@@ -1,0 +1,6 @@
+{
+   "KeyChoiceLabel" : "Entrez un texte" ,
+   "KeyBodyText1"   : "C'est un exemple de widget où la dernière partie de son titre, son corps et le label dans le menu Preferences sont traduits.",
+   "KeyBodyText2"   : "Le code de la langue courante est  <b>{code}</b>." ,
+   "KeyTitle"       : "Pour \" {preftext} \""
+}

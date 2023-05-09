@@ -1,0 +1,20 @@
+del command 'PLCGlobalSearchModelsCommand';
+add command 'PLCGlobalSearchModelsCommand'
+	description	''
+	label	'emxProduct.ActionLink.FindModels'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Model&table=PLCSearchModelsTable&selection=multiple&showSavedQuery=True&searchCollectionEnabled=True&HelpMarker=emxhelpfullsearch&searchmode=globalsearch&toolbar=PLCFullSearchPLCToolbar'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP,ENO_BPS_TP'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCGlobalSearchModelsCommand'
+	property	'version'	value	'R418'
+;
+modify menu PLCSearch add command PLCGlobalSearchModelsCommand order command PLCGlobalSearchModelsCommand 2;
+modify menu SearchAddExistingChooserMenu add command PLCGlobalSearchModelsCommand order command PLCGlobalSearchModelsCommand 29;
+modify menu MarketingPreferenceMenu add command PLCGlobalSearchModelsCommand order command PLCGlobalSearchModelsCommand 0;
+#channel ==>PLCSearchSearchAddExistingChooserMenuMarketingPreferenceMenu
+add property command_PLCGlobalSearchModelsCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCGlobalSearchModelsCommand';

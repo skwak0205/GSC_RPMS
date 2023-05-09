@@ -1,0 +1,16 @@
+del command 'LCDiscussionCommand';
+add command 'LCDiscussionCommand'
+	description	'Discussion Command Object'
+	label	'emxComponents.Common.Discussion'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&table=APPDiscussionsList&program=emxDiscussion:getDiscussionList&topActionbar=APPDiscussionTopActionBar&bottomActionbar=APPDiscussionBottomActionBar&header=emxComponents.Common.DiscussionsHeading&selection=multiple&sortColumnName=Name&sortDirection=ascending&HelpMarker=emxhelpdiscussions&PrinterFriendly=true&TransactionType=update'
+	alt	'emxLibraryCentral.Command.Discussion'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCDiscussionCommand'
+	property	'version'	value	'R214'
+;
+#channel ==>
+add property command_LCDiscussionCommand on program eServiceSchemaVariableMapping.tcl to command 'LCDiscussionCommand';

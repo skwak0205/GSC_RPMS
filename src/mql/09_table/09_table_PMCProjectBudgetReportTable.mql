@@ -1,0 +1,37 @@
+del table 'PMCProjectBudgetReportTable' system;
+add table 'PMCProjectBudgetReportTable' system
+column #1
+	name	'Item'
+	label	'emxProgramCentral.Budget.Item'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Sortable'		'false'
+	setting	'Column Type'		'program'
+	setting	'function'		'getColumnBudgetNameData'
+	setting	'program'		'emxProjectBudget'
+	setting	'Show Type Icon'		'true'
+column #2
+	name	'CostInterval'
+	businessobject	'name'
+	label	'emxProgramCentral.Budget.CostInterval'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getDynamicCostIntervalColumn'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'emxProjectBudget'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBudgetReportTable'
+	property	'version'	value	'R212'
+;
+add property table_PMCProjectBudgetReportTable on program eServiceSchemaVariableMapping.tcl to table 'PMCProjectBudgetReportTable' system;

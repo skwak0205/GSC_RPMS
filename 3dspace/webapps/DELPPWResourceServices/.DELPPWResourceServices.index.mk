@@ -1,0 +1,9 @@
+m|DELPPWModels\DELPPWResourceServices.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.0.22078|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\DELPPWResourceServices\DELPPWResourceServices.js|1647691801|4215
+s|DELPPWModels\DELPPWResourceServices.mweb\src\ResourceUtils.js|1642593884|18485
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

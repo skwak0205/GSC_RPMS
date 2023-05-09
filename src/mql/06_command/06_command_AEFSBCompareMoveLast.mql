@@ -1,0 +1,19 @@
+del command 'AEFSBCompareMoveLast';
+add command 'AEFSBCompareMoveLast'
+	description	''
+	label	'emxFramework.FreezePane.SBCompare.MoveLast'
+	href	'javascript:moveNextOrPreviousChanges('last')'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionMoveLast.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBCompareMoveLast'
+	property	'version'	value	'R419'
+;
+modify menu AEFStructureCompareToolbar add command AEFSBCompareMoveLast order command AEFSBCompareMoveLast 0;
+modify menu PMCProjectBaselineCompareToolbar add command AEFSBCompareMoveLast order command AEFSBCompareMoveLast 4;
+modify menu PMCWhatIfSyncToolbar add command AEFSBCompareMoveLast order command AEFSBCompareMoveLast 6;
+#channel ==>AEFStructureCompareToolbarPMCProjectBaselineCompareToolbarPMCWhatIfSyncToolbar
+add property command_AEFSBCompareMoveLast on program eServiceSchemaVariableMapping.tcl to command 'AEFSBCompareMoveLast';

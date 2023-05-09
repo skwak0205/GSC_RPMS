@@ -1,0 +1,28 @@
+del command 'FTRReplaceGBOMCommand';
+add command 'FTRReplaceGBOMCommand'
+	description	''
+	label	'emxProduct.ActionLink.GBOMReplace'
+	href	'${SUITE_DIR}/GBOMReplacePreProcess.jsp?mode=fromContext'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showReplaceGBOMActionCommand'
+	setting	'Access Program'		'emxFTRPart'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionReplace.png'
+	setting	'Help Marker'		'emxhelpgbomreplace'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRReplaceGBOMCommand'
+	property	'version'	value	'R418'
+;
+modify menu FTRGBOMStructureToolbarActions add command FTRReplaceGBOMCommand order command FTRReplaceGBOMCommand 5;
+modify menu FTRContextGBOMStructureToolbarActions add command FTRReplaceGBOMCommand order command FTRReplaceGBOMCommand 8;
+#channel ==>FTRGBOMStructureToolbarActionsFTRContextGBOMStructureToolbarActions
+add property command_FTRReplaceGBOMCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRReplaceGBOMCommand';

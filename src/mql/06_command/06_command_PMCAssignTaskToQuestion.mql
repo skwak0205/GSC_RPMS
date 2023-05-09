@@ -1,0 +1,23 @@
+del command 'PMCAssignTaskToQuestion';
+add command 'PMCAssignTaskToQuestion'
+	description	'Command to assign tasks to question'
+	label	'emxProgramCentral.Common.AssignTasks'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=assignTaskToQuestion'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToQuestionCommands'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Image'		'${COMMON_DIR}/images/iconAddTask.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssignTaskToQuestion'
+	property	'version'	value	'R424.HF4'
+;
+modify menu PMCQuestionToolbarActions add command PMCAssignTaskToQuestion order command PMCAssignTaskToQuestion 3;
+modify menu PMCQuestionToolbar add command PMCAssignTaskToQuestion order command PMCAssignTaskToQuestion 3;
+#channel ==>PMCQuestionToolbarActionsPMCQuestionToolbar
+add property command_PMCAssignTaskToQuestion on program eServiceSchemaVariableMapping.tcl to command 'PMCAssignTaskToQuestion';

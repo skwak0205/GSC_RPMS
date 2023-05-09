@@ -1,0 +1,23 @@
+del command 'FTRRemoveRequirementSatisfiedByActionLink';
+add command 'FTRRemoveRequirementSatisfiedByActionLink'
+	description	'Command Object for Removing Selected Requirement(s).'
+	label	'emxRequirements.ActionLink.Remove'
+	href	'${SUITE_DIR}/RequirementUtil.jsp?mode=disconnect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxRequirements.Alert.Remove'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRRemoveRequirementSatisfiedByActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRRequirementSatisfiedByBottomActionBar add command FTRRemoveRequirementSatisfiedByActionLink order command FTRRemoveRequirementSatisfiedByActionLink 0;
+#channel ==>FTRRequirementSatisfiedByBottomActionBar
+add property command_FTRRemoveRequirementSatisfiedByActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRRemoveRequirementSatisfiedByActionLink';

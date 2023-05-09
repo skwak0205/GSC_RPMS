@@ -1,0 +1,12 @@
+del command 'PLCCreateNewModelProductCommand';
+add command 'PLCCreateNewModelProductCommand'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Access Expression'		'$<from[relationship_Products]=="False">'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R420'
+;
+#channel ==>
+add property command_PLCCreateNewModelProductCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCCreateNewModelProductCommand';

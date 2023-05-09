@@ -1,0 +1,18 @@
+del command 'APPRefDocumentsCommand';
+add command 'APPRefDocumentsCommand'
+	description	'Reference Documents Command Object'
+	label	'emxFramework.Command.ReferenceDocuments'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPRefDocumentsToolbar&header=emxComponents.Common.ReferenceDocumentsPageHeading&HelpMarker=emxhelppartreferencedocuments&parentRelName=relationship_ReferenceDocument'
+	alt	'emxFramework.Command.Alt.ReferenceDocuments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallFormFolder.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRefDocumentsCommand'
+	property	'version'	value	'R420.HF2'
+;
+modify menu type_Part add command APPRefDocumentsCommand order command APPRefDocumentsCommand 2;
+#channel ==>type_Part
+add property command_APPRefDocumentsCommand on program eServiceSchemaVariableMapping.tcl to command 'APPRefDocumentsCommand';

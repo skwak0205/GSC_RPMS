@@ -1,0 +1,27 @@
+del command 'PMCBudgetReport';
+add command 'PMCBudgetReport'
+	description	'Report Filter Command'
+	label	'emxProgramCentral.Budget.ReportFilter'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCProjectBudgetReportTable&toolbar=PMCProjectBudgetReportFilter&sortColumnName=none&selection=multiple&header=emxProgramCentral.Budget.ReportFilter&program=emxProjectBudget:getTableProjectBudgetReportData&HelpMarker=emxhelpexpensereport&generateReport=true&customize=false&showRMB=true'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isActualTransactionEnabled'
+	setting	'Access Program'		'emxProjectBudget'
+	setting	'emxProjectBudget'		'emxProjectBudget'
+	setting	'Image'		'${COMMON_DIR}/images/I_ExpenseReport32.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBudgetReport'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBudgetToolbarActions add command PMCBudgetReport order command PMCBudgetReport 0;
+modify menu PMCProjectBudgetToolbar add command PMCBudgetReport order command PMCBudgetReport 6;
+#channel ==>PMCProjectBudgetToolbarActionsPMCProjectBudgetToolbar
+add property command_PMCBudgetReport on program eServiceSchemaVariableMapping.tcl to command 'PMCBudgetReport';

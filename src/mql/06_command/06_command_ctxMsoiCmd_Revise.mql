@@ -1,0 +1,23 @@
+del command 'ctxMsoiCmd_Revise';
+add command 'ctxMsoiCmd_Revise'
+	description	'ctxMsoiCmd_Revise'
+	label	'emxMSF.Command.ctxMsoiCmd_Revise'
+	href	''
+	alt	'ctxMsoiCmd_Revise'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'true'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_Revise'
+	property	'version'	value	'V6R2022x'
+;
+modify menu ctxMsoi_Navigation_FileLocked add command ctxMsoiCmd_Revise order command ctxMsoiCmd_Revise 6;
+modify menu ctxMsoi_Navigation_FileUnlocked add command ctxMsoiCmd_Revise order command ctxMsoiCmd_Revise 6;
+modify menu ctxMsoi_Navigation_MultiFile add command ctxMsoiCmd_Revise order command ctxMsoiCmd_Revise 4;
+modify menu ctxMsoi_SearchResults_FileLocked add command ctxMsoiCmd_Revise order command ctxMsoiCmd_Revise 6;
+modify menu ctxMsoi_SearchResults_FileUnlocked add command ctxMsoiCmd_Revise order command ctxMsoiCmd_Revise 6;
+modify menu ctxMsoi_SearchResults_MultiFile add command ctxMsoiCmd_Revise order command ctxMsoiCmd_Revise 4;
+#channel ==>ctxMsoi_Navigation_FileLockedctxMsoi_Navigation_FileUnlockedctxMsoi_Navigation_MultiFilectxMsoi_SearchResults_FileLockedctxMsoi_SearchResults_FileUnlockedctxMsoi_SearchResults_MultiFile
+add property command_ctxMsoiCmd_Revise on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_Revise';

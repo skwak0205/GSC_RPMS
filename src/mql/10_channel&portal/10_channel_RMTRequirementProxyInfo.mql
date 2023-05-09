@@ -1,0 +1,17 @@
+del channel 'RMTRequirementProxyInfo';
+add channel 'RMTRequirementProxyInfo'
+	description	'Channel to Information of Requirement Proxy'
+	height	'0'
+	label	'emxRequirements.Common.InformationCategory'
+	href	''
+	setting		'Registered Suite'		'Requirements'
+	setting		'ChannelID'		'1'
+	command 	'AEFHistory'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementProxyInfo'
+	property	'version'	value	'R421'
+;
+#portal ==>RMTRequirementProxyInfo
+add property channel_RMTRequirementProxyInfo on program eServiceSchemaVariableMapping.tcl to channel 'RMTRequirementProxyInfo';

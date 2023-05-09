@@ -1,0 +1,22 @@
+del command 'FTRModelManufacturingView';
+add command 'FTRModelManufacturingView'
+	description	''
+	label	'emxConfiguration.Model.ManufacturingView'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=FTRModelManufacturingViewPortal&header=emxConfiguration.Model.Heading.ManufacturingView&HelpMarker=emxhelpmodelmanufacturingview'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Action Label'		'emxProduct.Button.Filter'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'showManufacturingFeaturesUX'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Cloud'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRModelManufacturingView'
+	property	'version'	value	'R421'
+;
+modify menu type_Model add command FTRModelManufacturingView order command FTRModelManufacturingView 6;
+#channel ==>type_Model
+add property command_FTRModelManufacturingView on program eServiceSchemaVariableMapping.tcl to command 'FTRModelManufacturingView';

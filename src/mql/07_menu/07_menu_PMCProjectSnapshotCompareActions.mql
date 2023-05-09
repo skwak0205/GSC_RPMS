@@ -1,0 +1,19 @@
+del menu 'PMCProjectSnapshotCompareActions';
+add menu 'PMCProjectSnapshotCompareActions'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCompare.gif'
+	setting	'Width'		'100'
+	command	'PMCProjectSnapshotCompare'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCProjectSnapshotCompareActions'
+	property 'version'	value	'R216'
+;
+add property menu_PMCProjectSnapshotCompareActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCProjectSnapshotCompareActions';

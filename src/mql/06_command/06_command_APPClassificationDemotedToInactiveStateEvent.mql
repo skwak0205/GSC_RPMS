@@ -1,0 +1,18 @@
+del command 'APPClassificationDemotedToInactiveStateEvent';
+add command 'APPClassificationDemotedToInactiveStateEvent'
+	description	'Event holder for demotion to Inactive state'
+	label	'emxComponents.Event.Classification_Demoted_To_Inactive_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Classification Demoted To Inactive State'
+	setting	'History Bit'		'demote to Inactive'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPClassificationDemotedToInactiveStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu APPClassificationSubscriptionEvents add command APPClassificationDemotedToInactiveStateEvent order command APPClassificationDemotedToInactiveStateEvent 0;
+#channel ==>APPClassificationSubscriptionEvents
+add property command_APPClassificationDemotedToInactiveStateEvent on program eServiceSchemaVariableMapping.tcl to command 'APPClassificationDemotedToInactiveStateEvent';

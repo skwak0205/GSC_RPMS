@@ -1,0 +1,20 @@
+del command 'TEADOCUMENTSDeletedEvent';
+add command 'TEADOCUMENTSDeletedEvent'
+	description	'DOCUMENTS Deleted Event'
+	label	'emxComponents.DOCUMENTS.Event.Deleted'
+	href	''
+	alt	''
+	setting	'Force Recursion'		'true'
+	setting	'Recurse Direction'		'to'
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Deleted'
+	setting	'Recurse Relationship'		'$<relationship_VaultedDocuments>'
+	setting	'Is Recursible'		'true'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TEADOCUMENTSDeletedEvent'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_TEADOCUMENTSDeletedEvent on program eServiceSchemaVariableMapping.tcl to command 'TEADOCUMENTSDeletedEvent';

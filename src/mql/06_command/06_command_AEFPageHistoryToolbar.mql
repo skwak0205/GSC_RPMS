@@ -1,0 +1,23 @@
+del command 'AEFPageHistoryToolbar';
+add command 'AEFPageHistoryToolbar'
+	description	'emxFramework.PageHistory.Pagehistory'
+	label	'emxFramework.PageHistory.Pagehistory'
+	href	'${COMMON_DIR}/emxPageHistory.jsp?HelpMarker=emxhelppagehistory'
+	alt	'emxFramework.PageHistory.Pagehistory'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'480'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'Framework'
+	setting	'Popup Modal'		'false'
+	setting	'Access Function'		'isPageHistoryEnabled'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPageHistory.png'
+	setting	'Help Marker'		'emxhelppagehistory'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFPageHistoryToolbar'
+	property	'version'	value	'R417'
+;
+#channel ==>My Tools
+add property command_AEFPageHistoryToolbar on program eServiceSchemaVariableMapping.tcl to command 'AEFPageHistoryToolbar';

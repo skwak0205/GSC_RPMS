@@ -1,0 +1,26 @@
+del command 'TMCWorkspaceFolderCloneCommand';
+add command 'TMCWorkspaceFolderCloneCommand'
+	description	''
+	label	'emxTeamCentral.Button.CloneStructure'
+	href	'${COMMON_DIR}/emxForm.jsp?form=TMCCloneWorkspaceVault&formHeader=emxTeamCentral.Common.CloneFolders&HelpMarker=emxhelpcreatenewfolder&postProcessURL=../teamcentral/emxTeamCloneFolders.jsp&mode=edit&findMxLink=false&submitAction=doNothing'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'(policy != "Template Workspace Vault") && (current.access[fromconnect])'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isWsNotInArchiveState'
+	setting	'Access Program'		'emxTeamContent'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCloneFolder.png'
+	user	'3DSRestrictedContributor'
+	user	'VPLMExperimenter'
+	user	'Exchange User'
+	user	'Buyer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceFolderCloneCommand'
+	property	'version'	value	'R423.HF4'
+;
+modify menu TMCWorkspaceFolderDetailsActionsToolBar add command TMCWorkspaceFolderCloneCommand order command TMCWorkspaceFolderCloneCommand 2;
+#channel ==>TMCWorkspaceFolderDetailsActionsToolBar
+add property command_TMCWorkspaceFolderCloneCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceFolderCloneCommand';

@@ -1,0 +1,15 @@
+del menu 'AEFCollectionPropertiesActionsToolBar';
+add menu 'AEFCollectionPropertiesActionsToolBar'
+	description	''
+	label	'emxFramework.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	command	'AEFCollectionsEditDetails'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'AEFCollectionPropertiesActionsToolBar'
+	property 'version'	value	'10-5'
+;
+add property menu_AEFCollectionPropertiesActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'AEFCollectionPropertiesActionsToolBar';

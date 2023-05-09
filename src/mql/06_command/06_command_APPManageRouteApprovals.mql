@@ -1,0 +1,27 @@
+del command 'APPManageRouteApprovals';
+add command 'APPManageRouteApprovals'
+	description	'Manage Route Approvals Functionality'
+	label	'emxComponents.Command.ManageRouteApprovals'
+	href	'${COMPONENT_DIR}/emxRouteManageApprovalsDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canManageRouteApprovals'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/ENOManageRouteApprovals.png'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPManageRouteApprovals'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPRouteSummaryActionsToolBar add command APPManageRouteApprovals order command APPManageRouteApprovals 4;
+modify menu APPRouteSummaryTaskActionsToolBar add command APPManageRouteApprovals order command APPManageRouteApprovals 4;
+modify menu PMCRouteSummaryActionsToolBar add command APPManageRouteApprovals order command APPManageRouteApprovals 4;
+#channel ==>APPRouteSummaryActionsToolBarAPPRouteSummaryTaskActionsToolBarPMCRouteSummaryActionsToolBar
+add property command_APPManageRouteApprovals on program eServiceSchemaVariableMapping.tcl to command 'APPManageRouteApprovals';

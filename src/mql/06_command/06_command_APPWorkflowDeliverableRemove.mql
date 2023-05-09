@@ -1,0 +1,25 @@
+del command 'APPWorkflowDeliverableRemove';
+add command 'APPWorkflowDeliverableRemove'
+	description	'Remove Selected Document'
+	label	'emxComponents.Button.Remove'
+	href	'${SUITE_DIR}/emxCommonTaskDeliverableRemove.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'((current.access[fromdisconnect]==true) && (to[Workflow Task].from.current=="Started"))'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	setting	'Confirm Message'		'emxComponents.Message.ConfirmRemoveContent'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowDeliverableRemove'
+	property	'version'	value	'R422'
+;
+modify menu APPWorkflowDeliverableSummaryActionsToolBar add command APPWorkflowDeliverableRemove order command APPWorkflowDeliverableRemove 4;
+#channel ==>APPWorkflowDeliverableSummaryActionsToolBar
+add property command_APPWorkflowDeliverableRemove on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowDeliverableRemove';

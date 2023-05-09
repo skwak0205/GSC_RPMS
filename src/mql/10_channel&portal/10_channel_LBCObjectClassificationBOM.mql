@@ -1,0 +1,16 @@
+del channel 'LBCObjectClassificationBOM';
+add channel 'LBCObjectClassificationBOM'
+	description	''
+	height	'60'
+	label	''
+	href	''
+	setting		'Registered Suite'		'LibraryCentral'
+	command 	'LBCBOMClassificationView'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCObjectClassificationBOM'
+	property	'version'	value	'R215'
+;
+#portal ==>LBCClassificationPowerView
+add property channel_LBCObjectClassificationBOM on program eServiceSchemaVariableMapping.tcl to channel 'LBCObjectClassificationBOM';

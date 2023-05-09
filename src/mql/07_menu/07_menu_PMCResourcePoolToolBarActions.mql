@@ -1,0 +1,20 @@
+del menu 'PMCResourcePoolToolBarActions';
+add menu 'PMCResourcePoolToolBarActions'
+	description	''
+	label	'emxProgramCentral.ResourcePool.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	command	'PMCReportResourceDemandSummary'
+	command	'PMCReportResourceDemandVersusCapacity'
+	command	'PMCReportResourceUtilization'
+	command	'PMCReportProjectAssignment'
+	command	'PMCReportResourceDemandBySkill'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourcePoolToolBarActions'
+	property 'version'	value	'R417'
+;
+add property menu_PMCResourcePoolToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourcePoolToolBarActions';

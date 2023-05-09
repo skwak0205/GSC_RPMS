@@ -1,0 +1,26 @@
+del command 'TMCWorkspaceReactivateCommand';
+add command 'TMCWorkspaceReactivateCommand'
+	description	''
+	label	'emxTeamCentral.Button.Reactivate'
+	href	'${SUITE_DIR}/emxTeamWorkspaceReactivate.jsp'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Access Expression'		'(current == "Archive" && current.access[demote] == true)'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActivate.png'
+	setting	'Confirm Message'		'emxTeamCentral.ReactivateProject.Confirmation'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceReactivateCommand'
+	property	'version'	value	'R422.HF1'
+;
+modify menu TMCWorkspaceDetailsActionsToolBar add command TMCWorkspaceReactivateCommand order command TMCWorkspaceReactivateCommand 6;
+#channel ==>TMCWorkspaceDetailsActionsToolBar
+add property command_TMCWorkspaceReactivateCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceReactivateCommand';

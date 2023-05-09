@@ -1,0 +1,15 @@
+del menu 'APPCommonReviseUsageReportToolbar';
+add menu 'APPCommonReviseUsageReportToolbar'
+	description	''
+	label	'emxComponents.Menu.ReviseSearch'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	command	'APPCommonReviseUsageReport'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPCommonReviseUsageReportToolbar'
+	property 'version'	value	'10-7'
+;
+add property menu_APPCommonReviseUsageReportToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPCommonReviseUsageReportToolbar';

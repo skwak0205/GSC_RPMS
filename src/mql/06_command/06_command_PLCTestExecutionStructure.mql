@@ -1,0 +1,19 @@
+del command 'PLCTestExecutionStructure';
+add command 'PLCTestExecutionStructure'
+	description	'Structure Navigation tree for Test Execution'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Structure Program'		'emxTestExecution'
+	setting	'Submit'		'true'
+	setting	'Structure Function'		'getStructureList'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCTestExecutionStructure'
+	property	'version'	value	'R422'
+;
+modify menu type_PLCTestExecutionStructureMenu add command PLCTestExecutionStructure order command PLCTestExecutionStructure 0;
+#channel ==>type_PLCTestExecutionStructureMenu
+add property command_PLCTestExecutionStructure on program eServiceSchemaVariableMapping.tcl to command 'PLCTestExecutionStructure';

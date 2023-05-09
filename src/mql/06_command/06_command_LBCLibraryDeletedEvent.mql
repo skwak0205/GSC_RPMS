@@ -1,0 +1,18 @@
+del command 'LBCLibraryDeletedEvent';
+add command 'LBCLibraryDeletedEvent'
+	description	'Event holder for Library Deletion'
+	label	'emxLibraryCentral.Event.Library_Deleted'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Library Deleted'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCLibraryDeletedEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCDocumentLibrarySubscriptionEvents add command LBCLibraryDeletedEvent order command LBCLibraryDeletedEvent 5;
+modify menu LBCLibrariesSubscriptionEvents add command LBCLibraryDeletedEvent order command LBCLibraryDeletedEvent 4;
+#channel ==>LBCDocumentLibrarySubscriptionEventsLBCLibrariesSubscriptionEvents
+add property command_LBCLibraryDeletedEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCLibraryDeletedEvent';

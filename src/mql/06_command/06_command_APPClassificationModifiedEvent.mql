@@ -1,0 +1,19 @@
+del command 'APPClassificationModifiedEvent';
+add command 'APPClassificationModifiedEvent'
+	description	'Event holder for Classification Modification'
+	label	'emxComponents.Event.Classification_Modified'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Classification Modified'
+	setting	'History Bit'		'modify'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPClassificationModifiedEvent'
+	property	'version'	value	'R212'
+;
+modify menu APPClassificationSubscriptionEvents add command APPClassificationModifiedEvent order command APPClassificationModifiedEvent 3;
+modify menu LBCDocumentFamilySubscriptionEvents add command APPClassificationModifiedEvent order command APPClassificationModifiedEvent 3;
+#channel ==>APPClassificationSubscriptionEventsLBCDocumentFamilySubscriptionEvents
+add property command_APPClassificationModifiedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPClassificationModifiedEvent';

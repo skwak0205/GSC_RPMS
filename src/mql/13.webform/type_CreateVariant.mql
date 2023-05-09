@@ -1,0 +1,146 @@
+################################################################################################
+# Created Date : 2020.05.19
+# Create by Suhwan,Jang
+# Description : OOTB Copy & Change
+################################################################################################
+# OOTB command copy by Suhwan,Jang 2020/05/19
+copy form 'type_CreateVariant' 'type_CreateVariant_OOTB';
+
+# field hidden by Suhwan,Jang 2020/05/19
+mod form 'type_CreateVariant'
+    field mod name 'Display Text'
+        add setting 'Access Expression' 'false'
+    field mod name 'DesignResponsibility'
+        add setting 'Access Expression' 'false'
+    field mod name 'CollabSpace'
+        add setting 'Access Expression' 'false'
+    field mod name 'Section Header'
+        add setting 'Access Expression' 'false'
+    field mod name 'Policy'
+        add setting 'Access Expression' 'false'
+    field mod name 'Key-In Type'
+        add setting 'Access Expression' 'false'
+    field mod name 'Owner'
+        add setting 'Access Expression' 'false'
+;
+
+# add field ( Function Dept, Order/Project Type, Option Description ) by Suhwan,Jang 2020/05/19
+mod form 'type_CreateVariant'
+    field
+        name 'emdFunctionalDept'
+        label 'emxConfiguration.Label.FunctionalDept'
+        businessobject  '$<attribute[emdFunctionalDept]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Input Type' 'combobox'
+        setting 'Admin Type' 'attribute_emdFunctionalDept'
+        setting 'Field Type' 'attribute'
+        setting 'Field Size' '100'
+        setting 'Range Program' 'emdCommonUtil'
+        setting 'Range Function' 'getCommonAttributeRangeByOOTBUI'
+    field
+        name 'emdOrderProjectType'
+        label 'emxConfiguration.Label.OrderWorkOption'
+        businessobject  '$<attribute[emdOrderProjectType]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'attribute'
+        setting 'Input Type' 'combobox'
+        setting 'Admin Type' 'attribute_emdOrderProjectType'
+        setting 'Field Size' '100'
+    field
+        name 'emdOptionDesc'
+        label 'emxConfiguration.Label.OptionDescription'
+        businessobject  '$<attribute[emdRemark]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'attribute'
+        setting 'Input Type' 'textarea'
+;
+
+# change field by Suhwan,Jang 2020/05/19
+mod form 'type_CreateVariant'
+    field mod name 'Type'
+        add setting 'Editable' 'false'
+    field mod name 'Display Name'
+        label 'emxConfiguration.Label.OptionGroupName'
+        add setting 'Validate' 'emdCheckRequired'
+        add setting 'Field Size' '45'
+        remove setting 'OnChange Handler'
+    field mod name 'Name'
+        label 'emxConfiguration.Label.OptionGroupCode'
+        add setting 'Validate' 'emdCheckRequired'
+        remove setting 'OnChange Handler'
+    field mod name 'Description'
+        label 'emxConfiguration.Label.ChangeReason'
+;
+
+# change order by Suhwan,Jang 2020/05/21
+mod form 'type_CreateVariant'
+    field mod name 'Section Header Basic'
+        order '1'
+    field mod name 'Type'
+        order '2'
+    field mod name 'Name'
+        order '3'
+    field mod name 'Display Name'
+        order '4'
+    field mod name 'emdOrderProjectType'
+        order '5'
+    field mod name 'emdFunctionalDept'
+        order '6'
+    field mod name 'emdOptionDesc'
+        order '7'
+    field mod name 'Description'
+        order '8'
+;
+
+# Option Group Code Validation 변경 by Suhwan,Jang 2020/11/23
+mod form 'type_CreateVariant'
+    field mod name 'Name'
+        add setting 'Validate' 'emdOptionGroupCodeValidation'
+;
+
+# Class Certification Field 추가 by Suhwan,Jang 2020/12/15
+mod form 'type_CreateVariant'
+    field
+        name 'emdClassificationYN'
+        label 'emxConfiguration.Label.ClassCertification'
+        businessobject  '$<attribute[emdClassificationYN]>'
+        alt ''
+        range ''
+        update ''
+        setting 'Registered Suite' 'Configuration'
+        setting 'Required' 'false'
+        setting 'Editable' 'true'
+        setting 'Field Type' 'attribute'
+        setting 'Input Type' 'combobox'
+        setting 'Admin Type' 'attribute_emdClassificationYN'
+        order 6
+;
+
+# Order / Project on change handler 추가 by Suhwan,Jang 2020/12/15
+mod form 'type_CreateVariant'
+    field mod name 'emdOrderProjectType'
+		add setting 'OnChange Handler' 'emdOrderProjectTypeOnChange'
+;
+
+# Order/Project, Functional Dept 필수체크 by Suhwan,Jang 2020/12/16
+mod form 'type_CreateVariant'
+    field mod name 'emdOrderProjectType'
+		add setting 'Required' 'true'
+    field mod name 'emdFunctionalDept'
+		add setting 'Required' 'true'
+;

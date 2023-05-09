@@ -1,0 +1,20 @@
+del command 'PLCHierarchyRemoveCommand';
+add command 'PLCHierarchyRemoveCommand'
+	description	''
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/PLCHierarchyRemovePostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R420'
+;
+modify menu PLCProductLineHierarchyMenu add command PLCHierarchyRemoveCommand order command PLCHierarchyRemoveCommand 3;
+#channel ==>PLCProductLineHierarchyMenu
+add property command_PLCHierarchyRemoveCommand on program eServiceSchemaVariableMapping.tcl to command 'PLCHierarchyRemoveCommand';

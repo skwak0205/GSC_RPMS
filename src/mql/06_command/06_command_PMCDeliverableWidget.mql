@@ -1,0 +1,21 @@
+del command 'PMCDeliverableWidget';
+add command 'PMCDeliverableWidget'
+	description	'Deliverable Widget'
+	label	'emxProgramCentral.Deliverable.Widget'
+	href	'../widget/bpsWidget.jsp?bps_widget=PRG_Experience_CollaborativePlanning'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'DPG'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeliverableWidget'
+	property	'version'	value	'R422'
+;
+modify menu DPGMyDesk add command PMCDeliverableWidget order command PMCDeliverableWidget 0;
+#channel ==>DPGMyDesk
+add property command_PMCDeliverableWidget on program eServiceSchemaVariableMapping.tcl to command 'PMCDeliverableWidget';

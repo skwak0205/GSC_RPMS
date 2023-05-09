@@ -1,0 +1,22 @@
+del command 'FTREditFixedResourceActionLink';
+add command 'FTREditFixedResourceActionLink'
+	description	'Edit Details Action Link on Properties Page for Fixed Resource'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_FixedResource&mode=Edit&formHeader=emxProduct.Heading.EditNoRev&HelpMarker=emxhelpresourcerulesedit'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'getEditLink'
+	setting	'Access Program'		'emxFixedResource'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTREditFixedResourceActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRFixedResourcePropertiesTopActionBar add command FTREditFixedResourceActionLink order command FTREditFixedResourceActionLink 0;
+#channel ==>FTRFixedResourcePropertiesTopActionBar
+add property command_FTREditFixedResourceActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTREditFixedResourceActionLink';

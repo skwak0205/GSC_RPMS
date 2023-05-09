@@ -1,0 +1,24 @@
+del command 'DCLibraryWizardActionLink';
+add command 'DCLibraryWizardActionLink'
+	description	'Library Create Wizard'
+	label	'emxDocumentCentral.ActionBarCmd.LibraryWizard'
+	href	'${SUITE_DIR}/emxDocumentCentralDocumentClassificationCreateWizardDialogFS.jsp?type=type_Library'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	user	'Author'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCLibraryWizardActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCAllLibrariesTopActionbar add command DCLibraryWizardActionLink order command DCLibraryWizardActionLink 0;
+#channel ==>DCAllLibrariesTopActionbar
+add property command_DCLibraryWizardActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCLibraryWizardActionLink';

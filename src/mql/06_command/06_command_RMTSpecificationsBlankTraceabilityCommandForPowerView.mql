@@ -1,0 +1,19 @@
+del command 'RMTSpecificationsBlankTraceabilityCommandForPowerView';
+add command 'RMTSpecificationsBlankTraceabilityCommandForPowerView'
+	description	''
+	label	'emxRequirements.Common.TraceabilityReport'
+	href	'${COMMON_DIR}/emxBlank.jsp'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecificationsBlankTraceabilityCommandForPowerView'
+	property	'version'	value	'R422'
+;
+#channel ==>RMTSpecificationsTraceabilityReport
+add property command_RMTSpecificationsBlankTraceabilityCommandForPowerView on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecificationsBlankTraceabilityCommandForPowerView';

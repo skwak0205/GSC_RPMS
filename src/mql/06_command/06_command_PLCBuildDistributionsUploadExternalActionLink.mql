@@ -1,0 +1,25 @@
+del command 'PLCBuildDistributionsUploadExternalActionLink';
+add command 'PLCBuildDistributionsUploadExternalActionLink'
+	description	''
+	label	'emxProduct.ActionLink.UploadExternalFile'
+	href	'${SUITE_DIR}/BuildUtil.jsp?objectAction=checkin&JPOName=emxBuild&parentRelName=relationship_DistributionFile&appDir=productline&appName=productline&showDescription=true&allowFileNameChange=false&showFormat=true&override=false&mode=uploadExternal'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.gif'
+	user	'VPLMCreator'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCBuildDistributionsUploadExternalActionLink'
+	property	'version'	value	'R417'
+;
+modify menu PLCBuildDistributionsActionToolBar add command PLCBuildDistributionsUploadExternalActionLink order command PLCBuildDistributionsUploadExternalActionLink 1;
+#channel ==>PLCBuildDistributionsActionToolBar
+add property command_PLCBuildDistributionsUploadExternalActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCBuildDistributionsUploadExternalActionLink';

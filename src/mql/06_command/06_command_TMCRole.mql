@@ -1,0 +1,24 @@
+del command 'TMCRole';
+add command 'TMCRole'
+	description	'Role Command Object'
+	label	'emxFramework.Command.Role'
+	href	'${SUITE_DIR}/emxTeamRoleSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Role'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallRole.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRole'
+	property	'version'	value	'R422'
+;
+modify menu type_People add command TMCRole order command TMCRole 0;
+modify menu TMCtype_Person add command TMCRole order command TMCRole 0;
+#channel ==>type_PeopleTMCtype_Person
+add property command_TMCRole on program eServiceSchemaVariableMapping.tcl to command 'TMCRole';

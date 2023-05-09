@@ -1,0 +1,29 @@
+del command 'RMTSpecStructureBrowser';
+add command 'RMTSpecStructureBrowser'
+	description	'launch spec structure browser.'
+	label	'emxRequirements.ActionLink.SpecStructureBrowser'
+	href	'${SUITE_DIR}/PopupLauncher.jsp?table=RMTSpecStatusTable&freezePane=Name,Title,DUP_Title,Revision&header=emxRequirements.Heading.StructureBrowser&selection=multiple&direction=from&editLink=true&sortColumnName=none&toolbar=RMTSpecTreeToolbar&editRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_RequirementBreakdown&resequenceRelationship=relationship_SpecificationStructure,relationship_DerivedRequirement,relationship_RequirementBreakdown&connectionProgram=emxSpecificationStructureBase:processXMLMessage&multiColumnSort=false&HelpMarker=emxhelpspecificationstructureview&appendURL=StructureEffectivityForExpand|Requirements&expandByDefault=true&TargetView=sb&effectivityRelationship=relationship_SpecificationStructure,relationship_RequirementBreakdown,relationship_DerivedRequirement&parallelLoading=true'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'900'
+	setting	'Registered Suite'		'Requirements'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTSpecStructureBrowser'
+	property	'version'	value	'R423'
+;
+modify menu RMTSpecStructureDisplay add command RMTSpecStructureBrowser order command RMTSpecStructureBrowser 1;
+modify menu RMTRichTextEditorActions add command RMTSpecStructureBrowser order command RMTSpecStructureBrowser 2;
+#channel ==>RMTSpecStructureDisplayRMTRichTextEditorActions
+add property command_RMTSpecStructureBrowser on program eServiceSchemaVariableMapping.tcl to command 'RMTSpecStructureBrowser';

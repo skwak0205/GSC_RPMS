@@ -1,0 +1,22 @@
+del command 'PMCBusinessGoalEdit';
+add command 'PMCBusinessGoalEdit'
+	description	'Business Goal Edit Command Object'
+	label	'emxProgramCentral.Button.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCBusinessGoalForm&mode=edit&formHeader=emxProgramCentral.Common.EditBusinessGoalDetails&HelpMarker=emxhelpbusinessgoaleditdialog&findMxLink=false&postProcessJPO=emxProgramBusinessGoal:editPostProcessActions&submitAction=refreshCaller'
+	alt	'emxProgramCentral.Button.EditDetails'
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current != Complete)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Business Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBusinessGoalEdit'
+	property	'version'	value	'R422'
+;
+modify menu PMCBusinessGoalToolBarActions add command PMCBusinessGoalEdit order command PMCBusinessGoalEdit 0;
+#channel ==>PMCBusinessGoalToolBarActions
+add property command_PMCBusinessGoalEdit on program eServiceSchemaVariableMapping.tcl to command 'PMCBusinessGoalEdit';

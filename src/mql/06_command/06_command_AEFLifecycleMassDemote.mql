@@ -1,0 +1,25 @@
+del command 'AEFLifecycleMassDemote';
+add command 'AEFLifecycleMassDemote'
+	description	'Command to do Mass Demote'
+	label	'emxFramework.Common.MassDemote'
+	href	'${COMMON_DIR}/emxMassPromoteDemote.jsp?cmd=Demote'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Framework'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDemote.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFLifecycleMassDemote'
+	property	'version'	value	'R417'
+;
+modify menu RMTSpecTreeToolbar add command AEFLifecycleMassDemote order command AEFLifecycleMassDemote 4;
+modify menu RMTRichTextEditorToolbar add command AEFLifecycleMassDemote order command AEFLifecycleMassDemote 0;
+modify menu RMTRequirementStructureBrowserToolbar add command AEFLifecycleMassDemote order command AEFLifecycleMassDemote 0;
+modify menu RMTRequirementRichTextEditorToolbar add command AEFLifecycleMassDemote order command AEFLifecycleMassDemote 0;
+modify menu RMTRequirementListToolbar add command AEFLifecycleMassDemote order command AEFLifecycleMassDemote 0;
+modify menu RMTBufferMenu add command AEFLifecycleMassDemote order command AEFLifecycleMassDemote 2;
+#channel ==>RMTSpecTreeToolbarRMTRichTextEditorToolbarRMTRequirementStructureBrowserToolbarRMTRequirementRichTextEditorToolbarRMTRequirementListToolbarRMTBufferMenu
+add property command_AEFLifecycleMassDemote on program eServiceSchemaVariableMapping.tcl to command 'AEFLifecycleMassDemote';

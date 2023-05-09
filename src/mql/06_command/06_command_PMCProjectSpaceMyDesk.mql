@@ -1,0 +1,23 @@
+del command 'PMCProjectSpaceMyDesk';
+add command 'PMCProjectSpaceMyDesk'
+	description	'ProjectSpace Command Object'
+	label	'emxFramework.MenuItem.Projects'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?pageSize=25&parallelLoading=true&maxCellsToDraw=2000&scrollPageSize=50&program=emxProjectSpace:getAssignedActiveProjects,emxProjectSpace:getCredentialedActiveProjects,emxProjectSpace:getArchiveCancelCompleteProjects,emxProjectSpace:getAllOtherProjects&programLabel=emxProgramCentral.ProjectList.AssignedActive,emxProgramCentral.ProjectList.CredentialedActive,emxProgramCentral.Common.InActive,emxProgramCentral.Common.All&table=PMCProjectSpaceMyDesk&selection=multiple&header=emxProgramCentral.ProgramTop.Projects&sortColumnName=Name,ProjectNameOnMobile&sortDirection=ascending&Export=false&toolbar=PMCProjectSummaryToolBar&HelpMarker=emxhelpprojectsummary&freezePane=Name,ProjectNameOnMobile&expandLevelFilter=false&StringResourceFileId=emxProgramCentralStringResource'
+	alt	'emxFramework.MenuItem.Projects'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	user	'Resource Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSpaceMyDesk'
+	property	'version'	value	'R424'
+;
+modify menu PMCMyDesk add command PMCProjectSpaceMyDesk order command PMCProjectSpaceMyDesk 4;
+#channel ==>PMCMyDeskAEFPowerViewChannel
+add property command_PMCProjectSpaceMyDesk on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSpaceMyDesk';

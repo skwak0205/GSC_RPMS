@@ -1,0 +1,23 @@
+del command 'PMCRemoveTemplateCoOwner';
+add command 'PMCRemoveTemplateCoOwner'
+	description	''
+	label	'emxProgramCentral.Common.Remove'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=RemoveTemplateCoOwner'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isOwnerOrCoOwner'
+	setting	'Access Program'		'emxProjectTemplate'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/PRSPRemoveSharedTable.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCRemoveTemplateCoOwner'
+	property	'version'	value	'R419'
+;
+modify menu PMCTemplateCoOwnerToolBar add command PMCRemoveTemplateCoOwner order command PMCRemoveTemplateCoOwner 0;
+#channel ==>PMCTemplateCoOwnerToolBar
+add property command_PMCRemoveTemplateCoOwner on program eServiceSchemaVariableMapping.tcl to command 'PMCRemoveTemplateCoOwner';

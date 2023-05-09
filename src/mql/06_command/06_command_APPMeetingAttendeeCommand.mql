@@ -1,0 +1,16 @@
+del command 'APPMeetingAttendeeCommand';
+add command 'APPMeetingAttendeeCommand'
+	description	''
+	label	'emxComponents.Common.MeetingAttendee'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPMeetingAttendee&program=emxMeeting:getMeetingttendee&editLink=false&toolbar=APPMeetingsAttendeeToolbar&selection=multiple&objectCompare=false&HelpMarker=emxhelpattendees&header=emxComponents.Heading.Attendees'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingAttendeeCommand'
+	property	'version'	value	'R209'
+;
+modify menu type_Meeting add command APPMeetingAttendeeCommand order command APPMeetingAttendeeCommand 3;
+#channel ==>type_Meeting
+add property command_APPMeetingAttendeeCommand on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingAttendeeCommand';

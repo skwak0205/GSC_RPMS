@@ -1,0 +1,19 @@
+del command 'APPAccessRequestFilterSubmitButton';
+add command 'APPAccessRequestFilterSubmitButton'
+	description	'Used for Filter Submit button in Summary Page'
+	label	'emxComponents.Common.Filter'
+	href	'${SUITE_DIR}/emxFilterOnAccessRequest.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'Components'
+	setting	'Action Label'		'emxComponents.Common.Filter'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAccessRequestFilterSubmitButton'
+	property	'version'	value	'R213'
+;
+modify menu APPSummaryAccessRequestToolbar add command APPAccessRequestFilterSubmitButton order command APPAccessRequestFilterSubmitButton 0;
+#channel ==>APPSummaryAccessRequestToolbar
+add property command_APPAccessRequestFilterSubmitButton on program eServiceSchemaVariableMapping.tcl to command 'APPAccessRequestFilterSubmitButton';

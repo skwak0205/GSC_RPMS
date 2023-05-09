@@ -1,0 +1,16 @@
+del menu 'FTRGlobalSearchConfigurationStructuresToolbar';
+add menu 'FTRGlobalSearchConfigurationStructuresToolbar'
+	description	''
+	label	'emxConfiguration.Menu.ConfigurationStructure'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRGlobalSearchConfigurationFeatureCommand'
+	command	'FTRGlobalSearchConfigurationOptionCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRGlobalSearchConfigurationStructuresToolbar'
+	property 'version'	value	'R212'
+;
+add property menu_FTRGlobalSearchConfigurationStructuresToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRGlobalSearchConfigurationStructuresToolbar';

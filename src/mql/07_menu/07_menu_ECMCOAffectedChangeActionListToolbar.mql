@@ -1,0 +1,22 @@
+del menu 'ECMCOAffectedChangeActionListToolbar';
+add menu 'ECMCOAffectedChangeActionListToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	command	'ECMCreateCAUnderCO'
+	command	'ECMCreateExternalChangeAction'
+	command	'ECMAddExternalChangeAction'
+	command	'ECMRemoveCAFromCO'
+	command	'ECMCreateCAUnderCR'
+	command	'ECMRemoveCAFromCR'
+	command	'ECMMergeCA'
+	command	'ECMCASummaryTransferOwnership'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'EnterpriseChangeMgt'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'ECMCOAffectedChangeActionListToolbar'
+	property 'version'	value	'R216'
+;
+add property menu_ECMCOAffectedChangeActionListToolbar on program eServiceSchemaVariableMapping.tcl to menu 'ECMCOAffectedChangeActionListToolbar';

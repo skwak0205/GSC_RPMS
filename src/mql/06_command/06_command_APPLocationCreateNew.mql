@@ -1,0 +1,22 @@
+del command 'APPLocationCreateNew';
+add command 'APPLocationCreateNew'
+	description	'Command To Create New Location'
+	label	'emxComponents.Button.CreateNew'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Location&header=emxComponents.LocationDialog.CreateLocation&form=type_Location&HelpMarker=emxhelplocationcreate&nameField=keyin&createJPO=emxLocation:createLocationObject&postProcessJPO=emxLocation:createLocationPostProcess&submitAction=refreshCaller&mode=create&preProcessJavaScript=clearAddressFieldInLocation'
+	alt	'emxComponents.Button.CreateNew'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPLocationCreateNew'
+	property	'version'	value	'R417'
+;
+modify menu APPLocationsSummaryActionToolBar add command APPLocationCreateNew order command APPLocationCreateNew 1;
+#channel ==>APPLocationsSummaryActionToolBar
+add property command_APPLocationCreateNew on program eServiceSchemaVariableMapping.tcl to command 'APPLocationCreateNew';

@@ -1,0 +1,17 @@
+del channel 'PMCMyCalendarChannel';
+add channel 'PMCMyCalendarChannel'
+	description	''
+	height	'520'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	setting		'ChannelID'		'1'
+	command 	'PMCMyCalendarDay','PMCMyCalendarWeek','PMCMyCalendarMonth'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCMyCalendarChannel'
+	property	'version'	value	'R214'
+;
+#portal ==>PMCMyCalendar
+add property channel_PMCMyCalendarChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCMyCalendarChannel';

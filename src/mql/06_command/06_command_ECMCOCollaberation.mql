@@ -1,0 +1,12 @@
+del command 'ECMCOCollaberation';
+add command 'ECMCOCollaberation'
+	description	'CO Collaberation commands'
+	label	'EnterpriseChangeMgt.Command.ChangeCollaberation'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=ECMCOCollaberationPortal&showPageHeader=true&header=EnterpriseChangeMgt.Heading.ChangeCollaberation'
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChangeMgt'
+	property	'Target Location'	value	'content'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_ECMCOCollaberation on program eServiceSchemaVariableMapping.tcl to command 'ECMCOCollaberation';

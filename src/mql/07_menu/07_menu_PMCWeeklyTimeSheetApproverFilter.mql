@@ -1,0 +1,18 @@
+del menu 'PMCWeeklyTimeSheetApproverFilter';
+add menu 'PMCWeeklyTimeSheetApproverFilter'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCWeeklyTimeSheetFilterStateAll'
+	command	'PMCWeeklyTimeSheetFilterStateSubmit'
+	command	'PMCWeeklyTimeSheetFilterStateApprove'
+	command	'PMCWeeklyTimeSheetFilterStateReject'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCWeeklyTimeSheetApproverFilter'
+	property 'version'	value	'R210'
+;
+add property menu_PMCWeeklyTimeSheetApproverFilter on program eServiceSchemaVariableMapping.tcl to menu 'PMCWeeklyTimeSheetApproverFilter';

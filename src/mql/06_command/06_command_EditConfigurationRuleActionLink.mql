@@ -1,0 +1,19 @@
+del command 'EditConfigurationRuleActionLink';
+add command 'EditConfigurationRuleActionLink'
+	description	'EditConfigurationRuleActionLink'
+	label	'emxProduct.ActionLink.Edit'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_EditConfigurationRule&mode=Edit&formHeader=emxConfiguration.Heading.EditConfigurationRule&HelpMarker=emxhelpconfigurablerulesedit&postProcessURL=../configuration/ConfigurationRuleEditPostProcess.jsp&submitAction=doNothing'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'(current != "Release" && current != "Obsolete" && $<attribute[attribute_ExpressionType] =="Matrix">)'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	property	'version'	value	'R421'
+;
+modify menu ConfigurationRulePropertiesTopActionBar add command EditConfigurationRuleActionLink order command EditConfigurationRuleActionLink 1;
+#channel ==>ConfigurationRulePropertiesTopActionBar
+add property command_EditConfigurationRuleActionLink on program eServiceSchemaVariableMapping.tcl to command 'EditConfigurationRuleActionLink';

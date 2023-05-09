@@ -1,0 +1,16 @@
+del menu 'IssueCategoriesToolBar';
+add menu 'IssueCategoriesToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Horizontal ToolBar'		'true'
+	menu	'IssueCategoriesToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'IssueCategoriesToolBar'
+	property 'version'	value	'R422'
+;
+add property menu_IssueCategoriesToolBar on program eServiceSchemaVariableMapping.tcl to menu 'IssueCategoriesToolBar';

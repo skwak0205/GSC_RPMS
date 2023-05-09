@@ -1,0 +1,18 @@
+del menu 'type_ProjectTemplateVault';
+add menu 'type_ProjectTemplateVault'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonDocumentUI:getDocuments&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=PMCContentSummaryToolBar&header=emxProgramCentral.Common.ContentWithName&HelpMarker=emxhelpcontentsummary&parentRelName=relationship_VaultedDocumentsRev2'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallFolder.gif'
+	command	'APPDiscussionCommand'
+	command	'PMCProperties'
+	command	'PMCSubfolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'type_ProjectTemplateVault'
+	property 'version'	value	'10-5'
+;
+add property menu_type_ProjectTemplateVault on program eServiceSchemaVariableMapping.tcl to menu 'type_ProjectTemplateVault';

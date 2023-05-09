@@ -1,0 +1,15 @@
+del menu 'RMTDocumentRevisionsToolBar';
+add menu 'RMTDocumentRevisionsToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	menu	'RMTDocumentRevisionsActionsToolBar'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTDocumentRevisionsToolBar'
+	property 'version'	value	'V6R2013x'
+;
+add property menu_RMTDocumentRevisionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTDocumentRevisionsToolBar';

@@ -1,0 +1,14 @@
+del portal 'PMCProjectIssuesRisksPortal';
+add portal 'PMCProjectIssuesRisksPortal'
+	description	'Issues&Risks Portal'
+	label	''
+	href	''
+	channel 	PMCProjectIssuesRisksChannel
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectIssuesRisksPortal'
+	property	'version'	value	'R210'
+;
+add property portal_PMCProjectIssuesRisksPortal on program eServiceSchemaVariableMapping.tcl to portal 'PMCProjectIssuesRisksPortal';

@@ -1,0 +1,21 @@
+del menu 'PLCActions';
+add menu 'PLCActions'
+	description	''
+	label	'emxProduct.Menu.ProductLine'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Image'		'${COMMON_DIR}/images/iconMenuProductLine.gif'
+	command	'PLCCreateProductLineAction'
+	command	'PLCCreateModelAction'
+	command	'PLCCreateProductAction'
+	command	'PLCCreateBuildAction'
+	command	'PLCAddTestCase'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'ProductLine'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'PLCActions'
+	property 'version'	value	'R422'
+;
+add property menu_PLCActions on program eServiceSchemaVariableMapping.tcl to menu 'PLCActions';

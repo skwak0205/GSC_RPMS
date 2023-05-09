@@ -1,0 +1,16 @@
+del menu 'IEFDesktopMyLockedActionMenu';
+add menu 'IEFDesktopMyLockedActionMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'IntegrationFramework'
+	command	'IEFDesktopCheckOutCommand'
+	command	'IEFDesktopUnlockCommand'
+	property 'installer'	value	'ENOVIAIntegrationEngineering'
+	property 'application'	value	'IntegrationFramework'
+	property 'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property 'original name'	value	'IEFDesktopMyLockedActionMenu'
+	property 'version'	value	'R424'
+;
+add property menu_IEFDesktopMyLockedActionMenu on program eServiceSchemaVariableMapping.tcl to menu 'IEFDesktopMyLockedActionMenu';

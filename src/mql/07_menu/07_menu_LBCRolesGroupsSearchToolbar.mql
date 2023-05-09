@@ -1,0 +1,18 @@
+del menu 'LBCRolesGroupsSearchToolbar';
+add menu 'LBCRolesGroupsSearchToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'LBCNameMatchesTextboxFilter'
+	command	'LBCTopLevelCheckboxFilter'
+	command	'LBCSublevelCheckBoxFilter'
+	command	'LBCGroupRolesFilter'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCRolesGroupsSearchToolbar'
+	property 'version'	value	'R212'
+;
+add property menu_LBCRolesGroupsSearchToolbar on program eServiceSchemaVariableMapping.tcl to menu 'LBCRolesGroupsSearchToolbar';

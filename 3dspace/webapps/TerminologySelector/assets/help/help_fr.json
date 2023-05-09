@@ -1,0 +1,8 @@
+{
+"TerminologyManagementCommand.Title":"Gérer la définition de structure de navigation",
+"TerminologyManagementCommand.ShortHelp":"Gérer les références associées aux structures de navigation et les instances associées aux nœuds de navigation.",
+"AssociateTerminologiesCommand.Title":"Ajouter à la structure de navigation",
+"AssociateTerminologiesCommand.ShortHelp":"Associer les références sélectionnées à la structure de navigation.",
+"AssociateTermsCommand.Title":"Ajouter au nœud de navigation",
+"AssociateTermsCommand.ShortHelp":"Associer les instances sélectionnées au nœud de navigation."
+}

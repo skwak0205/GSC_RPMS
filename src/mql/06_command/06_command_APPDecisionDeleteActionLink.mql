@@ -1,0 +1,22 @@
+del command 'APPDecisionDeleteActionLink';
+add command 'APPDecisionDeleteActionLink'
+	description	'Decision Delete Selcted Command Object'
+	label	'emxComponents.ActionLink.Delete'
+	href	'${SUITE_DIR}/emxIssueUtil.jsp?mode=delete'
+	alt	'emxComponents.ActionLink.Delete'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'True'
+	setting	'Row Select'		'Multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxComponents.Alert.Delete'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionDeleteActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPDecisionsMyDeskActionBar add command APPDecisionDeleteActionLink order command APPDecisionDeleteActionLink 0;
+modify menu APPDecisionsActionBar add command APPDecisionDeleteActionLink order command APPDecisionDeleteActionLink 0;
+#channel ==>APPDecisionsMyDeskActionBarAPPDecisionsActionBar
+add property command_APPDecisionDeleteActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionDeleteActionLink';

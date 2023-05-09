@@ -1,0 +1,16 @@
+del command 'PARSearchFindParameters';
+add command 'PARSearchFindParameters'
+	description	'Search Command Object'
+	label	'emxParameter.FindObjects.Parameters'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_PlmParameter:POLICY=policy_Parameter,policy_ParameterAggregation&showInitialResults=false&table=PARSearchResult&selection=multiple&HelpMarker=emxhelpfullsearch&searchmode=globalsearch'
+	alt	''
+	setting	'Target Location'		'windowshade'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Parameter'
+	setting	'Selectable in Preferences'		'false'
+	setting	'Help Marker'		'emxhelpfullsearch'
+;
+modify menu PARSearchMenu add command PARSearchFindParameters order command PARSearchFindParameters 0;
+#channel ==>PARSearchMenu
+add property command_PARSearchFindParameters on program eServiceSchemaVariableMapping.tcl to command 'PARSearchFindParameters';

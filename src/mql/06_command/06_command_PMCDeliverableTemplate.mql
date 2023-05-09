@@ -1,0 +1,21 @@
+del command 'PMCDeliverableTemplate';
+add command 'PMCDeliverableTemplate'
+	description	'Deliverable Template from Deliverable Intent'
+	label	'emxProgramCentral.Deliverable.Template'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?toolbar=PMCDeliverableTemplateActions&program=emxDeliverable:getDeliverablesTemplates&table=PMCDeliverableTemplateTable&freezePane=Name&selection=multiple&editLink=true&hideHeader=true&findMxLink=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'DPG'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeliverableTemplate'
+	property	'version'	value	'R422'
+;
+modify menu DPGMyDesk add command PMCDeliverableTemplate order command PMCDeliverableTemplate 2;
+#channel ==>DPGMyDesk
+add property command_PMCDeliverableTemplate on program eServiceSchemaVariableMapping.tcl to command 'PMCDeliverableTemplate';

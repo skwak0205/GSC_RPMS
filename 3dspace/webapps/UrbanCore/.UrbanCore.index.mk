@@ -1,0 +1,17 @@
+m|UrbanWebGL\UrbanCore.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.23009|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\UrbanCore\UrbanCore.js|1673300317|126930
+s|UrbanWebGL\UrbanCore.mweb\src\DateTime.js|1669417074|11158
+u|UrbanWebGL\UrbanCore.mweb\src\PerformanceProfile.js|1669417074|5313
+u|UrbanWebGL\UrbanCore.mweb\src\PerformanceProfileManager.js|1669417074|9286
+u|UrbanWebGL\UrbanCore.mweb\src\RenderPassManager.js|1669417074|182
+u|UrbanWebGL\UrbanCore.mweb\src\SceneRenderer.js|1671230062|105390
+u|UrbanWebGL\UrbanCore.mweb\src\UndergroundVisualizer.js|1669417074|115302
+u|UrbanWebGL\UrbanCore.mweb\src\Urban.js|1673292992|65643
+u|UrbanWebGL\UrbanCore.mweb\src\UrbanCore.js|1669417074|1
+u|UrbanWebGL\UrbanCore.mweb\src\Viewpoint.js|1669417074|56343
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

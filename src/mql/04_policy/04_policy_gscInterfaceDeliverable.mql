@@ -1,0 +1,26 @@
+add policy 'gscInterfaceDeliverable'
+    description 'Policy applicable to gscInterfaceDeliverables'
+    add type 'gscPatent'
+    store STORE
+    add format generic
+    sequence -
+    state  'Exists'
+    revision FALSE
+    version FALSE
+    promote FALSE
+    checkouthistory TRUE
+    public  none
+    owner  all
+    user 'Employee' read,checkout,fromconnect,toconnect,fromdisconnect,todisconnect,execute,viewform,show
+    user 'Global User' read,checkout,show
+    property 'installer' value 'ENOVIAEngineering'
+    property 'application' value 'Framework'
+    property 'installed date' value 'Thu Oct 27 15:47:52 KST 2022'
+    property 'original name' value 'gscInterfaceDeliverable'
+    property 'state_Exists' value 'Exists'
+    property 'version' value 'R423'
+;
+add property policy_gscInterfaceDeliverable on program eServiceSchemaVariableMapping.tcl to policy 'gscInterfaceDeliverable';
+
+mod policy gscInterfaceDeliverable state Exists add user VPLMCreator read,show,fromconnect,toconnect,fromdisconnect,todisconnect;
+mod policy gscInterfaceDeliverable state Exists add user VPLMProjectLeader read,show,fromconnect,toconnect,fromdisconnect,todisconnect;

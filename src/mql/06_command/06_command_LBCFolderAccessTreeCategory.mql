@@ -1,0 +1,21 @@
+del command 'LBCFolderAccessTreeCategory';
+add command 'LBCFolderAccessTreeCategory'
+	description	'Folder Access Tree Category'
+	label	'emxDocumentCentral.TreeCategory.Access'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=LBCFolderAccessSummary&expandProgram=emxWorkspaceVault:getFolderAllAccessDetails&expandProgramMenu=LBCFolderAccessList&toolbar=LBCFolderAccessAddRemoveMembersAction&header=emxDocumentCentral.Common.AccessWithObjectName&sortColumnName=Name&sortDirection=ascending&selection=multiple&HelpMarker=emxhelpfolderaccess&PrinterFriendly=true&accessChoice=Add,Add_Remove,Read,Read_Write,Remove&selection=multiple&editLink=true&expandLevelFilter=false&objectCompare=false&connectionProgram=emxWorkspaceVault:inlineAddRemoveAccess&postProcessJPO=emxWorkspaceVault:editMemberAccess&showRMB=false'
+	alt	'emxDocumentCentral.TreeCategory.Access'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Function'		'showGranteeAccessCategory'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	setting	'Image'		'${COMMON_DIR}/iconSmallAccess.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCFolderAccessTreeCategory'
+	property	'version'	value	'R419'
+;
+modify menu DCtype_ProjectVault add command LBCFolderAccessTreeCategory order command LBCFolderAccessTreeCategory 2;
+modify menu LBCFolderRMB add command LBCFolderAccessTreeCategory order command LBCFolderAccessTreeCategory 2;
+#channel ==>DCtype_ProjectVaultLBCFolderRMB
+add property command_LBCFolderAccessTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'LBCFolderAccessTreeCategory';

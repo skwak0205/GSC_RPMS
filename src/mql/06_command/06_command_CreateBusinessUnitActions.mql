@@ -1,0 +1,26 @@
+del command 'CreateBusinessUnitActions';
+add command 'CreateBusinessUnitActions'
+	description	'CreateBusinessUnit Command Object'
+	label	'emxComponents.Common.CreateBusinessUnit'
+	href	'${COMPONENT_DIR}/emxComponentsCreateBusinessUnitDialogFS.jsp'
+	alt	'emxComponents.Common.CreateBusinessUnit'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	user	'Organization Manager'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	user	'Supplier Representative'
+	user	'Buyer Administrator'
+	user	'Supplier Development Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'CreateBusinessUnitActions'
+	property	'version'	value	'R419'
+;
+#channel ==>
+add property command_CreateBusinessUnitActions on program eServiceSchemaVariableMapping.tcl to command 'CreateBusinessUnitActions';

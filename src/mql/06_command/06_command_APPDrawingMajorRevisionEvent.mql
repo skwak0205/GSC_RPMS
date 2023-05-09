@@ -1,0 +1,13 @@
+del command 'APPDrawingMajorRevisionEvent';
+add command 'APPDrawingMajorRevisionEvent'
+	description	'When Drawing is major revised'
+	label	'emxComponents.Notification.Event.Revised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Revised'
+	property	'version'	value	'R424'
+;
+modify menu APPDrawingEvents add command APPDrawingMajorRevisionEvent order command APPDrawingMajorRevisionEvent 0;
+#channel ==>APPDrawingEvents
+add property command_APPDrawingMajorRevisionEvent on program eServiceSchemaVariableMapping.tcl to command 'APPDrawingMajorRevisionEvent';

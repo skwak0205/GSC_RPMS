@@ -1,0 +1,22 @@
+del command 'TMCDocument';
+add command 'TMCDocument'
+	description	'Document Command Object'
+	label	'emxFramework.Command.Document'
+	href	'${SUITE_DIR}/FSGenericSummary.jsp'
+	alt	'emxFramework.Command.Alt.Document'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallDocument.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCDocument'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCDocument on program eServiceSchemaVariableMapping.tcl to command 'TMCDocument';

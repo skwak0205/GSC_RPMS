@@ -1,0 +1,18 @@
+del command 'PMCProjectBenefitInDashboard';
+add command 'PMCProjectBenefitInDashboard'
+	description	'Project benefit main command'
+	label	'emxProgramCentral.Common.Benefits'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PMCProjectBenefitSummaryTable&toolbar=PMCProjectBenefitFilter&freezePane=Name&selection=none&expandProgram=emxBenefitItem:getTableExpandChildProjectBenefitData&editLink=false&showTabHeader=false&emxExpandFilter=3&customize=false&HelpMarker= emxhelpfinancialitemsummary'
+	alt	'emxProgramCentral.Common.Benefits'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitInDashboard'
+	property	'version'	value	'R417'
+;
+#channel ==>PMCGateDashboardChannel2
+add property command_PMCProjectBenefitInDashboard on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitInDashboard';

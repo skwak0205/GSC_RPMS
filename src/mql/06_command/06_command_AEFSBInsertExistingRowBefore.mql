@@ -1,0 +1,19 @@
+del command 'AEFSBInsertExistingRowBefore';
+add command 'AEFSBInsertExistingRowBefore'
+	description	'Insert Existing Row Above'
+	label	'emxFramework.FreezePane.SBEditActions.AddNewRowBefore'
+	href	'javascript:addExistingChildRowAbove()'
+	alt	'emxFramework.FreezePane.SBEditActions.AddNewRowBefore'
+	setting	'Registered Suite'		'Framework'
+	setting	'Mode'		'edit'
+	setting	'Access Function'		'accessEditExisting'
+	setting	'Access Program'		'emxAEFUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSBInsertExistingRowBefore'
+	property	'version'	value	'R213'
+;
+modify menu AEFSBAddExistingMenu add command AEFSBInsertExistingRowBefore order command AEFSBInsertExistingRowBefore 1;
+#channel ==>AEFSBAddExistingMenu
+add property command_AEFSBInsertExistingRowBefore on program eServiceSchemaVariableMapping.tcl to command 'AEFSBInsertExistingRowBefore';

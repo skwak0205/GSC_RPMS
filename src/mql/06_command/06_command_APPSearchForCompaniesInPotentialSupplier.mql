@@ -1,0 +1,18 @@
+del command 'APPSearchForCompaniesInPotentialSupplier';
+add command 'APPSearchForCompaniesInPotentialSupplier'
+	description	'Command for Company Search'
+	label	'emxComponents.Command.SearchForCompanies'
+	href	'${COMPONENT_DIR}/emxComponentsPotentialSupplierSearchDialog.jsp?typename=Company'
+	alt	'emxComponents.Command.SearchForCompanies'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearchForCompany.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchForCompaniesInPotentialSupplier'
+	property	'version'	value	'R417'
+;
+modify menu APPPotentialSupplierSearchActionsToolBar add command APPSearchForCompaniesInPotentialSupplier order command APPSearchForCompaniesInPotentialSupplier 1;
+#channel ==>APPPotentialSupplierSearchActionsToolBar
+add property command_APPSearchForCompaniesInPotentialSupplier on program eServiceSchemaVariableMapping.tcl to command 'APPSearchForCompaniesInPotentialSupplier';

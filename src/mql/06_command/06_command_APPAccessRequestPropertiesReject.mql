@@ -1,0 +1,22 @@
+del command 'APPAccessRequestPropertiesReject';
+add command 'APPAccessRequestPropertiesReject'
+	description	'Command Object to promote Access Request from Submitted/Review state state to Rejected state'
+	label	'emxComponents.Command.RejectAccessRequest'
+	href	'${SUITE_DIR}/emxCommonAccessRequestProcess.jsp?mode=Rejected&fromPropertiesPage=true'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'( current==Submitted || current==Review )'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionReject.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Request Reviewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAccessRequestPropertiesReject'
+	property	'version'	value	'R422'
+;
+modify menu APPAccessRequestActionsToolbar add command APPAccessRequestPropertiesReject order command APPAccessRequestPropertiesReject 4;
+#channel ==>APPAccessRequestActionsToolbar
+add property command_APPAccessRequestPropertiesReject on program eServiceSchemaVariableMapping.tcl to command 'APPAccessRequestPropertiesReject';

@@ -1,0 +1,17 @@
+del command 'APPObjectRevisedEvent';
+add command 'APPObjectRevisedEvent'
+	description	'Object Revised Event'
+	label	'emxComponents.Notification.Event.Revised'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'Revised'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPObjectRevisedEvent'
+	property	'version'	value	'R207'
+;
+modify menu APPDecisionEvents add command APPObjectRevisedEvent order command APPObjectRevisedEvent 1;
+#channel ==>APPDecisionEvents
+add property command_APPObjectRevisedEvent on program eServiceSchemaVariableMapping.tcl to command 'APPObjectRevisedEvent';

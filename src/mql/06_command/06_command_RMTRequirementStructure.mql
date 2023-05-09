@@ -1,0 +1,27 @@
+del command 'RMTRequirementStructure';
+add command 'RMTRequirementStructure'
+	description	'Requirement Structure Command'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Structure Program'		'emxRequirement'
+	setting	'Submit'		'true'
+	setting	'Structure Function'		'getStructureList'
+	user	'3DSRestrictedReader'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Manager'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRequirementStructure'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_RMTRequirementStructure on program eServiceSchemaVariableMapping.tcl to command 'RMTRequirementStructure';

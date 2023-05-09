@@ -1,0 +1,15 @@
+del command 'MsoiMyParts';
+add command 'MsoiMyParts'
+	description	'UI3 based my Parts Command object specific to MS Office Integration'
+	label	'emxEngineeringCentral.Common.Part'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxMsoiMyPartsUtil:getParts&table=IEFDesktopObjectSummary'
+	alt	'emxEngineeringCentral.Common.Part'
+	setting	'Registered Suite'		'EngineeringCentral'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiMyParts'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_MsoiMyParts on program eServiceSchemaVariableMapping.tcl to command 'MsoiMyParts';

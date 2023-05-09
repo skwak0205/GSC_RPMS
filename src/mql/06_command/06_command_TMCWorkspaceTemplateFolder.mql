@@ -1,0 +1,23 @@
+del command 'TMCWorkspaceTemplateFolder';
+add command 'TMCWorkspaceTemplateFolder'
+	description	'Folder Command Object'
+	label	'emxTeamCentral.Common.Folders'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxWorkspaceTemplate:getWorkspaceTemplateFolders&table=TMCWorkspaceTemplateFolderSummary&header=emxTeamCentral.UITable.Folders&HelpMarker=emxhelpworkspacetemplatefolders'
+	alt	'emxTeamCentral.Common.Folders'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallFolder.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceTemplateFolder'
+	property	'version'	value	'R422'
+;
+modify menu type_WorkspaceTemplate add command TMCWorkspaceTemplateFolder order command TMCWorkspaceTemplateFolder 1;
+#channel ==>type_WorkspaceTemplate
+add property command_TMCWorkspaceTemplateFolder on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceTemplateFolder';

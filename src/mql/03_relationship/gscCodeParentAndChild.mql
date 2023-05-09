@@ -1,0 +1,31 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : Code Master To Code Master Relationship
+################################################################################################
+
+#del relationship gscCodeParentAndChild;
+add relationship gscCodeParentAndChild
+    description "Code Master To Code Master Relationship"
+    from
+        type "gscCodeMaster"
+        revision none
+        clone none
+        cardinality one
+        propagateconnection
+        !propagatemodify
+    to
+        type "gscCodeMaster"
+        revision none
+        clone none
+        cardinality many
+        propagateconnection
+        !propagatemodify
+        nothidden
+    property 'installed date'   value '2023.01.10'
+    property 'original name'    value 'gscCodeParentAndChild'
+    property 'application'      value 'Components'
+    property 'installer'        value 'GSC'
+    property 'version'          value 'V6R2019'
+;
+add property relationship_gscCodeParentAndChild on program eServiceSchemaVariableMapping.tcl to relationship 'gscCodeParentAndChild';

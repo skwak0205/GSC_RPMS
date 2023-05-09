@@ -1,0 +1,15 @@
+{
+  "CEV.optionsChecker.rdfServerURL.error": "La URL del servidor RDF tiene que estar definida.",
+  "CEV.optionsChecker.resourceURI.error": "Tiene que haber definido un URI de recurso.",
+  "CEV.optionsChecker.constraintsPosition.error": "La posición de las ventanas emergentes de restricciones debe ser 'arriba', 'a la derecha', 'abajo' o 'a la izquierda'",
+  "CEV.optionsChecker.buttons.types.error": "El botón '{label}' debe ser de alguno de estos tipos: 'principal', 'predeterminado', 'información', 'correcto', 'advertencia' o 'error'",
+  "CEV.optionsChecker.buttons.specificActions.error": "La acción específica para la característica '{key}' debe ser una función.",
+  "CEV.optionsChecker.search.error": "Para buscar valores para la característica '{key}' es necesaria una función.",
+  "CEV.title": "Editor de características",
+  "CEV.defaultMessage": "Se ha producido un error al recuperar todas las características...",
+  "CEV.userCharacteristics.title": "Características de usuario",
+  "CEV.characteristics.title": "Características",
+  "CEV.okButton.content": "Aceptar",
+  "CEV.cancelButton.content": "Cancelar",
+  "CEV.cancelButton.error": "Error al hacer clic en el botón 'Cancelar'..."
+}

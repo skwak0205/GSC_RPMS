@@ -1,0 +1,16 @@
+del menu 'DCAllFoldersBottomActionbar';
+add menu 'DCAllFoldersBottomActionbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'DocumentCentral'
+	command	'DCObjectSubscribetoSelectedActionLink'
+	command	'DCObjectDeleteSelectedActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'DCAllFoldersBottomActionbar'
+	property 'version'	value	'10-6-0-1'
+;
+add property menu_DCAllFoldersBottomActionbar on program eServiceSchemaVariableMapping.tcl to menu 'DCAllFoldersBottomActionbar';

@@ -1,0 +1,16 @@
+del channel 'PMCWeeklyTimeSheetApproval';
+add channel 'PMCWeeklyTimeSheetApproval'
+	description	'Weekly Timesheet Approval'
+	height	'300'
+	label	'emxProgramCentral.WeeklyTimesheet.WeeklyTimeSheetApproval'
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'PMCWeeklyTimeSheetApprove'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWeeklyTimeSheetApproval'
+	property	'version'	value	'R210'
+;
+#portal ==>
+add property channel_PMCWeeklyTimeSheetApproval on program eServiceSchemaVariableMapping.tcl to channel 'PMCWeeklyTimeSheetApproval';

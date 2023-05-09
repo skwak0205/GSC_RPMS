@@ -1,0 +1,25 @@
+del command 'PMCBusinessGoalRemove';
+add command 'PMCBusinessGoalRemove'
+	description	'BusinessGoal Remove Selected Command Object'
+	label	'emxProgramCentral.Common.Remove'
+	href	'${SUITE_DIR}/emxProgramCentralSearchBusinessGoalProcess.jsp?mode=DisconnectBusinessGoal'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxProgramCentral.Common.ConfirmRemove'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Business Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCBusinessGoalRemove'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectBusinessGoalToolBarActions add command PMCBusinessGoalRemove order command PMCBusinessGoalRemove 0;
+#channel ==>PMCProjectBusinessGoalToolBarActions
+add property command_PMCBusinessGoalRemove on program eServiceSchemaVariableMapping.tcl to command 'PMCBusinessGoalRemove';

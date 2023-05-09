@@ -1,0 +1,18 @@
+################################################################################################
+# Created Date : 2023.04.12
+# Create by jrchoi
+# Description : 이산화탄소감축량
+################################################################################################
+
+#del attribute 'gscOffsetAmount';
+add attribute  'gscOffsetAmount'
+   description '이산화탄소감축량'
+   type        'real'
+   default    ''
+   property "application"	  value "Framework"
+   property "version"		  value "V6R2019"
+   property "installer"	  value "HHI"
+   property "installed date" value "2020-05-19"
+   property "original name"  value "gscOffsetAmount"
+;
+add property attribute_gscOffsetAmount on program 'eServiceSchemaVariableMapping.tcl' to attribute 'gscOffsetAmount';

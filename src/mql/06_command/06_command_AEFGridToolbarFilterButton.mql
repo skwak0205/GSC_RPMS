@@ -1,0 +1,18 @@
+del command 'AEFGridToolbarFilterButton';
+add command 'AEFGridToolbarFilterButton'
+	description	'Filter button for the AEF Grid Toolbar to filter table results'
+	label	'emxFramework.Button.Filter'
+	href	''
+	alt	''
+	setting	'Input Type'		'submit'
+	setting	'Registered Suite'		'Framework'
+	setting	'Action Label'		'emxFramework.Button.Filter'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFGridToolbarFilterButton'
+	property	'version'	value	'R212'
+;
+modify menu AEFGridFilterToolbar add command AEFGridToolbarFilterButton order command AEFGridToolbarFilterButton 0;
+#channel ==>AEFGridFilterToolbar
+add property command_AEFGridToolbarFilterButton on program eServiceSchemaVariableMapping.tcl to command 'AEFGridToolbarFilterButton';

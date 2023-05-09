@@ -1,0 +1,27 @@
+del command 'TMCRouteSummarySetTaskEscalation';
+add command 'TMCRouteSummarySetTaskEscalation'
+	description	'Command for SetTaskEscalation link on RouteSummary'
+	label	'emxComponents.TaskEscalation.SetTaskEscalation'
+	href	'${COMPONENT_DIR}/emxRouteSummaryTaskEscalationProcess.jsp'
+	alt	'emxComponents.TaskEscalation.SetTaskEscalation'
+	setting	'Target Location'		'hiddenFrame'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEscalateTask.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'VPLMReleaseManager'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRouteSummarySetTaskEscalation'
+	property	'version'	value	'R423.HF3'
+;
+modify menu TMCRouteSummaryTopActionBar add command TMCRouteSummarySetTaskEscalation order command TMCRouteSummarySetTaskEscalation 0;
+#channel ==>TMCRouteSummaryTopActionBar
+add property command_TMCRouteSummarySetTaskEscalation on program eServiceSchemaVariableMapping.tcl to command 'TMCRouteSummarySetTaskEscalation';

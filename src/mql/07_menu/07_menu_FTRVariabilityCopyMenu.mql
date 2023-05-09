@@ -1,0 +1,14 @@
+del menu 'FTRVariabilityCopyMenu';
+add menu 'FTRVariabilityCopyMenu'
+	description	''
+	label	'emxProduct.Menu.Copy'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type.kindof!="type_Model">'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	command	'FTRVariabilityCopyFrom'
+	command	'FTRVariabilityCopyTo'
+	property 'version'	value	'R420'
+;
+add property menu_FTRVariabilityCopyMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRVariabilityCopyMenu';

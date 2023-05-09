@@ -1,0 +1,19 @@
+del command 'AEFTriggerValidation';
+add command 'AEFTriggerValidation'
+	description	'Command to Validate the Triggers'
+	label	'emxFramework.Command.Label.TriggerValidation'
+	href	'${SUITE_DIR}/emxTable.jsp?table=AEFValidateTrigger&program=emxTriggerValidationBase:getCheckTriggers&header=emxFramework.Label.TriggerValidation&customize=false&multiColumnSort=false&objectBased=false&SubmitURL=../common/emxTriggerIntermediatePage.jsp&SubmitLabel=emxFramework.Button.Next&Style=dialog&CancelLabel=emxFramework.Button.Cancel&CancelButton=true&multipleObjects=false&selection=multiple&HelpMarker=emxhelptriggervalidationrules'
+	alt	'emxFramework.Command.Tooltip.TriggerValidation'
+	setting	'Window Height'		'600'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionValidate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFTriggerValidation'
+	property	'version'	value	'R419'
+;
+modify menu AEFLifecycleMenuToolBar add command AEFTriggerValidation order command AEFTriggerValidation 1;
+#channel ==>AEFLifecycleMenuToolBar
+add property command_AEFTriggerValidation on program eServiceSchemaVariableMapping.tcl to command 'AEFTriggerValidation';

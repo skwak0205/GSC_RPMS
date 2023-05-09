@@ -1,0 +1,34 @@
+
+################################################################################################
+# Created Date : 2023.02.06
+# Create by Jungrim Choi
+# Description : Event related Projects
+################################################################################################
+
+#del relationship gscEventProject;
+add relationship gscEventProject
+  description "Event to Project"
+  from
+    type "gscEvent"
+    revision none
+    clone none
+    cardinality many
+    propagateconnection
+    !propagatemodify
+  to
+    type "Project Space"
+    revision none
+    clone none
+    cardinality many
+    propagateconnection
+    !propagatemodify
+    nothidden
+    property 'installed date'     value  '01-06-2023'
+    property 'application'        value  'ProgramCentral'
+    property 'original name'      value  'gscEventProject'
+    property 'installer'          value  'jrchoi'
+    property 'version'            value  'V6R2022'
+;
+
+add property relationship_gscEventProject on program eServiceSchemaVariableMapping.tcl to relationship 'gscEventProject';
+modify relationship gscEventProject add attribute gscGateResult;

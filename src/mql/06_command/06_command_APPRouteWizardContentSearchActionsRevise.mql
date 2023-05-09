@@ -1,0 +1,17 @@
+del command 'APPRouteWizardContentSearchActionsRevise';
+add command 'APPRouteWizardContentSearchActionsRevise'
+	description	''
+	label	'emxComponents.Command.Revise'
+	href	'javascript:appendQueryString()'
+	alt	''
+	setting	'Target Location'		'_top'
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteWizardContentSearchActionsRevise'
+	property	'version'	value	'R215'
+;
+modify menu APPRouteWizardContentSearchActionBar add command APPRouteWizardContentSearchActionsRevise order command APPRouteWizardContentSearchActionsRevise 0;
+#channel ==>APPRouteWizardContentSearchActionBar
+add property command_APPRouteWizardContentSearchActionsRevise on program eServiceSchemaVariableMapping.tcl to command 'APPRouteWizardContentSearchActionsRevise';

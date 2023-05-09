@@ -1,0 +1,19 @@
+del menu 'PMCQuestionToolbar';
+add menu 'PMCQuestionToolbar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Hide Mode'		'mobile'
+	command	'PMCCreateQuestion'
+	command	'PMCDeleteQuestion'
+	command	'PMCAssignTaskToQuestion'
+	command	'PMCRemoveTaskFromQuestion'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCQuestionToolbar'
+	property 'version'	value	'R424.HF3'
+;
+add property menu_PMCQuestionToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCQuestionToolbar';

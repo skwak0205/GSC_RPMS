@@ -1,0 +1,21 @@
+del command 'TMCPushSubAddRecipientsCommand';
+add command 'TMCPushSubAddRecipientsCommand'
+	description	''
+	label	'emxTeamCentral.Button.AddRecipients'
+	href	'${ROOT_DIR}/components/emxCommonSearch.jsp?formName=emxTableForm&selection=multiple&frameName=searchPane&searchmode=generic&searchmenu=TMCPushSubAddRecipientsMenu&searchcommand=TMCPushSubFindPeopleCommand&stringResourceFile=emxTeamCentralStringResource&searchheader=emxTeamCentral.FindFiles.FindFiles&CancelButton=true'
+	alt	''
+	setting	'Registered Suite'		'TeamCentral'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCPushSubAddRecipientsCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCPushSubAddRecipientsToolbar add command TMCPushSubAddRecipientsCommand order command TMCPushSubAddRecipientsCommand 1;
+#channel ==>TMCPushSubAddRecipientsToolbar
+add property command_TMCPushSubAddRecipientsCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCPushSubAddRecipientsCommand';

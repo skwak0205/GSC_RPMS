@@ -1,0 +1,9 @@
+m|DELPPWModules\DELPPWAuxiliaryModule.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.1.22319|3.2
+r|G:\R425\BSF\.
+t|win_b64\webapps\DELPPWAuxiliaryModule\DELPPWAuxiliaryModule.js|1668549576|6929
+s|DELPPWModules\DELPPWAuxiliaryModule.mweb\src\AuxiliaryModule.js|1667805934|28965
+u|win_b64\code\toolcmds\mkwebconcat.bat|1647654585|287
+u|win_b64\code\toolcmds\terser.bat|1647654585|240

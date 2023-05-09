@@ -1,0 +1,17 @@
+del command 'APPDashboardUserRecentDocs';
+add command 'APPDashboardUserRecentDocs'
+	description	'Assignment Command Object'
+	label	'emxFramework.String.MyRecentDocs'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDashboardDocuments:getDocuments&mode=Recent&table=APPDashboardUserDocuments&toolbar=APPHomePageDocumentsToolbar&header=emxFramework.String.MyRecentDocuments&clearLimitNotice=true&sortColumnName=Modified&sortDirection=decending&editLink=false&selection=multiple&subHeader=emxFramework.String.LatestModifiedDocumentsByUser&freezePane=Name,RouteStatus,Title,Actions,NewWindow'
+	alt	'emxFramework.MenuItem.Assignments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDashboardUserRecentDocs'
+	property	'version'	value	'R421'
+;
+#channel ==>AEFPowerViewChannel
+add property command_APPDashboardUserRecentDocs on program eServiceSchemaVariableMapping.tcl to command 'APPDashboardUserRecentDocs';

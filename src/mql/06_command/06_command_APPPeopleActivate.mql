@@ -1,0 +1,29 @@
+del command 'APPPeopleActivate';
+add command 'APPPeopleActivate'
+	description	'Activate People Command'
+	label	'emxComponents.Button.Activate'
+	href	'${SUITE_DIR}/emxComponentsPeopleActivateProcess.jsp'
+	alt	'emxComponents.Button.Activate'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForCompanyNodes'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActivate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPeopleActivate'
+	property	'version'	value	'R420.HF2'
+;
+modify menu APPInactivePeopleSummaryActionToolbar add command APPPeopleActivate order command APPPeopleActivate 0;
+modify menu APPInactivePeopleSummaryToolbar add command APPPeopleActivate order command APPPeopleActivate 0;
+modify menu APPPeopleSummaryActionsToolBar add command APPPeopleActivate order command APPPeopleActivate 8;
+modify menu APPPeopleSummaryToolBar add command APPPeopleActivate order command APPPeopleActivate 10;
+#channel ==>APPInactivePeopleSummaryActionToolbarAPPInactivePeopleSummaryToolbarAPPPeopleSummaryActionsToolBarAPPPeopleSummaryToolBar
+add property command_APPPeopleActivate on program eServiceSchemaVariableMapping.tcl to command 'APPPeopleActivate';

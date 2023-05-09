@@ -1,0 +1,19 @@
+del menu 'RMTProductRequirementTopActionBar';
+add menu 'RMTProductRequirementTopActionBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTCreateRequirementProduct'
+	command	'RMTAddExistingProductRequirementActionLink'
+	command	'APPSeparator'
+	menu	'RMTProductRequirementTraceabilityMenu'
+	command	'RMTRequirementRichTextEditor'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTProductRequirementTopActionBar'
+	property 'version'	value	'V6R2016x'
+;
+add property menu_RMTProductRequirementTopActionBar on program eServiceSchemaVariableMapping.tcl to menu 'RMTProductRequirementTopActionBar';

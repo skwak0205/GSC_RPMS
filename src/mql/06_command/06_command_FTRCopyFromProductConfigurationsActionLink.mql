@@ -1,0 +1,19 @@
+del command 'FTRCopyFromProductConfigurationsActionLink';
+add command 'FTRCopyFromProductConfigurationsActionLink'
+	description	'CopyProductConfigurations'
+	label	'emxProduct.ActionLink.CopyProductConfigurations'
+	href	'${SUITE_DIR}/CopyProductConfigurationPreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'($<type.kindof=="type_Products">)&&(!$<type=="type_ProductVariant">)&&(current != "Obsolete")'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	user	'VPLMCreator'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRProductConfigurationActionToolbar add command FTRCopyFromProductConfigurationsActionLink order command FTRCopyFromProductConfigurationsActionLink 2;
+#channel ==>FTRProductConfigurationActionToolbar
+add property command_FTRCopyFromProductConfigurationsActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCopyFromProductConfigurationsActionLink';

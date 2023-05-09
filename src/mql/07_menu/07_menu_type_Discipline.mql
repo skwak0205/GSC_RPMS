@@ -1,0 +1,9 @@
+del menu 'type_Discipline';
+add menu 'type_Discipline'
+	description	'Disciplines tree'
+	label	'emxPlmOnline.label.Discipline'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminDisciplineDetails.jsp'
+	alt	'emxPlmOnline.label.Discipline'
+	setting	'Registered Suite'		'Framework'
+;
+add property menu_type_Discipline on program eServiceSchemaVariableMapping.tcl to menu 'type_Discipline';

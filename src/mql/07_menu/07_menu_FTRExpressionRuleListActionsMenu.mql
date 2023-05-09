@@ -1,0 +1,14 @@
+del menu 'FTRExpressionRuleListActionsMenu';
+add menu 'FTRExpressionRuleListActionsMenu'
+	description	'FTRExpressionRuleListActionsMenu'
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'FTRCreateExpressionRuleActionCommandLink'
+	command	'AEFSeparator'
+	command	'FTRDeleteExpressionRuleActionCommandLink'
+	property 'version'	value	'R421'
+;
+add property menu_FTRExpressionRuleListActionsMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTRExpressionRuleListActionsMenu';

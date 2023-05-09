@@ -1,0 +1,20 @@
+del menu 'APPRouteContentSummaryCreateNew';
+add menu 'APPRouteContentSummaryCreateNew'
+	description	''
+	label	'emxComponents.Common.CreateNew'
+	href	''
+	alt	'emxComponents.Common.CreateNew'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Function'		'canUpload'
+	setting	'Access Program'		'emxRoute'
+	command	'APPRouteContentUploadExternalFile'
+	command	'AEFSeparator'
+	command	'APPRouteCreateVCFileFolder'
+	command	'APPRouteConnectVCFileFolder'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRouteContentSummaryCreateNew'
+	property 'version'	value	'10-7'
+;
+add property menu_APPRouteContentSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to menu 'APPRouteContentSummaryCreateNew';

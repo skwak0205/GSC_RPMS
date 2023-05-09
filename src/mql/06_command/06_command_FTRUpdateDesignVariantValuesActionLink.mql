@@ -1,0 +1,20 @@
+del command 'FTRUpdateDesignVariantValuesActionLink';
+add command 'FTRUpdateDesignVariantValuesActionLink'
+	description	''
+	label	'emxProduct.ActionLink.UpdateDesignVariantValues'
+	href	'${SUITE_DIR}/PartUtil.jsp?mode=searchconfiguration&param=search'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRUpdateDesignVariantValuesActionLink'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_FTRUpdateDesignVariantValuesActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRUpdateDesignVariantValuesActionLink';

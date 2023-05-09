@@ -1,0 +1,12 @@
+del command 'VPLMIntegSynchAndTransferToVPLM';
+add command 'VPLMIntegSynchAndTransferToVPLM'
+	description	'Command to synchronize data with Engineering and transfer authoring control.'
+	label	'emxVPMCentral.Synchronization.Command.SyncWithTransfer.Title'
+	href	'${SUITE_DIR}/common/emxSynchronizeWithVPLMDialogFS.jsp?titleKey=emxVPLMSynchro.Synchronization.Command.SyncWithTransfer.Title&Transfer=True'
+	alt	''
+	setting	'Registered Suite'		'VPMCentral'
+	setting	'Access Function'		'isVPMUser'
+	setting	'Access Program'		'VPLMIntegCheckCommandAccess'
+;
+#channel ==>
+add property command_VPLMIntegSynchAndTransferToVPLM on program eServiceSchemaVariableMapping.tcl to command 'VPLMIntegSynchAndTransferToVPLM';

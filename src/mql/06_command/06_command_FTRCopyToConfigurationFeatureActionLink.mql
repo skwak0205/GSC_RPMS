@@ -1,0 +1,20 @@
+del command 'FTRCopyToConfigurationFeatureActionLink';
+add command 'FTRCopyToConfigurationFeatureActionLink'
+	description	''
+	label	'emxProduct.ActionLink.CopyTo'
+	href	'${SUITE_DIR}/ConfigurationFeatureCopyPreProcess.jsp?functionality=ConfigurationFeatureCopyTo&isFromPropertyPage=true'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCopyToConfigurationFeatureActionLink'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_FTRCopyToConfigurationFeatureActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCopyToConfigurationFeatureActionLink';

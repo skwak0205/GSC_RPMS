@@ -1,0 +1,22 @@
+del command 'TMCVersion';
+add command 'TMCVersion'
+	description	'Version Command Object'
+	label	'emxFramework.Command.Version'
+	href	'${SUITE_DIR}/emxTeamVersionsSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Version'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallVersion.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCVersion'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCVersion on program eServiceSchemaVariableMapping.tcl to command 'TMCVersion';

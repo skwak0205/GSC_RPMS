@@ -1,0 +1,23 @@
+del command 'PMCAddNewQualityMetric';
+add command 'PMCAddNewQualityMetric'
+	description	'Command for Adding New Quality Metric'
+	label	'emxProgramCentral.Button.CreateForCompany'
+	href	'${SUITE_DIR}/emxProgramCentralQualityMetricCreateDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'($<current>!=Controlled)'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddNewQualityMetric'
+	property	'version'	value	'R422'
+;
+modify menu PMCQualityMetricToolbarActions add command PMCAddNewQualityMetric order command PMCAddNewQualityMetric 1;
+#channel ==>PMCQualityMetricToolbarActions
+add property command_PMCAddNewQualityMetric on program eServiceSchemaVariableMapping.tcl to command 'PMCAddNewQualityMetric';

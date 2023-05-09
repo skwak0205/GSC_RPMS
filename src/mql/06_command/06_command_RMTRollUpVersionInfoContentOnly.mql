@@ -1,0 +1,25 @@
+del command 'RMTRollUpVersionInfoContentOnly';
+add command 'RMTRollUpVersionInfoContentOnly'
+	description	''
+	label	'emxRequirements.ActionLink.ContentOnly'
+	href	'${SUITE_DIR}/RequirementVersionUtil.jsp?mode=rollUp&rollUpMode=Content'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Licensed Product'		'ENO_RMF_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedOwner'
+	user	'VPLMCreator'
+	user	'VPLMProjectAdministrator'
+	user	'Requirement Manager'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRollUpVersionInfoContentOnly'
+	property	'version'	value	'R422'
+;
+modify menu RMTRequirementVersionRollUp add command RMTRollUpVersionInfoContentOnly order command RMTRollUpVersionInfoContentOnly 0;
+#channel ==>RMTRequirementVersionRollUp
+add property command_RMTRollUpVersionInfoContentOnly on program eServiceSchemaVariableMapping.tcl to command 'RMTRollUpVersionInfoContentOnly';

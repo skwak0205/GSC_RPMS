@@ -1,0 +1,30 @@
+del command 'FTRConfigurationRulesPortalCommand';
+add command 'FTRConfigurationRulesPortalCommand'
+	description	'Portal command for Configurable Rules'
+	label	'emxProduct.Tree.ConfigurationRules'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=FTRConfigurationRulesPortal&header=emxProduct.Heading.ConfigurationRules.ProductLine&HelpMarker=emxhelpconfigurableruleslist'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isNotLogicalFeatureContext'
+	setting	'Access Program'		'LogicalFeature'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRConfigurationRulesPortalCommand'
+	property	'version'	value	'R421'
+;
+modify menu type_PLCProductLine add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 3;
+modify menu type_Products add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 6;
+modify menu type_ProductVariant add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 11;
+modify menu type_ConfigurationFeature add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 3;
+modify menu type_Model add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 2;
+modify menu type_LogicalFeature add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 2;
+modify menu type_ConfigurationOption add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 1;
+modify menu type_ProductLine add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 2;
+modify menu type_Variant add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 2;
+modify menu type_VariabilityGroup add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 2;
+modify menu type_VariantValue add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 1;
+modify menu type_VariabilityOption add command FTRConfigurationRulesPortalCommand order command FTRConfigurationRulesPortalCommand 1;
+#channel ==>type_PLCProductLinetype_Productstype_ProductVarianttype_ConfigurationFeaturetype_Modeltype_LogicalFeaturetype_ConfigurationOptiontype_ProductLinetype_Varianttype_VariabilityGrouptype_VariantValuetype_VariabilityOption
+add property command_FTRConfigurationRulesPortalCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRConfigurationRulesPortalCommand';

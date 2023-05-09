@@ -1,0 +1,23 @@
+del command 'PMCEffortEditDetails';
+add command 'PMCEffortEditDetails'
+	description	'Edit Details for Effort'
+	label	'emxProgramCentral.Common.EditDetails'
+	href	'${SUITE_DIR}/emxProgramCentralEffortEdit.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'450'
+	setting	'Window Width'		'750'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'single'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCEffortEditDetails'
+	property	'version'	value	'R216'
+;
+modify menu PMCEffortToolbarActions add command PMCEffortEditDetails order command PMCEffortEditDetails 5;
+#channel ==>PMCEffortToolbarActions
+add property command_PMCEffortEditDetails on program eServiceSchemaVariableMapping.tcl to command 'PMCEffortEditDetails';

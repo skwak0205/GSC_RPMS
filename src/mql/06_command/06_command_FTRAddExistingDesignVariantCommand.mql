@@ -1,0 +1,25 @@
+del command 'FTRAddExistingDesignVariantCommand';
+add command 'FTRAddExistingDesignVariantCommand'
+	description	''
+	label	'emxProduct.ActionLink.AddExistingDesignVariantActionLink'
+	href	'${SUITE_DIR}/DesignVariantPreProcess.jsp?mode=searchDesignVariant'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isValidContextForDV'
+	setting	'Access Program'		'LogicalFeature'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionAddDesignVariant.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingDesignVariantCommand'
+	property	'version'	value	'R418'
+;
+modify menu FTRContextGBOMStructureToolbarActions add command FTRAddExistingDesignVariantCommand order command FTRAddExistingDesignVariantCommand 4;
+#channel ==>FTRContextGBOMStructureToolbarActions
+add property command_FTRAddExistingDesignVariantCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingDesignVariantCommand';

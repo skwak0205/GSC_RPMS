@@ -1,0 +1,16 @@
+del menu 'RMTSpecStructureDisplay';
+add menu 'RMTSpecStructureDisplay'
+	description	''
+	label	'emxRequirements.Menu.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	command	'RMTSpecStructureBrowser'
+	command	'RMTSpecRichTextEditor'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'RequirementsManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RMTSpecStructureDisplay'
+	property 'version'	value	'V6R2011x'
+;
+add property menu_RMTSpecStructureDisplay on program eServiceSchemaVariableMapping.tcl to menu 'RMTSpecStructureDisplay';

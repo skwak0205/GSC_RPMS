@@ -1,0 +1,17 @@
+del command 'PMCProjectGovernedItems';
+add command 'PMCProjectGovernedItems'
+	description	'Lists the Governed Items of the Project'
+	label	'emxProgramCentral.Common.GovernedItems'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProjectReport:getProjectSpaceGovernedItemsList&table=PMCProjectGovernedItemsSummary&toolbar=PMCGovernedItemsToolbar&freezePane=Name&header=emxProgramCentral.GovernedItems.GovernedItemsPageHeading&selection=multiple&PrinterFriendly=true&Export=true&HelpMarker=emxhelpgoverneditems'
+	alt	'emxProgramCentral.Common.GovernedItems'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectGovernedItems'
+	property	'version'	value	'R420.HF3'
+;
+#channel ==>PMCObjectives
+add property command_PMCProjectGovernedItems on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectGovernedItems';

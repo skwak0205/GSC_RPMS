@@ -1,0 +1,20 @@
+del command 'RMTRevisions';
+add command 'RMTRevisions'
+	description	'lists the Document Revisions'
+	label	'emxComponents.RouteTemplate.Revisions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxRMTCommon:getRevisions&table=APPDocumentRevisions&toolbar=RMTDocumentRevisionsToolBar&header=emxComponents.Common.RevisionsPageHeading&subHeader=emxComponents.Menu.SubHeaderDocuments&HelpMarker=emxhelpdocumentfilerevisions'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTRevisions'
+	property	'version'	value	'R422'
+;
+#channel ==>RMTSpecificationsChangeControl
+add property command_RMTRevisions on program eServiceSchemaVariableMapping.tcl to command 'RMTRevisions';

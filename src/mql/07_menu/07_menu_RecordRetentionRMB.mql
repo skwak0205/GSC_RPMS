@@ -1,0 +1,21 @@
+del menu 'RecordRetentionRMB';
+add menu 'RecordRetentionRMB'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	command	'RecordRetentionProperties'
+	command	'AEFLifecycle'
+	menu	'AEFClipboardCollectionsRMB'
+	command	'AEFSeparator'
+	command	'APPQuickFileList'
+	command	'APPRelatedFiles'
+	command	'APPAllFileDetails'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'RecordRetentionRMB'
+	property 'version'	value	'R417'
+;
+add property menu_RecordRetentionRMB on program eServiceSchemaVariableMapping.tcl to menu 'RecordRetentionRMB';

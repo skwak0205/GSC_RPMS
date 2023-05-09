@@ -1,0 +1,18 @@
+del command 'PMCProjectTemplateMyDesk';
+add command 'PMCProjectTemplateMyDesk'
+	description	'ProjectTemplate Command Object'
+	label	'emxFramework.MenuItem.ProjectTemplates'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxProjectTemplateBase:getActiveProjectTemplates,emxProjectTemplateBase:getInActiveProjectTemplates,emxProjectTemplateBase:getAllProjectTemplates&programLabel=emxProgramCentral.Common.ActiveProjectTemplates,emxProgramCentral.Common.InactiveProjectTemplates,emxProgramCentral.Common.All&table=PMCProjectTemplateSummary&selection=multiple&header=emxProgramCentral.ProgramTop.ProjectTemplates&toolbar=PMCMyDeskProjectTemplateSummaryToolBar&HelpMarker=emxhelpprojecttemplatesummary&Export=false&StringResourceFileId=emxProgramCentralStringResource'
+	alt	'emxFramework.MenuItem.ProjectTemplates'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectTemplateMyDesk'
+	property	'version'	value	'R423.HF1'
+;
+modify menu PMCMyDesk add command PMCProjectTemplateMyDesk order command PMCProjectTemplateMyDesk 8;
+#channel ==>PMCMyDesk
+add property command_PMCProjectTemplateMyDesk on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectTemplateMyDesk';

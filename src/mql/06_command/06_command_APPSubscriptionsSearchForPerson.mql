@@ -1,0 +1,20 @@
+del command 'APPSubscriptionsSearchForPerson';
+add command 'APPSubscriptionsSearchForPerson'
+	description	''
+	label	'emxComponents.Common.FindPerson'
+	href	'${COMPONENT_DIR}/emxComponentsPersonSearch.jsp?fromSubscriptions=true'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearchForPerson.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSubscriptionsSearchForPerson'
+	property	'version'	value	'R422'
+;
+modify menu APPSubscriptionsSearchPersonToolbar add command APPSubscriptionsSearchForPerson order command APPSubscriptionsSearchForPerson 0;
+#channel ==>APPSubscriptionsSearchPersonToolbar
+add property command_APPSubscriptionsSearchForPerson on program eServiceSchemaVariableMapping.tcl to command 'APPSubscriptionsSearchForPerson';

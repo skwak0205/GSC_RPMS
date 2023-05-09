@@ -1,0 +1,24 @@
+del command 'FTRProductGBOMCommand';
+add command 'FTRProductGBOMCommand'
+	description	''
+	label	'emxProduct.Tree.GBOM'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=FTRGBOMStructureTable&program=emxFTRPart:getCompleteGBOMStructure&selection=multiple&header=emxProduct.Heading.Parts&toolbar=FTRGBOMStructureToolbarActions&type=type_Part&editLink=true&HelpMarker=emxhelpgbom&appendURL=VariantEffectivity|Effectivity&effectivityFilterMode=150'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<expression[LogicalFeatureEnabled]=="true">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'isMobileModeDisabled'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Image'		'${COMMON_DIR}/iconSmallPart.gif'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRProductGBOMCommand'
+	property	'version'	value	'R423'
+;
+modify menu type_Products add command FTRProductGBOMCommand order command FTRProductGBOMCommand 7;
+#channel ==>type_Products
+add property command_FTRProductGBOMCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRProductGBOMCommand';

@@ -1,0 +1,27 @@
+del command 'CFFExpressionFilterInput';
+add command 'CFFExpressionFilterInput'
+	description	'Command to show the effectivity Input field followed by the chooser in the Effectivity Toolbar'
+	label	'Effectivity.Label.FilterExpression'
+	href	'${SUITE_DIR}/EffectivityDefinitionDialog.jsp?modetype=edit&invockedFrom=fromEffToolbar&showAnd=false'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Input Type'		'textbox'
+	setting	'Maximum Length'		'20'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Effectivity'
+	setting	'Mode'		'view'
+	setting	'format'		'chooser'
+	setting	'Popup Modal'		'true'
+	setting	'Width'		'300'
+	setting	'Show Clear Button'		'true'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'EffectivityFramework'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFExpressionFilterInput'
+	property	'version'	value	'R215'
+;
+modify menu CFFEffectivityFrameworkToolbar add command CFFExpressionFilterInput order command CFFExpressionFilterInput 1;
+#channel ==>CFFEffectivityFrameworkToolbar
+add property command_CFFExpressionFilterInput on program eServiceSchemaVariableMapping.tcl to command 'CFFExpressionFilterInput';

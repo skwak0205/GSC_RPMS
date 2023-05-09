@@ -1,0 +1,18 @@
+del command 'APPSearchForBusinessUnitsInPotentialSupplier';
+add command 'APPSearchForBusinessUnitsInPotentialSupplier'
+	description	'Command object for Search For Business Units for Potential Suppliers'
+	label	'emxComponents.Command.SearchForBUs'
+	href	'${COMPONENT_DIR}/emxComponentsPotentialSupplierSearchDialog.jsp?typename=BU'
+	alt	'emxComponents.Command.SearchForBUs'
+	setting	'Target Location'		'searchContent'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSearchForBusinessUnit.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPSearchForBusinessUnitsInPotentialSupplier'
+	property	'version'	value	'R417'
+;
+modify menu APPPotentialSupplierSearchActionsToolBar add command APPSearchForBusinessUnitsInPotentialSupplier order command APPSearchForBusinessUnitsInPotentialSupplier 0;
+#channel ==>APPPotentialSupplierSearchActionsToolBar
+add property command_APPSearchForBusinessUnitsInPotentialSupplier on program eServiceSchemaVariableMapping.tcl to command 'APPSearchForBusinessUnitsInPotentialSupplier';

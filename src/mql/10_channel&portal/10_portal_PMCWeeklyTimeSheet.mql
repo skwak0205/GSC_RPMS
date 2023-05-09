@@ -1,0 +1,15 @@
+del portal 'PMCWeeklyTimeSheet';
+add portal 'PMCWeeklyTimeSheet'
+	description	'My Weekly TimeSheet'
+	label	'emxProgramCentral.WeeklyTimesheet.WeeklyTimeSheet'
+	href	''
+	channel 	PMCWeeklyTimeSheet
+	channel 	PMCWeeklyTimeSheetTaskDetails
+	setting	'Registered Suite'		'ProgramCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWeeklyTimeSheet'
+	property	'version'	value	'R215'
+;
+add property portal_PMCWeeklyTimeSheet on program eServiceSchemaVariableMapping.tcl to portal 'PMCWeeklyTimeSheet';

@@ -1,0 +1,15 @@
+del menu 'FTRGlobalRulesTreeCategory';
+add menu 'FTRGlobalRulesTreeCategory'
+	description	''
+	label	'emxProduct.Tree.GlobalRules'
+	href	'${COMMON_DIR}/emxTable.jsp?table=FTRConfigurationRuleList&program=emxConfigurableRules:getAllRules&menu=FTRGlobalRulesTreeCategory&header=emxProduct.Heading.GlobalRules&Export=false&pagination=0&HelpMarker=emxhelpconfigurableruleslist'
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRCompatibilityRulesTreeCategory'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRGlobalRulesTreeCategory'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_FTRGlobalRulesTreeCategory on program eServiceSchemaVariableMapping.tcl to menu 'FTRGlobalRulesTreeCategory';

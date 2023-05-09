@@ -1,0 +1,98 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통코드 detail table
+################################################################################################
+
+#del table 'gscCommonCodeDetail' system;
+add table 'gscCommonCodeDetail' system
+    column
+        name 'name'
+        label 'emxComponents.Basic.Name'
+        label 'emxComponents.Basic.Name'
+        businessobject  '$<name>'
+        setting 'Registered Suite' 'Components'
+        setting 'Admin Type'        'name'
+        setting 'Field Type'        'basic'
+        setting 'Export'            'true'
+        setting 'Editable'          'true'
+    column
+        name 'Title'
+        label 'emxComponents.Label.Title'
+        label 'emxComponents.Label.Title'
+        businessobject  '$<attribute[attribute_Title]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_Title'
+        setting 'Field Type'        'attribute'
+        setting 'Width'             '200'
+        setting 'Export'            'true'
+        setting 'Editable'          'true'
+    column
+        name 'gscTitleKO'
+        label 'emxComponents.Label.gscTitleKO'
+        label 'emxComponents.Label.gscTitleKO'
+        businessobject  '$<attribute[attribute_gscTitleKO]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_gscTitleKO'
+        setting 'Field Type'        'attribute'
+        setting 'Width'             '200'
+        setting 'Export'            'true'
+        setting 'Editable'          'true'
+    column
+        name 'SequenceOrder'
+        label 'emxComponents.Label.SequenceOrder'
+        label 'emxComponents.Label.SequenceOrder'
+        businessobject  '$<attribute[attribute_SequenceOrder]>'
+        setting 'Registered Suite'  'Components'
+        setting 'Admin Type'        'attribute_SequenceOrder'
+        setting 'Field Type'        'attribute'
+        setting 'Width'             '200'
+        setting 'Export'            'true'
+        setting 'format'            'numeric'
+        setting 'Number Format'     'true'
+        setting 'Decimal Format'    '0'
+        setting 'Editable'          'true'
+    column
+        name "state"
+        label "emxComponents.Common.State"
+        businessobject  "current"
+        sorttype "none"
+        setting "Auto Filter"       "True"
+        setting "Admin Type"        "State"
+        setting "Registered Suite"  "Components"
+        setting "Style Function"    "getStyleForState"
+        setting "Style Program"     "gscCommonCode"
+        setting "Width"             "70"
+        setting 'Editable'          'true'
+        setting "Input Type"        "combobox"
+		setting "Range Program"     "gscCommonCode"
+		setting "Range Function"    "getStates"
+		setting "Update Program"    "gscCommonCode"
+		setting "Update Function"   "updateStatus"
+    column
+        label 'emxComponents.Common.Description'
+        businessobject 'description'
+        name 'Description'
+        sorttype 'none'
+        setting "Admin Type"        "Description"
+        setting 'Auto Filter'       'false'
+        setting 'Field Type'        'basic'
+        setting 'Input Type'        'textarea'
+        setting 'Registered Suite'  'Components'
+        setting 'Editable'          'true'
+    column
+        name "Type"
+        label "emxDocumentCentral.Common.Type"
+        businessobject  "type"
+        sorttype "none"
+        setting "Auto Filter" "True"
+        setting "Admin Type" "Type"
+        setting "Registered Suite" "LibraryCentral"
+        setting "Width" "70"
+property "installer"        value "GSC"
+property "application"      value "Components"
+property "installed date"   value "2023.01.10"
+property "original name"    value "gscCommonCodeDetail"
+property "version"          value "R421"
+;
+add property table_gscCommonCodeDetail on program 'eServiceSchemaVariableMapping.tcl' to table gscCommonCodeDetail system;

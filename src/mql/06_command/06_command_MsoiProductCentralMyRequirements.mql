@@ -1,0 +1,16 @@
+del command 'MsoiProductCentralMyRequirements';
+add command 'MsoiProductCentralMyRequirements'
+	description	'UI3 based my Requirements Command object specific to MS Office Integration'
+	label	'emxProduct.Menu.Requirements'
+	href	'${COMMON_DIR}/emxTable.jsp?program=MSFProductCentralUtil:getCurrentUserRequirements&table=RMTMyDeskRequirementList'
+	alt	'emxProduct.Menu.Requirements'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'MsoiProductCentralMyRequirements'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>IEF ENOVIA Root
+add property command_MsoiProductCentralMyRequirements on program eServiceSchemaVariableMapping.tcl to command 'MsoiProductCentralMyRequirements';

@@ -1,0 +1,26 @@
+del command 'CFPRemoveModelTemplate';
+add command 'CFPRemoveModelTemplate'
+	description	''
+	label	'DMCPlanning.ActionLink.RemoveModelTemplate'
+	href	'${SUITE_DIR}/RemoveUtil.jsp?mode=Remove&context=ModelTemplate'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'DMCPlanning'
+	setting	'Licensed Product'		'ENO_CFP_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAuthoringModeEnabled'
+	setting	'Access Program'		'CFPModelBase'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	setting	'Confirm Message'		'DMCPlanning.Alert.Remove'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'DMCPlanning'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFPRemoveModelTemplate'
+	property	'version'	value	'R418'
+;
+modify menu CFPMasterFeatureToolbarActions add command CFPRemoveModelTemplate order command CFPRemoveModelTemplate 3;
+#channel ==>CFPMasterFeatureToolbarActions
+add property command_CFPRemoveModelTemplate on program eServiceSchemaVariableMapping.tcl to command 'CFPRemoveModelTemplate';

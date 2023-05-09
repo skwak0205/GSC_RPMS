@@ -1,0 +1,22 @@
+del command 'AddExistingIssueAssigneeLink';
+add command 'AddExistingIssueAssigneeLink'
+	description	'Issue AddExisting Command Object'
+	label	'emxComponents.Command.DistributionListAddPersons'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Person:CURRENT=policy_Person.state_Active&mode=IssueaddAsignee&submitLabel=emxFramework.GlobalSearch.Done&table=IssueSearchPersonsTable&form=BPSUserSearchForm&selection=multiple&submitURL=../components/emxCommonConnectObjects.jsp&showInitialResults=true&srcDestRelName=relationship_AssignedIssue&excludeOIDprogram=emxCommonIssue:excludeIssueRelatedObjects&showInitialResults=true&isTo=false'
+	alt	'emxComponents.Command.DistributionListAddPersons'
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/IconAddMember.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AddExistingIssueAssigneeLink'
+	property	'version'	value	'R422.HF1'
+;
+modify menu IssueAssigneeListToolBarActions add command AddExistingIssueAssigneeLink order command AddExistingIssueAssigneeLink 1;
+#channel ==>IssueAssigneeListToolBarActions
+add property command_AddExistingIssueAssigneeLink on program eServiceSchemaVariableMapping.tcl to command 'AddExistingIssueAssigneeLink';

@@ -1,0 +1,22 @@
+del menu 'PMCCreateResourcePlan';
+add menu 'PMCCreateResourcePlan'
+	description	''
+	label	''
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=createRequest'
+	alt	'emxProgramCentral.Common.Create'
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	setting	'Width'		'100'
+	command	'PMCCreateNewResourceRequest'
+	command	'PMCCreateResourcePlanFromWBS'
+	command	'PMCCloneResourcePlan'
+	command	'PMCCreateNewResourceRequestByPhase'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCCreateResourcePlan'
+	property 'version'	value	'R215'
+;
+add property menu_PMCCreateResourcePlan on program eServiceSchemaVariableMapping.tcl to menu 'PMCCreateResourcePlan';

@@ -1,0 +1,21 @@
+del form 'BPSRouteTemplateSearch';
+add form 'BPSRouteTemplateSearch' web
+field #1
+	name	'Type'
+	label	'emxFramework.Basic.Type'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+field #2
+	name	'Name'
+	label	'emxFramework.Basic.Name'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'BPSRouteTemplateSearch'
+	property	'version'	value	'R417'
+;
+add property form_BPSRouteTemplateSearch on program eServiceSchemaVariableMapping.tcl to form 'BPSRouteTemplateSearch';

@@ -1,0 +1,15 @@
+del menu 'LBCObjectClassificationToolBar';
+add menu 'LBCObjectClassificationToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	menu	'LBCObjectClassificationActionsToolBar'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'LibraryCentral'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'LBCObjectClassificationToolBar'
+	property 'version'	value	'R211'
+;
+add property menu_LBCObjectClassificationToolBar on program eServiceSchemaVariableMapping.tcl to menu 'LBCObjectClassificationToolBar';

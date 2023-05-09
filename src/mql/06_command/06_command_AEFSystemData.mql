@@ -1,0 +1,19 @@
+del command 'AEFSystemData';
+add command 'AEFSystemData'
+	description	'Display Configuration details'
+	label	'emxFramework.AdminTool.SystemData'
+	href	'${COMMON_DIR}/emxSystemData.jsp'
+	alt	'emxFramework.AdminTool.SystemData'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Framework'
+	user	'Administration Manager'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFSystemData'
+	property	'version'	value	'R216'
+;
+modify menu AdminTools add command AEFSystemData order command AEFSystemData 1;
+#channel ==>AdminTools
+add property command_AEFSystemData on program eServiceSchemaVariableMapping.tcl to command 'AEFSystemData';

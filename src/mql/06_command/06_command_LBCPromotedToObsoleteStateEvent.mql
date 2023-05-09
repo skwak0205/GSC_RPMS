@@ -1,0 +1,22 @@
+del command 'LBCPromotedToObsoleteStateEvent';
+add command 'LBCPromotedToObsoleteStateEvent'
+	description	'Event holder for promotion to Obsolete state'
+	label	'emxLibraryCentral.Event.Promoted_To_Obsolete_State'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Event Type'		'Promoted To Obsolete State'
+	setting	'History Bit'		'promote to Obsolete'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCPromotedToObsoleteStateEvent'
+	property	'version'	value	'R212'
+;
+modify menu LBCDocumentLibrarySubscriptionEvents add command LBCPromotedToObsoleteStateEvent order command LBCPromotedToObsoleteStateEvent 9;
+modify menu LBCBookshelfSubscriptionEvents add command LBCPromotedToObsoleteStateEvent order command LBCPromotedToObsoleteStateEvent 10;
+modify menu LBCBookSubscriptionEvents add command LBCPromotedToObsoleteStateEvent order command LBCPromotedToObsoleteStateEvent 10;
+modify menu LBCLibrariesSubscriptionEvents add command LBCPromotedToObsoleteStateEvent order command LBCPromotedToObsoleteStateEvent 6;
+modify menu LBCDocumentFamilySubscriptionEvents add command LBCPromotedToObsoleteStateEvent order command LBCPromotedToObsoleteStateEvent 8;
+#channel ==>LBCDocumentLibrarySubscriptionEventsLBCBookshelfSubscriptionEventsLBCBookSubscriptionEventsLBCLibrariesSubscriptionEventsLBCDocumentFamilySubscriptionEvents
+add property command_LBCPromotedToObsoleteStateEvent on program eServiceSchemaVariableMapping.tcl to command 'LBCPromotedToObsoleteStateEvent';

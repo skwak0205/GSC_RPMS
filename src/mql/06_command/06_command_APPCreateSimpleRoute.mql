@@ -1,0 +1,33 @@
+del command 'APPCreateSimpleRoute';
+add command 'APPCreateSimpleRoute'
+	description	'Command Object for Create Simple Route'
+	label	'emxComponents.Common.CreateSimpleRoute'
+	href	'${COMPONENT_DIR}/emxRouteCreateSimpleDialogFS.jsp?init1=true'
+	alt	'emxComponents.Common.CreateSimpleRoute'
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'!(policy == "Inbox Task" && current == Complete)'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checkCreateSimpleRouteAccess'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedContributor'
+	user	'3DSRestrictedOwner'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	user	'VPLMReleaseManager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateSimpleRoute'
+	property	'version'	value	'R423.HF3'
+;
+modify menu APPRouteSummaryActionsToolBar add command APPCreateSimpleRoute order command APPCreateSimpleRoute 3;
+modify menu APPRoutesTreeCategoryActionsToolBar add command APPCreateSimpleRoute order command APPCreateSimpleRoute 2;
+modify menu AppActionRoute add command APPCreateSimpleRoute order command APPCreateSimpleRoute 0;
+modify menu APPRouteSummaryTaskActionsToolBar add command APPCreateSimpleRoute order command APPCreateSimpleRoute 3;
+modify menu PMCRouteSummaryActionsToolBar add command APPCreateSimpleRoute order command APPCreateSimpleRoute 3;
+#channel ==>APPRouteSummaryActionsToolBarAPPRoutesTreeCategoryActionsToolBarAppActionRouteAPPRouteSummaryTaskActionsToolBarPMCRouteSummaryActionsToolBar
+add property command_APPCreateSimpleRoute on program eServiceSchemaVariableMapping.tcl to command 'APPCreateSimpleRoute';

@@ -1,0 +1,20 @@
+del command 'APPCompanies';
+add command 'APPCompanies'
+	description	'Command Object for Company Summary'
+	label	'emxComponents.Command.Companies'
+	href	'${COMMON_DIR}/emxCompaniesIntermediate.jsp?HelpMarker=emxhelpcompanylist'
+	alt	'emxComponents.Command.Companies'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'Organization Manager'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompanies'
+	property	'version'	value	'R424'
+;
+#channel ==>My Enovia
+add property command_APPCompanies on program eServiceSchemaVariableMapping.tcl to command 'APPCompanies';

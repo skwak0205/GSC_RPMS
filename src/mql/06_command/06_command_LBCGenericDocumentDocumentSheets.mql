@@ -1,0 +1,19 @@
+del command 'LBCGenericDocumentDocumentSheets';
+add command 'LBCGenericDocumentDocumentSheets'
+	description	'Generic Document Document Sheets Tree Category'
+	label	'emxDocumentCentral.TreeCategory.DocumentSheets'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?freezePane=Name&program=emxCommonDocumentUI:getDocuments&table=LBCDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=DCDocumentSheetToolBar&header=emxDocumentCentral.Common.Sheets&HelpMarker=emxhelpdocumentsheets&defaultType=type_DocumentSheet&parentRelName=relationship_DocumentSheets&type=type_DocumentSheet'
+	alt	'emxDocumentCentral.TreeCategory.DocumentSheets'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'($<attribute[attribute_IsVersionObject].value> != True)'
+	setting	'Image'		'${COMMON_DIR}/iconSmallObjectFolder.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCGenericDocumentDocumentSheets'
+	property	'version'	value	'R213'
+;
+modify menu type_GenericDocument add command LBCGenericDocumentDocumentSheets order command LBCGenericDocumentDocumentSheets 4;
+#channel ==>type_GenericDocument
+add property command_LBCGenericDocumentDocumentSheets on program eServiceSchemaVariableMapping.tcl to command 'LBCGenericDocumentDocumentSheets';

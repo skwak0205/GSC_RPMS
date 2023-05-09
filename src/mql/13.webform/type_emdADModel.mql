@@ -1,0 +1,163 @@
+################################################################################################
+# Created Date : 2020.07.01
+# Create by Nackwon.Do
+# Description : AD Model Properties
+################################################################################################
+
+del form 'type_emdADModel';
+
+add form 'type_emdADModel' web
+    field
+        name  'Type'
+        label 'emxEngineeringCentral.Common.Type'
+        businessobject '$<type>'
+        alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Admin Type"			"Type"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+	field
+		name  'Name'
+		label 'emxEngineeringCentral.Common.Name'
+		businessobject '$<name>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+	field
+		name  'Title'
+		label 'emxEngineeringCentral.Common.Title'
+		businessobject '$<attribute[attribute_V_Name]>'
+		alt ''
+        range '' 
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"attribute"
+    field
+		name  'revision'
+		label 'emxEngineeringCentral.Common.Revision'
+		businessobject '$<revision>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+	field
+		name  'emdProjectType'
+		label 'emxEngineeringCentral.Label.ProjectType'
+		businessobject '$<attribute[attribute_emdProjectType]>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"attribute"
+    field
+        name  'emdPhaseCode'
+        label 'emxEngineeringCentral.Label.PhaseCode'
+        businessobject '$<attribute[attribute_emdPhaseCode]>'
+        alt ''
+          range ''
+          update ''
+          setting "Registered Suite"  "EngineeringCentral"
+          setting "Editable"			"false"
+          setting "Field Type" 		"attribute"
+	field
+		name  'emdSeries'
+		label 'emxEngineeringCentral.Label.Series'
+		businessobject '$<attribute[attribute_emdSeries]>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"true"
+        setting "Field Type" 		"attribute"
+    field
+		name  'emdShipNo'
+		label 'emxEngineeringCentral.Label.ShipNo'
+		businessobject '$<attribute[attribute_emdShipNo]>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"true"
+        setting "Field Type" 		"attribute"
+	field
+		name  'Description'
+		label 'emxEngineeringCentral.Common.Description'
+		businessobject '$<description>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+	field
+		name  'State'
+		label 'emxEngineeringCentral.Common.State'
+		businessobject '$<current>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+	field
+		name  'Owner'
+		label 'emxEngineeringCentral.Common.Owner'
+		businessobject '$<owner>'
+		alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "EngineeringCentral"
+        setting "Editable"			"false"
+        setting "Field Type" 		"basic"
+        setting "Admin Type" 		"owner"
+        setting "format"            "user"
+    field
+        name  'emdClassification'
+        label 'emdManufacturing.Label.emdClassification'
+        businessobject '$<attribute[attribute_emdClassification]>'
+        alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "emdManufacturing"
+        setting "Editable"			"false"
+        setting "Admin Type"        "attribute_emdClassification"
+        setting "Field Type" 		"attribute"
+    field
+        name 'ADEngineGroup'
+        label 'emdManufacturing.Command.emdADEngineGroup'
+        businessobject  '$<from[relationship_emdADModelToADEngineGroup].to.name>'
+        alt ''
+        range ''
+        update ''
+        href '${COMMON_DIR}/emxTree.jsp?emxSuiteDirectory=LibraryCentral'
+        setting 'Registered Suite' 'emdManufacturing'
+        setting 'Editable' 'false'
+        setting 'Alternate OID expression' '$<from[relationship_emdADModelToADEngineGroup].to.id>'
+    field
+        name  'emdHullNo'
+        label 'emdManufacturing.Label.emdHullNo'
+        businessobject '$<attribute[attribute_emdHullNo]>'
+        alt ''
+        range ''
+        update ''
+        setting "Registered Suite"  "emdManufacturing"
+        setting "Editable"			"false"
+        setting "Admin Type"        "attribute_emdHullNo"
+        setting "Field Type" 		"attribute"
+property "installer" value "HHI"
+property "application" value "Framework"
+property "installed date" value "2020-07-01"
+property "original name" value "type_emdADModel"
+property "version" value "V6R2019"
+;
+
+add property form_type_emdADModel on program eServiceSchemaVariableMapping.tcl to form 'type_emdADModel';

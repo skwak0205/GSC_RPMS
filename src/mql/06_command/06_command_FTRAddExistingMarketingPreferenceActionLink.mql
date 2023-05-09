@@ -1,0 +1,26 @@
+del command 'FTRAddExistingMarketingPreferenceActionLink';
+add command 'FTRAddExistingMarketingPreferenceActionLink'
+	description	'Add Existing Marketing Preference Rule'
+	label	'emxProduct.ActionLink.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_MarketingPreference&excludeOIDprogram=emxFeatureSearchBase:excludeConnected&table=MarketingPreferenceSearchTable&selection=multiple&submitAction=refreshCaller&hideHeader=true&HelpMarker=emxhelpfullsearch&submitURL=../configuration/SearchUtil.jsp?mode=AddExisting&relName=relationship_MarketingPreference&from=false'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'630'
+	setting	'Window Width'		'850'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'createNewLinkDisplay'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'VPLMProjectLeader'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRAddExistingMarketingPreferenceActionLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRMarketingPreferenceListTopActionBar add command FTRAddExistingMarketingPreferenceActionLink order command FTRAddExistingMarketingPreferenceActionLink 2;
+#channel ==>FTRMarketingPreferenceListTopActionBar
+add property command_FTRAddExistingMarketingPreferenceActionLink on program eServiceSchemaVariableMapping.tcl to command 'FTRAddExistingMarketingPreferenceActionLink';

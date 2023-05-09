@@ -1,0 +1,20 @@
+del menu 'PMCAssessSummaryToolBar';
+add menu 'PMCAssessSummaryToolBar'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCAssessSummaryCreateNew'
+	command	'AEFSeparator'
+	command	'PMCCopyPreviousAssessment'
+	command	'PMCCopySelectedAssessment'
+	command	'AEFSeparator2'
+	command	'PMCAssessSummaryDelete'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCAssessSummaryToolBar'
+	property 'version'	value	'R423.HF6'
+;
+add property menu_PMCAssessSummaryToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCAssessSummaryToolBar';

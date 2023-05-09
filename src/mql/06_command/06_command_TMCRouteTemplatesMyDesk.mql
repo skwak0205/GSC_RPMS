@@ -1,0 +1,19 @@
+del command 'TMCRouteTemplatesMyDesk';
+add command 'TMCRouteTemplatesMyDesk'
+	description	'RouteTemplates Command Object'
+	label	'emxFramework.MenuItem.RouteTemplates'
+	href	'${SUITE_DIR}/emxTeamMyRouteTemplateSummaryFS.jsp'
+	alt	'emxFramework.MenuItem.RouteTemplates'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Exchange User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCRouteTemplatesMyDesk'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCRouteTemplatesMyDesk on program eServiceSchemaVariableMapping.tcl to command 'TMCRouteTemplatesMyDesk';

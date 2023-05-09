@@ -1,0 +1,21 @@
+del command 'FTRResourceRulesCommand';
+add command 'FTRResourceRulesCommand'
+	description	''
+	label	'emxProduct.Tree.Resources'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=FTRFixedResourceRuleListTable&autoNameChecked=true&header=emxProduct.Heading.FixedResource&selection=multiple&program=emxFixedResource:getAllFixedResourcesObjects&toolbar=FTRFixedResourceToolBarMenu&sortColumnName=Name&HelpMarker=emxhelpresourceruleslist&editLink=true'
+	alt	''
+	setting	'image'		'${COMMON_DIR}/images/iconSmallFixedResource.gif'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'($<type.kindof!="type_LOGICALSTRUCTURES">)&&(!$<type=="type_ProductVariant">)'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Access Function'		'showResourceRulesUX'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Cloud'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRResourceRulesCommand'
+	property	'version'	value	'R421'
+;
+#channel ==>FTRConfigurationRulesChannel
+add property command_FTRResourceRulesCommand on program eServiceSchemaVariableMapping.tcl to command 'FTRResourceRulesCommand';

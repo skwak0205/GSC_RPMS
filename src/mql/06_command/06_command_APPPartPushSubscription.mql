@@ -1,0 +1,17 @@
+del command 'APPPartPushSubscription';
+add command 'APPPartPushSubscription'
+	description	'Command to initiate Push Subscriptions'
+	label	'emxComponents.Button.PushSubscription'
+	href	'${SUITE_DIR}/emxPushSubscriptionDialog.jsp?HelpMarker=emxhelpsubscriptionspush'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionSubscribe.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartPushSubscription'
+	property	'version'	value	'R417'
+;
+modify menu APPPartDetailsActionsToolBar add command APPPartPushSubscription order command APPPartPushSubscription 0;
+#channel ==>APPPartDetailsActionsToolBar
+add property command_APPPartPushSubscription on program eServiceSchemaVariableMapping.tcl to command 'APPPartPushSubscription';

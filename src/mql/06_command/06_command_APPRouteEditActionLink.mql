@@ -1,0 +1,24 @@
+del command 'APPRouteEditActionLink';
+add command 'APPRouteEditActionLink'
+	description	'Command to Edit Route details'
+	label	'emxComponents.Command.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Route&mode=edit&formHeader=emxComponents.RouteDetailsDialog.Heading&HelpMarker=emxhelpeditroutedetails&Export=false'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'checksToEditRoute'
+	setting	'Access Program'		'emxRoute'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteEditActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPRoutePropertiesActionsToolBar add command APPRouteEditActionLink order command APPRouteEditActionLink 1;
+#channel ==>APPRoutePropertiesActionsToolBar
+add property command_APPRouteEditActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRouteEditActionLink';

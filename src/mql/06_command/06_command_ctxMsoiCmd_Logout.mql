@@ -1,0 +1,17 @@
+del command 'ctxMsoiCmd_Logout';
+add command 'ctxMsoiCmd_Logout'
+	description	'ctxMsoiCmd_Logout'
+	label	'emxMSF.Command.ctxMsoiCmd_Logout'
+	href	''
+	alt	'ctxMsoiCmd_Logout'
+	setting	'IsDefault'		'false'
+	setting	'HasSubCommands'		'false'
+	setting	'Enabled'		'true'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:40:28 +0900 2022'
+	property	'original name'	value	'ctxMsoiCmd_Logout'
+	property	'version'	value	'V6R2022x'
+;
+#channel ==>
+add property command_ctxMsoiCmd_Logout on program eServiceSchemaVariableMapping.tcl to command 'ctxMsoiCmd_Logout';

@@ -1,0 +1,17 @@
+del menu 'APPCollaborationRequestsSummaryActionsToolBar';
+add menu 'APPCollaborationRequestsSummaryActionsToolBar'
+	description	''
+	label	'Components.Toolbar.Actions'
+	href	''
+	alt	'Components.Toolbar.Actions'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPCollaborationRequestsAccept'
+	command	'APPCollaborationRequestsReject'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPCollaborationRequestsSummaryActionsToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPCollaborationRequestsSummaryActionsToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPCollaborationRequestsSummaryActionsToolBar';

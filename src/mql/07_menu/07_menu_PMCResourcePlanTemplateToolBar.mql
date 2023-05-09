@@ -1,0 +1,14 @@
+del menu 'PMCResourcePlanTemplateToolBar';
+add menu 'PMCResourcePlanTemplateToolBar'
+	description	''
+	label	'emxProgramCentral.Command.ResourcePlan.Actions'
+	href	''
+	alt	''
+	menu	'PMCResourcePlanTemplateToolBarActions'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourcePlanTemplateToolBar'
+	property 'version'	value	'R210'
+;
+add property menu_PMCResourcePlanTemplateToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourcePlanTemplateToolBar';

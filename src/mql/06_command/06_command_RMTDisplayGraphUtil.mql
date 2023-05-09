@@ -1,0 +1,20 @@
+del command 'RMTDisplayGraphUtil';
+add command 'RMTDisplayGraphUtil'
+	description	''
+	label	'emxRequirements.Label.DisplayGraph'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=graphDisplay&command=RMTDisplayGraph'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Access Function'		'isGraphAvailable'
+	setting	'Access Program'		'emxRMTCommon'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTDisplayGraphUtil'
+	property	'version'	value	'R422'
+;
+#channel ==>RMTSpecificationsTraceabilityRMTTraceability
+add property command_RMTDisplayGraphUtil on program eServiceSchemaVariableMapping.tcl to command 'RMTDisplayGraphUtil';

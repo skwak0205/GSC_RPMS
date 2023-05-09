@@ -1,0 +1,18 @@
+del command 'FTRVariabilityGroupRemovedEvent';
+add command 'FTRVariabilityGroupRemovedEvent'
+	description	'Variability Group Removed Event'
+	label	'PublishSubscribe.Event.VariabilityGroupRemoved'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	setting	'Event Type'		'Variability Group Removed In Product Context'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'History Bit'		'disconnect'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'original name'	value	'FTRVariabilityGroupRemovedEvent'
+	property	'version'	value	'R422'
+;
+modify menu PLCProductsEvents add command FTRVariabilityGroupRemovedEvent order command FTRVariabilityGroupRemovedEvent 13;
+#channel ==>PLCProductsEvents
+add property command_FTRVariabilityGroupRemovedEvent on program eServiceSchemaVariableMapping.tcl to command 'FTRVariabilityGroupRemovedEvent';

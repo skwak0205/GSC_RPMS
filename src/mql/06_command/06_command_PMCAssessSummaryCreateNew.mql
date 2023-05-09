@@ -1,0 +1,28 @@
+del command 'PMCAssessSummaryCreateNew';
+add command 'PMCAssessSummaryCreateNew'
+	description	'Command to Create New Assessment Link'
+	label	'emxProgramCentral.Assessment.CreateNewAssessment'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_Assessment&policy=policy_Assessment&form=PMCCreateAssessment&HelpMarker=emxhelpassessmentcreate&header=emxProgramCentral.Assessment.CreateAssessment&autoNameChecked=true&findMxLink=false&nameField=both&showApply=false&postProcessJPO=emxAssessmentBase:createAssessment&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'520'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isAssessmentCreateValid'
+	setting	'Access Program'		'emxAssessment'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAssessSummaryCreateNew'
+	property	'version'	value	'R423.HF6'
+;
+modify menu PMCAssessSummaryToolBar add command PMCAssessSummaryCreateNew order command PMCAssessSummaryCreateNew 1;
+modify menu PMCAssessSummaryToolBarActions add command PMCAssessSummaryCreateNew order command PMCAssessSummaryCreateNew 1;
+#channel ==>PMCAssessSummaryToolBarPMCAssessSummaryToolBarActions
+add property command_PMCAssessSummaryCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PMCAssessSummaryCreateNew';

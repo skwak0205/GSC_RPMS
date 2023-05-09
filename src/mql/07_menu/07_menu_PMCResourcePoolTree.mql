@@ -1,0 +1,20 @@
+del menu 'PMCResourcePoolTree';
+add menu 'PMCResourcePoolTree'
+	description	''
+	label	'${NAME}'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCResourcePoolForm'
+	alt	''
+	setting	'Tree Scope ID'		'resourcePoolId'
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCResourcePoolCategoryBusinessUnits'
+	command	'PMCResourcePoolCategoryDepartments'
+	command	'PMCResourcePoolCategoryResourceRequests'
+	command	'PMCResourcePoolCategoryPeople'
+	command	'PMCResourcePoolReport'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourcePoolTree'
+	property 'version'	value	'R417'
+;
+add property menu_PMCResourcePoolTree on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourcePoolTree';

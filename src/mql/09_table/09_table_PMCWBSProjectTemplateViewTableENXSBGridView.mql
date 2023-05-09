@@ -1,0 +1,22 @@
+del table 'PMCWBSProjectTemplateViewTableENXSBGridView' system;
+add table 'PMCWBSProjectTemplateViewTableENXSBGridView' system
+column #1
+	name	'DynamicColumn'
+	businessobject	'empty'
+	label	'Other'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Dynamic Column Function'		'getPMCWBSProjectTemplateViewTableENXSBGridViewTable'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Column Type'		'Dynamic'
+	setting	'Dynamic Column Program'		'emxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-30-2022'
+	property	'original name'	value	'PMCWBSProjectTemplateViewTableENXSBGridView'
+	property	'version'	value	'R424.HF4'
+;
+add property table_PMCWBSProjectTemplateViewTableENXSBGridView on program eServiceSchemaVariableMapping.tcl to table 'PMCWBSProjectTemplateViewTableENXSBGridView' system;

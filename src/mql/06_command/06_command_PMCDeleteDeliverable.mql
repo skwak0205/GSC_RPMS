@@ -1,0 +1,22 @@
+del command 'PMCDeleteDeliverable';
+add command 'PMCDeleteDeliverable'
+	description	'Delete Deliverable Intent Object'
+	label	'emxProgramCentral.Common.DeleteDeliverable'
+	href	'${SUITE_DIR}/emxProgramCentralUtil.jsp?mode=deleteDeliverable'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENODEPL_TP'
+	setting	'Submit'		'true'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDeleteDeliverable'
+	property	'version'	value	'R422'
+;
+modify menu PMCDeliverableActions add command PMCDeleteDeliverable order command PMCDeleteDeliverable 0;
+#channel ==>PMCDeliverableActions
+add property command_PMCDeleteDeliverable on program eServiceSchemaVariableMapping.tcl to command 'PMCDeleteDeliverable';

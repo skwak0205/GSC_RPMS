@@ -1,0 +1,16 @@
+del command 'APPRequestedDocuments';
+add command 'APPRequestedDocuments'
+	description	'Command object for Requested Documents.'
+	label	'emxComponents.Command.RequestedDocuments'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxCommonAccessRequest:getRequestedDocuments&table=APPAccessRequestDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=&header=emxComponents.Heading.RequestedDocuments&HelpMarker=emxhelpcontentlist'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRequestedDocuments'
+	property	'version'	value	'10-7'
+;
+modify menu type_AccessRequest add command APPRequestedDocuments order command APPRequestedDocuments 3;
+#channel ==>type_AccessRequest
+add property command_APPRequestedDocuments on program eServiceSchemaVariableMapping.tcl to command 'APPRequestedDocuments';

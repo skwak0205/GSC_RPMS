@@ -1,0 +1,10 @@
+del command 'PARParametersTreeCategory';
+add command 'PARParametersTreeCategory'
+	description	'Display parameters  to a certain object'
+	label	'emxParameter.Requirements.AllParameters'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxParameterConnect:getParameters&table=PARParameters&editLink=true&header=emxParameter.Associate.Header&direction=from&toolbar=PARParametersToolbar&selection=multiple&sortColumnName=RelationshipType&massPromoteDemote=true&postProcessJPO=emxParameterEdit:updateTableValues'
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+;
+#channel ==>RMTProperties
+add property command_PARParametersTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PARParametersTreeCategory';

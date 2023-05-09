@@ -1,0 +1,9 @@
+del menu 'type_MySpace';
+add menu 'type_MySpace'
+	description	''
+	label	'emxPlmOnline.label.MySpace'
+	href	'${COMMON_DIR}/emxPLMOnlineNewTree.jsp'
+	alt	'emxPlmOnline.label.MySpace'
+	setting	'Registered Suite'		'VPLMAdministration'
+;
+add property menu_type_MySpace on program eServiceSchemaVariableMapping.tcl to menu 'type_MySpace';

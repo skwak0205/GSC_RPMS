@@ -1,0 +1,20 @@
+del command 'APPRoutePushSubscriptionLink';
+add command 'APPRoutePushSubscriptionLink'
+	description	'Command for Push Subscription'
+	label	'emxComponents.Button.PushSubscription'
+	href	'${SUITE_DIR}/emxPushSubscriptionDialog.jsp'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'owner==context.user'
+	setting	'Popup Modal'		'true'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRoutePushSubscriptionLink'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_APPRoutePushSubscriptionLink on program eServiceSchemaVariableMapping.tcl to command 'APPRoutePushSubscriptionLink';

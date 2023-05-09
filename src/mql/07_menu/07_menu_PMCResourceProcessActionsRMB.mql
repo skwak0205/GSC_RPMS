@@ -1,0 +1,16 @@
+del menu 'PMCResourceProcessActionsRMB';
+add menu 'PMCResourceProcessActionsRMB'
+	description	''
+	label	'emxProgramCentral.ResourcePool.RequestRequest.ResourceActions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCResourceRequestAddResources'
+	command	'PMCResourcePoolAddResource'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourceProcessActionsRMB'
+	property 'version'	value	'R214'
+;
+add property menu_PMCResourceProcessActionsRMB on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourceProcessActionsRMB';

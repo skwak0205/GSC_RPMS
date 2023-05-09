@@ -1,0 +1,17 @@
+del command 'PMCResourcePlanTemplate';
+add command 'PMCResourcePlanTemplate'
+	description	''
+	label	'emxProgramCentral.Common.ResourcePlanTemplate'
+	href	'${SUITE_DIR}/emxProgramCentralBudgetUtil.jsp?mode=resourcePlanTemplate'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePlanTemplate'
+	property	'version'	value	'R419'
+;
+modify menu type_ProjectTemplate add command PMCResourcePlanTemplate order command PMCResourcePlanTemplate 8;
+#channel ==>type_ProjectTemplate
+add property command_PMCResourcePlanTemplate on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePlanTemplate';

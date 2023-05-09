@@ -1,0 +1,18 @@
+del command 'PMCResourceRequestAddResourceEvent';
+add command 'PMCResourceRequestAddResourceEvent'
+	description	''
+	label	'emxProgramCentral.ResourceRequest.AddResourceEvent'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Event Type'		'Add Resource'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourceRequestAddResourceEvent'
+	property	'version'	value	'R216'
+;
+modify menu PMCResourceRequestEvents add command PMCResourceRequestAddResourceEvent order command PMCResourceRequestAddResourceEvent 1;
+#channel ==>PMCResourceRequestEvents
+add property command_PMCResourceRequestAddResourceEvent on program eServiceSchemaVariableMapping.tcl to command 'PMCResourceRequestAddResourceEvent';

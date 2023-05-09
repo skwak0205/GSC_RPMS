@@ -1,0 +1,25 @@
+del command 'APPCreateNewMeeting';
+add command 'APPCreateNewMeeting'
+	description	''
+	label	'emxComponents.Common.CreateNewMeeting'
+	href	'${COMMON_DIR}/emxCreate.jsp?form=type_Meeting&type=type_Meeting&header=emxComponents.Common.CreateMeeting&Mode=create&helpMarker=emxhelpcreatemeeting&preProcessJPO=emxMeeting:checkMeetingPrerequisites&postProcessJPO=emxMeeting:updateCoownersOwnership&submitAction=refreshCaller&nameField=both&postProcessURL=../components/emxMeetingProcess.jsp?action=CreateMeeting&typeChooser=true'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[fromconnect] == true)'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showCreateNewMeeting'
+	setting	'Access Program'		'emxMeeting'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedContributor'
+	user	'Global User'
+	user	'VPLMExperimenter'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCreateNewMeeting'
+	property	'version'	value	'R424'
+;
+modify menu APPMeetingActionToolbar add command APPCreateNewMeeting order command APPCreateNewMeeting 1;
+#channel ==>APPMeetingActionToolbar
+add property command_APPCreateNewMeeting on program eServiceSchemaVariableMapping.tcl to command 'APPCreateNewMeeting';

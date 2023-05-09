@@ -1,0 +1,17 @@
+del menu 'TMCtype_RequestToSupplier';
+add menu 'TMCtype_RequestToSupplier'
+	description	''
+	label	'${NAME} ${REVISION}'
+	href	'${SUITE_DIR}/RTSDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'Sourcing'
+	setting	'Image'		'${COMMON_DIR}/iconSmallRTS.gif'
+	command	'TMCDiscussion'
+	command	'TMCRoute'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'TeamCentral'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'TMCtype_RequestToSupplier'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_TMCtype_RequestToSupplier on program eServiceSchemaVariableMapping.tcl to menu 'TMCtype_RequestToSupplier';

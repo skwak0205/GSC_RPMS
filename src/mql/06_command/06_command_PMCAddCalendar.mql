@@ -1,0 +1,19 @@
+del command 'PMCAddCalendar';
+add command 'PMCAddCalendar'
+	description	'Add existing calendars to project'
+	label	'emxProgramCentral.Calendar.AddCalendar'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_WorkCalendar&table=PMCProjectCalendarSearchTable&selection=multiple&hideHeader=true&submitURL=../programcentral/emxProgramCentralUtil.jsp?mode=addCalendarToProjectProcess&chooserType=CalendarChooser&fieldNameActual=Calendar&fieldNameDisplay=CalendarDisplay&suiteKey=ProgramCentral&SuiteDirectory=programcentral&HelpMarker=emxhelpfullsearch'
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'!((type=="Project Space") &&(current == Active || current == Review || current == Complete || current == Archive))'
+	setting	'Submit'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/PRSPAddSharedTable.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCAddCalendar'
+	property	'version'	value	'R421.HF3'
+;
+modify menu PMCCalendarToolBar add command PMCAddCalendar order command PMCAddCalendar 1;
+#channel ==>PMCCalendarToolBar
+add property command_PMCAddCalendar on program eServiceSchemaVariableMapping.tcl to command 'PMCAddCalendar';

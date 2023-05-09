@@ -1,0 +1,23 @@
+del command 'FTRCopyRuleExtensionRuleActionCommandLink';
+add command 'FTRCopyRuleExtensionRuleActionCommandLink'
+	description	'CopyRuleExtensionRule'
+	label	'emxProduct.ActionLink.Copy'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_RuleExtension&table=FTRRuleExtensionSearchTable&showInitialResults=false&selection=single&HelpMarker=emxhelpruleextensioncopy&submitAction=refreshCaller&hideHeader=true&submitURL=../configuration/RuleExtensionCopyPreProcess.jsp'
+	alt	''
+	setting	'Popup Size'		'Large'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCopy.png'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCopyRuleExtensionRuleActionCommandLink'
+	property	'version'	value	'R417'
+;
+modify menu FTRRuleExtensionsListTopActionBarMenu add command FTRCopyRuleExtensionRuleActionCommandLink order command FTRCopyRuleExtensionRuleActionCommandLink 3;
+#channel ==>FTRRuleExtensionsListTopActionBarMenu
+add property command_FTRCopyRuleExtensionRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRCopyRuleExtensionRuleActionCommandLink';

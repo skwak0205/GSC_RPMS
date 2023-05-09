@@ -1,0 +1,20 @@
+del command 'APPWorkflowAddContentActionLink';
+add command 'APPWorkflowAddContentActionLink'
+	description	'Command Object for add content to workflow object'
+	label	'emxComponents.Common.AddContent'
+	href	'${COMPONENT_DIR}/emxWorkflowContentSearchDialogFS.jsp'
+	alt	'emxComponents.Common.AddContent'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current != "Suspended") && (current != "Completed") && (owner == context.user)'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowAddContentActionLink'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu APPWorkflowContentSummaryActionsToolBar add command APPWorkflowAddContentActionLink order command APPWorkflowAddContentActionLink 1;
+#channel ==>APPWorkflowContentSummaryActionsToolBar
+add property command_APPWorkflowAddContentActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowAddContentActionLink';

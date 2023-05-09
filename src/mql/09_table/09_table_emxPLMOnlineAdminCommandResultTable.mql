@@ -1,0 +1,18 @@
+del table 'emxPLMOnlineAdminCommandResultTable' system;
+add table 'emxPLMOnlineAdminCommandResultTable' system
+column #1
+	name	'Name'
+	label	'emxPlmOnline.label.Commands'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminCommandReport.jsp?commandName=${ROW_ID}'
+	range	''
+	setting	'Target Location'		'_parent'
+	setting	'Auto Filter'		'true'
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'fillCommandColumn'
+	setting	'program'		'emxPLMOnlineAdminAccessesViewProgram'
+;
+add property table_emxPLMOnlineAdminCommandResultTable on program eServiceSchemaVariableMapping.tcl to table 'emxPLMOnlineAdminCommandResultTable' system;

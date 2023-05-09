@@ -1,0 +1,16 @@
+del channel 'PMCProjectApprovalsRoutesChannel';
+add channel 'PMCProjectApprovalsRoutesChannel'
+	description	'Approvals&Routes Channel'
+	height	'650'
+	label	''
+	href	''
+	setting		'Registered Suite'		'ProgramCentral'
+	command 	'APPRoutes','PMCApproval'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectApprovalsRoutesChannel'
+	property	'version'	value	'R210'
+;
+#portal ==>PMCProjectApprovalsRoutesPortal
+add property channel_PMCProjectApprovalsRoutesChannel on program eServiceSchemaVariableMapping.tcl to channel 'PMCProjectApprovalsRoutesChannel';

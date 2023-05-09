@@ -1,0 +1,23 @@
+del command 'TMCMessageAttachments';
+add command 'TMCMessageAttachments'
+	description	'Message Attachments Command Object'
+	label	'emxFramework.Command.Attachments'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxDiscussion:getDiscussionAttachmentsList&table=APPDocumentSummary&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=TMCDiscussionAttachmentToolBar&header=emxFramework.Command.Attachments&HelpMarker=emxhelpdiscussion'
+	alt	'emxFramework.Command.Alt.Attachments'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'${COMMON_DIR}/iconSmallAttachment.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCMessageAttachments'
+	property	'version'	value	'R422'
+;
+modify menu TMCtype_Message add command TMCMessageAttachments order command TMCMessageAttachments 0;
+#channel ==>TMCtype_Message
+add property command_TMCMessageAttachments on program eServiceSchemaVariableMapping.tcl to command 'TMCMessageAttachments';

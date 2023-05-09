@@ -1,0 +1,31 @@
+del command 'PMCDocumentContentUploadFiles';
+add command 'PMCDocumentContentUploadFiles'
+	description	'Upload Files from RMB menu Add content'
+	label	'emxProgramCentral.Common.UploadFiles'
+	href	'${SUITE_DIR}/emxProgramCentralDocumentCreatePreProcess.jsp?documentAction=upload'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'CmdName'		'PMCDocumentContentUploadFiles'
+	setting	'Window Height'		'570'
+	setting	'Window Width'		'780'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForFolderAndDocumentActions'
+	setting	'Access Program'		'emxProjectFolder'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUploadFile.png'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDocumentContentUploadFiles'
+	property	'version'	value	'R422'
+;
+modify menu PMCWorkspaceVaultAddContnetActions add command PMCDocumentContentUploadFiles order command PMCDocumentContentUploadFiles 0;
+modify menu PMCFolderDocumentFileActions add command PMCDocumentContentUploadFiles order command PMCDocumentContentUploadFiles 3;
+#channel ==>PMCWorkspaceVaultAddContnetActionsPMCFolderDocumentFileActions
+add property command_PMCDocumentContentUploadFiles on program eServiceSchemaVariableMapping.tcl to command 'PMCDocumentContentUploadFiles';

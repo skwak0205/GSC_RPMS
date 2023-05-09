@@ -1,0 +1,16 @@
+del command 'APPDecisionProperties';
+add command 'APPDecisionProperties'
+	description	''
+	label	'emxComponents.ActionLink.Properties'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Decision&actionBarName=APPDecisionPropertiesActionBar&formHeader=emxComponents.Common.PropertiesPageHeading&HelpMarker=emxhelpdecisionproperties'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionProperties'
+	property	'version'	value	'R208'
+;
+modify menu type_DecisionRMB add command APPDecisionProperties order command APPDecisionProperties 1;
+#channel ==>type_DecisionRMB
+add property command_APPDecisionProperties on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionProperties';

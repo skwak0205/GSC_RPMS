@@ -1,0 +1,28 @@
+del command 'PMCProjectSummaryGateHold';
+add command 'PMCProjectSummaryGateHold'
+	description	'Command to Hold Project from Gate Portal Page'
+	label	'emxProgramCentral.Common.Gate.Hold'
+	href	'${SUITE_DIR}/emxProgramCentralProjectHoldCancel.jsp?program=emxProjectHoldAndCancel:projectHoldCancelResume&switch=Hold&invokedFrom=StructureBrowser'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Popup Model'		'true'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isCommandVisible'
+	setting	'Access Program'		'emxProjectHoldAndCancel'
+	setting	'Row Select'		'multi'
+	setting	'Command Name'		'Hold'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPause.gif'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectSummaryGateHold'
+	property	'version'	value	'R422'
+;
+modify menu PMCProjectSummaryToolBarActions add command PMCProjectSummaryGateHold order command PMCProjectSummaryGateHold 6;
+#channel ==>PMCProjectSummaryToolBarActions
+add property command_PMCProjectSummaryGateHold on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectSummaryGateHold';

@@ -1,0 +1,19 @@
+del command 'CFFComposition_ProductBuilds';
+add command 'CFFComposition_ProductBuilds'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Effectivity'
+	setting	'expandProgram'		'emxBuild:getProductAllocation'
+	setting	'relationshipType'		'relationship_ProductBuild'
+	setting	'binaryKey'		'ProductBuilds'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'CFFComposition_ProductBuilds'
+	property	'version'	value	'R214'
+;
+modify menu CFFParentComposition add command CFFComposition_ProductBuilds order command CFFComposition_ProductBuilds 0;
+#channel ==>CFFParentComposition
+add property command_CFFComposition_ProductBuilds on program eServiceSchemaVariableMapping.tcl to command 'CFFComposition_ProductBuilds';

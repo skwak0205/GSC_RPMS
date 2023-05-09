@@ -1,0 +1,17 @@
+del command 'ENOFOL3WorkspaceDisconnectObjectEvent';
+add command 'ENOFOL3WorkspaceDisconnectObjectEvent'
+	description	''
+	label	'emxComponents.Notification.Event.Item_Detached'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Event Type'		'NXContentRemoved'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'FolderManagement'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'ENOFOL3WorkspaceDisconnectObjectEvent'
+	property	'version'	value	'R423'
+;
+modify menu ENOFOL3WorkspaceEvent add command ENOFOL3WorkspaceDisconnectObjectEvent order command ENOFOL3WorkspaceDisconnectObjectEvent 0;
+#channel ==>ENOFOL3WorkspaceEvent
+add property command_ENOFOL3WorkspaceDisconnectObjectEvent on program eServiceSchemaVariableMapping.tcl to command 'ENOFOL3WorkspaceDisconnectObjectEvent';

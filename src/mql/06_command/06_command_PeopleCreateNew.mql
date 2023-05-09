@@ -1,0 +1,29 @@
+del command 'PeopleCreateNew';
+add command 'PeopleCreateNew'
+	description	'People Create New Command Object'
+	label	'emxComponents.Button.CreateNew'
+	href	'${SUITE_DIR}/emxComponentsCreatePeopleDialogFS.jsp'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForBUPeopleCreateNew'
+	setting	'Access Program'		'emxOrganization'
+	setting	'Hide Mode'		'Cloud'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'PeopleCreateNew'
+	property	'version'	value	'R420.HF2'
+;
+modify menu PeopleSummaryTopActionbar add command PeopleCreateNew order command PeopleCreateNew 1;
+modify menu APPPeopleSummaryActionsToolBar add command PeopleCreateNew order command PeopleCreateNew 1;
+modify menu APPPeopleSummaryToolBar add command PeopleCreateNew order command PeopleCreateNew 1;
+#channel ==>PeopleSummaryTopActionbarAPPPeopleSummaryActionsToolBarAPPPeopleSummaryToolBar
+add property command_PeopleCreateNew on program eServiceSchemaVariableMapping.tcl to command 'PeopleCreateNew';

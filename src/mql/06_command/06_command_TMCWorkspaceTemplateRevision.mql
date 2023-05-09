@@ -1,0 +1,18 @@
+del command 'TMCWorkspaceTemplateRevision';
+add command 'TMCWorkspaceTemplateRevision'
+	description	'Revision Command Object'
+	label	'emxFramework.Command.Revision'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxWorkspaceTemplate:getWorkspaceTemplateRev&table=TMCWorkspaceTemplateRevSummary&header=emxTeamCentral.UITable.Revision&topActionbar=TMCWorkspaceTemplateRevSummaryTopActionBar&HelpMarker=emxhelpworkspacetemplaterevisions'
+	alt	'emxFramework.Command.Alt.Revision'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallRevision.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceTemplateRevision'
+	property	'version'	value	'10-0-0-0'
+;
+modify menu type_WorkspaceTemplate add command TMCWorkspaceTemplateRevision order command TMCWorkspaceTemplateRevision 2;
+#channel ==>type_WorkspaceTemplate
+add property command_TMCWorkspaceTemplateRevision on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceTemplateRevision';

@@ -1,0 +1,28 @@
+del command 'LCClassDelete';
+add command 'LCClassDelete'
+	description	'Class Delete'
+	label	'emxLibraryCentral.Command.Delete'
+	href	'${SUITE_DIR}/emxLibraryCentralObjectsDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'Content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.gif'
+	setting	'Confirm Message'		'emxDocumentCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCClassDelete'
+	property	'version'	value	'R422'
+;
+modify menu LCClassActionsToolBar add command LCClassDelete order command LCClassDelete 6;
+#channel ==>LCClassActionsToolBar
+add property command_LCClassDelete on program eServiceSchemaVariableMapping.tcl to command 'LCClassDelete';

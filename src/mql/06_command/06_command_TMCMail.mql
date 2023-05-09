@@ -1,0 +1,22 @@
+del command 'TMCMail';
+add command 'TMCMail'
+	description	'Mail Command Object'
+	label	'emxFramework.Command.Mail'
+	href	'${SUITE_DIR}/emxTeamMailDetailsFS.jsp'
+	alt	'emxFramework.Command.Alt.Mail'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconUnReadMail.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCMail'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_TMCMail on program eServiceSchemaVariableMapping.tcl to command 'TMCMail';

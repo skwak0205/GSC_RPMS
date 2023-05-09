@@ -1,0 +1,11 @@
+del menu 'APPVPMReferenceEvents';
+add menu 'APPVPMReferenceEvents'
+	description	'Events menu for VPMReference'
+	label	''
+	href	''
+	alt	''
+	command	'APPVPMReferencePromoteEvent'
+	command	'APPVPMReferenceMajorRevisionEvent'
+	property 'version'	value	'R421'
+;
+add property menu_APPVPMReferenceEvents on program eServiceSchemaVariableMapping.tcl to menu 'APPVPMReferenceEvents';

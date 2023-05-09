@@ -1,0 +1,21 @@
+del menu 'APPDiscussionToolBar';
+add menu 'APPDiscussionToolBar'
+	description	''
+	label	'emxComponents.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Horizontal ToolBar'		'true'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPDiscussionActionsToolBar'
+	command	'APPDiscussionsSubscribe'
+	command	'APPDiscussionsUnSubscribe'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPDiscussionToolBar'
+	property 'version'	value	'R419'
+;
+add property menu_APPDiscussionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPDiscussionToolBar';

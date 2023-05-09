@@ -1,0 +1,61 @@
+################################################################################################
+# Created Date : 2020.06.10
+# Create by BongJun,Park
+# Description : 공통코드 detail 생성 webform
+################################################################################################
+
+#del form 'form_gscCommonCodeDetailCreate' web;
+add form 'form_gscCommonCodeDetailCreate' web
+    field
+        name    'Revision'
+        label   'emxComponents.Command.gscCommonCodeMasterList'
+        bus     '$<name>'
+        setting "Admin Type"        "Revision"
+        setting "Registered Suite"  "Components"
+        setting "Editable"          "false"
+        setting "Field Type"        "program"
+        setting "function"          "getToObjectNameByField"
+        setting "program"           "gscCommonCode"
+    field
+        name    'Name'
+        label   'emxComponents.Common.Name'
+        bus     '$<name>'
+        setting "Registered Suite"  "Components"
+        setting "Required"          "true"
+        setting "Editable"          "true"
+        setting "Field Type"        "basic"
+        setting "Name Field"        "keyin"
+    field
+        name    'Title'
+        label   'emxComponents.Label.Title'
+        bus     '$<attribute[attribute_Title].value>'
+        setting "Registered Suite"  "Components"
+        setting "Required"          "true"
+        setting "Editable"          "true"
+        setting "Field Type"        "attribute"
+		setting "Admin Type"        "attribute_Title"
+    field
+        name    'gscTitleKO'
+        label   'emxComponents.Label.gscTitleKO'
+        bus     '$<attribute[attribute_gscTitleKO].value>'
+        setting "Registered Suite"  "Components"
+        setting "Required"          "true"
+        setting "Editable"          "true"
+        setting "Field Type"        "attribute"
+		setting "Admin Type"        "attribute_gscTitleKO"
+    field
+        name    'description'
+        label   'emxComponents.Common.Description'
+        bus     '$<description>'
+        setting 'Field Type'        'basic'
+        setting 'Editable'          'true'
+        setting 'Registered Suite'  'Components'
+        setting 'Export'            'true'
+        setting "Input Type"        "textarea"
+property "installer"        value "GSC"
+property "application"      value "Components"
+property "installed date"   value "2020.06.10"
+property "original name"    value "form_gscCommonCodeDetailCreate"
+property "version"          value "R421"
+;
+add property form_form_gscCommonCodeDetailCreate on program 'eServiceSchemaVariableMapping.tcl' to form form_gscCommonCodeDetailCreate;

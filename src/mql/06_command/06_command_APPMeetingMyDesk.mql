@@ -1,0 +1,19 @@
+del command 'APPMeetingMyDesk';
+add command 'APPMeetingMyDesk'
+	description	''
+	label	'emxComponents.Common.Meetings'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxMeeting:getMeetingSummaryList&editLink=true&table=APPMeetingSummary&toolbar=APPGlobalMeetingToolbar&mode=view&selection=multiple&sortColumnName=Name,Relationship&header=emxComponents.MeetingMyDesk.MyMeetings&postProcessJPO=emxMeeting:postProcessRefresh&GlobalContext=true&HelpMarker=emxhelpmeetings&expandProgram=emxMeeting:getTableMeetingData&displayView=details'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Licensed Product'		'ENO_BPS_TP'
+	setting	'Access Function'		'checkMeetingAccessforTEAM'
+	setting	'Access Program'		'DSCTEAMAccessUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingMyDesk'
+	property	'version'	value	'R216'
+;
+#channel ==>My EnoviaTMCMyViewWorkspaceMeetingsChannel
+add property command_APPMeetingMyDesk on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingMyDesk';

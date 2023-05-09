@@ -1,0 +1,22 @@
+del command 'FTRCommonBOM';
+add command 'FTRCommonBOM'
+	description	'BOM Command Object'
+	label	'emxComponents.Command.BOM'
+	href	'${SUITE_DIR}/PreviewBOMProcess.jsp?mode=displayBOM'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<expression[LogicalFeatureEnabled]=="true">'
+	setting	'Licensed Product'		'ENO_FTR_TP,ENO_CFE_TP,ENO_BPS_TP'
+	setting	'Image'		'${COMMON_DIR}/iconSmallBOM.gif'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRCommonBOM'
+	property	'version'	value	'R423'
+;
+modify menu type_ProductConfiguration add command FTRCommonBOM order command FTRCommonBOM 2;
+#channel ==>type_ProductConfiguration
+add property command_FTRCommonBOM on program eServiceSchemaVariableMapping.tcl to command 'FTRCommonBOM';

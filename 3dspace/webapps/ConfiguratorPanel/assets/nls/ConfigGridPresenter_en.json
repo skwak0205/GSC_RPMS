@@ -1,0 +1,17 @@
+{
+  "titleLabel" : "Title",
+  "typeLabel" : "Type",
+  "sequenceNoLabel" : "Sequence Number",
+  "configurationLabel" : "Configuration",
+
+  "variantType" : "Variant",
+  "valueType" : "Value",
+  "variabilityGroupType" : "Option Group",
+  "optionType" : "Option",
+  "parameterType" : "Parameter",
+  "loadingStatusLabel" : "Loading Product Configurations",
+  "totalPCLabel": "Total Product Configurations",
+  "totalVariablityLabel" : "Total Variability",
+  "applySelectionAction" : "Apply to selection",
+  "differentRuleModelMsg" : "The source Product Configuration has different Rule Evaluation Level"
+}

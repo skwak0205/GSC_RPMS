@@ -1,0 +1,19 @@
+del command 'APPMyWorkflow';
+add command 'APPMyWorkflow'
+	description	'Command Object for Workflow display in my workflow menu'
+	label	'emxComponents.Command.MyWorkflow'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxWorkflow:getInprocessWorkflows,emxWorkflow:getNotStartedWorkflows,emxWorkflow:getMyworkflows,emxWorkflow:getPausedWorkflows,emxWorkflow:getCompletedWorkflowsInLast30Days,emxWorkflow:getCompletedWorkflowsInLast60Days,emxWorkflow:getCompletedWorkflowsInLast90Days&table=APPWorkflowSummary&selection=single&programLabel=emxComponents.Workflow.Filter.Inprocess,emxComponents.Workflow.Filter.notStarted,emxComponents.Common.All,emxComponents.Workflow.Filter.Suspended,emxComponents.Workflow.Filter.CompletedWithin30days,emxComponents.Workflow.Filter.CompletedWithin60days,emxComponents.Workflow.Filter.CompletedWithin90days&toolbar=APPWorkflowSummaryToolBar&header=emxComponents.Heading.Workflow&HelpMarker=emxhelpworkflows'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Employee'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMyWorkflow'
+	property	'version'	value	'R422'
+;
+#channel ==>My Workflows
+add property command_APPMyWorkflow on program eServiceSchemaVariableMapping.tcl to command 'APPMyWorkflow';

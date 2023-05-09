@@ -1,0 +1,21 @@
+del command 'DataGridMassUpdate';
+add command 'DataGridMassUpdate'
+	description	''
+	label	'emxFramework.FreezePane.Action.MassUpdate'
+	href	'javascript:StandardFunctions.showMassUpdateDialog()'
+	alt	'emxFramework.FreezePane.Action.MassUpdate'
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Function'		'canMassUpdate'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	setting	'Image'		'${COMMON_DIR}/images/iconMassUpdate.png'
+	setting	'Display View'		'details'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridMassUpdate'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridMenu add command DataGridMassUpdate order command DataGridMassUpdate 6;
+#channel ==>DataGridMenu
+add property command_DataGridMassUpdate on program eServiceSchemaVariableMapping.tcl to command 'DataGridMassUpdate';

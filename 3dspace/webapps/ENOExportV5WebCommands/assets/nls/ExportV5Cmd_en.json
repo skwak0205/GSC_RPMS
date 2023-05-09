@@ -1,0 +1,75 @@
+{
+	"title" : "Export V5",
+	"init" : "initialized ! ",
+	"loading" : "Loading the objects to export",
+	"option_path" : {
+		"label" : "Export to directory",
+		"option_text" : "Enter a path here",
+		"option_combo" : "Select a location ...",
+		"button_add" : "Add",
+		"predefined_paths" : "Predefined paths",
+		"added_path" : "Local definition"
+	},
+	"option_conflict" : {
+		"option_overwrite": "Overwrite",
+		"option_copy": "Keep a copy of the existing file in case of conflict in the disk"
+	},
+	"generatingfilename" : "Generating file names...",
+	"buttonLaunch" : "Launch",
+	"buttonExport" : "Export",
+	"buttonCancel" : "Cancel",
+	"error" : {
+		"title" : "Error",
+		"noSelection":"Please select the object to export before launching the Export V5 command ",
+		"empty" : "Export impossible: the defined rule generated an empty file name.",
+		"unicity" : {
+			"BL" : "Export impossible: the defined rule did not generate unique file names {ofileName}.",
+			"noBL" : "Export impossible: generated file names based on title usage did not generate unique file names {ofileName}. Define a naming rule."
+		},
+		"expand_empty": "Export Impossible : the result of the expand is empty.",
+		"expand_failed_title": "Export failed",
+		"type": "Export Impossible : object {title} with the type {objType} are not allowed for export. Unselect the object before running the exportV5 command.",
+		"CADMaster": "Export Impossible : object {title} with {cadmaster} CAD origin are not allowed for export. Unselect the object before running the exportV5 command.",
+		"launchApp": "Failed launching the batch.",
+		"errorType": "Error id : {errorID}",
+		"fetchFailed": "Unable to retrieve object Information.",
+		"fetchFailed_subtitle": "Verify that you have the correct credentials or contact your system administrator for support.",
+		"emptyDefinedPath": "The list of authorized paths is empty. Please contact your administrator.",
+		"pathInvalid": "The path defined by the names {namesList} are invalid. Please contact your administrator.",
+		"emptyPathIdentifier": "The defined paths should have a name. Please contact your administrator.",
+		"identifierUnicity":"The following name(s) are not unique : {namesList}. The defined paths should have a unique name. Please contact your administrator",
+		"emptyobject":"Wrong syntax for the declaration of the path. Please contact your administrator",
+		"timeout":"The request has timedout after {seconds}ms.",
+	    "security_context_fail": "Server request cannot be sent : failed retrieving security context.",
+	    "expandIssue" : "Some data may not be indexed yet. Please wait a few minutes before making a new tentative attempt.",
+        "code401" : "Error 401 : authentication issue",
+        "code400": "Error 400 : Bad request",
+        "genericError" : "Error processing request"
+	},
+	"warning":{
+		"title" : "Warning",
+		"title_path":"Invalid path.",
+		"empty_path":"Cannot export to an empty location",
+		"invalid_select":"Some of the selected files are not supported",
+		"invalid_path":"the selected path is invalid. Please correct or enter a new one.",
+		"invalid_fetchanswer":"Some of the newly created objects hasn't been indexed yet and may not be exported."
+	},
+	"info" : {
+		"title" : "Information",
+		"message" : "Successfully sent the message."
+	},
+	"success" : {
+		"title" : "Success",
+		"message" : "The data have been send to CATIA V5 for export."
+	},
+	"processing": "Generating filenames",
+	"launch_batch": "Launching the batch...",
+	"ExportV5.Msg.InvalidInput": "Export to CATIA V5 of one or more selected data is not supported.",
+	"ExportV5.Msg.ExecutionFailed": "Unexpected error occurred.",
+	"ExportV5.Msg.ExecutionFailed.Subtitle": "Contact your administrator for support.",
+	"ExportV5.Msg.InvalidRole": "You do not have the role to use Export to CATIA V5",
+	"ExportV5.Msg.InvalidInputCADMaster": "One or more selected data has unsupported CAD Master. Export to CATIA V5 is not supported.",
+	"ExportV5.Msg.ExpandResultEmpty": "Expand result of selected data is empty. Export to CATIA V5 is not possible."
+	
+}
+

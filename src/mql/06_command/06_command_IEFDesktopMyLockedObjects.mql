@@ -1,0 +1,17 @@
+del command 'IEFDesktopMyLockedObjects';
+add command 'IEFDesktopMyLockedObjects'
+	description	'Checked Out Command Object'
+	label	'emxIEFDesignCenter.Common.LockedObjects'
+	href	'${COMMON_DIR}/emxTable.jsp?program=IEFUtil:getMyCheckedOutDocs&table=IEFDesktopDocumentSummary&toolbar=IEFDesktopMyLockedActionMenu'
+	alt	'My Checked Out Documents'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'DesignerCentral'
+	setting	'Licensed Product'		'DEC,DC2,MSF,PRG,ADS,ENOXCAD_AP,ENOPRPR_AP,ENOCOMI_AP,ENO2DDE_AP'
+	property	'installer'	value	'ENOVIAIntegrationEngineering'
+	property	'application'	value	'IntegrationFramework'
+	property	'installed date'	value	'Wed Nov 02 15:37:50 +0900 2022'
+	property	'original name'	value	'IEFDesktopMyLockedObjects'
+	property	'version'	value	'R424'
+;
+#channel ==>IEF ENOVIA Root
+add property command_IEFDesktopMyLockedObjects on program eServiceSchemaVariableMapping.tcl to command 'IEFDesktopMyLockedObjects';

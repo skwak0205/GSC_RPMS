@@ -1,0 +1,27 @@
+del command 'RMTReplaceByLastRevision';
+add command 'RMTReplaceByLastRevision'
+	description	'replace object By last revision.'
+	label	'emxRequirements.Label.RMTReplaceByLastRevision'
+	href	'${SUITE_DIR}/SpecificationStructureUtil.jsp?mode=replaceByLastRevision'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Requirements'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isDoReconcileOnReviseAvailable'
+	setting	'Access Program'		'emxRMTCommon'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallHigherRevision.gif'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTReplaceByLastRevision'
+	property	'version'	value	'V6R2016x.HF2'
+;
+modify menu RMTSpecTreeActionBar add command RMTReplaceByLastRevision order command RMTReplaceByLastRevision 12;
+modify menu RMTStructureBrowserActionsMenu add command RMTReplaceByLastRevision order command RMTReplaceByLastRevision 0;
+modify menu RMTChapTreeActionBar add command RMTReplaceByLastRevision order command RMTReplaceByLastRevision 0;
+modify menu RMTReqGroupActions add command RMTReplaceByLastRevision order command RMTReplaceByLastRevision 0;
+modify menu RMTRequirementUseCaseTopActionBar add command RMTReplaceByLastRevision order command RMTReplaceByLastRevision 0;
+modify menu RMTUseCaseSubUseCaseTopActionBar add command RMTReplaceByLastRevision order command RMTReplaceByLastRevision 0;
+#channel ==>RMTSpecTreeActionBarRMTStructureBrowserActionsMenuRMTChapTreeActionBarRMTReqGroupActionsRMTRequirementUseCaseTopActionBarRMTUseCaseSubUseCaseTopActionBar
+add property command_RMTReplaceByLastRevision on program eServiceSchemaVariableMapping.tcl to command 'RMTReplaceByLastRevision';

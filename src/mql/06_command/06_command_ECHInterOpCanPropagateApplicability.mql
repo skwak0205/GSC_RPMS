@@ -1,0 +1,11 @@
+del command 'ECHInterOpCanPropagateApplicability';
+add command 'ECHInterOpCanPropagateApplicability'
+	description	'Command to handle interoperability to know whether propagation is allowed or not'
+	label	''
+	href	''
+	alt	''
+	setting	'Registered Suite'		'EnterpriseChange'
+	setting	'type_PLMActionBase'		'emxECA:isPropagationAllowed'
+;
+#channel ==>
+add property command_ECHInterOpCanPropagateApplicability on program eServiceSchemaVariableMapping.tcl to command 'ECHInterOpCanPropagateApplicability';

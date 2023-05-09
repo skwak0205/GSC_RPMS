@@ -1,0 +1,19 @@
+del command 'AEFCompanyLogo';
+add command 'AEFCompanyLogo'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Access Behavior'		'disable'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'false'
+	setting	'Image'		'${COMMON_DIR}/images/iconMed3DSLogo.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'AEFCompanyLogo'
+	property	'version'	value	'R215'
+;
+modify menu AEFGlobalToolbar add command AEFCompanyLogo order command AEFCompanyLogo 1;
+#channel ==>AEFGlobalToolbar
+add property command_AEFCompanyLogo on program eServiceSchemaVariableMapping.tcl to command 'AEFCompanyLogo';

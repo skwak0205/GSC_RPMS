@@ -1,0 +1,45 @@
+del command 'DomainAccessTreeCategory';
+add command 'DomainAccessTreeCategory'
+	description	''
+	label	'emxFramework.Common.DomainAccessTreeCategory'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxDomainAccess:getObjectAccessList&table=DomainAccess&editLink=true&selection=multiple&toolbar=DomainAccessToolBar&level=0&header=emxFramework.DomainAccess.AccessView&expandLevelFilter=true&editRootNode=false&objectBased=false&hideRootSelection=true&displayView=details&showClipboard=false&HelpMarker=emxhelpmultipleownershipaccess&massUpdate=false'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'!(policy == "Template Workspace Vault" || policy == "Version")'
+	setting	'Access Function'		'hasAccessForTaskManagementCategoryCommand'
+	setting	'Access Program'		'emxTask'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DomainAccessTreeCategory'
+	property	'version'	value	'R419'
+;
+modify menu type_DOCUMENTS add command DomainAccessTreeCategory order command DomainAccessTreeCategory 19;
+modify menu type_ProjectVault add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_Project add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu TMCtype_ProjectVault add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_WorkspaceTemplate add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_GeneralLibrary add command DomainAccessTreeCategory order command DomainAccessTreeCategory 1;
+modify menu type_PartLibrary add command DomainAccessTreeCategory order command DomainAccessTreeCategory 1;
+modify menu type_Library add command DomainAccessTreeCategory order command DomainAccessTreeCategory 1;
+modify menu type_GeneralClass add command DomainAccessTreeCategory order command DomainAccessTreeCategory 2;
+modify menu type_PartFamily add command DomainAccessTreeCategory order command DomainAccessTreeCategory 2;
+modify menu type_DocumentFamily add command DomainAccessTreeCategory order command DomainAccessTreeCategory 2;
+modify menu type_GenericDocument add command DomainAccessTreeCategory order command DomainAccessTreeCategory 1;
+modify menu type_Model add command DomainAccessTreeCategory order command DomainAccessTreeCategory 15;
+modify menu type_Products add command DomainAccessTreeCategory order command DomainAccessTreeCategory 16;
+modify menu type_DeliverableIntent add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_DeliverableTemplate add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_UseCase add command DomainAccessTreeCategory order command DomainAccessTreeCategory 1;
+modify menu type_Chapter add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_Comment add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_ProductConfiguration add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_Variant add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_VariabilityGroup add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_VariantValue add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu type_VariabilityOption add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu FMAWorkspaceTree add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu FMAtype_Folder add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+modify menu FMAtype_Document add command DomainAccessTreeCategory order command DomainAccessTreeCategory 0;
+#channel ==>type_DOCUMENTStype_ProjectVaulttype_ProjectTMCtype_ProjectVaulttype_WorkspaceTemplatetype_GeneralLibrarytype_PartLibrarytype_Librarytype_GeneralClasstype_PartFamilytype_DocumentFamilytype_GenericDocumenttype_Modeltype_Productstype_DeliverableIntenttype_DeliverableTemplatetype_UseCasetype_Chaptertype_Commenttype_ProductConfigurationtype_Varianttype_VariabilityGrouptype_VariantValuetype_VariabilityOptionFMAWorkspaceTreeFMAtype_FolderFMAtype_DocumentPMCSCProjectMembersAccessChannelRMTPropertiesRMTRequirementGroupPropertiesRMTSpecificationsProperties
+add property command_DomainAccessTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'DomainAccessTreeCategory';

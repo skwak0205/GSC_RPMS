@@ -1,0 +1,23 @@
+del command 'LCPurge';
+add command 'LCPurge'
+	description	'For purging records'
+	label	'emxLibraryCentral.Command.LCPurge'
+	href	'${SUITE_DIR}/emxLibraryCentralPurgeProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Expression'		'(current== "Scheduled" || current== "Purged")'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionPurge.png'
+	setting	'Confirm Message'		'emxLibraryCentral.Purge.ConfirmMsg'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCPurge'
+	property	'version'	value	'R421'
+;
+modify menu LCRetainedDocumentSummaryActionsToolBar add command LCPurge order command LCPurge 3;
+#channel ==>LCRetainedDocumentSummaryActionsToolBar
+add property command_LCPurge on program eServiceSchemaVariableMapping.tcl to command 'LCPurge';

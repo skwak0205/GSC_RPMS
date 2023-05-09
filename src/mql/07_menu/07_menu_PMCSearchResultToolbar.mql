@@ -1,0 +1,16 @@
+del menu 'PMCSearchResultToolbar';
+add menu 'PMCSearchResultToolbar'
+	description	''
+	label	'emxProgramCentral.SearchResultToolbar'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'AEFReviseSearch'
+	command	'AEFAddToCollection'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCSearchResultToolbar'
+	property 'version'	value	'R210'
+;
+add property menu_PMCSearchResultToolbar on program eServiceSchemaVariableMapping.tcl to menu 'PMCSearchResultToolbar';

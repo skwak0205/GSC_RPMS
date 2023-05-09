@@ -1,0 +1,24 @@
+del command 'APPRouteTemplateRemoveAccess';
+add command 'APPRouteTemplateRemoveAccess'
+	description	'Command to remove Route Template Access'
+	label	'emxComponents.ObjectAccess.Remove'
+	href	'${SUITE_DIR}/emxRouteRemoveMembersProcess.jsp?fromRouteAccessSummaryPage=false'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'type.kindof=="$<type_RouteTemplate>" && current=="Inactive"'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'showCommand'
+	setting	'Access Program'		'emxRouteTemplate'
+	setting	'Row Select'		'Multiple'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.png'
+	setting	'Confirm Message'		'emxComponents.RouteTemplate.RemoveMsgConfirm'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRouteTemplateRemoveAccess'
+	property	'version'	value	'R423.HF4'
+;
+modify menu APPRouteAccessActionsToolbar add command APPRouteTemplateRemoveAccess order command APPRouteTemplateRemoveAccess 0;
+#channel ==>APPRouteAccessActionsToolbar
+add property command_APPRouteTemplateRemoveAccess on program eServiceSchemaVariableMapping.tcl to command 'APPRouteTemplateRemoveAccess';

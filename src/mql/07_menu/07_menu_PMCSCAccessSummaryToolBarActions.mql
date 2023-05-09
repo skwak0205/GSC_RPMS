@@ -1,0 +1,15 @@
+del menu 'PMCSCAccessSummaryToolBarActions';
+add menu 'PMCSCAccessSummaryToolBarActions'
+	description	''
+	label	'ProgramCentral.Toolbar.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCSCAccessSummaryAddPerson'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCSCAccessSummaryToolBarActions'
+	property 'version'	value	'R212'
+;
+add property menu_PMCSCAccessSummaryToolBarActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCSCAccessSummaryToolBarActions';

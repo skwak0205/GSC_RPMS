@@ -1,0 +1,15 @@
+del command 'APPVPLMProjectViewToolbar';
+add command 'APPVPLMProjectViewToolbar'
+	description	'Project view'
+	label	'emxPlmOnline.label.Project'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPVPLMProjectAdminPortal&toolbar=APPXPAdminToolBar&header=emxPlmOnline.label.ManageProject'
+	alt	'emxPlmOnline.label.Project'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPLMAdministration'
+	setting	'Access Function'		'isOneClickEnvironment'
+	setting	'Access Program'		'VPLMPosAdminUIOptions'
+	setting	'Image'		'iconSmallXPProject.gif'
+;
+modify menu APPXPAdminToolBar add command APPVPLMProjectViewToolbar order command APPVPLMProjectViewToolbar 3;
+#channel ==>APPXPAdminToolBar
+add property command_APPVPLMProjectViewToolbar on program eServiceSchemaVariableMapping.tcl to command 'APPVPLMProjectViewToolbar';

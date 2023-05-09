@@ -1,0 +1,16 @@
+del menu 'DashboardHelpMenu';
+add menu 'DashboardHelpMenu'
+	description	''
+	label	''
+	href	''
+	alt	''
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	command	'AEFHelpCommand'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'DashboardHelpMenu'
+	property 'version'	value	'R418'
+;
+add property menu_DashboardHelpMenu on program eServiceSchemaVariableMapping.tcl to menu 'DashboardHelpMenu';

@@ -1,0 +1,16 @@
+del command 'DomainAccessAddOrganization';
+add command 'DomainAccessAddOrganization'
+	description	''
+	label	'emxFramework.Common.DomainAccessAddOrganization'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?showInitialResults=true&table=DomainAccessOrganizationSummary&selection=multiple&form=AEFSearchOrganizationForm&submitURL=${COMMON_DIR}/emxDomainAccessProcess.jsp&cmdName=addOrg&jpoName=emxDomainAccess&methodName=addOrganization&field=TYPES=type_Organization:CURRENT=policy_Organization.state_Active&excludeOIDprogram=emxDomainAccess:getExcludeOrgList'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Expression'		'current.access[changeowner]||current.access[changesov]'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DomainAccessAddOrganization'
+	property	'version'	value	'R417'
+;
+#channel ==>
+add property command_DomainAccessAddOrganization on program eServiceSchemaVariableMapping.tcl to command 'DomainAccessAddOrganization';

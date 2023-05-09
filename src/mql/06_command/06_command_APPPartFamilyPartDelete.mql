@@ -1,0 +1,32 @@
+del command 'APPPartFamilyPartDelete';
+add command 'APPPartFamilyPartDelete'
+	description	'Part Family Delete'
+	label	'emxLibraryCentral.Command.Delete'
+	href	'${SUITE_DIR}/emxLibraryCentralPartFamilyPartDeleteProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'Content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Access Map'		'FromDisconnect'
+	setting	'Licensed Product'		'ENO_LBC_TP,ENO_LIB_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDelete.png'
+	setting	'Confirm Message'		'emxLibraryCentral.Message.ConfirmDeleteSelected'
+	user	'3DSRestrictedAuthor'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'VPLMAdmin'
+	user	'Limited Author'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartFamilyPartDelete'
+	property	'version'	value	'R422'
+;
+modify menu APPPartFamilyPartActionsToolBar add command APPPartFamilyPartDelete order command APPPartFamilyPartDelete 0;
+#channel ==>APPPartFamilyPartActionsToolBar
+add property command_APPPartFamilyPartDelete on program eServiceSchemaVariableMapping.tcl to command 'APPPartFamilyPartDelete';

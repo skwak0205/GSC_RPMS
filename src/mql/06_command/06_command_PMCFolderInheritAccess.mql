@@ -1,0 +1,25 @@
+del command 'PMCFolderInheritAccess';
+add command 'PMCFolderInheritAccess'
+	description	''
+	label	'emxProgramCentral.Access.Inherit_Access'
+	href	''
+	alt	''
+	setting	'Range Function'		'getFolderAccessType'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'(current.access[modify] == true)'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Range Program'		'emxProjectFolderBase'
+	setting	'Access Function'		'isProjectNotInHoldOrCancel'
+	setting	'Access Program'		'emxProjectSpace'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCFolderInheritAccess'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCFolderInheritAccess on program eServiceSchemaVariableMapping.tcl to command 'PMCFolderInheritAccess';

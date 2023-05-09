@@ -1,0 +1,23 @@
+del command 'PMCQuickOpportunityCreate';
+add command 'PMCQuickOpportunityCreate'
+	description	''
+	label	'emxProgramCentral.Opportunity.CreateOpportunity'
+	href	'${SUITE_DIR}/emxProgramCentralRiskUtil.jsp?mode=quickCreateOpportunity'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Access Expression'		'false'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessToMembers'
+	setting	'Access Program'		'emxRisk'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCQuickOpportunityCreate'
+	property	'version'	value	'R421.HF2'
+;
+modify menu PMCOpportunitySummaryToolBar add command PMCQuickOpportunityCreate order command PMCQuickOpportunityCreate 1;
+#channel ==>PMCOpportunitySummaryToolBar
+add property command_PMCQuickOpportunityCreate on program eServiceSchemaVariableMapping.tcl to command 'PMCQuickOpportunityCreate';

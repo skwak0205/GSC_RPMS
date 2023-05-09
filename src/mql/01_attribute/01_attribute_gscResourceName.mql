@@ -1,0 +1,13 @@
+#del attribute 'gscResourceName';
+add attribute 'gscResourceName'
+ type 'string'
+ description 'Resource name of the resource'
+  property 'installer' value 'ENOVIAEngineering'
+  property 'application' value 'Framework'
+  property 'installed date' value 'Thu Oct 27 15:35:11 KST 2022'
+  property 'original name' value 'gscResourceName'
+  property 'CustomerExposition' value 'Programmer'
+  property 'Protection' value 'Free'
+  property 'version' value 'R212'
+;
+add property attribute_gscResourceName on program eServiceSchemaVariableMapping.tcl to attribute 'gscResourceName';

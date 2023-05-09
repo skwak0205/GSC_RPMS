@@ -1,0 +1,17 @@
+del channel 'FTRLogicalFeatureWithDVChannel';
+add channel 'FTRLogicalFeatureWithDVChannel'
+	description	''
+	height	'0'
+	label	''
+	href	''
+	setting		'Registered Suite'		'Configuration'
+	setting		'ChannelID'		'1'
+	command 	'FTRLogicalFeaturesWithDV'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'FTRLogicalFeatureWithDVChannel'
+	property	'version'	value	'R214'
+;
+#portal ==>FTRConfigurationDesignVariantPortal
+add property channel_FTRLogicalFeatureWithDVChannel on program eServiceSchemaVariableMapping.tcl to channel 'FTRLogicalFeatureWithDVChannel';

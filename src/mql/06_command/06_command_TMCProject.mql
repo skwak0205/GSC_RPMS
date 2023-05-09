@@ -1,0 +1,21 @@
+del command 'TMCProject';
+add command 'TMCProject'
+	description	'Workspace Command Object'
+	label	'emxFramework.Command.Workspace'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_Workspace&mode=view&toolbar=TMCWorkspaceDetialsToolBar&HelpMarker=emxhelpworkspaceproperties'
+	alt	'emxFramework.Command.Alt.Workspace'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Image'		'iconSmallWorkspace.png'
+	user	'VPLMViewer'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCProject'
+	property	'version'	value	'R420.HF2'
+;
+#channel ==>
+add property command_TMCProject on program eServiceSchemaVariableMapping.tcl to command 'TMCProject';

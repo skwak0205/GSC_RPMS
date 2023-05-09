@@ -1,0 +1,19 @@
+del command 'DataGridSave';
+add command 'DataGridSave'
+	description	''
+	label	'emxFramework.FreezePane.Action.Save'
+	href	'javascript:StandardFunctions.saveEdits()'
+	alt	'emxFramework.FreezePane.Action.Save'
+	setting	'Alignment'		'right'
+	setting	'Registered Suite'		'Framework'
+	setting	'Access Function'		'canEdit'
+	setting	'Access Program'		'com.matrixone.apps.framework.ui.rest.GridViewUtil'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'Framework'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'DataGridSave'
+	property	'version'	value	'R423.HF3'
+;
+modify menu DataGridMenu add command DataGridSave order command DataGridSave 3;
+#channel ==>DataGridMenu
+add property command_DataGridSave on program eServiceSchemaVariableMapping.tcl to command 'DataGridSave';

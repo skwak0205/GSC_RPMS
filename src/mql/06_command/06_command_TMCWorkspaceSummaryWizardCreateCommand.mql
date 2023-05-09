@@ -1,0 +1,27 @@
+del command 'TMCWorkspaceSummaryWizardCreateCommand';
+add command 'TMCWorkspaceSummaryWizardCreateCommand'
+	description	''
+	label	'emxTeamCentral.Button.WorkspaceWizard'
+	href	'${SUITE_DIR}/emxTeamCreateWorkspaceWizardDialogFS.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'525'
+	setting	'Window Width'		'800'
+	setting	'Registered Suite'		'TeamCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'canDisplayCreateCommand'
+	setting	'Access Program'		'emxAEFUtil'
+	setting	'Image'		'${COMMON_DIR}/images/I_CldWizard.png'
+	user	'VPLMExperimenter'
+	user	'VPLMAdmin'
+	user	'Exchange User'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'TeamCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'TMCWorkspaceSummaryWizardCreateCommand'
+	property	'version'	value	'R422'
+;
+modify menu TMCWorkspaceSummaryActionsToolBar add command TMCWorkspaceSummaryWizardCreateCommand order command TMCWorkspaceSummaryWizardCreateCommand 2;
+#channel ==>TMCWorkspaceSummaryActionsToolBar
+add property command_TMCWorkspaceSummaryWizardCreateCommand on program eServiceSchemaVariableMapping.tcl to command 'TMCWorkspaceSummaryWizardCreateCommand';

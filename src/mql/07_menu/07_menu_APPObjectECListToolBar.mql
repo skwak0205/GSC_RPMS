@@ -1,0 +1,19 @@
+del menu 'APPObjectECListToolBar';
+add menu 'APPObjectECListToolBar'
+	description	''
+	label	'emxComponents.label.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	menu	'APPObjectECReportToolBar'
+	menu	'APPObjectECActionsToolBar'
+	command	'APPECEffortReportActionLink'
+	command	'APPECStatusReportActionLink'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPObjectECListToolBar'
+	property 'version'	value	'R417'
+;
+add property menu_APPObjectECListToolBar on program eServiceSchemaVariableMapping.tcl to menu 'APPObjectECListToolBar';

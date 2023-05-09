@@ -1,0 +1,23 @@
+del command 'PMCTaskQuestion';
+add command 'PMCTaskQuestion'
+	description	'TaskQuestion Command Object'
+	label	'emxFramework.Command.Question'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxQuestion:getQuestions&table=PMCTaskQuestionSummary&toolbar=PMCProjectTemplateTaskQuestionActionsToolBar&header=emxProgramCentral.Common.Questions&HelpMarker=emxhelptaskquestionsummary&Export=false&sortColumnName=Name&sortDirection=ascending'
+	alt	'emxFramework.Command.Alt.TaskQuestion'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Image'		'sm_icon_Question.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCTaskQuestion'
+	property	'version'	value	'R422'
+;
+modify menu type_TaskTemplate add command PMCTaskQuestion order command PMCTaskQuestion 7;
+#channel ==>type_TaskTemplate
+add property command_PMCTaskQuestion on program eServiceSchemaVariableMapping.tcl to command 'PMCTaskQuestion';

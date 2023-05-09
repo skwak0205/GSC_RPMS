@@ -1,0 +1,27 @@
+################################################################################################
+# Created Date : 2023.01.31
+# Create by HyungJin, Ju
+# Description : GSCaltex Project 초기 Migration MQL 생성 Script - 개발서버
+# MQL 엑셀 Path : OneDrive\Project\200. Design\200.10 Functional Spec\과제정보\RPMS task 정리 및 과제 분류 v1.1_230308.xlsx
+################################################################################################
+
+# Project Space 생성
+# https://djrpmsdev.gscaltexdev.co.kr/3dspace/common/emxCreate.jsp?typeChooser=true&SelectType=single&ReloadOpener=true&nameField=both&autoNameChecked=false&type=type_ProjectSpace&policy=policy_ProjectSpace&form=PMCCreateBlankProjectForm&mode=create&createJPO=emxProjectSpace%3AcreateNewProject&postProcessJPO=emxProjectSpace%3AcreateAndConnectProject&postProcessURL=..%2Fprogramcentral%2FemxProgramCentralUtil.jsp%3Fmode%3DlaunchProject&submitAction=nothing&HelpMarker=emxhelpprojectdetailsspecify&findMxLink=false&showPageURLIcon=false&suiteKey=ProgramCentral&StringResourceFileId=emxProgramCentralStringResource&SuiteDirectory=programcentral&preProcessJavaScript=setFocusOnNameField&header=emxProgramCentral.Common.Project.BlankHeader&createProject=Blank&suiteKey=ProgramCentral&StringResourceFileId=emxProgramCentralStringResource&SuiteDirectory=programcentral&widgetId=null&openerFrame=content&targetLocation=slidein&slideinType=wider
+# 위 URL 와 같은 '새 프로젝트 생성' Form을 통해 수기 생성 - 다수의 Trigger 존재
+# 수기 생성 후, temp query bus 'Project Space' <NAME> * select physicalid dump |; 와 같이 검색 하여 physicalid 조회 후, 해당 physicalid로 mod bus 속성 수정
+
+
+# 개발 기준 - print
+# Project Space 속성 수정
+
+
+# Project Space - Relationship 설정 - Business Unit Project [add connection 'Business Unit Project' from <Business Unit> to <Project Space>;]
+# Business Unit 리스트 조회 MQL: temp query bus 'Business Unit' * * select physicalid attribute[Title] dump |;
+
+
+# Project Space - Relationship 설정 - Related Projects [add connection 'Related Projects' from <본인 Project Space> to <연결 Project Space>;]
+
+
+# Project Space - Relationship 설정 - Member [add connection 'Member' from <본인 Project Space> to <Person>;]
+# Person 리스트 조회 MQL: temp query bus 'Person' * * select physicalid attribute[Last Name] attribute[First Name];
+

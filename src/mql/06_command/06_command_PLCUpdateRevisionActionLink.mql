@@ -1,0 +1,19 @@
+del command 'PLCUpdateRevisionActionLink';
+add command 'PLCUpdateRevisionActionLink'
+	description	''
+	label	'emxProduct.ActionLink.UpdateRevision'
+	href	'${SUITE_DIR}/RevisionUtil.jsp?mode=update'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Licensed Product'		'ENO_PLC_TP'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'Multiple'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCUpdateRevisionActionLink'
+	property	'version'	value	'R215'
+;
+#channel ==>
+add property command_PLCUpdateRevisionActionLink on program eServiceSchemaVariableMapping.tcl to command 'PLCUpdateRevisionActionLink';

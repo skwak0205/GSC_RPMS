@@ -1,0 +1,18 @@
+del command 'APPRevisionsTreeCategory';
+add command 'APPRevisionsTreeCategory'
+	description	''
+	label	'emxComponents.Tree.Revisions'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPRevisionsList&header=emxComponents.Heading.Revisions&program=emxCommonUtilBase:getAllRevisions&toolbar=APPRevisionsToolBar&sortColumnName=Name'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconSmallRevision.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPRevisionsTreeCategory'
+	property	'version'	value	'R417'
+;
+modify menu type_Decision add command APPRevisionsTreeCategory order command APPRevisionsTreeCategory 6;
+#channel ==>type_Decision
+add property command_APPRevisionsTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPRevisionsTreeCategory';

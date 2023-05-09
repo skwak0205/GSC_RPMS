@@ -1,0 +1,15 @@
+del channel 'ProcessStepDefaultChannel';
+add channel 'ProcessStepDefaultChannel'
+	description	''
+	height	'260'
+	label	''
+	href	''
+	command 	'ProcessStepDynamicCommand'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProcessSteps'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'ProcessStepDefaultChannel'
+	property	'version'	value	'R421'
+;
+#portal ==>ProcessStepDefaultPortal
+add property channel_ProcessStepDefaultChannel on program eServiceSchemaVariableMapping.tcl to channel 'ProcessStepDefaultChannel';

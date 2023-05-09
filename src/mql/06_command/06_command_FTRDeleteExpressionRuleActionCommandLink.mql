@@ -1,0 +1,22 @@
+del command 'FTRDeleteExpressionRuleActionCommandLink';
+add command 'FTRDeleteExpressionRuleActionCommandLink'
+	description	'FTRDeleteExpressionRuleActionCommandLink'
+	label	'emxProduct.ActionLink.Remove'
+	href	'${SUITE_DIR}/ConfigurationRuleDeletePostProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'createNewLinkDisplayInTable'
+	setting	'Access Program'		'emxConfigurableRules'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'multiple'
+	setting	'Image'		'${COMMON_DIR}/images/IconActionTrashCan.png'
+	setting	'Confirm Message'		'emxProduct.Alert.Remove'
+	user	'VPLMProjectLeader'
+	property	'version'	value	'R421'
+;
+modify menu FTRExpressionRuleListActionsMenu add command FTRDeleteExpressionRuleActionCommandLink order command FTRDeleteExpressionRuleActionCommandLink 0;
+#channel ==>FTRExpressionRuleListActionsMenu
+add property command_FTRDeleteExpressionRuleActionCommandLink on program eServiceSchemaVariableMapping.tcl to command 'FTRDeleteExpressionRuleActionCommandLink';

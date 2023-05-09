@@ -1,0 +1,25 @@
+del command 'APPVCFolderConnectBusinessObject';
+add command 'APPVCFolderConnectBusinessObject'
+	description	'VC Folder Connect on demand Command Object'
+	label	'emxComponents.VersionControl.ConnectVCFileFolderOnDemand'
+	href	'${SUITE_DIR}/emxCommonDocumentVCOnDemandIntermediateProcess.jsp?objectAction=connectVCFileFolderOnDemand&calledPage=Connect'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasShowCommands'
+	setting	'Access Program'		'emxVCDocumentUI'
+	setting	'Row Select'		'Single'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPVCFolderConnectBusinessObject'
+	property	'version'	value	'R422'
+;
+modify menu APPVCFolderContentActions add command APPVCFolderConnectBusinessObject order command APPVCFolderConnectBusinessObject 0;
+#channel ==>APPVCFolderContentActions
+add property command_APPVCFolderConnectBusinessObject on program eServiceSchemaVariableMapping.tcl to command 'APPVCFolderConnectBusinessObject';

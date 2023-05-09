@@ -1,0 +1,22 @@
+del command 'APPAddRoleCommand';
+add command 'APPAddRoleCommand'
+	description	'Command to add role to a person'
+	label	'emxComponents.Common.AddRole'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?selection=multiple&expandLevelFilterMenu=false&customize=false&Export=false&sortColumnName=Name&sortDirection=ascending&PrinterFriendly=false&displayView=details&showPageURLIcon=false&showRMB=false&showClipboard=false&objectCompare=false&submitLabel=emxComponents.Common.Done&cancelLabel=emxComponents.Common.Cancel&cancelButton=true&submitURL=../components/emxComponentsAddRole.jsp&header=emxComponents.AddRoles.SelectRoles&program=emxRoleUtil:getRolesSearchResults&toolbar=APPRoleSearchToolbar&suiteKey=Components&table=APPRoleSummary'
+	alt	''
+	setting	'Popup Size'		'MediumTall'
+	setting	'Registered Suite'		'Components'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.png'
+	user	'Organization Manager'
+	user	'VPLMAdmin'
+	user	'Company Representative'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddRoleCommand'
+	property	'version'	value	'R420'
+;
+modify menu APPRoleActionsToolBar add command APPAddRoleCommand order command APPAddRoleCommand 1;
+#channel ==>APPRoleActionsToolBar
+add property command_APPAddRoleCommand on program eServiceSchemaVariableMapping.tcl to command 'APPAddRoleCommand';

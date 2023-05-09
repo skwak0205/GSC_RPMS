@@ -1,0 +1,17 @@
+del command 'APPDecisionWhereUsedTreeCategory';
+add command 'APPDecisionWhereUsedTreeCategory'
+	description	''
+	label	'emxComponents.Common.WhereUsed'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=APPDecisionWhereUsedPowerView&showPageHeader=false'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPDecisionWhereUsedTreeCategory'
+	property	'version'	value	'R207'
+;
+modify menu type_Decision add command APPDecisionWhereUsedTreeCategory order command APPDecisionWhereUsedTreeCategory 3;
+modify menu type_DecisionRMB add command APPDecisionWhereUsedTreeCategory order command APPDecisionWhereUsedTreeCategory 2;
+#channel ==>type_Decisiontype_DecisionRMB
+add property command_APPDecisionWhereUsedTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'APPDecisionWhereUsedTreeCategory';

@@ -1,0 +1,24 @@
+del command 'PMCWBSTaskAssigneeView';
+add command 'PMCWBSTaskAssigneeView'
+	description	''
+	label	'emxProgramCentral.Common.TaskAssigneeView'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'function'		'getMemberTasks'
+	setting	'Access Function'		'isNotFromRMB'
+	setting	'Access Program'		'emxTask'
+	setting	'program'		'emxTask'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCWBSTaskAssigneeView'
+	property	'version'	value	'R422'
+;
+modify menu PMCWBSListMenu add command PMCWBSTaskAssigneeView order command PMCWBSTaskAssigneeView 3;
+#channel ==>PMCWBSListMenu
+add property command_PMCWBSTaskAssigneeView on program eServiceSchemaVariableMapping.tcl to command 'PMCWBSTaskAssigneeView';

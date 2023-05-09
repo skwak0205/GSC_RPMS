@@ -1,0 +1,13 @@
+del menu 'CollaborationTools';
+add menu 'CollaborationTools'
+	description	''
+	label	'emxVPMCentral.MyDesk.CollaborationTools'
+	href	''
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPMCentral'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionUtilities.gif'
+	command	'VPLMIntegSynchroEnvChecker'
+	command	'VPLMIntegSynchroVPLMDataChecker'
+;
+add property menu_CollaborationTools on program eServiceSchemaVariableMapping.tcl to menu 'CollaborationTools';

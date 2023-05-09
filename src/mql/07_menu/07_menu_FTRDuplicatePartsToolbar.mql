@@ -1,0 +1,15 @@
+del menu 'FTRDuplicatePartsToolbar';
+add menu 'FTRDuplicatePartsToolbar'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTRRemoveGBOMCommandFromDuplicates'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTRDuplicatePartsToolbar'
+	property 'version'	value	'R214'
+;
+add property menu_FTRDuplicatePartsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'FTRDuplicatePartsToolbar';

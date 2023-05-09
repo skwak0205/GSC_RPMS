@@ -1,0 +1,22 @@
+del command 'PMCDashboard';
+add command 'PMCDashboard'
+	description	'Dashboard Command Object'
+	label	'emxFramework.Command.Dashboard'
+	href	'${SUITE_DIR}/emxProgramCentralDashboardsSummaryFS.jsp'
+	alt	'emxFramework.Command.Alt.Dashboard'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'sm_icon_Dashboard.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Project User'
+	user	'External Project User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCDashboard'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCDashboard on program eServiceSchemaVariableMapping.tcl to command 'PMCDashboard';

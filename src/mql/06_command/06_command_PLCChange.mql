@@ -1,0 +1,15 @@
+del command 'PLCChange';
+add command 'PLCChange'
+	description	''
+	label	'emxProductLine.CategoryTab.Change'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PLCProductEngineeringChangePortal&HelpMarker=emxhelpproductdetails&header=emxProduct.Heading.Portal.PropertiesWithRev'
+	alt	''
+	setting	'Registered Suite'		'ProductLine'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCChange'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_PLCChange on program eServiceSchemaVariableMapping.tcl to command 'PLCChange';

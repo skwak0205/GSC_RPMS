@@ -1,0 +1,20 @@
+del command 'PLCProductVersionTreeCategory';
+add command 'PLCProductVersionTreeCategory'
+	description	''
+	label	'emxProduct.Tree.Versions'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=PLCProductList&header=emxProduct.Heading.ProductVersions&selection=multiple&program=emxProduct:getVersionProducts&programLabel=emxProduct.Filter.All&topActionbar=PLCProductVersionListTopActionBar&bottomActionbar=PLCProductVersionListBottomActionBar&sortColumnName=Name&HelpMarker=emxhelpproductversionlist&editLink=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'ProductLine'
+	setting	'Access Expression'		'$<attribute[attribute_IsVersion] =="FALSE">'
+	setting	'Image'		'${COMMON_DIR}/iconSmallVersion.gif'
+	user	'VPLMProjectLeader'
+	user	'VPLMViewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'ProductLine'
+	property	'installed date'	value	'05-08-2015'
+	property	'original name'	value	'PLCProductVersionTreeCategory'
+	property	'version'	value	'R418'
+;
+#channel ==>
+add property command_PLCProductVersionTreeCategory on program eServiceSchemaVariableMapping.tcl to command 'PLCProductVersionTreeCategory';

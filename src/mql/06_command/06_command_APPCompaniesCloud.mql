@@ -1,0 +1,18 @@
+del command 'APPCompaniesCloud';
+add command 'APPCompaniesCloud'
+	description	'Command Object for Company Summary in Cloud'
+	label	'emxComponents.Command.Companies'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?table=APPCompaniesSummary&toolbar=APPCompanySummaryToolBar&program=emxCompany:getAllActiveCompanies&header=emxComponents.CompanySummary.Heading&HelpMarker=emxhelpcompanylist&selection=multiple&PrinterFriendly=true&sortColumnName=Name&sortDirection=ascending&customize=false&showRMB=false'
+	alt	'emxComponents.Command.Companies'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Hide Mode'		'!Cloud'
+	user	'VPLMAdmin'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPCompaniesCloud'
+	property	'version'	value	'R421'
+;
+#channel ==>
+add property command_APPCompaniesCloud on program eServiceSchemaVariableMapping.tcl to command 'APPCompaniesCloud';

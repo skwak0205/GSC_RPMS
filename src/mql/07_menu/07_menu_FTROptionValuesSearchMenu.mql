@@ -1,0 +1,15 @@
+del menu 'FTROptionValuesSearchMenu';
+add menu 'FTROptionValuesSearchMenu'
+	description	''
+	label	'emxProduct.Common.Action'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Configuration'
+	command	'FTROptionValueSearchCommand'
+	property 'installer'	value	'MatrixOneEngineering'
+	property 'application'	value	'VariantConfigurationBase'
+	property 'installed date'	value	'05-08-2015'
+	property 'original name'	value	'FTROptionValuesSearchMenu'
+	property 'version'	value	'V6R2008-2.0'
+;
+add property menu_FTROptionValuesSearchMenu on program eServiceSchemaVariableMapping.tcl to menu 'FTROptionValuesSearchMenu';

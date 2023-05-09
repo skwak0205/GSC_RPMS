@@ -1,0 +1,18 @@
+del command 'APPPartFamilyParts';
+add command 'APPPartFamilyParts'
+	description	''
+	label	'emxLibraryCentral.Command.Parts'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxLibraryCentralUtil:getClassifiedItems&table=APPPartFamilyPartsList&selection=multiple&sortColumnName=Name&sortDirection=ascending&toolbar=APPPartFamilyPartToolBar&header=emxLibraryCentral.Common.PartsPageHeading&HelpMarker=emxhelplistparts&editLink=true'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'LibraryCentral'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartFamilyParts'
+	property	'version'	value	'R214'
+;
+modify menu type_PartFamily add command APPPartFamilyParts order command APPPartFamilyParts 7;
+modify menu Msoitype_PartFamily add command APPPartFamilyParts order command APPPartFamilyParts 1;
+#channel ==>type_PartFamilyMsoitype_PartFamily
+add property command_APPPartFamilyParts on program eServiceSchemaVariableMapping.tcl to command 'APPPartFamilyParts';

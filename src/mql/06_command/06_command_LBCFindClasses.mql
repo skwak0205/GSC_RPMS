@@ -1,0 +1,21 @@
+del command 'LBCFindClasses';
+add command 'LBCFindClasses'
+	description	'Find Classes'
+	label	'emxLibraryCentral.Search.FindGeneralClass'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_GeneralClass&formInclusionList=COUNT&hideHeader=true&header=emxLibraryCentral.Search.Results&selection=multiple&table=LBCFindObjectsList&HelpMarker=emxhelpfullsearch&toolbar=LBCSearchResultToolBar&showInitialResults=false'
+	alt	'emxLibraryCentral.Search.FindGeneralClass'
+	setting	'Target Location'		'windowshade'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP,ENO_LIB_TP'
+	setting	'Help Marker'		'emxhelpfullsearch'
+	user	'VPLMViewer'
+	user	'Library User'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCFindClasses'
+	property	'version'	value	'R216'
+;
+modify menu LBCGlobalSearch add command LBCFindClasses order command LBCFindClasses 3;
+#channel ==>LBCGlobalSearch
+add property command_LBCFindClasses on program eServiceSchemaVariableMapping.tcl to command 'LBCFindClasses';

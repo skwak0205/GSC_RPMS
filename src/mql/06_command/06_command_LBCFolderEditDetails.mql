@@ -1,0 +1,21 @@
+del command 'LBCFolderEditDetails';
+add command 'LBCFolderEditDetails'
+	description	'Edit Details Action Link on Properties'
+	label	'emxDocumentCentral.ActionBarCmd.EditDetails'
+	href	'${COMMON_DIR}/emxForm.jsp?form=type_WorkspaceVault&HelpMarker=emxhelpfolderedit&formHeader=emxDocumentCentral.Shortcut.EditFolder&Export=False&findMxLink=false&mode=edit&postProcessJPO=emxLibraryCentralCommon:sendObjectModifyNotification'
+	alt	''
+	setting	'Target Location'		'self'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'hasModifyAccess'
+	setting	'Access Program'		'emxLibraryCentralCommon'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionEdit.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LBCFolderEditDetails'
+	property	'version'	value	'R211'
+;
+modify menu LBCFolderPropertiesActions add command LBCFolderEditDetails order command LBCFolderEditDetails 0;
+#channel ==>LBCFolderPropertiesActions
+add property command_LBCFolderEditDetails on program eServiceSchemaVariableMapping.tcl to command 'LBCFolderEditDetails';

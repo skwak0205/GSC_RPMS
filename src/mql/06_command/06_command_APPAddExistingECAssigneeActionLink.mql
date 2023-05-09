@@ -1,0 +1,25 @@
+del command 'APPAddExistingECAssigneeActionLink';
+add command 'APPAddExistingECAssigneeActionLink'
+	description	''
+	label	'emxComponents.Command.AddExisting'
+	href	'${COMMON_DIR}/emxFullSearch.jsp?field=TYPES=type_Person&table=AEFGeneralSearchResults&selection=multiple&showSavedQuery=True&searchCollectionEnabled=True&srcDestRelName=relationship_AssignedEC&isTo=false&submitURL=../components/emxEngineeringChangeUtil.jsp?mode=addAssigneeSubmit'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Window Height'		'500'
+	setting	'Window Width'		'700'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'owner==context.user'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'showAddRemoveAssigneesLink'
+	setting	'Access Program'		'emxCommonEngineeringChange'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAdd.gif'
+	setting	'Access Mask'		'ToConnect'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPAddExistingECAssigneeActionLink'
+	property	'version'	value	'R417'
+;
+modify menu APPECAssigneesListActionsToolBar add command APPAddExistingECAssigneeActionLink order command APPAddExistingECAssigneeActionLink 1;
+#channel ==>APPECAssigneesListActionsToolBar
+add property command_APPAddExistingECAssigneeActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPAddExistingECAssigneeActionLink';

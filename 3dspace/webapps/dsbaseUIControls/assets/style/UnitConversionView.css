@@ -1,0 +1,28 @@
+div.unit-conversion-view-arrow-div {
+    font-size: 1.6em;
+    text-align: center;
+    margin-top: 2vh;
+}
+
+span.unit-conversion-view-addon {
+    font-weight: bold;
+    border-left: 1px solid rgb(209, 212, 212) !important;
+}
+
+span.unit-conversion-view-addon-clickable {
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+span.unit-conversion-view-addon-clickable i.fonticon-chevron-down {
+    margin: 0;
+}
+
+div.unit-conversion-view-units-dropdown {
+    min-width: unset !important;
+}
+
+div.unit-conversion-view-units-dropdown .item {
+    padding: 0;
+}

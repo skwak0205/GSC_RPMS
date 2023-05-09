@@ -1,0 +1,21 @@
+del command 'RMTPrefExtendedSpecTree';
+add command 'RMTPrefExtendedSpecTree'
+	description	'Preference for extended specification structure.'
+	label	'emxRequirements.ActionLink.RMTPrefExtendedSpecTree'
+	href	'${SUITE_DIR}/emxPrefExtendedSpecTree.jsp?HelpMarker=xxx'
+	alt	''
+	setting	'Registered Suite'		'Requirements'
+	setting	'Image'		'${COMMON_DIR}/images/buttonToolbarPreferences.gif'
+	user	'3DSRestrictedReader'
+	user	'VPLMViewer'
+	user	'Employee'
+	user	'Requirement Viewer'
+	property	'installer'	value	'MatrixOneEngineering'
+	property	'application'	value	'RequirementsManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'RMTPrefExtendedSpecTree'
+	property	'version'	value	'R422'
+;
+modify menu RequirementsCentral add command RMTPrefExtendedSpecTree order command RMTPrefExtendedSpecTree 2;
+#channel ==>RequirementsCentral
+add property command_RMTPrefExtendedSpecTree on program eServiceSchemaVariableMapping.tcl to command 'RMTPrefExtendedSpecTree';

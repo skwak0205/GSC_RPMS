@@ -1,0 +1,25 @@
+del command 'PMCCopyWBSToSelectedTask';
+add command 'PMCCopyWBSToSelectedTask'
+	description	''
+	label	'emxProgramCentral.Common.CopyWBSToSelectedTask'
+	href	'${SUITE_DIR}/emxProgramCentralWBSHiddenProcess.jsp?calledMethod=submitImport'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Selection'		'single'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'hasAccessForWBSView'
+	setting	'Access Program'		'emxTask'
+	setting	'Row Select'		'single'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCopyWBSToSelectedTask'
+	property	'version'	value	'R422'
+;
+#channel ==>
+add property command_PMCCopyWBSToSelectedTask on program eServiceSchemaVariableMapping.tcl to command 'PMCCopyWBSToSelectedTask';

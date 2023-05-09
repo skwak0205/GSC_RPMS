@@ -1,0 +1,26 @@
+del command 'LCCreateNewRetentionRecord';
+add command 'LCCreateNewRetentionRecord'
+	description	'For Creating Retention Record'
+	label	'emxLibraryCentral.Command.CreateNewRecordRetention'
+	href	'${COMMON_DIR}/emxCreate.jsp?type=type_RetentionRecord&nameField=both&vaultChooser=false&policy=policy_RetentionRecord&form=LCCreateRetentionRecord&typeChooser=false&submitAction=treeContent&header=emxLibraryCentral.Command.CreateNewRecordRetention&HelpMarker=emxhelplibrarycreaterecretention'
+	alt	''
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Licensed Product'		'ENO_LBC_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Row Select'		'none'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreateRecordRetention.png'
+	user	'3DSRestrictedLeader'
+	user	'3DSRestrictedOwner'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Record Retention Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCCreateNewRetentionRecord'
+	property	'version'	value	'R422'
+;
+modify menu LCRetentionRecordSummaryToolbarActions add command LCCreateNewRetentionRecord order command LCCreateNewRetentionRecord 1;
+#channel ==>LCRetentionRecordSummaryToolbarActions
+add property command_LCCreateNewRetentionRecord on program eServiceSchemaVariableMapping.tcl to command 'LCCreateNewRetentionRecord';

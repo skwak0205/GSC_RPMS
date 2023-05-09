@@ -1,0 +1,28 @@
+del command 'PMCCloneResourcePlan';
+add command 'PMCCloneResourcePlan'
+	description	'PMCCloneResourcePlan'
+	label	'emxProgramCentral.Command.ResourcePlan.CloneRequest'
+	href	'${SUITE_DIR}/emxProgramCentralResourceRequestUtil.jsp?mode=createclone'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Window Height'		'600'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isCommandEnabled'
+	setting	'Access Program'		'emxResourceRequest'
+	setting	'Image'		'${COMMON_DIR}/images/I_Duplicate32.png'
+	user	'3DSRestrictedLeader'
+	user	'VPLMProjectLeader'
+	user	'Project Lead'
+	user	'External Project Lead'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCCloneResourcePlan'
+	property	'version'	value	'R422'
+;
+modify menu PMCCreateResourcePlan add command PMCCloneResourcePlan order command PMCCloneResourcePlan 3;
+modify menu PMCResourcePlanToolBar add command PMCCloneResourcePlan order command PMCCloneResourcePlan 7;
+#channel ==>PMCCreateResourcePlanPMCResourcePlanToolBar
+add property command_PMCCloneResourcePlan on program eServiceSchemaVariableMapping.tcl to command 'PMCCloneResourcePlan';

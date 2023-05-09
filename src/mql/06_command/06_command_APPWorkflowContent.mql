@@ -1,0 +1,18 @@
+del command 'APPWorkflowContent';
+add command 'APPWorkflowContent'
+	description	'Command Object for content display in workflow tree'
+	label	'emxFramework.Command.Content'
+	href	'${COMMON_DIR}/emxTable.jsp?table=APPWorkflowContent&toolbar=APPWorkflowContentSummaryToolBar&program=emxWorkflow:getContent&header=emxComponents.Workflow.WorkflowContentHeader&selection=multiple&HelpMarker=emxhelpworkflowfindcontent'
+	alt	'emxFramework.Command.Content'
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'Components'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionCreate.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPWorkflowContent'
+	property	'version'	value	'10-6-SP2'
+;
+modify menu type_Workflow add command APPWorkflowContent order command APPWorkflowContent 2;
+#channel ==>type_Workflow
+add property command_APPWorkflowContent on program eServiceSchemaVariableMapping.tcl to command 'APPWorkflowContent';

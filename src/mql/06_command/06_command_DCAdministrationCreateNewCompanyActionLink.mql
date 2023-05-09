@@ -1,0 +1,23 @@
+del command 'DCAdministrationCreateNewCompanyActionLink';
+add command 'DCAdministrationCreateNewCompanyActionLink'
+	description	'Create New Company'
+	label	'emxDocumentCentral.ActionBarCmd.CreateNewCompany'
+	href	'${SUITE_DIR}/emxDocumentCentralStart.jsp'
+	alt	''
+	setting	'Target Location'		'popup'
+	setting	'Printer Friendly'		'false'
+	setting	'Window Height'		'520'
+	setting	'Window Width'		'570'
+	setting	'Registered Suite'		'DocumentCentral'
+	setting	'Submit'		'false'
+	setting	'Currency Converter'		'false'
+	setting	'Row Select'		'none'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'DCAdministrationCreateNewCompanyActionLink'
+	property	'version'	value	'9-5-2-0'
+;
+modify menu DCAdministrationTopActionbar add command DCAdministrationCreateNewCompanyActionLink order command DCAdministrationCreateNewCompanyActionLink 0;
+#channel ==>DCAdministrationTopActionbar
+add property command_DCAdministrationCreateNewCompanyActionLink on program eServiceSchemaVariableMapping.tcl to command 'DCAdministrationCreateNewCompanyActionLink';

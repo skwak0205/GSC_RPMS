@@ -1,0 +1,18 @@
+del command 'APPPartCompleteEvent';
+add command 'APPPartCompleteEvent'
+	description	'Complete Part'
+	label	'emxComponents.Event.Part_Complete'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(policy == "Development Part")'
+	setting	'Event Type'		'Part Complete'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPPartCompleteEvent'
+	property	'version'	value	'10-7-SP1'
+;
+modify menu APPPartEvents add command APPPartCompleteEvent order command APPPartCompleteEvent 6;
+#channel ==>APPPartEvents
+add property command_APPPartCompleteEvent on program eServiceSchemaVariableMapping.tcl to command 'APPPartCompleteEvent';

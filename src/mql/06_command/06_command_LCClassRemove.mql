@@ -1,0 +1,23 @@
+del command 'LCClassRemove';
+add command 'LCClassRemove'
+	description	'Class Remove'
+	label	'emxDocumentCentral.Access.Remove'
+	href	'${SUITE_DIR}/emxLibraryCentralObjectPreRemoveContentsProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Target'		'Content'
+	setting	'Registered Suite'		'LibraryCentral'
+	setting	'Submit'		'true'
+	setting	'Row Select'		'multi'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionRemove.gif'
+	user	'VPLMProjectAdministrator'
+	user	'VPLMProjectLeader'
+	user	'Librarian'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'LibraryCentral'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'LCClassRemove'
+	property	'version'	value	'R216'
+;
+#channel ==>
+add property command_LCClassRemove on program eServiceSchemaVariableMapping.tcl to command 'LCClassRemove';

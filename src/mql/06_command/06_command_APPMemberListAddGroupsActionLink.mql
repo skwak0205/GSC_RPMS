@@ -1,0 +1,26 @@
+del command 'APPMemberListAddGroupsActionLink';
+add command 'APPMemberListAddGroupsActionLink'
+	description	'Command for adding the group in member list'
+	label	'emxComponents.Command.DistributionListAddGroups'
+	href	'${COMMON_DIR}/emxIndentedTable.jsp?program=emxGroupUtil:getGroupSearchResults&table=APPGroupSummary&toolbar=APPGroupSearchToolbar&selection=multiple&expandLevelFilterMenu=false&customize=false&Export=false&multiColumnSort=false&PrinterFriendly=false&showPageURLIcon=false&showRMB=false&showClipboard=false&displayView=details&objectCompare=false&submitLabel=emxFramework.Common.Done&header=emxComponents.AddGroups.SelectGroups&cancelLabel=emxFramework.Common.Cancel&cancelButton=true&submitURL=../components/emxMemberListAddMembers.jsp&memberType=Group&HelpMarker=emxhelpselectgroup'
+	alt	'emxComponents.Command.DistributionListAddGroups'
+	setting	'Popup Size'		'MediumTall'
+	setting	'Target Location'		'popup'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'owner==context.user'
+	setting	'Popup Modal'		'true'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionAddPersons.png'
+	user	'3DSRestrictedReader'
+	user	'Global User'
+	user	'VPLMViewer'
+	user	'Specification Manager'
+	user	'Specification Office Manager'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMemberListAddGroupsActionLink'
+	property	'version'	value	'R422'
+;
+modify menu APPMemberListMembersActionsToolBar add command APPMemberListAddGroupsActionLink order command APPMemberListAddGroupsActionLink 2;
+#channel ==>APPMemberListMembersActionsToolBar
+add property command_APPMemberListAddGroupsActionLink on program eServiceSchemaVariableMapping.tcl to command 'APPMemberListAddGroupsActionLink';

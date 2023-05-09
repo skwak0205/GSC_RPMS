@@ -1,0 +1,24 @@
+del command 'FTRFormCreateVariabilityGroup';
+add command 'FTRFormCreateVariabilityGroup'
+	description	''
+	label	'emxProduct.ActionLink.CreateVariabilityGroup'
+	href	'${SUITE_DIR}/VariabilityGroupCreatePreProcess.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'Configuration'
+	setting	'Access Expression'		'$<type.kindof!="type_Model">'
+	setting	'Licensed Product'		'ENO_FTR_TP'
+	setting	'Mode'		'edit'
+	setting	'Submit'		'true'
+	setting	'Access Function'		'isFrozenState'
+	setting	'Access Program'		'emxPLCCommon'
+	setting	'Hide Mode'		'Mobile'
+	setting	'Row Select'		'single'
+	setting	'Image'		'${COMMON_DIR}/images/I_CreateVariabilityGroup.png'
+	user	'VPLMProjectLeader'
+	property	'application'	value	'VariantConfigurationBase'
+	property	'version'	value	'R421'
+;
+modify menu FTRVariabilityToolbar add command FTRFormCreateVariabilityGroup order command FTRFormCreateVariabilityGroup 2;
+#channel ==>FTRVariabilityToolbar
+add property command_FTRFormCreateVariabilityGroup on program eServiceSchemaVariableMapping.tcl to command 'FTRFormCreateVariabilityGroup';

@@ -1,0 +1,16 @@
+del menu 'Icon Mail';
+add menu 'Icon Mail'
+	description	''
+	label	'emxFramework.IconMail.Inbox.IconMail'
+	href	'emxCompMailDetailsFS.jsp'
+	alt	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Image'		'iconUnReadMail.gif'
+	command	'AEFAttachmentsTreeCategory'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'Framework'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'Icon Mail'
+	property 'version'	value	'9-5-0-0'
+;
+add property menu_IconMail on program eServiceSchemaVariableMapping.tcl to menu 'Icon Mail';

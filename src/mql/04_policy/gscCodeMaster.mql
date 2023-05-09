@@ -1,0 +1,35 @@
+################################################################################################
+# Created Date : 2020.06.05
+# Create by GeonHwan,Bae
+# Description : Code Master Policy
+################################################################################################
+#del policy gscCodeMaster;
+add policy gscCodeMaster
+    description    'Code Master Policy'
+    sequence       ''
+    nothidden
+    type           'gscCodeMaster'
+    allstate
+        user VPLMAdmin key gscAdminUser all
+    state 'Inactive'
+        revision FALSE
+        version  FALSE
+        promote  FALSE
+        owner all
+        public none
+    state 'Active'
+        revision FALSE
+        version  FALSE
+        promote  FALSE
+        owner all
+        public show,read
+        user Employee show,read
+    property 'installed date' value '06-05-2020'
+    property 'application' value 'Framework'
+    property 'original name' value 'gscCodeMaster'
+    property 'installer' value 'GSC'
+    property 'version' value 'V6R2019'
+    property 'state_Inactive' value 'Inactive'
+    property 'state_Active' value 'Active'
+;
+add property "policy_gscCodeMaster" on program "eServiceSchemaVariableMapping.tcl" to policy "gscCodeMaster";

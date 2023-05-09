@@ -1,0 +1,18 @@
+del command 'APPJoinMeeting';
+add command 'APPJoinMeeting'
+	description	''
+	label	'emxComponents.Common.JoinMeeting'
+	href	'${COMPONENT_DIR}/emxMeetingProcess.jsp?action=JoinMeeting&notification=Yes&sReturnPage=MeetingDetails'
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'current=="In Progress" && $<attribute[attribute_MeetingType].value != "None"'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionJoinMeeting.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPJoinMeeting'
+	property	'version'	value	'R417'
+;
+modify menu APPMeetingPropertiesActionToolbar add command APPJoinMeeting order command APPJoinMeeting 8;
+#channel ==>APPMeetingPropertiesActionToolbar
+add property command_APPJoinMeeting on program eServiceSchemaVariableMapping.tcl to command 'APPJoinMeeting';

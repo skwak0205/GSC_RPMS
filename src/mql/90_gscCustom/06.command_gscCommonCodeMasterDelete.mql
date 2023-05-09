@@ -1,0 +1,23 @@
+################################################################################################
+# Created Date : 2023.01.10
+# Create by HyungJin,Ju
+# Description : 공통코드 master 삭제 command
+################################################################################################
+#del command "gscCommonCodeMasterDelete";
+add command "gscCommonCodeMasterDelete"
+    description ""
+    label   "emxComponents.Button.Delete"
+    alt     "emxComponents.Button.Delete"
+    href    "../enterprisechangemgtapp/gscECMDeletePreProcess.jsp?deleteJPO=gscCommonCode:deleteMasterCode&TargetFrame=parent"
+    setting "Registered Suite"  "Components"
+	setting "Target Location"   "listHidden"
+	setting "Submit"            "true"
+	setting "Row Select"        "multiple"
+	setting "Image"             "${COMMON_DIR}/images/iconActionThrash.png"
+property "application"      value "Components"
+property "version"          value "V6R2019"
+property "installer"        value "GSC"
+property "installed date"   value "2023.01.10"
+property "original name"    value "gscCommonCodeMasterDelete"
+;
+add property command_gscCommonCodeMasterDelete on program eServiceSchemaVariableMapping.tcl to command 'gscCommonCodeMasterDelete';

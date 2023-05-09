@@ -1,0 +1,15 @@
+del menu 'PMCResourceRequestEditPageProcessActions';
+add menu 'PMCResourceRequestEditPageProcessActions'
+	description	''
+	label	'emxProgramCentral.ResourcePool.RequestRequest.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'ProgramCentral'
+	command	'PMCEditPageSubmitRequest'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'ProgramManagementBase'
+	property 'installed date'	value	'10-28-2022'
+	property 'original name'	value	'PMCResourceRequestEditPageProcessActions'
+	property 'version'	value	'R214'
+;
+add property menu_PMCResourceRequestEditPageProcessActions on program eServiceSchemaVariableMapping.tcl to menu 'PMCResourceRequestEditPageProcessActions';

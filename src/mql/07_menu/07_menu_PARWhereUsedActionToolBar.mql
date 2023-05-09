@@ -1,0 +1,12 @@
+del menu 'PARWhereUsedActionToolBar';
+add menu 'PARWhereUsedActionToolBar'
+	description	''
+	label	'emxParameter.common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Parameter'
+	command	'PARConnectToExistingObject'
+	command	'AEFSeparator'
+	command	'PARDisconnectParameters'
+;
+add property menu_PARWhereUsedActionToolBar on program eServiceSchemaVariableMapping.tcl to menu 'PARWhereUsedActionToolBar';

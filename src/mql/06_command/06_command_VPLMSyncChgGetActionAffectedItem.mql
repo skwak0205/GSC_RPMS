@@ -1,0 +1,11 @@
+del command 'VPLMSyncChgGetActionAffectedItem';
+add command 'VPLMSyncChgGetActionAffectedItem'
+	description	'Command to get Affected Items on VPLM Action'
+	label	'emxVPMCentral.Change.Command.GetActionAffectedItem.Title'
+	href	'${COMMON_DIR}/emxTable.jsp?program=emxECA:getECAAffectedItems&table=VPLMECARelatedObjects&header=emxVPMCentral.Change.Command.GetActionAffectedItem.Title&triggerValidation=false&massPromoteDemote=false'
+	alt	''
+	setting	'Target Location'		'content'
+	setting	'Registered Suite'		'VPMCentral'
+;
+#channel ==>
+add property command_VPLMSyncChgGetActionAffectedItem on program eServiceSchemaVariableMapping.tcl to command 'VPLMSyncChgGetActionAffectedItem';

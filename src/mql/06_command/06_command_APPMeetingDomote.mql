@@ -1,0 +1,21 @@
+del command 'APPMeetingDomote';
+add command 'APPMeetingDomote'
+	description	''
+	label	'emxComponents.Button.Demote'
+	href	'${COMPONENT_DIR}/emxMeetingProcess.jsp?action=Demote&notification=Yes&sReturnPage=null&submitAction=refreshCaller'
+	alt	''
+	setting	'Target Location'		'formViewHidden'
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'(current.access[demote] == true)'
+	setting	'Access Function'		'showMeetingDemoteCommand'
+	setting	'Access Program'		'emxMeeting'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionDemote.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'CommonComponents'
+	property	'installed date'	value	'10-27-2022'
+	property	'original name'	value	'APPMeetingDomote'
+	property	'version'	value	'R422.HF1'
+;
+modify menu APPMeetingPropertiesActionToolbar add command APPMeetingDomote order command APPMeetingDomote 6;
+#channel ==>APPMeetingPropertiesActionToolbar
+add property command_APPMeetingDomote on program eServiceSchemaVariableMapping.tcl to command 'APPMeetingDomote';

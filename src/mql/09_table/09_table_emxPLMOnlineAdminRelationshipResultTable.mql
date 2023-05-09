@@ -1,0 +1,30 @@
+del table 'emxPLMOnlineAdminRelationshipResultTable' system;
+add table 'emxPLMOnlineAdminRelationshipResultTable' system
+column #1
+	name	'Name'
+	label	'emxPlmOnline.label.Relationship'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	'${COMMON_DIR}/emxPLMOnlineAdminRelationshipReport.jsp?relationshipName=${ROW_ID}'
+	range	''
+	setting	'Target Location'		'_parent'
+	setting	'Auto Filter'		'true'
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'fillReferenceOrInstanceColumn'
+	setting	'program'		'emxPLMOnlineAdminModelViewProgram'
+column #2
+	name	'Desription'
+	label	'emxFramework.Basic.Description'
+	autoheight	'FALSE'
+	autowidth	'FALSE'
+	edit	'FALSE'
+	href	''
+	range	''
+	setting	'Registered Suite'		'Framework'
+	setting	'Column Type'		'program'
+	setting	'function'		'fillInstanceDescription'
+	setting	'program'		'emxPLMOnlineAdminModelViewProgram'
+;
+add property table_emxPLMOnlineAdminRelationshipResultTable on program eServiceSchemaVariableMapping.tcl to table 'emxPLMOnlineAdminRelationshipResultTable' system;

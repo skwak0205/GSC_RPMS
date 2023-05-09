@@ -1,0 +1,24 @@
+del command 'PMCResourcePlanTemplateCurrencyFilter';
+add command 'PMCResourcePlanTemplateCurrencyFilter'
+	description	''
+	label	'emxProgramCentral.ResourceRequest.CurrencyFilter'
+	href	'${SUITE_DIR}/emxProgramCentralResourcePlanCostFilter.jsp'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Range Function'		'getResourceRequestCurrencyFilterRange'
+	setting	'Input Type'		'combobox'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'Range Program'		'emxResourceRequest'
+	setting	'Access Function'		'showCurrencyFilter'
+	setting	'Access Program'		'emxResourceRequest'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCResourcePlanTemplateCurrencyFilter'
+	property	'version'	value	'R419'
+;
+modify menu PMCResourceRequestTemplateToolBarActions add command PMCResourcePlanTemplateCurrencyFilter order command PMCResourcePlanTemplateCurrencyFilter 2;
+modify menu PMCResourceRequestTemplateToolBar add command PMCResourcePlanTemplateCurrencyFilter order command PMCResourcePlanTemplateCurrencyFilter 3;
+#channel ==>PMCResourceRequestTemplateToolBarActionsPMCResourceRequestTemplateToolBar
+add property command_PMCResourcePlanTemplateCurrencyFilter on program eServiceSchemaVariableMapping.tcl to command 'PMCResourcePlanTemplateCurrencyFilter';

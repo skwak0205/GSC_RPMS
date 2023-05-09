@@ -1,0 +1,11 @@
+del channel 'MngUniquenessKeysChannel';
+add channel 'MngUniquenessKeysChannel'
+	description	'Manage Deployment Uniqueness Keys Channel'
+	height	'0'
+	label	'emxPackagesManagement.label.DeploymentConstrainedAttributesChannel'
+	href	''
+	setting		'Registered Suite'		'PackagesManagement'
+	command 	'ActivationUniquenessKeyCmd','MngMxTNRTypesCmd'
+;
+#portal ==>MngUKConfigurationPortal
+add property channel_MngUniquenessKeysChannel on program eServiceSchemaVariableMapping.tcl to channel 'MngUniquenessKeysChannel';

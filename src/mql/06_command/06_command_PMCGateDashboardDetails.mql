@@ -1,0 +1,18 @@
+del command 'PMCGateDashboardDetails';
+add command 'PMCGateDashboardDetails'
+	description	'Command to show Dashboard Report present in Channel'
+	label	'emxFramework.Command.Dashboard'
+	href	'${COMMON_DIR}/emxPortal.jsp?portal=PMCDashboardPortal&showPageHeader=false'
+	alt	''
+	setting	'Target Location'		'listHidden'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PGE_TP'
+	setting	'Image'		'sm_icon_Dashboard.gif'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCGateDashboardDetails'
+	property	'version'	value	'R216'
+;
+#channel ==>PMCDashboardChannel
+add property command_PMCGateDashboardDetails on program eServiceSchemaVariableMapping.tcl to command 'PMCGateDashboardDetails';

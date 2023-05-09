@@ -1,0 +1,21 @@
+del menu 'APPRouteAccessActionsToolbar';
+add menu 'APPRouteAccessActionsToolbar'
+	description	''
+	label	'emxComponents.Common.Actions'
+	href	''
+	alt	''
+	setting	'Registered Suite'		'Components'
+	setting	'Access Expression'		'id==last.id&&(current.access[changesov]==true)&&!(type=="Route Template"&&current=="Active")'
+	setting	'Image'		'${COMMON_DIR}/images/iconActionActions.png'
+	command	'APPRouteAddPeople'
+	command	'RouteAccessAddUserGroups'
+	command	'APPRouteRemoveAccess'
+	command	'APPActiveRouteTemplateRemoveAccess'
+	command	'APPRouteTemplateRemoveAccess'
+	property 'installer'	value	'ENOVIAEngineering'
+	property 'application'	value	'CommonComponents'
+	property 'installed date'	value	'10-27-2022'
+	property 'original name'	value	'APPRouteAccessActionsToolbar'
+	property 'version'	value	'R422'
+;
+add property menu_APPRouteAccessActionsToolbar on program eServiceSchemaVariableMapping.tcl to menu 'APPRouteAccessActionsToolbar';

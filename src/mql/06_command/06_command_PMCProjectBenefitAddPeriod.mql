@@ -1,0 +1,24 @@
+del command 'PMCProjectBenefitAddPeriod';
+add command 'PMCProjectBenefitAddPeriod'
+	description	'Add Period'
+	label	'emxProgramCentral.ProjectBenefit.Command.AddPeriod'
+	href	'${COMMON_DIR}/emxForm.jsp?form=PMCProjectBenefitAddPeriod&mode=edit&formHeader=emxProgramCentral.ProjectBenefit.Command.AddPeriod&postProcessJPO=emxBenefitItem:addPeriod&HelpMarker=emxhelpperiodadd'
+	alt	'emxProgramCentral.ProjectBenefit.Command.AddPeriod'
+	setting	'Target Location'		'slidein'
+	setting	'Registered Suite'		'ProgramCentral'
+	setting	'Licensed Product'		'ENO_PRF_TP'
+	setting	'submitAction'		'refreshCaller'
+	setting	'Popup Modal'		'true'
+	setting	'Access Function'		'isAddPeriodAvailable'
+	setting	'Access Program'		'emxBenefitItem'
+	setting	'Image'		'${COMMON_DIR}/images/I_AddPeriod32.png'
+	property	'installer'	value	'ENOVIAEngineering'
+	property	'application'	value	'ProgramManagementBase'
+	property	'installed date'	value	'10-28-2022'
+	property	'original name'	value	'PMCProjectBenefitAddPeriod'
+	property	'version'	value	'R421.HF2'
+;
+modify menu PMCProjectBenefitEditPageToolBarActions add command PMCProjectBenefitAddPeriod order command PMCProjectBenefitAddPeriod 5;
+modify menu PMCProjectBenefitOperationsToolBar add command PMCProjectBenefitAddPeriod order command PMCProjectBenefitAddPeriod 2;
+#channel ==>PMCProjectBenefitEditPageToolBarActionsPMCProjectBenefitOperationsToolBar
+add property command_PMCProjectBenefitAddPeriod on program eServiceSchemaVariableMapping.tcl to command 'PMCProjectBenefitAddPeriod';
